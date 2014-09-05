@@ -334,6 +334,12 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 	$options[] = array(
+		'name' => __('Placeholder Image 2', 'bs-tourism'),
+		'desc' => __('Placeholder image for the second layout.', 'bs-tourism'),
+		'id'   => 'post_placeholder_2',
+		'type' => 'upload');
+
+	$options[] = array(
 		'name' => __('Archive Banner Image', 'bs-tourism'),
 		'desc' => __('Banner image to display on tours archive page.', 'bs-tourism'),
 		'id'   => 'post_banner_image',
