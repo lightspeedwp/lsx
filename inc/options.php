@@ -156,21 +156,37 @@ function optionsframework_options() {
 
 	// Available Options for Header Font
 	$typography_options_headers = array(
-		'sizes' => array('12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36'),
+		'sizes' => array('12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36' , '48', '60' , '70' , '80' , '90' , '100'),
 		'faces' => array(
 			'"Helvetica Neue", Helvetica, Arial, sans-serif' => 'Helvetica',
 			'"Open Sans", sans-serif'                        => 'Open Sans',
 			'Arial, "Helvetica Neue", Helvetica, sans-serif' => 'Arial',
 			'Georgia, Times, "Times New Roman", serif'       => 'Georgia',
+			'"Oleo Script",cursive'						     => 'Oleo Script',
 		),
 		'styles' => array('normal' => 'Normal', 'bold' => 'Bold')
 	);	
+
+
 	
 	$typography_options_headers = apply_filters('lsx_header_typography_options', $typography_options_headers);
-	
+
 
 	$typography_mixed_fonts = array_merge(options_typography_get_os_fonts(), options_typography_get_google_fonts());
 	asort($typography_mixed_fonts);
+
+	$options['banner_header_font'] = array('name' => 'Banner Header',
+		'id'                                    => 'banner_header_font',
+		'std'                                   => array('size' => '90px', 'color' => '#ffffff' ),
+		'type'                                                  => 'typography',
+		'options'                                               => $typography_options_headers);
+
+	$options['banner_tagline_font'] = array('name' => 'Banner Tagline',
+		'id'                                    => 'banner_tagline_font',
+		'std'                                   => array('size' => '36px', 'color' => '#ffffff'),
+		'type'                                                  => 'typography',
+		'options'                                               => $typography_options_headers);
+
 
 	$options['header_1_font'] = array('name' => 'Header 1',
 		'id'                                    => 'header_1_font',
@@ -231,6 +247,12 @@ function optionsframework_options() {
 		'std'                               => array('size' => '14px', 'face' => '"Helvetica Neue", Helvetica, Arial, sans-serif', 'color' => '#333333'),
 		'type'                                              => 'typography',
 		'options'                                           => $typography_options_body);
+
+	$options['banner_color'] = array('name' => 'Banner background color',
+		"desc"                               => "Select the color for the default banner background.",
+		"id"                                 => "banner_color",
+		"std"                                => "#ffffff",
+		"type"                               => "color");
 
 	$options['link_color'] = array('name' => 'Link color',
 		"desc"                               => "Select the color for links.",
@@ -535,6 +557,17 @@ function options_typography_styles() {
 			$output .= options_typography_font_styles(lsx_get_option('body_font'), 'body');
 		}
 
+		if (lsx_get_option('banner_header_font')) {
+			$output .= options_typography_font_styles(lsx_get_option('banner_header_font'), '.bs-image-header-title');
+			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
+		}
+
+			if (lsx_get_option('banner_tagline_font')) {
+			$output .= options_typography_font_styles(lsx_get_option('banner_tagline_font'), '.bs-image-header-desc');
+			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
+		}
+
+	
 		if (lsx_get_option('header_1_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('header_1_font'), 'h1');
 		}
@@ -557,6 +590,10 @@ function options_typography_styles() {
 
 		if (lsx_get_option('header_6_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('header_6_font'), 'h6');
+		}
+
+		if (lsx_get_option('banner_color')) {
+			$output .= '.bs-image-header {background:'.lsx_get_option('banner_color').'}';
 		}
 
 		if (lsx_get_option('link_color')) {
