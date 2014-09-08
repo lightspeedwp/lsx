@@ -61,7 +61,7 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 		}
 			
 		
-		if ( (is_home() || is_front_page()) && lsx_get_option( 'enable_banner', false ) ) { ?>
+		if ( (is_home() && is_front_page()) && lsx_get_option( 'enable_banner', false ) ) { ?>
 			<header class="bs-image-header" style="background-image: url(<?php echo $banner_image?>)">
 				<div class="container">
 					<div class="banner-text">
