@@ -13,7 +13,7 @@
 
 	<?php lsx_footer_before(); ?>
 
-	<footer class="content-info container" role="contentinfo">
+	<footer class="content-info container tester" role="contentinfo">
 		<div class="row">
 		    	<div class="col-sm-12">
   					    <div class="footer-menu">
