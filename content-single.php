@@ -34,8 +34,7 @@
 		<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 	</div><!-- .entry-content -->
 
-		<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
+		<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
 	<?php lsx_entry_bottom(); ?>
 
