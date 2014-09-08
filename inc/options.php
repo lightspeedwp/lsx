@@ -156,7 +156,7 @@ function optionsframework_options() {
 
 	// Available Options for Header Font
 	$typography_options_headers = array(
-		'sizes' => array('12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36'),
+		'sizes' => array('12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36' , '48', '60' , '70' , '80' , '90' , '100'),
 		'faces' => array(
 			'"Helvetica Neue", Helvetica, Arial, sans-serif' => 'Helvetica',
 			'"Open Sans", sans-serif'                        => 'Open Sans',
@@ -167,20 +167,10 @@ function optionsframework_options() {
 		'styles' => array('normal' => 'Normal', 'bold' => 'Bold')
 	);	
 
-		$typography_options_banner = array(
-		'sizes' => array('30' , '40' , '50' , '60' , '70' , '75' , '80' , '85' , '90' , '92' , '94' , '96' , '98' , '100'),
-		'faces' => array(
-			'"Helvetica Neue", Helvetica, Arial, sans-serif' => 'Helvetica',
-			'"Open Sans", sans-serif'                        => 'Open Sans',
-			'Arial, "Helvetica Neue", Helvetica, sans-serif' => 'Arial',
-			'Georgia, Times, "Times New Roman", serif'       => 'Georgia',
-			'"Oleo Script",cursive'						     => 'Oleo Script',
-		),
-		'styles' => array('normal' => 'Normal', 'bold' => 'Bold')
-	);	
+
 	
 	$typography_options_headers = apply_filters('lsx_header_typography_options', $typography_options_headers);
-	
+
 
 	$typography_mixed_fonts = array_merge(options_typography_get_os_fonts(), options_typography_get_google_fonts());
 	asort($typography_mixed_fonts);
@@ -189,7 +179,7 @@ function optionsframework_options() {
 		'id'                                    => 'banner_header_font',
 		'std'                                   => array('size' => '90px', 'color' => '#ffffff' , 'face' => 'cursive'),
 		'type'                                                  => 'typography',
-		'options'                                               => $typography_options_banner);
+		'options'                                               => $typography_options_headers);
 
 	$options['banner_tagline_font'] = array('name' => 'Banner Tagline',
 		'id'                                    => 'banner_tagline_font',
