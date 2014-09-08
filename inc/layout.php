@@ -265,7 +265,6 @@ function lsx_related_posts() {
 								<img class="img-responsive" src="http://placehold.it/350x230/" alt="placeholder" />
 							</a>
 						<?php } ?>
-					</a>
 					<h4><a href="<?php echo get_permalink( $related_post->ID );?>"><?php echo $related_post->post_title ?></a></h4>					
 				</div>
 			</div>
