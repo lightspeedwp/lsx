@@ -124,7 +124,10 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 						<?php } else { ?>
 							<h1 class="bs-image-header-title"><?php the_title(); ?></h1>
 						<?php } ?>
-						<h2 class="bs-image-header-desc"><?php echo get_post_meta( get_the_ID(), 'lsx_tagline', true ); ?></h2>
+						
+						<?php if(false != get_post_meta( get_the_ID(), 'lsx_tagline', true )) {?>
+							<h2 class="bs-image-header-desc"><?php echo get_post_meta( get_the_ID(), 'lsx_tagline', true ); ?></h2>
+						<?php } ?>
 					</div>
 				</div>
 			</header>
