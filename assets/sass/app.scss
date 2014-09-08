@@ -585,9 +585,15 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
 
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar>a img { float: none !important; }
 
-.bypostauthor {
+.bypostauthor,
+.wp-caption,
+.wp-caption-text,
+.gallery-caption
+ {
   font-style: inherit;
 }
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
