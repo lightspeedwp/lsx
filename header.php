@@ -29,7 +29,7 @@ global $lsx_options;
 <?php wp_head(); ?>
 <?php lsx_head_bottom(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('tester'); ?>>
 	<?php 
 	lsx_body_top();
 	// Use Bootstrap's navbar if enabled in config.php
