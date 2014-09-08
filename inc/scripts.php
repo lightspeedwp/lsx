@@ -12,7 +12,7 @@
 function lsx_scripts() {
 	//wp_enqueue_style( 'lsx-style', get_stylesheet_uri() );
 
-	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
+	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/assets/css/app.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
