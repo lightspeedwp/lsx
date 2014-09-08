@@ -37,36 +37,8 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 			$image_url = wp_get_attachment_url( $image_id );
 		}
 			
-		?>
-		<?php if ( is_author() ) { ?>
-			<header class="bs-image-header">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title"><?php the_author(); ?></h1>
-						<h2 class="bs-image-header-desc"><?php the_author_meta( 'user_description' ); ?></h2>
-					</div>
-				</div>
-			</header>	
-		<?php } elseif ( is_404() ) { ?>
-			<header class="bs-image-header">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title">Oops</h1>
-					</div>
-				</div>
-			</header>
-		<?php } elseif ( is_search() ) { ?>
-			<header class="bs-image-header">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title">Search Results</h1>
-						<?php if(isset($_GET['s'])) { ?>
-							<h2 class="bs-image-header-desc">for <?php echo $_GET['s']; ?></h2>
-						<?php } ?>
-					</div>
-				</div>
-			</header>
-		<?php } elseif ( is_home() && lsx_get_option( 'enable_banner', false ) ) { ?>
+		
+		if ( is_home() && lsx_get_option( 'enable_banner', false ) ) { ?>
 			<header class="bs-image-header">
 				<div class="container">
 					<div class="banner-text">
@@ -77,60 +49,7 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 					</div>
 				</div>
 			</header>
-		<?php } elseif ( is_page( 'events ') ) { ?>
-			<header class="bs-image-header">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title">Events</h1>	
-					</div>
-				</div>
-			</header>
-		<?php } elseif ( is_date() ) { ?>
-			<header class="bs-image-header">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title">
-							<?php if ( is_day() ) { ?> 
-								Archive for <?php the_time('F jS, Y'); ?>
-							<?php  } elseif ( is_month() ) { ?> 
-								Archive for <?php the_time('F, Y'); ?>
-							<?php } elseif ( is_year() ) { ?> 
-								Archive for <?php the_time('Y'); ?>
-							<?php } ?>
-						</h1>
-					</div>
-				</div>
-			</header>
-		<?php } elseif ( is_archive() ) { ?>
-			<header class="bs-image-header">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title"><?php single_cat_title(); ?></h1>
-						<h2 class="bs-image-header-desc"><?php echo category_description(); ?></h2>
-					</div>
-				</div>
-			</header>
-		<?php } else { ?>
-			<?php if ( $image_id ) { ?>
-				<header class="bs-image-header" style="background-image: url(<?php echo $image_url; ?>)">
-			<?php } else { ?>
-				<header class="bs-image-header">
-			<?php } ?>
-				<div class="container">
-					<div class="banner-text">
-						<?php if ( $heading ) { ?>
-							<h1 class="bs-image-header-title"><?php echo $heading; ?></h1>
-						<?php } else { ?>
-							<h1 class="bs-image-header-title"><?php the_title(); ?></h1>
-						<?php } ?>
-						
-						<?php if(false != get_post_meta( get_the_ID(), 'lsx_tagline', true )) {?>
-							<h2 class="bs-image-header-desc"><?php echo get_post_meta( get_the_ID(), 'lsx_tagline', true ); ?></h2>
-						<?php } ?>
-					</div>
-				</div>
-			</header>
-		<?php }
+		<?php } 
 	}
 };
 
