@@ -251,7 +251,7 @@ function optionsframework_options() {
 	$options['banner_color'] = array('name' => 'Banner background color',
 		"desc"                               => "Select the color for the default banner background.",
 		"id"                                 => "banner_color",
-		"std"                                => "#ffffff",
+		"std"                                => "#428BCA",
 		"type"                               => "color");
 
 	$options['link_color'] = array('name' => 'Link color',
