@@ -18,9 +18,7 @@
 			<?php } ?>
 		</h1>		
 		<?php if ( 'post' == get_post_type() ) : ?>
-		<small>
-			<?php lsx_post_meta(); ?>					
-		</small>		
+			<?php lsx_post_meta(); ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->	
 
