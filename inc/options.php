@@ -572,7 +572,12 @@ function options_typography_styles() {
 			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
 		}
 
-		
+			if (lsx_get_option('banner_tagline_font')) {
+			$output .= options_typography_font_styles(lsx_get_option('banner_tagline_font'), '.bs-image-header-desc');
+			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
+		}
+
+	
 		if (lsx_get_option('header_1_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('header_1_font'), 'h1');
 		}
