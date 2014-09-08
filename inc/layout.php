@@ -61,7 +61,9 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 				<div class="container">
 					<div class="banner-text">
 						<h1 class="bs-image-header-title">Search Results</h1>
-						<h2 class="bs-image-header-desc">for <?php echo $_GET['s']; ?></h2>
+						<?php if(isset($_GET['s'])) { ?>
+							<h2 class="bs-image-header-desc">for <?php echo $_GET['s']; ?></h2>
+						<?php } ?>
 					</div>
 				</div>
 			</header>
@@ -70,7 +72,9 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 				<div class="container">
 					<div class="banner-text">
 						<h1 class="bs-image-header-title"><?php echo lsx_get_option( 'home_banner_heading' ); ?></h1>
-						<h2 class="bs-image-header-desc"><?php echo lsx_get_option( 'home_banner_tagline' ); ?></h2>
+						<?php if(lsx_get_option( 'home_banner_tagline' )){ ?>
+							<h2 class="bs-image-header-desc"><?php echo lsx_get_option( 'home_banner_tagline' ); ?></h2>
+						<?php } ?>
 					</div>
 				</div>
 			</header>
