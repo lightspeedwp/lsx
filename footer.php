@@ -18,11 +18,16 @@
 		    	<div class="col-sm-12">
   					    <div class="footer-menu">
 							<?php 
-							if(!is_user_logged_in()){
-								wp_nav_menu(array('theme_location' => 'footer-menu'));
-							}else{
-								wp_nav_menu(array('theme_location' => 'footer_logged_in'));
-							}							
+							
+								if(!is_user_logged_in()){
+									if(has_nav_menu('footer-menu')){
+										wp_nav_menu(array('theme_location' => 'footer-menu'));
+									}
+								}else{
+									if(has_nav_menu('footer_logged_in')){
+										wp_nav_menu(array('theme_location' => 'footer_logged_in'));
+									}
+								}				
 							?>
 							<div class="clearfix"></div>
 						</div>		    	
