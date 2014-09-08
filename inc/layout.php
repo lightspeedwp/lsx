@@ -18,7 +18,6 @@ function lsx_add_footer_sidebar_area() {
 }
 }
 
-
 add_filter( 'lsx_filter_post_meta', 'lsx_set_post_meta_options' );
 function lsx_set_post_meta_options( $post_info ) {
 	$post_info = lsx_get_option('post_meta');
@@ -67,7 +66,7 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 					</div>
 				</div>
 			</header>
-		<?php } elseif ( is_home() ) { ?>
+		<?php } elseif ( is_home() && lsx_get_option( 'enable_banner', false ) ) { ?>
 			<header class="bs-image-header">
 				<div class="container">
 					<div class="banner-text">

@@ -14,7 +14,6 @@ define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/opti
 require_once dirname( __FILE__ ) . '/inc/options-framework/options-framework.php';
 require_once dirname( __FILE__ ) . '/inc/options.php';
 
-require get_template_directory() . '/inc/custom-fields.php';
 require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/layout.php';
 require get_template_directory() . '/inc/hooks.php';
