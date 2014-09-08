@@ -30,16 +30,39 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 
 		if ( ! lsx_get_option( 'enable_banner' ) ) { return false; }
 
-		$heading = get_post_meta( get_the_ID(), 'lsx_heading', true );
-		$tagline = get_post_meta( get_the_ID(), 'lsx_tagline', true );
-		$image_id = get_post_meta( get_the_ID(), 'lsx_banner_image', true );
-		if ( $image_id ) {
-			$image_url = wp_get_attachment_url( $image_id );
+		$backgrounds = array();	
+		
+		if (lsx_get_option('home_bg_image_1')) {
+			$backgrounds[] = lsx_get_option('home_bg_image_1');
+		}
+
+		if (lsx_get_option('home_bg_image_2')) {
+			$backgrounds[] = lsx_get_option('home_bg_image_2');
+		}
+	
+		if (lsx_get_option('home_bg_image_3')) {
+			$backgrounds[] = lsx_get_option('home_bg_image_3');
+		}
+
+		if (lsx_get_option('home_bg_image_4')) {
+			$backgrounds[] = lsx_get_option('home_bg_image_4');
+		}
+
+		if (lsx_get_option('home_bg_image_5')) {
+			$backgrounds[] = lsx_get_option('home_bg_image_5');
+		}
+
+		shuffle($backgrounds);
+
+		if (isset($backgrounds[0])) {
+			$banner_image = $backgrounds[0];
+		} else {
+			$banner_image = '';
 		}
 			
 		
-		if ( is_home() && lsx_get_option( 'enable_banner', false ) ) { ?>
-			<header class="bs-image-header">
+		if ( (is_home() && is_front_page()) && lsx_get_option( 'enable_banner', false ) ) { ?>
+			<header class="bs-image-header" style="background-image: url(<?php echo $banner_image?>)">
 				<div class="container">
 					<div class="banner-text">
 						<h1 class="bs-image-header-title"><?php echo lsx_get_option( 'home_banner_heading' ); ?></h1>
