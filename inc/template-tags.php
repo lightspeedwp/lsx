@@ -36,7 +36,7 @@ function lsx_breadcrumbs() {
     );
 
   // Output HTML
-  $output = '<div class="breadcrumbs-container" xmlns:v="http://rdf.data-vocabulary.org/#"\><ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+  $output = '<div class="breadcrumbs-container" xmlns:v="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
 
   // Print
   echo $output;

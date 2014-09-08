@@ -29,7 +29,7 @@ global $lsx_options;
 <?php wp_head(); ?>
 <?php lsx_head_bottom(); ?>
 </head>
-<body <?php body_class('development'); ?>>
+<body <?php body_class(); ?>>
 	<?php 
 	lsx_body_top();
 	// Use Bootstrap's navbar if enabled in config.php
@@ -88,4 +88,4 @@ global $lsx_options;
 	<?php lsx_header_after(); ?>
 
     <div class="wrap container" role="document">
-		<div class="content tester role row">
+		<div class="content role row">
