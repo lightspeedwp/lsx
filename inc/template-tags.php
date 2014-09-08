@@ -96,7 +96,7 @@ function lsx_post_meta() {
 
 	$post_info = do_shortcode( $post_info );
 	
-	printf( '<div class="post-meta">%s</div>' . "\n", $post_info );
+	printf( '<p class="post-meta">%s</p>' . "\n", $post_info );
 
 } // End lsx_post_meta()
 }
