@@ -187,7 +187,7 @@ function optionsframework_options() {
 
 	$options['banner_header_font'] = array('name' => 'Banner Header',
 		'id'                                    => 'banner_header_font',
-		'std'                                   => array('size' => '90px', 'color' => '#ffffff'),
+		'std'                                   => array('size' => '90px', 'color' => '#ffffff' , 'font' => 'cursive'),
 		'type'                                                  => 'typography',
 		'options'                                               => $typography_options_banner);
 
