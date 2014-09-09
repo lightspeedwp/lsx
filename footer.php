@@ -48,7 +48,7 @@
 
 	<?php lsx_footer_after(); ?>
 
-<?php wp_footer(); ?>
+<?php wp_footer(); ?> 
 
 <?php /*wp_footer(); TODO */ ?>
 <?php lsx_body_bottom(); ?>
