@@ -4,6 +4,43 @@
  * Register widgetized area and update sidebar with default widgets.
  */
 function lsx_widgets_init() {
+	
+	$layout = lsx_get_option('home_layout','2c-l');
+	$show_on_front = get_option('show_on_front');
+	
+	if(false != $show_on_front && 'page' == $show_on_front){
+		register_sidebar( array(
+			'name'          => __( 'Homepage Column 1', 'lsx' ),
+			'id'            => 'hompage-col-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}	
+	
+	if('2c-r' == $layout || '2c-l' == $layout || '3c-,' == $layout || '3c-l' == $layout || '3c-r' == $layout ){
+		register_sidebar( array(
+			'name'          => __( 'Homepage Column 2', 'lsx' ),
+			'id'            => 'hompage-col-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}	
+	
+	if('3c-,' == $layout || '3c-l' == $layout || '3c-r' == $layout ){
+		register_sidebar( array(
+		'name'          => __( 'Homepage Column 3', 'lsx' ),
+			'id'            => 'hompage-col-3',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}	
+	
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'lsx' ),
 		'id'            => 'sidebar-1',

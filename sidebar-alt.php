@@ -6,20 +6,28 @@
  */
 ?>
 <?php 
-	if ( is_home() || is_front_page() ) {
-		$layout = lsx_get_option('home_layout'); 
-	}if ( is_page_template('page-templates/template-blog.php') ) {
-		$layout = lsx_get_option('post_layout'); 
-	} else {
-		$layout = lsx_get_option('site_layout'); 
+
+	$sidebar = 'sidebar-2';
+	$show_on_front = get_option('show_on_front');
+
+	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
+		$layout = lsx_get_option('home_layout','2c-l'); 
+		$sidebar = 'homepage-col-3';
+	}else{
+		if ( is_page_template('page-templates/template-blog.php') ) {
+			$layout = lsx_get_option('post_layout','2c-l'); 
+		} else {
+			$layout = lsx_get_option('site_layout','2c-l'); 
+		}
 	}
-	$supported = array( '3c-l', '3c-m', '3c-r' );
+	
+	$supported = array( '3c-l', '3c-,' , '3c-m', '3c-r' );
 ?>
 <?php if ( in_array( $layout, $supported ) ) : ?>
 
 	<?php lsx_sidebars_before(); ?>
 
-	<?php if ( is_home() || is_front_page() ) : ?>
+	<?php if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) : ?>
 	<div id="tertiary" class="widget-area <?php echo lsx_home_sidebar_alt_class(); ?>" role="complementary">
 	<?php elseif ( is_page_template('page-templates/template-blog.php') ) : ?>
 	<div id="tertiary" class="widget-area <?php echo lsx_post_sidebar_alt_class(); ?>" role="complementary">
@@ -29,7 +37,7 @@
 
 		<?php lsx_sidebar_top(); ?>
 
-		<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
+		<?php if ( ! dynamic_sidebar( $sidebar ) ) : ?>
 
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>

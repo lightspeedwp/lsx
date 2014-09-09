@@ -81,6 +81,7 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 			$sidebar_class = 'col-' . $size . '-3';
 			$sidebar_class_alt = 'col-' . $size . '-2';
 			break;
+		case '3c-,':
 		case '3c-m':
 			$main_class = 'col-' . $size . '-7 col-' . $size . '-push-2';
 			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-push-2';
@@ -123,6 +124,20 @@ function lsx_home_main_class() {
 
 function lsx_post_main_class() {
 	return lsx_layout_selector( 'main', 'post' );
+}
+
+/**
+ * Outputs the class for the main div on the index.php page only
+ */
+function lsx_index_main_class() {
+	
+	$show_on_front = get_option('show_on_front');
+	if('page' == $show_on_front){
+		return lsx_layout_selector( 'main', 'post' );
+	}else{
+		return lsx_layout_selector( 'main', 'home' );
+	}
+	
 }
 
 /**

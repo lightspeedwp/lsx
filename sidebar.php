@@ -6,9 +6,12 @@
  */
 
 ?>
-<?php if ( is_home() || is_front_page() ) { 
+<?php
+	$show_on_front = get_option('show_on_front');
+
+ 	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) { 
 		$layout = lsx_get_option('home_layout'); 
-		
+		$sidebar = 'homepage-col-2';
 	} else {
 		
 		$page_layout = get_post_meta( get_the_ID(), 'lsx_layout', true );
@@ -23,22 +26,29 @@
 				$layout = lsx_get_option('site_layout');
 			}	
 		}
+		$sidebar = 'sidebar-1';
 	}
 	if ( $layout !== '1col' ) : ?>
 
 	<?php lsx_sidebars_before(); ?>
 
-	<?php if ( is_home() || is_front_page() ) : ?>
-	<div id="secondary" class="widget-area <?php echo lsx_home_sidebar_class(); ?>" role="complementary">
+	<?php if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) : ?>
+	
+		<div id="secondary" class="widget-area <?php echo lsx_home_sidebar_class(); ?>" role="complementary">
+		
 	<?php elseif ( is_page_template('page-templates/template-blog.php') ) : ?>
-	<div id="secondary" class="widget-area <?php echo lsx_post_sidebar_class(); ?>" role="complementary">
+	
+		<div id="secondary" class="widget-area <?php echo lsx_post_sidebar_class(); ?>" role="complementary">
+		
 	<?php else : ?>
-	<div id="secondary" class="widget-area <?php echo lsx_sidebar_class(); ?>" role="complementary">
+	
+		<div id="secondary" class="widget-area <?php echo lsx_sidebar_class(); ?>" role="complementary">
+		
 	<?php endif ; ?>
 
 		<?php lsx_sidebar_top(); ?>
 
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+		<?php if ( ! dynamic_sidebar( $sidebar ) ) : ?>
 
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>

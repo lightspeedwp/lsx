@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_home_main_class(); ?>">
+	<div id="primary" class="content-area <?php echo lsx_index_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 
