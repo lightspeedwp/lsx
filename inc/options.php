@@ -355,18 +355,6 @@ function optionsframework_options() {
 		'id'   => 'post_placeholder_2',
 		'type' => 'upload');
 
-	$options[] = array(
-		'name' => __('Archive Intro Text', 'bs-tourism'),
-		'desc' => __('Intro text to display on tours archive page.', 'bs-tourism'),
-		'id'   => 'post_introduction',
-		'type' => 'editor');
-
-	$options[] = array(
-		'name' => __('Archive Intro Image', 'bs-tourism'),
-		'desc' => __('The image which sits inside the description.', 'bs-tourism'),
-		'id'   => 'post_archive_introduction_image',
-		'type' => 'upload');
-
 	$options['author_box'] = array(
 		'name' => __('Post Author Box', 'lsx'),
 		'desc' => __('Display the Author Box below posts', 'lsx'),
