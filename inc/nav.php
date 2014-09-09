@@ -46,7 +46,11 @@ class LSX_Nav_Walker extends Walker_Nav_Menu {
 		$element->is_dropdown = ((!empty($children_elements[$element->ID]) && (($depth+1) < $max_depth || ($max_depth === 0))));
 
 		if ($element->is_dropdown) {
-			$element->classes[] = 'dropdown';
+			if ($depth>0) {
+				$element->classes[] = 'dropdown-submenu';
+			} else {
+				$element->classes[] = 'dropdown';
+			}
 		}
 
 		parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
