@@ -196,7 +196,6 @@ function lsx_related_posts() {
 		foreach ( $related_posts as $related_post ) {
 			?>
 			<div class="col-md-4">
-				<div class="well">					
 						<?php if ( has_post_thumbnail( $related_post->ID ) ) { ?>
 							<a href="<?php echo get_permalink( $related_post->ID );?>">
 								<?php echo get_the_post_thumbnail( $related_post->ID, 'thumbnail-wide', 'class=img-responsive' ); ?>
@@ -207,7 +206,6 @@ function lsx_related_posts() {
 							</a>
 						<?php } ?>
 					<h4><a href="<?php echo get_permalink( $related_post->ID );?>"><?php echo $related_post->post_title ?></a></h4>					
-				</div>
 			</div>
 			<?php
 		} ?>
