@@ -29,20 +29,6 @@
 		          wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav navbar-nav'));
 		        endif;
 			    ?>
-
-			    <?php
-ob_start();
-wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav navbar-nav'));
-$output = htmlspecialchars(ob_get_contents());
-ob_end_clean();
-$menu_items = substr_count($output,'li class');
-
-if ($menu_items >= 7) {
-?>
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/medium-nav-break.css">
-<?php
-}
-?>
 		    </nav>
 		  </div>
 		  	<?php lsx_header_bottom(); ?>
