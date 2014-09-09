@@ -109,21 +109,6 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Post Meta', 'lsx'),
-		'desc' => __("Use these shortcodes to include dynamic data into your meta sections. \n
-					[view_full_article] - Link to read the full post. \n
-					[post_date] - The post date. \n
-					[post_time] - The post time. \n
-					[post_author_link] - The post author (link to the author's website). \n
-					[post_author_posts_link] - The post author (link to the author's posts archive). \n
-					[post_comments] - Comments for the post. \n
-					[post_tags] - Tags for the post. \n
-					[post_categories] - Categories for the post. \n
-					[post_edit] - 'Edit' link for the post.", 'lsx'),
-		'id'   => 'post_meta',
-		'type' => 'textarea');
-
-	$options[] = array(
 		'name' => __('Fixed Layout', 'lsx'),
 		'desc' => __('Enable fixed layout.', 'lsx'),
 		'id'   => 'static_layout',

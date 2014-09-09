@@ -5,7 +5,6 @@
  * @package lsx
  */
 
-require get_template_directory() . '/inc/plugins.php';
 //require get_template_directory() . '/inc/bootstrap-variables.php';
 require get_template_directory() . '/inc/config.php';
 
