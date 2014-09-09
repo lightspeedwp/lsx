@@ -68,6 +68,8 @@ function optionsframework_options() {
 	$imagepath = get_template_directory_uri().'/assets/img/';
 
 	$options = array();
+	
+	$post_types = get_post_types(array('_builtin' => false , 'show_ui' => true));
 
 	$options[] = array(
 		'name' => __('Basic', 'lsx'),
@@ -325,8 +327,9 @@ function optionsframework_options() {
 			'type' => 'upload');
 	
 
-	$options[] = array('name' => 'Post',
-		'type'                   => 'heading');
+	$options[] = array(
+			'name' 	=> 'Post',
+			'type'	=> 'heading');
 
 	$options[] = array(
 		'name' => __('Placeholder Image', 'bs-tourism'),

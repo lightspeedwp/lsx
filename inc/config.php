@@ -162,3 +162,17 @@ function lsx_post_sidebar_alt_class() {
  * Default: 1140px is the default Bootstrap container width.
  */
 if (!isset($content_width)) { $content_width = 1140; }
+
+/**
+ * Disable the comments form by default for the page post type.
+ */
+function lsx_page_comments_off( $data ) {
+
+	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == 'Auto Draft' ) {
+		$data['comment_status'] = 0;
+		$data['ping_status'] = 0;
+	}
+
+	return $data;
+}
+add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
