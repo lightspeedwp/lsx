@@ -9,13 +9,20 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php lsx_entry_top(); ?>
-	
+
 	<?php if ( is_single() ) { ?>
+
 	<header class="page-header">
+		<?php if ( lsx_get_option( 'single_thumbnails') && has_post_thumbnail() ) {
+			the_post_thumbnail( 'thumbnail-single' );
+		} ?>
 		<h1 class="page-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } else { ?>
 	<header class="entry-header">
+		<?php if ( lsx_get_option( 'single_thumbnails') && has_post_thumbnail() ) {
+			the_post_thumbnail( 'thumbnail-single' );
+		} ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } ?>
@@ -23,9 +30,7 @@
 	<?php echo get_the_tag_list('<p><i class="fa fa-tags"></i> ',', ','</p>'); ?>
 
 	<div class="entry-content">
-		<?php if ( lsx_get_option( 'single_thumbnails') && has_post_thumbnail() ) {
-			the_post_thumbnail( 'thumbnail-single' );
-		} ?>
+		
 		<?php if ( ! is_singular() ) {
 			the_excerpt();
 		} else {
