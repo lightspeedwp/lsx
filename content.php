@@ -11,18 +11,7 @@
 	<?php lsx_entry_top(); ?>
 
 	<header class="entry-header">
-		<h1 class="entry-title">
-			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			<?php if ( is_sticky() ) { ?>
-					<span class="label label-default"><i class="fa fa-star"></i> Featured</span>
-			<?php } ?>
-		</h1>		
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<?php lsx_post_meta(); ?>
-		<?php endif; ?>
-	</header><!-- .entry-header -->	
-
-	<?php if ( has_post_thumbnail() ) { ?>
+		<?php if ( has_post_thumbnail() ) { ?>
 		<div class="entry-image">
 			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
 				 <?php the_post_thumbnail( 'lsx-thumbnail' ); ?>
@@ -51,6 +40,18 @@
 			</a>
 		</div>
 	<?php } ?>
+		<h1 class="entry-title">
+			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+			<?php if ( is_sticky() ) { ?>
+					<span class="label label-default"><i class="fa fa-star"></i> Featured</span>
+			<?php } ?>
+		</h1>		
+		<?php if ( 'post' == get_post_type() ) : ?>
+			<?php lsx_post_meta(); ?>
+		<?php endif; ?>
+	</header><!-- .entry-header -->	
+
+
 
 	<?php if ( is_search() || is_archive() || is_page_template( 'page-templates/template-blog.php' ) ) : // Only display Excerpts for Search and Archives ?>
 	<div class="entry-summary">
