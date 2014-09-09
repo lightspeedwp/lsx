@@ -356,24 +356,6 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('Archive Banner Image', 'bs-tourism'),
-		'desc' => __('Banner image to display on tours archive page.', 'bs-tourism'),
-		'id'   => 'post_banner_image',
-		'type' => 'upload');
-
-	$options[] = array(
-		'name' => __('Archive Banner Title', 'bs-tourism'),
-		'desc' => __('Banner title to display on tours archive page.', 'bs-tourism'),
-		'id'   => 'post_banner_title',
-		'type' => 'text');
-
-	$options[] = array(
-		'name' => __('Archive Banner Tagline', 'bs-tourism'),
-		'desc' => __('Banner tagline to display on tours archive page.', 'bs-tourism'),
-		'id'   => 'post_banner_tagline',
-		'type' => 'text');
-
-	$options[] = array(
 		'name' => __('Archive Intro Text', 'bs-tourism'),
 		'desc' => __('Intro text to display on tours archive page.', 'bs-tourism'),
 		'id'   => 'post_introduction',
