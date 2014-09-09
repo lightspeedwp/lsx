@@ -73,12 +73,12 @@ function optionsframework_options() {
 		'name' => __('Basic', 'lsx'),
 		'type' => 'heading');
 
-	$options[] = array(
-		'name' => __('Top Navigation', 'lsx'),
-		'desc' => __('Enable Bootstrap\'s top navigation bar.', 'lsx'),
-		'id'   => 'top_nav',
-		'std'  => 1,
-		'type' => 'checkbox');
+	// $options[] = array(
+	// 	'name' => __('Top Navigation', 'lsx'),
+	// 	'desc' => __('Enable Bootstrap\'s top navigation bar.', 'lsx'),
+	// 	'id'   => 'top_nav',
+	// 	'std'  => 1,
+	// 	'type' => 'checkbox');
 
 	$options['site_logo'] = array(
 		'name' => __('Logo', 'lsx'),
