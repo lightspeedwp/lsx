@@ -111,13 +111,6 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Fixed Layout', 'lsx'),
-		'desc' => __('Enable fixed layout.', 'lsx'),
-		'id'   => 'static_layout',
-		'std'  => '0',
-		'type' => 'checkbox');
-
-	$options[] = array(
 		'name'    => __('General Site Layout', 'lsx'),
 		'desc'    => __('Choose general sitewide layout.', 'lsx'),
 		'id'      => "site_layout",
@@ -155,17 +148,7 @@ function optionsframework_options() {
 	$typography_mixed_fonts = array_merge(options_typography_get_os_fonts(), options_typography_get_google_fonts());
 	asort($typography_mixed_fonts);
 
-	$options['banner_header_font'] = array('name' => 'Banner Header',
-		'id'                                    => 'banner_header_font',
-		'std'                                   => array('size' => '90px', 'color' => '#ffffff' ),
-		'type'                                                  => 'typography',
-		'options'                                               => $typography_options_headers);
-
-	$options['banner_tagline_font'] = array('name' => 'Banner Tagline',
-		'id'                                    => 'banner_tagline_font',
-		'std'                                   => array('size' => '36px', 'color' => '#ffffff'),
-		'type'                                                  => 'typography',
-		'options'                                               => $typography_options_headers);
+	
 
 
 	$options['header_1_font'] = array('name' => 'Header 1',
@@ -228,6 +211,18 @@ function optionsframework_options() {
 		'type'                                              => 'typography',
 		'options'                                           => $typography_options_body);
 
+	$options['banner_header_font'] = array('name' => 'Banner Header',
+		'id'                                    => 'banner_header_font',
+		'std'                                   => array('size' => '90px', 'color' => '#ffffff' ),
+		'type'                                                  => 'typography',
+		'options'                                               => $typography_options_headers);
+
+	$options['banner_tagline_font'] = array('name' => 'Banner Tagline',
+		'id'                                    => 'banner_tagline_font',
+		'std'                                   => array('size' => '36px', 'color' => '#ffffff'),
+		'type'                                                  => 'typography',
+		'options'                                               => $typography_options_headers);
+
 	$options['banner_color'] = array('name' => 'Banner background color',
 		"desc"                               => "Select the color for the default banner background.",
 		"id"                                 => "banner_color",
@@ -257,12 +252,6 @@ function optionsframework_options() {
 		"id"                                         => "button_hover_color",
 		"std"                                        => "#3276b1",
 		"type"                                       => "color");
-
-	$options['disable_styles'] = array('name' => 'Disable Styles',
-		'desc'                                   => 'Disable option styles and use theme defaults.',
-		'id'                                     => 'disable_styles',
-		'std'                                    => false,
-		'type'                                   => 'checkbox');
 
 	$options[] = array('name' => 'Homepage',
 		'type'                   => 'heading');
