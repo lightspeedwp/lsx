@@ -143,7 +143,6 @@ function optionsframework_options() {
 			'"Open Sans", sans-serif'                        => 'Open Sans',
 			'Arial, "Helvetica Neue", Helvetica, sans-serif' => 'Arial',
 			'Georgia, Times, "Times New Roman", serif'       => 'Georgia',
-			'"Oleo Script",cursive'						     => 'Oleo Script',
 		),
 		'styles' => array('normal' => 'Normal', 'bold' => 'Bold')
 	);	
