@@ -97,12 +97,6 @@ function optionsframework_options() {
 		'desc' => __('Upload a fallback placeholder image for post thumbnails.', 'lsx'),
 		'id'   => 'placeholder_image',
 		'type' => 'upload');
-	
-	$options[] = array(
-			'name' => __('Footer Banner Image', 'bs-tourism'),
-			'desc' => __('Banner image to display in the Footer.', 'bs-tourism'),
-			'id'   => 'site_footer_banner_image',
-			'type' => 'upload');	
 
 	$options[] = array(
 		'name' => __('Thumbnail Width', 'lsx'),
@@ -437,16 +431,6 @@ function optionsframework_options() {
 		'id'   => 'single_thumbnails',
 		'std'  => '1',
 		'type' => 'checkbox');
-
-	$options[] = array(
-		'name' => 'Categories',
-		'type' => 'heading');
-
-	$options[] = array(
-		'name' => __('Category Banner Image', 'lsx'),
-		'desc' => __('Banner image to display on category archive pages.', 'lsx'),
-		'id'   => 'category_banner_image',
-		'type' => 'upload');
 
 	/*$taxonomy_array = array();
 	$taxonomy_defaults = array();
