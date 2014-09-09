@@ -28,7 +28,16 @@
 				 <?php the_post_thumbnail( 'lsx-thumbnail' ); ?>
 			</a>
 		</div>
+	<?php } elseif( lsx_get_option( 'post_placeholder', false)) { ?>
+	
+		<div class="entry-image">
+			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
+				 <img src="<?php echo lsx_get_option( 'post_placeholder'); ?>" alt="placeholder" />
+			</a>
+		</div>	
+		
 	<?php } else { 
+
 		$width = lsx_get_option( 'thumb_width' );
 		if ( ! $width ) $width = 150;
 

@@ -95,9 +95,9 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('Placeholder Thumbnail', 'lsx'),
-		'desc' => __('Upload a fallback placeholder image for post thumbnails.', 'lsx'),
-		'id'   => 'placeholder_image',
+		'name' => __('Placeholder Image', 'bs-tourism'),
+		'desc' => __('Placeholder image for tours without a thumbnail assigned.', 'bs-tourism'),
+		'id'   => 'post_placeholder',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -330,18 +330,6 @@ function optionsframework_options() {
 	$options[] = array(
 			'name' 	=> 'Post',
 			'type'	=> 'heading');
-
-	$options[] = array(
-		'name' => __('Placeholder Image', 'bs-tourism'),
-		'desc' => __('Placeholder image for tours without a thumbnail assigned.', 'bs-tourism'),
-		'id'   => 'post_placeholder',
-		'type' => 'upload');
-
-	$options[] = array(
-		'name' => __('Placeholder Image 2', 'bs-tourism'),
-		'desc' => __('Placeholder image for the second layout.', 'bs-tourism'),
-		'id'   => 'post_placeholder_2',
-		'type' => 'upload');
 
 	$options['author_box'] = array(
 		'name' => __('Post Author Box', 'lsx'),
