@@ -333,21 +333,6 @@ function optionsframework_options() {
 		)
 	);
 
-	$options['post_layout'] = array(
-		'name'    => __('Post Layout', 'lsx'),
-		'desc'    => __('Choose post layout.', 'lsx'),
-		'id'      => "post_layout",
-		'std'     => "2c-l",
-		'type'    => "images",
-		'options' => array(
-			'1col' => $imagepath.'1c.png',
-			'2c-l' => $imagepath.'2cl.png',
-			'2c-r' => $imagepath.'2cr.png',
-			'3c-,' => $imagepath.'3cm.png',
-			'3c-l' => $imagepath.'3cl.png',
-			'3c-r' => $imagepath.'3cr.png')
-	);
-
 	$options['single_thumbnails'] = array(
 		'name' => __('Single Post Thumbnails', 'lsx'),
 		'desc' => __('Display featured image on single posts', 'lsx'),
