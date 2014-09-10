@@ -10,11 +10,14 @@
  * @since 1.0
  */
 function lsx_yoast_breadcrumbs(){
-  if ( is_home() ) {
-    return;
-  }
-
-  lsx_breadcrumbs();
+	
+	$show_on_front = get_option('show_on_front');	
+	
+	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
+		return;
+	}
+	
+	lsx_breadcrumbs();
 }
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
 
