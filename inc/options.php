@@ -72,7 +72,7 @@ function optionsframework_options() {
 	$post_types = get_post_types(array('_builtin' => false , 'show_ui' => true));
 
 	$options[] = array(
-		'name' => __('Basic', 'lsx'),
+		'name' => __('General', 'lsx'),
 		'type' => 'heading');
 
 	// $options[] = array(
@@ -241,7 +241,7 @@ function optionsframework_options() {
 		"std"                                        => "#3276b1",
 		"type"                                       => "color");
 
-	$options[] = array('name' => 'Homepage',
+	$options[] = array('name' => 'Home',
 		'type'                   => 'heading');
 
 	$options['enable_banner'] = array(
