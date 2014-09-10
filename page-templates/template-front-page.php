@@ -17,7 +17,7 @@
 					
 						<aside class="widget widget_text" id="text-2">
 							<h3 class="widget-title"><?php _e( 'Welcome', 'lsx' ); ?></h3>
-							<div class="textwidget"><?php _e( 'Add a text widget to your Homepage Column 1 sidebar.', 'lsx' ); ?></div>
+							<div class="textwidget"><?php _e( 'Add a text widget to your Home sidebar.', 'lsx' ); ?></div>
 						</aside>
 					
 					<?php endif; // end sidebar widget area ?>
