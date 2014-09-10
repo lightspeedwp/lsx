@@ -211,18 +211,6 @@ function optionsframework_options() {
 		'type'                                              => 'typography',
 		'options'                                           => $typography_options_body);
 
-	$options['banner_header_font'] = array('name' => 'Banner Header',
-		'id'                                    => 'banner_header_font',
-		'std'                                   => array('size' => '90px', 'color' => '#ffffff' ),
-		'type'                                                  => 'typography',
-		'options'                                               => $typography_options_headers);
-
-	$options['banner_tagline_font'] = array('name' => 'Banner Tagline',
-		'id'                                    => 'banner_tagline_font',
-		'std'                                   => array('size' => '36px', 'color' => '#ffffff'),
-		'type'                                                  => 'typography',
-		'options'                                               => $typography_options_headers);
-
 	$options['banner_color'] = array('name' => 'Banner background color',
 		"desc"                               => "Select the color for the default banner background.",
 		"id"                                 => "banner_color",
@@ -490,17 +478,6 @@ function options_typography_styles() {
 		if (lsx_get_option('body_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('body_font'), 'body');
 		}
-
-		if (lsx_get_option('banner_header_font')) {
-			$output .= options_typography_font_styles(lsx_get_option('banner_header_font'), '.bs-image-header-title');
-			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
-		}
-
-		if (lsx_get_option('banner_tagline_font')) {
-			$output .= options_typography_font_styles(lsx_get_option('banner_tagline_font'), '.bs-image-header-desc');
-			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
-		}
-
 	
 		if (lsx_get_option('header_1_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('header_1_font'), 'h1');
