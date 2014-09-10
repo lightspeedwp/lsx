@@ -264,55 +264,71 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 
 	$options['home_banner_heading'] = array(
-		'name' => __('Homepage Banner Heading', 'lsx'),
+		'name' => __('Banner Heading', 'lsx'),
 		'id'   => 'home_banner_heading',
-		'type' => 'text');
-
+		'type' => 'text');	
+	
+	$options['home_banner_heading_typography'] = array(
+			'name' 		=> 'Banner Heading Typography',
+			'id'  		=> 'home_banner_heading_typography',
+			'std' 		=> array('size' => '90px', 'color' => '#FFFFFF'),
+			'type'      => 'typography',
+			'options'   => $typography_options_headers
+	);	
+	
 	$options['home_banner_tagline'] = array(
 		'name' => __('Homepage Banner Tagline', 'lsx'),
 		'id'   => 'home_banner_tagline',
 		'type' => 'textarea');
 
-	$options['home_layout'] = array(
-		'name'    => __('Home Page Layout', 'lsx'),
-		'desc'    => __('Choose homepage layout.', 'lsx'),
-		'id'      => "home_layout",
-		'std'     => "2c-l",
-		'type'    => "images",
-		'options' => array(
-			'1col' => $imagepath.'1c.png',
-			'2c-l' => $imagepath.'2cl.png',
-			'2c-r' => $imagepath.'2cr.png',
-			'3c-,' => $imagepath.'3cm.png',
-			'3c-l' => $imagepath.'3cl.png',
-			'3c-r' => $imagepath.'3cr.png')
-	);
+	$options['home_banner_tagline_typography'] = array(
+			'name' 		=> 'Banner Tagline Typography',
+			'id'  		=> 'home_banner_tagline_typography',
+			'std' 		=> array('size' => '36px', 'color' => '#FFFFFF'),
+			'type'      => 'typography',
+			'options'   => $typography_options_headers
+	);	
 	
-	$options[] = array(
+	$options['home_bg_image_1'] = array(
 			'name' => __('Banner 1', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_1',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_2'] = array(
 			'name' => __('Banner 2', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_2',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_3'] = array(
 			'name' => __('Banner 3', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_3',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_4'] = array(
 			'name' => __('Banner 4', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_4',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_5'] = array(
 			'name' => __('Banner 5', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_5',
 			'type' => 'upload');
+	
+	$options['home_layout'] = array(
+			'name'    => __('Home Page Layout', 'lsx'),
+			'desc'    => __('Choose homepage layout.', 'lsx'),
+			'id'      => "home_layout",
+			'std'     => "2c-l",
+			'type'    => "images",
+			'options' => array(
+					'1col' => $imagepath.'1c.png',
+					'2c-l' => $imagepath.'2cl.png',
+					'2c-r' => $imagepath.'2cr.png',
+					'3c-,' => $imagepath.'3cm.png',
+					'3c-l' => $imagepath.'3cl.png',
+					'3c-r' => $imagepath.'3cr.png')
+	);	
 	
 
 	$options[] = array(
@@ -480,7 +496,7 @@ function options_typography_styles() {
 			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
 		}
 
-			if (lsx_get_option('banner_tagline_font')) {
+		if (lsx_get_option('banner_tagline_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('banner_tagline_font'), '.bs-image-header-desc');
 			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
 		}
@@ -529,7 +545,18 @@ function options_typography_styles() {
 		if (lsx_get_option('button_hover_color')) {
 			$output .= '.btn:hover {background-color:'.lsx_get_option('button_hover_color').'}';
 		}
+		
+		
+		//Homepage
+		if (lsx_get_option('home_banner_heading_typography')) {
+			$output .= options_typography_font_styles(lsx_get_option('home_banner_heading_typography'), '.home .bs-image-header-title');
+		}
+		
+		if (lsx_get_option('home_banner_tagline_typography')) {
+			$output .= options_typography_font_styles(lsx_get_option('home_banner_tagline_typography'), '.home .bs-image-header-desc');
+		}		
 
+		
 		if ($output != '') {
 			$output = "\n<style>\n".$output."</style>\n";
 			echo $output;
