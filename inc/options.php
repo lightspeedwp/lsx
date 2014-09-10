@@ -96,7 +96,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Placeholder Image', 'bs-tourism'),
-		'desc' => __('Placeholder image for tours without a thumbnail assigned.', 'bs-tourism'),
+		'desc' => __('Placeholder image for posts without a thumbnail assigned.', 'lsx'),
 		'id'   => 'post_placeholder',
 		'type' => 'upload');
 
