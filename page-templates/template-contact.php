@@ -68,4 +68,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+<?php get_sidebar('alt'); ?>
 <?php get_footer(); ?>

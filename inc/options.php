@@ -303,21 +303,6 @@ function optionsframework_options() {
 			'id'   => 'home_bg_image_5',
 			'type' => 'upload');
 	
-	$options['home_layout'] = array(
-			'name'    => __('Home Page Layout', 'lsx'),
-			'desc'    => __('Choose homepage layout.', 'lsx'),
-			'id'      => "home_layout",
-			'std'     => "2c-l",
-			'type'    => "images",
-			'options' => array(
-					'1col' => $imagepath.'1c.png',
-					'2c-l' => $imagepath.'2cl.png',
-					'2c-r' => $imagepath.'2cr.png',
-					'3c-,' => $imagepath.'3cm.png',
-					'3c-l' => $imagepath.'3cl.png',
-					'3c-r' => $imagepath.'3cr.png')
-	);	
-	
 
 	$options[] = array(
 			'name' 	=> 'Post',

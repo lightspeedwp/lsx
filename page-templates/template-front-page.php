@@ -13,7 +13,7 @@
 			
 				<section id="home-widgets">
 				
-					<?php if ( ! dynamic_sidebar( 'hompage-col-1' ) ) : ?>
+					<?php if ( ! dynamic_sidebar( 'home' ) ) : ?>
 					
 						<aside class="widget widget_text" id="text-2">
 							<h3 class="widget-title"><?php _e( 'Welcome', 'lsx' ); ?></h3>
@@ -33,7 +33,5 @@
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
-
 <?php get_sidebar( 'alt' ); ?>	
-	
 <?php get_footer(); ?>
