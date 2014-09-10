@@ -235,4 +235,4 @@ function lsx_blog_page_title() {
 		<?php } 
 		
 }
-add_action('lsx_content_top','lsx_blog_page_title');
+add_action('lsx_content_top','lsx_blog_page_title',20);
