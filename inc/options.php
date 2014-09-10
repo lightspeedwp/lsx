@@ -109,6 +109,38 @@ function optionsframework_options() {
 		'name' => __('Thumbnail Height', 'lsx'),
 		'id'   => 'thumb_height',
 		'type' => 'text');
+	
+	$options['author_box'] = array(
+			'name' => __('Post Author Box', 'lsx'),
+			'desc' => __('Display the Author Box below posts', 'lsx'),
+			'id'   => 'author_box',
+			'std'  => '0',
+			'type' => 'checkbox');
+	
+	$options['related_posts'] = array(
+			'name' => __('Related Posts', 'lsx'),
+			'desc' => __('Display related posts on single posts', 'lsx'),
+			'id'   => 'related_posts',
+			'std'  => '1',
+			'type' => 'checkbox');
+	
+	$options['related_by'] = array(
+			'name'    => __('Related By', 'lsx'),
+			'id'      => "related_by",
+			'std'     => "category",
+			'type'    => "radio",
+			'options' => array(
+					'category' => 'Category',
+					'tag'      => 'Tag',
+			)
+	);
+	
+	$options['single_thumbnails'] = array(
+			'name' => __('Single Post Thumbnails', 'lsx'),
+			'desc' => __('Display featured image on single posts', 'lsx'),
+			'id'   => 'single_thumbnails',
+			'std'  => '1',
+			'type' => 'checkbox');	
 
 	$options[] = array(
 		'name'    => __('General Site Layout', 'lsx'),
@@ -302,43 +334,6 @@ function optionsframework_options() {
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_5',
 			'type' => 'upload');
-	
-
-	$options[] = array(
-			'name' 	=> 'Post',
-			'type'	=> 'heading');
-
-	$options['author_box'] = array(
-		'name' => __('Post Author Box', 'lsx'),
-		'desc' => __('Display the Author Box below posts', 'lsx'),
-		'id'   => 'author_box',
-		'std'  => '0',
-		'type' => 'checkbox');
-
-	$options['related_posts'] = array(
-		'name' => __('Related Posts', 'lsx'),
-		'desc' => __('Display related posts on single posts', 'lsx'),
-		'id'   => 'related_posts',
-		'std'  => '1',
-		'type' => 'checkbox');
-
-	$options['related_by'] = array(
-		'name'    => __('Related By', 'lsx'),
-		'id'      => "related_by",
-		'std'     => "category",
-		'type'    => "radio",
-		'options' => array(
-			'category' => 'Category',
-			'tag'      => 'Tag',
-		)
-	);
-
-	$options['single_thumbnails'] = array(
-		'name' => __('Single Post Thumbnails', 'lsx'),
-		'desc' => __('Display featured image on single posts', 'lsx'),
-		'id'   => 'single_thumbnails',
-		'std'  => '1',
-		'type' => 'checkbox');
 
 	/*$taxonomy_array = array();
 	$taxonomy_defaults = array();
