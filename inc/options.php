@@ -282,6 +282,13 @@ function optionsframework_options() {
 		'id'   => 'enable_banner',
 		'std'  => '0',
 		'type' => 'checkbox');
+	
+	
+	$options[] = array(
+			'name' => __('Banner Height', 'lsx'),
+			'id'   => 'home_banner_height',
+			'std'  => '250px',
+			'type' => 'text');	
 
 	$options['home_banner_heading'] = array(
 		'name' => __('Banner Heading', 'lsx'),
@@ -496,6 +503,17 @@ function options_typography_styles() {
 		
 		if (lsx_get_option('home_banner_tagline_typography')) {
 			$output .= options_typography_font_styles(lsx_get_option('home_banner_tagline_typography'), '.home .bs-image-header-desc');
+		}
+		
+		if (lsx_get_option('home_banner_height')) {
+			$output .= 'header.bs-image-header {height:'.lsx_get_option('home_banner_height').'}';
+		} else {
+			$output .= 'header.bs-image-header {height:250px;}';
+		}		
+		
+
+		if (lsx_get_option('button_hover_color')) {
+			$output .= '.btn:hover {background-color:'.lsx_get_option('button_hover_color').'}';
 		}		
 
 		
