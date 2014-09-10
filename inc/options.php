@@ -205,7 +205,7 @@ function optionsframework_options() {
 	
 
 	$options['body_font'] = array('name' => 'Body Font',
-		'desc'                              => 'This font is used for all body text.',
+		'desc'                              => '',
 		'id'                                => 'body_font',
 		'std'                               => array('size' => '14px', 'face' => '"Helvetica Neue", Helvetica, Arial, sans-serif', 'color' => '#333333'),
 		'type'                                              => 'typography',
