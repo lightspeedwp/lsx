@@ -218,3 +218,21 @@ function lsx_related_posts() {
 	?>
 	<?php
 }
+
+/**
+ * Displays the blog page title
+ *
+ * @package lsx-theme
+ * @subpackage layout
+ */
+function lsx_blog_page_title() {
+
+		$blog_page = get_queried_object();
+		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == $blog_page->ID) { ?>
+			<header class="page-header">
+					<h1 class="page-title"><?php echo get_the_title($blog_page); ?></h1>		
+			</header>
+		<?php } 
+		
+}
+add_action('lsx_content_top','lsx_blog_page_title');

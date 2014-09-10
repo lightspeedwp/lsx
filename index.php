@@ -18,7 +18,7 @@ get_header(); ?>
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main" role="main">
-
+		
 		<?php lsx_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>
