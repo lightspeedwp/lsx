@@ -27,8 +27,7 @@ global $lsx_options;
 <?php wp_head(); ?>
 <?php lsx_head_bottom(); ?>
 </head>
-<body
-<?php body_class(); ?>>
+<body <?php body_class( 'lsx' ); ?>>
 <?php lsx_body_top(); ?>
 <?php lsx_header_before(); ?>
  	<header class="banner navbar navbar-default navbar-static-top" role="banner">
