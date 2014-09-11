@@ -154,6 +154,8 @@ class Options_Framework_Admin {
 	 function options_page() { ?>
 
 		<div id="optionsframework-wrap" class="wrap">
+		
+		<?php settings_errors( 'options-framework' ); ?>
 
 		<?php $menu = $this->menu_settings(); ?>
 		<h2><?php echo esc_html( $menu['page_title'] ); ?></h2>
@@ -161,8 +163,6 @@ class Options_Framework_Admin {
 	    <h2 class="nav-tab-wrapper">
 	        <?php echo Options_Framework_Interface::optionsframework_tabs(); ?>
 	    </h2>
-
-	    <?php settings_errors( 'options-framework' ); ?>
 
 	    <div id="optionsframework-metabox" class="metabox-holder">
 		    <div id="optionsframework" class="postbox">
