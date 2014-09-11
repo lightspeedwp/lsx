@@ -110,6 +110,11 @@ function optionsframework_options() {
 		'id'   => 'thumb_height',
 		'type' => 'text');
 	
+	$options[] = array(
+			'name' => __('Content Width', 'lsx'),
+			'id'   => 'content_width',
+			'type' => 'text');
+	
 	$options['author_box'] = array(
 			'name' => __('Post Author Box', 'lsx'),
 			'desc' => __('Display the Author Box below posts', 'lsx'),

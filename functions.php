@@ -41,4 +41,10 @@ $height = lsx_get_option( 'thumb_height' );
 add_image_size( 'lsx-thumbnail', $width, $height, true );
 add_image_size( 'thumbnail-wide', 350, 230, true );
 add_image_size( 'thumbnail-single', 750, 400, true );
+
+
+// Wordpress specific Variables
+if ( ! isset( $content_width ) ) {
+	$content_width = lsx_get_option( 'content_width' , 750 );
+}
 ?>
