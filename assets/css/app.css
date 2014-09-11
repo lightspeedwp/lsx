@@ -5742,20 +5742,20 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 /* ==========================================================================
    Sidebar
    ========================================================================== */
-#secondary .widget {
+#secondary .widget, #tertiary .widget {
   margin-bottom: 30px; }
-  #secondary .widget.widget_search {
+  #secondary .widget.widget_search, #tertiary .widget.widget_search {
     margin-top: 20px; }
-  #secondary .widget h3 {
+  #secondary .widget h3, #tertiary .widget h3 {
     color: #333; }
-  #secondary .widget.gform_widget ul {
+  #secondary .widget.gform_widget ul, #tertiary .widget.gform_widget ul {
     padding-left: 0; }
-  #secondary .widget select {
+  #secondary .widget select, #tertiary .widget select {
     max-width: 100%;
     width: auto; }
-  #secondary .widget.widget_rss ul li {
+  #secondary .widget.widget_rss ul li, #tertiary .widget.widget_rss ul li {
     margin-bottom: 15px; }
-  #secondary .widget.widget_tag_cloud .tagcloud a {
+  #secondary .widget.widget_tag_cloud .tagcloud a, #tertiary .widget.widget_tag_cloud .tagcloud a {
     display: inline-block;
     background: #428bca;
     color: #fff;
@@ -5765,16 +5765,16 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px; }
-    #secondary .widget.widget_tag_cloud .tagcloud a:hover {
+    #secondary .widget.widget_tag_cloud .tagcloud a:hover, #tertiary .widget.widget_tag_cloud .tagcloud a:hover {
       background: #3276b1;
       text-decoration: none; }
-  #secondary .widget.widget_calendar #wp-calendar caption {
+  #secondary .widget.widget_calendar #wp-calendar caption, #tertiary .widget.widget_calendar #wp-calendar caption {
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 18px; }
-  #secondary .widget.widget_calendar #wp-calendar tfoot td#prev {
+  #secondary .widget.widget_calendar #wp-calendar tfoot td#prev, #tertiary .widget.widget_calendar #wp-calendar tfoot td#prev {
     border-right: 0 !important; }
-  #secondary .widget.widget_calendar #wp-calendar tfoot td.pad {
+  #secondary .widget.widget_calendar #wp-calendar tfoot td.pad, #tertiary .widget.widget_calendar #wp-calendar tfoot td.pad {
     border: none; }
 
 /* ==========================================================================
