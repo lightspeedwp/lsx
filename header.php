@@ -65,5 +65,5 @@ global $lsx_options;
 		  	<?php lsx_header_bottom(); ?>
 		</header>
 <?php lsx_header_after(); ?>
-    <div class="wrap" role="document">
+    <div class="wrap container" role="document">
 	<div class="content role row">
