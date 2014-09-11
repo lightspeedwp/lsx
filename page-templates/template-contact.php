@@ -24,24 +24,24 @@ get_header(); ?>
 							<?php } ?>
 							
 							<?php if(false != lsx_get_option( 'contact_address' )) {?>
-								<p><strong><i class="fa fa-building-o"></i><?php echo __( 'Physical Address', 'lsx');?></strong>
+								<p><strong><i class="fa fa-building-o lsx-contact-building"></i><?php echo __( 'Physical Address', 'lsx');?></strong>
 								<div itemprop="address">	
 									<?php echo wpautop( lsx_get_option( 'contact_address' ) ); ?>								
 								</div></p>
 							<?php } ?>
 							
 							<?php if(false != lsx_get_option( 'contact_phone' )) {?>
-								<p><strong><i class="fa fa-phone"></i><?php echo __( 'Phone: ', 'lsx' ); ?></strong>
+								<p><strong><i class="fa fa-phone lsx-contact-phone"></i><?php echo __( 'Phone: ', 'lsx' ); ?></strong>
 								<a href="tel:<?php echo lsx_get_option( 'contact_phone' ); ?>"><span itemprop="telephone"><?php echo lsx_get_option( 'contact_phone' ); ?></span></a></p>
 							<?php } ?>
 							
 							<?php if(false != lsx_get_option( 'contact_fax' )) {?>
-								<p><strong><i class="fa fa-print"></i><?php echo __( 'Fax: ', 'lsx' ); ?></strong>
+								<p><strong><i class="fa fa-print lsx-contact-fax"></i><?php echo __( 'Fax: ', 'lsx' ); ?></strong>
 								<a href="tel:<?php echo lsx_get_option( 'contact_fax' ); ?>"><span itemprop="faxNumber"><?php echo lsx_get_option( 'contact_fax' ); ?></span></a></p>
 							<?php } ?>
 							
 							<?php if(false != lsx_get_option( 'contact_email' )) {?>
-								<p><strong><i class="fa fa-envelope"></i><?php echo __( 'Email: ', 'lsx' ); ?></strong>
+								<p><strong><i class="fa fa-envelope lsx-contact-email"></i><?php echo __( 'Email: ', 'lsx' ); ?></strong>
 								<a href="mailto:<?php echo lsx_get_option( 'contact_email' ); ?>"><span itemprop="email"><?php echo lsx_get_option( 'contact_email' ); ?></span></a></p>
 							<?php } ?>
 							
