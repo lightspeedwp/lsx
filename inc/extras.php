@@ -10,11 +10,14 @@
  * @since 1.0
  */
 function lsx_yoast_breadcrumbs(){
-  if ( is_home() ) {
-    return;
-  }
-
-  lsx_breadcrumbs();
+	
+	$show_on_front = get_option('show_on_front');	
+	
+	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
+		return;
+	}
+	
+	lsx_breadcrumbs();
 }
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
 
@@ -70,6 +73,12 @@ function lsx_body_class($classes) {
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
   }
+  
+  //Add the banner class if neccesary
+  $show_on_front = get_option('show_on_front');
+  if(lsx_get_option('enable_banner',false) && (('page' == $show_on_front && is_front_page()) || ('posts' == $show_on_front && is_home()) )) {
+  	$classes[] = 'banner';
+  }  
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');

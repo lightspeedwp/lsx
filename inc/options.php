@@ -72,7 +72,7 @@ function optionsframework_options() {
 	$post_types = get_post_types(array('_builtin' => false , 'show_ui' => true));
 
 	$options[] = array(
-		'name' => __('Basic', 'lsx'),
+		'name' => __('General', 'lsx'),
 		'type' => 'heading');
 
 	// $options[] = array(
@@ -95,9 +95,9 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('Placeholder Thumbnail', 'lsx'),
-		'desc' => __('Upload a fallback placeholder image for post thumbnails.', 'lsx'),
-		'id'   => 'placeholder_image',
+		'name' => __('Placeholder Image', 'bs-tourism'),
+		'desc' => __('Placeholder image for posts without a thumbnail assigned.', 'lsx'),
+		'id'   => 'post_placeholder',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -109,13 +109,43 @@ function optionsframework_options() {
 		'name' => __('Thumbnail Height', 'lsx'),
 		'id'   => 'thumb_height',
 		'type' => 'text');
-
+	
 	$options[] = array(
-		'name' => __('Fixed Layout', 'lsx'),
-		'desc' => __('Enable fixed layout.', 'lsx'),
-		'id'   => 'static_layout',
-		'std'  => '0',
-		'type' => 'checkbox');
+			'name' => __('Content Width', 'lsx'),
+			'id'   => 'content_width',
+			'type' => 'text');
+	
+	$options['author_box'] = array(
+			'name' => __('Post Author Box', 'lsx'),
+			'desc' => __('Display the Author Box below posts', 'lsx'),
+			'id'   => 'author_box',
+			'std'  => '0',
+			'type' => 'checkbox');
+	
+	$options['related_posts'] = array(
+			'name' => __('Related Posts', 'lsx'),
+			'desc' => __('Display related posts on single posts', 'lsx'),
+			'id'   => 'related_posts',
+			'std'  => '1',
+			'type' => 'checkbox');
+	
+	$options['related_by'] = array(
+			'name'    => __('Related By', 'lsx'),
+			'id'      => "related_by",
+			'std'     => "category",
+			'type'    => "radio",
+			'options' => array(
+					'category' => 'Category',
+					'tag'      => 'Tag',
+			)
+	);
+	
+	$options['single_thumbnails'] = array(
+			'name' => __('Single Post Thumbnails', 'lsx'),
+			'desc' => __('Display featured image on single posts', 'lsx'),
+			'id'   => 'single_thumbnails',
+			'std'  => '1',
+			'type' => 'checkbox');	
 
 	$options[] = array(
 		'name'    => __('General Site Layout', 'lsx'),
@@ -143,7 +173,6 @@ function optionsframework_options() {
 			'"Open Sans", sans-serif'                        => 'Open Sans',
 			'Arial, "Helvetica Neue", Helvetica, sans-serif' => 'Arial',
 			'Georgia, Times, "Times New Roman", serif'       => 'Georgia',
-			'"Oleo Script",cursive'						     => 'Oleo Script',
 		),
 		'styles' => array('normal' => 'Normal', 'bold' => 'Bold')
 	);	
@@ -156,17 +185,7 @@ function optionsframework_options() {
 	$typography_mixed_fonts = array_merge(options_typography_get_os_fonts(), options_typography_get_google_fonts());
 	asort($typography_mixed_fonts);
 
-	$options['banner_header_font'] = array('name' => 'Banner Header',
-		'id'                                    => 'banner_header_font',
-		'std'                                   => array('size' => '90px', 'color' => '#ffffff' ),
-		'type'                                                  => 'typography',
-		'options'                                               => $typography_options_headers);
-
-	$options['banner_tagline_font'] = array('name' => 'Banner Tagline',
-		'id'                                    => 'banner_tagline_font',
-		'std'                                   => array('size' => '36px', 'color' => '#ffffff'),
-		'type'                                                  => 'typography',
-		'options'                                               => $typography_options_headers);
+	
 
 
 	$options['header_1_font'] = array('name' => 'Header 1',
@@ -223,17 +242,11 @@ function optionsframework_options() {
 	
 
 	$options['body_font'] = array('name' => 'Body Font',
-		'desc'                              => 'This font is used for all body text.',
+		'desc'                              => '',
 		'id'                                => 'body_font',
 		'std'                               => array('size' => '14px', 'face' => '"Helvetica Neue", Helvetica, Arial, sans-serif', 'color' => '#333333'),
 		'type'                                              => 'typography',
 		'options'                                           => $typography_options_body);
-
-	$options['banner_color'] = array('name' => 'Banner background color',
-		"desc"                               => "Select the color for the default banner background.",
-		"id"                                 => "banner_color",
-		"std"                                => "#428BCA",
-		"type"                               => "color");
 
 	$options['link_color'] = array('name' => 'Link color',
 		"desc"                               => "Select the color for links.",
@@ -259,13 +272,7 @@ function optionsframework_options() {
 		"std"                                        => "#3276b1",
 		"type"                                       => "color");
 
-	$options['disable_styles'] = array('name' => 'Disable Styles',
-		'desc'                                   => 'Disable option styles and use theme defaults.',
-		'id'                                     => 'disable_styles',
-		'std'                                    => false,
-		'type'                                   => 'checkbox');
-
-	$options[] = array('name' => 'Homepage',
+	$options[] = array('name' => 'Home',
 		'type'                   => 'heading');
 
 	$options['enable_banner'] = array(
@@ -274,121 +281,72 @@ function optionsframework_options() {
 		'id'   => 'enable_banner',
 		'std'  => '0',
 		'type' => 'checkbox');
+	
+	
+	$options[] = array(
+			'name' => __('Banner Height', 'lsx'),
+			'id'   => 'home_banner_height',
+			'std'  => '250px',
+			'type' => 'text');	
 
 	$options['home_banner_heading'] = array(
-		'name' => __('Homepage Banner Heading', 'lsx'),
+		'name' => __('Banner Heading', 'lsx'),
 		'id'   => 'home_banner_heading',
-		'type' => 'text');
-
+		'type' => 'text');	
+	
+	$options['home_banner_heading_typography'] = array(
+			'name' 		=> 'Banner Heading Typography',
+			'id'  		=> 'home_banner_heading_typography',
+			'std' 		=> array('size' => '90px', 'color' => '#FFFFFF'),
+			'type'      => 'typography',
+			'options'   => $typography_options_headers
+	);	
+	
 	$options['home_banner_tagline'] = array(
 		'name' => __('Homepage Banner Tagline', 'lsx'),
 		'id'   => 'home_banner_tagline',
 		'type' => 'textarea');
 
-	$options['home_layout'] = array(
-		'name'    => __('Home Page Layout', 'lsx'),
-		'desc'    => __('Choose homepage layout.', 'lsx'),
-		'id'      => "home_layout",
-		'std'     => "2c-l",
-		'type'    => "images",
-		'options' => array(
-			'1col' => $imagepath.'1c.png',
-			'2c-l' => $imagepath.'2cl.png',
-			'2c-r' => $imagepath.'2cr.png',
-			'3c-,' => $imagepath.'3cm.png',
-			'3c-l' => $imagepath.'3cl.png',
-			'3c-r' => $imagepath.'3cr.png')
-	);
+	$options['home_banner_tagline_typography'] = array(
+			'name' 		=> 'Banner Tagline Typography',
+			'id'  		=> 'home_banner_tagline_typography',
+			'std' 		=> array('size' => '36px', 'color' => '#FFFFFF'),
+			'type'      => 'typography',
+			'options'   => $typography_options_headers
+	);	
 	
-	$options[] = array(
+	$options['banner_color'] = array(
+			'name' 		=> 'Banner background color',
+			"desc"      => "Select the color for the default banner background.",
+			"id"        => "banner_color",
+			"std"       => "#428BCA",
+			"type"      => "color");	
+	
+	$options['home_bg_image_1'] = array(
 			'name' => __('Banner 1', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_1',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_2'] = array(
 			'name' => __('Banner 2', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_2',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_3'] = array(
 			'name' => __('Banner 3', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_3',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_4'] = array(
 			'name' => __('Banner 4', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_4',
 			'type' => 'upload');
-	$options[] = array(
+	$options['home_bg_image_5'] = array(
 			'name' => __('Banner 5', 'bs-tourism'),
 			'desc' => __('Banner image to display on home.', 'bs-tourism'),
 			'id'   => 'home_bg_image_5',
 			'type' => 'upload');
-	
-
-	$options[] = array(
-			'name' 	=> 'Post',
-			'type'	=> 'heading');
-
-	$options[] = array(
-		'name' => __('Placeholder Image', 'bs-tourism'),
-		'desc' => __('Placeholder image for tours without a thumbnail assigned.', 'bs-tourism'),
-		'id'   => 'post_placeholder',
-		'type' => 'upload');
-
-	$options[] = array(
-		'name' => __('Placeholder Image 2', 'bs-tourism'),
-		'desc' => __('Placeholder image for the second layout.', 'bs-tourism'),
-		'id'   => 'post_placeholder_2',
-		'type' => 'upload');
-
-	$options['author_box'] = array(
-		'name' => __('Post Author Box', 'lsx'),
-		'desc' => __('Display the Author Box below posts', 'lsx'),
-		'id'   => 'author_box',
-		'std'  => '0',
-		'type' => 'checkbox');
-
-	$options['related_posts'] = array(
-		'name' => __('Related Posts', 'lsx'),
-		'desc' => __('Display related posts on single posts', 'lsx'),
-		'id'   => 'related_posts',
-		'std'  => '1',
-		'type' => 'checkbox');
-
-	$options['related_by'] = array(
-		'name'    => __('Related By', 'lsx'),
-		'id'      => "related_by",
-		'std'     => "category",
-		'type'    => "radio",
-		'options' => array(
-			'category' => 'Category',
-			'tag'      => 'Tag',
-		)
-	);
-
-	$options['post_layout'] = array(
-		'name'    => __('Post Layout', 'lsx'),
-		'desc'    => __('Choose post layout.', 'lsx'),
-		'id'      => "post_layout",
-		'std'     => "2c-l",
-		'type'    => "images",
-		'options' => array(
-			'1col' => $imagepath.'1c.png',
-			'2c-l' => $imagepath.'2cl.png',
-			'2c-r' => $imagepath.'2cr.png',
-			'3c-,' => $imagepath.'3cm.png',
-			'3c-l' => $imagepath.'3cl.png',
-			'3c-r' => $imagepath.'3cr.png')
-	);
-
-	$options['single_thumbnails'] = array(
-		'name' => __('Single Post Thumbnails', 'lsx'),
-		'desc' => __('Display featured image on single posts', 'lsx'),
-		'id'   => 'single_thumbnails',
-		'std'  => '1',
-		'type' => 'checkbox');
 
 	/*$taxonomy_array = array();
 	$taxonomy_defaults = array();
@@ -498,17 +456,6 @@ function options_typography_styles() {
 		if (lsx_get_option('body_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('body_font'), 'body');
 		}
-
-		if (lsx_get_option('banner_header_font')) {
-			$output .= options_typography_font_styles(lsx_get_option('banner_header_font'), '.bs-image-header-title');
-			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
-		}
-
-			if (lsx_get_option('banner_tagline_font')) {
-			$output .= options_typography_font_styles(lsx_get_option('banner_tagline_font'), '.bs-image-header-desc');
-			// options_typography_font_styles(lsx_get_option('banner_header_font'), 'body');
-		}
-
 	
 		if (lsx_get_option('header_1_font')) {
 			$output .= options_typography_font_styles(lsx_get_option('header_1_font'), 'h1');
@@ -553,7 +500,29 @@ function options_typography_styles() {
 		if (lsx_get_option('button_hover_color')) {
 			$output .= '.btn:hover {background-color:'.lsx_get_option('button_hover_color').'}';
 		}
+		
+		
+		//Homepage
+		if (lsx_get_option('home_banner_heading_typography')) {
+			$output .= options_typography_font_styles(lsx_get_option('home_banner_heading_typography'), '.home .bs-image-header-title');
+		}
+		
+		if (lsx_get_option('home_banner_tagline_typography')) {
+			$output .= options_typography_font_styles(lsx_get_option('home_banner_tagline_typography'), '.home .bs-image-header-desc');
+		}
+		
+		if (lsx_get_option('home_banner_height')) {
+			$output .= 'header.bs-image-header {height:'.lsx_get_option('home_banner_height').'}';
+		} else {
+			$output .= 'header.bs-image-header {height:250px;}';
+		}		
+		
 
+		if (lsx_get_option('button_hover_color')) {
+			$output .= '.btn:hover {background-color:'.lsx_get_option('button_hover_color').'}';
+		}		
+
+		
 		if ($output != '') {
 			$output = "\n<style>\n".$output."</style>\n";
 			echo $output;

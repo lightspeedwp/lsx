@@ -13,12 +13,12 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_home_main_class(); ?>">
+	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main" role="main">
-
+		
 		<?php lsx_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>
@@ -36,8 +36,12 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php lsx_paging_nav(); ?>
-
+			<?php if ( function_exists('wp_pagenavi') ) { ?>
+				<?php wp_pagenavi(); ?>
+			<?php } else { ?>
+				<?php lsx_paging_nav(); ?>
+			<?php } ?>
+			
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>

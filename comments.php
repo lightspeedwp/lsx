@@ -96,7 +96,7 @@ if (have_comments()) : ?>
 	<label for="comment"><?php _e('Comment', 'lsx'); ?></label>
 	<textarea name="comment" id="comment" class="form-control" rows="5" aria-required="true"></textarea>
 </div>
-<p><input name="submit" class="btn btn-primary" type="submit" id="submit" value="<?php _e('Submit Comment', 'lsx'); ?>"></p>
+<p><input name="submit" class="btn btn-primary" type="submit" id="submit" value="<?php esc_attr_e('Submit Comment', 'lsx'); ?>"></p>
 <?php comment_id_fields(); ?>
 <?php do_action('comment_form', $post->ID); ?>
 </form>

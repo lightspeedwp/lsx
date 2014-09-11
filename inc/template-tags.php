@@ -143,10 +143,18 @@ function lsx_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<div class="nav-links pager">
+		<div class="nav-links pager row">
 
-			<?php previous_post_link( '%link', _x( '<div class="previous"><span class="meta-nav">&larr;</span> %title</div>', 'Previous post link', 'lsx' ) ); ?>
-			<?php next_post_link(     '%link', _x( '<div class="next">%title <span class="meta-nav">&rarr;</span></div>', 'Next post link',     'lsx' ) ); ?>
+			<?php
+				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous"><span class="meta-nav">&larr;</span> %title</div>', 'Previous post link', 'lsx' ) );
+				$previous_post = str_replace('<a','<a class="col-sm-6"',$previous_post);
+				echo $previous_post;
+			?>
+			<?php
+				$next_post = get_next_post_link(     '%link', _x( '<div class="next">%title <span class="meta-nav">&rarr;</span></div>', 'Next post link',     'lsx' ) );
+				$next_post = str_replace('<a','<a class="col-sm-6"',$next_post);
+				echo $next_post;
+			?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->

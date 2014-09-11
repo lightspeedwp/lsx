@@ -59,9 +59,11 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 		} else {
 			$banner_image = '';
 		}
-			
 		
-		if ( (is_home() && is_front_page()) && lsx_get_option( 'enable_banner', false ) ) { ?>
+		$show_on_front = get_option('show_on_front');
+		
+		if ( (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page())) 
+			&& lsx_get_option( 'enable_banner', false ) ) { ?>
 			<header class="bs-image-header" style="background-image: url(<?php echo $banner_image?>)">
 				<div class="container">
 					<div class="banner-text">
@@ -146,6 +148,8 @@ add_action( 'lsx_entry_after', 'lsx_related_posts' );
 function lsx_related_posts() {
 
 	if ( ! lsx_get_option( 'related_posts' ) || ! is_single() ) { return false; }
+	
+	if ( 'attachment' == get_post_type() ) { return false; }
 
 	$category_array = array();
 	$category_terms = ( get_the_terms( get_the_ID(), 'category' ) );
@@ -196,7 +200,6 @@ function lsx_related_posts() {
 		foreach ( $related_posts as $related_post ) {
 			?>
 			<div class="col-md-4">
-				<div class="well">					
 						<?php if ( has_post_thumbnail( $related_post->ID ) ) { ?>
 							<a href="<?php echo get_permalink( $related_post->ID );?>">
 								<?php echo get_the_post_thumbnail( $related_post->ID, 'thumbnail-wide', 'class=img-responsive' ); ?>
@@ -207,7 +210,6 @@ function lsx_related_posts() {
 							</a>
 						<?php } ?>
 					<h4><a href="<?php echo get_permalink( $related_post->ID );?>"><?php echo $related_post->post_title ?></a></h4>					
-				</div>
 			</div>
 			<?php
 		} ?>
@@ -218,3 +220,21 @@ function lsx_related_posts() {
 	?>
 	<?php
 }
+
+/**
+ * Displays the blog page title
+ *
+ * @package lsx-theme
+ * @subpackage layout
+ */
+function lsx_blog_page_title() {
+
+		$blog_page = get_queried_object();
+		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == $blog_page->ID) { ?>
+			<header class="page-header">
+					<h1 class="page-title"><?php echo get_the_title($blog_page); ?></h1>		
+			</header>
+		<?php } 
+		
+}
+add_action('lsx_content_top','lsx_blog_page_title',20);

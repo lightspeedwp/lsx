@@ -48,11 +48,10 @@ add_action( 'after_setup_theme', 'lsx_setup' );
 function lsx_layout_selector( $class, $area = 'site' ) {
 	
 	$page_layout = get_post_meta( get_the_ID(), 'lsx_layout', true );
+	$show_on_front = get_option('show_on_front');
 	
-	if ( $area == 'home' ) {
-		$layout = lsx_get_option('home_layout');
-	}elseif ( $area == 'post' ) {
-		$layout = lsx_get_option('post_layout');
+	if ( 'page' == $show_on_front && $area == 'home' ) {
+		$layout = '1col';
 	} else {
 		if ( $page_layout && $page_layout != "default" ) {
 			$layout = $page_layout;
@@ -81,6 +80,7 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 			$sidebar_class = 'col-' . $size . '-3';
 			$sidebar_class_alt = 'col-' . $size . '-2';
 			break;
+		case '3c-,':
 		case '3c-m':
 			$main_class = 'col-' . $size . '-7 col-' . $size . '-push-2';
 			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-push-2';
@@ -121,8 +121,18 @@ function lsx_home_main_class() {
 	return lsx_layout_selector( 'main', 'home' );
 }
 
-function lsx_post_main_class() {
-	return lsx_layout_selector( 'main', 'post' );
+/**
+ * Outputs the class for the main div on the index.php page only
+ */
+function lsx_index_main_class() {
+	
+	$show_on_front = get_option('show_on_front');
+	if('page' == $show_on_front){
+		return lsx_layout_selector( 'main', 'home' );
+	}else{
+		return lsx_layout_selector( 'main', 'site' );
+	}
+	
 }
 
 /**
@@ -136,9 +146,6 @@ function lsx_home_sidebar_class() {
 	return lsx_layout_selector( 'sidebar', 'home' );
 }
 
-function lsx_post_sidebar_class() {
-	return lsx_layout_selector( 'sidebar', 'post' );
-}
 /**
  * .sidebar classes
  */
@@ -148,10 +155,6 @@ function lsx_sidebar_alt_class() {
 
 function lsx_home_sidebar_alt_class() {
 	return lsx_layout_selector( 'sidebar_alt', 'home' );
-}
-
-function lsx_post_sidebar_alt_class() {
-	return lsx_layout_selector( 'sidebar_alt', 'post' );
 }
 
 /**

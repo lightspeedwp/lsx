@@ -47,11 +47,6 @@ class LSX_Blog_Widget extends WP_Widget {
 		} else {
 			$layout = false;
 		}
-		if (isset($instance['excerpt_length'])) {
-			$excerpt_length = $instance['excerpt_length'];
-		} else {
-			$excerpt_length = false;
-		}
 
 		if (isset($instance['class'])) {
 			$class = $instance['class'];
@@ -70,6 +65,13 @@ class LSX_Blog_Widget extends WP_Widget {
 		} else {
 			$size = false;
 		}
+		
+		if (isset($instance['columns'])) {
+			$columns = $instance['columns'];
+		} else {
+			$columns = 3;
+		}	
+		$md_col_width = 12 / $columns;
 
 		// If limit not set, display all posts
 		if ($limit == '') {$limit = "1";
@@ -122,7 +124,7 @@ class LSX_Blog_Widget extends WP_Widget {
 				default:
 					$element             = 'div';
 					$inner_element       = 'div';
-					$inner_element_class = 'item';
+					$inner_element_class = 'item col-md-'.$md_col_width;
 					break;
 			}
 
@@ -136,68 +138,65 @@ class LSX_Blog_Widget extends WP_Widget {
 					case 'list':
 						?>
 						<div class="col-md-2">
-						<?php if (has_post_thumbnail()) {?>
-									        		        <a href="<?php the_permalink();?>">
-							<?php the_post_thumbnail('thumbnail', array($size, $size));?>
-							</a>
-							<?php 	} else {?>
-								        		        <a href="<?php the_permalink();?>">
-							        		            <img class="img-responsive" src="http://placehold.it/350x230/" alt="placeholder" />
-							        		        </a>
-						<?php 	}?>
+							<?php if (has_post_thumbnail()) {?>
+								<a href="<?php the_permalink();?>">
+								<?php the_post_thumbnail('thumbnail', array($size, $size));?>
+								</a>
+							<?php } else {?>
+							    <a href="<?php the_permalink();?>">
+									<img class="img-responsive" src="http://placehold.it/350x230/" alt="placeholder" />
+								</a>
+							<?php } ?>
+	
+						<?php echo apply_filters('lsx_blog_widget_post_meta', '', get_the_ID(), $layout);?>
+						</div>
+					
+						<div class="col-md-10">
+	
+							<?php do_action('lsx_blog_widget_before_title');?>
+							<h4><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h4>
+							<?php do_action('lsx_blog_widget_after_title');?>
+		
+		
+							<?php do_action('lsx_blog_widget_before_excerpt');?>
+							
+							<?php
+							// Description
+							if ($excerpt_length > 0) {
+								$content = strip_tags($post->post_excerpt).'...';
+								echo $content;
+							} else {
+								the_excerpt();
+							}
+							?>
+							
+							<a class="read-more" href="<?php the_permalink();?>">Read More</a>
+							<?php do_action('lsx_blog_widget_after_excerpt');?>
+						</div>
 
-					<?php echo apply_filters('lsx_blog_widget_post_meta', '', get_the_ID(), $layout);?>
-					</div>
-						        		    <div class="col-md-10">
-
-					<?php do_action('lsx_blog_widget_before_title');?>
-							        		        <h4><a href="<?php the_permalink();?>"><?php the_title();
-					?></a></h4>
-					<?php do_action('lsx_blog_widget_after_title');?>
-
-
-					<?php do_action('lsx_blog_widget_before_excerpt');?>
-							        		        <?php
-					// Description
-					if ($excerpt_length > 0) {
-						$content = strip_tags(substr($post->post_excerpt, 0, $excerpt_length)).'...';
-						echo $content;
-					} else {
-						the_excerpt();
-					}
-					?>
-							        		        <a class="read-more" href="<?php the_permalink();?>">Read More</a>
-					<?php do_action('lsx_blog_widget_after_excerpt');?>
-					</div>
-
-					        		        <div class="clearfix"></div>
+					    <div class="clearfix"></div>
 					<?php
 					break;
 
 				default:
 					?>
-								                <?php if (has_post_thumbnail()) {?>
-									                    <a href="<?php the_permalink();?>">
-						<?php the_post_thumbnail('thumbnail', array($size, $size));?>
-						</a>
-						<?php 	} else {?>
-									                    <a href="<?php the_permalink();?>">
-								                        <img class="img-responsive" src="http://placehold.it/350x230/" alt="placeholder" />
-								                    </a>
-						<?php 	}?>
-								                <h4><a href="<?php the_permalink();?>"><?php the_title();
-					?></a></h4>
-					<?php echo apply_filters('lsx_blog_widget_post_meta', '', get_the_ID(), $layout);?>
-								                <?php
-					// Description
-					if ($excerpt_length > 0) {
-						$content = strip_tags(substr(get_the_content(), 0, $excerpt_length)).'...';
-						echo $content;
-					} else {
-						the_excerpt();
-					}
-					?>
-								                <a class="read-more" href="<?php the_permalink();?>">Read More</a>
+						<?php if (has_post_thumbnail()) {?>
+							<a href="<?php the_permalink();?>">
+								<?php the_post_thumbnail('thumbnail', array($size, $size));?>
+							</a>
+						<?php } else {?>
+							<a href="<?php the_permalink();?>">
+								<img class="img-responsive" src="http://placehold.it/350x230/" alt="placeholder" />
+							</a>
+						<?php } ?>
+						
+						<h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+						
+						<?php echo apply_filters('lsx_blog_widget_post_meta', '', get_the_ID(), $layout);?>
+						
+						<?php the_excerpt(); ?>
+						
+						<a class="read-more" href="<?php the_permalink();?>">Read More</a>
 					<?php
 					break;
 			}
@@ -227,10 +226,10 @@ class LSX_Blog_Widget extends WP_Widget {
 		$instance['tagline']        = strip_tags($new_instance['tagline']);
 		$instance['layout']         = strip_tags($new_instance['layout']);
 		$instance['limit']          = strip_tags($new_instance['limit']);
-		$instance['excerpt_length'] = strip_tags($new_instance['excerpt_length']);
 		$instance['class']          = strip_tags($new_instance['class']);
 		$instance['featured']       = strip_tags($new_instance['featured']);
 		$instance['size']           = strip_tags($new_instance['size']);
+		$instance['columns'] = strip_tags( $new_instance['columns'] );
 
 		return $instance;
 	}
@@ -275,11 +274,6 @@ class LSX_Blog_Widget extends WP_Widget {
 		} else {
 			$limit = false;
 		}
-		if (isset($instance['excerpt_length'])) {
-			$excerpt_length = esc_attr($instance['excerpt_length']);
-		} else {
-			$excerpt_length = false;
-		}
 		if (isset($instance['class'])) {
 			$class = esc_attr($instance['class']);
 		} else {
@@ -290,73 +284,79 @@ class LSX_Blog_Widget extends WP_Widget {
 		} else {
 			$featured = false;
 		}
-
-		?>
-		        <p>
-		            <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo $title;?>" />
-		        </p>
-		        <p>
-		            <label for="<?php echo $this->get_field_id('title_link');?>"><?php _e('Title Link:');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('title_link');?>" name="<?php echo $this->get_field_name('title_link');?>" type="text" value="<?php echo $title_link;?>" />
-		            <small>Link the widget title to a URL</small>
-		        </p>
-		        <p>
-		            <label for="<?php echo $this->get_field_id('excerpt_length');?>"><?php _e('Excerpt Length:');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('excerpt_length');?>" name="<?php echo $this->get_field_name('excerpt_length');?>" type="text" value="<?php echo $excerpt_length;?>" />
-		            <small><?php _e('0 to display entire description');?></small>
-		        </p>
-
-		        <p>
-		            <label for="<?php echo $this->get_field_id('size');?>"><?php _e('Image size:');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('size');?>" name="<?php echo $this->get_field_name('size');?>" type="text" value="<?php echo $size;?>" />
-		        </p>
-
-		        <p>
-		            <label for="<?php echo $this->get_field_id('tagline');?>"><?php _e('Tagline:');
-		?></label>
-		            <textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('tagline');?>" name="<?php echo $this->get_field_name('tagline');?>"><?php echo $tagline;
-		?></textarea>
-		            <small>Tagline to display below the widget title</small>
-		        </p>
-
-		        <p>
-		            <label for="<?php echo $this->get_field_id('limit');?>"><?php _e('Maximum amount:', 'bs-reviews');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('limit');?>" name="<?php echo $this->get_field_name('limit');?>" type="text" value="<?php echo $limit;?>" />
-		            <small><?php _e('Default 1 post');?></small>
-		        </p>
-
-				<p>
-					<input id="<?php echo $this->get_field_id('featured');?>"
-						name="<?php echo $this->get_field_name('featured');?>"
-						type="checkbox" value="1" <?php checked('1', $featured);?> /> <label
-						for="<?php echo $this->get_field_id('featured');?>"><?php _e('Featured');
-		?></label>
-				</p>
-
-		        <p>
-		            <label for="<?php echo $this->get_field_id('layout');?>"><?php _e('Layout:', 'lsx-theme');
-		?></label>
-		            <select name="<?php echo $this->get_field_name('layout');?>" id="<?php echo $this->get_field_id('layout');?>" class="widefat layout">
-		<?php
-		$options = array('Standard', 'List', 'Custom');
-		foreach ($options as $option) {
-			echo '<option value="'.lcfirst($option).'" id="'.$option.'"', $layout == lcfirst($option)?' selected="selected"':'', '>', $option, '</option>';
+		
+		if (isset($instance['columns'])) {
+			$columns = esc_attr($instance['columns']);
+		} else {
+			$columns = false;
 		}
 		?>
+		<p>
+			<label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo $title;?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('title_link');?>"><?php _e('Title Link:');?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('title_link');?>" name="<?php echo $this->get_field_name('title_link');?>" type="text" value="<?php echo $title_link;?>" />
+			<small>Link the widget title to a URL</small>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('size');?>"><?php _e('Image size:');	?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('size');?>" name="<?php echo $this->get_field_name('size');?>" type="text" value="<?php echo $size;?>" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('tagline');?>"><?php _e('Tagline:');	?></label>
+			<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('tagline');?>" name="<?php echo $this->get_field_name('tagline');?>"><?php echo $tagline;?></textarea>
+			<small>Tagline to display below the widget title</small>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('limit');?>"><?php _e('Maximum amount:', 'bs-reviews'); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('limit');?>" name="<?php echo $this->get_field_name('limit');?>" type="text" value="<?php echo $limit;?>" />
+			<small><?php _e('Default 1 post');?></small>
+		</p>
+
+		<p>
+			<input id="<?php echo $this->get_field_id('featured');?>"
+						name="<?php echo $this->get_field_name('featured');?>"
+						type="checkbox" value="1" <?php checked('1', $featured);?> /> 
+			<label for="<?php echo $this->get_field_id('featured');?>"><?php _e('Featured'); ?></label>
+		</p>
+				
+		<p>
+			<label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Columns:'); ?></label>
+			<select name="<?php echo $this->get_field_name('columns'); ?>"
+				id="<?php echo $this->get_field_id('columns'); ?>"
+				class="widefat layout">
+		            <?php
+		            $options = array('1', '2', '3', '4' , '5' , '6');
+		            foreach ($options as $option) {
+		                echo '<option value="' . lcfirst($option) . '" id="' . $option . '"', $columns == lcfirst($option) ? ' selected="selected"' : '', '>', $option, '</option>';
+		            }
+		            ?>
 		            </select>
-		        </p>
-		        <p>
-		            <label for="<?php echo $this->get_field_id('class');?>"><?php _e('Class:');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('class');?>" name="<?php echo $this->get_field_name('class');?>" type="text" value="<?php echo $class;?>" />
-		            <small>Add your own class to the opening element of the widget</small>
-		        </p>
+		</p>				
+
+		<p>
+			<label for="<?php echo $this->get_field_id('layout');?>"><?php _e('Layout:', 'lsx-theme'); ?></label>
+			<select name="<?php echo $this->get_field_name('layout');?>" id="<?php echo $this->get_field_id('layout');?>" class="widefat layout">
+			<?php
+			$options = array('Standard', 'List', 'Custom');
+			foreach ($options as $option) {
+				echo '<option value="'.lcfirst($option).'" id="'.$option.'"', $layout == lcfirst($option)?' selected="selected"':'', '>', $option, '</option>';
+			}
+			?>
+			</select>
+		</p>
+		
+		<p>
+			<label for="<?php echo $this->get_field_id('class');?>"><?php _e('Class:');	?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id('class');?>" name="<?php echo $this->get_field_name('class');?>" type="text" value="<?php echo $class;?>" />
+			<small>Add your own class to the opening element of the widget</small>
+		</p>
 		<?php
 
 	}
