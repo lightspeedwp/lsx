@@ -124,7 +124,7 @@ class LSX_Blog_Widget extends WP_Widget {
 				default:
 					$element             = 'div';
 					$inner_element       = 'div';
-					$inner_element_class = 'item col-md-'.$md_col_width;
+					$inner_element_class = 'blog-widget-col item col-md-'.$md_col_width;
 					break;
 			}
 
