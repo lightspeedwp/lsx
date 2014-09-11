@@ -292,42 +292,42 @@ class LSX_Blog_Widget extends WP_Widget {
 		}
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');?></label>
+			<label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:','lsx');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo $title;?>" />
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('title_link');?>"><?php _e('Title Link:');?></label>
+			<label for="<?php echo $this->get_field_id('title_link');?>"><?php _e('Title Link:','lsx');?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title_link');?>" name="<?php echo $this->get_field_name('title_link');?>" type="text" value="<?php echo $title_link;?>" />
 			<small>Link the widget title to a URL</small>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('size');?>"><?php _e('Image size:');	?></label>
+			<label for="<?php echo $this->get_field_id('size');?>"><?php _e('Image size:','lsx');	?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('size');?>" name="<?php echo $this->get_field_name('size');?>" type="text" value="<?php echo $size;?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('tagline');?>"><?php _e('Tagline:');	?></label>
+			<label for="<?php echo $this->get_field_id('tagline');?>"><?php _e('Tagline:','lsx');	?></label>
 			<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('tagline');?>" name="<?php echo $this->get_field_name('tagline');?>"><?php echo $tagline;?></textarea>
 			<small>Tagline to display below the widget title</small>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('limit');?>"><?php _e('Maximum amount:', 'bs-reviews'); ?></label>
+			<label for="<?php echo $this->get_field_id('limit');?>"><?php _e('Maximum amount:', 'lsx'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('limit');?>" name="<?php echo $this->get_field_name('limit');?>" type="text" value="<?php echo $limit;?>" />
-			<small><?php _e('Default 1 post');?></small>
+			<small><?php _e('Default 1 post','lsx');?></small>
 		</p>
 
 		<p>
 			<input id="<?php echo $this->get_field_id('featured');?>"
 						name="<?php echo $this->get_field_name('featured');?>"
 						type="checkbox" value="1" <?php checked('1', $featured);?> /> 
-			<label for="<?php echo $this->get_field_id('featured');?>"><?php _e('Featured'); ?></label>
+			<label for="<?php echo $this->get_field_id('featured');?>"><?php _e('Featured','lsx'); ?></label>
 		</p>
 				
 		<p>
-			<label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Columns:'); ?></label>
+			<label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Columns:','lsx'); ?></label>
 			<select name="<?php echo $this->get_field_name('columns'); ?>"
 				id="<?php echo $this->get_field_id('columns'); ?>"
 				class="widefat layout">
@@ -341,7 +341,7 @@ class LSX_Blog_Widget extends WP_Widget {
 		</p>				
 
 		<p>
-			<label for="<?php echo $this->get_field_id('layout');?>"><?php _e('Layout:', 'lsx-theme'); ?></label>
+			<label for="<?php echo $this->get_field_id('layout');?>"><?php _e('Layout:', 'lsx'); ?></label>
 			<select name="<?php echo $this->get_field_name('layout');?>" id="<?php echo $this->get_field_id('layout');?>" class="widefat layout">
 			<?php
 			$options = array('Standard', 'List', 'Custom');
@@ -353,9 +353,9 @@ class LSX_Blog_Widget extends WP_Widget {
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('class');?>"><?php _e('Class:');	?></label>
+			<label for="<?php echo $this->get_field_id('class');?>"><?php _e('Class:','lsx');	?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('class');?>" name="<?php echo $this->get_field_name('class');?>" type="text" value="<?php echo $class;?>" />
-			<small>Add your own class to the opening element of the widget</small>
+			<small><?php _e('Add your own class to the opening element of the widget','lsx');	?></small>
 		</p>
 		<?php
 
