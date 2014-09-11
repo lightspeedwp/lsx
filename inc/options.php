@@ -248,12 +248,6 @@ function optionsframework_options() {
 		'type'                                              => 'typography',
 		'options'                                           => $typography_options_body);
 
-	$options['banner_color'] = array('name' => 'Banner background color',
-		"desc"                               => "Select the color for the default banner background.",
-		"id"                                 => "banner_color",
-		"std"                                => "#428BCA",
-		"type"                               => "color");
-
 	$options['link_color'] = array('name' => 'Link color',
 		"desc"                               => "Select the color for links.",
 		"id"                                 => "link_color",
@@ -320,6 +314,13 @@ function optionsframework_options() {
 			'type'      => 'typography',
 			'options'   => $typography_options_headers
 	);	
+	
+	$options['banner_color'] = array(
+			'name' 		=> 'Banner background color',
+			"desc"      => "Select the color for the default banner background.",
+			"id"        => "banner_color",
+			"std"       => "#428BCA",
+			"type"      => "color");	
 	
 	$options['home_bg_image_1'] = array(
 			'name' => __('Banner 1', 'bs-tourism'),
