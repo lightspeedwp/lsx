@@ -1,3 +1,11 @@
+<?php 
+if(isset($GLOBALS['comment_depth'])){
+	$depth = $GLOBALS['comment_depth'];
+}else{
+	$depth = 3;
+}
+?>
+
 <?php echo get_avatar($comment, $size = '64'); ?>
 <div class="media-body">
   <h4 class="media-heading"><?php echo get_comment_author_link(); ?></h4>
@@ -11,4 +19,4 @@
 <?php endif; ?>
 
 <?php comment_text(); ?>
-<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+<?php comment_reply_link(array('depth' => $depth,'max_depth' => $depth)); ?>

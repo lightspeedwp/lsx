@@ -32,10 +32,10 @@ class LSX_Walker_Comment extends Walker_Comment {
       return;
     }
 
-    extract($args, EXTR_SKIP); ?>
+    extract($args, EXTR_SKIP);?>
 
-  <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
-    <?php include(locate_template('comment.php')); ?>
+  	<li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
+    <?php get_template_part('comment'); ?>
   <?php
   }
 
