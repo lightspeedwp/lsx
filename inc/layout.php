@@ -148,6 +148,8 @@ add_action( 'lsx_entry_after', 'lsx_related_posts' );
 function lsx_related_posts() {
 
 	if ( ! lsx_get_option( 'related_posts' ) || ! is_single() ) { return false; }
+	
+	if ( 'attachment' == get_post_type() ) { return false; }
 
 	$category_array = array();
 	$category_terms = ( get_the_terms( get_the_ID(), 'category' ) );
