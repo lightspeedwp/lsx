@@ -24,11 +24,11 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php if ( is_date() ) { ?>
 						<?php if ( is_day() ) { ?> 
-							Archive for <?php the_time('F jS, Y'); ?>
+						<?php __( 'Archive for', 'lsx' ); ?> <?php the_time('F jS, Y'); ?>
 						<?php  } elseif ( is_month() ) { ?> 
-							Archive for <?php the_time('F, Y'); ?>
+						<?php __( 'Archive for', 'lsx' ); ?> <?php the_time('F, Y'); ?>
 						<?php } elseif ( is_year() ) { ?> 
-							Archive for <?php the_time('Y'); ?>
+						<?php __( 'Archive for', 'lsx' ); ?> <?php the_time('Y'); ?>
 						<?php } ?> 
 					<?php } else { ?>
 						<?php single_cat_title( 'Archive - '); ?>
