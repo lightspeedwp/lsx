@@ -46,6 +46,7 @@ class LSX_Walker_Comment extends Walker_Comment {
     }
     echo "</div></li>\n";
   }
+  
 }
 
 function lsx_get_avatar($avatar) {
@@ -53,3 +54,17 @@ function lsx_get_avatar($avatar) {
   return $avatar;
 }
 add_filter('get_avatar', 'lsx_get_avatar');
+
+/**
+ * Comment Form Field Filter
+ *
+ * @package lsx-theme
+ * @subpackage layout
+ */
+function lsx_comment_form_fields_filter($fields) {
+	foreach($fields as &$field){
+		$field = str_replace('<input', '<input class="form-control"', $field);
+	}
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'lsx_comment_form_fields_filter');

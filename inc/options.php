@@ -494,11 +494,11 @@ function options_typography_styles() {
 		}
 
 		if (lsx_get_option('button_color')) {
-			$output .= '.btn {background-color:'.lsx_get_option('button_color').'}';
+			$output .= '.btn , #respond #commentform .form-submit #submit {background-color:'.lsx_get_option('button_color').'}';
 		}
 
 		if (lsx_get_option('button_hover_color')) {
-			$output .= '.btn:hover {background-color:'.lsx_get_option('button_hover_color').'}';
+			$output .= '.btn:hover , #respond #commentform .form-submit #submit:hover {background-color:'.lsx_get_option('button_hover_color').'}';
 		}
 		
 		
