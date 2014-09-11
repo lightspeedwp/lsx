@@ -4,7 +4,7 @@
  *
  * @package LSX Theme
  */
- 
+global $content_width;
 get_header();
 ?>
  
