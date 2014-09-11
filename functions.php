@@ -47,4 +47,12 @@ add_image_size( 'thumbnail-single', 750, 400, true );
 if ( ! isset( $content_width ) ) {
 	$content_width = lsx_get_option( 'content_width' , 750 );
 }
+
+
+add_theme_support( 'custom-background', array(
+	// Background color default
+	'default-color' => 'FFF',
+	// Background image default
+) );
+
 ?>
