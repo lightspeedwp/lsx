@@ -161,6 +161,10 @@ function optionsframework_options() {
 			'3c-l' => $imagepath.'3cl.png',
 			'3c-r' => $imagepath.'3cr.png')
 	);
+	
+	//Allows Plugins to add in their own filters
+	$options = apply_filters('lsx-general-options',$options);
+	
 
 	$options[] = array('name' => 'Typography',
 		'type'                   => 'heading');
