@@ -62,7 +62,7 @@ function lsx_logo() {
 
 	if ( ! empty( $logo ) ) { 
 	
-		?> <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>"> <?php
+		?> <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>" class="site-logo"> <?php
 	
 	} else {
 		echo bloginfo('name');
