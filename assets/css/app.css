@@ -7451,8 +7451,17 @@ figure.alignnone {
   font-style: inherit;
 }
 
-iframe {
+.embed-responsive-item,
+iframe,
+embed,
+object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
   width: auto !important;
+  border: 0;
 }
 
 /* ==========================================================================
