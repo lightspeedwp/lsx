@@ -6983,10 +6983,6 @@ button.close {
 /* ==========================================================================
    Base
    ========================================================================== */
-#_BH_frame iframe {
-  width: auto !important;
-}
-
 body {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
@@ -7453,6 +7449,10 @@ figure.alignnone {
 .gallery-caption,
 .sticky {
   font-style: inherit;
+}
+
+iframe, #_BH_frame, iframe#_BH_frame {
+  width: auto !important;
 }
 
 /* ==========================================================================
