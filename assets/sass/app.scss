@@ -651,18 +651,11 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
   font-style: inherit;
 }
 
-.embed-responsive-item,
-iframe,
-embed,
-object {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  width: auto!important;
-  border: 0;
+ 
+#_BH_frame {
+  z-index: 2147483645;
 }
+
 
 /* ==========================================================================
    Media Queries
