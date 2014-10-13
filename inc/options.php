@@ -161,6 +161,11 @@ function optionsframework_options() {
 			'3c-l' => $imagepath.'3cl.png',
 			'3c-r' => $imagepath.'3cr.png')
 	);
+	$options['default_bg_image'] = array(
+			'name' => __('Default Banner', 'bs-tourism'),
+			'desc' => __('Banner image to display by default.', 'bs-tourism'),
+			'id'   => 'default_bg_image',
+			'type' => 'upload');
 
 	$options[] = array('name' => 'Typography',
 		'type'                   => 'heading');
@@ -500,6 +505,12 @@ function options_typography_styles() {
 		if (lsx_get_option('button_hover_color')) {
 			$output .= '.btn:hover , #respond #commentform .form-submit #submit:hover {background-color:'.lsx_get_option('button_hover_color').'}';
 		}
+		if (lsx_get_option('default_bg_image')) {
+			$output .= 'header.bs-image-header{background-image: url('.lsx_get_option('default_bg_image').');}';
+		}
+
+
+		
 		
 		
 		//Homepage

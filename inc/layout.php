@@ -56,24 +56,22 @@ if ( ! function_exists( 'lsx_page_banner' ) ) {
 
 		if (isset($backgrounds[0])) {
 			$banner_image = $backgrounds[0];
-		} else {
-			$banner_image = '';
 		}
 		
 		$show_on_front = get_option('show_on_front');
 		
 		if ( (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page())) 
 			&& lsx_get_option( 'enable_banner', false ) ) { ?>
-			<header class="bs-image-header" style="background-image: url(<?php echo $banner_image?>)">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title"><?php echo lsx_get_option( 'home_banner_heading' ); ?></h1>
-						<?php if(lsx_get_option( 'home_banner_tagline' )){ ?>
-							<h2 class="bs-image-header-desc"><?php echo lsx_get_option( 'home_banner_tagline' ); ?></h2>
-						<?php } ?>
-					</div>
+	<header class="bs-image-header" style="<?php if(!isset($banner_image)) {?>background-image: url(<?php echo $banner_image; ?>);<?php } ?>">
+		<div class="container">
+			<div class="banner-text">
+				<h1 class="bs-image-header-title"><?php echo lsx_get_option( 'home_banner_heading' ); ?></h1>
+					<?php if(lsx_get_option( 'home_banner_tagline' )){ ?>
+						<h2 class="bs-image-header-desc"><?php echo lsx_get_option( 'home_banner_tagline' ); ?></h2>
+					<?php } ?>
 				</div>
-			</header>
+			</div>
+	</header>
 		<?php } 
 	}
 };
