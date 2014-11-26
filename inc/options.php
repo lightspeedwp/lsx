@@ -599,7 +599,10 @@ function options_typography_enqueue_google_font($font) {
 	wp_enqueue_style("options_typography_$font", "//fonts.googleapis.com/css?family=$font", false, null, 'all');
 }
 
-function themeslug_get_options() {
+/*
+ * TODO: Remove the themeslug from the function name after the options have been changed to the customizer settings.
+ */
+function lsx_themeslug_get_options() {
 // Options API
 return wp_parse_args(
 		get_option( 'theme_themeslug_options', array() ),
