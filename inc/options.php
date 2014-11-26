@@ -598,3 +598,18 @@ function options_typography_enqueue_google_font($font) {
 	$font = str_replace(" ", "+", $font);
 	wp_enqueue_style("options_typography_$font", "//fonts.googleapis.com/css?family=$font", false, null, 'all');
 }
+
+function themeslug_get_options() {
+// Options API
+return wp_parse_args(
+		get_option( 'theme_themeslug_options', array() ),
+		themeslug_get_option_defaults()
+);
+// Theme Mods API:
+/*
+return wp_parse_args(
+		get_theme_mods(),
+		themeslug_get_option_defaults()
+);
+*/
+}
