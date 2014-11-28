@@ -44,15 +44,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 			        	<span class="icon-bar"></span>
 		      		</button>
 				     <a class="navbar-brand" href="<?php echo home_url(); ?>/">
-				     <?php 
-				     	if (lsx_get_option('site_logo')) {
-				     		?>
-				     		<img src="<?php echo lsx_get_option('site_logo'); ?>" alt="<?php echo get_bloginfo('name');?>">
-				     		<?php
-				     	} else {
-				     		echo get_bloginfo('name');
-				     	}
-				     ?>
+				     <?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
 				     </a>
 			    </div>
 			<?php lsx_nav_before(); ?>

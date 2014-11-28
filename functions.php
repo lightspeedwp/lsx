@@ -25,7 +25,16 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 
-
+add_action('after_setup_theme' , function() {
+	$args = array(
+    'header-text' => array(
+        'site-title',
+        'site-description',
+    ),
+    'size' => 'medium',
+);
+add_theme_support( 'site-logo', $args );
+});
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "form_submit_button", 10, 2);
 function form_submit_button($button, $form){
@@ -54,5 +63,6 @@ add_theme_support( 'custom-background', array(
 	'default-color' => 'FFF',
 	// Background image default
 ) );
+
 
 ?>
