@@ -24,7 +24,7 @@ require get_template_directory() . '/inc/comment-walker.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
-require get_template_directory() . '/inc/widgets/widget-blog.php';
+
 
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "form_submit_button", 10, 2);
