@@ -26,7 +26,6 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 	<link rel="shortcut icon" href="<?php echo esc_url( $favicon ); ?>"/>
 <?php } ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet"> <!-- @TODO take this out -->
 <?php wp_head(); ?>
 <?php lsx_head_bottom(); ?>
 </head>
