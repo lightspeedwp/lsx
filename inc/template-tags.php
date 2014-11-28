@@ -88,9 +88,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 function lsx_post_meta() {
 	if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; }
 
-	$post_info = '<span class="small">' . __( 'By', 'lsx' ) . '</span> [post_author_posts_link] <span class="small">' . _x( 'on', 'post datetime', 'lsx' ) . '</span> [post_date] <span class="small">' . __( 'in', 'lsx' ) . '</span> [post_categories before=""] ';
-
-	$post_info = do_shortcode( $post_info );
+	$post_info = '<span class="small">' . __( 'By', 'lsx' ) . '</span> ' . the_author() . ' <span class="small">' . _x( 'on', 'post datetime', 'lsx' ) . '</span> ' . the_date() . ' <span class="small">' . __( 'in', 'lsx' ) . '</span> ' . the_category(', ');
 	
 	printf( '<div class="post-meta">%s</div>' . "\n", $post_info );
 
