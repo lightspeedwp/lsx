@@ -45,6 +45,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 		      		</button>
 				     <a class="navbar-brand" href="<?php echo home_url(); ?>/">
 				     <?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
+				     <?php if ( function_exists( 'jetpack_the_site_title' ) ) jetpack_the_site_title(); ?>
 				     </a>
 			    </div>
 			<?php lsx_nav_before(); ?>
