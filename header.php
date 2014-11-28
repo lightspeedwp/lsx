@@ -67,4 +67,3 @@ global $lsx_options;
 <?php lsx_header_after(); ?>
     <div class="wrap container" role="document">
 	<div class="content role row">
-	this is a test
