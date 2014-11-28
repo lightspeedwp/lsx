@@ -44,8 +44,11 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 			        	<span class="icon-bar"></span>
 		      		</button>
 				     <a class="navbar-brand" href="<?php echo home_url(); ?>/">
-				     <?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
-				     <?php if ( function_exists( 'jetpack_the_site_title' ) ) jetpack_the_site_title(); ?>
+				          <?php if ( function_exists( 'jetpack_the_site_logo' ) ) {
+				          		jetpack_the_site_logo();
+				          	} else {
+				          		echo get_bloginfo('name');
+				          	} ?>
 				     </a>
 			    </div>
 			<?php lsx_nav_before(); ?>
@@ -63,3 +66,4 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 <?php lsx_header_after(); ?>
     <div class="wrap container" role="document">
 	<div class="content role row">
+	<?php if (get_bloginfo('description')) {echo get_bloginfo('name');}?>
