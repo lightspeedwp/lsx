@@ -26,7 +26,7 @@ function lsx_scripts() {
 	wp_enqueue_script('modernizr');
     wp_enqueue_script('jquery');
 	wp_enqueue_script('lsx_scripts');
-	wp_enqueue_style( 'font-awesome', get_stylesheet_uri() . '/assets/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.min.css' );
 	if(is_child_theme()) {
 	wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css' );
 
