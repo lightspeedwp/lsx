@@ -16,7 +16,10 @@ global $lsx_options;
 <?php if ( lsx_get_option('static_layout') != 1 ) : ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php endif; ?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php
+if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php if( lsx_get_option('favicon') ){ 
 	$favicon = lsx_get_option('favicon'); ?>
