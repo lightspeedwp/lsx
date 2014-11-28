@@ -43,14 +43,17 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 			        	<span class="icon-bar"></span>
 			        	<span class="icon-bar"></span>
 		      		</button>
-				     <a class="navbar-brand" href="<?php echo home_url(); ?>/">
-				          <?php if ( function_exists( 'jetpack_the_site_logo' ) ) {
-				          	jetpack_the_site_logo();
-				          	} else {
-				 	echo '<h1>' . get_bloginfo('name') . '</h1>';
-					echo '<p>' . get_bloginfo('description') . '</p>';
-				          		} ?>
-				     </a>
+<?php
+		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+			jetpack_the_site_logo();
+		} else {
+		?>
+			<div class="site-branding">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			</div>
+		<?php }
+?>
 			    </div>
 
 			<?php lsx_nav_before(); ?>
