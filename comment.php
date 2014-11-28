@@ -1,7 +1,6 @@
 <?php 
 if(isset($GLOBALS['comment_depth'])){
 	$depth = $GLOBALS['comment_depth'];
-	print_r('global set');
 }else{
 	$depth = 3;
 }
