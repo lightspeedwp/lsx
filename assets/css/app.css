@@ -8577,37 +8577,30 @@ header.banner {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 30px 0;
   border: none;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
-/* line 282, ../sass/app.scss */
+/* line 280, ../sass/app.scss */
 .logged-in header.banner {
   top: 32px;
 }
-/* line 288, ../sass/app.scss */
+/* line 286, ../sass/app.scss */
 header.banner .navbar-header .site-logo-link img {
-  max-height: 50px;
+  width: auto;
+  max-height: 70px;
+  margin: 30px 0;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 295, ../sass/app.scss */
-header.banner.scrolled {
-  padding: 15px 0;
-}
-/* line 300, ../sass/app.scss */
+/* line 298, ../sass/app.scss */
 header.banner.scrolled .navbar-header .site-logo-link img {
-  max-width: 200px;
+  max-height: 50px;
+  margin: 5px 0;
 }
 
-/* line 310, ../sass/app.scss */
+/* line 309, ../sass/app.scss */
 header.bs-image-header {
   padding: 90px 0;
   text-align: center;
@@ -8621,25 +8614,25 @@ header.bs-image-header {
   box-shadow: inset 0 0 50px rgba(40, 94, 142, 0.15);
 }
 @media screen and (max-width: 992px) {
-  /* line 310, ../sass/app.scss */
+  /* line 309, ../sass/app.scss */
   header.bs-image-header {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 310, ../sass/app.scss */
+  /* line 309, ../sass/app.scss */
   header.bs-image-header {
     padding: 50px 0;
   }
 }
 @media screen and (max-width: 450px) {
-  /* line 310, ../sass/app.scss */
+  /* line 309, ../sass/app.scss */
   header.bs-image-header {
     padding: 35px 0;
   }
 }
-/* line 338, ../sass/app.scss */
+/* line 337, ../sass/app.scss */
 header.bs-image-header h1 {
   margin: 0;
   letter-spacing: 2px;
@@ -8648,18 +8641,18 @@ header.bs-image-header h1 {
   text-shadow: 0 0px 15px rgba(40, 94, 142, 0.2);
 }
 @media screen and (max-width: 600px) {
-  /* line 338, ../sass/app.scss */
+  /* line 337, ../sass/app.scss */
   header.bs-image-header h1 {
     font-size: 0.8em;
   }
 }
 @media screen and (max-width: 450px) {
-  /* line 338, ../sass/app.scss */
+  /* line 337, ../sass/app.scss */
   header.bs-image-header h1 {
     font-size: 0.6em;
   }
 }
-/* line 355, ../sass/app.scss */
+/* line 354, ../sass/app.scss */
 header.bs-image-header h2 {
   max-width: 90%;
   line-height: 1.5;
@@ -8670,14 +8663,14 @@ header.bs-image-header h2 {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 600px) {
-  /* line 355, ../sass/app.scss */
+  /* line 354, ../sass/app.scss */
   header.bs-image-header h2 {
     font-size: 0.8em;
     margin: 10px auto 0 !important;
   }
 }
 @media screen and (max-width: 450px) {
-  /* line 355, ../sass/app.scss */
+  /* line 354, ../sass/app.scss */
   header.bs-image-header h2 {
     font-size: 0.6em;
     margin: 5px auto 0 !important;
@@ -8687,14 +8680,19 @@ header.bs-image-header h2 {
 /* ==========================================================================
    Navigation
    ========================================================================== */
-/* line 384, ../sass/app.scss */
+/* line 383, ../sass/app.scss */
 header.banner nav {
   float: right;
-  margin: 10px 0;
+  margin: 40px 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 /* line 389, ../sass/app.scss */
 header.banner.scrolled nav {
-  margin: 0;
+  margin: 3px 0px;
 }
 
 /* line 394, ../sass/app.scss */

@@ -275,9 +275,7 @@ header.banner {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 30px 0;
   border: none;
-  @include transition(all .3s ease-in-out);
 
   .logged-in & {
     top: 32px;
@@ -286,19 +284,20 @@ header.banner {
   .navbar-header {
     .site-logo-link {
       img {
-        max-height: 50px;
+        width: auto;
+        max-height: 70px;
+        margin: 30px 0;
         @include transition(all .3s ease-in-out);
       }
     }
   }
 
   &.scrolled {
-    padding: 15px 0;
-
     .navbar-header {
       .site-logo-link {
         img {
-          max-width: 200px;
+          max-height: 50px;
+          margin: 5px 0;
         }
       }
     }
@@ -383,11 +382,12 @@ header.bs-image-header {
 nav {
   header.banner & {
     float: right;
-    margin: 10px 0;
+    margin: 40px 0;
+    @include transition(all .3s ease-in-out);
   }
 
   header.banner.scrolled & {
-    margin: 0;
+    margin: 3px 0px;
   }
 }
 
