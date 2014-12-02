@@ -433,12 +433,31 @@ nav {
 					}
 				}
 
-				&.active,
-				&:hover {
+				ul.dropdwn-menu {
+					background: $off-white;
+					box-shadow: none;
+					border: none;
+
+					li {
+						a {
+							background: none;
+							background-color: inherit;
+
+							&:hover {
+								background: $light-grey; 
+							}
+						}
+					}
+				}
+
+				&.active {
 					a {
-						background: $off-white;
 						color: $black;
 					}
+				}
+
+				&:hover {
+					background: $off-white;
 				}
 			}
 		}
