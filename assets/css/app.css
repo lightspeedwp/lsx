@@ -8333,7 +8333,6 @@ button.close {
    ========================================================================== */
 /* line 13, ../sass/app.scss */
 body {
-  position: relative;
   margin: 0;
   padding: 0;
   font-size: 17px;
@@ -8344,7 +8343,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 29, ../sass/app.scss */
+/* line 28, ../sass/app.scss */
 .size-auto,
 .size-full,
 .size-large,
@@ -8354,91 +8353,91 @@ body {
   height: auto;
 }
 
-/* line 37, ../sass/app.scss */
+/* line 36, ../sass/app.scss */
 iframe,
 img,
 .thumbnail {
   max-width: 100%;
 }
 
-/* line 41, ../sass/app.scss */
+/* line 40, ../sass/app.scss */
 iframe {
   width: 100%!important;
 }
 
-/* line 46, ../sass/app.scss */
+/* line 45, ../sass/app.scss */
 img,
 .thumbnail {
   height: auto;
 }
-/* line 49, ../sass/app.scss */
+/* line 48, ../sass/app.scss */
 img .caption,
 .thumbnail .caption {
   padding: 12px 10px 7px;
 }
-/* line 54, ../sass/app.scss */
+/* line 53, ../sass/app.scss */
 img.alignright, img.pull-right,
 .thumbnail.alignright,
 .thumbnail.pull-right {
   margin: 0 0 15px 20px;
 }
-/* line 59, ../sass/app.scss */
+/* line 58, ../sass/app.scss */
 img.alignleft, img.pull-left,
 .thumbnail.alignleft,
 .thumbnail.pull-left {
   margin: 0 20px 15px 0;
 }
-/* line 63, ../sass/app.scss */
+/* line 62, ../sass/app.scss */
 img.aligncenter,
 .thumbnail.aligncenter {
   margin: 0 auto 15px;
 }
 
-/* line 69, ../sass/app.scss */
+/* line 68, ../sass/app.scss */
 .thumbnail .caption {
   padding: 12px 10px 7px;
 }
 
-/* line 76, ../sass/app.scss */
+/* line 75, ../sass/app.scss */
 #searchform .input-group input.search-field {
   height: 33px;
 }
-/* line 81, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 #searchform .input-group span.input-group-btn button.search-submit {
   color: #fff;
   background-color: #428bca;
   border-color: #357ebd;
 }
-/* line 86, ../sass/app.scss */
+/* line 85, ../sass/app.scss */
 #searchform .input-group span.input-group-btn button.search-submit:hover {
   background-color: #3276b1;
   border-color: #285e8e;
 }
 
-/* line 96, ../sass/app.scss */
+/* line 95, ../sass/app.scss */
 .pagination span.current {
   background: #428bca !important;
   color: #fff !important;
 }
 
-/* line 103, ../sass/app.scss */
+/* line 102, ../sass/app.scss */
 .pager .previous {
   text-align: left;
 }
-/* line 106, ../sass/app.scss */
+/* line 105, ../sass/app.scss */
 .pager .previous span {
   margin-right: 5px;
 }
-/* line 110, ../sass/app.scss */
+/* line 109, ../sass/app.scss */
 .pager .next {
   text-align: right;
 }
-/* line 113, ../sass/app.scss */
+/* line 112, ../sass/app.scss */
 .pager .next span {
   margin-left: 5px;
 }
 
-/* line 120, ../sass/app.scss */
+/* line 119, ../sass/app.scss */
 dl dt {
   margin-top: 15px;
   margin-bottom: 6px;
@@ -8446,7 +8445,7 @@ dl dt {
   border-bottom: 1px solid #ddd;
 }
 
-/* line 128, ../sass/app.scss */
+/* line 127, ../sass/app.scss */
 table {
   width: 100%;
   max-width: 100%;
@@ -8456,15 +8455,15 @@ table {
   border-spacing: 0;
   border: 1px solid #ddd;
 }
-/* line 139, ../sass/app.scss */
+/* line 138, ../sass/app.scss */
 table > thead tr th {
   border-bottom-width: 2px;
 }
-/* line 148, ../sass/app.scss */
+/* line 147, ../sass/app.scss */
 table tbody tr:nth-child(odd) td {
   background-color: #f9f9f9;
 }
-/* line 156, ../sass/app.scss */
+/* line 155, ../sass/app.scss */
 table td,
 table th {
   border: 1px solid #ddd;
@@ -8474,17 +8473,17 @@ table th {
   border-top: 1px solid #ddd;
 }
 
-/* line 166, ../sass/app.scss */
+/* line 165, ../sass/app.scss */
 ul.breadcrumb li > span {
   color: #ccc;
 }
-/* line 169, ../sass/app.scss */
+/* line 168, ../sass/app.scss */
 ul.breadcrumb li > span > span {
   padding: 0 3px;
   color: #999;
 }
 
-/* line 177, ../sass/app.scss */
+/* line 176, ../sass/app.scss */
 nav.page-nav p {
   display: inline-block;
   padding: 5px 14px;
@@ -8492,40 +8491,40 @@ nav.page-nav p {
   border: 1px solid #ddd;
   border-radius: 15px;
 }
-/* line 184, ../sass/app.scss */
+/* line 183, ../sass/app.scss */
 nav.page-nav p a {
   font-weight: bold;
 }
 
-/* line 191, ../sass/app.scss */
+/* line 190, ../sass/app.scss */
 #comments h3 {
   margin-bottom: 20px;
 }
-/* line 196, ../sass/app.scss */
+/* line 195, ../sass/app.scss */
 #comments ol.media-list li.comment {
   border-top: 1px solid #eee;
   padding: 20px 5px;
 }
-/* line 200, ../sass/app.scss */
+/* line 199, ../sass/app.scss */
 #comments ol.media-list li.comment.odd {
   background: #fafafa;
 }
-/* line 204, ../sass/app.scss */
+/* line 203, ../sass/app.scss */
 #comments ol.media-list .pingback {
   margin-bottom: 20px;
 }
-/* line 207, ../sass/app.scss */
+/* line 206, ../sass/app.scss */
 #comments ol.media-list .pingback h4.media-heading {
   font-size: 20px;
 }
-/* line 211, ../sass/app.scss */
+/* line 210, ../sass/app.scss */
 #comments ol.media-list .pingback time {
   font-size: 13px;
   margin-bottom: 10px;
   display: inline-block;
 }
 
-/* line 221, ../sass/app.scss */
+/* line 220, ../sass/app.scss */
 #respond #submit {
   display: inline-block;
   margin-bottom: 0;
@@ -8546,17 +8545,17 @@ nav.page-nav p a {
   user-select: none;
   color: white;
 }
-/* line 237, ../sass/app.scss */
+/* line 236, ../sass/app.scss */
 #respond #submit:hover, #respond #submit:focus {
   color: #333333;
   text-decoration: none;
 }
-/* line 244, ../sass/app.scss */
+/* line 243, ../sass/app.scss */
 #respond p.form-allowed-tags {
   display: none;
 }
 
-/* line 249, ../sass/app.scss */
+/* line 248, ../sass/app.scss */
 ul {
   padding-left: 20px;
 }
@@ -8564,27 +8563,28 @@ ul {
 /* ==========================================================================
    Header
    ========================================================================== */
-/* line 258, ../sass/app.scss */
-.banner {
-  position: absolute;
+/* line 257, ../sass/app.scss */
+header.banner {
+  position: fixed;
   width: 100%;
   top: 0;
   padding: 30px 0;
+  border: none;
 }
 /* line 264, ../sass/app.scss */
-.logged-in .banner {
-  top: 16px;
+.logged-in header.banner {
+  top: 32px;
 }
 /* line 270, ../sass/app.scss */
-.banner .navbar-header .site-logo-link img {
+header.banner .navbar-header .site-logo-link img {
   max-width: 300px;
 }
 /* line 276, ../sass/app.scss */
-.banner.scrolled {
+header.banner.scrolled {
   padding: 15px 0;
 }
 /* line 281, ../sass/app.scss */
-.banner.scrolled .navbar-header .site-logo-link img {
+header.banner.scrolled .navbar-header .site-logo-link img {
   max-width: 200px;
 }
 
@@ -8593,7 +8593,7 @@ header.bs-image-header {
   padding: 90px 0;
   text-align: center;
   background-size: 100%;
-  margin-top: 115px;
+  margin-top: 131px;
   -webkit-background-size: 100%;
   -o-background-size: 100%;
   background-repeat: no-repeat;

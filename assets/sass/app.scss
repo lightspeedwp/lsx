@@ -11,7 +11,6 @@
    ========================================================================== */
 
 body {
-  position: relative;
   margin: 0;
   padding: 0;
   font-size: 17px;
@@ -255,14 +254,15 @@ ul {
    Header
    ========================================================================== */
 
-.banner {
-  position: absolute;
+header.banner {
+  position: fixed;
   width: 100%;
   top: 0;
   padding: 30px 0;
+  border: none;
 
   .logged-in & {
-    top: 16px;
+    top: 32px;
   }
 
   .navbar-header {
@@ -292,7 +292,7 @@ header.bs-image-header {
   padding: 90px 0;
   text-align: center;
   background-size: 100%;
-  margin-top: 115px;
+  margin-top: 131px;
   -webkit-background-size: 100%;
   -o-background-size: 100%;
   
