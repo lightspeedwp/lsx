@@ -256,13 +256,13 @@ ul {
    ========================================================================== */
 
 .banner {
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   padding: 30px 0;
 
   .logged-in & {
-    top: 32px;
+    top: 16px;
   }
 
   .navbar-header {
@@ -292,7 +292,7 @@ header.bs-image-header {
   padding: 90px 0;
   text-align: center;
   background-size: 100%;
-  margin-top: -20px;
+  margin-top: 115px;
   -webkit-background-size: 100%;
   -o-background-size: 100%;
   

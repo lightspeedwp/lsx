@@ -8566,14 +8566,14 @@ ul {
    ========================================================================== */
 /* line 258, ../sass/app.scss */
 .banner {
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   padding: 30px 0;
 }
 /* line 264, ../sass/app.scss */
 .logged-in .banner {
-  top: 32px;
+  top: 16px;
 }
 /* line 270, ../sass/app.scss */
 .banner .navbar-header .site-logo-link img {
@@ -8593,7 +8593,7 @@ header.bs-image-header {
   padding: 90px 0;
   text-align: center;
   background-size: 100%;
-  margin-top: -20px;
+  margin-top: 115px;
   -webkit-background-size: 100%;
   -o-background-size: 100%;
   background-repeat: no-repeat;
