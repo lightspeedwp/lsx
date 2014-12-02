@@ -40,7 +40,7 @@
 
 		    		<?php lsx_footer_top(); ?>
 
-		      		<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
+		      		<p class="credit">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
 
 		      		<?php lsx_footer_bottom(); ?>
 		    	</div>
