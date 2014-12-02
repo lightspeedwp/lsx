@@ -22,6 +22,14 @@ $grey: #777;
 	transition: $value;
 }
 
+@mixin border-radius($value) {
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	-ms-border-radius: $value;
+	-o-border-radius: $value;
+	border-radius: $value;
+}
+
 
  
 /* ==========================================================================
@@ -412,6 +420,7 @@ nav {
 					background-color: none;
 					font-size: 18px;
 					padding: 15px 24px;
+					@include border-radius(3px);
 
 					.caret {
 						margin-left: 6px;
@@ -625,6 +634,8 @@ article {
 	 ========================================================================== */
 
 #footer-widgets {
+	background: $black;
+
 	.widget {
 		margin: 60px 0;
 		color: #999;
@@ -644,7 +655,9 @@ footer.content-info {
 	text-align: center;
 
 	.credit {
+		color: #fff;
 		font-weight: 600;
+		padding: 20px 0;
 	}
 }
 
@@ -661,6 +674,7 @@ footer.content-info {
 			display: inline-block;
 			margin-right: 25px; 
 		}
+
 		i {
 			font-size: 18px;
 		}
