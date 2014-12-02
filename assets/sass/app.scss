@@ -63,6 +63,10 @@ body {
 	height: auto;
 }
 
+a {
+	text-decoration: none !important;
+}
+
 h1,
 h2,
 h3,
@@ -434,7 +438,7 @@ nav {
 					font-size: 18px;
 					padding: 15px 24px;
 					transition: none;
-					@include border-radius(3px);
+					@include border-radius(4px);
 
 					.caret {
 						margin-left: 6px;
