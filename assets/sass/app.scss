@@ -258,8 +258,12 @@ ul {
 .banner {
   position: fixed;
   width: 100%;
-  top: 32px;
+  top: 0;
   padding: 30px 0;
+
+  .logged-in & {
+    top: 32px;
+  }
 
   .navbar-header {
     .site-logo-link {
