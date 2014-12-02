@@ -6,6 +6,12 @@
 @import "lsx/lsx.scss";
 
 
+// ========== Variables ========== //
+
+$black: #333;
+$grey: #777;
+
+
 // ========== Mixins ========== //
 
 @mixin transition($value) {
@@ -23,10 +29,11 @@
    ========================================================================== */
 
 body {
+  color: $grey;
   margin: 0;
   padding: 0;
   font-size: 17px;
-  line-height: 160%;
+  line-height: 180%;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   -webkit-text-size-adjust: 100%;
@@ -384,6 +391,14 @@ nav {
     float: right;
     margin: 40px 0;
     @include transition(all .3s ease-in-out);
+
+    .nav.navbar-nav {
+      li {
+        a {
+          font-size: 18px;
+        }
+      }
+    }
   }
 
   header.banner.scrolled & {
