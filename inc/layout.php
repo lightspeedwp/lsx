@@ -30,7 +30,10 @@ if ( ! function_exists( 'lsx_soliloquy_slider' ) && function_exists('soliloquy')
 	add_action( 'lsx_header_after', 'lsx_soliloquy_slider' );
 	function lsx_soliloquy_slider() {
 
-		$slider = absint( get_theme_mod( 'soliloquy_slider', 0 ) );
+		$slider = get_theme_mod( 'lsx_soliliquy_slider', 0 );
+		
+		die(print_r($slider));
+		
 		if(0 != $slider){
 		 ?>
 			<header class="soliloquy-slider">

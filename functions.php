@@ -9,9 +9,9 @@
 require get_template_directory() . '/inc/config.php';
 
 
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/options-framework/' );
-require_once dirname( __FILE__ ) . '/inc/options-framework/options-framework.php';
-require_once dirname( __FILE__ ) . '/inc/options.php';
+//define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/options-framework/' );
+//require_once dirname( __FILE__ ) . '/inc/options-framework/options-framework.php';
+require_once dirname( __FILE__ ) . '/inc/customizer.php';
 
 
 require get_template_directory() . '/inc/layout.php';
