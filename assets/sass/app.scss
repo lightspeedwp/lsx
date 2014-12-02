@@ -8,8 +8,14 @@
 
 // ========== Variables ========== //
 
+$blacker: #232222;
 $black: #333;
-$grey: #777;
+$dark-grey: #555;
+$mid-grey: #777;
+$grey: #999;
+$light-grey: #eee;
+$off-white: #fafafa;
+$white: #fff;
 
 
 // ========== Mixins ========== //
@@ -37,7 +43,7 @@ $grey: #777;
 	 ========================================================================== */
 
 body {
-	color: $grey;
+	color: $mid-grey;
 	margin: 0;
 	padding: 0;
 	font-size: 17px;
@@ -84,7 +90,7 @@ img,
 }
 
 iframe {
-	width:100%!important;
+	width: 100%;
 }
 
 img,
@@ -124,7 +130,7 @@ img,
  
 		span.input-group-btn {
 			button.search-submit {
-				color: #fff;
+				color: $white;
 				background-color: #428bca;
 				border-color: #357ebd;
 
@@ -140,7 +146,7 @@ img,
 .pagination {
 	span.current {
 		background: #428bca !important;
-		color: #fff !important;
+		color: $white !important;
 	}
 }
 
@@ -222,7 +228,7 @@ nav.page-nav {
 	p {
 		display: inline-block;
 		padding: 5px 14px;
-		background-color: #fff;
+		background-color: $white;
 		border: 1px solid #ddd;
 		border-radius: 15px;
 
@@ -476,7 +482,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 		}
 
 		h3 {
-			color: #333;
+			color: $black;
 		}
 
 		&.gform_widget {
@@ -502,7 +508,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 			.tagcloud a {
 				display: inline-block;
 				background: #428bca;
-				color: #fff;
+				color: $white;
 				font-size: 12px !important;
 				padding: 4px 10px;
 				margin: 2px 0px;
@@ -637,27 +643,26 @@ article {
 	background: $black;
 
 	.widget {
-		margin: 60px 0;
-		color: #999;
+		margin: 70px 0;
+		color: $grey;
 
 		h3.widget-title {
-			color: #eee;
+			color: #999;
 		}
 
 		a {
-			color: #fff;
+			color: $white;
 		}
 	}
 }
 
 footer.content-info {
-	background: #232222;
+	background: $blacker;
 	text-align: center;
 
 	.credit {
-		color: #fff;
-		font-weight: 600;
-		padding: 20px 0;
+		color: $white;
+		margin: 20px 0;
 	}
 }
 
@@ -759,7 +764,7 @@ select {
 		font-size: 14px;
 		line-height: 1.42857143;
 		color: #555;
-		background-color: #fff;
+		background-color: $white;
 		background-image: none;
 		border: 1px solid #ccc;
 		border-radius: 4px;

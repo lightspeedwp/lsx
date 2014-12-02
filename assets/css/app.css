@@ -8331,7 +8331,7 @@ button.close {
 /* ==========================================================================
 	 Base
 	 ========================================================================== */
-/* line 39, ../sass/app.scss */
+/* line 45, ../sass/app.scss */
 body {
   color: #777777;
   margin: 0;
@@ -8344,7 +8344,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 55, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 .size-auto,
 .size-full,
 .size-large,
@@ -8354,7 +8354,7 @@ body {
   height: auto;
 }
 
-/* line 61, ../sass/app.scss */
+/* line 67, ../sass/app.scss */
 a:hover {
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -8363,7 +8363,7 @@ a:hover {
   transition: all 0.1s ease-in-out;
 }
 
-/* line 68, ../sass/app.scss */
+/* line 74, ../sass/app.scss */
 h1,
 h2,
 h3 {
@@ -8371,7 +8371,7 @@ h3 {
   margin-bottom: 15px;
 }
 
-/* line 75, ../sass/app.scss */
+/* line 81, ../sass/app.scss */
 h4,
 h5,
 h6 {
@@ -8379,91 +8379,91 @@ h6 {
   margin-bottom: 25px;
 }
 
-/* line 82, ../sass/app.scss */
+/* line 88, ../sass/app.scss */
 iframe,
 img,
 .thumbnail {
   max-width: 100%;
 }
 
-/* line 86, ../sass/app.scss */
+/* line 92, ../sass/app.scss */
 iframe {
-  width: 100%!important;
+  width: 100%;
 }
 
-/* line 91, ../sass/app.scss */
+/* line 97, ../sass/app.scss */
 img,
 .thumbnail {
   height: auto;
 }
-/* line 94, ../sass/app.scss */
+/* line 100, ../sass/app.scss */
 img .caption,
 .thumbnail .caption {
   padding: 12px 10px 7px;
 }
-/* line 99, ../sass/app.scss */
+/* line 105, ../sass/app.scss */
 img.alignright, img.pull-right,
 .thumbnail.alignright,
 .thumbnail.pull-right {
   margin: 0 0 15px 20px;
 }
-/* line 104, ../sass/app.scss */
+/* line 110, ../sass/app.scss */
 img.alignleft, img.pull-left,
 .thumbnail.alignleft,
 .thumbnail.pull-left {
   margin: 0 20px 15px 0;
 }
-/* line 108, ../sass/app.scss */
+/* line 114, ../sass/app.scss */
 img.aligncenter,
 .thumbnail.aligncenter {
   margin: 0 auto 15px;
 }
 
-/* line 114, ../sass/app.scss */
+/* line 120, ../sass/app.scss */
 .thumbnail .caption {
   padding: 12px 10px 7px;
 }
 
-/* line 121, ../sass/app.scss */
+/* line 127, ../sass/app.scss */
 #searchform .input-group input.search-field {
   height: 33px;
 }
-/* line 126, ../sass/app.scss */
+/* line 132, ../sass/app.scss */
 #searchform .input-group span.input-group-btn button.search-submit {
-  color: #fff;
+  color: white;
   background-color: #428bca;
   border-color: #357ebd;
 }
-/* line 131, ../sass/app.scss */
+/* line 137, ../sass/app.scss */
 #searchform .input-group span.input-group-btn button.search-submit:hover {
   background-color: #3276b1;
   border-color: #285e8e;
 }
 
-/* line 141, ../sass/app.scss */
+/* line 147, ../sass/app.scss */
 .pagination span.current {
   background: #428bca !important;
-  color: #fff !important;
+  color: white !important;
 }
 
-/* line 148, ../sass/app.scss */
+/* line 154, ../sass/app.scss */
 .pager .previous {
   text-align: left;
 }
-/* line 151, ../sass/app.scss */
+/* line 157, ../sass/app.scss */
 .pager .previous span {
   margin-right: 5px;
 }
-/* line 155, ../sass/app.scss */
+/* line 161, ../sass/app.scss */
 .pager .next {
   text-align: right;
 }
-/* line 158, ../sass/app.scss */
+/* line 164, ../sass/app.scss */
 .pager .next span {
   margin-left: 5px;
 }
 
-/* line 165, ../sass/app.scss */
+/* line 171, ../sass/app.scss */
 dl dt {
   margin-top: 15px;
   margin-bottom: 6px;
@@ -8471,7 +8471,7 @@ dl dt {
   border-bottom: 1px solid #ddd;
 }
 
-/* line 173, ../sass/app.scss */
+/* line 179, ../sass/app.scss */
 table {
   width: 100%;
   max-width: 100%;
@@ -8481,15 +8481,15 @@ table {
   border-spacing: 0;
   border: 1px solid #ddd;
 }
-/* line 184, ../sass/app.scss */
+/* line 190, ../sass/app.scss */
 table > thead tr th {
   border-bottom-width: 2px;
 }
-/* line 193, ../sass/app.scss */
+/* line 199, ../sass/app.scss */
 table tbody tr:nth-child(odd) td {
   background-color: #f9f9f9;
 }
-/* line 201, ../sass/app.scss */
+/* line 207, ../sass/app.scss */
 table td,
 table th {
   border: 1px solid #ddd;
@@ -8499,58 +8499,58 @@ table th {
   border-top: 1px solid #ddd;
 }
 
-/* line 211, ../sass/app.scss */
+/* line 217, ../sass/app.scss */
 ul.breadcrumb li > span {
   color: #ccc;
 }
-/* line 214, ../sass/app.scss */
+/* line 220, ../sass/app.scss */
 ul.breadcrumb li > span > span {
   padding: 0 3px;
   color: #999;
 }
 
-/* line 222, ../sass/app.scss */
+/* line 228, ../sass/app.scss */
 nav.page-nav p {
   display: inline-block;
   padding: 5px 14px;
-  background-color: #fff;
+  background-color: white;
   border: 1px solid #ddd;
   border-radius: 15px;
 }
-/* line 229, ../sass/app.scss */
+/* line 235, ../sass/app.scss */
 nav.page-nav p a {
   font-weight: bold;
 }
 
-/* line 236, ../sass/app.scss */
+/* line 242, ../sass/app.scss */
 #comments h3 {
   margin-bottom: 20px;
 }
-/* line 241, ../sass/app.scss */
+/* line 247, ../sass/app.scss */
 #comments ol.media-list li.comment {
   border-top: 1px solid #eee;
   padding: 20px 5px;
 }
-/* line 245, ../sass/app.scss */
+/* line 251, ../sass/app.scss */
 #comments ol.media-list li.comment.odd {
   background: #fafafa;
 }
-/* line 249, ../sass/app.scss */
+/* line 255, ../sass/app.scss */
 #comments ol.media-list .pingback {
   margin-bottom: 20px;
 }
-/* line 252, ../sass/app.scss */
+/* line 258, ../sass/app.scss */
 #comments ol.media-list .pingback h4.media-heading {
   font-size: 20px;
 }
-/* line 256, ../sass/app.scss */
+/* line 262, ../sass/app.scss */
 #comments ol.media-list .pingback time {
   font-size: 13px;
   margin-bottom: 10px;
   display: inline-block;
 }
 
-/* line 266, ../sass/app.scss */
+/* line 272, ../sass/app.scss */
 #respond #submit {
   display: inline-block;
   margin-bottom: 0;
@@ -8571,17 +8571,17 @@ nav.page-nav p a {
   user-select: none;
   color: white;
 }
-/* line 282, ../sass/app.scss */
+/* line 288, ../sass/app.scss */
 #respond #submit:hover, #respond #submit:focus {
   color: #333333;
   text-decoration: none;
 }
-/* line 289, ../sass/app.scss */
+/* line 295, ../sass/app.scss */
 #respond p.form-allowed-tags {
   display: none;
 }
 
-/* line 294, ../sass/app.scss */
+/* line 300, ../sass/app.scss */
 ul {
   padding-left: 20px;
 }
@@ -8589,18 +8589,18 @@ ul {
 /* ==========================================================================
 	 Header
 	 ========================================================================== */
-/* line 303, ../sass/app.scss */
+/* line 309, ../sass/app.scss */
 header.banner {
   position: fixed;
   width: 100%;
   top: 0;
   border: none;
 }
-/* line 309, ../sass/app.scss */
+/* line 315, ../sass/app.scss */
 .logged-in header.banner {
   top: 32px;
 }
-/* line 315, ../sass/app.scss */
+/* line 321, ../sass/app.scss */
 header.banner .navbar-header .site-logo-link img {
   width: auto;
   max-height: 70px;
@@ -8611,13 +8611,13 @@ header.banner .navbar-header .site-logo-link img {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 327, ../sass/app.scss */
+/* line 333, ../sass/app.scss */
 header.banner.scrolled .navbar-header .site-logo-link img {
   max-height: 50px;
   margin: 15px 0;
 }
 
-/* line 338, ../sass/app.scss */
+/* line 344, ../sass/app.scss */
 header.bs-image-header {
   padding: 90px 0;
   text-align: center;
@@ -8631,25 +8631,25 @@ header.bs-image-header {
   box-shadow: inset 0 0 50px rgba(40, 94, 142, 0.15);
 }
 @media screen and (max-width: 992px) {
-  /* line 338, ../sass/app.scss */
+  /* line 344, ../sass/app.scss */
   header.bs-image-header {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 @media screen and (max-width: 600px) {
-  /* line 338, ../sass/app.scss */
+  /* line 344, ../sass/app.scss */
   header.bs-image-header {
     padding: 50px 0;
   }
 }
 @media screen and (max-width: 450px) {
-  /* line 338, ../sass/app.scss */
+  /* line 344, ../sass/app.scss */
   header.bs-image-header {
     padding: 35px 0;
   }
 }
-/* line 366, ../sass/app.scss */
+/* line 372, ../sass/app.scss */
 header.bs-image-header h1 {
   margin: 0;
   letter-spacing: 2px;
@@ -8658,18 +8658,18 @@ header.bs-image-header h1 {
   text-shadow: 0 0px 15px rgba(40, 94, 142, 0.2);
 }
 @media screen and (max-width: 600px) {
-  /* line 366, ../sass/app.scss */
+  /* line 372, ../sass/app.scss */
   header.bs-image-header h1 {
     font-size: 0.8em;
   }
 }
 @media screen and (max-width: 450px) {
-  /* line 366, ../sass/app.scss */
+  /* line 372, ../sass/app.scss */
   header.bs-image-header h1 {
     font-size: 0.6em;
   }
 }
-/* line 383, ../sass/app.scss */
+/* line 389, ../sass/app.scss */
 header.bs-image-header h2 {
   max-width: 90%;
   line-height: 1.5;
@@ -8680,14 +8680,14 @@ header.bs-image-header h2 {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 600px) {
-  /* line 383, ../sass/app.scss */
+  /* line 389, ../sass/app.scss */
   header.bs-image-header h2 {
     font-size: 0.8em;
     margin: 10px auto 0 !important;
   }
 }
 @media screen and (max-width: 450px) {
-  /* line 383, ../sass/app.scss */
+  /* line 389, ../sass/app.scss */
   header.bs-image-header h2 {
     font-size: 0.6em;
     margin: 5px auto 0 !important;
@@ -8697,7 +8697,7 @@ header.bs-image-header h2 {
 /* ==========================================================================
 	 Navigation
 	 ========================================================================== */
-/* line 412, ../sass/app.scss */
+/* line 418, ../sass/app.scss */
 header.banner nav {
   float: right;
   margin: 40px 0;
@@ -8707,7 +8707,7 @@ header.banner nav {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 419, ../sass/app.scss */
+/* line 425, ../sass/app.scss */
 header.banner nav .nav.navbar-nav li a {
   background-color: none;
   font-size: 18px;
@@ -8718,20 +8718,20 @@ header.banner nav .nav.navbar-nav li a {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 425, ../sass/app.scss */
+/* line 431, ../sass/app.scss */
 header.banner nav .nav.navbar-nav li a .caret {
   margin-left: 6px;
 }
-/* line 431, ../sass/app.scss */
+/* line 437, ../sass/app.scss */
 header.banner nav .nav.navbar-nav li.active a {
   color: #333333;
 }
-/* line 439, ../sass/app.scss */
+/* line 445, ../sass/app.scss */
 header.banner.scrolled nav {
   margin: 14px 0;
 }
 
-/* line 444, ../sass/app.scss */
+/* line 450, ../sass/app.scss */
 ul.nav li.dropdown:hover > ul.dropdown-menu {
   display: block;
 }
@@ -8739,12 +8739,12 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 /* ==========================================================================
 	 Content
 	 ========================================================================== */
-/* line 452, ../sass/app.scss */
+/* line 458, ../sass/app.scss */
 .wrap {
   margin-top: 180px;
   margin-bottom: 80px;
 }
-/* line 456, ../sass/app.scss */
+/* line 462, ../sass/app.scss */
 .home .wrap {
   margin-top: 0;
 }
@@ -8752,36 +8752,36 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 /* ==========================================================================
 	 Sidebar
 	 ========================================================================== */
-/* line 471, ../sass/app.scss */
+/* line 477, ../sass/app.scss */
 #secondary .widget, #tertiary .widget {
   margin-bottom: 30px;
 }
-/* line 474, ../sass/app.scss */
+/* line 480, ../sass/app.scss */
 .home #secondary .widget.widget_search, .home #tertiary .widget.widget_search {
   margin-top: 20px;
 }
-/* line 478, ../sass/app.scss */
+/* line 484, ../sass/app.scss */
 #secondary .widget h3, #tertiary .widget h3 {
-  color: #333;
+  color: #333333;
 }
-/* line 483, ../sass/app.scss */
+/* line 489, ../sass/app.scss */
 #secondary .widget.gform_widget ul, #tertiary .widget.gform_widget ul {
   padding-left: 0;
 }
-/* line 488, ../sass/app.scss */
+/* line 494, ../sass/app.scss */
 #secondary .widget select, #tertiary .widget select {
   max-width: 100%;
   width: auto;
 }
-/* line 495, ../sass/app.scss */
+/* line 501, ../sass/app.scss */
 #secondary .widget.widget_rss ul li, #tertiary .widget.widget_rss ul li {
   margin-bottom: 15px;
 }
-/* line 502, ../sass/app.scss */
+/* line 508, ../sass/app.scss */
 #secondary .widget.widget_tag_cloud .tagcloud a, #tertiary .widget.widget_tag_cloud .tagcloud a {
   display: inline-block;
   background: #428bca;
-  color: #fff;
+  color: white;
   font-size: 12px !important;
   padding: 4px 10px;
   margin: 2px 0px;
@@ -8789,22 +8789,22 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 514, ../sass/app.scss */
+/* line 520, ../sass/app.scss */
 #secondary .widget.widget_tag_cloud .tagcloud a:hover, #tertiary .widget.widget_tag_cloud .tagcloud a:hover {
   background: #3276b1;
   text-decoration: none;
 }
-/* line 523, ../sass/app.scss */
+/* line 529, ../sass/app.scss */
 #secondary .widget.widget_calendar #wp-calendar caption, #tertiary .widget.widget_calendar #wp-calendar caption {
   font-weight: bold;
   margin-bottom: 5px;
   font-size: 18px;
 }
-/* line 531, ../sass/app.scss */
+/* line 537, ../sass/app.scss */
 #secondary .widget.widget_calendar #wp-calendar tfoot td#prev, #tertiary .widget.widget_calendar #wp-calendar tfoot td#prev {
   border-right: 0 !important;
 }
-/* line 535, ../sass/app.scss */
+/* line 541, ../sass/app.scss */
 #secondary .widget.widget_calendar #wp-calendar tfoot td.pad, #tertiary .widget.widget_calendar #wp-calendar tfoot td.pad {
   border: none;
 }
@@ -8812,56 +8812,56 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 /* ==========================================================================
 	 Posts
 	 ========================================================================== */
-/* line 557, ../sass/app.scss */
+/* line 563, ../sass/app.scss */
 .archive article,
 .search article {
   margin-bottom: 35px;
 }
 
-/* line 563, ../sass/app.scss */
+/* line 569, ../sass/app.scss */
 article header.entry-header h1.entry-title {
   font-size: 24px;
   margin-bottom: 5px;
   line-height: 30px;
 }
-/* line 572, ../sass/app.scss */
+/* line 578, ../sass/app.scss */
 .archive article header.entry-header > small > p a {
   font-weight: bold;
 }
-/* line 580, ../sass/app.scss */
+/* line 586, ../sass/app.scss */
 article div.entry-summary {
   margin-top: 15px;
 }
-/* line 584, ../sass/app.scss */
+/* line 590, ../sass/app.scss */
 article .post-meta {
   color: #999;
   margin-bottom: 3px;
 }
-/* line 593, ../sass/app.scss */
+/* line 599, ../sass/app.scss */
 article footer.entry-meta span.comments-link a:before,
 article footer.entry-meta span.edit-link a:before {
   display: inline-block;
   font-family: Fontawesome;
   margin-right: 5px;
 }
-/* line 601, ../sass/app.scss */
+/* line 607, ../sass/app.scss */
 article footer.entry-meta span.comments-link {
   margin-right: 10px;
 }
-/* line 605, ../sass/app.scss */
+/* line 611, ../sass/app.scss */
 article footer.entry-meta span.comments-link a:before {
   content: '\f075';
 }
-/* line 613, ../sass/app.scss */
+/* line 619, ../sass/app.scss */
 article footer.entry-meta span.edit-link a:before {
   content: '\f040';
 }
 
-/* line 621, ../sass/app.scss */
+/* line 627, ../sass/app.scss */
 .read-more {
   margin-right: 10px;
 }
-/* line 623, ../sass/app.scss */
+/* line 629, ../sass/app.scss */
 .read-more:before {
   font-family: "FontAwesome";
   display: inline-block;
@@ -8872,45 +8872,44 @@ article footer.entry-meta span.edit-link a:before {
 /* ==========================================================================
 	 Footer
 	 ========================================================================== */
-/* line 636, ../sass/app.scss */
+/* line 642, ../sass/app.scss */
 #footer-widgets {
   background: #333333;
 }
-/* line 639, ../sass/app.scss */
+/* line 645, ../sass/app.scss */
 #footer-widgets .widget {
-  margin: 60px 0;
+  margin: 70px 0;
+  color: #999999;
+}
+/* line 649, ../sass/app.scss */
+#footer-widgets .widget h3.widget-title {
   color: #999;
 }
-/* line 643, ../sass/app.scss */
-#footer-widgets .widget h3.widget-title {
-  color: #eee;
-}
-/* line 647, ../sass/app.scss */
+/* line 653, ../sass/app.scss */
 #footer-widgets .widget a {
-  color: #fff;
+  color: white;
 }
 
-/* line 653, ../sass/app.scss */
+/* line 659, ../sass/app.scss */
 footer.content-info {
   background: #232222;
   text-align: center;
 }
-/* line 657, ../sass/app.scss */
+/* line 663, ../sass/app.scss */
 footer.content-info .credit {
-  color: #fff;
-  font-weight: 600;
-  padding: 20px 0;
+  color: white;
+  margin: 20px 0;
 }
 
 /* ==========================================================================
 	 Author Box
 	 ========================================================================== */
-/* line 673, ../sass/app.scss */
+/* line 678, ../sass/app.scss */
 .author-box .social a {
   display: inline-block;
   margin-right: 25px;
 }
-/* line 678, ../sass/app.scss */
+/* line 683, ../sass/app.scss */
 .author-box .social i {
   font-size: 18px;
 }
@@ -8918,26 +8917,26 @@ footer.content-info .credit {
 /* ==========================================================================
 	 Gravity Forms
 	 ========================================================================== */
-/* line 701, ../sass/app.scss */
+/* line 706, ../sass/app.scss */
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 705, ../sass/app.scss */
+/* line 710, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 719, ../sass/app.scss */
+/* line 724, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 730, ../sass/app.scss */
+/* line 735, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 736, ../sass/app.scss */
+/* line 741, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -8955,7 +8954,7 @@ footer.content-info .credit {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 754, ../sass/app.scss */
+/* line 759, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -8964,7 +8963,7 @@ select {
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
-  background-color: #fff;
+  background-color: white;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -8979,34 +8978,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 780, ../sass/app.scss */
+/* line 785, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 781, ../sass/app.scss */
+/* line 786, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 782, ../sass/app.scss */
+/* line 787, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 783, ../sass/app.scss */
+/* line 788, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 785, ../sass/app.scss */
+/* line 790, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 792, ../sass/app.scss */
+/* line 797, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
