@@ -32,8 +32,6 @@ if ( ! function_exists( 'lsx_soliloquy_slider' ) && function_exists('soliloquy')
 
 		$slider = get_theme_mod( 'lsx_soliliquy_slider', 0 );
 		
-		die(print_r($slider));
-		
 		if(0 != $slider){
 		 ?>
 			<header class="soliloquy-slider">
