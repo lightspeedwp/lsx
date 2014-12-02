@@ -8867,15 +8867,29 @@ article footer.entry-meta span.edit-link a:before {
 /* ==========================================================================
 	 Footer
 	 ========================================================================== */
+/* line 628, ../sass/app.scss */
+#footer-widgets .widget {
+  margin: 60px 0;
+  color: #999;
+}
+/* line 632, ../sass/app.scss */
+#footer-widgets .widget h3.widget-title {
+  color: #eee;
+}
+/* line 636, ../sass/app.scss */
+#footer-widgets .widget a {
+  color: #fff;
+}
+
 /* ==========================================================================
 	 Author Box
 	 ========================================================================== */
-/* line 637, ../sass/app.scss */
+/* line 652, ../sass/app.scss */
 .author-box .social a {
   display: inline-block;
   margin-right: 25px;
 }
-/* line 641, ../sass/app.scss */
+/* line 656, ../sass/app.scss */
 .author-box .social i {
   font-size: 18px;
 }
@@ -8883,26 +8897,26 @@ article footer.entry-meta span.edit-link a:before {
 /* ==========================================================================
 	 Gravity Forms
 	 ========================================================================== */
-/* line 664, ../sass/app.scss */
+/* line 679, ../sass/app.scss */
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 668, ../sass/app.scss */
+/* line 683, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 682, ../sass/app.scss */
+/* line 697, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 693, ../sass/app.scss */
+/* line 708, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 699, ../sass/app.scss */
+/* line 714, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -8920,7 +8934,7 @@ article footer.entry-meta span.edit-link a:before {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 717, ../sass/app.scss */
+/* line 732, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -8944,34 +8958,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 743, ../sass/app.scss */
+/* line 758, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 744, ../sass/app.scss */
+/* line 759, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 745, ../sass/app.scss */
+/* line 760, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 746, ../sass/app.scss */
+/* line 761, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 748, ../sass/app.scss */
+/* line 763, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 755, ../sass/app.scss */
+/* line 770, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
