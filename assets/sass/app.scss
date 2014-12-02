@@ -63,11 +63,15 @@ body {
 	height: auto;
 }
 
-a {
-	text-decoration: none !important;
-
-	&:hover {
-		@include transition(all .1s ease-in-out);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font: {
+		family: 'Raleway', 'Open Sans', sans-serif;
+		weight: 600;
 	}
 }
 
@@ -76,6 +80,7 @@ h2,
 h3 {
 	margin-top: 40px;
 	margin-bottom: 17px;
+
 }
 
 h4,
@@ -428,6 +433,7 @@ nav {
 					background-color: inherit;
 					font-size: 18px;
 					padding: 15px 24px;
+					transition: none;
 					@include border-radius(3px);
 
 					.caret {
