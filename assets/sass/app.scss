@@ -433,22 +433,37 @@ nav {
 					.caret {
 						margin-left: 6px;
 					}
+
+					&:hover {
+						color: $light-grey;
+						background: $black;
+					}
 				}
 
 				ul.dropdown-menu {
-					background: $off-white;
+					background: $black;
+					padding: 0;
+					margin-top: -2px;
 					box-shadow: none;
 					border: none;
+					-webkit-border-top-right-radius: 3px;
+					-moz-border-top-right-radius: 3px;
+					border-top-right-radius: 3px;
 
 					li {
 						a {
 							background: none;
 							background-color: inherit;
+							color: $light-grey;
 							font-size: 17px;
 
 							&:hover {
-								background: $light-grey; 
+								background: $mid-grey; 
 							}
+						}
+
+						ul.dropdown-menu {
+							margin-top: 0;
 						}
 					}
 				}
@@ -457,10 +472,6 @@ nav {
 					a {
 						color: $black;
 					}
-				}
-
-				&:hover {
-					background: $off-white;
 				}
 			}
 		}
