@@ -409,8 +409,19 @@ nav {
 		.nav.navbar-nav {
 			li {
 				a {
+					background-color: none;
 					font-size: 18px;
-					padding: 15px 25px;
+					padding: 15px 24px;
+
+					.caret {
+						margin-left: 6px;
+					}
+				}
+
+				&.active {
+					a {
+						color: $black;
+					}
 				}
 			}
 		}
