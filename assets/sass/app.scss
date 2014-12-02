@@ -14,7 +14,7 @@ $dark-grey: #555;
 $mid-grey: #777;
 $grey: #999;
 $light-grey: #eee;
-$off-white: #fafafa;
+$off-white: #f5f5f5;
 $white: #fff;
 
 
@@ -72,8 +72,8 @@ a {
 h1,
 h2,
 h3 {
-	margin-top: 38px;
-	margin-bottom: 15px;
+	margin-top: 40px;
+	margin-bottom: 17px;
 }
 
 h4,
@@ -423,7 +423,7 @@ nav {
 		.nav.navbar-nav {
 			li {
 				a {
-					background-color: none;
+					background-color: inherit;
 					font-size: 18px;
 					padding: 15px 24px;
 					@include border-radius(3px);
@@ -433,8 +433,10 @@ nav {
 					}
 				}
 
-				&.active {
+				&.active,
+				&:hover {
 					a {
+						background: $off-white;
 						color: $black;
 					}
 				}
