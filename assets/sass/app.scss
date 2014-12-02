@@ -14,7 +14,7 @@ $dark-grey: #555;
 $mid-grey: #777;
 $grey: #999;
 $light-grey: #eee;
-$off-white: #f5f5f5;
+$off-white: #f1f1f1;
 $white: #fff;
 
 
@@ -64,6 +64,8 @@ body {
 }
 
 a {
+	text-decoration: none !important;
+
 	&:hover {
 		@include transition(all .1s ease-in-out);
 	}
@@ -433,7 +435,7 @@ nav {
 					}
 				}
 
-				ul.dropdwn-menu {
+				ul.dropdown-menu {
 					background: $off-white;
 					box-shadow: none;
 					border: none;
@@ -684,7 +686,7 @@ footer.content-info {
 
 	.credit {
 		color: $white;
-		margin: 20px 0;
+		margin: 25px 0;
 	}
 }
 
