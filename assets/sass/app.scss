@@ -325,6 +325,12 @@ header.bs-image-header {
    Navigation
    ========================================================================== */
 
+nav {
+  .banner & {
+    float: right;
+  }
+}
+
 ul.nav li.dropdown:hover > ul.dropdown-menu{
     display: block;    
 }
