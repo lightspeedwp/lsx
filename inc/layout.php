@@ -26,57 +26,18 @@ function lsx_set_post_meta_options( $post_info ) {
 }
 
 
-if ( ! function_exists( 'lsx_page_banner' ) ) { 
-	add_action( 'lsx_header_after', 'lsx_page_banner' );
-	function lsx_page_banner() {
+if ( ! function_exists( 'lsx_soliloquy_slider' ) && function_exists('soliloquy') ) { 
+	add_action( 'lsx_header_after', 'lsx_soliloquy_slider' );
+	function lsx_soliloquy_slider() {
 
-		if ( ! lsx_get_option( 'enable_banner' ) ) { return false; }
-
-		$backgrounds = array();	
-		
-		if (lsx_get_option('home_bg_image_1')) {
-			$backgrounds[] = lsx_get_option('home_bg_image_1');
-		}
-
-		if (lsx_get_option('home_bg_image_2')) {
-			$backgrounds[] = lsx_get_option('home_bg_image_2');
-		}
-	
-		if (lsx_get_option('home_bg_image_3')) {
-			$backgrounds[] = lsx_get_option('home_bg_image_3');
-		}
-
-		if (lsx_get_option('home_bg_image_4')) {
-			$backgrounds[] = lsx_get_option('home_bg_image_4');
-		}
-
-		if (lsx_get_option('home_bg_image_5')) {
-			$backgrounds[] = lsx_get_option('home_bg_image_5');
-		}
-
-		shuffle($backgrounds);
-
-		if (isset($backgrounds[0])) {
-			$banner_image = $backgrounds[0];
-		} else {
-			$banner_image = '';
-		}
-		
-		$show_on_front = get_option('show_on_front');
-		
-		if ( (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page())) 
-			&& lsx_get_option( 'enable_banner', false ) ) { ?>
-			<header class="bs-image-header" style="background-image: url(<?php echo $banner_image?>)">
-				<div class="container">
-					<div class="banner-text">
-						<h1 class="bs-image-header-title"><?php echo lsx_get_option( 'home_banner_heading' ); ?></h1>
-						<?php if(lsx_get_option( 'home_banner_tagline' )){ ?>
-							<h2 class="bs-image-header-desc"><?php echo lsx_get_option( 'home_banner_tagline' ); ?></h2>
-						<?php } ?>
-					</div>
-				</div>
+		$slider = absint( get_theme_mod( 'soliloquy_slider', 0 ) );
+		if(0 != $slider){
+		 ?>
+			<header class="soliloquy-slider">
+				<?php soliloquy_slider( $slider ); ?>
 			</header>
-		<?php } 
+		<?php
+		} 
 	}
 };
 
