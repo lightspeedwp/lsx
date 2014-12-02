@@ -433,8 +433,10 @@ nav {
 					.caret {
 						margin-left: 6px;
 					}
+				}
 
-					&:hover {
+				&:hover {
+					& > a {
 						color: $light-grey;
 						background: $black;
 					}
