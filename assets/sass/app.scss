@@ -10,9 +10,16 @@
    Base
    ========================================================================== */
 
-body { 
-   -ms-word-wrap: break-word;
-   word-wrap: break-word;
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  line-height: 160%;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 .size-auto, 
@@ -20,8 +27,8 @@ body {
 .size-large,
 .size-medium,
 .size-thumbnail {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -93,20 +100,20 @@ img,
 }
 
 .pager {
-	.previous {
-		text-align:left;
-		
-		span {
-			margin-right:5px;
-		}
-	}
-	.next {
-		text-align:right;
-		
-		span {
-			margin-left:5px;
-		}		
-	}
+  .previous {
+    text-align:left;
+    
+    span {
+      margin-right:5px;
+    }
+  }
+  .next {
+    text-align:right;
+    
+    span {
+      margin-left:5px;
+    }   
+  }
 }
 
 dl {
@@ -211,32 +218,32 @@ nav.page-nav {
 }
 
 #respond {
-	#submit {
-	  display: inline-block;
-	  margin-bottom: 0; // For input.btn
-	  font-weight: $btn-font-weight;
-	  text-align: center;
-	  vertical-align: middle;
-	  cursor: pointer;
-	  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-	  border: 1px solid transparent;
-	  white-space: nowrap;
-	  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
-	  @include user-select(none);	
-	  
-	  color: $btn-primary-color;	
-	  
-	  &:hover,
-	  &:focus {
-	    color: $btn-default-color;
-	    text-decoration: none;
-	  }	  
-	  	
-	}
-	
-	p.form-allowed-tags {
-		display:none;
-	}
+  #submit {
+    display: inline-block;
+    margin-bottom: 0; // For input.btn
+    font-weight: $btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid transparent;
+    white-space: nowrap;
+    @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+    @include user-select(none); 
+    
+    color: $btn-primary-color;  
+    
+    &:hover,
+    &:focus {
+      color: $btn-default-color;
+      text-decoration: none;
+    }   
+      
+  }
+  
+  p.form-allowed-tags {
+    display:none;
+  }
 }
 
 ul {
@@ -248,7 +255,32 @@ ul {
    Header
    ========================================================================== */
 
-.banner { }
+.banner {
+  position: fixed;
+  width: 100%;
+  top: 32px;
+  padding: 30px 0;
+
+  .navbar-header {
+    .site-logo-link {
+      img {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &.scrolled {
+    padding: 15px 0;
+
+    .navbar-header {
+      .site-logo-link {
+        img {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+}
 
 // Bootstrap Image Header
 
@@ -363,7 +395,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
     margin-bottom: 30px;
     
     .home &.widget_search {
-    	margin-top:20px;
+      margin-top:20px;
     }
 
     h3 {
