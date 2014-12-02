@@ -8,8 +8,14 @@
 
 // ========== Variables ========== //
 
+$blacker: #232222;
 $black: #333;
-$grey: #777;
+$dark-grey: #555;
+$mid-grey: #777;
+$grey: #999;
+$light-grey: #eee;
+$off-white: #f1f1f1;
+$white: #fff;
 
 
 // ========== Mixins ========== //
@@ -22,6 +28,14 @@ $grey: #777;
 	transition: $value;
 }
 
+@mixin border-radius($value) {
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	-ms-border-radius: $value;
+	-o-border-radius: $value;
+	border-radius: $value;
+}
+
 
  
 /* ==========================================================================
@@ -29,11 +43,11 @@ $grey: #777;
 	 ========================================================================== */
 
 body {
-	color: $grey;
+	color: $mid-grey;
 	margin: 0;
 	padding: 0;
 	font-size: 17px;
-	line-height: 180%;
+	line-height: 200%;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
@@ -50,16 +64,27 @@ body {
 }
 
 a {
-	&:hover {
-		@include transition(all .1s ease-in-out);
+	text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font: {
+		family: 'Raleway', 'Open Sans', sans-serif;
+		weight: 600;
 	}
 }
 
 h1,
 h2,
 h3 {
-	margin-top: 38px;
-	margin-bottom: 15px;
+	margin-top: 40px;
+	margin-bottom: 17px;
+
 }
 
 h4,
@@ -76,7 +101,7 @@ img,
 }
 
 iframe {
-	width:100%!important;
+	width: 100%;
 }
 
 img,
@@ -116,7 +141,7 @@ img,
  
 		span.input-group-btn {
 			button.search-submit {
-				color: #fff;
+				color: $white;
 				background-color: #428bca;
 				border-color: #357ebd;
 
@@ -132,7 +157,7 @@ img,
 .pagination {
 	span.current {
 		background: #428bca !important;
-		color: #fff !important;
+		color: $white !important;
 	}
 }
 
@@ -214,7 +239,7 @@ nav.page-nav {
 	p {
 		display: inline-block;
 		padding: 5px 14px;
-		background-color: #fff;
+		background-color: $white;
 		border: 1px solid #ddd;
 		border-radius: 15px;
 
@@ -409,18 +434,61 @@ nav {
 		.nav.navbar-nav {
 			li {
 				a {
-					background-color: none;
+					background-color: inherit;
 					font-size: 18px;
 					padding: 15px 24px;
+					transition: none;
+					@include border-radius(4px);
 
 					.caret {
 						margin-left: 6px;
 					}
 				}
 
+				&:hover {
+					& > a {
+						color: $light-grey;
+						background: $black;
+					}
+				}
+
+				ul.dropdown-menu {
+					background: $black;
+					padding: 0;
+					margin-top: -2px;
+					box-shadow: none;
+					border: none;
+					-webkit-border-top-right-radius: 3px;
+					-moz-border-top-right-radius: 3px;
+					border-top-right-radius: 3px;
+
+					li {
+						a {
+							background: none;
+							background-color: inherit;
+							color: $light-grey;
+							font-size: 17px;
+
+							&:hover {
+								background: $mid-grey; 
+							}
+						}
+
+						ul.dropdown-menu {
+							margin-top: 0;
+						}
+					}
+				}
+
 				&.active {
 					a {
 						color: $black;
+					}
+
+					&:hover {
+						& > a {
+							color: $white;
+						}
 					}
 				}
 			}
@@ -467,7 +535,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 		}
 
 		h3 {
-			color: #333;
+			color: $black;
 		}
 
 		&.gform_widget {
@@ -493,7 +561,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 			.tagcloud a {
 				display: inline-block;
 				background: #428bca;
-				color: #fff;
+				color: $white;
 				font-size: 12px !important;
 				padding: 4px 10px;
 				margin: 2px 0px;
@@ -624,7 +692,33 @@ article {
 	 Footer
 	 ========================================================================== */
 
-.content-info { }
+#footer-widgets {
+	background: $black;
+
+	.widget {
+		margin: 70px 0;
+		color: $grey;
+
+		h3.widget-title {
+			color: #999;
+		}
+
+		a {
+			color: $white;
+		}
+	}
+}
+
+footer.content-info {
+	background: $blacker;
+	text-align: center;
+
+	.credit {
+		color: $white;
+		margin: 25px 0;
+	}
+}
+
 
 /* ==========================================================================
 	 Author Box
@@ -638,6 +732,7 @@ article {
 			display: inline-block;
 			margin-right: 25px; 
 		}
+
 		i {
 			font-size: 18px;
 		}
@@ -722,7 +817,7 @@ select {
 		font-size: 14px;
 		line-height: 1.42857143;
 		color: #555;
-		background-color: #fff;
+		background-color: $white;
 		background-image: none;
 		border: 1px solid #ccc;
 		border-radius: 4px;
