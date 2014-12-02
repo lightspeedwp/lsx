@@ -5,6 +5,18 @@
 @import "bootstrap/bootstrap.scss";
 @import "lsx/lsx.scss";
 
+
+// ========== Mixins ========== //
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+
  
 /* ==========================================================================
    Base
@@ -30,6 +42,11 @@ body {
   height: auto;
 }
 
+a {
+  &:hover {
+    @include transition(all .1s ease-in-out);
+  }
+}
 
 iframe, 
 img,
@@ -260,6 +277,7 @@ header.banner {
   top: 0;
   padding: 30px 0;
   border: none;
+  @include transition(all .3s ease-in-out);
 
   .logged-in & {
     top: 32px;
@@ -268,7 +286,8 @@ header.banner {
   .navbar-header {
     .site-logo-link {
       img {
-        max-width: 300px;
+        max-height: 50px;
+        @include transition(all .3s ease-in-out);
       }
     }
   }
@@ -362,8 +381,13 @@ header.bs-image-header {
    ========================================================================== */
 
 nav {
-  .banner & {
+  header.banner & {
     float: right;
+    margin: 10px 0;
+  }
+
+  header.banner.scrolled & {
+    margin: 0;
   }
 }
 
