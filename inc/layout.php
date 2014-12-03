@@ -7,17 +7,17 @@
 
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
-function lsx_add_footer_sidebar_area() {
-	?>
-	<section id="footer-widgets">
-		<div class="container">
-			<div class="row">
-				<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+	function lsx_add_footer_sidebar_area() {
+		?>
+		<section id="footer-widgets">
+			<div class="container">
+				<div class="row">
+					<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+				</div>
 			</div>
-		</div>
-	</section>
-	<?php
-}
+		</section>
+		<?php
+	}
 }
 
 add_filter( 'lsx_filter_post_meta', 'lsx_set_post_meta_options' );
