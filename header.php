@@ -42,32 +42,36 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 			        	<span class="icon-bar"></span>
 			        	<span class="icon-bar"></span>
 		      		</button>
-<?php
-		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-			jetpack_the_site_logo();
-		} else {
-		?>
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-			</div>
-		<?php }
-?>
+					<?php
+							if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+								jetpack_the_site_logo();
+							} else {
+							?>
+								<div class="site-branding">
+									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+									<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+								</div>
+							<?php }
+					?>
 			    </div>
 
 			<?php lsx_nav_before(); ?>
 			
-			<nav class="collapse navbar-collapse" role="navigation">
-		    	<?php
-					wp_nav_menu( array(
-					  'menu' => 'primary',
-					  'depth' => 2,
-					  'container' => false,
-					  'menu_class' => 'nav navbar-nav',
-					  'walker' => new wp_bootstrap_navwalker())
-					);
-				?>
-	    	</nav>
+			<?php 		    		
+				$nav_menu = get_theme_mod('nav_menu_locations',array());
+		    	if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+					<nav class="collapse navbar-collapse" role="navigation">
+				    	<?php
+								wp_nav_menu( array(
+								'menu' => $nav_menu['primary'],
+								'depth' => 2,
+								'container' => false,
+								'menu_class' => 'nav navbar-nav',
+								'walker' => new wp_bootstrap_navwalker())
+								);
+						?>
+		    		</nav>
+	    		<?php } ?>
 		  </div>
 		  	<?php lsx_header_bottom(); ?>
 		</header>
