@@ -446,12 +446,56 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 // Portfolio
 
 .page-template-template-portfolio-php {
-	#primary {
-		width: 100%;
+	#main {
+		text-align: center;
 
-		.portfolio-wrapper {
-			.jetpack-portfolio {
-				width: 200px;
+		.lsx-portfolio-wrapper {
+			width: 1170px;
+			margin: 0 auto;
+
+			@media screen and (max-width: 1200px) {
+				width: 970px;
+			}
+
+			@media screen and (max-width: 992px) {
+				width: 750px;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 540px;
+			}
+
+			@media screen and (max-width: 540px) {
+				width: 100%;
+			}
+
+			.lsx-portfolio {
+				.jetpack-portfolio {
+					width: 290px;
+					padding-left: 10px;
+					padding-right: 10px;
+					margin-bottom: 15px;
+
+					h3.entry-title {
+						margin-top: 15px;
+					}
+
+					@media screen and (max-width: 1200px) {
+						width: 320px;
+					}
+
+					@media screen and (max-width: 992px) {
+						width: 375px;
+					}
+
+					@media screen and (max-width: 768px) {
+						width: 270px;
+					}
+
+					@media screen and (max-width: 540px) {
+						width: 100%;
+					}
+				}
 			}
 		}
 	}
