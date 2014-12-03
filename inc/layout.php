@@ -26,19 +26,25 @@ function lsx_set_post_meta_options( $post_info ) {
 }
 
 
-if ( ! function_exists( 'lsx_soliloquy_slider' ) && function_exists('soliloquy') ) { 
-	add_action( 'lsx_content_top', 'lsx_soliloquy_slider' );
-	function lsx_soliloquy_slider() {
-
-		$slider = get_theme_mod( 'lsx_soliliquy_slider', 0 );
-		
-		if(0 != $slider){
-		 ?>
-			<section class="soliloquy-slider">
-				<?php soliloquy_slider( $slider ); ?>
-			</section>
-		<?php
-		} 
+/**
+ * Displays the hompage slider is Soliliquy Lite is active and the Customizer settings are set.
+ *
+ * @package lsx-theme
+ * @subpackage layout
+ * @category slider
+ */
+if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy')  ) { 
+	add_action( 'lsx_content_top', 'lsx_homepage_slider' );
+	function lsx_homepage_slider() {
+		$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
+		$show_on_front = get_option('show_on_front');
+		if('0' != $slider && (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()))) {
+			 ?>
+				<section class="soliloquy-slider">
+					<?php soliloquy_slider( $slider ); ?>
+				</section>
+			<?php
+		}
 	}
 };
 
@@ -108,82 +114,6 @@ function lsx_author_box() {
 	};
 }
 
-add_action( 'lsx_entry_after', 'lsx_related_posts' );
-function lsx_related_posts() {
-
-	if ( ! lsx_get_option( 'related_posts' ) || ! is_single() ) { return false; }
-	
-	if ( 'attachment' == get_post_type() ) { return false; }
-
-	$category_array = array();
-	$category_terms = ( get_the_terms( get_the_ID(), 'category' ) );
-	foreach ( $category_terms as $category_term ) {
-		$category_array[] = $category_term->term_id;
-	}
-	$tag_array = array();
-	$tag_terms = ( get_the_terms( get_the_ID(), 'tag' ) );
-	foreach ( $tag_terms as $tag_term ) {
-		$tag_array[] = $tag_term->term_id;
-	}
-
-	if ( lsx_get_option( 'related_by' ) == "category" ) {
-		$args = array(
-			'posts_per_page' => '3',
-			'orderby' => 'rand',
-			'post__not_in' => array(get_the_ID()),
-			'tax_query' => array(
-					array(
-						'taxonomy' => 'category',
-						'field' => 'id',
-						'terms' => $category_array
-					)
-				)
-			);
-	} elseif ( lsx_get_option( 'related_by' ) == "tag" ) {
-		$args = array(
-			'posts_per_page' => '3',
-			'orderby' => 'rand',
-			'post__not_in' => array(get_the_ID()),
-			'tax_query' => array(
-					array(
-						'taxonomy' => 'post_tag',
-						'field' => 'id',
-						'terms' => $tag_array
-					)
-				)
-			);
-	}
-
-	$related_posts = get_posts( $args );
-
-	if ( $related_posts ) {
-		?>
-		<h3>Related Posts</h3>
-		<div class="related-posts row">		
-		<?php
-		foreach ( $related_posts as $related_post ) {
-			?>
-			<div class="col-md-4">
-						<?php if ( has_post_thumbnail( $related_post->ID ) ) { ?>
-							<a href="<?php echo get_permalink( $related_post->ID );?>">
-								<?php echo get_the_post_thumbnail( $related_post->ID, 'thumbnail-wide', 'class=img-responsive' ); ?>
-							</a>
-						<?php } else { ?>
-							<a href="<?php echo get_permalink( $related_post->ID );?>">
-								<img class="img-responsive" src="http://placehold.it/350x230/" alt="placeholder" />
-							</a>
-						<?php } ?>
-					<h4><a href="<?php echo get_permalink( $related_post->ID );?>"><?php echo $related_post->post_title ?></a></h4>					
-			</div>
-			<?php
-		} ?>
-		</div>
-		<?php
-	}
-
-	?>
-	<?php
-}
 
 /**
  * Displays the blog page title

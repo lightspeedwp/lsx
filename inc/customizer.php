@@ -28,11 +28,9 @@ if(!class_exists('LSX_Theme_Customizer')){
 		
 			
 			$post_types = array();
-			add_action( 'customize_register', array($this,'soliloquy_customizer'), 11 );
+			add_action( 'customize_register', array($this,'customizer'), 11 );
 			
 		}
-		
-		
 		
 		/**
 		 * Slider Settings
@@ -51,7 +49,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 			
 			//Hompage Slider Settings
 			if(function_exists('soliloquy')){
-				$wp_customize->add_setting( 'lsx_soliliquy_slider', array(
+				$wp_customize->add_setting( 'lsx_homepage_slider', array(
 						'default'           => 0,
 						'type'              => 'theme_mod',
 						'sanitize_callback' => 'absint'
@@ -59,9 +57,9 @@ if(!class_exists('LSX_Theme_Customizer')){
 		
 				
 				$slider_choices = $this->get_slider_post_type_choices();
-				$wp_customize->add_control( 'lsx_soliliquy_slider', 
+				$wp_customize->add_control( 'lsx_homepage_slider', 
 						array(
-							'label'    => esc_html__( 'Select Soliloquy Slider', 'lsx-theme' ),
+							'label'    => esc_html__( 'Select Slider', 'lsx-theme' ),
 							'section'  => 'lsx-homepage',
 							'type'     => 'select',
 							'choices'  => $slider_choices
