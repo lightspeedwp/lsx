@@ -31,6 +31,8 @@ function lsx_scripts() {
 	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.css' );
 	if(is_child_theme()) {
 	wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css' );
+	wp_register_script('masonry', get_template_directory_uri().'/masonry.js', array('jquery'), null, true);
+	wp_enqueue_script('masonry');
 
 	}
 
