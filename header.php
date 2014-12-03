@@ -57,13 +57,17 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 
 			<?php lsx_nav_before(); ?>
 			
-		    <nav class="collapse navbar-collapse" role="navigation">
-			    <?php
-		        if (has_nav_menu('primary')) :
-		          wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav navbar-nav'));
-		        endif;
-			    ?>
-		    </nav>
+			<nav class="collapse navbar-collapse" role="navigation">
+		    	<?php
+					wp_nav_menu( array(
+					  'menu' => 'primary',
+					  'depth' => 2,
+					  'container' => false,
+					  'menu_class' => 'nav navbar-nav',
+					  'walker' => new wp_bootstrap_navwalker())
+					);
+				?>
+	    	</nav>
 		  </div>
 		  	<?php lsx_header_bottom(); ?>
 		</header>
