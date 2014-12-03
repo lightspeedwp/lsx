@@ -27,16 +27,16 @@ function lsx_set_post_meta_options( $post_info ) {
 
 
 if ( ! function_exists( 'lsx_soliloquy_slider' ) && function_exists('soliloquy') ) { 
-	add_action( 'lsx_header_after', 'lsx_soliloquy_slider' );
+	add_action( 'lsx_content_top', 'lsx_soliloquy_slider' );
 	function lsx_soliloquy_slider() {
 
 		$slider = get_theme_mod( 'lsx_soliliquy_slider', 0 );
 		
 		if(0 != $slider){
 		 ?>
-			<header class="soliloquy-slider">
+			<section class="soliloquy-slider">
 				<?php soliloquy_slider( $slider ); ?>
-			</header>
+			</section>
 		<?php
 		} 
 	}
