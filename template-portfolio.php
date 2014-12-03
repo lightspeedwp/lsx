@@ -67,6 +67,8 @@ get_header(); ?>
 
 			<?php endif; ?>	
 
+			<div class="clearfix"></div>
+
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
