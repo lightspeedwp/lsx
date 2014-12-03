@@ -443,6 +443,39 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	margin-bottom: 80px;
 }
 
+// Portfolio
+
+.lsx-portfolio-wrapper {
+	text-align: center;
+
+	.lsx-portfolio {
+		.jetpack-portfolio {
+			width: 25%;
+			float: left;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin-bottom: 15px;
+
+			h3.entry-title {
+				margin-top: 15px;
+				margin-bottom: 0px;
+			}
+
+			@media screen and (max-width: 992px) {
+				width: 33.3%;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 50%;
+			}
+
+			@media screen and (max-width: 540px) {
+				width: 100%;
+			}
+		}
+	}
+}
+
 
 /* ==========================================================================
 	 Sidebar

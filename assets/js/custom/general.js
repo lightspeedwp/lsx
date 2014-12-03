@@ -8,4 +8,8 @@ jQuery(document).ready(function($) {
 	        jQuery('header.banner').removeClass('scrolled');
 	    }
 	});
+
+	jQuery(window).on('load', function(){
+	    jQuery(window).resize();
+	});
 });
