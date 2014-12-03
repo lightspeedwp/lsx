@@ -79,7 +79,7 @@ add_filter('nav_menu_item_id', '__return_null');
  * Clean up wp_nav_menu_args
  *
  * Remove the container
- * Use LSX_Nav_Walker() by default
+ * Use LSX_Nav_Walker() by default 
  */
 function roots_nav_menu_args($args = '') {
 	$roots_nav_menu_args['container'] = false;
