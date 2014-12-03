@@ -447,29 +447,33 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
 .page-template-template-portfolio-php {
 	#main {
-		text-align: center;
-
 		.lsx-portfolio-wrapper {
-			width: 1170px;
-			margin: 0 auto;
-
-			@media screen and (max-width: 1200px) {
-				width: 970px;
-			}
-
-			@media screen and (max-width: 992px) {
-				width: 750px;
-			}
-
-			@media screen and (max-width: 768px) {
-				width: 540px;
-			}
-
-			@media screen and (max-width: 540px) {
-				width: 100%;
-			}
+			text-align: center;
 
 			.lsx-portfolio {
+				width: 1170px;
+				margin: 0 auto;
+
+				@media screen and (max-width: 1200px) {
+					width: 970px;
+				}
+
+				@media screen and (max-width: 992px) {
+					width: 750px;
+				}
+
+				@media screen and (max-width: 768px) {
+					width: 640px;
+				}
+
+				@media screen and (max-width: 600px) {
+					width: 500px;
+				}
+
+				@media screen and (max-width: 540px) {
+					width: 100%;
+				}
+
 				.jetpack-portfolio {
 					width: 290px;
 					padding-left: 10px;
@@ -489,7 +493,11 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 					}
 
 					@media screen and (max-width: 768px) {
-						width: 270px;
+						width: 300px;
+					}
+
+					@media screen and (max-width: 600px) {
+						width: 250px;
 					}
 
 					@media screen and (max-width: 540px) {
