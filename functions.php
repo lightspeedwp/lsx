@@ -65,4 +65,9 @@ add_theme_support( 'custom-background', array(
 ) );
 
 
+/**
+ * Load Bootstrap Navwalker.
+ */
+require_once('wp_bootstrap_navwalker.php');
+
 ?>
