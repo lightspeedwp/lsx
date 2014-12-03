@@ -79,7 +79,7 @@ add_filter('nav_menu_item_id', '__return_null');
  * Clean up wp_nav_menu_args
  *
  * Remove the container
- * Use LSX_Nav_Walker() by default
+ * Use LSX_Nav_Walker() by default 
  */
 function roots_nav_menu_args($args = '') {
 	$roots_nav_menu_args['container'] = false;
@@ -99,25 +99,3 @@ function roots_nav_menu_args($args = '') {
 	return array_merge($args, $roots_nav_menu_args);
 }
 add_filter('wp_nav_menu_args', 'roots_nav_menu_args');
-
-/**
- * Adds a menu to the admin bar to access the theme options
- *
- * Remove the container
- * Use LSX_Nav_Walker() by default
- */
-function lsx_theme_options_admin_bar_menu(){
-	global $wp_admin_bar;
-	
-	if(!is_admin()){
-		$args = array(
-			'id' => 'site-theme-options',
-			'parent' => 'site-name',
-			'href' => '/wp-admin/themes.php?page=options-framework',
-			'title' => 'Theme Options',
-		);
-		$wp_admin_bar->add_menu($args);
-	}
-	
-}
-add_filter('admin_bar_menu', 'lsx_theme_options_admin_bar_menu',100);
