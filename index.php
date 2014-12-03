@@ -13,9 +13,9 @@
 
 get_header(); ?>
 
-	<?php lsx_content_before(); ?>
-
 	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+
+		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main" role="main">
 		
