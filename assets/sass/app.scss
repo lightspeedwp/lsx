@@ -449,31 +449,9 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	text-align: center;
 
 	.lsx-portfolio {
-		width: 1170px;
-		margin: 0 auto;
-
-		@media screen and (max-width: 1200px) {
-			width: 970px;
-		}
-
-		@media screen and (max-width: 992px) {
-			width: 750px;
-		}
-
-		@media screen and (max-width: 768px) {
-			width: 640px;
-		}
-
-		@media screen and (max-width: 600px) {
-			width: 500px;
-		}
-
-		@media screen and (max-width: 540px) {
-			width: 100%;
-		}
-
 		.jetpack-portfolio {
-			width: 290px;
+			width: 25%;
+			float: left;
 			padding-left: 10px;
 			padding-right: 10px;
 			margin-bottom: 15px;
@@ -483,20 +461,12 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 				margin-bottom: 0px;
 			}
 
-			@media screen and (max-width: 1200px) {
-				width: 320px;
-			}
-
 			@media screen and (max-width: 992px) {
-				width: 375px;
+				width: 33.3%;
 			}
 
 			@media screen and (max-width: 768px) {
-				width: 300px;
-			}
-
-			@media screen and (max-width: 600px) {
-				width: 250px;
+				width: 50%;
 			}
 
 			@media screen and (max-width: 540px) {
