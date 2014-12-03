@@ -443,11 +443,17 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	margin-bottom: 80px;
 }
 
-// Gallery Test
+// Portfolio
 
-.page-template-template-gallery-php {
+.page-template-template-portfolio-php {
 	#primary {
 		width: 100%;
+
+		.portfolio-wrapper {
+			.jetpack-portfolio {
+				width: 200px;
+			}
+		}
 	}
 }
 

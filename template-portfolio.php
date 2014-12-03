@@ -34,7 +34,7 @@ get_header(); ?>
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
 			?>
 
-				<div class="portfolio-wrapper">
+				<div class="portfolio-wrapper js-masonry" data-masonry-options='{ "itemSelector": ".jetpack-portfolio" }', '{ "singleMode": "true" }'>
 
 					<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
