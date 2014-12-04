@@ -17,6 +17,8 @@ $light-grey: #eee;
 $off-white: #f1f1f1;
 $white: #fff;
 
+$primary: #428bca;
+
 
 // ========== Mixins ========== //
 
@@ -529,18 +531,17 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 		&.widget_tag_cloud {
 			.tagcloud a {
 				display: inline-block;
-				background: #428bca;
+				background: $grey;
 				color: $white;
+				line-height: 2;
 				font-size: 12px !important;
-				padding: 4px 10px;
+				padding: 2px 10px;
 				margin: 2px 0px;
-
-				-webkit-border-radius: 10px;
-				-moz-border-radius: 10px;
-				border-radius: 10px;
+				@include transition(all .1s ease-in-out);
+				@include border-radius(3px);
 			
 				&:hover {
-					background: #3276b1;
+					background: $primary;
 					text-decoration: none;
 				}
 			}
