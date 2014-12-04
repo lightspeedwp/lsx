@@ -37,6 +37,14 @@ add_action('after_setup_theme' , function() {
 );
 add_theme_support( 'site-logo', $args );
 });
+
+
+function lsx_title_tag_setup() {
+   add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'lsx_title_tag_setup' );
+
+
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "form_submit_button", 10, 2);
 function form_submit_button($button, $form){
