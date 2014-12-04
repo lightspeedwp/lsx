@@ -89,14 +89,15 @@ h6 {
 h1,
 h2,
 h3 {
+	color: $black;
 	margin-top: 40px;
 	margin-bottom: 17px;
-
 }
 
 h4,
 h5,
 h6 {
+	color: $dark-grey;
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
@@ -328,6 +329,7 @@ header.banner {
 	position: fixed;
 	width: 100%;
 	top: 0;
+	background: $light-grey;
 	border: none;
 
 	.admin-bar & {
@@ -378,9 +380,15 @@ nav {
 			li {
 				a {
 					background-color: inherit;
-					font-size: 18px;
+					color: $dark-grey;
+					font: {
+						family: 'Raleway', 'Open Sans', sans-serif;
+						size: 18px;
+						weight: 500;
+					}
 					padding: 15px 24px;
 					transition: none;
+
 
 					.caret {
 						margin-left: 6px;
@@ -510,6 +518,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	#home-widgets {
 		aside.widget {
 			margin-bottom: 80px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 
 			h3.widget-title {
 				font: {
