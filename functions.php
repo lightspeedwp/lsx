@@ -23,6 +23,8 @@ require get_template_directory() . '/inc/nav.php';
 require get_template_directory() . '/inc/comment-walker.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+
 
 
 add_action('after_setup_theme' , function() {
@@ -63,13 +65,6 @@ add_theme_support( 'custom-background', array(
 	'default-color' => 'FFF',
 	// Background image default
 ) );
-
-
-/**
- * Load Bootstrap Navwalker.
- */
-require_once('wp_bootstrap_navwalker.php');
-
 
 /**
  * Add theme support for infinite scroll.
