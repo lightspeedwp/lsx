@@ -35,12 +35,6 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-
-			<?php if ( function_exists('wp_pagenavi') ) { ?>
-				<?php wp_pagenavi(); ?>
-			<?php } else { ?>
-				<?php lsx_paging_nav(); ?>
-			<?php } ?>
 			
 		<?php else : ?>
 

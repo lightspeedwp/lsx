@@ -21,34 +21,6 @@ function lsx_yoast_breadcrumbs(){
 }
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
 
-/**
- * Custom functions that act independently of the theme templates
- *
- * Eventually, some of the functionality here could be replaced by core features
- *
- * @package lsx
- */
-  
-//customize the PageNavi HTML before it is output
-function lsx_filter_wppagenavi_html( $html ) {
-    $out = '';
-  
-    //wrap a's and span's in li's
-    $out = str_replace("<div","",$html);
-    $out = str_replace("class='wp-pagenavi'>","",$out);
-    $out = str_replace("<a","<li><a",$out);
-    $out = str_replace("</a>","</a></li>",$out);
-    $out = str_replace("<span","<li><span",$out);  
-    $out = str_replace("</span>","</span></li>",$out);
-    $out = str_replace("</div>","",$out);
-  
-    return '<div class="clearfix"></div>
-            <div class="lsx-pagination">
-            <ul class="pagination">'.$out.'</ul></div>';
-}
-add_filter( 'wp_pagenavi', 'lsx_filter_wppagenavi_html', 10, 2 );
-
-
 
 function lsx_placeholder_image( $html, $post_id = false, $post_thumbnail_id = false, $size = 'thumbnail', $attr = array() )
 {
