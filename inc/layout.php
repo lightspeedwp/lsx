@@ -34,7 +34,7 @@ function lsx_set_post_meta_options( $post_info ) {
  * @category slider
  */
 if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy')  ) { 
-	add_action( 'lsx_content_top', 'lsx_homepage_slider' );
+	add_action( 'lsx_header_after', 'lsx_homepage_slider' );
 	function lsx_homepage_slider() {
 		$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
 		$show_on_front = get_option('show_on_front');

@@ -48,6 +48,7 @@ body {
 	padding: 0;
 	font-size: 17px;
 	line-height: 200%;
+	letter-spacing: .1px;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
@@ -441,6 +442,18 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 .wrap {
 	margin-top: 180px;
 	margin-bottom: 80px;
+
+	.home & {
+		margin-top: 70px;
+	}
+}
+
+// Homepage
+
+.soliloquy-slider {
+	.home & {
+		margin-top: 130px;
+	}
 }
 
 // Portfolio
@@ -481,14 +494,13 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	 Sidebar
 	 ========================================================================== */
 
-.sidebar { }
-
-#secondary, #tertiary {
+#secondary, 
+#tertiary {
 	.widget {
 		margin-bottom: 30px;
 		
 		.home &.widget_search {
-			margin-top:20px;
+			margin-top: 20px;
 		}
 
 		h3 {

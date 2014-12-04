@@ -33,48 +33,50 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 <?php lsx_body_top(); ?>
 <?php lsx_header_before(); ?>
  	<header class="banner navbar navbar-default navbar-static-top" role="banner">
-      		<?php lsx_header_top(); ?>
-		  	<div class="container">
-		    	<div class="navbar-header">
-		      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			        	<span class="sr-only">Toggle navigation</span>
-			        	<span class="icon-bar"></span>
-			        	<span class="icon-bar"></span>
-			        	<span class="icon-bar"></span>
-		      		</button>
-					<?php
-							if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-								jetpack_the_site_logo();
-							} else {
-							?>
-								<div class="site-branding">
-									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-									<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-								</div>
-							<?php }
-					?>
-			    </div>
-
-			<?php lsx_nav_before(); ?>
-			
-			<?php 		    		
-				$nav_menu = get_theme_mod('nav_menu_locations',array());
-		    	if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
-					<nav class="collapse navbar-collapse" role="navigation">
-				    	<?php
-								wp_nav_menu( array(
-								'menu' => $nav_menu['primary'],
-								'depth' => 2,
-								'container' => false,
-								'menu_class' => 'nav navbar-nav',
-								'walker' => new wp_bootstrap_navwalker())
-								);
+  		<?php lsx_header_top(); ?>
+	  	<div class="container">
+	    	<div class="navbar-header">
+	      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		        	<span class="sr-only">Toggle navigation</span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+	      		</button>
+				<?php
+						if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+							jetpack_the_site_logo();
+						} else {
 						?>
-		    		</nav>
-	    		<?php } ?>
-		  </div>
-		  	<?php lsx_header_bottom(); ?>
-		</header>
+							<div class="site-branding">
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+								<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+							</div>
+						<?php }
+				?>
+		    </div>
+
+		<?php lsx_nav_before(); ?>
+		
+		<?php 		    		
+			$nav_menu = get_theme_mod('nav_menu_locations',array());
+	    	if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+				<nav class="collapse navbar-collapse" role="navigation">
+			    	<?php
+							wp_nav_menu( array(
+							'menu' => $nav_menu['primary'],
+							'depth' => 2,
+							'container' => false,
+							'menu_class' => 'nav navbar-nav',
+							'walker' => new wp_bootstrap_navwalker())
+							);
+					?>
+	    		</nav>
+    		<?php } ?>
+	  </div>
+	  	<?php lsx_header_bottom(); ?>
+	</header>
+		
 <?php lsx_header_after(); ?>
+    
     <div class="wrap container" role="document">
-	<div class="content role row">
+		<div class="content role row">
