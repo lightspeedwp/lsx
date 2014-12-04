@@ -92,6 +92,10 @@ h3 {
 	color: $black;
 	margin-top: 40px;
 	margin-bottom: 17px;
+
+	i {
+		margin-right: 15px;
+	}
 }
 
 h4,
@@ -100,6 +104,10 @@ h6 {
 	color: $dark-grey;
 	margin-top: 25px;
 	margin-bottom: 25px;
+
+	i {
+		margin-right: 10px;
+	}
 }
 
 iframe, 
@@ -741,11 +749,15 @@ article {
 		color: $grey;
 
 		h3.widget-title {
-			color: #999;
+			color: $light-grey;
 		}
 
 		a {
 			color: $white;
+
+			&:hover {
+				color: $light-grey;
+			}
 		}
 	}
 }
