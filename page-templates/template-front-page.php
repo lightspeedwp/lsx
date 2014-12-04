@@ -3,7 +3,7 @@
 
 	get_header(); ?>
 	
-	<div id="primary" class="content-area front-page">
+	<div id="primary" class="content-area front-page col-sm-12">
 	
 		<?php lsx_content_before(); ?>
 		
