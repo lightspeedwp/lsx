@@ -173,3 +173,15 @@ function lsx_clean_style_tag($input) {
 }
 add_filter('style_loader_tag', 'lsx_clean_style_tag');
 
+/**
+ * Add theme support for infinite scroll.
+ *
+ * @uses add_theme_support
+ * @return void
+ */
+function lsx_infinite_scroll_init() {
+    add_theme_support( 'infinite-scroll', array(
+        'container' => 'main',
+    ) );
+}
+add_action( 'after_setup_theme', 'lsx_infinite_scroll_init' );
