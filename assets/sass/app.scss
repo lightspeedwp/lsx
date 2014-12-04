@@ -70,6 +70,10 @@ a {
 	text-decoration: none !important;
 }
 
+p {
+	margin: 0 0 20px;
+}
+
 h1,
 h2,
 h3,
@@ -365,13 +369,18 @@ nav {
 		@include transition(all .3s ease-in-out);
 
 		.nav.navbar-nav {
+			& > li {
+				& > a {
+					@include border-radius(4px);
+				}
+			}
+
 			li {
 				a {
 					background-color: inherit;
 					font-size: 18px;
 					padding: 15px 24px;
 					transition: none;
-					@include border-radius(4px);
 
 					.caret {
 						margin-left: 6px;
@@ -388,12 +397,20 @@ nav {
 				ul.dropdown-menu {
 					background: $black;
 					padding: 0;
-					margin-top: -2px;
+					margin-top: -3px;
 					box-shadow: none;
 					border: none;
 					-webkit-border-top-right-radius: 3px;
 					-moz-border-top-right-radius: 3px;
 					border-top-right-radius: 3px;
+
+					-webkit-border-bottom-left-radius: 3px;
+					-moz-border-bottom-left-radius: 3px;
+					border-bottom-left-radius: 3px;
+
+					-webkit-border-bottom-right-radius: 3px;
+					-moz-border-bottom-right-radius: 3px;
+					border-bottom-right-radius: 3px;
 
 					li {
 						a {
@@ -401,9 +418,30 @@ nav {
 							background-color: inherit;
 							color: $light-grey;
 							font-size: 17px;
+							border-radius: none;
 
 							&:hover {
 								background: $mid-grey; 
+							}
+						}
+
+						&:first-child {
+							a {
+								-webkit-border-top-right-radius: 3px !important;
+								-moz-border-top-right-radius: 3px !important;
+								border-top-right-radius: 3px !important;
+							}
+						}
+
+						&:last-child {
+							a {
+								-webkit-border-bottom-left-radius: 3px !important;
+								-moz-border-bottom-left-radius: 3px !important;
+								border-bottom-left-radius: 3px !important;
+
+								-webkit-border-bottom-right-radius: 3px !important;
+								-moz-border-bottom-right-radius: 3px !important;
+								border-bottom-right-radius: 3px !important;
 							}
 						}
 
@@ -446,7 +484,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	margin-bottom: 100px;
 
 	.home & {
-		margin-top: 70px;
+		margin-top: 40px;
 	}
 }
 
@@ -467,6 +505,22 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 		}
 	}
 }
+
+.front-page {
+	#home-widgets {
+		aside.widget {
+			margin-bottom: 80px;
+
+			h3.widget-title {
+				font: {
+					size: 32px;
+				}
+				color: $black;
+			}
+		}
+	}
+}
+
 
 // Portfolio
 
