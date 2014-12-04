@@ -70,4 +70,20 @@ add_theme_support( 'custom-background', array(
  */
 require_once('wp_bootstrap_navwalker.php');
 
+
+/**
+ * Add theme support for infinite scroll.
+ *
+ * @uses add_theme_support
+ * @return void
+ */
+function lsx_infinite_scroll_init() {
+    add_theme_support( 'infinite-scroll', array(
+        'container' => 'main',
+        'type' => 'scroll',
+    ) );
+}
+add_action( 'after_setup_theme', 'lsx_infinite_scroll_init' );
+
+
 ?>
