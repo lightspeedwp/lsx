@@ -326,7 +326,7 @@ header.banner {
 	top: 0;
 	border: none;
 
-	.logged-in & {
+	.admin-bar & {
 		top: 32px;
 	}
 
@@ -456,6 +456,16 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	.home & {
 		margin-top: 130px;
 	}
+
+	.soliloquy-controls-direction {
+		.soliloquy-prev {
+			left: 30px;
+		}
+
+		.soliloquy-next {
+			right: 30px;
+		}
+	}
 }
 
 // Portfolio
@@ -576,32 +586,27 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	 Posts
 	 ========================================================================== */
 
-.hentry header { }
-.hentry time { }
-.hentry .byline { }
-.hentry .entry-content { }
-.hentry footer { }
-
-.archive article,
-.search article {
-	margin-bottom: 35px;
-}
-
 article {
+	margin-bottom: 20px;
+
 	header.entry-header {
 		h1.entry-title {
-			font-size: 24px;
-			margin-bottom: 5px;
-			line-height: 30px;
+			.label {
+				display: inline-block;
+				padding: 8px 12px;
+				margin-left: 5px;
+				font-size: 14px;
+				font-weight: 500;
+				letter-spacing: .3px;
+				font-family: 'Open Sans', sans-serif;
+				vertical-align: middle;
+				@include border-radius(3px);
+			}
 		}
 
-		.archive & {
-			& > small {
-				& > p {
-					a {
-						font-weight: bold;
-					}
-				}
+		.entry-image {
+			.thumbnail {
+				margin-bottom: 30px;
 			}
 		}
 	}
@@ -611,8 +616,8 @@ article {
 	}
 
 	.post-meta {
-		color: #999;
-		margin-bottom: 3px;
+		color: $grey;
+		margin-bottom: 20px;
 	}
 
 	footer.entry-meta {
