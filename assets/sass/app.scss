@@ -59,7 +59,10 @@ body {
 	color: $mid-grey;
 	margin: 0;
 	padding: 0;
-	font-size: 17px;
+	font: {
+		size: 17px;
+		family: 'Open Sans', sans-serif;
+	}
 	line-height: 200%;
 	letter-spacing: .1px;
 	-ms-word-wrap: break-word;
@@ -365,60 +368,27 @@ nav.page-nav {
 	
 	ol.media-list {
 		li.comment {
-			border-top: 1px solid #eee;
-			padding: 20px 5px;
-			
 			&.odd {
-				background: #fafafa;
-			}
-		}
-		.pingback {
-			margin-bottom: 20px;
-
-			h4.media-heading {
-				font-size: 20px;
+				background: $off-white;
 			}
 
 			time {
-				font-size: 13px;
-				margin-bottom: 10px;
-				display: inline-block;
-			} 
+				font-size: 16px;
+			}
 		}
-	}
-}
-
-#respond {
-	#submit {
-		display: inline-block;
-		margin-bottom: 0; // For input.btn
-		font-weight: $btn-font-weight;
-		text-align: center;
-		vertical-align: middle;
-		cursor: pointer;
-		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-		border: 1px solid transparent;
-		white-space: nowrap;
-		@include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
-		@include user-select(none); 
-		
-		color: $btn-primary-color;  
-		
-		&:hover,
-		&:focus {
-			color: $btn-default-color;
-			text-decoration: none;
-		}   
-			
-	}
-	
-	p.form-allowed-tags {
-		display:none;
 	}
 }
 
 ul {
 	padding-left: 20px;
+}
+
+hr {
+	display: none;
+}
+
+.media > .pull-left {
+	margin-right: 20px;
 }
 
 
@@ -932,15 +902,82 @@ article {
 	}
 }
 
-.read-more {
-	margin-right: 10px;
-	&:before {
-			font-family: "FontAwesome";
-			display: inline-block;
-			content: "\f02d";    
-			margin-right: 5px;
+#respond {
+	.comment-notes {
+		margin-bottom: 15px;
+	}
+
+	.logged-in-as {
+		margin-bottom: -10px;
+	}
+
+	#submit {
+		@include button-variant($white, $primary, rgba(0, 0, 0, 0));
+		padding: 4px 20px;
+		@include border-radius(3px);
+	}
+
+	.comment-subscription-form {
+		margin: 0;
+		
+		label {
+			font: {
+				size: 16px;
+				weight: 500;
+			}
+		}
+	}
+}
+
+.sharedaddy,
+.jp-relatedposts {
+	h3 {
+		font: {
+			family: 'Raleway', 'Open Sans', sans-serif;
+			size: 20px;
+			weight: 600;
 		}
 
+		&:before {
+			display: none;
+		}
+	}
+
+	.jp-relatedposts-post {
+		font-family: 'Open Sans', sans-serif;
+
+		img {
+			margin-bottom: 10px;
+		}
+
+		h4.jp-relatedposts-post-title {
+			margin-bottom: 10px;
+			line-height: 200%;
+
+			a {
+				font: {
+					family: 'Raleway', 'Open Sans', sans-serif;
+					size: 18px;
+					weight: 600;
+				}
+			}
+		}
+
+		p {
+			line-height: 200%;
+		}
+	}
+}
+
+.read-more {
+	margin-right: 10px;
+
+	&:before {
+		font-family: "FontAwesome";
+		display: inline-block;
+		content: "\f02d";    
+		margin-right: 5px;
+	}
 }
 
 /* ==========================================================================
@@ -1007,21 +1044,11 @@ footer.content-info {
 	 ========================================================================== */
 
 .author-box {
-	
-	.social {
-		
-		a {
-			display: inline-block;
-			margin-right: 25px; 
-		}
-
-		i {
-			font-size: 18px;
-		}
-
-	}
-
+	margin-top: 40px;
+	border: none;
+	box-shadow: none;
 }
+
 
 /* ==========================================================================
 	 Gravity Forms
