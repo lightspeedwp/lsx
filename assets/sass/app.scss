@@ -355,6 +355,12 @@ header.banner {
 	background: $light-grey;
 	border: none;
 
+	@media screen and (max-width: 992px) {
+		& > .container {
+			position: relative;
+		}
+	}
+
 	.admin-bar & {
 		top: 32px;
 	}
@@ -366,14 +372,8 @@ header.banner {
 				max-height: 70px;
 				margin: 30px 0;
 				@include transition(all .3s ease-in-out);
-			}
-		}
-	}
 
-	&.scrolled {
-		.navbar-header {
-			.site-logo-link {
-				img {
+				@media screen and (max-width: 992px) {
 					max-height: 50px;
 					margin: 15px 0;
 				}
@@ -381,7 +381,7 @@ header.banner {
 		}
 	}
 
-	@media screen and (max-width: 992px) {
+	&.scrolled {
 		.navbar-header {
 			.site-logo-link {
 				img {
@@ -405,6 +405,10 @@ nav {
 		@include transition(all .3s ease-in-out);
 
 		.nav.navbar-nav {
+			@media screen and (max-width: 992px) {
+				margin: 0;
+			}
+
 			& > li {
 				& > a {
 					@include border-radius(4px);
@@ -426,6 +430,10 @@ nav {
 
 					.caret {
 						margin-left: 6px;
+
+						@media screen and (max-width: 992px) {
+							display: none;
+						}
 					}
 				}
 
@@ -454,6 +462,14 @@ nav {
 					-moz-border-bottom-right-radius: 3px;
 					border-bottom-right-radius: 3px;
 
+					@media screen and (max-width: 992px) {
+						display: block;
+						position: relative;
+						width: 100%;
+						background: $light-grey;
+						margin-bottom: 15px;
+					}
+
 					li {
 						a {
 							background: none;
@@ -464,6 +480,11 @@ nav {
 
 							&:hover {
 								background: $mid-grey; 
+							}
+
+							@media screen and (max-width: 992px) {
+								color: $grey;
+								font-size: 15px;
 							}
 						}
 
@@ -513,13 +534,22 @@ nav {
 	}
 
 	@media screen and (max-width: 992px) {
-		margin: 14px 0;
+		position: absolute;
+		right: 15px;
+		background: $light-grey;
+		margin: 0 !important;
+		border: none !important;
+	}
+
+	@media screen and (max-width: 768px) {
+		right: 0;
 	}
 }
 
-ul.nav li.dropdown:hover > ul.dropdown-menu{
-		display: block;    
+.navbar-toggle {
+	margin: 23px 0;
 }
+
 
 /* ==========================================================================
 	 Content
