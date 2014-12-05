@@ -18,6 +18,7 @@ $off-white: #f1f1f1;
 $white: #fff;
 
 $primary: #428bca;
+$primary-darker: #357ebd;
 
 
 // ========== Mixins ========== //
@@ -173,11 +174,11 @@ img,
 		span.input-group-btn {
 			button.search-submit {
 				color: $white;
-				background-color: #428bca;
-				border-color: #357ebd;
+				background-color: $primary;
+				border-color: $primary-darker;
 
 				&:hover {
-					background-color: #3276b1;
+					background-color: $primary-darker;
 					border-color: #285e8e;
 				}
 			}
@@ -187,7 +188,7 @@ img,
 
 .pagination {
 	span.current {
-		background: #428bca !important;
+		background: $primary !important;
 		color: $white !important;
 	}
 }
@@ -214,7 +215,7 @@ dl {
 		margin-top: 15px;
 		margin-bottom: 6px;
 		padding-bottom: 3px;
-		border-bottom: 1px solid #ddd;
+		border-bottom: 1px solid $light-grey;
 	}
 }
 
@@ -225,7 +226,7 @@ table {
 	margin-bottom: 20px;
 	border-collapse: collapse;
 	border-spacing: 0;
-	border: 1px solid #ddd;
+	border: 1px solid $light-grey;
 
 	& > thead {
 		tr {
@@ -239,7 +240,7 @@ table {
 		tr {
 			&:nth-child(odd) {
 				td {
-					background-color: #f9f9f9;
+					background-color: $off-white;
 				}
 			}
 		}
@@ -247,21 +248,31 @@ table {
 
 	td,
 	th {
-		border: 1px solid #ddd;
+		border: 1px solid $light-grey;
 		padding: 8px;
 		line-height: 1.42857;
 		vertical-align: top;
-		border-top: 1px solid #ddd;
+		border-top: 1px solid $light-grey;
 	}
 }
 
 ul.breadcrumb {
+	background: none;
+	font: {
+		family: 'Raleway', 'Open Sans', sans-serif;
+		size: 14px;
+		weight: 500;
+	}
+	padding: 0;
+	letter-spacing: .2px;
+	
+
 	li > span {
-		color: #ccc;
+		color: $grey;
 
 		& > span {
 			padding: 0 3px;
-			color: #999;
+			color: $grey;
 		}
 	}
 }
@@ -271,7 +282,7 @@ nav.page-nav {
 		display: inline-block;
 		padding: 5px 14px;
 		background-color: $white;
-		border: 1px solid #ddd;
+		border: 1px solid $light-grey;
 		border-radius: 15px;
 
 		a {
@@ -558,6 +569,11 @@ nav {
 .wrap {
 	margin-top: 180px;
 	margin-bottom: 100px;
+
+	@media screen and (max-width: 992px) {
+		margin-top: 120px;
+		margin-bottom: 60px;
+	}
 
 	.home & {
 		margin-top: 40px;
