@@ -40,7 +40,7 @@ add_theme_support( 'site-logo', $args );
 
 
 function lsx_title_tag_setup() {
-   add_theme_support( 'title-tag' );
+   add_theme_support( 'title-tag' ); 
    add_theme_support( 'jetpack-testimonial' );
 }
 add_action( 'after_setup_theme', 'lsx_title_tag_setup' );
