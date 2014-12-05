@@ -384,7 +384,7 @@ ul {
 }
 
 hr {
-	display: none;
+	display: none !important;
 }
 
 .media > .pull-left {
@@ -919,6 +919,10 @@ article {
 
 	.comment-subscription-form {
 		margin: 0;
+
+		&:hover {
+			cursor: pointer;
+		}
 		
 		label {
 			font: {
@@ -933,13 +937,13 @@ article {
 .jp-relatedposts {
 	h3 {
 		font: {
-			family: 'Raleway', 'Open Sans', sans-serif;
-			size: 20px;
-			weight: 600;
+			family: 'Raleway', 'Open Sans', sans-serif !important;
+			size: 20px !important;
+			weight: 600 !important;
 		}
 
 		&:before {
-			display: none;
+			display: none !important;
 		}
 	}
 
@@ -951,20 +955,20 @@ article {
 		}
 
 		h4.jp-relatedposts-post-title {
-			margin-bottom: 10px;
-			line-height: 200%;
+			margin-bottom: 10px !important;
+			line-height: 200% !important;
 
 			a {
 				font: {
-					family: 'Raleway', 'Open Sans', sans-serif;
-					size: 18px;
-					weight: 600;
+					family: 'Raleway', 'Open Sans', sans-serif !important;
+					size: 18px !important;
+					weight: 600 !important;
 				}
 			}
 		}
 
 		p {
-			line-height: 200%;
+			line-height: 200% !important;
 		}
 	}
 }
@@ -1044,9 +1048,14 @@ footer.content-info {
 	 ========================================================================== */
 
 .author-box {
-	margin-top: 40px;
+	margin-top: 0;
+	margin-bottom: 40px;
 	border: none;
 	box-shadow: none;
+
+	.single & {
+		margin-top: 40px;
+	}
 }
 
 
