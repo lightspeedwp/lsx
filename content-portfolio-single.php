@@ -8,7 +8,7 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<?php echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-entry-meta">', _x(', ', 'Used between list items, there is a space after the comma.', 'lsx' ), '</span>' ); ?>
+		<?php echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-entry-meta"><i class="fa fa-tags"></i>', _x(', ', 'Used between list items, there is a space after the comma.', 'lsx' ), '</span>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

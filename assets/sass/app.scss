@@ -141,6 +141,54 @@ h6 {
 	}
 }
 
+h1 {
+	font-size: 32px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 28px;
+	}
+}
+
+h2 {
+	font-size: 30px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 26px;
+	}
+}
+
+h3 {
+	font-size: 24px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 20px;
+	}
+}
+
+h4 {
+	font-size: 18px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+h5 {
+	font-size: 17px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+h6 {
+	font-size: 16px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 15px;
+	}
+}
+
 iframe, 
 img,
 .thumbnail {
@@ -631,6 +679,7 @@ nav {
 
 header.page-header {
 	margin: 0;
+	padding: 0;
 	border: none;
 }
 
@@ -698,7 +747,7 @@ header.page-header {
 			float: left;
 			padding-left: 10px;
 			padding-right: 10px;
-			margin-bottom: 15px;
+			margin-bottom: 20px;
 
 			h3.entry-title {
 				margin-top: 15px;
@@ -720,6 +769,13 @@ header.page-header {
 	}
 }
 
+.single-jetpack-portfolio {
+		.jetpack-portfolio {
+		header.entry-header {
+			margin-bottom: 10px;
+		}
+	}
+}
 
 /* ==========================================================================
 	 Sidebar
@@ -814,6 +870,8 @@ article {
 
 	header.entry-header {
 		h1.entry-title {
+			line-height: 150%;
+
 			.label {
 				display: inline-block;
 				padding: 8px 12px;
@@ -840,7 +898,6 @@ article {
 
 	.post-meta {
 		color: $grey;
-		margin-bottom: 20px;
 	}
 
 	footer.entry-meta {
