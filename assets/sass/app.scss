@@ -66,6 +66,11 @@ body {
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+		line-height: 180%;
+	}
 }
 
 .size-auto, 
@@ -610,7 +615,7 @@ nav {
 	margin-bottom: 100px;
 
 	@media screen and (max-width: 992px) {
-		margin-top: 120px;
+		margin-top: 100px;
 		margin-bottom: 60px;
 	}
 
@@ -622,6 +627,11 @@ nav {
 	.home & {
 		margin-top: 40px;
 	}
+}
+
+header.page-header {
+	margin: 0;
+	border: none;
 }
 
 // Homepage
@@ -679,6 +689,8 @@ nav {
 
 .lsx-portfolio-wrapper {
 	text-align: center;
+	margin-left: -5px;
+	margin-right: -5px;
 
 	.lsx-portfolio {
 		.jetpack-portfolio {
