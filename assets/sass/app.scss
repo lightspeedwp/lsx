@@ -589,7 +589,11 @@ nav {
 }
 
 .navbar-toggle {
-	margin: 23px 0;
+	margin: 48px 0;
+
+	@media screen and (max-width: 992px) {
+		margin: 23px 0;
+	}
 
 	@media screen and (max-width: 768px) {
 		margin: 18px 0;
@@ -626,6 +630,10 @@ nav {
 	.home & {
 		padding-top: 130px;
 		background: $light-grey;
+
+		@media screen and (max-width: 992px) {
+			padding-top: 80px;
+		}
 
 		@media screen and (max-width: 768px) {
 			padding-top: 0;
