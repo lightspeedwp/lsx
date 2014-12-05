@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area single-portfolio col-sm-12">
 
 		<?php lsx_content_before(); ?>
 

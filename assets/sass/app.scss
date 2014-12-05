@@ -18,6 +18,7 @@ $off-white: #f1f1f1;
 $white: #fff;
 
 $primary: #428bca;
+$primary-darker: #357ebd;
 
 
 // ========== Mixins ========== //
@@ -58,13 +59,21 @@ body {
 	color: $mid-grey;
 	margin: 0;
 	padding: 0;
-	font-size: 17px;
+	font: {
+		size: 17px;
+		family: 'Open Sans', sans-serif;
+	}
 	line-height: 200%;
 	letter-spacing: .1px;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+		line-height: 180%;
+	}
 }
 
 .size-auto, 
@@ -82,6 +91,10 @@ a {
 
 p {
 	margin: 0 0 25px;
+
+	@media screen and (max-width: 768px) {
+		margin: 0 0 15px;
+	}
 }
 
 h1,
@@ -107,6 +120,11 @@ h3 {
 	i {
 		margin-right: 15px;
 	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 20px;
+		margin-bottom: 15px;
+	}
 }
 
 h4,
@@ -118,6 +136,59 @@ h6 {
 
 	i {
 		margin-right: 10px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+}
+
+h1 {
+	font-size: 32px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 28px;
+	}
+}
+
+h2 {
+	font-size: 30px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 26px;
+	}
+}
+
+h3 {
+	font-size: 24px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 20px;
+	}
+}
+
+h4 {
+	font-size: 18px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+h5 {
+	font-size: 17px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+h6 {
+	font-size: 16px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 15px;
 	}
 }
 
@@ -173,11 +244,11 @@ img,
 		span.input-group-btn {
 			button.search-submit {
 				color: $white;
-				background-color: #428bca;
-				border-color: #357ebd;
+				background-color: $primary;
+				border-color: $primary-darker;
 
 				&:hover {
-					background-color: #3276b1;
+					background-color: $primary-darker;
 					border-color: #285e8e;
 				}
 			}
@@ -187,7 +258,7 @@ img,
 
 .pagination {
 	span.current {
-		background: #428bca !important;
+		background: $primary !important;
 		color: $white !important;
 	}
 }
@@ -214,7 +285,7 @@ dl {
 		margin-top: 15px;
 		margin-bottom: 6px;
 		padding-bottom: 3px;
-		border-bottom: 1px solid #ddd;
+		border-bottom: 1px solid $light-grey;
 	}
 }
 
@@ -225,7 +296,7 @@ table {
 	margin-bottom: 20px;
 	border-collapse: collapse;
 	border-spacing: 0;
-	border: 1px solid #ddd;
+	border: 1px solid $light-grey;
 
 	& > thead {
 		tr {
@@ -239,7 +310,7 @@ table {
 		tr {
 			&:nth-child(odd) {
 				td {
-					background-color: #f9f9f9;
+					background-color: $off-white;
 				}
 			}
 		}
@@ -247,21 +318,31 @@ table {
 
 	td,
 	th {
-		border: 1px solid #ddd;
+		border: 1px solid $light-grey;
 		padding: 8px;
 		line-height: 1.42857;
 		vertical-align: top;
-		border-top: 1px solid #ddd;
+		border-top: 1px solid $light-grey;
 	}
 }
 
 ul.breadcrumb {
+	background: none;
+	font: {
+		family: 'Raleway', 'Open Sans', sans-serif;
+		size: 14px;
+		weight: 500;
+	}
+	padding: 0;
+	letter-spacing: .2px;
+	
+
 	li > span {
-		color: #ccc;
+		color: $grey;
 
 		& > span {
 			padding: 0 3px;
-			color: #999;
+			color: $grey;
 		}
 	}
 }
@@ -271,7 +352,7 @@ nav.page-nav {
 		display: inline-block;
 		padding: 5px 14px;
 		background-color: $white;
-		border: 1px solid #ddd;
+		border: 1px solid $light-grey;
 		border-radius: 15px;
 
 		a {
@@ -287,60 +368,27 @@ nav.page-nav {
 	
 	ol.media-list {
 		li.comment {
-			border-top: 1px solid #eee;
-			padding: 20px 5px;
-			
 			&.odd {
-				background: #fafafa;
-			}
-		}
-		.pingback {
-			margin-bottom: 20px;
-
-			h4.media-heading {
-				font-size: 20px;
+				background: $off-white;
 			}
 
 			time {
-				font-size: 13px;
-				margin-bottom: 10px;
-				display: inline-block;
-			} 
+				font-size: 16px;
+			}
 		}
-	}
-}
-
-#respond {
-	#submit {
-		display: inline-block;
-		margin-bottom: 0; // For input.btn
-		font-weight: $btn-font-weight;
-		text-align: center;
-		vertical-align: middle;
-		cursor: pointer;
-		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-		border: 1px solid transparent;
-		white-space: nowrap;
-		@include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
-		@include user-select(none); 
-		
-		color: $btn-primary-color;  
-		
-		&:hover,
-		&:focus {
-			color: $btn-default-color;
-			text-decoration: none;
-		}   
-			
-	}
-	
-	p.form-allowed-tags {
-		display:none;
 	}
 }
 
 ul {
 	padding-left: 20px;
+}
+
+hr {
+	display: none !important;
+}
+
+.media > .pull-left {
+	margin-right: 20px;
 }
 
 
@@ -355,6 +403,19 @@ header.banner {
 	background: $light-grey;
 	border: none;
 
+	@media screen and (max-width: 992px) {
+		& > .container {
+			position: relative;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		position: relative !important;
+		top: 0 !important;
+		padding: 0 15px;
+		margin: 0;
+	}
+
 	.admin-bar & {
 		top: 32px;
 	}
@@ -366,6 +427,15 @@ header.banner {
 				max-height: 70px;
 				margin: 30px 0;
 				@include transition(all .3s ease-in-out);
+
+				@media screen and (max-width: 992px) {
+					max-height: 50px;
+					margin: 15px 0;
+				}
+
+				@media screen and (max-width: 768px) {
+					max-height: 40px !important;
+				}
 			}
 		}
 	}
@@ -388,12 +458,21 @@ header.banner {
 	 ========================================================================== */
 
 nav {
+	@media screen and (max-width: 768px) {
+		padding: 0 !important;
+		transition: none !important;
+	}
+
 	header.banner & {
 		float: right;
 		margin: 40px 0;
 		@include transition(all .3s ease-in-out);
 
 		.nav.navbar-nav {
+			@media screen and (max-width: 992px) {
+				margin: 0;
+			}
+
 			& > li {
 				& > a {
 					@include border-radius(4px);
@@ -415,10 +494,15 @@ nav {
 
 					.caret {
 						margin-left: 6px;
+
+						@media screen and (max-width: 992px) {
+							display: none;
+						}
 					}
 				}
 
-				&:hover {
+				&:hover,
+				&.open {
 					& > a {
 						color: $light-grey;
 						background: $dark-grey;
@@ -443,6 +527,14 @@ nav {
 					-moz-border-bottom-right-radius: 3px;
 					border-bottom-right-radius: 3px;
 
+					@media screen and (max-width: 992px) {
+						display: block;
+						position: relative;
+						width: 100%;
+						background: $light-grey;
+						margin-bottom: 15px;
+					}
+
 					li {
 						a {
 							background: none;
@@ -453,6 +545,11 @@ nav {
 
 							&:hover {
 								background: $mid-grey; 
+							}
+
+							@media screen and (max-width: 992px) {
+								color: $grey;
+								font-size: 15px;
 							}
 						}
 
@@ -500,11 +597,32 @@ nav {
 	header.banner.scrolled & {
 		margin: 14px 0;
 	}
+
+	@media screen and (max-width: 992px) {
+		position: absolute;
+		right: 15px;
+		background: $light-grey;
+		margin: 0 !important;
+		border: none !important;
+	}
+
+	@media screen and (max-width: 768px) {
+		right: 0;
+	}
 }
 
-ul.nav li.dropdown:hover > ul.dropdown-menu{
-		display: block;    
+.navbar-toggle {
+	margin: 48px 0;
+
+	@media screen and (max-width: 992px) {
+		margin: 23px 0;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin: 18px 0;
+	}
 }
+
 
 /* ==========================================================================
 	 Content
@@ -514,9 +632,25 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	margin-top: 180px;
 	margin-bottom: 100px;
 
+	@media screen and (max-width: 992px) {
+		margin-top: 100px;
+		margin-bottom: 60px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 20px;
+		margin-bottom: 50px;
+	}
+
 	.home & {
 		margin-top: 40px;
 	}
+}
+
+header.page-header {
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 // Homepage
@@ -524,7 +658,15 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 .soliloquy-slider {
 	.home & {
 		padding-top: 130px;
-		background: #eee;
+		background: $light-grey;
+
+		@media screen and (max-width: 992px) {
+			padding-top: 80px;
+		}
+
+		@media screen and (max-width: 768px) {
+			padding-top: 0;
+		}
 	}
 
 	.soliloquy-controls-direction {
@@ -541,7 +683,11 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 .front-page {
 	#home-widgets {
 		aside.widget {
-			margin-bottom: 80px;
+			margin-bottom: 50px;
+
+			@media screen and (max-width: 768px) {
+				padding-top: 0;
+			}
 
 			&:last-child {
 				margin-bottom: 0;
@@ -562,6 +708,8 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
 .lsx-portfolio-wrapper {
 	text-align: center;
+	margin-left: -5px;
+	margin-right: -5px;
 
 	.lsx-portfolio {
 		.jetpack-portfolio {
@@ -569,7 +717,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 			float: left;
 			padding-left: 10px;
 			padding-right: 10px;
-			margin-bottom: 15px;
+			margin-bottom: 40px;
 
 			h3.entry-title {
 				margin-top: 15px;
@@ -582,6 +730,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
 			@media screen and (max-width: 768px) {
 				width: 50%;
+				margin-bottom: 20px;
 			}
 
 			@media screen and (max-width: 540px) {
@@ -591,6 +740,13 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 	}
 }
 
+.single-jetpack-portfolio {
+		.jetpack-portfolio {
+		header.entry-header {
+			margin-bottom: 10px;
+		}
+	}
+}
 
 /* ==========================================================================
 	 Sidebar
@@ -598,6 +754,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
 #secondary, 
 #tertiary {
+	@media screen and (max-width: 768px) {
+		margin-top: 50px;
+	}
+
 	.widget {
 		margin-bottom: 30px;
 		
@@ -681,6 +841,8 @@ article {
 
 	header.entry-header {
 		h1.entry-title {
+			line-height: 150%;
+
 			.label {
 				display: inline-block;
 				padding: 8px 12px;
@@ -707,7 +869,6 @@ article {
 
 	.post-meta {
 		color: $grey;
-		margin-bottom: 20px;
 	}
 
 	footer.entry-meta {
@@ -742,15 +903,87 @@ article {
 	}
 }
 
-.read-more {
-	margin-right: 10px;
-	&:before {
-			font-family: "FontAwesome";
-			display: inline-block;
-			content: "\f02d";    
-			margin-right: 5px;
+#respond {
+	.comment-notes {
+		margin-bottom: 15px;
+	}
+
+	.logged-in-as {
+		margin-bottom: -10px;
+	}
+
+	#submit {
+		@include button-variant($white, $primary, rgba(0, 0, 0, 0));
+		padding: 4px 20px;
+		@include border-radius(3px);
+	}
+
+	.comment-subscription-form {
+		margin: 0;
+
+		&:hover {
+			cursor: pointer;
+		}
+		
+		label {
+			font: {
+				size: 16px;
+				weight: 500;
+			}
+		}
+	}
+}
+
+.sharedaddy,
+.jp-relatedposts {
+	h3 {
+		font: {
+			family: 'Raleway', 'Open Sans', sans-serif !important;
+			size: 20px !important;
+			weight: 600 !important;
+		}
+		margin-top: 20px;
+
+		em {
+			display: none !important;
+		}
+	}
+
+	.jp-relatedposts-post {
+		font-family: 'Open Sans', sans-serif;
+
+		img {
+			margin-bottom: 10px;
 		}
 
+		h4.jp-relatedposts-post-title {
+			margin-bottom: 10px !important;
+			line-height: 200% !important;
+
+			a {
+				font: {
+					family: 'Raleway', 'Open Sans', sans-serif !important;
+					size: 18px !important;
+					weight: 600 !important;
+				}
+			}
+		}
+
+		p {
+			line-height: 200% !important;
+		}
+	}
+}
+
+.read-more {
+	margin-right: 10px;
+
+	&:before {
+		font-family: "FontAwesome";
+		display: inline-block;
+		content: "\f02d";    
+		margin-right: 5px;
+	}
 }
 
 /* ==========================================================================
@@ -763,6 +996,10 @@ article {
 	.widget {
 		margin: 70px 0;
 		color: $grey;
+
+		@media screen and (max-width: 768px) {
+			margin: 50px 0;
+		}
 
 		h3.widget-title {
 			color: $grey;
@@ -813,21 +1050,16 @@ footer.content-info {
 	 ========================================================================== */
 
 .author-box {
-	
-	.social {
-		
-		a {
-			display: inline-block;
-			margin-right: 25px; 
-		}
+	margin-top: 0;
+	margin-bottom: 40px;
+	border: none;
+	box-shadow: none;
 
-		i {
-			font-size: 18px;
-		}
-
+	.single & {
+		margin-top: 40px;
 	}
-
 }
+
 
 /* ==========================================================================
 	 Gravity Forms
