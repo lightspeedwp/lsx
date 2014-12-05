@@ -717,7 +717,7 @@ header.page-header {
 			float: left;
 			padding-left: 10px;
 			padding-right: 10px;
-			margin-bottom: 20px;
+			margin-bottom: 40px;
 
 			h3.entry-title {
 				margin-top: 15px;
@@ -730,6 +730,7 @@ header.page-header {
 
 			@media screen and (max-width: 768px) {
 				width: 50%;
+				margin-bottom: 20px;
 			}
 
 			@media screen and (max-width: 540px) {
@@ -941,8 +942,9 @@ article {
 			size: 20px !important;
 			weight: 600 !important;
 		}
+		margin-top: 20px;
 
-		&:before {
+		em {
 			display: none !important;
 		}
 	}
