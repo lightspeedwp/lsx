@@ -380,6 +380,17 @@ header.banner {
 			}
 		}
 	}
+
+	@media screen and (max-width: 992px) {
+		.navbar-header {
+			.site-logo-link {
+				img {
+					max-height: 50px;
+					margin: 15px 0;
+				}
+			}
+		}
+	}
 }
 
 
@@ -498,6 +509,10 @@ nav {
 	}
 
 	header.banner.scrolled & {
+		margin: 14px 0;
+	}
+
+	@media screen and (max-width: 992px) {
 		margin: 14px 0;
 	}
 }
