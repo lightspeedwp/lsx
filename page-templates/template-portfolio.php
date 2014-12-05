@@ -1,13 +1,13 @@
 <?php
 /**
- * Template Name: Portfolio Page Template
+ * Template Name: Portfolio Archive
  *
  * @package lsx
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area portfolio-template col-sm-12">
 
 		<?php lsx_content_before(); ?>
 
@@ -34,14 +34,14 @@ get_header(); ?>
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
 			?>
 
-				<div class="portfolio-wrapper">
+				<div class="lsx-portfolio-wrapper">
+					<div class="lsx-portfolio js-masonry" data-masonry-options='{ "itemSelector": ".jetpack-portfolio" }', '{ "singleMode": "true" }'>
+						<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
-					<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
+							<?php get_template_part( 'content', 'portfolio' ); ?>
 
-						<?php get_template_part( 'content', 'portfolio' ); ?>
-
-					<?php endwhile; ?>
-
+						<?php endwhile; ?>
+					</div>
 				</div><!-- .portfolio-wrapper -->
 
 			<?php else : ?>
@@ -67,12 +67,12 @@ get_header(); ?>
 
 			<?php endif; ?>	
 
+			<div class="clearfix"></div>
+
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_sidebar('alt'); ?>
+	
 <?php get_footer(); ?>
