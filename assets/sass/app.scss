@@ -83,6 +83,10 @@ a {
 
 p {
 	margin: 0 0 25px;
+
+	@media screen and (max-width: 768px) {
+		margin: 0 0 15px;
+	}
 }
 
 h1,
@@ -108,6 +112,11 @@ h3 {
 	i {
 		margin-right: 15px;
 	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 20px;
+		margin-bottom: 15px;
+	}
 }
 
 h4,
@@ -119,6 +128,11 @@ h6 {
 
 	i {
 		margin-right: 10px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 }
 
@@ -372,6 +386,13 @@ header.banner {
 		}
 	}
 
+	@media screen and (max-width: 768px) {
+		position: relative !important;
+		top: 0 !important;
+		padding: 0 15px;
+		margin: 0;
+	}
+
 	.admin-bar & {
 		top: 32px;
 	}
@@ -387,6 +408,10 @@ header.banner {
 				@media screen and (max-width: 992px) {
 					max-height: 50px;
 					margin: 15px 0;
+				}
+
+				@media screen and (max-width: 768px) {
+					max-height: 40px !important;
 				}
 			}
 		}
@@ -410,6 +435,11 @@ header.banner {
 	 ========================================================================== */
 
 nav {
+	@media screen and (max-width: 768px) {
+		padding: 0 !important;
+		transition: none !important;
+	}
+
 	header.banner & {
 		float: right;
 		margin: 40px 0;
@@ -559,6 +589,10 @@ nav {
 
 .navbar-toggle {
 	margin: 23px 0;
+
+	@media screen and (max-width: 768px) {
+		margin: 18px 0;
+	}
 }
 
 
@@ -575,6 +609,11 @@ nav {
 		margin-bottom: 60px;
 	}
 
+	@media screen and (max-width: 768px) {
+		margin-top: 0 !important;
+		margin-bottom: 50px;
+	}
+
 	.home & {
 		margin-top: 40px;
 	}
@@ -585,7 +624,11 @@ nav {
 .soliloquy-slider {
 	.home & {
 		padding-top: 130px;
-		background: #eee;
+		background: $light-grey;
+
+		@media screen and (max-width: 768px) {
+			padding-top: 0;
+		}
 	}
 
 	.soliloquy-controls-direction {
@@ -602,7 +645,11 @@ nav {
 .front-page {
 	#home-widgets {
 		aside.widget {
-			margin-bottom: 80px;
+			margin-bottom: 50px;
+
+			@media screen and (max-width: 768px) {
+				padding-top: 0;
+			}
 
 			&:last-child {
 				margin-bottom: 0;
@@ -659,6 +706,10 @@ nav {
 
 #secondary, 
 #tertiary {
+	@media screen and (max-width: 768px) {
+		margin-top: 50px;
+	}
+
 	.widget {
 		margin-bottom: 30px;
 		
@@ -824,6 +875,10 @@ article {
 	.widget {
 		margin: 70px 0;
 		color: $grey;
+
+		@media screen and (max-width: 768px) {
+			margin: 50px 0;
+		}
 
 		h3.widget-title {
 			color: $grey;
