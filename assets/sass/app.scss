@@ -478,7 +478,8 @@ nav {
 					}
 				}
 
-				&:hover {
+				&:hover,
+				&.open {
 					& > a {
 						color: $light-grey;
 						background: $dark-grey;
