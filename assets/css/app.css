@@ -9197,35 +9197,39 @@ article div.entry-summary {
 article .post-meta {
   color: #999999;
 }
-/* line 899, ../sass/app.scss */
+/* line 896, ../sass/app.scss */
+article .post-tags p {
+  font-size: 14px;
+}
+/* line 905, ../sass/app.scss */
 article footer.entry-meta span.comments-link a:before,
 article footer.entry-meta span.edit-link a:before {
   display: inline-block;
   font-family: Fontawesome;
   margin-right: 5px;
 }
-/* line 907, ../sass/app.scss */
+/* line 913, ../sass/app.scss */
 article footer.entry-meta span.comments-link {
   margin-right: 10px;
 }
-/* line 911, ../sass/app.scss */
+/* line 917, ../sass/app.scss */
 article footer.entry-meta span.comments-link a:before {
   content: '\f075';
 }
-/* line 919, ../sass/app.scss */
+/* line 925, ../sass/app.scss */
 article footer.entry-meta span.edit-link a:before {
   content: '\f040';
 }
 
-/* line 928, ../sass/app.scss */
+/* line 934, ../sass/app.scss */
 #respond .comment-notes {
   margin-bottom: 15px;
 }
-/* line 932, ../sass/app.scss */
+/* line 938, ../sass/app.scss */
 #respond .logged-in-as {
   margin-bottom: -10px;
 }
-/* line 936, ../sass/app.scss */
+/* line 942, ../sass/app.scss */
 #respond #submit {
   color: white;
   background-color: #428bca;
@@ -9257,21 +9261,21 @@ article footer.entry-meta span.edit-link a:before {
   color: #428bca;
   background-color: white;
 }
-/* line 942, ../sass/app.scss */
+/* line 948, ../sass/app.scss */
 #respond .comment-subscription-form {
   margin: 0;
 }
-/* line 945, ../sass/app.scss */
+/* line 951, ../sass/app.scss */
 #respond .comment-subscription-form:hover {
   cursor: pointer;
 }
-/* line 949, ../sass/app.scss */
+/* line 955, ../sass/app.scss */
 #respond .comment-subscription-form label {
   font-size: 16px;
   font-weight: 500;
 }
 
-/* line 960, ../sass/app.scss */
+/* line 966, ../sass/app.scss */
 .sharedaddy h3,
 .jp-relatedposts h3 {
   font-family: 'Raleway', 'Open Sans', sans-serif !important;
@@ -9279,47 +9283,47 @@ article footer.entry-meta span.edit-link a:before {
   font-weight: 600 !important;
   margin-top: 20px;
 }
-/* line 969, ../sass/app.scss */
+/* line 975, ../sass/app.scss */
 .sharedaddy h3:before,
 .sharedaddy h3 em:before,
 .jp-relatedposts h3:before,
 .jp-relatedposts h3 em:before {
   display: none !important;
 }
-/* line 974, ../sass/app.scss */
+/* line 980, ../sass/app.scss */
 .sharedaddy .jp-relatedposts-post,
 .jp-relatedposts .jp-relatedposts-post {
   font-family: 'Open Sans', sans-serif;
 }
-/* line 977, ../sass/app.scss */
+/* line 983, ../sass/app.scss */
 .sharedaddy .jp-relatedposts-post img,
 .jp-relatedposts .jp-relatedposts-post img {
   margin-bottom: 10px;
 }
-/* line 981, ../sass/app.scss */
+/* line 987, ../sass/app.scss */
 .sharedaddy .jp-relatedposts-post h4.jp-relatedposts-post-title,
 .jp-relatedposts .jp-relatedposts-post h4.jp-relatedposts-post-title {
   margin-bottom: 10px !important;
   line-height: 200% !important;
 }
-/* line 985, ../sass/app.scss */
+/* line 991, ../sass/app.scss */
 .sharedaddy .jp-relatedposts-post h4.jp-relatedposts-post-title a,
 .jp-relatedposts .jp-relatedposts-post h4.jp-relatedposts-post-title a {
   font-family: 'Raleway', 'Open Sans', sans-serif !important;
   font-size: 18px !important;
   font-weight: 600 !important;
 }
-/* line 994, ../sass/app.scss */
+/* line 1000, ../sass/app.scss */
 .sharedaddy .jp-relatedposts-post p,
 .jp-relatedposts .jp-relatedposts-post p {
   line-height: 200% !important;
 }
 
-/* line 1000, ../sass/app.scss */
+/* line 1006, ../sass/app.scss */
 .read-more {
   margin-right: 10px;
 }
-/* line 1003, ../sass/app.scss */
+/* line 1009, ../sass/app.scss */
 .read-more:before {
   font-family: "FontAwesome";
   display: inline-block;
@@ -9330,34 +9334,34 @@ article footer.entry-meta span.edit-link a:before {
 /* ==========================================================================
 	 Footer
 	 ========================================================================== */
-/* line 1015, ../sass/app.scss */
+/* line 1021, ../sass/app.scss */
 #footer-widgets {
   background: #333333;
 }
-/* line 1018, ../sass/app.scss */
+/* line 1024, ../sass/app.scss */
 #footer-widgets .widget {
   margin: 70px 0;
   color: #999999;
 }
 @media screen and (max-width: 768px) {
-  /* line 1018, ../sass/app.scss */
+  /* line 1024, ../sass/app.scss */
   #footer-widgets .widget {
     margin: 50px 0;
   }
 }
-/* line 1026, ../sass/app.scss */
+/* line 1032, ../sass/app.scss */
 #footer-widgets .widget h3.widget-title {
   color: #999999;
 }
-/* line 1030, ../sass/app.scss */
+/* line 1036, ../sass/app.scss */
 #footer-widgets .widget a {
   color: #eeeeee;
 }
-/* line 1033, ../sass/app.scss */
+/* line 1039, ../sass/app.scss */
 #footer-widgets .widget a:hover {
   color: #999999;
 }
-/* line 1039, ../sass/app.scss */
+/* line 1045, ../sass/app.scss */
 #footer-widgets .widget.widget_tag_cloud .tagcloud a {
   display: inline-block;
   background: #999999;
@@ -9377,18 +9381,18 @@ article footer.entry-meta span.edit-link a:before {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1050, ../sass/app.scss */
+/* line 1056, ../sass/app.scss */
 #footer-widgets .widget.widget_tag_cloud .tagcloud a:hover {
   background: #428bca;
   text-decoration: none;
 }
 
-/* line 1059, ../sass/app.scss */
+/* line 1065, ../sass/app.scss */
 footer.content-info {
   background: #232222;
   text-align: center;
 }
-/* line 1063, ../sass/app.scss */
+/* line 1069, ../sass/app.scss */
 footer.content-info .credit {
   color: white;
   margin: 20px 0;
@@ -9398,14 +9402,14 @@ footer.content-info .credit {
 /* ==========================================================================
 	 Author Box
 	 ========================================================================== */
-/* line 1075, ../sass/app.scss */
+/* line 1081, ../sass/app.scss */
 .author-box {
   margin-top: 0;
   margin-bottom: 40px;
   border: none;
   box-shadow: none;
 }
-/* line 1081, ../sass/app.scss */
+/* line 1087, ../sass/app.scss */
 .single .author-box {
   margin-top: 40px;
 }
@@ -9413,26 +9417,26 @@ footer.content-info .credit {
 /* ==========================================================================
 	 Gravity Forms
 	 ========================================================================== */
-/* line 1102, ../sass/app.scss */
+/* line 1108, ../sass/app.scss */
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 1106, ../sass/app.scss */
+/* line 1112, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 1120, ../sass/app.scss */
+/* line 1126, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 1131, ../sass/app.scss */
+/* line 1137, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 1137, ../sass/app.scss */
+/* line 1143, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -9450,7 +9454,7 @@ footer.content-info .credit {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 1155, ../sass/app.scss */
+/* line 1161, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -9474,34 +9478,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 1181, ../sass/app.scss */
+/* line 1187, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 1182, ../sass/app.scss */
+/* line 1188, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 1183, ../sass/app.scss */
+/* line 1189, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 1184, ../sass/app.scss */
+/* line 1190, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 1186, ../sass/app.scss */
+/* line 1192, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 1193, ../sass/app.scss */
+/* line 1199, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
