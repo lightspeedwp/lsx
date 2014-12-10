@@ -91,7 +91,14 @@ get_header(); ?>
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
-	
-	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+	<?php
+		$firefox = strpos($_SERVER["HTTP_USER_AGENT"], 'Firefox') ? true : false;
+
+		if ($firefox) {
+
+		} else { ?> 
+			<script src="assets/js/imagesloaded.pkgd.min.js"></script> 
+		<?php }
+	?>
 	
 <?php get_footer(); ?>
