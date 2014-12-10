@@ -1,13 +1,30 @@
 jQuery(document).ready(function($) {
 	$('table#wp-calendar').addClass('table');
 	
-	jQuery(window).scroll(function(){
-	    if(jQuery(window).scrollTop() > 100) {
-	        jQuery('header.banner').addClass('scrolled');
+	$(window).scroll(function(){
+	    if($(window).scrollTop() > 100) {
+	        $('header.banner').addClass('scrolled');
 	    } else {
-	        jQuery('header.banner').removeClass('scrolled');
+	        $('header.banner').removeClass('scrolled');
 	    }
 	});
 
-	jQuery(window).resize();
+	$('.lsx-portfolio').masonry({
+	    itemSelector: '.jetpack-portfolio',
+	    singlemode: true,
+	    isAnimated: true,
+	    animationOptions: {
+	        duration: 700,
+	        easing: 'linear',
+	        queue: false
+	    }
+	});
+
+	$('.lsx-portfolio').imagesLoaded( function(){
+	    $('.lsx-portfolio').masonry({
+			itemSelector: '.jetpack-portfolio',
+			isAnimated: true,
+			isFitWidth: true
+	    });
+    });
 });

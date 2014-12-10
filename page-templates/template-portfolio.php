@@ -52,7 +52,7 @@ get_header(); ?>
 			?>
 
 				<div class="lsx-portfolio-wrapper">
-					<div class="lsx-portfolio js-masonry" data-masonry-options='{ "itemSelector": ".jetpack-portfolio" }', '{ "singleMode": "true" }'>
+					<div class="lsx-portfolio">
 						<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
 							<?php get_template_part( 'content', 'portfolio' ); ?>
