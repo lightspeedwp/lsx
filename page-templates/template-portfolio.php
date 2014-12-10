@@ -91,5 +91,18 @@ get_header(); ?>
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
+
+	<script src="assets/js/masonry.pkgd.min.js"></script>
+	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+
+	<script>
+	  $('.lsx-portfolio').imagesLoaded( function(){
+	    $('.lsx-portfolio').masonry({
+	     itemSelector: '.jetpack-portfolio',
+	     isAnimated: true,
+	     isFitWidth: true
+	    });
+	  });
+	</script>
 	
 <?php get_footer(); ?>
