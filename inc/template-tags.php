@@ -87,13 +87,27 @@ endif;
 if ( ! function_exists( 'lsx_post_meta' ) ) {
 	function lsx_post_meta() {
 		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; }
-	
-		$post_info = '<span class="small">' . __( 'By', 'lsx' ) . '</span> ' . get_the_author() . ' <span class="small">' . _x( 'on', 'post datetime', 'lsx' ) . '</span> ' . the_date($d = '', $before = '', $after = '', false) . ' <span class="small">' . __( 'in', 'lsx' ) . '</span> ' . implode(',',get_the_category(', '));
+		
+		$post_info = '<span class="small">' . __( 'By', 'lsx' ) . '</span> ' . get_the_author() . ' <span class="small">' . _x( 'on', 'post datetime', 'lsx' ) . '</span> ' . the_date($d = '', $before = '', $after = '', false);
 		$post_info = do_shortcode( $post_info );
 		
 		printf( '<div class="post-meta">%s</div>' . "\n", $post_info );
+
+		$args = array(
+	    'orderby' => 'name',
+	    'order' => 'ASC'
+	    );
+    	$categories = get_categories($args); ?>
+    	
+    	<div class="post-categories">
+    		<strong>Categories:</strong>
+    		
+	    	<?php foreach ( $categories as $category ) {
+	    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
+	    	} ?>
+    	</div>
 	
-	} // End lsx_post_meta()
+	<?php } // End lsx_post_meta()
 }
 
 if ( ! function_exists( 'lsx_paging_nav' ) ) :
