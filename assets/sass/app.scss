@@ -735,15 +735,15 @@ header.page-header {
 				overflow: hidden;
 
 				img {
-					@include transition(all .5s ease-in-out);
+					@include transition(all .4s ease-in-out);
 				}
 
 				&.zoom {
 					img {
-						-webkit-transform: scale(1.05);
-						-moz-transform: scale(1.05);
-						-o-transform: scale(1.05);
-						transform: scale(1.05);
+						-webkit-transform: scale(1.08);
+						-moz-transform: scale(1.08);
+						-o-transform: scale(1.08);
+						transform: scale(1.08);
 					}
 				}
 			}
