@@ -9,6 +9,12 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+	$('.portfolio-thumbnail').hover(function() {
+        $(this).addClass('zoom');
+    }, function() {
+        $(this).removeClass('zoom');
+    });
+
 	$('.lsx-portfolio').masonry({
 	    itemSelector: '.jetpack-portfolio',
 	    singlemode: true,
