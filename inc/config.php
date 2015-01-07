@@ -75,22 +75,6 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 			$main_class = 'col-' . $size . '-8 col-' . $size . '-push-4';
 			$sidebar_class = 'col-' . $size . '-4 col-' . $size . '-pull-8';
 			break;
-		case '3c-l':
-			$main_class = 'col-' . $size . '-7';
-			$sidebar_class = 'col-' . $size . '-3';
-			$sidebar_class_alt = 'col-' . $size . '-2';
-			break;
-		case '3c-,':
-		case '3c-m':
-			$main_class = 'col-' . $size . '-7 col-' . $size . '-push-2';
-			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-push-2';
-			$sidebar_class_alt = 'col-' . $size . '-2 col-' . $size . '-pull-10';
-			break;
-		case '3c-r':
-			$main_class = 'col-' . $size . '-7 col-' . $size . '-push-5';
-			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-pull-7';
-			$sidebar_class_alt = 'col-' . $size . '-2 col-' . $size . '-pull-7';
-			break;
 		default:
 			$main_class = 'col-' . $size . '-8';
 			$sidebar_class = 'col-' . $size . '-4';
@@ -103,10 +87,6 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 
 	if ( $class == 'sidebar' ) {
 		return $sidebar_class;
-	}
-
-	if ( $class == 'sidebar_alt' ) {
-		return $sidebar_class_alt;
 	}
 }
 
@@ -144,17 +124,6 @@ function lsx_sidebar_class() {
 
 function lsx_home_sidebar_class() {
 	return lsx_layout_selector( 'sidebar', 'home' );
-}
-
-/**
- * .sidebar classes
- */
-function lsx_sidebar_alt_class() {
-  	return lsx_layout_selector( 'sidebar_alt' );
-}
-
-function lsx_home_sidebar_alt_class() {
-	return lsx_layout_selector( 'sidebar_alt', 'home' );
 }
 
 /**

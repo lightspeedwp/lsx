@@ -93,12 +93,11 @@ if(!class_exists('LSX_Theme_Customizer')){
 			return $data;
 		
 		}		
-		
-	}
-	
+	}	
 }
 
 $lsx_customizer = new LSX_Theme_Customizer();
+
 /**
  * Helper function to return the theme option value.
  * If no value has been saved, it returns $default.
