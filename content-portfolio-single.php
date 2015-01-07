@@ -13,16 +13,10 @@
 	<?php if ( is_single() ) { ?>
 
 	<header class="page-header">
-		<?php if ( has_post_thumbnail() ) {
-			the_post_thumbnail( 'thumbnail-single' );
-		} ?>
 		<h1 class="page-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } else { ?>
 	<header class="entry-header">
-		<?php if ( has_post_thumbnail() ) {
-			the_post_thumbnail( 'thumbnail-single' );
-		} ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } ?>
