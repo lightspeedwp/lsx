@@ -14,7 +14,7 @@
 		<?php if ( has_post_thumbnail() ) { ?>
 		<div class="entry-image">
 			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
-				 <?php the_post_thumbnail( 'lsx-thumbnail' ); ?>
+				 <?php the_post_thumbnail( 'thumbnail-single' ); ?>
 			</a>
 		</div>
 	<?php } elseif( lsx_get_option( 'post_placeholder', false)) { ?>
@@ -28,10 +28,10 @@
 	<?php } else { 
 
 		$width = lsx_get_option( 'thumb_width' );
-		if ( ! $width ) $width = 150;
+		if ( ! $width ) $width = 750;
 
 		$height = lsx_get_option( 'thumb_height' );
-		if ( ! $height ) $height = 150;
+		if ( ! $height ) $height = 350;
 		?>
 
 		<div class="entry-image">
