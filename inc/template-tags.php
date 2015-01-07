@@ -43,33 +43,6 @@ function lsx_breadcrumbs() {
   echo $output;
 }
 
-/**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package lsx
- */
-
-if ( ! function_exists( 'lsx_logo' ) ) :
-/**
- * Displays logo when applicable
- *
- * @return void
- */
-function lsx_logo() {
-	$logo = lsx_get_option('site_logo');
-
-	if ( ! empty( $logo ) ) { 
-	
-		?> <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>"> <?php
-	
-	} else {
-		echo bloginfo('name');
-	}
-}
-endif;
-
 /*-----------------------------------------------------------------------------------*/
 /* Add customisable post meta */
 /*-----------------------------------------------------------------------------------*/
