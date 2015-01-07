@@ -28,7 +28,7 @@ function lsx_scripts() {
     wp_enqueue_script('masonry');
 	wp_enqueue_script('lsx_scripts');
 	wp_enqueue_script('custom');
-	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '//css/font-awesome.css' );
+	wp_enqueue_style( 'genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
 	if(is_child_theme()) {
 	wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css' );
 	
