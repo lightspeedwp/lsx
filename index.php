@@ -36,6 +36,8 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 			
+			<?php lsx_paging_nav(); ?>
+			
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>

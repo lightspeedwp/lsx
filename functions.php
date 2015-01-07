@@ -85,6 +85,7 @@ function lsx_infinite_scroll_init() {
     add_theme_support( 'infinite-scroll', array(
         'container' => 'main',
         'type' => 'scroll',
+        'posts_per_page' => get_option('posts_per_page',10),
     ) );
 }
 add_action( 'after_setup_theme', 'lsx_infinite_scroll_init' );

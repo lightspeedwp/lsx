@@ -108,33 +108,42 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 }
 
 if ( ! function_exists( 'lsx_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @return void
- */
-function lsx_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
+	/**
+	 * Display navigation to next/previous set of posts when applicable.
+	 *
+	 * @return void
+	 */
+	function lsx_paging_nav() {
+		// Don't print empty markup if there's only one page.
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return;
+		}
+		
+		
+		if(true == get_option('infinite_scroll',1) && function_exists('the_neverending_home_page_init')){
+			return true;
+		}elseif(function_exists('wp_pagenavi')){
+			wp_pagenavi();
+		}else{
+		
+			?>
+			<nav class="navigation paging-navigation" role="navigation">
+				<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'lsx' ); ?></h1>
+				<div class="nav-links">
+		
+					<?php if ( get_next_posts_link() ) : ?>
+					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ) ); ?></div>
+					<?php endif; ?>
+		
+					<?php if ( get_previous_posts_link() ) : ?>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ) ); ?></div>
+					<?php endif; ?>
+		
+				</div><!-- .nav-links -->
+			</nav><!-- .navigation -->
+			<?php
+		}
 	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'lsx' ); ?></h1>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
 endif;
 
 if ( ! function_exists( 'lsx_post_nav' ) ) :
