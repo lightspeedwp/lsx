@@ -615,12 +615,39 @@ nav {
 .navbar-toggle {
 	margin: 48px 0;
 
+	.scrolled & {
+		margin: 23px 0;
+	}
+
 	@media screen and (max-width: 992px) {
 		margin: 23px 0;
 	}
 
 	@media screen and (max-width: 768px) {
 		margin: 18px 0;
+	}
+}
+
+.mobile-menu-title {
+	display: none;
+	float: right;
+	margin: 48px 13px;
+	font-weight: 600;
+
+	.scrolled & {
+		margin: 23px 13px;
+	}
+
+	@media screen and (min-width: 450px) and (max-width: 1200px) {
+		display: block;
+	}
+
+	@media screen and (max-width: 992px) {
+		margin: 23px 13px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin: 18px 13px;
 	}
 }
 
