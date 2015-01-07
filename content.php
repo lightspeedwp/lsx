@@ -14,7 +14,7 @@
 		<?php if ( has_post_thumbnail() ) { ?>
 		<div class="entry-image">
 			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
-				 <?php the_post_thumbnail( 'lsx-thumbnail' ); ?>
+				 <?php the_post_thumbnail( 'thumbnail-single' ); ?>
 			</a>
 		</div>
 	<?php } elseif( lsx_get_option( 'post_placeholder', false)) { ?>
@@ -28,10 +28,10 @@
 	<?php } else { 
 
 		$width = lsx_get_option( 'thumb_width' );
-		if ( ! $width ) $width = 150;
+		if ( ! $width ) $width = 750;
 
 		$height = lsx_get_option( 'thumb_height' );
-		if ( ! $height ) $height = 150;
+		if ( ! $height ) $height = 350;
 		?>
 
 		<div class="entry-image">
@@ -42,8 +42,10 @@
 	<?php } ?>
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			<?php if ( is_sticky() ) { ?>
-					<span class="label label-default"><i class="fa fa-star"></i> Featured</span>
+			<?php if ( is_sticky() && has_post_thumbnail() ) { ?>
+				<span class="label label-default label-sticky">Featured</span>
+			<?php } elseif ( is_sticky() ) { ?>
+				<span class="label label-default">Featured</span>
 			<?php } ?>
 		</h1>		
 		<?php if ( 'post' == get_post_type() ) : ?>
