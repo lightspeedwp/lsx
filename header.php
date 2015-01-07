@@ -36,22 +36,25 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
   		<?php lsx_header_top(); ?>
 	  	<div class="container">
 	    	<div class="navbar-header">
-	      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		        	<span class="sr-only">Toggle navigation</span>
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
 	      		</button>
+
+	      		<span class="mobile-menu-title">Menu</span>
+
 				<?php
-						if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-							jetpack_the_site_logo();
-						} else {
-						?>
-							<div class="site-branding">
-								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-							</div>
-						<?php }
+					if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+						jetpack_the_site_logo();
+					} else {
+					?>
+						<div class="site-branding">
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+						</div>
+				<?php }
 				?>
 		    </div>
 
