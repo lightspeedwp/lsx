@@ -13,20 +13,20 @@
 	<?php if ( is_single() ) { ?>
 
 	<header class="page-header">
-		<?php if ( lsx_get_option( 'single_thumbnails') && has_post_thumbnail() ) {
+		<?php if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'thumbnail-single' );
 		} ?>
 		<h1 class="page-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } else { ?>
 	<header class="entry-header">
-		<?php if ( lsx_get_option( 'single_thumbnails') && has_post_thumbnail() ) {
+		<?php if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'thumbnail-single' );
 		} ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } ?>
-	<?php lsx_post_meta(); ?>
+
 	<?php echo get_the_tag_list('<p><i class="fa fa-tags"></i> ',', ','</p>'); ?>
 
 	<div class="entry-content">

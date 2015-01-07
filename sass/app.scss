@@ -907,33 +907,8 @@ article {
 	}
 
 	footer.entry-meta {
-		span.comments-link,
-		span.edit-link {
-			a {
-				&:before {
-					display: inline-block;
-					font-family: Fontawesome;
-					margin-right: 5px;
-				}
-			}
-		}
-
 		span.comments-link {
 			margin-right: 10px;
-
-			a {
-				&:before {
-					content: '\f075';
-				}
-			}
-		}
-
-		span.edit-link {
-			a {
-				&:before {
-					content: '\f040';
-				}
-			}
 		}
 	}
 }
@@ -1013,13 +988,6 @@ article {
 
 .read-more {
 	margin-right: 10px;
-
-	&:before {
-		font-family: "FontAwesome";
-		display: inline-block;
-		content: "\f02d";    
-		margin-right: 5px;
-	}
 }
 
 /* ==========================================================================
