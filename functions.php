@@ -104,4 +104,13 @@ function lsx_portfolio_banner() {
 add_action( 'lsx_header_after', 'lsx_portfolio_banner' );
 
 
+/**
+* Register Social Navigation
+*/
+function lsx_register_social_menu() {
+  register_nav_menu('social',__( 'Social Menu' ));
+}
+add_action( 'init', 'lsx_register_social_menu' );
+
+
 ?>

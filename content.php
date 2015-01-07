@@ -42,10 +42,8 @@
 	<?php } ?>
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			<?php if ( is_sticky() && has_post_thumbnail() ) { ?>
+			<?php if ( is_sticky() ) { ?>
 				<span class="label label-default label-sticky">Featured</span>
-			<?php } elseif ( is_sticky() ) { ?>
-				<span class="label label-default">Featured</span>
 			<?php } ?>
 		</h1>		
 		<?php if ( 'post' == get_post_type() ) : ?>
