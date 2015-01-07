@@ -172,3 +172,17 @@ function lsx_clean_style_tag($input) {
   return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
 }
 add_filter('style_loader_tag', 'lsx_clean_style_tag');
+
+
+/**
+ * Adds the Site Title in Settings->General as a "title" attribute for the logo link.
+ * @param string $html The HTML of the Logo
+ * @return string
+ */
+
+function lsx_site_logo_title_tag( $html) {
+	
+	$html = str_replace('<a', '<a title="'.get_bloginfo('name').'" ', $html);
+	return $html;
+}
+add_filter( 'jetpack_the_site_logo', 'lsx_site_logo_title_tag');

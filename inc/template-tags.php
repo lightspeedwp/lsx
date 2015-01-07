@@ -43,6 +43,30 @@ function lsx_breadcrumbs() {
   echo $output;
 }
 
+/**
+ * Custom template tags for this theme.
+ * Eventually, some of the functionality here could be replaced by core features.
+ *
+ * @package lsx
+ */
+if ( ! function_exists( 'lsx_site_title' ) ) :
+	/**
+	 * Displays logo when applicable
+	 *
+	 * @return void
+	*/
+	function lsx_site_title() {
+		?>
+			<div class="site-branding">
+				<h1 class="site-title"><a title="<?php bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			</div>		
+		<?php 
+	}
+endif;
+
+
+
 /*-----------------------------------------------------------------------------------*/
 /* Add customisable post meta */
 /*-----------------------------------------------------------------------------------*/

@@ -46,12 +46,8 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 						if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 							jetpack_the_site_logo();
 						} else {
-						?>
-							<div class="site-branding">
-								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-							</div>
-						<?php }
+							lsx_site_title();
+						}
 				?>
 		    </div>
 
