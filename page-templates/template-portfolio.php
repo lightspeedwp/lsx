@@ -92,6 +92,6 @@ get_header(); ?>
 		
 	</div><!-- #primary -->
 	
-	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="/js/imagesloaded.pkgd.min.js"></script>
 	
 <?php get_footer(); ?>
