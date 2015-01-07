@@ -61,16 +61,27 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 	    	if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
 				<nav class="collapse navbar-collapse" role="navigation">
 			    	<?php
-							wp_nav_menu( array(
-							'menu' => $nav_menu['primary'],
-							'depth' => 2,
-							'container' => false,
-							'menu_class' => 'nav navbar-nav',
-							'walker' => new wp_bootstrap_navwalker())
-							);
+						wp_nav_menu( array(
+						'menu' => $nav_menu['primary'],
+						'depth' => 2,
+						'container' => false,
+						'menu_class' => 'nav navbar-nav',
+						'walker' => new wp_bootstrap_navwalker())
+						);
 					?>
 	    		</nav>
-    		<?php } ?>
+    		<?php } else { ?>
+    			<nav class="collapse navbar-collapse" role="navigation">
+			    	<?php
+						wp_nav_menu( array(
+						'menu' => $nav_menu,
+						'depth' => 2,
+						'container' => false,
+						'menu_class' => 'nav navbar-nav',
+						'walker' => new wp_bootstrap_navwalker())
+						);
+					?>
+	    		</nav>
 	  </div>
 	  	<?php lsx_header_bottom(); ?>
 	</header>
