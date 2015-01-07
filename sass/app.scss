@@ -231,6 +231,9 @@ img,
 }
 
 .thumbnail {
+	padding: 0;
+	border: none;
+
 	.caption {
 		padding: 12px 10px 7px;
 	}
@@ -669,7 +672,7 @@ nav {
 		margin-top: 20px;
 		margin-bottom: 50px;
 	}
-	
+
 	.single-jetpack-portfolio & {
 		margin-top: 40px;
 	}
@@ -898,6 +901,7 @@ article {
 
 	header.entry-header {
 		h1.entry-title {
+			position: relative;
 			line-height: 150%;
 
 			.label {
@@ -910,6 +914,19 @@ article {
 				font-family: 'Open Sans', sans-serif;
 				vertical-align: middle;
 				@include border-radius(3px);
+
+				&.label-sticky {
+					position: absolute;
+					top: 0;
+					left: 40px;
+					background: rgba(0, 0, 0, .7);
+					padding: 10px 15px;
+					margin: 0;
+					font: {
+						size: 18px;
+						weight: 600;
+					}
+				}
 			}
 		}
 
