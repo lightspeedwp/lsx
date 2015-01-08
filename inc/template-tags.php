@@ -117,16 +117,21 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 				?>
 			</div>
 
-			<div class="post-categories">
-				<span class="genericon genericon-category"></span>
-				<?php 
-					$categories = get_categories($args);
 
-					foreach ( $categories as $category ) {
-			    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
-			    	} 
-		    	?>
-			</div>
+			<?php 
+		    	$post_categories = wp_get_post_categories( get_the_ID() );
+		    	$cats = array();
+		    	foreach($post_categories as $c){
+		    			$cat = get_category( $c );
+		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a> ';
+		    	}
+		    	if(!empty($cats)){ ?>
+					<div class="post-categories">
+						<span class="genericon genericon-category"></span>		    	
+						<?php echo implode(', ', $cats); ?>
+					</div>					
+			<?php } ?>
+
 
 			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
 
