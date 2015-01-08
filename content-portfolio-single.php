@@ -38,17 +38,17 @@
 		<div class="col-md-4">
 			<div class="portfolio-meta">
 				<div class="portfolio-category">
-					<span>Category</span>
+					<span><span class="genericon genericon-category"></span>Category</span>
 					<a href="#">Lorem Ipsum</a>
 				</div>
 
 				<div class="portfolio-client">
-					<span>Client</span>
+					<span><span class="genericon genericon-user"></span>Client</span>
 					<span>Dolor Sit Amet</span>
 				</div>
 
 				<div class="portfolio-website">
-					<span>Website</span>
+					<span><span class="genericon genericon-link"></span>Website</span>
 					<a href="#">http://www.loremipsum.com</a>
 				</div>
 			</div>

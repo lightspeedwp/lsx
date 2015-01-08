@@ -63,17 +63,6 @@
 		?>		
 	</div><!-- .entry-content -->
 	<?php endif; ?>
-	
-	<footer class="footer-meta">
-		<?php if ( 'post' == get_post_type() ) : ?>
-			
-			<?php lsx_post_format(); ?>
-			  
-		<?php endif; ?>
-	
-		<?php lsx_post_meta(); ?>		
-
-	</footer><!-- .footer-meta -->
 
 	<?php lsx_entry_bottom(); ?>
 
@@ -83,3 +72,14 @@
 </article><!-- #post-## -->
 
 <?php lsx_entry_after(); ?>
+
+<footer class="footer-meta">
+	<?php if ( 'post' == get_post_type() ) : ?>
+		
+		<?php lsx_post_format(); ?>
+		  
+	<?php endif; ?>
+
+	<?php lsx_post_meta(); ?>		
+
+</footer><!-- .footer-meta -->
