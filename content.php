@@ -66,20 +66,19 @@
 
 	<?php lsx_entry_bottom(); ?>
 
+	<footer class="footer-meta">
+		<?php if ( 'post' == get_post_type() ) : ?>
+			
+			<?php lsx_post_format(); ?>
+			  
+		<?php endif; ?>
+
+		<?php lsx_post_meta(); ?>	
+	</footer><!-- .footer-meta -->
+
 	<div class="clearfix"></div>
 
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
 </article><!-- #post-## -->
 
 <?php lsx_entry_after(); ?>
-
-<footer class="footer-meta">
-	<?php if ( 'post' == get_post_type() ) : ?>
-		
-		<?php lsx_post_format(); ?>
-		  
-	<?php endif; ?>
-
-	<?php lsx_post_meta(); ?>		
-
-</footer><!-- .footer-meta -->
