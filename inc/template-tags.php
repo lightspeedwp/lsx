@@ -80,28 +80,59 @@ endif;
 
 if ( ! function_exists( 'lsx_post_meta' ) ) {
 	function lsx_post_meta() {
-		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; }
+		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
 		
-		$post_info = '<span class="small">' . __( 'By', 'lsx' ) . '</span> ' . get_the_author() . ' <span class="small">' . _x( 'on', 'post datetime', 'lsx' ) . '</span> ' . the_date($d = '', $before = '', $after = '', false);
-		$post_info = do_shortcode( $post_info );
-		
-		printf( '<div class="post-meta">%s</div>' . "\n", $post_info );
+		<div class="post-meta">
+			<div class="post-date">
+				<span class="genericon genericon-month"></span>
+				<?php
+					$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+					
+					$time_string = sprintf( $time_string,
+						esc_attr( get_the_date( 'c' ) ),
+						get_the_date(),
+						esc_attr( get_the_modified_date( 'c' ) ),
+						get_the_modified_date()
+					);
+					printf( '<a href="%2$s" rel="bookmark">%3$s</a>',
+						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
+						esc_url( get_permalink() ),
+						$time_string
+					);
+				?>
+			</div>
 
-		$args = array(
-	    'orderby' => 'name',
-	    'order' => 'ASC'
-	    );
-    	$categories = get_categories($args); ?>
-    	
-    	<div class="post-categories">
-    		<strong>Categories:</strong>
-    		
-	    	<?php foreach ( $categories as $category ) {
-	    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
-	    	} ?>
-    	</div>
-	
-	<?php } // End lsx_post_meta()
+			<div class="post-author">
+
+				<?php
+					if ( ! is_sticky() ) { ?>
+						<span class="genericon genericon-user"></span>
+
+						<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
+							_x( 'Author', 'Used before post author name.', 'lsx' ),
+							esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+							get_the_author()
+						);
+					}
+				?>
+			</div>
+
+			<div class="post-categories">
+				<span class="genericon genericon-category"></span>
+				<?php 
+					$categories = get_categories($args);
+
+					foreach ( $categories as $category ) {
+			    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
+			    	} 
+		    	?>
+			</div>
+
+			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
+
+		</div>
+
+	<?php } // End lsx_post_meta() 
 }
 
 /**

@@ -1013,17 +1013,16 @@ article {
 	}
 
 	.post-meta {
-		color: $grey;
-	}
+		color: $dark-grey;
 
-	.post-tags {
-		p {
-			font-size: 14px;
+		& > div {
+			float: left;
+			margin-right: 20px;
+
+			.genericon {
+				vertical-align: middle;
+			}
 		}
-	}
-
-	.post-categories {
-		font-size: 14px;
 	}
 
 	.entry-content {
