@@ -268,3 +268,11 @@ function lsx_get_avatar_url($author_id, $size) {
 	preg_match("/src='(.*?)'/i", $get_avatar, $matches);
 	return ($matches[1]);
 }
+
+/**
+ * Checks if a Nav $element is empty or not
+ */
+function lsx_is_element_empty($element) {
+	$element = trim($element);
+	return empty($element)?false:true;
+}

@@ -61,7 +61,7 @@ class LSX_Nav_Walker extends Walker_Nav_Menu {
  * Remove the id="" on nav menu items
  * Return 'menu-slug' for nav menu classes
  */
-function roots_nav_menu_css_class($classes, $item) {
+function lsx_nav_menu_css_class($classes, $item) {
 	$slug    = sanitize_title($item->title);
 	$classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
 	$classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
@@ -70,9 +70,9 @@ function roots_nav_menu_css_class($classes, $item) {
 
 	$classes = array_unique($classes);
 
-	return array_filter($classes, 'is_element_empty');
+	return array_filter($classes, 'lsx_is_element_empty');
 }
-add_filter('nav_menu_css_class', 'roots_nav_menu_css_class', 10, 2);
+add_filter('nav_menu_css_class', 'lsx_nav_menu_css_class', 10, 2);
 add_filter('nav_menu_item_id', '__return_null');
 
 /**
@@ -81,7 +81,7 @@ add_filter('nav_menu_item_id', '__return_null');
  * Remove the container
  * Use LSX_Nav_Walker() by default 
  */
-function roots_nav_menu_args($args = '') {
+function lsx_nav_menu_args($args = '') {
 	$roots_nav_menu_args['container'] = false;
 
 	if (!$args['items_wrap']) {
@@ -97,5 +97,5 @@ function roots_nav_menu_args($args = '') {
 	}
 
 	return array_merge($args, $roots_nav_menu_args);
-}
-add_filter('wp_nav_menu_args', 'roots_nav_menu_args');
+} 
+add_filter('wp_nav_menu_args', 'lsx_nav_menu_args');
