@@ -66,7 +66,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 						'depth' => 2,
 						'container' => false,
 						'menu_class' => 'nav navbar-nav',
-						'walker' => new wp_bootstrap_navwalker())
+						'walker' => new lsx_bootstrap_navwalker())
 						);
 					?>
 	    		</nav>
@@ -78,7 +78,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 						'depth' => 2,
 						'container' => false,
 						'menu_class' => 'nav navbar-nav',
-						'walker' => new wp_bootstrap_navwalker())
+						'walker' => new lsx_bootstrap_navwalker())
 						);
 					?>
 	    		</nav>
