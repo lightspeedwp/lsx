@@ -123,7 +123,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 					$categories = get_categories($args);
 
 					foreach ( $categories as $category ) {
-			    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
+			    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
 			    	} 
 		    	?>
 			</div>
@@ -149,7 +149,7 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 			$format_link = get_post_format_link($post_format);
 			?>
 	    	<div class="post-format">
-	    		<?php echo '<span class="genericon"></span><a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" ), ucfirst($post_format) ) . '" ' . '>' . $post_format . '</a> '; ?>
+	    		<?php echo '<span class="genericon"></span><a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" , 'lsx' ), ucfirst($post_format) ) . '" ' . '>' . $post_format . '</a> '; ?>
 	    	</div>			
 			<?php 
 		}

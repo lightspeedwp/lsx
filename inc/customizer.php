@@ -5,7 +5,6 @@
  * @package lsx-theme
  */
 
-
 /**
  * @package lsx-theme
  * @author  warwick@feedmymedia.com <lsdev.biz>
@@ -26,11 +25,17 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 */
 		public function __construct() {
 		
-			
-			$post_types = array();
+			add_action( 'customize_preview_init', array($this,'customize_preview_js' ));
 			add_action( 'customize_register', array($this,'customizer'), 11 );
-			
 		}
+		
+		/**
+		 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+		 */
+		function customize_preview_js() {
+			wp_enqueue_script( 'lsx_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+		}
+			
 		
 		/**
 		 * Slider Settings
@@ -38,14 +43,14 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 * @since     1.0.0
 		 */		
 		public function customizer( $wp_customize ) {		
-		
+			
+			$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';			
+			
 			//Register a section
 			$wp_customize->add_section( 'lsx-homepage', array(
 					'title' => 'Homepage', // The title of section
 					'description' => '', // The description of section
 			) );
-	
-			
 			
 			//Hompage Slider Settings
 			if(function_exists('soliloquy')){
