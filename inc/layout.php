@@ -63,7 +63,7 @@ function lsx_author_box() {
 					<img class="pull-left img-circle" src="<?php echo lsx_get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
 				</div>
 				<div class="content col-sm-10">
-					<h4>About <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h4>
+					<h4>Published by <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h4>
 					<p><?php echo get_the_author_meta( 'description', $author_id ); ?></p>
 				</div>							
 				<div class="col-sm-12">
