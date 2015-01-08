@@ -1114,6 +1114,26 @@ article {
 	margin-right: 10px;
 }
 
+#infinite-handle {
+	margin-top: 60px;
+
+	span {
+		background: $primary;
+		font: {
+			size: 14px;
+			weight: 600;
+		}
+		padding: 9px 17px;
+		text-transform: uppercase;
+		@include border-radius(3px);
+
+		&:hover {
+			background: $black;
+		}
+	}
+}
+
+
 /* ==========================================================================
 	 Footer
 	 ========================================================================== */
