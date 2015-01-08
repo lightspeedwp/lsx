@@ -872,9 +872,28 @@ header.page-header {
 }
 
 .single-jetpack-portfolio {
-		.jetpack-portfolio {
-		header.entry-header {
+	.jetpack-portfolio {
+		header.page-header {
 			margin-bottom: 10px;
+		}
+
+		.portfolio-meta {
+			background: $off-white;
+			padding: 20px 30px;
+			margin-top: 24px;
+
+			& > div {
+				margin-bottom: 20px;
+
+				span:first-child {
+					display: block;
+					color: $dark-grey;
+				}
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 }
@@ -1029,7 +1048,7 @@ article {
 	.post-format {
 		float: left;
 		margin-right: 20px;
-		
+
 		.genericon {
 			margin-right: 5px;
 		}
