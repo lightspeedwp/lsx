@@ -76,9 +76,6 @@ endif;
  *
  * Add customisable post meta, using shortcodes,
  * to be added/modified where necessary.
- *
- * @package WooFramework
- * @subpackage Actions
  */
 
 if ( ! function_exists( 'lsx_post_meta' ) ) {
@@ -105,6 +102,27 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
     	</div>
 	
 	<?php } // End lsx_post_meta()
+}
+
+/**
+ * Add customisable post format html.
+ */
+
+if ( ! function_exists( 'lsx_post_format' ) ) {
+	function lsx_post_format() {
+		global $post;
+		
+		$post_format = get_post_format($post);
+		
+		if('standard' != $post_format && '' != $post_format) {
+			$format_link = get_post_format_link($post_format);
+			?>
+	    	<div class="post-format">
+	    		<strong>Format:</strong> <?php echo '<a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" ), ucfirst($post_format) ) . '" ' . '>' . $post_format.'</a> '; ?>
+	    	</div>			
+			<?php 
+		}
+	} // End lsx_post_format()
 }
 
 if ( ! function_exists( 'lsx_paging_nav' ) ) :
