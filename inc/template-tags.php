@@ -178,7 +178,7 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 			$args = array(
 					'prev_text'          => __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
 					'next_text'          => __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
-					'screen_reader_text' => '',
+					'screen_reader_text' => ' '
 			);
 			the_post_navigation($args);
 		}
@@ -197,7 +197,7 @@ if ( ! function_exists( 'lsx_post_nav' ) ) :
 		$args = array(
 				'prev_text'          => '<span class="meta-nav">&larr;</span> %title',
 				'next_text'          => '%title <span class="meta-nav">&rarr;</span>',
-				'screen_reader_text' => '',
+				'screen_reader_text' => ' ',
 		);
 		the_post_navigation($args);
 	}
