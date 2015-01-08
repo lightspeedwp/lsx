@@ -48,9 +48,6 @@
 		</h1>		
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<?php lsx_post_meta(); ?>
-			
-			<?php lsx_post_format(); ?>
-			  
 		<?php endif; ?>
 	</header><!-- .entry-header -->	
 
