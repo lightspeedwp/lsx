@@ -149,7 +149,7 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 			$format_link = get_post_format_link($post_format);
 			?>
 	    	<div class="post-format">
-	    		<strong>Format:</strong> <?php echo '<a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" ), ucfirst($post_format) ) . '" ' . '>' . $post_format.'</a> '; ?>
+	    		<?php echo '<span class="genericon"></span><a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" ), ucfirst($post_format) ) . '" ' . '>' . $post_format . '</a> '; ?>
 	    	</div>			
 			<?php 
 		}

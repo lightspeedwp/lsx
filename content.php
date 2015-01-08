@@ -46,14 +46,7 @@
 				<span class="label label-default label-sticky">Featured</span>
 			<?php } ?>
 		</h1>		
-		<?php if ( 'post' == get_post_type() ) : ?>
-			
-			<?php lsx_post_format(); ?>
-			  
-		<?php endif; ?>
 	</header><!-- .entry-header -->	
-
-
 
 	<?php if ( is_search() || is_archive() || is_page_template( 'page-templates/template-blog.php' ) ) : // Only display Excerpts for Search and Archives ?>
 	<div class="entry-summary">
@@ -71,9 +64,13 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 	
-
 	<footer class="footer-meta">
-
+		<?php if ( 'post' == get_post_type() ) : ?>
+			
+			<?php lsx_post_format(); ?>
+			  
+		<?php endif; ?>
+	
 		<?php lsx_post_meta(); ?>		
 
 	</footer><!-- .footer-meta -->

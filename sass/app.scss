@@ -1012,15 +1012,46 @@ article {
 		margin-top: 15px;
 	}
 
-	.post-meta {
+	.post-meta,
+	.post-format {
 		color: $dark-grey;
 
 		& > div {
 			float: left;
 			margin-right: 20px;
+		}
 
-			.genericon {
-				vertical-align: middle;
+		.genericon {
+			vertical-align: middle;
+		}
+	}
+
+	.post-format {
+		.genericon {
+			margin-right: 5px;
+		}
+	}
+
+	&.format-video {
+		.post-format {
+			span:before {
+				content: "\f104";
+			}
+		}
+	}
+
+	&.format-image {
+		.post-format {
+			span:before {
+				content: "\f102";
+			}
+		}
+	}
+
+	&.format-gallery {
+		.post-format {
+			span:before {
+				content: "\f103";
 			}
 		}
 	}
