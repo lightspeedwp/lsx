@@ -1118,17 +1118,17 @@ article {
 	margin-top: 60px;
 
 	span {
-		background: $primary;
+		background: $primary !important;
 		font: {
-			size: 14px;
+			size: 14px !important;
 			weight: 600;
 		}
-		padding: 9px 17px;
+		padding: 9px 17px !important;
 		text-transform: uppercase;
 		@include border-radius(3px);
 
 		&:hover {
-			background: $black;
+			background: $black !important;
 		}
 	}
 }
