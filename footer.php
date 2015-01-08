@@ -40,9 +40,24 @@
 
 		    		<?php lsx_footer_top(); ?>
 
-		      		<p class="credit">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
+		      		<?php if ( has_nav_menu( 'social' ) ) { ?>
+		      			<p class="credit credit-float">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
+
+						<nav id="social-navigation" class="social-navigation" role="navigation">
+							<?php
+								// Social links navigation menu.
+								wp_nav_menu( array(
+									'theme_location' => 'social',
+									'depth'          => 1,
+								) );
+							?>
+						</nav><!-- .social-navigation -->
+					<?php } else { ?>
+						<p class="credit">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> All Rights Reserved.</p>
+					<?php } ?>
 
 		      		<?php lsx_footer_bottom(); ?>
+
 		    	</div>
 		  	</div>
 		</div>
