@@ -1012,18 +1012,51 @@ article {
 		margin-top: 15px;
 	}
 
-	.post-meta {
-		color: $grey;
-	}
+	.post-meta,
+	.post-format {
+		color: $dark-grey;
 
-	.post-tags {
-		p {
-			font-size: 14px;
+		& > div {
+			float: left;
+			margin-right: 20px;
+		}
+
+		.genericon {
+			vertical-align: middle;
 		}
 	}
 
-	.post-categories {
-		font-size: 14px;
+	.post-format {
+		float: left;
+		margin-right: 20px;
+		
+		.genericon {
+			margin-right: 5px;
+		}
+	}
+
+	&.format-video {
+		.post-format {
+			span:before {
+				content: "\f104";
+			}
+		}
+	}
+
+	&.format-image {
+		.post-format {
+			span:before {
+				content: "\f102";
+			}
+		}
+	}
+
+	&.format-gallery {
+		.post-format {
+			span:before {
+				content: "\f103";
+			}
+		}
 	}
 
 	.entry-content {

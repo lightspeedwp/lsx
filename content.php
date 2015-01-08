@@ -46,12 +46,7 @@
 				<span class="label label-default label-sticky">Featured</span>
 			<?php } ?>
 		</h1>		
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<?php lsx_post_meta(); ?>
-		<?php endif; ?>
 	</header><!-- .entry-header -->	
-
-
 
 	<?php if ( is_search() || is_archive() || is_page_template( 'page-templates/template-blog.php' ) ) : // Only display Excerpts for Search and Archives ?>
 	<div class="entry-summary">
@@ -68,23 +63,23 @@
 		?>		
 	</div><!-- .entry-content -->
 	<?php endif; ?>
-	<?php echo get_the_tag_list('<p><i class="fa fa-tags"></i> ',', ','</p>'); ?>
+	
+	<footer class="footer-meta">
+		<?php if ( 'post' == get_post_type() ) : ?>
+			
+			<?php lsx_post_format(); ?>
+			  
+		<?php endif; ?>
+	
+		<?php lsx_post_meta(); ?>		
 
-	<footer class="entry-meta">
-		
-		<?php if ( ! is_single() ) : ?>
-			<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
-		<?php endif ?>
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'lsx' ), __( '1 Comment', 'lsx' ), __( '% Comments', 'lsx' ) ); ?></span>
-		<?php endif; ?>			
-
-		<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
+	</footer><!-- .footer-meta -->
 
 	<?php lsx_entry_bottom(); ?>
+
 	<div class="clearfix"></div>
+
+	<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
 </article><!-- #post-## -->
 
 <?php lsx_entry_after(); ?>

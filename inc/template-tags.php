@@ -80,28 +80,59 @@ endif;
 
 if ( ! function_exists( 'lsx_post_meta' ) ) {
 	function lsx_post_meta() {
-		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; }
+		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
 		
-		$post_info = '<span class="small">' . __( 'By', 'lsx' ) . '</span> ' . get_the_author() . ' <span class="small">' . _x( 'on', 'post datetime', 'lsx' ) . '</span> ' . the_date($d = '', $before = '', $after = '', false);
-		$post_info = do_shortcode( $post_info );
-		
-		printf( '<div class="post-meta">%s</div>' . "\n", $post_info );
+		<div class="post-meta">
+			<div class="post-date">
+				<span class="genericon genericon-month"></span>
+				<?php
+					$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+					
+					$time_string = sprintf( $time_string,
+						esc_attr( get_the_date( 'c' ) ),
+						get_the_date(),
+						esc_attr( get_the_modified_date( 'c' ) ),
+						get_the_modified_date()
+					);
+					printf( '<a href="%2$s" rel="bookmark">%3$s</a>',
+						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
+						esc_url( get_permalink() ),
+						$time_string
+					);
+				?>
+			</div>
 
-		$args = array(
-	    'orderby' => 'name',
-	    'order' => 'ASC'
-	    );
-    	$categories = get_categories($args); ?>
-    	
-    	<div class="post-categories">
-    		<strong>Categories:</strong>
-    		
-	    	<?php foreach ( $categories as $category ) {
-	    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
-	    	} ?>
-    	</div>
-	
-	<?php } // End lsx_post_meta()
+			<div class="post-author">
+
+				<?php
+					if ( ! is_sticky() ) { ?>
+						<span class="genericon genericon-user"></span>
+
+						<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
+							_x( 'Author', 'Used before post author name.', 'lsx' ),
+							esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+							get_the_author()
+						);
+					}
+				?>
+			</div>
+
+			<div class="post-categories">
+				<span class="genericon genericon-category"></span>
+				<?php 
+					$categories = get_categories($args);
+
+					foreach ( $categories as $category ) {
+			    	echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> ';
+			    	} 
+		    	?>
+			</div>
+
+			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
+
+		</div>
+
+	<?php } // End lsx_post_meta() 
 }
 
 /**
@@ -118,7 +149,7 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 			$format_link = get_post_format_link($post_format);
 			?>
 	    	<div class="post-format">
-	    		<?php echo '<a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" ), ucfirst($post_format) ) . '" ' . '>' . $post_format.'</a> '; ?>
+	    		<?php echo '<span class="genericon"></span><a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" ), ucfirst($post_format) ) . '" ' . '>' . $post_format . '</a> '; ?>
 	    	</div>			
 			<?php 
 		}
@@ -144,32 +175,59 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 			wp_pagenavi();
 		}else{
 		
-			$args = array(
-					'prev_text'          => __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
-					'next_text'          => __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
-					'screen_reader_text' => ' ',
-			);
-			the_posts_navigation($args);
+			?>
+			<nav class="navigation paging-navigation" role="navigation">
+				<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'lsx' ); ?></h1>
+				<div class="nav-links">
+		
+					<?php if ( get_next_posts_link() ) : ?>
+					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ) ); ?></div>
+					<?php endif; ?>
+		
+					<?php if ( get_previous_posts_link() ) : ?>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ) ); ?></div>
+					<?php endif; ?>
+		
+				</div><!-- .nav-links -->
+			</nav><!-- .navigation -->
+			<?php
 		}
 	}
 endif;
 
 if ( ! function_exists( 'lsx_post_nav' ) ) :
-	/**
-	 * Display navigation to next/previous post when applicable.
-	 *
-	 * @return void
-	 */
-	function lsx_post_nav() {
-		// Don't print empty markup if there's nowhere to navigate.
-		
-		$args = array(
-				'prev_text'          => '<span class="meta-nav">&larr;</span> %title',
-				'next_text'          => '%title <span class="meta-nav">&rarr;</span>',
-				'screen_reader_text' => '',
-		);
-		the_post_navigation($args);
+/**
+ * Display navigation to next/previous post when applicable.
+ *
+ * @return void
+ */
+function lsx_post_nav() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+
+	if ( ! $next && ! $previous ) {
+		return;
 	}
+	?>
+	<nav class="navigation post-navigation" role="navigation">
+		<div class="nav-links pager row">
+
+			<?php
+				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous"><span class="meta-nav">&larr;</span> %title</div>', 'Previous post link', 'lsx' ) );
+				$previous_post = str_replace('<a','<a class="col-sm-6"',$previous_post);
+				echo $previous_post;
+			?>
+			<?php
+				$next_post = get_next_post_link(     '%link', _x( '<div class="next">%title <span class="meta-nav">&rarr;</span></div>', 'Next post link',     'lsx' ) );
+				$next_post = str_replace('<a','<a class="col-sm-6"',$next_post);
+				echo $next_post;
+			?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
 endif;
 
 if ( ! function_exists( 'lsx_posted_on' ) ) :
