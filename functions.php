@@ -84,7 +84,7 @@ add_theme_support( 'custom-background', array(
 function lsx_infinite_scroll_init() {
     add_theme_support( 'infinite-scroll', array(
         'container' => 'main',
-        'type' => 'scroll',
+        'type' => 'click',
         'posts_per_page' => get_option('posts_per_page',10),
     ) );
 }

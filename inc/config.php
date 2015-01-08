@@ -35,6 +35,15 @@ function lsx_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+	
+	
+	/*
+	 * Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image', 'video', 'gallery') );
+		
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
