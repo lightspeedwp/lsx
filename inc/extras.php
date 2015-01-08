@@ -1,13 +1,7 @@
 <?php
 
 /**
- *
  * Adds Yoast Breadcrumbs to lsx_content_top
- *
- * @package activeafrica-lsx-child
- * @subpackage Action
- * @author LightSpeed (Domenico)
- * @since 1.0
  */
 function lsx_yoast_breadcrumbs(){
 	
@@ -22,6 +16,9 @@ function lsx_yoast_breadcrumbs(){
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
 
 
+/**
+ * Displays a placeholder image
+ */
 function lsx_placeholder_image( $html, $post_id = false, $post_thumbnail_id = false, $size = 'thumbnail', $attr = array() )
 {
     if ( '' !== $html )
@@ -31,12 +28,13 @@ function lsx_placeholder_image( $html, $post_id = false, $post_thumbnail_id = fa
 
     $placeholder_url = lsx_get_option('placeholder_image');
 
-    $placeholder_id = get_attachment_id( $placeholder_url );
+    $placeholder_id = lsx_get_attachment_id( $placeholder_url );
 
    return wp_get_attachment_image( $placeholder_id, $size );
 
 }
 add_filter( 'post_thumbnail_html', 'lsx_placeholder_image' );
+
 /**
  * Add and remove body_class() classes
  */
@@ -186,3 +184,87 @@ function lsx_site_logo_title_tag( $html) {
 	return $html;
 }
 add_filter( 'jetpack_the_site_logo', 'lsx_site_logo_title_tag');
+
+
+if (!function_exists('lsx_get_attachment_id')) {
+	/**
+	 * Get the Attachment ID for a given image URL.
+	 *
+	 * @link   http://wordpress.stackexchange.com/a/7094
+	 *
+	 * @param  string $url
+	 *
+	 * @return boolean|integer
+	 */
+	function lsx_get_attachment_id($url) {
+
+		$dir = wp_upload_dir();
+
+		// baseurl never has a trailing slash
+		if (false === strpos($url, $dir['baseurl'].'/')) {
+			// URL points to a place outside of upload directory
+			return false;
+		}
+
+		$file  = basename($url);
+		$query = array(
+				'post_type'  => 'attachment',
+				'fields'     => 'ids',
+				'meta_query' => array(
+						array(
+								'value'   => $file,
+								'compare' => 'LIKE',
+						),
+				)
+		);
+
+		$query['meta_query'][0]['key'] = '_wp_attached_file';
+
+		// query attachments
+		$ids = get_posts($query);
+
+		if (!empty($ids)) {
+
+			foreach ($ids as $id) {
+
+				// first entry of returned array is the URL
+				$temp_url = wp_get_attachment_image_src($id, 'full');
+				if ($url === array_shift($temp_url)) {
+					return $id;
+				}
+			}
+		}
+
+		$query['meta_query'][0]['key'] = '_wp_attachment_metadata';
+
+		// query attachments again
+		$ids = get_posts($query);
+
+		if (empty($ids)) {
+			return false;
+		}
+
+		foreach ($ids as $id) {
+
+			$meta = wp_get_attachment_metadata($id);
+
+			foreach ($meta['sizes'] as $size => $values) {
+
+				if ($values['file'] === $file && $url === array_shift(wp_get_attachment_image_src($id, $size))) {
+					return $id;
+				}
+			}
+		}
+
+		return false;
+	}
+}
+
+/**
+ * Get the Avatar Url
+ */
+function lsx_get_avatar_url($author_id, $size) {
+	$get_avatar = get_avatar($author_id, $size);
+	preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+	return ($matches[1]);
+}

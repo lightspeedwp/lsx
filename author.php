@@ -25,7 +25,7 @@ get_header(); ?>
 				?>
 					<div class="author-box well col-xs-12">
 						<div class="image col-sm-2">
-							<img class="pull-left img-circle" src="<?php echo get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
+							<img class="pull-left img-circle" src="<?php echo lsx_get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
 						</div>
 						<div class="content col-sm-10">
 							<h4>About <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h4>
