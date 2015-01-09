@@ -60,9 +60,9 @@ $controls = array(
       'priority'    =>  11, //Determines the order this control appears in for the specified section
     ),//add more fields
   )
-
 );
 
+$controls = array();
 
 // add the slider if function exists
 if(function_exists('soliloquy')){
@@ -86,7 +86,27 @@ if(function_exists('soliloquy')){
     'type'          =>  'select',
     'choices'       =>  LSX_Theme_Customizer::get_slider_post_type_choices()
   );
+  
 }
+
+  /// add the setting
+  $controls['settings']['lsx_color_scheme']  = array(
+    'default'       =>  'default', //Default setting/value to save
+    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+  );
+  /// add the control
+  $controls['fields']['lsx_color_scheme'] = array(
+    'label'         =>  esc_html__( 'Color Scheme', 'lsx-theme' ),
+    'section'       =>  'colors',
+    'type'          =>  'select',
+    'choices'  => array(
+  		'default' => 'Default',
+    	'dark' => 'Dark',
+    	'light' => 'Light'
+  	),
+	'priority' => 1,
+  );
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
 
