@@ -131,6 +131,8 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 
 			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
 
+			
+			<br clear="both" />
 		</div>
 
 	<?php } // End lsx_post_meta() 
