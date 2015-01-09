@@ -54,60 +54,44 @@ if(!class_exists('LSX_Theme_Customizer')){
 		public function customizer( $wp_customize ) {
 			
 			
-			$inner_priority = 1;
-			// go over the sections and add as needed
-			if( !empty( $this->controls['sections'] ) ){
-				
-				foreach( $this->controls['sections'] as $group_slug=>$group){
-					
-					if( empty( $group['fields'] ) ){
-						continue;
-					}
-					
-					//$group['control_slug'] = null;
-
-					$inner_priority = $this->add_section( $group_slug, $group, $wp_customize, $inner_priority++ );
-
-				}
-
-			}			
-
-
-			// go over the panels and add as needed
-			$inner_priority = 1;
+			// start panels
 			if( !empty( $this->controls['panels'] ) ){
-				foreach( $this->controls['panels'] as $control_slug=>$control ){
 
-					$wp_customize->add_panel(
-						$control_slug,
-						array(
-							'title' 		=> $control['title'],
-							'description' 	=> ( isset( $control['description'] ) ? $control['description'] : null ),
-							)
-						);
-
-					// sections
-					if( !empty( $control['sections'] ) ){
-						
-						foreach( $control['sections'] as $group_slug=>$group){
-							
-							$group['control_slug'] = $control_slug;
-
-							if( empty( $group['fields'] ) ){
-								continue;
-							}
-
-							$inner_priority = $this->add_section( $group_slug, $group, $wp_customize, $inner_priority++ );
-
-						}
-
-					}
-
+				foreach( $this->controls['panels'] as $panel_slug => $args ){
+					$this->add_panel( $panel_slug, $args, $wp_customize );
 				}
+
+			}
+
+			// start sections
+			if( !empty( $this->controls['sections'] ) ){
+
+				foreach( $this->controls['sections'] as $section_slug => $args ){
+					$this->add_section( $section_slug, $args, $wp_customize );
+				}
+
+			}
+
+			// start sections
+			if( !empty( $this->controls['settings'] ) ){
+
+				foreach( $this->controls['settings'] as $settings_slug => $args ){
+					$this->add_setting( $settings_slug, $args, $wp_customize );
+				}
+
+			}
+
+			// start fields
+			if( !empty( $this->controls['fields'] ) ){
+
+				foreach( $this->controls['fields'] as $field_slug => $args ){
+					$this->add_control( $field_slug, $args, $wp_customize );
+				}
+
 			}
 
 
-
+			/*
 			$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';			
 			
 			//Register a section
@@ -133,67 +117,68 @@ if(!class_exists('LSX_Theme_Customizer')){
 							'type'     => 'select',
 							'choices'  => $slider_choices
 				) );
-			}
+			}*/
 		
-		}		
+		}
 		
+
+		/**
+		 * create a panel
+		 *
+		 * @since     1.0.0
+		 */		
+		private function add_panel( $slug, $args, $wp_customize ) {
+			
+			$default_args = array(
+				'title' 		=> null,
+				'description' 	=> null,
+			);
+
+			$wp_customize->add_panel(
+				$slug,
+				array_merge( $default_args, $args )
+			);
+			
+		}
+
 
 		/**
 		 * create a section
 		 *
 		 * @since     1.0.0
 		 */		
-		private function add_section( $slug, $group, $wp_customize, $priority ) {
+		private function add_section( $slug, $args, $wp_customize ) {
+			
+			$default_args = array(
+				'capability' => 'edit_theme_options', //Capability needed to tweak
+				'description' => null, //Descriptive tooltip
+			);
 
-				// section args
-				$section_args = array(
-					'title' 		=> $group['title'],
-					'description' 	=> ( isset( $group['description'] ) ? $group['description'] : null ),					
-				);
+			$wp_customize->add_section( $slug, 
+				array_merge( $default_args, $args )
+			);
+			
+		}
 
-				if( !empty( $group['control_slug'] ) ){
-					$section_args['panel'] 		= $group['control_slug'];
-					$section_args['priority'] 	= $priority;
-				}
+		/**
+		 * create a setting
+		 *
+		 * @since     1.0.0
+		 */		
+		private function add_setting( $slug, $args, $wp_customize ) {
+			
+			$default_args =	array(
+				'default' 		=> null, //Default setting/value to save
+				'type' 			=> 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+				'capability'	=> 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+				'transport' 	=> 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+			);
 
-				$wp_customize->add_section(
-					$slug,
-					$section_args
-				);
 
-				foreach( $group['fields'] as $field_slug=>$field ){
-					
-					$setting_args = array(
-						'default'	=> ( isset($field['default']) ? $field['default'] : null ),
-						'transport'	=> $field['transport'],
-					);
-					// if provided a settings array, merge with current settings
-					if( !empty( $field['settings'] ) && is_array( $field['settings'] ) ){
-						$setting_args = array_merge( $field['settings'] );
-					}
-					// create setting control
-					$wp_customize->add_setting(
-						$field_slug,
-						$setting_args
-					);
+			$wp_customize->add_setting( $slug, //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+				array_merge( $default_args, $args )
+			);    
 
-					// build args for controll.
-					$args = array(
-						'label' 		=> $field['label'],
-						'description' 	=> ( isset( $field['description'] ) ? $field['description'] : null ),
-						'section' 		=> $slug,
-						'settings'		=> $field_slug,
-						'type' 			=> $field['type'],
-						'config' 		=> $field,
-						'priority' 		=> $priority++
-					);
-
-					// create control
-					$this->add_control( $field_slug, $args, $wp_customize );
-
-				}
-
-			return $priority;
 		}
 
 		/**
@@ -202,24 +187,43 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 * @since     1.0.0
 		 */		
 		private function add_control( $slug, $args, $wp_customize ) {
-
-			// add actual control.
-			if(class_exists( "WP_Customize_" . $args['type'] . "_Control" )){
 			
-				$classname = "WP_Customize_" . $args['type'] . "_Control";
-				$control = new $classname( $wp_customize, $slug, $args );
+			$default_args = array(
+
+			);
+
+			if( isset( $args['control'] ) && class_exists( $args['control'] )){
+				
+				$control_class = $args['control'];
+				unset( $args['control'] );
+
+				$control = new $control_class( $wp_customize, $slug, array_merge( $default_args, $args ) );
 				$wp_customize->add_control( $control );
 			
 			}else{
+				
+				if( isset( $args['control'] ) ){
+					unset( $args['control'] );
+				}
 
 				$wp_customize->add_control(
 					$slug,
-					$args
+					array_merge( $default_args, $args )
 				);
 			}
 
+			/*
+			$wp_customize->add_control( new WP_Customize_Color_Control( //Instantiate the color control class
+					$wp_customize, //Pass the $wp_customize object (required)
+					$slug, //Set a unique ID for the control
+					array(
+					)
+				)
+			);*/
+
 		}
 		
+
 
 
 		public static function get_slider_post_type_choices() {
@@ -249,75 +253,45 @@ if(!class_exists('LSX_Theme_Customizer')){
 	}	
 }
 
+// register customizer
+add_action( 'customize_register', function(){
 
-
-// define your controls here
-$controls = array(
-
-	// defines the root sections
-	'sections'		=>	array(
-		// defines a section
-		'root_group_slug'	=>	array(
-			'title'			=>	__( 'root Level', 'slug' ),
-			'description'	=>	__( 'Details on this group in level', 'slug' ), // optional
-			'fields'		=>	array(
-				// Defines a Field
-				'root_field_slug'		=>	array(
-					'label'			=>	__( 'First Field', 'slug' ),
-					'description'	=>	__( 'This is a field. the first.', 'slug' ), // optional
-					'default'		=>	'default value', // optional
-					'transport'		=>	'refresh', // transport or postMessage. see codex, required additional JS files.
-					'type'			=>	'Text', // case sensitive for built int types: Text, Color, Upload, Image. Lowercase for html inputs like: text, textarea (select, checkboxes, radio require custom controls)
-					'choices'		=>	array( 'LSX_Theme_Customizer', 'get_slider_post_type_choices' ),
-					'settings'		=>	array(
-						'sanitize_callback' => 'absint',
-						'type'              => 'theme_mod',
-					)
-
-				), // add more as needed
-
+	// define your controls here
+	$controls = array(
+		'panels'	=>	array(
+			'my_panel_slug' => array(
+				'title' => 'My Panel Title'
 			)
-		), // add more sections as needed
-	),
-	// defines the panels
-	'panels'			=>	array(
-		'header_controls'	=>	array(
-			'title'			=>	__( 'First Group', 'slug' ),
-			'description'	=>	__( 'First Group Controls Here', 'slug' ), // optional
-			'sections'		=>	array(
-				// defines a section
-				'first_group_slug'	=>	array(
-					'title'			=>	__( 'First Level', 'slug' ),
-					'description'	=>	__( 'Details on this group in level', 'slug' ), // optional
-					'fields'		=>	array(
-						// Defines a Field
-						'field_slug'		=>	array(
-							'label'			=>	__( 'First Field', 'slug' ),
-							'description'	=>	__( 'This is a field. the first.', 'slug' ), // optional
-							'default'		=>	'default value', // optional
-							'transport'		=>	'refresh', // transport or postMessage. see codex, required additional JS files.
-							'type'			=>	'Text', // case sensitive for built int types: Text, Color, Upload, Image. Lowercase for html inputs like: text, textarea (select, checkboxes, radio require custom controls)
-							'choices'		=>	array( 'LSX_Theme_Customizer', 'get_slider_post_type_choices' ),
-							'settings'		=>	array(
-								'sanitize_callback' => 'absint',
-								'type'              => 'theme_mod',
-							)
-
-						), // add more as needed
-
-					)
-				), // add more sections as needed
-
+		),
+		'sections'	=>	array(
+			'my_section_slug' => array(
+				'title' => 'My Section Title',
+				'panel'	=>	'my_panel_slug'
 			)
-		), // add more panels as needed
-	),
+		),
+		'settings'	=>	array(
+			'my_setting'		=>	array(
+				'default' 		=> '#2BA6CB', //Default setting/value to save
+				'type' 			=> 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+				'capability' 	=> 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+				'transport' 	=> 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+			)
+		),
+		'fields'	=>	array(
+			'my_color' 		=>	array(
+				'label' 	=>	__( 'Link Color', 'mytheme' ), //Admin-visible name of the control
+				'control'	=>	'WP_Customize_Color_Control', // the control type class name
+				'section' 	=>	'my_section_slug', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+				'settings' 	=>	'my_setting', //Which setting to load and manipulate (serialized is okay)
+				'priority' 	=>	11, //Determines the order this control appears in for the specified section
+			)
+		)
 
+	);
 
-);
+	$lsx_customizer = new LSX_Theme_Customizer( $controls );
 
-
-
-$lsx_customizer = new LSX_Theme_Customizer( $controls );
+}, 25);
 
 /**
  * Helper function to return the theme option value.
