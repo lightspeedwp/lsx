@@ -166,10 +166,16 @@ if(function_exists('soliloquy')){
         "cssClass" => "notoSerif"
       ),      
       array(
-        "title" => "Ubuntu Condensed", 
-        "location" => "Ubuntu+Condensed", 
-        "cssDeclaration" => "'Ubuntu Condensed', sans-serif", 
-        "cssClass" => "ubuntuCondensed"
+        "title" => "Lato", 
+        "location" => "Lato", 
+        "cssDeclaration" => "'Lato', sans-serif", 
+        "cssClass" => "lato"
+      ),      
+      array(
+        "title" => "Open Sans", 
+        "location" => "Open+Sans", 
+        "cssDeclaration" => "'Open Sans', sans-serif", 
+        "cssClass" => "openSans"
       )
     ),
   'priority' => 1,
