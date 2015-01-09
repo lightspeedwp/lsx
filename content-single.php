@@ -26,7 +26,6 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } ?>
-	<?php lsx_post_meta(); ?>
 
 	<div class="entry-content">
 		<?php if ( ! is_singular() ) {
@@ -37,9 +36,15 @@
 		<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 	</div><!-- .entry-content -->
 
-	<div class="post-tags">
-		<?php echo get_the_tag_list('<p><i class="fa fa-tags"></i> ',', ','</p>'); ?>
-	</div>
+	<footer class="footer-meta">
+		<?php if ( 'post' == get_post_type() ) : ?>
+			
+			<?php lsx_post_format(); ?>
+			  
+		<?php endif; ?>
+
+		<?php lsx_post_meta(); ?>	
+	</footer><!-- .footer-meta -->
 	
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
