@@ -17,8 +17,80 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
+// register customizer fields
+add_action( 'customize_register', function(){
+
+  // define your controls here
+  $controls = array(
+    // array to define settings
+    'settings'      =>  array(
+      'my_setting'    =>  array(
+        'default'     =>  '#2BA6CB', //Default setting/value to save
+        'type'      =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+        'capability'  =>  'edit_theme_options', //Optional. Special permissions for accessing this setting.
+        'transport'   =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+      ),//add more settings
+    ),
+    // array to define panels
+    'panels'      =>  array(
+      'my_panel_slug'   =>  array(
+        'title'     =>  'My Panel Title',
+        'priority'    =>  1
+      ), // add more panels
+    ),
+    // array to define sections
+    'sections'      =>  array(
+      'my_section_slug'   =>  array(
+        'title'     =>  'My Section Title',
+        'panel'     =>  'my_panel_slug' // Optional: if defined a panel, reference the panel slug here
+      ),//add more sections
+    ),
+    // array to define fields
+    'fields'      =>  array(
+      'my_color'      =>  array(
+        'label'     =>  __( 'Link Color', 'mytheme' ), //Admin-visible name of the control
+        'control'   =>  'WP_Customize_Color_Control', // Optional: the control type class name ( built in WP_Customize_Image_Control, WP_Customize_Upload_Control, WP_Customize_Color_Control, WP_Customize_Text_Control ) use lowercase type : ie. textarea for generic
+        //'type'    =>  'select', // only if control is not defined. this is the input type (text, textarea, select etc..)
+        //'choices'   =>  '', //array() | callback of choices for selects or choice based controls / types
+        'section'     =>  'my_section_slug', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+        'settings'    =>  'my_setting', //Which setting to load and manipulate (serialized is okay)
+        'priority'    =>  11, //Determines the order this control appears in for the specified section
+      ),//add more fields
+    )
+
+  );
 
 
+  // add the slider if function exists
+  if(function_exists('soliloquy')){
+    // add homepage slider section
+    $controls['sections']['lsx-homepage'] = array(
+      'title'       =>  'Homepage'
+    );
+
+    /// add the setting
+    $controls['settings']['lsx_homepage_slider']  = array(
+      'default'       =>  '0', //Default setting/value to save
+      'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+      'capability'    =>  'edit_theme_options', //Optional. Special permissions for accessing this setting.
+      'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+      'sanitize_callback' =>  'absint' // santize setting callback
+    );
+    /// add the control
+    $controls['fields']['lsx_homepage_slider'] = array(
+      'label'         =>  esc_html__( 'Select Slider', 'lsx-theme' ),
+      'section'       =>  'lsx-homepage',
+      'type'          =>  'select',
+      'choices'       =>  LSX_Theme_Customizer::get_slider_post_type_choices()
+    );
+  }
+
+  $lsx_customizer = new LSX_Theme_Customizer( $controls );
+
+}, 25);
+
+
+// after setup theme
 add_action('after_setup_theme' , function() {
 	$args = array(
     'header-text' => array(

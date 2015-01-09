@@ -90,34 +90,6 @@ if(!class_exists('LSX_Theme_Customizer')){
 
 			}
 
-
-			/*
-			$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';			
-			
-			//Register a section
-			$wp_customize->add_section( 'lsx-homepage', array(
-					'title' => 'Homepage', // The title of section
-					'description' => '', // The description of section
-			) );
-			
-			//Hompage Slider Settings
-			if(function_exists('soliloquy')){
-				$wp_customize->add_setting( 'lsx_homepage_slider', array(
-						'default'           => 0,
-						'type'              => 'theme_mod',
-						'sanitize_callback' => 'absint'
-				) );
-		
-				
-				$slider_choices = $this->get_slider_post_type_choices();
-				$wp_customize->add_control( 'lsx_homepage_slider', 
-						array(
-							'label'    => esc_html__( 'Select Slider', 'lsx-theme' ),
-							'section'  => 'lsx-homepage',
-							'type'     => 'select',
-							'choices'  => $slider_choices
-				) );
-			}*/
 		
 		}
 		
@@ -212,15 +184,6 @@ if(!class_exists('LSX_Theme_Customizer')){
 				);
 			}
 
-			/*
-			$wp_customize->add_control( new WP_Customize_Color_Control( //Instantiate the color control class
-					$wp_customize, //Pass the $wp_customize object (required)
-					$slug, //Set a unique ID for the control
-					array(
-					)
-				)
-			);*/
-
 		}
 		
 
@@ -252,53 +215,6 @@ if(!class_exists('LSX_Theme_Customizer')){
 		}		
 	}	
 }
-
-// register customizer
-add_action( 'customize_register', function(){
-
-	// define your controls here
-	$controls = array(
-		// array to define settings
-		'settings'		=>	array(
-			'my_setting'		=>	array(
-				'default' 		=>	'#2BA6CB', //Default setting/value to save
-				'type' 			=>	'theme_mod', //Is this an 'option' or a 'theme_mod'?
-				'capability' 	=>	'edit_theme_options', //Optional. Special permissions for accessing this setting.
-				'transport' 	=>	'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-			)
-		),
-		// array to define panels
-		'panels'		=>	array(
-			'my_panel_slug' 	=>	array(
-				'title' 		=>	'My Panel Title',
-				'priority'		=>	1
-			)
-		),
-		// array to define sections
-		'sections'		=>	array(
-			'my_section_slug' 	=> 	array(
-				'title' 		=> 	'My Section Title',
-				'panel'			=>	'my_panel_slug' // Optional: if defined a panel, reference the panel slug here
-			)
-		),
-		// array to define fields
-		'fields'		=>	array(
-			'my_color' 			=>	array(
-				'label' 		=>	__( 'Link Color', 'mytheme' ), //Admin-visible name of the control
-				//'control'		=>	'WP_Customize_Image_Control', // Optional: the control type class name ( built in WP_Customize_Image_Control, WP_Customize_Upload_Control, WP_Customize_Color_Control, WP_Customize_Text_Control ) use lowercase type : ie. textarea for generic
-				'type'			=>	'select', // only if control is not defined. this is the input type (text, textarea, select etc..)
-				//'choices'		=>	'', //array() | callback of choices for selects or choice based controls / types
-				'section' 		=>	'my_section_slug', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-				'settings' 		=>	'my_setting', //Which setting to load and manipulate (serialized is okay)
-				'priority' 		=>	11, //Determines the order this control appears in for the specified section
-			)
-		)
-
-	);
-
-	$lsx_customizer = new LSX_Theme_Customizer( $controls );
-
-}, 25);
 
 /**
  * Helper function to return the theme option value.
