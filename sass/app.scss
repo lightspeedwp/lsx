@@ -664,16 +664,89 @@ nav {
 						speak: none;
 					}
 
+					&[href$="/feed/"]:before {
+						content: "\f413";
+					}
+
+					&[href*="codepen.io"]:before {
+						content: "\f216";
+					}
+
+					&[href*="digg.com"]:before {
+						content: "\f221";
+					}
+
+					&[href*="dribbble.com"]:before {
+						content: "\f201";
+					}
+
+					&[href*="dropbox.com"]:before {
+						content: "\f225";
+					}
+
 					&[href*="facebook.com"]:before {
 						content: "\f203";
+					}
+
+					&[href*="flickr.com"]:before {
+						content: "\f211";
+					}
+
+					&[href*="foursquare.com"]:before {
+						content: "\f226";
 					}
 
 					&[href*="plus.google.com"]:before {
 						content: "\f206";
 					}
 
+					&[href*="github.com"]:before {
+						content: "\f200";
+					}
+
+					&[href*="instagram.com"]:before {
+						content: "\f215";
+					}
+
+					&[href*="linkedin.com"]:before {
+						content: "\f208";
+					}
+
+					&[href*="pinterest.com"]:before {
+						content: "\f210";
+					}
+
+					&[href*="getpocket.com"]:before {
+						content: "\f224";
+					}
+
+					&[href*="polldaddy.com"]:before {
+						content: "\f217";
+					}
+
+					&[href*="reddit.com"]:before {
+						content: "\f222";
+					}
+
+					&[href*="stumbleupon.com"]:before {
+						content: "\f223";
+					}
+
+					&[href*="tumblr.com"]:before {
+						content: "\f214";
+					}
+
 					&[href*="twitter.com"]:before {
 						content: "\f202";
+					}
+
+					&[href*="vimeo.com"]:before {
+						content: "\f212";
+					}
+
+					&[href*="wordpress.com"]:before,
+					&[href*="wordpress.org"]:before {
+						content: "\f205";
 					}
 
 					&[href*="youtube.com"]:before {
@@ -683,21 +756,17 @@ nav {
 					&[href*="mailto:"]:before {
 						content: "\f410";
 					}
+
+					&[href*="spotify.com"]:before {
+						content: "\f515";
+					}
+
+					&[href*="twitch.tv"]:before {
+						content: "\f516";
+					}
 				}
 			}
 		}
-	}
-
-	@media screen and (max-width: 992px) {
-		position: absolute;
-		right: 15px;
-		background: $light-grey;
-		margin: 0 !important;
-		border: none !important;
-	}
-
-	@media screen and (max-width: 768px) {
-		right: 0;
 	}
 }
 
@@ -740,6 +809,19 @@ nav {
 	}
 }
 
+.pager {
+	.next {
+		@media screen and (max-width: 768px) {
+			text-align: left;
+
+			.meta-nav {
+				float: left;
+				margin-left: 0;
+				margin-right: 5px;
+			}
+		}
+	}
+}
 
 /* ==========================================================================
 	 Content
@@ -1016,6 +1098,10 @@ header.page-header {
 
 article {
 	margin-bottom: 70px;
+
+	.single & {
+		margin-bottom: 0;
+	}
 
 	header.entry-header {
 		h1.entry-title {
