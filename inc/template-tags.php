@@ -160,9 +160,9 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 }
 
 /**
- * Add customisable post meta.
+ * Add customisable portfolio meta.
  *
- * Add customisable post meta, using shortcodes,
+ * Add customisable portfolio meta, using shortcodes,
  * to be added/modified where necessary.
  */
 
@@ -204,6 +204,33 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 		</div>
 
 	<?php } // End lsx_portfolio_meta() 
+}
+
+/**
+ * Add customisable portfolio gallery.
+ *
+ */
+
+if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
+	function lsx_portfolio_gallery() {
+
+		$media = get_attached_media( 'image' );
+		$media_array = array();
+		$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
+		
+		if(!empty($media)){
+			foreach($media as $media_item){
+				if($post_thumbnail_id != $media_item->ID) {
+					$media_array[] = $media_item->ID;
+				}
+			}
+				
+			if(!empty($media_array)){
+				echo apply_filters('the_content','[gallery size="thumbnail" ids="'.implode(',', $media_array).'"]');
+			}
+		}
+		
+	}
 }
 
 if ( ! function_exists( 'lsx_paging_nav' ) ) :

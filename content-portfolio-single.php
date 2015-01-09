@@ -44,25 +44,7 @@
 
 	<?php lsx_post_nav(); ?>
 	
-	<?php 
-		$media = get_attached_media( 'image' );
-		$media_array = array();
-		$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
-		
-		if(!empty($media)){
-			foreach($media as $media_item){
-				if($post_thumbnail_id != $media_item->ID) {
-					$media_array[] = $media_item->ID; 
-				}
-			}
-			
-			if(!empty($media_array)){
-				echo apply_filters('the_content','[gallery size="thumbnail" ids="'.implode(',', $media_array).'"]');
-			}
-		} 
-		
-		
-	?>
+	<?php lsx_portfolio_gallery(); ?>
 	
 	<?php lsx_entry_bottom(); ?>
 
