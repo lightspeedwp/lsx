@@ -687,18 +687,6 @@ nav {
 			}
 		}
 	}
-
-	@media screen and (max-width: 992px) {
-		position: absolute;
-		right: 15px;
-		background: $light-grey;
-		margin: 0 !important;
-		border: none !important;
-	}
-
-	@media screen and (max-width: 768px) {
-		right: 0;
-	}
 }
 
 .navbar-toggle {
@@ -740,6 +728,19 @@ nav {
 	}
 }
 
+.pager {
+	.next {
+		@media screen and (max-width: 768px) {
+			text-align: left;
+
+			.meta-nav {
+				float: left;
+				margin-left: 0;
+				margin-right: 5px;
+			}
+		}
+	}
+}
 
 /* ==========================================================================
 	 Content
