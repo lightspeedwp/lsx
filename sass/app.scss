@@ -196,6 +196,7 @@ h6 {
 	margin-top: 0 !important;
 	margin-bottom: 25px;
 	font-size: 36px;
+	line-height: 1.4;
 }
 
 iframe, 
@@ -247,7 +248,7 @@ img,
 #searchform {
 	.input-group {
 		input.search-field {
-			height: 33px;
+			height: 35px;
 		}
  
 		span.input-group-btn {
@@ -477,6 +478,10 @@ nav {
 		margin: 40px 0;
 		@include transition(all .3s ease-in-out);
 
+		@media screen and (max-width: 1200px) {
+			width: 100%;
+		}
+
 		.nav.navbar-nav {
 			@media screen and (max-width: 992px) {
 				margin: 0;
@@ -609,7 +614,18 @@ nav {
 
 	&#social-navigation {
 		float: right;
-		margin: 25px 0;
+		margin: 25px 0 !important;
+		background: none;
+
+		@media screen and (max-width: 768px) {
+			float: left;
+			position: relative;
+			clear: both;
+
+			ul {
+				margin: -20px 0 0 -20px !important;
+			}
+		}
 
 		ul {
 			list-style: none;
@@ -770,10 +786,12 @@ header.page-header {
 
 		@media screen and (max-width: 992px) {
 			padding-top: 80px;
+			margin-bottom: -80px;
 		}
 
 		@media screen and (max-width: 768px) {
 			padding-top: 0;
+			margin-bottom: 0;
 		}
 	}
 
@@ -1042,7 +1060,6 @@ article {
 		.entry-image {
 			.thumbnail {
 				margin-bottom: 30px;
-				margin-right: 0;
 			}
 		}
 	}
@@ -1100,6 +1117,13 @@ article {
 
 	.entry-content {
 		margin-top: 20px;
+
+		.embed-youtube {
+			iframe {
+				height: auto;
+				min-height: 320px;
+			}
+		}
 	}
 
 	footer.entry-meta {
@@ -1195,6 +1219,10 @@ article {
 		text-transform: uppercase;
 		@include border-radius(3px);
 
+		@media screen and (max-width: 800px) {
+			text-align: center;
+		}
+
 		&:hover {
 			background: $black !important;
 		}
@@ -1281,7 +1309,7 @@ footer.content-info {
 	}
 
 	.profile-link {
-		margin-left: 120px;
+		margin-left: 103px;
 	}
 
 	.single & {
@@ -1330,6 +1358,7 @@ footer.content-info {
  
 .gform_button {
 	@extend .btn;
+	line-height: 1.5;
 }
  
 .gform_wrapper .gfield_error {

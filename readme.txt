@@ -92,10 +92,10 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 = Quick Specs =
 
-* The main content width is ?px
-* The sidebar width is ?px
-* Featured Images are ?px wide by ?px high
-* Portfolio feature images are ?px wide by ?px high
+* The main content width is 750px
+* The sidebar width is 360px
+* Featured Images are 750px wide by 300px high
+* Portfolio feature images are 360px wide by 270px high
 
 == Documentation & Support ==
 
