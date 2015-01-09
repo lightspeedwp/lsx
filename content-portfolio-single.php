@@ -67,10 +67,10 @@
 		if(!empty($media)){
 			foreach($media as $media_item){
 				if($post_thumbnail_id != $media_item->ID) {
-					$media_array[] = $media_item->ID;
+					$media_array[] = $media_item->ID; 
 				}
 			}
-		}
+		} 
 		
 		echo do_shortcode('[gallery ids="'.implode(',', $media_array).'"]');
 	?>
