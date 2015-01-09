@@ -82,7 +82,8 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 						);
 					?>
 	    		</nav>
-	  </div>
+	    	</div>
+	    </div>
 	  		<?php } ?>
 	  		
 	  	<?php lsx_header_bottom(); ?>
