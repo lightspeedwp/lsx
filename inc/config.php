@@ -55,32 +55,21 @@ endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );
 
 function lsx_layout_selector( $class, $area = 'site' ) {
-	
-	$page_layout = get_post_meta( get_the_ID(), 'lsx_layout', true );
-	$show_on_front = get_option('show_on_front');
-	
-	if ( 'page' == $show_on_front && $area == 'home' ) {
-		$layout = '1col';
-	} else {
-		if ( $page_layout && $page_layout != "default" ) {
-			$layout = $page_layout;
-		} else {
-			$layout = lsx_get_option('site_layout');	
-		}
-	}
+		
+	$layout = get_theme_mod('lsx_layout');
 
 	$default_size = 'sm';
 	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
 	switch ( $layout ) {
-		case '1col':
+		case '1c':
 			$main_class = 'col-' . $size . '-12';
 			break;
-		case '2c-l':
+		case '2cl':
 			$main_class = 'col-' . $size . '-8';
 			$sidebar_class = 'col-' . $size . '-4';
 			break;
-		case '2c-r':
+		case '2cr':
 			$main_class = 'col-' . $size . '-8 col-' . $size . '-push-4';
 			$sidebar_class = 'col-' . $size . '-4 col-' . $size . '-pull-8';
 			break;

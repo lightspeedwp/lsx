@@ -137,7 +137,6 @@ if(function_exists('soliloquy')){
   );  
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
-
 // after setup theme
 add_action('after_setup_theme' , function() {
 	$args = array(
