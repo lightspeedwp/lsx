@@ -285,7 +285,8 @@ function lsx_portfolio_post_meta_boxes_setup() {
 function lsx_save_portfolio_post_meta( $post_id, $post ) {
 
 
-  if ( !isset( $_POST['lsx_website_nonce'] ) || !wp_verify_nonce( $_POST['lsx_website_nonce'], basename( __FILE__ ) ) )
+  if ( (!isset( $_POST['lsx_website_nonce'] ) || !wp_verify_nonce( $_POST['lsx_website_nonce'], basename( __FILE__ ) )) 
+	|| (!isset( $_POST['lsx_client_nonce'] ) || !wp_verify_nonce( $_POST['lsx_client_nonce'], basename( __FILE__ ) )) )
     return $post_id;
 
   $post_type = get_post_type_object( $post->post_type );
@@ -293,26 +294,31 @@ function lsx_save_portfolio_post_meta( $post_id, $post ) {
   if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
 
-  $new_meta_value = ( isset( $_POST['lsx-website'] ) ? $_POST['lsx-website'] : '' );
-
-  $meta_key = 'lsx-website';
-
-  $meta_value = get_post_meta( $post_id, $meta_key, true );
-
-  if ( $new_meta_value && '' == $meta_value )
-    add_post_meta( $post_id, $meta_key, $new_meta_value, true );
-
-  elseif ( $new_meta_value && $new_meta_value != $meta_value )
-    update_post_meta( $post_id, $meta_key, $new_meta_value );
-
-  elseif ( '' == $new_meta_value && $meta_value )
-    delete_post_meta( $post_id, $meta_key, $meta_value );
+  
+  $meta_keys = array('lsx-website','lsx-client');
+  
+  foreach($meta_keys as $meta_key){
+  
+	  $new_meta_value = ( isset( $_POST[$meta_key] ) ? $_POST[$meta_key] : '' );
+	
+	  $meta_value = get_post_meta( $post_id, $meta_key, true );
+	
+	  if ( $new_meta_value && '' == $meta_value )
+	    add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+	
+	  elseif ( $new_meta_value && $new_meta_value != $meta_value )
+	    update_post_meta( $post_id, $meta_key, $new_meta_value );
+	
+	  elseif ( '' == $new_meta_value && $meta_value )
+	    delete_post_meta( $post_id, $meta_key, $meta_value );
+  
+  }
 }
 
 function lsx_add_portfolio_post_meta_boxes() {
 
   add_meta_box(
-    '',
+    'lsx_client_meta_box',
     esc_html__( 'Client', 'client' ),
     'lsx_client_meta_box',
     'jetpack-portfolio',
@@ -321,7 +327,7 @@ function lsx_add_portfolio_post_meta_boxes() {
   );
 
   add_meta_box(
-    '',
+    'lsx_website_meta_box',
     esc_html__( 'Website', 'website' ),
     'lsx_website_meta_box',
     'jetpack-portfolio',
