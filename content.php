@@ -18,11 +18,14 @@
 			</a>
 		</div>
 	<?php } ?>
-	
+
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			<?php if ( is_sticky() ) { ?>
+			<?php if ( is_sticky() && has_post_thumbnail() ) { ?>
 				<span class="label label-default label-sticky">Featured</span>
+			<?php 
+				} elseif ( is_sticky() && ! has_post_thumbnail() ) { ?>
+					<span class="label label-default label-sticky no-thumb">Featured</span>
 			<?php } ?>
 		</h1>		
 	</header><!-- .entry-header -->	
