@@ -104,17 +104,13 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 
 			<div class="post-author">
 
-				<?php
-					if ( ! is_sticky() ) { ?>
-						<span class="genericon genericon-user"></span>
+				<span class="genericon genericon-user"></span>
 
-						<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
-							_x( 'Author', 'Used before post author name.', 'lsx' ),
-							esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-							get_the_author()
-						);
-					}
-				?>
+				<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
+					_x( 'Author', 'Used before post author name.', 'lsx' ),
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					get_the_author()
+				); ?>
 			</div>
 
 
