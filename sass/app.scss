@@ -196,6 +196,7 @@ h6 {
 	margin-top: 0 !important;
 	margin-bottom: 25px;
 	font-size: 36px;
+	line-height: 1.4;
 }
 
 iframe, 
@@ -609,7 +610,16 @@ nav {
 
 	&#social-navigation {
 		float: right;
-		margin: 25px 0;
+		margin: 25px 0 !important;
+		background: none;
+
+		@media screen and (max-width: 768px) {
+			float: left;
+
+			ul {
+				margin: -20px 0 0 -20px;
+			}
+		}
 
 		ul {
 			list-style: none;
@@ -1280,7 +1290,7 @@ footer.content-info {
 	}
 
 	.profile-link {
-		margin-left: 120px;
+		margin-left: 103px;
 	}
 
 	.single & {
