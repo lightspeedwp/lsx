@@ -128,7 +128,7 @@ if(function_exists('soliloquy')){
   $controls['fields']['lsx_layout'] = array(
     'label'         =>  '',
     'section'       =>  'lsx-layout',
-    'control'   =>  'WP_Customize_Layout_Control',
+    'control'   =>  'LSX_Customize_Layout_Control',
     'layouts'		=>	array(
     	'1c',
     	'2cr',
@@ -136,6 +136,50 @@ if(function_exists('soliloquy')){
     ),
 	'priority' => 1,
   );  
+
+  $controls['sections']['lsx-font'] = array(
+    'title'       =>  'Font',
+      'description' => 'Change the fonts sitewide.'
+  );
+  $controls['settings']['lsx_font']  = array(
+    'default'       =>  'Noto Sans', //Default setting/value to save
+    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+  );  
+  /// add the control
+  $controls['fields']['lsx_font'] = array(
+    'label'         =>  '',
+    'section'       =>  'lsx-font',
+    'settings'      =>  'lsx_font',
+    'control'   =>  'LSX_Customize_Font_Control',
+    'choices'   =>  array(
+      array(
+        "title" => "Noto Sans", 
+        "location" => "Noto+Sans", 
+        "cssDeclaration" => "'Noto Sans', sans-serif", 
+        "cssClass" => "notoSans"
+      ),      
+      array(
+        "title" => "Noto Serif", 
+        "location" => "Noto+Serif", 
+        "cssDeclaration" => "'Noto Serif', serif", 
+        "cssClass" => "notoSerif"
+      ),      
+      array(
+        "title" => "Lato", 
+        "location" => "Lato", 
+        "cssDeclaration" => "'Lato', sans-serif", 
+        "cssClass" => "lato"
+      ),      
+      array(
+        "title" => "Open Sans", 
+        "location" => "Open+Sans", 
+        "cssDeclaration" => "'Open Sans', sans-serif", 
+        "cssClass" => "openSans"
+      )
+    ),
+  'priority' => 1,
+  );    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
 // after setup theme
