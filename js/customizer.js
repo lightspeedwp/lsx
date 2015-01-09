@@ -11,7 +11,7 @@
 		// push message
 		message.bind( function( value ) {
 			// Do stuff with pushed message value
-			
+
 			$( 'a' ).css( 'color' , value );
 		
 		} );

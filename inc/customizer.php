@@ -36,6 +36,9 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 */
 		public function __construct( $controls ) {
 			
+			// get custom controls
+			require get_template_directory() . '/inc/customizer-controls.php';
+
 			$this->controls = $controls;
 
 			add_action( 'customize_preview_init', array($this,'customize_preview_js' ));
@@ -299,6 +302,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 		}		
 	}	
 }
+
 
 /**
  * Helper function to return the theme option value.
