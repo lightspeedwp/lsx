@@ -142,7 +142,7 @@ if(function_exists('soliloquy')){
       'description' => 'Change the fonts sitewide.'
   );
   $controls['settings']['lsx_font']  = array(
-    'default'       =>  'Noto Sans', //Default setting/value to save
+    'default'       =>  'noto_sans_open_sans', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
   );  
@@ -153,30 +153,90 @@ if(function_exists('soliloquy')){
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
-      array(
-        "title" => "Noto Sans", 
-        "location" => "Noto+Sans", 
-        "cssDeclaration" => "'Noto Sans', sans-serif", 
-        "cssClass" => "notoSans"
-      ),      
-      array(
-        "title" => "Noto Serif", 
-        "location" => "Noto+Serif", 
-        "cssDeclaration" => "'Noto Serif', serif", 
-        "cssClass" => "notoSerif"
-      ),      
-      array(
-        "title" => "Lato", 
-        "location" => "Lato", 
-        "cssDeclaration" => "'Lato', sans-serif", 
-        "cssClass" => "lato"
-      ),      
-      array(
-        "title" => "Open Sans", 
-        "location" => "Open+Sans", 
-        "cssDeclaration" => "'Open Sans', sans-serif", 
-        "cssClass" => "openSans"
-      )
+      'alegreya_serif_open_sans' => array(
+        'header'  => array(
+            "title" => "Alegreya", 
+            "location" => "Alegreya", 
+            "cssDeclaration" => "'Alegreya', serif", 
+            "cssClass" => "alegreya",
+          ),
+        'body'  => array(
+            "title" => "Open Sans", 
+            "location" => "Open+Sans", 
+            "cssDeclaration" => "'Open Sans', sans-serif", 
+            "cssClass" => "openSans"
+          ),
+        ),
+      'arial_sans_verdana_sans' => array(
+        'header'  => array(
+            "title" => "Arial", 
+            "location" => "Arial", 
+            "cssDeclaration" => "'Arial', serif", 
+            "cssClass" => "arial",
+          ),
+        'body'  => array(
+            "title" => "Verdana", 
+            "location" => "Verdana", 
+            "cssDeclaration" => "'Verdana', sans-serif", 
+            "cssClass" => "verdana"
+          ),
+        ),      
+      'noto_sans_open_sans' => array(
+        'header'  => array(
+            "title" => "Noto Sans", 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
+          ),
+        'body'  => array(
+            "title" => "Open Sans", 
+            "location" => "Open+Sans", 
+            "cssDeclaration" => "'Open Sans', sans-serif", 
+            "cssClass" => "openSans"
+          ),
+        ),
+      'noto_serif_noto_sans' => array(
+        'header'  => array(
+            "title" => "Noto Serif", 
+            "location" => "Noto+Serif", 
+            "cssDeclaration" => "'Noto Serif', serif", 
+            "cssClass" => "notoSerif",
+          ),
+        'body'  => array(
+            "title" => "Noto Sans", 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
+          ),
+        ),
+      'georgia_serif_open_sans' => array(
+        'header'  => array(
+            "title" => "Georgia", 
+            "location" => "Georgia", 
+            "cssDeclaration" => "'Georgia', serif", 
+            "cssClass" => "georgia",
+          ),
+        'body'  => array(
+            "title" => "Open Sans", 
+            "location" => "Open+Sans", 
+            "cssDeclaration" => "'Open Sans', sans-serif", 
+            "cssClass" => "openSans"
+          ),
+        ),
+      'georgia_serif_open_sans' => array(
+        'header'  => array(
+            "title" => "Georgia", 
+            "location" => "Georgia", 
+            "cssDeclaration" => "'Georgia', serif", 
+            "cssClass" => "georgia",
+          ),
+        'body'  => array(
+            "title" => "Open Sans", 
+            "location" => "Open+Sans", 
+            "cssDeclaration" => "'Open Sans', sans-serif", 
+            "cssClass" => "openSans"
+          ),
+        ),
     ),
   'priority' => 1,
   );    

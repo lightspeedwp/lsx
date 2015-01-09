@@ -29,9 +29,16 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 			// if there are no choices then don't print anything
 			return;
 		}
-		$this->fonts = new Google_Font_Collection( $this->choices );
+		$fonts = array();
+		foreach( $this->choices as $slug=>$font ){
+			$fonts[] = $font['header'];
+			$fonts[] = $font['body'];
+			$this->choices[$slug] = $font;
+		}
+		
+		$this->fonts = new Google_Font_Collection( $fonts );
 
-		$this->choices = $this->fonts->getFontFamilyNameArray();
+		$fonts = $this->fonts->getFontFamilyNameArray();
 		//print links to css files
 		$this->fonts->printThemeCustomizerCssLocations();
 
@@ -44,23 +51,26 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 		<div class="fontPickerCustomControl">
 			<select <?php $this->link(); ?>>
 				<?php
-				foreach ( $this->choices as $value => $label ){
-					echo '<option value="' . esc_attr( $label ) . '">' . $label . '</option>';
+				foreach ( $this->choices as $value => $conf ){
+					echo '<option value="' . esc_attr( $value ) . '">' . $value . '</option>';
 				}
 				?>
 			</select>
 			<div class="fancyDisplay">
 				<ul>
 					<?php
-					$cssClassArray = $this->fonts->getCssClassArray();
-					foreach ($cssClassArray as $key => $font){
+					//$cssClassArray = $this->fonts->getCssClassArray();
+					foreach ($this->choices as $key => $font){
 						$class = null;
 						if( $key == $set_value ){
 							$class = ' selected';
 						}
 						
 						?>
-						<li class="font-choice <?php echo $font.$class; ?>"><?php echo $key; ?></li>
+						<li class="font-choice <?php echo $class; ?>">
+							<div class="<?php echo $font['header']['cssClass']; ?>"><?php echo $font['header']['title']; ?></div>
+							<small class="<?php echo $font['body']['cssClass']; ?>"><?php echo $font['body']['title']; ?></small>
+						</li>
 						<?php
 					}
 					?>
