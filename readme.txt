@@ -1,82 +1,103 @@
-=== About Theme ===
-Contributors: @krugazul, @richlloydmiles, @eleshar, @feedmymedia
+=== LSX ===
+Contributors: the LightSpeed team
+Author: LightSpeed
+Author URI: https://www.lsdev.biz/
 Theme Name: LSX
-Theme URI: https://www.lsdev.biz/
-Version: 1.0
-Tested up to: WP 4.0
-
-Author: Aigars Silkalns
-Author URI: http://colorlib.com/wp/
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl.html
--------------------------------------------------------
-LSX theme framework, Copyright 2014 lsdev.biz
-LSX WordPress theme is distributed under the terms of the GNU GPL
-LSX is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
--------------------------------------------------------
-
-== Credits ==
-
-* FontAwesome (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
-* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
-* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+Theme URI: https://www.lsdev.biz/project/lsx/
+Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Requires at least: 4.1
+Tested up to: 4.1
+Stable tag: 4.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
+LSX is a clean, modern, minimal and fully responsive parent theme. This theme is ideal for developers looking for a Bootstrap parent theme. LSX has been designed to be minimal and lean, the does however have theme options that allow you to control fonts, color options, home page configuration and add contact details. The theme is built using Bootstrap 3, which makes it responsive and mobile friendly.
 
-LSX is a clean, modern, minimal and fully responsive parent theme. This theme is ideal for developers looking for a Bootstrap parent theme. LSX has been designed to be minimal and lean, the does however have theme options that allow you to control fonts, color options, home page configuration and add contact details. The theme is built using Bootstrap 3, which makes it responsive and mobile friendly. It features SEO friendly structure, logo upload, flexible blog posts widget.
+* Responsive Layout
+* Custom Colors
+* Custom Background
+* Social Links
+* Menu Description
+* Post Formats
+* The GPL v2.0 or later license. 
+
+== Credits ==
+* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
+* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* Genericons (http://genericons.com/) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html) 
 
 == Installation ==
 
-* You can install the theme through the WordPress installer under "Themes" > "Install themes" by searching for "LSX".
+* In your admin panel, go to Appearance -> Themes and click the Add New button.
 * Alternatively you can download the file, unzip it and move the unzipped contents to the "wp-content/themes" folder of your WordPress installation. You will then be able to activate the theme.
-* Activate the theme through the 'Appearance' menu in WordPress
+* Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+* Click Activate to use your new theme right away.
 
-== Changelog ==
+== Page Templates ==
 
-= 1.0 =
-
-* Initial release
-
-
-== LSX Features ==
-
-General:
-* Bootstrap 3 integration
-* Responsive design
-* SEO friendly
-* Theme Options
-* Drop-down Menu
-* Cross-browser compatibility
-* Threaded Comments
-* Gravatar ready
-* Font Awesome icons
-
-Theme Options:
-* General - this tab covers important basics like logo, favicon, sitewide sidebar layout, related posts, 
-* Typography tab - configure sitewide font sizes, colours and type, link and button colours
-* Home - use this tab to enable a banner, upload banners, add banner text
-* Contact - configure the details, map and assign a gravity form
-
-Widgets:
-* LSX offers 1 custom blog widget that is very flexible
-
-Page Templates:
 * Sitemap
 * Archives
-* Contact - this displays details added via the theme options contact tab
+* Full width layout
 
-Sidebars:
-* Home
-* Sidebar
-* Sidebar - Secondary
-* Footer
+== Frequently Asked Questions ==
 
-Menus
-* There is one primary menu.
+= How do I change the color scheme? =
+
+You can change the colors of your site really easily using LSX.
+
+1. In your admin panel, go to Appearance -> Customize.
+4. Now you will see the Customizer and a tab called 'Colors'. Click this tab.
+5. You can now change your color scheme by selecting one of the predefined ones. Choose a color scheme you want from Base Color Scheme dropdown. You can preview the change in the Customizer.
+6. Once you are happy with your color changes you can click save and your changes will be reflected on your live site.
+
+= How do I add the social links to the sidebar? =
+
+LSX allows you display links to your social media profiles, like Twitter and Facebook, with icons.
+
+1. Create a new Custom Menu, and assign it to the Social Links Menu location.
+2. Add links to each of your social services using the Links panel.
+3. Icons for your social links will automatically appear if it’s available.
+4. The menu appears in the footer.
+
+Available icons: (Linking to any of the following sites will automatically display its icon in your social menu).
+
+* Codepen
+* Digg
+* Dribbble
+* Dropbox
+* Facebook
+* Flickr
+* Foursquare
+* GitHub
+* Google+
+* Instagram
+* LinkedIn
+* Email (mailto: links)
+* Pinterest
+* Pocket
+* PollDaddy
+* Reddit
+* RSS Feed (urls with /feed/)
+* Spotify
+* StumbleUpon
+* Tumblr
+* Twitch
+* Twitter
+* Vimeo
+* WordPress
+* YouTube
+
+Social networks that aren't currently supported will be indicated by a generic share icon.
+
+= Quick Specs =
+
+* The main content width is ?px
+* The sidebar width is ?px
+* Featured Images are ?px wide by ?px high
+* Portfolio feature images are ?px wide by ?px high
 
 == Documentation & Support ==
 
 Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/
-
 Support - https://www.lsdev.biz/contact-us/
