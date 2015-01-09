@@ -25,7 +25,7 @@ $controls = array(
       'default'     =>  '#2BA6CB', //Default setting/value to save
       'type'      =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
       'capability'  =>  'edit_theme_options', //Optional. Special permissions for accessing this setting.
-      'transport'   =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+      'transport'   =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
       'css' => array( // Optional: does this apply to a css selector for the live site?
         'selector'    =>  'a', // CSS Selector the setting is for
         'style_name'  =>  'color', // the css style to be applied
@@ -52,7 +52,7 @@ $controls = array(
   'fields'      =>  array(
     'my_color'      =>  array(
       'label'     =>  __( 'Link Color', 'mytheme' ), //Admin-visible name of the control
-      'control'   =>  'WP_Customize_Color_Control', // Optional: the control type class name ( built in WP_Customize_Image_Control, WP_Customize_Upload_Control, WP_Customize_Color_Control, WP_Customize_Text_Control ) use lowercase type : ie. textarea for generic
+      'control'   =>  'WP_Customize_Layout_Control', // Optional: the control type class name ( built in WP_Customize_Image_Control, WP_Customize_Upload_Control, WP_Customize_Color_Control, WP_Customize_Text_Control ) use lowercase type : ie. textarea for generic
       //'type'    =>  'select', // only if control is not defined. this is the input type (text, textarea, select etc..)
       //'choices'   =>  '', //array() | callback of choices for selects or choice based controls / types
       'section'     =>  'my_section_slug', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
@@ -107,6 +107,34 @@ if(function_exists('soliloquy')){
   	),
 	'priority' => 1,
   );
+
+  $controls['sections']['lsx-layout'] = array(
+    'title'       =>  'Layout'
+  );
+
+
+  $controls['settings']['lsx_layout']  = array(
+    'default'       =>  '2cr', //Default setting/value to save
+    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+    'layouts'		=>	array(
+    	'1c',
+    	'2cr',
+    	'2cl'
+    )
+  ); 
+  /// add the control
+  $controls['fields']['lsx_layout'] = array(
+    'label'         =>  esc_html__( 'Layout', 'lsx-theme' ),
+    'section'       =>  'lsx-layout',
+    'control'   =>  'WP_Customize_Layout_Control',
+    'layouts'		=>	array(
+    	'1c',
+    	'2cr',
+    	'2cl'
+    ),
+	'priority' => 1,
+  );  
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
 
