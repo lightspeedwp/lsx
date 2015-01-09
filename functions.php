@@ -93,7 +93,7 @@ if(function_exists('soliloquy')){
   $controls['settings']['lsx_color_scheme']  = array(
     'default'       =>  'default', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-    'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
   );
   /// add the control
   $controls['fields']['lsx_color_scheme'] = array(
