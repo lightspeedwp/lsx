@@ -54,23 +54,23 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 				?>
 		    </div>
 
-		<?php lsx_nav_before(); ?>
-		
-		<?php 		    		
-			$nav_menu = get_theme_mod('nav_menu_locations',array());
-	    	if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
-				<nav class="collapse navbar-collapse" role="navigation">
-			    	<?php
-						wp_nav_menu( array(
-						'menu' => $nav_menu['primary'],
-						'depth' => 2,
-						'container' => false,
-						'menu_class' => 'nav navbar-nav',
-						'walker' => new lsx_bootstrap_navwalker())
-						);
-					?>
-	    		</nav>
-    		<?php } else { ?>
+			<?php lsx_nav_before(); ?>
+			
+			<?php 		    		
+				$nav_menu = get_theme_mod('nav_menu_locations',array());
+		    	if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+					<nav class="collapse navbar-collapse" role="navigation">
+				    	<?php
+							wp_nav_menu( array(
+							'menu' => $nav_menu['primary'],
+							'depth' => 2,
+							'container' => false,
+							'menu_class' => 'nav navbar-nav',
+							'walker' => new lsx_bootstrap_navwalker())
+							);
+						?>
+		    		</nav>
+	    		<?php } else { ?>
     			<nav class="collapse navbar-collapse" role="navigation">
 			    	<?php
 						wp_nav_menu( array(
@@ -83,10 +83,11 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 					?>
 	    		</nav>
 	    	</div>
-	    </div>
 	  		<?php } ?>
 	  		
 	  	<?php lsx_header_bottom(); ?>
+
+	  	</div>
 	</header>
 		
 <?php lsx_header_after(); ?>
