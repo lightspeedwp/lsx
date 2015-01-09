@@ -97,9 +97,6 @@ img {
   border: 1px solid $thumbnail-border;
   border-radius: $thumbnail-border-radius;
   @include transition(all .2s ease-in-out);
-
-  // Keep them at most 100% wide
-  @include img-responsive(inline-block);
 }
 
 // Perfect circle

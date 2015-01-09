@@ -15,26 +15,6 @@ function lsx_yoast_breadcrumbs(){
 }
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
 
-
-/**
- * Displays a placeholder image
- */
-function lsx_placeholder_image( $html, $post_id = false, $post_thumbnail_id = false, $size = 'thumbnail', $attr = array() )
-{
-    if ( '' !== $html )
-    {
-        return $html;
-    }
-
-    $placeholder_url = lsx_get_option('placeholder_image');
-
-    $placeholder_id = lsx_get_attachment_id( $placeholder_url );
-
-   return wp_get_attachment_image( $placeholder_id, $size );
-
-}
-add_filter( 'post_thumbnail_html', 'lsx_placeholder_image' );
-
 /**
  * Add and remove body_class() classes
  */

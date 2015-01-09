@@ -17,29 +17,8 @@
 				 <?php the_post_thumbnail( 'thumbnail-single' ); ?>
 			</a>
 		</div>
-	<?php } elseif( lsx_get_option( 'post_placeholder', false)) { ?>
-	
-		<div class="entry-image">
-			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
-				 <img src="<?php echo lsx_get_option( 'post_placeholder'); ?>" alt="placeholder" />
-			</a>
-		</div>	
-		
-	<?php } else { 
-
-		$width = lsx_get_option( 'thumb_width' );
-		if ( ! $width ) $width = 750;
-
-		$height = lsx_get_option( 'thumb_height' );
-		if ( ! $height ) $height = 350;
-		?>
-
-		<div class="entry-image">
-			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
-				 <img src="http://placehold.it/<?php echo $width; ?>x<?php echo $height; ?>" alt="placeholder" />
-			</a>
-		</div>
 	<?php } ?>
+	
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			<?php if ( is_sticky() ) { ?>
