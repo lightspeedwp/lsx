@@ -118,14 +118,41 @@ if(function_exists('soliloquy')){
     'default'       =>  '2cr', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-    
+    'layouts'		=>	array(
+    	'1c',
+    	'2cr',
+    	'2cl'
+    )
   ); 
   /// add the control
   $controls['fields']['lsx_layout'] = array(
     'label'         =>  '',
     'section'       =>  'lsx-layout',
+    'control'   =>  'LSX_Customize_Layout_Control',
+    'layouts'		=>	array(
+    	'1c',
+    	'2cr',
+    	'2cl'
+    ),
+	'priority' => 1,
+  );  
+
+  $controls['sections']['lsx-font'] = array(
+    'title'       =>  'Font',
+      'description' => 'Change the fonts sitewide.'
+  );
+  $controls['settings']['lsx_font']  = array(
+    'default'       =>  'Noto Sans', //Default setting/value to save
+    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+  );  
+  /// add the control
+  $controls['fields']['lsx_font'] = array(
+    'label'         =>  '',
+    'section'       =>  'lsx-font',
+    'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
-    'choices'		=>	array(
+    'choices'   =>  array(
       array(
         "title" => "Noto Sans", 
         "location" => "Noto+Sans", 
@@ -145,7 +172,7 @@ if(function_exists('soliloquy')){
         "cssClass" => "ubuntuCondensed"
       )
     ),
-	'priority' => 1,
+  'priority' => 1,
   );    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
