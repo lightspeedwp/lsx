@@ -77,7 +77,7 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 			$main_class = 'col-' . $size . '-8';
 			$sidebar_class = 'col-' . $size . '-4';
 			break;
-	}
+	} 
 
 	if ( $class == 'main' ) {
 		return $main_class;
