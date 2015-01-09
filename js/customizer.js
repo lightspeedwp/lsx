@@ -5,10 +5,17 @@
  */
 
 ( function( $ ) {
-	// Site title and description.
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
+	
+	// template for postMessage transport.
+	wp.customize( 'my_setting', function( message ) {
+		// push message
+		message.bind( function( value ) {
+			// Do stuff with pushed message value
+			
+			$( 'a' ).css( 'color' , value );
+		
 		} );
+	
 	} );
+
 } )( jQuery );
