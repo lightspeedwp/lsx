@@ -248,7 +248,7 @@ img,
 #searchform {
 	.input-group {
 		input.search-field {
-			height: 33px;
+			height: 35px;
 		}
  
 		span.input-group-btn {
@@ -478,6 +478,10 @@ nav {
 		margin: 40px 0;
 		@include transition(all .3s ease-in-out);
 
+		@media screen and (max-width: 1200px) {
+			width: 100%;
+		}
+
 		.nav.navbar-nav {
 			@media screen and (max-width: 992px) {
 				margin: 0;
@@ -615,9 +619,11 @@ nav {
 
 		@media screen and (max-width: 768px) {
 			float: left;
+			position: relative;
+			clear: both;
 
 			ul {
-				margin: -20px 0 0 -20px;
+				margin: -20px 0 0 -20px !important;
 			}
 		}
 
@@ -780,10 +786,12 @@ header.page-header {
 
 		@media screen and (max-width: 992px) {
 			padding-top: 80px;
+			margin-bottom: -80px;
 		}
 
 		@media screen and (max-width: 768px) {
 			padding-top: 0;
+			margin-bottom: 0;
 		}
 	}
 
@@ -1109,6 +1117,13 @@ article {
 
 	.entry-content {
 		margin-top: 20px;
+
+		.embed-youtube {
+			iframe {
+				height: auto;
+				min-height: 320px;
+			}
+		}
 	}
 
 	footer.entry-meta {
@@ -1203,6 +1218,10 @@ article {
 		padding: 9px 17px !important;
 		text-transform: uppercase;
 		@include border-radius(3px);
+
+		@media screen and (max-width: 800px) {
+			text-align: center;
+		}
 
 		&:hover {
 			background: $black !important;
@@ -1339,6 +1358,7 @@ footer.content-info {
  
 .gform_button {
 	@extend .btn;
+	line-height: 1.5;
 }
  
 .gform_wrapper .gfield_error {
