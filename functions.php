@@ -62,6 +62,7 @@ $controls = array(
   )
 );
 
+$controls = array();
 
 // add the slider if function exists
 if(function_exists('soliloquy')){
