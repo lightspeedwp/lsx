@@ -103,7 +103,7 @@ function lsx_author_box() {
 							echo "</div>";
 					}
 					?>
-					<div class="profile-link pull-right">
+					<div class="profile-link pull-left">
 						<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ); ?>">
 							View all posts by <?php echo get_the_author_meta( 'display_name', $author_id ); ?>  <i class="fa fa-arrow-right"></i>
 						</a>
