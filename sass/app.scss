@@ -752,6 +752,12 @@ header.page-header {
 	margin: 0;
 	padding: 0;
 	border: none;
+
+	.template-sticky & {
+		img {
+			margin-bottom: 40px;
+		}
+	}
 }
 
 // Homepage
@@ -1133,7 +1139,7 @@ article {
 			size: 20px !important;
 			weight: 600 !important;
 		}
-		margin-top: 20px;
+		margin: 20px 0 10px !important;
 
 		&:before,
 		em:before {
