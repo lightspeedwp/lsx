@@ -93,14 +93,17 @@ if(function_exists('soliloquy')){
     'default'       =>  'default', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-    'sanitize_callback' =>  'twentyfifteen_sanitize_color_scheme' // santize setting callback
   );
   /// add the control
   $controls['fields']['lsx_color_scheme'] = array(
     'label'         =>  esc_html__( 'Color Scheme', 'lsx-theme' ),
     'section'       =>  'colors',
     'type'          =>  'select',
-    'choices'  => twentyfifteen_get_color_scheme_choices(),
+    'choices'  => array(
+  		'default' => 'Default',
+    	'dark' => 'Dark',
+    	'light' => 'Light'
+  	),
 	'priority' => 1,
   );
 
