@@ -55,9 +55,13 @@
 					$media_array[] = $media_item->ID; 
 				}
 			}
+			
+			if(!empty($media_array)){
+				echo apply_filters('the_content','[gallery ids="'.implode(',', $media_array).'"]');
+			}
 		} 
 		
-		echo apply_filters('the_content','[gallery ids="'.implode(',', $media_array).'"]');
+		
 	?>
 	
 	<?php lsx_entry_bottom(); ?>
