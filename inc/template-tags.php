@@ -159,6 +159,53 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 	} // End lsx_post_format()
 }
 
+/**
+ * Add customisable post meta.
+ *
+ * Add customisable post meta, using shortcodes,
+ * to be added/modified where necessary.
+ */
+
+if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
+	function lsx_portfolio_meta() {
+		?>
+
+		<div class="portfolio-meta">
+		
+			<?php 
+				$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+				
+				if($portfolio_type){
+					?>
+					<div class="portfolio-category">
+						<span><span class="genericon genericon-category"></span>Category</span>
+						<?php echo $portfolio_type; ?>
+					</div>			
+			<?php } ?>
+		
+			<?php 
+				$client = get_post_meta(get_the_ID(),'lsx-client',true);
+				if(false != $client){ ?>
+				<div class="portfolio-client">
+					<span><span class="genericon genericon-user"></span>Client</span>
+					<span><?php echo $client; ?></span>
+				</div>			
+			<?php }	?>
+
+			<?php 
+				$website = get_post_meta(get_the_ID(),'lsx-website',true);
+				if(false != $website){ ?>
+				<div class="portfolio-website">
+					<span><span class="genericon genericon-link"></span>Website</span>
+					<a href="<?php echo $website; ?>"><?php echo $website; ?></a>
+				</div>				
+			<?php }	?>
+
+		</div>
+
+	<?php } // End lsx_portfolio_meta() 
+}
+
 if ( ! function_exists( 'lsx_paging_nav' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
