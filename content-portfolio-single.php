@@ -36,22 +36,7 @@
 		</div>
 
 		<div class="col-md-4">
-			<div class="portfolio-meta">
-				<div class="portfolio-category">
-					<span><span class="genericon genericon-category"></span>Category</span>
-					<a href="#">Lorem Ipsum</a>
-				</div>
-
-				<div class="portfolio-client">
-					<span><span class="genericon genericon-user"></span>Client</span>
-					<span>Dolor Sit Amet</span>
-				</div>
-
-				<div class="portfolio-website">
-					<span><span class="genericon genericon-link"></span>Website</span>
-					<a href="#">http://www.loremipsum.com</a>
-				</div>
-			</div>
+			<?php lsx_portfolio_meta(); ?>
 		</div>
 	</div>
 	
@@ -72,7 +57,7 @@
 			}
 		} 
 		
-		echo do_shortcode('[gallery ids="'.implode(',', $media_array).'"]');
+		echo apply_filters('the_content','[gallery ids="'.implode(',', $media_array).'"]');
 	?>
 	
 	<?php lsx_entry_bottom(); ?>

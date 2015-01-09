@@ -235,10 +235,11 @@ add_action( 'load-post-new.php', 'lsx_portfolio_post_meta_boxes_setup' );
 function lsx_portfolio_post_meta_boxes_setup() {
   add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
 
-   add_action( 'save_post', 'lsx_save_portfolio_post_meta', 10, 2 );
+   add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
 }
 
 function lsx_save_portfolio_post_meta( $post_id, $post ) {
+
 
   if ( !isset( $_POST['lsx_website_nonce'] ) || !wp_verify_nonce( $_POST['lsx_website_nonce'], basename( __FILE__ ) ) )
     return $post_id;
@@ -248,9 +249,9 @@ function lsx_save_portfolio_post_meta( $post_id, $post ) {
   if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
 
-  $new_meta_value = ( isset( $_POST['lsx-portfolio'] ) ? sanitize_html_class( $_POST['lsx-portfolio'] ) : '' );
+  $new_meta_value = ( isset( $_POST['lsx-website'] ) ? $_POST['lsx-website'] : '' );
 
-  $meta_key = 'lsx_portfolio_meta';
+  $meta_key = 'lsx-website';
 
   $meta_value = get_post_meta( $post_id, $meta_key, true );
 

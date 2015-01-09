@@ -159,6 +159,105 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 	} // End lsx_post_format()
 }
 
+/**
+ * Add customisable post meta.
+ *
+ * Add customisable post meta, using shortcodes,
+ * to be added/modified where necessary.
+ */
+
+if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
+	function lsx_portfolio_meta() {
+		?>
+		
+		
+		<div class="portfolio-meta">
+		
+			<?php 
+				$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+				
+				if($portfolio_type){
+					?>
+					<div class="portfolio-category">
+						<span><span class="genericon genericon-category"></span>Category</span>
+						<?php echo $portfolio_type; ?>
+					</div>			
+			<?php } ?>
+		
+
+
+			<div class="portfolio-client">
+				<span><span class="genericon genericon-user"></span>Client</span>
+				<span>Dolor Sit Amet</span>
+			</div>
+
+			<?php 
+				$website = get_post_meta(get_the_ID(),'lsx-website',true);
+				if(false != $website){ ?>
+				<div class="portfolio-website">
+					<span><span class="genericon genericon-link"></span>Website</span>
+					<a href="<?php echo $website; ?>"><?php echo $website; ?></a>
+				</div>				
+			<?php }	?>
+
+		</div>
+		
+		<div class="post-meta">
+			<div class="post-date">
+				<span class="genericon genericon-month"></span>
+				<?php
+					$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+					
+					$time_string = sprintf( $time_string,
+						esc_attr( get_the_date( 'c' ) ),
+						get_the_date(),
+						esc_attr( get_the_modified_date( 'c' ) ),
+						get_the_modified_date()
+					);
+					printf( '<a href="%2$s" rel="bookmark">%3$s</a>',
+						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
+						esc_url( get_permalink() ),
+						$time_string
+					);
+				?>
+			</div>
+
+			<div class="post-author">
+
+				<span class="genericon genericon-user"></span>
+
+				<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
+					_x( 'Author', 'Used before post author name.', 'lsx' ),
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					get_the_author()
+				); ?>
+			</div>
+
+
+			<?php 
+		    	$post_categories = wp_get_post_categories( get_the_ID() );
+		    	$cats = array();
+		    	foreach($post_categories as $c){
+		    			$cat = get_category( $c );
+		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a> ';
+		    	}
+		    	if(!empty($cats)){ ?>
+					<div class="post-categories">
+						<span class="genericon genericon-category"></span>		    	
+						<?php echo implode(', ', $cats); ?>
+					</div>					
+			<?php } ?>
+
+
+			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
+
+			
+			<br clear="both" />
+		</div>
+
+	<?php } // End lsx_post_meta() 
+}
+
 if ( ! function_exists( 'lsx_paging_nav' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
