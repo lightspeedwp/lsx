@@ -13,5 +13,6 @@
 			// Do stuff with pushed message value
 			$( 'a' ).css( 'color' , value );
 		} );
-	} );
+	} );	
+	
 } )( jQuery );
