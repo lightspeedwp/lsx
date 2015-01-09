@@ -118,24 +118,35 @@ if(function_exists('soliloquy')){
     'default'       =>  '2cr', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-    'layouts'		=>	array(
-    	'1c',
-    	'2cr',
-    	'2cl'
-    )
+    
   ); 
   /// add the control
   $controls['fields']['lsx_layout'] = array(
     'label'         =>  '',
     'section'       =>  'lsx-layout',
-    'control'   =>  'WP_Customize_Layout_Control',
-    'layouts'		=>	array(
-    	'1c',
-    	'2cr',
-    	'2cl'
+    'control'   =>  'LSX_Customize_Font_Control',
+    'choices'		=>	array(
+      array(
+        "title" => "Noto Sans", 
+        "location" => "Noto+Sans", 
+        "cssDeclaration" => "'Noto Sans', sans-serif", 
+        "cssClass" => "notoSans"
+      ),      
+      array(
+        "title" => "Noto Serif", 
+        "location" => "Noto+Serif", 
+        "cssDeclaration" => "'Noto Serif', serif", 
+        "cssClass" => "notoSerif"
+      ),      
+      array(
+        "title" => "Ubuntu Condensed", 
+        "location" => "Ubuntu+Condensed", 
+        "cssDeclaration" => "'Ubuntu Condensed', sans-serif", 
+        "cssClass" => "ubuntuCondensed"
+      )
     ),
 	'priority' => 1,
-  );  
+  );    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
 // after setup theme

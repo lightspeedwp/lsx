@@ -7,7 +7,7 @@
 if( !class_exists( 'WP_Customize_Control' ) ){
 	return;
 }
-class WP_Customize_Layout_Control extends WP_Customize_Control {
+class LSX_Customize_Layout_Control extends WP_Customize_Control {
 	/**
 	 * @access public
 	 * @var string
