@@ -997,7 +997,7 @@ header.page-header {
 	 ========================================================================== */
 
 article {
-	margin-bottom: 20px;
+	margin-bottom: 70px;
 
 	header.entry-header {
 		h1.entry-title {
@@ -1025,6 +1025,15 @@ article {
 					font: {
 						size: 18px;
 						weight: 600;
+					}
+
+					&.no-thumb {
+						position: relative;
+						font-size: 16px;
+						vertical-align: middle;
+						margin-top: -5px;
+						margin-left: 10px;
+						left: auto;
 					}
 				}
 			}
