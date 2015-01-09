@@ -109,7 +109,8 @@ if(function_exists('soliloquy')){
   );
 
   $controls['sections']['lsx-layout'] = array(
-    'title'       =>  'Layout'
+    'title'       =>  'Layout',
+  		'description' => 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.'
   );
 
 
@@ -125,7 +126,7 @@ if(function_exists('soliloquy')){
   ); 
   /// add the control
   $controls['fields']['lsx_layout'] = array(
-    'label'         =>  esc_html__( 'Layout', 'lsx-theme' ),
+    'label'         =>  '',
     'section'       =>  'lsx-layout',
     'control'   =>  'WP_Customize_Layout_Control',
     'layouts'		=>	array(
