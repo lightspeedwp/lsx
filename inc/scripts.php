@@ -67,7 +67,7 @@ function lsx_scripts() {
 			$body_font_location = 'Noto+Sans';
 		break;		
 
-		case 'alegreya_serif_open_sans':
+		case 'alegreya_open_sans':
 			$header_font_location = 'Alegreya';
 			$body_font_location = 'Open+Sans';
 		break;	
