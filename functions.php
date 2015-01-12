@@ -17,50 +17,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
-// define your controls here
-$controls = array(
-  // array to define settings
-  'settings'      =>  array(
-    'my_setting'    =>  array(
-      'default'     =>  '#2BA6CB', //Default setting/value to save
-      'type'      =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-      'capability'  =>  'edit_theme_options', //Optional. Special permissions for accessing this setting.
-      'transport'   =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-      'css' => array( // Optional: does this apply to a css selector for the live site?
-        'selector'    =>  'a', // CSS Selector the setting is for
-        'style_name'  =>  'color', // the css style to be applied
-        'prefix'      =>  '', //optional: the value prefix for sanatized values, if needed
-        'postfix'     =>  '', //optional: the value postfix for sanatized values, if needed
-      )
-    ),//add more settings
-  ),
-  // array to define panels
-  'panels'      =>  array(
-    'my_panel_slug'   =>  array(
-      'title'     =>  'My Panel Title',
-      'priority'    =>  1
-    ), // add more panels
-  ),
-  // array to define sections
-  'sections'      =>  array(
-    'my_section_slug'   =>  array(
-      'title'     =>  'My Section Title',
-      'panel'     =>  'my_panel_slug' // Optional: if defined a panel, reference the panel slug here
-    ),//add more sections
-  ),
-  // array to define fields
-  'fields'      =>  array(
-    'my_color'      =>  array(
-      'label'     =>  __( 'Link Color', 'mytheme' ), //Admin-visible name of the control
-      'control'   =>  'WP_Customize_Layout_Control', // Optional: the control type class name ( built in WP_Customize_Image_Control, WP_Customize_Upload_Control, WP_Customize_Color_Control, WP_Customize_Text_Control ) use lowercase type : ie. textarea for generic
-      //'type'    =>  'select', // only if control is not defined. this is the input type (text, textarea, select etc..)
-      //'choices'   =>  '', //array() | callback of choices for selects or choice based controls / types
-      'section'     =>  'my_section_slug', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-      'settings'    =>  'my_setting', //Which setting to load and manipulate (serialized is okay)
-      'priority'    =>  11, //Determines the order this control appears in for the specified section
-    ),//add more fields
-  )
-);
 
 $controls = array();
 
@@ -89,30 +45,37 @@ if(function_exists('soliloquy')){
   
 }
 
-  /// add the setting
-  $controls['settings']['lsx_color_scheme']  = array(
-    'default'       =>  'default', //Default setting/value to save
-    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  );
-  /// add the control
-  $controls['fields']['lsx_color_scheme'] = array(
-    'label'         =>  esc_html__( 'Color Scheme', 'lsx-theme' ),
-    'section'       =>  'colors',
-    'type'          =>  'select',
-    'choices'  => array(
-  		'default' => 'Default',
-    	'dark' => 'Dark',
-    	'light' => 'Light'
-  	),
+/*
+ * Colour Settings
+ */
+ /// add the setting
+ $controls['settings']['lsx_color_scheme']  = array(
+   'default'       =>  'default', //Default setting/value to save
+   'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+   'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+ );
+ /// add the control
+ $controls['fields']['lsx_color_scheme'] = array(
+   'label'         =>  esc_html__( 'Color Scheme', 'lsx-theme' ),
+   'section'       =>  'colors',
+   'type'          =>  'select',
+   'choices'  => array(
+ 		'default' => 'Default',
+   		'dark' => 'Dark',
+ 	  	'light' => 'Light'
+ 	),
 	'priority' => 1,
   );
 
+ /*
+  * Layout Controls
+  */
+	 
   $controls['sections']['lsx-layout'] = array(
     'title'       =>  'Layout',
-  		'description' => 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.'
+  	'description' => 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.',
+  	'priority' => 112,  		
   );
-
 
   $controls['settings']['lsx_layout']  = array(
     'default'       =>  '2cr', //Default setting/value to save
@@ -133,13 +96,17 @@ if(function_exists('soliloquy')){
     	'1c',
     	'2cr',
     	'2cl'
-    ),
-	'priority' => 1,
+    )
   );  
 
+  /*
+   * Font Controls
+   */
+  
   $controls['sections']['lsx-font'] = array(
     'title'       =>  'Font',
-      'description' => 'Change the fonts sitewide.'
+    'description' => 'Change the fonts sitewide.',
+  	'priority' => 42,
   );
   $controls['settings']['lsx_font']  = array(
     'default'       =>  'noto_sans_open_sans', //Default setting/value to save
@@ -238,7 +205,7 @@ if(function_exists('soliloquy')){
           ),
         ),
     ),
-  'priority' => 1,
+  'priority' => 2,
   );    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );

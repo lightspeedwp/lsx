@@ -64,8 +64,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 *
 		 * @since     1.0.0
 		 */		
-		public function customizer( $wp_customize ) {
-			
+		public function customizer( $wp_customize ) {			
 			
 			// start panels
 			if( !empty( $this->controls['panels'] ) ){
