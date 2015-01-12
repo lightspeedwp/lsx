@@ -110,7 +110,7 @@ if(function_exists('soliloquy')){
   	'priority' => 42,
   );
   $controls['settings']['lsx_font']  = array(
-    'default'       =>  'raleway_serif_open_sans', //Default setting/value to save
+    'default'       =>  'raleway_open_sans', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
   );  
@@ -121,12 +121,12 @@ if(function_exists('soliloquy')){
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
-      'raleway_serif_open_sans' => array(
+      'raleway_open_sans' => array(
         'header'  => array(
             "title" => "Raleway", 
-            "location" => "Raleway+Serif", 
+            "location" => "Raleway", 
             "cssDeclaration" => "'Raleway', sans-serif", 
-            "cssClass" => "ralewaySerif",
+            "cssClass" => "raleway",
           ),
         'body'  => array(
             "title" => "Open Sans", 
@@ -163,7 +163,7 @@ if(function_exists('soliloquy')){
             "cssClass" => "notoSans",
           ),
         ),
-      'alegreya_serif_open_sans' => array(
+      'alegreya_open_sans' => array(
         'header'  => array(
             "title" => "Alegreya", 
             "location" => "Alegreya", 

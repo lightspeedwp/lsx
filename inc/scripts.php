@@ -52,29 +52,29 @@ function lsx_scripts() {
 	
 	$font = get_theme_mod('lsx_font','alegreya_serif_open_sans');
 	switch($font){
-		case 'arial_sans_verdana_sans':
-			$header_font_location = 'Arial';
-			$body_font_location = 'Verdana';
-		break;
-		
-		case 'noto_sans_open_sans':
-			$header_font_location = 'Noto+Sans';
+		case 'raleway_open_sans':
+			$header_font_location = 'Raleway';
 			$body_font_location = 'Open+Sans';
-		break;		
+		break;
 
 		case 'noto_serif_noto_sans':
 			$header_font_location = 'Noto+Serif';
 			$body_font_location = 'Noto+Sans';
 		break;
+		
+		case 'noto_sans_noto_sans':
+			$header_font_location = 'Noto+Sans';
+			$body_font_location = 'Noto+Sans';
+		break;		
 
-		case 'georgia_serif_open_sans':
-			$header_font_location = 'Georgia';
+		case 'alegreya_serif_open_sans':
+			$header_font_location = 'Alegreya';
 			$body_font_location = 'Open+Sans';
 		break;	
 				
-		//alegreya_serif_open_sans
+		//raleway_open_sans
 		default:
-			$header_font_location = 'Alegreya'; 
+			$header_font_location = 'Raleway'; 
 			$body_font_location = 'Open+Sans';
 		break;
 	}
