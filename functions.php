@@ -222,12 +222,6 @@ add_theme_support( 'site-logo', $args );
 });
 
 
-function lsx_title_tag_setup() {
-   add_theme_support( 'title-tag' ); 
-   add_theme_support( 'jetpack-testimonial' );
-}
-add_action( 'after_setup_theme', 'lsx_title_tag_setup' );
-
 
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
