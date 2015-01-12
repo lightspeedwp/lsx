@@ -15,7 +15,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function lsx_setup() {
-
+	global $content_width;
+	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -49,6 +50,34 @@ function lsx_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'lsx' ),
 	) );	
+	
+	/**
+	 * $content_width is a global variable used by WordPress for max image upload sizes
+	 * and media embeds (in pixels).
+	 *
+	 * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
+	 * Default: 1140px is the default Bootstrap container width.
+	 */
+	if (!isset($content_width)) { 
+	
+		$layout = get_theme_mod('lsx_layout','2cr');
+		
+		switch($layout){
+			
+			case '2cr':
+			case '2cl':
+				$content_width = 750;
+			break;
+
+			case '1c':
+				$content_width = 1140;
+			break;
+			
+		}
+		
+	}
+	
+	
 
 }
 endif; // lsx_setup
@@ -123,15 +152,6 @@ function lsx_sidebar_class() {
 function lsx_home_sidebar_class() {
 	return lsx_layout_selector( 'sidebar', 'home' );
 }
-
-/**
- * $content_width is a global variable used by WordPress for max image upload sizes
- * and media embeds (in pixels).
- *
- * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
- * Default: 1140px is the default Bootstrap container width.
- */
-if (!isset($content_width)) { $content_width = 1140; }
 
 /**
  * Disable the comments form by default for the page post type.

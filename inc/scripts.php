@@ -45,7 +45,7 @@ function lsx_scripts() {
 	ob_end_clean();
 		$menu_items = substr_count($output,'li class');
 	if ($menu_items >= 7) {
-		wp_enqueue_style('medium-break', get_template_directory_uri() . '//css/medium-nav-break.css', false);
+		wp_enqueue_style('medium-break', get_template_directory_uri() . '/css/medium-nav-break.css', false);
 	}
 	//wp_enqueue_script( 'lsx-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 }
