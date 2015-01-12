@@ -121,6 +121,20 @@ if(function_exists('soliloquy')){
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
+      'raleway_open_sans' => array(
+        'header'  => array(
+            "title" => "Raleway", 
+            "location" => "Raleway", 
+            "cssDeclaration" => "'Raleway', sans-serif", 
+            "cssClass" => "raleway",
+          ),
+        'body'  => array(
+            "title" => "Open Sans", 
+            "location" => "Open+Sans", 
+            "cssDeclaration" => "'Open Sans', sans-serif", 
+            "cssClass" => "openSans"
+          ),
+        ),
       'noto_serif_noto_sans' => array(
         'header'  => array(
             "title" => "Noto Serif", 
