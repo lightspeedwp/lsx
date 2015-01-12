@@ -61,8 +61,9 @@ if(function_exists('soliloquy')){
    'type'          =>  'select',
    'choices'  => array(
  		'default' => 'Default',
-   		'dark' => 'Dark',
- 	  	'light' => 'Light'
+   		'red' => 'Red',
+ 	  	'green' => 'Green',
+      'brown' => 'Brown'
  	),
 	'priority' => 1,
   );
