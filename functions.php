@@ -121,48 +121,6 @@ if(function_exists('soliloquy')){
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
-      'alegreya_serif_open_sans' => array(
-        'header'  => array(
-            "title" => "Alegreya", 
-            "location" => "Alegreya", 
-            "cssDeclaration" => "'Alegreya', serif", 
-            "cssClass" => "alegreya",
-          ),
-        'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
-          ),
-        ),
-      'arial_sans_verdana_sans' => array(
-        'header'  => array(
-            "title" => "Arial", 
-            "location" => "Arial", 
-            "cssDeclaration" => "'Arial', serif", 
-            "cssClass" => "arial",
-          ),
-        'body'  => array(
-            "title" => "Verdana", 
-            "location" => "Verdana", 
-            "cssDeclaration" => "'Verdana', sans-serif", 
-            "cssClass" => "verdana"
-          ),
-        ),      
-      'noto_sans_open_sans' => array(
-        'header'  => array(
-            "title" => "Noto Sans", 
-            "location" => "Noto+Sans", 
-            "cssDeclaration" => "'Noto Sans', sans-serif", 
-            "cssClass" => "notoSans",
-          ),
-        'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
-          ),
-        ),
       'noto_serif_noto_sans' => array(
         'header'  => array(
             "title" => "Noto Serif", 
@@ -177,26 +135,26 @@ if(function_exists('soliloquy')){
             "cssClass" => "notoSans",
           ),
         ),
-      'georgia_serif_open_sans' => array(
+      'noto_sans_noto_sans' => array(
         'header'  => array(
-            "title" => "Georgia", 
-            "location" => "Georgia", 
-            "cssDeclaration" => "'Georgia', serif", 
-            "cssClass" => "georgia",
+            "title" => "Noto Sans", 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
           ),
         'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
+            "title" => "Noto Sans", 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
           ),
         ),
-      'georgia_serif_open_sans' => array(
+      'noto_sans_open_sans' => array(
         'header'  => array(
-            "title" => "Georgia", 
-            "location" => "Georgia", 
-            "cssDeclaration" => "'Georgia', serif", 
-            "cssClass" => "georgia",
+            "title" => "Noto Sans", 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
           ),
         'body'  => array(
             "title" => "Open Sans", 
