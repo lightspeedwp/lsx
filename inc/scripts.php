@@ -72,16 +72,20 @@ function lsx_scripts() {
 			$body_font_location = 'Open+Sans';
 		break;	
 				
+		//alegreya_serif_open_sans
 		default:
-			$header_font_location = 'Alegreya'; //alegreya_serif_open_sans
+			$header_font_location = 'Alegreya'; 
 			$body_font_location = 'Open+Sans';
 		break;
 	}
-
+	
+	//Call the Google Fonts and then Enque them.
 	wp_register_style('lsx-header-font', 'http://fonts.googleapis.com/css?family='.$header_font_location);
 	wp_register_style('lsx-body-font', 'http://fonts.googleapis.com/css?family='.$body_font_location);
 	wp_enqueue_style( 'lsx-header-font');
 	wp_enqueue_style( 'lsx-body-font');
+	
+	wp_enqueue_style('lsx_font_scheme', get_template_directory_uri() . '/css/'.$font.'.css', false, '48a2bd26791de3fa7cab2d2af5fec6a4');
 	
 }
 add_action( 'wp_enqueue_scripts', 'lsx_scripts' );
