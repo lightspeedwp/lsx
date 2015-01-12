@@ -121,12 +121,12 @@ if(function_exists('soliloquy')){
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
-      'raleway_open_sans' => array(
+      'raleway_serif_open_sans' => array(
         'header'  => array(
             "title" => "Raleway", 
-            "location" => "Raleway", 
+            "location" => "Raleway+Serif", 
             "cssDeclaration" => "'Raleway', sans-serif", 
-            "cssClass" => "raleway",
+            "cssClass" => "ralewaySerif",
           ),
         'body'  => array(
             "title" => "Open Sans", 
