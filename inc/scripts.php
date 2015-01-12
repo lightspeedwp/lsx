@@ -48,5 +48,40 @@ function lsx_scripts() {
 		wp_enqueue_style('medium-break', get_template_directory_uri() . '/css/medium-nav-break.css', false);
 	}
 	//wp_enqueue_script( 'lsx-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	
+	
+	$font = get_theme_mod('lsx_font','alegreya_serif_open_sans');
+	switch($font){
+		case 'arial_sans_verdana_sans':
+			$header_font_location = 'Arial';
+			$body_font_location = 'Verdana';
+		break;
+		
+		case 'noto_sans_open_sans':
+			$header_font_location = 'Noto+Sans';
+			$body_font_location = 'Open+Sans';
+		break;		
+
+		case 'noto_serif_noto_sans':
+			$header_font_location = 'Noto+Serif';
+			$body_font_location = 'Noto+Sans';
+		break;
+
+		case 'georgia_serif_open_sans':
+			$header_font_location = 'Georgia';
+			$body_font_location = 'Open+Sans';
+		break;	
+				
+		default:
+			$header_font_location = 'Alegreya'; //alegreya_serif_open_sans
+			$body_font_location = 'Open+Sans';
+		break;
+	}
+
+	wp_register_style('lsx-header-font', 'http://fonts.googleapis.com/css?family='.$header_font_location);
+	wp_register_style('lsx-body-font', 'http://fonts.googleapis.com/css?family='.$body_font_location);
+	wp_enqueue_style( 'lsx-header-font');
+	wp_enqueue_style( 'lsx-body-font');
+	
 }
 add_action( 'wp_enqueue_scripts', 'lsx_scripts' );
