@@ -163,6 +163,20 @@ if(function_exists('soliloquy')){
             "cssClass" => "openSans"
           ),
         ),
+      'alegreya_serif_open_sans' => array(
+        'header'  => array(
+            "title" => "Alegreya", 
+            "location" => "Alegreya", 
+            "cssDeclaration" => "'Alegreya', serif", 
+            "cssClass" => "alegreya",
+          ),
+        'body'  => array(
+            "title" => "Open Sans", 
+            "location" => "Open+Sans", 
+            "cssDeclaration" => "'Open Sans', sans-serif", 
+            "cssClass" => "openSans"
+          ),
+        ),
     ),
   'priority' => 2,
   );    
