@@ -163,20 +163,6 @@ if(function_exists('soliloquy')){
             "cssClass" => "notoSans",
           ),
         ),
-      'noto_sans_open_sans' => array(
-        'header'  => array(
-            "title" => "Noto Sans", 
-            "location" => "Noto+Sans", 
-            "cssDeclaration" => "'Noto Sans', sans-serif", 
-            "cssClass" => "notoSans",
-          ),
-        'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
-          ),
-        ),
       'alegreya_serif_open_sans' => array(
         'header'  => array(
             "title" => "Alegreya", 
