@@ -9393,6 +9393,7 @@ header.page-header {
   font-size: 14px !important;
   padding: 2px 10px;
   margin: 2px 0px;
+  text-decoration: none !important;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -9404,11 +9405,10 @@ header.page-header {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1087, ../sass/app.scss */
+/* line 1088, ../sass/app.scss */
 #secondary .widget.widget_tag_cloud .tagcloud a:hover,
 #tertiary .widget.widget_tag_cloud .tagcloud a:hover {
   background: #428bca;
-  text-decoration: none;
 }
 /* line 1096, ../sass/app.scss */
 #secondary .widget.widget_calendar #wp-calendar caption,
