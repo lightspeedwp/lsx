@@ -1081,12 +1081,12 @@ header.page-header {
 				font-size: 14px !important;
 				padding: 2px 10px;
 				margin: 2px 0px;
+				text-decoration: none !important;
 				@include transition(all .1s ease-in-out);
 				@include border-radius(3px);
 			
 				&:hover {
 					background: $primary;
-					text-decoration: none;
 				}
 			}
 		}
