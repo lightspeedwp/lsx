@@ -107,7 +107,7 @@ function lsx_caption($output, $attr, $content) {
 
   $output  = '<figure' . $attributes .'>';
   $output .= do_shortcode($content);
-  $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
+  $output .= '<figcaption class="caption wp-caption-text">' . esc_html($attr['caption'])	 . '</figcaption>';
   $output .= '</figure>';
 
   return $output;

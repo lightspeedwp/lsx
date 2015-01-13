@@ -85,7 +85,7 @@ class LSX_Customize_Layout_Control extends WP_Customize_Control {
 			}
 
 			?>
-			<input <?php $this->link(); ?> class="selected-layout <?php echo $class; ?>" id="<?php echo $id; ?>" type="hidden" value="<?php echo $value; ?>" <?php $this->input_attrs(); ?>>
+			<input <?php $this->link(); ?> class="selected-layout <?php echo $class; ?>" id="<?php echo $id; ?>" type="hidden" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>>
 			</div>
 		</label>
 	<?php
