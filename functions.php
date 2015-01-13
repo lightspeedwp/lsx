@@ -37,7 +37,7 @@ if(function_exists('soliloquy')){
   );
   /// add the control
   $controls['fields']['lsx_homepage_slider'] = array(
-    'label'         =>  esc_html__( 'Select Slider', 'lsx-theme' ),
+    'label'         =>  esc_html__( 'Select Slider', 'lsx' ),
     'section'       =>  'lsx-homepage',
     'type'          =>  'select',
     'choices'       =>  LSX_Theme_Customizer::get_slider_post_type_choices()
@@ -56,14 +56,14 @@ if(function_exists('soliloquy')){
  );
  /// add the control
  $controls['fields']['lsx_color_scheme'] = array(
-   'label'         =>  esc_html__( 'Color Scheme', 'lsx-theme' ),
+   'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
    'section'       =>  'colors',
    'type'          =>  'select',
    'choices'  => array(
- 		'default' => 'Default',
-   		'red' => 'Red',
- 	  	'green' => 'Green',
-      'brown' => 'Brown'
+ 		'default' => esc_html__( 'Default', 'lsx' ),
+   		'red' => esc_html__( 'Red', 'lsx' ),
+ 	  	'green' => esc_html__( 'Green', 'lsx' ),
+      'brown' => esc_html__( 'Brown', 'lsx' )
  	),
 	'priority' => 1,
   );
@@ -73,8 +73,8 @@ if(function_exists('soliloquy')){
   */
 	 
   $controls['sections']['lsx-layout'] = array(
-    'title'       =>  'Layout',
-  	'description' => 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.',
+    'title'       =>  esc_html__( 'Layout', 'lsx' ),
+  	'description' => __( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
   	'priority' => 112,  		
   );
 
@@ -105,7 +105,7 @@ if(function_exists('soliloquy')){
    */
   
   $controls['sections']['lsx-font'] = array(
-    'title'       =>  'Font',
+    'title'       =>  __( 'Font', 'lsx' ),
     'description' => 'Change the fonts sitewide.',
   	'priority' => 42,
   );
@@ -116,20 +116,20 @@ if(function_exists('soliloquy')){
   );  
   /// add the control
   $controls['fields']['lsx_font'] = array(
-    'label'         =>  '',
+    'label'         =>  __( '', 'lsx' ),
     'section'       =>  'lsx-font',
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
       'raleway_open_sans' => array(
         'header'  => array(
-            "title" => "Raleway", 
+            "title" => __( 'Raleway', 'lsx' ), 
             "location" => "Raleway", 
             "cssDeclaration" => "'Raleway', sans-serif", 
             "cssClass" => "raleway",
           ),
         'body'  => array(
-            "title" => "Open Sans", 
+            "title" => __( 'Open Sans', 'lsx' ), 
             "location" => "Open+Sans", 
             "cssDeclaration" => "'Open Sans', sans-serif", 
             "cssClass" => "openSans"
@@ -137,13 +137,13 @@ if(function_exists('soliloquy')){
         ),
       'noto_serif_noto_sans' => array(
         'header'  => array(
-            "title" => "Noto Serif", 
+            "title" => __( 'Noto Serif', 'lsx' ), 
             "location" => "Noto+Serif", 
             "cssDeclaration" => "'Noto Serif', serif", 
             "cssClass" => "notoSerif",
           ),
         'body'  => array(
-            "title" => "Noto Sans", 
+            "title" => __( 'Noto Sans', 'lsx' ), 
             "location" => "Noto+Sans", 
             "cssDeclaration" => "'Noto Sans', sans-serif", 
             "cssClass" => "notoSans",
@@ -151,13 +151,13 @@ if(function_exists('soliloquy')){
         ),
       'noto_sans_noto_sans' => array(
         'header'  => array(
-            "title" => "Noto Sans", 
+            "title" => __( 'Noto Sans', 'lsx' ), 
             "location" => "Noto+Sans", 
             "cssDeclaration" => "'Noto Sans', sans-serif", 
             "cssClass" => "notoSans",
           ),
         'body'  => array(
-            "title" => "Noto Sans", 
+            "title" => __( 'Noto Sans', 'lsx' ), 
             "location" => "Noto+Sans", 
             "cssDeclaration" => "'Noto Sans', sans-serif", 
             "cssClass" => "notoSans",
@@ -165,13 +165,13 @@ if(function_exists('soliloquy')){
         ),
       'alegreya_open_sans' => array(
         'header'  => array(
-            "title" => "Alegreya", 
+            "title" => __( 'Alegreya', 'lsx' ), 
             "location" => "Alegreya", 
             "cssDeclaration" => "'Alegreya', serif", 
             "cssClass" => "alegreya",
           ),
         'body'  => array(
-            "title" => "Open Sans", 
+            "title" => __( 'Open Sans', 'lsx' ), 
             "location" => "Open+Sans", 
             "cssDeclaration" => "'Open Sans', sans-serif", 
             "cssClass" => "openSans"
@@ -253,7 +253,7 @@ add_action( 'lsx_header_after', 'lsx_portfolio_banner' );
 * Register Social Navigation
 */
 function lsx_register_social_menu() {
-  register_nav_menu('social',__( 'Social Menu' ));
+  register_nav_menu('social', __( 'Social Menu' , 'lsx' ));
 }
 add_action( 'init', 'lsx_register_social_menu' );
 
@@ -307,7 +307,7 @@ function lsx_add_portfolio_post_meta_boxes() {
 
   add_meta_box(
     'lsx_client_meta_box',
-    esc_html__( 'Client', 'client' ),
+    esc_html__( 'Client', 'lsx' ),
     'lsx_client_meta_box',
     'jetpack-portfolio',
     'side',
@@ -316,7 +316,7 @@ function lsx_add_portfolio_post_meta_boxes() {
 
   add_meta_box(
     'lsx_website_meta_box',
-    esc_html__( 'Website', 'website' ),
+    esc_html__( 'Website', 'lsx' ),
     'lsx_website_meta_box',
     'jetpack-portfolio',
     'side',
