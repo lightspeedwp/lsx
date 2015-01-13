@@ -90,16 +90,16 @@ function lsx_author_box() {
 							echo "<div class='social pull-left'>";
 
 						if ( $facebook )
-							echo "<a href='$facebook' target='_blank'><i class='fa fa-facebook'></i></a>";
+							echo "<a href='".esc_url($facebook)."' target='_blank'><i class='fa fa-facebook'></i></a>";
 
 						if ( $twitter )
-							echo "<a href='$twitter' target='_blank'><i class='fa fa-twitter'></i></a>";
+							echo "<a href='".esc_url($twitter)."' target='_blank'><i class='fa fa-twitter'></i></a>";
 
 						if ( $googleplus )
-							echo "<a href='$googleplus' target='_blank'><i class='fa fa-google-plus'></i></a>";
+							echo "<a href='".esc_url($googleplus)."' target='_blank'><i class='fa fa-google-plus'></i></a>";
 
 						if ( $linkedin )
-							echo "<a href='$linkedin' target='_blank'><i class='fa fa-linkedin'></i></a>";
+							echo "<a href='".esc_url($linkedin)."' target='_blank'><i class='fa fa-linkedin'></i></a>";
 
 						if ( $facebook || $twitter || $googleplus || $linked )
 							echo "</div>";
@@ -107,7 +107,7 @@ function lsx_author_box() {
 					?>
 					<div class="profile-link pull-left">
 						<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ); ?>">
-							View all posts by <?php echo get_the_author_meta( 'display_name', $author_id ); ?>  <i class="fa fa-arrow-right"></i>
+							<?php _e('View all posts by','lsx'); ?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?>  <i class="fa fa-arrow-right"></i>
 						</a>
 					</div>
 					<div class="clearfix"></div>
