@@ -314,7 +314,7 @@ function lsx_save_portfolio_post_meta( $post_id, $post ) {
   
   foreach($meta_keys as $meta_key){
   
-	  $new_meta_value = ( isset( $_POST[$meta_key] ) ? $_POST[$meta_key] : '' );
+	  $new_meta_value = ( isset( $_POST[$meta_key] ) ? sanitize_text_field($_POST[$meta_key]) : '' );
 	
 	  $meta_value = get_post_meta( $post_id, $meta_key, true );
 	
