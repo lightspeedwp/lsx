@@ -52,7 +52,7 @@ function lsx_scripts() {
 	//wp_enqueue_script( 'lsx-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
 	
-	$font = get_theme_mod('lsx_font','alegreya_serif_open_sans');
+	$font = get_theme_mod('lsx_font','raleway_open_sans');
 	switch($font){
 		case 'raleway_open_sans':
 			$header_font_location = 'Raleway';

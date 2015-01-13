@@ -209,6 +209,11 @@ iframe {
 	width: 100%;
 }
 
+button,
+.btn {
+	border: none !important;
+}
+
 img,
 .thumbnail {
 	height: auto;
@@ -230,6 +235,10 @@ img,
 	&.aligncenter {
 		margin: 0 auto 15px;
 	}
+}
+
+.search-submit {
+	padding: 8px 12px;
 }
 
 .lsx-button {
@@ -655,6 +664,7 @@ nav {
 							variant: normal;
 						}
 						line-height: 1;
+						text-decoration: none !important;
 						-moz-transition: color .1s ease-in 0;
 						-webkit-transition: color .1s ease-in 0;
 						text-decoration: inherit;
