@@ -469,6 +469,27 @@ header.banner {
 			}
 		}
 	}
+
+	.site-branding {
+		.site-title {
+			margin-bottom: 0px;
+			margin-top: 33px;
+
+			.scrolled & {
+				margin-top: 20px;
+			}
+
+			@media screen and (max-width: 992px) {
+				margin-top: 20px;
+			}
+		}
+
+		.site-description {
+			.scrolled & {
+				display: none;
+			}
+		}
+	}
 }
 
 
