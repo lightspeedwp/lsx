@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 
