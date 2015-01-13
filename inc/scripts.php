@@ -87,7 +87,7 @@ function lsx_scripts() {
 	wp_enqueue_style( 'lsx-header-font');
 	wp_enqueue_style( 'lsx-body-font');
 	
-	wp_enqueue_style('lsx_font_scheme', get_template_directory_uri() . '/css/'.$font.'.css', false, '48a2bd26791de3fa7cab2d2af5fec6a4');
+	wp_enqueue_style('lsx_font_scheme', esc_url( get_template_directory_uri() . '/css/'.$font.'.css'), false, '48a2bd26791de3fa7cab2d2af5fec6a4');
 	
 }
 add_action( 'wp_enqueue_scripts', 'lsx_scripts' );
