@@ -91,14 +91,11 @@ header.banner {
   background: #62ba6f;
 }
 
-header.banner nav {
-  border: none !important;
-  margin-top: 10px;
-  box-shadow: none;
-}
-
 @media screen and (max-width: 992px) {
   header.banner nav {
+    border: none !important;
+    margin-top: 10px;
+    box-shadow: none;
     margin: 20px -15px 0 -15px !important;
     padding-bottom: 20px !important;
     float: none;
