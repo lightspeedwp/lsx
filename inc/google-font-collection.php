@@ -104,7 +104,7 @@ class Google_Font_Collection
 		foreach ($this->fonts as $key => $value) 
 		{
 			?>
-			<link href="http://fonts.googleapis.com/css?family=<?= $value->__get("location"); ?>" rel='stylesheet' type='text/css'>
+			<link href="http://fonts.googleapis.com/css?family=<?php echo $value->__get("location"); ?>" rel='stylesheet' type='text/css'>
 			<?php
 		}
 	}
@@ -121,8 +121,8 @@ class Google_Font_Collection
 			foreach ($this->fonts as $key => $value) 
 			{
 				?>
-				.<?=$value->__get("cssClass")?>{
-					font-family: <?= $value->__get("cssDeclaration"); ?>;
+				.<?php echo $value->__get("cssClass")?>{
+					font-family: <?php echo $value->__get("cssDeclaration"); ?>;
 				}
 				<?php
 			}
