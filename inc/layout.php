@@ -23,12 +23,6 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 	}
 }
 
-add_filter( 'lsx_filter_post_meta', 'lsx_set_post_meta_options' );
-function lsx_set_post_meta_options( $post_info ) {
-	$post_info = lsx_get_option('post_meta');
-}
-
-
 /**
  * Displays the hompage slider is Soliliquy Lite is active and the Customizer settings are set.
  *
@@ -54,7 +48,7 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 add_action( 'lsx_entry_after', 'lsx_author_box' );
 function lsx_author_box() {
 
-	if ( ! lsx_get_option( 'author_box' ) || ! is_single() ) { return false; }
+	if ( ! is_single() ) { return false; }
 
 	global $post;
 	$author_id=$post->post_author;

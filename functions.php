@@ -207,13 +207,7 @@ function lsx_form_submit_button($button, $form){
     return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
 }
 
-$width = lsx_get_option( 'thumb_width' );
-// if ( ! $width ) $width = 150;
 
-$height = lsx_get_option( 'thumb_height' );
-// if ( ! $height ) $height = 150;
-
-add_image_size( 'lsx-thumbnail', $width, $height, true );
 add_image_size( 'thumbnail-wide', 350, 230, true );
 add_image_size( 'thumbnail-single', 750, 350, true );
 

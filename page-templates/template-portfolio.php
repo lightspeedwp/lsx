@@ -16,9 +16,6 @@ get_header(); ?>
 			<?php lsx_content_top(); ?>
 
 			<header class="page-header">
-				<?php if ( lsx_get_option( 'single_thumbnails') && has_post_thumbnail() ) {
-					the_post_thumbnail( 'thumbnail-single' );
-				} ?>
 				<h1 class="page-title"><?php the_title(); ?></h1>		
 			</header><!-- .entry-header -->
 
