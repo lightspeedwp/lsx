@@ -163,11 +163,11 @@ if(!class_exists('LSX_Theme_Customizer')){
 				'type' 			=> 'theme_mod', //Is this an 'option' or a 'theme_mod'?
 				'capability'	=> 'edit_theme_options', //Optional. Special permissions for accessing this setting.
 				'transport' 	=> 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+				'sanitize_callback' =>  'esc_attr'
 			);
 
-
 			$wp_customize->add_setting( $slug, //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-				array_merge( $default_args, $args )
+				wp_parse_args( $default_args, $args )
 			);    
 
 		}

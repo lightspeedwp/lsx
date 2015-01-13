@@ -55,6 +55,7 @@ if(function_exists('soliloquy')){
    'default'       =>  'default', //Default setting/value to save
    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+ 	'sanitize_callback' =>  'esc_attr' // santize setting callback
  );
  /// add the control
  $controls['fields']['lsx_color_scheme'] = array(
@@ -77,7 +78,7 @@ if(function_exists('soliloquy')){
   $controls['sections']['lsx-layout'] = array(
     'title'       =>  esc_html__( 'Layout', 'lsx' ),
   	'description' => __( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
-  	'priority' => 112,  		
+  	'priority' => 112
   );
 
   $controls['settings']['lsx_layout']  = array(
@@ -88,7 +89,8 @@ if(function_exists('soliloquy')){
     	'1c',
     	'2cr',
     	'2cl'
-    )
+    ),
+  	'sanitize_callback' =>  'esc_attr' // santize setting callback
   ); 
   /// add the control
   $controls['fields']['lsx_layout'] = array(
@@ -109,12 +111,13 @@ if(function_exists('soliloquy')){
   $controls['sections']['lsx-font'] = array(
     'title'       =>  __( 'Font', 'lsx' ),
     'description' => 'Change the fonts sitewide.',
-  	'priority' => 42,
+  	'priority' => 42
   );
   $controls['settings']['lsx_font']  = array(
     'default'       =>  'raleway_open_sans', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+  	'sanitize_callback' =>  'esc_attr' // santize setting callback
   );  
   /// add the control
   $controls['fields']['lsx_font'] = array(
