@@ -61,8 +61,9 @@ if(function_exists('soliloquy')){
    'type'          =>  'select',
    'choices'  => array(
  		'default' => 'Default',
-   		'dark' => 'Dark',
- 	  	'light' => 'Light'
+   		'red' => 'Red',
+ 	  	'green' => 'Green',
+      'brown' => 'Brown'
  	),
 	'priority' => 1,
   );
@@ -109,7 +110,7 @@ if(function_exists('soliloquy')){
   	'priority' => 42,
   );
   $controls['settings']['lsx_font']  = array(
-    'default'       =>  'noto_sans_open_sans', //Default setting/value to save
+    'default'       =>  'raleway_open_sans', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
   );  
@@ -120,40 +121,12 @@ if(function_exists('soliloquy')){
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
-      'alegreya_serif_open_sans' => array(
+      'raleway_open_sans' => array(
         'header'  => array(
-            "title" => "Alegreya", 
-            "location" => "Alegreya", 
-            "cssDeclaration" => "'Alegreya', serif", 
-            "cssClass" => "alegreya",
-          ),
-        'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
-          ),
-        ),
-      'arial_sans_verdana_sans' => array(
-        'header'  => array(
-            "title" => "Arial", 
-            "location" => "Arial", 
-            "cssDeclaration" => "'Arial', serif", 
-            "cssClass" => "arial",
-          ),
-        'body'  => array(
-            "title" => "Verdana", 
-            "location" => "Verdana", 
-            "cssDeclaration" => "'Verdana', sans-serif", 
-            "cssClass" => "verdana"
-          ),
-        ),      
-      'noto_sans_open_sans' => array(
-        'header'  => array(
-            "title" => "Noto Sans", 
-            "location" => "Noto+Sans", 
-            "cssDeclaration" => "'Noto Sans', sans-serif", 
-            "cssClass" => "notoSans",
+            "title" => "Raleway", 
+            "location" => "Raleway", 
+            "cssDeclaration" => "'Raleway', sans-serif", 
+            "cssClass" => "raleway",
           ),
         'body'  => array(
             "title" => "Open Sans", 
@@ -176,26 +149,26 @@ if(function_exists('soliloquy')){
             "cssClass" => "notoSans",
           ),
         ),
-      'georgia_serif_open_sans' => array(
+      'noto_sans_noto_sans' => array(
         'header'  => array(
-            "title" => "Georgia", 
-            "location" => "Georgia", 
-            "cssDeclaration" => "'Georgia', serif", 
-            "cssClass" => "georgia",
+            "title" => "Noto Sans", 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
           ),
         'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
+            "title" => "Noto Sans", 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
           ),
         ),
-      'georgia_serif_open_sans' => array(
+      'alegreya_open_sans' => array(
         'header'  => array(
-            "title" => "Georgia", 
-            "location" => "Georgia", 
-            "cssDeclaration" => "'Georgia', serif", 
-            "cssClass" => "georgia",
+            "title" => "Alegreya", 
+            "location" => "Alegreya", 
+            "cssDeclaration" => "'Alegreya', serif", 
+            "cssClass" => "alegreya",
           ),
         'body'  => array(
             "title" => "Open Sans", 
