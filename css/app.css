@@ -9393,7 +9393,7 @@ header.page-header {
   font-size: 14px !important;
   padding: 2px 10px;
   margin: 2px 0px;
-  text-decoration: none !important;
+  border: none !important;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -9705,6 +9705,7 @@ article footer.entry-meta span.comments-link {
   font-size: 14px !important;
   padding: 2px 10px;
   margin: 2px 0px;
+  border: none !important;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -9716,24 +9717,24 @@ article footer.entry-meta span.comments-link {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1382, ../sass/app.scss */
+/* line 1383, ../sass/app.scss */
 #footer-widgets .widget.widget_tag_cloud .tagcloud a:hover {
   background: #428bca;
   text-decoration: none;
 }
 
-/* line 1391, ../sass/app.scss */
+/* line 1392, ../sass/app.scss */
 footer.content-info {
   background: #232222;
   text-align: center;
 }
-/* line 1395, ../sass/app.scss */
+/* line 1396, ../sass/app.scss */
 footer.content-info .credit {
   color: white;
   margin: 20px 0;
   font-size: 15px;
 }
-/* line 1400, ../sass/app.scss */
+/* line 1401, ../sass/app.scss */
 footer.content-info .credit.credit-float {
   float: left;
 }
@@ -9741,22 +9742,22 @@ footer.content-info .credit.credit-float {
 /* ==========================================================================
 	 Author Box
 	 ========================================================================== */
-/* line 1411, ../sass/app.scss */
+/* line 1412, ../sass/app.scss */
 .author-box {
   margin-top: 0;
   margin-bottom: 40px;
   border: none;
   box-shadow: none;
 }
-/* line 1417, ../sass/app.scss */
+/* line 1418, ../sass/app.scss */
 .author-box h4 {
   margin-top: 0;
 }
-/* line 1421, ../sass/app.scss */
+/* line 1422, ../sass/app.scss */
 .author-box .profile-link {
   margin-left: 103px;
 }
-/* line 1425, ../sass/app.scss */
+/* line 1426, ../sass/app.scss */
 .single .author-box {
   margin-top: 40px;
 }
@@ -9764,31 +9765,31 @@ footer.content-info .credit.credit-float {
 /* ==========================================================================
 	 Gravity Forms
 	 ========================================================================== */
-/* line 1445, ../sass/app.scss */
+/* line 1446, ../sass/app.scss */
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 1449, ../sass/app.scss */
+/* line 1450, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 1462, ../sass/app.scss */
+/* line 1463, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 1467, ../sass/app.scss */
+/* line 1468, ../sass/app.scss */
 .gform_button {
   line-height: 1.5;
 }
 
-/* line 1474, ../sass/app.scss */
+/* line 1475, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 1480, ../sass/app.scss */
+/* line 1481, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -9806,7 +9807,7 @@ footer.content-info .credit.credit-float {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 1498, ../sass/app.scss */
+/* line 1499, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -9830,34 +9831,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 1524, ../sass/app.scss */
+/* line 1525, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 1525, ../sass/app.scss */
+/* line 1526, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 1526, ../sass/app.scss */
+/* line 1527, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 1527, ../sass/app.scss */
+/* line 1528, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 1529, ../sass/app.scss */
+/* line 1530, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 1536, ../sass/app.scss */
+/* line 1537, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,

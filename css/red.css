@@ -232,11 +232,12 @@ article .post-format {
 
 #footer-widgets .widget.widget_tag_cloud .tagcloud a {
   background: #ffffff;
-  color: #333333;
+  color: #333333 !important;
 }
 
 #footer-widgets .widget.widget_tag_cloud .tagcloud a:hover {
-  background: #eeeeee !important;
+  background: #333333 !important;
+  color: #ffffff !important;
 }
 
 footer.content-info {
