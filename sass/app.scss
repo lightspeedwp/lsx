@@ -468,6 +468,12 @@ header.banner {
 				}
 			}
 		}
+
+		.site-branding {
+			.site-title {
+				margin-top: 20px;
+			}
+		}
 	}
 
 	.site-branding {
@@ -475,17 +481,13 @@ header.banner {
 			margin-bottom: 0px;
 			margin-top: 33px;
 
-			.scrolled & {
-				margin-top: 20px;
-			}
-
 			@media screen and (max-width: 992px) {
 				margin-top: 20px;
 			}
 		}
 
 		.site-description {
-			.scrolled & {
+			@media screen and (max-width: 1200px) {
 				display: none;
 			}
 		}
