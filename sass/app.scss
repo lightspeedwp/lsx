@@ -847,6 +847,12 @@ nav {
 			max-width: 750px;
 			margin: 0 auto;
 			float: none;
+
+			.single-jetpack-portfolio &,
+			.lsx-portfolio &,
+			.page-template-template-portfolio & {
+				max-width: 100%;
+			}
 		}
 	}
 
