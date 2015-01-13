@@ -251,3 +251,12 @@ function lsx_is_element_empty($element) {
 	$element = trim($element);
 	return empty($element)?false:true;
 }
+
+/**
+ * Adds portfolio to the related posts.
+ */
+function lsx_allowed_related_post_types($allowed_post_types) {
+	$allowed_post_types[] = 'jetpack-portfolio';
+	return $allowed_post_types;
+}
+add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
