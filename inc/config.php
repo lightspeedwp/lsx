@@ -72,7 +72,7 @@ function lsx_setup() {
 			break;
 
 			case '1c':
-				$content_width = 1140;
+				$content_width = 750;
 			break;
 			
 		}
@@ -95,6 +95,7 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 	switch ( $layout ) {
 		case '1c':
 			$main_class = 'col-' . $size . '-12';
+			$sidebar_class = 'col-' . $size . '-12';
 			break;
 		case '2cl':
 			$main_class = 'col-' . $size . '-8';
