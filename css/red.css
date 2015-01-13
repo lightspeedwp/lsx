@@ -91,6 +91,12 @@ header.banner {
   background: #D96459;
 }
 
+header.banner nav {
+  border: none !important;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
 header.banner nav .nav.navbar-nav li a {
   color: #ffffff;
   border: none !important;
@@ -131,6 +137,19 @@ header.banner nav .nav.navbar-nav li.active a {
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
   color: #ffffff;
+}
+
+.navbar-toggle {
+  background: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.mobile-menu-title {
+  color: #ffffff;
+  margin: 20px 5px;
 }
 
 .home .soliloquy-slider {
