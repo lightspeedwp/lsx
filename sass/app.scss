@@ -468,6 +468,33 @@ header.banner {
 				}
 			}
 		}
+
+		.site-branding {
+			.site-title {
+				margin-top: 20px;
+			}
+		}
+
+		.site-description {
+			display: none;
+		}
+	}
+
+	.site-branding {
+		.site-title {
+			margin-bottom: 0px;
+			margin-top: 33px;
+
+			@media screen and (max-width: 992px) {
+				margin-top: 20px;
+			}
+		}
+
+		.site-description {
+			@media screen and (max-width: 1200px) {
+				display: none;
+			}
+		}
 	}
 }
 

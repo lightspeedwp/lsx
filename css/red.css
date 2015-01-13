@@ -91,6 +91,14 @@ header.banner {
   background: #D96459;
 }
 
+header.banner .site-title a {
+  color: #ffffff;
+}
+
+header.banner .site-description {
+  color: #ffffff;
+}
+
 @media screen and (max-width: 992px) {
   header.banner nav {
     border: none !important;
@@ -154,7 +162,7 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 
 .mobile-menu-title {
   color: #ffffff;
-  margin: 20px 5px;
+  margin: 47px 5px;
 }
 
 .scrolled .mobile-menu-title {
@@ -316,4 +324,8 @@ footer.content-info a:hover {
 
 select {
   color: #555;
+}
+
+#social-navigation ul li a:hover {
+  color: #D96459 !important;
 }
