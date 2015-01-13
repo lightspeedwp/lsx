@@ -93,13 +93,14 @@ header.banner {
 
 header.banner nav {
   border: none !important;
+  margin-top: 10px;
   box-shadow: none;
-  margin: 20px -15px 0 -15px !important;
-  padding-bottom: 20px !important;
 }
 
 @media screen and (max-width: 992px) {
   header.banner nav {
+    margin: 20px -15px 0 -15px !important;
+    padding-bottom: 20px !important;
     float: none;
   }
 }
@@ -164,14 +165,14 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 }
 
 @media screen and (max-width: 992px) {
-  .scrolled .mobile-menu-title {
-    margin: 23px 13px;
+  .mobile-menu-title {
+    margin: 22px 13px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .scrolled .mobile-menu-title {
-    margin: 18px 13px;
+  .mobile-menu-title {
+    margin: 19px 13px;
   }
 }
 
