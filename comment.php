@@ -1,6 +1,6 @@
 <?php 
 if(isset($GLOBALS['comment_depth'])){
-	$depth = $GLOBALS['comment_depth'];
+	$depth = intval($GLOBALS['comment_depth']);
 }else{
 	$depth = 3;
 }

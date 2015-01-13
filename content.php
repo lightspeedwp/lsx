@@ -22,10 +22,10 @@
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			<?php if ( is_sticky() && has_post_thumbnail() ) { ?>
-				<span class="label label-default label-sticky">Featured</span>
+				<span class="label label-default label-sticky"><?php _e('Featured','lsx'); ?></span>
 			<?php 
 				} elseif ( is_sticky() && ! has_post_thumbnail() ) { ?>
-					<span class="label label-default label-sticky no-thumb">Featured</span>
+					<span class="label label-default label-sticky no-thumb"><?php _e('Featured','lsx'); ?></span>
 			<?php } ?>
 		</h1>		
 	</header><!-- .entry-header -->	

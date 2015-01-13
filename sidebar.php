@@ -34,15 +34,15 @@
 
 	<?php if ('posts' == $show_on_front && is_home()) : ?>
 	
-		<div id="secondary" class="widget-area <?php echo lsx_home_sidebar_class(); ?>" role="complementary">
+		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_home_sidebar_class()); ?>" role="complementary">
 		
 	<?php elseif ( is_page_template('page-templates/template-blog.php') ) : ?>
 	
-		<div id="secondary" class="widget-area <?php echo lsx_sidebar_class(); ?>" role="complementary">
+		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_sidebar_class()); ?>" role="complementary">
 		
 	<?php else : ?>
 	
-		<div id="secondary" class="widget-area <?php echo lsx_sidebar_class(); ?>" role="complementary">
+		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_sidebar_class()); ?>" role="complementary">
 		
 	<?php endif ; ?>
 
