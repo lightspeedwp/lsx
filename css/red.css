@@ -94,9 +94,14 @@ header.banner {
 header.banner nav {
   border: none !important;
   box-shadow: none;
-  float: none;
   margin: 20px -15px 0 -15px !important;
   padding-bottom: 20px !important;
+}
+
+@media screen and (max-width: 992px) {
+  header.banner nav {
+    float: none;
+  }
 }
 
 header.banner nav .nav.navbar-nav li a {
@@ -152,6 +157,22 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 .mobile-menu-title {
   color: #ffffff;
   margin: 20px 5px;
+}
+
+.scrolled .mobile-menu-title {
+  margin: 20px 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-menu-title {
+    margin: 22px 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-title {
+    margin: 19px 13px;
+  }
 }
 
 .home .soliloquy-slider {

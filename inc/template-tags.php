@@ -180,7 +180,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 					?>
 					<div class="portfolio-category">
 						<span><span class="genericon genericon-category"></span><?php _e('Category','lsx'); ?></span>
-						<?php echo esc_html($portfolio_type); ?>
+						<?php echo esc_url($portfolio_type); ?>
 					</div>			
 			<?php } ?>
 		
