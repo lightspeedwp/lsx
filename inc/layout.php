@@ -71,40 +71,6 @@ function lsx_author_box() {
 				</div>							
 				<div class="col-sm-12">
 					<hr>
-					<?php
-					$args = array(
-						'post_type' => 'team',
-						'meta_key' => 'bs_user_id',
-						'meta_value' => $author_id
-						);
-
-					$team_members = get_posts( $args );
-
-					foreach ( $team_members as $member ) {							
-						$facebook = get_post_meta( $member->ID, 'bs_facebook', true );
-						$twitter = get_post_meta( $member->ID, 'bs_twitter', true );
-						$googleplus = get_post_meta( $member->ID, 'bs_googleplus', true );
-						$linkedin = get_post_meta( $member->ID, 'bs_linkedin', true );
-
-						if ( $facebook || $twitter || $googleplus || $linked )
-							echo "<div class='social pull-left'>";
-
-						if ( $facebook )
-							echo "<a href='".esc_url($facebook)."' target='_blank'><i class='fa fa-facebook'></i></a>";
-
-						if ( $twitter )
-							echo "<a href='".esc_url($twitter)."' target='_blank'><i class='fa fa-twitter'></i></a>";
-
-						if ( $googleplus )
-							echo "<a href='".esc_url($googleplus)."' target='_blank'><i class='fa fa-google-plus'></i></a>";
-
-						if ( $linkedin )
-							echo "<a href='".esc_url($linkedin)."' target='_blank'><i class='fa fa-linkedin'></i></a>";
-
-						if ( $facebook || $twitter || $googleplus || $linked )
-							echo "</div>";
-					}
-					?>
 					<div class="profile-link pull-left">
 						<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ); ?>">
 							<?php _e('View all posts by','lsx'); ?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?>  <i class="fa fa-arrow-right"></i>
