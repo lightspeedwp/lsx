@@ -15,24 +15,22 @@ jQuery(document).ready(function($) {
         $(this).removeClass('zoom');
     });
 
-    $(window).load(function(){
-		$('.lsx-portfolio').masonry({
-		    itemSelector: '.jetpack-portfolio',
-		    singlemode: true,
-		    isAnimated: true,
-		    animationOptions: {
-		        duration: 700,
-		        easing: 'linear',
-		        queue: false
-		    }
-		});
+	$('.lsx-portfolio').masonry({
+	    itemSelector: '.jetpack-portfolio',
+	    singlemode: true,
+	    isAnimated: true,
+	    animationOptions: {
+	        duration: 700,
+	        easing: 'linear',
+	        queue: false
+	    }
+	});
 
-		$('.lsx-portfolio').imagesLoaded( function(){
-		    $('.lsx-portfolio').masonry({
-				itemSelector: '.jetpack-portfolio',
-				isAnimated: true,
-				isFitWidth: true
-		    });
+	$('.lsx-portfolio').imagesLoaded( function(){
+	    $('.lsx-portfolio').masonry({
+			itemSelector: '.jetpack-portfolio',
+			isAnimated: true,
+			isFitWidth: true
 	    });
-    }
+    });
 });
