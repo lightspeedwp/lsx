@@ -23,8 +23,10 @@ class Google_Font_Collection
 
 		// create fonts
 		foreach ($fonts as $key => $value) 
-		{
-			$this->fonts[$value["title"]] = new Google_Font($value["title"], $value["location"], $value["cssDeclaration"], $value["cssClass"]);
+		{	
+			if( empty( $value["system"] ) ){
+				$this->fonts[$value["title"]] = new Google_Font($value["title"], $value["location"], $value["cssDeclaration"], $value["cssClass"]);
+			}
 		}
 	}
 
