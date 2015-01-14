@@ -260,3 +260,8 @@ function lsx_allowed_related_post_types($allowed_post_types) {
 	return $allowed_post_types;
 }
 add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
+
+/**
+ * Remove the Category from the Jetpack related posts.
+ */
+add_filter( 'jetpack_relatedposts_filter_post_context', '__return_empty_string' );
