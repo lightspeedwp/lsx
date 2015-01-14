@@ -1243,12 +1243,15 @@ article {
 
 		.entry-image {
 			.thumbnail {
+				margin-right: 0;
 				margin-bottom: 30px;
 
-				.home &,
-				.blog &,
-				.archive & {
-					margin-right: 0 !important;
+				&.pull-left {
+					margin-right: 20px;
+				}
+
+				&.pull-right {
+					margin-left: 20px;
 				}
 			}
 		}
@@ -1317,6 +1320,9 @@ article {
 	}
 
 	footer.entry-meta {
+		background: #f1f1f1;
+		padding: 20px 30px;
+
 		span.comments-link {
 			margin-right: 10px;
 		}
@@ -1394,6 +1400,10 @@ article {
 			line-height: 200% !important;
 		}
 	}
+}
+
+.sharedaddy {
+	margin-bottom: 20px;
 }
 
 .jp-relatedposts {
