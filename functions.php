@@ -225,14 +225,9 @@ add_action( 'init', 'lsx_register_social_menu' );
 /**
 * Custom Metaboxes for Jetpack Portfolio
 */
-add_action( 'load-post.php', 'lsx_portfolio_post_meta_boxes_setup' );
-add_action( 'load-post-new.php', 'lsx_portfolio_post_meta_boxes_setup' );
 
-function lsx_portfolio_post_meta_boxes_setup() {
   add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
-
    add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
-}
 
 function lsx_save_portfolio_post_meta( $post_id, $post ) {
 
