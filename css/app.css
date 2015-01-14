@@ -9712,15 +9712,20 @@ article footer.entry-meta span.comments-link {
 }
 
 /* line 1389, ../sass/app.scss */
+.jp-relatedposts {
+  clear: both;
+}
+
+/* line 1393, ../sass/app.scss */
 .read-more {
   margin-right: 10px;
 }
 
-/* line 1393, ../sass/app.scss */
+/* line 1397, ../sass/app.scss */
 #infinite-handle {
   margin-top: 60px;
 }
-/* line 1396, ../sass/app.scss */
+/* line 1400, ../sass/app.scss */
 #infinite-handle span {
   background: #428bca !important;
   font-size: 14px !important;
@@ -9734,12 +9739,12 @@ article footer.entry-meta span.comments-link {
   border-radius: 3px;
 }
 @media screen and (max-width: 800px) {
-  /* line 1396, ../sass/app.scss */
+  /* line 1400, ../sass/app.scss */
   #infinite-handle span {
     text-align: center;
   }
 }
-/* line 1410, ../sass/app.scss */
+/* line 1414, ../sass/app.scss */
 #infinite-handle span:hover {
   background: #333333 !important;
 }
@@ -9747,34 +9752,34 @@ article footer.entry-meta span.comments-link {
 /* ==========================================================================
 	 Footer
 	 ========================================================================== */
-/* line 1421, ../sass/app.scss */
+/* line 1425, ../sass/app.scss */
 #footer-widgets {
   background: #333333;
 }
-/* line 1424, ../sass/app.scss */
+/* line 1428, ../sass/app.scss */
 #footer-widgets .widget {
   margin: 70px 0 90px;
   color: #999999;
 }
 @media screen and (max-width: 768px) {
-  /* line 1424, ../sass/app.scss */
+  /* line 1428, ../sass/app.scss */
   #footer-widgets .widget {
     margin: 50px 0;
   }
 }
-/* line 1432, ../sass/app.scss */
+/* line 1436, ../sass/app.scss */
 #footer-widgets .widget h3.widget-title {
   color: #999999;
 }
-/* line 1436, ../sass/app.scss */
+/* line 1440, ../sass/app.scss */
 #footer-widgets .widget a {
   color: #eeeeee;
 }
-/* line 1439, ../sass/app.scss */
+/* line 1443, ../sass/app.scss */
 #footer-widgets .widget a:hover {
   color: #999999;
 }
-/* line 1445, ../sass/app.scss */
+/* line 1449, ../sass/app.scss */
 #footer-widgets .widget.widget_tag_cloud .tagcloud a {
   display: inline-block;
   background: #999999;
@@ -9795,24 +9800,24 @@ article footer.entry-meta span.comments-link {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1457, ../sass/app.scss */
+/* line 1461, ../sass/app.scss */
 #footer-widgets .widget.widget_tag_cloud .tagcloud a:hover {
   background: #428bca;
   text-decoration: none;
 }
 
-/* line 1466, ../sass/app.scss */
+/* line 1470, ../sass/app.scss */
 footer.content-info {
   background: #232222;
   text-align: center;
 }
-/* line 1470, ../sass/app.scss */
+/* line 1474, ../sass/app.scss */
 footer.content-info .credit {
   color: white;
   margin: 20px 0;
   font-size: 15px;
 }
-/* line 1475, ../sass/app.scss */
+/* line 1479, ../sass/app.scss */
 footer.content-info .credit.credit-float {
   float: left;
 }
@@ -9820,22 +9825,22 @@ footer.content-info .credit.credit-float {
 /* ==========================================================================
 	 Author Box
 	 ========================================================================== */
-/* line 1486, ../sass/app.scss */
+/* line 1490, ../sass/app.scss */
 .author-box {
   margin-top: 0;
   margin-bottom: 40px;
   border: none;
   box-shadow: none;
 }
-/* line 1492, ../sass/app.scss */
+/* line 1496, ../sass/app.scss */
 .author-box h4 {
   margin-top: 0;
 }
-/* line 1496, ../sass/app.scss */
+/* line 1500, ../sass/app.scss */
 .author-box .profile-link {
   margin-left: 103px;
 }
-/* line 1500, ../sass/app.scss */
+/* line 1504, ../sass/app.scss */
 .single .author-box {
   margin-top: 40px;
 }
@@ -9843,31 +9848,31 @@ footer.content-info .credit.credit-float {
 /* ==========================================================================
 	 Gravity Forms
 	 ========================================================================== */
-/* line 1520, ../sass/app.scss */
+/* line 1524, ../sass/app.scss */
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 1524, ../sass/app.scss */
+/* line 1528, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 1537, ../sass/app.scss */
+/* line 1541, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 1542, ../sass/app.scss */
+/* line 1546, ../sass/app.scss */
 .gform_button {
   line-height: 1.5;
 }
 
-/* line 1549, ../sass/app.scss */
+/* line 1553, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 1555, ../sass/app.scss */
+/* line 1559, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -9885,7 +9890,7 @@ footer.content-info .credit.credit-float {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 1573, ../sass/app.scss */
+/* line 1577, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -9909,34 +9914,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 1599, ../sass/app.scss */
+/* line 1603, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 1600, ../sass/app.scss */
+/* line 1604, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 1601, ../sass/app.scss */
+/* line 1605, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 1602, ../sass/app.scss */
+/* line 1606, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 1604, ../sass/app.scss */
+/* line 1608, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 1611, ../sass/app.scss */
+/* line 1615, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
