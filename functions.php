@@ -187,19 +187,6 @@ if(function_exists('soliloquy')){
   );    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
-// after setup theme
-add_action('after_setup_theme' , function() {
-	$args = array(
-    'header-text' => array(
-        'site-title',
-        'site-description',
-    ),
-    'size' => 'medium',
-);
-add_theme_support( 'site-logo', $args );
-});
-
-
 
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
@@ -210,28 +197,6 @@ function lsx_form_submit_button($button, $form){
 
 add_image_size( 'thumbnail-wide', 350, 230, true );
 add_image_size( 'thumbnail-single', 750, 350, true );
-
-
-add_theme_support( 'custom-background', array(
-	// Background color default
-	'default-color' => 'FFF',
-	// Background image default
-) );
-
-/**
- * Add theme support for infinite scroll.
- *
- * @uses add_theme_support
- * @return void
- */
-function lsx_infinite_scroll_init() {
-    add_theme_support( 'infinite-scroll', array(
-        'container' => 'main',
-        'type' => 'click',
-        'posts_per_page' => get_option('posts_per_page',10),
-    ) );
-}
-add_action( 'after_setup_theme', 'lsx_infinite_scroll_init' );
 
 
 /**

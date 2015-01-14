@@ -26,6 +26,22 @@ function lsx_setup() {
 	 * to change 'lsx' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
+	
+	$args = array(
+			'header-text' => array(
+					'site-title',
+					'site-description',
+			),
+			'size' => 'medium',
+	);
+	add_theme_support( 'site-logo', $args );
+
+	
+	add_theme_support( 'custom-background', array(
+	// Background color default
+	'default-color' => 'FFF',
+	// Background image default
+	) );	
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -46,6 +62,13 @@ function lsx_setup() {
 	* See: https://codex.wordpress.org/Post_Formats
 	*/
 	add_theme_support( 'post-formats', array('image', 'video', 'gallery') );
+	
+	
+	add_theme_support( 'infinite-scroll', array(
+		'container' => 'main',
+		'type' => 'click',
+		'posts_per_page' => get_option('posts_per_page',10),
+	) );	
 		
 
 	// This theme uses wp_nav_menu() in one location.
