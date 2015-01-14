@@ -284,7 +284,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 		
 			/* Set an array. */
 			$data = array(
-					0 => __( 'Disable', 'lsx' )
+					'0' => __( 'Disable', 'lsx' )
 			);
 		
 			/* Get Soliloquy Sliders. */

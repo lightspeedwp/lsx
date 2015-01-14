@@ -33,8 +33,7 @@ if(function_exists('soliloquy')){
   $controls['settings']['lsx_homepage_slider']  = array(
     'default'       =>  '0', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-    'capability'    =>  'edit_theme_options', //Optional. Special permissions for accessing this setting.
-    'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
     'sanitize_callback' =>  'absint' // santize setting callback
   );
   /// add the control
