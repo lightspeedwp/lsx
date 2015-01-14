@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 
@@ -184,7 +185,7 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 				$fb_output .= ' class="' . $menu_class . '"';
 
 			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.__('Add a menu','lsx').'</a></li>';
 			$fb_output .= '</ul>';
 
 			if ( $container )

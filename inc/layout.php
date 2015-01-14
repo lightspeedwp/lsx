@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Layout hooks
  *
@@ -10,7 +12,7 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 	function lsx_add_footer_sidebar_area() {
 		?>
 		<section id="footer-widgets">
-			<h2 style="display: none;">Footer Widgets</h2>
+			<h2 style="display: none;"><?php _e('Footer Widgets','lsx'); ?></h2>
 			<div class="container">
 				<div class="row">
 					<?php dynamic_sidebar( 'sidebar-footer' ); ?>
@@ -20,12 +22,6 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 		<?php
 	}
 }
-
-add_filter( 'lsx_filter_post_meta', 'lsx_set_post_meta_options' );
-function lsx_set_post_meta_options( $post_info ) {
-	$post_info = lsx_get_option('post_meta');
-}
-
 
 /**
  * Displays the hompage slider is Soliliquy Lite is active and the Customizer settings are set.
@@ -52,7 +48,7 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 add_action( 'lsx_entry_after', 'lsx_author_box' );
 function lsx_author_box() {
 
-	if ( ! lsx_get_option( 'author_box' ) || ! is_single() ) { return false; }
+	if ( ! is_single() ) { return false; }
 
 	global $post;
 	$author_id=$post->post_author;
@@ -64,48 +60,14 @@ function lsx_author_box() {
 					<img class="pull-left img-circle" src="<?php echo lsx_get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
 				</div>
 				<div class="content col-sm-10">
-					<h4>Published by <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h4>
+					<h4><?php _e('Published by','lsx'); ?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h4>
 					<p><?php echo get_the_author_meta( 'description', $author_id ); ?></p>
 				</div>							
 				<div class="col-sm-12">
 					<hr>
-					<?php
-					$args = array(
-						'post_type' => 'team',
-						'meta_key' => 'bs_user_id',
-						'meta_value' => $author_id
-						);
-
-					$team_members = get_posts( $args );
-
-					foreach ( $team_members as $member ) {							
-						$facebook = get_post_meta( $member->ID, 'bs_facebook', true );
-						$twitter = get_post_meta( $member->ID, 'bs_twitter', true );
-						$googleplus = get_post_meta( $member->ID, 'bs_googleplus', true );
-						$linkedin = get_post_meta( $member->ID, 'bs_linkedin', true );
-
-						if ( $facebook || $twitter || $googleplus || $linked )
-							echo "<div class='social pull-left'>";
-
-						if ( $facebook )
-							echo "<a href='$facebook' target='_blank'><i class='fa fa-facebook'></i></a>";
-
-						if ( $twitter )
-							echo "<a href='$twitter' target='_blank'><i class='fa fa-twitter'></i></a>";
-
-						if ( $googleplus )
-							echo "<a href='$googleplus' target='_blank'><i class='fa fa-google-plus'></i></a>";
-
-						if ( $linkedin )
-							echo "<a href='$linkedin' target='_blank'><i class='fa fa-linkedin'></i></a>";
-
-						if ( $facebook || $twitter || $googleplus || $linked )
-							echo "</div>";
-					}
-					?>
 					<div class="profile-link pull-left">
 						<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ); ?>">
-							View all posts by <?php echo get_the_author_meta( 'display_name', $author_id ); ?>  <i class="fa fa-arrow-right"></i>
+							<?php _e('View all posts by','lsx'); ?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?>  <i class="fa fa-arrow-right"></i>
 						</a>
 					</div>
 					<div class="clearfix"></div>

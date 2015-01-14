@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Adds Yoast Breadcrumbs to lsx_content_top
@@ -23,12 +24,6 @@ function lsx_body_class($classes) {
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
   }
-  
-  //Add the banner class if neccesary
-  $show_on_front = get_option('show_on_front');
-  if(lsx_get_option('enable_banner',false) && (('page' == $show_on_front && is_front_page()) || ('posts' == $show_on_front && is_home()) )) {
-  	$classes[] = 'banner';
-  }  
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');
@@ -106,7 +101,7 @@ function lsx_caption($output, $attr, $content) {
 
   $output  = '<figure' . $attributes .'>';
   $output .= do_shortcode($content);
-  $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
+  $output .= '<figcaption class="caption wp-caption-text">' . esc_html($attr['caption'])	 . '</figcaption>';
   $output .= '</figure>';
 
   return $output;
@@ -256,3 +251,27 @@ function lsx_is_element_empty($element) {
 	$element = trim($element);
 	return empty($element)?false:true;
 }
+
+/**
+ * Adds portfolio to the related posts.
+ */
+function lsx_allowed_related_post_types($allowed_post_types) {
+	$allowed_post_types[] = 'jetpack-portfolio';
+	foreach($allowed_post_types as $key => $value){
+		if('page' == $value){
+			unset($allowed_post_types[$key]);
+		}
+	}
+	return $allowed_post_types;
+}
+
+
+/**
+ * Remove the Category from the Jetpack related posts.
+ */
+function lsx_remove_related_post_context(){
+	add_filter( 'jetpack_relatedposts_filter_post_context', '__return_empty_string' );
+	add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
+}
+add_action('init','lsx_remove_related_post_context',20);
+

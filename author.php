@@ -28,42 +28,8 @@ get_header(); ?>
 							<img class="pull-left img-circle" src="<?php echo lsx_get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
 						</div>
 						<div class="content col-sm-10">
-							<h4>Published by <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h4>
+							<h4><?php _e('Published by','lsx');?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h4>
 							<p><?php echo get_the_author_meta( 'description', $author_id ); ?></p>
-							<?php
-							$args = array(
-								'post_type' => 'team',
-								'meta_key' => 'bs_user_id',
-								'meta_value' => $author_id
-								);
-
-							$team_members = get_posts( $args );
-
-							foreach ( $team_members as $member ) {							
-								$facebook = get_post_meta( $member->ID, 'bs_facebook', true );
-								$twitter = get_post_meta( $member->ID, 'bs_twitter', true );
-								$googleplus = get_post_meta( $member->ID, 'bs_googleplus', true );
-								$linkedin = get_post_meta( $member->ID, 'bs_linkedin', true );
-
-								if ( $facebook || $twitter || $googleplus || $linked )
-									echo "<div class='social'><hr>";
-
-								if ( $facebook )
-									echo "<a href='$facebook' target='_blank'><i class='fa fa-facebook'></i></a>";
-
-								if ( $twitter )
-									echo "<a href='$twitter' target='_blank'><i class='fa fa-twitter'></i></a>";
-
-								if ( $googleplus )
-									echo "<a href='$googleplus' target='_blank'><i class='fa fa-google-plus'></i></a>";
-
-								if ( $linkedin )
-									echo "<a href='$linkedin' target='_blank'><i class='fa fa-linkedin'></i></a>";
-
-								if ( $facebook || $twitter || $googleplus || $linked )
-									echo "</div>";
-							}
-							?>
 						</div>						
 					</div>
 				<?php								
@@ -71,7 +37,7 @@ get_header(); ?>
 			?>
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php echo 'Posts by '; ?><?php the_author(); ?>
+					<?php echo __('Posts by','lsx').' '; ?><?php the_author(); ?>
 				</h1>
 
 			</header><!-- .page-header -->

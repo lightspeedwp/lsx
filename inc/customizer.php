@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Customizer Configuration File
  *
@@ -64,8 +66,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 *
 		 * @since     1.0.0
 		 */		
-		public function customizer( $wp_customize ) {
-			
+		public function customizer( $wp_customize ) {			
 			
 			// start panels
 			if( !empty( $this->controls['panels'] ) ){
@@ -162,11 +163,11 @@ if(!class_exists('LSX_Theme_Customizer')){
 				'type' 			=> 'theme_mod', //Is this an 'option' or a 'theme_mod'?
 				'capability'	=> 'edit_theme_options', //Optional. Special permissions for accessing this setting.
 				'transport' 	=> 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+				'sanitize_callback' =>  'esc_attr'
 			);
 
-
 			$wp_customize->add_setting( $slug, //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-				array_merge( $default_args, $args )
+				wp_parse_args( $default_args, $args )
 			);    
 
 		}
@@ -283,7 +284,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 		
 			/* Set an array. */
 			$data = array(
-					0 => __( 'Disable', 'lsx-theme' )
+					0 => __( 'Disable', 'lsx' )
 			);
 		
 			/* Get Soliloquy Sliders. */
@@ -305,31 +306,3 @@ if(!class_exists('LSX_Theme_Customizer')){
 		}		
 	}	
 }
-
-
-/**
- * Helper function to return the theme option value.
- * If no value has been saved, it returns $default.
- * Needed because options are saved as serialized strings.
- *
- * Not in a class to support backwards compatibility in themes.
- */
-
-if ( ! function_exists( 'lsx_get_option' ) ) :
-
-function lsx_get_option( $name, $default = false ) {
-	$config = get_option( 'optionsframework' );
-
-	if ( ! isset( $config['id'] ) ) {
-		return $default;
-	}
-
-	$options = get_option( $config['id'] );
-
-	if ( isset( $options[$name] ) ) {
-		return $options[$name];
-	}
-
-	return $default;
-}
-endif;

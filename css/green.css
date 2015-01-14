@@ -1,0 +1,327 @@
+a {
+  color: #555555;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #333333;
+}
+
+.wrap a:hover {
+  border-bottom: 1px solid;
+}
+
+.btn {
+  background: #555555;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background: #444444;
+}
+
+body {
+  color: #888888;
+}
+
+h1,
+h2,
+h3 {
+  color: #333333;
+}
+
+h4,
+h5,
+h6 {
+  color: #555555;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  border: none !important;
+}
+
+.lsx-button {
+  background: #333333;
+}
+
+.lsx-button:hover {
+  background: #232222;
+}
+
+#searchform .input-group span.input-group-btn button.search-submit {
+  color: white;
+  background-color: #555555 !important;
+  border-color: #333333;
+}
+
+#searchform .input-group span.input-group-btn button.search-submit:hover {
+  background-color: #333333;
+  border-color: #285e8e;
+}
+
+.pagination span.current {
+  background: #555555 !important;
+  color: white !important;
+}
+
+ul.breadcrumb li > span {
+  color: #999999;
+}
+ul.breadcrumb li > span > span {
+  color: #999999;
+}
+
+nav.page-nav p {
+  background-color: white;
+  border: 1px solid #eeeeee;
+}
+
+#comments ol.media-list li.comment.odd {
+  background: #f1f1f1;
+}
+
+header.banner {
+  background: #62ba6f;
+}
+
+header.banner .site-description {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 992px) {
+  header.banner nav {
+    border: none !important;
+    margin-top: 10px;
+    box-shadow: none;
+    margin: 20px -15px 0 -15px !important;
+    padding-bottom: 20px !important;
+    float: none;
+  }
+}
+
+header.banner nav .nav.navbar-nav li a {
+  color: #ffffff;
+  border: none !important;
+}
+
+header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
+  color: #ffffff;
+  background: #333333;
+}
+
+header.banner nav .nav.navbar-nav li ul.dropdown-menu {
+  background: #333333;
+}
+
+@media screen and (max-width: 992px) {
+  header.banner nav .nav.navbar-nav li ul.dropdown-menu {
+    background: #62ba6f;
+  }
+}
+
+header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
+  color: #ffffff;
+}
+
+header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
+  background: #555555;
+}
+
+@media screen and (max-width: 992px) {
+  header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
+    color: #ffffff;
+  }
+}
+
+header.banner nav .nav.navbar-nav li.active a {
+  color: #232222;
+}
+
+header.banner nav .nav.navbar-nav li.active:hover > a {
+  color: #ffffff;
+}
+
+.navbar-toggle {
+  background: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.mobile-menu-title {
+  color: #ffffff;
+  margin: 47px 5px;
+}
+
+.scrolled .mobile-menu-title {
+  margin: 20px 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-menu-title {
+    margin: 22px 13px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-title {
+    margin: 19px 13px;
+  }
+}
+
+.home .soliloquy-slider {
+  background: #62ba6f;
+}
+
+.front-page #home-widgets aside.widget h3.widget-title {
+  color: #333333;
+}
+
+.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta {
+  background: #f1f1f1;
+}
+
+.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta > div span:first-child {
+  display: block;
+  color: #555555;
+}
+
+#secondary .widget h3,
+#tertiary .widget h3 {
+  color: #333333;
+}
+
+#secondary .widget.widget_tag_cloud .tagcloud a,
+#tertiary .widget.widget_tag_cloud .tagcloud a {
+  background: #999999;
+  color: white;
+}
+
+#secondary .widget.widget_tag_cloud .tagcloud a:hover,
+#tertiary .widget.widget_tag_cloud .tagcloud a:hover {
+  background: #555555 !important;
+}
+
+article header.entry-header h1.entry-title .label.label-sticky {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+article .post-meta,
+article .post-format {
+  color: #555555;
+}
+
+#respond #submit {
+  color: white;
+  background-color: #555555 !important;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+#respond #submit:hover, #respond #submit:focus, #respond #submit:active, #respond #submit.active, .open > #respond #submit.dropdown-toggle {
+  color: white;
+  background-color: #3071a9;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+#respond #submit.disabled, #respond #submit.disabled:hover, #respond #submit.disabled:focus, #respond #submit.disabled:active, #respond #submit.disabled.active, #respond #submit[disabled], #respond #submit[disabled]:hover, #respond #submit[disabled]:focus, #respond #submit[disabled]:active, #respond #submit[disabled].active, fieldset[disabled] #respond #submit, fieldset[disabled] #respond #submit:hover, fieldset[disabled] #respond #submit:focus, fieldset[disabled] #respond #submit:active, fieldset[disabled] #respond #submit.active {
+  background-color: #555555 !important;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+#respond #submit .badge {
+  color: #555555 !important;
+  background-color: white;
+}
+
+.sharedaddy .jp-relatedposts-post p,
+.jp-relatedposts .jp-relatedposts-post p {
+  line-height: 200% !important;
+}
+
+#infinite-handle span {
+  background: #555555 !important;
+}
+
+#infinite-handle span:hover {
+  background: #333333 !important;
+}
+
+#footer-widgets {
+  background: #35673d;
+}
+
+#footer-widgets .widget {
+  color: #ffffff;
+}
+
+#footer-widgets .widget h3.widget-title {
+  color: #ffffff;
+}
+
+#footer-widgets .widget a {
+  color: #ffffff !important;
+}
+
+#footer-widgets .widget a:hover {
+  border-bottom: 1px solid;
+}
+
+#footer-widgets .widget.widget_tag_cloud .tagcloud a {
+  background: #ffffff;
+  color: #333333 !important;
+}
+
+#footer-widgets .widget.widget_tag_cloud .tagcloud a:hover {
+  background: #333333 !important;
+  color: #ffffff !important;
+}
+
+footer.content-info {
+  background: #333333;
+}
+
+footer.content-info a {
+  color: #ffffff;
+}
+
+footer.content-info a:hover {
+  color: #eeeeee;
+}
+
+.gform_wrapper .gfield_required {
+  color: #a94442;
+}
+
+.gform_wrapper .gfield_error .gfield_label {
+  color: #a94442;
+}
+
+.gform_wrapper .gfield_error input,
+.gform_wrapper .gfield_error select,
+.gform_wrapper .gfield_error textarea {
+  border-color: #ebccd1;
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.gform_wrapper .gfield_error input:focus,
+.gform_wrapper .gfield_error select:focus,
+.gform_wrapper .gfield_error textarea:focus {
+  border-color: #a94442;
+}
+
+select {
+  color: #555;
+}
+
+#social-navigation ul li a:hover {
+  color: #62ba6f !important;
+}

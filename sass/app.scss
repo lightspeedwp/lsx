@@ -209,6 +209,11 @@ iframe {
 	width: 100%;
 }
 
+button,
+.btn {
+	border: none !important;
+}
+
 img,
 .thumbnail {
 	height: auto;
@@ -230,6 +235,10 @@ img,
 	&.aligncenter {
 		margin: 0 auto 15px;
 	}
+}
+
+.search-submit {
+	padding: 8px 12px;
 }
 
 .lsx-button {
@@ -459,6 +468,33 @@ header.banner {
 				}
 			}
 		}
+
+		.site-branding {
+			.site-title {
+				margin-top: 20px;
+			}
+		}
+
+		.site-description {
+			display: none;
+		}
+	}
+
+	.site-branding {
+		.site-title {
+			margin-bottom: 0px;
+			margin-top: 33px;
+
+			@media screen and (max-width: 992px) {
+				margin-top: 20px;
+			}
+		}
+
+		.site-description {
+			@media screen and (max-width: 1200px) {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -617,7 +653,7 @@ nav {
 		margin: 25px 0 !important;
 		background: none;
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 992px) {
 			float: left;
 			position: relative;
 			clear: both;
@@ -655,6 +691,7 @@ nav {
 							variant: normal;
 						}
 						line-height: 1;
+						text-decoration: none !important;
 						-moz-transition: color .1s ease-in 0;
 						-webkit-transition: color .1s ease-in 0;
 						text-decoration: inherit;
@@ -831,6 +868,21 @@ nav {
 	margin-top: 180px;
 	margin-bottom: 100px;
 
+	#primary,
+	#secondary {
+		&.col-sm-12 {
+			max-width: 750px;
+			margin: 0 auto;
+			float: none;
+
+			.single-jetpack-portfolio &,
+			.lsx-portfolio &,
+			.page-template-template-portfolio & {
+				max-width: 100%;
+			}
+		}
+	}
+
 	@media screen and (max-width: 992px) {
 		margin-top: 100px;
 		margin-bottom: 60px;
@@ -920,6 +972,20 @@ header.page-header {
 	background-size: cover !important;
 	width: 100%;
 	height: 500px;
+
+	@media screen and (max-width: 992px) {
+		margin-top: 80px;
+		height: 350px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 0;
+		height: 300px;
+	}
+
+	@media screen and (max-width: 430px) {
+		height: 200px;
+	}
 }
 
 .page-template-template-portfolio {
@@ -1001,7 +1067,7 @@ header.page-header {
 
 				.genericon {
 					display: inline-block !important;
-					margin: 9px 4px 0 0;
+					margin: 7px 4px 0 0;
 				}
 			}
 		}
@@ -1040,6 +1106,10 @@ header.page-header {
 			width: auto;
 		}
 
+		button {
+			margin-bottom: 15px;
+		}
+
 		&.widget_rss {
 			ul {
 				li {
@@ -1057,12 +1127,12 @@ header.page-header {
 				font-size: 14px !important;
 				padding: 2px 10px;
 				margin: 2px 0px;
+				border: none !important;
 				@include transition(all .1s ease-in-out);
 				@include border-radius(3px);
 			
 				&:hover {
 					background: $primary;
-					text-decoration: none;
 				}
 			}
 		}
@@ -1146,6 +1216,12 @@ article {
 		.entry-image {
 			.thumbnail {
 				margin-bottom: 30px;
+
+				.home &,
+				.blog &,
+				.archive & {
+					margin-right: 0 !important;
+				}
 			}
 		}
 	}
@@ -1352,6 +1428,7 @@ article {
 				font-size: 14px !important;
 				padding: 2px 10px;
 				margin: 2px 0px;
+				border: none !important;
 				@include transition(all .1s ease-in-out);
 				@include border-radius(3px);
 			
@@ -1410,36 +1487,34 @@ footer.content-info {
 
 
 .gform_wrapper {
- 
-		ul {
-				@extend .list-unstyled;
-		}
- 
-		li {
-				@extend .form-group;
-		}
- 
-		form {
-				margin-bottom: 0;
-		}
- 
-		.gfield_required {
-				padding-left: 1px;
-				color: $state-danger-text;
-		}
+	ul {
+		@extend .list-unstyled;
+	}
+
+	li {
+		@extend .form-group;
+	}
+
+	form {
+		margin-bottom: 0;
+	}
+
+	.gfield_required {
+		padding-left: 1px;
+		color: $state-danger-text;
+	}
 }
  
 .ginput_container {
- 
-		input,
-		select,
-		textarea {
-				@extend .form-control;
-		}
- 
-		textarea {
-			height: auto;
-		}
+	input,
+	select,
+	textarea {
+		@extend .form-control;
+	}
+
+	textarea {
+		height: auto;
+	}
 }
  
 .gform_button {
@@ -1450,48 +1525,48 @@ footer.content-info {
 .gform_wrapper .gfield_error {
  
 		.gfield_label {
-				color: $state-danger-text;
+			color: $state-danger-text;
 		}
  
 		input,
 		select,
 		textarea {
-				border-color: $alert-danger-border;
-				background-color: $alert-danger-bg;
-				color: $alert-danger-text;
-				@include form-control-focus( $alert-danger-text );
+			border-color: $alert-danger-border;
+			background-color: $alert-danger-bg;
+			color: $alert-danger-text;
+			@include form-control-focus( $alert-danger-text );
 		}
 }
  
 .validation_error {
-		@extend .alert;
-		@extend .alert-danger;
+	@extend .alert;
+	@extend .alert-danger;
 }
  
 #gforms_confirmation_message {
-		@extend .alert;
-		@extend .alert-success;
+	@extend .alert;
+	@extend .alert-success;
 }
 
 select {
-		display: block;
-		width: 100%;
-		height: 34px;
-		padding: 6px 12px;
-		font-size: 14px;
-		line-height: 1.42857143;
-		color: #555;
-		background-color: $white;
-		background-image: none;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		
-		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-		-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-		box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: $white;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 
-		-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
 /* ==========================================================================
@@ -1514,31 +1589,3 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
  {
 	font-style: inherit;
 }
-
-
-/* ==========================================================================
-	 Media Queries
-	 ========================================================================== */
-
-@media (min-width: $screen-sm-min) { }
-
-@media (min-width: $screen-md-min) { }
-
-@media (min-width: $screen-lg-min) { }
-
-
-// LSX Parent Styles (to be removed once added to parent)
-
-
-
-
-
-
-
-
-
-
-
-
-
-

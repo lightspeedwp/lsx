@@ -4,6 +4,8 @@
  *
  * @package lsx
  */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 
 require get_template_directory() . '/inc/config.php';
 require get_template_directory() . '/inc/customizer.php';
@@ -17,50 +19,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
-// define your controls here
-$controls = array(
-  // array to define settings
-  'settings'      =>  array(
-    'my_setting'    =>  array(
-      'default'     =>  '#2BA6CB', //Default setting/value to save
-      'type'      =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-      'capability'  =>  'edit_theme_options', //Optional. Special permissions for accessing this setting.
-      'transport'   =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-      'css' => array( // Optional: does this apply to a css selector for the live site?
-        'selector'    =>  'a', // CSS Selector the setting is for
-        'style_name'  =>  'color', // the css style to be applied
-        'prefix'      =>  '', //optional: the value prefix for sanatized values, if needed
-        'postfix'     =>  '', //optional: the value postfix for sanatized values, if needed
-      )
-    ),//add more settings
-  ),
-  // array to define panels
-  'panels'      =>  array(
-    'my_panel_slug'   =>  array(
-      'title'     =>  'My Panel Title',
-      'priority'    =>  1
-    ), // add more panels
-  ),
-  // array to define sections
-  'sections'      =>  array(
-    'my_section_slug'   =>  array(
-      'title'     =>  'My Section Title',
-      'panel'     =>  'my_panel_slug' // Optional: if defined a panel, reference the panel slug here
-    ),//add more sections
-  ),
-  // array to define fields
-  'fields'      =>  array(
-    'my_color'      =>  array(
-      'label'     =>  __( 'Link Color', 'mytheme' ), //Admin-visible name of the control
-      'control'   =>  'WP_Customize_Layout_Control', // Optional: the control type class name ( built in WP_Customize_Image_Control, WP_Customize_Upload_Control, WP_Customize_Color_Control, WP_Customize_Text_Control ) use lowercase type : ie. textarea for generic
-      //'type'    =>  'select', // only if control is not defined. this is the input type (text, textarea, select etc..)
-      //'choices'   =>  '', //array() | callback of choices for selects or choice based controls / types
-      'section'     =>  'my_section_slug', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-      'settings'    =>  'my_setting', //Which setting to load and manipulate (serialized is okay)
-      'priority'    =>  11, //Determines the order this control appears in for the specified section
-    ),//add more fields
-  )
-);
 
 $controls = array();
 
@@ -81,7 +39,7 @@ if(function_exists('soliloquy')){
   );
   /// add the control
   $controls['fields']['lsx_homepage_slider'] = array(
-    'label'         =>  esc_html__( 'Select Slider', 'lsx-theme' ),
+    'label'         =>  esc_html__( 'Select Slider', 'lsx' ),
     'section'       =>  'lsx-homepage',
     'type'          =>  'select',
     'choices'       =>  LSX_Theme_Customizer::get_slider_post_type_choices()
@@ -89,30 +47,39 @@ if(function_exists('soliloquy')){
   
 }
 
-  /// add the setting
-  $controls['settings']['lsx_color_scheme']  = array(
-    'default'       =>  'default', //Default setting/value to save
-    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  );
-  /// add the control
-  $controls['fields']['lsx_color_scheme'] = array(
-    'label'         =>  esc_html__( 'Color Scheme', 'lsx-theme' ),
-    'section'       =>  'colors',
-    'type'          =>  'select',
-    'choices'  => array(
-  		'default' => 'Default',
-    	'dark' => 'Dark',
-    	'light' => 'Light'
-  	),
+/*
+ * Colour Settings
+ */
+ /// add the setting
+ $controls['settings']['lsx_color_scheme']  = array(
+   'default'       =>  'default', //Default setting/value to save
+   'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+   'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+ 	'sanitize_callback' =>  'esc_attr' // santize setting callback
+ );
+ /// add the control
+ $controls['fields']['lsx_color_scheme'] = array(
+   'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
+   'section'       =>  'colors',
+   'type'          =>  'select',
+   'choices'  => array(
+ 		'default' => esc_html__( 'Default', 'lsx' ),
+   		'red' => esc_html__( 'Red', 'lsx' ),
+ 	  	'green' => esc_html__( 'Green', 'lsx' ),
+      'brown' => esc_html__( 'Brown', 'lsx' )
+ 	),
 	'priority' => 1,
   );
 
+ /*
+  * Layout Controls
+  */
+	 
   $controls['sections']['lsx-layout'] = array(
-    'title'       =>  'Layout',
-  		'description' => 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.'
+    'title'       =>  esc_html__( 'Layout', 'lsx' ),
+  	'description' => __( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
+  	'priority' => 112
   );
-
 
   $controls['settings']['lsx_layout']  = array(
     'default'       =>  '2cr', //Default setting/value to save
@@ -122,7 +89,8 @@ if(function_exists('soliloquy')){
     	'1c',
     	'2cr',
     	'2cl'
-    )
+    ),
+  	'sanitize_callback' =>  'esc_attr' // santize setting callback
   ); 
   /// add the control
   $controls['fields']['lsx_layout'] = array(
@@ -133,65 +101,40 @@ if(function_exists('soliloquy')){
     	'1c',
     	'2cr',
     	'2cl'
-    ),
-	'priority' => 1,
+    )
   );  
 
+  /*
+   * Font Controls
+   */
+  
   $controls['sections']['lsx-font'] = array(
-    'title'       =>  'Font',
-      'description' => 'Change the fonts sitewide.'
+    'title'       =>  __( 'Font', 'lsx' ),
+    'description' => 'Change the fonts sitewide.',
+  	'priority' => 42
   );
   $controls['settings']['lsx_font']  = array(
-    'default'       =>  'noto_sans_open_sans', //Default setting/value to save
+    'default'       =>  'raleway_open_sans', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+  	'sanitize_callback' =>  'esc_attr' // santize setting callback
   );  
   /// add the control
   $controls['fields']['lsx_font'] = array(
-    'label'         =>  '',
+    'label'         =>  __( '', 'lsx' ),
     'section'       =>  'lsx-font',
     'settings'      =>  'lsx_font',
     'control'   =>  'LSX_Customize_Font_Control',
     'choices'   =>  array(
-      'alegreya_serif_open_sans' => array(
+      'raleway_open_sans' => array(
         'header'  => array(
-            "title" => "Alegreya", 
-            "location" => "Alegreya", 
-            "cssDeclaration" => "'Alegreya', serif", 
-            "cssClass" => "alegreya",
+            "title" => __( 'Raleway', 'lsx' ), 
+            "location" => "Raleway", 
+            "cssDeclaration" => "'Raleway', sans-serif", 
+            "cssClass" => "raleway",
           ),
         'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
-          ),
-        ),
-      'arial_sans_verdana_sans' => array(
-        'header'  => array(
-            "title" => "Arial", 
-            "location" => "Arial", 
-            "cssDeclaration" => "'Arial', serif", 
-            "cssClass" => "arial",
-            "system"  => true
-          ),
-        'body'  => array(
-            "title" => "Verdana", 
-            "location" => "Verdana", 
-            "cssDeclaration" => "'Verdana', sans-serif", 
-            "cssClass" => "verdana",
-            "system"  => true
-          ),
-        ),      
-      'noto_sans_open_sans' => array(
-        'header'  => array(
-            "title" => "Noto Sans", 
-            "location" => "Noto+Sans", 
-            "cssDeclaration" => "'Noto Sans', sans-serif", 
-            "cssClass" => "notoSans",
-          ),
-        'body'  => array(
-            "title" => "Open Sans", 
+            "title" => __( 'Open Sans', 'lsx' ), 
             "location" => "Open+Sans", 
             "cssDeclaration" => "'Open Sans', sans-serif", 
             "cssClass" => "openSans"
@@ -199,71 +142,51 @@ if(function_exists('soliloquy')){
         ),
       'noto_serif_noto_sans' => array(
         'header'  => array(
-            "title" => "Noto Serif", 
+            "title" => __( 'Noto Serif', 'lsx' ), 
             "location" => "Noto+Serif", 
             "cssDeclaration" => "'Noto Serif', serif", 
             "cssClass" => "notoSerif",
           ),
         'body'  => array(
-            "title" => "Noto Sans", 
+            "title" => __( 'Noto Sans', 'lsx' ), 
             "location" => "Noto+Sans", 
             "cssDeclaration" => "'Noto Sans', sans-serif", 
             "cssClass" => "notoSans",
           ),
         ),
-      'georgia_serif_open_sans' => array(
+      'noto_sans_noto_sans' => array(
         'header'  => array(
-            "title" => "Georgia", 
-            "location" => "Georgia", 
-            "cssDeclaration" => "'Georgia', serif", 
-            "cssClass" => "georgia",
+            "title" => __( 'Noto Sans', 'lsx' ), 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
           ),
         'body'  => array(
-            "title" => "Open Sans", 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
+            "title" => __( 'Noto Sans', 'lsx' ), 
+            "location" => "Noto+Sans", 
+            "cssDeclaration" => "'Noto Sans', sans-serif", 
+            "cssClass" => "notoSans",
           ),
         ),
-      'georgia_serif_open_sans' => array(
+      'alegreya_open_sans' => array(
         'header'  => array(
-            "title" => "Georgia", 
-            "location" => "Georgia", 
-            "cssDeclaration" => "'Georgia', serif", 
-            "cssClass" => "georgia",
-            "system"  => true
+            "title" => __( 'Alegreya', 'lsx' ), 
+            "location" => "Alegreya", 
+            "cssDeclaration" => "'Alegreya', serif", 
+            "cssClass" => "alegreya",
           ),
         'body'  => array(
-            "title" => "Open Sans", 
+            "title" => __( 'Open Sans', 'lsx' ), 
             "location" => "Open+Sans", 
             "cssDeclaration" => "'Open Sans', sans-serif", 
             "cssClass" => "openSans"
           ),
         ),
     ),
-  'priority' => 1,
+  'priority' => 2,
   );    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
-// after setup theme
-add_action('after_setup_theme' , function() {
-	$args = array(
-    'header-text' => array(
-        'site-title',
-        'site-description',
-    ),
-    'size' => 'medium',
-);
-add_theme_support( 'site-logo', $args );
-});
-
-
-function lsx_title_tag_setup() {
-   add_theme_support( 'title-tag' ); 
-   add_theme_support( 'jetpack-testimonial' );
-}
-add_action( 'after_setup_theme', 'lsx_title_tag_setup' );
-
 
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
@@ -271,43 +194,9 @@ function lsx_form_submit_button($button, $form){
     return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
 }
 
-$width = lsx_get_option( 'thumb_width' );
-// if ( ! $width ) $width = 150;
 
-$height = lsx_get_option( 'thumb_height' );
-// if ( ! $height ) $height = 150;
-
-add_image_size( 'lsx-thumbnail', $width, $height, true );
 add_image_size( 'thumbnail-wide', 350, 230, true );
 add_image_size( 'thumbnail-single', 750, 350, true );
-
-
-// Wordpress specific Variables
-if ( ! isset( $content_width ) ) {
-	$content_width = lsx_get_option( 'content_width' , 750 );
-}
-
-
-add_theme_support( 'custom-background', array(
-	// Background color default
-	'default-color' => 'FFF',
-	// Background image default
-) );
-
-/**
- * Add theme support for infinite scroll.
- *
- * @uses add_theme_support
- * @return void
- */
-function lsx_infinite_scroll_init() {
-    add_theme_support( 'infinite-scroll', array(
-        'container' => 'main',
-        'type' => 'click',
-        'posts_per_page' => get_option('posts_per_page',10),
-    ) );
-}
-add_action( 'after_setup_theme', 'lsx_infinite_scroll_init' );
 
 
 /**
@@ -328,7 +217,7 @@ add_action( 'lsx_header_after', 'lsx_portfolio_banner' );
 * Register Social Navigation
 */
 function lsx_register_social_menu() {
-  register_nav_menu('social',__( 'Social Menu' ));
+  register_nav_menu('social', __( 'Social Menu' , 'lsx' ));
 }
 add_action( 'init', 'lsx_register_social_menu' );
 
@@ -336,14 +225,9 @@ add_action( 'init', 'lsx_register_social_menu' );
 /**
 * Custom Metaboxes for Jetpack Portfolio
 */
-add_action( 'load-post.php', 'lsx_portfolio_post_meta_boxes_setup' );
-add_action( 'load-post-new.php', 'lsx_portfolio_post_meta_boxes_setup' );
 
-function lsx_portfolio_post_meta_boxes_setup() {
   add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
-
    add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
-}
 
 function lsx_save_portfolio_post_meta( $post_id, $post ) {
 
@@ -362,7 +246,7 @@ function lsx_save_portfolio_post_meta( $post_id, $post ) {
   
   foreach($meta_keys as $meta_key){
   
-	  $new_meta_value = ( isset( $_POST[$meta_key] ) ? $_POST[$meta_key] : '' );
+	  $new_meta_value = ( isset( $_POST[$meta_key] ) ? sanitize_text_field($_POST[$meta_key]) : '' );
 	
 	  $meta_value = get_post_meta( $post_id, $meta_key, true );
 	
@@ -382,7 +266,7 @@ function lsx_add_portfolio_post_meta_boxes() {
 
   add_meta_box(
     'lsx_client_meta_box',
-    esc_html__( 'Client', 'client' ),
+    esc_html__( 'Client', 'lsx' ),
     'lsx_client_meta_box',
     'jetpack-portfolio',
     'side',
@@ -391,7 +275,7 @@ function lsx_add_portfolio_post_meta_boxes() {
 
   add_meta_box(
     'lsx_website_meta_box',
-    esc_html__( 'Website', 'website' ),
+    esc_html__( 'Website', 'lsx' ),
     'lsx_website_meta_box',
     'jetpack-portfolio',
     'side',

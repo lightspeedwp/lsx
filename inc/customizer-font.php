@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * LSX_Customize_Font_Control Class
 **/
@@ -68,8 +70,8 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 						
 						?>
 						<li class="font-choice <?php echo $class; ?>">
-							<div class="<?php echo $font['header']['cssClass']; ?>"><?php echo $font['header']['title']; ?></div>
-							<small class="<?php echo $font['body']['cssClass']; ?>"><?php echo $font['body']['title']; ?></small>
+							<div class="<?php echo $font['header']['cssClass']; ?>"><?php echo esc_html($font['header']['title']); ?></div>
+							<small class="<?php echo $font['body']['cssClass']; ?>"><?php echo esc_html($font['body']['title']); ?></small>
 						</li>
 						<?php
 					}

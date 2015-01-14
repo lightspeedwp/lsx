@@ -40,25 +40,16 @@
 		</div>
 	</div>
 	
+	<div class="row">
+		<div class="col-md-12">	
+			<?php echo do_shortcode('[jetpack-related-posts]'); ?>
+		</div>
+	</div>	
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
 	<?php lsx_post_nav(); ?>
 	
-	<?php 
-		$media = get_attached_media( 'image' );
-		$media_array = array();
-		$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
-		
-		if(!empty($media)){
-			foreach($media as $media_item){
-				if($post_thumbnail_id != $media_item->ID) {
-					$media_array[] = $media_item->ID; 
-				}
-			}
-		} 
-		
-		echo apply_filters('the_content','[gallery ids="'.implode(',', $media_array).'"]');
-	?>
+	<?php lsx_portfolio_gallery(); ?>
 	
 	<?php lsx_entry_bottom(); ?>
 

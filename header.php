@@ -13,18 +13,11 @@ global $lsx_options;
 <head>
 <?php lsx_head_top(); ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<?php if ( lsx_get_option('static_layout') != 1 ) : ?>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php endif; ?>
 <?php
 if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<?php if( lsx_get_option('favicon') ){ 
-	$favicon = lsx_get_option('favicon'); ?>
-	<link rel="shortcut icon" href="<?php echo esc_url( $favicon ); ?>"/>
-<?php } ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 <?php lsx_head_bottom(); ?>
@@ -37,7 +30,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 	  	<div class="container">
 	    	<div class="navbar-header">
 	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		        	<span class="sr-only">Toggle navigation</span>
+		        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>

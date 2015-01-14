@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Yoast Breadcrumbs on Twitter Bootstrap
@@ -152,7 +153,7 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 			$format_link = get_post_format_link($post_format);
 			?>
 	    	<div class="post-format">
-	    		<?php echo '<span class="genericon"></span><a href="' . $format_link . '" title="' . sprintf( __( "View all %s posts" , 'lsx' ), ucfirst($post_format) ) . '" ' . '>' . ucfirst($post_format) . '</a> '; ?>
+	    		<?php echo '<span class="genericon"></span><a href="' . esc_url($format_link) . '" title="' . sprintf( __( "View all %s posts" , 'lsx' ), ucfirst($post_format) ) . '" ' . '>' . ucfirst($post_format) . '</a> '; ?>
 	    	</div>			
 			<?php 
 		}
@@ -160,9 +161,9 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 }
 
 /**
- * Add customisable post meta.
+ * Add customisable portfolio meta.
  *
- * Add customisable post meta, using shortcodes,
+ * Add customisable portfolio meta, using shortcodes,
  * to be added/modified where necessary.
  */
 
@@ -178,7 +179,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				if($portfolio_type){
 					?>
 					<div class="portfolio-category">
-						<span><span class="genericon genericon-category"></span>Category</span>
+						<span><span class="genericon genericon-category"></span><?php _e('Category','lsx'); ?></span>
 						<?php echo $portfolio_type; ?>
 					</div>			
 			<?php } ?>
@@ -186,24 +187,51 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 			<?php 
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);
 				if(false != $client){ ?>
-				<div class="portfolio-client">
-					<span><span class="genericon genericon-user"></span>Client</span>
-					<span><?php echo $client; ?></span>
-				</div>			
+					<div class="portfolio-client">
+						<span><span class="genericon genericon-user"></span><?php _e('Client','lsx'); ?></span>
+						<span><?php echo esc_html($client); ?></span>
+					</div>			
 			<?php }	?>
 
 			<?php 
 				$website = get_post_meta(get_the_ID(),'lsx-website',true);
 				if(false != $website){ ?>
-				<div class="portfolio-website">
-					<span><span class="genericon genericon-link"></span>Website</span>
-					<a href="<?php echo $website; ?>"><?php echo $website; ?></a>
-				</div>				
+					<div class="portfolio-website">
+						<span><span class="genericon genericon-link"></span><?php _e('Website','lsx'); ?></span>
+						<a href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
+					</div>				
 			<?php }	?>
 
 		</div>
 
 	<?php } // End lsx_portfolio_meta() 
+}
+
+/**
+ * Add customisable portfolio gallery.
+ *
+ */
+
+if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
+	function lsx_portfolio_gallery() {
+
+		$media = get_attached_media( 'image' );
+		$media_array = array();
+		$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
+		
+		if(!empty($media)){
+			foreach($media as $media_item){
+				if($post_thumbnail_id != $media_item->ID) {
+					$media_array[] = $media_item->ID;
+				}
+			}
+				
+			if(!empty($media_array)){
+				echo apply_filters('the_content','[gallery size="thumbnail" ids="'.implode(',', $media_array).'"]');
+			}
+		}
+		
+	}
 }
 
 if ( ! function_exists( 'lsx_paging_nav' ) ) :
@@ -287,8 +315,8 @@ if ( ! function_exists( 'lsx_posted_on' ) ) :
 function lsx_posted_on() {
 	global $post;
 
-	echo 'by '; 
+	echo __('by ','lsx'); 
 	the_author_posts_link(); 
-	echo ' on ' . get_the_date( 'D jS F Y ' ) . ' in ' . get_the_category_list( ', ', '', $post->ID );
+	echo ' '.__('on').' ' . get_the_date( 'D jS F Y ' ) . ' '.__('in').' ' . get_the_category_list( ', ', '', $post->ID );
 }
 endif;

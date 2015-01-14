@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Theme Configuration File
  * See: http://jetpack.me/
@@ -15,7 +17,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function lsx_setup() {
-
+	global $content_width;
+	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -23,11 +26,27 @@ function lsx_setup() {
 	 * to change 'lsx' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
+	
+	$args = array(
+			'header-text' => array(
+					'site-title',
+					'site-description',
+			),
+			'size' => 'medium',
+	);
+	add_theme_support( 'site-logo', $args );
+
+	
+	add_theme_support( 'custom-background', array(
+	// Background color default
+	'default-color' => 'FFF',
+	// Background image default
+	) );	
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	//add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -43,12 +62,47 @@ function lsx_setup() {
 	* See: https://codex.wordpress.org/Post_Formats
 	*/
 	add_theme_support( 'post-formats', array('image', 'video', 'gallery') );
+	
+	
+	add_theme_support( 'infinite-scroll', array(
+		'container' => 'main',
+		'type' => 'click',
+		'posts_per_page' => get_option('posts_per_page',10),
+	) );	
 		
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'lsx' ),
 	) );	
+	
+	/**
+	 * $content_width is a global variable used by WordPress for max image upload sizes
+	 * and media embeds (in pixels).
+	 *
+	 * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
+	 * Default: 1140px is the default Bootstrap container width.
+	 */
+	if (!isset($content_width)) { 
+	
+		$layout = get_theme_mod('lsx_layout','2cr');
+		
+		switch($layout){
+			
+			case '2cr':
+			case '2cl':
+				$content_width = 750;
+			break;
+
+			case '1c':
+				$content_width = 750;
+			break;
+			
+		}
+		
+	}
+	
+	
 
 }
 endif; // lsx_setup
@@ -64,6 +118,7 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 	switch ( $layout ) {
 		case '1c':
 			$main_class = 'col-' . $size . '-12';
+			$sidebar_class = 'col-' . $size . '-12';
 			break;
 		case '2cl':
 			$main_class = 'col-' . $size . '-8';
@@ -123,15 +178,6 @@ function lsx_sidebar_class() {
 function lsx_home_sidebar_class() {
 	return lsx_layout_selector( 'sidebar', 'home' );
 }
-
-/**
- * $content_width is a global variable used by WordPress for max image upload sizes
- * and media embeds (in pixels).
- *
- * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
- * Default: 1140px is the default Bootstrap container width.
- */
-if (!isset($content_width)) { $content_width = 1140; }
 
 /**
  * Disable the comments form by default for the page post type.
