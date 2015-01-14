@@ -12,17 +12,18 @@
 
 	<?php if ( is_single() ) { ?>
 
-	<header class="page-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>		
-	</header><!-- .entry-header -->
+		<header class="page-header">
+			<h1 class="page-title"><?php the_title(); ?></h1>		
+		</header><!-- .entry-header -->
 	<?php } else { ?>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>		
-	</header><!-- .entry-header -->
+		<header class="entry-header">
+			<h1 class="entry-title"><?php the_title(); ?></h1>		
+		</header><!-- .entry-header -->
 	<?php } ?>
 
 	<div class="entry-content">
-		<?php if ( ! is_singular() ) {
+		<?php
+		if ( ! is_singular() ) {
 			the_excerpt();
 		} else {
 			the_content(); 
