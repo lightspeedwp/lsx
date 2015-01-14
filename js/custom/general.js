@@ -19,7 +19,6 @@ jQuery(document).ready(function($) {
 		$('.lsx-portfolio').imagesLoaded( function(){
 		    $('.lsx-portfolio').masonry({
 				itemSelector: '.jetpack-portfolio',
-				columnWidth: '.jetpack-portfolio',
 				isAnimated: true,
 				isFitWidth: true,
 				animationOptions: {

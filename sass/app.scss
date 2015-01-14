@@ -288,9 +288,14 @@ img,
 
 		div {
 			.nav-links-description {
+				width: 50%;
 				color: $grey;
 				margin-bottom: 0;
 				font-weight: 500;
+
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}
 			}
 		}
 
@@ -305,6 +310,7 @@ img,
 
 	.previous {
 		text-align: left;
+		float: left;
 		
 		span {
 			margin-right: 5px;
@@ -313,6 +319,7 @@ img,
 
 	.next {
 		text-align: right;
+		float: right;
 		
 		span {
 			margin-left: 5px;
