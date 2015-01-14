@@ -167,7 +167,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 			);
 
 			$wp_customize->add_setting( $slug, //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-				wp_parse_args( $default_args, $args )
+				array_merge( $default_args, $args )
 			);    
 
 		}
