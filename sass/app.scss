@@ -283,13 +283,20 @@ img,
 
 .pager {
 	a {
-		border: none;
+		border: none !important;
 		font-weight: 600;
+
+		div {
+			.nav-links-description {
+				display: block;
+				color: $grey;
+				font-weight: 500;
+			}
+		}
 	}
 
 	.previous {
 		text-align: left;
-		font-weight: 600;
 		
 		span {
 			margin-right: 5px;
@@ -298,7 +305,6 @@ img,
 
 	.next {
 		text-align: right;
-		font-weight: 600;
 		
 		span {
 			margin-left: 5px;
