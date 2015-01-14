@@ -282,6 +282,14 @@ img,
 }
 
 .pager {
+	& > div {
+		font-weight: 600;
+
+		a {
+			border: none;
+		}
+	}
+
 	.previous {
 		text-align:left;
 		
@@ -289,6 +297,7 @@ img,
 			margin-right:5px;
 		}
 	}
+
 	.next {
 		text-align:right;
 		
@@ -1067,6 +1076,7 @@ header.page-header {
 			margin-left: 40px;
 
 			@media screen and (max-width: 768px) {
+				float: none;
 				margin-left: 0;
 				margin-bottom: 30px;
 			}
