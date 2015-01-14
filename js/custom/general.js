@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 	$(window).resize(function () {
 		$(msnryContainerSelector).masonry();
 	});
-
+	/*
 	$('.lsx-portfolio').masonry({
 	    itemSelector: '.jetpack-portfolio',
 	    singlemode: true,
@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
 	        queue: false
 	    }
 	});
-
+	/*
 	$('.lsx-portfolio').imagesLoaded( function(){
 	    $('.lsx-portfolio').masonry({
 			itemSelector: '.jetpack-portfolio',
@@ -55,4 +55,5 @@ jQuery(document).ready(function($) {
 			isFitWidth: true
 	    });
     });
+	*/
 });
