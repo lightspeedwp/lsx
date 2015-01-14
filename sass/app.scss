@@ -1060,19 +1060,16 @@ header.page-header {
 			margin-bottom: 10px;
 		}
 
-		.col-md-4 {
-			float: right;
-
-			@media screen and (max-width: 768px) {
-				float: none;
-				margin-top: -20px;
-			}
-		}
-
 		.portfolio-meta {
 			background: $off-white;
+			float: right;
 			padding: 20px 30px;
-			margin-top: 24px;
+			margin-left: 40px;
+
+			@media screen and (max-width: 768px) {
+				margin-left: 0;
+				margin-bottom: 30px;
+			}
 
 			& > div {
 				margin-bottom: 20px;

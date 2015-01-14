@@ -24,12 +24,10 @@
 	<?php echo get_the_tag_list('<p>',', ','</p>'); ?>
 
 	<div class="row">
-		<div class="col-md-4">
-			<?php lsx_portfolio_meta(); ?>
-		</div>
-
-		<div class="col-md-8">
+		<div class="col-sm-12">
 			<div class="entry-content">
+				<?php lsx_portfolio_meta(); ?>
+
 				<?php if ( ! is_singular() ) {
 					the_excerpt();
 				} else {
