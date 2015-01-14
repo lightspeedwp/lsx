@@ -25,12 +25,17 @@ jQuery(document).ready(function($) {
 	        queue: false
 	    }
 	});
-	
+
 	$('.lsx-portfolio').imagesLoaded( function(){
 	    $('.lsx-portfolio').masonry({
 			itemSelector: '.jetpack-portfolio',
 			isAnimated: true,
-			isFitWidth: true
+			isFitWidth: true,
+			animationOptions: {
+		        duration: 700,
+		        easing: 'linear',
+		        queue: false
+		    }
 	    });
     });
 });
