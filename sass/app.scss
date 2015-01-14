@@ -296,6 +296,10 @@ img,
 			margin-left:5px;
 		}   
 	}
+
+	@media screen and (max-width: 992px) {
+		margin: 20px 15px;
+	}
 }
 
 dl {
@@ -505,11 +509,10 @@ header.banner {
 nav {
 	@media screen and (max-width: 992px) {
 		border: none !important;
-	    margin-top: 10px;
-	    box-shadow: none;
+	    box-shadow: none !important;
 	    margin: 10px -15px 0 -15px !important;
 	    padding-bottom: 20px !important;
-	    float: none;
+	    float: none !important;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -897,12 +900,12 @@ nav {
 	}
 
 	@media screen and (max-width: 768px) {
-		margin-top: 20px;
+		margin-top: 0;
 		margin-bottom: 50px;
 	}
 
 	.single-jetpack-portfolio & {
-		margin-top: 40px;
+		margin-top: 20px;
 	}
 }
 
@@ -1357,6 +1360,10 @@ article {
 
 	.jp-relatedposts-post {
 		font-family: 'Open Sans', sans-serif;
+
+		a {
+			border: none !important;
+		}
 
 		img {
 			margin-bottom: 10px;
