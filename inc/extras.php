@@ -257,6 +257,11 @@ function lsx_is_element_empty($element) {
  */
 function lsx_allowed_related_post_types($allowed_post_types) {
 	$allowed_post_types[] = 'jetpack-portfolio';
+	foreach($allowed_post_types as $key => $value){
+		if('page' == $value){
+			unset($allowed_post_types[$key]);
+		}
+	}
 	return $allowed_post_types;
 }
 add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
@@ -264,4 +269,8 @@ add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
 /**
  * Remove the Category from the Jetpack related posts.
  */
-add_filter( 'jetpack_relatedposts_filter_post_context', '__return_empty_string' );
+function lsx_remove_related_post_context(){
+	add_filter( 'jetpack_relatedposts_filter_post_context', '__return_empty_string' );
+}
+add_action('init','lsx_remove_related_post_context',20);
+
