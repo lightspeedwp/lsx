@@ -282,27 +282,26 @@ img,
 }
 
 .pager {
-	& > div {
+	a {
+		border: none;
 		font-weight: 600;
-
-		a {
-			border: none;
-		}
 	}
 
 	.previous {
-		text-align:left;
+		text-align: left;
+		font-weight: 600;
 		
 		span {
-			margin-right:5px;
+			margin-right: 5px;
 		}
 	}
 
 	.next {
-		text-align:right;
+		text-align: right;
+		font-weight: 600;
 		
 		span {
-			margin-left:5px;
+			margin-left: 5px;
 		}   
 	}
 
@@ -1363,10 +1362,10 @@ article {
 	h3 {
 		font: {
 			family: 'Raleway', 'Open Sans', sans-serif !important;
-			size: 20px !important;
+			size: 28px !important;
 			weight: 600 !important;
 		}
-		margin: 10px 0 !important;
+		margin: 20px 0 !important;
 
 		&:before,
 		em:before {
