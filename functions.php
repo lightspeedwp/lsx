@@ -173,12 +173,14 @@ if(function_exists('soliloquy')){
             "location" => "Arial", 
             "cssDeclaration" => "'Arial', serif", 
             "cssClass" => "arial",
+            "system"  => true
           ),
         'body'  => array(
             "title" => "Verdana", 
             "location" => "Verdana", 
             "cssDeclaration" => "'Verdana', sans-serif", 
-            "cssClass" => "verdana"
+            "cssClass" => "verdana",
+            "system"  => true
           ),
         ),      
       'noto_sans_open_sans' => array(
@@ -229,6 +231,7 @@ if(function_exists('soliloquy')){
             "location" => "Georgia", 
             "cssDeclaration" => "'Georgia', serif", 
             "cssClass" => "georgia",
+            "system"  => true
           ),
         'body'  => array(
             "title" => "Open Sans", 
