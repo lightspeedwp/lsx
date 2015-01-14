@@ -88,22 +88,11 @@ nav.page-nav p {
 }
 
 header.banner {
-  background: #62ba6f;
+  background: #6fba7a;
 }
 
 header.banner .site-description {
   color: #ffffff;
-}
-
-@media screen and (max-width: 992px) {
-  header.banner nav {
-    border: none !important;
-    margin-top: 10px;
-    box-shadow: none;
-    margin: 20px -15px 0 -15px !important;
-    padding-bottom: 20px !important;
-    float: none;
-  }
 }
 
 header.banner nav .nav.navbar-nav li a {
@@ -113,16 +102,16 @@ header.banner nav .nav.navbar-nav li a {
 
 header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
   color: #ffffff;
-  background: #333333;
+  background: #555555;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-  background: #333333;
+  background: #555555;
 }
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-    background: #62ba6f;
+    background: #6fba7a;
   }
 }
 
@@ -131,7 +120,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #555555;
+  background: #777777;
 }
 
 @media screen and (max-width: 992px) {
@@ -141,7 +130,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #232222;
+  color: #333333;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
@@ -178,7 +167,7 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 }
 
 .home .soliloquy-slider {
-  background: #62ba6f;
+  background: #6fba7a;
 }
 
 .front-page #home-widgets aside.widget h3.widget-title {
@@ -255,7 +244,7 @@ article .post-format {
 }
 
 #footer-widgets {
-  background: #35673d;
+  background: #375c3d;
 }
 
 #footer-widgets .widget {
@@ -323,5 +312,5 @@ select {
 }
 
 #social-navigation ul li a:hover {
-  color: #62ba6f !important;
+  color: #6fba7a !important;
 }

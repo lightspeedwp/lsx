@@ -91,17 +91,6 @@ header.banner {
   background: #e7ddc8;
 }
 
-@media screen and (max-width: 992px) {
-  header.banner nav {
-    border: none !important;
-    margin-top: 10px;
-    box-shadow: none;
-    margin: 20px -15px 0 -15px !important;
-    padding-bottom: 20px !important;
-    float: none;
-  }
-}
-
 header.banner nav .nav.navbar-nav li a {
   color: #333333;
   border: none !important;
@@ -109,11 +98,11 @@ header.banner nav .nav.navbar-nav li a {
 
 header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
   color: #ffffff;
-  background: #333333;
+  background: #555555;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-  background: #333333;
+  background: #555555;
 }
 
 @media screen and (max-width: 992px) {
@@ -123,11 +112,11 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-  color: #333333;
+  color: #ffffff;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #555555;
+  background: #777777;
 }
 
 @media screen and (max-width: 992px) {
@@ -137,7 +126,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #232222;
+  color: #ffffff;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
@@ -320,4 +309,8 @@ select {
 
 #social-navigation ul li a:hover {
   color: #e7ddc8 !important;
+}
+
+.site-description {
+  color: #555555;
 }

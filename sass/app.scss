@@ -72,7 +72,6 @@ body {
 
 	@media screen and (max-width: 768px) {
 		font-size: 16px;
-		line-height: 180%;
 	}
 }
 
@@ -297,6 +296,10 @@ img,
 			margin-left:5px;
 		}   
 	}
+
+	@media screen and (max-width: 992px) {
+		margin: 20px 15px;
+	}
 }
 
 dl {
@@ -491,7 +494,7 @@ header.banner {
 		}
 
 		.site-description {
-			@media screen and (max-width: 1200px) {
+			@media screen and (max-width: 992px) {
 				display: none;
 			}
 		}
@@ -504,6 +507,14 @@ header.banner {
 	 ========================================================================== */
 
 nav {
+	@media screen and (max-width: 992px) {
+		border: none !important;
+	    box-shadow: none !important;
+	    margin: 10px -15px 0 -15px !important;
+	    padding-bottom: 20px !important;
+	    float: none !important;
+	}
+
 	@media screen and (max-width: 768px) {
 		padding: 0 !important;
 		transition: none !important;
@@ -540,7 +551,6 @@ nav {
 					}
 					padding: 15px 24px;
 					transition: none;
-
 
 					.caret {
 						margin-left: 6px;
@@ -650,7 +660,7 @@ nav {
 
 	&#social-navigation {
 		float: right;
-		margin: 25px 0 !important;
+		margin: 25px 0 10px !important;
 		background: none;
 
 		@media screen and (max-width: 992px) {
@@ -670,6 +680,7 @@ nav {
 			li {
 				float: left;
 				margin-right: 15px;
+				margin-bottom: 15px;
 
 				&:last-child {
 					margin-right: 0;
@@ -889,12 +900,12 @@ nav {
 	}
 
 	@media screen and (max-width: 768px) {
-		margin-top: 20px;
+		margin-top: 0;
 		margin-bottom: 50px;
 	}
 
 	.single-jetpack-portfolio & {
-		margin-top: 40px;
+		margin-top: 20px;
 	}
 }
 
@@ -967,14 +978,14 @@ header.page-header {
 // Portfolio
 
 .portfolio-banner {
-	margin-top: 130px;
+	margin-top: 120px;
 	background-repeat: no-repeat;
 	background-size: cover !important;
 	width: 100%;
 	height: 500px;
 
 	@media screen and (max-width: 992px) {
-		margin-top: 80px;
+		margin-top: 70px;
 		height: 350px;
 	}
 
@@ -1046,6 +1057,15 @@ header.page-header {
 	.jetpack-portfolio {
 		header.page-header {
 			margin-bottom: 10px;
+		}
+
+		.col-md-4 {
+			float: right;
+
+			@media screen and (max-width: 768px) {
+				float: none;
+				margin-top: -20px;
+			}
 		}
 
 		.portfolio-meta {
@@ -1341,6 +1361,10 @@ article {
 	.jp-relatedposts-post {
 		font-family: 'Open Sans', sans-serif;
 
+		a {
+			border: none !important;
+		}
+
 		img {
 			margin-bottom: 10px;
 		}
@@ -1400,7 +1424,7 @@ article {
 	background: $black;
 
 	.widget {
-		margin: 70px 0;
+		margin: 70px 0 90px;
 		color: $grey;
 
 		@media screen and (max-width: 768px) {
