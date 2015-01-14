@@ -40,6 +40,11 @@
 		</div>
 	</div>
 	
+	<div class="row">
+		<div class="col-md-12">	
+			<?php echo do_shortcode('[jetpack-related-posts]'); ?>
+		</div>
+	</div>	
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
 	<?php lsx_post_nav(); ?>
