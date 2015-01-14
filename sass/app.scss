@@ -72,7 +72,6 @@ body {
 
 	@media screen and (max-width: 768px) {
 		font-size: 16px;
-		line-height: 180%;
 	}
 }
 
@@ -491,7 +490,7 @@ header.banner {
 		}
 
 		.site-description {
-			@media screen and (max-width: 1200px) {
+			@media screen and (max-width: 992px) {
 				display: none;
 			}
 		}
@@ -650,7 +649,7 @@ nav {
 
 	&#social-navigation {
 		float: right;
-		margin: 25px 0 !important;
+		margin: 25px 0 10px !important;
 		background: none;
 
 		@media screen and (max-width: 992px) {
@@ -670,6 +669,7 @@ nav {
 			li {
 				float: left;
 				margin-right: 15px;
+				margin-bottom: 15px;
 
 				&:last-child {
 					margin-right: 0;
@@ -1046,6 +1046,15 @@ header.page-header {
 	.jetpack-portfolio {
 		header.page-header {
 			margin-bottom: 10px;
+		}
+
+		.col-md-4 {
+			float: right;
+
+			@media screen and (max-width: 768px) {
+				float: none;
+				margin-top: -20px;
+			}
 		}
 
 		.portfolio-meta {

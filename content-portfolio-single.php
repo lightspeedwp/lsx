@@ -24,6 +24,10 @@
 	<?php echo get_the_tag_list('<p>',', ','</p>'); ?>
 
 	<div class="row">
+		<div class="col-md-4">
+			<?php lsx_portfolio_meta(); ?>
+		</div>
+
 		<div class="col-md-8">
 			<div class="entry-content">
 				<?php if ( ! is_singular() ) {
@@ -33,10 +37,6 @@
 				} ?>
 				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 			</div><!-- .entry-content -->
-		</div>
-
-		<div class="col-md-4">
-			<?php lsx_portfolio_meta(); ?>
 		</div>
 	</div>
 	
