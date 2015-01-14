@@ -503,6 +503,15 @@ header.banner {
 	 ========================================================================== */
 
 nav {
+	@media screen and (max-width: 992px) {
+		border: none !important;
+	    margin-top: 10px;
+	    box-shadow: none;
+	    margin: 10px -15px 0 -15px !important;
+	    padding-bottom: 20px !important;
+	    float: none;
+	}
+
 	@media screen and (max-width: 768px) {
 		padding: 0 !important;
 		transition: none !important;
@@ -539,7 +548,6 @@ nav {
 					}
 					padding: 15px 24px;
 					transition: none;
-
 
 					.caret {
 						margin-left: 6px;
