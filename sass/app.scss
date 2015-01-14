@@ -293,6 +293,14 @@ img,
 				font-weight: 500;
 			}
 		}
+
+		&:hover {
+			div {
+				.nav-links-description {
+					color: $dark-grey;
+				}
+			}
+		}
 	}
 
 	.previous {
@@ -438,6 +446,7 @@ header.banner {
 	top: 0;
 	background: $light-grey;
 	border: none;
+	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .2));
 
 	@media screen and (max-width: 992px) {
 		& > .container {
