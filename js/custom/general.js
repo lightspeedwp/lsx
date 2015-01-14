@@ -15,6 +15,25 @@ jQuery(document).ready(function($) {
         $(this).removeClass('zoom');
     });
 
+    //Masonry blocks
+	$blocks = $(".lsx-portfolio");
+
+	$blocks.imagesLoaded(function(){
+		$blocks.masonry({
+			itemSelector: '.jetpack-portfolio'
+		});
+
+		// Fade blocks in after images are ready (prevents jumping and re-rendering)
+		$(".jetpack-portfolio").fadeIn();
+	});
+	
+	$(document).ready( function() { setTimeout( function() { $blocks.masonry(); }, 500); });
+
+	$(window).resize(function () {
+		$blocks.masonry();
+	});
+
+	/*
 	$('.lsx-portfolio').masonry({
 	    itemSelector: '.jetpack-portfolio',
 	    singlemode: true,
@@ -38,4 +57,5 @@ jQuery(document).ready(function($) {
 		    }
 	    });
     });
+*/
 });
