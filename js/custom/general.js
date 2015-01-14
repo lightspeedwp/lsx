@@ -15,6 +15,28 @@ jQuery(document).ready(function($) {
         $(this).removeClass('zoom');
     });
 
+    // Masonry
+    var msnryContainerSelector = ".lsx-portfolio";
+	var msnryItemSelector = ".jetpack-portfolio";
+
+	$(msnryContainerSelector).imagesLoaded(function(){
+		
+        $(msnryContainerSelector).masonry({
+		itemSelector: msnryItemSelector
+		});
+                
+        $(msnryContainerSelector).masonry( 'on', 'layoutComplete', function( msnryInstance, laidOutItems ) {
+            var masonryItems = $(this.element).find(msnryItemSelector);
+            masonryItems.fadeTo(400, 1);// Fade blocks in after images are ready (prevents jumping and re-rendering)
+        });
+	});
+
+	$(document).ready( function() { setTimeout( function() { $(msnryContainerSelector).masonry(); }, 500); });
+
+	$(window).resize(function () {
+		$(msnryContainerSelector).masonry();
+	});
+
 	$('.lsx-portfolio').masonry({
 	    itemSelector: '.jetpack-portfolio',
 	    singlemode: true,
