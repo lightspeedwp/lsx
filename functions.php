@@ -207,7 +207,7 @@ function lsx_portfolio_banner() {
         $image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
         <div class="portfolio-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
         </div>
-    <?php }
+    <?php } 
 }
 add_action( 'lsx_header_after', 'lsx_portfolio_banner' );
 
