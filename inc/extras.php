@@ -275,6 +275,24 @@ function lsx_portfolio_archive_pagination( $query ) {
 }
 add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
 
+
+
+/**
+ * Set the Portfolio to 9 posts per page
+ */
+function lsx_portfolio_taxonomy_template( $template ) {
+
+	if ( is_tax(array('jetpack-portfolio-type','jetpack-portfolio-tag'))  ) {
+		$new_template = locate_template( array( 'archive-jetpack-portfolio.php' ) );
+		if ( '' != $new_template ) {
+			return $new_template ;
+		}
+	}
+
+	return $template;
+}
+add_filter( 'template_include', 'lsx_portfolio_taxonomy_template', 99 );
+
 /**
  * Remove the Category from the Jetpack related posts.
  */
