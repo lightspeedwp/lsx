@@ -73,11 +73,6 @@ body {
 	@media screen and (max-width: 768px) {
 		font-size: 16px;
 	}
-
-	&.page-template-template-full-width,
-	&.page-template-template-front-page {
-		max-width: 1140px;
-	}
 }
 
 .size-auto, 
@@ -917,7 +912,9 @@ nav {
 
 	#primary,
 	#secondary {
-		&.col-sm-12 {
+		&.col-sm-12,
+		.page-template-template-full-width &,
+		.page-template-template-front-page & {
 			max-width: 750px;
 			margin: 0 auto;
 			float: none;
