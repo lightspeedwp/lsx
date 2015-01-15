@@ -1066,8 +1066,8 @@ header.page-header {
 				}
 
 				.portfolio-title {
-					opacity: 0;
-					font-size: 20px;
+					opacity: .7;
+					font-size: 22px;
 					color: $white;
 					font-weight: bold;
 					text-align: center;
@@ -1084,10 +1084,11 @@ header.page-header {
 				&.active {
 					.portfolio-title {
 						opacity: 1;
+						border: none !important;
 					}
 
 					img {
-						opacity: .5;
+						opacity: .35;
 						-webkit-transform: scale(1.08);
 						-moz-transform: scale(1.08);
 						-o-transform: scale(1.08);
