@@ -10,14 +10,9 @@
 
 	<?php lsx_entry_top(); ?>
 
-	<?php if ( is_single() ) { ?>
-
+	<?php if ( ! has_post_thumbnail() ) { ?>
 	<header class="page-header">
 		<h1 class="page-title"><?php the_title(); ?></h1>		
-	</header><!-- .entry-header -->
-	<?php } else { ?>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 	<?php } ?>
 
