@@ -206,6 +206,9 @@ function lsx_portfolio_banner() {
     if ( is_singular( 'jetpack-portfolio' ) && has_post_thumbnail() ) {
         $image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
         <div class="portfolio-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
+          <header class="page-header">
+            <h1 class="page-title"><?php the_title(); ?></h1>   
+          </header><!-- .entry-header -->
         </div>
     <?php } 
 }

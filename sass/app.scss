@@ -454,7 +454,7 @@ header.banner {
 	top: 0;
 	background: $light-grey;
 	border: none;
-	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .2));
+	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .1));
 
 	@media screen and (max-width: 992px) {
 		& > .container {
@@ -912,7 +912,9 @@ nav {
 
 	#primary,
 	#secondary {
-		&.col-sm-12 {
+		&.col-sm-12,
+		.page-template-template-full-width &,
+		.page-template-template-front-page & {
 			max-width: 750px;
 			margin: 0 auto;
 			float: none;
@@ -936,6 +938,10 @@ nav {
 	}
 
 	.single-jetpack-portfolio & {
+		margin-top: 40px;
+	}
+
+	@media screen and (max-width: 768px) {
 		margin-top: 20px;
 	}
 }
@@ -1038,8 +1044,8 @@ header.page-header {
 
 .lsx-portfolio-wrapper {
 	text-align: center;
-	margin-left: -5px;
-	margin-right: -5px;
+	margin-left: -7px;
+	margin-right: -7px;
 
 	.lsx-portfolio {
 		width: 100% !important;
@@ -1048,23 +1054,48 @@ header.page-header {
 			width: 33.3%;
 			padding-left: 10px;
 			padding-right: 10px;
-			margin-bottom: 40px;
+			margin-bottom: 20px;
 			overflow: hidden;
 
-			h3.entry-title {
-				margin-top: 15px;
-				margin-bottom: 0px;
-			}
+			.portfolio-content-wrapper {
+				position: relative;
+				background: $blacker;
 
-			.portfolio-thumbnail {
-				overflow: hidden;
+				.portfolio-thumbnail {
+					overflow: hidden;
 
-				img {
+					a {
+						border: none !important;
+					}
+
+					img {
+						@include transition(all .4s ease-in-out);
+					}
+				}
+
+				.portfolio-title {
+					opacity: 0;
+					font-size: 22px;
+					color: $white;
+					font-weight: bold;
+					text-align: center;
+					margin-bottom: 10px;
+					display: block;
+					position: absolute;
+					top: 50%;
+					margin: -18px auto 0 !important;
+					width: 100%;
+					border: none !important;
 					@include transition(all .4s ease-in-out);
 				}
 
-				&.zoom {
+				&.active {
+					.portfolio-title {
+						opacity: 1;
+					}
+
 					img {
+						opacity: .3;
 						-webkit-transform: scale(1.08);
 						-moz-transform: scale(1.08);
 						-o-transform: scale(1.08);
