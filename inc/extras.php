@@ -275,3 +275,28 @@ function lsx_remove_related_post_context(){
 }
 add_action('init','lsx_remove_related_post_context',20);
 
+
+/**
+ * return the responsive images.
+ */
+function lsx_get_thumbnail($size){
+	
+	$post_id = ( null === $post_id ) ? get_the_ID() : $post_id;
+	$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+	
+	if('thumbnail-single' == $size){
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
+		
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+	}
+	return $img;
+}
+
+/**
+ * Output the Resonsive Images
+ */
+function lsx_thumbnail($size = 'thumbnail'){
+	echo lsx_get_thumbnail($size);
+}

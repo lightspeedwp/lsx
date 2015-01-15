@@ -28,7 +28,55 @@ jQuery(document).ready(function($) {
 			    }
 		    });
 	    });
+		
+		
+		$('img.lsx-responsive').each( function(){
+			$(this).attr('src',$(this).attr('data-desktop'));
+		});
+		
+
+
+		var width = $(window).width();
+		$(window).resize(function(){
+		   //if($(this).width() != width){
+			
+			if(992 == width || 768 == width){
+				
+			  var attribute_name = 'data-desktop';
+			  
+		      width = $(this).width();
+		      //1200, 992, 768
+		      if(width >= 992){
+		    	  
+		    	  attribute_name = 'data-desktop';
+		    	  console.log('Changing to Desktop');
+		      }else{
+		    	  
+		    	  if(width < 992 && width >= 768){
+		    		  
+		    		  attribute_name = 'data-tablet';
+		    		  console.log('Changing to Tablet');
+		    		  
+		    	  }else{
+		    		  
+		    		  attribute_name = 'data-mobile';
+		    		  console.log('Changing to Mobile');
+		    		  
+		    	  }
+		    	  
+		      }	
+		      
+		      $('img.lsx-responsive').each( function(){
+				$(this).attr('src',$(this).attr(attribute_name));
+		      });		      
+		      
+		   }
+		});		
+		
 	});
+    
+    
+    
 });
 
 	
