@@ -28,13 +28,13 @@
 				} else {
 					the_content(); 
 				} ?>
+				
+				<?php lsx_portfolio_gallery(); ?>
+
 				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 			</div><!-- .entry-content -->
 		</div>
 	</div>
-
-	<?php lsx_portfolio_gallery(); ?>
-	
 	<div class="row">
 		<div class="col-md-12">	
 			<?php echo do_shortcode('[jetpack-related-posts]'); ?>
