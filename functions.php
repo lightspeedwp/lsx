@@ -15,6 +15,7 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/scripts.php';
 require get_template_directory() . '/inc/nav.php';
 require get_template_directory() . '/inc/comment-walker.php';
+require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
@@ -193,26 +194,8 @@ function lsx_form_submit_button($button, $form){
     return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
 }
 
-
 add_image_size( 'thumbnail-wide', 350, 230, true );
 add_image_size( 'thumbnail-single', 750, 350, true );
-
-
-/**
- * Add Featured Image as Banner on Single Portfolio Posts.
- */
-function lsx_portfolio_banner() {
-	global $post;
-    if ( is_singular( 'jetpack-portfolio' ) && has_post_thumbnail() ) {
-        $image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-        <div class="portfolio-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
-          <header class="page-header">
-            <h1 class="page-title"><?php the_title(); ?></h1>   
-          </header><!-- .entry-header -->
-        </div>
-    <?php } 
-}
-add_action( 'lsx_header_after', 'lsx_portfolio_banner' );
 
 
 /**
@@ -222,90 +205,4 @@ function lsx_register_social_menu() {
   register_nav_menu('social', __( 'Social Menu' , 'lsx' ));
 }
 add_action( 'init', 'lsx_register_social_menu' );
-
-
-/**
-* Custom Metaboxes for Jetpack Portfolio
-*/
-
-  add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
-   add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
-
-function lsx_save_portfolio_post_meta( $post_id, $post ) {
-
-
-  if ( (!isset( $_POST['lsx_website_nonce'] ) || !wp_verify_nonce( $_POST['lsx_website_nonce'], basename( __FILE__ ) )) 
-	|| (!isset( $_POST['lsx_client_nonce'] ) || !wp_verify_nonce( $_POST['lsx_client_nonce'], basename( __FILE__ ) )) )
-    return $post_id;
-
-  $post_type = get_post_type_object( $post->post_type );
-
-  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
-    return $post_id;
-
-  
-  $meta_keys = array('lsx-website','lsx-client');
-  
-  foreach($meta_keys as $meta_key){
-  
-	  $new_meta_value = ( isset( $_POST[$meta_key] ) ? sanitize_text_field($_POST[$meta_key]) : '' );
-	
-	  $meta_value = get_post_meta( $post_id, $meta_key, true );
-	
-	  if ( $new_meta_value && '' == $meta_value )
-	    add_post_meta( $post_id, $meta_key, $new_meta_value, true );
-	
-	  elseif ( $new_meta_value && $new_meta_value != $meta_value )
-	    update_post_meta( $post_id, $meta_key, $new_meta_value );
-	
-	  elseif ( '' == $new_meta_value && $meta_value )
-	    delete_post_meta( $post_id, $meta_key, $meta_value );
-  
-  }
-}
-
-function lsx_add_portfolio_post_meta_boxes() {
-
-  add_meta_box(
-    'lsx_client_meta_box',
-    esc_html__( 'Client', 'lsx' ),
-    'lsx_client_meta_box',
-    'jetpack-portfolio',
-    'side',
-    'default'
-  );
-
-  add_meta_box(
-    'lsx_website_meta_box',
-    esc_html__( 'Website', 'lsx' ),
-    'lsx_website_meta_box',
-    'jetpack-portfolio',
-    'side',
-    'default'
-  );
-}
-
-function lsx_client_meta_box( $object, $box ) { ?>
-
-  <?php wp_nonce_field( basename( __FILE__ ), 'lsx_client_nonce' ); ?>
-
-  <p>
-    <input class="widefat" type="text" name="lsx-client" id="lsx-client" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-client', true ) ); ?>" size="30" />
-    <br /><br />
-    <label for="lsx-client"><?php _e( "Enter the name of the project client", 'client' ); ?></label>
-  </p>
-<?php }
-
-function lsx_website_meta_box( $object, $box ) { ?>
-
-  <?php wp_nonce_field( basename( __FILE__ ), 'lsx_website_nonce' ); ?>
-
-  <p>
-    <input class="widefat" type="text" name="lsx-website" id="lsx-website" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-website', true ) ); ?>" size="30" />
-    <br /><br />
-    <label for="lsx-website"><?php _e( "Enter the URL of the project website", 'website' ); ?></label>
-  </p>
-<?php }
-
-
 ?>

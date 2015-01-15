@@ -146,21 +146,6 @@ function lsx_clean_style_tag($input) {
 }
 add_filter('style_loader_tag', 'lsx_clean_style_tag');
 
-
-/**
- * Adds the Site Title in Settings->General as a "title" attribute for the logo link.
- * @param string $html The HTML of the Logo
- * @return string
- */
-
-function lsx_site_logo_title_tag( $html) {
-	
-	$html = str_replace('<a', '<a title="'.get_bloginfo('name').'" ', $html);
-	return $html;
-}
-add_filter( 'jetpack_the_site_logo', 'lsx_site_logo_title_tag');
-
-
 if (!function_exists('lsx_get_attachment_id')) {
 	/**
 	 * Get the Attachment ID for a given image URL.
@@ -252,81 +237,6 @@ function lsx_is_element_empty($element) {
 	return empty($element)?false:true;
 }
 
-/**
- * Adds portfolio to the related posts.
- */
-function lsx_allowed_related_post_types($allowed_post_types) {
-	$allowed_post_types[] = 'jetpack-portfolio';
-	foreach($allowed_post_types as $key => $value){
-		if('page' == $value){
-			unset($allowed_post_types[$key]);
-		}
-	}
-	return $allowed_post_types;
-}
-
-/**
- * Set the Portfolio to 9 posts per page
- */
-function lsx_portfolio_archive_pagination( $query ) {
-	if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() ) {
-		$query->set( 'posts_per_page', get_option( 'jetpack_portfolio_posts_per_page', '9' ) );
-	}
-}
-add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
-
-
-
-/**
- * Set the Portfolio to 9 posts per page
- */
-function lsx_portfolio_taxonomy_template( $template ) {
-
-	if ( is_tax(array('jetpack-portfolio-type','jetpack-portfolio-tag'))  ) {
-		$new_template = locate_template( array( 'archive-jetpack-portfolio.php' ) );
-		if ( '' != $new_template ) {
-			return $new_template ;
-		}
-	}
-	
-	return $template;
-}
-add_filter( 'template_include', 'lsx_portfolio_taxonomy_template', 99 );
-
-/**
- * Remove the Category from the Jetpack related posts.
- */
-function lsx_remove_related_post_context(){
-	add_filter( 'jetpack_relatedposts_filter_post_context', '__return_empty_string' );
-	add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
-}
-add_action('init','lsx_remove_related_post_context',20);
-
-/**
- * Remove the related posts from below the content area.
- */
-function lsx_remove_single_portfolio_related_posts() {
-	
-	if(is_single() && 'jetpack-portfolio' == get_post_type() && class_exists('Jetpack_RelatedPosts')){
-		$jprp = Jetpack_RelatedPosts::init();
-		$callback = array( $jprp, 'filter_add_target_to_dom' );
-		remove_filter( 'the_content', $callback, 40 );
-	}
-}
-add_filter( 'wp', 'lsx_remove_single_portfolio_related_posts', 20 );
-
-/**
- * A template tag to call the Portfolios Related posts
- */
-function lsx_portfolio_related_posts(){
-	if(class_exists('Jetpack_RelatedPosts')){ ?>
-		<div class="row">
-			<div class="col-md-12">	
-				<?php echo do_shortcode('[jetpack-related-posts]'); ?>
-			</div>
-		</div>			
-	<?php }
-}
 
 /**
  * return the responsive images.
