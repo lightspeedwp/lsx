@@ -282,18 +282,48 @@ img,
 }
 
 .pager {
-	.previous {
-		text-align:left;
-		
-		span {
-			margin-right:5px;
+	a {
+		border: none !important;
+		font-weight: 600;
+
+		div {
+			width: 50%;
+
+			.nav-links-description {
+				color: $grey;
+				margin-bottom: 0;
+				font-weight: 500;
+
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}
+			}
+		}
+
+		&:hover {
+			div {
+				.nav-links-description {
+					color: $dark-grey;
+				}
+			}
 		}
 	}
-	.next {
-		text-align:right;
+
+	.previous {
+		text-align: left;
+		float: left;
 		
 		span {
-			margin-left:5px;
+			margin-right: 5px;
+		}
+	}
+
+	.next {
+		text-align: right;
+		float: right;
+		
+		span {
+			margin-left: 5px;
 		}   
 	}
 
@@ -424,6 +454,7 @@ header.banner {
 	top: 0;
 	background: $light-grey;
 	border: none;
+	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .2));
 
 	@media screen and (max-width: 992px) {
 		& > .container {
@@ -1060,19 +1091,17 @@ header.page-header {
 			margin-bottom: 10px;
 		}
 
-		.col-md-4 {
+		.portfolio-meta {
+			background: $off-white;
 			float: right;
+			padding: 20px 30px;
+			margin-left: 40px;
 
 			@media screen and (max-width: 768px) {
 				float: none;
-				margin-top: -20px;
+				margin-left: 0;
+				margin-bottom: 30px;
 			}
-		}
-
-		.portfolio-meta {
-			background: $off-white;
-			padding: 20px 30px;
-			margin-top: 24px;
 
 			& > div {
 				margin-bottom: 20px;
@@ -1236,12 +1265,15 @@ article {
 
 		.entry-image {
 			.thumbnail {
+				margin-right: 0;
 				margin-bottom: 30px;
 
-				.home &,
-				.blog &,
-				.archive & {
-					margin-right: 0 !important;
+				&.pull-left {
+					margin-right: 20px;
+				}
+
+				&.pull-right {
+					margin-left: 20px;
 				}
 			}
 		}
@@ -1314,6 +1346,11 @@ article {
 			margin-right: 10px;
 		}
 	}
+
+	footer.footer-meta {
+		background: #f1f1f1;
+		padding: 20px 30px;
+	}
 }
 
 #respond {
@@ -1348,10 +1385,10 @@ article {
 	h3 {
 		font: {
 			family: 'Raleway', 'Open Sans', sans-serif !important;
-			size: 20px !important;
+			size: 28px !important;
 			weight: 600 !important;
 		}
-		margin: 10px 0 !important;
+		margin: 20px 0 !important;
 
 		&:before,
 		em:before {
@@ -1387,6 +1424,14 @@ article {
 			line-height: 200% !important;
 		}
 	}
+}
+
+.sharedaddy {
+	margin-bottom: 20px;
+}
+
+.jp-relatedposts {
+	clear: both;
 }
 
 .read-more {
