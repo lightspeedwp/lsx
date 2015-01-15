@@ -1358,6 +1358,11 @@ article {
 		& > div {
 			float: left;
 			margin-right: 20px;
+
+			&.clearfix {
+				float: none;
+				margin: 0;
+			}
 		}
 
 		.genericon {
