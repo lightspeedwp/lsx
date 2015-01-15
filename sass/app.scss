@@ -1058,6 +1058,7 @@ header.page-header {
 
 			.portfolio-content-wrapper {
 				position: relative;
+				background: $blacker;
 
 				.portfolio-thumbnail {
 					overflow: hidden;
@@ -1067,34 +1068,29 @@ header.page-header {
 					}
 				}
 
-				.portfolio-entry-header {
+				.portfolio-title {
 					opacity: 0;
+					font-size: 22px;
+					color: #fff;
+					font-weight: bold;
+					text-align: center;
+					margin-bottom: 10px;
+					display: block;
 					position: absolute;
-					top: 0;
+					top: 50%;
+					margin: -20px auto 0 !important;
 					width: 100%;
-					height: 100%;
-					background: rgba(0, 0, 0, .5);
+					border: none !important;
 					@include transition(all .4s ease-in-out);
-
-					h3.entry-title {
-						height: 100%;
-						margin-top: 0;
-						margin-bottom: 0;
-
-						a {
-							display: block;
-							color: $white;
-							padding: 120px;
-						}
-					}
 				}
 
 				&.active {
-					.portfolio-entry-header {
+					.portfolio-title {
 						opacity: 1;
 					}
 
 					img {
+						opacity: .5;
 						-webkit-transform: scale(1.08);
 						-moz-transform: scale(1.08);
 						-o-transform: scale(1.08);

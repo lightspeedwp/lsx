@@ -15,9 +15,7 @@
 				</a>
 			</div>
 		<?php endif; ?>
-
-		<header class="portfolio-entry-header">
-			<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
-		</header>
+		
+		<?php the_title( '<a class="portfolio-title" href="' . esc_url( get_permalink() ) . '" rel="bookmark"><span>', '</span></a>' ); ?>
 	</div>
 </article>
