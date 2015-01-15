@@ -9,10 +9,10 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	$('.portfolio-thumbnail').hover(function() {
-        $(this).addClass('zoom');
+	$('.portfolio-content-wrapper').hover(function() {
+        $(this).addClass('active');
     }, function() {
-        $(this).removeClass('zoom');
+        $(this).removeClass('active');
     });
 
     $(window).load(function() {

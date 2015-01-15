@@ -73,6 +73,11 @@ body {
 	@media screen and (max-width: 768px) {
 		font-size: 16px;
 	}
+
+	&.page-template-template-full-width,
+	&.page-template-template-front-page {
+		max-width: 1140px;
+	}
 }
 
 .size-auto, 
@@ -454,7 +459,7 @@ header.banner {
 	top: 0;
 	background: $light-grey;
 	border: none;
-	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .2));
+	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .1));
 
 	@media screen and (max-width: 992px) {
 		& > .container {
@@ -1048,22 +1053,47 @@ header.page-header {
 			width: 33.3%;
 			padding-left: 10px;
 			padding-right: 10px;
-			margin-bottom: 40px;
+			margin-bottom: 20px;
 			overflow: hidden;
 
-			h3.entry-title {
-				margin-top: 15px;
-				margin-bottom: 0px;
-			}
+			.portfolio-content-wrapper {
+				position: relative;
 
-			.portfolio-thumbnail {
-				overflow: hidden;
+				.portfolio-thumbnail {
+					overflow: hidden;
 
-				img {
-					@include transition(all .4s ease-in-out);
+					img {
+						@include transition(all .4s ease-in-out);
+					}
 				}
 
-				&.zoom {
+				.portfolio-entry-header {
+					display: none;
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, .5);
+					@include transition(all .3s ease-in-out);
+
+					h3.entry-title {
+						height: 100%;
+						margin-top: 0;
+						margin-bottom: 0;
+
+						a {
+							display: block;
+							color: $white;
+							padding: 120px;
+						}
+					}
+				}
+
+				&.active {
+					.portfolio-entry-header {
+						display: block;
+					}
+
 					img {
 						-webkit-transform: scale(1.08);
 						-moz-transform: scale(1.08);
