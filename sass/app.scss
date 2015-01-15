@@ -1059,7 +1059,10 @@ header.page-header {
 
 				.portfolio-thumbnail {
 					overflow: hidden;
-					border: none !important;
+
+					a {
+						border: none !important;
+					}
 
 					img {
 						@include transition(all .4s ease-in-out);
