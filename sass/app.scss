@@ -542,7 +542,7 @@ header.banner {
 	 ========================================================================== */
 
 nav {
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 1200px) {
 		border: none !important;
 	    box-shadow: none !important;
 	    margin: 10px -15px 0 -15px !important;
@@ -594,6 +594,14 @@ nav {
 							display: none;
 						}
 					}
+
+					@media screen and (max-width: 992px) {
+						background: none !important;
+
+						&:hover {
+							color: $black !important;
+						}
+					}
 				}
 
 				&:hover,
@@ -601,6 +609,10 @@ nav {
 					& > a {
 						color: $light-grey;
 						background: $dark-grey;
+
+						@media screen and (max-width: 992px) {
+							background: none !important;
+						}
 					}
 				}
 
