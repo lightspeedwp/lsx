@@ -315,6 +315,18 @@ function lsx_remove_single_portfolio_related_posts() {
 }
 add_filter( 'wp', 'lsx_remove_single_portfolio_related_posts', 20 );
 
+/**
+ * A template tag to call the Portfolios Related posts
+ */
+function lsx_portfolio_related_posts(){
+	if(class_exists('Jetpack_RelatedPosts')){ ?>
+		<div class="row">
+			<div class="col-md-12">	
+				<?php echo do_shortcode('[jetpack-related-posts]'); ?>
+			</div>
+		</div>			
+	<?php }
+}
 
 /**
  * return the responsive images.
