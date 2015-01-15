@@ -29,7 +29,7 @@ get_header(); ?>
 					<div class="lsx-portfolio">
 						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php get_template_part( 'content', 'portfolio' ); ?>
+							<?php get_template_part( 'content', 'jetpack-portfolio' ); ?>
 
 						<?php endwhile; ?>
 					</div>
