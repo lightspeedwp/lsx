@@ -288,7 +288,7 @@ function lsx_portfolio_taxonomy_template( $template ) {
 			return $new_template ;
 		}
 	}
-
+	
 	return $template;
 }
 add_filter( 'template_include', 'lsx_portfolio_taxonomy_template', 99 );
@@ -301,6 +301,19 @@ function lsx_remove_related_post_context(){
 	add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
 }
 add_action('init','lsx_remove_related_post_context',20);
+
+/**
+ * Remove the related posts from below the content area.
+ */
+function lsx_remove_single_portfolio_related_posts() {
+	
+	if(is_single() && 'jetpack-portfolio' == get_post_type() && class_exists('Jetpack_RelatedPosts')){
+		$jprp = Jetpack_RelatedPosts::init();
+		$callback = array( $jprp, 'filter_add_target_to_dom' );
+		remove_filter( 'the_content', $callback, 40 );
+	}
+}
+add_filter( 'wp', 'lsx_remove_single_portfolio_related_posts', 20 );
 
 
 /**

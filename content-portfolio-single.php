@@ -28,9 +28,7 @@
 				} else {
 					the_content(); 
 				} ?>
-
 				
-
 				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 			</div><!-- .entry-content -->
 		</div>
@@ -39,14 +37,16 @@
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
 	<?php lsx_portfolio_gallery(); ?>
-
-	<?php lsx_post_nav(); ?>
 	
 	<div class="row">
 		<div class="col-md-12">	
 			<?php echo do_shortcode('[jetpack-related-posts]'); ?>
 		</div>
-	</div>
+	</div>	
+
+	<?php lsx_post_nav(); ?>
+	
+
 	
 	<?php lsx_entry_bottom(); ?>
 
