@@ -96,6 +96,7 @@ Social networks that aren't currently supported will be indicated by a generic s
 * The sidebar width is 360px
 * Featured Images are 750px wide by 300px high
 * Portfolio feature images are 360px wide by 270px high
+* Portfolio single gallery images are minimum 750px wide by 300px high 
 
 == Documentation & Support ==
 

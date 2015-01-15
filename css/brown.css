@@ -134,10 +134,14 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 }
 
 .navbar-toggle {
-  background: none;
+  background: none !important;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
+  background-color: #333333;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {
   background-color: #333333;
 }
 
@@ -158,7 +162,7 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 
 @media screen and (max-width: 768px) {
   .mobile-menu-title {
-    margin: 19px 13px;
+    margin: 19px 5px;
   }
 }
 

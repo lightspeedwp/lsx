@@ -32,6 +32,8 @@
 			</div><!-- .entry-content -->
 		</div>
 	</div>
+
+	<?php lsx_portfolio_gallery(); ?>
 	
 	<div class="row">
 		<div class="col-md-12">	
@@ -42,7 +44,7 @@
 
 	<?php lsx_post_nav(); ?>
 	
-	<?php lsx_portfolio_gallery(); ?>
+	
 	
 	<?php lsx_entry_bottom(); ?>
 

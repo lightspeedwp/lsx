@@ -170,7 +170,7 @@ h3 {
 h4 {
 	font-size: 18px;
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 460px) {
 		font-size: 16px;
 	}
 }
@@ -542,7 +542,7 @@ header.banner {
 	 ========================================================================== */
 
 nav {
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 1200px) {
 		border: none !important;
 	    box-shadow: none !important;
 	    margin: 10px -15px 0 -15px !important;
@@ -551,7 +551,7 @@ nav {
 	}
 
 	@media screen and (max-width: 768px) {
-		padding: 0 !important;
+		padding: 0 0 10px !important;
 		transition: none !important;
 	}
 
@@ -594,6 +594,14 @@ nav {
 							display: none;
 						}
 					}
+
+					@media screen and (max-width: 992px) {
+						background: none !important;
+
+						&:hover {
+							color: $black !important;
+						}
+					}
 				}
 
 				&:hover,
@@ -601,6 +609,10 @@ nav {
 					& > a {
 						color: $light-grey;
 						background: $dark-grey;
+
+						@media screen and (max-width: 992px) {
+							background: none !important;
+						}
 					}
 				}
 
@@ -857,15 +869,15 @@ nav {
 	margin: 48px 0;
 
 	.scrolled & {
-		margin: 23px 0;
+		margin: 22px 0;
 	}
 
 	@media screen and (max-width: 992px) {
-		margin: 23px 0;
+		margin: 22px 0;
 	}
 
 	@media screen and (max-width: 768px) {
-		margin: 18px 0;
+		margin: 19px 0;
 	}
 }
 
@@ -1033,7 +1045,7 @@ header.page-header {
 			max-width: 1140px;
 			margin: 0 auto;
 			color: $white;
-			font-size: 40px;
+			font-size: 42px;
 			-webkit-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
 			-moz-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
 			text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
@@ -1588,17 +1600,19 @@ footer.content-info {
 	 ========================================================================== */
 
 .author-box {
+	padding: 20px;
 	margin-top: 0;
 	margin-bottom: 40px;
 	border: none;
 	box-shadow: none;
 
-	h4 {
-		margin-top: 0;
+	h3 {
+		margin-top: 5px;
+		color: $black;
 	}
 
 	.profile-link {
-		margin-left: 125px;
+		margin-left: 5px;
 	}
 
 	.single & {
