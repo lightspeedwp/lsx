@@ -9376,8 +9376,9 @@ header.page-header {
 /* line 1060, ../sass/app.scss */
 .lsx-portfolio-wrapper .lsx-portfolio .jetpack-portfolio .portfolio-content-wrapper .portfolio-thumbnail {
   overflow: hidden;
+  border: none !important;
 }
-/* line 1063, ../sass/app.scss */
+/* line 1064, ../sass/app.scss */
 .lsx-portfolio-wrapper .lsx-portfolio .jetpack-portfolio .portfolio-content-wrapper .portfolio-thumbnail img {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -9385,7 +9386,7 @@ header.page-header {
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-/* line 1068, ../sass/app.scss */
+/* line 1069, ../sass/app.scss */
 .lsx-portfolio-wrapper .lsx-portfolio .jetpack-portfolio .portfolio-content-wrapper .portfolio-title {
   opacity: 0;
   font-size: 22px;
@@ -9405,10 +9406,9 @@ header.page-header {
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-/* line 1085, ../sass/app.scss */
+/* line 1086, ../sass/app.scss */
 .lsx-portfolio-wrapper .lsx-portfolio .jetpack-portfolio .portfolio-content-wrapper.active .portfolio-title {
   opacity: 1;
-  border: none !important;
 }
 /* line 1090, ../sass/app.scss */
 .lsx-portfolio-wrapper .lsx-portfolio .jetpack-portfolio .portfolio-content-wrapper.active img {

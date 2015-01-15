@@ -1059,6 +1059,7 @@ header.page-header {
 
 				.portfolio-thumbnail {
 					overflow: hidden;
+					border: none !important;
 
 					img {
 						@include transition(all .4s ease-in-out);
@@ -1084,7 +1085,6 @@ header.page-header {
 				&.active {
 					.portfolio-title {
 						opacity: 1;
-						border: none !important;
 					}
 
 					img {
