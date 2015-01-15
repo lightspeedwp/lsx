@@ -120,7 +120,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		    	$cats = array();
 		    	foreach($post_categories as $c){
 		    			$cat = get_category( $c );
-		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a> ';
+		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
 		    	}
 		    	if(!empty($cats)){ ?>
 					<div class="post-categories">
