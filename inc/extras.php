@@ -265,6 +265,15 @@ function lsx_allowed_related_post_types($allowed_post_types) {
 	return $allowed_post_types;
 }
 
+/**
+ * Set the Portfolio to 9 posts per page
+ */
+function lsx_portfolio_archive_pagination( $query ) {
+	if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() ) {
+		$query->set( 'posts_per_page', get_option( 'jetpack_portfolio_posts_per_page', '9' ) );
+	}
+}
+add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
 
 /**
  * Remove the Category from the Jetpack related posts.
