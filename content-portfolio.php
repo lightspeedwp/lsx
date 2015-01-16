@@ -4,9 +4,18 @@
  *
  * @package lsx
  */
+
+
+$type_class = "";
+$types = get_the_terms( get_the_ID(), 'jetpack-portfolio-type');
+if ($types) {
+	foreach ($types as $type) {
+		$type_class .= $type->slug . " ";
+	}
+}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($type_class); ?>>
 	<div class="portfolio-content-wrapper">
 		<?php if ( '' != get_the_post_thumbnail() ) : ?>
 			<div class="portfolio-thumbnail">

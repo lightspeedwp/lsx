@@ -14,6 +14,24 @@ jQuery(document).ready(function($) {
     }, function() {
         $(this).removeClass('active');
     });
+	
+	$('#filterNav a').click(function(){
+		var selector = $(this).attr('data-filter');
+		$('.lsx-portfolio-wrapper .lsx-portfolio').isotope({
+			filter: selector,
+			hiddenStyle : {
+		    	opacity: 0,
+		    	scale : 1
+			}
+		});
+
+		if ( !$(this).hasClass('selected') ) {
+			$(this).parents('#filterNav').find('.selected').removeClass('selected');
+			$(this).addClass('selected');
+		}
+
+		return false;
+	});	
 
     $(window).load(function() {
 		$('.lsx-portfolio').imagesLoaded( function(){

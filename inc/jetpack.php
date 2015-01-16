@@ -216,6 +216,31 @@ function lsx_website_meta_box( $object, $box ) { ?>
   </p>
 <?php }
 
+
+/**
+ * A project type filter for the portfolio template
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+function lsx_portfolio_sorter(){ ?>
+	<ul id="filterNav" class="clearfix">
+		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'themetrust'); ?></a></li>
+		<?php $j=1;
+		$types = get_terms('jetpack-portfolio-type');
+		foreach ($types as $type) {
+			$a = '<li><a href="#" data-filter=".'.$type->slug.'">';
+	    	$a .= $type->name;					
+			$a .= '</a></li>';
+			echo $a;
+			echo "\n";
+			$j++;
+		}?>
+	</ul>
+<?php } 
+
+
 /*
  * Related Posts
  */
