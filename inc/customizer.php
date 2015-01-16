@@ -156,18 +156,16 @@ if(!class_exists('LSX_Theme_Customizer')){
 			// add css live setting for output
 			if( !empty( $args['css'] ) ){
 				unset( $args['css'] );
-			}			
-
-			$default_args =	array(
-				'default' 		=> null, //Default setting/value to save
-				'type' 			=> 'theme_mod', //Is this an 'option' or a 'theme_mod'?
-				'capability'	=> 'edit_theme_options', //Optional. Special permissions for accessing this setting.
-				'transport' 	=> 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-				'sanitize_callback' =>  'esc_attr'
-			);
+			}
 
 			$wp_customize->add_setting( $slug, //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-				array_merge( $default_args, $args )
+				array_merge( array(
+					'default' 			=> null, //Default setting/value to save
+					'type' 				=> 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+					'capability'		=> 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+					'transport' 		=> 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+					'sanitize_callback' =>  'esc_attr'
+				), $args )
 			);    
 
 		}
