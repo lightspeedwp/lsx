@@ -231,6 +231,7 @@ function lsx_portfolio_sorter(){ ?>
 		<?php $j=1;
 		$types = get_terms('jetpack-portfolio-type');
 		
+		print_r($types);
 		if(is_array($types)){
 			foreach ($types as $type) {
 				$a = '<li><a href="#" data-filter=".'.$type->slug.'">';
