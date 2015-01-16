@@ -58,7 +58,7 @@ get_header(); ?>
 				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '10' );
 				$args = array(
 					'post_type'      => 'jetpack-portfolio',
-					'posts_per_page' => $posts_per_page,
+					'posts_per_page' => '-1',
 					'paged'          => $paged,
 				);
 				$project_query = new WP_Query ( $args );
