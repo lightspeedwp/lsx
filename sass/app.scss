@@ -1075,7 +1075,7 @@ header.page-header {
 	#filterNav {
 		list-style: none;
 		padding: 0;
-		margin-bottom: 40px;
+		margin-bottom: 45px;
 
 		li {
 			float: left;
@@ -1083,7 +1083,7 @@ header.page-header {
 
 			a {
 				background: $grey;
-				color: $black;
+				color: $white;
 				padding: 9px 13px;
 				border: none !important;
 				@include border-radius(3px);
@@ -1091,7 +1091,6 @@ header.page-header {
 				&:hover,
 				&.selected {
 					background: $black;
-					color: $white;
 				}
 			}
 		}
