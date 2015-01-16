@@ -232,3 +232,27 @@ function lsx_remove_related_post_context(){
 	add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
 }
 add_action('init','lsx_remove_related_post_context',20);
+
+
+/*
+ * Sharing
+ */
+
+/**
+ * Remove the sharing from automatically displaying on the portfolio pages
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category sharing
+ */
+function lsx_portfolio_remove_share() {
+	if('portfolio' == get_post_type()){
+		remove_filter( 'the_content', 'sharing_display',19 );
+		remove_filter( 'the_excerpt', 'sharing_display',19 );
+		if ( class_exists( 'Jetpack_Likes' ) ) {
+			remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+		}
+	}
+}
+
+add_action( 'loop_start', 'lsx_portfolio_remove_share' ); 
