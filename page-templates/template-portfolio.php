@@ -29,7 +29,23 @@ get_header(); ?>
 				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 			</div><!-- .entry-content -->
 			
-			<?php  lsx_portfolio_sorter(); ?>
+			<ul id="filterNav" class="clearfix">
+				<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'themetrust'); ?></a></li>
+				<?php $j=1;
+				$types = get_terms('jetpack-portfolio-type');
+				
+				print_r($types);
+				if(is_array($types)){
+					foreach ($types as $type) {
+						$a = '<li><a href="#" data-filter=".'.$type->slug.'">';
+				    	$a .= $type->name;					
+						$a .= '</a></li>';
+						echo $a;
+						echo "\n";
+						$j++;
+					}
+				}?>
+			</ul>
 
 			<?php
 				if ( get_query_var( 'paged' ) ) :
