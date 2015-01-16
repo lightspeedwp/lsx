@@ -1071,6 +1071,31 @@ header.page-header {
 	.page-title {
 		margin-bottom: 40px;
 	}
+
+	#filterNav {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 40px;
+
+		li {
+			float: left;
+			margin-right: 10px;
+
+			a {
+				background: $grey;
+				color: $black;
+				padding: 9px 13px;
+				border: none !important;
+				@include border-radius(3px);
+
+				&:hover,
+				&.selected {
+					background: $black;
+					color: $white;
+				}
+			}
+		}
+	}
 }
 
 .lsx-portfolio-wrapper {
