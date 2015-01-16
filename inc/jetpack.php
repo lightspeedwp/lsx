@@ -229,13 +229,16 @@ function lsx_portfolio_sorter(){ ?>
 		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'themetrust'); ?></a></li>
 		<?php $j=1;
 		$types = get_terms('jetpack-portfolio-type');
-		foreach ($types as $type) {
-			$a = '<li><a href="#" data-filter=".'.$type->slug.'">';
-	    	$a .= $type->name;					
-			$a .= '</a></li>';
-			echo $a;
-			echo "\n";
-			$j++;
+		
+		if(is_array($types)){
+			foreach ($types as $type) {
+				$a = '<li><a href="#" data-filter=".'.$type->slug.'">';
+		    	$a .= $type->name;					
+				$a .= '</a></li>';
+				echo $a;
+				echo "\n";
+				$j++;
+			}
 		}?>
 	</ul>
 <?php } 
