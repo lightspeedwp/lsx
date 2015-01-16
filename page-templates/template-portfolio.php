@@ -29,7 +29,7 @@ get_header(); ?>
 				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 			</div><!-- .entry-content -->
 			
-			<?php //lsx_portfolio_sorter(); ?>
+			<?php lsx_portfolio_sorter(); ?>
 
 			<?php
 				if ( get_query_var( 'paged' ) ) :

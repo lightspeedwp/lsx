@@ -223,7 +223,7 @@ function lsx_website_meta_box( $object, $box ) { ?>
  * @package lsx
  * @subpackage jetpack
  * @category portfolio
- */
+ */   
 function lsx_portfolio_sorter(){ ?>
 	<ul id="filterNav" class="clearfix">
 		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'themetrust'); ?></a></li>
