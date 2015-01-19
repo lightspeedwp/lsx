@@ -76,6 +76,30 @@ function lsx_setup() {
 		'primary' => __( 'Primary Menu', 'lsx' ),
 	) );	
 	
+	add_theme_support( 'content-width', array(
+		'widths' => array(
+			'1' => array(
+				'label' => __( '1 Column', 'lsx' ),
+				'value' => '1140',
+			),
+			'2' => array(
+				'label' => __( '2 Column', 'lsx' ),
+				'value' => '750',
+			),
+		)
+	));
+	
+}
+endif; // lsx_setup
+add_action( 'after_setup_theme', 'lsx_setup' );
+
+
+/**
+ * $overwrite the $content_width var, based on the layout of the page.
+ */
+function lsx_process_content_width() {
+	global $content_width;
+
 	/**
 	 * $content_width is a global variable used by WordPress for max image upload sizes
 	 * and media embeds (in pixels).
@@ -83,30 +107,31 @@ function lsx_setup() {
 	 * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
 	 * Default: 1140px is the default Bootstrap container width.
 	 */
-	if (!isset($content_width)) { 
 	
-		$layout = get_theme_mod('lsx_layout','2cr');
-		
-		switch($layout){
-			
-			case '2cr':
-			case '2cl':
-				$content_width = 750;
-			break;
+	$content_column_widths = get_theme_support('content-width');
+	if(false != $content_column_widths){
 
-			case '1c':
-				$content_width = 750;
-			break;
-			
+		$layout = get_theme_mod('lsx_layout','2cr');
+		if(
+			is_page_template('page-templates/template-portfolio.php') ||
+			is_page_template('page-templates/template-front-page.php') ||
+			is_page_template('page-templates/template-full-width.php') ||
+			is_post_type_archive('jetpack-portfolio')
+		){
+			$layout = '1c';
 		}
-		
+
+		if(stristr($layout, '1')){
+			$content_width = $content_column_widths[0]['widths']['1']['value'];
+		}elseif(stristr($layout, '2')){
+			$content_width = $content_column_widths[0]['widths']['2']['value'];
+		}
+
 	}
 	
-	
-
 }
-endif; // lsx_setup
-add_action( 'after_setup_theme', 'lsx_setup' );
+add_action('wp_head','lsx_process_content_width');
+
 
 function lsx_layout_selector( $class, $area = 'site' ) {
 		
