@@ -116,7 +116,8 @@ function lsx_process_content_width() {
 			is_page_template('page-templates/template-portfolio.php') ||
 			is_page_template('page-templates/template-front-page.php') ||
 			is_page_template('page-templates/template-full-width.php') ||
-			is_post_type_archive('jetpack-portfolio')
+			is_post_type_archive('jetpack-portfolio') ||
+			is_tax(array('jetpack-portfolio-type','jetpack-portfolio-tag'))
 		){
 			$layout = '1c';
 		}
