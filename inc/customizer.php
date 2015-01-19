@@ -43,6 +43,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 			require get_template_directory() . '/inc/google-font-collection.php';
 			require get_template_directory() . '/inc/customizer-layout.php';
 			require get_template_directory() . '/inc/customizer-font.php';
+			require get_template_directory() . '/inc/customizer-colour.php';
 
 			$this->controls = $controls;
 

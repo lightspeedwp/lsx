@@ -62,12 +62,13 @@ if(function_exists('soliloquy')){
    'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
    'section'       =>  'colors',
    'type'          =>  'select',
-   'choices'  => array(
+   'colours'  => array(
  		'default' => esc_html__( 'Default', 'lsx' ),
    		'red' => esc_html__( 'Red', 'lsx' ),
  	  	'green' => esc_html__( 'Green', 'lsx' ),
       'brown' => esc_html__( 'Brown', 'lsx' )
  	),
+ 	'control'   =>  'LSX_Customize_Colour_Control',
 	'priority' => 1,
   );
 
