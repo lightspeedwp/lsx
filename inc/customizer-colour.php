@@ -50,7 +50,7 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 	 *
 	 * @since 3.4.0
 	 */
-	public function enqueue() {
+	public function enqueue() { 
 		// 
 		wp_enqueue_script( 'lsx-colour-control', get_template_directory_uri() .'/js/customizer-colour.js', array('jquery'), null, true );
 	}
