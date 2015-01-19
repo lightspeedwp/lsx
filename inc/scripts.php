@@ -29,6 +29,7 @@ function lsx_scripts() {
 	wp_register_script('lsx_scripts', get_template_directory_uri() . '/js/scripts.min.js', false, 'c9f983e2965b9c7888dac272e56c4f4b', true);
 	wp_register_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.7.0.min.js', false, null, false);
 	wp_enqueue_script('isotope', get_template_directory_uri().'/js/jquery.isotope.min.js', array('jquery'), '1.3.110525', true);
+	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js', array('jquery'));
 	
 	wp_register_script('custom', get_template_directory_uri() . '/js/custom/general.js', array('masonry','isotope'), null, false);
 	

@@ -66,7 +66,7 @@ get_header(); ?>
 			?>
 
 				<div class="lsx-portfolio-wrapper">
-					<div class="lsx-portfolio">
+					<div class="lsx-portfolio masonry">
 						<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
 							<?php get_template_part( 'content', 'portfolio' ); ?>
@@ -105,7 +105,5 @@ get_header(); ?>
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
-	
-	<script src="/js/imagesloaded.pkgd.min.js"></script>
 	
 <?php get_footer(); ?>

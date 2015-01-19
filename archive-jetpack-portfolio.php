@@ -66,6 +66,4 @@ get_header(); ?>
 		
 	</div><!-- #primary -->
 	
-	<script src="/js/imagesloaded.pkgd.min.js"></script>
-	
 <?php get_footer(); ?>
