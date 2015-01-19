@@ -66,7 +66,7 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 		$class = 'customize-control customize-control-' . $this->type;
 		$value = $this->value();
 
-		?>
+		?> 
 		<label>
 			<?php if ( ! empty( $this->label ) ) { ?>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
