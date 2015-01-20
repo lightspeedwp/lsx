@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
 	});	
 
     $(window).load(function() {
-		/*$('.lsx-portfolio').imagesLoaded( function(){
+		$('.lsx-portfolio').imagesLoaded( function(){
 		    $('.lsx-portfolio').masonry({
 				itemSelector: '.jetpack-portfolio',
 				isAnimated: true,
@@ -53,18 +53,23 @@ jQuery(document).ready(function($) {
 			        queue: false
 			    }
 		    });
-	    });*/
-    	
-    	$('.lsx-portfolio.masonry').masonry({
-			itemSelector: '.jetpack-portfolio',
-			isAnimated: true,
-			isFitWidth: true,
-			animationOptions: {
-		        duration: 700,
-		        easing: 'skip',
-		        queue: false
-		    }
 	    });
+		$( document.body ).on( 'post-load', function () {
+			
+		    $('.lsx-portfolio').masonry({
+				itemSelector: '.infinite-wrap .jetpack-portfolio',
+				isAnimated: true,
+				isFitWidth: true,
+				animationOptions: {
+			        duration: 700,
+			        easing: 'linear',
+			        queue: false
+			    }
+		    });
+	    	
+	    	alert('hello');
+	    } );
+
     	
     	
     	/*lsx_set_portfolio_columns();

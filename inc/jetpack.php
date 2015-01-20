@@ -121,8 +121,6 @@ function lsx_portfolio_archive_slug() {
 
 	$portfolio_archive_slug = get_theme_mod('lsx_portfolio_slug','portfolio');
 	
-	//die(print_r($portfolio_archive_slug));
-	
 	if('portfolio' != $portfolio_archive_slug  && isset($wp_post_types['jetpack-portfolio'])){
 
 		$wp_post_types['jetpack-portfolio']->has_archive = $portfolio_archive_slug;
@@ -137,7 +135,10 @@ function lsx_portfolio_archive_slug() {
 		
 		$archive_slug = $wp_rewrite->root . $portfolio_archive_slug;
 		add_rewrite_rule( "{$archive_slug}/?$", "index.php?post_type=jetpack-portfolio", 'top' );
-
+		
+		if ( $wp_post_types['jetpack-portfolio']->rewrite['pages'] ){
+			add_rewrite_rule( "{$archive_slug}/{$wp_rewrite->pagination_base}/([0-9]{1,})/?$", "index.php?post_type=jetpack-portfolio" . '&paged=$matches[1]', 'top' );
+		}
 		flush_rewrite_rules();
 
 	}

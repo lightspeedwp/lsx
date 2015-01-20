@@ -63,8 +63,6 @@ function lsx_setup() {
 	*/
 	add_theme_support( 'post-formats', array('image', 'video', 'gallery') );
 	
-	
-	
 	$infinite_scroll_args = array(
 		'container' => 'main',
 		'type' => 'click',
