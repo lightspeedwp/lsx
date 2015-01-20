@@ -293,6 +293,10 @@ add_action('init','lsx_remove_related_post_context',20);
  */
  function lsx_infinite_scroll_render() {
 	global $wp_query;
-	print_r($wp_query);
-	get_template_part( 'content', get_post_type() );
+	
+	if('jetpack-portfolio' == $wp_query->query['post_type']){
+		get_template_part( 'content', 'portfolio' );
+	}else{
+		get_template_part( 'content', get_post_type() );
+	}
  }
