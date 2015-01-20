@@ -61,7 +61,7 @@ jQuery(document).ready(function($) {
 			isFitWidth: true,
 			animationOptions: {
 		        duration: 700,
-		        easing: 'linear',
+		        easing: 'skip',
 		        queue: false
 		    }
 	    });

@@ -115,10 +115,29 @@ function lsx_portfolio_archive_pagination( $query ) {
 }
 add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
 
+/**
+ * Remove the sharing from below the content on single portfolio pages.
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+function lsx_portfolio_remove_share() {
+
+	if(is_single() && 'jetpack-portfolio' == get_post_type()){
+		remove_filter( 'the_content', 'sharing_display',19 );
+		remove_filter( 'the_excerpt', 'sharing_display',19 );
+		if ( class_exists( 'Jetpack_Likes' ) ) {
+			remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+		}
+	}
+}
+
+add_action( 'loop_start', 'lsx_portfolio_remove_share' );
 
 
 /**
- * Set the Portfolio to 9 posts per page
+ * Redirect the template archive to our one
  * 
  * @package lsx
  * @subpackage jetpack
