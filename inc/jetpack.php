@@ -281,3 +281,18 @@ function lsx_remove_related_post_context(){
 	add_filter( 'rest_api_allowed_post_types', 'lsx_allowed_related_post_types' );
 }
 add_action('init','lsx_remove_related_post_context',20);
+
+
+/**
+ * Set the code to be rendered on for calling posts,
+ * hooked to template parts when possible.
+ * 
+ * @package lsx
+ * @subpackage jetpack
+ * @category infinite scroll
+ */
+ function lsx_infinite_scroll_render() {
+	global $wp_query;
+	print_r($wp_query);
+	get_template_part( 'content', get_post_type() );
+ }

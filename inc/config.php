@@ -68,6 +68,7 @@ function lsx_setup() {
 		'container' => 'main',
 		'type' => 'click',
 		'posts_per_page' => get_option('posts_per_page',10),
+		'render'    => 'lsx_infinite_scroll_render'
 	) );	
 		
 
