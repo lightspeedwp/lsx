@@ -190,7 +190,7 @@ if(function_exists('soliloquy')){
   /*
    * Site Icon
   */
-  
+  /*
   $controls['sections']['site-logo'] = array(
   		'title'       =>  esc_html__( 'Site Logo', 'lsx' ),
   		'description' => __( 'Upload an image to', 'lsx' ),
@@ -219,7 +219,7 @@ if(function_exists('soliloquy')){
   				'2cl'
   		)
   );  
-  
+  */
     
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
