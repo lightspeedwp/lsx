@@ -31,7 +31,7 @@ get_header(); ?>
 				<?php lsx_portfolio_sorter(); ?>
 
 				<div class="lsx-portfolio-wrapper">
-					<div class="lsx-portfolio">
+					<div id="portfolio-infinite-scroll-wrapper" class="lsx-portfolio masonry">
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<?php get_template_part( 'content', 'portfolio' ); ?>

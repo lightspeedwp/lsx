@@ -87,6 +87,35 @@ add_filter('lsx_customizer_controls','lsx_portfolio_customizer_options',10);
  * @subpackage jetpack
  * @category portfolio
  */
+function lsx_portfolio_infinite_scroll(){
+	global $_wp_theme_features,$wp_query;
+
+	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag')){
+		
+		if(is_array($_wp_theme_features['infinite-scroll']) && is_array($_wp_theme_features['infinite-scroll'][0])){
+			$_wp_theme_features['infinite-scroll'][0]['container'] = 'portfolio-infinite-scroll-wrapper';
+			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = get_option( 'jetpack_portfolio_posts_per_page', '9' );
+		}
+	}
+	
+	/*add_theme_support( 'infinite-scroll', array(
+	'container' => 'main',
+	'type' => 'click',
+	'posts_per_page' => get_option('posts_per_page',10),
+	'render'    => 'lsx_infinite_scroll_render'
+	
+	) );*/
+
+}
+add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
+
+/**
+ * Set the Portfolio archive slug
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
 function lsx_portfolio_archive_slug() {
 	global $wp_post_types,$wp_rewrite;
 
@@ -361,9 +390,13 @@ add_action('init','lsx_remove_related_post_context',20);
  function lsx_infinite_scroll_render() {
 	global $wp_query;
 	
-	if('jetpack-portfolio' == $wp_query->query['post_type']){
-		get_template_part( 'content', 'portfolio' );
-	}else{
-		get_template_part( 'content', get_post_type() );
+	while(have_posts()){
+		the_post();
+		
+		if('jetpack-portfolio' == get_post_type()){
+			get_template_part( 'content', 'portfolio' );
+		}else{
+			get_template_part( 'content', get_post_type() );
+		}
 	}
  }
