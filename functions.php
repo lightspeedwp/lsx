@@ -186,6 +186,41 @@ if(function_exists('soliloquy')){
     ),
   'priority' => 2,
   );    
+  
+  /*
+   * Site Icon
+  */
+  
+  $controls['sections']['site-logo'] = array(
+  		'title'       =>  esc_html__( 'Site Logo', 'lsx' ),
+  		'description' => __( 'Upload an image to', 'lsx' ),
+  		'priority' => 112
+  );
+  
+  $controls['settings']['lsx_layout']  = array(
+  		'default'       =>  '2cr', //Default setting/value to save
+  		'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+  		'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+  		'layouts'		=>	array(
+  				'1c',
+  				'2cr',
+  				'2cl'
+  		),
+  		'sanitize_callback' =>  'esc_attr' // santize setting callback
+  );
+  /// add the control
+  $controls['fields']['lsx_layout'] = array(
+  		'label'         =>  '',
+  		'section'       =>  'lsx-layout',
+  		'control'   =>  'WP_Customize_Image_Control',
+  		'layouts'		=>	array(
+  				'1c',
+  				'2cr',
+  				'2cl'
+  		)
+  );  
+  
+    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
 

@@ -7,6 +7,77 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @package lsx
  */
 
+function lsx_layout_selector( $class, $area = 'site' ) {
+
+	$layout = get_theme_mod('lsx_layout');
+
+	$default_size = 'sm';
+	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+
+	switch ( $layout ) {
+		case '1c':
+			$main_class = 'col-' . $size . '-12';
+			$sidebar_class = 'col-' . $size . '-12';
+			break;
+		case '2cl':
+			$main_class = 'col-' . $size . '-8';
+			$sidebar_class = 'col-' . $size . '-4';
+			break;
+		case '2cr':
+			$main_class = 'col-' . $size . '-8 col-' . $size . '-push-4';
+			$sidebar_class = 'col-' . $size . '-4 col-' . $size . '-pull-8';
+			break;
+		default:
+			$main_class = 'col-' . $size . '-8';
+			$sidebar_class = 'col-' . $size . '-4';
+			break;
+	}
+
+	if ( $class == 'main' ) {
+		return $main_class;
+	}
+
+	if ( $class == 'sidebar' ) {
+		return $sidebar_class;
+	}
+}
+
+/**
+ * .main classes
+ */
+function lsx_main_class() {
+	return lsx_layout_selector( 'main' );
+}
+
+function lsx_home_main_class() {
+	return lsx_layout_selector( 'main', 'home' );
+}
+
+/**
+ * Outputs the class for the main div on the index.php page only
+ */
+function lsx_index_main_class() {
+
+	$show_on_front = get_option('show_on_front');
+	if('page' == $show_on_front){
+		return lsx_layout_selector( 'main', 'home' );
+	}else{
+		return lsx_layout_selector( 'main', 'site' );
+	}
+
+}
+
+/**
+ * .sidebar classes
+ */
+function lsx_sidebar_class() {
+	return lsx_layout_selector( 'sidebar' );
+}
+
+function lsx_home_sidebar_class() {
+	return lsx_layout_selector( 'sidebar', 'home' );
+}
+
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {

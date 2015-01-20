@@ -95,7 +95,11 @@ add_action( 'after_setup_theme', 'lsx_setup' );
 
 
 /**
- * $overwrite the $content_width var, based on the layout of the page.
+ * Overwrite the $content_width var, based on the layout of the page.
+ * 
+ * @package	lsx
+ * @subpackage config
+ * @category content_width
  */
 function lsx_process_content_width() {
 	global $content_width;
@@ -134,77 +138,6 @@ function lsx_process_content_width() {
 add_action('wp_head','lsx_process_content_width');
 
 
-function lsx_layout_selector( $class, $area = 'site' ) {
-		
-	$layout = get_theme_mod('lsx_layout');
-
-	$default_size = 'sm';
-	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );
-
-	switch ( $layout ) {
-		case '1c':
-			$main_class = 'col-' . $size . '-12';
-			$sidebar_class = 'col-' . $size . '-12';
-			break;
-		case '2cl':
-			$main_class = 'col-' . $size . '-8';
-			$sidebar_class = 'col-' . $size . '-4';
-			break;
-		case '2cr':
-			$main_class = 'col-' . $size . '-8 col-' . $size . '-push-4';
-			$sidebar_class = 'col-' . $size . '-4 col-' . $size . '-pull-8';
-			break;
-		default:
-			$main_class = 'col-' . $size . '-8';
-			$sidebar_class = 'col-' . $size . '-4';
-			break;
-	}
-
-	if ( $class == 'main' ) {
-		return $main_class;
-	}
-
-	if ( $class == 'sidebar' ) {
-		return $sidebar_class;
-	}
-}
-
-/**
- * .main classes
- */
-function lsx_main_class() {
-  	return lsx_layout_selector( 'main' );
-}
-
-function lsx_home_main_class() {
-	return lsx_layout_selector( 'main', 'home' );
-}
-
-/**
- * Outputs the class for the main div on the index.php page only
- */
-function lsx_index_main_class() {
-	
-	$show_on_front = get_option('show_on_front');
-	if('page' == $show_on_front){
-		return lsx_layout_selector( 'main', 'home' );
-	}else{
-		return lsx_layout_selector( 'main', 'site' );
-	}
-	
-}
-
-/**
- * .sidebar classes
- */
-function lsx_sidebar_class() {
-  	return lsx_layout_selector( 'sidebar' );
-}
-
-function lsx_home_sidebar_class() {
-	return lsx_layout_selector( 'sidebar', 'home' );
-}
-
 /**
  * Disable the comments form by default for the page post type.
  */
@@ -218,3 +151,81 @@ function lsx_page_comments_off( $data ) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
+
+
+/*
+ * ===================	Tiny MCE  ===================
+ */
+
+/**
+ * Adds a Button to the second row of TinyMCE Buttons
+ * 
+ * @package	lsx
+ * @subpackage config
+ * @category TinyMCE
+ * @param	$buttons array()
+ * @return	$buttons array()
+ */
+function lsx_mce_buttons_2($buttons) {
+	
+	array_unshift($buttons, 'styleselect');
+	return $buttons;
+	
+}
+add_filter('mce_buttons_2', 'lsx_mce_buttons_2');
+
+
+/**
+ *  Callback function to filter the MCE settings
+ *
+ * @package	lsx
+ * @subpackage config
+ * @category TinyMCE
+ * @param	$init_array array()
+ * @return	$init_array array()
+ */
+function lsx_mce_before_init_insert_formats( $init_array ) {
+
+	$style_formats = array(
+			// Each array child is a format with it's own settings
+			array(
+					'title' => 'Content Block',
+					'block' => 'span',
+					'classes' => 'content-block',
+					'wrapper' => true,
+						
+			),
+			array(
+					'title' => 'Blue Button',
+					'block' => 'span',
+					'classes' => 'blue-button',
+					'wrapper' => true,
+			),
+			array(
+					'title' => 'Red Button',
+					'block' => 'span',
+					'classes' => 'red-button',
+					'wrapper' => true,
+			),
+	);
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );
+	return $init_array;
+
+}
+add_filter( 'tiny_mce_before_init', 'lsx_mce_before_init_insert_formats' );
+
+/**
+ *  Registers our themes editor stylesheet.
+ *
+ * @package	lsx
+ * @subpackage config
+ * @category TinyMCE
+ * @param	$init_array array()
+ * @return	$init_array array()
+ */
+function lsx_add_editor_styles() {
+	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
+}
+add_action( 'init', 'lsx_add_editor_styles' );
+

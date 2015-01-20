@@ -1,0 +1,36 @@
+.content-block { 
+    border:1px solid #eee; 
+    padding:3px;
+    background:#ccc;
+    max-width:250px;
+    float:right; 
+    text-align:center;
+}
+.content-block:after { 
+    clear:both;
+} 
+.blue-button { 
+	background-color:#33bdef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding:6px 24px;
+	text-decoration:none;
+}
+
+.red-button {
+	background-color:#bc3315;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding:6px 24px;
+	text-decoration:none;
+}
