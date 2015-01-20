@@ -66,8 +66,7 @@ jQuery(document).ready(function($) {
 			        queue: false
 			    }
 		    });
-	    	
-	    	alert('hello');
+
 	    } );
 
     	
