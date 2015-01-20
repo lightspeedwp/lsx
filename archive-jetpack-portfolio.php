@@ -10,7 +10,11 @@ get_header(); ?>
 			<?php lsx_content_top(); ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php the_archive_title(); ?></h1>		
+				<?php if(is_post_type_archive()){ ?>
+					<h1 class="page-title"><?php _e('Projects','lsx'); ?></h1>
+				<?php } else { ?>
+					<h1 class="page-title"><?php the_archive_title(); ?></h1>
+				<?php } ?>	
 			</header><!-- .entry-header -->
 
 			
@@ -20,13 +24,14 @@ get_header(); ?>
 				</div>
 			<?php } ?>
 			
-
 			<?php
 				if ( post_type_exists( 'jetpack-portfolio' ) && have_posts() ) :
 			?>
+				
+				<?php lsx_portfolio_sorter(); ?>
 
 				<div class="lsx-portfolio-wrapper">
-					<div class="lsx-portfolio">
+					<div id="portfolio-infinite-scroll-wrapper" class="lsx-portfolio masonry">
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<?php get_template_part( 'content', 'portfolio' ); ?>
