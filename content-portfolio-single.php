@@ -33,7 +33,7 @@
 				
 				<?php lsx_post_nav(); ?>	
 				
-				<?php 
+				<?php  
 					if ( function_exists( 'sharing_display' ) ) {
 						sharing_display( '', true );
 					}
