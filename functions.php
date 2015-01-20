@@ -220,7 +220,8 @@ if(function_exists('soliloquy')){
   		)
   );  
   */
-    
+  
+$controls = apply_filters('lsx_customizer_controls', $controls);    
 
 $lsx_customizer = new LSX_Theme_Customizer( $controls );
 
