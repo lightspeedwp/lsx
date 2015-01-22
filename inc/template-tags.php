@@ -332,9 +332,11 @@ if(!function_exists('lsx_site_identity')){
 
 		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
-		} else {
+		} 
+		
+		if(true == get_theme_mod('site_logo_header_text',1)){
 			lsx_site_title();
-		}	
+		}
 	}
 }
 

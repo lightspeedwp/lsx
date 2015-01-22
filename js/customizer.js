@@ -32,14 +32,26 @@
 		value.bind( function( newval ) {
 			if($( 'body' ).hasClass('has-site-logo')){
 			}else{
+				
+				/*jQuery.ajax({
+			        type: "post",
+			        url: lsx_customizer_params.ajaxurl,
+			        data: {
+			            action: 'wp_ajax_customizer_site_title'
+			        },
+			        success: function(response){ //so, if data is retrieved, store it in html
+			            //if no categories are found
+			            if(response != "") {
+			            	$( 'body .navbar-header' ).ammed(response);
+			            }
+			        }
+			    });*/	
+				
+				alert($('#customize-control-site_logo_header_text input').val());
 			}
 			
-			//alert($('#customize-control-site_logo_header_text input').val());
+			
 			
 		} );
 	} );	
-	
-	
-		
-	site_logo
 } )( jQuery );

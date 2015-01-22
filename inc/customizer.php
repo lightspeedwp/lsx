@@ -47,8 +47,11 @@ if(!class_exists('LSX_Theme_Customizer')){
 
 			$this->controls = $controls;
 
-			add_action( 'customize_preview_init', array($this,'customize_preview_js' ));
+			add_action( 'customize_preview_init', array($this,'customize_preview_js' ),20);
 			add_action( 'customize_register', array($this,'customizer'), 11 );
+			
+			add_action( 'wp_ajax_customizer_site_title', array($this,'ajax_site_title') );
+			add_action('wp_ajax_nopriv_customizer_site_title', array($this,'ajax_site_title'));			
 
 			// write CSS customisations to live site
 			add_action( 'wp_head' , array( $this , 'header_output' ), 55 );
@@ -58,7 +61,8 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
 		 */
 		function customize_preview_js() {			
-			wp_enqueue_script( 'lsx_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), wp_get_theme()->Version, true );
+			
+			wp_enqueue_script( 'lsx_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ) , wp_get_theme()->Version, true );			
 		}
 			
 		
@@ -305,6 +309,14 @@ if(!class_exists('LSX_Theme_Customizer')){
 			/* Return array. */
 			return $data;
 		
-		}		
+		}	
+		
+		/**
+		 * Returns the site title via ajax
+		 */
+		public function ajax_site_title() {
+			lsx_site_identity();
+		}
+		
 	}	
 }
