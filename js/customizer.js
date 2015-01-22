@@ -6,13 +6,40 @@
 
 ( function( $ ) {
 	
-	// template for postMessage transport.
-	wp.customize( 'my_setting', function( message ) {
-		// push message
-		message.bind( function( value ) {
-			// Do stuff with pushed message value
-			$( 'a' ).css( 'color' , value );
+	// Update the site title in real time...
+	wp.customize( 'blogname', function( value ) {
+		value.bind( function( newval ) {
+			$( 'h1.site-title a' ).html( newval );
+		} );
+	} );
+	
+	//Update the site description in real time...
+	wp.customize( 'blogdescription', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site-description' ).html( newval );
+		} );
+	} );
+
+	//Update site background color...
+	wp.customize( 'background_color', function( value ) {
+		value.bind( function( newval ) {
+			$('body').css('background-color', newval );
+		} );
+	} );
+	
+	//Site Logo js for Jetpacks Site Logo
+	wp.customize( 'site_logo', function( value ) {
+		value.bind( function( newval ) {
+			if($( 'body' ).hasClass('has-site-logo')){
+			}else{
+			}
+			
+			//alert($('#customize-control-site_logo_header_text input').val());
+			
 		} );
 	} );	
 	
+	
+		
+	site_logo
 } )( jQuery );

@@ -38,45 +38,14 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
 
 	      		<span class="mobile-menu-title">Menu</span>
 
-				<?php
-					if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-						jetpack_the_site_logo();
-					} else {
-						lsx_site_title();
-					}
-				?>
+				<?php lsx_site_identity(); ?>
 		    </div>
 
 			<?php lsx_nav_before(); ?>
 			
-			<?php 		    		
-				$nav_menu = get_theme_mod('nav_menu_locations',array());
-		    	if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
-					<nav class="collapse navbar-collapse" role="navigation">
-				    	<?php
-							wp_nav_menu( array(
-							'menu' => $nav_menu['primary'],
-							'depth' => 2,
-							'container' => false,
-							'menu_class' => 'nav navbar-nav',
-							'walker' => new lsx_bootstrap_navwalker())
-							);
-						?>
-		    		</nav>
-	    		<?php } else { ?>
-    			<nav class="collapse navbar-collapse" role="navigation">
-			    	<?php
-						wp_nav_menu( array(
-						'menu' => $nav_menu,
-						'depth' => 2,
-						'container' => false,
-						'menu_class' => 'nav navbar-nav',
-						'walker' => new lsx_bootstrap_navwalker())
-						);
-					?>
-	    		</nav>
-	    	</div>
-	  		<?php } ?>
+			<?php lsx_nav_menu(); ?>
+	  		
+	  		<?php lsx_nav_after(); ?>
 	  		
 	  	<?php lsx_header_bottom(); ?>
 

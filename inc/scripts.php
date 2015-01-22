@@ -2,14 +2,10 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Scripts and Styles file
- * See: http://jetpack.me/
- *
- * @package lsx
- */
-
-/**
  * Enqueue scripts and styles.
+ *
+ * @package 	lsx
+ * @subpackage	scripts
  */
 function lsx_scripts() {
 

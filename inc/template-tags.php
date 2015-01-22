@@ -320,3 +320,58 @@ function lsx_posted_on() {
 	echo ' '.__('on').' ' . get_the_date( 'D jS F Y ' ) . ' '.__('in').' ' . get_the_category_list( ', ', '', $post->ID );
 }
 endif;
+
+/**
+ * Outputs either the Site Title or the Site Logo
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ */
+if(!function_exists('lsx_site_identity')){
+	function lsx_site_identity(){
+
+		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+			jetpack_the_site_logo();
+		} else {
+			lsx_site_title();
+		}	
+	}
+}
+
+/**
+ * Outputs the Nav Menu
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ */
+if(!function_exists('lsx_nav_menu')){
+	function lsx_nav_menu(){
+		$nav_menu = get_theme_mod('nav_menu_locations',array());
+	    if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+			<nav class="collapse navbar-collapse" role="navigation">
+		    	<?php
+				wp_nav_menu( array(
+					'menu' => $nav_menu['primary'],
+					'depth' => 2,
+					'container' => false,
+					'menu_class' => 'nav navbar-nav',
+					'walker' => new lsx_bootstrap_navwalker())
+				);
+				?>
+		   		</nav>
+	    	<?php } else { ?>
+	    		<nav class="collapse navbar-collapse" role="navigation">
+		  	<?php
+			wp_nav_menu( array(
+				'menu' => $nav_menu,
+				'depth' => 2,
+				'container' => false,
+				'menu_class' => 'nav navbar-nav',
+				'walker' => new lsx_bootstrap_navwalker())
+			);
+			?>
+	    	</nav>
+	    </div>
+	  	<?php }
+	}
+}

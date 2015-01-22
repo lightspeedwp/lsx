@@ -69,6 +69,10 @@ function lsx_nav_before() {
 	do_action( 'lsx_nav_before' );
 }
 
+function lsx_nav_after() {
+	do_action( 'lsx_nav_after' );
+}
+
 /**
 * Semantic <content> hooks
 * 
