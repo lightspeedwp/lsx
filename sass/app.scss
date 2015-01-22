@@ -1228,12 +1228,6 @@ header.page-header {
 
 	.widget {
 		margin-bottom: 30px;
-
-		&:nth-of-type(1) {
-			.widget-title {
-				margin-top: 2px !important;
-			}
-		}
 		
 		.home &.widget_search {
 			margin-top: 20px;
@@ -1576,6 +1570,10 @@ article {
 
 #footer-widgets {
 	background: $black;
+
+	.footer-widgets-title {
+		display: none;
+	}
 
 	.widget {
 		margin: 70px 0 90px;

@@ -242,4 +242,5 @@ function lsx_register_social_menu() {
   register_nav_menu('social', __( 'Social Menu' , 'lsx' ));
 }
 add_action( 'init', 'lsx_register_social_menu' );
+
 ?>
