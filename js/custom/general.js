@@ -56,8 +56,11 @@ jQuery(document).ready(function($) {
 	    });
 		$( document.body ).on( 'post-load', function () {
 			
+			$('.lsx-portfolio').append($('.infinite-wrap').html());
+			$('.infinite-wrap').html('');
+			
 		    $('.lsx-portfolio').masonry({
-				itemSelector: '.infinite-wrap .jetpack-portfolio',
+				itemSelector: '.jetpack-portfolio',
 				isAnimated: true,
 				isFitWidth: true,
 				animationOptions: {

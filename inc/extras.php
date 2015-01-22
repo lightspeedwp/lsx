@@ -242,7 +242,7 @@ function lsx_is_element_empty($element) {
  * return the responsive images.
  */
 function lsx_get_thumbnail($size){
-	
+	global $post;
 	$post_id = ( null === $post_id ) ? get_the_ID() : $post_id;
 	$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	
