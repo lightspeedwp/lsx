@@ -243,6 +243,4 @@ function lsx_register_social_menu() {
 }
 add_action( 'init', 'lsx_register_social_menu' );
 
-add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) );
-
 ?>
