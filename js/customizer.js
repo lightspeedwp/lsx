@@ -1,7 +1,7 @@
 /**
  * Theme Customizer enhancements for a better user experience.
  *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ * This is the JS that runs on the site in the preview window
  */
 
 ( function( $ ) {
@@ -27,31 +27,19 @@
 		} );
 	} );
 	
-	//Site Logo js for Jetpacks Site Logo
-	wp.customize( 'site_logo', function( value ) {
+	//Update site background color...
+	wp.customize( 'lsx_color_scheme', function( value ) {
+
 		value.bind( function( newval ) {
-			if($( 'body' ).hasClass('has-site-logo')){
-			}else{
-				
-				/*jQuery.ajax({
-			        type: "post",
-			        url: lsx_customizer_params.ajaxurl,
-			        data: {
-			            action: 'wp_ajax_customizer_site_title'
-			        },
-			        success: function(response){ //so, if data is retrieved, store it in html
-			            //if no categories are found
-			            if(response != "") {
-			            	$( 'body .navbar-header' ).ammed(response);
-			            }
-			        }
-			    });*/	
-				
-				alert($('#customize-control-site_logo_header_text input').val());
-			}
 			
-			
+			$("<link/>", {
+				   rel: "stylesheet",
+				   type: "text/css",
+				   href: lsx_customizer_params.template_directory+"/css/"+newval+".css"
+			}).appendTo("head");
 			
 		} );
 	} );	
+	
+
 } )( jQuery );

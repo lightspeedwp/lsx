@@ -62,7 +62,10 @@ if(!class_exists('LSX_Theme_Customizer')){
 		 */
 		function customize_preview_js() {			
 			
-			wp_enqueue_script( 'lsx_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ) , wp_get_theme()->Version, true );			
+			wp_enqueue_script( 'lsx_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ) , wp_get_theme()->Version, true );
+			wp_localize_script( 'lsx_customizer', 'lsx_customizer_params', array(
+			'template_directory' => get_template_directory_uri()
+			) );
 		}
 			
 		
