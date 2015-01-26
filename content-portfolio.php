@@ -21,7 +21,7 @@ if ($types) {
 		<?php if ( '' != get_the_post_thumbnail() ) : ?>
 			<div class="portfolio-thumbnail">
 				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail(); ?>
+					<?php lsx_thumbnail( 'thumbnail' ); ?>
 				</a>
 			</div>
 		<?php endif; ?>
