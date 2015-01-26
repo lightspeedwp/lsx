@@ -42,7 +42,9 @@ jQuery(document).ready(function($) {
 	});	
 
     $(window).load(function() {
+    	
 		$('.lsx-portfolio').imagesLoaded( function(){
+			
 		    $('.lsx-portfolio').masonry({
 				itemSelector: '.jetpack-portfolio',
 				isAnimated: true,
@@ -53,33 +55,43 @@ jQuery(document).ready(function($) {
 			        queue: false
 			    }
 		    });
+		    
 	    });
+		
 		$( document.body ).on( 'post-load', function () {
 			
 			$('.lsx-portfolio').append($('.infinite-wrap').html());
 			$('.infinite-wrap').html('');
 			
-		    $('.lsx-portfolio').masonry({
-				itemSelector: '.jetpack-portfolio',
-				isAnimated: true,
-				isFitWidth: true,
-				animationOptions: {
-			        duration: 700,
-			        easing: 'linear',
-			        queue: false
-			    }
-		    });
+			$('img.lsx-responsive').each( function() {
+				$(this).attr('src',$(this).attr('data-desktop'));
+			});	
+			
+			$('.lsx-portfolio').masonry('destroy');
 
+			$('.lsx-portfolio').imagesLoaded( function(){
+			    $('.lsx-portfolio').masonry({
+					itemSelector: '.jetpack-portfolio',
+					isAnimated: true,
+					isFitWidth: true,
+					animationOptions: {
+				        duration: 700,
+				        easing: 'linear',
+				        queue: false
+				    }
+			    });
+			});
+		    console.log('reloaded');
 	    } );
 
     	
     	
-    	lsx_set_portfolio_columns();
-		$('.lsx-portfolio.masonry').isotope({
+    	/*lsx_set_portfolio_columns();*/
+		/*$('.lsx-portfolio.masonry').isotope({
 			resizable: false,
 			layoutMode: 'fitRows',	
 			masonry: {
-				columnWidth: colW,
+				columnWidth: 300,
 				isFitWidth: true,
 				itemSelector: '.jetpack-portfolio',
 				isAnimated: true,				
@@ -89,7 +101,7 @@ jQuery(document).ready(function($) {
 			        queue: false
 			    }				
 			}
-		});
+		});*/
 		
 		
 		
