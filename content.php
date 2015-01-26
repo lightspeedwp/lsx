@@ -30,7 +30,7 @@
 		</h1>		
 	</header><!-- .entry-header -->	
 
-	<?php if ( is_single() && is_singular() ) : // Only display Excerpts for Search and Archives ?>
+	<?php if ( !is_singular() ) : // Only display Excerpts for Search and Archives ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>		
 		</div><!-- .entry-summary -->
