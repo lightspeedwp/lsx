@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
 
     	
     	
-    	/*lsx_set_portfolio_columns();
+    	lsx_set_portfolio_columns();
 		$('.lsx-portfolio.masonry').isotope({
 			resizable: false,
 			layoutMode: 'fitRows',	
@@ -89,7 +89,11 @@ jQuery(document).ready(function($) {
 			        queue: false
 			    }				
 			}
-		});	*/
+		});
+		
+		
+		
+		
 		
 		$('img.lsx-responsive').each( function() {
 			$(this).attr('src',$(this).attr('data-desktop'));
