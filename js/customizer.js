@@ -39,7 +39,7 @@
 			}).appendTo("head");
 			
 		} );
-	} );	
+	} ); 	
 	
 
 } )( jQuery );
