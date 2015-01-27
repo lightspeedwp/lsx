@@ -603,6 +603,10 @@ nav {
 						}
 					}
 				}
+				
+				&.dropdown:hover > ul.dropdown-menu {
+					display: block;
+				}				
 
 				&:hover,
 				&.open {
@@ -641,6 +645,8 @@ nav {
 						background: $light-grey;
 						margin-bottom: 15px;
 					}
+					
+
 
 					li {
 						a {
