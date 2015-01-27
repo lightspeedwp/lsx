@@ -73,7 +73,7 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
-				$atts['href']   		= '#';
+				$atts['href']   		= ! empty( $item->url ) ? $item->url : '';
 				$atts['data-toggle']	= 'dropdown';
 				$atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
@@ -100,10 +100,11 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title ) )
-				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-			else
+			if ( ! empty( $item->attr_title ) ) {
+				$item_output .= '<a'. $attributes .'"><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
+			} else {
 				$item_output .= '<a'. $attributes .'>';
+			}
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
