@@ -55,7 +55,7 @@ if(function_exists('soliloquy')){
    'default'       =>  'default', //Default setting/value to save
    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
    'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
- 	'sanitize_callback' =>  'esc_attr' // santize setting callback
+ 	'sanitize_callback' =>  'sanitize_text_field' // santize setting callback
  );
  /// add the control
  $controls['fields']['lsx_color_scheme'] = array(
@@ -91,8 +91,9 @@ if(function_exists('soliloquy')){
     	'2cr',
     	'2cl'
     ),
-  	'sanitize_callback' =>  'esc_attr' // santize setting callback
-  ); 
+  	'sanitize_callback' =>  'sanitize_text_field' // santize setting callback
+  );
+  
   /// add the control
   $controls['fields']['lsx_layout'] = array(
     'label'         =>  '',
@@ -118,7 +119,7 @@ if(function_exists('soliloquy')){
     'default'       =>  'raleway_open_sans', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  	'sanitize_callback' =>  'esc_attr' // santize setting callback
+  	'sanitize_callback' =>  'sanitize_text_field' // santize setting callback
   );  
   /// add the control
   $controls['fields']['lsx_font'] = array(

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 function lsx_layout_selector( $class, $area = 'site' ) {
 
-	$layout = get_theme_mod('lsx_layout');
+	$layout = get_theme_mod('lsx_layout','2cr');
 
 	$default_size = 'sm';
 	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );
@@ -19,11 +19,11 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 			$main_class = 'col-' . $size . '-12';
 			$sidebar_class = 'col-' . $size . '-12';
 			break;
-		case '2cl':
+		case '2cr':
 			$main_class = 'col-' . $size . '-8';
 			$sidebar_class = 'col-' . $size . '-4';
 			break;
-		case '2cr':
+		case '2cl':
 			$main_class = 'col-' . $size . '-8 col-' . $size . '-push-4';
 			$sidebar_class = 'col-' . $size . '-4 col-' . $size . '-pull-8';
 			break;
