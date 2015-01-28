@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
 		});
 		
 		var width = $(window).width();
-		if(992 < width){
+		if(1186 < width){
 			$('.navbar-nav li.dropdown a').each(function(){
 				$(this).removeClass('dropdown-toggle');
 				$(this).removeAttr('data-toggle');
@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
 			
 			width = $(window).width();
 			console.log(width);
-			if (992 < width){
+			if (1186 < width){
 				$('.navbar-nav li.dropdown a').each(function(){
 					$(this).removeClass('dropdown-toggle');
 					$(this).removeAttr('data-toggle');
