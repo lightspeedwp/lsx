@@ -247,7 +247,7 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 		}
 		
 		
-		if(true == get_option('infinite_scroll',1) && function_exists('the_neverending_home_page_init')){
+		if(current_theme_supports('infinite-scroll') && function_exists('the_neverending_home_page_init')){
 			return true;
 		}elseif(function_exists('wp_pagenavi')){
 			wp_pagenavi();
