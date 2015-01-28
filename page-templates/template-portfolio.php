@@ -49,6 +49,8 @@ get_header(); ?>
 				$project_query = new WP_Query ( $args );
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
 			?>
+			
+				<?php lsx_portfolio_sorter(); ?>
 
 				<div class="lsx-portfolio-wrapper">
 					<div class="lsx-portfolio masonry">

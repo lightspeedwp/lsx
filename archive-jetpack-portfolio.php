@@ -28,7 +28,7 @@ get_header(); ?>
 				if ( post_type_exists( 'jetpack-portfolio' ) && have_posts() ) :
 			?>
 				
-				<?php lsx_portfolio_sorter(); ?>
+				<?php if(!is_tax()){ lsx_portfolio_sorter(); } ?>
 
 				<div class="lsx-portfolio-wrapper">
 					<div id="portfolio-infinite-scroll-wrapper" class="lsx-portfolio masonry">
