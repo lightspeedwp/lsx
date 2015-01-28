@@ -13,24 +13,46 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	$('.portfolio-content-wrapper').hover(function() {
-        $(this).addClass('active');
-    }, function() {
-        $(this).removeClass('active');
-    });
+
 
     $(window).load(function() {
     	
-		$('#main').imagesLoaded( function(){
-			
-			projectThumbInit();
-			projectFilterInit();
 
-			jQuery('#main').css('opacity', '1' );
-		    
-	    });
 		
 		if(lsx_params.is_portfolio){
+						
+			$('.portfolio-content-wrapper').hover(function() {
+		        $(this).addClass('active');
+		    }, function() {
+		        $(this).removeClass('active');
+		    });			
+
+			$('#main').imagesLoaded( function(){
+				
+				projectThumbInit();
+				projectFilterInit();
+
+				jQuery('#main').css('opacity', '1' );
+			    
+		    });			
+			
+		     var infinite_count = 0;
+		     // Triggers re-layout on infinite scroll
+		     $( document.body ).on( 'post-load', function () {
+				infinite_count = infinite_count + 1;
+
+				var selector = $('#infinite-view-' + infinite_count);
+				//var $elements = $selector.find('.jetpack-portfolio');
+				  var elements = [];
+				  selector.find('.jetpack-portfolio').each( function() {
+					  elements.push( $(this) );
+					  $('.lsx-portfolio').append($(this));
+				});
+				
+				//$elements.hide();
+				  //$('.lsx-portfolio').isotope( 'appended', elements ).fadeIn();
+				//$elements.fadeIn();
+		     });
 
 		}
     	
@@ -137,6 +159,7 @@ function projectThumbInit() {
 	gridContainer.isotope({
 		resizable: false,
 		layoutMode: 'fitRows',
+		itemSelector: '.jetpack-portfolio',
 		masonry: {
 			columnWidth: colW
 		}
