@@ -18,7 +18,7 @@ get_header(); ?>
 			</header><!-- .entry-header -->
 
 			
-			<?php if(is_tax()){ ?>
+			<?php if(is_tax()){ ?> 
 				<div class="entry-content">		
 					<?php the_archive_description(); ?>
 				</div>
