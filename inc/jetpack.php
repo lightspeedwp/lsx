@@ -143,7 +143,7 @@ function lsx_portfolio_archive_slug() {
 
 	}
 }
-add_action( 'init', 'lsx_portfolio_archive_slug' , 20 );
+//add_action( 'init', 'lsx_portfolio_archive_slug' , 20 );
 
 /**
  * Set the Portfolio to 9 posts per page

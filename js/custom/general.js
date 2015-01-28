@@ -139,7 +139,6 @@ jQuery(document).ready(function($) {
 				});				
 			}
 			
-			
 			if ('992' == width || '768' == width){
 				
 			  var attribute_name = 'data-desktop';

@@ -269,3 +269,23 @@ function lsx_get_thumbnail($size){
 function lsx_thumbnail($size = 'thumbnail'){
 	echo lsx_get_thumbnail($size);
 }
+
+/**
+ * Add Featured Image as Banner on Single Pages.
+ *
+ * @package lsx
+ * @subpackage extras
+ * @category banner
+ */
+function lsx_page_banner() {
+	global $post;
+	if ( is_singular( 'page' ) && has_post_thumbnail() ) {
+        $image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+        <div class="page-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
+          <header class="page-header">
+            <h1 class="page-title"><?php the_title(); ?></h1>   
+          </header><!-- .entry-header -->
+        </div>
+    <?php } 
+}
+add_action( 'lsx_header_after', 'lsx_page_banner' );
