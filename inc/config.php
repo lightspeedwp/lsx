@@ -204,16 +204,16 @@ function lsx_mce_before_init_insert_formats( $init_array ) {
 						
 			),
 			array(
-					'title' => 'Blue Button',
+					'title' => 'Button - Default',
 					'block' => 'span',
-					'classes' => 'blue-button',
+					'classes' => 'btn btn-default',
 					'wrapper' => true,
 			),
 			array(
-					'title' => 'Red Button',
+					'title' => 'Button - Primary',
 					'block' => 'span',
-					'classes' => 'red-button',
-					'wrapper' => true,
+					'classes' => 'btn btn-primary',
+					'wrapper' => false,
 			),
 	);
 	// Insert the array, JSON ENCODED, into 'style_formats'
