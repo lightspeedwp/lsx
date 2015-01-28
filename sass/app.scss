@@ -604,9 +604,11 @@ nav {
 					}
 				}
 				
-				&.dropdown:hover > ul.dropdown-menu {
-					display: block;
-				}				
+				@media screen and (min-width: 992px) {
+					&.dropdown:hover > ul.dropdown-menu {
+						display: block;
+					}	 
+				}			
 
 				&:hover,
 				&.open {

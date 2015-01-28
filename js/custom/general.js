@@ -112,14 +112,38 @@ jQuery(document).ready(function($) {
 		});
 		
 		var width = $(window).width();
+		if(992 < width){
+			$('.navbar-nav li.dropdown a').each(function(){
+				$(this).removeClass('dropdown-toggle');
+				$(this).removeAttr('data-toggle');
+			});
+		}
+		
+		
 		$(window).resize(function() {
 		   //if($(this).width() != width){
 			
-			if (992 == width || 768 == width){
+			width = $(window).width();
+			console.log(width);
+			if (992 < width){
+				$('.navbar-nav li.dropdown a').each(function(){
+					$(this).removeClass('dropdown-toggle');
+					$(this).removeAttr('data-toggle');
+					console.log('remove dropdown toggle');
+				});
+			}else{
+				$('.navbar-nav li.dropdown a').each(function(){
+					$(this).addClass('dropdown-toggle');
+					$(this).attr('data-toggle','dropdown');
+					console.log('adding dropdown toggle');
+				});				
+			}
+			
+			
+			if ('992' == width || '768' == width){
 				
 			  var attribute_name = 'data-desktop';
 			  
-		      width = $(this).width();
 		      //1200, 992, 768
 		      if (width >= 992) {
 

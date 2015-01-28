@@ -5943,8 +5943,9 @@ header.banner nav {
         background: none !important; }
         header.banner nav .nav.navbar-nav li a:hover {
           color: #333333 !important; } }
-  header.banner nav .nav.navbar-nav li.dropdown:hover > ul.dropdown-menu {
-    display: block; }
+  @media screen and (min-width: 992px) {
+    header.banner nav .nav.navbar-nav li.dropdown:hover > ul.dropdown-menu {
+      display: block; } }
   header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
     color: #eeeeee;
     background: #555555; }

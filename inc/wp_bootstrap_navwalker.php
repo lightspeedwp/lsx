@@ -74,8 +74,8 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= ! empty( $item->url ) ? $item->url : '';
-				$atts['data-hover']	= 'dropdown';
-				$atts['class']			= 'dropdown-hover';
+				$atts['data-toggle']	= 'dropdown';
+				$atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
