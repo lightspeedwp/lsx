@@ -151,6 +151,8 @@ function lsx_portfolio_remove_share() {
 
 	if( (is_single() && 'jetpack-portfolio' == get_post_type())
 	 || is_page_template('page-templates/template-portfolio.php')){
+
+		die('hello');
 		remove_filter( 'the_content', 'sharing_display',19 );
 		remove_filter( 'the_excerpt', 'sharing_display',19 );
 		if ( class_exists( 'Jetpack_Likes' ) ) {
