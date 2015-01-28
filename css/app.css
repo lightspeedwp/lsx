@@ -1,5 +1,5 @@
 /*!
- * LSX 1.0 
+ * LSX 1.0
  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
@@ -6277,7 +6277,12 @@ header.page-header {
       padding-left: 10px;
       padding-right: 10px;
       margin-bottom: 20px;
-      overflow: hidden; }
+      overflow: hidden;
+      display: block;
+      float: left;
+      height: auto !important;
+      transition-property: transform, opacity;
+      transition-duration: 0.8s; }
       .lsx-portfolio-wrapper .lsx-portfolio .jetpack-portfolio .portfolio-content-wrapper {
         position: relative;
         background: #232222; }

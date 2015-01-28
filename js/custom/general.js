@@ -1,4 +1,5 @@
 var colW;
+var gridContainer = jQuery('.lsx-portfolio');
 
 
 jQuery(document).ready(function($) {
@@ -17,99 +18,22 @@ jQuery(document).ready(function($) {
     }, function() {
         $(this).removeClass('active');
     });
-	
-	/*$('#filterNav a').click(function(){
-		var selector = $(this).attr('data-filter');
-		$('.lsx-portfolio-wrapper .lsx-portfolio').isotope({
-			filter: selector,
-			hiddenStyle : {
-		    	opacity: 0,
-		    	scale : 1
-			},
-			animationOptions: {
-		        duration: 700,
-		        easing: 'linear',
-		        queue: false
-		    }		
-		});
-
-		if ( !$(this).hasClass('selected') ) {
-			$(this).parents('#filterNav').find('.selected').removeClass('selected');
-			$(this).addClass('selected');
-		}
-
-		return false;
-	});	*/
 
     $(window).load(function() {
     	
-		$('.lsx-portfolio').imagesLoaded( function(){
+		$('#main').imagesLoaded( function(){
 			
-		    $('.lsx-portfolio').masonry({
-				itemSelector: '.jetpack-portfolio',
-				columnWidth: '.jetpack-portfolio',
-				isFitWidth: true,
-			    visibleStyle: { opacity: 1, transform: 'scale(1)' }
-		    });
+			projectThumbInit();
+			projectFilterInit();
+
+			jQuery('#main').css('opacity', '1' );
 		    
 	    });
 		
 		if(lsx_params.is_portfolio){
-			var infinite_count = 0;
-			$( document.body ).on( 'post-load', function () {
-				
-				infinite_count = infinite_count + 1;
-				/*$('#infinite-view-' + infinite_count+' img.lsx-responsive').each( function() {
-					$(this).attr('src',$(this).attr('data-desktop'));
-				});*/	
-				
-			    
-			    var $container = $('.lsx-portfolio').data('masonry');
-			    var $selector = $('#infinite-view-' + infinite_count);
-			    var $elements = $selector.find('.jetpack-portfolio');
-			    $elements.hide();
-			    $container.appended( $elements, true );
-			    
-			    $elements.fadeIn();
-			    $selector.html('');
-				
-				//$('.lsx-portfolio').masonry('appended',$('.infinite-wrap').html());
-	
-				/*$('.lsx-portfolio').imagesLoaded( function(){
-				    $('.lsx-portfolio').masonry({
-						itemSelector: '.jetpack-portfolio',
-						isAnimated: true,
-						isFitWidth: true,
-						animationOptions: {
-					        duration: 700,
-					        easing: 'linear',
-					        queue: false
-					    }
-				    });
-				});*/
-			    console.log('reloaded');
-		    } );
+
 		}
     	
-    	/*lsx_set_portfolio_columns();*/
-		/*$('.lsx-portfolio.masonry').isotope({
-			resizable: false,
-			layoutMode: 'fitRows',	
-			masonry: {
-				columnWidth: 300,
-				isFitWidth: true,
-				itemSelector: '.jetpack-portfolio',
-				isAnimated: true,				
-				animationOptions: {
-			        duration: 700,
-			        easing: 'linear',
-			        queue: false
-			    }				
-			}
-		});*/
-		
-		
-		
 		
 		
 		$('img.lsx-responsive').each( function() {
@@ -202,4 +126,46 @@ function gridResize() {
 			columnWidth: colW
 		}
 	});
+}
+
+///////////////////////////////
+//Project thumbs
+///////////////////////////////
+
+function projectThumbInit() {
+	lsx_set_portfolio_columns();
+	gridContainer.isotope({
+		resizable: false,
+		layoutMode: 'fitRows',
+		masonry: {
+			columnWidth: colW
+		}
+	});
+
+	jQuery(".lsx-portfolio .jetpack-portfolio").css("visibility", "visible");
+}
+
+///////////////////////////////
+//Project Filtering
+///////////////////////////////
+
+function projectFilterInit() {
+	
+	jQuery('#filterNav a').click(function(){
+		var selector = jQuery(this).attr('data-filter');
+		jQuery('.lsx-portfolio-wrapper .lsx-portfolio').isotope({
+			filter: selector,
+			hiddenStyle : {
+		    	opacity: 0,
+		    	scale : 1
+			}		
+		});
+
+		if ( !jQuery(this).hasClass('selected') ) {
+			jQuery(this).parents('#filterNav').find('.selected').removeClass('selected');
+			jQuery(this).addClass('selected');
+		}
+
+		return false;
+	});	
 }
