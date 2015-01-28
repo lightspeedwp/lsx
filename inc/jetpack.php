@@ -50,35 +50,6 @@ add_filter( 'jetpack_the_site_logo', 'lsx_site_logo_title_tag');
 /*
  * Layout Controls
 */
-/**
- * Add Featured Image as Banner on Single Portfolio Posts.
- *
- * @package lsx
- * @subpackage jetpack
- * @category portfolio
- */
-function lsx_portfolio_customizer_options($controls) {
-	$controls['sections']['lsx-portfolio'] = array(
-			'title'       =>  esc_html__( 'Portfolio', 'lsx' ),
-			'description' => __( 'Change your portfolio display settings.', 'lsx' ),
-			//'priority' => 112
-	);
-	
-	$controls['settings']['lsx_portfolio_slug']  = array(
-			'default'       =>  'portfolio', //Default setting/value to save
-			'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-			'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-			'sanitize_callback' =>  'esc_attr' // santize setting callback
-	);
-	/// add the control
-	$controls['fields']['lsx_portfolio_slug'] = array(
-			'label'         =>  'Portfolio Page Slug',
-			'section'       =>  'lsx-portfolio',
-			'type'			=>  'text'
-	);
-	return $controls;
-}
-add_filter('lsx_customizer_controls','lsx_portfolio_customizer_options',10);
 
 /**
  * Set the Portfolio archive slug
@@ -97,53 +68,9 @@ function lsx_portfolio_infinite_scroll(){
 			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = get_option( 'jetpack_portfolio_posts_per_page', '9' );
 		}
 	}
-	
-	/*add_theme_support( 'infinite-scroll', array(
-	'container' => 'main',
-	'type' => 'click',
-	'posts_per_page' => get_option('posts_per_page',10),
-	'render'    => 'lsx_infinite_scroll_render'
-	
-	) );*/
 
 }
 add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
-
-/**
- * Set the Portfolio archive slug
- *
- * @package lsx
- * @subpackage jetpack
- * @category portfolio
- */
-function lsx_portfolio_archive_slug() {
-	global $wp_post_types,$wp_rewrite;
-
-	$portfolio_archive_slug = get_theme_mod('lsx_portfolio_slug','portfolio');
-	
-	if('portfolio' != $portfolio_archive_slug  && isset($wp_post_types['jetpack-portfolio'])){
-
-		$wp_post_types['jetpack-portfolio']->has_archive = $portfolio_archive_slug;
-		
-		$wp_post_types['jetpack-portfolio']->rewrite = array(
-				'slug' => $portfolio_archive_slug,
-				'with_front' => '',
-				'feeds' => 1,
-				'pages' => 1,
-				'ep_mask' => 1,
-		);
-		
-		$archive_slug = $wp_rewrite->root . $portfolio_archive_slug;
-		add_rewrite_rule( "{$archive_slug}/?$", "index.php?post_type=jetpack-portfolio", 'top' );
-		
-		if ( $wp_post_types['jetpack-portfolio']->rewrite['pages'] ){
-			add_rewrite_rule( "{$archive_slug}/{$wp_rewrite->pagination_base}/([0-9]{1,})/?$", "index.php?post_type=jetpack-portfolio" . '&paged=$matches[1]', 'top' );
-		}
-		flush_rewrite_rules();
-
-	}
-}
-add_action( 'init', 'lsx_portfolio_archive_slug' , 20 );
 
 /**
  * Set the Portfolio to 9 posts per page
