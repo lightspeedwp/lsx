@@ -108,7 +108,7 @@ function lsx_set_portfolio_columns()
 	}else if(gw<=1700){
 			columns = 3;
 	}else{
-		columns = 6;
+		columns = 6; 
 	}
 	colW = Math.floor(gw / columns);
 	jQuery('.jetpack-portfolio').each(function(id){
