@@ -21,15 +21,10 @@ get_header(); ?>
 
 			<div class="entry-content">
 				
-				<?php if ( ! is_singular() ) {
-					the_excerpt();
-				} else {
-					the_content(); 
-				} ?>
+				<?php the_content(); ?>
+				
 				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 			</div><!-- .entry-content -->
-			
-			<?php lsx_portfolio_sorter(); ?>
 
 			<?php
 				if ( get_query_var( 'paged' ) ) :
