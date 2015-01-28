@@ -27,7 +27,7 @@ function lsx_scripts() {
 	wp_enqueue_script('isotope', get_template_directory_uri().'/js/jquery.isotope.min.js', array('jquery'), '1.3.110525', true);
 	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js', array('jquery'));
 	
-	wp_register_script('custom', get_template_directory_uri() . '/js/custom/general.js', array('masonry','isotope'), null, false);
+	wp_register_script('custom', get_template_directory_uri() . '/js/custom/general.js', array('masonry'), null, false);
 	
 	//Set some parameters that we can use in the JS
 	$is_portfolio = false;
@@ -42,7 +42,7 @@ function lsx_scripts() {
 	wp_enqueue_script('modernizr');
     wp_enqueue_script('jquery');
     wp_enqueue_script('masonry');
-    wp_enqueue_script('isotope');
+    //wp_enqueue_script('isotope');
 	wp_enqueue_script('lsx_scripts');
 	wp_enqueue_script('custom');
 	wp_enqueue_style( 'genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
