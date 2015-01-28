@@ -19,12 +19,16 @@ get_header(); ?>
 				<h1 class="page-title"><?php the_title(); ?></h1>		
 			</header><!-- .entry-header -->
 
-			<div class="entry-content">
-				
-				<?php the_content(); ?>
-				
-				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
-			</div><!-- .entry-content -->
+			<?php if(have_posts()) { ?>
+				<?php while(have_posts()) { the_post(); ?>
+					<div class="entry-content">
+						
+						<?php the_content(); ?>
+						
+						<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
+					</div><!-- .entry-content -->
+				<?php } ?>
+			<?php } ?>
 
 			<?php
 				if ( get_query_var( 'paged' ) ) :
