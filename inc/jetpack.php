@@ -78,7 +78,7 @@ function lsx_portfolio_customizer_options($controls) {
 	);
 	return $controls;
 }
-add_filter('lsx_customizer_controls','lsx_portfolio_customizer_options',10);
+//add_filter('lsx_customizer_controls','lsx_portfolio_customizer_options',10);
 
 /**
  * Set the Portfolio archive slug
