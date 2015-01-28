@@ -961,7 +961,8 @@ nav {
 		margin-bottom: 50px;
 	}
 
-	.single-jetpack-portfolio & {
+	.single-jetpack-portfolio &,
+	.page-has-banner & {
 		margin-top: 40px;
 	}
 
@@ -1038,6 +1039,7 @@ header.page-header {
 
 // Portfolio
 
+.page-banner, 
 .portfolio-banner {
 	margin-top: 120px;
 	background-repeat: no-repeat;

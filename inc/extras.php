@@ -24,6 +24,10 @@ function lsx_body_class($classes) {
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
   }
+  
+  if(is_page() && has_post_thumbnail()){
+  	$classes[] = 'page-has-banner';
+  }
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');
@@ -279,7 +283,8 @@ function lsx_thumbnail($size = 'thumbnail'){
  */
 function lsx_page_banner() {
 	global $post;
-	if ( is_singular( 'page' ) && has_post_thumbnail() ) {
+
+	if ( is_page() && has_post_thumbnail() ) {
         $image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
         <div class="page-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
           <header class="page-header">

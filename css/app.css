@@ -6165,7 +6165,7 @@ nav#social-navigation {
     .wrap {
       margin-top: 0;
       margin-bottom: 50px; } }
-  .single-jetpack-portfolio .wrap {
+  .single-jetpack-portfolio .wrap, .page-has-banner .wrap {
     margin-top: 40px; }
   @media screen and (max-width: 768px) {
     .wrap {
@@ -6206,15 +6206,18 @@ header.page-header {
     font-size: 32px;
     color: #333333; }
 
+.page-banner,
 .portfolio-banner {
   margin-top: 120px;
   background-repeat: no-repeat;
   background-size: cover !important;
   width: 100%;
   padding: 240px 0; }
+  .page-banner header.page-header,
   .portfolio-banner header.page-header {
     width: 100%;
     text-align: center; }
+    .page-banner header.page-header h1.page-title,
     .portfolio-banner header.page-header h1.page-title {
       max-width: 1140px;
       margin: 0 auto;
@@ -6224,14 +6227,17 @@ header.page-header {
       -moz-text-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
       text-shadow: 0 0 30px rgba(0, 0, 0, 0.15); }
   @media screen and (max-width: 992px) {
+    .page-banner,
     .portfolio-banner {
       margin-top: 70px;
       padding: 140px 0; } }
   @media screen and (max-width: 768px) {
+    .page-banner,
     .portfolio-banner {
       margin-top: 0;
       padding: 100px 0; } }
   @media screen and (max-width: 430px) {
+    .page-banner,
     .portfolio-banner {
       padding: 80px 0; } }
 
