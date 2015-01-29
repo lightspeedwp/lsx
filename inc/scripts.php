@@ -8,9 +8,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @subpackage	scripts
  */
 function lsx_scripts() {
-
-	//wp_enqueue_style( 'lsx-style', get_stylesheet_uri() );
-
 	
 	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/css/app.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
 	
@@ -31,7 +28,7 @@ function lsx_scripts() {
 	
 	//Set some parameters that we can use in the JS
 	$is_portfolio = false;
-	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag')){
+	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag') || is_page_template('page-templates/template-portfolio.php')){
 		$is_portfolio = true;
 	}
 	$param_array = array(
