@@ -49,9 +49,6 @@ jQuery(document).ready(function($) {
 					  $('.lsx-portfolio').append($(this));
 				});
 				  selector.remove();
-				//$elements.hide();
-				  //$('.lsx-portfolio').isotope( 'appended', elements ).fadeIn();
-				//$elements.fadeIn();
 		     });
 
 		}
@@ -132,7 +129,7 @@ function lsx_set_portfolio_columns()
 	}else{
 		columns = 6; 
 	}
-	colW = Math.floor(gw / columns);
+	colW = Math.floor(gw / columns) - 14;
 	jQuery('.jetpack-portfolio').each(function(id){
 		jQuery(this).css('width',colW + 'px');
 	});
