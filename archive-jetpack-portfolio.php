@@ -11,7 +11,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<?php if(is_post_type_archive()){ ?>
-					<h1 class="page-title"><?php _e('Projects','lsx'); ?></h1>
+					<h1 class="page-title"><?php _e('Portfolio','lsx'); ?></h1>
 				<?php } else { ?>
 					<h1 class="page-title"><?php the_archive_title(); ?></h1>
 				<?php } ?>	
