@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 					  elements.push( $(this) );
 					  $('.lsx-portfolio').append($(this));
 				});
-				
+				  selector.remove();
 				//$elements.hide();
 				  //$('.lsx-portfolio').isotope( 'appended', elements ).fadeIn();
 				//$elements.fadeIn();
