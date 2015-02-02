@@ -122,7 +122,7 @@ function lsx_set_portfolio_columns()
 {
 	var columns;
 	var gw = jQuery('.lsx-portfolio-wrapper').width();
-	if(gw<=700){
+	if(gw<=992){
 		columns = 2;
 	}else if(gw<=1700){
 			columns = 3;
