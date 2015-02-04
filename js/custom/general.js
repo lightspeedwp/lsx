@@ -16,22 +16,15 @@ jQuery(document).ready(function($) {
 
 
     $(window).load(function() {
-    	
-
 		
-		if(lsx_params.is_portfolio){
-						
-			$('.filter-items-wrapper').hover(function() {
-		        $(this).addClass('active');
-		    }, function() {
-		        $(this).removeClass('active');
-		    });			
-
+    	
+    	var has_filter = $('#filterNav');
+    	if('undefined' != has_filter){
 			$('#main').imagesLoaded( function(){
 				
 				projectThumbInit();
 				projectFilterInit();
-
+	
 				jQuery('#main').css('opacity', '1' );
 			    
 		    });			
@@ -40,7 +33,7 @@ jQuery(document).ready(function($) {
 		     // Triggers re-layout on infinite scroll
 		     $( document.body ).on( 'post-load', function () {
 				infinite_count = infinite_count + 1;
-
+	
 				var selector = $('#infinite-view-' + infinite_count);
 				//var $elements = $selector.find('.jetpack-portfolio');
 				  var elements = [];
@@ -50,7 +43,15 @@ jQuery(document).ready(function($) {
 				});
 				  selector.remove();
 		     });
-
+    	}
+    	
+		if(lsx_params.is_portfolio){
+						
+			$('.filter-items-wrapper').hover(function() {
+		        $(this).addClass('active');
+		    }, function() {
+		        $(this).removeClass('active');
+		    });
 		}
     	
 		
