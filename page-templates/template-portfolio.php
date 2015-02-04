@@ -51,8 +51,8 @@ get_header(); ?>
 			
 				<?php lsx_portfolio_sorter(); ?>
 
-				<div class="lsx-portfolio-wrapper">
-					<div class="lsx-portfolio masonry">
+				<div class="filter-items-wrapper lsx-portfolio-wrapper">
+					<div class="filter-items-container lsx-portfolio masonry">
 						<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
 							<?php get_template_part( 'content', 'portfolio' ); ?>

@@ -30,8 +30,8 @@ get_header(); ?>
 				
 				<?php if(!is_tax()){ lsx_portfolio_sorter(); } ?>
 
-				<div class="lsx-portfolio-wrapper">
-					<div id="portfolio-infinite-scroll-wrapper" class="lsx-portfolio masonry">
+				<div class="filter-items-wrapper lsx-portfolio-wrapper">
+					<div id="portfolio-infinite-scroll-wrapper" class="filter-items-container lsx-portfolio masonry">
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<?php get_template_part( 'content', 'portfolio' ); ?>

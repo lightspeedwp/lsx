@@ -1,5 +1,5 @@
 var colW;
-var gridContainer = jQuery('.lsx-portfolio');
+var gridContainer = jQuery('.filter-items-container');
 
 
 jQuery(document).ready(function($) {
@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 		
 		if(lsx_params.is_portfolio){
 						
-			$('.portfolio-content-wrapper').hover(function() {
+			$('.filter-items-wrapper').hover(function() {
 		        $(this).addClass('active');
 		    }, function() {
 		        $(this).removeClass('active');
@@ -44,9 +44,9 @@ jQuery(document).ready(function($) {
 				var selector = $('#infinite-view-' + infinite_count);
 				//var $elements = $selector.find('.jetpack-portfolio');
 				  var elements = [];
-				  selector.find('.jetpack-portfolio').each( function() {
+				  selector.find('.filter-item').each( function() {
 					  elements.push( $(this) );
-					  $('.lsx-portfolio').append($(this));
+					  $('.filter-items-container').append($(this));
 				});
 				  selector.remove();
 		     });
@@ -121,7 +121,7 @@ jQuery(document).ready(function($) {
 function lsx_set_portfolio_columns()
 {
 	var columns;
-	var gw = jQuery('.lsx-portfolio-wrapper').width();
+	var gw = jQuery('.filter-items-wrapper').width();
 	if(gw<=992){
 		columns = 2;
 	}else if(gw<=1700){
@@ -130,15 +130,15 @@ function lsx_set_portfolio_columns()
 		columns = 6; 
 	}
 	colW = Math.floor(gw / columns) - 14;
-	jQuery('.jetpack-portfolio').each(function(id){
+	jQuery('.filter-item').each(function(id){
 		jQuery(this).css('width',colW + 'px');
 	});
-	jQuery('.jetpack-portfolio').show();
+	jQuery('.filter-item').show();
 }
 
 function gridResize() {
 	setColumns();
-	jQuery('.lsx-portfolio-wrapper').isotope({
+	jQuery('.filter-items-wrapper').isotope({
 		resizable: false,
 		layoutMode: 'fitRows',
 		masonry: {
@@ -156,13 +156,13 @@ function projectThumbInit() {
 	gridContainer.isotope({
 		resizable: false,
 		layoutMode: 'fitRows',
-		itemSelector: '.jetpack-portfolio',
+		itemSelector: '.filter-item',
 		masonry: {
 			columnWidth: colW
 		}
 	});
 
-	jQuery(".lsx-portfolio .jetpack-portfolio").css("visibility", "visible");
+	jQuery(".filter-items-container .filter-item").css("visibility", "visible");
 }
 
 ///////////////////////////////
@@ -173,7 +173,7 @@ function projectFilterInit() {
 	
 	jQuery('#filterNav a').click(function(){
 		var selector = jQuery(this).attr('data-filter');
-		jQuery('.lsx-portfolio-wrapper .lsx-portfolio').isotope({
+		jQuery('.filter-items-wrapper .filter-items-container').isotope({
 			filter: selector,
 			hiddenStyle : {
 		    	opacity: 0,
