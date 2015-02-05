@@ -47,13 +47,18 @@ jQuery(document).ready(function($) {
     	
 		if(lsx_params.is_portfolio){
 						
-			$('.masonry > article').hover(function() {
+			$('.filter-items-wrapper').hover(function() {
 		        $(this).addClass('active');
 		    }, function() {
 		        $(this).removeClass('active');
 		    });
 		}
-		
+    	
+		$('.masonry > article').hover(function() {
+	        $(this).addClass('active');
+	    }, function() {
+	        $(this).removeClass('active');
+	    });
 		
 		$('img.lsx-responsive').each( function() {
 			$(this).attr('src',$(this).attr('data-desktop'));
