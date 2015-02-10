@@ -9,6 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require get_template_directory() . '/inc/config.php';
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/sanitize.php';
 require get_template_directory() . '/inc/layout.php';
 require get_template_directory() . '/inc/hooks.php';
 require get_template_directory() . '/inc/widgets.php';
@@ -35,7 +36,6 @@ if(function_exists('soliloquy')){
     'default'       =>  '0', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-    'sanitize_callback' =>  'absint' // santize setting callback
   );
   /// add the control
   $controls['fields']['lsx_homepage_slider'] = array(
@@ -52,21 +52,20 @@ if(function_exists('soliloquy')){
  */
  /// add the setting
  $controls['settings']['lsx_color_scheme']  = array(
-   'default'       =>  'default', //Default setting/value to save
-   'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-   'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
- 	'sanitize_callback' =>  'sanitize_text_field' // santize setting callback
+   	'default'       =>  'default', //Default setting/value to save
+   	'type'	        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+  	'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
  );
  /// add the control
  $controls['fields']['lsx_color_scheme'] = array(
    'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
    'section'       =>  'colors',
    'type'          =>  'select',
-   'colours'  => array(
+   'choices'  => array(
  		'default' => esc_html__( 'Default', 'lsx' ),
    		'red' => esc_html__( 'Red', 'lsx' ),
  	  	'green' => esc_html__( 'Green', 'lsx' ),
-      'brown' => esc_html__( 'Brown', 'lsx' )
+      	'brown' => esc_html__( 'Brown', 'lsx' )
  	),
  	'control'   =>  'LSX_Customize_Colour_Control',
 	'priority' => 1,
@@ -86,12 +85,6 @@ if(function_exists('soliloquy')){
     'default'       =>  '2cr', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-    'layouts'		=>	array(
-    	'1c',
-    	'2cr',
-    	'2cl'
-    ),
-  	'sanitize_callback' =>  'sanitize_text_field' // santize setting callback
   );
   
   /// add the control
@@ -99,7 +92,7 @@ if(function_exists('soliloquy')){
     'label'         =>  '',
     'section'       =>  'lsx-layout',
     'control'   =>  'LSX_Customize_Layout_Control',
-    'layouts'		=>	array(
+    'choices'		=>	array(
     	'1c',
     	'2cr',
     	'2cl'
@@ -119,7 +112,6 @@ if(function_exists('soliloquy')){
     'default'       =>  'raleway_open_sans', //Default setting/value to save
     'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
     'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  	'sanitize_callback' =>  'sanitize_text_field' // santize setting callback
   );  
   /// add the control
   $controls['fields']['lsx_font'] = array(
@@ -187,40 +179,6 @@ if(function_exists('soliloquy')){
     ),
   'priority' => 2,
   );    
-  
-  /*
-   * Site Icon
-  */
-  /*
-  $controls['sections']['site-logo'] = array(
-  		'title'       =>  esc_html__( 'Site Logo', 'lsx' ),
-  		'description' => __( 'Upload an image to', 'lsx' ),
-  		'priority' => 112
-  );
-  
-  $controls['settings']['lsx_layout']  = array(
-  		'default'       =>  '2cr', //Default setting/value to save
-  		'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-  		'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  		'layouts'		=>	array(
-  				'1c',
-  				'2cr',
-  				'2cl'
-  		),
-  		'sanitize_callback' =>  'esc_attr' // santize setting callback
-  );
-  /// add the control
-  $controls['fields']['lsx_layout'] = array(
-  		'label'         =>  '',
-  		'section'       =>  'lsx-layout',
-  		'control'   =>  'WP_Customize_Image_Control',
-  		'layouts'		=>	array(
-  				'1c',
-  				'2cr',
-  				'2cl'
-  		)
-  );  
-  */
   
 $controls = apply_filters('lsx_customizer_controls', $controls);    
 

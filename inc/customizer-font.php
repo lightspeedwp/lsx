@@ -87,3 +87,4 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 		<?php
 	}
 }
+?>

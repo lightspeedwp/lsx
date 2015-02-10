@@ -5,6 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Customizer Configuration File
  *
  * @package lsx-theme
+ * @subpackage inc
+ * 
  */
 
 /**
@@ -174,7 +176,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 					'type' 				=> 'theme_mod', //Is this an 'option' or a 'theme_mod'?
 					'capability'		=> 'edit_theme_options', //Optional. Special permissions for accessing this setting.
 					'transport' 		=> 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback' =>  'sanitize_text_field'
+					'sanitize_callback'	=> 'lsx_sanitize_choices'
 				), $args )
 			);    
 
@@ -319,6 +321,22 @@ if(!class_exists('LSX_Theme_Customizer')){
 		public function ajax_site_title() {
 			lsx_site_identity();
 		}
+		
+		/**
+		 * Returns a registered field
+		 */
+		public function get_control($id) {
+			$field = $this->controls['fields'][$id];
+			return $field;
+		}
+
+		/**
+		 * Returns a registered setting
+		 */
+		public function get_setting($id) {
+			$setting = $this->controls['fields'][$id];
+			return $setting;
+		}		
 		
 	}	
 }

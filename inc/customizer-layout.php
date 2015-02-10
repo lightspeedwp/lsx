@@ -40,8 +40,8 @@ class LSX_Customize_Layout_Control extends WP_Customize_Control {
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
-		if( !empty( $args['layouts'] ) ){
-			$this->layouts = $args['layouts'];
+		if( !empty( $args['choices'] ) ){
+			$this->layouts = $args['choices'];
 		}
 	}
 

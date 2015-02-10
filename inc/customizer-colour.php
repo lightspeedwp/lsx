@@ -40,8 +40,8 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
-		if( !empty( $args['colours'] ) ){
-			$this->colours = $args['colours'];
+		if( !empty( $args['choices'] ) ){
+			$this->colours = $args['choices'];
 		}
 	}
 
@@ -92,4 +92,4 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 	}
 
 }
-
+?>
