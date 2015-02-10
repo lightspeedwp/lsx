@@ -5951,7 +5951,8 @@ header.banner nav {
     background: #555555; }
     @media screen and (max-width: 992px) {
       header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
-        background: none !important; } }
+        background: none !important;
+        color: #eeeeee !important; } }
   header.banner nav .nav.navbar-nav li ul.dropdown-menu {
     background: #555555;
     padding: 0;
@@ -5973,7 +5974,9 @@ header.banner nav {
         position: relative;
         width: 100%;
         background: #eeeeee;
-        margin-bottom: 15px; } }
+        margin-bottom: 16px; }
+        header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
+          color: #555555 !important; } }
     header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
       background: none;
       background-color: inherit;

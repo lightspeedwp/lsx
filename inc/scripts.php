@@ -33,7 +33,7 @@ function lsx_scripts() {
 	$param_array = array(
 			'is_portfolio' => $is_portfolio
 	);
-	wp_localize_script( 'custom', 'lsx_params', $param_array );
+	wp_localize_script( 'lsx_custom', 'lsx_params', $param_array );
 	
 	wp_enqueue_script('modernizr');
     wp_enqueue_script('jquery');

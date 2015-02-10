@@ -618,6 +618,7 @@ nav {
 
 						@media screen and (max-width: 992px) {
 							background: none !important;
+							color: $light-grey !important;
 						}
 					}
 				}
@@ -645,7 +646,13 @@ nav {
 						position: relative;
 						width: 100%;
 						background: $light-grey;
-						margin-bottom: 15px;
+						margin-bottom: 16px;
+						
+						li {
+							a {
+								color: $dark-grey !important;
+							}
+						}
 					}
 					
 
