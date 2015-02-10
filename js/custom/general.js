@@ -54,7 +54,11 @@ jQuery(document).ready(function($) {
 		    });
 		}
     	
-		
+		$('.masonry > article').hover(function() {
+	        $(this).addClass('active');
+	    }, function() {
+	        $(this).removeClass('active');
+	    });
 		
 		$('img.lsx-responsive').each( function() {
 			$(this).attr('src',$(this).attr('data-desktop'));
