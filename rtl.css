@@ -14,6 +14,44 @@ body {
 	unicode-bidi: embed;
 }
 
+/*
+ *	Nav Styles 
+ */
+
+
+@media (min-width: 1200px) {
+	body.rtl header.navbar nav {
+		float:left;
+	}
+	body.rtl header.navbar .navbar-header {
+  	  	float: right;
+	}	
+}
+
+body.rtl header.banner nav .nav.navbar-nav li ul.dropdown-menu {
+	float:right;
+	right:0;
+	text-align:right;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 0px;
+}
+
+body.rtl header.banner nav .nav.navbar-nav li a .caret {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+@media (max-width: 1200px) {
+	.navbar-toggle,
+	.mobile-menu-title {
+		float:left;
+	}
+}
+
+
+/*
+ *	Form Styles 
+ */
 .input-group .form-control:last-child,
 .input-group .ginput_container input:last-child,
 .ginput_container .input-group input:last-child,
