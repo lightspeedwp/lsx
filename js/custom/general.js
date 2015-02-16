@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
     	
 		if(lsx_params.is_portfolio){
 						
-			$('.filter-item').hover(function() {
+			$('.portfolio-content-wrapper').hover(function() {
 		        $(this).addClass('active');
 		    }, function() {
 		        $(this).removeClass('active');
