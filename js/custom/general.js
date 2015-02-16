@@ -77,7 +77,9 @@ jQuery(document).ready(function($) {
 		   //if($(this).width() != width){
 			
 			width = $(window).width();
-
+			
+			console.log(width);
+			
 			if (1186 < width){
 				$('.navbar-nav li.dropdown a').each(function(){
 					$(this).removeClass('dropdown-toggle');

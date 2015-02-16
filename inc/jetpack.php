@@ -255,7 +255,7 @@ function lsx_client_meta_box( $object, $box ) { ?>
   <p>
     <input class="widefat" type="text" name="lsx-client" id="lsx-client" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-client', true ) ); ?>" size="30" />
     <br /><br />
-    <label for="lsx-client"><?php _e( "Enter the name of the project client", 'client' ); ?></label>
+    <label for="lsx-client"><?php _e( "Enter the name of the project client", 'lsx' ); ?></label>
   </p>
 <?php }
 
@@ -266,7 +266,7 @@ function lsx_website_meta_box( $object, $box ) { ?>
   <p>
     <input class="widefat" type="text" name="lsx-website" id="lsx-website" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-website', true ) ); ?>" size="30" />
     <br /><br />
-    <label for="lsx-website"><?php _e( "Enter the URL of the project website", 'website' ); ?></label>
+    <label for="lsx-website"><?php _e( "Enter the URL of the project website", 'lsx' ); ?></label>
   </p>
 <?php }
 
@@ -281,7 +281,7 @@ function lsx_website_meta_box( $object, $box ) { ?>
 
 function lsx_portfolio_sorter(){ ?>
 	<ul id="filterNav" class="clearfix">
-		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'themetrust'); ?></a></li>
+		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'lsx'); ?></a></li>
 		<?php $j=1;
 		$types = get_terms('jetpack-portfolio-type');
 		
