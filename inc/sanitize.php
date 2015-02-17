@@ -67,7 +67,7 @@ function lsx_customizer_sanitize_get_default( $id ) {
 
 	$setting = $lsx_customizer->get_setting($id);
 
-	if ( isset( $field['default'] ) ) {
-		return $field['default'];
+	if ( isset( $setting['default'] ) ) {
+		return $setting['default'];
 	}
 }
