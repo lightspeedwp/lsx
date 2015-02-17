@@ -39,17 +39,9 @@ get_header(); ?>
 					$paged = 1;
 				endif;
 
-				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '10' );
 				$args = array(
 					'post_type'      => 'jetpack-portfolio',
 					'posts_per_page' => -1,
-					'paged'          => $paged,
-					'meta_query'	 => array(
-						array(
-							'meta_key' => '_thumbnail_id',
-							'compare' => 'EXISTS'
-						)
-					)
 				);
 				$project_query = new WP_Query ( $args );
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
@@ -61,7 +53,9 @@ get_header(); ?>
 					<div class="filter-items-container lsx-portfolio masonry">
 						<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
-							<?php get_template_part( 'content', 'portfolio' ); ?>
+							<?php if(has_post_thumbnail()) { ?>
+								<?php get_template_part( 'content', 'portfolio' ); ?>
+							<?php } ?>
 
 						<?php endwhile; ?>
 					</div>
