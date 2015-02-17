@@ -148,6 +148,8 @@ add_action('wp_head','lsx_process_content_width');
 
 /**
  * Disable the comments form by default for the page post type.
+ * @package	lsx
+ * @subpackage config
  */
 function lsx_page_comments_off( $data ) {
 
@@ -162,66 +164,9 @@ add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
 
 
 /*
- * ===================	Tiny MCE  ===================
+ * ===================	Editor Styles  ===================
  */
 
-/**
- * Adds a Button to the second row of TinyMCE Buttons
- * 
- * @package	lsx
- * @subpackage config
- * @category TinyMCE
- * @param	$buttons array()
- * @return	$buttons array()
- */
-function lsx_mce_buttons_2($buttons) {
-	
-	array_unshift($buttons, 'styleselect');
-	return $buttons;
-	
-}
-add_filter('mce_buttons_2', 'lsx_mce_buttons_2');
-
-
-/**
- *  Callback function to filter the MCE settings
- *
- * @package	lsx
- * @subpackage config
- * @category TinyMCE
- * @param	$init_array array()
- * @return	$init_array array()
- */
-function lsx_mce_before_init_insert_formats( $init_array ) {
-
-	$style_formats = array(
-			// Each array child is a format with it's own settings
-			array(
-					'title' => 'Content Block',
-					'block' => 'span',
-					'classes' => 'content-block',
-					'wrapper' => true,
-						
-			),
-			array(
-					'title' => 'Button - Default',
-					'block' => 'span',
-					'classes' => 'btn btn-default',
-					'wrapper' => true,
-			),
-			array(
-					'title' => 'Button - Primary',
-					'block' => 'span',
-					'classes' => 'btn btn-primary',
-					'wrapper' => false,
-			),
-	);
-	// Insert the array, JSON ENCODED, into 'style_formats'
-	$init_array['style_formats'] = json_encode( $style_formats );
-	return $init_array;
-
-}
-add_filter( 'tiny_mce_before_init', 'lsx_mce_before_init_insert_formats' );
 
 /**
  *  Registers our themes editor stylesheet.
