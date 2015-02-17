@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: LSX 1.0.5\n"
+"Project-Id-Version: LSX 1.0.7\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/lsx-theme\n"
-"POT-Creation-Date: 2015-01-13 15:43:48+00:00\n"
+"POT-Creation-Date: 2015-02-17 13:03:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,25 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: author.php:31 inc/layout.php:69
+#: archive-jetpack-portfolio.php:14
+msgid "Portfolio"
+msgstr ""
+
+#: archive-jetpack-portfolio.php:47 content-none.php:13
+#: page-templates/template-portfolio.php:68
+msgid "Nothing Found"
+msgstr ""
+
+#: archive-jetpack-portfolio.php:53 page-templates/template-portfolio.php:74
+msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: archive-jetpack-portfolio.php:57 content-none.php:28
+#: page-templates/template-portfolio.php:78
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: author.php:31 inc/layout.php:134
 msgid "Published by"
 msgstr ""
 
@@ -58,10 +76,6 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-none.php:13 page-templates/template-portfolio.php:68
-msgid "Nothing Found"
-msgstr ""
-
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -70,29 +84,24 @@ msgstr ""
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: content-none.php:28 page-templates/template-portfolio.php:78
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: content-page.php:23 content-portfolio-single.php:43 content-single.php:49
-#: content.php:63 image.php:43 image.php:109
+#: content-page.php:25 content-portfolio-single.php:54 content-single.php:44
+#: content.php:67 image.php:43 image.php:109
 #: page-templates/template-archives.php:48
 #: page-templates/template-sitemap.php:81
 msgid "Edit"
 msgstr ""
 
-#: content-portfolio-single.php:34 content-single.php:36 content.php:42
-#: image.php:95 page-templates/template-portfolio.php:32
+#: content-portfolio-single.php:49 content-single.php:31 content.php:46
+#: image.php:95 page-templates/template-portfolio.php:28
 msgid "Pages:"
 msgstr ""
 
-#: content-portfolio.php:21
-msgctxt "Used between list items, there is a space after the comma."
-msgid ", "
+#: content.php:26 content.php:29
+msgid "Featured"
 msgstr ""
 
-#: content.php:25 content.php:28
-msgid "Featured"
+#: content.php:41
+msgid "Continue reading %s"
 msgstr ""
 
 #: footer.php:44 footer.php:56
@@ -103,23 +112,23 @@ msgstr ""
 msgid "Select Slider"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:61
 msgid "Color Scheme"
 msgstr ""
 
-#: functions.php:66
+#: functions.php:65
 msgid "Default"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:66
 msgid "Red"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:67
 msgid "Green"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:68
 msgid "Brown"
 msgstr ""
 
@@ -131,51 +140,35 @@ msgstr ""
 msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
 msgstr ""
 
-#: functions.php:112
+#: functions.php:107
 msgid "Font"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:125
 msgid "Raleway"
 msgstr ""
 
-#: functions.php:137 functions.php:179
+#: functions.php:131 functions.php:173
 msgid "Open Sans"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:139
 msgid "Noto Serif"
 msgstr ""
 
-#: functions.php:151 functions.php:159 functions.php:165
+#: functions.php:145 functions.php:153 functions.php:159
 msgid "Noto Sans"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:167
 msgid "Alegreya"
 msgstr ""
 
-#: functions.php:261
+#: functions.php:201
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:315 inc/template-tags.php:191
-msgid "Client"
-msgstr ""
-
-#: functions.php:324 inc/template-tags.php:200
-msgid "Website"
-msgstr ""
-
-#: functions.php:339
-msgid "Enter the name of the project client"
-msgstr ""
-
-#: functions.php:350
-msgid "Enter the URL of the project website"
-msgstr ""
-
-#: header.php:40
+#: header.php:33
 msgid "Toggle navigation"
 msgstr ""
 
@@ -203,23 +196,51 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/config.php:53
+#: inc/config.php:84
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/config.php:90
+msgid "1 Column"
+msgstr ""
+
+#: inc/config.php:94
+msgid "2 Column"
+msgstr ""
+
+#: inc/customizer.php:297
 msgid "Disable"
 msgstr ""
 
-#: inc/extras.php:71
+#: inc/extras.php:69
 msgid "Page %s"
 msgstr ""
 
-#: inc/layout.php:15
+#: inc/jetpack.php:234 inc/template-tags.php:191
+msgid "Client"
+msgstr ""
+
+#: inc/jetpack.php:243 inc/template-tags.php:200
+msgid "Website"
+msgstr ""
+
+#: inc/jetpack.php:258
+msgid "Enter the name of the project client"
+msgstr ""
+
+#: inc/jetpack.php:269
+msgid "Enter the URL of the project website"
+msgstr ""
+
+#: inc/jetpack.php:284
+msgid "All"
+msgstr ""
+
+#: inc/layout.php:86
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/layout.php:76
+#: inc/layout.php:141
 msgid "View all posts by"
 msgstr ""
 
@@ -245,37 +266,37 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: inc/template-tags.php:258
+#: inc/template-tags.php:257
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:262
+#: inc/template-tags.php:261
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/template-tags.php:266
+#: inc/template-tags.php:265
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:295
+#: inc/template-tags.php:294
 msgctxt "Previous post link"
-msgid "<div class=\"previous\"><span class=\"meta-nav\">&larr;</span> %title</div>"
+msgid "<div class=\"previous\"><p class=\"nav-links-description\">Previous Post:</p><span class=\"meta-nav\">&larr;</span> %title</div>"
 msgstr ""
 
-#: inc/template-tags.php:300
+#: inc/template-tags.php:299
 msgctxt "Next post link"
-msgid "<div class=\"next\">%title <span class=\"meta-nav\">&rarr;</span></div>"
+msgid "<div class=\"next\"><p class=\"nav-links-description\">Next Post:</p>%title <span class=\"meta-nav\">&rarr;</span></div>"
 msgstr ""
 
-#: inc/template-tags.php:318
+#: inc/template-tags.php:317
 msgid "by "
 msgstr ""
 
-#: inc/template-tags.php:320
+#: inc/template-tags.php:319
 msgid "on"
 msgstr ""
 
-#: inc/template-tags.php:320
+#: inc/template-tags.php:319
 msgid "in"
 msgstr ""
 
@@ -291,7 +312,7 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: inc/wp_bootstrap_navwalker.php:188
+#: inc/wp_bootstrap_navwalker.php:189
 msgid "Add a menu"
 msgstr ""
 
@@ -320,10 +341,6 @@ msgstr ""
 msgid "Add a text widget to your Home sidebar."
 msgstr ""
 
-#: page-templates/template-portfolio.php:74
-msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
 #: page-templates/template-sitemap.php:27
 msgid "Pages"
 msgstr ""
@@ -348,11 +365,11 @@ msgstr ""
 msgid "Search for:"
 msgstr ""
 
-#: sidebar.php:58
+#: sidebar.php:51
 msgid "Archives"
 msgstr ""
 
-#: sidebar.php:65
+#: sidebar.php:58
 msgid "Meta"
 msgstr ""
 #. Theme Name of the plugin/theme
@@ -381,6 +398,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Front Page */"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width */"
 msgstr ""
 
 #. Template Name of the plugin/theme
