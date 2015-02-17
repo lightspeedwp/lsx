@@ -44,6 +44,12 @@ get_header(); ?>
 					'post_type'      => 'jetpack-portfolio',
 					'posts_per_page' => -1,
 					'paged'          => $paged,
+					'meta_query'	 => array(
+						array(
+							'meta_key' => '_thumbnail_id',
+							'compare' => 'EXISTS'
+						)
+					)
 				);
 				$project_query = new WP_Query ( $args );
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
