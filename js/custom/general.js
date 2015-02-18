@@ -17,13 +17,13 @@ jQuery(document).ready(function($) {
 
     $(window).load(function() {
 		
-    	
+    	// The soprter for the portfolio.
     	var has_filter = $('#filterNav');
     	if('undefined' != has_filter){
 			$('#main').imagesLoaded( function(){
 				
-				projectThumbInit();
-				projectFilterInit();
+				lsxProjectThumbInit();
+				lsxProjectFilterInit();
 	
 				jQuery('#main').css('opacity', '1' );
 			    
@@ -45,6 +45,7 @@ jQuery(document).ready(function($) {
 		     });
     	}
     	
+    	//Portfolio Hover Class
 		if(lsx_params.is_portfolio){
 						
 			$('.portfolio-content-wrapper').hover(function() {
@@ -60,11 +61,12 @@ jQuery(document).ready(function($) {
 	        $(this).removeClass('active');
 	    });
 		
-		$('img.lsx-responsive').each( function() {
-			$(this).attr('src',$(this).attr('data-desktop'));
-		});
+		
+
 		
 		var width = $(window).width();
+		
+		//Dropdown Toggle
 		if(1186 < width){
 			$('.navbar-nav li.dropdown a').each(function(){
 				$(this).removeClass('dropdown-toggle');
@@ -73,37 +75,13 @@ jQuery(document).ready(function($) {
 		}
 		
 		//Page Banner
-		var banner_attribute_name = 'data-desktop';
-		if(width <= 768){
-			banner_attribute_name = 'data-tablet';
-		}
-		if(width <= 400){
-			banner_attribute_name = 'data-mobile';
-		}			
-		if($('body').hasClass('page')){		
-			var image_url = 'url('+$('.page-banner').attr(banner_attribute_name)+')';
-			$('.page-banner').css('background-image',image_url);			
-		}
+		lsxResizeBanner(width);
+		lsxResizeSingleThumbnail(width);		
 		
 		
+		//Does everything it did on top
 		$(window).resize(function() {
-		   //if($(this).width() != width){
-			
 			width = $(window).width();
-			
-			console.log(width);
-			var banner_attribute_name = 'data-desktop';
-			if(width <= 768){
-				banner_attribute_name = 'data-tablet';
-			}
-			if(width <= 400){
-				banner_attribute_name = 'data-mobile';
-			}			
-			if($('body').hasClass('page')){		
-				var image_url = 'url('+$('.page-banner').attr(banner_attribute_name)+')';
-				$('.page-banner').css('background-image',image_url);			
-			}
-			
 			
 			if (1186 < width){
 				$('.navbar-nav li.dropdown a').each(function(){
@@ -117,29 +95,55 @@ jQuery(document).ready(function($) {
 				});				
 			}
 			
-			if ('992' == width || '768' == width){
-				
-			  var attribute_name = 'data-desktop';
-			  
-		      //1200, 992, 768
-		      if (width >= 992) {
-		    	  attribute_name = 'data-desktop';
-		      } else {
-		    	  if (width < 992 && width >= 768) {
-		    		  attribute_name = 'data-tablet';
-		    	  } else {
-		    		  attribute_name = 'data-mobile';
-		    	  }
-		      }	
-		      
-		      $('img.lsx-responsive').each( function(){
-				$(this).attr('src',$(this).attr(attribute_name));
-		      });		      
-		      
-		   }
+			lsxResizeBanner(width);	
+			lsxResizeSingleThumbnail(width);	
+			    
 		});		
 	});
 });
+
+///////////////////////////////
+//Apply the correct banner size
+///////////////////////////////
+
+function lsxResizeBanner(width) {
+	
+	var banner_attribute_name = 'data-desktop';
+	if(width <= 768){
+		banner_attribute_name = 'data-tablet';
+	}
+	if(width <= 400){
+		banner_attribute_name = 'data-mobile';
+	}			
+	if(jQuery('body').hasClass('page')){		
+		var image_url = 'url('+jQuery('.page-banner').attr(size)+')';
+		jQuery('.page-banner').css('background-image',image_url);	
+	}	
+
+}
+
+///////////////////////////////
+//Apply the correct single thumbnail size
+///////////////////////////////
+
+function lsxResizeSingleThumbnail(width) {
+	var attribute_name = 'data-desktop';
+	//1200, 992, 768
+	if (width >= 992) {
+		attribute_name = 'data-desktop';
+	} else {
+		if (width < 992 && width >= 768) {
+			attribute_name = 'data-tablet';
+		} else {
+			attribute_name = 'data-mobile';
+		}
+	}
+  
+	jQuery('img.lsx-responsive').each( function(){
+		jQuery(this).attr('src',jQuery(this).attr(attribute_name));
+	});	
+}
+
 
 ///////////////////////////////
 //Isotope Grid Resize
@@ -163,22 +167,11 @@ function lsx_set_portfolio_columns()
 	jQuery('.filter-item').show();
 }
 
-function gridResize() {
-	setColumns();
-	jQuery('.filter-items-wrapper').isotope({
-		resizable: false,
-		layoutMode: 'fitRows',
-		masonry: {
-			columnWidth: colW
-		}
-	});
-}
-
 ///////////////////////////////
 //Project thumbs
 ///////////////////////////////
 
-function projectThumbInit() {
+function lsxProjectThumbInit() {
 	lsx_set_portfolio_columns();
 	gridContainer.isotope({
 		resizable: false,
@@ -192,11 +185,12 @@ function projectThumbInit() {
 	jQuery(".filter-items-container .filter-item").css("visibility", "visible");
 }
 
+
 ///////////////////////////////
 //Project Filtering
 ///////////////////////////////
 
-function projectFilterInit() {
+function lsxProjectFilterInit() {
 	
 	jQuery('#filterNav a').click(function(){
 		var selector = jQuery(this).attr('data-filter');

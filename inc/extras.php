@@ -261,7 +261,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 	
 	if('thumbnail-single' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
 		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
 
 		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
@@ -283,7 +283,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 		
 	}elseif(is_array($size)){
 		
-		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, array(250,200) );
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 		
 	}

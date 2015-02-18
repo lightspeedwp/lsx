@@ -15,7 +15,7 @@
 		<div class="entry-image">
 			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
 				 <?php //lsx_thumbnail( 'thumbnail-single' ); ?>
-				 <?php the_post_thumbnail('thumbnail-single'); ?>
+				 <?php lsx_thumbnail('thumbnail-single'); ?>
 			</a>
 		</div>
 	<?php } ?>
