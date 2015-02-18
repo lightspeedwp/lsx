@@ -3,7 +3,7 @@
 
 	get_header(); ?>
 	
-	<div id="primary" class="content-area <?php echo lsx_home_main_class(); ?>">
+	<div id="primary" class="content-area front-page col-sm-12">
 	
 		<?php lsx_content_before(); ?>
 		
@@ -31,7 +31,4 @@
 		<?php lsx_content_after(); ?>
 
 	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_sidebar( 'alt' ); ?>	
 <?php get_footer(); ?>

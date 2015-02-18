@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Cleaner walker for wp_nav_menu()
  *
@@ -61,7 +63,7 @@ class LSX_Nav_Walker extends Walker_Nav_Menu {
  * Remove the id="" on nav menu items
  * Return 'menu-slug' for nav menu classes
  */
-function roots_nav_menu_css_class($classes, $item) {
+function lsx_nav_menu_css_class($classes, $item) {
 	$slug    = sanitize_title($item->title);
 	$classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
 	$classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
@@ -70,18 +72,18 @@ function roots_nav_menu_css_class($classes, $item) {
 
 	$classes = array_unique($classes);
 
-	return array_filter($classes, 'is_element_empty');
+	return array_filter($classes, 'lsx_is_element_empty');
 }
-add_filter('nav_menu_css_class', 'roots_nav_menu_css_class', 10, 2);
+add_filter('nav_menu_css_class', 'lsx_nav_menu_css_class', 10, 2);
 add_filter('nav_menu_item_id', '__return_null');
 
 /**
  * Clean up wp_nav_menu_args
  *
  * Remove the container
- * Use LSX_Nav_Walker() by default
+ * Use LSX_Nav_Walker() by default 
  */
-function roots_nav_menu_args($args = '') {
+function lsx_nav_menu_args($args = '') {
 	$roots_nav_menu_args['container'] = false;
 
 	if (!$args['items_wrap']) {
@@ -97,27 +99,5 @@ function roots_nav_menu_args($args = '') {
 	}
 
 	return array_merge($args, $roots_nav_menu_args);
-}
-add_filter('wp_nav_menu_args', 'roots_nav_menu_args');
-
-/**
- * Adds a menu to the admin bar to access the theme options
- *
- * Remove the container
- * Use LSX_Nav_Walker() by default
- */
-function lsx_theme_options_admin_bar_menu(){
-	global $wp_admin_bar;
-	
-	if(!is_admin()){
-		$args = array(
-			'id' => 'site-theme-options',
-			'parent' => 'site-name',
-			'href' => '/wp-admin/themes.php?page=options-framework',
-			'title' => 'Theme Options',
-		);
-		$wp_admin_bar->add_menu($args);
-	}
-	
-}
-add_filter('admin_bar_menu', 'lsx_theme_options_admin_bar_menu',100);
+} 
+add_filter('wp_nav_menu_args', 'lsx_nav_menu_args');

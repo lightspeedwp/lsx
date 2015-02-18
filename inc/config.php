@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Theme Configuration File
  * See: http://jetpack.me/
@@ -15,7 +17,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function lsx_setup() {
-
+	global $content_width;
+	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -23,11 +26,27 @@ function lsx_setup() {
 	 * to change 'lsx' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
+	
+	$args = array(
+			'header-text' => array(
+					'site-title',
+					'site-description',
+			),
+			'size' => 'medium',
+	);
+	add_theme_support( 'site-logo', $args );
+
+	
+	add_theme_support( 'custom-background', array(
+	// Background color default
+	'default-color' => 'FFF',
+	// Background image default
+	) );	
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	//add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -35,139 +54,102 @@ function lsx_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+	
+	
+	/*
+	 * Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image', 'video', 'gallery') );
+	
+	$infinite_scroll_args = array(
+		'container' => 'main',
+		'type' => 'click',
+		'posts_per_page' => get_option('posts_per_page',10),
+		'render'    => 'lsx_infinite_scroll_render'
+	);
+	
+	$page_url = $_SERVER["REQUEST_URI"];
+	$portfolio_archive_slug = get_theme_mod('lsx_portfolio_slug','portfolio');
+	
+	if(stristr($page_url, $portfolio_archive_slug)){
+		$infinite_scroll_args['container'] = 'portfolio-infinite-scroll-wrapper';
+	}
+	
+	add_theme_support( 'infinite-scroll', $infinite_scroll_args );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'lsx' ),
 	) );	
-
+	
+	add_theme_support( 'content-width', array(
+		'widths' => array(
+			'1' => array(
+				'label' => __( '1 Column', 'lsx' ),
+				'value' => '1140',
+			),
+			'2' => array(
+				'label' => __( '2 Column', 'lsx' ),
+				'value' => '750',
+			),
+		)
+	));
+	
 }
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );
 
-function lsx_layout_selector( $class, $area = 'site' ) {
+
+/**
+ * Overwrite the $content_width var, based on the layout of the page.
+ * 
+ * @package	lsx
+ * @subpackage config
+ * @category content_width
+ */
+function lsx_process_content_width() {
+	global $content_width;
+
+	/**
+	 * $content_width is a global variable used by WordPress for max image upload sizes
+	 * and media embeds (in pixels).
+	 *
+	 * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
+	 * Default: 1140px is the default Bootstrap container width.
+	 */
 	
-	$page_layout = get_post_meta( get_the_ID(), 'lsx_layout', true );
-	$show_on_front = get_option('show_on_front');
-	
-	if ( 'page' == $show_on_front && $area == 'home' ) {
-		$layout = '1col';
-	} else {
-		if ( $page_layout && $page_layout != "default" ) {
-			$layout = $page_layout;
-		} else {
-			$layout = lsx_get_option('site_layout');	
+	$content_column_widths = get_theme_support('content-width');
+	if(false != $content_column_widths){
+
+		$layout = get_theme_mod('lsx_layout','2cr');
+		if(
+			is_page_template('page-templates/template-portfolio.php') ||
+			is_page_template('page-templates/template-front-page.php') ||
+			is_page_template('page-templates/template-full-width.php') ||
+			is_post_type_archive('jetpack-portfolio') ||
+			is_tax(array('jetpack-portfolio-type','jetpack-portfolio-tag'))
+		){
+			$layout = '1c';
 		}
-	}
 
-	$default_size = 'sm';
-	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+		if(stristr($layout, '1')){
+			$content_width = $content_column_widths[0]['widths']['1']['value'];
+		}elseif(stristr($layout, '2')){
+			$content_width = $content_column_widths[0]['widths']['2']['value'];
+		}
 
-	switch ( $layout ) {
-		case '1col':
-			$main_class = 'col-' . $size . '-12';
-			break;
-		case '2c-l':
-			$main_class = 'col-' . $size . '-8';
-			$sidebar_class = 'col-' . $size . '-4';
-			break;
-		case '2c-r':
-			$main_class = 'col-' . $size . '-8 col-' . $size . '-push-4';
-			$sidebar_class = 'col-' . $size . '-4 col-' . $size . '-pull-8';
-			break;
-		case '3c-l':
-			$main_class = 'col-' . $size . '-7';
-			$sidebar_class = 'col-' . $size . '-3';
-			$sidebar_class_alt = 'col-' . $size . '-2';
-			break;
-		case '3c-,':
-		case '3c-m':
-			$main_class = 'col-' . $size . '-7 col-' . $size . '-push-2';
-			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-push-2';
-			$sidebar_class_alt = 'col-' . $size . '-2 col-' . $size . '-pull-10';
-			break;
-		case '3c-r':
-			$main_class = 'col-' . $size . '-7 col-' . $size . '-push-5';
-			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-pull-7';
-			$sidebar_class_alt = 'col-' . $size . '-2 col-' . $size . '-pull-7';
-			break;
-		default:
-			$main_class = 'col-' . $size . '-8';
-			$sidebar_class = 'col-' . $size . '-4';
-			break;
-	}
-
-	if ( $class == 'main' ) {
-		return $main_class;
-	}
-
-	if ( $class == 'sidebar' ) {
-		return $sidebar_class;
-	}
-
-	if ( $class == 'sidebar_alt' ) {
-		return $sidebar_class_alt;
-	}
-}
-
-/**
- * .main classes
- */
-function lsx_main_class() {
-  	return lsx_layout_selector( 'main' );
-}
-
-function lsx_home_main_class() {
-	return lsx_layout_selector( 'main', 'home' );
-}
-
-/**
- * Outputs the class for the main div on the index.php page only
- */
-function lsx_index_main_class() {
-	
-	$show_on_front = get_option('show_on_front');
-	if('page' == $show_on_front){
-		return lsx_layout_selector( 'main', 'home' );
-	}else{
-		return lsx_layout_selector( 'main', 'site' );
 	}
 	
 }
+add_action('wp_head','lsx_process_content_width');
 
-/**
- * .sidebar classes
- */
-function lsx_sidebar_class() {
-  	return lsx_layout_selector( 'sidebar' );
-}
-
-function lsx_home_sidebar_class() {
-	return lsx_layout_selector( 'sidebar', 'home' );
-}
-
-/**
- * .sidebar classes
- */
-function lsx_sidebar_alt_class() {
-  	return lsx_layout_selector( 'sidebar_alt' );
-}
-
-function lsx_home_sidebar_alt_class() {
-	return lsx_layout_selector( 'sidebar_alt', 'home' );
-}
-
-/**
- * $content_width is a global variable used by WordPress for max image upload sizes
- * and media embeds (in pixels).
- *
- * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
- * Default: 1140px is the default Bootstrap container width.
- */
-if (!isset($content_width)) { $content_width = 1140; }
 
 /**
  * Disable the comments form by default for the page post type.
+ * @package	lsx
+ * @subpackage config
  */
 function lsx_page_comments_off( $data ) {
 
@@ -179,3 +161,24 @@ function lsx_page_comments_off( $data ) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
+
+
+/*
+ * ===================	Editor Styles  ===================
+ */
+
+
+/**
+ *  Registers our themes editor stylesheet.
+ *
+ * @package	lsx
+ * @subpackage config
+ * @category TinyMCE
+ * @param	$init_array array()
+ * @return	$init_array array()
+ */
+function lsx_add_editor_styles() {
+	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
+}
+add_action( 'init', 'lsx_add_editor_styles' );
+

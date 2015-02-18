@@ -10,39 +10,32 @@
 	$show_on_front = get_option('show_on_front');
 
  	if ('page' == $show_on_front && is_front_page()) { 
-		$layout = '1col'; 
+		$layout = '1c'; 
 		$sidebar = 'home';
 	} else {
-		
-		$page_layout = get_post_meta( get_the_ID(), 'lsx_layout', true );
-		
-		if ( $page_layout && $page_layout != "default" ) {
-			$layout = $page_layout;
-		} else {
-			$layout = lsx_get_option('site_layout');
-		}
-		
+
+		$layout = get_theme_mod('lsx_layout','2cr');
 		if('posts' == $show_on_front && is_home()){
 			$sidebar = 'home';
 		}else{
 			$sidebar = 'sidebar-1';
 		}
 	}
-	if ( $layout !== '1col' ) : ?>
+	if ( $layout !== '1c' ) : ?>
 
 	<?php lsx_sidebars_before(); ?>
 
 	<?php if ('posts' == $show_on_front && is_home()) : ?>
 	
-		<div id="secondary" class="widget-area <?php echo lsx_home_sidebar_class(); ?>" role="complementary">
+		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_home_sidebar_class()); ?>" role="complementary">
 		
 	<?php elseif ( is_page_template('page-templates/template-blog.php') ) : ?>
 	
-		<div id="secondary" class="widget-area <?php echo lsx_sidebar_class(); ?>" role="complementary">
+		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_sidebar_class()); ?>" role="complementary">
 		
 	<?php else : ?>
 	
-		<div id="secondary" class="widget-area <?php echo lsx_sidebar_class(); ?>" role="complementary">
+		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_sidebar_class()); ?>" role="complementary">
 		
 	<?php endif ; ?>
 

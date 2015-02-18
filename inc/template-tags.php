@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Yoast Breadcrumbs on Twitter Bootstrap
@@ -21,7 +22,7 @@ function lsx_breadcrumbs() {
 
   // Remove wrapper <span xmlns:v />
   $output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
-  $output = preg_replace("/\<\/span\>$/", "", $output);
+  $output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
 
   $crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
 
@@ -45,30 +46,27 @@ function lsx_breadcrumbs() {
 
 /**
  * Custom template tags for this theme.
- *
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package lsx
  */
-
-if ( ! function_exists( 'lsx_logo' ) ) :
-/**
- * Displays logo when applicable
- *
- * @return void
- */
-function lsx_logo() {
-	$logo = lsx_get_option('site_logo');
-
-	if ( ! empty( $logo ) ) { 
-	
-		?> <img src="<?php echo $logo; ?>" alt="<?php bloginfo('name'); ?>" class="site-logo"> <?php
-	
-	} else {
-		echo bloginfo('name');
+if ( ! function_exists( 'lsx_site_title' ) ) :
+	/**
+	 * Displays logo when applicable
+	 *
+	 * @return void
+	*/
+	function lsx_site_title() {
+		?>
+			<div class="site-branding">
+				<h1 class="site-title"><a title="<?php bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			</div>		
+		<?php 
 	}
-}
 endif;
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Add customisable post meta */
@@ -79,52 +77,199 @@ endif;
  *
  * Add customisable post meta, using shortcodes,
  * to be added/modified where necessary.
- *
- * @package WooFramework
- * @subpackage Actions
  */
 
 if ( ! function_exists( 'lsx_post_meta' ) ) {
-function lsx_post_meta() {
-	if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; }
+	function lsx_post_meta() {
+		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
+		
+		<div class="post-meta">
+			<div class="post-date">
+				<span class="genericon genericon-month"></span>
+				<?php
+					$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+					
+					$time_string = sprintf( $time_string,
+						esc_attr( get_the_date( 'c' ) ),
+						get_the_date(),
+						esc_attr( get_the_modified_date( 'c' ) ),
+						get_the_modified_date()
+					);
+					printf( '<a href="%2$s" rel="bookmark">%3$s</a>',
+						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
+						esc_url( get_permalink() ),
+						$time_string
+					);
+				?>
+			</div>
 
-	$post_info = '<span class="small">' . __( 'By', 'lsx' ) . '</span> [post_author_posts_link] <span class="small">' . _x( 'on', 'post datetime', 'lsx' ) . '</span> [post_date] <span class="small">' . __( 'in', 'lsx' ) . '</span> [post_categories before=""] ';
+			<div class="post-author">
 
-	$post_info = do_shortcode( $post_info );
-	
-	printf( '<div class="post-meta">%s</div>' . "\n", $post_info );
+				<span class="genericon genericon-user"></span>
 
-} // End lsx_post_meta()
+				<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
+					_x( 'Author', 'Used before post author name.', 'lsx' ),
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					get_the_author()
+				); ?>
+			</div>
+
+
+			<?php 
+		    	$post_categories = wp_get_post_categories( get_the_ID() );
+		    	$cats = array();
+		    	foreach($post_categories as $c){
+		    			$cat = get_category( $c );
+		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
+		    	}
+		    	if(!empty($cats)){ ?>
+					<div class="post-categories">
+						<span class="genericon genericon-category"></span>		    	
+						<?php echo implode(', ', $cats); ?>
+					</div>					
+			<?php } ?>
+
+
+			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
+
+			
+			<div class="clearfix"></div>
+		</div>
+
+	<?php } // End lsx_post_meta() 
+}
+
+/**
+ * Add customisable post format html.
+ */
+
+if ( ! function_exists( 'lsx_post_format' ) ) {
+	function lsx_post_format() {
+		global $post;
+		
+		$post_format = get_post_format($post);
+		
+		if('standard' != $post_format && '' != $post_format) {
+			$format_link = get_post_format_link($post_format);
+			?>
+	    	<div class="post-format">
+	    		<?php echo '<span class="genericon"></span><a href="' . esc_url($format_link) . '" title="' . sprintf( __( "View all %s posts" , 'lsx' ), ucfirst($post_format) ) . '" ' . '>' . ucfirst($post_format) . '</a> '; ?>
+	    	</div>			
+			<?php 
+		}
+	} // End lsx_post_format()
+}
+
+/**
+ * Add customisable portfolio meta.
+ *
+ * Add customisable portfolio meta, using shortcodes,
+ * to be added/modified where necessary.
+ */
+
+if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
+	function lsx_portfolio_meta() {
+		?>
+
+		<div class="portfolio-meta">
+		
+			<?php 
+				$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+				
+				if($portfolio_type){
+					?>
+					<div class="portfolio-category">
+						<span><span class="genericon genericon-category"></span><?php _e('Category','lsx'); ?></span>
+						<?php echo $portfolio_type; ?>
+					</div>			
+			<?php } ?>
+		
+			<?php 
+				$client = get_post_meta(get_the_ID(),'lsx-client',true);
+				if(false != $client){ ?>
+					<div class="portfolio-client">
+						<span><span class="genericon genericon-user"></span><?php _e('Client','lsx'); ?></span>
+						<span><?php echo esc_html($client); ?></span>
+					</div>			
+			<?php }	?>
+
+			<?php 
+				$website = get_post_meta(get_the_ID(),'lsx-website',true);
+				if(false != $website){ ?>
+					<div class="portfolio-website">
+						<span><span class="genericon genericon-link"></span><?php _e('Website','lsx'); ?></span>
+						<a href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
+					</div>				
+			<?php }	?>
+
+		</div>
+
+	<?php } // End lsx_portfolio_meta() 
+}
+
+/**
+ * Add customisable portfolio gallery.
+ *
+ */
+
+if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
+	function lsx_portfolio_gallery() {
+
+		$media = get_attached_media( 'image' );
+		$media_array = array();
+		$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
+		
+		if(!empty($media)){
+			foreach($media as $media_item){
+				if($post_thumbnail_id != $media_item->ID) {
+					$media_array[] = $media_item->ID;
+				}
+			}
+				
+			if(!empty($media_array)){
+				echo do_shortcode('[gallery size="thumbnail" ids="'.implode(',', $media_array).'"]');
+			}
+		}
+		
+	}
 }
 
 if ( ! function_exists( 'lsx_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @return void
- */
-function lsx_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
+	/**
+	 * Display navigation to next/previous set of posts when applicable.
+	 *
+	 * @return void
+	 */
+	function lsx_paging_nav() {
+		// Don't print empty markup if there's only one page.
+		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+			return;
+		}
+		
+		if(current_theme_supports('infinite-scroll') && function_exists('the_neverending_home_page_init')){
+			return true;
+		}elseif(function_exists('wp_pagenavi')){
+			wp_pagenavi();
+		}else{
+		
+			?>
+			<nav class="navigation paging-navigation" role="navigation">
+				<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'lsx' ); ?></h1>
+				<div class="nav-links">
+		
+					<?php if ( get_next_posts_link() ) : ?>
+					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ) ); ?></div>
+					<?php endif; ?>
+		
+					<?php if ( get_previous_posts_link() ) : ?>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ) ); ?></div>
+					<?php endif; ?>
+		
+				</div><!-- .nav-links -->
+			</nav><!-- .navigation -->
+			<?php
+		}
 	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'lsx' ); ?></h1>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
 endif;
 
 if ( ! function_exists( 'lsx_post_nav' ) ) :
@@ -146,13 +291,13 @@ function lsx_post_nav() {
 		<div class="nav-links pager row">
 
 			<?php
-				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous"><span class="meta-nav">&larr;</span> %title</div>', 'Previous post link', 'lsx' ) );
-				$previous_post = str_replace('<a','<a class="col-sm-6"',$previous_post);
+				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous"><p class="nav-links-description">Previous Post:</p><span class="meta-nav">&larr;</span> %title</div>', 'Previous post link', 'lsx' ) );
+				$previous_post = str_replace('<a','<a',$previous_post);
 				echo $previous_post;
 			?>
 			<?php
-				$next_post = get_next_post_link(     '%link', _x( '<div class="next">%title <span class="meta-nav">&rarr;</span></div>', 'Next post link',     'lsx' ) );
-				$next_post = str_replace('<a','<a class="col-sm-6"',$next_post);
+				$next_post = get_next_post_link(     '%link', _x( '<div class="next"><p class="nav-links-description">Next Post:</p>%title <span class="meta-nav">&rarr;</span></div>', 'Next post link',     'lsx' ) );
+				$next_post = str_replace('<a','<a',$next_post);
 				echo $next_post;
 			?>
 
@@ -169,8 +314,65 @@ if ( ! function_exists( 'lsx_posted_on' ) ) :
 function lsx_posted_on() {
 	global $post;
 
-	echo 'by '; 
+	echo __('by ','lsx'); 
 	the_author_posts_link(); 
-	echo ' on ' . get_the_date( 'D jS F Y ' ) . ' in ' . get_the_category_list( ', ', '', $post->ID );
+	echo ' '.__('on').' ' . get_the_date( 'D jS F Y ' ) . ' '.__('in').' ' . get_the_category_list( ', ', '', $post->ID );
 }
 endif;
+
+/**
+ * Outputs either the Site Title or the Site Logo
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ */
+if(!function_exists('lsx_site_identity')){
+	function lsx_site_identity(){
+
+		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+			jetpack_the_site_logo();
+		} 
+		
+		if(true == get_theme_mod('site_logo_header_text',1)){
+			lsx_site_title();
+		}
+	}
+}
+
+/**
+ * Outputs the Nav Menu
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ */
+if(!function_exists('lsx_nav_menu')){
+	function lsx_nav_menu(){
+		$nav_menu = get_theme_mod('nav_menu_locations',array());
+	    if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+			<nav class="collapse navbar-collapse" role="navigation">
+		    	<?php
+				wp_nav_menu( array(
+					'menu' => $nav_menu['primary'],
+					'depth' => 2,
+					'container' => false,
+					'menu_class' => 'nav navbar-nav',
+					'walker' => new lsx_bootstrap_navwalker())
+				);
+				?>
+		   		</nav>
+	    	<?php } else { ?>
+	    		<nav class="collapse navbar-collapse" role="navigation">
+		  	<?php
+			wp_nav_menu( array(
+				'menu' => $nav_menu,
+				'depth' => 2,
+				'container' => false,
+				'menu_class' => 'nav navbar-nav',
+				'walker' => new lsx_bootstrap_navwalker())
+			);
+			?>
+	    	</nav>
+	    </div>
+	  	<?php }
+	}
+}

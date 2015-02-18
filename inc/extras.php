@@ -1,13 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- *
  * Adds Yoast Breadcrumbs to lsx_content_top
- *
- * @package activeafrica-lsx-child
- * @subpackage Action
- * @author LightSpeed (Domenico)
- * @since 1.0
  */
 function lsx_yoast_breadcrumbs(){
 	
@@ -22,50 +17,6 @@ function lsx_yoast_breadcrumbs(){
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
 
 /**
- * Custom functions that act independently of the theme templates
- *
- * Eventually, some of the functionality here could be replaced by core features
- *
- * @package lsx
- */
-  
-//customize the PageNavi HTML before it is output
-function lsx_filter_wppagenavi_html( $html ) {
-    $out = '';
-  
-    //wrap a's and span's in li's
-    $out = str_replace("<div","",$html);
-    $out = str_replace("class='wp-pagenavi'>","",$out);
-    $out = str_replace("<a","<li><a",$out);
-    $out = str_replace("</a>","</a></li>",$out);
-    $out = str_replace("<span","<li><span",$out);  
-    $out = str_replace("</span>","</span></li>",$out);
-    $out = str_replace("</div>","",$out);
-  
-    return '<div class="clearfix"></div>
-            <div class="lsx-pagination">
-            <ul class="pagination">'.$out.'</ul></div>';
-}
-add_filter( 'wp_pagenavi', 'lsx_filter_wppagenavi_html', 10, 2 );
-
-
-
-function lsx_placeholder_image( $html, $post_id = false, $post_thumbnail_id = false, $size = 'thumbnail', $attr = array() )
-{
-    if ( '' !== $html )
-    {
-        return $html;
-    }
-
-    $placeholder_url = lsx_get_option('placeholder_image');
-
-    $placeholder_id = get_attachment_id( $placeholder_url );
-
-   return wp_get_attachment_image( $placeholder_id, $size );
-
-}
-add_filter( 'post_thumbnail_html', 'lsx_placeholder_image' );
-/**
  * Add and remove body_class() classes
  */
 function lsx_body_class($classes) {
@@ -74,11 +25,9 @@ function lsx_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
   
-  //Add the banner class if neccesary
-  $show_on_front = get_option('show_on_front');
-  if(lsx_get_option('enable_banner',false) && (('page' == $show_on_front && is_front_page()) || ('posts' == $show_on_front && is_home()) )) {
-  	$classes[] = 'banner';
-  }  
+  if(is_page() && has_post_thumbnail()){
+  	$classes[] = 'page-has-banner';
+  }
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');
@@ -156,7 +105,7 @@ function lsx_caption($output, $attr, $content) {
 
   $output  = '<figure' . $attributes .'>';
   $output .= do_shortcode($content);
-  $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
+  $output .= '<figcaption class="caption wp-caption-text">' . esc_html($attr['caption'])	 . '</figcaption>';
   $output .= '</figure>';
 
   return $output;
@@ -201,3 +150,180 @@ function lsx_clean_style_tag($input) {
 }
 add_filter('style_loader_tag', 'lsx_clean_style_tag');
 
+if (!function_exists('lsx_get_attachment_id')) {
+	/**
+	 * Get the Attachment ID for a given image URL.
+	 *
+	 * @link   http://wordpress.stackexchange.com/a/7094
+	 *
+	 * @param  string $url
+	 *
+	 * @return boolean|integer
+	 */
+	function lsx_get_attachment_id($url) {
+
+		$dir = wp_upload_dir();
+
+		// baseurl never has a trailing slash
+		if (false === strpos($url, $dir['baseurl'].'/')) {
+			// URL points to a place outside of upload directory
+			return false;
+		}
+
+		$file  = basename($url);
+		$query = array(
+				'post_type'  => 'attachment',
+				'fields'     => 'ids',
+				'meta_query' => array(
+						array(
+								'value'   => $file,
+								'compare' => 'LIKE',
+						),
+				)
+		);
+
+		$query['meta_query'][0]['key'] = '_wp_attached_file';
+
+		// query attachments
+		$ids = get_posts($query);
+
+		if (!empty($ids)) {
+
+			foreach ($ids as $id) {
+
+				// first entry of returned array is the URL
+				$temp_url = wp_get_attachment_image_src($id, 'full');
+				if ($url === array_shift($temp_url)) {
+					return $id;
+				}
+			}
+		}
+
+		$query['meta_query'][0]['key'] = '_wp_attachment_metadata';
+
+		// query attachments again
+		$ids = get_posts($query);
+
+		if (empty($ids)) {
+			return false;
+		}
+
+		foreach ($ids as $id) {
+
+			$meta = wp_get_attachment_metadata($id);
+
+			foreach ($meta['sizes'] as $size => $values) {
+
+				if ($values['file'] === $file && $url === array_shift(wp_get_attachment_image_src($id, $size))) {
+					return $id;
+				}
+			}
+		}
+
+		return false;
+	}
+}
+
+/**
+ * Get the Avatar Url
+ */
+function lsx_get_avatar_url($author_id, $size) {
+	$get_avatar = get_avatar($author_id, $size);
+	preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+	return ($matches[1]);
+}
+
+/**
+ * Checks if a Nav $element is empty or not
+ */
+function lsx_is_element_empty($element) {
+	$element = trim($element);
+	return empty($element)?false:true;
+}
+
+
+/**
+ * return the responsive images.
+ */
+function lsx_get_thumbnail($size,$image_src = false){
+	global $post;
+	
+	if(false == $image_src){
+		$post_id = ( null === $post_id ) ? get_the_ID() : $post_id;
+		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+	}elseif(false != $image_src	){
+		if(is_numeric($image_src)){
+			$post_thumbnail_id = $image_src;
+		}else{
+			$post_thumbnail_id = lsx_get_attachment_id_from_src($image_src);
+		}
+	}
+	
+	if('thumbnail-single' == $size){
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
+
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+
+	}elseif('thumbnail-wide' == $size){
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+	
+	}elseif('banner' == $size){
+		
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $image_src );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
+				
+		$img = ' data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'"';
+		
+	}elseif(is_array($size)){
+		
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+		
+	}
+	return $img;
+}
+
+/**
+ * Output the Resonsive Images
+ */
+function lsx_thumbnail($size = 'thumbnail',$image_src = false){
+	echo lsx_get_thumbnail($size,$image_src);
+}
+
+/**
+ * Gets the attachments ID from the src
+ */
+function lsx_get_attachment_id_from_src($image_src) {
+	global $wpdb;
+	$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src' LIMIT 1";
+	$id = $wpdb->get_var($query);
+	return $id;
+}
+
+/**
+ * Add Featured Image as Banner on Single Pages.
+ *
+ * @package lsx
+ * @subpackage extras
+ * @category banner
+ */
+function lsx_page_banner() {
+	global $post;
+
+	if ( is_page() && has_post_thumbnail() ) { ?>
+        
+        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id($post->ID)); ?>>
+          <header class="page-header">
+            <h1 class="page-title"><?php the_title(); ?></h1>   
+          </header><!-- .entry-header -->
+        </div>
+    <?php } 
+}
+add_action( 'lsx_header_after', 'lsx_page_banner' );

@@ -35,12 +35,8 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-
-			<?php if ( function_exists('wp_pagenavi') ) { ?>
-				<?php wp_pagenavi(); ?>
-			<?php } else { ?>
-				<?php lsx_paging_nav(); ?>
-			<?php } ?>
+			
+			<?php lsx_paging_nav(); ?>
 			
 		<?php else : ?>
 
@@ -56,6 +52,5 @@ get_header(); ?>
 		
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_sidebar( 'alt' ); ?>
+<?php get_sidebar( 'sidebar' ); ?>
 <?php get_footer(); ?>

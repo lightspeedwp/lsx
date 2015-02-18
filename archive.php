@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * The template for displaying Archive pages.
  *
@@ -22,20 +24,16 @@ get_header(); ?>
 			<header class="page-header">
 				
 				<h1 class="page-title">
-					<?php if ( is_date() ) { ?>
-						<?php if ( is_day() ) { ?> 
-						<?php __( 'Archive for', 'lsx' ); ?> <?php the_time('F jS, Y'); ?>
-						<?php  } elseif ( is_month() ) { ?> 
-						<?php __( 'Archive for', 'lsx' ); ?> <?php the_time('F, Y'); ?>
-						<?php } elseif ( is_year() ) { ?> 
-						<?php __( 'Archive for', 'lsx' ); ?> <?php the_time('Y'); ?>
-						<?php } ?> 
-					<?php } else { ?>
-						<?php single_cat_title( 'Archive - '); ?>
-					<?php } ?>
+					<?php the_archive_title(); ?>
 				</h1>
 
 			</header><!-- .page-header -->
+			
+			<?php if(is_tax()){ ?>
+				<div class="entry-content">		
+					<?php the_archive_description(); ?>
+				</div>
+			<?php } ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -50,13 +48,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 			
-			
-
-			<?php if ( function_exists('wp_pagenavi') ) { ?>
-				<?php wp_pagenavi(); ?>
-			<?php } else { ?>
-				<?php lsx_paging_nav(); ?>
-			<?php } ?>
+			<?php lsx_paging_nav(); ?>
 
 		<?php else : ?>
 
@@ -73,5 +65,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
-<?php get_sidebar('alt'); ?>
+
 <?php get_footer(); ?>

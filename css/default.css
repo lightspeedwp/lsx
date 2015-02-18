@@ -1,0 +1,69 @@
+header.banner {
+  background: #eeeeee;
+}
+header.banner nav .nav.navbar-nav li a {
+  color: #555555;
+  border: none !important;
+}
+
+header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
+  color: #eeeeee;
+  background: #555555;
+}
+
+header.banner nav .nav.navbar-nav li ul.dropdown-menu {
+  background: #555555;
+}
+
+@media screen and (max-width: 992px) {
+  header.banner nav .nav.navbar-nav li ul.dropdown-menu {
+    background: #eeeeee;
+  }
+}
+
+
+header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
+  color: #eeeeee;
+}
+
+header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
+  background: #777777;
+}
+
+@media screen and (max-width: 992px) {
+  header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
+    color: #eeeeee;
+  }
+}
+
+header.banner nav .nav.navbar-nav li.active a {
+  color: #333333;
+}
+
+header.banner nav .nav.navbar-nav li.active:hover > a {
+  color: #ffffff;
+}
+
+.navbar-toggle {
+  background: none !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #333333;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {
+  background-color: #333333;
+}
+
+.mobile-menu-title {
+  color: #333333;
+  margin: 47px 5px;
+}
+
+.home .soliloquy-slider {
+  background: #eeeeee;
+}
+#social-navigation ul li a:hover {
+  color: #eeeeee !important;
+}

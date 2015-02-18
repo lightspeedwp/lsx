@@ -8,8 +8,8 @@ module.exports = function(grunt) {
       },
       all: [
         'Gruntfile.js',
-        'assets/js/*.js',
-        '!assets/js/scripts.min.js'
+        '/js/*.js',
+        '!/js/scripts.min.js'
       ]
     },
     sass: {
@@ -18,53 +18,53 @@ module.exports = function(grunt) {
               style: 'compressed'
           },
           files: {
-             'assets/css/main.min.css': 'assets/sass/app.scss'
+             '/css/main.min.css': '/sass/app.scss'
           }
         }
     },
     uglify: {
       dist: {
         files: {
-          'assets/js/scripts.min.js': [
-            'assets/js/plugins/bootstrap/transition.js',
-            'assets/js/plugins/bootstrap/alert.js',
-            'assets/js/plugins/bootstrap/button.js',
-            'assets/js/plugins/bootstrap/carousel.js',
-            'assets/js/plugins/bootstrap/collapse.js',
-            'assets/js/plugins/bootstrap/dropdown.js',
-            'assets/js/plugins/bootstrap/modal.js',
-            'assets/js/plugins/bootstrap/tooltip.js',
-            'assets/js/plugins/bootstrap/popover.js',
-            'assets/js/plugins/bootstrap/scrollspy.js',
-            'assets/js/plugins/bootstrap/tab.js',
-            'assets/js/plugins/bootstrap/affix.js',
-            'assets/js/plugins/*.js',
-            'assets/js/_*.js',
-            'assets/js/vendor/jquery.fitvids.js',
-            'assets/js/custom/general.js'
+          '/js/scripts.min.js': [
+            '/js/plugins/bootstrap/transition.js',
+            '/js/plugins/bootstrap/alert.js',
+            '/js/plugins/bootstrap/button.js',
+            '/js/plugins/bootstrap/carousel.js',
+            '/js/plugins/bootstrap/collapse.js',
+            '/js/plugins/bootstrap/dropdown.js',
+            '/js/plugins/bootstrap/modal.js',
+            '/js/plugins/bootstrap/tooltip.js',
+            '/js/plugins/bootstrap/popover.js',
+            '/js/plugins/bootstrap/scrollspy.js',
+            '/js/plugins/bootstrap/tab.js',
+            '/js/plugins/bootstrap/affix.js',
+            '/js/plugins/*.js',
+            '/js/_*.js',
+            '/js/vendor/jquery.fitvids.js',
+            '/js/custom/general.js'
           ]
         },
         options: {
           // JS source map: to enable, uncomment the lines below and update sourceMappingURL based on your install
-          // sourceMap: 'assets/js/scripts.min.js.map',
-          // sourceMappingURL: '/app/themes/roots/assets/js/scripts.min.js.map'
+          // sourceMap: '/js/scripts.min.js.map',
+          // sourceMappingURL: '/app/themes/roots//js/scripts.min.js.map'
         }
       }
     },
     version: {
       options: {
         file: 'inc/scripts.php',
-        css: 'assets/css/main.min.css',
+        css: '/css/main.min.css',
         cssHandle: 'lsx_main',
-        js: 'assets/js/scripts.min.js',
+        js: '/js/scripts.min.js',
         jsHandle: 'lsx_scripts'
       }
     },
     watch: {
       sass: {
         files: [
-          'assets/sass/*.scss',
-          'assets/sass/bootstrap/*.scss'
+          '/sass/*.scss',
+          '/sass/bootstrap/*.scss'
         ],
         tasks: ['sass', 'version']
       },
@@ -81,16 +81,16 @@ module.exports = function(grunt) {
           livereload: false
         },
         files: [
-          'assets/css/main.min.css',
-          'assets/js/scripts.min.js',
+          '/css/main.min.css',
+          '/js/scripts.min.js',
           '*.php'
         ]
       }
     },
     clean: {
       dist: [
-        'assets/css/main.min.css',
-        'assets/js/scripts.min.js'
+        '/css/main.min.css',
+        '/js/scripts.min.js'
       ]
     }
   });
