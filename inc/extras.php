@@ -277,7 +277,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 		
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $image_src );
 		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
 				
 		$img = ' data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'"';
 		
@@ -317,9 +317,9 @@ function lsx_get_attachment_id_from_src($image_src) {
 function lsx_page_banner() {
 	global $post;
 
-	if ( is_page() && has_post_thumbnail() ) {
-        $image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-        <div class="page-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
+	if ( is_page() && has_post_thumbnail() ) { ?>
+        
+        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id($post->ID)); ?>>
           <header class="page-header">
             <h1 class="page-title"><?php the_title(); ?></h1>   
           </header><!-- .entry-header -->
