@@ -245,24 +245,47 @@ function lsx_is_element_empty($element) {
 /**
  * return the responsive images.
  */
-function lsx_get_thumbnail($size){
+function lsx_get_thumbnail($size,$image_src = false){
 	global $post;
-	$post_id = ( null === $post_id ) ? get_the_ID() : $post_id;
-	$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+	
+	if(false == $image_src){
+		$post_id = ( null === $post_id ) ? get_the_ID() : $post_id;
+		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+	}elseif(false != $image_src	){
+		if(is_numeric($image_src)){
+			$post_thumbnail_id = $image_src;
+		}else{
+			$post_thumbnail_id = lsx_get_attachment_id_from_src($image_src);
+		}
+	}
 	
 	if('thumbnail-single' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
 		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
 		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
-		
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
-	
+
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+
 	}elseif('thumbnail-wide' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'medium' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, $size );	
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+	
+	}elseif('banner' == $size){
+		
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $image_src );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+				
+		$img = ' data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'"';
+		
+	}elseif(is_array($size)){
+		
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, array(250,200) );
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+		
 	}
 	return $img;
 }
@@ -270,8 +293,18 @@ function lsx_get_thumbnail($size){
 /**
  * Output the Resonsive Images
  */
-function lsx_thumbnail($size = 'thumbnail'){
-	echo lsx_get_thumbnail($size);
+function lsx_thumbnail($size = 'thumbnail',$image_src = false){
+	echo lsx_get_thumbnail($size,$image_src);
+}
+
+/**
+ * Gets the attachments ID from the src
+ */
+function lsx_get_attachment_id_from_src($image_src) {
+	global $wpdb;
+	$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src' LIMIT 1";
+	$id = $wpdb->get_var($query);
+	return $id;
 }
 
 /**
