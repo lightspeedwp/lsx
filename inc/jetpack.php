@@ -138,7 +138,7 @@ function lsx_portfolio_related_posts(){
 			</div>
 		</div>			
 	<?php }
-}
+} 
 
 /**
  * Remove the sharing from below the content on single portfolio pages.
