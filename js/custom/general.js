@@ -116,7 +116,7 @@ function lsxResizeBanner(width) {
 		banner_attribute_name = 'data-mobile';
 	}			
 	if(jQuery('body').hasClass('page')){		
-		var image_url = 'url('+jQuery('.page-banner').attr(size)+')';
+		var image_url = 'url('+jQuery('.page-banner').attr(banner_attribute_name)+')';
 		jQuery('.page-banner').css('background-image',image_url);	
 	}	
 
