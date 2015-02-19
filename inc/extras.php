@@ -249,7 +249,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 	global $post;
 	
 	if(false == $image_src){
-		$post_id = ( null === $post_id ) ? get_the_ID() : $post_id;
+		$post_id = ( null === $post->ID ) ? get_the_ID() : $post->ID;
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	}elseif(false != $image_src	){
 		if(is_numeric($image_src)){

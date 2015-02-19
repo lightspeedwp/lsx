@@ -124,7 +124,6 @@ function lsx_author_box() {
 	global $post;
 	$author_id=$post->post_author;
 	if ( get_post_type() == 'post' ) {
-		$author_meta = get_the_author_meta( $field, $user_id );
 		?>
 			<div class="author-box well col-xs-12">
 				<div class="image col-sm-2">
@@ -156,9 +155,9 @@ function lsx_author_box() {
  * @subpackage layout
  */
 function lsx_blog_page_title() {
-
-		$blog_page = get_queried_object();
-		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == $blog_page->ID) { ?>
+		global $post;
+		
+		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == $post->ID) { ?>
 			<header class="page-header">
 					<h1 class="page-title"><?php echo get_the_title($blog_page); ?></h1>		
 			</header>
