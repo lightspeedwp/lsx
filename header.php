@@ -29,7 +29,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) { ?>
   		<?php lsx_header_top(); ?>
 	  	<div class="container">
 	    	<div class="navbar-header">
-	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
 		        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
