@@ -349,7 +349,7 @@ if(!function_exists('lsx_nav_menu')){
 	function lsx_nav_menu(){
 		$nav_menu = get_theme_mod('nav_menu_locations',array());
 	    if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
-			<nav class="collapse navbar-collapse" role="navigation">
+			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
 		    	<?php
 				wp_nav_menu( array(
 					'menu' => $nav_menu['primary'],
@@ -361,7 +361,7 @@ if(!function_exists('lsx_nav_menu')){
 				?>
 		   		</nav>
 	    	<?php } else { ?>
-	    		<nav class="collapse navbar-collapse" role="navigation">
+	    		<nav class="primary-navbar collapse navbar-collapse" role="navigation">
 		  	<?php
 			wp_nav_menu( array(
 				'menu' => $nav_menu,
