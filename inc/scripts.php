@@ -86,9 +86,12 @@ function lsx_scripts() {
 		break;
 	}
 	
+	$http_var = 'http';
+	if(is_ssl()){ $http_var .= 's'; }
+	
 	//Call the Google Fonts and then Enque them.
-	wp_register_style('lsx-header-font', 'http://fonts.googleapis.com/css?family='.$header_font_location);
-	wp_register_style('lsx-body-font', 'http://fonts.googleapis.com/css?family='.$body_font_location);
+	wp_register_style('lsx-header-font', $http_var.'://fonts.googleapis.com/css?family='.$header_font_location);
+	wp_register_style('lsx-body-font', $http_var.'://fonts.googleapis.com/css?family='.$body_font_location);
 	wp_enqueue_style( 'lsx-header-font');
 	wp_enqueue_style( 'lsx-body-font');
 	
