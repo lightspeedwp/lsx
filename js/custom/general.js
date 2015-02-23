@@ -173,9 +173,10 @@ function lsx_set_portfolio_columns()
 
 function lsxProjectThumbInit() {
 	lsx_set_portfolio_columns();
+	
 	gridContainer.isotope({
-		resizable: false,
-		layoutMode: 'fitRows',
+		resizable: true,
+		//layoutMode: 'fitRows',
 		itemSelector: '.filter-item',
 		masonry: {
 			columnWidth: colW
