@@ -161,10 +161,11 @@ function lsx_set_portfolio_columns()
 		columns = 6; 
 	}
 	colW = Math.floor(gw / columns) - 14;
-	jQuery('.filter-item').each(function(id){
+	console.log(colW);
+	/*jQuery('.filter-item').each(function(id){
 		jQuery(this).css('width',colW + 'px');
-	});
-	jQuery('.filter-item').show();
+	});*/
+	//jQuery('.filter-item').show();
 }
 
 ///////////////////////////////
@@ -174,16 +175,20 @@ function lsx_set_portfolio_columns()
 function lsxProjectThumbInit() {
 	lsx_set_portfolio_columns();
 	
-	gridContainer.isotope({
+	/*gridContainer.isotope({
 		resizable: true,
 		//layoutMode: 'fitRows',
 		itemSelector: '.filter-item',
 		masonry: {
 			columnWidth: colW
 		}
-	});
+	});*/
+	gridContainer.masonry({
+		  itemSelector: '.filter-item',
+		  columnWidth: colW
+	});	
 
-	jQuery(".filter-items-container .filter-item").css("visibility", "visible");
+	//jQuery(".filter-items-container .filter-item").css("visibility", "visible");
 }
 
 

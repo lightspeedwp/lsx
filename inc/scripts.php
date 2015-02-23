@@ -37,7 +37,8 @@ function lsx_scripts() {
 	
 	wp_enqueue_script('modernizr');
     wp_enqueue_script('jquery');
-    wp_enqueue_script('isotope');
+    //wp_enqueue_script('isotope');
+    wp_enqueue_script('masonry');
 	wp_enqueue_script('lsx_scripts');
 	wp_enqueue_script('lsx_custom');
 	wp_enqueue_style( 'genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
