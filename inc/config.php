@@ -181,4 +181,3 @@ function lsx_add_editor_styles() {
 	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
 }
 add_action( 'init', 'lsx_add_editor_styles' );
-
