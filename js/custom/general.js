@@ -197,12 +197,14 @@ function lsxProjectFilterInit() {
 	
 	jQuery('#filterNav a').click(function(){
 		var selector = jQuery(this).attr('data-filter');
-		jQuery('.filter-items-wrapper .filter-items-container').isotope({
+		jQuery('.filter-items-container').isotope({
 			filter: selector,
-			hiddenStyle : {
-		    	opacity: 0,
-		    	scale : 1
-			}		
+			resizable: true,
+			layoutMode: 'packery',
+			itemSelector: '.filter-item',
+			masonry: {
+				columnWidth: colW
+			}			
 		});
 
 		if ( !jQuery(this).hasClass('selected') ) {
