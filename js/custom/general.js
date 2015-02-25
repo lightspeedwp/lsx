@@ -163,6 +163,7 @@ function lsx_set_portfolio_columns()
 	
 	jQuery('.filter-item').each(function(id){
 		jQuery(this).css('width',colW + 'px');
+		jQuery(this).show();
 	});
 }
 
