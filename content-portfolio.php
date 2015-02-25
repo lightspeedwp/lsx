@@ -13,7 +13,6 @@ if ($types) {
 		$type_class .= $type->slug . " ";
 	}
 }
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($type_class); ?>>
