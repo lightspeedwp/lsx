@@ -177,7 +177,7 @@ function lsxProjectThumbInit() {
 		
 		jQuery(".filter-items-container").isotope({
 			resizable: true,
-			layoutMode: 'fitRows',
+			layoutMode: 'packery',
 			itemSelector: '.filter-item',
 			masonry: {
 				columnWidth: colW
