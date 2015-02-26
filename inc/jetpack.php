@@ -47,10 +47,6 @@ add_filter( 'jetpack_the_site_logo', 'lsx_site_logo_title_tag');
  * Portfolio Functionality
  */
 
-/*
- * Layout Controls
-*/
-
 /**
  * Set the Portfolio archive slug
  *
@@ -316,6 +312,35 @@ function lsx_remove_related_post_context(){
 }
 add_action('init','lsx_remove_related_post_context',20);
 
+
+/*
+ * Infinate Scroll
+*/
+/**
+ * Adds the theme_support for Jetpacks Infinite Scroll
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category infinite scroll
+ */
+function lsx_jetpack_infinite_scroll_after_setup() {
+	$infinite_scroll_args = array(
+			'container' => 'main',
+			'type' => 'click',
+			'posts_per_page' => get_option('posts_per_page',10),
+			'render'    => 'lsx_infinite_scroll_render'
+	);
+
+	$page_url = $_SERVER["REQUEST_URI"];
+	$portfolio_archive_slug = get_theme_mod('lsx_portfolio_slug','portfolio');
+
+	if(stristr($page_url, $portfolio_archive_slug)){
+		$infinite_scroll_args['container'] = 'portfolio-infinite-scroll-wrapper';
+	}
+
+	add_theme_support( 'infinite-scroll', $infinite_scroll_args );
+}
+add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
 
 /**
  * Set the code to be rendered on for calling posts,
