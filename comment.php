@@ -4,9 +4,6 @@ if(isset($GLOBALS['comment_depth'])){
 }else{
 	$depth = 3;
 }
-
-$depth = 3;
-
 ?>
 
 <?php echo get_avatar($comment, $size = '64'); ?>
@@ -22,4 +19,4 @@ $depth = 3;
 <?php endif; ?>
 
 <?php comment_text(); ?>
-<?php comment_reply_link(array('depth' => $depth,'max_depth' => 5)); ?>
+<?php comment_reply_link(array('depth' => $depth,'max_depth' => $depth)); ?>
