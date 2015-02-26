@@ -136,7 +136,7 @@ add_action('wp_head','lsx_process_content_width');
  */
 function lsx_page_comments_off( $data ) {
 
-	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == 'Auto Draft' ) {
+	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == __('Auto Draft','lsx') ) {
 		$data['comment_status'] = 0;
 		$data['ping_status'] = 0;
 	}
