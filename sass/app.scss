@@ -943,9 +943,22 @@ nav {
 
 	#primary,
 	#secondary {
-		&.col-sm-12,
+	
+		&.col-sm-12 {
+			max-width: 780px;
+			margin: 0 auto;
+			float: none;
+			
+			.single-jetpack-portfolio &,
+			.lsx-portfolio &,
+			.post-type-archive-jetpack-portfolio & {
+				max-width: 100%;
+			}
+		}	
+	
 		.page-template-template-full-width &,
-		.page-template-template-front-page & {
+		.page-template-template-front-page &,
+		.page-template-template-portfolio & {
 			max-width: 1140px;
 			margin: 0 auto;
 			float: none;

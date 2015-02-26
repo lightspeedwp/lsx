@@ -6142,22 +6142,32 @@ nav#social-navigation {
 .wrap {
   margin-top: 180px;
   margin-bottom: 100px; }
-  .wrap #primary.col-sm-12, .page-template-template-full-width .wrap #primary, .page-template-template-front-page .wrap #primary,
-  .wrap #secondary.col-sm-12, .page-template-template-full-width
+  .wrap #primary.col-sm-12,
+  .wrap #secondary.col-sm-12 {
+    max-width: 780px;
+    margin: 0 auto;
+    float: none; }
+    .single-jetpack-portfolio .wrap #primary.col-sm-12, .lsx-portfolio .wrap #primary.col-sm-12, .post-type-archive-jetpack-portfolio .wrap #primary.col-sm-12, .single-jetpack-portfolio
+    .wrap #secondary.col-sm-12, .lsx-portfolio
+    .wrap #secondary.col-sm-12, .post-type-archive-jetpack-portfolio
+    .wrap #secondary.col-sm-12 {
+      max-width: 100%; }
+  .page-template-template-full-width .wrap #primary, .page-template-template-front-page .wrap #primary, .page-template-template-portfolio .wrap #primary, .page-template-template-full-width
   .wrap #secondary, .page-template-template-front-page
+  .wrap #secondary, .page-template-template-portfolio
   .wrap #secondary {
     max-width: 1140px;
     margin: 0 auto;
     float: none; }
-    .single-jetpack-portfolio .wrap #primary.col-sm-12, .lsx-portfolio .wrap #primary.col-sm-12, .post-type-archive-jetpack-portfolio .wrap #primary.col-sm-12, .single-jetpack-portfolio .page-template-template-full-width .wrap #primary, .lsx-portfolio .page-template-template-full-width .wrap #primary, .post-type-archive-jetpack-portfolio .page-template-template-full-width .wrap #primary, .single-jetpack-portfolio .page-template-template-front-page .wrap #primary, .lsx-portfolio .page-template-template-front-page .wrap #primary, .post-type-archive-jetpack-portfolio .page-template-template-front-page .wrap #primary, .single-jetpack-portfolio
-    .wrap #secondary.col-sm-12, .lsx-portfolio
-    .wrap #secondary.col-sm-12, .post-type-archive-jetpack-portfolio
-    .wrap #secondary.col-sm-12, .single-jetpack-portfolio .page-template-template-full-width
+    .single-jetpack-portfolio .page-template-template-full-width .wrap #primary, .lsx-portfolio .page-template-template-full-width .wrap #primary, .post-type-archive-jetpack-portfolio .page-template-template-full-width .wrap #primary, .single-jetpack-portfolio .page-template-template-front-page .wrap #primary, .lsx-portfolio .page-template-template-front-page .wrap #primary, .post-type-archive-jetpack-portfolio .page-template-template-front-page .wrap #primary, .single-jetpack-portfolio .page-template-template-portfolio .wrap #primary, .lsx-portfolio .page-template-template-portfolio .wrap #primary, .post-type-archive-jetpack-portfolio .page-template-template-portfolio .wrap #primary, .single-jetpack-portfolio .page-template-template-full-width
     .wrap #secondary, .lsx-portfolio .page-template-template-full-width
     .wrap #secondary, .post-type-archive-jetpack-portfolio .page-template-template-full-width
     .wrap #secondary, .single-jetpack-portfolio .page-template-template-front-page
     .wrap #secondary, .lsx-portfolio .page-template-template-front-page
     .wrap #secondary, .post-type-archive-jetpack-portfolio .page-template-template-front-page
+    .wrap #secondary, .single-jetpack-portfolio .page-template-template-portfolio
+    .wrap #secondary, .lsx-portfolio .page-template-template-portfolio
+    .wrap #secondary, .post-type-archive-jetpack-portfolio .page-template-template-portfolio
     .wrap #secondary {
       max-width: 100%; }
   @media screen and (max-width: 992px) {
