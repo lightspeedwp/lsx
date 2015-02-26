@@ -55,29 +55,12 @@ function lsx_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	
-	
 	/*
 	 * Enable support for Post Formats.
 	*
 	* See: https://codex.wordpress.org/Post_Formats
 	*/
 	add_theme_support( 'post-formats', array('image', 'video', 'gallery') );
-	
-	$infinite_scroll_args = array(
-		'container' => 'main',
-		'type' => 'click',
-		'posts_per_page' => get_option('posts_per_page',10),
-		'render'    => 'lsx_infinite_scroll_render'
-	);
-	
-	$page_url = $_SERVER["REQUEST_URI"];
-	$portfolio_archive_slug = get_theme_mod('lsx_portfolio_slug','portfolio');
-	
-	if(stristr($page_url, $portfolio_archive_slug)){
-		$infinite_scroll_args['container'] = 'portfolio-infinite-scroll-wrapper';
-	}
-	
-	add_theme_support( 'infinite-scroll', $infinite_scroll_args );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -88,7 +71,7 @@ function lsx_setup() {
 		'widths' => array(
 			'1' => array(
 				'label' => __( '1 Column', 'lsx' ),
-				'value' => '1140',
+				'value' => '750',
 			),
 			'2' => array(
 				'label' => __( '2 Column', 'lsx' ),
@@ -153,7 +136,7 @@ add_action('wp_head','lsx_process_content_width');
  */
 function lsx_page_comments_off( $data ) {
 
-	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == 'Auto Draft' ) {
+	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == __('Auto Draft','lsx') ) {
 		$data['comment_status'] = 0;
 		$data['ping_status'] = 0;
 	}
