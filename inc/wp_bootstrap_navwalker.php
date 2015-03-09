@@ -58,6 +58,12 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
+			
+			//Check if this is ment to be a "social" type menu
+			$no_menu_text = false;
+			if(stristr($class_names, 'fa')){
+				$no_menu_text = true;
+			}
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
@@ -105,8 +111,14 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 			} else {
 				$item_output .= '<a'. $attributes .'>';
 			}
+			
+			if(false == $no_menu_text){
+				$item_title = apply_filters( 'the_title', $item->title, $item->ID );
+			}else{
+				$item_title = '';
+			}
 
-			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= $args->link_before . $item_title . $args->link_after;
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
 			$item_output .= $args->after;
 
