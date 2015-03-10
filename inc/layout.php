@@ -121,8 +121,8 @@ function lsx_author_box() {
 
 	if ( ! is_single() ) { return false; }
 
-	global $post;
-	$author_id=$post->post_author;
+	$author_id=get_the_author_meta('ID');
+	
 	if ( get_post_type() == 'post' ) {
 		?>
 			<div class="author-box well col-xs-12">
@@ -155,9 +155,8 @@ function lsx_author_box() {
  * @subpackage layout
  */
 function lsx_blog_page_title() {
-		global $post;
 		
-		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == $post->ID) { ?>
+		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == get_the_ID()) { ?>
 			<header class="page-header">
 					<h1 class="page-title"><?php echo get_the_title($blog_page); ?></h1>		
 			</header>

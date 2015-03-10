@@ -246,10 +246,9 @@ function lsx_is_element_empty($element) {
  * return the responsive images.
  */
 function lsx_get_thumbnail($size,$image_src = false){
-	global $post;
 	
 	if(false == $image_src){
-		$post_id = ( null === $post->ID ) ? get_the_ID() : $post->ID;
+		$post_id = get_the_ID();
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	}elseif(false != $image_src	){
 		if(is_numeric($image_src)){
@@ -315,11 +314,10 @@ function lsx_get_attachment_id_from_src($image_src) {
  * @category banner
  */
 function lsx_page_banner() {
-	global $post;
 
 	if ( is_page() && has_post_thumbnail() ) { ?>
         
-        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id($post->ID)); ?>>
+        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
           <header class="page-header">
             <h1 class="page-title"><?php the_title(); ?></h1>   
           </header><!-- .entry-header -->

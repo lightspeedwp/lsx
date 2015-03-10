@@ -19,8 +19,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<?php
-			global $post;
-			$author_id = $post->post_author;
+			$author_id = get_the_author_meta('ID');
 			if ( get_post_type() == 'post' ) {
 				?>
 					<div class="author-box well col-xs-12">

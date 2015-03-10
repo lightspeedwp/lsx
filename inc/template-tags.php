@@ -145,9 +145,8 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 
 if ( ! function_exists( 'lsx_post_format' ) ) {
 	function lsx_post_format() {
-		global $post;
 		
-		$post_format = get_post_format($post);
+		$post_format = get_post_format();
 		
 		if('standard' != $post_format && '' != $post_format) {
 			$format_link = get_post_format_link($post_format);
