@@ -19,17 +19,13 @@ function lsx_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_register_script('lsx_scripts', get_template_directory_uri() . '/js/scripts.min.js', false, 'c9f983e2965b9c7888dac272e56c4f4b', true);
-	wp_register_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.7.0.min.js', false, null, false);
-	wp_enqueue_script('modernizr');
-	
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('lsx_scripts', get_template_directory_uri() . '/js/scripts.min.js', false, 'c9f983e2965b9c7888dac272e56c4f4b', true);
+	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.7.0.min.js', false, null, false);
 	wp_enqueue_script('isotope', get_template_directory_uri().'/js/jquery.isotope.min.js', array('jquery'), '1.3.110525', true);
 	wp_enqueue_script('packery', get_template_directory_uri().'/js/jquery.packery.min.js', array('jquery'), '1.1.1', true);
-	//wp_enqueue_script('masonry');
-	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js', array('jquery','isotope'));
-	
-	wp_register_script('lsx_custom', get_template_directory_uri() . '/js/custom/general.js', array('isotope'), null, false);
-	wp_enqueue_script('lsx_custom');
+	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js', array('jquery','isotope'));	
+	wp_enqueue_script('lsx_custom', get_template_directory_uri() . '/js/custom/general.js', array('isotope'), null, false);
 	
 	//Set some parameters that we can use in the JS
 	$is_portfolio = false;
@@ -41,11 +37,6 @@ function lsx_scripts() {
 	);
 	wp_localize_script( 'lsx_custom', 'lsx_params', $param_array );
 	
-	
-    wp_enqueue_script('jquery');
-    //wp_enqueue_script('isotope');
-    
-	wp_enqueue_script('lsx_scripts');
 	
 	wp_enqueue_style( 'genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
 	if(is_child_theme()) {
@@ -61,7 +52,6 @@ function lsx_scripts() {
 	if ($menu_items >= 7) {
 		wp_enqueue_style('medium-break', get_template_directory_uri() . '/css/medium-nav-break.css', false);
 	}
-	//wp_enqueue_script( 'lsx-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
 	
 	$font = get_theme_mod('lsx_font','raleway_open_sans');

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // this file controls all of the data for the custom fonts used in the theme customizer
 
 // the Google_Font_Collection object is a wrapper that holds all of the individual custom fonts
-class Google_Font_Collection
+class LSX_Google_Font_Collection
 {
 	private $fonts;
 
@@ -25,7 +25,7 @@ class Google_Font_Collection
 		foreach ($fonts as $key => $value) 
 		{	
 			if( empty( $value["system"] ) ){
-				$this->fonts[$value["title"]] = new Google_Font($value["title"], $value["location"], $value["cssDeclaration"], $value["cssClass"]);
+				$this->fonts[$value["title"]] = new LSX_Google_Font($value["title"], $value["location"], $value["cssDeclaration"], $value["cssClass"]);
 			}
 		}
 	}

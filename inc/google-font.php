@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Google_Font Class
 **/
-class Google_Font
+class LSX_Google_Font
 {
 	private $title; // the name of the font
 	private $location; // the http location of the font file

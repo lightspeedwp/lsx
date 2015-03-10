@@ -161,7 +161,7 @@ function lsx_set_portfolio_columns()
 	}
 	colW = Math.floor(gw / columns) - 14;
 	
-	jQuery('.filter-item').each(function(id){
+	jQuery('.filter-items-container .filter-item').each(function(id){
 		jQuery(this).css('width',colW + 'px');
 		jQuery(this).show();
 	});
