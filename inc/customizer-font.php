@@ -38,7 +38,7 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 			$this->choices[$slug] = $font;
 		}
 		
-		$this->fonts = new Google_Font_Collection( $fonts );
+		$this->fonts = new LSX_Google_Font_Collection( $fonts );
 
 		$fonts = $this->fonts->getFontFamilyNameArray();
 		//print links to css files
