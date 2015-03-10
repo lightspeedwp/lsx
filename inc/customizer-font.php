@@ -15,12 +15,10 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 	**/
 	public function enqueue(){
 		// styles
-		wp_register_style( 'lsx-font-picker-custom-control', get_template_directory_uri() .'/css/customizer-font.css');
-		wp_enqueue_style( 'lsx-font-picker-custom-control' );
-	
+		wp_enqueue_style( 'lsx-font-picker-custom-control', get_template_directory_uri() .'/css/customizer-font.css');
+			
 		// scripts
-		wp_register_script( 'lsx-font-picker-custom-control', get_template_directory_uri() .'/js/customizer-font.js');
-		wp_enqueue_script( 'lsx-font-picker-custom-control' );
+		wp_enqueue_script( 'lsx-font-picker-custom-control', get_template_directory_uri() .'/js/customizer-font.js');
 	}
 
 	/**
