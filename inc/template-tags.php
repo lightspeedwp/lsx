@@ -307,19 +307,6 @@ function lsx_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'lsx_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function lsx_posted_on() {
-	global $post;
-
-	echo __('by ','lsx'); 
-	the_author_posts_link(); 
-	echo ' '.__('on').' ' . get_the_date( 'D jS F Y ' ) . ' '.__('in').' ' . get_the_category_list( ', ', '', $post->ID );
-}
-endif;
-
 /**
  * Outputs either the Site Title or the Site Logo
  *
