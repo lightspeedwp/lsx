@@ -22,167 +22,180 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 
-$controls = array();
 
-// add the slider if function exists
-if(function_exists('soliloquy')){
-  // add homepage slider section
-  $controls['sections']['lsx-homepage'] = array(
-    'title'       =>  'Homepage'
-  );
-
-  /// add the setting
-  $controls['settings']['lsx_homepage_slider']  = array(
-    'default'       =>  '0', //Default setting/value to save
-    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  );
-  /// add the control
-  $controls['fields']['lsx_homepage_slider'] = array(
-    'label'         =>  esc_html__( 'Select Slider', 'lsx' ),
-    'section'       =>  'lsx-homepage',
-    'type'          =>  'select',
-    'choices'       =>  LSX_Theme_Customizer::get_slider_post_type_choices()
-  );
-  
-}
-
-/*
- * Colour Settings
+/**
+ * Returns an array of $controls for the customizer class to generate.
+ *
+ * @package 	lsx
+ * @subpackage	functions
+ * @category	customizer
+ * @return		$lsx_controls array()
  */
- /// add the setting
- $controls['settings']['lsx_color_scheme']  = array(
-   	'default'       =>  'default', //Default setting/value to save
-   	'type'	        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-  	'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
- );
- /// add the control
- $controls['fields']['lsx_color_scheme'] = array(
-   'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
-   'section'       =>  'colors',
-   'type'          =>  'select',
-   'choices'  => array(
- 		'default' => esc_html__( 'Default', 'lsx' ),
-   		'red' => esc_html__( 'Red', 'lsx' ),
- 	  	'green' => esc_html__( 'Green', 'lsx' ),
-      	'brown' => esc_html__( 'Brown', 'lsx' )
- 	),
- 	'control'   =>  'LSX_Customize_Colour_Control',
-	'priority' => 1,
-  );
+function lsx_get_customizer_controls(){
+	$lsx_controls = array();
+	
+	// add the slider if function exists
+	if(function_exists('soliloquy')){
+	  // add homepage slider section
+	  $lsx_controls['sections']['lsx-homepage'] = array(
+	    'title'       =>  'Homepage'
+	  );
+	
+	  /// add the setting
+	  $lsx_controls['settings']['lsx_homepage_slider']  = array(
+	    'default'       =>  '0', //Default setting/value to save
+	    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  );
+	  /// add the control
+	  $lsx_controls['fields']['lsx_homepage_slider'] = array(
+	    'label'         =>  esc_html__( 'Select Slider', 'lsx' ),
+	    'section'       =>  'lsx-homepage',
+	    'type'          =>  'select',
+	    'choices'       =>  LSX_Theme_Customizer::get_slider_post_type_choices()
+	  );
+	  
+	}
+	
+	/*
+	 * Colour Settings
+	 */
+	 /// add the setting
+	 $lsx_controls['settings']['lsx_color_scheme']  = array(
+	   	'default'       =>  'default', //Default setting/value to save
+	   	'type'	        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	  	'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	 );
+	 /// add the control
+	 $lsx_controls['fields']['lsx_color_scheme'] = array(
+	   'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
+	   'section'       =>  'colors',
+	   'type'          =>  'select',
+	   'choices'  => array(
+	 		'default' => esc_html__( 'Default', 'lsx' ),
+	   		'red' => esc_html__( 'Red', 'lsx' ),
+	 	  	'green' => esc_html__( 'Green', 'lsx' ),
+	      	'brown' => esc_html__( 'Brown', 'lsx' )
+	 	),
+	 	'control'   =>  'LSX_Customize_Colour_Control',
+		'priority' => 1,
+	  );
+	
+	 /*
+	  * Layout Controls
+	  */
+		 
+	  $lsx_controls['sections']['lsx-layout'] = array(
+	    'title'       =>  esc_html__( 'Layout', 'lsx' ),
+	  	'description' => __( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
+	  	'priority' => 112
+	  );
+	
+	  $lsx_controls['settings']['lsx_layout']  = array(
+	    'default'       =>  '2cr', //Default setting/value to save
+	    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  );
+	  
+	  /// add the control
+	  $lsx_controls['fields']['lsx_layout'] = array(
+	    'label'         =>  '',
+	    'section'       =>  'lsx-layout',
+	    'control'   =>  'LSX_Customize_Layout_Control',
+	    'choices'		=>	array(
+	    	'1c',
+	    	'2cr',
+	    	'2cl'
+	    )
+	  );  
+	
+	  /*
+	   * Font Controls
+	   */
+	  
+	  $lsx_controls['sections']['lsx-font'] = array(
+	    'title'       =>  __( 'Font', 'lsx' ),
+	    'description' => 'Change the fonts sitewide.',
+	  	'priority' => 42
+	  );
+	  $lsx_controls['settings']['lsx_font']  = array(
+	    'default'       =>  'raleway_open_sans', //Default setting/value to save
+	    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  );  
+	  /// add the control
+	  $lsx_controls['fields']['lsx_font'] = array(
+	    'label'         =>  __( '', 'lsx' ),
+	    'section'       =>  'lsx-font',
+	    'settings'      =>  'lsx_font',
+	    'control'   =>  'LSX_Customize_Font_Control',
+	    'choices'   =>  array(
+	      'raleway_open_sans' => array(
+	        'header'  => array(
+	            "title" => __( 'Raleway', 'lsx' ), 
+	            "location" => "Raleway", 
+	            "cssDeclaration" => "'Raleway', sans-serif", 
+	            "cssClass" => "raleway",
+	          ),
+	        'body'  => array(
+	            "title" => __( 'Open Sans', 'lsx' ), 
+	            "location" => "Open+Sans", 
+	            "cssDeclaration" => "'Open Sans', sans-serif", 
+	            "cssClass" => "openSans"
+	          ),
+	        ),
+	      'noto_serif_noto_sans' => array(
+	        'header'  => array(
+	            "title" => __( 'Noto Serif', 'lsx' ), 
+	            "location" => "Noto+Serif", 
+	            "cssDeclaration" => "'Noto Serif', serif", 
+	            "cssClass" => "notoSerif",
+	          ),
+	        'body'  => array(
+	            "title" => __( 'Noto Sans', 'lsx' ), 
+	            "location" => "Noto+Sans", 
+	            "cssDeclaration" => "'Noto Sans', sans-serif", 
+	            "cssClass" => "notoSans",
+	          ),
+	        ),
+	      'noto_sans_noto_sans' => array(
+	        'header'  => array(
+	            "title" => __( 'Noto Sans', 'lsx' ), 
+	            "location" => "Noto+Sans", 
+	            "cssDeclaration" => "'Noto Sans', sans-serif", 
+	            "cssClass" => "notoSans",
+	          ),
+	        'body'  => array(
+	            "title" => __( 'Noto Sans', 'lsx' ), 
+	            "location" => "Noto+Sans", 
+	            "cssDeclaration" => "'Noto Sans', sans-serif", 
+	            "cssClass" => "notoSans",
+	          ),
+	        ),
+	      'alegreya_open_sans' => array(
+	        'header'  => array(
+	            "title" => __( 'Alegreya', 'lsx' ), 
+	            "location" => "Alegreya", 
+	            "cssDeclaration" => "'Alegreya', serif", 
+	            "cssClass" => "alegreya",
+	          ),
+	        'body'  => array(
+	            "title" => __( 'Open Sans', 'lsx' ), 
+	            "location" => "Open+Sans", 
+	            "cssDeclaration" => "'Open Sans', sans-serif", 
+	            "cssClass" => "openSans"
+	          ),
+	        ),
+	    ),
+	  'priority' => 2,
+	  );    
+	  
+	$lsx_controls = apply_filters('lsx_customizer_controls', $lsx_controls); 
 
- /*
-  * Layout Controls
-  */
-	 
-  $controls['sections']['lsx-layout'] = array(
-    'title'       =>  esc_html__( 'Layout', 'lsx' ),
-  	'description' => __( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
-  	'priority' => 112
-  );
+	return $lsx_controls;
+}  
 
-  $controls['settings']['lsx_layout']  = array(
-    'default'       =>  '2cr', //Default setting/value to save
-    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  );
-  
-  /// add the control
-  $controls['fields']['lsx_layout'] = array(
-    'label'         =>  '',
-    'section'       =>  'lsx-layout',
-    'control'   =>  'LSX_Customize_Layout_Control',
-    'choices'		=>	array(
-    	'1c',
-    	'2cr',
-    	'2cl'
-    )
-  );  
-
-  /*
-   * Font Controls
-   */
-  
-  $controls['sections']['lsx-font'] = array(
-    'title'       =>  __( 'Font', 'lsx' ),
-    'description' => 'Change the fonts sitewide.',
-  	'priority' => 42
-  );
-  $controls['settings']['lsx_font']  = array(
-    'default'       =>  'raleway_open_sans', //Default setting/value to save
-    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-  );  
-  /// add the control
-  $controls['fields']['lsx_font'] = array(
-    'label'         =>  __( '', 'lsx' ),
-    'section'       =>  'lsx-font',
-    'settings'      =>  'lsx_font',
-    'control'   =>  'LSX_Customize_Font_Control',
-    'choices'   =>  array(
-      'raleway_open_sans' => array(
-        'header'  => array(
-            "title" => __( 'Raleway', 'lsx' ), 
-            "location" => "Raleway", 
-            "cssDeclaration" => "'Raleway', sans-serif", 
-            "cssClass" => "raleway",
-          ),
-        'body'  => array(
-            "title" => __( 'Open Sans', 'lsx' ), 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
-          ),
-        ),
-      'noto_serif_noto_sans' => array(
-        'header'  => array(
-            "title" => __( 'Noto Serif', 'lsx' ), 
-            "location" => "Noto+Serif", 
-            "cssDeclaration" => "'Noto Serif', serif", 
-            "cssClass" => "notoSerif",
-          ),
-        'body'  => array(
-            "title" => __( 'Noto Sans', 'lsx' ), 
-            "location" => "Noto+Sans", 
-            "cssDeclaration" => "'Noto Sans', sans-serif", 
-            "cssClass" => "notoSans",
-          ),
-        ),
-      'noto_sans_noto_sans' => array(
-        'header'  => array(
-            "title" => __( 'Noto Sans', 'lsx' ), 
-            "location" => "Noto+Sans", 
-            "cssDeclaration" => "'Noto Sans', sans-serif", 
-            "cssClass" => "notoSans",
-          ),
-        'body'  => array(
-            "title" => __( 'Noto Sans', 'lsx' ), 
-            "location" => "Noto+Sans", 
-            "cssDeclaration" => "'Noto Sans', sans-serif", 
-            "cssClass" => "notoSans",
-          ),
-        ),
-      'alegreya_open_sans' => array(
-        'header'  => array(
-            "title" => __( 'Alegreya', 'lsx' ), 
-            "location" => "Alegreya", 
-            "cssDeclaration" => "'Alegreya', serif", 
-            "cssClass" => "alegreya",
-          ),
-        'body'  => array(
-            "title" => __( 'Open Sans', 'lsx' ), 
-            "location" => "Open+Sans", 
-            "cssDeclaration" => "'Open Sans', sans-serif", 
-            "cssClass" => "openSans"
-          ),
-        ),
-    ),
-  'priority' => 2,
-  );    
-  
-$controls = apply_filters('lsx_customizer_controls', $controls);    
-
-$lsx_customizer = new LSX_Theme_Customizer( $controls );
+$lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
 
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
