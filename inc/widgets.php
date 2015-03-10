@@ -8,7 +8,7 @@ function lsx_widgets_init() {
 	
 	register_sidebar( array(
 		'name'          => __( 'Home', 'lsx' ),
-		'id'            => 'home',
+		'id'            => 'sidebar-home',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
