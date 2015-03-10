@@ -13,7 +13,7 @@
 			
 				<section id="home-widgets">
 				
-					<?php if ( ! dynamic_sidebar( 'home' ) ) : ?>
+					<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
 					
 						<aside class="widget widget_text" id="text-2">
 							<h3 class="widget-title"><?php _e( 'Welcome', 'lsx' ); ?></h3>
