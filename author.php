@@ -28,7 +28,7 @@ get_header(); ?>
 							<img class="pull-left img-circle" src="<?php echo lsx_get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
 						</div>
 						<div class="content col-sm-10">
-							<h3><?php _e('Published by','lsx');?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h3>
+							<h3><?php printf( __('Published by %s','lsx'), get_the_author_meta( 'display_name', $author_id )) ; ?></h3>
 							<p><?php echo get_the_author_meta( 'description', $author_id ); ?></p>
 						</div>						
 					</div>
@@ -37,7 +37,7 @@ get_header(); ?>
 			?>
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php echo __('Posts by','lsx').' '; ?><?php the_author(); ?>
+					<?php printf( __( 'Posts by %s', 'lsx' ), get_the_author() ); ?>
 				</h1>
 
 			</header><!-- .page-header -->

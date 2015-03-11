@@ -331,13 +331,6 @@ function lsx_jetpack_infinite_scroll_after_setup() {
 			'render'    => 'lsx_infinite_scroll_render'
 	);
 
-	$page_url = $_SERVER["REQUEST_URI"];
-	$portfolio_archive_slug = get_theme_mod('lsx_portfolio_slug','portfolio');
-
-	if(stristr($page_url, $portfolio_archive_slug)){
-		$infinite_scroll_args['container'] = 'portfolio-infinite-scroll-wrapper';
-	}
-
 	add_theme_support( 'infinite-scroll', $infinite_scroll_args );
 }
 add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );

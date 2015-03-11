@@ -9,6 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 function lsx_scripts() {
 	
+	wp_enqueue_style('lsx_main_style', get_stylesheet_uri() , false, '23a2bd43791de3fa3cab2d2af5fec6a2');
+	
 	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/css/app.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
 	
 	$style = get_theme_mod( 'lsx_color_scheme','default');
