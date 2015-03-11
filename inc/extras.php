@@ -244,6 +244,10 @@ function lsx_is_element_empty($element) {
 
 /**
  * return the responsive images.
+ * 
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
  */
 function lsx_get_thumbnail($size,$image_src = false){
 	
@@ -291,6 +295,10 @@ function lsx_get_thumbnail($size,$image_src = false){
 
 /**
  * Output the Resonsive Images
+ * 
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
  */
 function lsx_thumbnail($size = 'thumbnail',$image_src = false){
 	echo lsx_get_thumbnail($size,$image_src);
@@ -298,6 +306,9 @@ function lsx_thumbnail($size = 'thumbnail',$image_src = false){
 
 /**
  * Gets the attachments ID from the src
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
  */
 function lsx_get_attachment_id_from_src($image_src) {
 	global $wpdb;
@@ -305,6 +316,47 @@ function lsx_get_attachment_id_from_src($image_src) {
 	$id = $wpdb->get_var($query);
 	return $id;
 }
+
+/**
+ * Gets the attachments ID from the src
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
+ */
+function lsx_the_content_responsive_image_filter($content) {
+	if('post' == get_post_type() && is_single()){
+		/*$content = preg_replace('#<img.+?src="([^"]*)".*?/?>#i', '<a href="$1">$0</a>', $content);*/
+		
+		$content = preg_replace_callback(
+				'#<img.+?src="([^"]*)".*?/?>#i',
+				function ($matches) {
+					
+					$post_thumbnail_id = lsx_get_attachment_id_from_src($matches[1]);
+					if(false != $post_thumbnail_id){
+						$data_tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+						$data_mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );					
+						$data_desktop = $matches[1];
+						
+						return '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$data_desktop.'" data-tablet="'.$data_tablet[0].'" data-mobile="'.$data_mobile[0].'" />';
+						
+					}else{
+						return $matches[0];
+					}
+				},
+				$content
+		);	
+		
+	}
+	return $content;
+}
+add_action('the_content','lsx_the_content_responsive_image_filter');
+
+/**
+ * A callback function for the preg_replace that changes the images stored in post_content to their responsive counterparts.
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
+ */
 
 /**
  * Add Featured Image as Banner on Single Pages.
