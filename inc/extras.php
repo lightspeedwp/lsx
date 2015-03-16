@@ -11,7 +11,6 @@ function lsx_yoast_breadcrumbs(){
 	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
 		return;
 	}
-	
 	lsx_breadcrumbs();
 }
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
@@ -25,7 +24,7 @@ function lsx_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
   
-  if(is_page() && has_post_thumbnail()){
+  if(is_page() && has_post_thumbnail() && !is_front_page()){
   	$classes[] = 'page-has-banner';
   }
 
