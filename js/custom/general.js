@@ -1,4 +1,5 @@
 var colW;
+var noColumns;
 var gridContainer = jQuery('.filter-items-container');
 
 
@@ -151,16 +152,16 @@ function lsxResizeSingleThumbnail(width) {
 
 function lsx_set_portfolio_columns()
 {
-	var columns;
+	var noColumns;
 	var gw = jQuery('.filter-items-wrapper').width();
 	if(gw<=992){
-		columns = 2;
+		noColumns = 2;
 	}else if(gw<=1700){
-			columns = 3;
+		noColumns = 3;
 	}else{
-		columns = 6; 
+		noColumns = 6; 
 	}
-	colW = Math.floor(gw / columns) - 14;
+	colW = Math.floor(gw / noColumns) - 14;
 	
 	jQuery('.filter-items-container .filter-item').each(function(id){
 		jQuery(this).css('width',colW + 'px');
@@ -177,13 +178,20 @@ function lsxProjectThumbInit() {
 	
 	jQuery(".filter-items-container").imagesLoaded( function() {
 		
-		jQuery(".filter-items-container").isotope({
+		/*jQuery(".filter-items-container").isotope({
 			resizable: true,
 			layoutMode: 'packery',
 			itemSelector: '.filter-item',
 			masonry: {
 				columnWidth: colW
 			}
+		});*/
+		
+		jQuery(".filter-items-container").masonry({
+			resizable: true,
+			//layoutMode: 'packery',
+			itemSelector: '.filter-item',
+			columnWidth: noColumns
 		});		
 	});	
 
