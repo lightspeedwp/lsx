@@ -95,8 +95,7 @@ jQuery(document).ready(function($) {
 			}
 			
 			lsxResizeBanner(width);	
-			lsxResizeSingleThumbnail(width);	
-			    
+			lsxResizeSingleThumbnail(width);
 		});		
 	});
 });
@@ -114,7 +113,7 @@ function lsxResizeBanner(width) {
 	if(width <= 400){
 		banner_attribute_name = 'data-mobile';
 	}			
-	if(undefined != jQuery('.page-banner')){		
+	if(undefined != jQuery('.page-banner') && jQuery('.page-banner').attr('data-desktop') !== undefined){		
 		var image_url = 'url('+jQuery('.page-banner').attr(banner_attribute_name)+')';
 		jQuery('.page-banner').css('background-image',image_url);	
 	}	
@@ -137,9 +136,11 @@ function lsxResizeSingleThumbnail(width) {
 			attribute_name = 'data-mobile';
 		}
 	}
-  
+
 	jQuery('img.lsx-responsive').each( function(){
-		jQuery(this).attr('src',jQuery(this).attr(attribute_name));
+		if(jQuery(this).attr('data-desktop') !== undefined){
+			jQuery(this).attr('src',jQuery(this).attr(attribute_name));
+		}
 	});	
 }
 
