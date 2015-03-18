@@ -366,6 +366,10 @@ add_action('the_content','lsx_the_content_responsive_image_filter');
  */
 function lsx_page_banner() {
 
+	$show_on_front = get_option('show_on_front','posts');
+	
+	if('page' == $show_on_front && is_front_page()) { return; }
+	
 	if ( is_page() && has_post_thumbnail() ) { ?>
         
         <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
