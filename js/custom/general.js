@@ -1,6 +1,6 @@
 var colW;
 var noColumns;
-var gridContainer = jQuery('.filter-items-container');
+var masonryContainer = jQuery('.filter-items-container');
 
 
 jQuery(document).ready(function($) {
@@ -153,7 +153,7 @@ function lsxResizeSingleThumbnail(width) {
 function lsx_set_portfolio_columns()
 {
 	var noColumns;
-	var gw = jQuery('.filter-items-wrapper').width();
+	var gw = masonryContainer.width();
 	if(gw<=992){
 		noColumns = 2;
 	}else if(gw<=1700){
@@ -163,7 +163,7 @@ function lsx_set_portfolio_columns()
 	}
 	colW = Math.floor(gw / noColumns) - 14;
 	
-	jQuery('.filter-items-container .filter-item').each(function(id){
+	masonryContainer.find('.filter-item').each(function(id){
 		jQuery(this).css('width',colW + 'px');
 		jQuery(this).show();
 	});
@@ -176,18 +176,9 @@ function lsx_set_portfolio_columns()
 function lsxProjectThumbInit() {
 	lsx_set_portfolio_columns();
 	
-	jQuery(".filter-items-container").imagesLoaded( function() {
+	masonryContainer.imagesLoaded( function() {
 		
-		/*jQuery(".filter-items-container").isotope({
-			resizable: true,
-			layoutMode: 'packery',
-			itemSelector: '.filter-item',
-			masonry: {
-				columnWidth: colW
-			}
-		});*/
-		
-		jQuery(".filter-items-container").masonry({
+		masonryContainer.masonry({
 			resizable: true,
 			//layoutMode: 'packery',
 			itemSelector: '.filter-item',
@@ -206,14 +197,16 @@ function lsxProjectFilterInit() {
 	
 	jQuery('#filterNav a').click(function(){
 		var selector = jQuery(this).attr('data-filter');
-		jQuery('.filter-items-container').isotope({
-			filter: selector,
-			resizable: true,
-			layoutMode: 'packery',
-			itemSelector: '.filter-item',
-			masonry: {
-				columnWidth: colW
-			}			
+		selector = selector.replace('.','');
+		
+		jQuery('.filter-items-container .filter-item').each(function(){
+			
+			if(jQuery(this).hasClass(selector) || '*' == selector){
+				jQuery(this).show();
+			}else{
+				jQuery(this).hide();
+			}
+			
 		});
 
 		if ( !jQuery(this).hasClass('selected') ) {

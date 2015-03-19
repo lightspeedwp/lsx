@@ -188,7 +188,7 @@ function lsx_get_customizer_controls(){
 	        ),
 	    ),
 	  'priority' => 2,
-	  );    
+	  );  	  
 	  
 	$lsx_controls = apply_filters('lsx_customizer_controls', $lsx_controls); 
 
