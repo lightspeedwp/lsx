@@ -1571,17 +1571,19 @@ article {
 				a {
 					background: none !important;
 					border: 2px solid !important;
+					font-size: 14px !important;
 					padding: 6px 17px 6px 16px !important;
 					box-shadow: none !important;
+					@include transition(all .1s ease-in-out);
 
 					&:hover,
 					&:focus {
 						border: 2px solid;
-						color: $white;
+						color: $white !important;
 					}
 				}
 
-				&.share-print,
+				&.share-print a,
 				&.share-email a {
 					&:hover,
 					&:focus {
@@ -1590,8 +1592,8 @@ article {
 				}
 
 				&.share-facebook a {
-					border-color: #3b5998;
-					color: #3b5998;
+					border-color: #3b5998 !important;
+					color: #3b5998 !important;
 
 					&:hover,
 					&:focus {
@@ -1600,8 +1602,8 @@ article {
 				}
 
 				&.share-linkedin a {
-					border-color: #007bb6;
-					color: #007bb6;
+					border-color: #007bb6 !important;
+					color: #007bb6 !important;
 
 					&:hover,
 					&:focus {
@@ -1610,8 +1612,8 @@ article {
 				}
 
 				&.share-twitter a {
-					border-color: #00aced;
-					color: #00aced;
+					border-color: #00aced !important;
+					color: #00aced !important;
 
 					&:hover,
 					&:focus {
@@ -1620,8 +1622,8 @@ article {
 				}
 
 				&.share-google-plus-1 a {
-					border-color: #dd4b39;
-					color: #dd4b39;
+					border-color: #dd4b39 !important;
+					color: #dd4b39 !important;
 
 					&:hover,
 					&:focus {
@@ -1630,8 +1632,8 @@ article {
 				}
 
 				&.share-pinterest a {
-					border-color: #cb2027;
-					color: #cb2027;
+					border-color: #cb2027 !important;
+					color: #cb2027 !important;
 
 					&:hover,
 					&:focus {
