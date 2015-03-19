@@ -337,7 +337,7 @@ dl {
 		margin-top: 15px;
 		margin-bottom: 6px;
 		padding-bottom: 3px;
-		border-bottom: 1px solid $light-grey;
+		border-bottom: 1px solid #ccc;
 	}
 }
 
@@ -346,6 +346,7 @@ table {
 	max-width: 100%;
 	background-color: transparent;
 	margin-bottom: 20px;
+	font-size: 15px;
 	border-collapse: collapse;
 	border-spacing: 0;
 	border: none;
@@ -362,15 +363,11 @@ table {
 	tbody {
 		tr {
 			&:nth-child(even) {
-				td {
-					background-color: $white;
-				}
+				background-color: $white;
 			}
 
 			&:nth-child(odd) {
-				td {
-					background-color: $off-white;
-				}
+				background-color: $off-white;
 			}
 		}
 	} 
@@ -378,7 +375,8 @@ table {
 	td,
 	th {
 		border-bottom: 1px solid #ccc;
-		padding: 8px;
+		padding: 8px 18px;
+		font-weight: normal;
 	}
 }
 
