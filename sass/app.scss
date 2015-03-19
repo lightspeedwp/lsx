@@ -1564,6 +1564,83 @@ article {
 
 .sharedaddy {
 	margin-bottom: 20px;
+
+	.sd-content {
+		ul {
+			li {
+				a {
+					background: none;
+					border: 2px solid;
+					padding: 6px 17px 6px 16px;
+					box-shadow: none;
+
+					&:hover,
+					&:focus {
+						border: 2px solid;
+						color: $white;
+					}
+				}
+
+				&.share-print,
+				&.share-email a {
+					&:hover,
+					&:focus {
+						background: #555;
+					}
+				}
+
+				&.share-facebook a {
+					border-color: #3b5998;
+					color: #3b5998;
+
+					&:hover,
+					&:focus {
+						background: #3b5998;
+					}
+				}
+
+				&.share-linkedin a {
+					border-color: #007bb6;
+					color: #007bb6;
+
+					&:hover,
+					&:focus {
+						background: #007bb6;
+					}
+				}
+
+				&.share-twitter a {
+					border-color: #00aced;
+					color: #00aced;
+
+					&:hover,
+					&:focus {
+						background: #00aced;
+					}
+				}
+
+				&.share-google-plus-1 a {
+					border-color: #dd4b39;
+					color: #dd4b39;
+
+					&:hover,
+					&:focus {
+						background: #dd4b39;
+					}
+				}
+
+				&.share-pinterest a {
+					border-color: #cb2027;
+					color: #cb2027;
+
+					&:hover,
+					&:focus {
+						background: #cb2027;
+					}
+				}
+			}
+		}
+	} 
 }
 
 .jp-relatedposts {

@@ -9919,22 +9919,83 @@ article footer.footer-meta {
 .sharedaddy {
   margin-bottom: 20px;
 }
+/* line 1571, ../sass/app.scss */
+.sharedaddy .sd-content ul li a {
+  background: none;
+  border: 2px solid;
+  padding: 6px 17px 6px 16px;
+  box-shadow: none;
+}
+/* line 1578, ../sass/app.scss */
+.sharedaddy .sd-content ul li a:hover, .sharedaddy .sd-content ul li a:focus {
+  border: 2px solid;
+  color: white;
+}
+/* line 1587, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-print:hover, .sharedaddy .sd-content ul li.share-print:focus, .sharedaddy .sd-content ul li.share-email a:hover, .sharedaddy .sd-content ul li.share-email a:focus {
+  background: #555;
+}
+/* line 1592, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-facebook a {
+  border-color: #3b5998;
+  color: #3b5998;
+}
+/* line 1597, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-facebook a:hover, .sharedaddy .sd-content ul li.share-facebook a:focus {
+  background: #3b5998;
+}
+/* line 1602, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-linkedin a {
+  border-color: #007bb6;
+  color: #007bb6;
+}
+/* line 1607, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-linkedin a:hover, .sharedaddy .sd-content ul li.share-linkedin a:focus {
+  background: #007bb6;
+}
+/* line 1612, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-twitter a {
+  border-color: #00aced;
+  color: #00aced;
+}
+/* line 1617, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-twitter a:hover, .sharedaddy .sd-content ul li.share-twitter a:focus {
+  background: #00aced;
+}
+/* line 1622, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-google-plus-1 a {
+  border-color: #dd4b39;
+  color: #dd4b39;
+}
+/* line 1627, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-google-plus-1 a:hover, .sharedaddy .sd-content ul li.share-google-plus-1 a:focus {
+  background: #dd4b39;
+}
+/* line 1632, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-pinterest a {
+  border-color: #cb2027;
+  color: #cb2027;
+}
+/* line 1637, ../sass/app.scss */
+.sharedaddy .sd-content ul li.share-pinterest a:hover, .sharedaddy .sd-content ul li.share-pinterest a:focus {
+  background: #cb2027;
+}
 
-/* line 1569, ../sass/app.scss */
+/* line 1646, ../sass/app.scss */
 .jp-relatedposts {
   clear: both;
 }
 
-/* line 1573, ../sass/app.scss */
+/* line 1650, ../sass/app.scss */
 .read-more {
   margin-right: 10px;
 }
 
-/* line 1577, ../sass/app.scss */
+/* line 1654, ../sass/app.scss */
 #infinite-handle {
   margin-top: 60px;
 }
-/* line 1580, ../sass/app.scss */
+/* line 1657, ../sass/app.scss */
 #infinite-handle span {
   background: #428bca !important;
   font-size: 14px !important;
@@ -9948,12 +10009,12 @@ article footer.footer-meta {
   border-radius: 3px;
 }
 @media screen and (max-width: 800px) {
-  /* line 1580, ../sass/app.scss */
+  /* line 1657, ../sass/app.scss */
   #infinite-handle span {
     text-align: center;
   }
 }
-/* line 1594, ../sass/app.scss */
+/* line 1671, ../sass/app.scss */
 #infinite-handle span:hover {
   background: #333333 !important;
 }
@@ -9961,38 +10022,38 @@ article footer.footer-meta {
 /* ==========================================================================
 	 Footer
 	 ========================================================================== */
-/* line 1605, ../sass/app.scss */
+/* line 1682, ../sass/app.scss */
 #footer-widgets {
   background: #333333;
 }
-/* line 1608, ../sass/app.scss */
+/* line 1685, ../sass/app.scss */
 #footer-widgets .footer-widgets-title {
   display: none;
 }
-/* line 1612, ../sass/app.scss */
+/* line 1689, ../sass/app.scss */
 #footer-widgets .widget {
   margin: 70px 0 90px;
   color: #999999;
 }
 @media screen and (max-width: 768px) {
-  /* line 1612, ../sass/app.scss */
+  /* line 1689, ../sass/app.scss */
   #footer-widgets .widget {
     margin: 50px 0;
   }
 }
-/* line 1620, ../sass/app.scss */
+/* line 1697, ../sass/app.scss */
 #footer-widgets .widget h3.widget-title {
   color: #999999;
 }
-/* line 1624, ../sass/app.scss */
+/* line 1701, ../sass/app.scss */
 #footer-widgets .widget a {
   color: #eeeeee;
 }
-/* line 1627, ../sass/app.scss */
+/* line 1704, ../sass/app.scss */
 #footer-widgets .widget a:hover {
   color: #999999;
 }
-/* line 1633, ../sass/app.scss */
+/* line 1710, ../sass/app.scss */
 #footer-widgets .widget.widget_tag_cloud .tagcloud a {
   display: inline-block;
   background: #999999;
@@ -10013,24 +10074,24 @@ article footer.footer-meta {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1645, ../sass/app.scss */
+/* line 1722, ../sass/app.scss */
 #footer-widgets .widget.widget_tag_cloud .tagcloud a:hover {
   background: #428bca;
   text-decoration: none;
 }
 
-/* line 1654, ../sass/app.scss */
+/* line 1731, ../sass/app.scss */
 footer.content-info {
   background: #232222;
   text-align: center;
 }
-/* line 1658, ../sass/app.scss */
+/* line 1735, ../sass/app.scss */
 footer.content-info .credit {
   color: white;
   margin: 20px 0;
   font-size: 15px;
 }
-/* line 1663, ../sass/app.scss */
+/* line 1740, ../sass/app.scss */
 footer.content-info .credit.credit-float {
   float: left;
 }
@@ -10038,7 +10099,7 @@ footer.content-info .credit.credit-float {
 /* ==========================================================================
 	 Author Box
 	 ========================================================================== */
-/* line 1674, ../sass/app.scss */
+/* line 1751, ../sass/app.scss */
 .author-box {
   padding: 20px;
   margin-top: 0;
@@ -10046,16 +10107,16 @@ footer.content-info .credit.credit-float {
   border: none;
   box-shadow: none;
 }
-/* line 1681, ../sass/app.scss */
+/* line 1758, ../sass/app.scss */
 .author-box h3 {
   margin-top: 5px;
   color: #333333;
 }
-/* line 1686, ../sass/app.scss */
+/* line 1763, ../sass/app.scss */
 .author-box .profile-link {
   margin-left: 5px;
 }
-/* line 1690, ../sass/app.scss */
+/* line 1767, ../sass/app.scss */
 .single .author-box {
   margin-top: 40px;
 }
@@ -10063,31 +10124,31 @@ footer.content-info .credit.credit-float {
 /* ==========================================================================
 	 Gravity Forms
 	 ========================================================================== */
-/* line 1710, ../sass/app.scss */
+/* line 1787, ../sass/app.scss */
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 1714, ../sass/app.scss */
+/* line 1791, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 1727, ../sass/app.scss */
+/* line 1804, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 1732, ../sass/app.scss */
+/* line 1809, ../sass/app.scss */
 .gform_button {
   line-height: 1.5;
 }
 
-/* line 1739, ../sass/app.scss */
+/* line 1816, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 1745, ../sass/app.scss */
+/* line 1822, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -10105,7 +10166,7 @@ footer.content-info .credit.credit-float {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 1763, ../sass/app.scss */
+/* line 1840, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -10129,34 +10190,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 1789, ../sass/app.scss */
+/* line 1866, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 1790, ../sass/app.scss */
+/* line 1867, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 1791, ../sass/app.scss */
+/* line 1868, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 1792, ../sass/app.scss */
+/* line 1869, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 1794, ../sass/app.scss */
+/* line 1871, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 1801, ../sass/app.scss */
+/* line 1878, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
@@ -10166,56 +10227,56 @@ figure.alignnone {
 }
 
 @media (max-width: 1200px) {
-  /* line 1808, ../sass/app.scss */
+  /* line 1885, ../sass/app.scss */
   .navbar-header {
     float: none;
   }
 
-  /* line 1811, ../sass/app.scss */
+  /* line 1888, ../sass/app.scss */
   .navbar-left, .navbar-right {
     float: none !important;
   }
 
-  /* line 1814, ../sass/app.scss */
+  /* line 1891, ../sass/app.scss */
   .navbar-toggle {
     display: block;
   }
 
-  /* line 1817, ../sass/app.scss */
+  /* line 1894, ../sass/app.scss */
   .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 1821, ../sass/app.scss */
+  /* line 1898, ../sass/app.scss */
   .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
   }
 
-  /* line 1825, ../sass/app.scss */
+  /* line 1902, ../sass/app.scss */
   .navbar-collapse.collapse {
     display: none!important;
   }
 
-  /* line 1828, ../sass/app.scss */
+  /* line 1905, ../sass/app.scss */
   .navbar-nav {
     float: none!important;
     margin-top: 7.5px;
   }
 
-  /* line 1832, ../sass/app.scss */
+  /* line 1909, ../sass/app.scss */
   .navbar-nav > li {
     float: none;
   }
 
-  /* line 1835, ../sass/app.scss */
+  /* line 1912, ../sass/app.scss */
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  /* line 1839, ../sass/app.scss */
+  /* line 1916, ../sass/app.scss */
   .collapse.in {
     display: block !important;
   }
