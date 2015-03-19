@@ -332,6 +332,29 @@ img,
 	}
 }
 
+blockquote {
+	position: relative;
+	padding: 0;
+	padding-left: 32px;
+	margin: 0 0 20px;
+	font-size: 16px;
+	border-left: none;
+
+	&:before {
+		content: '\f106';
+		font: {
+			family: genericons;
+			size: 20px;
+		}
+		position: absolute;
+		left: 0;
+	}
+}
+
+cite {
+	font-weight: bold;
+}
+
 dl {
 	dt {
 		margin-top: 15px;
@@ -353,6 +376,8 @@ table {
 
 	& > thead {
 		tr {
+			background: $white;
+
 			th {
 				font-weight: bold;
 				border-bottom-width: 2px;
@@ -442,10 +467,10 @@ ul {
 }
 
 hr {
-	margin: 50px auto;
+	margin: 60px auto;
 	border: 0;
-    border-top: 3px solid #eeeeee;
-	max-width: 30%;
+    border-top: 3px solid #ddd;
+	max-width: 20%;
 }
 
 .media > .pull-left {
