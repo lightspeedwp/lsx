@@ -563,7 +563,25 @@ header.banner {
 			}
 		}
 	}
+	
+	.header-central & {
+		.navbar-header,
+		nav,
+		.navbar-nav {
+			float:none;
+			display:block;
+			text-align:center;
+		}
+		
+		.navbar-nav > li {
+		    display: inline-block;
+		    float: none;
+		}		
+	}
+	
 }
+
+
 
 
 /* ==========================================================================

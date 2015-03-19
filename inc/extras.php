@@ -19,6 +19,13 @@ add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
  * Add and remove body_class() classes
  */
 function lsx_body_class($classes) {
+	/*
+	 * Add the header layout class
+	 */
+	$header_layout = get_theme_mod('lsx_header_layout','inline');
+	$classes[] = 'header-'.$header_layout;
+		
+	
   // Add post/page slug
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
