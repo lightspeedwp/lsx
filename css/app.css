@@ -5923,6 +5923,16 @@ header.banner {
   .header-central header.banner .navbar-nav > li {
     display: inline-block;
     float: none; }
+  .header-expanded header.banner nav,
+  .header-expanded header.banner .navbar-nav {
+    float: none;
+    display: block; }
+  .header-expanded header.banner .navbar-header {
+    float: none;
+    width: 50%; }
+  .header-expanded header.banner .navbar-nav > li {
+    display: inline-block;
+    float: none; }
 
 /* ==========================================================================
 	 Navigation

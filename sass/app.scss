@@ -582,6 +582,22 @@ header.banner {
 		}		
 	}
 	
+	.header-expanded & {
+		nav,
+		.navbar-nav {
+			float:none;
+			display:block;
+		}
+		.navbar-header {
+			float: none;
+			width: 50%;
+		}	
+		.navbar-nav > li {
+		    display: inline-block;
+		    float: none;
+		}		
+	}	
+	
 }
 
 
