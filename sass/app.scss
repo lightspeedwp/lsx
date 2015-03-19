@@ -336,7 +336,10 @@ blockquote {
 	position: relative;
 	padding: 0 30px;
 	margin: 0 0 20px;
-	font-size: 15px;
+	font: {
+		family: 'Noto Serif', serif;
+		size: 16px;
+	}
 	border-left: none;
 
 	&:before {
@@ -468,7 +471,7 @@ ul {
 hr {
 	margin: 60px auto;
 	border: 0;
-    border-top: 3px solid #ddd;
+    border-top: 3px solid #e5e5e5;
 	max-width: 20%;
 }
 
