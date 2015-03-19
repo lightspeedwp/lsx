@@ -31,9 +31,12 @@ function lsx_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
   
-  if(is_page() && has_post_thumbnail() && !is_front_page()){
+  $post_types = array('page');
+  $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
+  if(is_singular($post_types) && has_post_thumbnail() && !is_front_page()){
   	$classes[] = 'page-has-banner';
   }
+  
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');
@@ -377,7 +380,10 @@ function lsx_page_banner() {
 	
 	if('page' == $show_on_front && is_front_page()) { return; }
 	
-	if ( is_page() && has_post_thumbnail() ) { ?>
+	$post_types = array('page');
+	$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
+	
+	if ( is_singular($post_types) && has_post_thumbnail() ) { ?>
         
         <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
           <header class="page-header">
