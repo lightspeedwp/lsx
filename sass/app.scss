@@ -348,11 +348,12 @@ table {
 	margin-bottom: 20px;
 	border-collapse: collapse;
 	border-spacing: 0;
-	border: 1px solid $light-grey;
+	border: none;
 
 	& > thead {
 		tr {
 			th {
+				font-weight: bold;
 				border-bottom-width: 2px;
 			} 
 		}
@@ -360,6 +361,12 @@ table {
 
 	tbody {
 		tr {
+			&:nth-child(even) {
+				td {
+					background-color: $white;
+				}
+			}
+
 			&:nth-child(odd) {
 				td {
 					background-color: $off-white;
@@ -370,11 +377,8 @@ table {
 
 	td,
 	th {
-		border: 1px solid $light-grey;
+		border-bottom: 1px solid #ccc;
 		padding: 8px;
-		line-height: 1.42857;
-		vertical-align: top;
-		border-top: 1px solid $light-grey;
 	}
 }
 
