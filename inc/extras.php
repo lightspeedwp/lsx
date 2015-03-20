@@ -374,22 +374,25 @@ add_action('the_content','lsx_the_content_responsive_image_filter');
  * @subpackage extras
  * @category banner
  */
-function lsx_page_banner() {
-
-	$show_on_front = get_option('show_on_front','posts');
+if(!function_exists('lsx_page_banner')){
+	function lsx_page_banner() {
 	
-	if('page' == $show_on_front && is_front_page()) { return; }
-	
-	$post_types = array('page');
-	$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
-	
-	if ( is_singular($post_types) && has_post_thumbnail() ) { ?>
-        
-        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
-          <header class="page-header">
-            <h1 class="page-title"><?php the_title(); ?></h1>   
-          </header><!-- .entry-header -->
-        </div>
-    <?php } 
+		$show_on_front = get_option('show_on_front','posts');
+		
+		if('page' == $show_on_front && is_front_page()) { return; }
+		
+		$post_types = array('page');
+		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
+		
+		if ( is_singular($post_types) && has_post_thumbnail() ) { ?>
+	        
+	        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
+	          <header class="page-header">
+	            <h1 class="page-title"><?php the_title(); ?></h1>   
+	            <?php lsx_banner_content(); ?>
+	          </header><!-- .entry-header -->
+	        </div>
+	    <?php } 
+	}
 }
 add_action( 'lsx_header_after', 'lsx_page_banner' );
