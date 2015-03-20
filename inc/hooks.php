@@ -74,6 +74,16 @@ function lsx_nav_after() {
 }
 
 /**
+ * Semantic <content> hooks
+ *
+ * $lsx_supports[] = 'lsx_banner_content';
+ */
+
+function lsx_banner_content() {
+	do_action( 'lsx_banner_content' );
+}
+
+/**
 * Semantic <content> hooks
 * 
 * $lsx_supports[] = 'content';
