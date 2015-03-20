@@ -263,11 +263,10 @@ img,
 			button.search-submit {
 				color: $white;
 				background-color: $primary;
-				border-color: $primary-darker;
+				border: none !important;
 
 				&:hover {
 					background-color: $primary-darker;
-					border-color: #285e8e;
 				}
 			}
 		}
