@@ -376,8 +376,6 @@ add_action('the_content','lsx_the_content_responsive_image_filter');
  */
 if(!function_exists('lsx_page_banner')){
 	function lsx_page_banner() {
-	
-		$show_on_front = get_option('show_on_front','posts');
 		
 		$post_types = array('page');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
