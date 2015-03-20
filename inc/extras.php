@@ -379,8 +379,6 @@ if(!function_exists('lsx_page_banner')){
 	
 		$show_on_front = get_option('show_on_front','posts');
 		
-		if('page' == $show_on_front && is_front_page()) { return; }
-		
 		$post_types = array('page');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
 		
