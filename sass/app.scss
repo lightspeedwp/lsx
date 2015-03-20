@@ -338,7 +338,7 @@ blockquote {
 	margin: 0 0 20px;
 	font: {
 		family: 'Noto Serif', serif;
-		size: 16px;
+		size: 18px;
 	}
 	border-left: none;
 
@@ -450,6 +450,10 @@ nav.page-nav {
 	h3 {
 		margin-bottom: 20px;
 	}
+
+	.media-heading {
+		margin: 0;
+	}
 	
 	ol.media-list {
 		li.comment {
@@ -458,11 +462,13 @@ nav.page-nav {
 			}
 
 			time {
-				font-size: 16px;
+				font-size: 15px;
 			}
 		}
 	}
 }
+
+
 
 ul {
 	padding-left: 20px;
