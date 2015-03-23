@@ -60,7 +60,7 @@ function lsx_get_customizer_controls(){
 	 * https://wordpress.org/plugins/wp-translate/	
 	 */
 	/// add the setting
-	$lsx_controls['settings']['lsx_wp_translate_location']  = array(
+	/*$lsx_controls['settings']['lsx_wp_translate_location']  = array(
 			'default'       =>  '0', //Default setting/value to save
 			'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
 			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
@@ -71,7 +71,7 @@ function lsx_get_customizer_controls(){
 			'label'         =>  __('Layout','lsx'),
 			'section'       =>  'title_tagline',
 			'type'   =>  'checkbox'
-	);
+	);*/
 	
 	
 	// add the slider if function exists

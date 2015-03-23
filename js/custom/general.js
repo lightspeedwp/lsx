@@ -146,15 +146,16 @@ function lsxResizeSingleThumbnail(width) {
 
 function lsxProjectThumbInit() {
 	
-	jQuery('.filter-items-container').imagesLoaded( function() {
-		
-		jQuery('.filter-items-container').masonry({
-			resizable: true,
-			//layoutMode: 'packery',
-			itemSelector: '.filter-item'
-		});		
-	});	
-
+	if( 1 < jQuery(".filter-items-container .filter-item").length){
+		jQuery('.filter-items-container').imagesLoaded( function() {
+			
+			jQuery('.filter-items-container').masonry({
+				resizable: true,
+				//layoutMode: 'packery',
+				itemSelector: '.filter-item'
+			});		
+		});	
+	}
 }
 
 
