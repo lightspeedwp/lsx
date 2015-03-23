@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @subpackage	scripts
  */
 function lsx_scripts() {
+	global $content_width;
 	
 	wp_enqueue_style('lsx_main_style', get_stylesheet_uri() , false, '23a2bd43791de3fa3cab2d2af5fec6a2');
 	
@@ -37,7 +38,6 @@ function lsx_scripts() {
 	);
 	//Set the columns for the archives
 	$param_array['columns'] = apply_filters('lsx_archive_column_number',3);
-	
 	
 	wp_localize_script( 'lsx_custom', 'lsx_params', $param_array );
 	
