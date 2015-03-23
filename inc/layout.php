@@ -119,11 +119,11 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 add_action( 'lsx_entry_after', 'lsx_author_box' );
 function lsx_author_box() {
 
-	if ( ! is_single() && ! is_active_widget( false, false, $this->id_base, true ) ) { return false; }
+	if ( ! is_single()  ) { return false; }
 
 	$author_id=get_the_author_meta('ID');
 	
-	if ( get_post_type() == 'post' ) {
+	if ( get_post_type() == 'post' ) && ! is_active_widget( false, false, $this->id_base, true ) {
 		?>
 			<div class="author-box well col-xs-12">
 				<div class="image col-sm-2">
