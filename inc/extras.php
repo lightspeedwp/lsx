@@ -271,6 +271,8 @@ function lsx_get_thumbnail($size,$image_src = false){
 		}
 	}
 	
+	$size = apply_filters('lsx_thumbnail_size',$size);
+	
 	if('thumbnail-single' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
 		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
