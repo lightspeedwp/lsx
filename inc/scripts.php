@@ -35,13 +35,9 @@ function lsx_scripts() {
 	$param_array = array(
 			'is_portfolio' => $is_portfolio
 	);
-	
 	//Set the columns for the archives
-	$colums = 3;
-	$dynamic_column_post_types = apply_filters('lsx_archive_column_number',array());
-	if(is_post_type_archive($dynamic_column_post_types)){
-		
-	}
+	$param_array['columns'] = apply_filters('lsx_archive_column_number',3);
+	
 	
 	wp_localize_script( 'lsx_custom', 'lsx_params', $param_array );
 	
