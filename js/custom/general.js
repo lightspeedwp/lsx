@@ -151,8 +151,7 @@ function lsxProjectThumbInit() {
 		jQuery('.filter-items-container').masonry({
 			resizable: true,
 			//layoutMode: 'packery',
-			itemSelector: '.filter-item',
-			//columnWidth: noColumns
+			itemSelector: '.filter-item'
 		});		
 	});	
 
