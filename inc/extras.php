@@ -382,7 +382,7 @@ if(!function_exists('lsx_page_banner')){
 		
 		if ( is_singular($post_types) && has_post_thumbnail() ) { ?>
 	        
-	        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
+	        <div class="page-banner" style="background-position: 50% 50%" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
 	          <header class="page-header">
 	            <h1 class="page-title"><?php the_title(); ?></h1>   
 	            <?php lsx_banner_content(); ?>
