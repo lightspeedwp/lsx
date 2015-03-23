@@ -1,8 +1,3 @@
-var colW;
-var noColumns;
-var masonryContainer = jQuery('.filter-items-container');
-
-
 jQuery(document).ready(function($) {
 	$('table#wp-calendar').addClass('table');
 	
@@ -30,7 +25,7 @@ jQuery(document).ready(function($) {
 			    
 		    });			
 			
-		     var infinite_count = 0;
+		     /*var infinite_count = 0;
 		     // Triggers re-layout on infinite scroll
 		     $( document.body ).on( 'post-load', function () {
 				infinite_count = infinite_count + 1;
@@ -43,7 +38,7 @@ jQuery(document).ready(function($) {
 					  $('.filter-items-container').append($(this));
 				});
 				  selector.remove();
-		     });
+		     });*/
     	}
     	
     	//Portfolio Hover Class
@@ -145,44 +140,19 @@ function lsxResizeSingleThumbnail(width) {
 	});	
 }
 
-
-///////////////////////////////
-//Isotope Grid Resize
-///////////////////////////////
-
-function lsx_set_portfolio_columns()
-{
-	var noColumns;
-	var gw = masonryContainer.width();
-	if(gw<=992){
-		noColumns = 2;
-	}else if(gw<=1700){
-		noColumns = 3;
-	}else{
-		noColumns = 6; 
-	}
-	colW = Math.floor(gw / noColumns) - 14;
-	
-	masonryContainer.find('.filter-item').each(function(id){
-		jQuery(this).css('width',colW + 'px');
-		jQuery(this).show();
-	});
-}
-
 ///////////////////////////////
 //Project thumbs
 ///////////////////////////////
 
 function lsxProjectThumbInit() {
-	lsx_set_portfolio_columns();
 	
-	masonryContainer.imagesLoaded( function() {
+	jQuery('.filter-items-container').imagesLoaded( function() {
 		
-		masonryContainer.masonry({
+		jQuery('.filter-items-container').masonry({
 			resizable: true,
 			//layoutMode: 'packery',
 			itemSelector: '.filter-item',
-			columnWidth: noColumns
+			//columnWidth: noColumns
 		});		
 	});	
 
