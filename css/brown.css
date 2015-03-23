@@ -1,3 +1,8 @@
+html,
+body {
+  background: #fff !important;
+}
+
 a {
   color: #555555;
 }
@@ -54,12 +59,10 @@ h6 a:hover {
 #searchform .input-group span.input-group-btn button.search-submit {
   color: white;
   background-color: #555555 !important;
-  border-color: #333333;
 }
 
 #searchform .input-group span.input-group-btn button.search-submit:hover {
-  background-color: #333333;
-  border-color: #285e8e;
+  background-color: #333333 !important;
 }
 
 .pagination span.current {
@@ -122,7 +125,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #ffffff;
+  color: #888;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {

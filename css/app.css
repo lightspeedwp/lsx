@@ -8591,12 +8591,12 @@ img.aligncenter,
 #searchform .input-group span.input-group-btn button.search-submit {
   color: white;
   background-color: #428bca;
-  border-color: #357ebd;
+  border: none !important;
+  margin-left: 0 !important;
 }
-/* line 268, ../sass/app.scss */
+/* line 269, ../sass/app.scss */
 #searchform .input-group span.input-group-btn button.search-submit:hover {
   background-color: #357ebd;
-  border-color: #285e8e;
 }
 
 /* line 278, ../sass/app.scss */
@@ -10214,28 +10214,29 @@ footer.content-info .credit.credit-float {
 
 /* ==========================================================================
 	 Author Box
-	 ========================================================================== */
-/* line 1872, ../sass/app.scss */
+	 ========================================================================== 
+
 .author-box {
-  padding: 20px;
-  margin-top: 0;
-  margin-bottom: 40px;
-  border: none;
-  box-shadow: none;
+	padding: 20px;
+	margin-top: 0;
+	margin-bottom: 40px;
+	border: none;
+	box-shadow: none;
+
+	h3 {
+		margin-top: 5px;
+		color: $black;
+	}
+
+	.profile-link {
+		margin-left: 5px;
+	}
+
+	.single & {
+		margin-top: 40px;
+	}
 }
-/* line 1879, ../sass/app.scss */
-.author-box h3 {
-  margin-top: 5px;
-  color: #333333;
-}
-/* line 1884, ../sass/app.scss */
-.author-box .profile-link {
-  margin-left: 5px;
-}
-/* line 1888, ../sass/app.scss */
-.single .author-box {
-  margin-top: 40px;
-}
+
 
 /* ==========================================================================
 	 Gravity Forms

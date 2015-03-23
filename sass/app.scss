@@ -263,11 +263,11 @@ img,
 			button.search-submit {
 				color: $white;
 				background-color: $primary;
-				border-color: $primary-darker;
+				border: none !important;
+				margin-left: 0 !important;
 
 				&:hover {
 					background-color: $primary-darker;
-					border-color: #285e8e;
 				}
 			}
 		}
@@ -1867,7 +1867,7 @@ footer.content-info {
 
 /* ==========================================================================
 	 Author Box
-	 ========================================================================== */
+	 ========================================================================== 
 
 .author-box {
 	padding: 20px;
