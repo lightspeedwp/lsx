@@ -10214,61 +10214,58 @@ footer.content-info .credit.credit-float {
 
 /* ==========================================================================
 	 Author Box
-	 ========================================================================== */
-/* line 1872, ../sass/app.scss */
+	 ========================================================================== 
+
 .author-box {
-  padding: 20px;
-  margin-top: 0;
-  margin-bottom: 40px;
-  border: none;
-  box-shadow: none;
+	padding: 20px;
+	margin-top: 0;
+	margin-bottom: 40px;
+	border: none;
+	box-shadow: none;
+
+	h3 {
+		margin-top: 5px;
+		color: $black;
+	}
+
+	.profile-link {
+		margin-left: 5px;
+	}
+
+	.single & {
+		margin-top: 40px;
+	}
 }
-/* line 1879, ../sass/app.scss */
-.author-box h3 {
-  margin-top: 5px;
-  color: #333333;
-}
-/* line 1884, ../sass/app.scss */
-.author-box .profile-link {
-  margin-left: 5px;
-}
-/* line 1888, ../sass/app.scss */
-.single .author-box {
-  margin-top: 40px;
-}
-/* line 1892, ../sass/app.scss */
-#secondary .author-box {
-  display: none;
-}
+
 
 /* ==========================================================================
 	 Gravity Forms
 	 ========================================================================== */
-/* line 1912, ../sass/app.scss */
+/* line 1908, ../sass/app.scss */
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 1916, ../sass/app.scss */
+/* line 1912, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 1929, ../sass/app.scss */
+/* line 1925, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 1934, ../sass/app.scss */
+/* line 1930, ../sass/app.scss */
 .gform_button {
   line-height: 1.5;
 }
 
-/* line 1941, ../sass/app.scss */
+/* line 1937, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 1947, ../sass/app.scss */
+/* line 1943, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -10286,7 +10283,7 @@ footer.content-info .credit.credit-float {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 1965, ../sass/app.scss */
+/* line 1961, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -10310,34 +10307,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 1991, ../sass/app.scss */
+/* line 1987, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 1992, ../sass/app.scss */
+/* line 1988, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 1993, ../sass/app.scss */
+/* line 1989, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 1994, ../sass/app.scss */
+/* line 1990, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 1996, ../sass/app.scss */
+/* line 1992, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 2003, ../sass/app.scss */
+/* line 1999, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
@@ -10347,56 +10344,56 @@ figure.alignnone {
 }
 
 @media (max-width: 1200px) {
-  /* line 2010, ../sass/app.scss */
+  /* line 2006, ../sass/app.scss */
   .navbar-header {
     float: none;
   }
 
-  /* line 2013, ../sass/app.scss */
+  /* line 2009, ../sass/app.scss */
   .navbar-left, .navbar-right {
     float: none !important;
   }
 
-  /* line 2016, ../sass/app.scss */
+  /* line 2012, ../sass/app.scss */
   .navbar-toggle {
     display: block;
   }
 
-  /* line 2019, ../sass/app.scss */
+  /* line 2015, ../sass/app.scss */
   .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 2023, ../sass/app.scss */
+  /* line 2019, ../sass/app.scss */
   .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
   }
 
-  /* line 2027, ../sass/app.scss */
+  /* line 2023, ../sass/app.scss */
   .navbar-collapse.collapse {
     display: none!important;
   }
 
-  /* line 2030, ../sass/app.scss */
+  /* line 2026, ../sass/app.scss */
   .navbar-nav {
     float: none!important;
     margin-top: 7.5px;
   }
 
-  /* line 2034, ../sass/app.scss */
+  /* line 2030, ../sass/app.scss */
   .navbar-nav > li {
     float: none;
   }
 
-  /* line 2037, ../sass/app.scss */
+  /* line 2033, ../sass/app.scss */
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  /* line 2041, ../sass/app.scss */
+  /* line 2037, ../sass/app.scss */
   .collapse.in {
     display: block !important;
   }
