@@ -45,6 +45,15 @@ function lsx_breadcrumbs() {
 }
 
 /**
+ * Replaces the seperator with a blank space.
+ *
+ */
+function lsx_breadcrumbs_seperator_filter($seperator) {
+	return '';
+}
+add_filter( 'wpseo_breadcrumb_separator', 'lsx_breadcrumbs_seperator_filter' );
+
+/**
  * Custom template tags for this theme.
  * Eventually, some of the functionality here could be replaced by core features.
  *
