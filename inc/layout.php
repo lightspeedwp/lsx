@@ -119,7 +119,7 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 add_action( 'lsx_entry_after', 'lsx_author_box' );
 function lsx_author_box() {
 
-	if ( ! is_single() && ! is_archive() ) { return false; }
+	if ( ! is_single() && ! is_active_widget( false, false, $this->id_base, true ) ) { return false; }
 
 	$author_id=get_the_author_meta('ID');
 	
