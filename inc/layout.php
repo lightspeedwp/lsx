@@ -123,7 +123,7 @@ function lsx_author_box() {
 
 	$author_id=get_the_author_meta('ID');
 	
-	if ( get_post_type() == 'post' ) && ! is_active_widget( false, false, $this->id_base, true ) {
+	if ( get_post_type() == 'post' && ! is_active_widget( false, false, $this->id_base, true ) ) {
 		?>
 			<div class="author-box well col-xs-12">
 				<div class="image col-sm-2">
