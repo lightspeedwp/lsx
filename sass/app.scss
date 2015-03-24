@@ -1411,6 +1411,21 @@ header.page-header {
 
 article {
 	margin-bottom: 70px;
+	
+	&.column-1 {
+		width: 100% !important;
+		max-width: 100%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	
+	&.column-2 {
+		width: 50% !important;
+	}
+	
+	&.column-3 {
+		width: 33.3% !important;
+	}		
 
 	.single & {
 		margin-bottom: 0;
