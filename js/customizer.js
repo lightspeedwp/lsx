@@ -50,7 +50,7 @@
             $("body").addClass('header-'+newval);
             console.log($("body"));
         } );
-    });	
+    });
 	
 
 } )( jQuery );
