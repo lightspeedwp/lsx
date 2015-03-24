@@ -558,8 +558,11 @@ header.banner {
 
 	.site-branding {
 		.site-title {
-			margin-bottom: 0px;
-			margin-top: 33px;
+			margin: {
+				top: 33px;
+				bottom: 0px;
+			}
+			font-weight: bold;
 
 			@media screen and (max-width: 992px) {
 				margin-top: 20px;
