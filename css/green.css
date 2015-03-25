@@ -79,6 +79,10 @@ ul.breadcrumb li a {
   color: #596b46;
 }
 
+ul.breadcrumb li a:hover {
+  color: #333333;
+}
+
 nav.page-nav p {
   background-color: white;
   border: 1px solid #eeeeee;
@@ -97,7 +101,7 @@ header.banner .site-description {
 }
 
 header.banner nav .nav.navbar-nav li a {
-  color: #5c6669;
+  color: #596b46;
   border: none !important;
 }
 
@@ -118,7 +122,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-  color: #fff;
+  color: #fff !important;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
@@ -132,11 +136,11 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #596b46;
+  color: #333;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
-  color: #333;
+  color: #fff;
 }
 
 .navbar-toggle {
