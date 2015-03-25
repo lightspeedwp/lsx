@@ -1,5 +1,5 @@
 a {
-  color: #555555;
+  color: #596b46;
 }
 
 a:hover,
@@ -9,17 +9,17 @@ a:active {
 }
 
 .btn {
-  background: #555555;
+  background: #596b46;
 }
 
 .btn:hover,
 .btn:focus,
 .btn:active {
-  background: #444444;
+  background: #333333;
 }
 
 body {
-  color: #888888;
+  color: #777777;
 }
 
 h1,
@@ -59,7 +59,7 @@ h6 a:hover {
 
 #searchform .input-group span.input-group-btn button.search-submit:hover {
   background-color: #333333;
-  border-color: #285e8e;
+  border-color: #232222;
 }
 
 .pagination span.current {
@@ -67,11 +67,17 @@ h6 a:hover {
   color: white !important;
 }
 
+
+
 ul.breadcrumb li > span {
   color: #999999;
 }
 ul.breadcrumb li > span > span {
   color: #999999;
+}
+
+ul.breadcrumb li a {
+  color: #596b46;
 }
 
 nav.page-nav p {
@@ -84,7 +90,7 @@ nav.page-nav p {
 }
 
 header.banner {
-  background: #6fba7a !important;
+  background: #fff !important;
 }
 
 header.banner .site-description {
@@ -92,22 +98,23 @@ header.banner .site-description {
 }
 
 header.banner nav .nav.navbar-nav li a {
-  color: #ffffff;
+  color: #5c6669;
   border: none !important;
 }
 
-header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
+header.banner nav .nav.navbar-nav li:hover > a, 
+header.banner nav .nav.navbar-nav li.open > a {
   color: #ffffff;
-  background: #555555;
+  background: #ffffff;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-  background: #555555;
+  background: #596b46;
 }
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-    background: #6fba7a;
+    background: #596b46;
   }
 }
 
@@ -116,21 +123,21 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #777777;
+  background: #ffffff;
 }
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-    color: #ffffff;
+    color: #a5a370;
   }
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #333333;
+  color: #596b46;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
-  color: #ffffff;
+  color: #333;
 }
 
 .navbar-toggle {
@@ -167,7 +174,7 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 }
 
 .home .soliloquy-slider {
-  background: #6fba7a;
+  background: #596b46;
 }
 
 .front-page #home-widgets aside.widget h3.widget-title {
@@ -243,8 +250,12 @@ article .post-format {
   background: #333333 !important;
 }
 
+.footer-subscribe {
+  background: #596b46 !important;
+}
+
 #footer-widgets {
-  background: #375c3d;
+  background: #333;
 }
 
 #footer-widgets .widget {
@@ -271,6 +282,10 @@ article .post-format {
 #footer-widgets .widget.widget_tag_cloud .tagcloud a:hover {
   background: #333333 !important;
   color: #ffffff !important;
+}
+
+.footer-widgets-wrapper .footer-widgets .styler .widget ul li a {
+  color: #a5a370;
 }
 
 footer.content-info {
@@ -311,6 +326,10 @@ select {
   color: #555;
 }
 
+#social-navigation ul li a {
+  color: #a5a370 !important;
+}
+
 #social-navigation ul li a:hover {
-  color: #6fba7a !important;
+  color: #ffffff !important;
 }
