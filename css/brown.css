@@ -11,6 +11,7 @@ a:active {
 .btn,
 button {
   background: #d48a1d !important;
+  font-size: 15px !important;
 }
 
 .btn:hover,
@@ -32,6 +33,7 @@ button:hover {
 
 .secondary .btn,
 .secondary button {
+  color: #fff !important;
   background: #572600 !important;
 }
 
@@ -142,7 +144,7 @@ header.banner .site-description {
 }
 
 header.banner nav .nav.navbar-nav li a {
-  color: #d48a1d;
+  color: #572600;
   border: none !important;
 }
 
@@ -167,7 +169,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #a5a370;
+  background: #572600;
 }
 
 @media screen and (max-width: 992px) {
@@ -177,7 +179,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #333;
+  color: #572600;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
