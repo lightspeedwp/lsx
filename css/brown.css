@@ -1,23 +1,45 @@
 a {
-  color: #572600;
+  color: #d48a1d;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #333333;
+  color: #af6a03;
 }
 
 .btn,
 button {
-  background: #572600 !important;
+  background: #d48a1d !important;
 }
 
 .btn:hover,
 .btn:focus,
 .btn:active,
 button:hover {
-  background: #333333 !important;
+  background: #af6a03 !important;
+}
+
+.secondary a {
+  color: #572600;
+}
+
+.secondary a:hover,
+.secondary a:focus,
+.secondary a:active {
+  color: #331701;
+}
+
+.secondary .btn,
+.secondary button {
+  background: #572600 !important;
+}
+
+.secondary .btn:hover,
+.secondary .btn:focus,
+.secondary .btn:active,
+.secondary button:hover {
+  background: #331701 !important;
 }
 
 body {
@@ -43,7 +65,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: #572600;
+  color: #d48a1d;
 }
 
 h1 a:hover,
@@ -95,7 +117,7 @@ ul.breadcrumb li > span > span {
 }
 
 ul.breadcrumb li a {
-  color: #572600;
+  color: #d48a1d;
 }
 
 ul.breadcrumb li a:hover {
@@ -112,7 +134,7 @@ nav.page-nav p {
 }
 
 header.banner {
-  background: #fdf9f3 !important;
+  background: #fff !important;
 }
 
 header.banner .site-description {
@@ -120,23 +142,23 @@ header.banner .site-description {
 }
 
 header.banner nav .nav.navbar-nav li a {
-  color: #572600;
+  color: #d48a1d;
   border: none !important;
 }
 
 header.banner nav .nav.navbar-nav li:hover > a, 
 header.banner nav .nav.navbar-nav li.open > a {
   color: #ffffff;
-  background: #572600;
+  background: #d48a1d;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-  background: #572600;
+  background: #d48a1d;
 }
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-    background: #572600;
+    background: #d48a1d;
   }
 }
 
@@ -145,7 +167,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #572600;
+  background: #a5a370;
 }
 
 @media screen and (max-width: 992px) {
@@ -196,7 +218,7 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 }
 
 .home .soliloquy-slider {
-  background: #572600;
+  background: #d48a1d;
 }
 
 .front-page #home-widgets aside.widget h3.widget-title {
@@ -273,7 +295,7 @@ article .post-format {
 }
 
 .footer-subscribe {
-  background: #572600 !important;
+  background: #d48a1d !important;
 }
 
 #footer-widgets {
@@ -307,7 +329,7 @@ article .post-format {
 }
 
 .footer-widgets-wrapper .footer-widgets .styler .widget ul li a {
-  color: #572600 !important;
+  color: #a5a370 !important;
 }
 
 .footer-widgets-wrapper .footer-widgets .styler .widget ul li a:hover {
@@ -345,7 +367,7 @@ footer.content-info a:hover {
 .gform_wrapper .gfield_error input:focus,
 .gform_wrapper .gfield_error select:focus,
 .gform_wrapper .gfield_error textarea:focus {
-  border-color: #572600;
+  border-color: #d48a1d;
 }
 
 select {
@@ -353,7 +375,7 @@ select {
 }
 
 #social-navigation ul li a {
-  color: #572600 !important;
+  color: #a5a370 !important;
 }
 
 #social-navigation ul li a:hover {
@@ -361,5 +383,5 @@ select {
 }
 
 .caldera-grid .form-control:focus {
-    border-color: #572600;
+    border-color: #d48a1d;
 }
