@@ -104,7 +104,7 @@ header.banner nav .nav.navbar-nav li a {
 header.banner nav .nav.navbar-nav li:hover > a, 
 header.banner nav .nav.navbar-nav li.open > a {
   color: #ffffff;
-  background: #5c6669;
+  background: #596b46;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu {
@@ -284,7 +284,11 @@ article .post-format {
 }
 
 .footer-widgets-wrapper .footer-widgets .styler .widget ul li a {
-  color: #a5a370;
+  color: #a5a370 !important;
+}
+
+.footer-widgets-wrapper .footer-widgets .styler .widget ul li a:hover {
+  color: #fff !important;
 }
 
 footer.content-info {
