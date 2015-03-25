@@ -8,13 +8,16 @@ a:active {
   color: #333333;
 }
 
-.btn {
+.btn,
+button {
   background: #596b46 !important;
 }
 
 .btn:hover,
 .btn:focus,
-.btn:active {
+.btn:active,
+button:hover,
+input[type="submit"]:hover {
   background: #333333 !important;
 }
 
@@ -344,7 +347,7 @@ footer.content-info a:hover {
 .gform_wrapper .gfield_error input:focus,
 .gform_wrapper .gfield_error select:focus,
 .gform_wrapper .gfield_error textarea:focus {
-  border-color: #a94442;
+  border-color: #596b46;
 }
 
 select {
@@ -357,4 +360,8 @@ select {
 
 #social-navigation ul li a:hover {
   color: #ffffff !important;
+}
+
+.caldera-grid .form-control:focus {
+    border-color: #596b46;
 }
