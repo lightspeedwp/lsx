@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if( !class_exists( 'WP_Customize_Control' ) ){
 	return;
 }
-class LSX_Customize_header_Layout_Control extends WP_Customize_Control {
+class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 	/**
 	 * @access public
 	 * @var string
@@ -52,7 +52,7 @@ class LSX_Customize_header_Layout_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		// 
-		wp_enqueue_script( 'lsx-header-layout-control', get_template_directory_uri() .'/js/customizer-header-layout.js', array('jquery','customize-preview'), null, true );
+		wp_enqueue_script( 'lsx-header-layout-control', get_template_directory_uri() .'/js/customizer-header-layout.js', array('jquery'), null, true );
 	}
 
 	/**
@@ -92,4 +92,3 @@ class LSX_Customize_header_Layout_Control extends WP_Customize_Control {
 	}
 
 }
-

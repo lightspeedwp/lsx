@@ -1,18 +1,22 @@
-/**
- * Theme Customizer layout control JS
- *
- */
+	/**
+	 * Theme Customizer layout control JS
+	 *
+	 */
 
 ( function( $ ) {
 	
 	// custom controls
 	$(document).on('click', '.header-layout-button', function(){
-		var clicked = $(this),
-			parent = clicked.closest('.header-layouts-selector'),
-			input = parent.find('.selected-header-layout');
-		parent.find( '.header-layout-button' ).css('border', '1px solid transparent');
+		
+		var clicked = $(this)
+		var currently_selected = $('.selected-header-layout');
+		
+		$( '.header-layout-button' ).each(function(){
+			$( this ).css('border', '1px solid transparent');
+		});
 		clicked.css( 'border', '1px solid rgb(43, 166, 203)');
-		$(input).val( clicked.data('option') ).trigger('change');
+		
+		currently_selected.val( clicked.attr('data-option') ).trigger('change');
 	});
 
 } )( jQuery );

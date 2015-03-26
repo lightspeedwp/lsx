@@ -32,29 +32,6 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 function lsx_get_customizer_controls(){
 	$lsx_controls = array();
 	
-	
-	/*
-	 * Header Layout Options
-	 */
-	/// add the setting
-	/*$lsx_controls['settings']['lsx_header_layout']  = array(
-			'default'       =>  'inline', //Default setting/value to save
-			'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-	);	
-	
-	/// add the control
-	$lsx_controls['fields']['lsx_header_layout'] = array(
-			'label'         =>  __('Layout','lsx'),
-			'section'       =>  'lsx-layout',
-			'control'   =>  'LSX_Customize_Header_Layout_Control',
-			'choices'		=>	array(
-					'central',
-					'expanded',
-					'inline'
-			)
-	);*/
-	
 	/*
 	 * If the WP Translate plugin is active then display some controls for that.	
 	 * https://wordpress.org/plugins/wp-translate/	
@@ -124,6 +101,29 @@ function lsx_get_customizer_controls(){
 	 /*
 	  * Layout Controls
 	  */
+	 
+	 /*
+	  * Header Layout Options
+	 */
+	 /// add the setting
+	 $lsx_controls['settings']['lsx_header_layout']  = array(
+	 		'default'       =>  'inline', //Default setting/value to save
+	 		'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	 		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	 );
+	 
+	 /// add the control
+	 $lsx_controls['fields']['lsx_header_layout'] = array(
+	 		'label'         =>  __('Header','lsx'),
+	 		'section'       =>  'lsx-layout',
+	 		'control'   =>  'LSX_Customize_Header_Layout_Control',
+	 		//'type'       =>  'select',
+	 		'choices'		=>	array(
+	 				'central',
+	 				'expanded',
+	 				'inline'
+	 		)
+	 );	 
 		 
 	  $lsx_controls['sections']['lsx-layout'] = array(
 	    'title'       =>  esc_html__( 'Layout', 'lsx' ),
@@ -139,7 +139,7 @@ function lsx_get_customizer_controls(){
 	  
 	  /// add the control
 	  $lsx_controls['fields']['lsx_layout'] = array(
-	    'label'         =>  '',
+	    'label'         =>  __('Body','lsx'),
 	    'section'       =>  'lsx-layout',
 	    'control'   =>  'LSX_Customize_Layout_Control',
 	    'choices'		=>	array(
