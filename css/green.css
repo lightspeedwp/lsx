@@ -331,21 +331,21 @@ footer.content-info a:hover {
 }
 
 .gform_wrapper .gfield_error .gfield_label {
-  color: #a94442;
+  color: #a94442 !important;
 }
 
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
-  border-color: #ebccd1;
-  background-color: #f2dede;
-  color: #a94442;
+  border-color: #ebccd1 !important;
+  background-color: #f2dede !important;
+  color: #a94442 !important;
 }
 
 .gform_wrapper .gfield_error input:focus,
 .gform_wrapper .gfield_error select:focus,
 .gform_wrapper .gfield_error textarea:focus {
-  border-color: #596b46;
+  border-color: #d48a1d !important;
 }
 
 select {
@@ -360,6 +360,7 @@ select {
   color: #ffffff !important;
 }
 
-.caldera-grid .form-control:focus {
-    border-color: #596b46;
+.caldera-grid .form-control input:focus {
+    border-color: #d48a1d !important;
+    box-shadow: none !important;
 }
