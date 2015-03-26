@@ -618,7 +618,7 @@ nav {
 	@media screen and (max-width: 1200px) {
 		border: none !important;
 	    box-shadow: none !important;
-	    margin: 10px -15px 0 -15px !important;
+	    margin: 0 !important;
 	    padding-bottom: 20px !important;
 	    float: none !important;
 	}
@@ -645,6 +645,10 @@ nav {
 			& > li {
 				& > a {
 					@include border-radius(4px);
+
+					@media screen and (max-width: 992px) {
+						padding-left: 0 !important;
+					}
 				}
 			}
 
@@ -736,7 +740,7 @@ nav {
 							background-color: inherit;
 							color: $light-grey;
 							font-size: 17px;
-							border-radius: none;
+							border-radius: 0;
 
 							&:hover {
 								background: $mid-grey; 
@@ -957,11 +961,11 @@ nav {
 	margin: 48px 0;
 
 	.scrolled & {
-		margin: 22px 0;
+		margin: 32px 0;
 	}
 
 	@media screen and (max-width: 992px) {
-		margin: 22px 0;
+		margin: 32px 0;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -976,7 +980,7 @@ nav {
 	font-weight: 600;
 
 	.scrolled & {
-		margin: 23px 13px;
+		margin: 31px 13px;
 	}
 
 	@media screen and (min-width: 450px) and (max-width: 1200px) {
@@ -984,11 +988,11 @@ nav {
 	}
 
 	@media screen and (max-width: 992px) {
-		margin: 21px 13px !important;
+		margin: 31px 13px !important;
 	}
 
 	@media screen and (max-width: 768px) {
-		margin: 18px 13px !important;
+		margin: 19px 5px !important;
 	}
 }
 
@@ -1011,7 +1015,7 @@ nav {
 	 ========================================================================== */
 
 .wrap {
-	margin-top: 180px;
+	margin-top: 200px;
 	margin-bottom: 100px;
 
 	#primary,
@@ -1047,13 +1051,13 @@ nav {
 	}
 
 	@media screen and (max-width: 992px) {
-		margin-top: 100px;
+		margin-top: 140px;
 		margin-bottom: 60px;
 	}
 
 	@media screen and (max-width: 768px) {
-		margin-top: 0;
-		margin-bottom: 50px;
+		margin-top: 20px;
+		margin-bottom: 40px;
 	}
 
 	.single-jetpack-portfolio &,
@@ -1332,13 +1336,12 @@ header.page-header {
 
 	.widget {
 		margin-bottom: 30px;
-		
-		.home &.widget_search {
-			margin-top: 20px;
-		}
 
 		h3 {
 			color: $black;
+		}
+		.widget-title {
+			font-size: 24px;
 		}
 
 		&.gform_widget {
@@ -1414,6 +1417,14 @@ header.page-header {
 
 article {
 	margin-bottom: 70px;
+
+	@media screen and (max-width: 992px) {
+		margin-bottom: 50px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-bottom: 40px;
+	}
 	
 	body &.column-1 {
 		width: 100%;
@@ -1441,8 +1452,17 @@ article {
 	body &.column-6 {
 		width: 16.666% !important;
 	}	
+
 	.single & {
 		margin-bottom: 0;
+	}
+
+	&:nth-of-type(1) {
+		header.entry-header {
+			h1.entry-title {
+				margin-top: 0;
+			}
+		}
 	}
 
 	header.entry-header {
@@ -1490,12 +1510,27 @@ article {
 				margin-right: 0;
 				margin-bottom: 30px;
 
+				&.pull-left,
+				&.pull-right {
+					@media screen and (max-width: 768px) {
+						float: none !important;
+					}
+				}
+
 				&.pull-left {
 					margin-right: 20px;
+
+					@media screen and (max-width: 768px) {
+						margin-right: 0;
+					}
 				}
 
 				&.pull-right {
 					margin-left: 20px;
+
+					@media screen and (max-width: 768px) {
+						margin-left: 0;
+					}
 				}
 			}
 		}

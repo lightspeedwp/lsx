@@ -151,7 +151,7 @@ function lsxProjectThumbInit() {
 			
 			jQuery('.filter-items-container').masonry({
 				resizable: true,
-				//layoutMode: 'packery',
+				layoutMode: 'packery',
 				itemSelector: '.filter-item'
 			});		
 		});	
