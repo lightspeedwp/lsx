@@ -367,8 +367,12 @@ footer.content-info a:hover {
 
 .gform_wrapper .gfield_error input:focus,
 .gform_wrapper .gfield_error select:focus,
-.gform_wrapper .gfield_error textarea:focus {
+.gform_wrapper .gfield_error textarea:focus,
+.home-bg-image-footer .container > span .form-group input:focus, 
+.home-bg-image-footer .container > form .form-group input:focus,
+.caldera-grid .form-control input:focus {
   border-color: #d48a1d !important;
+  box-shadow: none !important;
 }
 
 select {
@@ -381,9 +385,4 @@ select {
 
 #social-navigation ul li a:hover {
   color: #ffffff !important;
-}
-
-.caldera-grid .form-control input:focus {
-    border-color: #d48a1d !important;
-    box-shadow: none !important;
 }
