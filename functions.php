@@ -37,7 +37,7 @@ function lsx_get_customizer_controls(){
 	 * Header Layout Options
 	 */
 	/// add the setting
-	$lsx_controls['settings']['lsx_header_layout']  = array(
+	/*$lsx_controls['settings']['lsx_header_layout']  = array(
 			'default'       =>  'inline', //Default setting/value to save
 			'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
 			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
@@ -53,7 +53,7 @@ function lsx_get_customizer_controls(){
 					'expanded',
 					'inline'
 			)
-	);
+	);*/
 	
 	/*
 	 * If the WP Translate plugin is active then display some controls for that.	
