@@ -9,7 +9,13 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-
+	// Removing homepage slider for mobile
+	$(document).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 540) {
+	        $(".home .soliloquy-slider").remove();
+	    }
+	});
 
     $(window).load(function() {
 		

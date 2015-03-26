@@ -1020,7 +1020,6 @@ nav {
 
 	#primary,
 	#secondary {
-	
 		&.col-sm-12 {
 			max-width: 780px;
 			margin: 0 auto;
@@ -1051,7 +1050,7 @@ nav {
 	}
 
 	@media screen and (max-width: 992px) {
-		margin-top: 140px;
+		margin-top: 100px;
 		margin-bottom: 60px;
 	}
 
@@ -1063,6 +1062,10 @@ nav {
 	.single-jetpack-portfolio &,
 	.page-has-banner & {
 		margin-top: 40px;
+
+		@media screen and (max-width: 768px) {
+			margin-top: 20px;
+		}
 	}
 
 	@media screen and (max-width: 768px) {
