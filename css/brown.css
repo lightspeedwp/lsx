@@ -168,7 +168,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #d48a1d;
+  background: #331701;
 }
 
 @media screen and (max-width: 992px) {
@@ -354,21 +354,21 @@ footer.content-info a:hover {
 }
 
 .gform_wrapper .gfield_error .gfield_label {
-  color: #a94442;
+  color: #a94442 !important;
 }
 
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
-  border-color: #ebccd1;
-  background-color: #f2dede;
-  color: #a94442;
+  border-color: #ebccd1 !important;
+  background-color: #f2dede !important;
+  color: #a94442 !important;
 }
 
 .gform_wrapper .gfield_error input:focus,
 .gform_wrapper .gfield_error select:focus,
 .gform_wrapper .gfield_error textarea:focus {
-  border-color: #d48a1d;
+  border-color: #d48a1d !important;
 }
 
 select {
@@ -376,13 +376,14 @@ select {
 }
 
 #social-navigation ul li a {
-  color: #a5a370 !important;
+  color: #d48a1d !important;
 }
 
 #social-navigation ul li a:hover {
   color: #ffffff !important;
 }
 
-.caldera-grid .form-control:focus {
-    border-color: #d48a1d;
+.caldera-grid .form-control input:focus {
+    border-color: #d48a1d !important;
+    box-shadow: none !important;
 }
