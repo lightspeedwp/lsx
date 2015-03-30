@@ -15,8 +15,8 @@ global $lsx_options;
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php wp_head(); ?>
 <?php lsx_head_bottom(); ?>
+<?php wp_head(); ?>
 </head>
 <body <?php body_class( 'lsx' ); ?>>
 <?php lsx_body_top(); ?>
