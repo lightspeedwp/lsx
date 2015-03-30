@@ -69,6 +69,8 @@ function lsx_setup() {
 	
 	$content_width = 750;
 	
+	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
+	
 }
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );
@@ -112,23 +114,3 @@ function lsx_page_comments_off( $data ) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
-
-
-/*
- * ===================	Editor Styles  ===================
- */
-
-
-/**
- *  Registers our themes editor stylesheet.
- *
- * @package	lsx
- * @subpackage config
- * @category TinyMCE
- * @param	$init_array array()
- * @return	$init_array array()
- */
-function lsx_add_editor_styles() {
-	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
-}
-add_action( 'init', 'lsx_add_editor_styles' );
