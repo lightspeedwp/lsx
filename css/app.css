@@ -8438,32 +8438,32 @@ h6 i {
 
 /* line 146, ../sass/app.scss */
 h1 {
-  font-size: 32px;
+  font-size: 40px;
 }
 
 /* line 150, ../sass/app.scss */
 h2 {
-  font-size: 30px;
+  font-size: 36px;
 }
 
 /* line 154, ../sass/app.scss */
 h3 {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 /* line 158, ../sass/app.scss */
 h4 {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 /* line 162, ../sass/app.scss */
 h5 {
-  font-size: 17px;
+  font-size: 20px;
 }
 
 /* line 166, ../sass/app.scss */
 h6 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* line 170, ../sass/app.scss */
@@ -8887,14 +8887,7 @@ header.banner .site-branding .site-title {
     float: none !important;
   }
 }
-@media screen and (max-width: 768px) {
-  /* line 593, ../sass/app.scss */
-  nav {
-    padding: 0 0 10px !important;
-    transition: none !important;
-  }
-}
-/* line 607, ../sass/app.scss */
+/* line 602, ../sass/app.scss */
 header.banner nav {
   float: right;
   margin: 40px 0;
@@ -8905,9 +8898,16 @@ header.banner nav {
   transition: all 0.3s ease-in-out;
 }
 @media screen and (max-width: 1200px) {
-  /* line 607, ../sass/app.scss */
+  /* line 602, ../sass/app.scss */
   header.banner nav {
     width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 602, ../sass/app.scss */
+  header.banner nav {
+    padding: 0 0 10px !important;
+    transition: none !important;
   }
 }
 @media screen and (max-width: 992px) {

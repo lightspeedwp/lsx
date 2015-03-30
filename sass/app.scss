@@ -144,27 +144,27 @@ h6 {
 }
 
 h1 {
-	font-size: 32px;
+	font-size: 40px;
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 36px;
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 30px;
 }
 
 h4 {
-	font-size: 18px;
+	font-size: 24px;
 }
 
 h5 {
-	font-size: 17px;
+	font-size: 20px;
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .page-title {
@@ -599,11 +599,6 @@ nav {
 	    float: none !important;
 	}
 
-	@media screen and (max-width: 768px) {
-		padding: 0 0 10px !important;
-		transition: none !important;
-	}
-
 	header.banner & {
 		float: right;
 		margin: 40px 0;
@@ -611,6 +606,11 @@ nav {
 
 		@media screen and (max-width: 1200px) {
 			width: 100%;
+		}
+
+		@media screen and (max-width: 768px) {
+			padding: 0 0 10px !important;
+			transition: none !important;
 		}
 
 		.nav.navbar-nav {
