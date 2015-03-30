@@ -184,6 +184,12 @@ function lsxProjectFilterInit() {
 			}
 			
 		});
+		
+		jQuery('.filter-items-container').masonry({
+			resizable: true,
+			layoutMode: 'packery',
+			itemSelector: '.filter-item'
+		});			
 
 		if ( !jQuery(this).hasClass('selected') ) {
 			jQuery(this).parents('#filterNav').find('.selected').removeClass('selected');
