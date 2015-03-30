@@ -1,5 +1,5 @@
 header.banner {
-  background: #eeeeee;
+  background: #ffffff;
 }
 header.banner nav .nav.navbar-nav li a {
   color: #555555;
@@ -17,13 +17,12 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu {
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-    background: #eeeeee;
+    background: none;
   }
 }
 
-
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-  color: #eeeeee;
+  color: #ffffff;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
@@ -32,7 +31,11 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-    color: #eeeeee;
+    color: #555555;
+  }
+
+  header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
+    color: #333333;
   }
 }
 
@@ -66,4 +69,8 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 }
 #social-navigation ul li a:hover {
   color: #eeeeee !important;
+}
+
+blockquote {
+  color: #555555;
 }

@@ -282,8 +282,8 @@ function lsx_get_thumbnail($size,$image_src = false){
 
 	}elseif('thumbnail-wide' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
 
 		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 	

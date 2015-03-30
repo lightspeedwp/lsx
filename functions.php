@@ -237,6 +237,17 @@ function lsx_get_customizer_controls(){
 
 $lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
 
+
+/**
+* Add Viewport Meta Tag to head
+*/
+function lsx_add_viewport_meta_tag() {
+	?>
+  		<meta name="viewport" content="width=device-width">
+  	<?php }
+add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
+
+
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
 function lsx_form_submit_button($button, $form){
