@@ -69,6 +69,18 @@ body {
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
+
+	@media screen and (max-width: 992px) {
+		line-height: 170%;
+	}
+
+	@media screen and (max-width: 992px) {
+		line-height: 160%;
+	}
+
+	@media screen and (max-width: 768px) {
+		line-height: 1.4;
+	}
 }
 
 .size-auto, 
@@ -587,21 +599,23 @@ header.banner {
 	 ========================================================================== */
 
 nav {
-	@media screen and (max-width: 1200px) {
-		border: none !important;
-	    box-shadow: none !important;
-	    margin: 0 !important;
-	    padding-bottom: 20px !important;
-	    float: none !important;
-	}
-
 	header.banner & {
 		float: right;
 		margin: 40px 0;
+		border: none !important;
 		@include transition(all .3s ease-in-out);
 
 		@media screen and (max-width: 1200px) {
 			width: 100%;
+			border: none !important;
+		    box-shadow: none !important;
+		    margin: 0 !important;
+		    padding-bottom: 20px !important;
+		    float: none !important;
+		}
+
+		@media screen and (max-width: 992px) {
+			margin: 0 !important;
 		}
 
 		@media screen and (max-width: 768px) {
@@ -957,11 +971,11 @@ nav {
 .mobile-menu-title {
 	display: none;
 	float: right;
-	margin: 48px 13px;
+	margin: 52px 13px;
 	font-weight: 600;
 
 	.scrolled & {
-		margin: 31px 10px;
+		margin: 36px 5px;
 	}
 
 	@media screen and (min-width: 450px) and (max-width: 1200px) {
