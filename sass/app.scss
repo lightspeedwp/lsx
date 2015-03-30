@@ -319,9 +319,10 @@ blockquote {
 	margin: 0 0 20px;
 	font: {
 		family: 'Noto Serif', serif;
-		size: 18px;
+		size: 17px;
 	}
 	border-left: none;
+	line-height: 180%;
 
 	&:before {
 		content: '\f106';
@@ -773,7 +774,7 @@ nav {
 	}
 
 	header.banner.scrolled & {
-		margin: 14px 0;
+		margin: 21px 0;
 	}
 
 	&#social-navigation {
