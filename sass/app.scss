@@ -70,12 +70,8 @@ body {
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 
-	@media screen and (max-width: 992px) {
-		line-height: 170%;
-	}
-
 	@media screen and (max-width: 768px) {
-		line-height: 160%;
+		line-height: 180%;
 	}
 }
 
@@ -111,6 +107,10 @@ h6 {
 		weight: 600;
 	}
 	line-height: inherit;
+
+	@media screen and (max-width: 768px) {
+		line-height: 1.4;
+	}
 }
 
 h1,
@@ -269,14 +269,15 @@ img,
 		div {
 			width: 50%;
 
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				margin-bottom: 15px;
+			}
+
 			.nav-links-description {
 				color: $grey;
 				margin-bottom: 0;
 				font-weight: 500;
-
-				@media screen and (max-width: 768px) {
-					width: 100%;
-				}
 			}
 		}
 
@@ -459,6 +460,10 @@ hr {
 	border: 0;
     border-top: 3px solid #e5e5e5;
 	max-width: 20%;
+
+	@media screen and (max-width: 768px) {
+		margin: 40px auto;
+	}
 }
 
 .media > .pull-left {
@@ -802,6 +807,11 @@ nav {
 				float: left;
 				margin-right: 15px;
 				margin-bottom: 15px;
+
+				@media screen and (max-width: 992px) {
+					margin-right: 20px;
+					margin-bottom: 20px;
+				}
 
 				&:last-child {
 					margin-right: 0;
