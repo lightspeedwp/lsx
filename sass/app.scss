@@ -565,6 +565,10 @@ header.banner {
 			font-weight: bold;
 
 			@media screen and (max-width: 992px) {
+				margin-top: 30px;
+			}
+			
+			@media screen and (max-width: 768px) {
 				margin-top: 20px;
 			}
 		}
@@ -573,6 +577,12 @@ header.banner {
 			@media screen and (max-width: 992px) {
 				display: none;
 			}
+		}
+	}
+	
+	.header-inline & {
+		.site-branding {
+			display: inline-block;
 		}
 	}
 	
@@ -585,10 +595,11 @@ header.banner {
 			text-align:center;
 		}
 		
-		.navbar-nav > li {
+		.navbar-nav > li, .navbar-toggle, .mobile-menu-title {
 		    display: inline-block;
 		    float: none;
-		}		
+		}
+		 	
 	}
 	
 	.header-expanded & {

@@ -25,6 +25,9 @@ global $lsx_options;
   		<?php lsx_header_top(); ?>
 	  	<div class="container">
 	    	<div class="navbar-header">
+
+				<?php lsx_site_identity(); ?>
+				
 	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
 		        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
 		        	<span class="icon-bar"></span>
@@ -32,9 +35,7 @@ global $lsx_options;
 		        	<span class="icon-bar"></span>
 	      		</button>
 
-	      		<span class="mobile-menu-title">Menu</span>
-
-				<?php lsx_site_identity(); ?>
+	      		<span class="mobile-menu-title">Menu</span>				
 		    </div>
 
 			<?php lsx_nav_before(); ?>

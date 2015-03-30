@@ -179,17 +179,15 @@ function lsxProjectFilterInit() {
 			
 			if(jQuery(this).hasClass(selector) || '*' == selector){
 				jQuery(this).show();
+				jQuery(this).css('visibility','visible');
 			}else{
 				jQuery(this).hide();
+				jQuery(this).css('visibility','hidden');
 			}
 			
 		});
 		
-		jQuery('.filter-items-container').masonry({
-			resizable: true,
-			layoutMode: 'packery',
-			itemSelector: '.filter-item'
-		});			
+		jQuery('.filter-items-container').masonry('reloadItems');	
 
 		if ( !jQuery(this).hasClass('selected') ) {
 			jQuery(this).parents('#filterNav').find('.selected').removeClass('selected');
