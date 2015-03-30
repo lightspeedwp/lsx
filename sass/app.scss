@@ -1017,7 +1017,12 @@ nav {
 
 .wrap {
 	margin-top: 180px;
-	margin-bottom: 100px;
+	margin-bottom: 60px;
+
+	.home & {
+		margin-top: 200px;
+		margin-bottom: 60px;
+	}
 
 	#primary,
 	#secondary {
