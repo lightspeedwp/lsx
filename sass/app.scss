@@ -1245,15 +1245,18 @@ header.page-header {
 
 				.portfolio-title {
 					opacity: .8;
-					font-size: 18px;
+					font: {
+						size: 18px;
+						weight: bold;
+					}
 					color: $white;
-					font-weight: bold;
 					text-align: center;
 					margin-bottom: 10px;
 					display: block;
 					position: absolute;
 					top: 50%;
 					margin: -18px auto 0 !important;
+					letter-spacing: .7px;
 					padding: 0 15px;
 					width: 100%;
 					border: none !important;
