@@ -982,7 +982,7 @@ nav {
 	}
 
 	@media screen and (max-width: 992px) {
-		margin: 34px 5px !important;
+		margin: 31px 5px !important;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -1150,9 +1150,14 @@ header.page-header {
 			margin: 0 auto;
 			color: $white;
 			font-size: 42px;
+			padding: 0 10px;
 			-webkit-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
 			-moz-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
 			text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
+
+			@media screen and (max-width: 768px) {
+				font-size: 24px;
+			}
 		}
 	}
 
