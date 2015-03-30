@@ -70,8 +70,8 @@ body {
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 
-	@media screen and (max-width: 768px) {
-		font-size: 16px;
+	@media screen and (max-width: 992px) {
+		font-size: 18px;
 	}
 }
 
@@ -145,50 +145,26 @@ h6 {
 
 h1 {
 	font-size: 32px;
-
-	@media screen and (max-width: 768px) {
-		font-size: 28px;
-	}
 }
 
 h2 {
 	font-size: 30px;
-
-	@media screen and (max-width: 768px) {
-		font-size: 26px;
-	}
 }
 
 h3 {
 	font-size: 24px;
-
-	@media screen and (max-width: 768px) {
-		font-size: 20px;
-	}
 }
 
 h4 {
 	font-size: 18px;
-
-	@media screen and (max-width: 460px) {
-		font-size: 16px;
-	}
 }
 
 h5 {
 	font-size: 17px;
-
-	@media screen and (max-width: 768px) {
-		font-size: 16px;
-	}
 }
 
 h6 {
 	font-size: 16px;
-
-	@media screen and (max-width: 768px) {
-		font-size: 15px;
-	}
 }
 
 .page-title {
@@ -524,7 +500,7 @@ header.banner {
 				@include transition(all .3s ease-in-out);
 
 				@media screen and (max-width: 992px) {
-					max-height: 66px;
+					max-height: 64px;
 					margin: 15px 0;
 				}
 
@@ -539,7 +515,7 @@ header.banner {
 		.navbar-header {
 			.site-logo-link {
 				img {
-					max-height: 66px;
+					max-height: 64px;
 					margin: 15px 0;
 				}
 			}
@@ -832,6 +808,11 @@ nav {
 					height: 24px;
 					overflow: hidden;
 
+					@media screen and (max-width: 992px) {
+						width: 30px;
+						height: 30px;
+					}
+
 					&:before {
 						display: inline-block;
 						font: {
@@ -849,6 +830,10 @@ nav {
 						-moz-osx-font-smoothing: grayscale;
 						-webkit-font-smoothing: antialiased;
 						speak: none;
+
+						@media screen and (max-width: 992px) {
+							font-size: 30px;
+						}
 					}
 
 					&[href$="/feed/"]:before {
@@ -992,7 +977,7 @@ nav {
 	}
 
 	@media screen and (max-width: 768px) {
-		margin: 19px 2px !important;
+		margin: 17px 2px !important;
 	}
 }
 
@@ -1050,7 +1035,7 @@ nav {
 	}
 
 	@media screen and (max-width: 992px) {
-		margin-top: 100px;
+		margin-top: 120px;
 		margin-bottom: 60px;
 	}
 
@@ -1876,14 +1861,14 @@ article {
 
 	.widget {
 		margin: 70px 0 90px;
-		color: $grey;
+		color: #ccc;
 
 		@media screen and (max-width: 768px) {
 			margin: 50px 0;
 		}
 
 		h3.widget-title {
-			color: $grey;
+			color: $light-grey;
 		}
 
 		a {
@@ -1925,35 +1910,13 @@ footer.content-info {
 		margin: 20px 0;
 		font-size: 15px;
 
+		@media screen and (max-width: 992px) {
+			font-size: 17px;
+		}
+
 		&.credit-float {
 			float: left;
 		}
-	}
-}
-
-
-/* ==========================================================================
-	 Author Box
-	 ========================================================================== 
-
-.author-box {
-	padding: 20px;
-	margin-top: 0;
-	margin-bottom: 40px;
-	border: none;
-	box-shadow: none;
-
-	h3 {
-		margin-top: 5px;
-		color: $black;
-	}
-
-	.profile-link {
-		margin-left: 5px;
-	}
-
-	.single & {
-		margin-top: 40px;
 	}
 }
 
