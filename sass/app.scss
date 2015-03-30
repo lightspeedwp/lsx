@@ -69,10 +69,6 @@ body {
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
-
-	@media screen and (max-width: 992px) {
-		font-size: 18px;
-	}
 }
 
 .size-auto, 
@@ -965,7 +961,7 @@ nav {
 	font-weight: 600;
 
 	.scrolled & {
-		margin: 31px 13px;
+		margin: 31px 10px;
 	}
 
 	@media screen and (min-width: 450px) and (max-width: 1200px) {
