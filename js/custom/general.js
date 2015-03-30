@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 	// Removing homepage slider for mobile
 	$(document).resize(function () {
 	    var screen = $(window)    
-	    if (screen.width < 540) {
+	    if (screen.width < 768) {
 	        $(".home .soliloquy-slider").remove();
 	    }
 	});
