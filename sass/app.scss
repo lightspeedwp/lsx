@@ -711,15 +711,7 @@ nav {
 						width: 100%;
 						background: $light-grey;
 						margin-bottom: 16px;
-						
-						li {
-							a {
-								color: $dark-grey !important;
-							}
-						}
 					}
-					
-
 
 					li {
 						a {
@@ -1252,8 +1244,8 @@ header.page-header {
 				}
 
 				.portfolio-title {
-					opacity: 0;
-					font-size: 22px;
+					opacity: .8;
+					font-size: 18px;
 					color: $white;
 					font-weight: bold;
 					text-align: center;
@@ -1288,7 +1280,7 @@ header.page-header {
 				margin-bottom: 20px;
 			}
 
-			@media screen and (max-width: 540px) {
+			@media screen and (max-width: 600px) {
 				width: 100%;
 			}
 		}
@@ -1852,6 +1844,10 @@ article {
 
 #infinite-handle {
 	margin-top: 60px;
+
+	@media screen and (max-width: 768px) {
+		margin-top: 20px;
+	}
 
 	span {
 		background: $primary !important;
