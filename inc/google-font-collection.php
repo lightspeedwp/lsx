@@ -105,8 +105,10 @@ class LSX_Google_Font_Collection
 	{
 		foreach ($this->fonts as $key => $value) 
 		{
+			$protocol = 'http';
+			if(is_ssl()){ $protocol.='s'; }
 			?>
-			<link href="http://fonts.googleapis.com/css?family=<?php echo $value->__get("location"); ?>" rel='stylesheet' type='text/css'>
+			<link href="<?php echo $protocol; ?>://fonts.googleapis.com/css?family=<?php echo $value->__get("location"); ?>" rel='stylesheet' type='text/css'>
 			<?php
 		}
 	}
