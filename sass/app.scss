@@ -1136,8 +1136,11 @@ header.page-header {
 .page-banner, 
 .portfolio-banner {
 	margin-top: 120px;
-	background-repeat: no-repeat;
-	background-size: cover !important;
+	background: {
+		repeat: no-repeat;
+		size: cover !important;
+		position: 50%;
+	}
 	width: 100%;
 	padding: 240px 0;
 
@@ -1149,11 +1152,15 @@ header.page-header {
 			max-width: 1140px;
 			margin: 0 auto;
 			color: $white;
-			font-size: 42px;
+			font-size: 52px;
 			padding: 0 10px;
 			-webkit-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
 			-moz-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
 			text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
+
+			@media screen and (max-width: 768px) {
+				font-size: 42px;
+			}
 
 			@media screen and (max-width: 768px) {
 				font-size: 24px;
