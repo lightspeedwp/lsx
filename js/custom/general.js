@@ -98,7 +98,12 @@ jQuery(document).ready(function($) {
 			
 			lsxResizeBanner(width);	
 			lsxResizeSingleThumbnail(width);
-		});		
+		});	
+		
+		$( document.body ).on( 'post-load', function () {
+			lsxResizeBanner(width);	
+			lsxResizeSingleThumbnail(width);			
+		});
 	});
 });
 
