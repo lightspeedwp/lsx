@@ -39,7 +39,6 @@ $primary-darker: #357ebd;
 	border-radius: $value;
 }
 
-
 @mixin lsx-button {
 	background: $black;
 	margin-right: 5px;
@@ -48,6 +47,14 @@ $primary-darker: #357ebd;
 	&:hover {
 		background: $blacker;
 	}
+}
+
+@mixin full-width-section($background, $color) {
+	margin: 0 -9999rem;
+	padding: 40px 9999rem;
+	background: $background;
+	color: $color;
+	margin-bottom: 40px;
 }
 
  
@@ -65,6 +72,7 @@ body {
 		family: 'Open Sans', sans-serif;
 	}
 	line-height: 200%;
+	overflow-x: hidden;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
@@ -450,8 +458,6 @@ nav.page-nav {
 	}
 }
 
-
-
 ul {
 	padding-left: 20px;
 }
@@ -469,6 +475,21 @@ hr {
 
 .media > .pull-left {
 	margin-right: 20px;
+}
+
+.full-width-section {
+	@include full-width-section($black, $white);
+}
+
+.full-width-section-large {
+	@include full-width-section($primary, $white);
+	padding: {
+		top: 60px;
+		bottom: 60px;
+	}
+	font-size: 20px;
+    line-height: 2;
+    text-align: center;
 }
 
 
