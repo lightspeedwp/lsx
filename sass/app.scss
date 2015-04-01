@@ -65,7 +65,7 @@ $primary-darker: #357ebd;
     @include transition(all .1s ease-in-out);
 
     &:hover {
-    	background: $color;
+    	background: $color !important;
     	color: $hover-color !important;
     }
 }
@@ -84,7 +84,7 @@ $primary-darker: #357ebd;
 @mixin lsx-box {
 	background: $white;
 	text-align: center;
-	border: none;
+	border: 1px solid $light-grey;
 	margin-bottom: 30px;
 	font-size: 15px;
 	@include border-radius(3px);
@@ -112,6 +112,10 @@ $primary-darker: #357ebd;
 
 		p {
 			margin: 0 0 10px;
+
+			.genericon {
+				vertical-align: middle;
+			}
 		}
 	}
 }
@@ -258,6 +262,10 @@ iframe {
 button,
 .btn {
 	border: none;
+}
+
+address {
+	line-height: inherit;
 }
 
 img,
@@ -549,14 +557,6 @@ hr {
 	font-size: 20px;
     line-height: 2;
     text-align: center;
-
-    a {
-    	font-weight: bold;
-
-    	&:hover {
-    		color: $white;
-    	}
-    }
 }
 
 .lsx-box {
