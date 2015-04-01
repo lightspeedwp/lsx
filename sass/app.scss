@@ -74,6 +74,10 @@ $primary-darker: #357ebd;
 	@include border-radius(3px);
 	@include box-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
 
+	& > .thumbnail {
+		margin: 0;
+	}
+
 	& > .content {
 		padding: 30px 40px;
 
@@ -88,6 +92,10 @@ $primary-darker: #357ebd;
 				size: 22px;
 				weight: normal;
 			}
+		}
+
+		p {
+			margin: 0 0 10px;
 		}
 	}
 }
