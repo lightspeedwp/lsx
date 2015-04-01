@@ -78,6 +78,14 @@ add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
 function lsx_portfolio_archive_pagination( $query ) {
 	if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() ) {
 		$query->set( 'posts_per_page', '-1' );
+		
+		$meta_query = array(
+			array(
+				'key'	=> '_thumbnail_id',
+				'compare'	=> 'EXISTS'
+			)
+		);
+		$query->set( 'meta_query', $meta_query);
 	}
 }
 add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
