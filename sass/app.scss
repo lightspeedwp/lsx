@@ -62,7 +62,14 @@ $primary-darker: #357ebd;
 	padding: 40px 9999rem;
 	background: $background;
 	color: $color;
-	margin-bottom: 40px;
+	margin: {
+		top: 40px;
+		bottom: 40px;
+	}
+
+	a {
+		color: $color;
+	}
 }
 
 @mixin lsx-box {
