@@ -84,7 +84,7 @@ $primary-darker: #357ebd;
 @mixin lsx-box {
 	background: $white;
 	text-align: center;
-	border: 1px solid $light-grey;
+	border: none;
 	margin-bottom: 30px;
 	font-size: 15px;
 	@include border-radius(3px);
@@ -92,6 +92,10 @@ $primary-darker: #357ebd;
 
 	& > .thumbnail {
 		margin: 0;
+
+		img {
+
+		}
 	}
 
 	& > .content {
@@ -487,6 +491,7 @@ table {
 
 ul.breadcrumb {
 	margin-bottom: 30px;
+	padding: 0;
 
 	li {
 		background: $white;
@@ -623,7 +628,7 @@ hr {
 
 .caldera-grid {
 	.control-label {
-		font-weight: normal;
+		font-weight: normal !important;
 	}
 
 	.form-control {
