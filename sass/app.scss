@@ -23,12 +23,12 @@ $primary-darker: #357ebd;
 
 // ========== Mixins ========== //
 
-@mixin transition($value) {
-	-webkit-transition: $value;
-	-moz-transition: $value;
-	-ms-transition: $value;
-	-o-transition: $value;
-	transition: $value;
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
 }
 
 @mixin border-radius($value) {
@@ -57,6 +57,19 @@ $primary-darker: #357ebd;
 	}
 }
 
+@mixin lsx-border-button($color, $hover-color) {
+	background: none !important;
+    padding: 11px 22px;
+    border: 3px solid $color !important;
+    font-size: inherit;
+    @include transition(all .1s ease-in-out);
+
+    &:hover {
+    	background: $color;
+    	color: $hover-color !important;
+    }
+}
+
 @mixin full-width-section($background, $color) {
 	margin: 0 -9999rem;
 	padding: 40px 9999rem;
@@ -65,10 +78,6 @@ $primary-darker: #357ebd;
 	margin: {
 		top: 40px;
 		bottom: 40px;
-	}
-
-	a {
-		color: $color;
 	}
 }
 
@@ -122,7 +131,7 @@ body {
 		family: 'Open Sans', sans-serif;
 	}
 	line-height: 200%;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	-webkit-text-size-adjust: 100%;
@@ -248,7 +257,7 @@ iframe {
 
 button,
 .btn {
-	border: none !important;
+	border: none;
 }
 
 img,
@@ -532,7 +541,7 @@ hr {
 }
 
 .full-width-section-large {
-	@include full-width-section($primary, $white);
+	@include full-width-section($primary, $light-grey);
 	padding: {
 		top: 60px;
 		bottom: 60px;
@@ -540,10 +549,22 @@ hr {
 	font-size: 20px;
     line-height: 2;
     text-align: center;
+
+    a {
+    	font-weight: bold;
+
+    	&:hover {
+    		color: $white;
+    	}
+    }
 }
 
 .lsx-box {
 	@include lsx-box;
+}
+
+.lsx-border-button {
+	@include lsx-border-button($white, $primary);
 }
 
 
