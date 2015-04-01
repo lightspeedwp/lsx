@@ -39,6 +39,14 @@ $primary-darker: #357ebd;
 	border-radius: $value;
 }
 
+@mixin box-shadow($args...) {
+	-webkit-box-shadow: $args;
+	-moz-box-shadow: $args;
+	-ms-box-shadow: $args;
+	-o-box-shadow: $args;
+	box-shadow: $args;
+}
+
 @mixin lsx-button {
 	background: $black;
 	margin-right: 5px;
@@ -55,6 +63,33 @@ $primary-darker: #357ebd;
 	background: $background;
 	color: $color;
 	margin-bottom: 40px;
+}
+
+@mixin lsx-box {
+	background: $white;
+	text-align: center;
+	border: none;
+	margin-bottom: 30px;
+	font-size: 15px;
+	@include border-radius(3px);
+	@include box-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+
+	& > .content {
+		padding: 30px 40px;
+
+		h3 {
+			margin: {
+				top: 0;
+				bottom: 15px;
+			}
+			padding-bottom: 10px;
+			border-bottom: 1px solid #ddd;
+			font: {
+				size: 22px;
+				weight: normal;
+			}
+		}
+	}
 }
 
  
@@ -490,6 +525,10 @@ hr {
 	font-size: 20px;
     line-height: 2;
     text-align: center;
+}
+
+.lsx-box {
+	@include lsx-box;
 }
 
 
