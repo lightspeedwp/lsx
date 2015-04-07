@@ -313,8 +313,13 @@ img,
 
 	&.image-border {
 		padding: 4px;
-  		border: 1px solid #ccc;
+  		border: 1px solid #ddd;
   		@include border-radius(3px);
+  		@include transition(all .1s ease-in-out);
+
+  		&:hover {
+  			border: 1px solid #ccc;
+  		}
 	}
 }
 
