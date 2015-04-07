@@ -765,6 +765,7 @@ table {
 				weight: bold;
 			}
 			color: $black;
+			border-bottom: 1px solid #ddd;
 			@include transition(all .1s ease-in-out);
 
 			&:hover {
@@ -779,6 +780,8 @@ table {
 
 			h3 {
 				margin-top: 0;
+				border-bottom: 1px solid #ddd;
+				padding-bottom: 13px;
 
 				a {
 					font: {
