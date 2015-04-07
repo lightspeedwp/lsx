@@ -631,7 +631,7 @@ ul.breadcrumb {
 						}
 					}
 
-					&:nth-of-type(1) {
+					&:first-child {
 						padding-left: 22px;
 					}
 				}
@@ -1969,7 +1969,8 @@ article {
 		.sd-content {
 			ul {
 				li {
-					a {
+					a,
+					a.sd-button {
 						background: #555;
 						border: 2px solid #555 !important;
 						font-size: 14px !important;
