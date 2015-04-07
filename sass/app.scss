@@ -757,7 +757,7 @@ table {
 
 		a[class*="title"] {
 			display: inline-block;
-			min-height: 230px;
+			min-height: 235px;
 			padding: 20px 30px;
 			font: {
 				family: "Noto Serif", serif;
@@ -869,9 +869,11 @@ table {
 			}
 
 			.caption {
+			    max-width: 400px;
 				background: rgba(255, 255, 255, .6);
 				text-align: center;
 				padding: 20px;
+				margin: 0 auto;
 				@include border-radius(5px);
 				@include transition(all 0.3s ease-in-out);
 				
@@ -964,8 +966,8 @@ table {
 // Masonry
 
 .masonry {
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: -8px;
+	margin-right: -8px;
 
 	& > h2 {
 		clear: both;
@@ -1016,7 +1018,7 @@ table {
 
 				img {
 					width: 100%;
-					min-height: 230px;
+					min-height: 235px;
 					@include transition(all .4s ease-in-out);
 				}
 			}
@@ -2685,6 +2687,8 @@ article {
 	}
 }
 
+// Jetpack Sharing and Related Posts
+
 .sharedaddy,
 .jp-relatedposts {
 	h3 {
@@ -2901,6 +2905,30 @@ article {
 	 Footer
 	 ========================================================================== */
 
+// Footer Subscribe
+
+.footer-subscribe {
+	background: $primary;
+	padding: 55px 0 60px;
+
+	h2 {
+		text-align: center;
+		font-weight: normal;
+		color: $light-grey;
+		margin: {
+			top: 0;
+			bottom: 45px;
+		}
+	}
+
+	.btn {
+		@include lsx-button;
+		@include lsx-border-button();
+	}
+}
+
+// Footer Widgets
+
 #footer-widgets {
 	background: $black;
 
@@ -2949,6 +2977,8 @@ article {
 		}
 	}
 }
+
+// Footer
 
 footer.content-info {
 	background: $blacker;
