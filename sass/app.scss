@@ -181,6 +181,38 @@ $primary-darker: #357ebd;
 	}
 }
 
+@mixin lsx-parallax-banner {
+	.page-banner {
+		position: fixed !important;
+		top: 0;
+		margin-top: 0;
+		background-color: $black;
+		padding: 380px 0 240px;
+		z-index: -1;
+		@include transition(all .08s ease-in-out);
+	}
+
+	.wrap {
+		width: 100%;
+		padding: 0;
+		background: $off-white;
+		margin-top: 640px;
+		margin-bottom: 0;
+		padding-bottom: 60px;
+		border-top: 1px solid #ddd;
+
+		& > .content {
+			max-width: 1140px;
+			margin: 0 auto;
+			padding-top: 60px;
+
+			header.page-header {
+				display: none !important;
+			}
+		}
+	}
+}
+
  
 /* ==========================================================================
 	 Base
@@ -361,6 +393,10 @@ img,
   			border: 1px solid #ccc;
   		}
 	}
+}
+
+.page-has-banner {
+	@include lsx-parallax-banner;
 }
 
 .search-submit {
