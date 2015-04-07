@@ -1350,6 +1350,68 @@ nav {
 	}
 }
 
+// Modals
+
+.modal-dialog {
+	margin: 0;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+}
+
+.modal-content {
+	padding: 30px 40px;
+	border: none;
+}
+
+.modal-header {
+	border: none;
+	@include border-radius-top(3px);
+
+	.close {
+		float: none;
+    	position: absolute;
+    	right: 30px;
+    	top: 30px;
+	}
+}
+
+.modal-content .modal-title {
+	font-size: 26px;
+}
+
+.modal-body {
+	background: $white;
+	overflow-y: auto;
+	@include border-radius-bottom(3px);
+
+	.form-group {
+		width: 100%;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+		margin-top: 25px;
+	}
+
+	textarea {
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 10px;	
+	}
+}
+
+.modal-footer {
+	margin-top: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.modal-dialog {
+		width: 100%;
+	}
+}
+
 /* ==========================================================================
 	 Content 2
 	 ========================================================================== */
