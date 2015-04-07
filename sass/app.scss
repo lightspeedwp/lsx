@@ -2927,7 +2927,7 @@ article {
 
 	.btn {
 		@include lsx-button;
-		@include lsx-border-button();
+		@include lsx-border-button($white, $primary);
 	}
 }
 
