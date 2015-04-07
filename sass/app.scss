@@ -75,10 +75,22 @@ $primary-darker: #357ebd;
 	box-shadow: $args;
 }
 
+@mixin text-shadow($args...) {
+	-webkit-text-shadow: $args;
+	-moz-text-shadow: $args;
+	-ms-text-shadow: $args;
+	-o-text-shadow: $args;
+	text-shadow: $args;
+}
+
 @mixin clear-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+@mixin title-shadow {
+	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.1), 0px 3px 19px rgba(0, 0, 0, 0.2));
 }
  
 @mixin lsx-button {
@@ -704,6 +716,170 @@ table {
 		border-bottom: 1px solid #ddd;
 		padding: 8px 18px;
 		font-weight: normal;
+	}
+}
+
+
+// Masonry
+
+.masonry {
+	margin-left: 0;
+	margin-right: 0;
+
+	& > h2 {
+		clear: both;
+		margin-bottom: 30px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.col-md-4,
+	.col-md-6 {
+		article {
+			width: 100% !important;
+			margin-bottom: 40px !important;	
+		}
+	}
+
+	.col-md-8 & {
+		article {
+			width: 50% !important;
+			margin-bottom: 20px;
+
+			@media screen and (max-width: 540px) {
+				width: 100% !important;
+			}
+		}
+	}
+	
+	article {
+		width: 33.3%;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		display: block;
+		float: left;
+		height: auto !important;
+
+		[class*="-content-wrapper"] {
+			position: relative;
+			background: $blacker;
+
+			[class*="-thumbnail"] {
+				overflow: hidden;
+
+				a {
+					border: none !important;
+				}
+
+				img {
+					width: 100%;
+					@include transition(all .4s ease-in-out);
+				}
+			}
+
+			[class*="-title"] {
+				font: {
+					size: 22px;
+				}
+				color: white;
+				text-align: center;
+				margin-bottom: 10px;
+				display: block;
+				position: absolute;
+				top: 50%;
+				margin: -18px auto 0 !important;
+				width: 100%;
+				border: none !important;
+				text-transform: capitalize;
+				@include transition(all 0.4s ease-in-out);
+				@include title-shadow;
+
+				@media screen and (max-width: 768px) {
+					font-size: 18px;
+				}
+
+				@media screen and (max-width: 540px) {
+					font: {
+						size: 20px;
+						weight: bold;
+					}
+				}
+			}
+		}
+
+		&.active,
+		&.restaurant:hover,
+		&.offer:hover {
+			img {
+				opacity: .1;
+				-webkit-transform: scale(1.08);
+				-moz-transform: scale(1.08);
+				-o-transform: scale(1.08);
+				transform: scale(1.08);
+			}
+		}
+
+		@media screen and (max-width: 992px) {
+			width: 50% !important;
+		}
+
+		@media screen and (max-width: 540px) {
+			width: 100% !important;
+			margin-bottom: 20px;
+		}
+	}
+} 
+
+
+// Archive Filters
+
+#filterNav { 
+	list-style: none; 
+	padding: 0;
+	margin: {
+		top: 40px;
+		bottom: 45px;
+	}
+
+	li {
+		float: left;
+		margin-right: 10px;
+
+		a {
+			background: $grey;
+			color: $white;
+			padding: 9px 15px;
+			border: none !important;
+			text-transform: capitalize;
+			@include border-radius(3px);
+
+			&:hover,
+			&.selected {
+				background: $black;
+			}
+		}
+	}
+}
+
+
+// Banners 
+
+.page-banner {
+	background-color: $black;
+
+	header.page-header {
+		h1.page-title {
+			@include title-shadow;
+			padding-bottom: none;
+			border-bottom: none;
+		}
+	}
+
+	.home & {
+		margin-top: 0;
+		background-position: 50% 50% !important;
 	}
 }
 
