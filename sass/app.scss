@@ -80,20 +80,37 @@ $primary-darker: #357ebd;
 	margin: 0;
 	padding: 0;
 }
-
+ 
 @mixin lsx-button {
 	background: $black;
-	margin-right: 5px;
-	border: none;
+	color: $white;
+	border: none !important;
 	box-shadow: none;
 	padding: 11px 26px;
-    font-size: 16px;
-    margin-top: 10px;
+    margin: {
+    	top: 10px;
+    	bottom: 10px;
+    }
     @include transition(all .1s ease-in-out);
 
 	&:hover,
 	&:focus {
 		background: $blacker;
+		color: $white;
+	}
+}
+
+@mixin lsx-cta-button {
+	color: $white;
+	font-size: 17px;
+	padding: 16px 30px;
+	margin-top: 14px;
+	background: $dark-grey;
+	@include box-shadow(0px 3px 0 #444);
+
+	&:hover,
+	&:focus {
+		background: #444;
 	}
 }
 
@@ -129,7 +146,7 @@ $primary-darker: #357ebd;
 	margin-bottom: 30px;
 	font-size: 15px;
 	@include border-radius(3px);
-	@include box-shadow(0 1px 5px rgba(0, 0, 0, 0.28));
+	@include box-shadow(0 1px 5px rgba(0, 0, 0, 0.3));
 
 	& > .thumbnail {
 		margin: 0;
@@ -495,8 +512,8 @@ img,
 
 .lsx-button,
 .caldera-grid input[type="submit"],
-.caldera-grid .btn-primary:hover {
-	@include lsx-button;
+.caldera-grid .btn-primary {
+	@include lsx-button
 }
 
 .thumbnail {
