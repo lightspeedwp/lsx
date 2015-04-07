@@ -92,10 +92,6 @@ $primary-darker: #357ebd;
 
 	& > .thumbnail {
 		margin: 0;
-
-		img {
-
-		}
 	}
 
 	& > .content {
@@ -313,6 +309,12 @@ img,
 
 	&.aligncenter {
 		margin: 0 auto 15px;
+	}
+
+	&.image-border {
+		padding: 4px;
+  		border: 1px solid #ccc;
+  		@include border-radius(3px);
 	}
 }
 
