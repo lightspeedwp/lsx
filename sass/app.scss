@@ -164,6 +164,36 @@ $primary-darker: #357ebd;
 			}
 		}
 
+		.price-wrapper {
+			margin: 17px 0;
+			padding: 15px 0;
+			border: {
+				top: 1px solid #ddd;
+				bottom: 1px solid #ddd;
+			}
+
+			.price {
+				color: #999;
+
+				.price-inner {
+					display: inline-block;
+					margin-top: -5px;
+					color: $grey;
+					font: {
+						size: 22px;
+						weight: bold;
+					}
+					vertical-align: middle;
+
+					.hb_symbol {
+						font-size: 15px;
+						vertical-align: top;
+						margin-right: 3px;
+					}
+				}
+			}
+		}
+
 		.btn {
 			margin-top: 20px;
 		}
@@ -406,7 +436,7 @@ button,
 	border: none;
 	
 	&.btn-lg {
-		padding: 10px 26px;
+		padding: 7px 24px;
 	    font-size: 17px;
 	    line-height: inherit;
 	    @include border-radius(3px);
