@@ -63,6 +63,18 @@ jQuery(document).ready(function($) {
 	        $(this).removeClass('active');
 	    });
 		
+		var width = $(window).width();
+		
+
+		//Dropdown Toggle
+		if(1186 < width){
+			$('.navbar-nav li.dropdown a').each(function(){
+				$(this).removeClass('dropdown-toggle');
+				$(this).removeAttr('data-toggle');
+			});
+		}
+		
+
 		// Parallax Effect on Banners
 		function parallax(){
 	    var scrolled = $(window).scrollTop();
@@ -76,17 +88,6 @@ jQuery(document).ready(function($) {
 		$(window).scroll(function(e){
 		    parallax();
 		});
-
-		
-		var width = $(window).width();
-		
-		//Dropdown Toggle
-		if(1186 < width){
-			$('.navbar-nav li.dropdown a').each(function(){
-				$(this).removeClass('dropdown-toggle');
-				$(this).removeAttr('data-toggle');
-			});
-		}
 		
 		//Page Banner		
 		lsxResizeBanner(width);	
