@@ -93,10 +93,6 @@ jQuery(document).ready(function($) {
 		//Page Banner		
 		lsxResizeBanner(width);	
 		lsxResizeSingleThumbnail(width);
-
-		$(window).load(function() {
-			$('portfolio-banner').addClass('page-banner');
-		});
 		
 		//Does everything it did on top
 		$(window).resize(function() {
