@@ -73,7 +73,8 @@ jQuery(document).ready(function($) {
 				$(this).removeAttr('data-toggle');
 			});
 		}
-		
+
+
 
 		// Parallax Effect on Banners
 		function parallax(){
@@ -92,6 +93,8 @@ jQuery(document).ready(function($) {
 		//Page Banner		
 		lsxResizeBanner(width);	
 		lsxResizeSingleThumbnail(width);
+
+		$('portfolio-banner').addClass('page-banner');
 		
 		//Does everything it did on top
 		$(window).resize(function() {

@@ -355,6 +355,13 @@ iframe {
 button,
 .btn {
 	border: none;
+	
+	.btn-lg {
+		padding: 10px 26px;
+	    font-size: 18px;
+	    line-height: inherit;
+	    @include border-radius(3px);
+	}
 }
 
 address {
@@ -1884,8 +1891,8 @@ article {
 	}
 
 	footer.footer-meta {
-		background: #f1f1f1;
-		padding: 20px 30px;
+		border-top: 3px solid #ddd;
+		padding: 20px 0;
 	}
 }
 
