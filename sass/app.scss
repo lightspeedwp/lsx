@@ -757,6 +757,7 @@ table {
 
 		a[class*="title"] {
 			display: inline-block;
+			min-height: 230px;
 			padding: 20px 30px;
 			font: {
 				family: "Noto Serif", serif;
@@ -1015,6 +1016,7 @@ table {
 
 				img {
 					width: 100%;
+					min-height: 230px;
 					@include transition(all .4s ease-in-out);
 				}
 			}
