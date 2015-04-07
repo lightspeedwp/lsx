@@ -80,7 +80,8 @@ $primary-darker: #357ebd;
 	margin-right: 5px;
 	border: none;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background: $blacker;
 	}
 }
@@ -92,7 +93,8 @@ $primary-darker: #357ebd;
     font-size: inherit;
     @include transition(all .1s ease-in-out);
 
-    &:hover {
+    &:hover,
+    &:focus {
     	background: $color !important;
     	color: $hover-color !important;
     }
@@ -116,7 +118,7 @@ $primary-darker: #357ebd;
 	margin-bottom: 30px;
 	font-size: 15px;
 	@include border-radius(3px);
-	@include box-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+	@include box-shadow(0 1px 4px rgba(0, 0, 0, 0.28));
 
 	& > .thumbnail {
 		margin: 0;
@@ -160,6 +162,7 @@ $primary-darker: #357ebd;
 	border: 3px solid #ddd;
 	box-shadow: none;
 	@include border-radius(3px);
+	@include transition(all .1s ease-in-out);
 
 	&:hover {
 		border: 3px solid #ddd;
@@ -360,7 +363,8 @@ img,
 }
 
 .lsx-button,
-.caldera-grid input[type="submit"] {
+.caldera-grid input[type="submit"],
+.caldera-grid .btn-primary:hover {
 	@include lsx-button;
 }
 
