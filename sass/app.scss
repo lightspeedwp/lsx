@@ -1970,10 +1970,12 @@ article {
 			ul {
 				li {
 					a {
-						border: 2px solid !important;
+						background: #555;
+						border: 2px solid #555 !important;
 						font-size: 14px !important;
 						padding: 6px 18px 6px 16px !important;
 						box-shadow: none !important;
+						color: $white;
 						@include transition(all .1s ease-in-out);
 
 						&:hover,
@@ -1987,96 +1989,99 @@ article {
 					&.share-print a,
 					&.share-email a {
 						background: #555;
-						color: $white;
+
+						&:hover,
+						&:focus {
+							color: #555;
+						}
 					}
 
 					&.share-facebook a {
 						background: #3b5998;
+						border-color: #3b5998 !important;
 
 						&:hover,
 						&:focus {
-							color: $white !important;
-							border-color: #3b5998 !important;
-							color: #3b5998 !important;
+							color: #3b5998;
 						}
 					}
 
 					&.share-linkedin a {
 						background: #007bb6;
+						border-color: #007bb6 !important;
 
 						&:hover,
 						&:focus {
-							border-color: #007bb6 !important;
 							color: #007bb6 !important;
 						}
 					}
 
 					&.share-reddit a {
 						background: #5f99cf;
+						border-color: #5f99cf !important;
 
 						&:hover,
 						&:focus {
-							border-color: #5f99cf !important;
 							color: #5f99cf !important;
 						}
 					}
 
 					&.share-stumbleupon a {
 						background: #eb4924;
+						border-color: #eb4924 !important;
 
 						&:hover,
 						&:focus {
-							border-color: #eb4924 !important;
 							color: #eb4924 !important;
 						}
 					}
 
 					&.share-twitter a {
 						background: #00aced;
+						border-color: #00aced !important;
 
 						&:hover,
 						&:focus {
-							border-color: #00aced !important;
 							color: #00aced !important;
 						}
 					}
 
 					&.share-google-plus-1 a {
 						background: #dd4b39;
+						border-color: #dd4b39 !important;
 
 						&:hover,
 						&:focus {
-							border-color: #dd4b39 !important;
 							color: #dd4b39 !important;
 						}
 					}
 
 					&.share-tumblr a {
 						background: #35465c;
+						border-color: #35465c !important;
 
 						&:hover,
 						&:focus {
-							border-color: #35465c !important;
 							color: #35465c !important;
 						}
 					}
 
 					&.share-pinterest a {
 						background: #cb2027;
+						border-color: #cb2027 !important;
 
 						&:hover,
 						&:focus {
-							border-color: #cb2027 !important;
 							color: #cb2027 !important;
 						}
 					}
 
 					&.share-pocket a {
 						background: #d3505a;
+						border-color: #d3505a !important;
 
 						&:hover,
 						&:focus {
-							border-color: #d3505a !important;
 							color: #d3505a !important;
 						}
 					}
