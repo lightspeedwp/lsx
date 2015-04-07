@@ -165,12 +165,7 @@ $primary-darker: #357ebd;
 		}
 
 		.price-wrapper {
-			margin: 17px 0;
-			padding: 15px 0;
-			border: {
-				top: 1px solid #ddd;
-				bottom: 1px solid #ddd;
-			}
+			margin: 10px 0;
 
 			.price {
 				color: #999;
@@ -178,12 +173,16 @@ $primary-darker: #357ebd;
 				.price-inner {
 					display: inline-block;
 					margin-top: -5px;
-					color: $grey;
+					color: $dark-grey;
 					font: {
 						size: 22px;
 						weight: bold;
 					}
 					vertical-align: middle;
+
+					br {
+						display: none;
+					}
 
 					.hb_symbol {
 						font-size: 15px;
@@ -198,6 +197,8 @@ $primary-darker: #357ebd;
 			margin-top: 20px;
 		}
 	}
+
+	&.lsx-price 
 }
 
 @mixin lsx-form-field {
