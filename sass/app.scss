@@ -150,7 +150,7 @@ $primary-darker: #357ebd;
 
 @mixin lsx-border-button($color, $hover-color) {
 	background: none !important;
-    padding: 11px 22px;
+    padding: 6px 40px;
     border: 3px solid $color !important;
     font-size: inherit;
     @include transition(all .1s ease-in-out);
@@ -2926,7 +2926,6 @@ article {
 	.btn {
 		@include lsx-button;
 		@include lsx-border-button($white, $primary);
-		margin: 0;
 	}
 }
 
