@@ -720,6 +720,245 @@ table {
 }
 
 
+
+// Plugin Post Types
+
+.room,
+.property {
+	overflow: visible !important;
+	margin-bottom: 40px;
+
+	.stars {
+		max-height: 24px;
+		
+		.genericon-star {
+			color: #ffcc00;
+			font-size: 22px;
+			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
+		}
+	}
+
+	.child-policy {
+		margin-bottom: 40px;
+	}
+
+	[class*="content-wrapper"] {
+		@include lsx-box;
+
+		[class*="thumbnail"] {
+			@include border-radius-top(3px);
+
+			img {
+				width: 100%;
+				opacity: 1 !important;
+				@include border-radius-top(3px);
+			}
+		}
+
+		a[class*="title"] {
+			display: inline-block;
+			padding: 20px 30px;
+			font: {
+				family: "Noto Serif", serif;
+				size: 20px;
+				weight: bold;
+			}
+			color: $black;
+			@include transition(all .1s ease-in-out);
+
+			&:hover {
+				color: $mid-grey;
+			}
+		}
+
+		[class*="content"] {
+			padding: 20px 30px 30px;
+			font-size: 15px;
+
+			h3 {
+				margin-top: 0;
+
+				a {
+					font: {
+						size: 20px;
+						weight: bold;
+					}
+					color: $black;
+					@include transition(all .1s ease-in-out);
+
+					&:hover {
+						color: $mid-grey;
+					}
+				}
+			}
+
+			.price-wrapper {
+				margin: 17px 0;
+				padding: 15px 0;
+				border: {
+					top: 1px solid #ddd;
+					bottom: 1px solid #ddd;
+				}
+
+				.price {
+					color: #999;
+
+					.price-inner {
+						display: inline-block;
+						margin-top: -5px;
+						color: $grey;
+						font: {
+							size: 22px;
+							weight: bold;
+						}
+						vertical-align: middle;
+
+						.hb_symbol {
+							font-size: 15px;
+							vertical-align: top;
+							margin-right: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Slider Widgets
+
+.slider-widget-title {
+	margin-top: 0;
+	font: {
+		size: 20px;
+		weight: normal;
+	}
+
+	.genericon {
+		font-size: 20px;
+		margin-top: 6px;
+		margin-right: 3px;
+	}
+}
+
+.offer-slider,
+.room-slider {
+	.slick-list {
+		overflow: hidden;
+
+		.slide-container {
+			background-position: center center;
+			padding: 40px;
+			@include border-radius-top(3px);
+
+			&:hover {
+				.caption {
+					background: rgba(255, 255, 255, .84);
+
+					.slide-title {
+						color: $primary;
+					}
+				}
+				
+				.genericon-leftarrow,
+				.genericon-rightarrow {
+					color: $black;
+				}
+			}
+
+			.caption {
+				background: rgba(255, 255, 255, .6);
+				text-align: center;
+				padding: 20px;
+				@include border-radius(5px);
+				@include transition(all 0.3s ease-in-out);
+				
+				.slide-title {
+					margin: 0 0 10px;
+					font: {
+						family: 'Noto Sans', sans-serif !important;
+						weight: normal;
+					}
+					@include transition(all 0.3s ease-in-out);
+				}
+
+				.valid-until {
+					margin: 0;
+					color: $black;
+					font-size: 14px;
+					line-height: 2;
+				}
+			}
+		}
+	}
+
+	.genericon-leftarrow,
+	.genericon-rightarrow {
+		color: $dark-grey;
+		font-size: 24px;
+		margin-top: 20px;
+		transition: none;
+
+		&:hover,
+		&:focus {
+			cursor: pointer;
+			color: $primary;
+		}
+	}
+
+	.genericon-rightarrow {
+		float: right;
+		padding-left: 15px;
+	    margin-right: 10px;
+	}
+
+	.genericon-leftarrow {
+		float: left;
+		padding-right: 15px;
+	    margin-left: 10px;
+	}
+
+	.slick-dots {
+		@include clear-list;
+		@include lsx-box;
+		text-align: center;
+		background: white;
+		padding: 15px;
+
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 15px;
+			height: 15px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			button {
+				background: $dark-grey;
+				text-indent: -999px;
+				width: 12px;
+				height: 12px;
+				padding: 0;
+				margin: 0;
+				@include border-radius(100%);
+
+				&:hover,
+				&:focus {
+					background: $primary;
+				}
+			}
+
+			&.slick-active {
+				button {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+
 // Masonry
 
 .masonry {
@@ -883,6 +1122,8 @@ table {
 	}
 }
 
+// Breadcrumbs
+
 ul.breadcrumb {
 	margin-bottom: 30px;
 	padding: 0;
@@ -948,6 +1189,8 @@ ul.breadcrumb {
 	}
 }
 
+// Posts Nav
+
 nav.page-nav {
 	p {
 		display: inline-block;
@@ -961,6 +1204,8 @@ nav.page-nav {
 		}
 	}
 }
+
+// Post Comments
 
 #comments {
 	h3 {
