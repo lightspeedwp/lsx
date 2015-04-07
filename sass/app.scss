@@ -213,6 +213,39 @@ $primary-darker: #357ebd;
 	}
 }
 
+@mixin lsx-info-box {
+	background: $off-white;
+	padding: 20px 30px;
+	margin: 0;
+	list-style: none;
+	border-top: 3px solid #ccc;
+	margin-bottom: 20px;
+
+	& > div,
+	li {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #ccc;
+
+		&:last-child {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			border-bottom: none;
+		}
+
+		span:first-child {
+			display: block;
+			color: $dark-grey;
+		}
+
+		.genericon {
+			display: inline-block !important;
+			margin-right: 5px;
+			vertical-align: middle;
+		}
+	}
+}
+
  
 /* ==========================================================================
 	 Base
@@ -409,6 +442,10 @@ img,
 
 .search-submit {
 	padding: 8px 12px;
+}
+
+.info-box {
+	@include lsx-info-box;
 }
 
 .lsx-button,
@@ -1564,33 +1601,14 @@ header.page-header {
 		}
 
 		.portfolio-meta {
-			background: $off-white;
+			@include lsx-info-box;
 			float: right;
-			padding: 20px 30px;
 			margin-left: 40px;
 
 			@media screen and (max-width: 768px) {
 				float: none;
 				margin-left: 0;
 				margin-bottom: 30px;
-			}
-
-			& > div {
-				margin-bottom: 20px;
-
-				span:first-child {
-					display: block;
-					color: $dark-grey;
-				}
-
-				&:last-of-type {
-					margin-bottom: 0;
-				}
-
-				.genericon {
-					display: inline-block !important;
-					margin: 7px 4px 0 0;
-				}
 			}
 		}
 	}
