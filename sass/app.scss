@@ -39,6 +39,34 @@ $primary-darker: #357ebd;
 	border-radius: $value;
 }
 
+@mixin border-radius-top($value) {
+	-webkit-border-top-left-radius: $value;
+	-moz-border-top-left-radius: $value;
+	-ms-border-top-left-radius: $value;
+	-o-border-top-left-radius: $value;
+	border-top-left-radius: $value;
+
+	-webkit-border-top-right-radius: $value;
+	-moz-border-top-right-radius: $value;
+	-ms-border-top-right-radius: $value;
+	-o-border-top-right-radius: $value;
+	border-top-right-radius: $value;
+}
+
+@mixin border-radius-bottom($value) {
+	-webkit-border-bottom-left-radius: $value;
+	-moz-border-bottom-left-radius: $value;
+	-ms-border-bottom-left-radius: $value;
+	-o-border-bottom-left-radius: $value;
+	border-bottom-left-radius: $value;
+
+	-webkit-border-bottom-right-radius: $value;
+	-moz-border-bottom-right-radius: $value;
+	-ms-border-bottom-right-radius: $value;
+	-o-border-bottom-right-radius: $value;
+	border-bottom-right-radius: $value;
+}
+
 @mixin box-shadow($args...) {
 	-webkit-box-shadow: $args;
 	-moz-box-shadow: $args;
@@ -92,6 +120,10 @@ $primary-darker: #357ebd;
 
 	& > .thumbnail {
 		margin: 0;
+
+		img {
+			@include border-radius-top(3px);
+		}
 	}
 
 	& > .content {
@@ -327,7 +359,8 @@ img,
 	padding: 8px 12px;
 }
 
-.lsx-button {
+.lsx-button,
+.caldera-grid input[type="submit"] {
 	@include lsx-button;
 }
 
