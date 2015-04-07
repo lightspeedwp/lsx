@@ -1975,7 +1975,7 @@ article {
 						font-size: 14px !important;
 						padding: 6px 18px 6px 16px !important;
 						box-shadow: none !important;
-						color: $white;
+						color: $white !important;
 						@include transition(all .1s ease-in-out);
 
 						&:hover,
@@ -1992,7 +1992,7 @@ article {
 
 						&:hover,
 						&:focus {
-							color: #555;
+							color: #555 !important;
 						}
 					}
 
@@ -2002,7 +2002,7 @@ article {
 
 						&:hover,
 						&:focus {
-							color: #3b5998;
+							color: #3b5998 !important;
 						}
 					}
 
