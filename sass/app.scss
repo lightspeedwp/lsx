@@ -544,9 +544,7 @@ img,
 	@include lsx-info-box;
 }
 
-.lsx-button,
-.caldera-grid input[type="submit"],
-.caldera-grid .btn-primary {
+.lsx-button {
 	@include lsx-button
 }
 
@@ -2928,6 +2926,7 @@ article {
 	.btn {
 		@include lsx-button;
 		@include lsx-border-button($white, $primary);
+		margin: 0;
 	}
 }
 
