@@ -115,6 +115,25 @@ $primary-darker: #357ebd;
 	&:focus {
 		background: #444;
 	}
+
+	&.book-now,
+	&.enquire-modal-button {
+		display: block;
+	}
+
+	&.book-now {
+		background: $primary;
+		@include box-shadow(0px 3px 0 $primary-darker);
+
+		&:hover,
+		&:focus {
+			background: $primary-darker;
+		}
+	}
+
+	&.enquire-now {
+		@include lsx-button;
+	}
 }
 
 @mixin lsx-border-button($color, $hover-color) {
@@ -842,6 +861,238 @@ hr {
 }
 
 
+// Modals
+
+.modal-dialog {
+	margin: 0;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+}
+
+.modal-content {
+	padding: 30px 40px;
+	border: none;
+}
+
+.modal-header {
+	border: none;
+	@include border-radius-top(3px);
+
+	.close {
+		float: none;
+    	position: absolute;
+    	right: 30px;
+    	top: 30px;
+	}
+}
+
+.modal-content .modal-title {
+	font-size: 26px;
+}
+
+.modal-body {
+	background: $white;
+	overflow-y: auto;
+	@include border-radius-bottom(3px);
+
+	.form-group {
+		width: 100%;
+	}
+
+	.btn {
+		display: block;
+		width: 100%;
+		margin-top: 25px;
+	}
+
+	textarea {
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 10px;	
+	}
+}
+
+.modal-footer {
+	margin-top: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.modal-dialog {
+		width: 100%;
+	}
+}
+
+// Sliders Default
+
+.slick-slider {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.dragging {
+		cursor: pointer;
+		cursor: hand;
+	}
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+
+.slick-prev,
+.slick-next {
+	position: absolute;
+	display: block;
+	height: 20px;
+	width: 20px;
+	line-height: 0px;
+	font-size: 0px;
+	cursor: pointer;
+	background: transparent;
+	color: transparent;
+	top: 50%;
+	margin-top: -10px;
+	padding: 0;
+	border: none;
+	outline: none;
+
+	&:hover, &:focus {
+		outline: none;
+		background: transparent;
+		color: transparent;
+		
+		&:before {
+			opacity: 1;
+		}
+	}
+
+	&.slick-disabled:before {
+		opacity: 0.25;
+	}
+}
+
+.slick-prev:before, .slick-next:before {
+	font-size: 20px;
+	line-height: 1;
+	color: $white;
+	opacity: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+.slick-next {
+    right: -25px;
+}
+
+
+// Slider Nav
+
+@media (min-width: 768px) {
+    #slider-navbtn {
+        display: block;
+    }
+
+    #slider-navbar.collapse {
+        display: none !important;
+    }
+
+    #slider-navbar.collapse.in {
+        display: block !important;
+    }
+
+    #slider-navbar .navbar-nav {
+        float: none !important;
+    }
+}
+
 /* ==========================================================================
 	 Header
 	 ========================================================================== */
@@ -1371,68 +1622,6 @@ nav {
 				margin-right: 5px;
 			}
 		}
-	}
-}
-
-// Modals
-
-.modal-dialog {
-	margin: 0;
-	position: absolute !important;
-	top: 50% !important;
-	left: 50% !important;
-}
-
-.modal-content {
-	padding: 30px 40px;
-	border: none;
-}
-
-.modal-header {
-	border: none;
-	@include border-radius-top(3px);
-
-	.close {
-		float: none;
-    	position: absolute;
-    	right: 30px;
-    	top: 30px;
-	}
-}
-
-.modal-content .modal-title {
-	font-size: 26px;
-}
-
-.modal-body {
-	background: $white;
-	overflow-y: auto;
-	@include border-radius-bottom(3px);
-
-	.form-group {
-		width: 100%;
-	}
-
-	.btn {
-		display: block;
-		width: 100%;
-		margin-top: 25px;
-	}
-
-	textarea {
-		width: 100%;
-		margin-top: 10px;
-		margin-bottom: 10px;	
-	}
-}
-
-.modal-footer {
-	margin-top: 0;
-}
-
-@media screen and (max-width: 767px) {
-	.modal-dialog {
-		width: 100%;
 	}
 }
 
