@@ -63,7 +63,19 @@ jQuery(document).ready(function($) {
 	        $(this).removeClass('active');
 	    });
 		
-		
+		// Parallax Effect on Banners
+		function parallax(){
+	    var scrolled = $(window).scrollTop();
+		    $('.page-banner').css('top', (scrolled) + 'px');
+		}
+		function parallax(){
+		    var scrolled = $(window).scrollTop();
+		    $('.page-banner').css('top', (scrolled * 0.1) + 'px');
+		}
+
+		$(window).scroll(function(e){
+		    parallax();
+		});
 
 		
 		var width = $(window).width();
