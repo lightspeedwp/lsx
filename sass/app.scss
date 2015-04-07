@@ -86,11 +86,14 @@ $primary-darker: #357ebd;
 	color: $white;
 	border: none !important;
 	box-shadow: none;
+	font-size: 17px;
+    line-height: inherit;
 	padding: 11px 26px;
     margin: {
     	top: 10px;
     	bottom: 10px;
     }
+    @include border-radius(3px);
     @include transition(all .1s ease-in-out);
 
 	&:hover,
@@ -514,6 +517,10 @@ img,
 .caldera-grid input[type="submit"],
 .caldera-grid .btn-primary {
 	@include lsx-button
+}
+
+.lsx-cta-button {
+	@include lsx-cta-button;
 }
 
 .thumbnail {
