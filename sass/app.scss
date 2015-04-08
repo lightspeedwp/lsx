@@ -278,7 +278,7 @@ $primary-darker: #357ebd;
 		top: 0;
 		margin-top: 0;
 		background-color: $black;
-		padding: 380px 0 240px;
+		padding: 370px 0 250px;
 		z-index: -1;
 		@include transition(all .08s ease-in-out);
 	}
@@ -327,6 +327,10 @@ $primary-darker: #357ebd;
 		span:first-child {
 			display: block;
 			color: $dark-grey;
+		}
+
+		p {
+			margin: 0;
 		}
 
 		.genericon {
