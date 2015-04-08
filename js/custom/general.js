@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 	$('table#wp-calendar').addClass('table');
-	
+	/*
 	$(function () {
 	  $.srSmoothscroll({
 	    step: 100,
@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 	    target: $('body')
 	  })
 	})
-
+	*/
 	$(window).scroll(function(){
 	    if($(window).scrollTop() > 150) {
 	        $('header.banner').addClass('scrolled');
