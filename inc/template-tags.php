@@ -371,34 +371,3 @@ if(!function_exists('lsx_nav_menu')){
 	  	<?php }
 	}
 }
-
-/**
- * Adds enquiry form modal to wp_footer
- *
- * @package 	lsx
- * @subpackage	template-tags
- */
-add_action( 'wp_footer', 'lsx_enquire_bar_modal' );
-function lsx_enquire_bar_modal() {
-
-	$enquire_form_id = lsx_is_form_enabled('enquire');
-	if(false == $enquire_form_id) { return; }
-
-	$show_on_front = get_option('show_on_front');
-	if ( ('page' == $show_on_front && is_front_page()) || is_post_type_archive('room') || is_singular('property') || is_singular('offer') || is_singular('room')  ) : ?>
-		<div class="modal fade" id="enquire-modal" tabindex="-1" role="dialog" aria-labelledby="enquire-modal-label" aria-hidden="true">
-	  		<div class="modal-dialog">
-	    		<div class="modal-content">
-	      			<div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">Enquire</h4>
-				    </div>
-	
-	      			<div class="modal-body">
-				        <?php echo do_shortcode( '[caldera_form id="'.$enquire_form_id.'"]' ); ?>
-			      	</div>
-			    </div>
-		  	</div>
-		</div>
-	<?php endif;
-}
