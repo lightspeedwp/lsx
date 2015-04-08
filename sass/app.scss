@@ -1152,6 +1152,12 @@ ul.breadcrumb {
 			& > span {
 				padding: 0;
 
+				&:first-child {
+					a {
+						padding-left: 22px;
+					}
+				}
+
 				& > span,
 				a,
 				strong {
@@ -1191,10 +1197,6 @@ ul.breadcrumb {
 						&:after {
 							display: none;
 						}
-					}
-
-					&:first-child {
-						padding-left: 22px;
 					}
 				}
 			}
@@ -1291,6 +1293,10 @@ hr {
 
 	.form-control {
 		@include lsx-form-field;
+	}
+
+	.btn {
+		@include lsx-button;
 	}
 }
 
