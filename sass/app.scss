@@ -1320,7 +1320,7 @@ hr {
 	}
 
 	.minicolor-picker {
-		width: auto;
+		width: auto !important;
 	}
 
 	.help-block {
@@ -1331,6 +1331,12 @@ hr {
 	.cf-color-picker {
 		.input-group-addon {
 			padding: 0 25px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				cursor: pointer;
+			}
 		}
 	}
 
