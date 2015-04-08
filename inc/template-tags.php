@@ -186,7 +186,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				if(false != $tags){ ?>
 					<div class="portfolio-tag">
 						<span><span class="genericon genericon-user"></span><?php _e('Services','lsx'); ?></span>
-						<span><?php echo esc_html($tags); ?></span>
+						<span><?php echo $tags ?></span>
 					</div>			
 			<?php }	?>
 
