@@ -2451,11 +2451,15 @@ header.page-header {
 			dl.gallery-item {
 				width: 100% !important;
 
+				dt,
+				dl {
+					border: none !important;
+				}
+
 				img {
 					border: 0 !important; 
 					width: 100% !important;
-					padding: 4px;
-			  		border: 1px solid #ddd;
+			  		border: 1px solid #ddd !important;
 			  		@include border-radius(3px);
 				}
 			}
