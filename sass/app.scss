@@ -1334,10 +1334,10 @@ hr {
 			border: 3px solid #ddd;
 			border-left: none;
 
-			&:hover,
 			&:focus,
 			&:active {
 				cursor: pointer;
+				border-color: $primary;
 			}
 		}
 	}

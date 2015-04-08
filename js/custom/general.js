@@ -1,15 +1,28 @@
 jQuery(document).ready(function($) {
 	$('table#wp-calendar').addClass('table');
+	
 	/*
+	var div = document.createElement("div");
+	div.id = "body-wrapper";
+	// Move the body's children into this wrapper
+	while (document.body.firstChild)
+	{
+	    div.appendChild(document.body.firstChild);
+	}
+	// Append the wrapper to the body
+	document.body.appendChild(div);
+
 	$(function () {
 	  $.srSmoothscroll({
 	    step: 100,
-	    speed: 75,
+	    speed: 975,
 	    ease: 'swing',
-	    target: $('body')
+	    target: $('body'),
+	    conainter: $(window)
 	  })
 	})
 	*/
+
 	$(window).scroll(function(){
 	    if($(window).scrollTop() > 150) {
 	        $('header.banner').addClass('scrolled');
