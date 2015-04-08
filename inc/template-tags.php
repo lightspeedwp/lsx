@@ -182,6 +182,15 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 		<div class="portfolio-meta">
 
 			<?php 
+				$tags = get_the_tag_list('<span>',', ','</span>');
+				if(false != $tags){ ?>
+					<div class="portfolio-tag">
+						<span><span class="genericon genericon-user"></span><?php _e('Services','lsx'); ?></span>
+						<span><?php echo esc_html($tags); ?></span>
+					</div>			
+			<?php }	?>
+
+			<?php 
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);
 				if(false != $client){ ?>
 					<div class="portfolio-client">
@@ -205,7 +214,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				if($portfolio_type){
 					?>
 					<div class="portfolio-category">
-						<span><span class="genericon genericon-category"></span><?php _e('Category','lsx'); ?></span>
+						<span><span class="genericon genericon-category"></span><?php _e('Industry','lsx'); ?></span>
 						<?php echo $portfolio_type; ?>
 					</div>			
 			<?php } ?>
