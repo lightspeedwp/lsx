@@ -373,38 +373,16 @@ if(!function_exists('lsx_nav_menu')){
 }
 
 /**
- * Adds Footer Widgets section above footer
- *
- * @package 	classybeds-lsx-child
- * @subpackage	hooks
- * @category	sidebar
- */
-add_action( 'lsx_footer_before', 'classybeds_footer_widgets', 11 );
-function classybeds_footer_widgets() {
-	?>
-	<section class="footer-widgets-wrapper">
-		<div class="container">
-			<div class="footer-widgets">
-				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebar-footer-left') ) ?>
-				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebar-footer-middle') ) ?>
-				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebar-footer-right') ) ?>
-			</div>
-		</div>
-	</section>
-	<?php
-}
-
-/**
  * Adds enquiry form modal to wp_footer
  *
- * @package 	classybeds-lsx-child
+ * @package 	lsx-child
  * @subpackage	hooks
  * @category	forms
  */
-add_action( 'wp_footer', 'classybeds_enquire_bar_modal' );
-function classybeds_enquire_bar_modal() {
+add_action( 'wp_footer', 'lsx_enquire_bar_modal' );
+function lsx_enquire_bar_modal() {
 
-	$enquire_form_id = classybeds_is_form_enabled('enquire');
+	$enquire_form_id = lsx_is_form_enabled('enquire');
 	if(false == $enquire_form_id) { return; }
 
 	$show_on_front = get_option('show_on_front');
@@ -424,28 +402,4 @@ function classybeds_enquire_bar_modal() {
 		  	</div>
 		</div>
 	<?php endif;
-}
-
-function lsx_page_banner() {
-
-	$show_on_front = get_option('show_on_front','posts');
-	$full_experience = get_theme_mod('home_full_experience_enable',false);
-	$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
-	
-	if('page' == $show_on_front && is_front_page() && false != $full_experience) { return; }
-	
-	if(0 != $slider){ return; }
-	
-	$post_types = array('page');
-	$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);
-
-	if ( is_singular($post_types) && has_post_thumbnail() ) { ?>
-	        
-        <div class="page-banner" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
-          <header class="page-header">
-            <h1 class="page-title"><?php the_title(); ?></h1>   
-            <?php lsx_banner_content(); ?>
-          </header><!-- .entry-header -->
-        </div>
-	<?php } 
 }
