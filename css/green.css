@@ -5,7 +5,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-  color: #333333;
+  color: #3d4a30;
 }
 
 .btn,
@@ -17,7 +17,7 @@ button {
 .btn:focus,
 .btn:active,
 button:hover {
-  background: #333333 !important;
+  background: #3d4a30 !important;
 }
 
 body {
@@ -99,7 +99,7 @@ ul.breadcrumb li a {
 }
 
 ul.breadcrumb li a:hover {
-  color: #333333;
+  color: #3d4a30;
 }
 
 nav.page-nav p {
@@ -145,7 +145,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #a5a370;
+  background: #3d4a30;
 }
 
 @media screen and (max-width: 992px) {
@@ -155,7 +155,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #333;
+  color: #3d4a30;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
@@ -277,7 +277,7 @@ article .post-format {
 }
 
 #footer-widgets {
-  background: #333;
+  background: #3d4a30;
 }
 
 #footer-widgets .widget {
@@ -315,7 +315,7 @@ article .post-format {
 }
 
 footer.content-info {
-  background: #333333;
+  background: #333;
 }
 
 footer.content-info a {
@@ -344,8 +344,34 @@ footer.content-info a:hover {
 
 .gform_wrapper .gfield_error input:focus,
 .gform_wrapper .gfield_error select:focus,
-.gform_wrapper .gfield_error textarea:focus {
-  border-color: #d48a1d !important;
+.gform_wrapper .gfield_error textarea:focus,
+.home-bg-image-footer .container > span .form-group input:focus, 
+.home-bg-image-footer .container > form .form-group input:focus,
+.caldera-grid .form-control input:focus,
+.caldera-grid .form-control:focus,
+.ginput_container input:focus, 
+.ginput_container select:focus, 
+.ginput_container textarea:focus {
+  border-color: #a5a370 !important;
+  box-shadow: none !important;
+}
+
+.caldera-grid .btn, 
+.caldera-grid .gform_button,
+.gform_page_footer input[type="button"] {
+  background: #572600 !important;
+}
+
+.caldera-grid .btn:hover, 
+.caldera-grid .gform_button:hover,
+.caldera-grid .btn:focus, 
+.caldera-grid .gform_button:focus,
+.caldera-grid .btn:active, 
+.caldera-grid .gform_button:active,
+.gform_page_footer input[type="button"]:hover,
+.gform_page_footer input[type="button"]:focus,
+.gform_page_footer input[type="button"]:active {
+  background: #331701 !important;
 }
 
 select {
@@ -360,7 +386,27 @@ select {
   color: #ffffff !important;
 }
 
-.caldera-grid .form-control input:focus {
-    border-color: #d48a1d !important;
-    box-shadow: none !important;
+.page-template-template-portfolio #filterNav li a, 
+.post-type-archive-jetpack-portfolio #filterNav li a {
+  background: #596b46 !important;
+}
+
+.page-template-template-portfolio #filterNav li a:hover, 
+.page-template-template-portfolio #filterNav li a.selected, 
+.post-type-archive-jetpack-portfolio #filterNav li a:hover, 
+.post-type-archive-jetpack-portfolio #filterNav li a.selected {
+  background: #3d4a30 !important;
+}
+
+.masonry [class*='-content-wrapper'] {
+  background: #3d4a30 !important;
+}
+
+.cf-toggle-group-buttons button {
+  background: #a5a370 !important;
+}
+
+.cf-toggle-group-buttons button:hover,
+.cf-toggle-group-buttons button.success {
+  background: #79774e !important;
 }
