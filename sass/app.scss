@@ -415,7 +415,6 @@ h2,
 h3 {
 	color: $black;
 	margin-top: 40px;
-	margin-bottom: 17px;
 
 	i {
 		margin-right: 15px;
@@ -432,7 +431,7 @@ h5,
 h6 {
 	color: $dark-grey;
 	margin-top: 25px;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 
 	i {
 		margin-right: 10px;
@@ -446,14 +445,17 @@ h6 {
 
 h1 {
 	font-size: 36px;
+	margin-bottom: 24px;
 }
 
 h2 {
 	font-size: 32px;
+	margin-bottom: 20px;
 }
 
 h3 {
 	font-size: 24px;
+	margin-bottom: 17px;
 }
 
 h4 {
@@ -2098,6 +2100,13 @@ nav {
 			.post-type-archive-jetpack-portfolio & {
 				max-width: 100%;
 			}
+		}
+	}
+
+	.page-template-template-full-width-narrow & {
+		#primary {
+			margin: 0 auto;
+			float: none;
 		}
 	}
 
