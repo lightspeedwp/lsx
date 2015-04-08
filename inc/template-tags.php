@@ -182,20 +182,20 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 		<div class="portfolio-meta">
 
 			<?php 
-				$tags = get_the_tag_list('<span>',', ','</span>');
-				if(false != $tags){ ?>
-					<div class="portfolio-tag">
-						<span><span class="genericon genericon-user"></span><?php _e('Services','lsx'); ?></span>
-						<span><?php echo $tags ?></span>
-					</div>			
-			<?php }	?>
-
-			<?php 
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);
 				if(false != $client){ ?>
 					<div class="portfolio-client">
 						<span><span class="genericon genericon-user"></span><?php _e('Client','lsx'); ?></span>
 						<span><?php echo esc_html($client); ?></span>
+					</div>			
+			<?php }	?>
+
+			<?php 
+				$tags = echo get_the_tag_list('<span>',', ','</span>');
+				if(false != $tags){ ?>
+					<div class="portfolio-tags">
+						<span><span class="genericon genericon-user"></span><?php _e('Services','lsx'); ?></span>
+						<span><?php $tags ?></span>
 					</div>			
 			<?php }	?>
 
@@ -244,7 +244,7 @@ if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
 			}
 				
 			if(!empty($media_array)){
-				echo gallery_shortcode(array('size'=>'thumbnail','ids'=>implode(',', $media_array)));
+				echo gallery_shortcode(array('size'=>'thumbnail-wide','ids'=>implode(',', $media_array)));
 			}
 		}
 		
