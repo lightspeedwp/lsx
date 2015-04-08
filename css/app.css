@@ -346,9 +346,8 @@ th {
   }
 
   /* line 83, ../sass/bootstrap/_print.scss */
-  .btn > .caret, .gform_button > .caret,
-  .dropup > .btn > .caret,
-  .dropup > .gform_button > .caret {
+  .btn > .caret,
+  .dropup > .btn > .caret {
     border-top-color: #000 !important;
   }
 
@@ -3576,7 +3575,6 @@ input[type="month"] {
 input[type="date"].input-sm, .form-horizontal .form-group-sm input[type="date"].form-control, .form-horizontal .form-group-sm .ginput_container input[type="date"], .ginput_container .form-horizontal .form-group-sm input[type="date"], .input-group-sm > input[type="date"].form-control, .ginput_container .input-group-sm > input[type="date"],
 .input-group-sm > input[type="date"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="date"].btn,
-.input-group-sm > .input-group-btn > input[type="date"].gform_button,
 input[type="time"].input-sm,
 .form-horizontal .form-group-sm input[type="time"].form-control,
 .form-horizontal .form-group-sm .ginput_container input[type="time"],
@@ -3585,7 +3583,6 @@ input[type="time"].input-sm,
 .ginput_container .input-group-sm > input[type="time"],
 .input-group-sm > input[type="time"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="time"].btn,
-.input-group-sm > .input-group-btn > input[type="time"].gform_button,
 input[type="datetime-local"].input-sm,
 .form-horizontal .form-group-sm input[type="datetime-local"].form-control,
 .form-horizontal .form-group-sm .ginput_container input[type="datetime-local"],
@@ -3594,7 +3591,6 @@ input[type="datetime-local"].input-sm,
 .ginput_container .input-group-sm > input[type="datetime-local"],
 .input-group-sm > input[type="datetime-local"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
-.input-group-sm > .input-group-btn > input[type="datetime-local"].gform_button,
 input[type="month"].input-sm,
 .form-horizontal .form-group-sm input[type="month"].form-control,
 .form-horizontal .form-group-sm .ginput_container input[type="month"],
@@ -3602,15 +3598,13 @@ input[type="month"].input-sm,
 .input-group-sm > input[type="month"].form-control,
 .ginput_container .input-group-sm > input[type="month"],
 .input-group-sm > input[type="month"].input-group-addon,
-.input-group-sm > .input-group-btn > input[type="month"].btn,
-.input-group-sm > .input-group-btn > input[type="month"].gform_button {
+.input-group-sm > .input-group-btn > input[type="month"].btn {
   line-height: 30px;
 }
 /* line 189, ../sass/bootstrap/_forms.scss */
 input[type="date"].input-lg, .form-horizontal .form-group-lg input[type="date"].form-control, .form-horizontal .form-group-lg .ginput_container input[type="date"], .ginput_container .form-horizontal .form-group-lg input[type="date"], .input-group-lg > input[type="date"].form-control, .ginput_container .input-group-lg > input[type="date"],
 .input-group-lg > input[type="date"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="date"].btn,
-.input-group-lg > .input-group-btn > input[type="date"].gform_button,
 input[type="time"].input-lg,
 .form-horizontal .form-group-lg input[type="time"].form-control,
 .form-horizontal .form-group-lg .ginput_container input[type="time"],
@@ -3619,7 +3613,6 @@ input[type="time"].input-lg,
 .ginput_container .input-group-lg > input[type="time"],
 .input-group-lg > input[type="time"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="time"].btn,
-.input-group-lg > .input-group-btn > input[type="time"].gform_button,
 input[type="datetime-local"].input-lg,
 .form-horizontal .form-group-lg input[type="datetime-local"].form-control,
 .form-horizontal .form-group-lg .ginput_container input[type="datetime-local"],
@@ -3628,7 +3621,6 @@ input[type="datetime-local"].input-lg,
 .ginput_container .input-group-lg > input[type="datetime-local"],
 .input-group-lg > input[type="datetime-local"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
-.input-group-lg > .input-group-btn > input[type="datetime-local"].gform_button,
 input[type="month"].input-lg,
 .form-horizontal .form-group-lg input[type="month"].form-control,
 .form-horizontal .form-group-lg .ginput_container input[type="month"],
@@ -3636,8 +3628,7 @@ input[type="month"].input-lg,
 .input-group-lg > input[type="month"].form-control,
 .ginput_container .input-group-lg > input[type="month"],
 .input-group-lg > input[type="month"].input-group-addon,
-.input-group-lg > .input-group-btn > input[type="month"].btn,
-.input-group-lg > .input-group-btn > input[type="month"].gform_button {
+.input-group-lg > .input-group-btn > input[type="month"].btn {
   line-height: 46px;
 }
 
@@ -3735,8 +3726,7 @@ input[type="checkbox"] {
 .ginput_container .input-group-lg > select.form-control-static,
 .ginput_container .input-group-lg > textarea.form-control-static,
 .input-group-lg > .form-control-static.input-group-addon,
-.input-group-lg > .input-group-btn > .form-control-static.btn,
-.input-group-lg > .input-group-btn > .form-control-static.gform_button, .form-control-static.input-sm, .form-horizontal .form-group-sm .form-control-static.form-control, .form-horizontal .form-group-sm .ginput_container input.form-control-static, .ginput_container .form-horizontal .form-group-sm input.form-control-static,
+.input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .form-horizontal .form-group-sm .form-control-static.form-control, .form-horizontal .form-group-sm .ginput_container input.form-control-static, .ginput_container .form-horizontal .form-group-sm input.form-control-static,
 .form-horizontal .form-group-sm .ginput_container select.form-control-static,
 .ginput_container .form-horizontal .form-group-sm select.form-control-static,
 .form-horizontal .form-group-sm .ginput_container textarea.form-control-static,
@@ -3744,8 +3734,7 @@ input[type="checkbox"] {
 .ginput_container .input-group-sm > select.form-control-static,
 .ginput_container .input-group-sm > textarea.form-control-static,
 .input-group-sm > .form-control-static.input-group-addon,
-.input-group-sm > .input-group-btn > .form-control-static.btn,
-.input-group-sm > .input-group-btn > .form-control-static.gform_button {
+.input-group-sm > .input-group-btn > .form-control-static.btn {
   padding-left: 0;
   padding-right: 0;
 }
@@ -3759,8 +3748,7 @@ input[type="checkbox"] {
 .ginput_container .input-group-sm > select,
 .ginput_container .input-group-sm > textarea,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn,
-.input-group-sm > .input-group-btn > .gform_button {
+.input-group-sm > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3774,8 +3762,7 @@ select.input-sm, .form-horizontal .form-group-sm select.form-control,
 .ginput_container .form-horizontal .form-group-sm select, .input-group-sm > select.form-control,
 .ginput_container .input-group-sm > select,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn,
-.input-group-sm > .input-group-btn > select.gform_button {
+.input-group-sm > .input-group-btn > select.btn {
   height: 30px;
   line-height: 30px;
 }
@@ -3787,7 +3774,6 @@ textarea.input-sm, .form-horizontal .form-group-sm textarea.form-control,
 .ginput_container .input-group-sm > textarea,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
-.input-group-sm > .input-group-btn > textarea.gform_button,
 select[multiple].input-sm,
 .form-horizontal .form-group-sm select[multiple].form-control,
 .form-horizontal .form-group-sm .ginput_container select[multiple],
@@ -3795,8 +3781,7 @@ select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .ginput_container .input-group-sm > select[multiple],
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn,
-.input-group-sm > .input-group-btn > select[multiple].gform_button {
+.input-group-sm > .input-group-btn > select[multiple].btn {
   height: auto;
 }
 
@@ -3809,8 +3794,7 @@ select[multiple].input-sm,
 .ginput_container .input-group-lg > select,
 .ginput_container .input-group-lg > textarea,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn,
-.input-group-lg > .input-group-btn > .gform_button {
+.input-group-lg > .input-group-btn > .btn {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -3824,8 +3808,7 @@ select.input-lg, .form-horizontal .form-group-lg select.form-control,
 .ginput_container .form-horizontal .form-group-lg select, .input-group-lg > select.form-control,
 .ginput_container .input-group-lg > select,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn,
-.input-group-lg > .input-group-btn > select.gform_button {
+.input-group-lg > .input-group-btn > select.btn {
   height: 46px;
   line-height: 46px;
 }
@@ -3837,7 +3820,6 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control,
 .ginput_container .input-group-lg > textarea,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
-.input-group-lg > .input-group-btn > textarea.gform_button,
 select[multiple].input-lg,
 .form-horizontal .form-group-lg select[multiple].form-control,
 .form-horizontal .form-group-lg .ginput_container select[multiple],
@@ -3845,8 +3827,7 @@ select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .ginput_container .input-group-lg > select[multiple],
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn,
-.input-group-lg > .input-group-btn > select[multiple].gform_button {
+.input-group-lg > .input-group-btn > select[multiple].btn {
   height: auto;
 }
 
@@ -3885,8 +3866,7 @@ select[multiple].input-lg,
 .ginput_container .input-group-lg > select + .form-control-feedback,
 .ginput_container .input-group-lg > textarea + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
-.input-group-lg > .input-group-btn > .btn + .form-control-feedback,
-.input-group-lg > .input-group-btn > .gform_button + .form-control-feedback {
+.input-group-lg > .input-group-btn > .btn + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px;
@@ -3901,8 +3881,7 @@ select[multiple].input-lg,
 .ginput_container .input-group-sm > select + .form-control-feedback,
 .ginput_container .input-group-sm > textarea + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
-.input-group-sm > .input-group-btn > .btn + .form-control-feedback,
-.input-group-sm > .input-group-btn > .gform_button + .form-control-feedback {
+.input-group-sm > .input-group-btn > .btn + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -4187,7 +4166,7 @@ select[multiple].input-lg,
 }
 
 /* line 9, ../sass/bootstrap/_buttons.scss */
-.btn, .gform_button {
+.btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -4207,25 +4186,25 @@ select[multiple].input-lg,
   user-select: none;
 }
 /* line 25, ../sass/bootstrap/_buttons.scss */
-.btn:focus, .gform_button:focus, .btn:active:focus, .gform_button:active:focus, .btn.active:focus, .active.gform_button:focus {
+.btn:focus, .btn:active:focus, .btn.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 31, ../sass/bootstrap/_buttons.scss */
-.btn:hover, .gform_button:hover, .btn:focus, .gform_button:focus {
+.btn:hover, .btn:focus {
   color: #333333;
   text-decoration: none;
 }
 /* line 37, ../sass/bootstrap/_buttons.scss */
-.btn:active, .gform_button:active, .btn.active, .active.gform_button {
+.btn:active, .btn.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 /* line 45, ../sass/bootstrap/_buttons.scss */
-.btn.disabled, .disabled.gform_button, .btn[disabled], [disabled].gform_button, fieldset[disabled] .btn, fieldset[disabled] .gform_button {
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -4426,7 +4405,7 @@ select[multiple].input-lg,
 }
 
 /* line 124, ../sass/bootstrap/_buttons.scss */
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .gform_button {
+.btn-lg, .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
@@ -4434,7 +4413,7 @@ select[multiple].input-lg,
 }
 
 /* line 128, ../sass/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .gform_button {
+.btn-sm, .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -4442,7 +4421,7 @@ select[multiple].input-lg,
 }
 
 /* line 132, ../sass/bootstrap/_buttons.scss */
-.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .gform_button {
+.btn-xs, .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -4686,37 +4665,29 @@ tbody.collapse.in {
   vertical-align: middle;
 }
 /* line 11, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn, .btn-group > .gform_button,
-.btn-group-vertical > .btn,
-.btn-group-vertical > .gform_button {
+.btn-group > .btn,
+.btn-group-vertical > .btn {
   position: relative;
   float: left;
 }
 /* line 18, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, .btn-group > .gform_button:hover, .btn-group > .btn:focus, .btn-group > .gform_button:focus, .btn-group > .btn:active, .btn-group > .gform_button:active, .btn-group > .btn.active, .btn-group > .active.gform_button,
+.btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
 .btn-group-vertical > .btn:hover,
-.btn-group-vertical > .gform_button:hover,
 .btn-group-vertical > .btn:focus,
-.btn-group-vertical > .gform_button:focus,
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .gform_button:active,
-.btn-group-vertical > .btn.active,
-.btn-group-vertical > .active.gform_button {
+.btn-group-vertical > .btn.active {
   z-index: 2;
 }
 /* line 21, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:focus, .btn-group > .gform_button:focus,
-.btn-group-vertical > .btn:focus,
-.btn-group-vertical > .gform_button:focus {
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus {
   outline: 0;
 }
 
 /* line 33, ../sass/bootstrap/_button-groups.scss */
-.btn-group .btn + .btn, .btn-group .gform_button + .btn, .btn-group .btn + .gform_button, .btn-group .gform_button + .gform_button,
+.btn-group .btn + .btn,
 .btn-group .btn + .btn-group,
-.btn-group .gform_button + .btn-group,
 .btn-group .btn-group + .btn,
-.btn-group .btn-group + .gform_button,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -4740,29 +4711,29 @@ tbody.collapse.in {
   float: left;
 }
 /* line 49, ../sass/bootstrap/_button-groups.scss */
-.btn-toolbar > .btn, .btn-toolbar > .gform_button,
+.btn-toolbar > .btn,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
 /* line 54, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .gform_button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
 /* line 59, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child, .btn-group > .gform_button:first-child {
+.btn-group > .btn:first-child {
   margin-left: 0;
 }
 /* line 61, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .gform_button:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 67, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child:not(:first-child), .btn-group > .gform_button:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -4774,19 +4745,19 @@ tbody.collapse.in {
 }
 
 /* line 75, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .gform_button {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
 }
 
 /* line 80, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .gform_button:last-child,
+.btn-group > .btn-group:first-child > .btn:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 84, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:last-child > .btn:first-child, .btn-group > .btn-group:last-child > .gform_button:first-child {
+.btn-group > .btn-group:last-child > .btn:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4798,13 +4769,13 @@ tbody.collapse.in {
 }
 
 /* line 108, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle, .btn-group > .gform_button + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
 
 /* line 112, ../sass/bootstrap/_button-groups.scss */
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .gform_button + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4821,26 +4792,25 @@ tbody.collapse.in {
 }
 
 /* line 130, ../sass/bootstrap/_button-groups.scss */
-.btn .caret, .gform_button .caret {
+.btn .caret {
   margin-left: 0;
 }
 
 /* line 134, ../sass/bootstrap/_button-groups.scss */
-.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .gform_button .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
 /* line 139, ../sass/bootstrap/_button-groups.scss */
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .gform_button .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
   border-width: 0 5px 5px;
 }
 
 /* line 150, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, .btn-group-vertical > .gform_button,
+.btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > .btn-group > .gform_button {
+.btn-group-vertical > .btn-group > .btn {
   display: block;
   float: none;
   width: 100%;
@@ -4856,51 +4826,49 @@ tbody.collapse.in {
   clear: both;
 }
 /* line 160, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .gform_button {
+.btn-group-vertical > .btn-group > .btn {
   float: none;
 }
 /* line 168, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .gform_button + .btn, .btn-group-vertical > .btn + .gform_button, .btn-group-vertical > .gform_button + .gform_button,
+.btn-group-vertical > .btn + .btn,
 .btn-group-vertical > .btn + .btn-group,
-.btn-group-vertical > .gform_button + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
-.btn-group-vertical > .btn-group + .gform_button,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
 /* line 175, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .gform_button:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 /* line 178, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .gform_button:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 /* line 182, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .gform_button:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 /* line 187, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .gform_button {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
 }
 
 /* line 192, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .gform_button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* line 196, ../sass/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .gform_button:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4913,14 +4881,14 @@ tbody.collapse.in {
   border-collapse: separate;
 }
 /* line 211, ../sass/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn, .btn-group-justified > .gform_button,
+.btn-group-justified > .btn,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
 /* line 216, ../sass/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .gform_button {
+.btn-group-justified > .btn-group .btn {
   width: 100%;
 }
 /* line 220, ../sass/bootstrap/_button-groups.scss */
@@ -4929,9 +4897,8 @@ tbody.collapse.in {
 }
 
 /* line 236, ../sass/bootstrap/_button-groups.scss */
-[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .gform_button > input[type="radio"],
-[data-toggle="buttons"] > .btn > input[type="checkbox"],
-[data-toggle="buttons"] > .gform_button > input[type="checkbox"] {
+[data-toggle="buttons"] > .btn > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -5017,8 +4984,7 @@ tbody.collapse.in {
 .ginput_container .input-group-sm > select.input-group-addon,
 .ginput_container .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .input-group-addon.btn,
-.input-group-sm > .input-group-btn > .input-group-addon.gform_button {
+.input-group-sm > .input-group-btn > .input-group-addon.btn {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
@@ -5032,8 +4998,7 @@ tbody.collapse.in {
 .ginput_container .input-group-lg > select.input-group-addon,
 .ginput_container .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .input-group-addon.btn,
-.input-group-lg > .input-group-btn > .input-group-addon.gform_button {
+.input-group-lg > .input-group-btn > .input-group-addon.btn {
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 6px;
@@ -5052,14 +5017,10 @@ tbody.collapse.in {
 .ginput_container .input-group textarea:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .gform_button,
 .input-group-btn:first-child > .btn-group > .btn,
-.input-group-btn:first-child > .btn-group > .gform_button,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .gform_button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-.input-group-btn:last-child > .btn-group:not(:last-child) > .gform_button {
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -5077,14 +5038,10 @@ tbody.collapse.in {
 .ginput_container .input-group textarea:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .gform_button,
 .input-group-btn:last-child > .btn-group > .btn,
-.input-group-btn:last-child > .btn-group > .gform_button,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .gform_button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
-.input-group-btn:first-child > .btn-group:not(:first-child) > .gform_button {
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -5101,24 +5058,24 @@ tbody.collapse.in {
   white-space: nowrap;
 }
 /* line 140, ../sass/bootstrap/_input-groups.scss */
-.input-group-btn > .btn, .input-group-btn > .gform_button {
+.input-group-btn > .btn {
   position: relative;
 }
 /* line 142, ../sass/bootstrap/_input-groups.scss */
-.input-group-btn > .btn + .btn, .input-group-btn > .gform_button + .btn, .input-group-btn > .btn + .gform_button, .input-group-btn > .gform_button + .gform_button {
+.input-group-btn > .btn + .btn {
   margin-left: -1px;
 }
 /* line 148, ../sass/bootstrap/_input-groups.scss */
-.input-group-btn > .btn:hover, .input-group-btn > .gform_button:hover, .input-group-btn > .btn:focus, .input-group-btn > .gform_button:focus, .input-group-btn > .btn:active, .input-group-btn > .gform_button:active {
+.input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
   z-index: 2;
 }
 /* line 156, ../sass/bootstrap/_input-groups.scss */
-.input-group-btn:first-child > .btn, .input-group-btn:first-child > .gform_button,
+.input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
 /* line 162, ../sass/bootstrap/_input-groups.scss */
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .gform_button,
+.input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -5655,12 +5612,12 @@ tbody.collapse.in {
   margin-bottom: 8px;
 }
 /* line 362, ../sass/bootstrap/_navbar.scss */
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.gform_button {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 /* line 365, ../sass/bootstrap/_navbar.scss */
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.gform_button {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -6096,7 +6053,7 @@ tbody.collapse.in {
   display: none;
 }
 /* line 25, ../sass/bootstrap/_labels.scss */
-.btn .label, .gform_button .label {
+.btn .label {
   position: relative;
   top: -1px;
 }
@@ -6182,12 +6139,12 @@ a.label:hover, a.label:focus {
   display: none;
 }
 /* line 27, ../sass/bootstrap/_badges.scss */
-.btn .badge, .gform_button .badge {
+.btn .badge {
   position: relative;
   top: -1px;
 }
 /* line 31, ../sass/bootstrap/_badges.scss */
-.btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .gform_button .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -7373,12 +7330,12 @@ button.close {
   clear: both;
 }
 /* line 110, ../sass/bootstrap/_modals.scss */
-.modal-footer .btn + .btn, .modal-footer .gform_button + .btn, .modal-footer .btn + .gform_button, .modal-footer .gform_button + .gform_button {
+.modal-footer .btn + .btn {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 115, ../sass/bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .gform_button + .btn, .modal-footer .btn-group .btn + .gform_button, .modal-footer .btn-group .gform_button + .gform_button {
+.modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
 /* line 119, ../sass/bootstrap/_modals.scss */
@@ -7873,7 +7830,7 @@ button.close {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 /* line 202, ../sass/bootstrap/_carousel.scss */
-.carousel-caption .btn, .carousel-caption .gform_button {
+.carousel-caption .btn {
   text-shadow: none;
 }
 
@@ -8502,17 +8459,13 @@ iframe {
 
 /* line 491, ../sass/app.scss */
 button,
-.btn,
-.gform_button {
+.btn {
   border: none;
 }
 /* line 494, ../sass/app.scss */
-button.btn-lg, .btn-group-lg > button.btn, .btn-group-lg > button.gform_button,
+button.btn-lg, .btn-group-lg > button.btn,
 .btn.btn-lg,
-.btn-group-lg > .btn,
-.btn-group-lg > .gform_button,
-.btn-lg.gform_button,
-.btn-group-lg > .gform_button.btn {
+.btn-group-lg > .btn {
   padding: 7px 24px;
   font-size: 17px;
   line-height: inherit;
@@ -9030,9 +8983,8 @@ table th {
   margin-right: 3px;
 }
 /* line 247, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content .btn, .room [class*="content-wrapper"] > .content .gform_button,
-.property [class*="content-wrapper"] > .content .btn,
-.property [class*="content-wrapper"] > .content .gform_button {
+.room [class*="content-wrapper"] > .content .btn,
+.property [class*="content-wrapper"] > .content .btn {
   margin-top: 20px;
 }
 /* line 754, ../sass/app.scss */
@@ -9377,9 +9329,8 @@ table th {
   margin-right: 3px;
 }
 /* line 247, ../sass/app.scss */
-.offer-slider .slick-dots > .content .btn, .offer-slider .slick-dots > .content .gform_button,
-.room-slider .slick-dots > .content .btn,
-.room-slider .slick-dots > .content .gform_button {
+.offer-slider .slick-dots > .content .btn,
+.room-slider .slick-dots > .content .btn {
   margin-top: 20px;
 }
 /* line 939, ../sass/app.scss */
@@ -9839,7 +9790,7 @@ hr {
   margin-right: 3px;
 }
 /* line 247, ../sass/app.scss */
-.lsx-box > .content .btn, .lsx-box > .content .gform_button {
+.lsx-box > .content .btn {
   margin-top: 20px;
 }
 
@@ -9916,7 +9867,7 @@ hr {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 /* line 1306, ../sass/app.scss */
-.caldera-grid .btn, .caldera-grid .gform_button {
+.caldera-grid .btn {
   background: #333333;
   color: white;
   border: none !important;
@@ -9938,7 +9889,7 @@ hr {
   transition: all 0.1s ease-in-out;
 }
 /* line 112, ../sass/app.scss */
-.caldera-grid .btn:hover, .caldera-grid .gform_button:hover, .caldera-grid .btn:focus, .caldera-grid .gform_button:focus {
+.caldera-grid .btn:hover, .caldera-grid .btn:focus {
   background: #232222;
   color: white;
 }
@@ -10047,7 +9998,7 @@ hr {
   width: 100%;
 }
 /* line 1397, ../sass/app.scss */
-.modal-body .btn, .modal-body .gform_button {
+.modal-body .btn {
   display: block;
   width: 100%;
   margin-top: 25px;
@@ -11107,7 +11058,7 @@ header.page-header {
 }
 /* line 2395, ../sass/app.scss */
 .lsx-portfolio-wrapper .lsx-portfolio .jetpack-portfolio .portfolio-content-wrapper.active img {
-  opacity: .2;
+  opacity: .08;
   -webkit-transform: scale(1.08);
   -moz-transform: scale(1.08);
   -o-transform: scale(1.08);
@@ -11755,7 +11706,7 @@ article footer.footer-meta {
   margin-bottom: 45px;
 }
 /* line 2998, ../sass/app.scss */
-.footer-subscribe .btn, .footer-subscribe .gform_button {
+.footer-subscribe .btn {
   background: #333333;
   color: white;
   border: none !important;
@@ -11786,12 +11737,12 @@ article footer.footer-meta {
   transition: all 0.1s ease-in-out;
 }
 /* line 112, ../sass/app.scss */
-.footer-subscribe .btn:hover, .footer-subscribe .gform_button:hover, .footer-subscribe .btn:focus, .footer-subscribe .gform_button:focus {
+.footer-subscribe .btn:hover, .footer-subscribe .btn:focus {
   background: #232222;
   color: white;
 }
 /* line 159, ../sass/app.scss */
-.footer-subscribe .btn:hover, .footer-subscribe .gform_button:hover, .footer-subscribe .btn:focus, .footer-subscribe .gform_button:focus {
+.footer-subscribe .btn:hover, .footer-subscribe .btn:focus {
   background: white !important;
   color: #428bca !important;
 }
@@ -11883,27 +11834,90 @@ footer.content-info .credit.credit-float {
 .gform_wrapper form {
   margin-bottom: 0;
 }
-/* line 3095, ../sass/app.scss */
+/* line 3097, ../sass/app.scss */
 .gform_wrapper .gfield_required {
   padding-left: 1px;
   color: #a94442;
 }
 
-/* line 3108, ../sass/app.scss */
+/* line 3106, ../sass/app.scss */
+.ginput_container input,
+.ginput_container select,
+.ginput_container textarea {
+  height: auto;
+  font-size: 16px;
+  padding: 12px 16px;
+  color: #555555;
+  border: 3px solid #ddd;
+  box-shadow: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* line 263, ../sass/app.scss */
+.ginput_container input:hover,
+.ginput_container select:hover,
+.ginput_container textarea:hover {
+  border: 3px solid #ddd;
+  box-shadow: none;
+}
+/* line 268, ../sass/app.scss */
+.ginput_container input:focus,
+.ginput_container select:focus,
+.ginput_container textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+/* line 3111, ../sass/app.scss */
 .ginput_container textarea {
   height: auto;
 }
 
-/* line 3113, ../sass/app.scss */
+/* line 3116, ../sass/app.scss */
 .gform_button {
-  line-height: 1.5;
+  background: #333333;
+  color: white;
+  border: none !important;
+  box-shadow: none;
+  font-size: 17px;
+  line-height: inherit;
+  padding: 11px 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* line 112, ../sass/app.scss */
+.gform_button:hover, .gform_button:focus {
+  background: #232222;
+  color: white;
 }
 
-/* line 3120, ../sass/app.scss */
+/* line 3122, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 3126, ../sass/app.scss */
+/* line 3128, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -11924,7 +11938,7 @@ footer.content-info .credit.credit-float {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 3144, ../sass/app.scss */
+/* line 3146, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -11948,34 +11962,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 3170, ../sass/app.scss */
+/* line 3172, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 3171, ../sass/app.scss */
+/* line 3173, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 3172, ../sass/app.scss */
+/* line 3174, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 3173, ../sass/app.scss */
+/* line 3175, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 3175, ../sass/app.scss */
+/* line 3177, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 3182, ../sass/app.scss */
+/* line 3184, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
@@ -11985,56 +11999,56 @@ figure.alignnone {
 }
 
 @media (max-width: 1200px) {
-  /* line 3189, ../sass/app.scss */
+  /* line 3191, ../sass/app.scss */
   .navbar-header {
     float: none;
   }
 
-  /* line 3192, ../sass/app.scss */
+  /* line 3194, ../sass/app.scss */
   .navbar-left, .navbar-right {
     float: none !important;
   }
 
-  /* line 3195, ../sass/app.scss */
+  /* line 3197, ../sass/app.scss */
   .navbar-toggle {
     display: block;
   }
 
-  /* line 3198, ../sass/app.scss */
+  /* line 3200, ../sass/app.scss */
   .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 3202, ../sass/app.scss */
+  /* line 3204, ../sass/app.scss */
   .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
   }
 
-  /* line 3206, ../sass/app.scss */
+  /* line 3208, ../sass/app.scss */
   .navbar-collapse.collapse {
     display: none!important;
   }
 
-  /* line 3209, ../sass/app.scss */
+  /* line 3211, ../sass/app.scss */
   .navbar-nav {
     float: none!important;
     margin-top: 7.5px;
   }
 
-  /* line 3213, ../sass/app.scss */
+  /* line 3215, ../sass/app.scss */
   .navbar-nav > li {
     float: none;
   }
 
-  /* line 3216, ../sass/app.scss */
+  /* line 3218, ../sass/app.scss */
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  /* line 3220, ../sass/app.scss */
+  /* line 3222, ../sass/app.scss */
   .collapse.in {
     display: block !important;
   }

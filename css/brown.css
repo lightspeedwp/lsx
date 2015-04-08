@@ -401,3 +401,19 @@ select {
 #social-navigation ul li a:hover {
   color: #ffffff !important;
 }
+
+.page-template-template-portfolio #filterNav li a, 
+.post-type-archive-jetpack-portfolio #filterNav li a {
+  background: #572600 !important;
+}
+
+.page-template-template-portfolio #filterNav li a:hover, 
+.page-template-template-portfolio #filterNav li a.selected, 
+.post-type-archive-jetpack-portfolio #filterNav li a:hover, 
+.post-type-archive-jetpack-portfolio #filterNav li a.selected {
+  background: #331701 !important;
+}
+
+.masonry [class*='-content-wrapper'] {
+  background: #331701 !important;
+}

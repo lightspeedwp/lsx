@@ -2393,7 +2393,7 @@ header.page-header {
 					}
 
 					img {
-						opacity: .2;
+						opacity: .08;
 						-webkit-transform: scale(1.08);
 						-moz-transform: scale(1.08);
 						-o-transform: scale(1.08);
@@ -3092,6 +3092,8 @@ footer.content-info {
 		margin-bottom: 0;
 	}
 
+
+
 	.gfield_required {
 		padding-left: 1px;
 		color: $state-danger-text;
@@ -3103,6 +3105,7 @@ footer.content-info {
 	select,
 	textarea {
 		@extend .form-control;
+		@include lsx-form-field;
 	}
 
 	textarea {
@@ -3111,8 +3114,7 @@ footer.content-info {
 }
  
 .gform_button {
-	@extend .btn;
-	line-height: 1.5;
+	@include lsx-button;
 }
  
 .gform_wrapper .gfield_error {
