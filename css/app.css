@@ -11885,8 +11885,9 @@ footer.content-info .credit.credit-float {
   height: auto;
 }
 
-/* line 3116, ../sass/app.scss */
-.gform_button {
+/* line 3117, ../sass/app.scss */
+.gform_button,
+.gform_page_footer input[type="button"] {
   background: #333333;
   color: white;
   border: none !important;
@@ -11908,16 +11909,18 @@ footer.content-info .credit.credit-float {
   transition: all 0.1s ease-in-out;
 }
 /* line 112, ../sass/app.scss */
-.gform_button:hover, .gform_button:focus {
+.gform_button:hover, .gform_button:focus,
+.gform_page_footer input[type="button"]:hover,
+.gform_page_footer input[type="button"]:focus {
   background: #232222;
   color: white;
 }
 
-/* line 3122, ../sass/app.scss */
+/* line 3123, ../sass/app.scss */
 .gform_wrapper .gfield_error .gfield_label {
   color: #a94442;
 }
-/* line 3128, ../sass/app.scss */
+/* line 3129, ../sass/app.scss */
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
@@ -11938,7 +11941,7 @@ footer.content-info .credit.credit-float {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(169, 68, 66, 0.6);
 }
 
-/* line 3146, ../sass/app.scss */
+/* line 3147, ../sass/app.scss */
 select {
   display: block;
   width: 100%;
@@ -11962,34 +11965,34 @@ select {
 	 WordPress Generated Classes
 	 See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 	 ========================================================================== */
-/* line 3172, ../sass/app.scss */
+/* line 3173, ../sass/app.scss */
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-/* line 3173, ../sass/app.scss */
+/* line 3174, ../sass/app.scss */
 .alignleft {
   float: left;
 }
 
-/* line 3174, ../sass/app.scss */
+/* line 3175, ../sass/app.scss */
 .alignright {
   float: right;
 }
 
-/* line 3175, ../sass/app.scss */
+/* line 3176, ../sass/app.scss */
 figure.alignnone {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 3177, ../sass/app.scss */
+/* line 3178, ../sass/app.scss */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
   float: none !important;
 }
 
-/* line 3184, ../sass/app.scss */
+/* line 3185, ../sass/app.scss */
 .bypostauthor,
 .wp-caption,
 .wp-caption-text,
@@ -11999,56 +12002,56 @@ figure.alignnone {
 }
 
 @media (max-width: 1200px) {
-  /* line 3191, ../sass/app.scss */
+  /* line 3192, ../sass/app.scss */
   .navbar-header {
     float: none;
   }
 
-  /* line 3194, ../sass/app.scss */
+  /* line 3195, ../sass/app.scss */
   .navbar-left, .navbar-right {
     float: none !important;
   }
 
-  /* line 3197, ../sass/app.scss */
+  /* line 3198, ../sass/app.scss */
   .navbar-toggle {
     display: block;
   }
 
-  /* line 3200, ../sass/app.scss */
+  /* line 3201, ../sass/app.scss */
   .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  /* line 3204, ../sass/app.scss */
+  /* line 3205, ../sass/app.scss */
   .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
   }
 
-  /* line 3208, ../sass/app.scss */
+  /* line 3209, ../sass/app.scss */
   .navbar-collapse.collapse {
     display: none!important;
   }
 
-  /* line 3211, ../sass/app.scss */
+  /* line 3212, ../sass/app.scss */
   .navbar-nav {
     float: none!important;
     margin-top: 7.5px;
   }
 
-  /* line 3215, ../sass/app.scss */
+  /* line 3216, ../sass/app.scss */
   .navbar-nav > li {
     float: none;
   }
 
-  /* line 3218, ../sass/app.scss */
+  /* line 3219, ../sass/app.scss */
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  /* line 3222, ../sass/app.scss */
+  /* line 3223, ../sass/app.scss */
   .collapse.in {
     display: block !important;
   }
