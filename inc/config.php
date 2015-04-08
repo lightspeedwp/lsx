@@ -115,3 +115,24 @@ function lsx_page_comments_off( $data ) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
+
+/**
+ * Checks if a caldera form with your slug exists
+ *
+ * @package 	lsx
+ * @subpackage	config
+ */
+function lsx_is_form_enabled($slug = false) {
+	if(false == $slug){ return false; }
+	
+	$match = false;
+	$forms = get_option( '_caldera_forms' , false );
+	if(false == $forms ) { return false; }
+	foreach($forms as $form_id=>$form_maybe){
+		if( trim(strtolower($slug)) == strtolower($form_maybe['name']) ){
+			$match = $form_id;
+			break;
+		}
+	}
+	return $match;
+}
