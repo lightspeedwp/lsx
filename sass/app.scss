@@ -2446,6 +2446,20 @@ header.page-header {
 				margin-bottom: 30px;
 			}
 		}
+
+		.gallery {
+			dl.gallery-item {
+				width: 100% !important;
+
+				img {
+					border: 0 !important; 
+					width: 100% !important;
+					padding: 4px;
+			  		border: 1px solid #ddd;
+			  		@include border-radius(3px);
+				}
+			}
+		}
 	}
 }
  
