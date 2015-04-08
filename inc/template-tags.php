@@ -191,11 +191,11 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 			<?php }	?>
 
 			<?php 
-				$tags = echo get_the_tag_list('<span>',', ','</span>');
+				$tags = get_the_tag_list('<span>',', ','</span>');
 				if(false != $tags){ ?>
 					<div class="portfolio-tags">
 						<span><span class="genericon genericon-user"></span><?php _e('Services','lsx'); ?></span>
-						<span><?php $tags ?></span>
+						<span><?php echo $tags ?></span>
 					</div>			
 			<?php }	?>
 
@@ -244,7 +244,7 @@ if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
 			}
 				
 			if(!empty($media_array)){
-				echo gallery_shortcode(array('size'=>'thumbnail-wide','ids'=>implode(',', $media_array)));
+				echo gallery_shortcode(array('size'=>'','ids'=>implode(',', $media_array)));
 			}
 		}
 		
