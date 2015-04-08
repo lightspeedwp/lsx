@@ -1291,6 +1291,10 @@ hr {
 }
 
 .caldera-grid {
+	.form-group {
+		margin-bottom: 20px;
+	}
+
 	.control-label {
 		font-weight: bold;
 	}
@@ -1306,12 +1310,17 @@ hr {
 	.cf-toggle-group-buttons {
 		button {
 			background: $primary;
+			font-size: 15px;
 
 			&:hover,
 			&.btn-success {
 				background: $primary-darker;
 			}
 		}
+	}
+
+	.minicolor-picker {
+		width: auto;
 	}
 
 	.help-block {
@@ -1333,7 +1342,7 @@ hr {
 
 	input[type="checkbox"],
 	input[type="radio"] {
-		margin: 11px 0 0;
+		margin: 11px 0 0 -20px;
 	}
 }
 
