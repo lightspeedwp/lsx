@@ -371,3 +371,81 @@ if(!function_exists('lsx_nav_menu')){
 	  	<?php }
 	}
 }
+
+/**
+ * Adds Footer Widgets section above footer
+ *
+ * @package 	classybeds-lsx-child
+ * @subpackage	hooks
+ * @category	sidebar
+ */
+add_action( 'lsx_footer_before', 'classybeds_footer_widgets', 11 );
+function classybeds_footer_widgets() {
+	?>
+	<section class="footer-widgets-wrapper">
+		<div class="container">
+			<div class="footer-widgets">
+				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebar-footer-left') ) ?>
+				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebar-footer-middle') ) ?>
+				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebar-footer-right') ) ?>
+			</div>
+		</div>
+	</section>
+	<?php
+}
+
+/**
+ * Adds enquiry form modal to wp_footer
+ *
+ * @package 	classybeds-lsx-child
+ * @subpackage	hooks
+ * @category	forms
+ */
+add_action( 'wp_footer', 'classybeds_enquire_bar_modal' );
+function classybeds_enquire_bar_modal() {
+
+	$enquire_form_id = classybeds_is_form_enabled('enquire');
+	if(false == $enquire_form_id) { return; }
+
+	$show_on_front = get_option('show_on_front');
+	if ( ('page' == $show_on_front && is_front_page()) || is_post_type_archive('room') || is_singular('property') || is_singular('offer') || is_singular('room')  ) : ?>
+		<div class="modal fade" id="enquire-modal" tabindex="-1" role="dialog" aria-labelledby="enquire-modal-label" aria-hidden="true">
+	  		<div class="modal-dialog">
+	    		<div class="modal-content">
+	      			<div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Enquire</h4>
+				    </div>
+	
+	      			<div class="modal-body">
+				        <?php echo do_shortcode( '[caldera_form id="'.$enquire_form_id.'"]' ); ?>
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+	<?php endif;
+}
+
+function lsx_page_banner() {
+
+	$show_on_front = get_option('show_on_front','posts');
+	$full_experience = get_theme_mod('home_full_experience_enable',false);
+	$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
+	
+	if('page' == $show_on_front && is_front_page() && false != $full_experience) { return; }
+	
+	if(0 != $slider){ return; }
+	
+	$post_types = array('page');
+	$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);
+
+	if ( is_singular($post_types) && has_post_thumbnail() ) { ?>
+	        
+        <div class="page-banner" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
+          <header class="page-header">
+            <h1 class="page-title"><?php the_title(); ?></h1>   
+            <?php lsx_banner_content(); ?>
+          </header><!-- .entry-header -->
+        </div>
+	<?php } 
+}
