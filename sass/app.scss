@@ -445,17 +445,17 @@ h6 {
 
 h1 {
 	font-size: 36px;
-	margin-bottom: 24px;
+	margin-bottom: 30px;
 }
 
 h2 {
 	font-size: 32px;
-	margin-bottom: 20px;
+	margin-bottom: 26px;
 }
 
 h3 {
 	font-size: 24px;
-	margin-bottom: 17px;
+	margin-bottom: 20px;
 }
 
 h4 {
@@ -646,6 +646,8 @@ img,
 		margin: 20px 15px;
 	}
 }
+
+
 
 blockquote {
 	position: relative;
@@ -1290,7 +1292,7 @@ hr {
 
 .caldera-grid {
 	.control-label {
-		font-weight: normal !important;
+		font-weight: bold;
 	}
 
 	.form-control {
@@ -1299,6 +1301,39 @@ hr {
 
 	.btn {
 		@include lsx-button;
+	}
+
+	.cf-toggle-group-buttons {
+		button {
+			background: $primary;
+
+			&:hover,
+			&.btn-success {
+				background: $primary-darker;
+			}
+		}
+	}
+
+	.help-block {
+		color: $grey;
+		font-size: 15px;
+	}
+
+	.cf-color-picker {
+		.input-group-addon {
+			padding: 0 25px;
+		}
+	}
+
+	.radio,
+	.checkbox {
+		margin-top: 0px;
+		margin-bottom: 7px;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		margin: 11px 0 0;
 	}
 }
 
@@ -1315,6 +1350,7 @@ hr {
 .modal-content {
 	padding: 30px 40px;
 	border: none;
+	@include box-shadow(0 2px 10px rgba(0, 0, 0, 0.32));
 }
 
 .modal-header {
