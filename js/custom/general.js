@@ -4,14 +4,14 @@ jQuery(document).ready(function($) {
 	$(function () {
 	  $.srSmoothscroll({
 	    step: 100,
-	    speed: 78,
+	    speed: 75,
 	    ease: 'swing',
 	    target: $('body')
 	  })
 	})
 
 	$(window).scroll(function(){
-	    if($(window).scrollTop() > 100) {
+	    if($(window).scrollTop() > 150) {
 	        $('header.banner').addClass('scrolled');
 	    } else {
 	        $('header.banner').removeClass('scrolled');
