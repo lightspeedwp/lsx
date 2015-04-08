@@ -377,7 +377,8 @@ footer.content-info a:hover {
 }
 
 .caldera-grid .btn, 
-.caldera-grid .gform_button {
+.caldera-grid .gform_button,
+.gform_page_footer input[type="button"] {
   background: #572600 !important;
 }
 
@@ -386,7 +387,10 @@ footer.content-info a:hover {
 .caldera-grid .btn:focus, 
 .caldera-grid .gform_button:focus,
 .caldera-grid .btn:active, 
-.caldera-grid .gform_button:active {
+.caldera-grid .gform_button:active,
+.gform_page_footer input[type="button"]:hover,
+.gform_page_footer input[type="button"]:focus,
+.gform_page_footer input[type="button"]:active {
   background: #331701 !important;
 }
 
