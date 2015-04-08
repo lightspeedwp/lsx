@@ -180,18 +180,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 		?>
 
 		<div class="portfolio-meta">
-		
-			<?php 
-				$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
-				
-				if($portfolio_type){
-					?>
-					<div class="portfolio-category">
-						<span><span class="genericon genericon-category"></span><?php _e('Category','lsx'); ?></span>
-						<?php echo $portfolio_type; ?>
-					</div>			
-			<?php } ?>
-		
+
 			<?php 
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);
 				if(false != $client){ ?>
@@ -209,6 +198,17 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 						<a href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
 					</div>				
 			<?php }	?>
+
+			<?php 
+				$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+				
+				if($portfolio_type){
+					?>
+					<div class="portfolio-category">
+						<span><span class="genericon genericon-category"></span><?php _e('Category','lsx'); ?></span>
+						<?php echo $portfolio_type; ?>
+					</div>			
+			<?php } ?>
 
 		</div>
 
