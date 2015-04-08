@@ -244,7 +244,7 @@ if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
 			}
 				
 			if(!empty($media_array)){
-				echo gallery_shortcode(array('size'=>'','ids'=>implode(',', $media_array)));
+				echo gallery_shortcode(array('size'=>'full','ids'=>implode(',', $media_array)));
 			}
 		}
 		
