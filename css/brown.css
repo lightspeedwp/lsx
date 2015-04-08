@@ -10,7 +10,7 @@ a:active {
 
 .btn,
 button {
-  background: #d48a1d !important;
+  background: #d48a1d;
 }
 
 .btn:hover,
@@ -370,9 +370,24 @@ footer.content-info a:hover {
 .gform_wrapper .gfield_error textarea:focus,
 .home-bg-image-footer .container > span .form-group input:focus, 
 .home-bg-image-footer .container > form .form-group input:focus,
-.caldera-grid .form-control input:focus {
+.caldera-grid .form-control input:focus,
+.caldera-grid .form-control:focus {
   border-color: #d48a1d !important;
   box-shadow: none !important;
+}
+
+.caldera-grid .btn, 
+.caldera-grid .gform_button {
+  background: #572600 !important;
+}
+
+.caldera-grid .btn:hover, 
+.caldera-grid .gform_button:hover,
+.caldera-grid .btn:focus, 
+.caldera-grid .gform_button:focus,
+.caldera-grid .btn:active, 
+.caldera-grid .gform_button:active {
+  background: #331701 !important;
 }
 
 select {
