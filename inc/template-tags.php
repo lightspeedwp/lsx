@@ -182,21 +182,21 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 		<div class="portfolio-meta">
 
 			<?php 
+				$client = get_post_meta(get_the_ID(),'lsx-client',true);
+				if(false != $client){ ?>
+					<div class="portfolio-client">
+						<span><span class="genericon genericon-link"></span><?php _e('client','lsx'); ?></span>
+						<a href="<?php echo esc_url($client); ?>"><?php echo esc_url($client); ?></a>
+					</div>				
+			<?php }	?>
+
+			<?php 
 				$tags = get_post_meta(get_the_ID(),'jetpack-portfolio-tag',true);
 				if(false != $tags){ ?>
 					<div class="portfolio-services">
 						<span><span class="genericon genericon-link"></span><?php _e('Servies','lsx'); ?></span>
 						<a href="<?php echo esc_url($tags); ?>"><?php echo esc_url($tags); ?></a>
 					</div>				
-			<?php }	?>
-
-			<?php 
-				$tags = get_the_tag_list('<span>',', ','</span>');
-				if(false != $tags){ ?>
-					<div class="portfolio-tags">
-						<span><span class="genericon genericon-user"></span><?php _e('Services','lsx'); ?></span>
-						<span><?php echo $tags ?></span>
-					</div>			
 			<?php }	?>
 
 			<?php 
