@@ -284,11 +284,9 @@ $primary-darker: #357ebd;
 		padding: 380px 0 250px;
 		z-index: -1;
 		@include transition(all .08s ease-in-out);
-
+		
 		@media print {
 			position: relative;
-			padding: 20px 0 !important;
-			height: auto !important;
 		}
 	}
 
@@ -300,10 +298,6 @@ $primary-darker: #357ebd;
 		margin-bottom: 0;
 		padding-bottom: 60px;
 		border-top: 1px solid #ddd;
-
-		@media print {
-			margin-top: 0;
-		}
 
 		& > .content {
 			max-width: 1140px;
@@ -609,6 +603,10 @@ img,
 }
 
 .pager {
+	@media print {
+		display: none !important;
+	}
+
 	a {
 		border: none !important;
 		font-weight: 600;
@@ -1134,6 +1132,10 @@ ul.breadcrumb {
 	margin-bottom: 30px;
 	padding: 0;
 	background: none;
+
+	@media print {
+		display: none !important;
+	}
 
 	li {
 		background: $white;
@@ -2265,13 +2267,9 @@ header.page-header {
 	width: 100%;
 	padding: 240px 0;
 
-	header.page-header {
-		h1.page-title {
-			@media print {
-				margin-top: 0 !important;
-				padding: 20px 0 !important;
-			}
-		}
+	@media print {
+		padding: 0 !important;
+		margin-top: 0 !important;
 	}
 
 	.home & {
@@ -2294,6 +2292,12 @@ header.page-header {
 			margin: 0 auto;
 			border-bottom: none;
 			@include title-shadow;
+
+			@media print {
+				font-size: 42px;
+				margin-top: 0 !important;
+				padding: 20px 0 !important;
+			}
 
 			@media screen and (max-width: 768px) {
 				font-size: 42px;
