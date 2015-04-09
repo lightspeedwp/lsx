@@ -179,7 +179,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 	function lsx_portfolio_meta() {
 		?>
 
-		<div class="portfolio-meta col-sm-4">
+		<div class="portfolio-meta col-sm-4 info-box-sticky">
 
 			<?php 
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);

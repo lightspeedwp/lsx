@@ -39,6 +39,12 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+	// Sticky Info Box widget
+	$(".info-box-sticky").sticky({ 
+		topSpacing: 129,
+		bottomSpacing: 520
+	});
+
     $(window).load(function() {
 		
     	// The soprter for the portfolio.
