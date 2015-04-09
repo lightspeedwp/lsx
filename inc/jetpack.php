@@ -276,6 +276,27 @@ function lsx_portfolio_sorter(){ ?>
 	</ul>
 <?php } 
 
+/**
+ * A project type filter for the portfolio template
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+
+function lsx_portfolio_naviagtion_labels($labels){ 
+	
+	if(is_post_type_archive('jetpack-portfolio')){
+		$labels = array(
+				'next' 		=> __( '<span class="meta-nav">&larr;</span> Older', 'lsx' ),
+				'previous' 	=> __( 'Newer <span class="meta-nav">&rarr;</span>', 'lsx' ),
+				'title' 	=> __( 'Portfolio navigation', 'lsx' )
+		);
+	}
+	return $labels;
+}
+add_filter('lsx_post_navigation_labels','lsx_portfolio_naviagtion_labels',1,10);
+
 
 /*
  * Related Posts

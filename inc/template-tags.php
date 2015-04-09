@@ -268,18 +268,25 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 		}elseif(function_exists('wp_pagenavi')){
 			wp_pagenavi();
 		}else{
-		
+			
+			$labels = array(
+				'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
+				'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
+				'title' 	=> __( 'Posts navigation', 'lsx' )
+			);
+			$labels = apply_filters('lsx_post_navigation_labels',$labels);
+			
+			extract($labels);
 			?>
 			<nav class="navigation paging-navigation" role="navigation">
-				<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'lsx' ); ?></h1>
+				<h1 class="screen-reader-text"><?php echo $title; ?></h1>
 				<div class="nav-links">
-		
 					<?php if ( get_next_posts_link() ) : ?>
-					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ) ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( $next ); ?></div>
 					<?php endif; ?>
 		
 					<?php if ( get_previous_posts_link() ) : ?>
-					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ) ); ?></div>
+					<div class="nav-next"><?php previous_posts_link( $previous ); ?></div>
 					<?php endif; ?>
 		
 				</div><!-- .nav-links -->
