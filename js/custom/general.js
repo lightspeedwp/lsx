@@ -39,10 +39,16 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// Sticky Info Box widget
+	// Sticky Book Now widget
+	if ($('body').hasClass('logged-in')) {
+		var spacing = 125;
+	} else {
+		var spacing = 93;
+	}
+
 	$(".info-box-sticky").sticky({ 
-		topSpacing: 129,
-		bottomSpacing: 520
+		topSpacing: spacing,
+		bottomSpacing: 700
 	});
 
     $(window).load(function() {

@@ -11101,63 +11101,26 @@ header.page-header {
 .single-jetpack-portfolio .jetpack-portfolio header.page-header {
   margin-bottom: 10px;
 }
-@media screen and (max-width: 768px) {
-  /* line 2440, ../sass/app.scss */
-  .single-jetpack-portfolio .jetpack-portfolio .portfolio-meta,
-  .single-jetpack-portfolio .jetpack-portfolio .entry-content {
-    float: none;
-    margin-left: 0;
-    margin-bottom: 20px;
-  }
+/* line 2440, ../sass/app.scss */
+.single-jetpack-portfolio .jetpack-portfolio .col-sm-4,
+.single-jetpack-portfolio .jetpack-portfolio .col-sm-8 {
+  float: none;
 }
-/* line 2448, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta {
-  background: #f1f1f1;
-  padding: 20px 30px;
-  margin: 0;
-  list-style: none;
-  border-top: 3px solid #ccc;
-  margin-bottom: 20px;
+/* line 2444, ../sass/app.scss */
+.single-jetpack-portfolio .jetpack-portfolio .col-sm-4 {
   float: right;
 }
-/* line 316, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta > div,
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta li {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ccc;
-}
-/* line 321, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta > div:last-child,
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta li:last-child {
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-bottom: none;
-}
-/* line 327, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta > div span:first-child,
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta li span:first-child {
-  display: block;
-  color: #555555;
-}
-/* line 332, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta > div p,
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta li p {
-  margin: 0;
-}
-/* line 336, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta > div .genericon,
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta li .genericon {
-  display: inline-block !important;
-  margin-right: 5px;
-  vertical-align: middle;
+/* line 2447, ../sass/app.scss */
+.single-jetpack-portfolio .jetpack-portfolio .col-sm-4 .portfolio-meta {
+  max-width: 350px;
+  min-width: 350px;
 }
 /* line 2453, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .portfolio-meta .portfolio-services a {
+.single-jetpack-portfolio .jetpack-portfolio .col-sm-4 .portfolio-services a {
   text-transform: capitalize;
 }
 /* line 2459, ../sass/app.scss */
-.single-jetpack-portfolio .jetpack-portfolio .entry-content {
+.single-jetpack-portfolio .jetpack-portfolio .col-sm-8 {
   float: left;
 }
 /* line 2464, ../sass/app.scss */

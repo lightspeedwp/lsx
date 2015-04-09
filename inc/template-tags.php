@@ -178,47 +178,47 @@ if ( ! function_exists( 'lsx_post_format' ) ) {
 if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 	function lsx_portfolio_meta() {
 		?>
+		<div class="col-sm-4">
+			<div id="portfolio-meta" class="portfolio-meta info-box-sticky info-box sticky-wrapper">
+				<?php 
+					$client = get_post_meta(get_the_ID(),'lsx-client',true);
+					if(false != $client){ ?>
+						<div class="portfolio-client">
+							<span><span class="genericon genericon-user"></span><?php _e('Client','lsx'); ?></span>
+							<a href="<?php echo esc_url($client); ?>"><?php echo esc_url($client); ?></a>
+						</div>				
+				<?php }	?>
 
-		<div class="portfolio-meta col-sm-4 info-box-sticky">
+				<?php 
+					$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+					
+					if($portfolio_type){
+						?>
+						<div class="portfolio-industry">
+							<span><span class="genericon genericon-category"></span><?php _e('Industry','lsx'); ?></span>
+							<?php echo $portfolio_type; ?>
+						</div>			
+				<?php } ?>
 
-			<?php 
-				$client = get_post_meta(get_the_ID(),'lsx-client',true);
-				if(false != $client){ ?>
-					<div class="portfolio-client">
-						<span><span class="genericon genericon-user"></span><?php _e('Client','lsx'); ?></span>
-						<a href="<?php echo esc_url($client); ?>"><?php echo esc_url($client); ?></a>
-					</div>				
-			<?php }	?>
+				<?php 
+					$services = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
+					if(false != $services){ ?>
+						<div class="portfolio-services">
+							<span><span class="genericon genericon-cog"></span><?php _e('Services','lsx'); ?></span>
+							<?php echo $services ?>
+						</div>				
+				<?php }	?>
 
-			<?php 
-				$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
-				
-				if($portfolio_type){
-					?>
-					<div class="portfolio-industry">
-						<span><span class="genericon genericon-category"></span><?php _e('Industry','lsx'); ?></span>
-						<?php echo $portfolio_type; ?>
-					</div>			
-			<?php } ?>
+				<?php 
+					$website = get_post_meta(get_the_ID(),'lsx-website',true);
+					if(false != $website){ ?>
+						<div class="portfolio-website">
+							<span><span class="genericon genericon-link"></span><?php _e('Website','lsx'); ?></span>
+							<a href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
+						</div>				
+				<?php }	?>
 
-			<?php 
-				$services = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
-				if(false != $services){ ?>
-					<div class="portfolio-services">
-						<span><span class="genericon genericon-cog"></span><?php _e('Services','lsx'); ?></span>
-						<?php echo $services ?>
-					</div>				
-			<?php }	?>
-
-			<?php 
-				$website = get_post_meta(get_the_ID(),'lsx-website',true);
-				if(false != $website){ ?>
-					<div class="portfolio-website">
-						<span><span class="genericon genericon-link"></span><?php _e('Website','lsx'); ?></span>
-						<a href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
-					</div>				
-			<?php }	?>
-
+			</div>
 		</div>
 
 	<?php } // End lsx_portfolio_meta() 

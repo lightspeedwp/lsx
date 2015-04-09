@@ -23,33 +23,35 @@
 			<div class="row">
 				<?php lsx_portfolio_meta(); ?>
 
-				<div class="entry-content col-sm-8">
-
-					<?php if ( ! is_singular() ) {
-						the_excerpt();
-					} else {
-						the_content(); 
-					} ?>
-
-					<?php lsx_portfolio_gallery(); ?>
+				<div class="col-sm-8">
+					<div class="entry-content">
 					
-					<?php lsx_post_nav(); ?>	
-					
-					<?php  
-						if ( function_exists( 'sharing_display' ) ) {
-							sharing_display( '', true );
-						}
+						<?php if ( ! is_singular() ) {
+							the_excerpt();
+						} else {
+							the_content(); 
+						} ?>
+
+						<?php lsx_portfolio_gallery(); ?>
 						
-						if ( class_exists( 'Jetpack_Likes' ) ) {
-							$custom_likes = new Jetpack_Likes;
-							echo $custom_likes->post_likes( '' );
-						}				
-					?>
-					
-					<?php lsx_portfolio_related_posts(); ?>
-					
-					<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
-				</div><!-- .entry-content -->
+						<?php lsx_post_nav(); ?>	
+						
+						<?php  
+							if ( function_exists( 'sharing_display' ) ) {
+								sharing_display( '', true );
+							}
+							
+							if ( class_exists( 'Jetpack_Likes' ) ) {
+								$custom_likes = new Jetpack_Likes;
+								echo $custom_likes->post_likes( '' );
+							}				
+						?>
+						
+						<?php lsx_portfolio_related_posts(); ?>
+						
+						<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
+					</div><!-- .entry-content -->
+				</div>
 			</div>
 		</div>
 	</div>
