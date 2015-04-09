@@ -48,7 +48,9 @@ jQuery(document).ready(function($) {
 
 	$(".info-box-sticky").sticky({ 
 		topSpacing: spacing,
-		bottomSpacing: 700
+		bottomSpacing: 700,
+		getWidthFrom: '#secondary',
+    	responsiveWidth: true
 	});
 
 	// Sticky Book Now widget
