@@ -7,7 +7,11 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area single-portfolio col-sm-12">
+	<div id="secondary" class="widget-area col-md-4" role="complementary">
+		<?php lsx_portfolio_meta(); ?>
+	</div><!-- #secondary -->
+
+	<div id="primary" class="content-area single-portfolio col-sm-8">
 
 		<?php lsx_content_before(); ?>
 

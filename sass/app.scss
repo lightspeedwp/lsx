@@ -2433,33 +2433,18 @@ header.page-header {
 }
 
 .single-jetpack-portfolio {
+
+	#primary {
+		float: left;
+	}
+
+	#secondary {
+		float: right;
+	}
+
 	.jetpack-portfolio {
 		header.page-header {
 			margin-bottom: 10px;
-		}
-
-		.col-sm-4,
-		.col-sm-8 {
-			float: none;
-		}
-
-		.col-sm-4 {
-			float: right;
-
-			.portfolio-meta {
-				max-width: 350px;
-				min-width: 350px;
-			}
-
-			.portfolio-services {
-				a {
-					text-transform: capitalize;
-				}
-			}
-		}
-
-		.col-sm-8 {
-			float: left;
 		}
 
 		.gallery {
