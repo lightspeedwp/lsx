@@ -213,7 +213,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				if(false != $website){ ?>
 					<div class="portfolio-website">
 						<span><span class="genericon genericon-link"></span><?php _e('Website','lsx'); ?></span>
-						<a href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
+						<a target="_blank" href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
 					</div>				
 			<?php }	?>
 
