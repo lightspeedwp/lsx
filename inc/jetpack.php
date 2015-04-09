@@ -102,7 +102,7 @@ add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
 function lsx_portfolio_banner() {
 	if ( is_singular( 'jetpack-portfolio' ) && has_post_thumbnail() ) {
         $image_src = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
-        <div class="portfolio-banner page-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
+        <div class="portfolio-banner page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
           <header class="page-header">
             <h1 class="page-title"><?php the_title(); ?></h1>   
           </header><!-- .entry-header -->
