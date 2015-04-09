@@ -2441,6 +2441,12 @@ header.page-header {
 			float: right;
 			margin-left: 40px;
 
+			.portfolio-services {
+				a {
+					text-transform: capitalize;
+				}
+			}
+
 			@media screen and (max-width: 768px) {
 				float: none;
 				margin-left: 0;
