@@ -90,7 +90,7 @@ $primary-darker: #357ebd;
 }
 
 @mixin title-shadow {
-	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.5));
+	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.24));
 }
  
 @mixin lsx-button {
@@ -277,13 +277,19 @@ $primary-darker: #357ebd;
 
 @mixin lsx-parallax-banner {
 	.page-banner {
-		position: fixed !important;
+		position: fixed;
 		top: 0;
 		margin-top: 0;
 		background-color: $black;
 		padding: 380px 0 250px;
 		z-index: -1;
 		@include transition(all .08s ease-in-out);
+
+		@media print {
+			position: relative;
+			padding: 20px 0 !important;
+			height: auto !important;
+		}
 	}
 
 	.wrap {
@@ -294,6 +300,10 @@ $primary-darker: #357ebd;
 		margin-bottom: 0;
 		padding-bottom: 60px;
 		border-top: 1px solid #ddd;
+
+		@media print {
+			margin-top: 0;
+		}
 
 		& > .content {
 			max-width: 1140px;
@@ -1115,26 +1125,6 @@ table {
 				background: $black;
 			}
 		}
-	}
-}
-
-
-// Banners 
-
-.page-banner {
-	background-color: $black;
-
-	header.page-header {
-		h1.page-title {
-			@include title-shadow;
-			padding-bottom: none;
-			border-bottom: none;
-		}
-	}
-
-	.home & {
-		margin-top: 0;
-		background-position: 50% 50% !important;
 	}
 }
 
@@ -2146,7 +2136,7 @@ nav {
 	margin-bottom: 60px;
 
 	@media print {
-		margin-top: 20px !important;
+		margin-top: 0 !important;
 	}
 
 	.home & {
@@ -2264,33 +2254,46 @@ header.page-header {
 	}
 }
 
-
-// Portfolio
-
-.page-banner, 
-.portfolio-banner {
+.page-banner {
 	margin-top: 120px;
 	background: {
 		repeat: no-repeat;
 		size: cover !important;
 		position: 50%;
+		color: $black;
 	}
 	width: 100%;
 	padding: 240px 0;
 
 	header.page-header {
-		width: 100%;
-		text-align: center;
+		h1.page-title {
+			@media print {
+				margin-top: 0 !important;
+				padding: 20px 0 !important;
+			}
+		}
+	}
+
+	.home & {
+		margin-top: 0;
+		background-position: 50% 50% !important;
+	}
+
+	header.page-header {
+		@media print {
+			text-align: left;
+		}
 
 		h1.page-title {
+			width: 100%;
 			max-width: 1140px;
-			margin: 0 auto;
 			color: $white;
+			text-align: center;
 			font-size: 52px;
-			padding: 0 10px;
-			-webkit-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
-			-moz-text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
-			text-shadow: 0 0 30px rgba(0, 0, 0 , .15);
+			padding: 0 10px 0;
+			margin: 0 auto;
+			border-bottom: none;
+			@include title-shadow;
 
 			@media screen and (max-width: 768px) {
 				font-size: 42px;
@@ -2316,6 +2319,8 @@ header.page-header {
 		padding: 80px 0;
 	}
 }
+
+// Portfolio
 
 .page-template-template-portfolio, .post-type-archive-jetpack-portfolio {
 	.page-title {
@@ -2349,6 +2354,7 @@ header.page-header {
 	}
 }
 
+/*
 .lsx-portfolio-wrapper {
 	text-align: center;
 	margin-left: -7px;
@@ -2441,8 +2447,9 @@ header.page-header {
 	}
 }
 
-.single-jetpack-portfolio {
+*/
 
+.single-jetpack-portfolio {
 	#primary {
 		float: left;
 	}
