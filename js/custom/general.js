@@ -1,4 +1,9 @@
+var filter_item_width;
 jQuery(document).ready(function($) {
+	
+	filter_item_width = jQuery('.filter-items-container').width();
+	filter_item_width = filter_item_width/3;
+	
 	$('table#wp-calendar').addClass('table');
 	
 	/*
@@ -213,12 +218,12 @@ function lsxResizeSingleThumbnail(width) {
 
 function lsxProjectThumbInit() {
 	
-	if( 1 < jQuery(".filter-items-container .filter-item").length){
+	if( jQuery(".filter-items-container .filter-item").length ){
 		jQuery('.filter-items-container').imagesLoaded( function() {
 			
 			jQuery('.filter-items-container').masonry({
 				resizable: true,
-				layoutMode: 'packery',
+				columnWidth: filter_item_width,
 				itemSelector: '.filter-item'
 			});		
 		});	
@@ -248,9 +253,12 @@ function lsxProjectFilterInit() {
 		
 		jQuery('.filter-items-container').masonry({
 			resizable: true,
-			layoutMode: 'packery',
+			columnWidth: filter_item_width,
 			itemSelector: '.filter-item'
-		});			
+				
+		});
+		
+		jQuery(window).trigger('resize');
 
 		if ( !jQuery(this).hasClass('selected') ) {
 			jQuery(this).parents('#filterNav').find('.selected').removeClass('selected');
