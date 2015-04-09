@@ -3040,6 +3040,12 @@ article {
 #footer-widgets {
 	background: $black;
 
+	&:after {
+		content: '';
+		display: block;
+		height: 75px;
+	}
+
 	.footer-widgets-title {
 		display: none;
 	}
@@ -3089,6 +3095,10 @@ article {
 // Footer
 
 footer.content-info {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 	background: $blacker;
 	text-align: center;
 
