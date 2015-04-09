@@ -82,7 +82,7 @@ function lsx_portfolio_archive_pagination( $query ) {
 		}
 	}
 }
-add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
+add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' , 100 );
 
 /**
  * Add Featured Image as Banner on Single Portfolio Posts.
