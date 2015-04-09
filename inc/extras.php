@@ -384,7 +384,7 @@ if(!function_exists('lsx_page_banner')){
 		$post_types = array('page');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
 		
-		if ( is_singular($post_types) && has_post_thumbnail() || is_singular('jetpack-portfolio') ) { ?>
+		if ( is_singular($post_types) && has_post_thumbnail() || is_singular('jetpack-portfolio') && has_post_thumbnail() || is_singular('post') && has_post_thumbnail() ) { ?>
 	        
 	        <?php 
 	        	$bg_image = '';
