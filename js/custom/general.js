@@ -40,9 +40,21 @@ jQuery(document).ready(function($) {
 	});
 
 	// Sticky Info Box widget
+	if ($('body').hasClass('logged-in')) {
+		var spacing = 125;
+	} else {
+		var spacing = 93;
+	}
+
 	$(".info-box-sticky").sticky({ 
-		topSpacing: 129,
-		bottomSpacing: 520
+		topSpacing: spacing,
+		bottomSpacing: 700
+	});
+
+	// Sticky Book Now widget
+	$(".sticky-book").sticky({ 
+		topSpacing: 127,
+		bottomSpacing: 700
 	});
 
     $(window).load(function() {
