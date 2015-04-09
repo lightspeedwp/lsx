@@ -2145,6 +2145,10 @@ nav {
 	margin-top: 180px;
 	margin-bottom: 60px;
 
+	@media print {
+		margin-top: 20px !important;
+	}
+
 	.home & {
 		margin-top: 200px;
 		margin-bottom: 60px;
@@ -2803,6 +2807,10 @@ article {
 
 .sharedaddy,
 .jp-relatedposts {
+	@media print {
+		display: none !important;
+	}
+
 	h3 {
 		font: {
 			family: 'Raleway', 'Open Sans', sans-serif !important;
