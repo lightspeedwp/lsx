@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// Sticky Book Now widget
+	// Sticky Info Box widget
 	if ($('body').hasClass('logged-in')) {
 		var spacing = 125;
 	} else {
@@ -48,6 +48,12 @@ jQuery(document).ready(function($) {
 
 	$(".info-box-sticky").sticky({ 
 		topSpacing: spacing,
+		bottomSpacing: 700
+	});
+
+	// Sticky Book Now widget
+	$(".sticky-book").sticky({ 
+		topSpacing: 127,
 		bottomSpacing: 700
 	});
 
