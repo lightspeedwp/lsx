@@ -2436,21 +2436,23 @@ header.page-header {
 			margin-bottom: 10px;
 		}
 
+		.portfolio-meta,
+		.entry-content {
+			@media screen and (max-width: 768px) {
+				float: none;
+				margin-left: 0;
+				margin-bottom: 20px;
+			}
+		}
+
 		.portfolio-meta {
 			@include lsx-info-box;
 			float: right;
-			margin-left: 40px;
 
 			.portfolio-services {
 				a {
 					text-transform: capitalize;
 				}
-			}
-
-			@media screen and (max-width: 768px) {
-				float: none;
-				margin-left: 0;
-				margin-bottom: 30px;
 			}
 		}
 
