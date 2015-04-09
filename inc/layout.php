@@ -108,7 +108,7 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 		$show_on_front = get_option('show_on_front');
 		if('0' != $slider && (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()))) {
 			 ?>
-				<section class="soliloquy-slider">
+				<section class="soliloquy-slider slider-<?php echo $slider;?>">
 					<?php soliloquy_slider( $slider ); ?>
 				</section>
 			<?php
