@@ -11,7 +11,6 @@ function lsx_yoast_breadcrumbs(){
 	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
 		return;
 	}
-	
 	lsx_breadcrumbs();
 }
 add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
@@ -20,14 +19,26 @@ add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
  * Add and remove body_class() classes
  */
 function lsx_body_class($classes) {
+	/*
+	 * Add the header layout class
+	 */
+	$header_layout = get_theme_mod('lsx_header_layout','inline');
+	$classes[] = 'header-'.$header_layout;
+		
+	
   // Add post/page slug
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
   }
   
-  if(is_page() && has_post_thumbnail()){
+  $post_types = array('page','post');
+  $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
+
+  if((is_singular($post_types) && has_post_thumbnail() && !is_front_page())
+  	 || (is_page_template('contact.php') && !is_front_page())){
   	$classes[] = 'page-has-banner';
   }
+  
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');
@@ -244,12 +255,15 @@ function lsx_is_element_empty($element) {
 
 /**
  * return the responsive images.
+ * 
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
  */
 function lsx_get_thumbnail($size,$image_src = false){
-	global $post;
 	
 	if(false == $image_src){
-		$post_id = ( null === $post->ID ) ? get_the_ID() : $post->ID;
+		$post_id = get_the_ID();
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	}elseif(false != $image_src	){
 		if(is_numeric($image_src)){
@@ -258,6 +272,8 @@ function lsx_get_thumbnail($size,$image_src = false){
 			$post_thumbnail_id = lsx_get_attachment_id_from_src($image_src);
 		}
 	}
+	
+	$size = apply_filters('lsx_thumbnail_size',$size);
 	
 	if('thumbnail-single' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
@@ -268,8 +284,8 @@ function lsx_get_thumbnail($size,$image_src = false){
 
 	}elseif('thumbnail-wide' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
 
 		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 	
@@ -292,6 +308,10 @@ function lsx_get_thumbnail($size,$image_src = false){
 
 /**
  * Output the Resonsive Images
+ * 
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
  */
 function lsx_thumbnail($size = 'thumbnail',$image_src = false){
 	echo lsx_get_thumbnail($size,$image_src);
@@ -299,6 +319,9 @@ function lsx_thumbnail($size = 'thumbnail',$image_src = false){
 
 /**
  * Gets the attachments ID from the src
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
  */
 function lsx_get_attachment_id_from_src($image_src) {
 	global $wpdb;
@@ -308,22 +331,75 @@ function lsx_get_attachment_id_from_src($image_src) {
 }
 
 /**
+ * Gets the attachments ID from the src
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
+ */
+function lsx_the_content_responsive_image_filter($content) {
+	if('post' == get_post_type() && is_single()){
+		/*$content = preg_replace('#<img.+?src="([^"]*)".*?/?>#i', '<a href="$1">$0</a>', $content);*/
+		
+		$content = preg_replace_callback(
+				'#<img.+?src="([^"]*)".*?/?>#i',
+				function ($matches) {
+					
+					$post_thumbnail_id = lsx_get_attachment_id_from_src($matches[1]);
+					if(false != $post_thumbnail_id){
+						$data_tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
+						$data_mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );					
+						$data_desktop = $matches[1];
+						
+						return '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$data_desktop.'" data-tablet="'.$data_tablet[0].'" data-mobile="'.$data_mobile[0].'" />';
+						
+					}else{
+						return $matches[0];
+					}
+				},
+				$content
+		);	
+		
+	}
+	return $content;
+}
+add_action('the_content','lsx_the_content_responsive_image_filter');
+
+/**
+ * A callback function for the preg_replace that changes the images stored in post_content to their responsive counterparts.
+ * @package lsx
+ * @subpackage extras
+ * @category thumbnails
+ */
+
+/**
  * Add Featured Image as Banner on Single Pages.
  *
  * @package lsx
  * @subpackage extras
  * @category banner
  */
-function lsx_page_banner() {
-	global $post;
-
-	if ( is_page() && has_post_thumbnail() ) { ?>
-        
-        <div class="page-banner" style="background-position: center !important;" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id($post->ID)); ?>>
-          <header class="page-header">
-            <h1 class="page-title"><?php the_title(); ?></h1>   
-          </header><!-- .entry-header -->
-        </div>
-    <?php } 
+if(!function_exists('lsx_page_banner')){
+	function lsx_page_banner() {
+		
+		$post_types = array('page');
+		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
+		
+		if ( is_singular($post_types) && has_post_thumbnail() || is_singular('jetpack-portfolio') && has_post_thumbnail() || is_singular('post') && has_post_thumbnail() ) { ?>
+	        
+	        <?php 
+	        	$bg_image = '';
+	        	if(has_post_thumbnail()){
+	        		$bg_image = lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID()));
+	        	}
+	        ?>
+	        
+	        <div class="page-banner" style="background-position: 50% 50%" <?php echo $bg_image;  ?>>
+	          <header class="page-header">
+	            <h1 class="page-title"><?php the_title(); ?></h1>   
+	            <?php lsx_banner_content(); ?>
+	          </header><!-- .entry-header -->
+	        </div>
+	    <?php } 
+	}
 }
 add_action( 'lsx_header_after', 'lsx_page_banner' );

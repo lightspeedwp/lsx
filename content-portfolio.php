@@ -17,13 +17,13 @@ if ($types) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($type_class); ?>>
 	<div class="portfolio-content-wrapper">
-		<?php if ( '' != get_the_post_thumbnail() ) : ?>
-			<div class="portfolio-thumbnail">
+		<div class="portfolio-thumbnail">
+			<?php if ( '' != get_the_post_thumbnail() ) : ?>
 				<a href="<?php the_permalink(); ?>">
 					<?php lsx_thumbnail( 'thumbnail-wide' ); ?>
 				</a>
-			</div>
-		<?php endif; ?>
+			<?php endif; ?>
+		</div>
 		
 		<?php the_title( '<a class="portfolio-title" href="' . esc_url( get_permalink() ) . '" rel="bookmark"><span>', '</span></a>' ); ?>
 	</div>

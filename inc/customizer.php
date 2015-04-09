@@ -46,6 +46,7 @@ if(!class_exists('LSX_Theme_Customizer')){
 			require get_template_directory() . '/inc/customizer-layout.php';
 			require get_template_directory() . '/inc/customizer-font.php';
 			require get_template_directory() . '/inc/customizer-colour.php';
+			require get_template_directory() . '/inc/customizer-header-layout.php';
 
 			$this->controls = $controls;
 

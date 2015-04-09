@@ -26,7 +26,16 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @param object $args
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';	
+		
+		/**
+		 * If this is a default menu being called we need to fix
+		 * the item object thats coming through.
+		 */
+		
+		if(!isset($item->title)){
+			return;
+		}
 
 		/**
 		 * Dividers, Headers or Disabled
@@ -114,7 +123,7 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}
 	}
-
+  
 	/**
 	 * Traverse elements to create list from elements.
 	 *

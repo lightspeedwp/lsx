@@ -67,18 +67,9 @@ function lsx_setup() {
 		'primary' => __( 'Primary Menu', 'lsx' ),
 	) );	
 	
-	add_theme_support( 'content-width', array(
-		'widths' => array(
-			'1' => array(
-				'label' => __( '1 Column', 'lsx' ),
-				'value' => '750',
-			),
-			'2' => array(
-				'label' => __( '2 Column', 'lsx' ),
-				'value' => '750',
-			),
-		)
-	));
+	$content_width = 750;
+	
+	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
 	
 }
 endif; // lsx_setup
@@ -95,36 +86,16 @@ add_action( 'after_setup_theme', 'lsx_setup' );
 function lsx_process_content_width() {
 	global $content_width;
 
-	/**
-	 * $content_width is a global variable used by WordPress for max image upload sizes
-	 * and media embeds (in pixels).
-	 *
-	 * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
-	 * Default: 1140px is the default Bootstrap container width.
-	 */
-	
-	$content_column_widths = get_theme_support('content-width');
-	if(false != $content_column_widths){
-
-		$layout = get_theme_mod('lsx_layout','2cr');
-		if(
-			is_page_template('page-templates/template-portfolio.php') ||
-			is_page_template('page-templates/template-front-page.php') ||
-			is_page_template('page-templates/template-full-width.php') ||
-			is_post_type_archive('jetpack-portfolio') ||
-			is_tax(array('jetpack-portfolio-type','jetpack-portfolio-tag'))
-		){
-			$layout = '1c';
-		}
-
-		if(stristr($layout, '1')){
-			$content_width = $content_column_widths[0]['widths']['1']['value'];
-		}elseif(stristr($layout, '2')){
-			$content_width = $content_column_widths[0]['widths']['2']['value'];
-		}
-
+	if(
+		is_page_template('page-templates/template-portfolio.php') ||
+		is_page_template('page-templates/template-front-page.php') ||
+		is_page_template('page-templates/template-full-width.php') ||
+		is_post_type_archive('jetpack-portfolio') ||
+		is_tax(array('jetpack-portfolio-type','jetpack-portfolio-tag')) ||
+		is_singular('jetpack-portfolio')
+	){
+		$content_width = 1140;
 	}
-	
 }
 add_action('wp_head','lsx_process_content_width');
 
@@ -144,23 +115,3 @@ function lsx_page_comments_off( $data ) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
-
-
-/*
- * ===================	Editor Styles  ===================
- */
-
-
-/**
- *  Registers our themes editor stylesheet.
- *
- * @package	lsx
- * @subpackage config
- * @category TinyMCE
- * @param	$init_array array()
- * @return	$init_array array()
- */
-function lsx_add_editor_styles() {
-	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
-}
-add_action( 'init', 'lsx_add_editor_styles' );

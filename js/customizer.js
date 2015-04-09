@@ -39,7 +39,18 @@
 			}).appendTo("head");
 			
 		} );
-	} ); 	
+	} );
+	
+	
+	//Update the headers layout.css
+    wp.customize("lsx_header_layout", function(value) {
+        value.bind(function(newval) {
+        	$("body").removeClass('header-central');
+        	$("body").removeClass('header-expanded');
+            $("body").addClass('header-'+newval);
+            console.log($("body"));
+        } );
+    });
 	
 
 } )( jQuery );

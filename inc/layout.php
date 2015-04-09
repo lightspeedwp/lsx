@@ -108,45 +108,13 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 		$show_on_front = get_option('show_on_front');
 		if('0' != $slider && (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()))) {
 			 ?>
-				<section class="soliloquy-slider">
+				<section class="soliloquy-slider slider-<?php echo $slider;?>">
 					<?php soliloquy_slider( $slider ); ?>
 				</section>
 			<?php
 		}
 	}
 };
-
-add_action( 'lsx_entry_after', 'lsx_author_box' );
-function lsx_author_box() {
-
-	if ( ! is_single() ) { return false; }
-
-	global $post;
-	$author_id=$post->post_author;
-	if ( get_post_type() == 'post' ) {
-		?>
-			<div class="author-box well col-xs-12">
-				<div class="image col-sm-2">
-					<img class="pull-left img-circle" src="<?php echo lsx_get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
-				</div>
-				<div class="content col-sm-10">
-					<h3><?php _e('Published by','lsx'); ?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?></h3>
-					<p><?php echo get_the_author_meta( 'description', $author_id ); ?></p>
-				</div>							
-				<div class="col-sm-12">
-					<hr>
-					<div class="profile-link pull-left">
-						<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ); ?>">
-							<?php _e('View all posts by','lsx'); ?> <?php echo get_the_author_meta( 'display_name', $author_id ); ?>  <i class="fa fa-arrow-right"></i>
-						</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		<?php
-	};
-}
-
 
 /**
  * Displays the blog page title
@@ -155,9 +123,8 @@ function lsx_author_box() {
  * @subpackage layout
  */
 function lsx_blog_page_title() {
-		global $post;
 		
-		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == $post->ID) { ?>
+		if ('page' == get_option('show_on_front') && get_option('page_for_posts') == get_the_ID()) { ?>
 			<header class="page-header">
 					<h1 class="page-title"><?php echo get_the_title($blog_page); ?></h1>		
 			</header>

@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @subpackage	scripts
  */
 function lsx_scripts() {
+	global $content_width;
 	
 	wp_enqueue_style('lsx_main_style', get_stylesheet_uri() , false, '23a2bd43791de3fa3cab2d2af5fec6a2');
 	
@@ -23,10 +24,12 @@ function lsx_scripts() {
 
 	wp_enqueue_script('lsx_scripts', get_template_directory_uri() . '/js/scripts.min.js', false, 'c9f983e2965b9c7888dac272e56c4f4b', true);
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.7.0.min.js', false, null, false);
-	wp_enqueue_script('isotope', get_template_directory_uri().'/js/jquery.isotope.min.js', array('jquery'), '1.3.110525', true);
-	wp_enqueue_script('packery', get_template_directory_uri().'/js/jquery.packery.min.js', array('jquery'), '1.1.1', true);
-	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js', array('jquery','isotope'));	
-	wp_enqueue_script('lsx_custom', get_template_directory_uri() . '/js/custom/general.js', array('isotope'), null, false);
+	wp_enqueue_script('mousewheel', get_template_directory_uri() . '/js/vendor/jquery.mousewheel.min.js', false, null, false);
+	wp_enqueue_script('smoothscroll', get_template_directory_uri() . '/js/vendor/jquery.simplr.smoothscroll.min.js', false, null, false);
+	wp_enqueue_script('sticky', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', false, null, false);
+	wp_enqueue_script('masonry');
+	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js', array('jquery','masonry'));	
+	wp_enqueue_script('lsx_custom', get_template_directory_uri() . '/js/custom/general.js', array('masonry'), null, false);
 	
 	//Set some parameters that we can use in the JS
 	$is_portfolio = false;
@@ -36,6 +39,9 @@ function lsx_scripts() {
 	$param_array = array(
 			'is_portfolio' => $is_portfolio
 	);
+	//Set the columns for the archives
+	$param_array['columns'] = apply_filters('lsx_archive_column_number',3);
+	
 	wp_localize_script( 'lsx_custom', 'lsx_params', $param_array );
 	
 	

@@ -21,8 +21,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
-
-
 /**
  * Returns an array of $controls for the customizer class to generate.
  *
@@ -33,6 +31,25 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
  */
 function lsx_get_customizer_controls(){
 	$lsx_controls = array();
+	
+	/*
+	 * If the WP Translate plugin is active then display some controls for that.	
+	 * https://wordpress.org/plugins/wp-translate/	
+	 */
+	/// add the setting
+	/*$lsx_controls['settings']['lsx_wp_translate_location']  = array(
+			'default'       =>  '0', //Default setting/value to save
+			'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	);	
+	
+	/// add the control
+	$lsx_controls['fields']['lsx_wp_translate_location'] = array(
+			'label'         =>  __('Layout','lsx'),
+			'section'       =>  'title_tagline',
+			'type'   =>  'checkbox'
+	);*/
+	
 	
 	// add the slider if function exists
 	if(function_exists('soliloquy')){
@@ -84,6 +101,29 @@ function lsx_get_customizer_controls(){
 	 /*
 	  * Layout Controls
 	  */
+	 
+	 /*
+	  * Header Layout Options
+	 */
+	 /// add the setting
+	 $lsx_controls['settings']['lsx_header_layout']  = array(
+	 		'default'       =>  'inline', //Default setting/value to save
+	 		'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	 		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	 );
+	 
+	 /// add the control
+	 $lsx_controls['fields']['lsx_header_layout'] = array(
+	 		'label'         =>  __('Header','lsx'),
+	 		'section'       =>  'lsx-layout',
+	 		'control'   =>  'LSX_Customize_Header_Layout_Control',
+	 		//'type'       =>  'select',
+	 		'choices'		=>	array(
+	 				'central',
+	 				'expanded',
+	 				'inline'
+	 		)
+	 );	 
 		 
 	  $lsx_controls['sections']['lsx-layout'] = array(
 	    'title'       =>  esc_html__( 'Layout', 'lsx' ),
@@ -99,7 +139,7 @@ function lsx_get_customizer_controls(){
 	  
 	  /// add the control
 	  $lsx_controls['fields']['lsx_layout'] = array(
-	    'label'         =>  '',
+	    'label'         =>  __('Body','lsx'),
 	    'section'       =>  'lsx-layout',
 	    'control'   =>  'LSX_Customize_Layout_Control',
 	    'choices'		=>	array(
@@ -188,7 +228,7 @@ function lsx_get_customizer_controls(){
 	        ),
 	    ),
 	  'priority' => 2,
-	  );    
+	  );  	  
 	  
 	$lsx_controls = apply_filters('lsx_customizer_controls', $lsx_controls); 
 
@@ -196,6 +236,17 @@ function lsx_get_customizer_controls(){
 }  
 
 $lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
+
+
+/**
+* Add Viewport Meta Tag to head
+*/
+function lsx_add_viewport_meta_tag() {
+	?>
+  		<meta name="viewport" content="width=device-width">
+  	<?php }
+add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
+
 
 // filter the Gravity Forms button type
 add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);

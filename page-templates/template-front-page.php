@@ -11,18 +11,39 @@
 
 			<?php lsx_content_top(); ?>		
 			
-				<section id="home-widgets">
+			<?php if(have_posts()) : ?>
+			
+				<?php while ( have_posts() ) : the_post(); ?>
 				
-					<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
-					
-						<aside class="widget widget_text" id="text-2">
-							<h3 class="widget-title"><?php _e( 'Welcome', 'lsx' ); ?></h3>
-							<div class="textwidget"><?php _e( 'Add a text widget to your Home sidebar.', 'lsx' ); ?></div>
-						</aside>
-					
-					<?php endif; // end sidebar widget area ?>
-					
-				</section>		
+					<?php lsx_entry_before(); ?>
+
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+							<div class="entry-content">
+								<?php the_content(); ?>
+								<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
+							</div><!-- .entry-content -->
+						
+							<?php lsx_entry_bottom(); ?>
+							
+						</article><!-- #post-## -->
+	
+				<?php endwhile; // end of the loop. ?>			
+			
+			<?php endif; ?>
+			
+			<section id="home-widgets">
+			
+				<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
+				
+					<aside class="widget widget_text" id="text-2">
+						<h3 class="widget-title"><?php _e( 'Welcome', 'lsx' ); ?></h3>
+						<div class="textwidget"><?php _e( 'Add a text widget to your Home sidebar.', 'lsx' ); ?></div>
+					</aside>
+				
+				<?php endif; // end sidebar widget area ?>
+				
+			</section>		
 				
 			<?php lsx_content_bottom(); ?>
 		

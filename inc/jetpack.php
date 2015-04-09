@@ -59,14 +59,29 @@ function lsx_portfolio_infinite_scroll(){
 
 	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag')){
 		
-		if(is_array($_wp_theme_features['infinite-scroll']) && is_array($_wp_theme_features['infinite-scroll'][0])){
+		if(class_exists('The_Neverending_Home_Page')){
 			$_wp_theme_features['infinite-scroll'][0]['container'] = 'portfolio-infinite-scroll-wrapper';
-			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = get_option( 'jetpack_portfolio_posts_per_page', '9' );
+			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = -1;
 		}
 	}
 
 }
 add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
+
+/**
+ * Disables the infinite scroll on the portfolio archive
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+function lsx_portfolio_infinite_scroll_disable($supported){
+	if(is_post_type_archive('jetpack-portfolio')){
+		$supported = false;
+	}
+	return $supported;
+}
+add_filter( 'infinite_scroll_archive_supported', 'lsx_portfolio_infinite_scroll_disable' , 1 , 10 );
 
 /**
  * Set the Portfolio to 9 posts per page
@@ -76,31 +91,13 @@ add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
  * @category portfolio
 */
 function lsx_portfolio_archive_pagination( $query ) {
-	if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() ) {
-		$query->set( 'posts_per_page', '-1' );
+	if(!is_admin()){
+		if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() && class_exists('The_Neverending_Home_Page')) {
+			$query->set( 'posts_per_page', -1 );
+		}
 	}
 }
-add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' );
-
-/**
- * Add Featured Image as Banner on Single Portfolio Posts.
- * 
- * @package lsx
- * @subpackage jetpack
- * @category portfolio
- */
-function lsx_portfolio_banner() {
-	global $post;
-	if ( is_singular( 'jetpack-portfolio' ) && has_post_thumbnail() ) {
-        $image_src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-        <div class="portfolio-banner" style="background-position: center !important; background: url(<?php echo $image_src ?>);">
-          <header class="page-header">
-            <h1 class="page-title"><?php the_title(); ?></h1>   
-          </header><!-- .entry-header -->
-        </div>
-    <?php } 
-}
-add_action( 'lsx_header_after', 'lsx_portfolio_banner' );
+add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' , 100 );
 
 /**
  * Remove the related posts from below the content area.
@@ -293,6 +290,27 @@ function lsx_portfolio_sorter(){ ?>
 		}?>
 	</ul>
 <?php } 
+
+/**
+ * A project type filter for the portfolio template
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+
+function lsx_portfolio_naviagtion_labels($labels){ 
+	
+	if(is_post_type_archive('jetpack-portfolio')){
+		$labels = array(
+				'next' 		=> __( '<span class="meta-nav">&larr;</span> Older', 'lsx' ),
+				'previous' 	=> __( 'Newer <span class="meta-nav">&rarr;</span>', 'lsx' ),
+				'title' 	=> __( 'Portfolio navigation', 'lsx' )
+		);
+	}
+	return $labels;
+}
+add_filter('lsx_post_navigation_labels','lsx_portfolio_naviagtion_labels',1,10);
 
 
 /*

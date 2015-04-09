@@ -21,8 +21,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="entry-content">
-				<?php lsx_portfolio_meta(); ?>
-
+			
 				<?php if ( ! is_singular() ) {
 					the_excerpt();
 				} else {
