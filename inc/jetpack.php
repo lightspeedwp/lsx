@@ -59,14 +59,29 @@ function lsx_portfolio_infinite_scroll(){
 
 	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag')){
 		
-		if(is_array($_wp_theme_features['infinite-scroll']) && is_array($_wp_theme_features['infinite-scroll'][0])){
+		if(class_exists('The_Neverending_Home_Page')){
 			$_wp_theme_features['infinite-scroll'][0]['container'] = 'portfolio-infinite-scroll-wrapper';
-			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = get_option( 'jetpack_portfolio_posts_per_page', '9' );
+			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = -1;
 		}
 	}
 
 }
 add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
+
+/**
+ * Disables the infinite scroll on the portfolio archive
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+function lsx_portfolio_infinite_scroll_disable($supported){
+	if(is_post_type_archive('jetpack-portfolio')){
+		$supported = false;
+	}
+	return $supported;
+}
+add_filter( 'infinite_scroll_archive_supported', 'lsx_portfolio_infinite_scroll_disable' , 1 , 10 );
 
 /**
  * Set the Portfolio to 9 posts per page
@@ -77,7 +92,7 @@ add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
 */
 function lsx_portfolio_archive_pagination( $query ) {
 	if(!is_admin()){
-		if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() && is_array($_wp_theme_features['infinite-scroll']) && is_array($_wp_theme_features['infinite-scroll'][0])) {
+		if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() && class_exists('The_Neverending_Home_Page')) {
 			$query->set( 'posts_per_page', -1 );
 		}
 	}
