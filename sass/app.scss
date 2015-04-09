@@ -1372,9 +1372,9 @@ hr {
 
 .modal-dialog {
 	margin: 0;
-	position: absolute !important;
-	top: 50% !important;
-	left: 50% !important;
+	position: absolute;
+	top: 20%;
+	left: 35%;
 }
 
 .modal-content {
@@ -2444,6 +2444,24 @@ header.page-header {
 				float: none;
 				margin-left: 0;
 				margin-bottom: 30px;
+			}
+		}
+
+		.gallery {
+			dl.gallery-item {
+				width: 100% !important;
+
+				dt,
+				dl {
+					border: none !important;
+				}
+
+				img {
+					border: 0 !important; 
+					width: 100% !important;
+			  		border: 1px solid #ddd !important;
+			  		@include border-radius(3px);
+				}
 			}
 		}
 	}
