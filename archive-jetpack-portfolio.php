@@ -1,7 +1,7 @@
 <?php
 get_header(); ?>
 
-	<div id="primary" class="content-area portfolio-template col-sm-12">
+	<div id="primary" class="content-area portfolio-template">
 
 		<?php lsx_content_before(); ?>
 
