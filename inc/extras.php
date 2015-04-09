@@ -384,9 +384,16 @@ if(!function_exists('lsx_page_banner')){
 		$post_types = array('page');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
 		
-		if ( is_singular($post_types) && has_post_thumbnail() || is_singular('jetpack-portfolio') && has_post_thumbnail() ) { ?>
+		if ( is_singular($post_types) && has_post_thumbnail() || is_singular('jetpack-portfolio') ) { ?>
 	        
-	        <div class="page-banner" style="background-position: 50% 50%" <?php echo lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID())); ?>>
+	        <?php 
+	        	$bg_image = '';
+	        	if(has_post_thumbnail()){
+	        		$bg_image = lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID()));
+	        	}
+	        ?>
+	        
+	        <div class="page-banner" style="background-position: 50% 50%" <?php echo $bg_image;  ?>>
 	          <header class="page-header">
 	            <h1 class="page-title"><?php the_title(); ?></h1>   
 	            <?php lsx_banner_content(); ?>
