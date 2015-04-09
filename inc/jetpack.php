@@ -77,7 +77,7 @@ add_action('wp_head','lsx_portfolio_infinite_scroll',1000);
 */
 function lsx_portfolio_archive_pagination( $query ) {
 	if(!is_admin()){
-		if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() ) {
+		if ( $query->is_post_type_archive(array('jetpack-portfolio')) && $query->is_main_query() && is_array($_wp_theme_features['infinite-scroll']) && is_array($_wp_theme_features['infinite-scroll'][0])) {
 			$query->set( 'posts_per_page', -1 );
 		}
 	}
