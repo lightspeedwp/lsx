@@ -286,7 +286,7 @@ $primary-darker: #357ebd;
 		@include transition(all .08s ease-in-out);
 		
 		@media print {
-			position: relative;
+			display: none;
 		}
 	}
 
@@ -298,6 +298,10 @@ $primary-darker: #357ebd;
 		margin-bottom: 0;
 		padding-bottom: 60px;
 		border-top: 1px solid #ddd;
+
+		@media print {
+			margin-top: 0 !important;
+		}
 
 		& > .content {
 			max-width: 1140px;
@@ -2267,20 +2271,12 @@ header.page-header {
 	width: 100%;
 	padding: 240px 0;
 
-	@media print {
-		padding: 0 !important;
-		margin-top: 0 !important;
-	}
-
 	.home & {
 		margin-top: 0;
 		background-position: 50% 50% !important;
 	}
 
 	header.page-header {
-		@media print {
-			text-align: left;
-		}
 
 		h1.page-title {
 			width: 100%;
@@ -2292,12 +2288,6 @@ header.page-header {
 			margin: 0 auto;
 			border-bottom: none;
 			@include title-shadow;
-
-			@media print {
-				font-size: 42px;
-				margin-top: 0 !important;
-				padding: 20px 0 !important;
-			}
 
 			@media screen and (max-width: 768px) {
 				font-size: 42px;
