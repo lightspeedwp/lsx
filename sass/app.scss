@@ -182,6 +182,7 @@ $primary-darker: #357ebd;
 	h5,
 	h6 {
 		margin-top: 0 !important;
+		line-height: 1.4;
 		color: $color;
 
 		a {
@@ -196,6 +197,7 @@ $primary-darker: #357ebd;
 	.btn,
 	button {
 		background: $black;
+		@include transition(all .1s ease-in-out);
 
 		&:hover,
 		&:focus,
