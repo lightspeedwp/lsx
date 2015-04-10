@@ -2290,7 +2290,6 @@ header.page-header {
 		}
 	}
 
-	.home article &,
 	.page-template-template-no-title & {
 		display: none !important;
 	}
@@ -2326,6 +2325,26 @@ header.page-header {
 
 		.soliloquy-next {
 			right: 30px;
+		}
+	}
+}
+
+.page-template-template-home-hero {
+	background: $primary;
+
+	article.page {
+		h1.page-title {
+			font-size: 46px;
+		    text-align: center;
+		}
+	}
+	
+	.entry-content {
+		color: $off-white;
+
+		a {
+			color: $white;
+			font-weight: bold;
 		}
 	}
 }
