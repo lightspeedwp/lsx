@@ -2332,21 +2332,33 @@ header.page-header {
 .page-template-template-home-hero {
 	background: $primary;
 
-	article.page {
-		h1.page-title {
-			font-size: 46px;
-		    text-align: center;
-		}
-	}
-	
-	.entry-content {
-		color: $off-white;
+	#primary {
+		float: none;
+		margin: 0 auto;
 
-		a {
-			color: $white;
-			font-weight: bold;
-		}
-	}
+		article.page {
+			h1.page-title {
+				font-size: 46px;
+			    text-align: center;
+			    color: $white;
+			}
+
+			.entry-content {
+				color: $white;
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				a {
+					color: $white;
+					font-weight: bold;
+				}
+			}
+		}	
+	}		
 }
 
 .front-page {
