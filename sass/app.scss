@@ -1660,12 +1660,6 @@ header.banner {
 			}
 		}
 
-		.site-branding {
-			.site-title {
-				margin-top: 33px;
-			}
-		}
-
 		.site-description {
 			display: none;
 		}
@@ -1674,7 +1668,7 @@ header.banner {
 	.site-branding {
 		.site-title {
 			margin: {
-				top: 33px;
+				top: 31px;
 				bottom: 0px;
 			}
 			font-weight: bold;
@@ -1684,8 +1678,13 @@ header.banner {
 			}
 
 			@media screen and (max-width: 768px) {
-				margin-top: 20px;
-				font-size: 25px;
+				margin-top: 18px;
+				font-size: 26px;
+			}
+
+			@media screen and (max-width: 540px) {
+				margin-top: 21px;
+				font-size: 22px;
 			}
 		}
 
@@ -2168,7 +2167,7 @@ nav {
 		}
 
 		@media screen and (max-width: 768px) {
-			margin-top: 40px;
+			margin-top: 20px;
 		}
 	}
 
