@@ -181,36 +181,28 @@ $primary-darker: #357ebd;
 	h4,
 	h5,
 	h6 {
-		color: $color !important;
+		margin-top: 0 !important;
+		color: $color;
+
+		a {
+			color: $color;
+		}
 	}
 
 	a {
-		color: $primary !important;
+		color: $color;
 	}
 
 	.btn,
 	button {
-		background: $primary;
+		background: $black;
 
 		&:hover,
 		&:focus,
 		&:active {
-			background: $primary-darker;
+			background: $blacker;
 		}
 	}
-}
-
-@mixin lsx-full-width-section-large {
-	@include lsx-full-width-section($primary, $white);
-	padding: {
-		top: 60px;
-		bottom: 60px;
-	}
-	margin: {
-		top: 60px;
-		bottom: 60px;
-	}
-    text-align: center;
 }
 
 @mixin lsx-box {
@@ -1340,11 +1332,16 @@ hr {
 }
 
 .lsx-full-width-section {
+	@include lsx-full-width-section($primary, $white);
+}
+
+.lsx-full-width-section-alt {
 	@include lsx-full-width-section($black, $white);
 }
 
 .lsx-full-width-section-home {
-	@include lsx-full-width-section-large;
+	@extend .lsx-full-width-section;
+	 margin-top: -50px !important;
 }
 
 .lsx-box {
