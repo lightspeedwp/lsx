@@ -286,7 +286,7 @@ $primary-darker: #357ebd;
 		@include transition(all .08s ease-in-out);
 		
 		@media print {
-			position: relative;
+			display: none;
 		}
 	}
 
@@ -2475,7 +2475,12 @@ header.page-header {
 
 	.jetpack-portfolio {
 		header.page-header {
+			display: none;
 			margin-bottom: 10px;
+
+			@media print {
+				display: block;
+			}
 		}
 
 		.gallery {
