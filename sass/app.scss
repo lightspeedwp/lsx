@@ -165,7 +165,7 @@ $primary-darker: #357ebd;
     }
 }
 
-@mixin full-width-section($background, $color) {
+@mixin lsx-full-width-section($background, $color) {
 	margin: 0 -9999rem;
 	padding: 40px 9999rem;
 	background: $background;
@@ -173,6 +173,37 @@ $primary-darker: #357ebd;
 	margin: {
 		top: 40px;
 		bottom: 40px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0 !important;
+		line-height: 1.4;
+		color: $color;
+
+		a {
+			color: $color;
+		}
+	}
+
+	a {
+		color: $color;
+	}
+
+	.btn,
+	button {
+		background: $black;
+		@include transition(all .1s ease-in-out);
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $blacker;
+		}
 	}
 }
 
@@ -364,7 +395,7 @@ $primary-darker: #357ebd;
 @mixin lsx-hero-unit {
 	text-align: center;
 	max-width: 80%;
-	margin: 20px auto 40px;
+	margin: 20px auto;
 
 	a,
 	.btn,
@@ -382,6 +413,7 @@ $primary-darker: #357ebd;
 	border-top: 3px solid #ddd;
 	padding: 20px 0;
 	margin-bottom: 0;
+	margin-top: 20px;
 }
 
  
@@ -398,7 +430,7 @@ body {
 		size: 17px;
 		family: 'Open Sans', sans-serif;
 	}
-	line-height: 1.9;
+	line-height: 2;
 	overflow-x: hidden !important;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -406,7 +438,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 
 	@media screen and (max-width: 768px) {
-		line-height: 1.7;
+		line-height: 1.8;
 	}
 }
 
@@ -487,17 +519,17 @@ h6 {
 
 h1 {
 	font-size: 36px;
-	margin-bottom: 30px;
+	margin-bottom: 26px;
 }
 
 h2 {
 	font-size: 32px;
-	margin-bottom: 26px;
+	margin-bottom: 20px;
 }
 
 h3 {
 	font-size: 24px;
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 }
 
 h4 {
@@ -1301,19 +1333,17 @@ hr {
 	margin-right: 20px;
 }
 
-.full-width-section {
-	@include full-width-section($black, $white);
+.lsx-full-width-section {
+	@include lsx-full-width-section($primary, $white);
 }
 
-.full-width-section-large {
-	@include full-width-section($primary, $light-grey);
-	padding: {
-		top: 60px;
-		bottom: 60px;
-	}
-	font-size: 20px;
-    line-height: 2;
-    text-align: center;
+.lsx-full-width-section-alt {
+	@include lsx-full-width-section($black, $white);
+}
+
+.lsx-full-width-section-home {
+	@extend .lsx-full-width-section;
+	 margin-top: -70px !important;
 }
 
 .lsx-box {
@@ -2185,7 +2215,7 @@ nav {
 	 ========================================================================== */
 
 .wrap {
-	margin-top: 180px;
+	margin-top: 140px;
 	margin-bottom: 60px;
 
 	.home & {
@@ -2259,6 +2289,11 @@ header.page-header {
 		img {
 			margin-bottom: 40px;
 		}
+	}
+
+	.home article &,
+	.page-template-template-no-title & {
+		display: none !important;
 	}
 }
 
@@ -2910,7 +2945,7 @@ article {
 }
 
 .sharedaddy {
-	margin-bottom: 30px;
+	margin: 40px 0;
 
 	.sd-social-icon-text {
 		.sd-content {

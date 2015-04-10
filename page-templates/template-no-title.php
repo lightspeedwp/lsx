@@ -1,18 +1,13 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * Template Name: Page - No Title
  *
  * @package lsx
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area col-sm-12">
 
 		<?php lsx_content_before(); ?>
 
@@ -40,7 +35,5 @@ get_header(); ?>
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
