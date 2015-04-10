@@ -165,7 +165,7 @@ $primary-darker: #357ebd;
     }
 }
 
-@mixin full-width-section($background, $color) {
+@mixin lsx-full-width-section($background, $color) {
 	margin: 0 -9999rem;
 	padding: 40px 9999rem;
 	background: $background;
@@ -198,6 +198,19 @@ $primary-darker: #357ebd;
 			background: $primary-darker;
 		}
 	}
+}
+
+@mixin lsx-full-width-section-large {
+	@include lsx-full-width-section($primary, $white);
+	padding: {
+		top: 60px;
+		bottom: 60px;
+	}
+	margin: {
+		top: 60px;
+		bottom: 60px;
+	}
+    text-align: center;
 }
 
 @mixin lsx-box {
@@ -1326,21 +1339,12 @@ hr {
 	margin-right: 20px;
 }
 
-.full-width-section {
-	@include full-width-section($black, $white);
+.lsx-full-width-section {
+	@include lsx-full-width-section($black, $white);
 }
 
-.full-width-section-large {
-	@include full-width-section($primary, $light-grey);
-	padding: {
-		top: 60px;
-		bottom: 60px;
-	}
-	margin: {
-		top: 60px;
-		bottom: 60px;
-	}
-    text-align: center;
+.lsx-full-width-section-home {
+	@include lsx-full-width-section-large;
 }
 
 .lsx-box {
