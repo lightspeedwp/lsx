@@ -198,6 +198,7 @@ $primary-darker: #357ebd;
 	button {
 		background: $color;
 		@include transition(all .1s ease-in-out);
+		color: $background;
 
 		&:hover,
 		&:focus,
@@ -1342,7 +1343,7 @@ hr {
 
 .lsx-full-width-section-header {
 	@extend .lsx-full-width-section;
-	 margin-top: -85px !important;
+	 margin-top: -110px !important;
 }
 
 .lsx-box {
