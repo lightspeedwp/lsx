@@ -281,12 +281,12 @@ $primary-darker: #357ebd;
 		top: 0;
 		margin-top: 0;
 		background-color: $black;
-		padding: 380px 0 250px;
+		padding: 380px 0;
 		z-index: -1;
 		@include transition(all .08s ease-in-out);
 		
 		@media print {
-			display: none;
+			position: fixed;
 		}
 	}
 
@@ -1249,10 +1249,6 @@ nav.page-nav {
 			}
 		}
 	}
-}
-
-ul {
-	padding-left: 20px;
 }
 
 hr {
