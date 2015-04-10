@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
 
 	$(".info-box-sticky").sticky({ 
 		topSpacing: spacing,
-		bottomSpacing: 700,
+		bottomSpacing: 590,
 		getWidthFrom: '#secondary',
     	responsiveWidth: true
 	});
