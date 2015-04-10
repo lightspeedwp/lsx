@@ -71,6 +71,10 @@ function lsx_setup() {
 	
 	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
 	
+	
+	
+	add_theme_support( 'html5', array( 'caption' ) );
+	
 }
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );

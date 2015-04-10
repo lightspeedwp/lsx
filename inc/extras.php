@@ -31,7 +31,7 @@ function lsx_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
   
-  $post_types = array('page','post');
+  $post_types = array('page');
   $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
 
   if((is_singular($post_types) && has_post_thumbnail() && !is_front_page())
@@ -83,45 +83,6 @@ function lsx_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'lsx_wp_title', 10, 2 );
-
-/**
- * Add Bootstrap thumbnail styling to images with captions
- * Use <figure> and <figcaption>
- *
- * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
- */
-function lsx_caption($output, $attr, $content) {
-  if (is_feed()) {
-    return $output;
-  }
-
-  $defaults = array(
-    'id'      => '',
-    'align'   => 'alignnone',
-    'width'   => '',
-    'caption' => ''
-  );
-
-  $attr = shortcode_atts($defaults, $attr);
-
-  // If the width is less than 1 or there is no caption, return the content wrapped between the [caption] tags
-  if ($attr['width'] < 1 || empty($attr['caption'])) {
-    return $content;
-  }
-
-  // Set up the attributes for the caption <figure>
-  $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
-  $attributes .= ' class="thumbnail wp-caption ' . esc_attr($attr['align']) . '"';
-  $attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
-
-  $output  = '<figure' . $attributes .'>';
-  $output .= do_shortcode($content);
-  $output .= '<figcaption class="caption wp-caption-text">' . esc_html($attr['caption'])	 . '</figcaption>';
-  $output .= '</figure>';
-
-  return $output;
-}
-add_filter('img_caption_shortcode', 'lsx_caption', 10, 3);
 
 /**
  * Wrap embedded media as suggested by Readability
