@@ -174,6 +174,30 @@ $primary-darker: #357ebd;
 		top: 40px;
 		bottom: 40px;
 	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $color !important;
+	}
+
+	a {
+		color: $primary !important;
+	}
+
+	.btn,
+	button {
+		background: $primary;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $primary-darker;
+		}
+	}
 }
 
 @mixin lsx-box {
@@ -364,7 +388,7 @@ $primary-darker: #357ebd;
 @mixin lsx-hero-unit {
 	text-align: center;
 	max-width: 80%;
-	margin: 20px auto 40px;
+	margin: 20px auto;
 
 	a,
 	.btn,
@@ -382,6 +406,7 @@ $primary-darker: #357ebd;
 	border-top: 3px solid #ddd;
 	padding: 20px 0;
 	margin-bottom: 0;
+	margin-top: 20px;
 }
 
  
@@ -487,17 +512,17 @@ h6 {
 
 h1 {
 	font-size: 36px;
-	margin-bottom: 30px;
+	margin-bottom: 26px;
 }
 
 h2 {
 	font-size: 32px;
-	margin-bottom: 26px;
+	margin-bottom: 20px;
 }
 
 h3 {
 	font-size: 24px;
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 }
 
 h4 {
@@ -1311,8 +1336,10 @@ hr {
 		top: 60px;
 		bottom: 60px;
 	}
-	font-size: 20px;
-    line-height: 2;
+	margin: {
+		top: 60px;
+		bottom: 60px;
+	}
     text-align: center;
 }
 
