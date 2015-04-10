@@ -160,12 +160,12 @@ $primary-darker: #357ebd;
 
     &:hover,
     &:focus {
-    	background: $color !important;
+    	border-color: $color !important;
     	color: $hover-color !important;
     }
 }
 
-@mixin full-width-section($background, $color) {
+@mixin lsx-full-width-section($background, $color) {
 	margin: 0 -9999rem;
 	padding: 40px 9999rem;
 	background: $background;
@@ -173,6 +173,39 @@ $primary-darker: #357ebd;
 	margin: {
 		top: 40px;
 		bottom: 40px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0 !important;
+		line-height: 1.4;
+		color: $color;
+
+		a {
+			color: $color;
+		}
+	}
+
+	a {
+		color: $color;
+	}
+
+	.btn,
+	button {
+		background: $color;
+		@include transition(all .1s ease-in-out);
+		color: $black;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $background;
+			color: $white;
+		}
 	}
 }
 
@@ -361,6 +394,30 @@ $primary-darker: #357ebd;
 	@include lsx-box;
 }
 
+@mixin lsx-hero-unit {
+	text-align: center;
+	max-width: 80%;
+	margin: 20px auto;
+
+	a,
+	.btn,
+	button {
+		font-weight: bold;
+	}
+
+	.btn,
+	button {
+		margin: 0 20px;
+	}
+}
+
+@mixin lsx-section-heading {
+	border-top: 3px solid #ddd;
+	padding: 20px 0;
+	margin-bottom: 0;
+	margin-top: 20px;
+}
+
  
 /* ==========================================================================
 	 Base
@@ -420,6 +477,10 @@ h6 {
 	}
 	line-height: inherit;
 
+	&.lsx-section-heading {
+		@include lsx-section-heading;
+	}
+
 	@media screen and (max-width: 768px) {
 		line-height: 1.4;
 	}
@@ -460,17 +521,17 @@ h6 {
 
 h1 {
 	font-size: 36px;
-	margin-bottom: 30px;
+	margin-bottom: 26px;
 }
 
 h2 {
 	font-size: 32px;
-	margin-bottom: 26px;
+	margin-bottom: 20px;
 }
 
 h3 {
 	font-size: 24px;
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 }
 
 h4 {
@@ -557,8 +618,7 @@ img,
 }
 
 .page-has-banner,
-.single-jetpack-portfolio,
-.single-post {
+.single-jetpack-portfolio {
 	@include lsx-parallax-banner;
 }
 
@@ -576,6 +636,10 @@ img,
 
 .lsx-cta-button {
 	@include lsx-cta-button;
+}
+
+.lsx-hero-unit {
+	@include lsx-hero-unit;
 }
 
 .thumbnail {
@@ -1270,19 +1334,28 @@ hr {
 	margin-right: 20px;
 }
 
-.full-width-section {
-	@include full-width-section($black, $white);
+.lsx-full-width-section {
+	@include lsx-full-width-section($primary, $white);
 }
 
-.full-width-section-large {
-	@include full-width-section($primary, $light-grey);
-	padding: {
-		top: 60px;
-		bottom: 60px;
+.lsx-full-width-section-alt {
+	@include lsx-full-width-section($black, $white);
+}
+
+.lsx-full-width-section-header {
+	@extend .lsx-full-width-section;
+	margin-top: -22px !important;
+	margin-bottom: 60px;
+
+	@media screen and (max-width: 992px) {
+		margin-top: -30px !important;
+		margin-bottom: 40px;
 	}
-	font-size: 20px;
-    line-height: 2;
-    text-align: center;
+
+	@media screen and (max-width: 768px) {
+		margin-top: -32px !important;
+		margin-bottom: 20px;
+	}
 }
 
 .lsx-box {
@@ -1925,7 +1998,7 @@ nav {
 			clear: both;
 
 			ul {
-				margin: -20px 0 0 -20px !important;
+				margin: -20px 0 0 -40px !important;
 			}
 		}
 
@@ -2154,20 +2227,16 @@ nav {
 	 ========================================================================== */
 
 .wrap {
-	margin-top: 180px;
+	margin-top: 140px;
 	margin-bottom: 60px;
 
 	.home & {
-		margin-top: 200px;
-		margin-bottom: 80px;
+		margin-top: 220px;
+		margin-bottom: 40px;
 
 		@media screen and (max-width: 992px) {
-			margin-top: 100px;
-			margin-bottom: 60px;
-		}
-
-		@media screen and (max-width: 768px) {
-			margin-top: 20px;
+			margin-top: 0;
+			margin-bottom: 40px;
 		}
 	}
 
@@ -2233,6 +2302,10 @@ header.page-header {
 			margin-bottom: 40px;
 		}
 	}
+
+	.page-template-template-no-title & {
+		display: none !important;
+	}
 }
 
 // Homepage
@@ -2252,6 +2325,10 @@ header.page-header {
 			padding-top: 0;
 			margin-bottom: 0;
 		}
+
+		.soliloquy-container {
+			max-width: 100% !important;
+		}
 	}
 
 	.soliloquy-controls-direction {
@@ -2263,6 +2340,42 @@ header.page-header {
 			right: 30px;
 		}
 	}
+}
+
+.page-template-template-home-hero {
+	background: $primary !important;
+
+	.wrap {
+		margin-top: 260px;
+	}
+
+	#primary {
+		float: none;
+		margin: 0 auto;
+
+		article.page {
+			h1.page-title {
+				font-size: 46px;
+			    text-align: center;
+			    color: $white;
+			}
+
+			.entry-content {
+				color: $white;
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6,
+				a {
+					color: $white;
+					font-weight: bold;
+				}
+			}
+		}	
+	}		
 }
 
 .front-page {
@@ -2595,7 +2708,7 @@ header.page-header {
 	 ========================================================================== */
 
 article {
-	margin-bottom: 70px;
+	margin-bottom: 60px;
 
 	@media screen and (max-width: 992px) {
 		margin-bottom: 50px;
@@ -2777,8 +2890,6 @@ article {
 	}
 
 	.entry-content {
-		margin-top: 20px;
-
 		.embed-youtube {
 			iframe {
 				height: auto;
@@ -2879,7 +2990,7 @@ article {
 }
 
 .sharedaddy {
-	margin-bottom: 30px;
+	margin: 40px 0;
 
 	.sd-social-icon-text {
 		.sd-content {

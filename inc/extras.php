@@ -31,11 +31,12 @@ function lsx_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
   
-  $post_types = array('page');
+  $post_types = array('page','post');
   $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
 
   if((is_singular($post_types) && has_post_thumbnail() && !is_front_page())
-  	 || (is_page_template('contact.php') && !is_front_page())){
+  	 || (is_page_template('contact.php') && !is_front_page()) 
+  || (is_singular('jetpack-portfolio'))){
   	$classes[] = 'page-has-banner';
   }
   
@@ -342,10 +343,11 @@ add_action('the_content','lsx_the_content_responsive_image_filter');
 if(!function_exists('lsx_page_banner')){
 	function lsx_page_banner() {
 		
-		$post_types = array('page');
+		$post_types = array('page','post');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
 		
-		if ( is_singular($post_types) && has_post_thumbnail() || is_singular('jetpack-portfolio') && has_post_thumbnail() || is_singular('post') && has_post_thumbnail() ) { ?>
+		if ( (is_singular($post_types) && has_post_thumbnail())
+		 || (is_singular('jetpack-portfolio')) ) { ?>
 	        
 	        <?php 
 	        	$bg_image = '';
