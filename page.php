@@ -20,15 +20,6 @@ get_header(); ?>
 
 			<?php lsx_content_top(); ?>
 
-			<?php 
-				if ( ! is_home() || ! is_front_page() ) { 
-				?>
-					<header class="page-header">
-						<h1 class="page-title"><?php the_title(); ?></h1>		
-					</header><!-- .entry-header -->
-				<?php } 
-			?>
-
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
