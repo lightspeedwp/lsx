@@ -198,12 +198,13 @@ $primary-darker: #357ebd;
 	button {
 		background: $color;
 		@include transition(all .1s ease-in-out);
-		color: $background;
+		color: $black;
 
 		&:hover,
 		&:focus,
 		&:active {
 			background: $background;
+			color: $white;
 		}
 	}
 }
