@@ -196,13 +196,13 @@ $primary-darker: #357ebd;
 
 	.btn,
 	button {
-		background: $black;
+		background: $color;
 		@include transition(all .1s ease-in-out);
 
 		&:hover,
 		&:focus,
 		&:active {
-			background: $blacker;
+			background: $background;
 		}
 	}
 }
@@ -430,7 +430,7 @@ body {
 		size: 17px;
 		family: 'Open Sans', sans-serif;
 	}
-	line-height: 2;
+	line-height: 200%;
 	overflow-x: hidden !important;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -438,7 +438,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 
 	@media screen and (max-width: 768px) {
-		line-height: 1.8;
+		line-height: 180%;
 	}
 }
 
@@ -1340,7 +1340,7 @@ hr {
 	@include lsx-full-width-section($black, $white);
 }
 
-.lsx-full-width-section-home {
+.lsx-full-width-section-header {
 	@extend .lsx-full-width-section;
 	 margin-top: -70px !important;
 }
