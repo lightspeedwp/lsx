@@ -21,12 +21,12 @@ get_header(); ?>
 			<?php lsx_content_top(); ?>
 
 			<?php 
-				if ( !is_home() ) { 
+				if ( ! is_home() ) { 
 				?>
 					<header class="page-header">
 						<h1 class="page-title"><?php the_title(); ?></h1>		
 					</header><!-- .entry-header -->
-				} 
+				<?php } 
 			?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
