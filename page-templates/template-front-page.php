@@ -36,10 +36,12 @@
 			
 				<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
 				
-					<aside class="widget widget_text" id="text-2">
-						<h3 class="widget-title"><?php _e( 'Welcome', 'lsx' ); ?></h3>
-						<div class="textwidget"><?php _e( 'Add a text widget to your Home sidebar.', 'lsx' ); ?></div>
-					</aside>
+					<?php if(is_customize_preview()) { ?>
+						<aside class="widget widget_text" id="text-2">
+							<h3 class="widget-title"><?php _e( 'Welcome', 'lsx' ); ?></h3>
+							<div class="textwidget"><?php _e( 'Add a text widget to your Home sidebar.', 'lsx' ); ?></div>
+						</aside>
+					<?php } ?>
 				
 				<?php endif; // end sidebar widget area ?>
 				
