@@ -185,20 +185,32 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
   color: #fff;
 }
 
-.navbar-toggle {
-  background: none !important;
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+  background: #333 !important;
+  border-color: #333 !important;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+.navbar-toggle,
+.navbar-toggle.collapsed {
+  background: none;
+  border-color: #ddd;
 }
 
-.navbar-default .navbar-toggle:hover .icon-bar {
+.navbar-default .navbar-toggle .icon-bar,
+.navbar-default .navbar-toggle.collapsed .icon-bar {
   background-color: #333333;
 }
 
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar,
+.navbar-default .navbar-toggle:active .icon-bar {
+  background-color: #ffffff !important;
+}
+
 .mobile-menu-title {
-  color: #ffffff;
+  color: #333333;
   margin: 47px 5px;
 }
 

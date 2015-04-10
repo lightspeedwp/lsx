@@ -1662,7 +1662,7 @@ header.banner {
 
 		.site-branding {
 			.site-title {
-				margin-top: 20px;
+				margin-top: 33px;
 			}
 		}
 
@@ -1680,7 +1680,12 @@ header.banner {
 			font-weight: bold;
 
 			@media screen and (max-width: 992px) {
+				font-size: 30px;
+			}
+
+			@media screen and (max-width: 768px) {
 				margin-top: 20px;
+				font-size: 25px;
 			}
 		}
 
@@ -1839,7 +1844,7 @@ nav {
 						display: block;
 						position: relative;
 						width: 100%;
-						background: $light-grey;
+						background: none !important;
 						margin-bottom: 16px;
 					}
 
@@ -2103,7 +2108,7 @@ nav {
 	font-weight: 600;
 
 	.scrolled & {
-		margin: 30px 5px;
+		margin: 30px 10px;
 	}
 
 	@media screen and (min-width: 450px) and (max-width: 1200px) {
@@ -2111,11 +2116,11 @@ nav {
 	}
 
 	@media screen and (max-width: 992px) {
-		margin: 31px 5px !important;
+		margin: 31px 10px !important;
 	}
 
 	@media screen and (max-width: 768px) {
-		margin: 20px 2px !important;
+		margin: 20px 10px !important;
 	}
 }
 
