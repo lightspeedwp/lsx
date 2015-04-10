@@ -10,14 +10,22 @@ a:active {
 
 .btn,
 button {
-  background: #596b46 !important;
+  background: #596b46;
 }
 
-.btn:hover,
-.btn:focus,
-.btn:active,
-button:hover {
+.wrap .btn:hover,
+.wrap .btn:focus,
+.wrap .btn:active,
+.wrap button:hover {
   background: #3d4a30 !important;
+}
+
+#footer-widgets .btn:hover,
+#footer-widgets .btn:focus,
+#footer-widgets .btn:active,
+#footer-widgets button:hover {
+  background: #333333 !important;
+  border: none !important;
 }
 
 body {
@@ -150,7 +158,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-    color: #fff;
+    color: #596b46;
   }
 }
 
@@ -162,20 +170,32 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
   color: #fff;
 }
 
-.navbar-toggle {
-  background: none !important;
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+  background: #333 !important;
+  border-color: #333 !important;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+.navbar-toggle,
+.navbar-toggle.collapsed {
+  background: none;
+  border-color: #ddd;
 }
 
-.navbar-default .navbar-toggle:hover .icon-bar {
+.navbar-default .navbar-toggle .icon-bar,
+.navbar-default .navbar-toggle.collapsed .icon-bar {
   background-color: #333333;
 }
 
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar,
+.navbar-default .navbar-toggle:active .icon-bar {
+  background-color: #ffffff !important;
+}
+
 .mobile-menu-title {
-  color: #ffffff;
+  color: #333333;
   margin: 47px 5px;
 }
 
