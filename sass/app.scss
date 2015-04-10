@@ -309,7 +309,11 @@ $primary-darker: #357ebd;
 			padding-top: 60px;
 
 			header.page-header {
-				display: none !important;
+				display: none;
+
+				@media print {
+					display: block;
+				}
 			}
 		}
 	}

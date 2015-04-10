@@ -14,8 +14,6 @@
 		<h1 class="page-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_tag_list('<p>',', ','</p>'); ?>
-
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="entry-content">
