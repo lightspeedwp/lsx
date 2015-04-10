@@ -2185,7 +2185,7 @@ nav {
 	 ========================================================================== */
 
 .wrap {
-	margin-top: 180px;
+	margin-top: 140px;
 	margin-bottom: 60px;
 
 	.home & {
@@ -2261,7 +2261,8 @@ header.page-header {
 		}
 	}
 
-	.home article & {
+	.home article &,
+	.template-no-title & {
 		display: none !important;
 	}
 }
@@ -2914,7 +2915,7 @@ article {
 }
 
 .sharedaddy {
-	margin-bottom: 30px;
+	margin: 40px 0;
 
 	.sd-social-icon-text {
 		.sd-content {
