@@ -286,7 +286,7 @@ $primary-darker: #357ebd;
 		@include transition(all .08s ease-in-out);
 		
 		@media print {
-			display: none;
+			display: none !important;
 		}
 	}
 
@@ -557,7 +557,8 @@ img,
 }
 
 .page-has-banner,
-.single-jetpack-portfolio {
+.single-jetpack-portfolio,
+.single-post {
 	@include lsx-parallax-banner;
 }
 
@@ -2170,11 +2171,6 @@ nav {
 		}
 	}
 
-	.single-post & {
-		margin-top: 60px;
-		margin-bottom: 60px;
-	}
-
 	#primary,
 	#secondary {
 		&.col-sm-12 {
@@ -2320,10 +2316,6 @@ header.page-header {
 			@media screen and (max-width: 768px) {
 				font-size: 24px;
 			}
-		}
-
-		.single-post & {
-			display: none;
 		}
 	}
 
