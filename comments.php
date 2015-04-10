@@ -65,5 +65,9 @@ if (have_comments()) : ?>
 
 <?php endif; ?>
 
-<?php $comment_form_args = array('comment_field' => '<p class="comment-form-comment"><textarea  id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'); ?>
+<?php 
+	$comment_form_args = array(
+		'comment_field' => '<p class="comment-form-comment"><textarea  id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+	);
+?>
 <?php comment_form($comment_form_args); ?>

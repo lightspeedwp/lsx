@@ -184,7 +184,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				if(false != $client){ ?>
 					<div class="portfolio-client">
 						<span><span class="genericon genericon-user"></span><?php _e('Client','lsx'); ?></span>
-						<a href="<?php echo esc_url($client); ?>"><?php echo esc_url($client); ?></a>
+						<span><?php echo $client ?></span>
 					</div>				
 			<?php }	?>
 
@@ -209,11 +209,11 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 			<?php }	?>
 
 			<?php 
-				$website = get_post_meta(get_the_ID(),'lsx-website',true);
+				$website = esc_url( get_post_meta(get_the_ID(),'lsx-website',true) );
 				if(false != $website){ ?>
 					<div class="portfolio-website">
 						<span><span class="genericon genericon-link"></span><?php _e('Website','lsx'); ?></span>
-						<a target="_blank" href="<?php echo esc_url($website); ?>"><?php echo esc_url($website); ?></a>
+						<a target="_blank" href="<?php echo esc_url($website); ?>"><?php echo $website ?></a>
 					</div>				
 			<?php }	?>
 

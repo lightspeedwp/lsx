@@ -90,7 +90,7 @@ $primary-darker: #357ebd;
 }
 
 @mixin title-shadow {
-	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.24));
+	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.08), 0px 3px 2px rgba(0, 0, 0, 0.2));
 }
  
 @mixin lsx-button {
@@ -281,12 +281,12 @@ $primary-darker: #357ebd;
 		top: 0;
 		margin-top: 0;
 		background-color: $black;
-		padding: 380px 0 250px;
+		padding: 380px 0;
 		z-index: -1;
 		@include transition(all .08s ease-in-out);
 		
 		@media print {
-			display: none;
+			display: none !important;
 		}
 	}
 
@@ -300,7 +300,7 @@ $primary-darker: #357ebd;
 		border-top: 1px solid #ddd;
 
 		@media print {
-			margin-top: 0 !important;
+			margin-top: 20px !important;
 		}
 
 		& > .content {
@@ -309,7 +309,11 @@ $primary-darker: #357ebd;
 			padding-top: 60px;
 
 			header.page-header {
-				display: none !important;
+				display: none;
+
+				@media print {
+					display: block;
+				}
 			}
 		}
 	}
@@ -481,6 +485,10 @@ h6 {
 	font-size: 18px;
 }
 
+ul {
+	padding-left: 40px;
+}
+
 .page-title {
 	margin-top: 0 !important;
 	margin-bottom: 25px;
@@ -549,7 +557,8 @@ img,
 }
 
 .page-has-banner,
-.single-jetpack-portfolio {
+.single-jetpack-portfolio,
+.single-post {
 	@include lsx-parallax-banner;
 }
 
@@ -778,7 +787,6 @@ table {
 
 		a[class*="title"] {
 			display: inline-block;
-			min-height: 235px;
 			padding: 20px 30px;
 			font: {
 				family: "Noto Serif", serif;
@@ -1041,7 +1049,7 @@ table {
 
 				img {
 					width: 100%;
-					min-height: 235px;
+					min-height: 246px;
 					@include transition(all .4s ease-in-out);
 				}
 			}
@@ -1245,10 +1253,6 @@ nav.page-nav {
 			}
 		}
 	}
-}
-
-ul {
-	padding-left: 20px;
 }
 
 hr {
@@ -2153,10 +2157,6 @@ nav {
 	margin-top: 180px;
 	margin-bottom: 60px;
 
-	@media print {
-		margin-top: 0 !important;
-	}
-
 	.home & {
 		margin-top: 200px;
 		margin-bottom: 80px;
@@ -2298,7 +2298,6 @@ header.page-header {
 	}
 
 	header.page-header {
-
 		h1.page-title {
 			width: 100%;
 			max-width: 1140px;
@@ -2472,7 +2471,12 @@ header.page-header {
 
 	.jetpack-portfolio {
 		header.page-header {
+			display: none;
 			margin-bottom: 10px;
+
+			@media print {
+				display: block;
+			}
 		}
 
 		.gallery {
