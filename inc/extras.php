@@ -31,11 +31,12 @@ function lsx_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
   
-  $post_types = array('page');
+  $post_types = array('page','post');
   $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
 
   if((is_singular($post_types) && has_post_thumbnail() && !is_front_page())
-  	 || (is_page_template('contact.php') && !is_front_page())){
+  	 || (is_page_template('contact.php') && !is_front_page()) 
+  || (is_singular('jetpack-portfolio'))){
   	$classes[] = 'page-has-banner';
   }
   
