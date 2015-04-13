@@ -172,8 +172,8 @@ $primary-darker: #357ebd;
 	background: $background;
 	color: $color;
 	margin: {
-		top: 40px;
-		bottom: 40px;
+		top: 60px;
+		bottom: 60px;
 	}
 
 	h1,
@@ -1364,22 +1364,6 @@ hr {
 	@include lsx-full-width($black, $white);
 }
 
-.lsx-full-width-header {
-	@extend .lsx-full-width;
-	margin-top: -92px !important;
-	margin-bottom: 60px;
-
-	@media screen and (max-width: 992px) {
-		margin-top: -80px !important;
-		margin-bottom: 40px;
-	}
-
-	@media screen and (max-width: 768px) {
-		margin-top: -2px !important;
-		margin-bottom: 20px;
-	}
-}
-
 .lsx-box {
 	@include lsx-box;
 }
@@ -2399,6 +2383,12 @@ header.page-header {
 			bottom: 60px !important;
 		}
 	}	
+}
+
+.page-template-template-page-hero {
+	.lsx-full-width-header {
+		margin-top: -15px;
+	}
 }
 
 .front-page {

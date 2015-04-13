@@ -308,11 +308,11 @@ article .post-format {
 }
 
 #footer-widgets .widget a {
-  color: #ffffff !important;
+  color: #a5a370 !important;
 }
 
 #footer-widgets .widget a:hover {
-  border-bottom: 1px solid;
+  color: #ffffff !important;
 }
 
 #footer-widgets .widget.widget_tag_cloud .tagcloud a {
@@ -437,4 +437,30 @@ select {
 
 .page-template-template-home-hero {
   background: #a5a370 !important;
+}
+
+.page-template-template-home-hero #primary article.page .entry-content .btn, 
+.page-template-template-home-hero #primary article.page .entry-content button {
+    color: #596b46 !important;
+    border-color: #596b46 !important;
+}
+
+.page-template-template-home-hero #primary article.page .entry-content .btn:hover, 
+.page-template-template-home-hero #primary article.page .entry-content .btn:focus, 
+.page-template-template-home-hero #primary article.page .entry-content .btn:active, 
+.page-template-template-home-hero #primary article.page .entry-content button:hover, 
+.page-template-template-home-hero #primary article.page .entry-content button:focus, 
+.page-template-template-home-hero #primary article.page .entry-content button:active {
+  border-color: #3d4a30 !important;
+  color: #3d4a30 !important;
+}
+ 
+.page-template-template-home-hero #primary article.page .entry-content a:hover,
+.page-template-template-home-hero #primary article.page .entry-content a:active,
+.page-template-template-home-hero #primary article.page .entry-content a:focus {
+  color: #3d4a30 !important;
+}
+
+.lsx-full-width {
+  background: #a5a370;
 }
