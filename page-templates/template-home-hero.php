@@ -28,12 +28,23 @@ get_header(); ?>
 				if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 				endif;
-			?>	
+			?>
+
+
 
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
+
+	<section id="home-widgets" class="col-sm-12">
+			
+		<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
+		
+		
+		<?php endif; // end sidebar widget area ?>
+		
+	</section>
 
 <?php get_footer(); ?>
