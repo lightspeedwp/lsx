@@ -2382,8 +2382,17 @@ header.page-header {
 					color: $white;
 					font-weight: bold;
 				}
+
+				.btn,
+				button {
+					@include lsx-border-button($white, $blacker);
+				}
 			}
 		}	
+	}
+
+	#home-widgets {
+		@include lsx-full-width($white, $dark-grey);
 	}		
 }
 
