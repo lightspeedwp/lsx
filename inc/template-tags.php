@@ -372,7 +372,7 @@ if(!function_exists('lsx_nav_menu')){
 		   		</nav>
 	    <?php } elseif(is_customize_preview()) { ?>
 	    		<nav class="primary-navbar collapse navbar-collapse" role="navigation">
-	    			<p><?php _e('Insert a menu here via the "Navigation" panel.','lsx');?>
+	    			<div class="alert alert-info" role="alert"><?php _e('Insert a menu here via the "Navigation" panel.','lsx');?></div>
 	    		</nav>
 	    </div>
 	  	<?php }
