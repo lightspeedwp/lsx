@@ -2366,6 +2366,12 @@ header.page-header {
 				a {
 					color: $white;
 					font-weight: bold;
+
+					&:focus,
+					&:hover,
+					&:active {
+						color: $black;
+					}
 				}
 
 				.btn,
