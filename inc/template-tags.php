@@ -356,8 +356,9 @@ if(!function_exists('lsx_site_identity')){
  */
 if(!function_exists('lsx_nav_menu')){
 	function lsx_nav_menu(){
-		$nav_menu = get_theme_mod('nav_menu_locations',array());
-	    if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+		$nav_menu = get_theme_mod('nav_menu_locations',false);
+
+	    if(false != $nav_menu && 0 != $nav_menu['primary']){ ?>
 			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
 		    	<?php
 				wp_nav_menu( array(
@@ -369,18 +370,10 @@ if(!function_exists('lsx_nav_menu')){
 				);
 				?>
 		   		</nav>
-	    	<?php } else { ?>
+	    <?php } elseif(is_customize_preview()) { ?>
 	    		<nav class="primary-navbar collapse navbar-collapse" role="navigation">
-		  	<?php
-			wp_nav_menu( array(
-				'menu' => $nav_menu,
-				'depth' => 2,
-				'container' => false,
-				'menu_class' => 'nav navbar-nav',
-				'walker' => new lsx_bootstrap_navwalker())
-			);
-			?>
-	    	</nav>
+	    			<p><?php _e('Insert a menu here via the "Navigation" panel.','lsx');?>
+	    		</nav>
 	    </div>
 	  	<?php }
 	}

@@ -53,13 +53,6 @@ class LSX_Walker_Comment extends Walker_Comment {
 
 function lsx_get_avatar($avatar) {
   $avatar = str_replace("class='avatar", "class='avatar pull-left media-object ", $avatar);
-  
-  if(stristr('class=', $field)){
-  	$field = str_replace('class="', 'class="form-control ', $field);
-  }else{
-  	$field = str_replace('<input', '<input class="form-control" ', $field);
-  }
-  
   return $avatar;
 }
 add_filter('get_avatar', 'lsx_get_avatar');

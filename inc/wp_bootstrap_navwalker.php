@@ -14,6 +14,14 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
 	}
+	
+	/**
+	 * @param string $item Passed by reference. Used to append additional content.
+	 */
+	public function filter_default_pages( &$item ) {
+		
+		return $item;
+	}	
 
 	/**
 	 * @see Walker::start_el()
@@ -32,7 +40,6 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 		 * If this is a default menu being called we need to fix
 		 * the item object thats coming through.
 		 */
-		
 		if(!isset($item->title)){
 			return;
 		}
