@@ -2348,6 +2348,8 @@ header.page-header {
 		margin: 0 auto;
 
 		article.page {
+			margin-bottom: 145px;
+			
 			h1.page-title {
 				font-size: 46px;
 			    text-align: center;
@@ -2378,6 +2380,10 @@ header.page-header {
 				button {
 					@include lsx-border-button($white, $black);
 				}
+			}
+
+			.entry-meta {
+				display: none;
 			}
 		}	
 	}
