@@ -440,7 +440,9 @@ select {
 }
 
 .page-template-template-home-hero #primary article.page .entry-content .btn, 
-.page-template-template-home-hero #primary article.page .entry-content button {
+.page-template-template-home-hero #primary article.page .entry-content button,
+.lsx-full-width .lsx-hero-unit .btn, 
+.lsx-full-width .lsx-hero-unit button {
     color: #596b46 !important;
     border-color: #596b46 !important;
 }
@@ -450,7 +452,13 @@ select {
 .page-template-template-home-hero #primary article.page .entry-content .btn:active, 
 .page-template-template-home-hero #primary article.page .entry-content button:hover, 
 .page-template-template-home-hero #primary article.page .entry-content button:focus, 
-.page-template-template-home-hero #primary article.page .entry-content button:active {
+.page-template-template-home-hero #primary article.page .entry-content button:active,
+.lsx-full-width .lsx-hero-unit .btn:hover, 
+.lsx-full-width .lsx-hero-unit .btn:focus, 
+.lsx-full-width .lsx-hero-unit .btn:active, 
+.lsx-full-width .lsx-hero-unit button:hover, 
+.lsx-full-width .lsx-hero-unit button:focus, 
+.lsx-full-width .lsx-hero-unit button:active {
   border-color: #3d4a30 !important;
   color: #3d4a30 !important;
 }
