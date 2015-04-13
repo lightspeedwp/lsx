@@ -36,7 +36,7 @@ get_header(); ?>
 		
 	</div><!-- #primary -->
 
-	<?php if ( !function_exists('dynamic_sidebar') ?>
+	<?php if ( dynamic_sidebar( 'sidebar-home' ) ) ?>
 	
 	<section id="home-widgets" class="lsx-full-width">
 		<?php dynamic_sidebar( 'sidebar-home' ); ?>
