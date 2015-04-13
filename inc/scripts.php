@@ -45,8 +45,9 @@ function lsx_scripts() {
 	wp_localize_script( 'lsx_custom', 'lsx_params', $param_array );
 	
 	
-	wp_enqueue_style( 'genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
-	if(is_child_theme()) {
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css' );
+	
+	if(is_child_theme() && file_exists(get_stylesheet_directory() . '/custom.css')) {
 		wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css' );
 	
 	}
