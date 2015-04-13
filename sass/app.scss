@@ -1363,6 +1363,16 @@ hr {
 
 .lsx-full-width-alt {
 	@include lsx-full-width($black, $white);
+
+	.btn,
+	button {
+		&:hover,
+		&:focus,
+		&:active {
+			background: $white !important;
+			border-color: $white !important;
+		}
+	}
 }
 
 .lsx-box {
@@ -2349,7 +2359,7 @@ header.page-header {
 
 		article.page {
 			margin-bottom: 145px;
-			
+
 			h1.page-title {
 				font-size: 46px;
 			    text-align: center;
