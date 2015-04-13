@@ -224,7 +224,7 @@ $primary-darker: #357ebd;
 
 		.btn,
 		button {
-			@include lsx-border-button($white, $blacker);
+			@include lsx-border-button($white, #888);
 			margin: 5px 15px;
 		}
 	}
