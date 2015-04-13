@@ -150,22 +150,23 @@ $primary-darker: #357ebd;
 
 @mixin lsx-border-button($color, $hover-color) {
 	background: none !important;
-    padding: 10px 30px;
+    padding: 9px 30px;
     border: 3px solid $color !important;
+    color: $color !important;
     font: {
-    	size: inherit;
+    	size: 18px;
     	weight: bold;
     }
-    @include transition(all .1s ease-in-out);
 
     &:hover,
-    &:focus {
-    	border-color: $color !important;
+    &:focus,
+    &:active {
+    	border-color: $hover-color !important;
     	color: $hover-color !important;
     }
 }
 
-@mixin lsx-full-width-section($background, $color) {
+@mixin lsx-full-width($background, $color) {
 	margin: 0 -9999rem;
 	padding: 40px 9999rem;
 	background: $background;
@@ -194,20 +195,16 @@ $primary-darker: #357ebd;
 		color: $color;
 	}
 
-	.btn,
-	button {
-		background: $color;
-		@include transition(all .1s ease-in-out);
-		color: $black;
+	.lsx-hero-unit {
+		color: $color;
 
-		&:hover,
-		&:focus,
-		&:active {
-			background: $background;
-			color: $white;
+		.btn,
+		button {
+			@include lsx-border-button($white, $black);
+			margin: 5px 15px;
 		}
 	}
-}
+}	
 
 @mixin lsx-box {
 	background: $white;
@@ -407,6 +404,7 @@ $primary-darker: #357ebd;
 
 	.btn,
 	button {
+		background: none;
 		margin: 0 20px;
 	}
 }
@@ -570,9 +568,10 @@ iframe {
 button,
 .btn {
 	border: none;
+	@include transition(all .1s ease-in-out);
 	
 	&.btn-lg {
-		padding: 7px 24px;
+		padding: 9px 28px;
 	    font-size: 17px;
 	    line-height: inherit;
 	    @include border-radius(3px);
@@ -1334,16 +1333,16 @@ hr {
 	margin-right: 20px;
 }
 
-.lsx-full-width-section {
-	@include lsx-full-width-section($primary, $white);
+.lsx-full-width {
+	@include lsx-full-width($primary, $white);
 }
 
-.lsx-full-width-section-alt {
-	@include lsx-full-width-section($black, $white);
+.lsx-full-width-alt {
+	@include lsx-full-width($black, $white);
 }
 
-.lsx-full-width-section-header {
-	@extend .lsx-full-width-section;
+.lsx-full-width-header {
+	@extend .lsx-full-width;
 	margin-top: -92px !important;
 	margin-bottom: 60px;
 
@@ -1363,7 +1362,7 @@ hr {
 }
 
 .lsx-border-button {
-	@include lsx-border-button($white, $primary);
+	@include lsx-border-button($primary, $black);
 }
 
 .caldera-grid {
@@ -1428,19 +1427,6 @@ hr {
 	input[type="radio"] {
 		margin: 11px 0 0 -20px;
 	}
-
-	/* 
-	input[type="file"] {
-		&:-webkit-file-upload-button {
-			visibility: hidden;
-		}
-
-		&:before {
-			content: 'Upload A File';
-			@include lsx-border-button($black, $blacker);
-		}
-	}
-	*/
 }
 
 
@@ -3000,7 +2986,10 @@ article {
 					a.sd-button {
 						background: #555;
 						border: 2px solid #555 !important;
-						font-size: 14px !important;
+						font: {
+							size: 14px !important;
+							weight: bold !important;
+						}
 						padding: 6px 18px 6px 16px !important;
 						box-shadow: none !important;
 						color: $white !important;
