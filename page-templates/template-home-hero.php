@@ -30,15 +30,13 @@ get_header(); ?>
 				endif;
 			?>
 
-
-
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
 
-	<section id="home-widgets" class="col-sm-12">
+	<section id="home-widgets" class="lsx-full-width">
 			
 		<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
 		

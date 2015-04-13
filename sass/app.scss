@@ -197,10 +197,33 @@ $primary-darker: #357ebd;
 
 	.lsx-hero-unit {
 		color: $color;
+	}
+
+	&#home-widgets {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: inherit;
+
+			a {
+				color: inherit;
+			}
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+
+	.lsx-hero-unit {
+		color: $color;
 
 		.btn,
 		button {
-			@include lsx-border-button($white, $grey);
+			@include lsx-border-button($white, $blacker);
 			margin: 5px 15px;
 		}
 	}
@@ -1362,7 +1385,7 @@ hr {
 }
 
 .lsx-border-button {
-	@include lsx-border-button($primary, $black);
+	@include lsx-border-button($black, $blacker);
 }
 
 .caldera-grid {
