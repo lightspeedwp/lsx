@@ -840,6 +840,17 @@ table {
 	}
 }
 
+[class*="col-xs"],
+[class*="col-sm"],
+[class*="col-md"],
+[class*="col-lg"] {
+	@media screen and (max-width: 770px) {
+		padding: {
+			left: 20px;
+			right: 20px;
+		}
+	}
+}
 
 
 // Plugin Post Types
@@ -2361,11 +2372,27 @@ header.page-header {
 
 	.wrap {
 		margin-top: 260px;
+
+		@media screen and (max-width: 992px) {
+  			margin-top: 160px;
+		}
+
+		@media screen and (max-width: 768px) {
+  			margin-top: 60px;
+		}
 	}
 
 	#primary {
 		float: none;
 		margin: 0 auto;
+
+		@media screen and (max-width: 992px) {
+			width: 90%;
+		}
+
+		@media screen and (max-width: 670px) {
+			width: 100%;
+		}
 
 		article.page {
 			margin-bottom: 145px;
@@ -2374,6 +2401,14 @@ header.page-header {
 				font-size: 46px;
 			    text-align: center;
 			    color: $white;
+
+			    @media screen and (max-width: 768px) {
+		  			font-size: 36px;
+				}
+
+				@media screen and (max-width: 670px) {
+		  			font-size: 32px;
+				}
 			}
 
 			.entry-content {
@@ -2414,6 +2449,15 @@ header.page-header {
 		padding: {
 			top: 60px !important;
 			bottom: 60px !important;
+		}
+
+		@media screen and (max-width: 992px) {
+  			margin-top: -70px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin: 0 auto;
+			padding: 60px 40px;
 		}
 	}	
 }
@@ -3275,6 +3319,13 @@ article {
 
 			&:hover {
 				color: $grey;
+			}
+		}
+
+		.btn,
+		button {
+			&:hover {
+				color: $white;
 			}
 		}
 
