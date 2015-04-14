@@ -840,18 +840,6 @@ table {
 	}
 }
 
-[class*="col-xs"],
-[class*="col-sm"],
-[class*="col-md"],
-[class*="col-lg"] {
-	@media screen and (max-width: 770px) {
-		padding: {
-			left: 20px;
-			right: 20px;
-		}
-	}
-}
-
 
 // Plugin Post Types
 
@@ -1847,16 +1835,18 @@ nav {
 			border: none !important;
 		    box-shadow: none !important;
 		    margin: 0 !important;
-		    padding-bottom: 20px !important;
+		    padding: {
+		    	bottom: 40px !important;
+		    }
 		    float: none !important;
 		}
 
 		@media screen and (max-width: 992px) {
+			padding-top: 20px;
 			margin: 0 !important;
 		}
 
 		@media screen and (max-width: 768px) {
-			padding: 0 0 10px !important;
 			transition: none !important;
 		}
 
@@ -1963,7 +1953,7 @@ nav {
 
 							@media screen and (max-width: 992px) {
 								color: $grey;
-								font-size: 15px;
+								font-size: 17px;
 							}
 						}
 
@@ -2378,7 +2368,7 @@ header.page-header {
 		}
 
 		@media screen and (max-width: 768px) {
-  			margin-top: 60px;
+  			margin-top: 40px;
 		}
 	}
 
@@ -2396,6 +2386,10 @@ header.page-header {
 
 		article.page {
 			margin-bottom: 145px;
+
+			@media screen and (max-width: 768px) {
+	  			margin-bottom: 50px;
+			}
 
 			h1.page-title {
 				font-size: 46px;
@@ -2456,8 +2450,8 @@ header.page-header {
 		}
 
 		@media screen and (max-width: 768px) {
-			margin: 0 auto;
-			padding: 60px 40px;
+			margin: 0 auto -40px;
+			padding: 40px 40px !important;
 		}
 	}	
 }
