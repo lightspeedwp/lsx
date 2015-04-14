@@ -2454,6 +2454,16 @@ header.page-header {
 				.btn,
 				button {
 					@include lsx-border-button($white, $black);
+
+					.btn,
+					button {
+						&:hover,
+						&:focus,
+						&:active {
+							background: $white !important;
+							border-color: $white !important;
+						}
+					}
 				}
 			}
 
