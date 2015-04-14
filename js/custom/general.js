@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
 	// Sticky Book Now widget
 	$(".sticky-book").sticky({ 
 		topSpacing: 127,
-		bottomSpacing: 700
+		bottomSpacing: 1560
 	});
 
     $(window).load(function() {
