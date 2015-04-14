@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
 	*/
 
 	$(window).scroll(function(){
-	    if($(window).scrollTop() > 180) {
+	    if($(window).scrollTop() > 250) {
 	        $('header.banner').addClass('scrolled');
 	    } else {
 	        $('header.banner').removeClass('scrolled');

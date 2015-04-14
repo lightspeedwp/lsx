@@ -1363,6 +1363,16 @@ hr {
 
 .lsx-full-width-alt {
 	@include lsx-full-width($black, $white);
+
+	.btn,
+	button {
+		&:hover,
+		&:focus,
+		&:active {
+			background: $white !important;
+			border-color: $white !important;
+		}
+	}
 }
 
 .lsx-box {
@@ -2348,6 +2358,8 @@ header.page-header {
 		margin: 0 auto;
 
 		article.page {
+			margin-bottom: 145px;
+
 			h1.page-title {
 				font-size: 46px;
 			    text-align: center;
@@ -2379,6 +2391,10 @@ header.page-header {
 					@include lsx-border-button($white, $black);
 				}
 			}
+
+			.entry-meta {
+				display: none;
+			}
 		}	
 	}
 
@@ -2395,6 +2411,14 @@ header.page-header {
 .page-template-template-page-hero {
 	.lsx-full-width-header {
 		margin-top: -15px;
+	}
+
+	.lsx-full-width-footer {
+		margin-bottom: -120px;
+	}
+
+	.edit-link {
+		display: none !important;
 	}
 }
 
