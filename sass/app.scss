@@ -200,25 +200,6 @@ $primary-darker: #357ebd;
 		color: $color;
 	}
 
-	&#home-widgets {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: inherit;
-
-			a {
-				color: inherit;
-			}
-		}
-
-		a {
-			color: inherit;
-		}
-	}
-
 	.lsx-hero-unit {
 		color: $color;
 
@@ -1887,6 +1868,7 @@ nav {
 
 					@media screen and (max-width: 992px) {
 						background: none !important;
+						font-size: 20px;
 
 						&:hover {
 							color: $black !important;
@@ -1953,7 +1935,7 @@ nav {
 
 							@media screen and (max-width: 992px) {
 								color: $grey;
-								font-size: 17px;
+								font-size: 18px;
 							}
 						}
 
