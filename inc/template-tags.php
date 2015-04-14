@@ -416,3 +416,47 @@ function lsx_sitemap_pages(){
 		wp_reset_postdata();
 	}
 }
+
+/**
+ * Outputs a custom post type section
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ * @category	sitemap
+ */
+function lsx_sitemap_custom_post_type($post_type = false){
+	if(!post_type_exists($post_type)){ return; }
+	
+	$posts_per_page = get_option('posts_per_page');
+	if(false == $posts_per_page){
+		$posts_per_page = 10;
+	}
+
+	$post_type_args = array(
+			'post_type'		=>	'page',
+			'posts_per_page'=>	$posts_per_page,
+			'post_status'	=>	'publish',
+			'post_type'		=>	$post_type,
+	);
+	$post_type_items = new WP_Query($post_type_args);
+	
+	$post_type_object = get_post_type_object($post_type);
+	if(null != $post_type_object){
+		$title = $post_type_object->labels->name;
+	}else{
+		$title = ucwords($post_type);
+	}
+	
+	if($post_type_items->have_posts()){
+
+		printf( '<h2>'.__( '%1$s', 'lsx' ).'</h2>', $title );
+
+		echo '<ul>';
+		while($post_type_items->have_posts()){ $post_type_items->the_post();
+			echo '<li class="page_item page-item-'.get_the_ID().'"><a href="'.get_permalink().'" title="">'.get_the_title().'</a></li>';
+		}
+		echo '</ul>';
+
+		wp_reset_postdata();
+	}
+}
