@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// Removing homepage slider for mobile
+	// Disabling homepage slider and background image area on mobile
 	$(document).resize(function () {
 	    var screen = $(window)    
 	    if (screen.width < 768) {
@@ -62,6 +62,15 @@ jQuery(document).ready(function($) {
 	    var screen = $(window)    
 	    if (screen.width < 768) {
 	        $(".home .soliloquy-slider").remove();
+	        $(".home .home-bg-image").remove();
+	    }
+	});
+
+	$(document).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 992) {
+	        $("nav ul li").removeClass('dropdown');
+	        $("nav ul li").removeClass('open');
 	    }
 	});
 

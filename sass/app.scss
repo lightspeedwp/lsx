@@ -840,6 +840,12 @@ table {
 	}
 }
 
+.breadcrumbs-container {
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
 
 // Plugin Post Types
 
@@ -1231,7 +1237,7 @@ table {
 // Breadcrumbs
 
 ul.breadcrumb {
-	margin-bottom: 30px;
+	margin: 30px 0;
 	padding: 0;
 	background: none;
 
@@ -2418,7 +2424,9 @@ header.page-header {
 				a {
 					color: $white;
 					font-weight: bold;
+				}
 
+				a {
 					&:focus,
 					&:hover,
 					&:active {
@@ -2468,6 +2476,14 @@ header.page-header {
 
 	.edit-link {
 		display: none !important;
+	}
+
+	.hero-tagline {
+		text-align: center;
+
+		em {
+			font-size: 22px;
+		}
 	}
 }
 
