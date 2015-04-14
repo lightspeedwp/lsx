@@ -334,6 +334,7 @@ endif;
  *
  * @package 	lsx
  * @subpackage	template-tags
+ * @category	header
  */
 if(!function_exists('lsx_site_identity')){
 	function lsx_site_identity(){
@@ -353,6 +354,7 @@ if(!function_exists('lsx_site_identity')){
  *
  * @package 	lsx
  * @subpackage	template-tags
+ * @category	navigation
  */
 if(!function_exists('lsx_nav_menu')){
 	function lsx_nav_menu(){
@@ -378,5 +380,39 @@ if(!function_exists('lsx_nav_menu')){
 	    		</nav>
 	    </div>
 	  	<?php }
+	}
+}
+
+/**
+ * Outputs Pages for the Sitemap Template
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ * @category	sitemap
+ */
+function lsx_sitemap_pages(){
+	$posts_per_page = get_option('posts_per_page');
+	if(false == $posts_per_page){
+		$posts_per_page = 10;
+	}
+	
+	$page_args = array(
+		'post_type'		=>	'page',
+		'posts_per_page'=>	$posts_per_page,
+		'post_status'	=>	'publish',
+		'post_type'		=>	'page',
+	);
+	$pages = new WP_Query($page_args);
+	if($pages->have_posts()){
+
+		echo '<h2>'.__( 'Pages', 'lsx' ).'</h2>';
+
+		echo '<ul>';
+		while($pages->have_posts()){ $pages->the_post();
+			echo '<li class="page_item page-item-'.get_the_ID().'"><a href="'.get_permalink().'" title="">'.get_the_title().'</a></li>';
+		}
+		echo '</ul>';
+		
+		wp_reset_postdata();
 	}
 }

@@ -24,10 +24,8 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<h2><?php _e( 'Pages', 'lsx' ); ?></h2>
-                        <ul>
-                            <?php wp_list_pages( 'depth=0&sort_column=menu_order&title_li=' ); ?>
-                        </ul>
+
+                        <?php lsx_sitemap_pages(); ?>
 
                         <h2><?php _e( 'Categories', 'lsx' ); ?></h2>
                         <ul>
