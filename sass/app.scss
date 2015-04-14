@@ -445,6 +445,10 @@ $primary-darker: #357ebd;
 	 Base
 	 ========================================================================== */
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	width: auto !important;
 	color: $mid-grey;
@@ -835,7 +839,6 @@ table {
 		font-weight: normal;
 	}
 }
-
 
 
 // Plugin Post Types
@@ -1832,16 +1835,18 @@ nav {
 			border: none !important;
 		    box-shadow: none !important;
 		    margin: 0 !important;
-		    padding-bottom: 20px !important;
+		    padding: {
+		    	bottom: 40px !important;
+		    }
 		    float: none !important;
 		}
 
 		@media screen and (max-width: 992px) {
+			padding-top: 20px;
 			margin: 0 !important;
 		}
 
 		@media screen and (max-width: 768px) {
-			padding: 0 0 10px !important;
 			transition: none !important;
 		}
 
@@ -1948,7 +1953,7 @@ nav {
 
 							@media screen and (max-width: 992px) {
 								color: $grey;
-								font-size: 15px;
+								font-size: 17px;
 							}
 						}
 
@@ -2357,19 +2362,47 @@ header.page-header {
 
 	.wrap {
 		margin-top: 260px;
+
+		@media screen and (max-width: 992px) {
+  			margin-top: 160px;
+		}
+
+		@media screen and (max-width: 768px) {
+  			margin-top: 40px;
+		}
 	}
 
 	#primary {
 		float: none;
 		margin: 0 auto;
 
+		@media screen and (max-width: 992px) {
+			width: 90%;
+		}
+
+		@media screen and (max-width: 670px) {
+			width: 100%;
+		}
+
 		article.page {
 			margin-bottom: 145px;
+
+			@media screen and (max-width: 768px) {
+	  			margin-bottom: 50px;
+			}
 
 			h1.page-title {
 				font-size: 46px;
 			    text-align: center;
 			    color: $white;
+
+			    @media screen and (max-width: 768px) {
+		  			font-size: 36px;
+				}
+
+				@media screen and (max-width: 670px) {
+		  			font-size: 32px;
+				}
 			}
 
 			.entry-content {
@@ -2410,6 +2443,15 @@ header.page-header {
 		padding: {
 			top: 60px !important;
 			bottom: 60px !important;
+		}
+
+		@media screen and (max-width: 992px) {
+  			margin-top: -70px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin: 0 -8px -40px;
+			padding: 40px 40px !important;
 		}
 	}	
 }
@@ -3271,6 +3313,13 @@ article {
 
 			&:hover {
 				color: $grey;
+			}
+		}
+
+		.btn,
+		button {
+			&:hover {
+				color: $white;
 			}
 		}
 
