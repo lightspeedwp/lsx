@@ -2747,17 +2747,13 @@ header.page-header {
 	}
 
 	#related-rooms {
-		@include lsx-full-width(inherit, inherit);
+		@include lsx-full-width(#af6a03, inherit);
 		margin-bottom: -60px;
 
 		.room-content {
 			& > p {
 				display: none;
 			}
-		}
-
-		.view-room {
-
 		}
 	}
 }
