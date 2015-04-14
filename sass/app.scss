@@ -183,12 +183,20 @@ $primary-darker: #357ebd;
 	h4,
 	h5,
 	h6 {
-		margin-top: 0 !important;
+		margin-top: 0;
 		line-height: 1.4;
 		color: $color;
 
 		a {
 			color: $color;
+		}
+
+		@media screen and (max-width: 992px) {
+			margin-top: 40px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-top: 20px;
 		}
 	}
 
@@ -2415,6 +2423,15 @@ header.page-header {
 			.entry-content {
 				color: $white;
 
+				.hero-tagline {
+					text-align: center;
+					margin-top: -11px;
+
+					em {
+						font-size: 22px;
+					}
+				}
+
 				h1,
 				h2,
 				h3,
@@ -2463,14 +2480,6 @@ header.page-header {
 			padding: 40px 40px !important;
 		}
 	}	
-
-	.hero-tagline {
-		text-align: center;
-
-		em {
-			font-size: 22px;
-		}
-	}
 }
 
 .page-template-template-page-hero {
