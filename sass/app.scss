@@ -1232,6 +1232,11 @@ ul.breadcrumb {
 	padding: 0;
 	background: none;
 
+	.page-template-template-page-hero & {
+		position: absolute;
+		top: 40px;
+	}
+
 	@media print {
 		display: none !important;
 	}
