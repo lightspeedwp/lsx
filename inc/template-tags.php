@@ -357,6 +357,8 @@ if(!function_exists('lsx_site_identity')){
 if(!function_exists('lsx_nav_menu')){
 	function lsx_nav_menu(){
 		$nav_menu = get_theme_mod('nav_menu_locations',false);
+		
+		//print_r(get_nav_menu_locations());
 
 	    if(false != $nav_menu && 0 != $nav_menu['primary']){ ?>
 			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
