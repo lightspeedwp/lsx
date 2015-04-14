@@ -348,10 +348,6 @@ article .post-format {
   color: #fff !important;
 }
 
-footer.content-info {
-  background: #333333;
-}
-
 footer.content-info a {
   color: #ffffff;
 }
@@ -450,27 +446,77 @@ select {
   border-color: #d48a1d !important;
 }
 
+.lsx-full-width {
+  background: #d48a1d;
+}
 
-.lsx-full-width-section, .lsx-full-width-section-header {
+.lsx-full-width-alt {
   background: #572600;
 }
 
-.lsx-full-width-section .btn, .lsx-full-width-section-home .btn,
-.lsx-full-width-section button,
-.lsx-full-width-section-home button {
+.page-template-template-home-hero {
   background: #d48a1d !important;
 }
 
-.lsx-full-width-section .btn:hover, .lsx-full-width-section-home .btn:hover, .lsx-full-width-section .btn:focus, .lsx-full-width-section-home .btn:focus, .lsx-full-width-section .btn:active, .lsx-full-width-section-home .btn:active,
-.lsx-full-width-section button:hover,
-.lsx-full-width-section-home button:hover,
-.lsx-full-width-section button:focus,
-.lsx-full-width-section-home button:focus,
-.lsx-full-width-section button:active,
-.lsx-full-width-section-home button:active {
-  background: #331701 !important;
+.page-template-template-home-hero #primary article.page .entry-content .btn, 
+.page-template-template-home-hero #primary article.page .entry-content button,
+.lsx-full-width .lsx-hero-unit .btn, 
+.lsx-full-width .lsx-hero-unit button {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
 }
 
-.page-template-template-home-header {
+.page-template-template-home-hero #primary article.page .entry-content .btn:hover, 
+.page-template-template-home-hero #primary article.page .entry-content .btn:focus, 
+.page-template-template-home-hero #primary article.page .entry-content .btn:active, 
+.page-template-template-home-hero #primary article.page .entry-content button:hover, 
+.page-template-template-home-hero #primary article.page .entry-content button:focus, 
+.page-template-template-home-hero #primary article.page .entry-content button:active,
+.lsx-full-width .lsx-hero-unit .btn:hover, 
+.lsx-full-width .lsx-hero-unit .btn:focus, 
+.lsx-full-width .lsx-hero-unit .btn:active, 
+.lsx-full-width .lsx-hero-unit button:hover, 
+.lsx-full-width .lsx-hero-unit button:focus, 
+.lsx-full-width .lsx-hero-unit button:active,
+.lsx-full-width-alt .lsx-hero-unit .btn:hover, 
+.lsx-full-width-alt .lsx-hero-unit .btn:focus, 
+.lsx-full-width-alt .lsx-hero-unit .btn:active, 
+.lsx-full-width-alt .lsx-hero-unit button:hover, 
+.lsx-full-width-alt .lsx-hero-unit button:focus, 
+.lsx-full-width-alt .lsx-hero-unit button:active {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #572600 !important;
+}
+  
+.page-template-template-home-hero #primary article.page .entry-content a:hover,
+.page-template-template-home-hero #primary article.page .entry-content a:active,
+.page-template-template-home-hero #primary article.page .entry-content a:focus {
+  color: #596b46 !important;
+}
+
+.lsx-full-width-alt .lsx-hero-unit .btn, 
+.lsx-full-width-alt .lsx-hero-unit button {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.widget#book .panel .book-now,
+.widget#book .panel .view-room {
+  -webkit-box-shadow: 0 3px 0px #af6a03 !important;
+  -moz-box-shadow: 0 3px 0px #af6a03 !important;
+  box-shadow: 0 3px 0px #af6a03 !important;
+}
+
+.widget#book .panel .enquire-now {
   background: #572600 !important;
+  -webkit-box-shadow: 0 3px 0px #af6a03;
+  -moz-box-shadow: 0 3px 0px #af6a03;
+  box-shadow: 0 3px 0px #af6a03;
+}
+
+.widget#book .panel .enquire-now:hover,
+.widget#book .panel .enquire-now:active,
+.widget#book .panel .enquire-now:focus {
+  background: #331701 !important;
 }

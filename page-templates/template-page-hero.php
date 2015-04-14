@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page - No Title
+ * Template Name: Page Hero
  *
  * @package lsx
  */
@@ -28,8 +28,8 @@ get_header(); ?>
 				if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 				endif;
-			?>	
-
+			?>
+			
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>

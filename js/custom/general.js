@@ -2,7 +2,19 @@ var filter_item_width;
 jQuery(document).ready(function($) {
 	
 	filter_item_width = jQuery('.filter-items-container').width();
-	filter_item_width = filter_item_width/3;
+	if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
+		filter_item_width = 750;
+	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-2')){
+		filter_item_width = filter_item_width/2;
+	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-3')){
+		filter_item_width = filter_item_width/3;
+	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-4')){
+		filter_item_width = filter_item_width/4;
+	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-5')){
+		filter_item_width = filter_item_width/5;
+	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-6')){
+		filter_item_width = filter_item_width/6;
+	}
 	
 	$('table#wp-calendar').addClass('table');
 	
@@ -29,7 +41,7 @@ jQuery(document).ready(function($) {
 	*/
 
 	$(window).scroll(function(){
-	    if($(window).scrollTop() > 150) {
+	    if($(window).scrollTop() > 250) {
 	        $('header.banner').addClass('scrolled');
 	    } else {
 	        $('header.banner').removeClass('scrolled');
@@ -61,7 +73,7 @@ jQuery(document).ready(function($) {
 	// Sticky Book Now widget
 	$(".sticky-book").sticky({ 
 		topSpacing: 127,
-		bottomSpacing: 700
+		bottomSpacing: 1300
 	});
 
     $(window).load(function() {

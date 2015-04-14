@@ -37,8 +37,8 @@ function lsx_breadcrumbs() {
     );
 
   // Output HTML
-  //$output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
-  //$output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+  $output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+  $output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
 
   // Print
   echo $output;
@@ -356,8 +356,11 @@ if(!function_exists('lsx_site_identity')){
  */
 if(!function_exists('lsx_nav_menu')){
 	function lsx_nav_menu(){
-		$nav_menu = get_theme_mod('nav_menu_locations',array());
-	    if(isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+		$nav_menu = get_theme_mod('nav_menu_locations',false);
+		
+		//print_r(get_nav_menu_locations());
+
+	    if(false != $nav_menu && 0 != $nav_menu['primary']){ ?>
 			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
 		    	<?php
 				wp_nav_menu( array(
@@ -369,18 +372,10 @@ if(!function_exists('lsx_nav_menu')){
 				);
 				?>
 		   		</nav>
-	    	<?php } else { ?>
+	    <?php } elseif(is_customize_preview()) { ?>
 	    		<nav class="primary-navbar collapse navbar-collapse" role="navigation">
-		  	<?php
-			wp_nav_menu( array(
-				'menu' => $nav_menu,
-				'depth' => 2,
-				'container' => false,
-				'menu_class' => 'nav navbar-nav',
-				'walker' => new lsx_bootstrap_navwalker())
-			);
-			?>
-	    	</nav>
+	    			<div class="alert alert-info" role="alert"><?php _e('Create a menu and assign it here via the "Navigation" panel.','lsx');?></div>
+	    		</nav>
 	    </div>
 	  	<?php }
 	}

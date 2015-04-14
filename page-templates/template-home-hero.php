@@ -28,12 +28,19 @@ get_header(); ?>
 				if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 				endif;
-			?>	
+			?>
 
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
+
+	<?php if ( is_active_sidebar( 'sidebar-home' ) ) { ?>
+
+		<section id="home-widgets">
+			<?php dynamic_sidebar( 'sidebar-home' ); ?>
+		</section>
+	<?php } ?>
 
 <?php get_footer(); ?>
