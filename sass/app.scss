@@ -169,7 +169,7 @@ $primary-darker: #357ebd;
 
 @mixin lsx-full-width($background, $color) {
 	margin: 0 -9999rem;
-	padding: 40px 9999rem;
+	padding: 60px 9999rem;
 	background: $background;
 	color: $color;
 	margin: {
@@ -1453,11 +1453,12 @@ hr {
 .modal-dialog {
 	margin: 0;
 	position: absolute;
-	top: 20%;
-	left: 35%;
+	top: 50%;
+	left: 50%;
 }
 
 .modal-content {
+	max-height: 100%;
 	padding: 30px 40px;
 	border: none;
 	@include box-shadow(0 2px 10px rgba(0, 0, 0, 0.32));
@@ -2743,6 +2744,17 @@ header.page-header {
 				}
 			}
 		}    
+	}
+
+	#related-rooms {
+		@include lsx-full-width(#f1f1f1, inherit);
+		margin-bottom: -60px;
+
+		.room-content {
+			& > p {
+				display: none;
+			}
+		}
 	}
 }
 
