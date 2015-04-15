@@ -254,8 +254,8 @@ function lsx_form_submit_button($button, $form){
     return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
 }
 
-add_image_size( 'thumbnail-wide', 350, 230, true );
-add_image_size( 'thumbnail-single', 750, 350, true );
+add_image_size( 'lsx-thumbnail-wide', 350, 230, true );
+add_image_size( 'lsx-thumbnail-single', 750, 350, true );
 
 
 /**

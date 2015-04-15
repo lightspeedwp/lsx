@@ -20,7 +20,7 @@ if ($types) {
 		<div class="portfolio-thumbnail">
 			<?php if ( '' != get_the_post_thumbnail() ) : ?>
 				<a href="<?php the_permalink(); ?>">
-					<?php lsx_thumbnail( 'thumbnail-wide' ); ?>
+					<?php lsx_thumbnail( 'lsx-thumbnail-wide' ); ?>
 				</a>
 			<?php endif; ?>
 		</div>
