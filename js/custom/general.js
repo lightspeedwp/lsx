@@ -48,11 +48,29 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+	// Disabling homepage slider and background image area on mobile
+	$(document).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 768) {
+	        $(".home .soliloquy-slider").remove();
+	        $(".home .home-bg-image").remove();
+	    }
+	});
+
 	// Removing homepage slider for mobile
 	$(document).resize(function () {
 	    var screen = $(window)    
 	    if (screen.width < 768) {
 	        $(".home .soliloquy-slider").remove();
+	        $(".home .home-bg-image").remove();
+	    }
+	});
+
+	$(document).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 992) {
+	        $("nav ul li").removeClass('dropdown');
+	        $("nav ul li").removeClass('open');
 	    }
 	});
 

@@ -183,12 +183,20 @@ $primary-darker: #357ebd;
 	h4,
 	h5,
 	h6 {
-		margin-top: 0 !important;
+		margin-top: 0;
 		line-height: 1.4;
 		color: $color;
 
 		a {
 			color: $color;
+		}
+
+		@media screen and (max-width: 992px) {
+			margin-top: 40px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-top: 20px;
 		}
 	}
 
@@ -210,12 +218,12 @@ $primary-darker: #357ebd;
 			color: inherit;
 
 			a {
-				color: inherit;
+				color: $primary;
 			}
 		}
 
 		a {
-			color: inherit;
+			color: $primary;
 		}
 	}
 
@@ -840,6 +848,12 @@ table {
 	}
 }
 
+.breadcrumbs-container {
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
 
 // Plugin Post Types
 
@@ -1231,7 +1245,7 @@ table {
 // Breadcrumbs
 
 ul.breadcrumb {
-	margin-bottom: 30px;
+	margin: 30px 0;
 	padding: 0;
 	background: none;
 
@@ -1887,6 +1901,7 @@ nav {
 
 					@media screen and (max-width: 992px) {
 						background: none !important;
+						font-size: 20px;
 
 						&:hover {
 							color: $black !important;
@@ -1953,7 +1968,7 @@ nav {
 
 							@media screen and (max-width: 992px) {
 								color: $grey;
-								font-size: 17px;
+								font-size: 18px;
 							}
 						}
 
@@ -2408,6 +2423,15 @@ header.page-header {
 			.entry-content {
 				color: $white;
 
+				.hero-tagline {
+					text-align: center;
+					margin-top: -11px;
+
+					em {
+						font-size: 22px;
+					}
+				}
+
 				h1,
 				h2,
 				h3,
@@ -2417,7 +2441,9 @@ header.page-header {
 				a {
 					color: $white;
 					font-weight: bold;
+				}
 
+				a {
 					&:focus,
 					&:hover,
 					&:active {
@@ -2428,6 +2454,16 @@ header.page-header {
 				.btn,
 				button {
 					@include lsx-border-button($white, $black);
+
+					.btn,
+					button {
+						&:hover,
+						&:focus,
+						&:active {
+							background: $white !important;
+							border-color: $white !important;
+						}
+					}
 				}
 			}
 
