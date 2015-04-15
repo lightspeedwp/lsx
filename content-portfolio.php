@@ -6,7 +6,7 @@
  */
 
 
-$type_class = "filter-item ";
+$type_class = "filter-item column-3 ";
 $types = get_the_terms( get_the_ID(), 'jetpack-portfolio-type');
 if ($types) {
 	foreach ($types as $type) {

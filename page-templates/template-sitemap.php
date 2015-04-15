@@ -27,21 +27,7 @@ get_header(); ?>
 
                         <?php lsx_sitemap_pages(); ?>
 
-                        <h2><?php _e( 'Categories', 'lsx' ); ?></h2>
-                        <ul>
-                            <?php wp_list_categories( 'title_li=&hierarchical=0&show_count=1' ); ?>
-                        </ul>
-
-                        <?php
-                        $args = array(
-							'public'				=> true,
-							'_builtin' 				=> false                      	
-                        );
-                        $post_types = get_post_types($args , 'names');
-						foreach($post_types as $post_type){
-							lsx_sitemap_custom_post_type($post_type);
-						}
-                        ?>
+                        <?php lsx_sitemap_custom_post_type(); ?>
                     	
 					</div><!-- .entry-content -->
 					<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
@@ -62,6 +48,6 @@ get_header(); ?>
 		
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('sitemap'); ?>
 
 <?php get_footer(); ?>
