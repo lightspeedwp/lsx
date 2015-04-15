@@ -183,12 +183,20 @@ $primary-darker: #357ebd;
 	h4,
 	h5,
 	h6 {
-		margin-top: 0 !important;
+		margin-top: 0;
 		line-height: 1.4;
 		color: $color;
 
 		a {
 			color: $color;
+		}
+
+		@media screen and (max-width: 992px) {
+			margin-top: 40px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-top: 20px;
 		}
 	}
 
@@ -210,12 +218,12 @@ $primary-darker: #357ebd;
 			color: inherit;
 
 			a {
-				color: inherit;
+				color: $primary;
 			}
 		}
 
 		a {
-			color: inherit;
+			color: $primary;
 		}
 	}
 
@@ -444,6 +452,10 @@ $primary-darker: #357ebd;
 /* ==========================================================================
 	 Base
 	 ========================================================================== */
+
+html {
+	overflow-x: hidden;
+}
 
 body {
 	width: auto !important;
@@ -836,6 +848,11 @@ table {
 	}
 }
 
+.breadcrumbs-container {
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}
 
 
 // Plugin Post Types
@@ -1228,7 +1245,7 @@ table {
 // Breadcrumbs
 
 ul.breadcrumb {
-	margin-bottom: 30px;
+	margin: 30px 0;
 	padding: 0;
 	background: none;
 
@@ -1832,16 +1849,18 @@ nav {
 			border: none !important;
 		    box-shadow: none !important;
 		    margin: 0 !important;
-		    padding-bottom: 20px !important;
+		    padding: {
+		    	bottom: 40px !important;
+		    }
 		    float: none !important;
 		}
 
 		@media screen and (max-width: 992px) {
+			padding-top: 20px;
 			margin: 0 !important;
 		}
 
 		@media screen and (max-width: 768px) {
-			padding: 0 0 10px !important;
 			transition: none !important;
 		}
 
@@ -1882,6 +1901,7 @@ nav {
 
 					@media screen and (max-width: 992px) {
 						background: none !important;
+						font-size: 20px;
 
 						&:hover {
 							color: $black !important;
@@ -1948,7 +1968,7 @@ nav {
 
 							@media screen and (max-width: 992px) {
 								color: $grey;
-								font-size: 15px;
+								font-size: 18px;
 							}
 						}
 
@@ -2357,23 +2377,60 @@ header.page-header {
 
 	.wrap {
 		margin-top: 260px;
+
+		@media screen and (max-width: 992px) {
+  			margin-top: 160px;
+		}
+
+		@media screen and (max-width: 768px) {
+  			margin-top: 40px;
+		}
 	}
 
 	#primary {
 		float: none;
 		margin: 0 auto;
 
+		@media screen and (max-width: 992px) {
+			width: 90%;
+		}
+
+		@media screen and (max-width: 670px) {
+			width: 100%;
+		}
+
 		article.page {
 			margin-bottom: 145px;
+
+			@media screen and (max-width: 768px) {
+	  			margin-bottom: 50px;
+			}
 
 			h1.page-title {
 				font-size: 46px;
 			    text-align: center;
 			    color: $white;
+
+			    @media screen and (max-width: 768px) {
+		  			font-size: 36px;
+				}
+
+				@media screen and (max-width: 670px) {
+		  			font-size: 32px;
+				}
 			}
 
 			.entry-content {
 				color: $white;
+
+				.hero-tagline {
+					text-align: center;
+					margin-top: -11px;
+
+					em {
+						font-size: 22px;
+					}
+				}
 
 				h1,
 				h2,
@@ -2384,7 +2441,9 @@ header.page-header {
 				a {
 					color: $white;
 					font-weight: bold;
+				}
 
+				a {
 					&:focus,
 					&:hover,
 					&:active {
@@ -2395,6 +2454,16 @@ header.page-header {
 				.btn,
 				button {
 					@include lsx-border-button($white, $black);
+
+					.btn,
+					button {
+						&:hover,
+						&:focus,
+						&:active {
+							background: $white !important;
+							border-color: $white !important;
+						}
+					}
 				}
 			}
 
@@ -2410,6 +2479,15 @@ header.page-header {
 		padding: {
 			top: 60px !important;
 			bottom: 60px !important;
+		}
+
+		@media screen and (max-width: 992px) {
+  			margin-top: -70px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin: 0 -8px -40px;
+			padding: 40px 40px !important;
 		}
 	}	
 }
@@ -3271,6 +3349,13 @@ article {
 
 			&:hover {
 				color: $grey;
+			}
+		}
+
+		.btn,
+		button {
+			&:hover {
+				color: $white;
 			}
 		}
 
