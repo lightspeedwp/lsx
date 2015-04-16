@@ -1309,11 +1309,6 @@ ul.breadcrumb {
 	padding: 0;
 	background: none;
 
-	.page-template-template-page-hero & {
-		position: absolute;
-		top: 40px;
-	}
-
 	@media print {
 		display: none !important;
 	}
@@ -2557,6 +2552,15 @@ header.page-header {
 }
 
 .page-template-template-page-hero {
+	ul.breadcrumb {
+		position: absolute;
+		top: -17px;
+
+		li.active {
+			@include border-radius-top(0);
+		}
+	}
+
 	.lsx-full-width-header {
 		margin-top: -15px;
 	}
