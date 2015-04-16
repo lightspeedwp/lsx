@@ -428,8 +428,11 @@ $primary-darker: #357ebd;
 }
 
 @mixin lsx-pricing-table {
-	@include clear-list;
 	@include lsx-box;
+	
+	ul {
+		@include clear-list;
+	}
 }
 
 @mixin lsx-hero-unit {
