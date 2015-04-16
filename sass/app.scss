@@ -177,6 +177,10 @@ $primary-darker: #357ebd;
 		bottom: 60px;
 	}
 
+	@media screen and (max-width: 768px) {
+		padding: 40px 9999rem;
+	}
+
 	h1,
 	h2,
 	h3,
@@ -234,6 +238,10 @@ $primary-darker: #357ebd;
 		button {
 			@include lsx-border-button($white, #888);
 			margin: 5px 15px;
+
+			@media screen and (max-width: 768px) {
+	  			margin: 15px 15px;
+			}
 		}
 	}
 }	
@@ -447,6 +455,45 @@ $primary-darker: #357ebd;
 	margin-bottom: 0;
 	margin-top: 20px;
 }
+
+@mixin lsx-image-section {
+	margin-top: 30px;
+
+	.lsx-image-section-content {
+		font-size: 16px;
+		padding-left: 70px;
+
+		@media screen and (max-width: 385px) {
+			padding-left: 0;
+		}
+
+		.lsx-image-section-title {
+			font-size: 20px;
+			margin-top: 0;
+			margin-bottom: 10px;
+
+			@media screen and (max-width: 385px) {
+				font-size: 19px;
+			}
+		}
+	}
+
+	& > p {
+		display: none;
+	}
+
+	& > img {
+		max-width: 50px;
+		float: left;
+		margin-top: 2px;
+
+		@media screen and (max-width: 385px) {
+			float: none;
+			padding-left: 0;
+		}
+	}
+}
+
 
  
 /* ==========================================================================
@@ -675,6 +722,10 @@ img,
 
 .lsx-hero-unit {
 	@include lsx-hero-unit;
+}
+
+.lsx-image-section {
+	@include lsx-image-section;
 }
 
 .thumbnail {
@@ -2499,6 +2550,12 @@ header.page-header {
 
 	.lsx-full-width-footer {
 		margin-bottom: -120px;
+		padding: 40px 9999rem;
+
+
+		@media screen and (max-width: 992px) {
+  			margin-top: -80px;
+		}
 	}
 
 	.edit-link {
