@@ -240,6 +240,7 @@ $primary-darker: #357ebd;
 			margin: 5px 15px;
 
 			@media screen and (max-width: 768px) {
+				display: block;
 	  			margin: 15px 15px;
 			}
 		}
@@ -436,6 +437,10 @@ $primary-darker: #357ebd;
 	max-width: 80%;
 	margin: 20px auto;
 
+	@media screen and (max-width: 385px) {
+		max-width: 100%;
+	}
+
 	a,
 	.btn,
 	button {
@@ -446,6 +451,10 @@ $primary-darker: #357ebd;
 	button {
 		background: none;
 		margin: 0 20px;
+
+		@media screen and (max-width: 768px) {
+			margin: 15 20px;
+		}
 	}
 }
 
@@ -2483,6 +2492,10 @@ header.page-header {
 					}
 				}
 
+				hr {
+					margin: 40px auto;
+				}
+
 				h1,
 				h2,
 				h3,
@@ -2554,7 +2567,7 @@ header.page-header {
 
 
 		@media screen and (max-width: 992px) {
-  			margin-top: -80px;
+  			margin-bottom: -80px;
 		}
 	}
 
