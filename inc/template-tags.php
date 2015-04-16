@@ -12,10 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function lsx_breadcrumbs() {
   if (!function_exists('yoast_breadcrumb')) {
     return null;
-  } else {
-  	// Output HTML
-	  $output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
-	  $output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
   }
 
   // Default Yoast Breadcrumbs Separator
@@ -39,6 +35,11 @@ function lsx_breadcrumbs() {
       '),
     $crumb
     );
+
+   if (function_exists('yoast_breadcrumb')) {
+	  $output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+	  $output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+  }
 
   // Print
   echo $output;
