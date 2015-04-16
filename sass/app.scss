@@ -241,7 +241,7 @@ $primary-darker: #357ebd;
 
 			@media screen and (max-width: 768px) {
 				display: block;
-	  			margin: 15px 15px;
+				margin: 15px auto 0;
 			}
 		}
 	}
@@ -1441,6 +1441,21 @@ hr {
 .lsx-full-width-alt {
 	@include lsx-full-width($black, $white);
 
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@media screen and (max-width: 992px) {
+			margin-top: 0;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-top: 0;
+		}
+	}
+
 	.btn,
 	button {
 		&:hover,
@@ -2568,10 +2583,14 @@ header.page-header {
 .page-template-template-page-hero {
 	ul.breadcrumb {
 		position: absolute;
-		top: -17px;
+		top: -25px;
 
 		li.active {
 			@include border-radius-top(0);
+		}
+
+		@media screen and (max-width: 1200px) {
+  			top: -17px;
 		}
 
 		@media screen and (max-width: 992px) {
@@ -2589,7 +2608,13 @@ header.page-header {
 
 
 		@media screen and (max-width: 992px) {
+  			margin-bottom: -110px;
+  			padding: 30px 9999rem;
+		}
+
+		@media screen and (max-width: 768px) {
   			margin-bottom: -80px;
+  			padding: 20px 9999rem;
 		}
 	}
 
