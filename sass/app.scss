@@ -1787,6 +1787,10 @@ header.banner {
 
 	.admin-bar & {
 		top: 32px;
+
+		@media screen and (max-width: 783px) {
+			top: 46px;
+		}
 	}
 
 	.navbar-header {
@@ -2325,6 +2329,16 @@ nav {
 		}
 	}
 
+	.page-template-template-page-hero & {
+		@media screen and (max-width: 992px) {
+			margin-top: 90px !important;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-top: 0 !important;
+		}
+	}
+
 	#primary,
 	#secondary {
 		&.col-sm-12 {
@@ -2558,6 +2572,10 @@ header.page-header {
 
 		li.active {
 			@include border-radius-top(0);
+		}
+
+		@media screen and (max-width: 992px) {
+  			top: -7px;
 		}
 	}
 
