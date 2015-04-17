@@ -45,6 +45,13 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+	$(window).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 768) {
+	        $(".page-banner").remove();
+	    }
+	});
+
 	$(document).resize(function () {
 	    var screen = $(window)    
 	    if (screen.width < 992) {
