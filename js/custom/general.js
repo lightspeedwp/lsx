@@ -15,8 +15,22 @@ jQuery(document).ready(function($) {
 	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-6')){
 		filter_item_width = filter_item_width/6;
 	}
-	
-	$('table#wp-calendar').addClass('table');
+	var window_width = $(window).width();
+	if(window_width <= 768 && window_width > 400){
+		filter_item_width = jQuery('.filter-items-container').width()/2;
+		
+		jQuery('.filter-items-container .filter-item').each(function(){
+			jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
+			jQuery(this).addClass('column-2');
+		});
+	}
+	if(window_width <= 400){
+		filter_item_width = jQuery('.filter-items-container').width();
+		jQuery('.filter-items-container .filter-item').each(function(){
+			jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
+			jQuery(this).addClass('column-1');
+		});
+	}
 	
 	/*
 	var div = document.createElement("div");
