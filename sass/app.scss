@@ -432,12 +432,6 @@ $primary-darker: #357ebd;
 	border-top: 3px solid #ccc;
 	margin-bottom: 20px;
 
-	@media screen and (max-width: 992px) {
-		position: relative !important;
-		width: auto !important;
-		top: auto !important;
-	}
-
 	& > div,
 	li {
 		margin-bottom: 20px;
@@ -2908,6 +2902,12 @@ header.page-header {
 
 		.info-box-mobile {
 			display: none;
+
+			.portfolio-meta {
+				position: relative !important;
+				top: auto !important;
+				width: auto !important;
+			}
 
 			@media screen and (max-width: 768px) {
 				display: block;

@@ -18,6 +18,10 @@ jQuery(document).ready(function($) {
 	
 	$('table#wp-calendar').addClass('table');
 
+	$('.dropdown-menu').on('touchstart.dropdown.data-api', function(e){
+	    e.stopPropagation();
+	});
+
 	$(window).scroll(function(){
 	    if($(window).scrollTop() > 250) {
 	        $('header.banner').addClass('scrolled');
