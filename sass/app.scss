@@ -434,6 +434,10 @@ $primary-darker: #357ebd;
 	border-top: 3px solid #ccc;
 	margin-bottom: 20px;
 
+	ul {
+		@include clear-list;
+	}
+
 	& > div,
 	li {
 		margin-bottom: 20px;
@@ -1520,7 +1524,7 @@ hr {
 	}
 
 	.control-label {
-		font-weight: bold;
+		font-weight: normal;
 	}
 
 	.form-control {
@@ -2399,7 +2403,7 @@ nav {
 		}
 
 		@media screen and (max-width: 768px) {
-			margin-top: 0 !important;
+			margin-top: 20px !important;
 		}
 	}
 
