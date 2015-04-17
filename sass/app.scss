@@ -246,7 +246,7 @@ $primary-darker: #357ebd;
 	}
 
 	.lsx-border-button {
-		color: $white !important;
+		color: $white;
 		background: none !important;
 		border-color: $white !important;
 
@@ -372,6 +372,10 @@ $primary-darker: #357ebd;
 		@media print {
 			display: none !important;
 		}
+
+		@media screen and (max-width: 1200px) {
+			padding: 300px 0 155px;
+		}
 	}
 
 	.wrap {
@@ -383,6 +387,14 @@ $primary-darker: #357ebd;
 		padding-bottom: 60px;
 		border-top: 1px solid #ddd;
 
+		@media screen and (max-width: 1200px) {
+			margin-top: 490px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-top: 0;
+		}
+
 		@media print {
 			margin-top: 20px !important;
 		}
@@ -392,10 +404,22 @@ $primary-darker: #357ebd;
 			margin: 0 auto;
 			padding-top: 60px;
 
+			@media screen and (max-width: 1200px) {
+				padding-top: 40px;
+			}
+
+			@media screen and (max-width: 992px) {
+				padding-top: 20px;
+			}
+
 			header.page-header {
 				display: none;
 
 				@media print {
+					display: block;
+				}
+
+				@media screen and (max-width: 768px) {
 					display: block;
 				}
 			}

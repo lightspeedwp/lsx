@@ -12,11 +12,9 @@
 
 	<?php lsx_entry_top(); ?>
 
-	<?php if(!has_post_thumbnail()) {?>
-		<header class="page-header">
-			<h1 class="page-title"><?php the_title(); ?></h1>
-		</header><!-- .entry-header -->
-	<?php } ?>
+	<header class="page-header">
+		<h1 class="page-title"><?php the_title(); ?></h1>
+	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>

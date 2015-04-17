@@ -57,12 +57,13 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// Removing homepage slider for mobile
+	// Removing homepage slider, bg image and page banners for mobile
 	$(document).resize(function () {
 	    var screen = $(window)    
 	    if (screen.width < 768) {
 	        $(".home .soliloquy-slider").remove();
 	        $(".home .home-bg-image").remove();
+	        $(".page-banner").remove();
 	    }
 	});
 
