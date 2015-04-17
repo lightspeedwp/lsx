@@ -404,14 +404,6 @@ $primary-darker: #357ebd;
 			margin: 0 auto;
 			padding-top: 60px;
 
-			@media screen and (max-width: 1200px) {
-				padding-top: 40px;
-			}
-
-			@media screen and (max-width: 992px) {
-				padding-top: 20px;
-			}
-
 			header.page-header {
 				display: none;
 
@@ -421,6 +413,7 @@ $primary-darker: #357ebd;
 
 				@media screen and (max-width: 768px) {
 					display: block;
+					text-align: center;
 				}
 			}
 		}
