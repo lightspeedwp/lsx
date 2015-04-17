@@ -1247,6 +1247,7 @@ table {
 
 			[class*="-thumbnail"] {
 				overflow: hidden;
+				min-height: 246px;
 
 				a {
 					border: none !important;
@@ -1254,7 +1255,6 @@ table {
 
 				img {
 					width: 100%;
-					min-height: 246px;
 					@include transition(all .4s ease-in-out);
 
 					@media screen and (max-width: 540px) {
@@ -1265,10 +1265,11 @@ table {
 
 			[class*="-title"] {
 				font: {
-					size: 22px;
+					size: 20px;
 				}
 				color: white;
 				text-align: center;
+				padding: 0 20px;
 				margin-bottom: 10px;
 				display: block;
 				position: absolute;
@@ -1280,15 +1281,12 @@ table {
 				@include transition(all 0.4s ease-in-out);
 				@include title-shadow;
 
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 992px) {
 					font-size: 18px;
 				}
 
 				@media screen and (max-width: 540px) {
-					font: {
-						size: 20px;
-						weight: bold;
-					}
+					font-weight: bold;
 				}
 			}
 		}
@@ -2797,100 +2795,6 @@ header.page-header {
 		}
 	}
 }
-
-/*
-.lsx-portfolio-wrapper {
-	text-align: center;
-	margin-left: -7px;
-	margin-right: -7px;
-	
-	#infinite-handle, .infinite-loader {
- 		bottom: 0;
-    	position: absolute;	
-	}
-
-	.lsx-portfolio {
-		width: 100% !important;
-
-		.jetpack-portfolio {
-			width: 33.3%;
-			padding-left: 10px;
-			padding-right: 10px;
-			margin-bottom: 20px;
-			overflow: hidden;
-			display: block;
-    		float: left;
-    		height: auto !important;	
-
-			.portfolio-content-wrapper {
-				position: relative;
-				background: $blacker;
-
-				.portfolio-thumbnail {
-					overflow: hidden;
-					min-height: 246px; 
-
-					a {
-						border: none !important;
-					}
-					
-					
-
-					img {
-						@include transition(all .4s ease-in-out);
-						width: 100%;
-						
-						max-height:246px;
-					}
-				}
-
-				.portfolio-title {
-					opacity: .8;
-					font: {
-						size: 18px;
-						weight: bold;
-					}
-					color: $white;
-					text-align: center;
-					margin-bottom: 10px;
-					display: block;
-					position: absolute;
-					top: 50%;
-					margin: -18px auto 0 !important;
-					letter-spacing: .7px;
-					padding: 0 15px;
-					width: 100%;
-					border: none !important;
-					@include transition(all .4s ease-in-out);
-				}
-
-				&.active {
-					.portfolio-title {
-						opacity: 1;
-					}
-
-					img {
-						opacity: .08;
-						-webkit-transform: scale(1.08);
-						-moz-transform: scale(1.08);
-						-o-transform: scale(1.08);
-						transform: scale(1.08);
-					}
-				}
-			}
-
-			@media screen and (max-width: 992px) {
-				width: 50%;
-				margin-bottom: 20px;
-			}
-
-			@media screen and (max-width: 600px) {
-				width: 100%;
-			}
-		}
-	}
-}
-*/
 
 .single-jetpack-portfolio {
 	#primary {
