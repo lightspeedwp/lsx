@@ -3032,7 +3032,6 @@ article {
 		margin-bottom: 40px;
 	}
 	
-	/*
 	body &.column-1 {
 		width: 100%;
 		max-width: 100%;
@@ -3042,10 +3041,22 @@ article {
 	
 	body &.column-2 {
 		width: 50% !important;
+
+		@media screen and (max-width: 768px) {
+			width: 100% !important;
+		}
 	}
 	
 	body &.column-3 {
 		width: 33.3% !important;
+
+		@media screen and (max-width: 992px) {
+			width: 50% !important;
+		}
+
+		@media screen and (max-width: 768px) {
+			width: 100% !important;
+		}
 	}
 	
 	body &.column-4 {
@@ -3059,7 +3070,7 @@ article {
 	body &.column-6 {
 		width: 16.666% !important;
 	}	
-	*/
+
 	.single & {
 		margin-bottom: 0;
 	}
