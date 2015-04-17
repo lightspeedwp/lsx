@@ -15,44 +15,12 @@ jQuery(document).ready(function($) {
 	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-6')){
 		filter_item_width = filter_item_width/6;
 	}
-	var window_width = $(window).width();
-	if(window_width <= 768 && window_width > 400){
-		filter_item_width = jQuery('.filter-items-container').width()/2;
-		
-		jQuery('.filter-items-container .filter-item').each(function(){
-			jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
-			jQuery(this).addClass('column-2');
-		});
-	}
-	if(window_width <= 400){
-		filter_item_width = jQuery('.filter-items-container').width();
-		jQuery('.filter-items-container .filter-item').each(function(){
-			jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
-			jQuery(this).addClass('column-1');
-		});
-	}
 	
-	/*
-	var div = document.createElement("div");
-	div.id = "body-wrapper";
-	// Move the body's children into this wrapper
-	while (document.body.firstChild)
-	{
-	    div.appendChild(document.body.firstChild);
-	}
-	// Append the wrapper to the body
-	document.body.appendChild(div);
+	$('table#wp-calendar').addClass('table');
 
-	$(function () {
-	  $.srSmoothscroll({
-	    step: 100,
-	    speed: 975,
-	    ease: 'swing',
-	    target: $('body'),
-	    conainter: $(window)
-	  })
-	})
-	*/
+	$('.dropdown-menu').on('touchstart.dropdown.data-api', function(e){
+	    e.stopPropagation();
+	});
 
 	$(window).scroll(function(){
 	    if($(window).scrollTop() > 250) {
@@ -71,12 +39,20 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// Removing homepage slider for mobile
+	// Removing homepage slider, bg image and page banners for mobile
 	$(document).resize(function () {
 	    var screen = $(window)    
 	    if (screen.width < 768) {
 	        $(".home .soliloquy-slider").remove();
 	        $(".home .home-bg-image").remove();
+	        $(".page-banner").remove();
+	    }
+	});
+
+	$(window).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 768) {
+	        $(".page-banner").remove();
 	    }
 	});
 
@@ -94,7 +70,7 @@ jQuery(document).ready(function($) {
 	} else {
 		var spacing = 93;
 	}
-
+	
 	$(".info-box-sticky").sticky({ 
 		topSpacing: spacing,
 		bottomSpacing: 590,
