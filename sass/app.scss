@@ -1201,9 +1201,6 @@ table {
 // Masonry
 
 .masonry {
-	margin-left: -8px;
-	margin-right: -8px;
-
 	& > h2 {
 		clear: both;
 		margin-bottom: 30px;
@@ -1256,6 +1253,10 @@ table {
 					width: 100%;
 					min-height: 246px;
 					@include transition(all .4s ease-in-out);
+
+					@media screen and (max-width: 540px) {
+						min-height: 0;
+					}
 				}
 			}
 
@@ -2783,7 +2784,7 @@ header.page-header {
 		}
 	}
 }
-
+/*
 .lsx-portfolio-wrapper {
 	text-align: center;
 	margin-left: -7px;
@@ -2875,7 +2876,7 @@ header.page-header {
 		}
 	}
 }
-
+*/
 .single-jetpack-portfolio {
 	#primary {
 		float: left;
