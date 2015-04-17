@@ -249,12 +249,14 @@ $primary-darker: #357ebd;
 		color: $white;
 		background: none !important;
 		border-color: $white !important;
+		border: 3px solid $white !important;
 
 		&:hover,
 		&:active,
 		&:focus {
 			background: $white !important;
 			border-color: $white !important;
+			border: 3px solid $white !important;
 			color: $black !important;
 		}
 	}
