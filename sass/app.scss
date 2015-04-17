@@ -236,17 +236,7 @@ $primary-darker: #357ebd;
 
 		.btn,
 		button {
-			@include lsx-border-button($white, $white);
 			margin: 5px 15px;
-
-			&.lsx-border-button {
-				&:hover,
-				&:active,
-				&:focus {
-					background: $white !important;
-					border-color: $white !important;
-				}
-			}
 
 			@media screen and (max-width: 768px) {
 				display: block;
@@ -256,11 +246,16 @@ $primary-darker: #357ebd;
 	}
 
 	.lsx-border-button {
+		color: $white !important;
+		background: none !important;
+		border-color: $white !important;
+
 		&:hover,
 		&:active,
 		&:focus {
 			background: $white !important;
 			border-color: $white !important;
+			color: $black !important;
 		}
 	}
 }	
