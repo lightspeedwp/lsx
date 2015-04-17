@@ -458,6 +458,15 @@ $primary-darker: #357ebd;
 			margin: 15 20px;
 		}
 	}
+
+	.lsx-border-button {
+		&:hover,
+		&:active,
+		&:focus {
+			background: $white !important;
+			border-color: $white !important;
+		} 
+	}
 }
 
 @mixin lsx-section-heading {
