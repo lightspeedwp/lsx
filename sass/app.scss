@@ -2467,7 +2467,7 @@ header.page-header {
 	background: $primary !important;
 
 	.wrap {
-		margin-top: 260px;
+		margin-top: 230px;
 
 		@media screen and (max-width: 992px) {
   			margin-top: 160px;
@@ -2491,7 +2491,7 @@ header.page-header {
 		}
 
 		article.page {
-			margin-bottom: 145px;
+			margin-bottom: 115px;
 
 			@media screen and (max-width: 768px) {
 	  			margin-bottom: 50px;
@@ -2698,6 +2698,32 @@ header.page-header {
 		padding: 80px 0;
 	}
 }
+
+
+// 404 Template
+
+.error404 {
+	.wrap {
+		margin-top: 205px;
+
+		#primary {
+			width: 100%;
+
+			.error-404 {
+				text-align: center;
+
+				.page-title {
+					border: none;
+					padding: 0;
+					margin-bottom: 18px;
+					font-size: 60px;
+					color: #999;
+				}
+			}
+		}
+	}
+}
+
 
 // Portfolio
 
