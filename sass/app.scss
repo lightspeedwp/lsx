@@ -432,6 +432,12 @@ $primary-darker: #357ebd;
 	border-top: 3px solid #ccc;
 	margin-bottom: 20px;
 
+	@media screen and (max-width: 768px) {
+		position: relative !important;
+		width: auto !important;
+		top: auto !important;
+	}
+
 	& > div,
 	li {
 		margin-bottom: 20px;
@@ -2880,10 +2886,26 @@ header.page-header {
 .single-jetpack-portfolio {
 	#primary {
 		float: left;
+
+		@media screen and (max-width: 768px) {
+			width: 100% !important;		
+		}
+
+		.info-box-mobile {
+			display: none;
+
+			@media screen and (max-width: 768px) {
+				display: block;
+			}
+		}
 	}
 
 	#secondary {
 		float: right;
+
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
 	}
 
 	.jetpack-portfolio {

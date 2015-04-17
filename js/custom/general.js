@@ -54,24 +54,18 @@ jQuery(document).ready(function($) {
 	});
 
 	// Sticky Info Box widget
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width > 992) {
-	        if ($('body').hasClass('logged-in')) {
-				var spacing = 125;
-			} else {
-				var spacing = 93;
-			}
-
-			$(".info-box-sticky").sticky({ 
-				topSpacing: spacing,
-				bottomSpacing: 590,
-				getWidthFrom: '#secondary',
-		    	responsiveWidth: true
-			});
-	    }
-	});
+	if ($('body').hasClass('logged-in')) {
+		var spacing = 125;
+	} else {
+		var spacing = 93;
+	}
 	
+	$(".info-box-sticky").sticky({ 
+		topSpacing: spacing,
+		bottomSpacing: 590,
+		getWidthFrom: '#secondary',
+    	responsiveWidth: true
+	});
 
 	// Sticky Book Now widget
 	$(".sticky-book").sticky({ 
