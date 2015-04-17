@@ -14,10 +14,6 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php lsx_content_top(); ?>
-
-			<div class="info-box-mobile">
-				<?php lsx_portfolio_meta(); ?>
-			</div>
 			
 			<?php while ( have_posts() ) : the_post(); ?>
 

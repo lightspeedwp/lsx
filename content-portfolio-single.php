@@ -14,6 +14,10 @@
 		<h1 class="page-title"><?php the_title(); ?></h1>		
 	</header><!-- .entry-header -->
 
+	<div class="info-box-mobile">
+		<?php lsx_portfolio_meta(); ?>
+	</div>
+
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="entry-content">
