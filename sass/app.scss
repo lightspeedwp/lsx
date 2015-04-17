@@ -2924,6 +2924,16 @@ header.page-header {
 
 		@media screen and (max-width: 992px) {
 			float: none;
+
+			.sticky-wrapper {
+				height: auto !important;
+			}
+			
+			.portfolio-meta {
+				position: relative !important;
+				top: auto !important;
+				width: auto !important;
+			}
 		}
 
 		@media screen and (max-width: 768px) {
