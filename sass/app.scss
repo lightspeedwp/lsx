@@ -1356,7 +1356,7 @@ table {
 // Breadcrumbs
 
 ul.breadcrumb {
-	margin-bottom: 0;
+	margin-bottom: 20px;
 	padding: 0;
 	background: none;
 
@@ -2803,6 +2803,7 @@ header.page-header {
 		}
 	}
 }
+
 /*
 .lsx-portfolio-wrapper {
 	text-align: center;
@@ -2896,6 +2897,7 @@ header.page-header {
 	}
 }
 */
+
 .single-jetpack-portfolio {
 	#primary {
 		float: left;
@@ -2915,6 +2917,10 @@ header.page-header {
 
 	#secondary {
 		float: right;
+
+		@media screen and (max-width: 992px) {
+			float: none;
+		}
 
 		@media screen and (max-width: 768px) {
 			display: none;
