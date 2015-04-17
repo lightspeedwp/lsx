@@ -432,7 +432,7 @@ $primary-darker: #357ebd;
 	border-top: 3px solid #ccc;
 	margin-bottom: 20px;
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 992px) {
 		position: relative !important;
 		width: auto !important;
 		top: auto !important;
@@ -1207,6 +1207,9 @@ table {
 // Masonry
 
 .masonry {
+	margin-left: -8px;
+	margin-right: -8px;
+
 	& > h2 {
 		clear: both;
 		margin-bottom: 30px;
@@ -2369,8 +2372,18 @@ nav {
 	 ========================================================================== */
 
 .wrap {
-	margin-top: 140px;
+	margin-top: 170px;
 	margin-bottom: 60px;
+
+	@media screen and (max-width: 992px) {
+		margin-top: 140px;
+		margin-bottom: 40px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
 
 	.home & {
 		margin-top: 220px;
