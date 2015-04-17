@@ -236,13 +236,25 @@ $primary-darker: #357ebd;
 
 		.btn,
 		button {
-			@include lsx-border-button($white, #888);
+			@include lsx-border-button($white, $white);
 			margin: 5px 15px;
 
 			@media screen and (max-width: 768px) {
 				display: block;
 				margin: 15px auto 0;
 			}
+		}
+	}
+
+	.lsx-border-button {
+		background: none !important;
+		border-color: $white !important;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: $white !important;
+			border-color: $white !important;
 		}
 	}
 }	
@@ -457,15 +469,6 @@ $primary-darker: #357ebd;
 		@media screen and (max-width: 768px) {
 			margin: 15 20px;
 		}
-	}
-
-	.lsx-border-button {
-		&:hover,
-		&:active,
-		&:focus {
-			background: $white !important;
-			border-color: $white !important;
-		} 
 	}
 }
 
@@ -1468,16 +1471,6 @@ hr {
 
 		@media screen and (max-width: 768px) {
 			margin-top: 0;
-		}
-	}
-
-	.btn,
-	button {
-		&:hover,
-		&:focus,
-		&:active {
-			background: $white !important;
-			border-color: $white !important;
 		}
 	}
 }
