@@ -17,28 +17,6 @@ jQuery(document).ready(function($) {
 	}
 	
 	$('table#wp-calendar').addClass('table');
-	
-	/*
-	var div = document.createElement("div");
-	div.id = "body-wrapper";
-	// Move the body's children into this wrapper
-	while (document.body.firstChild)
-	{
-	    div.appendChild(document.body.firstChild);
-	}
-	// Append the wrapper to the body
-	document.body.appendChild(div);
-
-	$(function () {
-	  $.srSmoothscroll({
-	    step: 100,
-	    speed: 975,
-	    ease: 'swing',
-	    target: $('body'),
-	    conainter: $(window)
-	  })
-	})
-	*/
 
 	$(window).scroll(function(){
 	    if($(window).scrollTop() > 250) {
@@ -76,18 +54,24 @@ jQuery(document).ready(function($) {
 	});
 
 	// Sticky Info Box widget
-	if ($('body').hasClass('logged-in')) {
-		var spacing = 125;
-	} else {
-		var spacing = 93;
-	}
+	$(document).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width > 992) {
+	        if ($('body').hasClass('logged-in')) {
+				var spacing = 125;
+			} else {
+				var spacing = 93;
+			}
 
-	$(".info-box-sticky").sticky({ 
-		topSpacing: spacing,
-		bottomSpacing: 590,
-		getWidthFrom: '#secondary',
-    	responsiveWidth: true
+			$(".info-box-sticky").sticky({ 
+				topSpacing: spacing,
+				bottomSpacing: 590,
+				getWidthFrom: '#secondary',
+		    	responsiveWidth: true
+			});
+	    }
 	});
+	
 
 	// Sticky Book Now widget
 	$(".sticky-book").sticky({ 
