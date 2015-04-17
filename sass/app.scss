@@ -152,7 +152,7 @@ $primary-darker: #357ebd;
 	background: none !important;
     padding: 9px 30px;
     border: 3px solid $color !important;
-    color: $color !important;
+    color: $color;
     font: {
     	size: 18px;
     	weight: bold;
@@ -239,6 +239,15 @@ $primary-darker: #357ebd;
 			@include lsx-border-button($white, $white);
 			margin: 5px 15px;
 
+			&.lsx-border-button {
+				&:hover,
+				&:active,
+				&:focus {
+					background: $white !important;
+					border-color: $white !important;
+				}
+			}
+
 			@media screen and (max-width: 768px) {
 				display: block;
 				margin: 15px auto 0;
@@ -247,9 +256,6 @@ $primary-darker: #357ebd;
 	}
 
 	.lsx-border-button {
-		background: none !important;
-		border-color: $white !important;
-
 		&:hover,
 		&:active,
 		&:focus {
