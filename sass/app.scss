@@ -1987,6 +1987,12 @@ nav {
 			}
 
 			& > li {
+
+				@media screen and (max-width: 1200px) {
+					float: left;
+ 					clear: both;
+				}
+
 				& > a {
 					@include border-radius(4px);
 
