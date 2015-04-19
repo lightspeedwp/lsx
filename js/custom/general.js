@@ -1,37 +1,6 @@
 var filter_item_width;
 jQuery(document).ready(function($) {
 	
-	filter_item_width = jQuery('.filter-items-container').width();
-	if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
-		filter_item_width = 750;
-	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-2')){
-		filter_item_width = filter_item_width/2;
-	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-3')){
-		filter_item_width = filter_item_width/3;
-	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-4')){
-		filter_item_width = filter_item_width/4;
-	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-5')){
-		filter_item_width = filter_item_width/5;
-	}else if(jQuery('.filter-items-container .filter-item').hasClass('column-6')){
-		filter_item_width = filter_item_width/6;
-	}
-	var window_width = $(window).width();
-	if(window_width <= 768 && window_width > 400){
-		filter_item_width = jQuery('.filter-items-container').width()/2;
-		
-		jQuery('.filter-items-container .filter-item').each(function(){
-			jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
-			jQuery(this).addClass('column-2');
-		});
-	}
-	if(window_width <= 400){
-		filter_item_width = jQuery('.filter-items-container').width();
-		jQuery('.filter-items-container .filter-item').each(function(){
-			jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
-			jQuery(this).addClass('column-1');
-		});
-	}	
-	
 	$('table#wp-calendar').addClass('table');
 
 	$('.dropdown-menu').on('touchstart.dropdown.data-api', function(e){
@@ -46,34 +15,9 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// Disabling homepage slider and background image area on mobile
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 768) {
-	        $(".home .soliloquy-slider").remove();
-	        $(".home .home-bg-image").remove();
-	    }
-	});
-
-	// Removing homepage slider, bg image and page banners for mobile
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 768) {
-	        $(".home .soliloquy-slider").remove();
-	        $(".home .home-bg-image").remove();
-	        $(".page-banner").remove();
-	    }
-	});
-
-	$(window).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 768) {
-	        $(".page-banner").remove();
-	    }
-	});
 
 	$(document).resize(function () {
-	    var screen = $(window)    
+	    var screen = $(window);    
 	    if (screen.width < 992) {
 	        $("nav ul li").removeClass('dropdown');
 	        $("nav ul li").removeClass('open');
@@ -87,48 +31,24 @@ jQuery(document).ready(function($) {
 		var spacing = 93;
 	}
 	
-	$(".info-box-sticky").sticky({ 
-		topSpacing: spacing,
-		bottomSpacing: 590,
-		getWidthFrom: '#secondary',
-    	responsiveWidth: true
-	});
+	if($(".info-box-sticky").length){
+		$(".info-box-sticky").sticky({ 
+			topSpacing: spacing,
+			bottomSpacing: 590,
+			getWidthFrom: '#secondary',
+	    	responsiveWidth: true
+		});
+	}
 
 	// Sticky Book Now widget
-	$(".sticky-book").sticky({ 
-		topSpacing: 127,
-		bottomSpacing: 1300
-	});
+	if($(".sticky-book").length){
+		$(".sticky-book").sticky({ 
+			topSpacing: 127,
+			bottomSpacing: 1300
+		});
+	}
 
     $(window).load(function() {
-		
-    	// The soprter for the portfolio.
-    	var has_filter = $('#filterNav');
-    	if('undefined' != has_filter){
-			$('#main').imagesLoaded( function(){
-				
-				lsxProjectThumbInit();
-				lsxProjectFilterInit();
-	
-				jQuery('#main').css('opacity', '1' );
-			    
-		    });			
-			
-		     /*var infinite_count = 0;
-		     // Triggers re-layout on infinite scroll
-		     $( document.body ).on( 'post-load', function () {
-				infinite_count = infinite_count + 1;
-	
-				var selector = $('#infinite-view-' + infinite_count);
-				//var $elements = $selector.find('.jetpack-portfolio');
-				  var elements = [];
-				  selector.find('.filter-item').each( function() {
-					  elements.push( $(this) );
-					  $('.filter-items-container').append($(this));
-				});
-				  selector.remove();
-		     });*/
-    	}
     	
     	//Portfolio Hover Class
 		if(lsx_params.is_portfolio){
@@ -147,8 +67,6 @@ jQuery(document).ready(function($) {
 	    });
 		
 		var width = $(window).width();
-		
-
 		//Dropdown Toggle
 		if(1186 < width){
 			$('.navbar-nav li.dropdown a').each(function(){
@@ -156,8 +74,6 @@ jQuery(document).ready(function($) {
 				$(this).removeAttr('data-toggle');
 			});
 		}
-
-
 
 		// Parallax Effect on Banners
 		function parallax(){
@@ -172,6 +88,18 @@ jQuery(document).ready(function($) {
 		$(window).scroll(function(e){
 		    parallax();
 		});
+		
+		lsxRemasonry();
+    	// The sprter for the portfolio.
+    	var has_filter = $('#filterNav');
+    	if('undefined' != has_filter){
+			$('#main').imagesLoaded( function(){
+				lsxRemasonry();
+				lsxMasonrySorter();
+				jQuery('#main').css('opacity', '1' ); 
+		    });			
+			
+    	}			
 		
 		//Page Banner		
 		lsxResizeBanner(width);	
@@ -195,6 +123,7 @@ jQuery(document).ready(function($) {
 			
 			lsxResizeBanner(width);	
 			lsxResizeSingleThumbnail(width);
+			lsxRemasonry();		
 		});	
 		
 		$( document.body ).on( 'post-load', function () {
@@ -249,29 +178,10 @@ function lsxResizeSingleThumbnail(width) {
 }
 
 ///////////////////////////////
-//Project thumbs
+//Sorter Function
 ///////////////////////////////
 
-function lsxProjectThumbInit() {
-	
-	if( jQuery(".filter-items-container .filter-item").length ){
-		jQuery('.filter-items-container').imagesLoaded( function() {
-			
-			jQuery('.filter-items-container').masonry({
-				resizable: true,
-				columnWidth: filter_item_width,
-				itemSelector: '.filter-item'
-			});		
-		});	
-	}
-}
-
-
-///////////////////////////////
-//Project Filtering
-///////////////////////////////
-
-function lsxProjectFilterInit() {
+function lsxMasonrySorter() {
 	
 	jQuery('#filterNav a').click(function(){
 		var selector = jQuery(this).attr('data-filter');
@@ -303,4 +213,61 @@ function lsxProjectFilterInit() {
 
 		return false;
 	});	
+}
+
+///////////////////////////////
+//realod the masonry layout
+///////////////////////////////
+
+function lsxRemasonry() {
+	if( jQuery(".filter-items-container .filter-item").length ){
+		filter_item_width = jQuery('.filter-items-container').width();
+		if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
+			filter_item_width = 750;
+		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-2')){
+			filter_item_width = filter_item_width/2;
+		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-3')){
+			filter_item_width = filter_item_width/3;
+		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-4')){
+			filter_item_width = filter_item_width/4;
+		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-5')){
+			filter_item_width = filter_item_width/5;
+		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-6')){
+			filter_item_width = filter_item_width/6;
+		}
+		
+		var window_width = jQuery(window).width();
+		if(window_width <= 768 && window_width > 400){
+			filter_item_width = jQuery('.filter-items-container').width()/2;
+			
+			jQuery('.filter-items-container .filter-item').each(function(){
+				jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
+				jQuery(this).addClass('column-2');
+			});
+		}
+		if(window_width <= 400){
+			filter_item_width = jQuery('.filter-items-container').width();
+			jQuery('.filter-items-container .filter-item').each(function(){
+				jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
+				jQuery(this).addClass('column-1');
+			});
+		}
+	
+		jQuery('.filter-items-container').imagesLoaded( function() {
+			
+			jQuery('.filter-items-container').masonry({
+				resizable: true,
+				columnWidth: filter_item_width,
+				itemSelector: '.filter-item'
+			});		
+		});	
+	}	
+}
+
+function lsxDisableMobileBanners(width){
+    if (width < 768) {
+        $(".home .soliloquy-slider").remove();
+        $(".home .home-bg-image").remove();
+        $(".page-banner").remove();
+    }	
 }
