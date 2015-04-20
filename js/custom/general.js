@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
 			
 			lsxResizeBanner(width);	
 			lsxResizeSingleThumbnail(width);
-			lsxRemasonry();		
+			lsxRemasonry();
 		});	
 		
 		$( document.body ).on( 'post-load', function () {
@@ -221,22 +221,20 @@ function lsxMasonrySorter() {
 
 function lsxRemasonry() {
 	if( jQuery(".filter-items-container .filter-item").length ){
-		filter_item_width = jQuery('.filter-items-container').width();
-		if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
-			filter_item_width = 750;
-		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-2')){
-			filter_item_width = filter_item_width/2;
-		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-3')){
-			filter_item_width = filter_item_width/3;
-		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-4')){
-			filter_item_width = filter_item_width/4;
-		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-5')){
-			filter_item_width = filter_item_width/5;
-		}else if(jQuery('.filter-items-container .filter-item').hasClass('column-6')){
-			filter_item_width = filter_item_width/6;
-		}
-		
+				
+		var columns = jQuery('.filter-items-container .filter-item').attr('data-column');
 		var window_width = jQuery(window).width();
+		if(window_width > 768) {
+			if(1 == columns){
+				filter_item_width = 750;
+			}else {
+				filter_item_width = filter_item_width/columns;
+			}			
+			jQuery('.filter-items-container .filter-item').each(function(){
+				jQuery(this).removeClass('column-1 column-2 column-3 column-4 column-5 column-6');
+				jQuery(this).addClass('column-'+columns);
+			});			
+		}
 		if(window_width <= 768 && window_width > 400){
 			filter_item_width = jQuery('.filter-items-container').width()/2;
 			

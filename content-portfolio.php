@@ -15,7 +15,7 @@ if ($types) {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class($type_class); ?>>
+<article id="post-<?php the_ID(); ?>" data-column="<?php echo 3; ?>" <?php post_class($type_class); ?>>
 	<div class="portfolio-content-wrapper">
 		<div class="portfolio-thumbnail">
 			<?php if ( '' != get_the_post_thumbnail() ) : ?>
