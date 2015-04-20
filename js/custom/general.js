@@ -56,14 +56,6 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 992) {
-	        $("nav ul li").removeClass('dropdown');
-	        $("nav ul li").removeClass('open');
-	    }
-	});
-
 	// Sticky Info Box widget
 	if ($('body').hasClass('logged-in')) {
 		var spacing = 125;
@@ -86,7 +78,7 @@ jQuery(document).ready(function($) {
 
     $(window).load(function() {
 		
-    	// The soprter for the portfolio.
+    	// The sorter for the portfolio.
     	var has_filter = $('#filterNav');
     	if('undefined' != has_filter){
 			$('#main').imagesLoaded( function(){
