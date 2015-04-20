@@ -1905,6 +1905,7 @@ header.banner {
 			font-weight: bold;
 
 			@media screen and (max-width: 992px) {
+				float: left;
 				font-size: 30px;
 			}
 
@@ -1920,6 +1921,11 @@ header.banner {
 		}
 
 		.site-description {
+			.header-expanded &,
+			.header-central & {
+				margin-bottom: 0;
+			}
+
 			@media screen and (max-width: 992px) {
 				display: none;
 			}
@@ -2403,6 +2409,11 @@ nav {
 	margin-top: 170px;
 	margin-bottom: 60px;
 
+	.header-expanded &,
+	.header-central & {
+		margin-top: 300px;
+	}
+
 	@media screen and (max-width: 992px) {
 		margin-top: 140px;
 		margin-bottom: 40px;
@@ -2410,7 +2421,6 @@ nav {
 
 	@media screen and (max-width: 768px) {
 		margin-top: 20px;
-		margin-bottom: 40px;
 	}
 
 	.home & {
@@ -2421,6 +2431,11 @@ nav {
 			margin-top: 0;
 			margin-bottom: 40px;
 		}
+	}
+
+	.home.header-expanded &,
+	.home.header-central & {
+		margin-top: 350px;
 	}
 
 	.page-template-template-page-hero & {
@@ -2469,19 +2484,6 @@ nav {
 			margin: 0 auto;
 			float: none;
 		}
-	}
-
-	@media screen and (max-width: 992px) {
-		margin-top: 120px;
-		margin-bottom: 60px;
-	}
-
-	@media screen and (max-width: 768px) {
-		margin-top: 20px;
-		margin-bottom: 40px;
-	}
-	@media screen and (max-width: 768px) {
-		margin-top: 20px;
 	}
 }
 
