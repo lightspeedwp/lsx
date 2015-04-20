@@ -83,7 +83,13 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 	function lsx_add_footer_sidebar_area() {
 		if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
 			<section id="footer-cta">
-				<?php dynamic_sidebar( 'sidebar-footer-cta' ); ?>
+				<div class="container">
+					<div class="lsx-full-width">
+						<div class="lsx-hero-unit">
+							<?php dynamic_sidebar( 'sidebar-footer-cta' ); ?>
+						</div>
+					</div>
+				</div>
 			</section>
 		<?php endif; ?>
 
