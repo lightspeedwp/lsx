@@ -47,14 +47,14 @@ jQuery(document).ready(function($) {
 	});
 
 	// Disabling homepage slider, background image area and page banners on mobile
-	$(document).resize(function () {
+	$(window).resize(function () {
 	    var screen = $(window)    
 	    if (screen.width < 768) {
 	        $(".home .soliloquy-slider").remove();
 	    }
 	});
 
-	$(document).resize(function () {
+	$(window).resize(function () {
 	    var screen = $(window)    
 	    if (screen.width < 768) {
 	        $(".home-bg-image").remove();
