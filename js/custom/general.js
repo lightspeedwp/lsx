@@ -47,20 +47,34 @@ jQuery(document).ready(function($) {
 	});
 
 	// Disabling homepage slider, background image area and page banners on mobile
-    var screen = $(window)    
-    if (screen.width < 768) {
-        $(".home .soliloquy-slider").remove();
-    }
+	$(window).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 768) {
+	        $(".home .soliloquy-slider").remove();
+	    }
+	});
 
-    var screen = $(window)    
-    if (screen.width < 768) {
-        $(".home-bg-image").remove();
-    }
+	$(window).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 768) {
+	        $(".home-bg-image").remove();
+	    }
+	});
 
-    var screen = $(window)    
-    if (screen.width < 768) {
-        $(".page-banner").remove();
-    }
+	$(window).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 768) {
+	        $(".page-banner").remove();
+	    }
+	});
+
+	$(document).resize(function () {
+	    var screen = $(window)    
+	    if (screen.width < 992) {
+	        $("nav ul li").removeClass('dropdown');
+	        $("nav ul li").removeClass('open');
+	    }
+	});
 
 	// Sticky Info Box widget
 	if ($('body').hasClass('logged-in')) {
