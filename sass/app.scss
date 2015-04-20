@@ -1859,6 +1859,10 @@ header.banner {
 				margin: 30px 0;
 				@include transition(all .3s ease-in-out);
 
+				.header-central & {
+					margin: 30px 0 0;
+				}
+
 				@media screen and (max-width: 992px) {
 					max-height: 64px;
 					margin: 15px 0;
@@ -1877,6 +1881,10 @@ header.banner {
 				img {
 					max-height: 64px;
 					margin: 15px 0;
+
+					.header-central & {
+						margin: 28px 0 3px;
+					}
 				}
 			}
 		}
@@ -1920,9 +1928,13 @@ header.banner {
 		.navbar-header,
 		nav,
 		.navbar-nav {
-			float:none;
-			display:block;
-			text-align:center;
+			display: block;
+			float: none;
+			text-align: center;
+
+			@media screen and (max-width: 1200px) {
+				text-align: left;
+			}
 		}
 		
 		.navbar-nav > li {
@@ -1934,13 +1946,19 @@ header.banner {
 	.header-expanded & {
 		nav,
 		.navbar-nav {
-			float:none;
-			display:block;
+			float: none;
+			display: block;
 		}
+
 		.navbar-header {
 			float: none;
 			width: 50%;
+
+			@media screen and (max-width: 1200px) {
+				width: 100%;
+			}
 		}	
+
 		.navbar-nav > li {
 		    display: inline-block;
 		    float: none;
@@ -2333,7 +2351,7 @@ nav {
 .mobile-menu-title {
 	display: none;
 	float: right;
-	margin: 52px 13px;
+	margin: 48px 13px;
 	font-weight: 600;
 
 	.scrolled & {
