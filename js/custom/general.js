@@ -53,6 +53,10 @@ jQuery(document).ready(function($) {
 	        $(".home .soliloquy-slider").remove();
 	        $(".home-bg-image").remove();
 	        $(".page-banner").remove();
+	    } else {
+	    	$(".home .soliloquy-slider").add();
+	        $(".home-bg-image").add();
+	        $(".page-banner").add();
 	    }
 	});
 
