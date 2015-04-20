@@ -83,7 +83,7 @@ if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
 	<div id="footer-cta" class="footer-cta widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-footer-cta' ); ?>
 	</div><!-- #primary-sidebar -->
-<? endif;
+<?php endif;
 
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {
