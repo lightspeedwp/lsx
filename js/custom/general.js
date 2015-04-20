@@ -62,19 +62,26 @@ jQuery(document).ready(function($) {
 	} else {
 		var spacing = 93;
 	}
-	
-	$(".info-box-sticky").sticky({ 
-		topSpacing: spacing,
-		bottomSpacing: 590,
-		getWidthFrom: '#secondary',
-    	responsiveWidth: true
-	});
 
-	// Sticky Book Now widget
-	$(".sticky-book").sticky({ 
-		topSpacing: 127,
-		bottomSpacing: 1300
+	$(window).resize(function () {
+		var screen = $(window)
+	    if (screen.width() > 768) {
+	        $(".info-box-sticky").sticky({ 
+			topSpacing: spacing,
+			bottomSpacing: 590,
+			getWidthFrom: '#secondary',
+	    	responsiveWidth: true
+			});
+
+			// Sticky Book Now widget
+			$(".sticky-book").sticky({ 
+				topSpacing: 127,
+				bottomSpacing: 1300
+			});
+	    }
 	});
+	
+		
 
     $(window).load(function() {
 		
