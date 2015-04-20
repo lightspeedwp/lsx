@@ -57,20 +57,10 @@ jQuery(document).ready(function($) {
         $(".home-bg-image").remove();
     }
 
-	$(window).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 768) {
-	        $(".page-banner").remove();
-	    }
-	});
-
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 992) {
-	        $("nav ul li").removeClass('dropdown');
-	        $("nav ul li").removeClass('open');
-	    }
-	});
+    var screen = $(window)    
+    if (screen.width < 768) {
+        $(".page-banner").remove();
+    }
 
 	// Sticky Info Box widget
 	if ($('body').hasClass('logged-in')) {
