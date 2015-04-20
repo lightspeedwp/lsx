@@ -3526,6 +3526,10 @@ article {
 // Footer CTA
 
 #footer-cta {
+	.home & {
+		display: none;
+	}
+
 	.lsx-full-width {
 		margin-bottom: 0 !important;
 
