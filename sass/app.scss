@@ -343,6 +343,13 @@ $primary-darker: #357ebd;
 }
 
 @mixin lsx-parallax-banner {
+	&.header-central,
+	&.header-expanded {
+		.wrap {
+			margin-top: 50px;
+		}
+	}
+
 	.page-banner {
 		position: fixed;
 		top: 0;
@@ -359,6 +366,10 @@ $primary-darker: #357ebd;
 		@media screen and (max-width: 1200px) {
 			padding: 300px 0 155px;
 		}
+
+		@media screen and (max-width: 992px) {
+			padding: 250px 0 155px;
+		}
 	}
 
 	.wrap {
@@ -371,7 +382,7 @@ $primary-darker: #357ebd;
 		border-top: 1px solid #ddd;
 
 		@media screen and (max-width: 1200px) {
-			margin-top: 490px;
+			margin-top: 490px !important;
 		}
 
 		@media screen and (max-width: 768px) {
