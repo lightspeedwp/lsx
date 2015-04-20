@@ -342,6 +342,12 @@ add_action('the_content','lsx_the_content_responsive_image_filter');
  */
 if(!function_exists('lsx_page_banner')){
 	function lsx_page_banner() {
+
+		$show_on_front = get_option('show_on_front','posts');
+		$full_experience = get_theme_mod('home_full_experience_enable',false);
+		$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
+		
+		if('page' == $show_on_front && is_front_page() && false != $full_experience) { return; }
 		
 		$post_types = array('page','post');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
