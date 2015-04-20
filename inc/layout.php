@@ -81,11 +81,11 @@ function lsx_home_sidebar_class() {
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {
-		if ( is_dynamic_sidebar( 'sidebar-footer-cta' ) ) { ?>
+		if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
 			<section id="footer-cta">
 				<?php dynamic_sidebar( 'sidebar-footer-cta' ); ?>
 			</section>
-		<?php } ?>
+		<?php endif; ?>
 
 		<section id="footer-widgets">
 			<h2 class="footer-widgets-title"><?php _e('Footer Widgets','lsx'); ?></h2>
