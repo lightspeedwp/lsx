@@ -79,6 +79,12 @@ function lsx_home_sidebar_class() {
 }
 
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
+if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
+	<div id="footer-cta" class="footer-cta widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-footer-cta' ); ?>
+	</div><!-- #primary-sidebar -->
+<? endif;
+
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {
 		?>

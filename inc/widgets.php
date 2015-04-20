@@ -32,6 +32,15 @@ function lsx_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer Call to Action', 'lsx' ),
+		'id'            => 'sidebar-footer-cta',
+		'before_widget' => '<div class="styler"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside></div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'lsx_widgets_init' );
 
