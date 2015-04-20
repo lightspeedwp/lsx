@@ -1859,13 +1859,14 @@ header.banner {
 				margin: 30px 0;
 				@include transition(all .3s ease-in-out);
 
-				.header-central & {
+				.header-central &,
+				.header-expanded & {
 					margin: 30px 0 0;
 				}
 
 				@media screen and (max-width: 992px) {
 					max-height: 64px;
-					margin: 15px 0;
+					margin: 15px 0 !important;
 				}
 
 				@media screen and (max-width: 768px) {
@@ -1882,7 +1883,8 @@ header.banner {
 					max-height: 64px;
 					margin: 15px 0;
 
-					.header-central & {
+					.header-central &,
+					.header-expanded & {
 						margin: 28px 0 3px;
 					}
 				}
@@ -2536,15 +2538,22 @@ header.page-header {
 .page-template-template-home-hero {
 	background: $primary !important;
 
+	&.header-central,
+	&.header-expanded {
+		.wrap {
+			margin-top: 337px;
+		}
+	}
+
 	.wrap {
 		margin-top: 230px;
 
 		@media screen and (max-width: 992px) {
-  			margin-top: 160px;
+  			margin-top: 160px !important;
 		}
 
 		@media screen and (max-width: 768px) {
-  			margin-top: 40px;
+  			margin-top: 40px !important;
 		}
 	}
 
