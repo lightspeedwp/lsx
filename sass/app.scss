@@ -695,7 +695,7 @@ button,
 	border: none;
 	font-size: 16px;
 	line-height: inherit;
-  	padding: 6px 20px;
+  	padding: 6px 24px;
 	@include transition(all .1s ease-in-out);
 	@include border-radius(3px);
 
@@ -703,6 +703,7 @@ button,
 	&:active,
 	&:focus {
 		background: $primary-darker;
+		color: $white;
 	}
 	
 	&.btn-lg {
