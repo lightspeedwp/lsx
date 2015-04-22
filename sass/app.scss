@@ -2488,6 +2488,14 @@ header.page-header {
 	.page-template-template-page-hero & {
 		display: none;
 	}
+
+	.home & {
+		display: none;
+
+		@media screen and (max-width: 768px) {
+			display: block;
+		}
+	}
 }
 
 // Homepage
