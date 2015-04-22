@@ -691,13 +691,15 @@ iframe {
 button,
 .btn {
 	border: none;
+	padding: 8px 20px;
+    font-size: inherit;
+    line-height: inherit;
 	@include transition(all .1s ease-in-out);
+	@include border-radius(3px);
 	
 	&.btn-lg {
 		padding: 9px 28px;
 	    font-size: 17px;
-	    line-height: inherit;
-	    @include border-radius(3px);
 	}
 }
 
