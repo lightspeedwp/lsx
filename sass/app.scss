@@ -690,12 +690,18 @@ iframe {
 
 button,
 .btn {
+	background: $primary;
+	color: $white;
 	border: none;
 	padding: 8px 20px;
-    font-size: inherit;
-    line-height: inherit;
 	@include transition(all .1s ease-in-out);
 	@include border-radius(3px);
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $primary-darker;
+	}
 	
 	&.btn-lg {
 		padding: 9px 28px;
@@ -1201,8 +1207,8 @@ table {
 // Masonry
 
 .masonry {
-	margin-left: -8px;
-	margin-right: -8px;
+	margin-left: -10px;
+	margin-right: -10px;
 
 	& > h2 {
 		clear: both;
@@ -3489,33 +3495,6 @@ article {
 		&:hover {
 			background: $black !important;
 		}
-	}
-}
-
-
-/* ==========================================================================
-	 Footer
-	 ========================================================================== */
-
-// Footer Subscribe
-
-.footer-subscribe {
-	background: $primary;
-	padding: 55px 0 60px;
-
-	h2 {
-		text-align: center;
-		font-weight: normal;
-		color: $light-grey;
-		margin: {
-			top: 0;
-			bottom: 45px;
-		}
-	}
-
-	.btn {
-		@include lsx-button;
-		@include lsx-border-button($white, $primary);
 	}
 }
 
