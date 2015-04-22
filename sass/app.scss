@@ -1252,7 +1252,20 @@ table {
 			margin-bottom: 0;
 
 			[class*="-thumbnail"] {
+				min-height: 241px;
 				overflow: hidden;
+
+				@media screen and (max-width: 1200px) {
+					min-height: 197px;
+				}
+
+				@media screen and (max-width: 992px) {
+					min-height: 230px;
+				}
+
+				@media screen and (max-width: 768px) {
+					min-height: 0;
+				}
 
 				a {
 					border: none !important;
