@@ -693,7 +693,9 @@ button,
 	background: $primary;
 	color: $white;
 	border: none;
-	padding: 8px 20px;
+	font-size: 16px;
+	line-height: inherit;
+  	padding: 6px 20px;
 	@include transition(all .1s ease-in-out);
 	@include border-radius(3px);
 
