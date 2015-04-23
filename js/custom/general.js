@@ -45,11 +45,13 @@ jQuery(document).ready(function($) {
 	        $('header.banner').removeClass('scrolled');
 	    }
 	});
-
-	$('img:not([alt])').each(function(){
-	    var $img = $(this);
-	    var filename = $img.attr('src')
-	    $img.attr('alt', filename.substring(0, filename.lastIndexOf('.')));
+	
+	$(window).resize(function () {
+		$('img:not([alt])').each(function(){
+		    var $img = $(this);
+		    var filename = $img.attr('src')
+		    $img.attr('alt', filename.substring(0, filename.lastIndexOf('.')));
+		});	
 	});
 
 	// Disabling homepage slider, background image area and page banners on mobile
