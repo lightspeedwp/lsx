@@ -121,6 +121,8 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 			 ?>
 				<section class="soliloquy-slider slider-<?php echo $slider;?>">
 					<?php soliloquy_slider( $slider ); ?>
+
+					<?php classybeds_enquire_bar(); ?>
 				</section>
 			<?php
 		}
