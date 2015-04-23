@@ -243,6 +243,109 @@ $primary-darker: #357ebd;
 	}
 }	
 
+@mixin lsx-masonry-styles {
+	overflow: visible !important;
+	margin-bottom: 40px;
+
+	.stars {
+		max-height: 24px;
+		
+		.genericon-star {
+			color: #ffcc00;
+			font-size: 22px;
+			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
+		}
+	}
+
+	.child-policy {
+		margin-bottom: 40px;
+	}
+
+	[class*="content-wrapper"] {
+		@include lsx-box;
+
+		[class*="thumbnail"] {
+			@include border-radius-top(3px);
+
+			img {
+				width: 100%;
+				opacity: 1 !important;
+				@include border-radius-top(3px);
+			}
+		}
+
+		a[class*="title"] {
+			display: inline-block;
+			padding: 20px 30px;
+			font: {
+				family: "Noto Serif", serif;
+				size: 20px;
+				weight: bold;
+			}
+			color: $black;
+			border-bottom: 1px solid #ddd;
+			@include transition(all .1s ease-in-out);
+
+			&:hover {
+				color: $mid-grey;
+			}
+		}
+
+		[class*="content"] {
+			background: $white;
+			padding: 20px 30px 30px;
+			font-size: 15px;
+
+			h3 {
+				margin-top: 0;
+
+				a {
+					font: {
+						size: 20px;
+						weight: bold;
+					}
+					color: $black;
+					@include transition(all .1s ease-in-out);
+
+					&:hover {
+						color: $mid-grey;
+					}
+				}
+			}
+
+			.price-wrapper {
+				margin: 17px 0;
+				padding: 15px 0;
+				border: {
+					top: 1px solid #ddd;
+					bottom: 1px solid #ddd;
+				}
+
+				.price {
+					color: #999;
+
+					.price-inner {
+						display: inline-block;
+						margin-top: -5px;
+						color: $grey;
+						font: {
+							size: 22px;
+							weight: bold;
+						}
+						vertical-align: middle;
+
+						.hb_symbol {
+							font-size: 15px;
+							vertical-align: top;
+							margin-right: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @mixin lsx-box {
 	background: $white;
 	text-align: center;
@@ -970,106 +1073,7 @@ table {
 .accommodation,
 .room,
 .property {
-	overflow: visible !important;
-	margin-bottom: 40px;
-
-	.stars {
-		max-height: 24px;
-		
-		.genericon-star {
-			color: #ffcc00;
-			font-size: 22px;
-			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
-		}
-	}
-
-	.child-policy {
-		margin-bottom: 40px;
-	}
-
-	[class*="content-wrapper"] {
-		@include lsx-box;
-
-		[class*="thumbnail"] {
-			@include border-radius-top(3px);
-
-			img {
-				width: 100%;
-				opacity: 1 !important;
-				@include border-radius-top(3px);
-			}
-		}
-
-		a[class*="title"] {
-			display: inline-block;
-			padding: 20px 30px;
-			font: {
-				family: "Noto Serif", serif;
-				size: 20px;
-				weight: bold;
-			}
-			color: $black;
-			border-bottom: 1px solid #ddd;
-			@include transition(all .1s ease-in-out);
-
-			&:hover {
-				color: $mid-grey;
-			}
-		}
-
-		[class*="content"] {
-			background: $white;
-			padding: 20px 30px 30px;
-			font-size: 15px;
-
-			h3 {
-				margin-top: 0;
-
-				a {
-					font: {
-						size: 20px;
-						weight: bold;
-					}
-					color: $black;
-					@include transition(all .1s ease-in-out);
-
-					&:hover {
-						color: $mid-grey;
-					}
-				}
-			}
-
-			.price-wrapper {
-				margin: 17px 0;
-				padding: 15px 0;
-				border: {
-					top: 1px solid #ddd;
-					bottom: 1px solid #ddd;
-				}
-
-				.price {
-					color: #999;
-
-					.price-inner {
-						display: inline-block;
-						margin-top: -5px;
-						color: $grey;
-						font: {
-							size: 22px;
-							weight: bold;
-						}
-						vertical-align: middle;
-
-						.hb_symbol {
-							font-size: 15px;
-							vertical-align: top;
-							margin-right: 3px;
-						}
-					}
-				}
-			}
-		}
-	}
+	@include lsx-masonry-styles;
 }
 
 // Slider Widgets
