@@ -106,7 +106,7 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 }
 
 /**
- * Displays the hompage slider is Soliliquy Lite is active and the Customizer settings are set.
+ * Displays the hompage slider if Soliliquy Lite is active and the Customizer settings are set.
  *
  * @package lsx-theme
  * @subpackage layout
