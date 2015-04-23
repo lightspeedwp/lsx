@@ -348,8 +348,6 @@ if(!function_exists('lsx_page_banner')){
 		$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
 		
 		if('page' == $show_on_front && is_front_page() && false != $full_experience) { return; }
-
-		if(0 != $slider){ return; }
 		
 		$post_types = array('page','post');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
