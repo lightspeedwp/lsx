@@ -56,13 +56,15 @@ jQuery(document).ready(function($) {
 	$(window).resize(function () {
 		var screen = $(window)
 	    if (screen.width() < 768) {
-	        $(".home .soliloquy-slider").remove();
-	        $(".home-bg-image").remove();
-	        $(".page-banner").remove();
+	        $(".home .soliloquy-slider").hide();
+	        $(".home-bg-image").hide();
+	        $(".home-bg-image-footer").hide();
+	        $(".page-banner").hide();
 	    } else {
-	    	$(".home .soliloquy-slider").add();
-	        $(".home-bg-image").add();
-	        $(".page-banner").add();
+	    	$(".home .soliloquy-slider").show();
+	    	$(".home-bg-image-footer").show();
+	        $(".home-bg-image").show();
+	        $(".page-banner").show();
 	    }
 	});
 
