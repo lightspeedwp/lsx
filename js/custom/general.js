@@ -45,13 +45,12 @@ jQuery(document).ready(function($) {
 	        $('header.banner').removeClass('scrolled');
 	    }
 	});
-	
-	$(window).resize(function () {
-		$('img:not([alt])').each(function(){
-		    var $img = $(this);
-		    var filename = $img.attr('src')
-		    $img.attr('alt', filename.substring(0, filename.lastIndexOf('.')));
-		});	
+
+	$('img:not([alt])').each(function(){
+	    var name = $('img').attr("src");
+    	var parts = name.split('/');
+   		name = parts[parts.length-1];
+	    $img.attr('alt', name.substring(0, name.lastIndexOf('.')));
 	});
 
 	// Disabling homepage slider, background image area and page banners on mobile
