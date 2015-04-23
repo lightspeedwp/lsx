@@ -8610,7 +8610,7 @@ img.image-border:hover,
   width: 100%;
   padding: 0;
   background: white;
-  margin-top: 640px;
+  margin-top: 640px !important;
   margin-bottom: 0;
   padding-bottom: 60px;
   border-top: 1px solid #ddd;
@@ -8619,14 +8619,14 @@ img.image-border:hover,
   /* line 474, ../sass/app.scss */
   .page-has-banner .wrap,
   .single-jetpack-portfolio .wrap {
-    margin-top: 490px;
+    margin-top: 490px !important;
   }
 }
 @media screen and (max-width: 768px) {
   /* line 474, ../sass/app.scss */
   .page-has-banner .wrap,
   .single-jetpack-portfolio .wrap {
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 }
 @media print {
