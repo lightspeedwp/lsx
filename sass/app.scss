@@ -2180,6 +2180,12 @@ nav {
 					a {
 						background: $black !important;
 						color: $white !important;
+
+						&:hover,
+						&:active,
+						&:focus {
+							background: $blacker !important;
+						}
 					}
 				}
 			}
