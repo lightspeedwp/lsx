@@ -2520,11 +2520,7 @@ header.page-header {
 	}
 
 	.home & {
-		display: none;
-
-		@media screen and (max-width: 768px) {
-			display: block;
-		}
+		display: none !important;
 	}
 }
 
