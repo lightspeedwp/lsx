@@ -212,25 +212,6 @@ $primary-darker: #357ebd;
 		color: $color;
 	}
 
-	&#home-widgets {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: inherit;
-
-			a {
-				color: $primary;
-			}
-		}
-
-		a {
-			color: $primary;
-		}
-	}
-
 	.lsx-hero-unit {
 		color: $color;
 
@@ -261,6 +242,109 @@ $primary-darker: #357ebd;
 		}
 	}
 }	
+
+@mixin lsx-masonry-styles {
+	overflow: visible !important;
+	margin-bottom: 40px;
+
+	.stars {
+		max-height: 24px;
+		
+		.genericon-star {
+			color: #ffcc00;
+			font-size: 22px;
+			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
+		}
+	}
+
+	.child-policy {
+		margin-bottom: 40px;
+	}
+
+	[class*="content-wrapper"] {
+		@include lsx-box;
+
+		[class*="thumbnail"] {
+			@include border-radius-top(3px);
+
+			img {
+				width: 100%;
+				opacity: 1 !important;
+				@include border-radius-top(3px);
+			}
+		}
+
+		a[class*="title"] {
+			display: inline-block;
+			padding: 20px 30px;
+			font: {
+				family: "Noto Serif", serif;
+				size: 20px;
+				weight: bold;
+			}
+			color: $black;
+			border-bottom: 1px solid #ddd;
+			@include transition(all .1s ease-in-out);
+
+			&:hover {
+				color: $mid-grey;
+			}
+		}
+
+		[class*="content"] {
+			background: $white;
+			padding: 20px 30px 30px;
+			font-size: 15px;
+
+			h3 {
+				margin-top: 0;
+
+				a {
+					font: {
+						size: 20px;
+						weight: bold;
+					}
+					color: $black;
+					@include transition(all .1s ease-in-out);
+
+					&:hover {
+						color: $mid-grey;
+					}
+				}
+			}
+
+			.price-wrapper {
+				margin: 17px 0;
+				padding: 15px 0;
+				border: {
+					top: 1px solid #ddd;
+					bottom: 1px solid #ddd;
+				}
+
+				.price {
+					color: #999;
+
+					.price-inner {
+						display: inline-block;
+						margin-top: -5px;
+						color: $grey;
+						font: {
+							size: 22px;
+							weight: bold;
+						}
+						vertical-align: middle;
+
+						.hb_symbol {
+							font-size: 15px;
+							vertical-align: top;
+							margin-right: 3px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 @mixin lsx-box {
 	background: $white;
@@ -362,6 +446,13 @@ $primary-darker: #357ebd;
 }
 
 @mixin lsx-parallax-banner {
+	&.header-central,
+	&.header-expanded {
+		.wrap {
+			margin-top: 50px;
+		}
+	}
+
 	.page-banner {
 		position: fixed;
 		top: 0;
@@ -384,17 +475,17 @@ $primary-darker: #357ebd;
 		width: 100%;
 		padding: 0;
 		background: $white;
-		margin-top: 640px;
+		margin-top: 640px !important;
 		margin-bottom: 0;
 		padding-bottom: 60px;
 		border-top: 1px solid #ddd;
 
 		@media screen and (max-width: 1200px) {
-			margin-top: 490px;
+			margin-top: 490px !important;
 		}
 
 		@media screen and (max-width: 768px) {
-			margin-top: 0;
+			margin-top: 0 !important;
 		}
 
 		@media print {
@@ -702,14 +793,25 @@ iframe {
 
 button,
 .btn {
+	background: $primary;
+	color: $white;
 	border: none;
+	font-size: 16px;
+	line-height: inherit;
+  	padding: 6px 24px;
 	@include transition(all .1s ease-in-out);
+	@include border-radius(3px);
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $primary-darker;
+		color: $white;
+	}
 	
 	&.btn-lg {
 		padding: 9px 28px;
 	    font-size: 17px;
-	    line-height: inherit;
-	    @include border-radius(3px);
 	}
 }
 
@@ -968,108 +1070,10 @@ table {
 
 // Plugin Post Types
 
+.accommodation,
 .room,
 .property {
-	overflow: visible !important;
-	margin-bottom: 40px;
-
-	.stars {
-		max-height: 24px;
-		
-		.genericon-star {
-			color: #ffcc00;
-			font-size: 22px;
-			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
-		}
-	}
-
-	.child-policy {
-		margin-bottom: 40px;
-	}
-
-	[class*="content-wrapper"] {
-		@include lsx-box;
-
-		[class*="thumbnail"] {
-			@include border-radius-top(3px);
-
-			img {
-				width: 100%;
-				opacity: 1 !important;
-				@include border-radius-top(3px);
-			}
-		}
-
-		a[class*="title"] {
-			display: inline-block;
-			padding: 20px 30px;
-			font: {
-				family: "Noto Serif", serif;
-				size: 20px;
-				weight: bold;
-			}
-			color: $black;
-			border-bottom: 1px solid #ddd;
-			@include transition(all .1s ease-in-out);
-
-			&:hover {
-				color: $mid-grey;
-			}
-		}
-
-		[class*="content"] {
-			background: $white;
-			padding: 20px 30px 30px;
-			font-size: 15px;
-
-			h3 {
-				margin-top: 0;
-
-				a {
-					font: {
-						size: 20px;
-						weight: bold;
-					}
-					color: $black;
-					@include transition(all .1s ease-in-out);
-
-					&:hover {
-						color: $mid-grey;
-					}
-				}
-			}
-
-			.price-wrapper {
-				margin: 17px 0;
-				padding: 15px 0;
-				border: {
-					top: 1px solid #ddd;
-					bottom: 1px solid #ddd;
-				}
-
-				.price {
-					color: #999;
-
-					.price-inner {
-						display: inline-block;
-						margin-top: -5px;
-						color: $grey;
-						font: {
-							size: 22px;
-							weight: bold;
-						}
-						vertical-align: middle;
-
-						.hb_symbol {
-							font-size: 15px;
-							vertical-align: top;
-							margin-right: 3px;
-						}
-					}
-				}
-			}
-		}
-	}
+	@include lsx-masonry-styles;
 }
 
 // Slider Widgets
@@ -1211,8 +1215,8 @@ table {
 // Masonry
 
 .masonry {
-	margin-left: -8px;
-	margin-right: -8px;
+	margin-left: -10px;
+	margin-right: -10px;
 
 	& > h2 {
 		clear: both;
@@ -1256,8 +1260,20 @@ table {
 			margin-bottom: 0;
 
 			[class*="-thumbnail"] {
+				min-height: 240px;
 				overflow: hidden;
-				min-height: 246px;
+
+				@media screen and (max-width: 1200px) {
+					min-height: 197px;
+				}
+
+				@media screen and (max-width: 992px) {
+					min-height: 230px;
+				}
+
+				@media screen and (max-width: 768px) {
+					min-height: 0;
+				}
 
 				a {
 					border: none !important;
@@ -1586,6 +1602,7 @@ hr {
 // Modals
 
 .modal-dialog {
+	max-height: 100% !important;
 	margin: 0;
 	position: absolute;
 	top: 50%;
@@ -1593,7 +1610,7 @@ hr {
 }
 
 .modal-content {
-	max-height: 100%;
+	max-height: 100% !important;
 	padding: 30px 40px;
 	border: none;
 	@include box-shadow(0 2px 10px rgba(0, 0, 0, 0.32));
@@ -1859,9 +1876,14 @@ header.banner {
 				margin: 30px 0;
 				@include transition(all .3s ease-in-out);
 
+				.header-central &,
+				.header-expanded & {
+					margin: 30px 0 0;
+				}
+
 				@media screen and (max-width: 992px) {
 					max-height: 64px;
-					margin: 15px 0;
+					margin: 15px 0 !important;
 				}
 
 				@media screen and (max-width: 768px) {
@@ -1877,6 +1899,11 @@ header.banner {
 				img {
 					max-height: 64px;
 					margin: 15px 0;
+
+					.header-central &,
+					.header-expanded & {
+						margin: 28px 0 3px;
+					}
 				}
 			}
 		}
@@ -1895,6 +1922,7 @@ header.banner {
 			font-weight: bold;
 
 			@media screen and (max-width: 992px) {
+				float: left;
 				font-size: 30px;
 			}
 
@@ -1910,6 +1938,11 @@ header.banner {
 		}
 
 		.site-description {
+			.header-expanded &,
+			.header-central & {
+				margin-bottom: 0;
+			}
+
 			@media screen and (max-width: 992px) {
 				display: none;
 			}
@@ -1920,9 +1953,13 @@ header.banner {
 		.navbar-header,
 		nav,
 		.navbar-nav {
-			float:none;
-			display:block;
-			text-align:center;
+			display: block;
+			float: none;
+			text-align: center;
+
+			@media screen and (max-width: 1200px) {
+				text-align: left;
+			}
 		}
 		
 		.navbar-nav > li {
@@ -1934,13 +1971,19 @@ header.banner {
 	.header-expanded & {
 		nav,
 		.navbar-nav {
-			float:none;
-			display:block;
+			float: none;
+			display: block;
 		}
+
 		.navbar-header {
 			float: none;
 			width: 50%;
+
+			@media screen and (max-width: 1200px) {
+				width: 100%;
+			}
 		}	
+
 		.navbar-nav > li {
 		    display: inline-block;
 		    float: none;
@@ -2129,6 +2172,19 @@ nav {
 					&:hover {
 						& > a {
 							color: $white;						
+						}
+					}
+				}
+
+				&.menu-highlight {
+					a {
+						background: $black !important;
+						color: $white !important;
+
+						&:hover,
+						&:active,
+						&:focus {
+							background: $blacker !important;
 						}
 					}
 				}
@@ -2333,7 +2389,7 @@ nav {
 .mobile-menu-title {
 	display: none;
 	float: right;
-	margin: 52px 13px;
+	margin: 48px 13px;
 	font-weight: 600;
 
 	.scrolled & {
@@ -2383,6 +2439,11 @@ nav {
 	margin-top: 170px;
 	margin-bottom: 60px;
 
+	.header-expanded &,
+	.header-central & {
+		margin-top: 300px;
+	}
+
 	@media screen and (max-width: 992px) {
 		margin-top: 140px;
 		margin-bottom: 40px;
@@ -2390,7 +2451,6 @@ nav {
 
 	@media screen and (max-width: 768px) {
 		margin-top: 20px;
-		margin-bottom: 40px;
 	}
 
 	.home & {
@@ -2401,6 +2461,11 @@ nav {
 			margin-top: 0;
 			margin-bottom: 40px;
 		}
+	}
+
+	.home.header-expanded &,
+	.home.header-central & {
+		margin-top: 350px;
 	}
 
 	.page-template-template-page-hero & {
@@ -2450,19 +2515,6 @@ nav {
 			float: none;
 		}
 	}
-
-	@media screen and (max-width: 992px) {
-		margin-top: 120px;
-		margin-bottom: 60px;
-	}
-
-	@media screen and (max-width: 768px) {
-		margin-top: 20px;
-		margin-bottom: 40px;
-	}
-	@media screen and (max-width: 768px) {
-		margin-top: 20px;
-	}
 }
 
 header.page-header {
@@ -2478,6 +2530,10 @@ header.page-header {
 
 	.page-template-template-page-hero & {
 		display: none;
+	}
+
+	.home & {
+		display: none !important;
 	}
 }
 
@@ -2518,15 +2574,22 @@ header.page-header {
 .page-template-template-home-hero {
 	background: $primary !important;
 
+	&.header-central,
+	&.header-expanded {
+		.wrap {
+			margin-top: 337px;
+		}
+	}
+
 	.wrap {
 		margin-top: 230px;
 
 		@media screen and (max-width: 992px) {
-  			margin-top: 160px;
+  			margin-top: 160px !important;
 		}
 
 		@media screen and (max-width: 768px) {
-  			margin-top: 40px;
+  			margin-top: 40px !important;
 		}
 	}
 
@@ -2659,6 +2722,13 @@ header.page-header {
 
 	.lsx-full-width-header {
 		margin-top: -40px;
+	}
+
+	&.header-central,
+	&.header-expanded {
+		.lsx-full-width-header {
+			margin-top: -50px;
+		}
 	}
 
 	.lsx-full-width-footer {
@@ -3460,31 +3530,28 @@ article {
 }
 
 
-/* ==========================================================================
-	 Footer
-	 ========================================================================== */
+// Footer CTA
 
-// Footer Subscribe
+#footer-cta {
+	.home & {
+		display: none;
+	}
 
-.footer-subscribe {
-	background: $primary;
-	padding: 55px 0 60px;
-
-	h2 {
-		text-align: center;
-		font-weight: normal;
-		color: $light-grey;
+	.lsx-full-width {
 		margin: {
-			top: 0;
-			bottom: 45px;
+			top: 0 !important;
+			bottom: 0 !important;
+		}
+
+		.widget {
+			.widget-title {
+				display: none;
+			}
 		}
 	}
-
-	.btn {
-		@include lsx-button;
-		@include lsx-border-button($white, $primary);
-	}
 }
+
+
 
 // Footer Widgets
 
