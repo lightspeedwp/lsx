@@ -46,37 +46,25 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-	// Disabling homepage slider and background image area on mobile
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 768) {
-	        $(".home .soliloquy-slider").remove();
-	        $(".home .home-bg-image").remove();
-	    }
+	$('img:not([alt])').each(function(){
+	    var $img = $(this);
+	    var filename = $img.attr('src')
+	    $img.attr('alt', filename.substring(0, filename.lastIndexOf('.')));
 	});
 
-	// Removing homepage slider, bg image and page banners for mobile
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 768) {
-	        $(".home .soliloquy-slider").remove();
-	        $(".home .home-bg-image").remove();
-	        $(".page-banner").remove();
-	    }
-	});
-
+	// Disabling homepage slider, background image area and page banners on mobile
 	$(window).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 768) {
-	        $(".page-banner").remove();
-	    }
-	});
-
-	$(document).resize(function () {
-	    var screen = $(window)    
-	    if (screen.width < 992) {
-	        $("nav ul li").removeClass('dropdown');
-	        $("nav ul li").removeClass('open');
+		var screen = $(window)
+	    if (screen.width() < 768) {
+	        $(".home .soliloquy-slider").hide();
+	        $(".home-bg-image").hide();
+	        $(".home-bg-image-footer").hide();
+	        $(".page-banner").hide();
+	    } else {
+	    	$(".home .soliloquy-slider").show();
+	    	$(".home-bg-image-footer").show();
+	        $(".home-bg-image").show();
+	        $(".page-banner").show();
 	    }
 	});
 
@@ -86,23 +74,30 @@ jQuery(document).ready(function($) {
 	} else {
 		var spacing = 93;
 	}
-	
-	$(".info-box-sticky").sticky({ 
-		topSpacing: spacing,
-		bottomSpacing: 590,
-		getWidthFrom: '#secondary',
-    	responsiveWidth: true
-	});
 
-	// Sticky Book Now widget
-	$(".sticky-book").sticky({ 
-		topSpacing: 127,
-		bottomSpacing: 1300
+	$(window).resize(function () {
+		var screen = $(window)
+	    if (screen.width() > 768) {
+	        $(".info-box-sticky").sticky({ 
+			topSpacing: spacing,
+			bottomSpacing: 590,
+			getWidthFrom: '#secondary',
+	    	responsiveWidth: true
+			});
+
+			// Sticky Book Now widget
+			$(".sticky-book").sticky({ 
+				topSpacing: 127,
+				bottomSpacing: 1300
+			});
+	    }
 	});
+	
+		
 
     $(window).load(function() {
 		
-    	// The soprter for the portfolio.
+    	// The sorter for the portfolio.
     	var has_filter = $('#filterNav');
     	if('undefined' != has_filter){
 			$('#main').imagesLoaded( function(){

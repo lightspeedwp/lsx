@@ -81,7 +81,18 @@ function lsx_home_sidebar_class() {
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {
-		?>
+		if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
+			<section id="footer-cta">
+				<div class="container">
+					<div class="lsx-full-width">
+						<div class="lsx-hero-unit">
+							<?php dynamic_sidebar( 'sidebar-footer-cta' ); ?>
+						</div>
+					</div>
+				</div>
+			</section>
+		<?php endif; ?>
+
 		<section id="footer-widgets">
 			<h2 class="footer-widgets-title"><?php _e('Footer Widgets','lsx'); ?></h2>
 			<div class="container">
@@ -95,7 +106,7 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 }
 
 /**
- * Displays the hompage slider is Soliliquy Lite is active and the Customizer settings are set.
+ * Displays the hompage slider if Soliliquy Lite is active and the Customizer settings are set.
  *
  * @package lsx-theme
  * @subpackage layout
@@ -108,8 +119,10 @@ if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy') 
 		$show_on_front = get_option('show_on_front');
 		if('0' != $slider && (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()))) {
 			 ?>
-				<section class="soliloquy-slider slider-<?php echo $slider;?>">
+				<section class="soliloquy-slider lsx-homepage-slider slider-<?php echo $slider;?>">
 					<?php soliloquy_slider( $slider ); ?>
+
+					<?php classybeds_enquire_bar(); ?>
 				</section>
 			<?php
 		}

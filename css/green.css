@@ -13,10 +13,10 @@ button {
 	background: #596b46;
 }
 
-.wrap .btn:hover,
-.wrap .btn:focus,
-.wrap .btn:active,
-.wrap button:hover {
+.btn:hover,
+.btn:focus,
+.btn:active,
+button:hover {
 	background: #3d4a30 !important;
 }
 
@@ -178,13 +178,13 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 
 .navbar-toggle,
 .navbar-toggle.collapsed {
-	background: none;
-	border-color: #ddd;
+	background: #596b46;
+	border-color: #fff;
 }
 
 .navbar-default .navbar-toggle .icon-bar,
 .navbar-default .navbar-toggle.collapsed .icon-bar {
-	background-color: #333333;
+	background-color: #fff;
 }
 
 .navbar-default .navbar-toggle:hover .icon-bar,
@@ -494,4 +494,10 @@ select {
 .page-template-template-home-hero #home-widgets#home-widgets h5 a:hover, 
 .page-template-template-home-hero #home-widgets#home-widgets h6 a:hover {
 	color: #3d4a30;
+}
+
+.home .soliloquy-container .soliloquy-caption-inside a:hover,
+.home .soliloquy-container .soliloquy-caption-inside a:active,
+.home .soliloquy-container .soliloquy-caption-inside a:focus {
+	color: #596b46 !important;
 }

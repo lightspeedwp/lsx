@@ -194,12 +194,12 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 .navbar-toggle,
 .navbar-toggle.collapsed {
   background: none;
-  border-color: #ddd;
+  border-color: #fff;
 }
 
 .navbar-default .navbar-toggle .icon-bar,
 .navbar-default .navbar-toggle.collapsed .icon-bar {
-  background-color: #333333;
+  background-color: #fff !important;
 }
 
 .navbar-default .navbar-toggle:hover .icon-bar,
@@ -502,4 +502,10 @@ select {
 .widget#book .panel .enquire-now:active,
 .widget#book .panel .enquire-now:focus {
   background: #331701 !important;
+}
+
+.home .soliloquy-container .soliloquy-caption-inside a:hover,
+.home .soliloquy-container .soliloquy-caption-inside a:active,
+.home .soliloquy-container .soliloquy-caption-inside a:focus {
+  color: #d48a1d !important;
 }

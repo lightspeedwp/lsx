@@ -242,14 +242,14 @@ function lsx_get_thumbnail($size,$image_src = false){
 		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
 		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
 
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 
 	}elseif('lsx-thumbnail-wide' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
 
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 	
 	}elseif('banner' == $size){
 		
@@ -257,12 +257,12 @@ function lsx_get_thumbnail($size,$image_src = false){
 		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
 		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
 				
-		$img = ' data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'"';
+		$img = ' src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'"';
 		
 	}elseif(is_array($size)){
 		
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 		
 	}
 	return $img;
@@ -342,6 +342,12 @@ add_action('the_content','lsx_the_content_responsive_image_filter');
  */
 if(!function_exists('lsx_page_banner')){
 	function lsx_page_banner() {
+
+		$show_on_front = get_option('show_on_front','posts');
+		$full_experience = get_theme_mod('home_full_experience_enable',false);
+		$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
+		
+		if('page' == $show_on_front && is_front_page() && false != $full_experience) { return; }
 		
 		$post_types = array('page','post');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
