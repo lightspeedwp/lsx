@@ -22,7 +22,7 @@ function lsx_breadcrumbs() {
 
   // Remove wrapper <span xmlns:v />
   $output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
-  $output = preg_replace("/\<\/span class='breadcrumb-span'\><\/span\>$/", "", $output);
+  $output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
 
   $crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
 

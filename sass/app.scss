@@ -638,6 +638,40 @@ $primary-darker: #357ebd;
 }
 
 
+@mixin lsx-breadcrumbs {
+	position: relative;
+	float: left;
+	font-size: 14px;
+	padding: 5px 20px 5px 27px;
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border: {
+			top: 30px solid transparent;
+			bottom: 30px solid transparent;
+		}
+		position: absolute;
+		top: 0;
+		margin-top: -8px;
+		z-index: 2; 
+	}
+
+	&:before {
+		border-left: 20px solid #ccc;
+		right: -10px;
+	}
+
+	&:after {
+		border-left: 20px solid #fff;
+		right: -9px;
+	}
+}
+
+
  
 /* ==========================================================================
 	 Base
@@ -1389,51 +1423,22 @@ ul.breadcrumb {
 		@include border-radius(3px);
 
 		& > span {
+
+			a {
+				padding-left: 22px;
+				@include lsx-breadcrumbs;
+			}
+
 			& > span {
 				padding: 0;
-
-				&:first-child {
-					a {
-						padding-left: 22px;
-					}
-				}
 
 				span,
 				a,
 				strong {
-					position: relative;
-					float: left;
-					font-size: 14px;
-					padding: 5px 20px 5px 27px;
-
-					&:before,
-					&:after {
-						content: "";
-						display: block;
-						width: 0;
-						height: 0;
-						border: {
-							top: 30px solid transparent;
-							bottom: 30px solid transparent;
-						}
-						position: absolute;
-						top: 0;
-						margin-top: -8px;
-						z-index: 2; 
-					}
-
-					&:before {
-						border-left: 20px solid #ccc;
-						right: -10px;
-					}
-
-					&:after {
-						border-left: 20px solid #fff;
-						right: -9px;
-					}
+					@include lsx-breadcrumbs;	
 				}
 
-				&.breadcrumb_last {
+				.breadcrumb_last {
 					&:before,	
 					&:after {
 						display: none;
