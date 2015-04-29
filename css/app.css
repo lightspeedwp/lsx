@@ -9945,24 +9945,24 @@ ul.breadcrumb li > span a {
   padding-left: 22px;
 }
 /* line 1436, ../sass/app.scss */
-ul.breadcrumb li > span[rel="v:child"] {
+ul.breadcrumb li > span span[rel="v:child"] {
   padding: 0;
 }
 /* line 1441, ../sass/app.scss */
-ul.breadcrumb li > span[rel="v:child"] span,
-ul.breadcrumb li > span[rel="v:child"] a,
-ul.breadcrumb li > span[rel="v:child"] strong {
+ul.breadcrumb li > span span[rel="v:child"] span,
+ul.breadcrumb li > span span[rel="v:child"] a,
+ul.breadcrumb li > span span[rel="v:child"] strong {
   position: relative;
   float: left;
   font-size: 14px;
   padding: 5px 20px 5px 27px;
 }
 /* line 648, ../sass/app.scss */
-ul.breadcrumb li > span[rel="v:child"] span:before, ul.breadcrumb li > span[rel="v:child"] span:after,
-ul.breadcrumb li > span[rel="v:child"] a:before,
-ul.breadcrumb li > span[rel="v:child"] a:after,
-ul.breadcrumb li > span[rel="v:child"] strong:before,
-ul.breadcrumb li > span[rel="v:child"] strong:after {
+ul.breadcrumb li > span span[rel="v:child"] span:before, ul.breadcrumb li > span span[rel="v:child"] span:after,
+ul.breadcrumb li > span span[rel="v:child"] a:before,
+ul.breadcrumb li > span span[rel="v:child"] a:after,
+ul.breadcrumb li > span span[rel="v:child"] strong:before,
+ul.breadcrumb li > span span[rel="v:child"] strong:after {
   content: "";
   display: block;
   width: 0;
@@ -9975,16 +9975,16 @@ ul.breadcrumb li > span[rel="v:child"] strong:after {
   z-index: 2;
 }
 /* line 663, ../sass/app.scss */
-ul.breadcrumb li > span[rel="v:child"] span:before,
-ul.breadcrumb li > span[rel="v:child"] a:before,
-ul.breadcrumb li > span[rel="v:child"] strong:before {
+ul.breadcrumb li > span span[rel="v:child"] span:before,
+ul.breadcrumb li > span span[rel="v:child"] a:before,
+ul.breadcrumb li > span span[rel="v:child"] strong:before {
   border-left: 20px solid #ccc;
   right: -10px;
 }
 /* line 668, ../sass/app.scss */
-ul.breadcrumb li > span[rel="v:child"] span:after,
-ul.breadcrumb li > span[rel="v:child"] a:after,
-ul.breadcrumb li > span[rel="v:child"] strong:after {
+ul.breadcrumb li > span span[rel="v:child"] span:after,
+ul.breadcrumb li > span span[rel="v:child"] a:after,
+ul.breadcrumb li > span span[rel="v:child"] strong:after {
   border-left: 20px solid #fff;
   right: -9px;
 }
