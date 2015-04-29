@@ -1432,7 +1432,7 @@ ul.breadcrumb {
 			.breadcrumb_last {
 					&:before,	
 					&:after {
-						display: none !important;
+						display: none;
 					}
 				}
 
@@ -1442,6 +1442,11 @@ ul.breadcrumb {
 
 			span[rel="v:child"] {
 				padding: 0;
+				
+				&:before,	
+				&:after {
+					display: none;
+				}
 
 				span,
 				a,
