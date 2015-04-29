@@ -9909,7 +9909,7 @@ ul.breadcrumb li > span > span:first-child a {
   padding-left: 22px;
 }
 /* line 1403, ../sass/app.scss */
-ul.breadcrumb li > span > span > span,
+ul.breadcrumb li > span > span span,
 ul.breadcrumb li > span > span a,
 ul.breadcrumb li > span > span strong {
   position: relative;
@@ -9918,7 +9918,7 @@ ul.breadcrumb li > span > span strong {
   padding: 5px 20px 5px 27px;
 }
 /* line 1410, ../sass/app.scss */
-ul.breadcrumb li > span > span > span:before, ul.breadcrumb li > span > span > span:after,
+ul.breadcrumb li > span > span span:before, ul.breadcrumb li > span > span span:after,
 ul.breadcrumb li > span > span a:before,
 ul.breadcrumb li > span > span a:after,
 ul.breadcrumb li > span > span strong:before,
@@ -9935,25 +9935,21 @@ ul.breadcrumb li > span > span strong:after {
   z-index: 2;
 }
 /* line 1425, ../sass/app.scss */
-ul.breadcrumb li > span > span > span:before,
+ul.breadcrumb li > span > span span:before,
 ul.breadcrumb li > span > span a:before,
 ul.breadcrumb li > span > span strong:before {
   border-left: 20px solid #ccc;
   right: -10px;
 }
 /* line 1430, ../sass/app.scss */
-ul.breadcrumb li > span > span > span:after,
+ul.breadcrumb li > span > span span:after,
 ul.breadcrumb li > span > span a:after,
 ul.breadcrumb li > span > span strong:after {
   border-left: 20px solid #fff;
   right: -9px;
 }
-/* line 1437, ../sass/app.scss */
-ul.breadcrumb li > span > span > span.breadcrumb_last:before, ul.breadcrumb li > span > span > span.breadcrumb_last:after,
-ul.breadcrumb li > span > span a.breadcrumb_last:before,
-ul.breadcrumb li > span > span a.breadcrumb_last:after,
-ul.breadcrumb li > span > span strong.breadcrumb_last:before,
-ul.breadcrumb li > span > span strong.breadcrumb_last:after {
+/* line 1438, ../sass/app.scss */
+ul.breadcrumb li > span > span.breadcrumb_last:before, ul.breadcrumb li > span > span.breadcrumb_last:after {
   display: none;
 }
 /* line 1446, ../sass/app.scss */

@@ -1398,7 +1398,7 @@ ul.breadcrumb {
 					}
 				}
 
-				& > span,
+				span,
 				a,
 				strong {
 					position: relative;
@@ -1431,12 +1431,12 @@ ul.breadcrumb {
 						border-left: 20px solid #fff;
 						right: -9px;
 					}
+				}
 
-					&.breadcrumb_last {
-						&:before,	
-						&:after {
-							display: none;
-						}
+				&.breadcrumb_last {
+					&:before,	
+					&:after {
+						display: none;
 					}
 				}
 			}
