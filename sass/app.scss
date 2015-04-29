@@ -1441,12 +1441,19 @@ ul.breadcrumb {
 				strong {
 					@include lsx-breadcrumbs;
 				}
+
+				.breadcrumb_last {
+					&:before,	
+					&:after {
+						display: none !important;
+					}
+				}
 			}
 
 			.breadcrumb_last {
 				&:before,	
 				&:after {
-					display: none;
+					display: none !important;
 				}
 			}
 		}
