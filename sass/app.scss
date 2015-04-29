@@ -1423,28 +1423,31 @@ ul.breadcrumb {
 		@include border-radius(3px);
 
 		& > span {
-
 			a,
-			span {
-				padding-left: 22px;
+			span,
+			strong {
 				@include lsx-breadcrumbs;
 			}
 
-			& > span {
+			a {
+				padding-left: 22px;
+			}
+
+			&[rel="v:child"] {
 				padding: 0;
 
 				span,
 				a,
 				strong {
-					@include lsx-breadcrumbs;	
+					@include lsx-breadcrumbs;
 				}
+			}
 
-				.breadcrumb_last {
-					&:before,	
-					&:after {
-						display: none;
-						@include lsx-breadcrumbs;
-					}
+			.breadcrumb_last {
+				&:before,	
+				&:after {
+					display: none;
+					@include lsx-breadcrumbs;
 				}
 			}
 		}
