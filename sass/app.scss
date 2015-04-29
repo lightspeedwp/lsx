@@ -1441,6 +1441,14 @@ ul.breadcrumb {
 				strong {
 					@include lsx-breadcrumbs;
 				}
+
+				.breadcrumb_last {
+				&:before,	
+				&:after {
+						display: none;
+						@include lsx-breadcrumbs;
+					}
+				}
 			}
 
 			.breadcrumb_last {
