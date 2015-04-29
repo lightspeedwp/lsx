@@ -1424,7 +1424,8 @@ ul.breadcrumb {
 
 		& > span {
 
-			a {
+			a,
+			span {
 				padding-left: 22px;
 				@include lsx-breadcrumbs;
 			}
@@ -1442,6 +1443,7 @@ ul.breadcrumb {
 					&:before,	
 					&:after {
 						display: none;
+						@include lsx-breadcrumbs;
 					}
 				}
 			}
