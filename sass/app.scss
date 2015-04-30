@@ -1430,11 +1430,11 @@ ul.breadcrumb {
 			}
 
 			.breadcrumb_last {
-					&:before,	
-					&:after {
-						display: none;
-					}
+				&:before,	
+				&:after {
+					display: none !important;
 				}
+			}
 
 			a {
 				padding-left: 22px;
@@ -1452,6 +1452,13 @@ ul.breadcrumb {
 				a,
 				strong {
 					@include lsx-breadcrumbs;
+				}
+
+				.breadcrumb_last {
+					&:before,	
+					&:after {
+						display: none !important;
+					}
 				}
 			}
 		}
