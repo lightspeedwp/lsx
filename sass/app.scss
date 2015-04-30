@@ -360,7 +360,6 @@ $primary-darker: #357ebd;
 @mixin lsx-masonry-post-type-styles {
 	overflow: visible !important;
 	margin-bottom: 40px;
-	@include lsx-clear-div;
 
 	.stars {
 		max-height: 24px;
@@ -448,8 +447,11 @@ $primary-darker: #357ebd;
 			}
 
 			.accommodation-bottom {
+				@include lsx-clear-div;
+
 				.accommodation-read-more {
 					float: right;
+					padding: 10px 20px;
 				}
 			}
 		}
