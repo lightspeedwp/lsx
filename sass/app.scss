@@ -359,7 +359,15 @@ $primary-darker: #357ebd;
 
 @mixin lsx-masonry-post-type-styles {
 	overflow: visible !important;
-	margin-bottom: 40px;
+	margin-bottom: 60px !important;
+
+	@media screen and (max-width: 768px) {
+		margin-bottom: 40px !important;
+	}
+
+	@media screen and (max-width: 500px) {
+		margin-bottom: 20px !important;
+	}
 
 	.stars {
 		max-height: 24px;
