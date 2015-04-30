@@ -1286,6 +1286,12 @@ table {
 	@include lsx-masonry-post-type-styles;
 
 	.accommodation-tabs {
+		margin-bottom: 40px;
+
+		@media screen and (max-width: 768px) {
+			margin-bottom: 20px;
+		}
+
 		.nav-tabs {
 			li {
 				a {
@@ -1313,6 +1319,18 @@ table {
 			-moz-border-top-right-radius: 3px;
 			border-top-right-radius: 3px;
 			@include border-radius-bottom(3px);
+		}
+	}
+
+	.accommodation-gallery {
+		& > a {
+			.genericon {
+				vertical-align: middle;
+
+				&:first-child {
+					font-size: 18px;
+				}
+			}
 		}
 	}
 }
