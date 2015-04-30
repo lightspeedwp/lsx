@@ -87,8 +87,10 @@ jQuery(document).ready(function($) {
 
 			// Sticky Book Now widget
 			$(".sticky-book").sticky({ 
-				topSpacing: 126,
-				bottomSpacing: 520
+				topSpacing: spacing,
+				bottomSpacing: 520,
+				getWidthFrom: '#secondary',
+	    		responsiveWidth: true
 			});
 	    }
 	});
