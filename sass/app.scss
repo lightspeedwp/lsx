@@ -455,6 +455,9 @@ $primary-darker: #357ebd;
 					float: right;
 					padding: 9px 20px;
 					border-left: 1px solid #ddd;
+					-webkit-border-bottom-right-radius: 3px;
+					-moz-border-bottom-right-radius: 3px;
+					border-bottom-right-radius: 3px;
 					@include transition(all .1s ease-in-out);
 
 					&:hover,
