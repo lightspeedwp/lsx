@@ -89,10 +89,6 @@ $primary-darker: #357ebd;
 	padding: 0;
 }
 
-@mixin title-shadow {
-	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.08), 0px 3px 2px rgba(0, 0, 0, 0.2));
-}
-
 @mixin lsx-clear-div {
     &:after {
         visibility: hidden;
@@ -102,6 +98,10 @@ $primary-darker: #357ebd;
         clear: both;
         height: 0;
     }
+}
+
+@mixin title-shadow {
+	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3));
 }
  
 @mixin lsx-button {
@@ -398,10 +398,13 @@ $primary-darker: #357ebd;
 			}
 
 			.accommodation-top {
-				padding: 15px 20px 0;
+				padding: 15px 20px;
 
 				h3 {
-					margin-top: 0;
+					margin: {
+						top: 0;
+						bottom: 0;
+					}
 
 					a {
 						font: {
@@ -413,6 +416,24 @@ $primary-darker: #357ebd;
 
 						&:hover {
 							color: $mid-grey;
+						}
+					}
+				}
+
+				& > div {
+					.connected-property {
+						font-size: 16px;
+					}
+
+					.stars {
+						float: right;
+						margin-top: 9px;
+						margin-right: 4px;
+
+						.genericon {
+							color: #ffcc00;
+							font-size: 18px;
+							width: 12px;
 						}
 					}
 				}
@@ -447,9 +468,25 @@ $primary-darker: #357ebd;
 				}
 			}
 
+			.accommodation-excerpt {
+				margin: 0;
+				padding: 15px 20px;
+				border-bottom: 1px solid #ddd;
+			}
+
 			.accommodation-bottom {
 				font-size: 16px;
 				@include lsx-clear-div;
+
+				.accommodation-country {
+					display: inline-block;
+					padding: 8px 20px;
+
+					.genericon {
+						vertical-align: middle;
+ 						font-size: 18px;
+					}
+				}
 
 				.accommodation-read-more {
 					float: right;
