@@ -371,12 +371,6 @@ $primary-darker: #357ebd;
 		}
 	}
 
-	&.active {
-		[class*="content"] {
-			background: $white;
-		}
-	}
-
 	[class*="content-wrapper"] {
 		@include lsx-box;
 
@@ -395,6 +389,13 @@ $primary-darker: #357ebd;
 			font-size: 15px;
 			text-align: left;
 			@include transition(all .1s ease-in-out);
+
+			&:hover,
+			&:focus,
+			&:hover {
+				background: $white;
+				cursor: default;
+			}
 
 			.accommodation-top {
 				padding: 15px 20px 0;
@@ -452,8 +453,9 @@ $primary-darker: #357ebd;
 
 				.accommodation-read-more {
 					float: right;
-					padding: 12px 20px;
+					padding: 10px 20px;
 					border-left: 1px solid #ddd;
+					@include transition(all .1s ease-in-out);
 
 					&:hover,
 					&:active,
