@@ -1239,7 +1239,19 @@ table {
 
 	.accommodation-tabs {
 		.nav-tabs {
+			li {
+				a {
+					background: none !important;
+					line-height: inherit;
+					padding: 8px 20px;
+				}
 
+				&.active {
+					a {
+						color: $black;
+					}
+				}
+			}
 		}
 
 		.tab-content {
