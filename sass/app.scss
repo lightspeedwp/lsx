@@ -391,13 +391,13 @@ $primary-darker: #357ebd;
 		}
 
 		[class*="content"] {
-			background: #fbfbfb;
+			background: #f4f4f4;
 			font-size: 15px;
 			text-align: left;
 			@include transition(all .1s ease-in-out);
 
 			.accommodation-top {
-				padding: 20px 20px 0;
+				padding: 15px 20px 0;
 
 				h3 {
 					margin-top: 0;
@@ -447,11 +447,20 @@ $primary-darker: #357ebd;
 			}
 
 			.accommodation-bottom {
+				font-size: 16px;
 				@include lsx-clear-div;
 
 				.accommodation-read-more {
 					float: right;
-					padding: 10px 20px;
+					padding: 12px 20px;
+					border-left: 1px solid #ddd;
+
+					&:hover,
+					&:active,
+					&:focus {
+						border-color: $black;
+						color: $white;
+					}
 				}
 			}
 		}
@@ -1220,7 +1229,6 @@ table {
 	@include lsx-masonry-post-type-styles;
 }
 
-.room,
 .property {
 	@include lsx-masonry-styles;
 }
