@@ -453,7 +453,7 @@ $primary-darker: #357ebd;
 
 				.accommodation-read-more {
 					float: right;
-					padding: 10px 20px;
+					padding: 9px 20px;
 					border-left: 1px solid #ddd;
 					@include transition(all .1s ease-in-out);
 
@@ -1204,6 +1204,12 @@ table {
 			&:nth-child(odd) {
 				background-color: $off-white;
 			}
+
+			&:last-child {
+				td {
+					border-bottom: none;
+				}
+			}
 		}
 	} 
 
@@ -1230,6 +1236,26 @@ table {
 
 .accommodation {
 	@include lsx-masonry-post-type-styles;
+
+	.accommodation-tabs {
+		.nav-tabs {
+
+		}
+
+		.tab-content {
+			padding: 20px 30px;
+    		font-size: 15px;
+			border: {
+				left: 1px solid #ddd;
+				right: 1px solid #ddd;
+				bottom: 1px solid #ddd;
+			}
+			-webkit-border-top-right-radius: 3px;
+			-moz-border-top-right-radius: 3px;
+			border-top-right-radius: 3px;
+			@include border-radius-bottom(3px);
+		}
+	}
 }
 
 .property {
