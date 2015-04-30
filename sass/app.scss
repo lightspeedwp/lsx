@@ -92,6 +92,17 @@ $primary-darker: #357ebd;
 @mixin title-shadow {
 	@include text-shadow(0px -1px 5px rgba(0, 0, 0, 0.08), 0px 3px 2px rgba(0, 0, 0, 0.2));
 }
+
+@mixin lsx-clear-div {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: "";
+        clear: both;
+        height: 0;
+    }
+}
  
 @mixin lsx-button {
 	background: $black;
@@ -340,6 +351,105 @@ $primary-darker: #357ebd;
 							margin-right: 3px;
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+@mixin lsx-masonry-post-type-styles {
+	overflow: visible !important;
+	margin-bottom: 40px;
+	@include lsx-clear-div;
+
+	.stars {
+		max-height: 24px;
+		
+		.genericon-star {
+			color: #ffcc00;
+			font-size: 22px;
+			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
+		}
+	}
+
+	&.active {
+		[class*="content"] {
+			background: $white;
+		}
+	}
+
+	[class*="content-wrapper"] {
+		@include lsx-box;
+
+		[class*="thumbnail"] {
+			@include border-radius-top(3px);
+
+			img {
+				width: 100%;
+				opacity: 1 !important;
+				@include border-radius-top(3px);
+			}
+		}
+
+		[class*="content"] {
+			background: #fbfbfb;
+			font-size: 15px;
+			text-align: left;
+			@include transition(all .1s ease-in-out);
+
+			.accommodation-top {
+				padding: 20px 20px 0;
+
+				h3 {
+					margin-top: 0;
+
+					a {
+						font: {
+							size: 20px;
+							weight: bold;
+						}
+						color: $black;
+						@include transition(all .1s ease-in-out);
+
+						&:hover {
+							color: $mid-grey;
+						}
+					}
+				}
+			}
+
+			.price-wrapper {
+				padding: 15px 20px;
+				border: {
+					top: 1px solid #ddd;
+					bottom: 1px solid #ddd;
+				}
+
+				.price {
+					color: #999;
+
+					.price-inner {
+						display: inline-block;
+						margin-top: -3px;
+						color: $grey;
+						font: {
+							size: 17px;
+							weight: bold;
+						}
+						vertical-align: middle;
+
+						.hb_symbol {
+							font-size: 15px;
+							vertical-align: top;
+							margin-right: 3px;
+						}
+					}
+				}
+			}
+
+			.accommodation-bottom {
+				.accommodation-read-more {
+					float: right;
 				}
 			}
 		}
@@ -1104,7 +1214,10 @@ table {
 
 // Plugin Post Types
 
-.accommodation,
+.accommodation {
+	@include lsx-masonry-post-type-styles;
+}
+
 .room,
 .property {
 	@include lsx-masonry-styles;
@@ -1356,10 +1469,6 @@ table {
 		&.offer:hover {
 			img {
 				opacity: .1;
-				-webkit-transform: scale(1.08);
-				-moz-transform: scale(1.08);
-				-o-transform: scale(1.08);
-				transform: scale(1.08);
 			}
 		}
 
