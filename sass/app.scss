@@ -1464,7 +1464,7 @@ table {
 					padding: 20px 30px;
 					color: white;
 					line-height: 180%;
-					@include transition(all .1s ease-in-out);
+					@include transition(all .12s ease-in-out);
 				}
 			}
 
@@ -1480,7 +1480,9 @@ table {
 		&.active {
 			.related-property-excerpt {
 				display: block !important;
-				top: 0 !important;
+				-webkit-transform: translateX(0) !important;
+				-moz-transform: translateX(0) !important;
+				transform: translateX(0) !important;
 			}
 		}
 	}
