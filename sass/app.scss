@@ -378,11 +378,6 @@ $primary-darker: #357ebd;
 			font-size: 22px;
 			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
 		}
-
-		.genericon-rating-full {
-			color: #ffcc00;
-			font-size: 20px;
-		}
 	}
 
 	[class*="content-wrapper"] {
@@ -1350,7 +1345,7 @@ table {
 	.single-property & {
 		.property-intro-meta {
 			padding-bottom: 40px;
-			margin-bottom: 50px;
+			margin-bottom: 40px;
 			border-bottom: 3px solid #ddd;
 
 			.intro-meta-item {
@@ -1390,6 +1385,8 @@ table {
 				margin-right: 15px;
 
 				.genericon {
+					color: #ffcc00;
+					font-size: 20px;
 					vertical-align: middle;
 				}
 			}
@@ -1406,7 +1403,11 @@ table {
 		}
 
 		.property-meta-section {
-
+			padding: 40px 0;
+			border-top: 3px solid #ddd;
+			margin-top: 30px;
+			font-size: 15px;
+			@include lsx-clear-div;
 		}
 	}
 }
