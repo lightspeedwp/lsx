@@ -1,17 +1,26 @@
 /*
-Syntax error: Invalid CSS after "	margin": expected ";", was ": {"
-        on line 1419 of C:/xampp/htdocs/lsdev/wp-content/themes/lsx-theme/sass/app.scss
+Syntax error: Invalid CSS after "		height 200px": expected "{", was ";"
+        on line 1425 of C:/xampp/htdocs/lsdev/wp-content/themes/lsx-theme/sass/app.scss
 
 Backtrace:
-C:/xampp/htdocs/lsdev/wp-content/themes/lsx-theme/sass/app.scss:1419
+C:/xampp/htdocs/lsdev/wp-content/themes/lsx-theme/sass/app.scss:1425
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1129:in `expected'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1066:in `expected'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1061:in `tok!'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:569:in `declaration_or_ruleset'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:517:in `block'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:512:in `ruleset'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:574:in `declaration_or_ruleset'
 org/jruby/RubyProc.java:268:in `call'
 org/jruby/RubyProc.java:228:in `call'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1104:in `rethrow'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:575:in `declaration_or_ruleset'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:537:in `block_child'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:526:in `block_contents'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:518:in `block'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:332:in `media_directive'
+org/jruby/RubyKernel.java:2092:in `send'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:163:in `special_directive'
+C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:135:in `directive'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:537:in `block_child'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:529:in `block_contents'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:518:in `block'
@@ -62,4 +71,4 @@ C:\Program Files (x86)\Scout\bin\compass:12:in `(root)'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"	margin\": expected \";\", was \": {\"\A         on line 1419 of C:/xampp/htdocs/lsdev/wp-content/themes/lsx-theme/sass/app.scss"; }
+  content: "Syntax error: Invalid CSS after \"		height 200px\": expected \"{\", was \";\"\A         on line 1425 of C:/xampp/htdocs/lsdev/wp-content/themes/lsx-theme/sass/app.scss"; }
