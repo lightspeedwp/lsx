@@ -96,7 +96,7 @@ jQuery(document).ready(function($) {
 			// Sticky Enquire Now widget
 			$(".sticky-enquire").sticky({ 
 				topSpacing: spacing,
-				bottomSpacing: 1460,
+				bottomSpacing: 1660,
 				getWidthFrom: '#secondary',
 	    		responsiveWidth: true
 			});
