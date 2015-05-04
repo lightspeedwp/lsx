@@ -1343,6 +1343,10 @@ table {
 
 	.single-property & {
 		.property-intro-meta {
+			padding-bottom: 40px;
+			margin-bottom: 50px;
+			border-bottom: 3px solid #ddd;
+
 			.intro-meta-item {
 				display: inline-block;
 				text-align: center;
@@ -1360,14 +1364,26 @@ table {
 				&.property-icon {
 					img {
 						display: block;
-						margin: 0 auto 10px;
+						margin: 0 auto 7px;
+					}
+
+					span {
+						font-size: 15px;
 					}
 				}
 			}
 		}
 
 		.property-info {
+			.stars,
+			.property-location {
+				display: inline-block;
+			}
 
+			.property-excerpt {
+				display: block;
+				font-size: 15px;
+			}
 		}
 
 		.property-meta-section {
