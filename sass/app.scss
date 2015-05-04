@@ -1411,6 +1411,21 @@ table {
 	}
 }
 
+#single-property-map {
+	background: #f5f5f5;
+	margin: 0 -9999rem;
+	padding: 0 9999rem;
+	height: 450px
+	margin: {
+		top: 60px;
+		bottom: 60px;
+	}
+
+	@media screen and (max-width: 768px) {
+		height 200px;
+	}
+}
+
 // Slider Widgets
 
 .slider-widget-title {
