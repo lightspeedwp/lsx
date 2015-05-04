@@ -1481,9 +1481,9 @@ table {
 
 		&.active {
 			.related-property-excerpt {
-				-webkit-transform: translate(0, 100%);
-				-moz-transform: translate(0, 100%);
-				transform: translate(0, 100%);
+				-webkit-transform: translate(0, 0) !important;
+				-moz-transform: translate(0, 0) !important;
+				transform: translate(0, 0) !important;
 			}
 		}
 	}
