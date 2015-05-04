@@ -1452,12 +1452,25 @@ table {
 	.property {
 		.property-content-wrapper {
 			.property-thumbnail {
+				position: relative;
+
 				.related-property-excerpt {
 					display: none;
+					position: absolute;
+					top: 246px;
+					height: 100%;
+					background: rgba(0, 0, 0, .7);
+					text-align: left;
+					padding: 20px 30px;
+					color: white;
+					line-height: 180%;
+					@include transition(all .1s ease-in-out);
 				}
 			}
 
 			.property-content {
+				padding: 20px 30px;
+
 				h3 {
 					margin-bottom: 0;
 				}
@@ -1466,7 +1479,8 @@ table {
 
 		&.active {
 			.related-property-excerpt {
-				display: block;
+				display: block !important;
+				top: 0;
 			}
 		}
 	}
