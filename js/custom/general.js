@@ -92,6 +92,14 @@ jQuery(document).ready(function($) {
 				getWidthFrom: '#secondary',
 	    		responsiveWidth: true
 			});
+
+			// Sticky Enquire Now widget
+			$(".sticky-enquire").sticky({ 
+				topSpacing: spacing,
+				bottomSpacing: 1460,
+				getWidthFrom: '#secondary',
+	    		responsiveWidth: true
+			});
 	    }
 	});
 	
