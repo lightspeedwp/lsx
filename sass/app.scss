@@ -1429,7 +1429,6 @@ table {
 }
 
 #single-property-map {
-	background: #f5f5f5;
 	margin: 0 -9999rem;
 	padding: 0 9999rem;
 	border: {
@@ -1446,6 +1445,33 @@ table {
 		height: 200px;
 	}
 }
+
+#related-properties {
+	margin-bottom: 60px;
+
+	.property {
+		.property-content-wrapper {
+			.property-thumbnail {
+				.related-property-excerpt {
+					display: none;
+				}
+			}
+
+			.property-content {
+				h3 {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&.active {
+			.related-property-excerpt {
+				display: block;
+			}
+		}
+	}
+}
+
 
 // Slider Widgets
 
