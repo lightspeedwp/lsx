@@ -1346,15 +1346,23 @@ table {
 			.intro-meta-item {
 				display: inline-block;
 				text-align: center;
+				vertical-align: bottom;
 				margin-right: 30px;
 
 				&:last-child {
 					margin-right: 0;
 				}
-			}
 
-			.property-logo {
-				max-width: 230px;
+				&.property-logo {
+					max-width: 230px;
+				}
+
+				&.property-icon {
+					img {
+						display: block;
+						margin: 0 auto 10px;
+					}
+				}
 			}
 		}
 
