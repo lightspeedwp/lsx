@@ -1340,6 +1340,32 @@ table {
 
 .property {
 	@include lsx-masonry-styles;
+
+	.single-property & {
+		.property-intro-meta {
+			.intro-meta-item {
+				display: inline-block;
+				text-align: center;
+				margin-right: 30px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			.property-logo {
+				max-width: 230px;
+			}
+		}
+
+		.property-info {
+
+		}
+
+		.property-meta-section {
+
+		}
+	}
 }
 
 // Slider Widgets
