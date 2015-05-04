@@ -1453,18 +1453,18 @@ table {
 		.property-content-wrapper {
 			.property-thumbnail {
 				position: relative;
+				overflow: hidden;
 
 				.related-property-excerpt {
 					display: none;
 					position: absolute;
-					top: 246px;
 					height: 100%;
 					background: rgba(0, 0, 0, .7);
 					text-align: left;
 					padding: 20px 30px;
 					color: white;
 					line-height: 180%;
-					@include transition(all .12s ease-in-out);
+					@include transition(all .2s ease-in-out);
 				}
 			}
 
@@ -1479,10 +1479,9 @@ table {
 
 		&.active {
 			.related-property-excerpt {
-				display: block !important;
-				-webkit-transform: translate(0, -246px);
-				-moz-transform: translate(0, -246px);
-				transform: translate(0, -246px);
+				-webkit-transform: translate(0, -100%);
+				-moz-transform: translate(0, -100%);
+				transform: translate(0, -100%);
 			}
 		}
 	}
