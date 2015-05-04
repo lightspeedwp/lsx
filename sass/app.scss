@@ -261,7 +261,8 @@ $primary-darker: #357ebd;
 	.stars {
 		max-height: 24px;
 		
-		.genericon-star {
+		.genericon-star,
+		.genericon-rating-full {
 			color: #ffcc00;
 			font-size: 22px;
 			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
@@ -376,6 +377,11 @@ $primary-darker: #357ebd;
 			color: #ffcc00;
 			font-size: 22px;
 			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
+		}
+
+		.genericon-rating-full {
+			color: #ffcc00;
+			font-size: 20px;
 		}
 	}
 
@@ -1380,9 +1386,22 @@ table {
 				display: inline-block;
 			}
 
+			.stars {
+				margin-right: 15px;
+
+				.genericon {
+					vertical-align: middle;
+				}
+			}
+
+			.property-location {
+				font-weight: bold;
+			}
+
 			.property-excerpt {
 				display: block;
 				font-size: 15px;
+				margin-top: 15px;
 			}
 		}
 
