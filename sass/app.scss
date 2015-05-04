@@ -1467,14 +1467,24 @@ table {
 					color: $white;
 					line-height: 180%;
 					@include transition(all .25s ease-in-out);
+					@include border-radius-top(3px);
 				}
 			}
 
 			.property-content {
-				padding: 20px 30px;
+				text-align: center !important;
 
 				h3 {
 					margin-bottom: 0;
+
+					a {
+						padding: 20px 30px;
+						color: #333;
+						font: {
+							size: 20px;
+							weight: bold;
+						}
+					}
 				}
 			}
 		}
