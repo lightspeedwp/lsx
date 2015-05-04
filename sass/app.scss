@@ -1463,7 +1463,10 @@ table {
 					padding: 20px 30px;
 					color: white;
 					line-height: 180%;
-					@include transition(all .2s ease-in-out);
+					-webkit-transform: translate(0, -100%);
+					-moz-transform: translate(0, -100%);
+					transform: translate(0, -100%);
+					@include transition(all .3s ease-in-out);
 				}
 			}
 
@@ -1478,9 +1481,9 @@ table {
 
 		&.active {
 			.related-property-excerpt {
-				-webkit-transform: translate(0, -100%);
-				-moz-transform: translate(0, -100%);
-				transform: translate(0, -100%);
+				-webkit-transform: translate(0, 100%);
+				-moz-transform: translate(0, 100%);
+				transform: translate(0, 100%);
 			}
 		}
 	}
