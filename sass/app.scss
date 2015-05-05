@@ -1406,6 +1406,12 @@ table {
 				vertical-align: bottom;
 				margin-right: 30px;
 
+				@media screen and (max-width: 510px) {
+					width: 45%;
+					margin-right: 0;
+					margin-top: 20px;
+				}
+
 				&:last-child {
 					margin-right: 0;
 				}
@@ -1419,7 +1425,7 @@ table {
 						margin-bottom: 30px;
 					}
 
-					@media screen and (max-width: 500px) {
+					@media screen and (max-width: 510px) {
 						max-width: 100%;
 					}
 				}
@@ -1442,6 +1448,10 @@ table {
 
 			.property-icons {
 				display: inline-block;
+
+				@media screen and (max-width: 510px) {
+					text-align: center;
+				}
 			}
 		}
 
