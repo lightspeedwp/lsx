@@ -440,6 +440,10 @@ $primary-darker: #357ebd;
 						margin-top: 9px;
 						margin-right: 4px;
 
+						@media screen and (max-width: 450px) {
+
+						}
+
 						.genericon {
 							color: #ffcc00;
 							font-size: 18px;
@@ -2601,6 +2605,7 @@ nav {
 					a {
 						background: $black !important;
 						color: $white !important;
+						padding: 15px 24px !important;
 
 						&:hover,
 						&:active,
@@ -2619,7 +2624,7 @@ nav {
 
 	&#social-navigation {
 		float: right;
-		margin: 25px 0 10px !important;
+		margin: 14px 0 10px !important;
 		background: none;
 
 		@media screen and (max-width: 992px) {
@@ -4040,7 +4045,7 @@ footer.content-info {
 
 	.credit {
 		color: $white;
-		margin: 20px 0;
+		margin: 20px 0 30px;
 		font-size: 15px;
 
 		@media screen and (max-width: 992px) {
