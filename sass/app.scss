@@ -380,6 +380,12 @@ $primary-darker: #357ebd;
 		}
 	}
 
+	&.active {
+		.accommodation-content {
+			background: $white !important;
+		}
+	}
+
 	[class*="content-wrapper"] {
 		@include lsx-box;
 
