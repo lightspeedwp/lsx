@@ -856,9 +856,9 @@ $primary-darker: #357ebd;
 }
 
 @mixin lsx-archive-filters-header {
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 40px;
-	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd !important;
+	margin-bottom: 40px !important;
+	padding-bottom: 20px !important;
 
 	.page-title {
 		border: none;
