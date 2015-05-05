@@ -105,6 +105,118 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 	}
 }
 
+add_action( 'lsx_footer_before', 'lsx_add_single_properties_bottom' );
+if ( ! function_exists( 'lsx_add_single_properties_bottom' ) ) { 
+	function lsx_add_single_properties_bottom() {
+		if ( is_page_template( 'single_property.php' ) ) { ?>
+			<div id="property-single-bottom">
+				<script src="https://maps.googleapis.com/maps/api/js?"></script>
+			    <script>
+			        function initialize() {
+			    	
+			        var myLatlng = new google.maps.LatLng(-33.92945, 18.45345);
+
+			        var mapOptions = {
+				        center: myLatlng,
+				        zoom: 15,
+				        scrollwheel: false,
+				        panControl: false,
+					    zoomControl: false,
+					    scaleControl: false,
+						mapTypeControl: false,
+						streetViewControl: false,
+						overviewMapControl: false
+			        }
+
+			        var map = new google.maps.Map(document.getElementById('ssingle-property-map'),
+			            mapOptions);
+
+			        var marker = new google.maps.Marker({
+					    position: myLatlng,
+					    map: map
+					});
+			      }
+
+			      google.maps.event.addDomListener(window, 'load', initialize);
+			    </script>
+				
+			    <div id="single-property-map-wrapper">
+					<div id="single-property-map" style="width:500px; height:500px;">OOOK</div>
+				</div>
+
+
+				<!-- Similar to the other masonry layouts markup, but note where I've put the excerpts (in the thumbnail anchor tag) -->
+				<div id="related-properties" class="col-md-12">
+					<h3>Related Properties</h3>
+
+					<div class="lsx-property-wrapper filter-items-wrapper">
+						<div id="property-infinite-scroll-wrapper" class="filter-items-container lsx-property masonry">
+							<article id="post-3489" class="property">
+								<div class="property-content-wrapper">
+									<div class="property-thumbnail">
+										<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/">
+											<span class="related-property-excerpt">This is where the related property excerpt is supposed to be...</span>
+											<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-desktop="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-tablet="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" data-mobile="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230.jpg" alt="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Mushara-Outpost-slider-home-2-350x230">		
+										</a>
+									</div>
+									
+									<div class="property-content">	
+										<h3>
+											<a href="http://mushara.feedmybeta.com/properties/mushara-outpost/" rel="bookmark">
+												<span>Mushara Outpost</span>
+											</a>
+										</h3>		
+										
+									</div>
+								</div>
+							</article>
+							
+							<article id="post-3488" class="property">
+								<div class="property-content-wrapper">
+									<div class="property-thumbnail">
+										<a href="http://mushara.feedmybeta.com/properties/mushara-bushcamp/">
+											<span class="related-property-excerpt">This is where the related property excerpt is supposed to be...</span>
+											<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="http://mushara.feedmybeta.com/wp-content/uploads/2015/04/Mushara-Bush-Camp-tents-exterior-body-350x230.jpg" data-desktop="http://mushara.feedmybeta.com/wp-content/uploads/2015/04/Mushara-Bush-Camp-tents-exterior-body-350x230.jpg" data-tablet="http://mushara.feedmybeta.com/wp-content/uploads/2015/04/Mushara-Bush-Camp-tents-exterior-body-350x230.jpg" data-mobile="http://mushara.feedmybeta.com/wp-content/uploads/2015/04/Mushara-Bush-Camp-tents-exterior-body-350x230.jpg" alt="http://mushara.feedmybeta.com/wp-content/uploads/2015/04/Mushara-Bush-Camp-tents-exterior-body-350x230">
+										</a>
+
+									</div>
+									
+									<div class="property-content">	
+										<h3>
+											<a href="http://mushara.feedmybeta.com/properties/mushara-bushcamp/" rel="bookmark">
+												<span>Mushara Bushcamp</span>
+											</a>
+										</h3>	
+									</div>
+								</div>
+							</article>
+							
+							<article id="post-3487" class="property">
+								<div class="property-content-wrapper">
+									<div class="property-thumbnail">
+										<a href="http://mushara.feedmybeta.com/properties/mushara-villa/">
+											<span class="related-property-excerpt">This is where the related property excerpt is supposed to be...</span>
+											<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Villa-Mushara-Home-Slider-2-350x230.jpg" data-desktop="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Villa-Mushara-Home-Slider-2-350x230.jpg" data-tablet="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Villa-Mushara-Home-Slider-2-350x230.jpg" data-mobile="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Villa-Mushara-Home-Slider-2-350x230.jpg" alt="http://mushara.feedmybeta.com/wp-content/uploads/2015/03/Villa-Mushara-Home-Slider-2-350x230">				
+										</a>
+									</div>
+									
+									<div class="property-content">	
+										<h3>
+											<a href="http://mushara.feedmybeta.com/properties/mushara-villa/" rel="bookmark">
+												<span>Mushara Villa</span>
+											</a>
+										</h3>	
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php }
+	}
+}
+
 /**
  * Displays the hompage slider if Soliliquy Lite is active and the Customizer settings are set.
  *
