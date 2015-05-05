@@ -1350,6 +1350,47 @@ table {
 	}
 }
 
+
+// Single Property Template
+
+.single-property {
+	.wrap {
+		.content {
+			@media screen and (max-width: 992px) {
+				padding-top: 40px;
+			}
+
+			#secondary {
+				float: right;
+
+				@media screen and (max-width: 992px) {
+					float: none;
+					margin: {
+						top: 0;
+						bottom: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.sticky-wrapper {
+	@media screen and (max-width: 992px) {
+		height: auto !important;
+
+		.widget {
+			width: auto !important;
+			position: relative !important;
+			top: auto !important;
+			max-width: 500px;
+		}
+	}
+}
+
+
+// General Property
+
 .property {
 	@include lsx-masonry-post-type-styles;
 
