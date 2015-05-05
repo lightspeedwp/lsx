@@ -855,6 +855,32 @@ $primary-darker: #357ebd;
 	}
 }
 
+@mixin lsx-archive-filters-header {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 40px;
+	padding-bottom: 20px;
+
+	.page-title {
+		border: none;
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+	}
+
+	[class*="-filters"] {
+		float: right;
+
+		.form-group {
+			display: inline-block;
+			margin: {
+			  	top: -5px;
+			  	left: 15px;
+			}
+			vertical-align: top;
+		}
+	}
+}
+
 
  
 /* ==========================================================================
@@ -1353,11 +1379,18 @@ table {
 
 // Single Property Template
 
-.single-property {
+.single-property,
+.single-accommodation {
 	.wrap {
 		.content {
 			@media screen and (max-width: 992px) {
 				padding-top: 40px;
+			}
+
+			#primary {
+				[class*="-archive-header"] {
+					@include lsx-archive-filters-header;
+				}
 			}
 
 			#secondary {
