@@ -1387,12 +1387,6 @@ table {
 				padding-top: 40px;
 			}
 
-			#primary {
-				[class*="-archive-header"] {
-					@include lsx-archive-filters-header;
-				}
-			}
-
 			#secondary {
 				float: right;
 
@@ -3081,6 +3075,10 @@ header.page-header {
 	.home & {
 		display: none !important;
 	}
+}
+
+[class*="-archive-header"] {
+	@include lsx-archive-filters-header;
 }
 
 // Homepage
