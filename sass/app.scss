@@ -1412,18 +1412,36 @@ table {
 
 				&.property-logo {
 					max-width: 230px;
+
+					@media screen and (max-width: 768px) {
+						max-width: 350px;
+						display: block;
+						margin-bottom: 30px;
+					}
+
+					@media screen and (max-width: 500px) {
+						max-width: 100%;
+					}
 				}
 
 				&.property-icon {
 					img {
 						display: block;
 						margin: 0 auto 7px;
+
+						@media screen and (max-width: 768px) {
+							margin: 0 auto 7px;
+						}
 					}
 
 					span {
 						font-size: 15px;
 					}
 				}
+			}
+
+			.property-icons {
+				display: inline-block;
 			}
 		}
 
