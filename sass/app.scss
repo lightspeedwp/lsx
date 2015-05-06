@@ -886,6 +886,14 @@ $primary-darker: #2a6496;
 	padding: 4px;
 	border: 1px solid #ddd;
 	@include border-radius(3px);
+	@include transition(all .1s ease-in-out);
+
+	a:hover &,
+	a:focus &,
+	a:active & {
+		border: 1px solid #777;
+		cursor: pointer;
+	}
 }
 
 
