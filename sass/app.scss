@@ -1343,18 +1343,20 @@ table {
 	.classy-home-content-section-wrapper {
 		@include lsx-full-width($off-white, #777);
 		margin: {
-			top: 0 !important;
-			bottom: 0 !important;
+			top: 0;
+			bottom: 0;
 		}
 		padding: {
-			top: 70px !important;
-			bottom: 70px !important;
+			top: 70px;
+			bottom: 70px;
 		}
 		border-bottom: 1px solid #ddd;
 
 		&:last-child {
 			border-bottom: none;
 		}
+
+
 
 		a {
 			color: $primary;
@@ -1368,10 +1370,12 @@ table {
 
 		.classy-home-content-section {
 			text-align: center;
+				
+			@media screen and (max-width: 992px) {
+				margin-bottom: 60px;
 
-			&:nth-child(2) {
-				@media screen and (max-width: 992px) {
-					margin-bottom: 60px;
+				&:last-child {
+					margin-bottom: 0;
 				}
 			}
 
@@ -1389,6 +1393,7 @@ table {
 
 			[class*="-slider"] {
 				.slide-container {
+					background-size: cover;
 					padding: 120px 40px;
 
 					@media screen and (max-width: 992px) {
@@ -1912,7 +1917,7 @@ table {
 
 			.caption {
 				display: inline-block;
-				background: rgba(255, 255, 255, .54);
+				background: rgba(255, 255, 255, .58);
 				text-align: center;
 				padding: 20px 30px;
 				@include border-radius(5px);
