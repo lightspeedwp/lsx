@@ -1343,6 +1343,8 @@ table {
 
 		&#classy-home-blog {
 			.post {
+				@include lsx-masonry-styles;
+				
 				[class*="-content-wrapper"] {
 					[class*="-thumbnail"] {
 						position: relative;
