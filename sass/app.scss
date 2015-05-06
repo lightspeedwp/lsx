@@ -1363,6 +1363,45 @@ table {
 			}
 		}
 
+		&#classy-home-intro {
+			.lsx-hero-unit {
+				text-align: left;
+				font-size: 18px;
+
+				h1 {
+					text-align: center;
+					color: $black;
+				}
+
+				h3 {
+					color: $black;
+					margin-bottom: 24px;
+				}
+
+				ul {
+					@include clear-list;
+
+					li {
+						.genericon {
+							vertical-align: middle;
+							color: $black;
+							margin-right: 4px;
+						}
+					}
+				}
+			}
+		}
+
+		&#classy-home-intro,
+		&#classy-home-blog,
+		&#classy-home-activities-restaurants {
+			background: $white;
+		}
+
+		&#classy-home-offers {
+			@include lsx-full-width($primary, #ccc);
+		}
+
 		&#classy-home-blog {
 			.post {
 				@include lsx-masonry-styles;
