@@ -1323,13 +1323,20 @@ table {
 
 .classy-home-content {
 	.classy-home-content-section-wrapper {
-		@include lsx-full-width(#f4f4f4, #777);
+		@include lsx-full-width(#f4f4f4, #fff);
 
 		.classy-home-content-section {
 			text-align: center;
 
 			h3 {
 				color: $black;
+				font-size: 30px;
+				margin-bottom: 20px;
+			}
+
+			span {
+				font-size: 18px;
+				margin-bottom: 30px;
 			}
 		}
 
