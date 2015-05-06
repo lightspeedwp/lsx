@@ -1342,6 +1342,11 @@ table {
 			top: 70px !important;
 			bottom: 70px !important;
 		}
+		border-bottom: 1px solid #ddd;
+
+		&:last-child {
+			border-bottom: none;
+		}
 
 		a {
 			color: $primary;
