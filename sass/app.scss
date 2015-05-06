@@ -1325,6 +1325,16 @@ table {
 	.classy-home-content-section-wrapper {
 		@include lsx-full-width(#fff, #777);
 
+		a {
+			color: $primary;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: $primary-darker;
+			}
+		}
+
 		.classy-home-content-section {
 			text-align: center;
 
@@ -1849,8 +1859,9 @@ table {
 				@include border-radius(100%);
 
 				&:hover,
-				&:focus {
-					background: $primary;
+				&:focus,
+				&:active {
+					background: $primary !important;
 				}
 			}
 
