@@ -886,11 +886,6 @@ $primary-darker: #357ebd;
 	padding: 4px;
 	border: 1px solid #ddd;
 	@include border-radius(3px);
-	@include transition(all .1s ease-in-out);
-
-	&:hover {
-		border: 1px solid #777;
-	}
 }
 
 
@@ -1446,6 +1441,10 @@ table {
 			.offer-slider {
 				.slick-track {
 					width: auto !important;
+				}
+
+				.slide-title {
+					color: $black;
 				}
 			}
 		}
