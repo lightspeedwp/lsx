@@ -1473,8 +1473,8 @@ table {
 
 		&#classy-home-gallery {
 			img  {
-				@media screen and (max-width: 992px) {
-					margin-bottom: 20px;
+				@media screen and (max-width: 768px) {
+					margin-bottom: 24px;
 				}
 			}
 		}
@@ -1482,6 +1482,7 @@ table {
 		&#classy-home-blog {
 			.post {
 				@include lsx-masonry-styles;
+				margin-bottom: 0 !important;
 
 				[class*="-content-wrapper"] {
 					[class*="-thumbnail"] {
