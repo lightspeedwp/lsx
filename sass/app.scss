@@ -1339,6 +1339,18 @@ table {
 				font-size: 18px;
 				margin-bottom: 40px;
 			}
+
+			[class*="-slider"] {
+				.slide-container {
+					padding: 73px 40px;
+
+					.caption {
+						h3 {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
 		}
 
 		&#classy-home-blog {
@@ -1786,12 +1798,13 @@ table {
 	.genericon-leftarrow,
 	.genericon-rightarrow {
 		color: $dark-grey;
-		font-size: 24px;
+		font-size: 26px !important;
 		margin-top: 20px;
 		transition: none;
 
 		&:hover,
-		&:focus {
+		&:focus,
+		&:active {
 			cursor: pointer;
 			color: $primary;
 		}
