@@ -1361,6 +1361,12 @@ table {
 		.classy-home-content-section {
 			text-align: center;
 
+			&:nth-child(2) {
+				@media screen and (max-width: 992px) {
+					margin-bottom: 60px;
+				}
+			}
+
 			& > h3 {
 				color: $black;
 				font-size: 30px;
@@ -1395,6 +1401,10 @@ table {
 					text-align: center;
 					color: $black;
 					margin-bottom: 40px;
+
+					@media screen and (max-width: 992px) {
+						text-align: left;
+					}
 				}
 
 				h3 {
@@ -1456,6 +1466,15 @@ table {
 
 				.slide-title {
 					color: $black;
+					margin: 0 !important;
+				}
+			}
+		}
+
+		&#classy-home-gallery {
+			img  {
+				@media screen and (max-width: 992px) {
+					margin-bottom: 20px;
 				}
 			}
 		}
