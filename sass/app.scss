@@ -1324,6 +1324,10 @@ table {
 .classy-home-content {
 	.classy-home-content-section-wrapper {
 		@include lsx-full-width(#fff, #777);
+		margin: {
+			top: 0 !important;
+			bottom: 0 !important;
+		}
 
 		a {
 			color: $primary;
@@ -1371,6 +1375,7 @@ table {
 				h1 {
 					text-align: center;
 					color: $black;
+					margin-bottom: 40px;
 				}
 
 				h3 {
@@ -1382,12 +1387,13 @@ table {
 					@include clear-list;
 
 					li {
-						margin-bottom: 4px;
-						
+						margin-bottom: 7px;
+
 						.genericon {
 							vertical-align: middle;
 							color: $black;
-							margin-right: 4px;
+							margin-right: 10px;
+							font-size: 20px;
 						}
 					}
 				}
@@ -1402,6 +1408,25 @@ table {
 
 		&#classy-home-offers {
 			@include lsx-full-width($primary, #ccc);
+
+			h3 {
+				color: $white;
+			}
+
+			.classy-home-content-section {
+				margin: 0 auto;
+				float: none;
+			}
+
+			a {
+				color: $white;
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: $black;
+				}
+			}
 		}
 
 		&#classy-home-blog {
@@ -1829,6 +1854,7 @@ table {
 				
 				.slide-title {
 					margin: 0 0 10px;
+					color: $black;
 					font: {
 						family: 'Noto Sans', sans-serif !important;
 						weight: normal;

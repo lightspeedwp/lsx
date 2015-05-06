@@ -552,6 +552,20 @@ select {
 .restaurants-slider .slick-dots li button:focus, 
 .activities-slider .slick-dots li button:hover, 
 .activities-slider .slick-dots li button:focus,
+.offer-slider .slick-dots li.slick-active button, 
+.room-slider .slick-dots li.slick-active button, 
+.accommodation-slider .slick-dots li.slick-active button, 
+.restaurants-slider .slick-dots li.slick-active button, 
+.activities-slider .slick-dots li.slick-active button {
+	background: #596b46 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper a,
+.offer-slider .slick-list .slide-container:hover .caption .slide-title,
+.room-slider .slick-list .slide-container:hover .caption .slide-title,
+.accommodation-slider .slick-list .slide-container:hover .caption .slide-title,
+.restaurants-slider .slick-list .slide-container:hover .caption .slide-title,
+.activities-slider .slick-list .slide-container:hover .caption .slide-title,
 .offer-slider .genericon-leftarrow:hover, 
 .offer-slider .genericon-leftarrow:focus, 
 .offer-slider .genericon-rightarrow:hover, 
@@ -572,15 +586,6 @@ select {
 .activities-slider .genericon-leftarrow:focus, 
 .activities-slider .genericon-rightarrow:hover, 
 .activities-slider .genericon-rightarrow:focus {
-	background: #596b46 !important;
-}
-
-.classy-home-content .classy-home-content-section-wrapper a,
-.offer-slider .slick-list .slide-container:hover .caption .slide-title,
-.room-slider .slick-list .slide-container:hover .caption .slide-title,
-.accommodation-slider .slick-list .slide-container:hover .caption .slide-title,
-.restaurants-slider .slick-list .slide-container:hover .caption .slide-title,
-.activities-slider .slick-list .slide-container:hover .caption .slide-title {
 	color: #596b46 !important;
 }
 
@@ -590,8 +595,11 @@ select {
 	color: #3d4a30 !important;
 }
 
-.classy-home-content .classy-home-content-section-wrapper#classy-home-video-accommodation, 
-.classy-home-content .classy-home-content-section-wrapper#classy-home-blog,
+.classy-home-content .classy-home-content-section-wrapper#classy-home-video-accommodation,
 .classy-home-content .classy-home-content-section-wrapper#classy-home-gallery {
-  background: #e1e0d1 !important;
+	background: #e1e0d1 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper#classy-home-offers {
+	background: #596b46 !important;
 }
