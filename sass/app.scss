@@ -1318,6 +1318,25 @@ table {
 }
 
 
+
+// Classy Homepage Template
+
+.classy-home-content {
+	.classy-home-content-section-wrapper {
+		@include lsx-full-width(#fbfbfb, #777);
+
+		.classy-home-content-section {
+			text-align: center;
+		}
+
+		&#classy-home-blog {
+			.post {
+				@include lsx-masonry-post-type-styles;
+			}
+		}
+	}
+}
+
 // Plugin Post Types
 
 .accommodation {
@@ -1376,7 +1395,6 @@ table {
 	}
 }
 
-
 // Single Property Template
 
 .single-property,
@@ -1414,7 +1432,6 @@ table {
 		}
 	}
 }
-
 
 // General Property
 
@@ -1649,7 +1666,10 @@ table {
 }
 
 .offer-slider,
-.room-slider {
+.room-slider,
+.accommodation-slider,
+.restaurants-slider,
+.activites-slider {
 	.slick-list {
 		overflow: hidden;
 
