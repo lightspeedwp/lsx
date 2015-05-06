@@ -1389,7 +1389,15 @@ table {
 
 			[class*="-slider"] {
 				.slide-container {
-					padding: 82px 40px;
+					padding: 120px 40px;
+
+					@media screen and (max-width: 992px) {
+						padding: 100px 40px;
+					}
+
+					@media screen and (max-width: 768px) {
+						margin-bottom: 80px 40px;
+					}
 
 					.caption {
 						h3 {
