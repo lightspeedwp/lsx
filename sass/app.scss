@@ -1422,22 +1422,30 @@ table {
 		&#classy-home-offers {
 			@include lsx-full-width($primary, #ccc);
 
-			h3 {
-				color: $white;
-			}
-
 			.classy-home-content-section {
 				margin: 0 auto;
 				float: none;
+
+				& > h3 {
+					color: $white;
+				}
+
+				& > span {
+					a {
+						color: $white !important;
+
+						&:hover,
+						&:active,
+						&:focus {
+							color: $black !important;
+						}
+					}
+				}
 			}
 
-			a {
-				color: $white;
-
-				&:hover,
-				&:active,
-				&:focus {
-					color: $black;
+			.offer-slider {
+				.slick-track {
+					width: auto !important;
 				}
 			}
 		}
