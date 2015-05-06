@@ -881,6 +881,18 @@ $primary-darker: #357ebd;
 	}
 }
 
+@mixin lsx-image-border {
+	background: $white;
+	padding: 4px;
+	border: 1px solid #ddd;
+	@include border-radius(3px);
+	@include transition(all .1s ease-in-out);
+
+	&:hover {
+		border: 1px solid #777;
+	}
+}
+
 
  
 /* ==========================================================================
@@ -1086,14 +1098,7 @@ img,
 	}
 
 	&.image-border {
-		padding: 4px;
-  		border: 1px solid #ddd;
-  		@include border-radius(3px);
-  		@include transition(all .1s ease-in-out);
-
-  		&:hover {
-  			border: 1px solid #ccc;
-  		}
+		@include lsx-image-border;
 	}
 }
 
@@ -1128,6 +1133,10 @@ img,
 
 .lsx-pricing-table {
 	@include lsx-pricing-table;
+}
+
+.lsx-image-border {
+	@include lsx-image-border;
 }
 
 .thumbnail {
@@ -1350,7 +1359,7 @@ table {
 
 			& > span {
 				display: block;
-				font-size: 18px;
+				font-size: 19px;
 				margin-bottom: 40px;
 			}
 
@@ -1387,7 +1396,7 @@ table {
 					@include clear-list;
 
 					li {
-						margin-bottom: 7px;
+						margin-bottom: 12px;
 
 						.genericon {
 							vertical-align: middle;
@@ -1844,11 +1853,10 @@ table {
 			}
 
 			.caption {
-			    max-width: 400px;
-				background: rgba(255, 255, 255, .6);
+				display: inline-block;
+				background: rgba(255, 255, 255, .54);
 				text-align: center;
-				padding: 20px;
-				margin: 0 auto;
+				padding: 20px 30px;
 				@include border-radius(5px);
 				@include transition(all 0.3s ease-in-out);
 				
