@@ -1331,20 +1331,20 @@ table {
 			h3 {
 				color: $black;
 				font-size: 30px;
-				margin-bottom: 20px;
+				margin-bottom: 14px;
 			}
 
 			span {
 				display: block;
 				font-size: 18px;
-				margin-bottom: 30px;
+				margin-bottom: 40px;
 			}
 		}
 
 		&#classy-home-blog {
 			.post {
 				@include lsx-masonry-styles;
-				
+
 				[class*="-content-wrapper"] {
 					[class*="-thumbnail"] {
 						position: relative;
@@ -1366,6 +1366,7 @@ table {
 
 					[class*="-content"] {
 						text-align: center !important;
+						padding: 0 !important;
 
 						h3 {
 							margin: 0;
@@ -2361,6 +2362,7 @@ hr {
     [dir="rtl"] & {
         float: right;
     }
+    width: 100%;
     img {
         display: block;
     }
