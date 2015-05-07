@@ -489,6 +489,9 @@ $primary-darker: #2a6496;
 			}
 
 			[class*="-excerpt"] {
+				height: 190px;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				margin: 0;
 				padding: 15px 20px;
 				border-bottom: 1px solid #ddd;
