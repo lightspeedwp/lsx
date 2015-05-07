@@ -184,6 +184,16 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
   color: #fff;
 }
 
+header.banner nav .nav.navbar-nav li.menu-highlight a {
+  background: #572600 !important
+}
+
+header.banner nav .nav.navbar-nav li.menu-highlight a:hover, 
+header.banner nav .nav.navbar-nav li.menu-highlight a:active, 
+header.banner nav .nav.navbar-nav li.menu-highlight a:focus {
+  background: #331701 !important;
+}
+
 .navbar-toggle:hover,
 .navbar-toggle:active,
 .navbar-toggle:focus {
@@ -364,7 +374,8 @@ footer.content-info a:hover {
 .caldera-grid .form-control:focus,
 .ginput_container input:focus, 
 .ginput_container select:focus, 
-.ginput_container textarea:focus {
+.ginput_container textarea:focus,
+.form-control:focus {
   border-color: #d48a1d !important;
   box-shadow: none !important;
 }

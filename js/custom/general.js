@@ -75,22 +75,30 @@ jQuery(document).ready(function($) {
 		var spacing = 93;
 	}
 
-	$(window).resize(function () {
-		var screen = $(window)
-	    if (screen.width() > 768) {
-	        $(".info-box-sticky").sticky({ 
-			topSpacing: spacing,
-			bottomSpacing: 590,
-			getWidthFrom: '#secondary',
-	    	responsiveWidth: true
-			});
+	$(".info-box-sticky").sticky({ 
+		topSpacing: spacing,
+		bottomSpacing: 590,
+		getWidthFrom: '#secondary',
+		responsiveWidth: true,
+		responsiveBreakpoint: 992
+	});
 
-			// Sticky Book Now widget
-			$(".sticky-book").sticky({ 
-				topSpacing: 127,
-				bottomSpacing: 1300
-			});
-	    }
+	// Sticky Book Now widget
+	$(".sticky-book").sticky({ 
+		topSpacing: spacing,
+		bottomSpacing: 520,
+		getWidthFrom: '#secondary',
+		responsiveWidth: true,
+		responsiveBreakpoint: 992
+	});
+
+	// Sticky Enquire Now widget
+	$(".sticky-enquire").sticky({ 
+		topSpacing: spacing,
+		bottomSpacing: 1660,
+		getWidthFrom: '#secondary',
+		responsiveWidth: true,
+		responsiveBreakpoint: 992
 	});
 	
 		

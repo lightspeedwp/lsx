@@ -169,6 +169,16 @@ header.banner nav .nav.navbar-nav li.active:hover > a {
 	color: #fff;
 }
 
+header.banner nav .nav.navbar-nav li.menu-highlight a {
+	background: #a5a370 !important
+}
+
+header.banner nav .nav.navbar-nav li.menu-highlight a:hover, 
+header.banner nav .nav.navbar-nav li.menu-highlight a:active, 
+header.banner nav .nav.navbar-nav li.menu-highlight a:focus {
+	background: #79774e !important;
+}
+
 .navbar-toggle:hover,
 .navbar-toggle:active,
 .navbar-toggle:focus {
@@ -316,6 +326,14 @@ article .post-format {
 	color: #fff !important;
 }
 
+.footer-widgets .widget a {
+	color: #a5a370 !important;
+}
+
+.footer-widgets .widget a:hover {
+	color: #ffffff !important;
+}
+
 footer.content-info a {
 	color: #ffffff;
 }
@@ -349,7 +367,8 @@ footer.content-info a:hover {
 .caldera-grid .form-control:focus,
 .ginput_container input:focus, 
 .ginput_container select:focus, 
-.ginput_container textarea:focus {
+.ginput_container textarea:focus,
+.form-control:focus {
 	border-color: #a5a370 !important;
 	box-shadow: none !important;
 }
@@ -500,4 +519,87 @@ select {
 .home .soliloquy-container .soliloquy-caption-inside a:active,
 .home .soliloquy-container .soliloquy-caption-inside a:focus {
 	color: #596b46 !important;
+}
+
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, 
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, 
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus,
+.accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, 
+.accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, 
+.accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
+  border-color: #596b46 !important;
+  background: #596b46 !important;
+}
+
+.widget#book .panel .btn.enquire-now:hover, 
+.widget#book .panel .btn.enquire-now:focus,
+.widget#book .panel .btn.enquire-now:active {
+  background: #333333 !important;
+}
+
+.offer-slider .slick-list .slide-container:hover .caption .slide-title, 
+.room-slider .slick-list .slide-container:hover .caption .slide-title {
+	color: #596b46 !important;
+}
+
+.offer-slider .slick-dots li button:hover, 
+.offer-slider .slick-dots li button:focus, 
+.room-slider .slick-dots li button:hover, 
+.room-slider .slick-dots li button:focus, 
+.accommodation-slider .slick-dots li button:hover, 
+.accommodation-slider .slick-dots li button:focus, 
+.restaurants-slider .slick-dots li button:hover, 
+.restaurants-slider .slick-dots li button:focus, 
+.activities-slider .slick-dots li button:hover, 
+.activities-slider .slick-dots li button:focus,
+.offer-slider .slick-dots li.slick-active button, 
+.room-slider .slick-dots li.slick-active button, 
+.accommodation-slider .slick-dots li.slick-active button, 
+.restaurants-slider .slick-dots li.slick-active button, 
+.activities-slider .slick-dots li.slick-active button {
+	background: #596b46 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper a,
+.offer-slider .slick-list .slide-container:hover .caption .slide-title,
+.room-slider .slick-list .slide-container:hover .caption .slide-title,
+.accommodation-slider .slick-list .slide-container:hover .caption .slide-title,
+.restaurants-slider .slick-list .slide-container:hover .caption .slide-title,
+.activities-slider .slick-list .slide-container:hover .caption .slide-title,
+.offer-slider .genericon-leftarrow:hover, 
+.offer-slider .genericon-leftarrow:focus, 
+.offer-slider .genericon-rightarrow:hover, 
+.offer-slider .genericon-rightarrow:focus, 
+.room-slider .genericon-leftarrow:hover, 
+.room-slider .genericon-leftarrow:focus, 
+.room-slider .genericon-rightarrow:hover, 
+.room-slider .genericon-rightarrow:focus, 
+.accommodation-slider .genericon-leftarrow:hover, 
+.accommodation-slider .genericon-leftarrow:focus, 
+.accommodation-slider .genericon-rightarrow:hover, 
+.accommodation-slider .genericon-rightarrow:focus, 
+.restaurants-slider .genericon-leftarrow:hover, 
+.restaurants-slider .genericon-leftarrow:focus, 
+.restaurants-slider .genericon-rightarrow:hover, 
+.restaurants-slider .genericon-rightarrow:focus, 
+.activities-slider .genericon-leftarrow:hover, 
+.activities-slider .genericon-leftarrow:focus, 
+.activities-slider .genericon-rightarrow:hover, 
+.activities-slider .genericon-rightarrow:focus {
+	color: #596b46 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper a:hover,
+.classy-home-content .classy-home-content-section-wrapper a:focus,
+.classy-home-content .classy-home-content-section-wrapper a:active {
+	color: #3d4a30 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper#classy-home-video-accommodation,
+.classy-home-content .classy-home-content-section-wrapper#classy-home-gallery {
+	background: #e1e0d1 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper#classy-home-offers {
+	background: #596b46 !important;
 }
