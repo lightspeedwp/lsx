@@ -2208,7 +2208,7 @@ ul.breadcrumb {
 
 				&.breadcrumb_last {
 					padding: 5px 20px 5px 27px !important; 
-					
+
 					&:before,	
 					&:after {
 						display: none !important;
@@ -3362,8 +3362,12 @@ header.page-header {
 		display: none;
 	}
 
+	.page-template-template-home-hero & {
+		display: block !important;
+	}
+
 	.home & {
-		display: none !important;
+		display: none;
 	}
 }
 
