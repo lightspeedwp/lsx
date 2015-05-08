@@ -912,8 +912,8 @@ html {
 body {
 	width: auto !important;
 	color: $mid-grey;
-	margin: 0;
-	padding: 0;
+	margin: 0 !important;
+	padding: 0 !important;
 	font: {
 		size: 17px;
 		family: 'Open Sans', sans-serif;
@@ -1602,7 +1602,7 @@ table {
 
 	.nav-tabs {
 		padding: 0 !important;
-		
+
 		li {
 			a {
 				line-height: inherit;
