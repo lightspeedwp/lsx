@@ -2203,6 +2203,15 @@ ul.breadcrumb {
 				&:after {
 					display: none !important;
 				}
+
+				&.breadcrumb_last {
+					padding: 5px 20px 5px 27px !important; 
+					
+					&:before,	
+					&:after {
+						display: none !important;
+					}
+				}
 			}
 
 			a,
