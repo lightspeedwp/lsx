@@ -1572,18 +1572,20 @@ table {
 // Plugin Post Types
 
 .accommodation {
-	@include lsx-masonry-post-type-styles;
+	.wrap & {
+		@include lsx-masonry-post-type-styles;
 
-	.accommodation-gallery {
-		& > a {
-			display: inline-block;
-			margin-bottom: 20px;
-			
-			.genericon {
-				vertical-align: middle;
+		.accommodation-gallery {
+			& > a {
+				display: inline-block;
+				margin-bottom: 20px;
+				
+				.genericon {
+					vertical-align: middle;
 
-				&:first-child {
-					font-size: 18px;
+					&:first-child {
+						font-size: 18px;
+					}
 				}
 			}
 		}
