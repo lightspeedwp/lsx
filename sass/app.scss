@@ -2213,12 +2213,21 @@ ul.breadcrumb {
 				padding-left: 22px;
 			}
 
-			span[rel="v:child"] {
-				padding: 0;
+			span[typeof="v:Breadcrumb"] {
+				padding: 0 !important;
 				
 				&:before,	
 				&:after {
-					display: none;
+					display: none !important;
+				}
+			}
+
+			span[rel="v:child"] {
+				padding: 0 !important;
+				
+				&:before,	
+				&:after {
+					display: none !important;
 				}
 
 				span,
