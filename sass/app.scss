@@ -1568,47 +1568,11 @@ table {
 	}
 }
 
+
 // Plugin Post Types
 
 .accommodation {
 	@include lsx-masonry-post-type-styles;
-
-	.accommodation-tabs {
-		margin-bottom: 40px;
-
-		@media screen and (max-width: 768px) {
-			margin-bottom: 20px;
-		}
-
-		.nav-tabs {
-			li {
-				a {
-					line-height: inherit;
-					padding: 8px 20px;
-				}
-
-				&.active {
-					a {
-						color: $black;
-					}
-				}
-			}
-		}
-
-		.tab-content {
-			padding: 20px 30px;
-    		font-size: 15px;
-			border: {
-				left: 1px solid #ddd;
-				right: 1px solid #ddd;
-				bottom: 1px solid #ddd;
-			}
-			-webkit-border-top-right-radius: 3px;
-			-moz-border-top-right-radius: 3px;
-			border-top-right-radius: 3px;
-			@include border-radius-bottom(3px);
-		}
-	}
 
 	.accommodation-gallery {
 		& > a {
@@ -1623,6 +1587,46 @@ table {
 				}
 			}
 		}
+	}
+}
+
+.accommodation-tabs {
+	margin: {
+		top: 20px;
+		bottom: 40px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-bottom: 20px;
+	}
+
+	.nav-tabs {
+		li {
+			a {
+				line-height: inherit;
+				padding: 8px 20px;
+			}
+
+			&.active {
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		padding: 20px 30px;
+		font-size: 15px;
+		border: {
+			left: 1px solid #ddd;
+			right: 1px solid #ddd;
+			bottom: 1px solid #ddd;
+		}
+		-webkit-border-top-right-radius: 3px;
+		-moz-border-top-right-radius: 3px;
+		border-top-right-radius: 3px;
+		@include border-radius-bottom(3px);
 	}
 }
 
