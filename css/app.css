@@ -8586,7 +8586,7 @@ a:hover img.image-border, a:focus img.image-border, a:active img.image-border, a
   top: 0;
   margin-top: 0;
   background-color: #333333;
-  padding: 345px 0;
+  padding: 370px 0;
   z-index: -1;
   -webkit-transition: all 0.08s ease-in-out;
   -moz-transition: all 0.08s ease-in-out;
@@ -9796,28 +9796,28 @@ table th {
 }
 
 /* line 1575, ../sass/app.scss */
-.wrap .accommodation {
+body:not('archive') .wrap .accommodation {
   overflow: visible !important;
   margin-bottom: 60px !important;
 }
 @media screen and (max-width: 768px) {
   /* line 1575, ../sass/app.scss */
-  .wrap .accommodation {
+  body:not('archive') .wrap .accommodation {
     margin-bottom: 40px !important;
   }
 }
 @media screen and (max-width: 500px) {
   /* line 1575, ../sass/app.scss */
-  .wrap .accommodation {
+  body:not('archive') .wrap .accommodation {
     margin-bottom: 20px !important;
   }
 }
 /* line 373, ../sass/app.scss */
-.wrap .accommodation .stars {
+body:not('archive') .wrap .accommodation .stars {
   max-height: 24px;
 }
 /* line 376, ../sass/app.scss */
-.wrap .accommodation .stars .genericon-star {
+body:not('archive') .wrap .accommodation .stars .genericon-star {
   color: #ffcc00;
   font-size: 22px;
   -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
@@ -9827,11 +9827,11 @@ table th {
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
 }
 /* line 384, ../sass/app.scss */
-.wrap .accommodation.active .accommodation-content {
+body:not('archive') .wrap .accommodation.active .accommodation-content {
   background: white !important;
 }
 /* line 389, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] {
   background: white;
   text-align: center;
   border: 1px solid #ddd;
@@ -9849,11 +9849,11 @@ table th {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 /* line 545, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .thumbnail {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .thumbnail {
   margin: 0;
 }
 /* line 548, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .thumbnail img {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .thumbnail img {
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -ms-border-top-left-radius: 3px;
@@ -9866,14 +9866,14 @@ table th {
   border-top-right-radius: 3px;
 }
 /* line 553, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content {
   list-style: none;
   margin: 0;
   padding: 0;
   padding: 30px 40px;
 }
 /* line 557, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content h3 {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content h3 {
   margin-top: 0;
   margin-bottom: 15px;
   padding-bottom: 10px;
@@ -9882,23 +9882,23 @@ table th {
   font-weight: bold;
 }
 /* line 570, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content p {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content p {
   margin: 0 0 10px;
 }
 /* line 573, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content p .genericon {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content p .genericon {
   vertical-align: middle;
 }
 /* line 578, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper {
   margin: 10px 0;
 }
 /* line 581, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price {
   color: #999;
 }
 /* line 584, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner {
   display: inline-block;
   margin-top: -5px;
   color: #555555;
@@ -9907,21 +9907,21 @@ table th {
   vertical-align: middle;
 }
 /* line 594, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner br {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner br {
   display: none;
 }
 /* line 598, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner .hb_symbol {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner .hb_symbol {
   font-size: 15px;
   vertical-align: top;
   margin-right: 3px;
 }
 /* line 607, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] > .content .btn {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .btn {
   margin-top: 20px;
 }
 /* line 392, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] {
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -ms-border-top-left-radius: 3px;
@@ -9934,7 +9934,7 @@ table th {
   border-top-right-radius: 3px;
 }
 /* line 395, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] img {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] img {
   width: 100%;
   opacity: 1 !important;
   -webkit-border-top-left-radius: 3px;
@@ -9949,7 +9949,7 @@ table th {
   border-top-right-radius: 3px;
 }
 /* line 402, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] {
   background: #f3f3f3;
   font-size: 15px;
   text-align: left;
@@ -9960,22 +9960,22 @@ table th {
   transition: all 0.1s ease-in-out;
 }
 /* line 410, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover, .wrap .accommodation [class*="content-wrapper"] [class*="content"]:focus, .wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"]:focus, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover {
   background: white;
   cursor: default;
 }
 /* line 415, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] {
   padding: 15px 20px;
   border-bottom: 1px solid #ddd;
 }
 /* line 419, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] h3 {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
 /* line 425, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] h3 a {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] h3 a {
   font-size: 20px;
   font-weight: bold;
   color: #333333;
@@ -9986,37 +9986,37 @@ table th {
   transition: all 0.1s ease-in-out;
 }
 /* line 433, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] h3 a:hover {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] h3 a:hover {
   color: #777777;
 }
 /* line 441, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .connected-property,
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .property-location {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .connected-property,
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .property-location {
   font-size: 16px;
 }
 /* line 445, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars {
   float: right;
   margin-top: 9px;
   margin-right: 4px;
 }
 /* line 454, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars .genericon {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars .genericon {
   color: #ffcc00;
   font-size: 18px;
   width: 12px;
 }
 /* line 463, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper {
   padding: 15px 20px;
   border-bottom: 1px solid #ddd;
 }
 /* line 469, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price {
   color: #999;
 }
 /* line 472, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner {
   display: inline-block;
   margin-top: -3px;
   color: #999999;
@@ -10025,13 +10025,13 @@ table th {
   vertical-align: middle;
 }
 /* line 482, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner .hb_symbol {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner .hb_symbol {
   font-size: 15px;
   vertical-align: top;
   margin-right: 3px;
 }
 /* line 491, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-excerpt"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-excerpt"] {
   height: 190px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -10040,11 +10040,11 @@ table th {
   border-bottom: 1px solid #ddd;
 }
 /* line 500, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] {
   font-size: 16px;
 }
 /* line 93, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"]:after {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"]:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -10053,17 +10053,17 @@ table th {
   height: 0;
 }
 /* line 504, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] {
   display: inline-block;
   padding: 8px 20px;
 }
 /* line 508, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] .genericon {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] .genericon {
   vertical-align: middle;
   font-size: 18px;
 }
 /* line 514, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"] {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"] {
   float: right;
   padding: 8px 20px;
   border-left: 1px solid #ddd;
@@ -10077,22 +10077,22 @@ table th {
   transition: all 0.1s ease-in-out;
 }
 /* line 525, ../sass/app.scss */
-.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
+body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
   border-color: #428bca;
   background: #428bca;
   color: white;
 }
 /* line 1579, ../sass/app.scss */
-.wrap .accommodation .accommodation-gallery > a {
+body:not('archive') .wrap .accommodation .accommodation-gallery > a {
   display: inline-block;
   margin-bottom: 20px;
 }
 /* line 1583, ../sass/app.scss */
-.wrap .accommodation .accommodation-gallery > a .genericon {
+body:not('archive') .wrap .accommodation .accommodation-gallery > a .genericon {
   vertical-align: middle;
 }
 /* line 1586, ../sass/app.scss */
-.wrap .accommodation .accommodation-gallery > a .genericon:first-child {
+body:not('archive') .wrap .accommodation .accommodation-gallery > a .genericon:first-child {
   font-size: 18px;
 }
 
@@ -11232,11 +11232,11 @@ table th {
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  -webkit-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  -moz-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  -ms-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  -o-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -ms-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -o-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 992px) {
   /* line 2105, ../sass/app.scss */
@@ -13371,15 +13371,15 @@ header.page-header {
   max-width: 1140px;
   color: white;
   text-align: center;
-  font-size: 52px;
+  font-size: 62px;
   padding: 0 10px 0;
   margin: 0 auto;
   border-bottom: none;
-  -webkit-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  -moz-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  -ms-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  -o-text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
-  text-shadow: 0px -1px 5px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -ms-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  -o-text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px -3px 50px rgba(0, 0, 0, 0.3), 0px 2px 1px rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 768px) {
   /* line 3626, ../sass/app.scss */

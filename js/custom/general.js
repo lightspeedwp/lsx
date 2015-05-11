@@ -77,7 +77,7 @@ jQuery(document).ready(function($) {
 
 	$(".info-box-sticky").sticky({ 
 		topSpacing: spacing,
-		bottomSpacing: 510,
+		bottomSpacing: 670,
 		getWidthFrom: '#secondary',
 		responsiveWidth: true,
 		responsiveBreakpoint: 992
