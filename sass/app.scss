@@ -3959,14 +3959,6 @@ article {
 		margin-bottom: 0;
 	}
 
-	&:nth-of-type(1) {
-		header.entry-header {
-			h1.entry-title {
-				margin-top: 0;
-			}
-		}
-	}
-
 	header.entry-header {
 		h1.entry-title {
 			position: relative;
@@ -4018,8 +4010,8 @@ article {
 
 		.entry-image {
 			.thumbnail {
-				margin-right: 0;
-				margin-bottom: 30px;
+				margin-right: 0 !important;
+				margin-bottom: 0;
 
 				&.pull-left,
 				&.pull-right {
