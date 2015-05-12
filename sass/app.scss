@@ -2118,7 +2118,7 @@ table {
 				border: none !important;
 				text-transform: capitalize;
 				@include transition(all 0.4s ease-in-out);
-				@include title-shadow;
+				@include text-shadow(0px -3px 50px rgba(0, 0, 0, 0.3), 2px 2px 1px rgba(0, 0, 0, 0.8));
 
 				@media screen and (max-width: 992px) {
 					font-size: 18px;
