@@ -266,11 +266,4 @@ function lsx_register_social_menu() {
 }
 add_action( 'init', 'lsx_register_social_menu' );
 
-// Temp to debug blog issue
-add_action( 'admin_bar_menu', 'show_template' );
-function show_template() {
-global $template;
-print_r( $template );
-}
-
 ?>
