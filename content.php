@@ -17,7 +17,6 @@
 				 <?php //lsx_thumbnail( 'thumbnail-single' ); ?>
 				 <?php lsx_thumbnail('thumbnail-single'); ?>
 			</a>
-			<br clear="all" />
 		</div>
 	<?php } ?>
 
