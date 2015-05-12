@@ -3970,7 +3970,11 @@ article {
 	header.entry-header {
 		h1.entry-title {
 			position: relative;
-			line-height: 150%;
+			line-height: 130%;
+			margin: {
+				top: 30px;
+				bottom: 20px;
+			}
 
 			@media screen and (max-width: 768px) {
 				line-height: 130%;
@@ -4043,8 +4047,8 @@ article {
 		}
 	}
 
-	div.entry-summary {
-		margin-top: 15px;
+	.entry-summary {
+		margin-bottom: 30px;
 	}
 
 	.post-meta,
