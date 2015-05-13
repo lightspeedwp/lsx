@@ -3412,6 +3412,7 @@ header.page-header {
 .client-showcase {
 	float: none;
 	margin: 0 auto 60px;
+	@include box-shadow(0 1px 5px rgba(0, 0, 0, 0.1));
 
 	@media screen and (max-width: 992px) {
 		margin: 0 auto 20px;
@@ -3436,7 +3437,7 @@ header.page-header {
 					}
 
 					.soliloquy-caption-inside {
-						background: rgba(255, 255, 255, 0.68);
+						background: rgba(0, 0, 0, 0.82);
 						text-align: left;
 						padding: 40px 50px;
 						@include border-radius(3px);
@@ -3447,30 +3448,44 @@ header.page-header {
 
 						h3 {
 							font-size: 24px;
-							margin-bottom: 6px;
+							margin-bottom: 7px;
+
+							@media screen and (max-width: 992px) {
+								font-size: 22px;
+							}
 
 							a {
-								color: $black !important;
+								color: $white !important;
 
 								&:hover,
 								&:focus,
 								&:active {
-									color: $blacker !important;
+									color: $grey !important;
 								}
 							}
 						}
 
+						.website-link {
+							color: $white !important;
+							border-bottom: 1px solid;
+
+							&:hover,
+							&:focus,
+							&:active {
+								color: $grey !important;
+							}
+						}
+
 						p {
-							color: $black;
+							color: $off-white;
 							font-size: 15px;
 							line-height: 175%;
 							margin: 15px 0px 24px;
 						}
 
 						.btn {
-							padding: 13px 17px;
-							background: $black;
-							color: $white !important;
+							padding: 14px 20px;
+							font-size: 16px;
 							@include border-radius(3px);
 
 							&:hover,
@@ -3494,7 +3509,10 @@ header.page-header {
 				}
 
 				.soliloquy-pager {
-					margin-bottom: 20px;
+					margin: {
+						left: 30px;
+						bottom: 20px;
+					}
 
 					@media screen and (max-width: 992px) {
 						display: none;
