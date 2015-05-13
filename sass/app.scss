@@ -3411,8 +3411,7 @@ header.page-header {
 
 .client-showcase {
 	float: none;
-	margin: 0 auto 60px;
-	@include box-shadow(0 1px 5px rgba(0, 0, 0, 0.1));
+	margin: 0 auto 20px;
 
 	@media screen and (max-width: 992px) {
 		margin: 0 auto 20px;
@@ -3424,7 +3423,17 @@ header.page-header {
 
 	.soliloquy-container {
 		&.client-showcase-slider {
+			.soliloquy-slider {
+				@include border-radius(10px);
+			}
+
 			.soliloquy-item {
+				padding: 180px 30px 0;
+				background: url(img/browser-window.png);
+				background: {
+					size: 100%;
+					repeat: no-repeat;
+				}
 				@include border-radius(3px);
 
 				.soliloquy-caption {
@@ -3439,7 +3448,7 @@ header.page-header {
 					}
 
 					.soliloquy-caption-inside {
-						background: rgba(0, 0, 0, 0.82);
+						background: rgba(35, 34, 34, 0.92);
 						text-align: left;
 						padding: 40px 50px;
 						@include border-radius(3px);
