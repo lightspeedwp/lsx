@@ -3433,7 +3433,8 @@ header.page-header {
 			.soliloquy-item {
 				@include border-radius(3px);
 
-				.soliloquy-link {
+				.soliloquy-link,
+				& > .soliloquy-image {
 					padding: 180px 30px 0;
 					background: url(../img/browser-window.png);
 					background: {
@@ -3529,7 +3530,7 @@ header.page-header {
 
 				.soliloquy-pager {
 					margin-top: -50px;
-					
+
 					@media screen and (max-width: 992px) {
 						display: none;
 					}
