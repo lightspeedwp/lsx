@@ -3431,6 +3431,8 @@ header.page-header {
 					max-width: 450px;
 					top: 10%;
 					right: 90px;
+					left: auto;
+  					bottom: auto;
 
 					@media screen and (max-width: 992px) {
 						max-width: 400px;
@@ -3448,6 +3450,7 @@ header.page-header {
 
 						h3 {
 							font-size: 24px;
+							margin-top: 0 !important;
 							margin-bottom: 7px;
 
 							@media screen and (max-width: 992px) {
@@ -3468,6 +3471,7 @@ header.page-header {
 						.website-link {
 							color: $white !important;
 							border-bottom: 1px solid;
+							font-size: 15px;
 
 							&:hover,
 							&:focus,
@@ -3480,7 +3484,7 @@ header.page-header {
 							color: $off-white;
 							font-size: 15px;
 							line-height: 175%;
-							margin: 15px 0px 24px;
+							margin: 28px 0px 31px;
 						}
 
 						.btn {
