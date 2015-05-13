@@ -3428,6 +3428,14 @@ header.page-header {
 			.soliloquy-viewport {
 				@include border-radius(10px);
 				height: 737px !important;
+
+				@media screen and (max-width: 1200px) {
+					height: 617px !important;
+				}
+
+				@media screen and (max-width: 992px) {
+					height: 479px !important;
+				}
 			}
 
 			.soliloquy-item {
@@ -3435,11 +3443,19 @@ header.page-header {
 
 				.soliloquy-link,
 				& > .soliloquy-image {
-					padding: 180px 30px 0;
+					padding: 180px 30px 30px;
 					background: url(../img/browser-window.png);
 					background: {
 						size: 100%;
 						repeat: no-repeat;
+					}
+
+					@media screen and (max-width: 1200px) {
+						padding: 150px 30px 0;
+					}
+
+					@media screen and (max-width: 992px) {
+						padding: 120px 30px 30px;
 					}
 				}
 
@@ -3450,18 +3466,29 @@ header.page-header {
 					left: auto;
   					bottom: auto;
 
+  					@media screen and (max-width: 1200px) {
+					    top: 150px;
+					}
+
 					@media screen and (max-width: 992px) {
 						max-width: 400px;
+						top: 120px;
 					}
 
 					.soliloquy-caption-inside {
 						background: rgba(35, 34, 34, 0.92);
 						text-align: left;
 						padding: 40px 50px;
+						height: 527px;
 						@include border-radius(3px);
+
+						@media screen and (max-width: 1200px) {
+							height: 432px;
+						}
 
 						@media screen and (max-width: 992px) {
 							padding: 20px 25px;
+							height: 328px;
 						}
 
 						h3 {
