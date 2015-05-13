@@ -3427,6 +3427,7 @@ header.page-header {
 
 			.soliloquy-viewport {
 				@include border-radius(10px);
+				height: 737px !important;
 			}
 
 			.soliloquy-item {
@@ -3527,6 +3528,8 @@ header.page-header {
 				}
 
 				.soliloquy-pager {
+					margin-top: -50px;
+					
 					@media screen and (max-width: 992px) {
 						display: none;
 					}
