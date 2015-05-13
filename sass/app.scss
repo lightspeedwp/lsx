@@ -3413,21 +3413,37 @@ header.page-header {
 	float: none;
 	margin: 0 auto 60px;
 
+	@media screen and (max-width: 992px) {
+		margin: 0 auto 20px;
+	}
+
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+
 	.soliloquy-container {
 		&.client-showcase-slider {
 			.soliloquy-item {
 				@include border-radius(3px);
 
 				.soliloquy-caption {
-					max-width: 380px;
-					top: 40px;
-					right: 80px;
+					max-width: 450px;
+					top: 10%;
+					right: 90px;
+
+					@media screen and (max-width: 992px) {
+						max-width: 400px;
+					}
 
 					.soliloquy-caption-inside {
-						background: rgba(255, 255, 255, 0.6);
+						background: rgba(255, 255, 255, 0.68);
 						text-align: left;
-						padding: 20px 25px;
+						padding: 40px 50px;
 						@include border-radius(3px);
+
+						@media screen and (max-width: 992px) {
+							padding: 20px 25px;
+						}
 
 						h3 {
 							font-size: 24px;
@@ -3447,7 +3463,7 @@ header.page-header {
 						p {
 							color: #555;
 							font-size: 15px;
-							line-height: 170%;
+							line-height: 175%;
 							margin: 13px 0px 20px;
 						}
 
@@ -3460,9 +3476,27 @@ header.page-header {
 							&:hover,
 							&:focus,
 							&:active {
-								color: $blacker !important;
+								background: $blacker !important;
 							}
 						}
+					}
+				}
+			}
+
+			.soliloquy-controls {
+				.soliloquy-prev {
+					left: 30px;
+				}
+
+				.soliloquy-next {
+					right: 30px;
+				}
+
+				.soliloquy-pager {
+					margin-bottom: 20px;
+
+					@media screen and (max-width: 992px) {
+						display: none;
 					}
 				}
 			}
