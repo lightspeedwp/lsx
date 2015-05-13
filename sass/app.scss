@@ -3517,19 +3517,14 @@ header.page-header {
 
 			.soliloquy-controls {
 				.soliloquy-prev {
-					left: 30px;
+					left: -60px;
 				}
 
 				.soliloquy-next {
-					right: 30px;
+					right: -60px;
 				}
 
 				.soliloquy-pager {
-					margin: {
-						left: 30px;
-						bottom: 20px;
-					}
-
 					@media screen and (max-width: 992px) {
 						display: none;
 					}
