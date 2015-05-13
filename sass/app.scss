@@ -3430,16 +3430,16 @@ header.page-header {
 						@include border-radius(3px);
 
 						h3 {
-							font-size: 23px;
+							font-size: 24px;
 							margin-bottom: 6px;
 
 							a {
-								color: $black;
+								color: $black !important;
 
 								&:hover,
 								&:focus,
 								&:active {
-									color: $blacker;
+									color: $blacker !important;
 								}
 							}
 						}
@@ -3448,11 +3448,20 @@ header.page-header {
 							color: #555;
 							font-size: 15px;
 							line-height: 170%;
-							margin: 13px 0px;
+							margin: 13px 0px 20px;
 						}
 
 						.btn {
+							padding: 13px 17px;
+							background: $black;
+							color: $white !important;
+							@include border-radius(3px);
 
+							&:hover,
+							&:focus,
+							&:active {
+								color: $blacker !important;
+							}
 						}
 					}
 				}
