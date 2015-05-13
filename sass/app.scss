@@ -3411,7 +3411,7 @@ header.page-header {
 
 .client-showcase {
 	float: none;
-	margin: 0 auto 20px;
+	margin: 0 auto 60px;
 
 	@media screen and (max-width: 992px) {
 		margin: 0 auto 20px;
@@ -3423,7 +3423,9 @@ header.page-header {
 
 	.soliloquy-container {
 		&.client-showcase-slider {
-			.soliloquy-slider {
+			max-height: 100%;
+
+			.soliloquy-viewport {
 				@include border-radius(10px);
 			}
 
