@@ -3409,6 +3409,51 @@ header.page-header {
 	}
 }
 
+.client-showcase {
+		float: none;
+    	margin: 0 auto 60px;
+
+	.soliloquy-container {
+		&.client-showcase {
+			.soliloquy-item {
+				.soliloquy-image {
+					@include border-radius(3px);
+				}
+
+				.soliloquy-caption {
+					max-width: 380px;
+					top: 40px;
+					right: 80px;
+
+					.soliloquy-caption-inside {
+						background: rgba(255, 255, 255, 0.6);
+						text-align: left;
+						padding: 20px 20px;
+
+						h3 {
+							color: $black;
+							font-size: 22px;
+							margin-bottom: 10px;
+						}
+
+						.website-link {
+							
+						}
+
+						p {
+
+						}
+
+						.btn {
+							
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 .page-template-template-home-hero {
 	background: $primary !important;
 
