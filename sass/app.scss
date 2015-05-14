@@ -3411,7 +3411,7 @@ header.page-header {
 
 .client-showcase {
 	float: none;
-	margin: 0 auto 60px;
+	margin: 0 auto 100px;
 
 	@media screen and (max-width: 992px) {
 		margin: 0 auto 20px;
@@ -3559,7 +3559,18 @@ header.page-header {
 				}
 
 				.soliloquy-pager {
-					margin-top: -50px;
+					bottom: -45px;
+
+					.soliloquy-pager-link {
+						background: #555 !important;
+						@include border-radius(10px);
+
+						&:hover,
+						&:focus,
+						&:active {
+							background: $black !important;
+						}
+					}
 
 					@media screen and (max-width: 992px) {
 						display: none;
