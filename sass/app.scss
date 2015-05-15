@@ -2068,9 +2068,11 @@ table {
 		height: auto !important;
 
 		&.column-4 {
+			@include lsx-masonry-styles;
+
 			[class*="-content-wrapper"] {
 				[class*="-thumbnail"] {
-					min-height: 170px;
+					min-height: 100%;
 				}
 			}
 		}
@@ -4137,14 +4139,38 @@ article {
 	
 	body &.column-4 {
 		width: 25% !important;
+
+		@media screen and (max-width: 992px) {
+			width: 50% !important;
+		}
+
+		@media screen and (max-width: 768px) {
+			width: 100% !important;
+		}
 	}
 	
 	body &.column-5 {
 		width: 20% !important;
+
+		@media screen and (max-width: 992px) {
+			width: 50% !important;
+		}
+
+		@media screen and (max-width: 768px) {
+			width: 100% !important;
+		}
 	}
 	
 	body &.column-6 {
 		width: 16.666% !important;
+
+		@media screen and (max-width: 992px) {
+			width: 50% !important;
+		}
+
+		@media screen and (max-width: 768px) {
+			width: 100% !important;
+		}
 	}	
 
 	.single & {
