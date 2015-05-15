@@ -2067,6 +2067,14 @@ table {
 		float: left;
 		height: auto !important;
 
+		&.column-4 {
+			[class*="-content-wrapper"] {
+				[class*="-thumbnail"] {
+					min-height: 170px;
+				}
+			}
+		}
+
 		[class*="-content-wrapper"] {
 			position: relative;
 			background: $blacker;
