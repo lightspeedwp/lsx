@@ -1043,10 +1043,28 @@ ul {
 	line-height: 1.4;
 }
 
+figure,
 iframe, 
 img,
 .thumbnail {
 	max-width: 100%;
+}
+
+figure {
+	&.wp-caption {
+		border: 1px solid #ddd;
+		margin-bottom: 25px;
+		@include border-radius(3px);
+		@include box-shadow(0 1px 5px rgba(0, 0, 0, 0.1));
+
+		figcaption.wp-caption-text {
+			font: {
+				size: 15px;
+				weight: bold;
+			}
+			padding: 7px 17px;
+		}
+	}
 }
 
 iframe {
