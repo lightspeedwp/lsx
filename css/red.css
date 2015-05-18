@@ -1,29 +1,35 @@
 a {
-  color: #555555;
+  color: #6b4646;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #333333;
+  color: #4a3030;
 }
 
-.wrap a:hover {
-  border-bottom: 1px solid;
-}
-
-.btn {
-  background: #555555;
+.btn,
+button {
+  background: #6b4646;
 }
 
 .btn:hover,
 .btn:focus,
-.btn:active {
-  background: #444444;
+.btn:active,
+button:hover {
+  background: #4a3030 !important;
+}
+
+#footer-widgets .btn:hover,
+#footer-widgets .btn:focus,
+#footer-widgets .btn:active,
+#footer-widgets button:hover {
+  background: #333333 !important;
+  border: none !important;
 }
 
 body {
-  color: #888888;
+  color: #777777;
 }
 
 h1,
@@ -36,6 +42,24 @@ h4,
 h5,
 h6 {
   color: #555555;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #6b4646;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #333;
 }
 
 h1 a:hover,
@@ -57,13 +81,11 @@ h6 a:hover {
 
 #searchform .input-group span.input-group-btn button.search-submit {
   color: white;
-  background-color: #555555 !important;
-  border-color: #333333;
+  background-color: #555555;
 }
 
 #searchform .input-group span.input-group-btn button.search-submit:hover {
   background-color: #333333;
-  border-color: #285e8e;
 }
 
 .pagination span.current {
@@ -74,8 +96,17 @@ h6 a:hover {
 ul.breadcrumb li > span {
   color: #999999;
 }
+
 ul.breadcrumb li > span > span {
   color: #999999;
+}
+
+ul.breadcrumb li a {
+  color: #6b4646;
+}
+
+ul.breadcrumb li a:hover {
+  color: #4a3030;
 }
 
 nav.page-nav p {
@@ -88,94 +119,96 @@ nav.page-nav p {
 }
 
 header.banner {
-  background: #d96b61 !important;
-}
-
-header.banner .site-title a {
-  color: #ffffff;
+  background: #fff !important;
 }
 
 header.banner .site-description {
-  color: #ffffff;
+  color: #999999;
 }
 
 header.banner nav .nav.navbar-nav li a {
-  color: #ffffff;
+  color: #6b4646;
   border: none !important;
 }
 
-header.banner nav .nav.navbar-nav li:hover > a, header.banner nav .nav.navbar-nav li.open > a {
+header.banner nav .nav.navbar-nav li:hover > a, 
+header.banner nav .nav.navbar-nav li.open > a {
   color: #ffffff;
-  background: #555555;
+  background: #6b4646;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-  background: #555555;
+  background: #6b4646;
 }
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-    background: #d96b61;
+    background: #6b4646;
   }
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-  color: #ffffff;
+  color: #fff !important;
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #777777;
+  background: #4a3030;
 }
 
 @media screen and (max-width: 992px) {
   header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-    color: #ffffff;
+    color: #6b4646 !important;
   }
 }
 
 header.banner nav .nav.navbar-nav li.active a {
-  color: #232222;
+  color: #4a3030;
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
-  color: #ffffff;
+  color: #fff;
 }
 
-.navbar-toggle {
-  background: none !important;
+header.banner nav .nav.navbar-nav li.menu-highlight a {
+  background: #7099a5 !important
 }
 
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+header.banner nav .nav.navbar-nav li.menu-highlight a:hover, 
+header.banner nav .nav.navbar-nav li.menu-highlight a:active, 
+header.banner nav .nav.navbar-nav li.menu-highlight a:focus {
+  background: #41545d !important;
 }
 
-.navbar-default .navbar-toggle:hover .icon-bar {
-  background-color: #333333;
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+  background: #333 !important;
+  border-color: #333 !important;
+}
+
+.navbar-toggle,
+.navbar-toggle.collapsed {
+  background: #6b4646;
+  border-color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar,
+.navbar-default .navbar-toggle.collapsed .icon-bar {
+  background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar,
+.navbar-default .navbar-toggle:active .icon-bar {
+  background-color: #ffffff !important;
 }
 
 .mobile-menu-title {
-  color: #ffffff;
-  margin: 47px 5px;
-}
-
-.scrolled .mobile-menu-title {
-  margin: 21px 5px;
-}
-
-@media screen and (max-width: 992px) {
-  .mobile-menu-title {
-    margin: 21px 5px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .mobile-menu-title {
-    margin: 19px 5px;
-  }
+  color: #333333;
 }
 
 .home .soliloquy-slider {
-  background: #d96b61;
+  background: #6b4646;
 }
 
 .front-page #home-widgets aside.widget h3.widget-title {
@@ -251,8 +284,12 @@ article .post-format {
   background: #333333 !important;
 }
 
+.footer-subscribe {
+  background: #6b4646 !important;
+}
+
 #footer-widgets {
-  background: #8C4646;
+  background: #333333;
 }
 
 #footer-widgets .widget {
@@ -264,11 +301,11 @@ article .post-format {
 }
 
 #footer-widgets .widget a {
-  color: #ffffff !important;
+  color: #7099a5 !important;
 }
 
 #footer-widgets .widget a:hover {
-  border-bottom: 1px solid;
+  color: #ffffff !important;
 }
 
 #footer-widgets .widget.widget_tag_cloud .tagcloud a {
@@ -281,8 +318,20 @@ article .post-format {
   color: #ffffff !important;
 }
 
-footer.content-info {
-  background: #333333;
+.footer-widgets-wrapper .footer-widgets .styler .widget ul li a {
+  color: #7099a5 !important;
+}
+
+.footer-widgets-wrapper .footer-widgets .styler .widget ul li a:hover {
+  color: #fff !important;
+}
+
+.footer-widgets .widget a {
+  color: #7099a5 !important;
+}
+
+.footer-widgets .widget a:hover {
+  color: #ffffff !important;
 }
 
 footer.content-info a {
@@ -298,27 +347,267 @@ footer.content-info a:hover {
 }
 
 .gform_wrapper .gfield_error .gfield_label {
-  color: #a94442;
+  color: #a94442 !important;
 }
 
 .gform_wrapper .gfield_error input,
 .gform_wrapper .gfield_error select,
 .gform_wrapper .gfield_error textarea {
-  border-color: #ebccd1;
-  background-color: #f2dede;
-  color: #a94442;
+  border-color: #ebccd1 !important;
+  background-color: #f2dede !important;
+  color: #a94442 !important;
 }
 
 .gform_wrapper .gfield_error input:focus,
 .gform_wrapper .gfield_error select:focus,
-.gform_wrapper .gfield_error textarea:focus {
-  border-color: #a94442;
+.gform_wrapper .gfield_error textarea:focus,
+.home-bg-image-footer .container > span .form-group input:focus, 
+.home-bg-image-footer .container > form .form-group input:focus,
+.caldera-grid .form-control input:focus,
+.caldera-grid .form-control:focus,
+.ginput_container input:focus, 
+.ginput_container select:focus, 
+.ginput_container textarea:focus,
+.form-control:focus {
+  border-color: #7099a5 !important;
+  box-shadow: none !important;
+}
+
+.caldera-grid .btn, 
+.caldera-grid .gform_button,
+.gform_page_footer input[type="button"] {
+  background: #7099a5 !important;
+}
+
+.caldera-grid .btn:hover, 
+.caldera-grid .gform_button:hover,
+.caldera-grid .btn:focus, 
+.caldera-grid .gform_button:focus,
+.caldera-grid .btn:active, 
+.caldera-grid .gform_button:active,
+.gform_page_footer input[type="button"]:hover,
+.gform_page_footer input[type="button"]:focus,
+.gform_page_footer input[type="button"]:active {
+  background: #41545d !important;
 }
 
 select {
   color: #555;
 }
 
+#social-navigation ul li a {
+  color: #7099a5 !important;
+}
+
 #social-navigation ul li a:hover {
-  color: #d96b61 !important;
+  color: #ffffff !important;
+}
+
+.page-template-template-portfolio #filterNav li a, 
+.post-type-archive-jetpack-portfolio #filterNav li a {
+  background: #6b4646 !important;
+}
+
+.page-template-template-portfolio #filterNav li a:hover, 
+.page-template-template-portfolio #filterNav li a.selected, 
+.post-type-archive-jetpack-portfolio #filterNav li a:hover, 
+.post-type-archive-jetpack-portfolio #filterNav li a.selected {
+  background: #4a3030 !important;
+}
+
+.masonry [class*='-content-wrapper'] {
+  background: #4a3030 !important;
+}
+
+.cf-toggle-group-buttons button {
+  background: #555 !important;
+}
+
+.cf-toggle-group-buttons button:hover,
+.cf-toggle-group-buttons button.success {
+  background: #333 !important;
+}
+
+.caldera-grid .cf-color-picker .input-group-addon:focus,
+.caldera-grid .cf-color-picker .input-group-addon:active {
+  border-color: #7099a5 !important;
+}
+
+.lsx-full-width {
+  background: #6b4646;
+}
+
+.page-template-template-home-hero {
+  background: #4a3030 !important;
+}
+
+.page-template-template-home-hero #primary article.page .entry-content .btn, 
+.page-template-template-home-hero #primary article.page .entry-content button,
+.lsx-full-width .lsx-hero-unit .btn, 
+.lsx-full-width .lsx-hero-unit button {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.page-template-template-home-hero #primary article.page .entry-content .btn:hover, 
+.page-template-template-home-hero #primary article.page .entry-content .btn:focus, 
+.page-template-template-home-hero #primary article.page .entry-content .btn:active, 
+.page-template-template-home-hero #primary article.page .entry-content button:hover, 
+.page-template-template-home-hero #primary article.page .entry-content button:focus, 
+.page-template-template-home-hero #primary article.page .entry-content button:active,
+.lsx-full-width .lsx-hero-unit .btn:hover, 
+.lsx-full-width .lsx-hero-unit .btn:focus, 
+.lsx-full-width .lsx-hero-unit .btn:active, 
+.lsx-full-width .lsx-hero-unit button:hover, 
+.lsx-full-width .lsx-hero-unit button:focus, 
+.lsx-full-width .lsx-hero-unit button:active {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #6b4646 !important;
+}
+  
+.page-template-template-home-hero #primary article.page .entry-content a:hover,
+.page-template-template-home-hero #primary article.page .entry-content a:active,
+.page-template-template-home-hero #primary article.page .entry-content a:focus {
+  color: #6b4646 !important;
+}
+
+.lsx-full-width {
+  background: #7099a5;
+}
+
+.lsx-full-width-alt {
+  background: #6b4646;
+}
+
+.lsx-full-width-alt .lsx-hero-unit .btn, 
+.lsx-full-width-alt .lsx-hero-unit button {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.lsx-full-width-alt .lsx-hero-unit .btn:hover, 
+.lsx-full-width-alt .lsx-hero-unit .btn:focus, 
+.lsx-full-width-alt .lsx-hero-unit .btn:active, 
+.lsx-full-width-alt .lsx-hero-unit button:hover, 
+.lsx-full-width-alt .lsx-hero-unit button:focus, 
+.lsx-full-width-alt .lsx-hero-unit button:active {
+  color: #4a3030 !important;
+  border-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+.page-template-template-home-hero #home-widgets#home-widgets h1 a, 
+.page-template-template-home-hero #home-widgets#home-widgets h2 a, 
+.page-template-template-home-hero #home-widgets#home-widgets h3 a, 
+.page-template-template-home-hero #home-widgets#home-widgets h4 a, 
+.page-template-template-home-hero #home-widgets#home-widgets h5 a, 
+.page-template-template-home-hero #home-widgets#home-widgets h6 a {
+  color: #6b4646;
+}
+
+.page-template-template-home-hero #home-widgets#home-widgets h1 a:hover, 
+.page-template-template-home-hero #home-widgets#home-widgets h2 a:hover, 
+.page-template-template-home-hero #home-widgets#home-widgets h3 a:hover, 
+.page-template-template-home-hero #home-widgets#home-widgets h4 a:hover, 
+.page-template-template-home-hero #home-widgets#home-widgets h5 a:hover, 
+.page-template-template-home-hero #home-widgets#home-widgets h6 a:hover {
+  color: #4a3030;
+}
+
+.home .soliloquy-container .soliloquy-caption-inside a:hover,
+.home .soliloquy-container .soliloquy-caption-inside a:active,
+.home .soliloquy-container .soliloquy-caption-inside a:focus {
+  color: #6b4646 !important;
+}
+
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, 
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, 
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus,
+.accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, 
+.accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, 
+.accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
+  border-color: #6b4646 !important;
+  background: #6b4646 !important;
+}
+
+.widget#book .panel .btn.enquire-now:hover, 
+.widget#book .panel .btn.enquire-now:focus,
+.widget#book .panel .btn.enquire-now:active {
+  background: #333333 !important;
+}
+
+.offer-slider .slick-list .slide-container:hover .caption .slide-title, 
+.room-slider .slick-list .slide-container:hover .caption .slide-title,
+.page-template-template-home-hero #home-widgets .home-features a {
+  color: #6b4646 !important;
+}
+
+.offer-slider .slick-dots li button:hover, 
+.offer-slider .slick-dots li button:focus, 
+.room-slider .slick-dots li button:hover, 
+.room-slider .slick-dots li button:focus, 
+.accommodation-slider .slick-dots li button:hover, 
+.accommodation-slider .slick-dots li button:focus, 
+.restaurants-slider .slick-dots li button:hover, 
+.restaurants-slider .slick-dots li button:focus, 
+.activities-slider .slick-dots li button:hover, 
+.activities-slider .slick-dots li button:focus,
+.offer-slider .slick-dots li.slick-active button, 
+.room-slider .slick-dots li.slick-active button, 
+.accommodation-slider .slick-dots li.slick-active button, 
+.restaurants-slider .slick-dots li.slick-active button, 
+.activities-slider .slick-dots li.slick-active button {
+  background: #6b4646 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper a,
+.offer-slider .slick-list .slide-container:hover .caption .slide-title,
+.room-slider .slick-list .slide-container:hover .caption .slide-title,
+.accommodation-slider .slick-list .slide-container:hover .caption .slide-title,
+.restaurants-slider .slick-list .slide-container:hover .caption .slide-title,
+.activities-slider .slick-list .slide-container:hover .caption .slide-title,
+.offer-slider .genericon-leftarrow:hover, 
+.offer-slider .genericon-leftarrow:focus, 
+.offer-slider .genericon-rightarrow:hover, 
+.offer-slider .genericon-rightarrow:focus, 
+.room-slider .genericon-leftarrow:hover, 
+.room-slider .genericon-leftarrow:focus, 
+.room-slider .genericon-rightarrow:hover, 
+.room-slider .genericon-rightarrow:focus, 
+.accommodation-slider .genericon-leftarrow:hover, 
+.accommodation-slider .genericon-leftarrow:focus, 
+.accommodation-slider .genericon-rightarrow:hover, 
+.accommodation-slider .genericon-rightarrow:focus, 
+.restaurants-slider .genericon-leftarrow:hover, 
+.restaurants-slider .genericon-leftarrow:focus, 
+.restaurants-slider .genericon-rightarrow:hover, 
+.restaurants-slider .genericon-rightarrow:focus, 
+.activities-slider .genericon-leftarrow:hover, 
+.activities-slider .genericon-leftarrow:focus, 
+.activities-slider .genericon-rightarrow:hover, 
+.activities-slider .genericon-rightarrow:focus {
+  color: #6b4646 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper a:hover,
+.classy-home-content .classy-home-content-section-wrapper a:focus,
+.classy-home-content .classy-home-content-section-wrapper a:active,
+.page-template-template-home-hero #home-widgets .home-features a:hover,
+.page-template-template-home-hero #home-widgets .home-features a:focus,
+.page-template-template-home-hero #home-widgets .home-features a:active {
+  color: #4a3030 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper#classy-home-video-accommodation,
+.classy-home-content .classy-home-content-section-wrapper#classy-home-gallery {
+  background: #e1e0d1 !important;
+}
+
+.classy-home-content .classy-home-content-section-wrapper#classy-home-offers {
+  background: #6b4646 !important;
+}
+
+.page-template-template-page-hero .lsx-full-width-header {
+  background: #4a3030 !important;
 }
