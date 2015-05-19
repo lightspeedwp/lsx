@@ -21,7 +21,7 @@ function lsx_breadcrumbs() {
   $crumbs = yoast_breadcrumb(null, null, false);
 
   // Remove wrapper <span xmlns:v />
-  $output = preg_replace("/^\<span class='breadcrumb-span' xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
+  $output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
   $output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
 
   $crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
@@ -342,10 +342,11 @@ if(!function_exists('lsx_site_identity')){
 
 		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
-		} 
-		
-		if(true == get_theme_mod('site_logo_header_text',1)){
-			lsx_site_title();
+		}else{
+			// shouldn't show both together.. its just strange
+			if(true == get_theme_mod('site_logo_header_text',1)){
+				lsx_site_title();
+			}
 		}
 	}
 }
@@ -493,4 +494,36 @@ function lsx_sitemap_taxonomy_clouds(){
 		        }
 	        }
         } 
+}
+
+/**
+ * Adds subscribe form above footer
+ *
+ * @package 	lsx
+ * @subpackage	hooks
+ * @category	forms
+ */
+add_action( 'lsx_footer_before', 'lsx_footer_subscription_cta', 10 );
+function lsx_footer_subscription_cta() {
+
+	$subscribe_form_id = lsx_is_form_enabled('subscribe');
+	if(false == $subscribe_form_id) { return; }
+
+	//add Caldera Forms Fields Scripts
+	if( defined( 'CFCORE_VER' ) ){
+		wp_enqueue_script( 'cf-frontend-fields', CFCORE_URL . 'assets/js/fields.min.js', array('jquery'), CFCORE_VER );
+	}
+
+	?>
+	<section class="footer-subscribe">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2><?php _e( 'Subscribe to Our Newsletter', 'lsx' ); ?></h2>
+					<?php echo do_shortcode( '[caldera_form id="'.$subscribe_form_id.'"]' ); ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
 }

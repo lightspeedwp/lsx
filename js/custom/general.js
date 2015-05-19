@@ -1,6 +1,6 @@
 var filter_item_width;
 jQuery(document).ready(function($) {
-	
+
 	filter_item_width = jQuery('.filter-items-container').width();
 	if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
 		filter_item_width = 750;
@@ -68,6 +68,17 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+    if ( $('header.banner').height() > 130 ) {
+        $('body').addClass('header-expanded');
+    }
+
+
+	$(window).resize(function () {
+	    if ( $('.navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() )  {
+			$('body').addClass('header-expanded');
+		}
+	});
+
 	// Sticky Info Box widget
 	if ($('body').hasClass('logged-in')) {
 		var spacing = 125;
@@ -75,22 +86,30 @@ jQuery(document).ready(function($) {
 		var spacing = 93;
 	}
 
-	$(window).resize(function () {
-		var screen = $(window)
-	    if (screen.width() > 768) {
-	        $(".info-box-sticky").sticky({ 
-			topSpacing: spacing,
-			bottomSpacing: 590,
-			getWidthFrom: '#secondary',
-	    	responsiveWidth: true
-			});
+	$(".info-box-sticky").sticky({ 
+		topSpacing: spacing,
+		bottomSpacing: 670,
+		getWidthFrom: '#secondary',
+		responsiveWidth: true,
+		responsiveBreakpoint: 992
+	});
 
-			// Sticky Book Now widget
-			$(".sticky-book").sticky({ 
-				topSpacing: 127,
-				bottomSpacing: 1300
-			});
-	    }
+	// Sticky Book Now widget
+	$(".sticky-book").sticky({ 
+		topSpacing: spacing,
+		bottomSpacing: 520,
+		getWidthFrom: '#secondary',
+		responsiveWidth: true,
+		responsiveBreakpoint: 992
+	});
+
+	// Sticky Enquire Now widget
+	$(".sticky-enquire").sticky({ 
+		topSpacing: spacing,
+		bottomSpacing: 1660,
+		getWidthFrom: '#secondary',
+		responsiveWidth: true,
+		responsiveBreakpoint: 992
 	});
 	
 		
