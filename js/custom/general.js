@@ -1,10 +1,6 @@
 var filter_item_width;
 jQuery(document).ready(function($) {
 
-	if ( $('header.banner').height > 130 ) {
-		$('body').addClass('header-expanded');
-	}
-	
 	filter_item_width = jQuery('.filter-items-container').width();
 	if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
 		filter_item_width = 750;
@@ -70,6 +66,12 @@ jQuery(document).ready(function($) {
 	        $(".home-bg-image").show();
 	        $(".page-banner").show();
 	    }
+	});
+
+	$(window).resize(function () {
+	    if ( $('body:not("scrolled") header.banner').height > 130 ) {
+			$('body').addClass('header-expanded');
+		}
 	});
 
 	// Sticky Info Box widget
