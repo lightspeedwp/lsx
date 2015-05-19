@@ -73,13 +73,12 @@ jQuery(document).ready(function($) {
     }
 
 
-	/*
 	$(window).resize(function () {
-	    if ( $('navbar-header').width()  )  {
+	    if ( $('navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() )  {
 			$('body').addClass('header-expanded');
 		}
 	});
-	*/
+
 	// Sticky Info Box widget
 	if ($('body').hasClass('logged-in')) {
 		var spacing = 125;
