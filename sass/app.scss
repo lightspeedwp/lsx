@@ -648,6 +648,10 @@ $primary-darker: #2a6496;
 		padding: 365px 0;
 		z-index: -1;
 		@include transition(all .08s ease-in-out);
+
+		.header-expanded & {
+			padding: 420px 0;
+		}
 		
 		@media print {
 			display: none !important;
