@@ -3,7 +3,7 @@ Contributors: the LightSpeed team
 Author: LightSpeed
 Author URI: https://www.lsdev.biz/
 Theme Name: LSX
-Theme URI: https://www.lsdev.biz/portfolio/lsx/
+Theme URI: https://www.lsdev.biz/project/lsx/
 Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.1
 Tested up to: 4.1
@@ -21,11 +21,6 @@ LSX is a clean, modern, minimal and fully responsive parent theme. This theme is
 * Menu Description
 * Post Formats
 * The GPL v2.0 or later license. 
-
-== Credits ==
-* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
-* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* Genericons (http://genericons.com/) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html) 
 
 == Installation ==
 
@@ -100,5 +95,58 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 == Documentation & Support ==
 
-Theme documentation is available on https://www.lsdev.biz/lsx-documentation/
-Support - https://www.lsdev.biz/contact-us/
+Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/
+Support - https://www.lsdev.biz/contact-us/ 
+
+== Changlog ==
+
+= 1.2.4 =
+* Removed the unused readme.txt in the languages directory.
+* Fixed responsive header CSS and JS
+* Added more styles to the Colour Scheme CSS files.
+
+= 1.2.3 =
+* Removed the Genericons example.html file for Security Reasons
+
+= 1.2.2 =
+* Responsive Layouts
+* The portfolio column layout for masonry on tablet and mobile.
+
+= 1.2.1 =
+* Updated the ScreenShot
+* The including of the genericons from the parent theme (for child themes)
+* Removed extra class code from the lsx_avatar function
+* Fixed the Masonry layout selecting different column layouts.
+* Added in an info box for the naviagation panel
+* Added in the sidebar for the sitemap template, and changed the amount of items called through on each section.
+
+
+= 1.2 =
+* Fixed the mixed content warning for the Google Fonts API calls.
+* Fixed the banner responsive JS on single posts
+* Fixed the Isotope filtering using the Packery Library
+* Changed the names of the Google Font Classes
+* Stoped the page banner from showing on the Homepage if the Reading settings are set to show a static page. 
+* Fixed the banner class for the body tag, no longer show up on all pages.
+* Fixed the header layout customiser js, and moved it into the "Layouts" Panel
+* Changed the content_width for the single 'jetpack-portfolio' post type to 1140px
+* Fixed the blog images not triggering on jetpack infinite scroll loading
+* Isotope jQuery Library 2.1.1
+* Set the Jetpack Portfolio post type archive to only call portfolio items that have a featured image set. i.e. Complete
+* Packery jQuery Library 1.1.1
+* WordPress Customizer options for controlling the layout of the header
+* Added in a filter 'lsx_allowed_post_type_banners' so child themes can add banner support for additional post types.
+* Added in a filter 'lsx_post_navigation_labels' which allows you to edit the labels outputted on the post type archive.
+
+= 0.1 =
+* First Version
+
+== Upgrade Notice ==
+
+= 1.2.4 =
+* Upgrade to remove the security related bug with the Genericons Example.html file.
+
+== Resources ==
+* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
+* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* Genericons (http://genericons.com/) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html) 
