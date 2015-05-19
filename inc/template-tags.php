@@ -495,3 +495,35 @@ function lsx_sitemap_taxonomy_clouds(){
 	        }
         } 
 }
+
+/**
+ * Adds subscribe form above footer
+ *
+ * @package 	lsx
+ * @subpackage	hooks
+ * @category	forms
+ */
+add_action( 'lsx_footer_before', 'lsx_footer_subscription_cta', 10 );
+function lsx_footer_subscription_cta() {
+
+	$subscribe_form_id = lsx_is_form_enabled('newsletter-subscribe');
+	if(false == $subscribe_form_id) { return; }
+
+	//add Caldera Forms Fields Scripts
+	if( defined( 'CFCORE_VER' ) ){
+		wp_enqueue_script( 'cf-frontend-fields', CFCORE_URL . 'assets/js/fields.min.js', array('jquery'), CFCORE_VER );
+	}
+
+	?>
+	<section class="footer-subscribe">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2><?php _e( 'Subscribe to Our Newsletter', 'lsx' ); ?></h2>
+					<?php echo do_shortcode( '[caldera_form id="'.$subscribe_form_id.'"]' ); ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
+}
