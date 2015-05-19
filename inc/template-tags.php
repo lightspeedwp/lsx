@@ -506,7 +506,7 @@ function lsx_sitemap_taxonomy_clouds(){
 add_action( 'lsx_footer_before', 'lsx_footer_subscription_cta', 10 );
 function lsx_footer_subscription_cta() {
 
-	$subscribe_form_id = lsx_is_form_enabled('newsletter-subscribe');
+	$subscribe_form_id = lsx_is_form_enabled('newsletter subscribe');
 	if(false == $subscribe_form_id) { return; }
 
 	//add Caldera Forms Fields Scripts
