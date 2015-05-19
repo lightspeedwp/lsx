@@ -68,12 +68,18 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+    if ( $('header.banner').height() > 130 ) {
+        $('body').addClass('header-expanded');
+    }
+
+
+	/*
 	$(window).resize(function () {
-	    if ($('.primary-navbar').parent().offset().top > 40)  {
+	    if ( $('navbar-header').width()  )  {
 			$('body').addClass('header-expanded');
 		}
 	});
-
+	*/
 	// Sticky Info Box widget
 	if ($('body').hasClass('logged-in')) {
 		var spacing = 125;
