@@ -100,11 +100,13 @@ Support - https://www.lsdev.biz/contact-us/
 
 == Changlog ==
 
-= 1.2.3 =
-* Removed the Genericons example.html file for Security Reasons
+= 1.2.4 =
 * Removed the unused readme.txt in the languages directory.
 * Fixed responsive header CSS and JS
 * Added more styles to the Colour Scheme CSS files.
+
+= 1.2.3 =
+* Removed the Genericons example.html file for Security Reasons
 
 = 1.2.2 =
 * Responsive Layouts
@@ -141,7 +143,7 @@ Support - https://www.lsdev.biz/contact-us/
 
 == Upgrade Notice ==
 
-= 1.2.3 =
+= 1.2.4 =
 * Upgrade to remove the security related bug with the Genericons Example.html file.
 
 == Resources ==
