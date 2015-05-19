@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$(window).resize(function () {
-	    if ( $('body:not("scrolled") header.banner').height > 130 ) {
+	    if ( $('header.banner').height > 130 ) {
 			$('body').addClass('header-expanded');
 		}
 	});
