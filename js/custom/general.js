@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$(window).resize(function () {
-	    if ( $('header.banner').height > 130 ) {
+	    if ($('.primary-nabar').parent().offset().top > 21)  {
 			$('body').addClass('header-expanded');
 		}
 	});
