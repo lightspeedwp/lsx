@@ -8597,7 +8597,13 @@ a:hover img.image-border, a:focus img.image-border, a:active img.image-border, a
 .single-jetpack-portfolio.header-expanded .wrap {
   margin-top: 50px;
 }
-/* line 643, ../sass/app.scss */
+/* line 642, ../sass/app.scss */
+.page-has-banner.header-central .page-banner, .page-has-banner.header-expanded .page-banner,
+.single-jetpack-portfolio.header-central .page-banner,
+.single-jetpack-portfolio.header-expanded .page-banner {
+  padding: 420px 0;
+}
+/* line 647, ../sass/app.scss */
 .page-has-banner .page-banner,
 .single-jetpack-portfolio .page-banner {
   position: fixed;
@@ -8612,20 +8618,15 @@ a:hover img.image-border, a:focus img.image-border, a:active img.image-border, a
   -o-transition: all 0.08s ease-in-out;
   transition: all 0.08s ease-in-out;
 }
-/* line 652, ../sass/app.scss */
-.header-expanded .page-has-banner .page-banner, .header-expanded
-.single-jetpack-portfolio .page-banner {
-  padding: 420px 0;
-}
 @media print {
-  /* line 643, ../sass/app.scss */
+  /* line 647, ../sass/app.scss */
   .page-has-banner .page-banner,
   .single-jetpack-portfolio .page-banner {
     display: none !important;
   }
 }
 @media screen and (max-width: 1200px) {
-  /* line 643, ../sass/app.scss */
+  /* line 647, ../sass/app.scss */
   .page-has-banner .page-banner,
   .single-jetpack-portfolio .page-banner {
     padding: 300px 0 155px;
