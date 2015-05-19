@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
 
 
 	$(window).resize(function () {
-	    if ( $('navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() )  {
+	    if ( $('.navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() )  {
 			$('body').addClass('header-expanded');
 		}
 	});
