@@ -9823,26 +9823,15 @@ table th {
 /* line 1594, ../sass/app.scss */
 .room {
   overflow: visible !important;
-  margin-bottom: 60px !important;
+  margin-bottom: 40px;
 }
-@media screen and (max-width: 768px) {
-  /* line 1594, ../sass/app.scss */
-  .room {
-    margin-bottom: 40px !important;
-  }
-}
-@media screen and (max-width: 500px) {
-  /* line 1594, ../sass/app.scss */
-  .room {
-    margin-bottom: 20px !important;
-  }
-}
-/* line 373, ../sass/app.scss */
+/* line 261, ../sass/app.scss */
 .room .stars {
   max-height: 24px;
 }
-/* line 376, ../sass/app.scss */
-.room .stars .genericon-star {
+/* line 265, ../sass/app.scss */
+.room .stars .genericon-star,
+.room .stars .genericon-rating-full {
   color: #ffcc00;
   font-size: 22px;
   -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
@@ -9851,11 +9840,11 @@ table th {
   -o-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
 }
-/* line 384, ../sass/app.scss */
-.room.active .accommodation-content {
-  background: white !important;
+/* line 272, ../sass/app.scss */
+.room .child-policy {
+  margin-bottom: 40px;
 }
-/* line 389, ../sass/app.scss */
+/* line 276, ../sass/app.scss */
 .room [class*="content-wrapper"] {
   background: white;
   text-align: center;
@@ -9945,7 +9934,7 @@ table th {
 .room [class*="content-wrapper"] > .content .btn {
   margin-top: 20px;
 }
-/* line 392, ../sass/app.scss */
+/* line 279, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="thumbnail"] {
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
@@ -9958,7 +9947,7 @@ table th {
   -o-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
-/* line 395, ../sass/app.scss */
+/* line 282, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="thumbnail"] img {
   width: 100%;
   opacity: 1 !important;
@@ -9973,50 +9962,36 @@ table th {
   -o-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
-/* line 402, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] {
-  background: #f3f3f3;
-  font-size: 15px;
-  text-align: left;
+/* line 289, ../sass/app.scss */
+.room [class*="content-wrapper"] a[class*="title"] {
+  display: inline-block;
+  padding: 20px 30px;
+  font-family: "Noto Serif", serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+  border-bottom: 1px solid #ddd;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-/* line 410, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"]:hover, .room [class*="content-wrapper"] [class*="content"]:focus, .room [class*="content-wrapper"] [class*="content"]:hover {
+/* line 301, ../sass/app.scss */
+.room [class*="content-wrapper"] a[class*="title"]:hover {
+  color: #777777;
+}
+/* line 306, ../sass/app.scss */
+.room [class*="content-wrapper"] [class*="content"] {
   background: white;
-  cursor: default;
+  padding: 20px 30px 30px;
+  font-size: 15px;
 }
-/* line 415, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-top"] {
-  padding: 15px 20px;
-  border-bottom: 1px solid #ddd;
-}
-/* line 421, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .connected-property,
-.room [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .property-location {
-  font-size: 16px;
-}
-/* line 425, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars {
-  float: right;
-  margin-top: 9px;
-  margin-right: 4px;
-}
-/* line 434, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars .genericon {
-  color: #ffcc00;
-  font-size: 18px;
-  width: 12px;
-}
-/* line 443, ../sass/app.scss */
+/* line 311, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="content"] h3 {
   margin-top: 0;
-  margin-bottom: 0;
 }
-/* line 449, ../sass/app.scss */
+/* line 314, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="content"] h3 a {
   font-size: 20px;
   font-weight: bold;
@@ -10027,85 +10002,35 @@ table th {
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-/* line 457, ../sass/app.scss */
+/* line 322, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="content"] h3 a:hover {
   color: #777777;
 }
-/* line 463, ../sass/app.scss */
+/* line 328, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="content"] .price-wrapper {
-  padding: 15px 20px;
+  margin: 17px 0;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-/* line 469, ../sass/app.scss */
+/* line 336, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="content"] .price-wrapper .price {
   color: #999;
 }
-/* line 472, ../sass/app.scss */
+/* line 339, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner {
   display: inline-block;
-  margin-top: -3px;
+  margin-top: -5px;
   color: #999999;
-  font-size: 17px;
+  font-size: 22px;
   font-weight: bold;
   vertical-align: middle;
 }
-/* line 482, ../sass/app.scss */
+/* line 349, ../sass/app.scss */
 .room [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner .hb_symbol {
   font-size: 15px;
   vertical-align: top;
   margin-right: 3px;
-}
-/* line 491, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-excerpt"] {
-  height: 190px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-  padding: 15px 20px;
-  border-bottom: 1px solid #ddd;
-}
-/* line 500, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-bottom"] {
-  font-size: 16px;
-}
-/* line 93, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-bottom"]:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: "";
-  clear: both;
-  height: 0;
-}
-/* line 504, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] {
-  display: inline-block;
-  padding: 8px 20px;
-}
-/* line 508, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] .genericon {
-  vertical-align: middle;
-  font-size: 18px;
-}
-/* line 514, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"] {
-  float: right;
-  padding: 8px 20px;
-  border-left: 1px solid #ddd;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-bottom-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-/* line 525, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, .room [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, .room [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
-  border-color: #428bca;
-  background: #428bca;
-  color: white;
 }
 
 /* line 1601, ../sass/app.scss */
