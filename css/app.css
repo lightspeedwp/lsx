@@ -9825,17 +9825,17 @@ table th {
 }
 
 /* line 1598, ../sass/app.scss */
-.room {
+.room:not("accommodation") {
   overflow: visible !important;
   margin-bottom: 40px;
 }
 /* line 261, ../sass/app.scss */
-.room .stars {
+.room:not("accommodation") .stars {
   max-height: 24px;
 }
 /* line 265, ../sass/app.scss */
-.room .stars .genericon-star,
-.room .stars .genericon-rating-full {
+.room:not("accommodation") .stars .genericon-star,
+.room:not("accommodation") .stars .genericon-rating-full {
   color: #ffcc00;
   font-size: 22px;
   -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
@@ -9845,11 +9845,11 @@ table th {
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
 }
 /* line 272, ../sass/app.scss */
-.room .child-policy {
+.room:not("accommodation") .child-policy {
   margin-bottom: 40px;
 }
 /* line 276, ../sass/app.scss */
-.room [class*="content-wrapper"] {
+.room:not("accommodation") [class*="content-wrapper"] {
   background: white;
   text-align: center;
   border: 1px solid #ddd;
@@ -9867,11 +9867,11 @@ table th {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 /* line 549, ../sass/app.scss */
-.room [class*="content-wrapper"] > .thumbnail {
+.room:not("accommodation") [class*="content-wrapper"] > .thumbnail {
   margin: 0;
 }
 /* line 552, ../sass/app.scss */
-.room [class*="content-wrapper"] > .thumbnail img {
+.room:not("accommodation") [class*="content-wrapper"] > .thumbnail img {
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -ms-border-top-left-radius: 3px;
@@ -9884,14 +9884,14 @@ table th {
   border-top-right-radius: 3px;
 }
 /* line 557, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content {
+.room:not("accommodation") [class*="content-wrapper"] > .content {
   list-style: none;
   margin: 0;
   padding: 0;
   padding: 30px 40px;
 }
 /* line 561, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content h3 {
+.room:not("accommodation") [class*="content-wrapper"] > .content h3 {
   margin-top: 0;
   margin-bottom: 15px;
   padding-bottom: 10px;
@@ -9900,23 +9900,23 @@ table th {
   font-weight: bold;
 }
 /* line 574, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content p {
+.room:not("accommodation") [class*="content-wrapper"] > .content p {
   margin: 0 0 10px;
 }
 /* line 577, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content p .genericon {
+.room:not("accommodation") [class*="content-wrapper"] > .content p .genericon {
   vertical-align: middle;
 }
 /* line 582, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content .price-wrapper {
+.room:not("accommodation") [class*="content-wrapper"] > .content .price-wrapper {
   margin: 10px 0;
 }
 /* line 585, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content .price-wrapper .price {
+.room:not("accommodation") [class*="content-wrapper"] > .content .price-wrapper .price {
   color: #999;
 }
 /* line 588, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content .price-wrapper .price .price-inner {
+.room:not("accommodation") [class*="content-wrapper"] > .content .price-wrapper .price .price-inner {
   display: inline-block;
   margin-top: -5px;
   color: #555555;
@@ -9925,21 +9925,21 @@ table th {
   vertical-align: middle;
 }
 /* line 598, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content .price-wrapper .price .price-inner br {
+.room:not("accommodation") [class*="content-wrapper"] > .content .price-wrapper .price .price-inner br {
   display: none;
 }
 /* line 602, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content .price-wrapper .price .price-inner .hb_symbol {
+.room:not("accommodation") [class*="content-wrapper"] > .content .price-wrapper .price .price-inner .hb_symbol {
   font-size: 15px;
   vertical-align: top;
   margin-right: 3px;
 }
 /* line 611, ../sass/app.scss */
-.room [class*="content-wrapper"] > .content .btn {
+.room:not("accommodation") [class*="content-wrapper"] > .content .btn {
   margin-top: 20px;
 }
 /* line 279, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="thumbnail"] {
+.room:not("accommodation") [class*="content-wrapper"] [class*="thumbnail"] {
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -ms-border-top-left-radius: 3px;
@@ -9952,7 +9952,7 @@ table th {
   border-top-right-radius: 3px;
 }
 /* line 282, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="thumbnail"] img {
+.room:not("accommodation") [class*="content-wrapper"] [class*="thumbnail"] img {
   width: 100%;
   opacity: 1 !important;
   -webkit-border-top-left-radius: 3px;
@@ -9967,7 +9967,7 @@ table th {
   border-top-right-radius: 3px;
 }
 /* line 289, ../sass/app.scss */
-.room [class*="content-wrapper"] a[class*="title"] {
+.room:not("accommodation") [class*="content-wrapper"] a[class*="title"] {
   display: inline-block;
   padding: 20px 30px;
   font-family: "Noto Serif", serif;
@@ -9982,21 +9982,21 @@ table th {
   transition: all 0.1s ease-in-out;
 }
 /* line 301, ../sass/app.scss */
-.room [class*="content-wrapper"] a[class*="title"]:hover {
+.room:not("accommodation") [class*="content-wrapper"] a[class*="title"]:hover {
   color: #777777;
 }
 /* line 306, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] {
   background: white;
   padding: 20px 30px 30px;
   font-size: 15px;
 }
 /* line 311, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] h3 {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] h3 {
   margin-top: 0;
 }
 /* line 314, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] h3 a {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] h3 a {
   font-size: 20px;
   font-weight: bold;
   color: #333333;
@@ -10007,22 +10007,22 @@ table th {
   transition: all 0.1s ease-in-out;
 }
 /* line 322, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] h3 a:hover {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] h3 a:hover {
   color: #777777;
 }
 /* line 328, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] .price-wrapper {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] .price-wrapper {
   margin: 17px 0;
   padding: 15px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
 /* line 336, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] .price-wrapper .price {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] .price-wrapper .price {
   color: #999;
 }
 /* line 339, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner {
   display: inline-block;
   margin-top: -5px;
   color: #999999;
@@ -10031,13 +10031,13 @@ table th {
   vertical-align: middle;
 }
 /* line 349, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner .hb_symbol {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner .hb_symbol {
   font-size: 15px;
   vertical-align: top;
   margin-right: 3px;
 }
 /* line 358, ../sass/app.scss */
-.room [class*="content-wrapper"] [class*="content"] .btn {
+.room:not("accommodation") [class*="content-wrapper"] [class*="content"] .btn {
   color: white !important;
 }
 

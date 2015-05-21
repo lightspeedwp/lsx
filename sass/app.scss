@@ -1595,7 +1595,7 @@ table {
 	}
 }
 
-.room {
+.room:not("accommodation") {
 	@include lsx-masonry-styles;
 }
 
