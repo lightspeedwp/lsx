@@ -416,26 +416,6 @@ $primary-darker: #2a6496;
 				padding: 15px 20px;
 				border-bottom: 1px solid #ddd;
 
-				h3 {
-					margin: {
-						top: 0;
-						bottom: 0;
-					}
-
-					a {
-						font: {
-							size: 20px;
-							weight: bold;
-						}
-						color: $black;
-						@include transition(all .1s ease-in-out);
-
-						&:hover {
-							color: $mid-grey;
-						}
-					}
-				}
-
 				& > div {
 					.connected-property,
 					.property-location {
@@ -456,6 +436,26 @@ $primary-darker: #2a6496;
 							font-size: 18px;
 							width: 12px;
 						}
+					}
+				}
+			}
+
+			h3 {
+				margin: {
+					top: 0;
+					bottom: 0;
+				}
+
+				a {
+					font: {
+						size: 20px;
+						weight: bold;
+					}
+					color: $black;
+					@include transition(all .1s ease-in-out);
+
+					&:hover {
+						color: $mid-grey;
 					}
 				}
 			}
@@ -1591,6 +1591,9 @@ table {
 	}
 }
 
+.room {
+	@include lsx-masonry-post-type-styles;
+}
 
 // Plugin Post Types
 
