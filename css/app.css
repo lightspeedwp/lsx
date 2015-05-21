@@ -10042,28 +10042,28 @@ table th {
 }
 
 /* line 1605, ../sass/app.scss */
-body:not('archive') .wrap .accommodation {
+.wrap .accommodation {
   overflow: visible !important;
   margin-bottom: 60px !important;
 }
 @media screen and (max-width: 768px) {
   /* line 1605, ../sass/app.scss */
-  body:not('archive') .wrap .accommodation {
+  .wrap .accommodation {
     margin-bottom: 40px !important;
   }
 }
 @media screen and (max-width: 500px) {
   /* line 1605, ../sass/app.scss */
-  body:not('archive') .wrap .accommodation {
+  .wrap .accommodation {
     margin-bottom: 20px !important;
   }
 }
 /* line 377, ../sass/app.scss */
-body:not('archive') .wrap .accommodation .stars {
+.wrap .accommodation .stars {
   max-height: 24px;
 }
 /* line 380, ../sass/app.scss */
-body:not('archive') .wrap .accommodation .stars .genericon-star {
+.wrap .accommodation .stars .genericon-star {
   color: #ffcc00;
   font-size: 22px;
   -webkit-text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
@@ -10073,11 +10073,11 @@ body:not('archive') .wrap .accommodation .stars .genericon-star {
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
 }
 /* line 388, ../sass/app.scss */
-body:not('archive') .wrap .accommodation.active .accommodation-content {
+.wrap .accommodation.active .accommodation-content {
   background: white !important;
 }
 /* line 393, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] {
+.wrap .accommodation [class*="content-wrapper"] {
   background: white;
   text-align: center;
   border: 1px solid #ddd;
@@ -10095,11 +10095,11 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 /* line 549, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .thumbnail {
+.wrap .accommodation [class*="content-wrapper"] > .thumbnail {
   margin: 0;
 }
 /* line 552, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .thumbnail img {
+.wrap .accommodation [class*="content-wrapper"] > .thumbnail img {
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -ms-border-top-left-radius: 3px;
@@ -10112,14 +10112,14 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .thumbnail
   border-top-right-radius: 3px;
 }
 /* line 557, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content {
+.wrap .accommodation [class*="content-wrapper"] > .content {
   list-style: none;
   margin: 0;
   padding: 0;
   padding: 30px 40px;
 }
 /* line 561, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content h3 {
+.wrap .accommodation [class*="content-wrapper"] > .content h3 {
   margin-top: 0;
   margin-bottom: 15px;
   padding-bottom: 10px;
@@ -10128,23 +10128,23 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content h
   font-weight: bold;
 }
 /* line 574, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content p {
+.wrap .accommodation [class*="content-wrapper"] > .content p {
   margin: 0 0 10px;
 }
 /* line 577, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content p .genericon {
+.wrap .accommodation [class*="content-wrapper"] > .content p .genericon {
   vertical-align: middle;
 }
 /* line 582, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper {
+.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper {
   margin: 10px 0;
 }
 /* line 585, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price {
+.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price {
   color: #999;
 }
 /* line 588, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner {
+.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner {
   display: inline-block;
   margin-top: -5px;
   color: #555555;
@@ -10153,21 +10153,21 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .
   vertical-align: middle;
 }
 /* line 598, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner br {
+.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner br {
   display: none;
 }
 /* line 602, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner .hb_symbol {
+.wrap .accommodation [class*="content-wrapper"] > .content .price-wrapper .price .price-inner .hb_symbol {
   font-size: 15px;
   vertical-align: top;
   margin-right: 3px;
 }
 /* line 611, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] > .content .btn {
+.wrap .accommodation [class*="content-wrapper"] > .content .btn {
   margin-top: 20px;
 }
 /* line 396, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] {
+.wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] {
   -webkit-border-top-left-radius: 3px;
   -moz-border-top-left-radius: 3px;
   -ms-border-top-left-radius: 3px;
@@ -10180,7 +10180,7 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="thu
   border-top-right-radius: 3px;
 }
 /* line 399, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] img {
+.wrap .accommodation [class*="content-wrapper"] [class*="thumbnail"] img {
   width: 100%;
   opacity: 1 !important;
   -webkit-border-top-left-radius: 3px;
@@ -10195,7 +10195,7 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="thu
   border-top-right-radius: 3px;
 }
 /* line 406, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] {
   background: #f3f3f3;
   font-size: 15px;
   text-align: left;
@@ -10206,39 +10206,39 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="con
   transition: all 0.1s ease-in-out;
 }
 /* line 414, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"]:focus, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover, .wrap .accommodation [class*="content-wrapper"] [class*="content"]:focus, .wrap .accommodation [class*="content-wrapper"] [class*="content"]:hover {
   background: white;
   cursor: default;
 }
 /* line 419, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] {
   padding: 15px 20px;
   border-bottom: 1px solid #ddd;
 }
 /* line 425, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .connected-property,
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .property-location {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .connected-property,
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .property-location {
   font-size: 16px;
 }
 /* line 429, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars {
   float: right;
   margin-top: 9px;
   margin-right: 4px;
 }
 /* line 438, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars .genericon {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-top"] > div .stars .genericon {
   color: #ffcc00;
   font-size: 18px;
   width: 12px;
 }
 /* line 447, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] h3 {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] h3 {
   margin-top: 0;
   margin-bottom: 0;
 }
 /* line 453, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] h3 a {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] h3 a {
   font-size: 20px;
   font-weight: bold;
   color: #333333;
@@ -10249,20 +10249,20 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="con
   transition: all 0.1s ease-in-out;
 }
 /* line 461, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] h3 a:hover {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] h3 a:hover {
   color: #777777;
 }
 /* line 467, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper {
   padding: 15px 20px;
   border-bottom: 1px solid #ddd;
 }
 /* line 473, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price {
   color: #999;
 }
 /* line 476, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner {
   display: inline-block;
   margin-top: -3px;
   color: #999999;
@@ -10271,13 +10271,13 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="con
   vertical-align: middle;
 }
 /* line 486, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner .hb_symbol {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] .price-wrapper .price .price-inner .hb_symbol {
   font-size: 15px;
   vertical-align: top;
   margin-right: 3px;
 }
 /* line 495, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-excerpt"] {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-excerpt"] {
   height: 190px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -10286,11 +10286,11 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="con
   border-bottom: 1px solid #ddd;
 }
 /* line 504, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] {
   font-size: 16px;
 }
 /* line 93, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"]:after {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"]:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -10299,17 +10299,17 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="con
   height: 0;
 }
 /* line 508, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] {
   display: inline-block;
   padding: 8px 20px;
 }
 /* line 512, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] .genericon {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-country"] .genericon {
   vertical-align: middle;
   font-size: 18px;
 }
 /* line 518, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"] {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"] {
   float: right;
   padding: 8px 20px;
   border-left: 1px solid #ddd;
@@ -10323,22 +10323,22 @@ body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="con
   transition: all 0.1s ease-in-out;
 }
 /* line 529, ../sass/app.scss */
-body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, body:not('archive') .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
+.wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, .wrap .accommodation [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
   border-color: #428bca;
   background: #428bca;
   color: white;
 }
 /* line 1609, ../sass/app.scss */
-body:not('archive') .wrap .accommodation .accommodation-gallery > a {
+.wrap .accommodation .accommodation-gallery > a {
   display: inline-block;
   margin-bottom: 20px;
 }
 /* line 1613, ../sass/app.scss */
-body:not('archive') .wrap .accommodation .accommodation-gallery > a .genericon {
+.wrap .accommodation .accommodation-gallery > a .genericon {
   vertical-align: middle;
 }
 /* line 1616, ../sass/app.scss */
-body:not('archive') .wrap .accommodation .accommodation-gallery > a .genericon:first-child {
+.wrap .accommodation .accommodation-gallery > a .genericon:first-child {
   font-size: 18px;
 }
 

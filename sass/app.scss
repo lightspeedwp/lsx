@@ -1602,7 +1602,7 @@ table {
 // Plugin Post Types
 
 .accommodation {
-	body:not('archive') .wrap & {
+	.wrap & {
 		@include lsx-masonry-post-type-styles;
 
 		.accommodation-gallery {
