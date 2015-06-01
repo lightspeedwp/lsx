@@ -68,14 +68,11 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
-    if ( $('header.banner').height() > 130 ) {
-        $('body').addClass('header-expanded');
-    }
-
-
-	$(window).resize(function () {
+    $(window).resize(function () {
 	    if ( $('.navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() )  {
 			$('body').addClass('header-expanded');
+		} else {
+			$('body').removeClass('header-expanded');
 		}
 	});
 
