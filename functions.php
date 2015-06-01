@@ -92,7 +92,8 @@ function lsx_get_customizer_controls(){
 	 		'default' => esc_html__( 'Default', 'lsx' ),
 	   		'red' => esc_html__( 'Red', 'lsx' ),
 	 	  	'green' => esc_html__( 'Green', 'lsx' ),
-	      	'brown' => esc_html__( 'Brown', 'lsx' )
+	      	'brown' => esc_html__( 'Brown', 'lsx' ),
+	      	'orange' => esc_html__( 'Orange', 'lsx' )
 	 	),
 	 	'control'   =>  'LSX_Customize_Colour_Control',
 		'priority' => 1,
