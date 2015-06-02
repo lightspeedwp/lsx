@@ -73,11 +73,6 @@ function lsx_scripts() {
 			$header_font_location = 'Noto+Serif';
 			$body_font_location = 'Noto+Sans';
 		break;
-
-		case 'amsi_pro_amsi_pro':
-			$header_font_location = 'Amsi+Pro';
-			$body_font_location = 'Amsi+Pro';
-		break;	
 		
 		case 'noto_sans_noto_sans':
 			$header_font_location = 'Noto+Sans';
