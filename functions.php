@@ -199,6 +199,20 @@ function lsx_get_customizer_controls(){
 	            "cssClass" => "notoSans",
 	          ),
 	        ),
+	      'amsi_pro_amsi_pro' => array(
+	        'header'  => array(
+	            "title" => __( 'Amsi Pro', 'lsx' ), 
+	            "location" => "Amsi+Pro", 
+	            "cssDeclaration" => "'Amsi Pro Regular', sans-serif", 
+	            "cssClass" => "amsiPro",
+	          ),
+	        'body'  => array(
+	            "title" => __( 'Amsi Pro', 'lsx' ), 
+	            "location" => "Amsi+Pro", 
+	            "cssDeclaration" => "'Amsi Pro Regular', sans-serif", 
+	            "cssClass" => "amsiPro",
+	          ),
+	        ),
 	      'noto_sans_noto_sans' => array(
 	        'header'  => array(
 	            "title" => __( 'Noto Sans', 'lsx' ), 

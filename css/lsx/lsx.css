@@ -53,7 +53,39 @@
   border-radius: 6px 0 6px 6px;
 }
 
-/* line 5, ../../sass/lsx/_fonts.scss */
+@font-face {
+  font-family: 'Amsi Pro Regular';
+  src: url("amsipro-regular-webfont.eot");
+  src: url("amsipro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("amsipro-regular-webfont.woff2") format("woff2"), url("amsipro-regular-webfont.woff") format("woff"), url("amsipro-regular-webfont.ttf") format("truetype"), url("amsipro-regular-webfont.svg#amsi_proregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amsi Pro Semibold';
+  src: url("amsipro-semibold-webfont.eot");
+  src: url("amsipro-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("amsipro-semibold-webfont.woff2") format("woff2"), url("amsipro-semibold-webfont.woff") format("woff"), url("amsipro-semibold-webfont.ttf") format("truetype"), url("amsipro-semibold-webfont.svg#amsi_prosemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amsi Pro Black';
+  src: url("amsipro-black-webfont.eot");
+  src: url("amsipro-black-webfont.eot?#iefix") format("embedded-opentype"), url("amsipro-black-webfont.woff2") format("woff2"), url("amsipro-black-webfont.woff") format("woff"), url("amsipro-black-webfont.ttf") format("truetype"), url("amsipro-black-webfont.svg#amsi_problack") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amsi Pro Bold';
+  src: url("amsipro-bold-webfont.eot");
+  src: url("amsipro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("amsipro-bold-webfont.woff2") format("woff2"), url("amsipro-bold-webfont.woff") format("woff"), url("amsipro-bold-webfont.ttf") format("truetype"), url("amsipro-bold-webfont.svg#amsi_probold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 56, ../../sass/lsx/_fonts.scss */
 .lsx-contact-building,
 .lsx-contact-phone,
 .lsx-contact-fax,
