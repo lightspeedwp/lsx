@@ -451,17 +451,17 @@ select {
 .caldera-grid .ginput_container select, 
 .ginput_container .caldera-grid select, 
 .caldera-grid .ginput_container textarea, 
-.ginput_container .caldera-grid textarea {
-	border: 3px solid #e9d2a5;
-}
-
+.ginput_container .caldera-grid textarea,
 .caldera-grid .form-control:hover, 
 .caldera-grid .ginput_container input:hover, 
 .ginput_container .caldera-grid input:hover, 
 .caldera-grid .ginput_container select:hover, 
 .ginput_container .caldera-grid select:hover, 
 .caldera-grid .ginput_container textarea:hover, 
-.ginput_container .caldera-grid textarea:hover,
+.ginput_container .caldera-grid textarea:hover, {
+	border: 3px solid #e9d2a5;
+}
+
 .caldera-grid .form-control:active, 
 .caldera-grid .ginput_container input:active, 
 .ginput_container .caldera-grid input:active, 
