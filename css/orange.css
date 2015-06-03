@@ -151,7 +151,13 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
 
 @media screen and (max-width: 992px) {
 	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-		color: #260e03 !important;
+		color: #fff !important;
+	}
+
+	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover,
+	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:focus,
+	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
+		color: #fbaf3f !important;
 	}
 }
 
@@ -176,14 +182,14 @@ header.banner nav .nav.navbar-nav li.menu-highlight a:focus {
 .navbar-toggle:hover,
 .navbar-toggle:active,
 .navbar-toggle:focus {
-	background: #333 !important;
-	border-color: #333 !important;
+	background: #cf5803 !important;
+	border-color: #cf5803 !important;
 }
 
 .navbar-toggle,
 .navbar-toggle.collapsed {
 	background: #e4701e;
-	border-color: #fff;
+	border-color: #e4701e;
 }
 
 .navbar-default .navbar-toggle .icon-bar,
@@ -198,7 +204,7 @@ header.banner nav .nav.navbar-nav li.menu-highlight a:focus {
 }
 
 .mobile-menu-title {
-	color: #333333;
+	color: #fff;
 }
 
 .home .soliloquy-slider {
