@@ -154,6 +154,13 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
 		color: #fff !important;
 	}
 
+	header.banner nav .nav.navbar-nav li:hover > a,
+	header.banner nav .nav.navbar-nav li:focus > a,
+	header.banner nav .nav.navbar-nav li:active > a, 
+	header.banner nav .nav.navbar-nav li.open > a {
+		color: #fbaf3f !important;
+	}
+
 	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover,
 	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:focus,
 	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
