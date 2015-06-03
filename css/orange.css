@@ -121,7 +121,9 @@ header.banner nav .nav.navbar-nav li a {
 	border: none !important;
 }
 
-header.banner nav .nav.navbar-nav li:hover > a, 
+header.banner nav .nav.navbar-nav li:hover > a,
+header.banner nav .nav.navbar-nav li:focus > a,
+header.banner nav .nav.navbar-nav li:active > a, 
 header.banner nav .nav.navbar-nav li.open > a {
 	color: #260e03 !important;
 	background: #fbaf3f;
@@ -141,7 +143,9 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 	color: #260e03 !important;
 }
 
-header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
+header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover,
+header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:focus,
+header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
 	background: #e49435;
 }
 
@@ -156,7 +160,7 @@ header.banner nav .nav.navbar-nav li.active a {
 }
 
 header.banner nav .nav.navbar-nav li.active:hover > a {
-	color: #fff;
+	color: #260e03;
 }
 
 header.banner nav .nav.navbar-nav li.menu-highlight a {
@@ -367,7 +371,7 @@ footer.content-info a:hover {
 .caldera-grid .btn, 
 .caldera-grid .gform_button,
 .gform_page_footer input[type="button"] {
-	background: #e49435 !important;
+	background: #fbaf3f !important;
 }
 
 .caldera-grid .btn:hover, 
@@ -379,7 +383,7 @@ footer.content-info a:hover {
 .gform_page_footer input[type="button"]:hover,
 .gform_page_footer input[type="button"]:focus,
 .gform_page_footer input[type="button"]:active {
-	background: #e2933f !important;
+	background: #e49435 !important;
 }
 
 select {
