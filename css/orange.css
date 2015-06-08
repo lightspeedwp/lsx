@@ -685,7 +685,7 @@ select {
 }
 
 .noUi-connect {
-	background: #fcb040 !important;
+	background: #cc4800 !important;
 }
 
 .property [class*="content-wrapper"] [class*="content"] h3 a, 
@@ -699,5 +699,27 @@ select {
 .campsite [class*="content-wrapper"] [class*="content"] h3 a:focus,
 .property [class*="content-wrapper"] [class*="content"] h3 a:hover, 
 .campsite [class*="content-wrapper"] [class*="content"] h3 a:hover {
-	color: #fcb040 !important;
+	color: #cc4800 !important;
+}
+
+.caldera-grid .form-control:focus, 
+.caldera-grid .ginput_container input:focus, 
+.ginput_container .caldera-grid input:focus, 
+.caldera-grid .ginput_container select:focus, 
+.ginput_container .caldera-grid select:focus, 
+.caldera-grid .ginput_container textarea:focus, 
+.ginput_container .caldera-grid textarea:focus, 
+.caldera-grid input[type="text"]:focus, 
+.caldera-grid input[type="search"]:focus, 
+.caldera-grid select:focus, .caldera-clarity-grid .form-control:focus, 
+.caldera-clarity-grid .ginput_container input:focus, 
+.ginput_container .caldera-clarity-grid input:focus, 
+.caldera-clarity-grid .ginput_container select:focus, 
+.ginput_container .caldera-clarity-grid select:focus, 
+.caldera-clarity-grid .ginput_container textarea:focus, 
+.ginput_container .caldera-clarity-grid textarea:focus, 
+.caldera-clarity-grid input[type="text"]:focus, 
+.caldera-clarity-grid input[type="search"]:focus, 
+.caldera-clarity-grid select:focus {
+	border-color: #cc4800 !important;
 }
