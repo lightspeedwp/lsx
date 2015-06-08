@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
 	});
 
     $(window).resize(function () {
-	    if ( $('.navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() )  {
+	    if ( $('.navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() && $(window).width() > 1200 )  {
 			$('body').addClass('header-expanded');
 		} else {
 			$('body').removeClass('header-expanded');
