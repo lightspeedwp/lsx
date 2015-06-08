@@ -1,10 +1,14 @@
-a {
+a,
+.caldera-grid a {
 	color: #e4701e;
 }
 
 a:hover,
 a:focus,
-a:active {
+a:active,
+.caldera-grid a:hover,
+.caldera-grid a:focus,
+.caldera-grid a:active {
 	color: #cc4800;
 }
 
@@ -655,4 +659,14 @@ select {
 .page-template-template-home-hero #home-widgets a:focus,
 .page-template-template-home-hero #home-widgets a:active {
 	color: #cc4800 !important;
+}
+
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, 
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, 
+.property [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus, 
+.campsite [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:hover, 
+.campsite [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:active, 
+.campsite [class*="content-wrapper"] [class*="content"] [class*="-bottom"] [class*="-read-more"]:focus {
+	border-color: #e4701e;
+  	background: #e4701e;
 }
