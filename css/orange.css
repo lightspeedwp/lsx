@@ -702,6 +702,28 @@ select {
 	color: #cc4800 !important;
 }
 
+.caldera-grid .form-control, 
+.caldera-grid .ginput_container input, 
+.ginput_container .caldera-grid input, 
+.caldera-grid .ginput_container select, 
+.ginput_container .caldera-grid select, 
+.caldera-grid .ginput_container textarea, 
+.ginput_container .caldera-grid textarea, 
+.caldera-grid input[type="text"], 
+.caldera-grid input[type="search"], 
+.caldera-grid select, .caldera-clarity-grid .form-control, 
+.caldera-clarity-grid .ginput_container input, 
+.ginput_container .caldera-clarity-grid input, 
+.caldera-clarity-grid .ginput_container select, 
+.ginput_container .caldera-clarity-grid select, 
+.caldera-clarity-grid .ginput_container textarea, 
+.ginput_container .caldera-clarity-grid textarea, 
+.caldera-clarity-grid input[type="text"], 
+.caldera-clarity-grid input[type="search"], 
+.caldera-clarity-grid select {
+	border-color: #ccc!important;
+}
+
 .caldera-grid .form-control:focus, 
 .caldera-grid .ginput_container input:focus, 
 .ginput_container .caldera-grid input:focus, 
@@ -711,7 +733,8 @@ select {
 .ginput_container .caldera-grid textarea:focus, 
 .caldera-grid input[type="text"]:focus, 
 .caldera-grid input[type="search"]:focus, 
-.caldera-grid select:focus, .caldera-clarity-grid .form-control:focus, 
+.caldera-grid select:focus, 
+.caldera-clarity-grid .form-control:focus, 
 .caldera-clarity-grid .ginput_container input:focus, 
 .ginput_container .caldera-clarity-grid input:focus, 
 .caldera-clarity-grid .ginput_container select:focus, 
