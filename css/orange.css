@@ -685,10 +685,19 @@ select {
 }
 
 .noUi-connect {
-	background: #fcb040;
+	background: #fcb040 !important;
 }
 
 .property [class*="content-wrapper"] [class*="content"] h3 a, 
 .campsite [class*="content-wrapper"] [class*="content"] h3 a {
 	color: #260E03 !important;
+}
+
+.property [class*="content-wrapper"] [class*="content"] h3 a:active, 
+.campsite [class*="content-wrapper"] [class*="content"] h3 a:active,
+.property [class*="content-wrapper"] [class*="content"] h3 a:focus, 
+.campsite [class*="content-wrapper"] [class*="content"] h3 a:focus,
+.property [class*="content-wrapper"] [class*="content"] h3 a:hover, 
+.campsite [class*="content-wrapper"] [class*="content"] h3 a:hover {
+	background: #fcb040 !important;
 }
