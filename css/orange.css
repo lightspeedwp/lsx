@@ -485,7 +485,14 @@ select {
 .caldera-grid .ginput_container select:focus, 
 .ginput_container .caldera-grid select:focus, 
 .caldera-grid .ginput_container textarea:focus, 
-.ginput_container .caldera-grid textarea:focus {
+.ginput_container .caldera-grid textarea:focus,
+.caldera-clarity-grid .form-control:focus, 
+.caldera-clarity-grid .ginput_container input:focus, 
+.ginput_container .caldera-clarity-grid input:focus, 
+.caldera-clarity-grid .ginput_container select:focus, 
+.ginput_container .caldera-clarity-grid select:focus, 
+.caldera-clarity-grid .ginput_container textarea:focus, 
+.ginput_container .caldera-clarity-grid textarea:focus {
 	border: 3px solid #e49435 !important;
 }
 
