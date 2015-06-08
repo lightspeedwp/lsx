@@ -1,15 +1,21 @@
-a,
-.caldera-grid a {
+a {
 	color: #e4701e;
 }
 
 a:hover,
 a:focus,
-a:active,
+a:active {
+	color: #cc4800;
+}
+
+.caldera-clarity-grid a {
+	color: #e4701e !important;
+}
+
 .caldera-clarity-grid a:hover,
 .caldera-clarity-grid a:focus,
 .caldera-clarity-grid a:active {
-	color: #cc4800;
+	color: #cc4800 !important;
 }
 
 .btn,
