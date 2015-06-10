@@ -372,3 +372,77 @@ if(!function_exists('lsx_page_banner')){
 	}
 }
 add_action( 'lsx_header_after', 'lsx_page_banner' );
+
+/**
+ * Checks if a caldera form with your slug exists
+ *
+ * @package 	lsx
+ * @subpackage	setup
+ * @category 	helper
+ */
+function lsx_is_form_enabled($slug = false) {
+	if(false == $slug){ return false; }
+
+	$match = false;
+	$forms = get_option( '_caldera_forms' , false );
+	if(false !== $forms ) {
+		foreach($forms as $form_id=>$form_maybe){
+			if( trim(strtolower($slug)) == strtolower($form_maybe['name']) ){
+				$match = $form_id;
+				break;
+			}
+		}
+	}
+	if( false === $match ){
+		$is_form = Caldera_Forms::get_form( strtolower( $slug ) );
+		if( !empty( $is_form ) ){
+			return strtolower( $slug );
+		}
+	}
+	
+	return $match;
+}
+
+/**
+ * Adds Enquire Form on Single Properties sticky booking widget
+ *
+ * @package 	lsx
+ * @subpackage	hooks
+ * @category	enquire bar
+ */
+function lsx_sticky_enquire_form() { 
+	
+	$enquire_modal = lsx_is_form_enabled('enquire');
+	if(false != $enquire_modal){
+		global $post;
+
+		if( $post->post_type == 'accommodation' ){
+			if( !empty( $post->connected_room ) ){
+				$property = get_post( $post->connected_room );
+			}elseif( !empty( $post->property ) ){
+				$property = get_post( $post->property );
+			}
+		}elseif( $post->post_type == 'property' ){
+			$property = $post;
+		}
+
+	?>							
+	<form class="form-inline" onsubmit="return false;">
+		<div class="form-group has-feedback sync-start">
+			<input type="text" data-provide="cfdatepicker" data-date-autoclose="true" class="form-control is-cfdatepicker" id="check_in" data-date-format="dd-mm-yyyy" name="check_in" data-sync="fld_9703038" placeholder="Check In" value="">
+			<span class="form-control-feedback genericon genericon-month"></span>
+		</div>
+		<div class="form-group has-feedback sync-end">
+			<input type="text" data-provide="cfdatepicker" data-date-autoclose="true" class="form-control is-cfdatepicker" id="check_out" data-date-format="dd-mm-yyyy" name="check_out" data-sync="fld_8979815" placeholder="Check Out" value="">
+			<span class="form-control-feedback genericon genericon-month"></span>
+		</div>
+		<?php if( isset( $property ) && !empty( $property->online_reservation_url ) && !wp_is_mobile() ){ ?>
+		<a href="<?php echo esc_url( $property->online_reservation_url ); ?>" target="_blank" class="btn btn-primary btn-lg" role="button">Book Now</a>
+		<?php } ?>
+		<?php if( isset( $property ) && !empty( $property->direct_link_to_online_reservation_mobile_optimised ) && wp_is_mobile() ){ ?>
+		<a href="<?php echo esc_url( $property->direct_link_to_online_reservation_mobile_optimised ); ?>" target="_blank" class="btn btn-primary btn-lg" role="button">Book Now</a>
+		<?php } ?>
+		<button class="btn btn-default enquire-now" data-toggle="modal" data-target="#enquire-modal"><?php _e('Make an Enquiry','classybeds-lsx-child'); ?></button>
+	</form>
+<?php }
+}
