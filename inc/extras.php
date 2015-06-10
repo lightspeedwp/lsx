@@ -380,6 +380,7 @@ add_action( 'lsx_header_after', 'lsx_page_banner' );
  * @subpackage	setup
  * @category 	helper
  */
+/*
 function lsx_is_form_enabled($slug = false) {
 	if(false == $slug){ return false; }
 
@@ -410,6 +411,7 @@ function lsx_is_form_enabled($slug = false) {
  * @subpackage	hooks
  * @category	enquire bar
  */
+/*
 function lsx_sticky_enquire_form() { 
 	
 	$enquire_modal = lsx_is_form_enabled('enquire');
