@@ -1,6 +1,17 @@
 var filter_item_width;
 jQuery(document).ready(function($) {
 
+	if ( $('.property-meta-section .row').height() > 68 ) {
+		$(this).parent().addClass('expandable');
+	}
+	
+	$('.property-meta-section.expandable').append('<a class="more-expand" href="#"></a>');
+	
+	$('.more-expand').click(function() {
+		$('.property-meta-section').removeClass('expandable');
+		$(this).hide('slow');
+	});
+
 	filter_item_width = jQuery('.filter-items-container').width();
 	if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
 		filter_item_width = 750;
