@@ -1234,6 +1234,10 @@ img,
 	@include lsx-image-border;
 }
 
+.lsx-form-field {
+	@include lsx-form-field;
+}
+
 .thumbnail {
 	padding: 0;
 	border: none;
@@ -2409,6 +2413,10 @@ hr {
 
 .lsx-border-button {
 	@include lsx-border-button($black, $blacker);
+}
+
+.form-control {
+	@include lsx-form-field;
 }
 
 .caldera-grid,
