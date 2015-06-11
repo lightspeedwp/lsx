@@ -1,9 +1,7 @@
 var filter_item_width;
 jQuery(document).ready(function($) {
-
-	$('.property-meta-section').addClass('expandable');
 	if ( $('.property-meta-section .row').height() > 68 ) {
-		$(this).parent().addClass('expandable');
+		$(this).parents().addClass('expandable');
 	}
 	
 	$('.property-meta-section.expandable').append('<a class="more-expand" href="#"></a>');
