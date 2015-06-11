@@ -1,6 +1,6 @@
 var filter_item_width;
 jQuery(document).ready(function($) {
-	if ( $('.property-meta-section .row').height() > 68 ) {
+	if ( $('.property-meta-section .row .col-md-8').children().length > 4 ) {
 		$(this).parents().addClass('expandable');
 	}
 	
