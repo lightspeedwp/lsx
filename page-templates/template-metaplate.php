@@ -4,7 +4,7 @@
  *
  * @package lsx
  */
-?>
+get_header() ?>
 
 	<div id="primary" class="content-area portfolio-template">
 
@@ -90,3 +90,4 @@
 		<?php lsx_content_after(); ?>
 		
 	</div><!-- #primary -->
+<?php get_footer(); ?>
