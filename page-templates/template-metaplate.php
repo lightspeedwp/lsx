@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Portfolio Archive
+ * Template Name: Metaplate
  *
  * @package lsx
  */
