@@ -20,35 +20,41 @@ global $lsx_options;
 </head>
 <body <?php body_class( 'lsx' ); ?>>
 <?php lsx_body_top(); ?>
-<?php lsx_header_before(); ?>
- 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
-  		<?php lsx_header_top(); ?>
-	  	<div class="container">
-	    	<div class="navbar-header">
-	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
-		        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
-		        	<span class="icon-bar"></span>
-		        	<span class="icon-bar"></span>
-		        	<span class="icon-bar"></span>
-	      		</button>
 
-	      		<span class="mobile-menu-title">Menu</span>
+<?php if !is_page_template('page-templates/template-metaplate.php') { ?>
 
-				<?php lsx_site_identity(); ?>
-		    </div>
+	<?php lsx_header_before(); ?>
+		 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
+		  		<?php lsx_header_top(); ?>
+			  	<div class="container">
+			    	<div class="navbar-header">
+			    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
+				        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
+				        	<span class="icon-bar"></span>
+				        	<span class="icon-bar"></span>
+				        	<span class="icon-bar"></span>
+			      		</button>
 
-			<?php lsx_nav_before(); ?>
+			      		<span class="mobile-menu-title">Menu</span>
+
+						<?php lsx_site_identity(); ?>
+				    </div>
+
+					<?php lsx_nav_before(); ?>
+					
+					<?php lsx_nav_menu(); ?>
+			  		
+			  		<?php lsx_nav_after(); ?>
+			  		
+			  	<?php lsx_header_bottom(); ?>
+
+			  	</div>
+			</header>
+				
+			<?php lsx_header_after(); ?>
 			
-			<?php lsx_nav_menu(); ?>
-	  		
-	  		<?php lsx_nav_after(); ?>
-	  		
-	  	<?php lsx_header_bottom(); ?>
+			<div class="wrap container" role="document">
+				<div class="content role row">
+	<?php } else { ?>
 
-	  	</div>
-	</header>
-		
-<?php lsx_header_after(); ?>
-    
-    <div class="wrap container" role="document">
-		<div class="content role row">
+	<?php } ?>
