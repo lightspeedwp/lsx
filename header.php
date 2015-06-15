@@ -67,13 +67,15 @@ global $lsx_options;
 			    	<div class="navbar-header">
 						<?php lsx_site_identity(); ?>
 				    </div>
+
+				    <div class="header-links">
+				    	<strong>Get your Tourism Establishment Online</strong>
+				    	<span>Questions? Email Us: <a href="#">email@address.com</a></span>
+				    </div>
 			  	</div>
 
 			  	<?php lsx_header_bottom(); ?>
 			</header>
 				
 			<?php lsx_header_after(); ?>
-			
-			<div class="wrap container" role="document">
-				<div class="content role row">
 	<?php } ?>

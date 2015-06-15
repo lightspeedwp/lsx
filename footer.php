@@ -67,9 +67,6 @@
 
 	<?php } else { ?>
 
-			</div><!-- .content -->
-		</div><!-- wrap -->
-
 		<footer class="content-info" role="contentinfo">
 			<div class="container">
 			  	<div class="row">
