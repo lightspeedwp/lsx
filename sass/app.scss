@@ -2739,7 +2739,7 @@ header.banner {
 	top: 0;
 	background: $white;
 	border: none;
-	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .1));
+	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .15));
 
 	@media screen and (max-width: 992px) {
 		& > .container {
@@ -4054,6 +4054,8 @@ header.page-header {
 
 .page-template-template-metaplate {
 	header.banner {
+		border-color: #ddd;
+
 		.header-links {
 			float: right;
 			margin: 47px 0;
@@ -4109,10 +4111,10 @@ header.page-header {
 					}
 
   					.genericon {
-  						vertical-align: middle;
-						margin-left: 10px;
+						vertical-align: middle;
+						margin-left: 24px;
 						width: 8px;
-						font-size: 12px;
+						font-size: 16px;
   					}
 				}
 			}
@@ -4127,11 +4129,35 @@ header.page-header {
 			}
 
 			.lst-landing-page-features {
+				.lst-landing-page-feature {
+					position: relative;
+					padding-left: 30px;
 
+					&:before {
+						content: '\f418';
+						display: block;
+						font: {
+							family: genericons;
+							size: 20px;
+						}
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+
+					.lst-landing-page-feature-title {
+						margin-bottom: 10px;
+					}
+
+					.lst-landing-page-feature-content {
+						font-size: 15px;
+						line-height: 2;
+					}
+				}
 			}
 
 			.lst-landing-page-testimonials {
-				
+
 			}
 		}
 	}
