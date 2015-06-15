@@ -4056,7 +4056,22 @@ header.page-header {
 	header.banner {
 		.header-links {
 			float: right;
-			margin: 43px 0;
+			margin: 47px 0;
+
+			strong {
+				margin-right: 20px;
+			}
+
+			a {
+				border-bottom: 1px solid;
+				@include transition(all .2s ease-in-out);
+
+				&:hover,
+				&:active,
+				&:focus {
+					border-bottom: none;
+				}
+			}
 		}
 
 		&.scrolled {
@@ -4066,32 +4081,36 @@ header.page-header {
 		}
 	}
 
-	.lst-landing-page-top {
-		.lsx-hero-unit {
-			margin: 20px auto 60px;
+	.wrap {
+		margin-bottom: 0 !important;
+		
+		.lst-landing-page-top {
+			.lsx-hero-unit {
+				margin: 20px auto 60px;
 
-			.lst-landing-page-headline {
-				h1 {
-					line-height: 1.4;
+				.lst-landing-page-headline {
+					h1 {
+						line-height: 1.4;
+					}
 				}
 			}
 		}
-	}
 
-	.lst-landing-page-middle {
-		.introduction-content {
-			h2 {
-				margin-top: 0;
+		.lst-landing-page-middle {
+			.introduction-content {
+				h2 {
+					margin-top: 0;
+				}
 			}
 		}
-	}
 
-	.lst-landing-page-bottom {
-		@include lsx-full-width($black, $white);
-		margin-bottom: 0;
+		.lst-landing-page-bottom {
+			@include lsx-full-width($black, $white);
+			margin-bottom: 0;
 
-		ul {
-			@include clear-list;
+			ul {
+				@include clear-list;
+			}
 		}
 	}
 }
