@@ -4058,12 +4058,32 @@ header.page-header {
 			float: right;
 			margin: 43px 0;
 		}
+
+		&.scrolled {
+			.header-links {
+				margin: 32px 0;
+			}
+		}
 	}
 
-	&.scrolled {
-		.header-links {
-			margin: 32px 0;
+	.lst-landing-page-top {
+		.lsx-hero-unit {
+			margin: 20px auto 60px;
+
+			.lst-landing-page-headline {
+				h1 {
+					line-height: 1.4;
+				}
+			}
 		}
+	}
+
+	.lst-landing-page-middle {
+
+	}
+
+	.lst-landing-page-bottom {
+
 	}
 }
 
