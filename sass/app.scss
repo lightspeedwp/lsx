@@ -4100,6 +4100,21 @@ header.page-header {
 				.lst-landing-page-introduction-content-title {
 					margin-top: 0;
 				}
+
+				.lst-landing-page-cta-btn {
+					padding: 11px 30px;
+					font: {
+						size: 18px;
+						weight: bold;
+					}
+
+  					.genericon {
+  						vertical-align: middle;
+						margin-left: 10px;
+						width: 8px;
+						font-size: 12px;
+  					}
+				}
 			}
 		}
 
@@ -4109,6 +4124,14 @@ header.page-header {
 
 			ul {
 				@include clear-list;
+			}
+
+			.lst-landing-page-features {
+
+			}
+
+			.lst-landing-page-testimonials {
+				
 			}
 		}
 	}
