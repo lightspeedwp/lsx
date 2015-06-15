@@ -4092,7 +4092,7 @@ header.page-header {
 
 				.lst-landing-page-headline {
 					margin-top: 0;
-					line-height: 1.4;
+					line-height: 1.55;
 				}
 			}
 		}
@@ -4105,14 +4105,17 @@ header.page-header {
 
 				.lst-landing-page-cta-btn {
 					padding: 11px 30px;
+					margin-top: 12px;
 					font: {
 						size: 18px;
 						weight: bold;
 					}
+					text-transform: uppercase;
 
   					.genericon {
+  						font-size: 14px;
 						vertical-align: middle;
-						margin-left: 24px;
+						margin-left: 23px;
 						width: 8px;
   					}
 				}
@@ -4163,24 +4166,33 @@ header.page-header {
 			}
 
 			.lst-landing-page-testimonials {
+				.lst-landing-page-testimonials-title {
+					font-size: 22px;
+				 	margin-bottom: 34px;
+				}
+
 				.lst-landing-page-testimonial {
 					.lst-landing-page-testimonial-image {
-
+						display: block;
+						height: 110px;
+						background-color: #555;
 					}
 
 					.lst-landing-page-testimonial-content {
 						font-size: 15px;
-						margin-bottom: 25px;
 
 						p {
 							line-height: 2;
 						}
 
 						.lst-landing-page-testimonial-content-quote {
-							margin-bottom: 10px;
 							font: {
+								size: 16px;
 								style: italic;
 							}
+							margin-bottom: 11px;
+							letter-spacing: .6px;
+							color: #ccc;
 						}
 
 						.lst-landing-page-testimonial-content-company-info {
