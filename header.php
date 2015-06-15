@@ -21,7 +21,7 @@ global $lsx_options;
 <body <?php body_class( 'lsx' ); ?>>
 <?php lsx_body_top(); ?>
 
-<?php if ( !is_page_template('page-templates/template-metaplate.php') ) { ?>
+<?php if ( !is_singular('landing-page') ) { ?>
 
 	<?php lsx_header_before(); ?>
 		 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
