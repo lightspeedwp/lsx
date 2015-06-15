@@ -4172,6 +4172,8 @@ header.page-header {
 				}
 
 				.lst-landing-page-testimonial {
+					margin-bottom: 36px;
+
 					.lst-landing-page-testimonial-image {
 						display: block;
 						height: 110px;
@@ -4190,12 +4192,17 @@ header.page-header {
 								size: 16px;
 								style: italic;
 							}
-							margin-bottom: 11px;
+							margin: {
+								top: 2px;
+								bottom: 11px;
+							}
 							letter-spacing: .6px;
 							color: #ccc;
 						}
 
 						.lst-landing-page-testimonial-content-company-info {
+							margin-bottom: 0;
+
 							span {
 								font-weight: bold;
 								margin-right: 7px;
