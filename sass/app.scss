@@ -4079,11 +4079,20 @@ header.page-header {
 	}
 
 	.lst-landing-page-middle {
-
+		.introduction-content {
+			h2 {
+				margin-top: 0;
+			}
+		}
 	}
 
 	.lst-landing-page-bottom {
+		@include lsx-full-width($white, $dark-grey);
+		margin-bottom: 0;
 
+		ul {
+			@include clear-list;
+		}
 	}
 }
 
