@@ -70,8 +70,6 @@
 			</div><!-- .content -->
 		</div><!-- wrap -->
 
-		<?php lsx_footer_before(); ?>
-
 		<footer class="content-info" role="contentinfo">
 			<div class="container">
 			  	<div class="row">
