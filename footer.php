@@ -75,7 +75,18 @@
 			    		<?php lsx_footer_top(); ?>
 
 			      		<p class="credit <?php if ( has_nav_menu( 'social' ) ) { ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), date_i18n( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
-						
+						<?php if ( has_nav_menu( 'social' ) ) { ?>
+							<nav id="social-navigation" class="social-navigation" role="navigation">
+								<?php
+									// Social links navigation menu.
+									wp_nav_menu( array(
+										'theme_location' => 'social',
+										'depth'          => 1,
+									) );
+								?>
+							</nav><!-- .social-navigation -->
+						<?php } ?>
+
 			      		<?php lsx_footer_bottom(); ?>
 
 			    	</div>
