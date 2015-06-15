@@ -4131,17 +4131,22 @@ header.page-header {
 			.lst-landing-page-features {
 				.lst-landing-page-feature {
 					position: relative;
-					padding-left: 30px;
+					padding-left: 38px;
+					margin-bottom: 30px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
 
 					&:before {
 						content: '\f418';
 						display: block;
 						font: {
 							family: genericons;
-							size: 20px;
+							size: 28px;
 						}
 						position: absolute;
-						top: 0;
+						top: -2px;
 						left: 0;
 					}
 
@@ -4152,6 +4157,8 @@ header.page-header {
 					.lst-landing-page-feature-content {
 						font-size: 15px;
 						line-height: 2;
+						color: #ccc;
+						margin-bottom: 0;
 					}
 				}
 			}
