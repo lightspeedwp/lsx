@@ -4114,7 +4114,6 @@ header.page-header {
 						vertical-align: middle;
 						margin-left: 24px;
 						width: 8px;
-						font-size: 16px;
   					}
 				}
 			}
@@ -4164,7 +4163,34 @@ header.page-header {
 			}
 
 			.lst-landing-page-testimonials {
+				.lst-landing-page-testimonial {
+					.lst-landing-page-testimonial-image {
 
+					}
+
+					.lst-landing-page-testimonial-content {
+						font-size: 15px;
+						margin-bottom: 25px;
+
+						p {
+							line-height: 2;
+						}
+
+						.lst-landing-page-testimonial-content-quote {
+							margin-bottom: 10px;
+							font: {
+								style: italic;
+							}
+						}
+
+						.lst-landing-page-testimonial-content-company-info {
+							span {
+								font-weight: bold;
+								margin-right: 7px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
