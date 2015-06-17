@@ -56,26 +56,45 @@ global $lsx_options;
 			<div class="wrap container" role="document">
 				<div class="content role row">
 
+	<?php } elseif ( is_page_template('page-templates/template-metaplate.php') ) { ?>
+
+		<?php lsx_header_before(); ?>
+
+	 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
+	  		<?php lsx_header_top(); ?>
+
+		  	<div class="container">
+		    	<div class="navbar-header">
+					<?php lsx_site_identity(); ?>
+			    </div>
+		  	</div>
+
+		  	<?php lsx_header_bottom(); ?>
+		</header>
+			
+		<?php lsx_header_after(); ?>
+
 	<?php } else { ?>
 
 		<?php lsx_header_before(); ?>
 
-		 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
-		  		<?php lsx_header_top(); ?>
+	 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
+	  		<?php lsx_header_top(); ?>
 
-			  	<div class="container">
-			    	<div class="navbar-header">
-						<?php lsx_site_identity(); ?>
-				    </div>
+		  	<div class="container">
+		    	<div class="navbar-header">
+					<?php lsx_site_identity(); ?>
+			    </div>
 
-				    <div class="header-links">
-				    	<strong>Get your Tourism Establishment Online</strong>
-				    	<span>Questions? Email Us: <a href="#">email@address.com</a></span>
-				    </div>
-			  	</div>
+			    <div class="header-links">
+			    	<strong>Get your Tourism Establishment Online</strong>
+			    	<span>Questions? Email Us: <a href="#">email@address.com</a></span>
+			    </div>
+		  	</div>
 
-			  	<?php lsx_header_bottom(); ?>
-			</header>
-				
-			<?php lsx_header_after(); ?>
+		  	<?php lsx_header_bottom(); ?>
+		</header>
+			
+		<?php lsx_header_after(); ?>
+
 	<?php } ?>

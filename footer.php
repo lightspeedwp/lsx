@@ -65,6 +65,28 @@
 
 		<?php wp_footer(); ?> 
 
+	<?php } else if ( is_page_template('page-templates/template-metaplate.php') ) { ?>
+
+		<footer class="content-info" role="contentinfo">
+			<div class="container">
+			  	<div class="row">
+			    	<div class="col-sm-12">
+
+			    		<?php lsx_footer_top(); ?>
+
+			      		<p class="credit <?php if ( has_nav_menu( 'social' ) ) { ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), date_i18n( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
+
+			      		<?php lsx_footer_bottom(); ?>
+
+			    	</div>
+			  	</div>
+			</div>
+		</footer>
+
+		<?php lsx_footer_after(); ?>
+
+		<?php wp_footer(); ?>
+
 	<?php } else { ?>
 
 		<footer class="content-info" role="contentinfo">
