@@ -1691,6 +1691,7 @@ table {
 				}
 
 				.lst-landing-page-cta-btn {
+					background: #d93a3a !important;
 					padding: 11px 30px;
 					margin-top: 12px;
 					font: {
@@ -1698,6 +1699,12 @@ table {
 						weight: bold;
 					}
 					text-transform: uppercase;
+
+					&:hover,
+					&:focus,
+					&:active {
+						background: #b53434 !important;
+					}
 
   					.genericon {
   						font-size: 14px;
