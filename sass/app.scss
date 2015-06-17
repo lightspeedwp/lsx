@@ -1619,17 +1619,6 @@ table {
 // Metaplate
 
 .page-template-template-metaplate {
-	a {
-		border-bottom: 1px solid;
-		@include transition(all .1s ease-in-out);
-
-		&:hover,
-		&:focus,
-		&:active {
-			border-bottom: none;
-		}
-	}
-
 	header.banner {
 		.header-links {
 			float: right;
@@ -1677,7 +1666,7 @@ table {
 			}
 
 			.signup-headline {
-				margin-bottom: 40px;
+				margin-bottom: 50px;
 			}
 		}
 
@@ -1689,6 +1678,10 @@ table {
 					font-size: 15px;
 					padding: 20px 30px 5px;
 					background-color: #eee;
+
+					a {
+						font-weight: bold;
+					}
 				}
 			}
 
@@ -1812,6 +1805,17 @@ table {
 			padding-top: 12px;
 			border-top: 1px solid #ccc;
 			margin-top: 20px;
+
+			a {
+				border-bottom: 1px solid;
+				@include transition(all .1s ease-in-out);
+
+				&:hover,
+				&:focus,
+				&:active {
+					border-bottom: none;
+				}
+			}
 		}
 	}
 }
