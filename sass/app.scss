@@ -1664,9 +1664,17 @@ table {
 					line-height: 1.52;
 				}
 			}
+
+			.signup-headline {
+				margin-bottom: 40px;
+			}
 		}
 
 		.lst-landing-page-middle {
+			&.signup-middle {
+				margin-bottom: 80px;
+			}
+
 			.lst-landing-page-introduction-content {
 				.lst-landing-page-introduction-content-title {
 					margin-top: 0;
@@ -1780,6 +1788,13 @@ table {
 					}
 				}
 			}
+		}
+
+		.signup-footer {
+			font-size: 15px;
+			padding-top: 12px;
+			border-top: 1px solid #ccc;
+			margin-top: 20px;
 		}
 	}
 }
