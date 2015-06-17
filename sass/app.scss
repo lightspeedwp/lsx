@@ -1619,6 +1619,17 @@ table {
 // Metaplate
 
 .page-template-template-metaplate {
+	a {
+		border-bottom: 1px solid;
+		@include transition(all .1s ease-in-out);
+
+		&:hover,
+		&:focus,
+		&:active {
+			border-bottom: none;
+		}
+	}
+
 	header.banner {
 		.header-links {
 			float: right;
@@ -1673,6 +1684,12 @@ table {
 		.lst-landing-page-middle {
 			&.signup-middle {
 				margin-bottom: 80px;
+
+				.signup-reasons {
+					font-size: 15px;
+					padding: 20px 30px 5px;
+					background-color: #eee;
+				}
 			}
 
 			.lst-landing-page-introduction-content {
@@ -2621,7 +2638,8 @@ hr {
 	.form-control,
 	input[type="text"],
 	input[type="search"],
-	select {
+	select,
+	.ccselect2-container {
 		@include lsx-form-field;
 	}
 
