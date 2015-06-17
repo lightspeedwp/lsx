@@ -615,6 +615,7 @@ $primary-darker: #2a6496;
 }
 
 @mixin lsx-form-field {
+	background: none !important;
 	height: auto;
 	font-size: 16px;
 	padding: 12px 16px;
@@ -1415,6 +1416,19 @@ table {
 	}
 }
 
+.ccselect2-container {
+	display: block !important;
+
+	.ccselect2-arrow {
+		background: none !important;
+		border: none !important;
+
+		b {
+			background-position: -4px 13px !important;
+		}
+	}
+}
+
 .breadcrumbs-container {
 	.page-template-template-page-hero & {
 		display: none;
@@ -1808,7 +1822,7 @@ table {
 		}
 
 		.signup-footer {
-			font-size: 15px;
+			font-size: 14px;
 			padding-top: 12px;
 			border-top: 1px solid #ccc;
 			margin-top: 20px;
