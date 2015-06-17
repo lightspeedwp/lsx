@@ -7,7 +7,7 @@
  * @package lsx
  */
 ?>
-<?php if ( !is_singular('landing-page') && !is_page_template('template-metaplate.php') ) { ?>
+<?php if ( !is_singular('landing-page') && !is_page_template('page-templates/template-metaplate.php') ) { ?>
 
 			</div><!-- .content -->
 		</div><!-- wrap -->
