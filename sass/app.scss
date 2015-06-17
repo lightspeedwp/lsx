@@ -2599,7 +2599,8 @@ hr {
 	@include lsx-border-button($black, $blacker);
 }
 
-.form-control {
+.form-control,
+.ccselect2-container {
 	@include lsx-form-field;
 }
 
