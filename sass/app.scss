@@ -1697,6 +1697,16 @@ table {
 						font-weight: bold;
 					}
 				}
+
+				input[type="submit"] {
+					background: #2b75bb !important;
+
+					&:hover,
+					&:focus,
+					&:active {
+						background: #23609a !important;
+					}
+				}
 			}
 
 			.lst-landing-page-introduction-content {
