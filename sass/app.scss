@@ -1666,7 +1666,10 @@ table {
 	}
 
 	.wrap {
-		margin-bottom: 0 !important;
+		margin: {
+			top: 0 !important;
+			bottom: 0 !important;
+		}
 		padding-bottom: 0 !important;
 
 		#primary {
