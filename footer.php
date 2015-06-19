@@ -65,7 +65,7 @@
 
 		<?php wp_footer(); ?> 
 
-	<?php } else if ( is_page_template('page-templates/template-metaplate.php') && !is_page('signup') ) { ?>
+	<?php } else if ( is_page_template('page-templates/template-metaplate.php') && is_page('signup') ) { ?>
 
 		<?php wp_footer(); ?>
 
