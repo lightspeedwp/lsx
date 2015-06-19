@@ -1633,6 +1633,12 @@ table {
 // Metaplate
 
 .page-template-template-metaplate {
+	&.signup {
+		.wrap {
+			margin-top: 170px !important;
+		}
+	}
+
 	header.banner {
 		.header-links {
 			float: right;
@@ -1667,7 +1673,6 @@ table {
 
 	.wrap {
 		margin: {
-			top: 0 !important;
 			bottom: 0 !important;
 		}
 		padding-bottom: 0 !important;
@@ -1698,7 +1703,7 @@ table {
 
 				.signup-reasons {
 					font-size: 15px;
-					padding: 20px 30px 5px;
+					padding: 20px 30px;
 					background-color: #eee;
 
 					a {
