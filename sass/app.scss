@@ -3586,6 +3586,7 @@ nav {
 	background: $black;
 
 	@media screen and (max-width: 768px) {
+		max-height: 40px;
 		margin: {
 			left: -15px;
 			right: -15px;
@@ -3605,6 +3606,7 @@ nav {
 
 		.header-central & {
 			float: none;
+			display: inline-block;
 		}
 
 		ul {
