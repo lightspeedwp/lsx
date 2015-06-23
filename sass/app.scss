@@ -3657,6 +3657,8 @@ nav {
 						color: $primary;
 
 						@media screen and (max-width: 768px) {
+							margin-right: 0;
+
 							&:hover,
 							&:active,
 							&:focus {
@@ -3729,6 +3731,7 @@ nav {
 
 						@media screen and (max-width: 768px) {
 							padding: 5px 22px;
+							margin-left: 8px;
 						}
 					}
 				}
