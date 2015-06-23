@@ -3607,6 +3607,10 @@ nav {
 	nav.top-menu {
 		float: right;
 
+		@media screen and (max-width: 768px) {
+			float: right !important;
+		}
+
 		.header-central & {
 			float: none;
 			display: inline-block;
