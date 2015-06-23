@@ -3144,7 +3144,7 @@ header.banner {
 	 ========================================================================== */
 
 nav {
-	header.banner & {
+	&.primary-navbar {
 		float: right;
 		margin: 40px 0;
 		border: none !important;
@@ -3339,7 +3339,7 @@ nav {
 		}
 	}
 
-	header.banner.scrolled & {
+	header.banner.scrolled &.primary-navbar {
 		margin: 21px 0;
 	}
 
@@ -3577,6 +3577,156 @@ nav {
 		}
 	}
 }
+
+
+
+// Top Menu
+
+#top-menu {
+	background: $black;
+
+	@media screen and (max-width: 768px) {
+		margin: {
+			left: -15px;
+			right: -15px;
+		}
+
+		& > .container {
+			padding: 0;
+		}
+	}
+
+	.header-central & {
+		text-align: center;
+	}
+
+	nav.top-menu {
+		float: right;
+
+		.header-central & {
+			float: none;
+		}
+
+		ul {
+			@include clear-list;
+
+			li {
+				float: left;
+
+				&:not(.cta) {
+					a {
+						@media screen and (max-width: 768px) {
+							width: 36px;
+							height: 40px;
+							visibility: hidden;
+
+							&:hover,
+							&:active,
+							&:focus {
+								&:before {
+									color: $white !important;
+								}
+							}
+						}
+					}
+				}
+
+				a {
+					display: block;
+					color: $white;
+					font-size: 14px;
+					padding: 5px 10px;
+					@include transition(all .1s ease-in-out);
+
+					&:before {
+						float: left;
+						font: {
+							family: genericons;
+							size: 17px;
+							weight: bold;
+						}
+						margin-right: 7px;
+						color: $primary;
+
+						@media screen and (max-width: 768px) {
+							visibility: visible;
+
+							&:hover,
+							&:active,
+							&:focus {
+								color: $white;
+							}
+						}
+					}
+
+					&:hover,
+					&:active,
+					&:focus {
+						color: $primary;
+					}
+				}
+
+				&.tel {
+					a {
+						&:before {
+							content: '\f50c';
+							font-size: 17px;
+						}
+					}
+				}
+
+				&.email {
+					a {
+						&:before {
+							content: '\f410';
+							font-size: 18px;
+						}
+					}
+				}
+
+				&.map {
+					a {
+						&:before {
+							content: '\f417';
+							font-size: 20px;
+							margin-right: 4px;
+						}
+					}
+				}
+
+				&.mobile {
+					a {
+						&:before {
+							content: '\f453';
+							font-size: 16px;
+						}
+					}
+				}
+
+				&.cta {
+					a {
+						background: #d93a3a;
+						color: $white !important;
+						padding: 5px 40px;
+						margin-left: 14px;
+						font-weight: bold;
+
+						&:before {
+							display: none;
+						}
+
+						&:hover,
+						&:active,
+						&:focus {
+							background: #9f2020;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 
 /* ==========================================================================
 	 Content 2

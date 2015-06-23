@@ -46,6 +46,14 @@ jQuery(document).ready(function($) {
 	    }
 	});
 
+	$(window).scroll(function(){
+	    if( $(window).scrollTop() > 250 && $(window).width() > 768) {
+	        $('#top-menu').slideUp();
+	    } else {
+	        $('#top-menu').slideDown();
+	    }
+	});
+
 	$('img:not([alt])').each(function(){
 	    var $img = $(this);
 	    var filename = $img.attr('src')

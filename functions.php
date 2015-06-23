@@ -260,6 +260,15 @@ add_image_size( 'thumbnail-single', 750, 350, true );
 
 
 /**
+* Register Top Navigation
+*/
+function lsx_register_top_menu() {
+  register_nav_menu('top-menu', __( 'Top Menu' , 'lsx' ));
+}
+add_action( 'init', 'lsx_register_top_menu' );
+
+
+/**
 * Register Social Navigation
 */
 function lsx_register_social_menu() {

@@ -39,7 +39,10 @@ function lsx_body_class($classes) {
   || (is_singular('jetpack-portfolio'))){
   	$classes[] = 'page-has-banner';
   }
-  
+
+  if (has_nav_menu('top-menu')) {
+  	$classes[] = 'has-top-menu';
+  }
 
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');

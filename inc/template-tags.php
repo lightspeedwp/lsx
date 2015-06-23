@@ -385,6 +385,7 @@ if(!function_exists('lsx_nav_menu')){
 	}
 }
 
+
 /**
  * Outputs Pages for the Sitemap Template
  *
@@ -526,4 +527,17 @@ function lsx_footer_subscription_cta() {
 		</div>
 	</section>
 	<?php
+}
+
+add_action( 'lsx_header_top', 'lsx_add_top_menu' );
+function lsx_add_top_menu() {
+	if (has_nav_menu('top-menu')) { ?>
+		<div id="top-menu">
+			<div class="container">
+				<nav class="top-menu" role="navigation">
+		    		<?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
+		    	</nav>	
+	    	</div>
+	    </div>
+	<?php }
 }
