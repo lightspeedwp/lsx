@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$(window).scroll(function(){
-	    if( $(window).scrollTop() > 250 && $(window).width() > 768) {
+	    if ( $(window).scrollTop() > 250 ) {
 	        $('#top-menu').slideUp();
 	    } else {
 	        $('#top-menu').slideDown();
