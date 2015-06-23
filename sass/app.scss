@@ -3729,6 +3729,10 @@ nav {
 						&:focus {
 							background: #9f2020;
 						}
+
+						@media screen and (max-width: 768px) {
+							padding: 5px 22px;
+						}
 					}
 				}
 			}
