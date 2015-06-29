@@ -56,7 +56,7 @@ global $lsx_options;
 			<div class="wrap container" role="document">
 				<div class="content role row">
 
-	<?php } elseif ( is_page_template('page-templates/template-metaplate.php') && is_page('signup') ) { ?>
+	<?php } elseif ( is_page_template('page-templates/template-metaplate-alt.php') ) { ?>
 
 		<?php lsx_header_before(); ?>
 
