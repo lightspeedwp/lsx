@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Metaplate
+ * Template Name: Metaplate Alt
  *
  * @package lsx
  */
