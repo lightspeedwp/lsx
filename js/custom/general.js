@@ -37,6 +37,17 @@ jQuery(document).ready(function($) {
 	$('.dropdown-menu').on('touchstart.dropdown.data-api', function(e){
 	    e.stopPropagation();
 	});
+
+	$(window).scroll(function(){
+	    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {
+	        $('#top-menu').slideUp();
+	        $('header.banner').addClass('scrolled');
+	    } else {
+	        $('#top-menu').slideDown();
+	        $('header.banner').removeClass('scrolled');
+	    }
+	});
+	
 	$(window).resize(function () {
 		$(window).scroll(function(){
 		    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {

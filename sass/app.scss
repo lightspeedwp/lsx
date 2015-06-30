@@ -3753,7 +3753,8 @@ nav {
 	margin-top: 170px;
 	margin-bottom: 60px;
 
-	.has-top-menu & {
+	.has-top-menu &,
+	.has-top-menu.home & {
 		margin-top: 220px;
 
 		@media screen and (max-width: 992px) {
@@ -4091,7 +4092,7 @@ header.page-header {
 	}
 
 	.wrap {
-		margin-top: 230px;
+		margin-top: 280px;
 
 		@media screen and (max-width: 992px) {
   			margin-top: 160px !important;
