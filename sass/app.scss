@@ -1634,12 +1634,6 @@ table {
 
 .page-template-template-metaplate,
 .page-template-template-metaplate-alt {
-	&.signup {
-		.wrap {
-			margin-top: 170px !important;
-		}
-	}
-
 	header.banner {
 		.navbar-header {
 			float: left;
@@ -1672,13 +1666,13 @@ table {
 		}
 	}
 
-	.page-banner {
+	.page-banner,
+	.page-header {
 		display: none !important;
 	}
 
 	.wrap {
 		margin: {
-			top: 128px !important;
 			bottom: 0 !important;
 		}
 		padding-bottom: 0 !important;
