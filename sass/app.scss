@@ -767,7 +767,7 @@ $primary-darker: #2a6496;
 	max-width: 80%;
 	margin: 20px auto;
 
-	@media screen and (max-width: 385px) {
+	@media screen and (max-width: 520px) {
 		max-width: 100%;
 	}
 
@@ -1641,6 +1641,10 @@ table {
 	}
 
 	header.banner {
+		.navbar-header {
+			float: left;
+		}
+
 		.header-links {
 			float: right;
 			margin: 47px 0;
@@ -3757,6 +3761,14 @@ nav {
 
 	.has-top-menu & {
 		margin-top: 220px;
+
+		@media screen and (max-width: 992px) {
+			margin-top: 180px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-top: 20px;
+		}
 	}
 
 	.header-expanded &,
