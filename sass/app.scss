@@ -3659,6 +3659,7 @@ nav {
 						}
 						margin-right: 7px;
 						color: $primary;
+						@include transition(all .1s ease-in-out);
 
 						@media screen and (max-width: 768px) {
 							margin-right: 0;
