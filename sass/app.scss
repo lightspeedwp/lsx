@@ -3753,7 +3753,7 @@ nav {
 	margin-top: 170px;
 	margin-bottom: 60px;
 
-	.has-top-menu & {
+	.has-top-menu.has-page-banner & {
 		margin-top: 220px;
 
 		@media screen and (max-width: 992px) {
@@ -3765,7 +3765,7 @@ nav {
 		}
 	}
 
-	.has-top-menu.home & {
+	.has-top-menu.home.has-page-banner & {
 		margin-top: 280px;
 
 		@media screen and (max-width: 992px) {
