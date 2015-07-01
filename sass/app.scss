@@ -3750,8 +3750,31 @@ nav {
 	 ========================================================================== */
 
 .wrap {
-	margin-top: 170px;
-	margin-bottom: 60px;
+	margin: {
+		top: 170px;
+		bottom: 60px;
+	}
+
+	@media screen and (max-width: 992px) {
+		margin-top: 180px;
+		margin-bottom: 40px;
+	}
+
+	@media screen and (max-width: 768px) {
+		margin-top: 20px;
+	}
+
+	.has-top-menu & {
+		@media screen and (min-width: 992px) {
+			margin-top: 215px;
+		}
+	}
+
+	.has-top-menu.home & {
+		@media screen and (min-width: 992px) {
+			margin-top: 124px;
+		}
+	}
 
 	.has-top-menu.has-page-banner & {
 		margin-top: 220px;
@@ -3780,15 +3803,6 @@ nav {
 	.header-expanded &,
 	.header-central & {
 		margin-top: 320px;
-	}
-
-	@media screen and (max-width: 992px) {
-		margin-top: 180px;
-		margin-bottom: 40px;
-	}
-
-	@media screen and (max-width: 768px) {
-		margin-top: 20px;
 	}
 
 	.home & {
