@@ -239,7 +239,8 @@ function lsx_get_customizer_controls(){
 	  $lsx_controls['settings']['lsx_header_email_address']  = array(
 	  		'default'       =>  'email@address.com', //Default setting/value to save
 	  		'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-	  		'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  		'sanitize_callback' => 'lsx_sanitize_email',
 	  );
 	  /// add the control
 	  $lsx_controls['fields']['lsx_header_email_address'] = array(
