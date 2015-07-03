@@ -88,7 +88,18 @@ global $lsx_options;
 
 			    <div class="header-links">
 			    	<strong><?php _e( 'Get your Tourism Establishment Online', 'lsx' ); ?></strong>
-			    	<span class="email-address"><?php _e( 'Questions? Email Us: ', 'lsx' ); ?><a href="mailto:<?php echo get_theme_mod('lsx_header_email_address','email@address.com')?>"><?php echo get_theme_mod('lsx_header_email_address','email@address.com')?></a></span>
+			    	
+			    	<?php 
+			    	if(is_singular('landing-page')){ 
+			    			$email_address = get_post_meta(get_the_ID(),'email_address',true);
+			    			if(false == $email_address){
+								$email_address = 'email@address.com';
+							}
+			    	}else{
+							$email_address = get_theme_mod('lsx_header_email_address','email@address.com');
+					} ?>
+			    	
+			    	<span class="email-address"><?php _e( 'Questions? Email Us: ', 'lsx' ); ?><a href="mailto:<?php echo $email_address; ?>"><?php echo $email_address; ?></a></span>
 			    </div>
 		  	</div>
 
