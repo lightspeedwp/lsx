@@ -229,7 +229,26 @@ function lsx_get_customizer_controls(){
 	        ),
 	    ),
 	  'priority' => 2,
-	  );  	  
+	  ); 
+	  
+	  
+	  $lsx_controls['sections']['lsx-metaplate'] = array(
+	  		'title'       =>  'Metaplate'
+	  );	  
+	  /// add the setting
+	  $lsx_controls['settings']['lsx_header_email_address']  = array(
+	  		'default'       =>  'email@address.com', //Default setting/value to save
+	  		'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	  		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  		'sanitize_callback' => 'lsx_sanitize_email',
+	  );
+	  /// add the control
+	  $lsx_controls['fields']['lsx_header_email_address'] = array(
+	  		'label'         =>  esc_html__( 'Email Address', 'lsx' ),
+	  		'section'       =>  'lsx-metaplate',
+	  		'type'          =>  'email',
+	  );	 
+	  
 	  
 	$lsx_controls = apply_filters('lsx_customizer_controls', $lsx_controls); 
 
