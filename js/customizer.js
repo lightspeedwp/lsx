@@ -48,9 +48,17 @@
         	$("body").removeClass('header-central');
         	$("body").removeClass('header-expanded');
             $("body").addClass('header-'+newval);
-            console.log($("body"));
         } );
     });
+    
+    
+	//Update the headers layout.css
+    wp.customize("lsx_header_email_address", function(value) {
+        value.bind(function(newval) {
+        	$(".header-links .email-address a").html(newval);
+        	$(".header-links .email-address a").attr('href',newval);            
+        } );
+    });    
 	
 
 } )( jQuery );

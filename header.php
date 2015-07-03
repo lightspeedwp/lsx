@@ -87,8 +87,8 @@ global $lsx_options;
 			    </div>
 
 			    <div class="header-links">
-			    	<strong>Get your Tourism Establishment Online</strong>
-			    	<span>Questions? Email Us: <a href="#">email@address.com</a></span>
+			    	<strong><?php _e( 'Get your Tourism Establishment Online', 'lsx' ); ?></strong>
+			    	<span class="email-address"><?php _e( 'Questions? Email Us: ', 'lsx' ); ?><a href="mailto:<?php echo get_theme_mod('lsx_header_email_address','email@address.com')?>"><?php echo get_theme_mod('lsx_header_email_address','email@address.com')?></a></span>
 			    </div>
 		  	</div>
 
