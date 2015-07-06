@@ -2365,6 +2365,10 @@ table {
 	
 	.wrap & .accommodation {
 		margin-bottom: 20px;
+		
+		& [class*="content-wrapper"] {
+			margin-bottom: 0px;
+		}
 	}
 	
 	article {
