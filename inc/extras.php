@@ -40,6 +40,10 @@ function lsx_body_class($classes) {
   	$classes[] = 'page-has-banner';
   }
 
+  if( is_page() && has_post_thumbnail() && is_front_page() ) {
+  	$classes[] = 'page-has-banner';
+  }
+
   if (has_nav_menu('top-menu')) {
   	$classes[] = 'has-top-menu';
   }
