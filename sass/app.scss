@@ -1206,6 +1206,14 @@ img,
 	@include lsx-parallax-banner;
 }
 
+.page-has-banner {
+	&.home.header-central {
+		.wrap {
+			margin-bottom: 0;
+		}
+	}
+}
+
 .search-submit {
 	padding: 8px 12px;
 	line-height: 1.2;
