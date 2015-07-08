@@ -2092,7 +2092,10 @@ table {
 			font-size: 15px;
 
 			.genericon {
-				font-family: genericons !important;
+				font: {
+					family: genericons !important;
+					size: 26px;
+				}
 			}
 		}
 
