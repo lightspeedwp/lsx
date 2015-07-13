@@ -2091,6 +2091,20 @@ table {
 			margin: 60px 0;
 			font-size: 15px;
 
+			.social-list {
+				@include clear-list;
+
+				li {
+					display: inline-block;
+					margin-right: 10px;
+					margin-bottom: 10px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+
 			.genericon {
 				font: {
 					family: genericons !important;
