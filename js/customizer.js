@@ -50,7 +50,15 @@
             $("body").addClass('header-'+newval);
         } );
     });
-    
+
+    //Update the fixed header in real time...
+	wp.customize( 'lsx_header_fixed', function( value ) {
+		value.bind( function( newval ) {
+			$('body').removeClass('header-true');
+			$('body').removeClass('header-false');
+			$('body').addClass('header-'+newval);
+		} );
+	} );
     
 	//Update the headers layout.css
     wp.customize("lsx_header_email_address", function(value) {
