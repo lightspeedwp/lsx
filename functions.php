@@ -138,6 +138,20 @@ function lsx_get_customizer_controls(){
 	    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
 	  );
 	  
+	  /// add the setting
+	  $lsx_controls['settings']['lsx_header_fixed']  = array(
+	  		'default'       =>  true, //Default setting/value to save
+	  		'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+	  		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  );
+	  
+	  /// add the control
+	  $lsx_controls['fields']['lsx_header_fixed'] = array(
+	  		'label'         =>  __('Fixed Header','lsx'),
+	  		'section'       =>  'lsx-layout',
+	  		'type'       =>  'checkbox',
+	  );	  
+	  
 	  /// add the control
 	  $lsx_controls['fields']['lsx_layout'] = array(
 	    'label'         =>  __('Body','lsx'),
@@ -149,21 +163,6 @@ function lsx_get_customizer_controls(){
 	    	'2cl'
 	    )
 	  );  
-
-	  /// add the setting
-	 $lsx_controls['settings']['lsx_header_fixed']  = array(
-	 		'default'       =>  true, //Default setting/value to save
-	 		'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
-	 		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-	 );
-	 
-	 /// add the control
-	 $lsx_controls['fields']['lsx_header_fixed'] = array(
-	 		'label'         =>  __('Fixed Header','lsx'),
-	 		'section'       =>  'lsx-layout',
-	 		'control'   =>  'LSX_Customize_Header_Fixed_Control',
-	 		'type'       =>  'checkbox',
-	 );
 	
 	  /*
 	   * Font Controls
