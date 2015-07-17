@@ -89,3 +89,21 @@ function lsx_sanitize_email( $email, $setting ) {
 	// If $email is a valid email, return it; otherwise, return the default.
 	return ( ! is_null( $email ) ? $email : $setting->default );
 }
+
+/**
+ * Sanitizes an single or multiple checkbox input
+ *
+ * @package lsx-theme
+ * @subpackage sanitize
+ *
+ * @param array $input
+ * @return array $output
+ */
+function lsx_sanitize_checkbox( $input ) {
+	if ( $input ) {
+		$output = '1';
+	} else {
+		$output = false;
+	}
+	return $output;
+}

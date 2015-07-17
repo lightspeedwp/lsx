@@ -141,7 +141,7 @@ function lsx_get_customizer_controls(){
 	  /// add the setting
 	  $lsx_controls['settings']['lsx_header_fixed']  = array(
 	  		'default'       =>  true, //Default setting/value to save
-	  		'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+	  		'sanitize_callback' => 'lsx_sanitize_checkbox',
 	  		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
 	  );
 	  
