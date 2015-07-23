@@ -3036,8 +3036,16 @@ header.banner {
 	border: none;
 	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .15));
 
-	@media screen and (max-width: 992px) {
-		& > .container {
+	& > .container {
+		@media screen and (min-width: 1200px) {
+			width: 100%;
+			padding: {
+				left: 40px;
+				right: 40px;
+			}
+		}
+
+		@media screen and (max-width: 992px) {
 			position: relative;
 		}
 	}
@@ -3061,22 +3069,34 @@ header.banner {
 		.site-logo-link {
 			img {
 				width: auto;
-				max-height: 70px;
-				margin: 30px 0;
+				max-height: 50px;
+				margin: 40px 0;
 				@include transition(all .3s ease-in-out);
 
 				.header-central &,
 				.header-expanded & {
 					margin: 30px 0 0;
+
+					@media screen and (max-width: 1200px) {
+						margin: 40px 0 !important;
+					}
+
+					@media screen and (max-width: 992px) {
+						margin: 24px 0 !important;
+					}
+
+					@media screen and (max-width: 768px) {
+						margin: 29px 0 !important;
+					}
 				}
 
 				@media screen and (max-width: 992px) {
-					max-height: 64px;
-					margin: 15px 0 !important;
+					margin: 24px 0 !important;
 				}
 
 				@media screen and (max-width: 768px) {
 					max-height: 40px !important;
+					margin: 16px 0 !important;
 				}
 			}
 		}
@@ -3086,12 +3106,14 @@ header.banner {
 		.navbar-header {
 			.site-logo-link {
 				img {
-					max-height: 64px;
-					margin: 15px 0;
+					max-height: 40px;
+				    margin: 29px 0 !important;
 
 					.header-central &,
 					.header-expanded & {
-						margin: 28px 0 3px;
+						margin: 30px 0 0 !important;
+
+
 					}
 				}
 			}
@@ -3150,6 +3172,10 @@ header.banner {
 				text-align: left;
 			}
 		}
+
+		nav.primary-navbar {
+			margin: 30px 0 30px;
+		}
 		
 		.navbar-nav > li {
 		    display: inline-block;
@@ -3189,7 +3215,8 @@ header.banner {
 nav {
 	&.primary-navbar {
 		float: right;
-		margin: 40px 0;
+		margin: 45px 0;
+		padding: 0;
 		border: none !important;
 		@include transition(all .3s ease-in-out);
 
@@ -3219,8 +3246,14 @@ nav {
 			}
 
 			& > li {
+				margin-left: 10px;
+
+				&:first-child {
+					margin-left: 0;
+				}
 
 				@media screen and (max-width: 1200px) {
+					margin-left: 0;
 					float: left;
  					clear: both;
 				}
@@ -3240,11 +3273,10 @@ nav {
 					color: $dark-grey;
 					font: {
 						family: 'Raleway', 'Open Sans', sans-serif;
-						size: 18px;
+						size: 17px;
 						weight: 500;
 					}
-					padding: 15px 24px;
-					transition: none;
+					padding: 10px 16px;
 
 					.caret {
 						margin-left: 6px;
@@ -3271,10 +3303,16 @@ nav {
 				}			
 
 				&:hover,
-				&.open {
+				&.open,
+				&.active {
 					& > a {
-						color: $light-grey;
-						background: $dark-grey;
+						color: $white;
+						background: $primary;
+
+						.caret {
+							border-top-color: $white;
+							border-bottom-color: $white;
+						}
 
 						@media screen and (max-width: 992px) {
 							background: none !important;
@@ -3284,7 +3322,7 @@ nav {
 				}
 
 				ul.dropdown-menu {
-					background: $dark-grey;
+					background: $primary;
 					padding: 0;
 					margin-top: -3px;
 					box-shadow: none;
@@ -3313,12 +3351,12 @@ nav {
 						a {
 							background: none;
 							background-color: inherit;
-							color: $light-grey;
-							font-size: 17px;
+							color: $white;
+							font-size: 16px;
 							border-radius: 0;
 
 							&:hover {
-								background: $mid-grey; 
+								background: $primary-darker; 
 							}
 
 							@media screen and (max-width: 992px) {
@@ -3383,7 +3421,7 @@ nav {
 	}
 
 	header.banner.scrolled &.primary-navbar {
-		margin: 21px 0;
+		margin: 26px 0;
 	}
 
 	&#social-navigation {
@@ -3635,8 +3673,15 @@ nav {
 			left: -15px;
 			right: -15px;
 		}
+	}
 
-		& > .container {
+	& > .container {
+		@media screen and (min-width: 1200px) {
+			width: 100%;
+			padding: 0;
+		}
+
+		@media screen and (max-width: 768px) {
 			padding: 0;
 		}
 	}
@@ -3766,6 +3811,10 @@ nav {
 						padding: 5px 40px;
 						margin-left: 14px;
 						font-weight: bold;
+
+						@media screen and (min-width: 1200px) {
+							padding: 5px 55px;
+						}
 
 						&:before {
 							display: none;
@@ -5254,6 +5303,16 @@ article {
 footer.content-info {
 	background: $blacker;
 	text-align: center;
+
+	@media screen and (min-width: 1200px) {
+		& > .container {
+			width: 100%;
+			padding: {
+				left: 30px;
+				right: 30px;
+			}
+		}
+	}
 
 	.credit {
 		color: $white;
