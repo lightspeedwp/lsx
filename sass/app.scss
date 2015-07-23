@@ -19,7 +19,7 @@ $white: #fff;
 
 $primary: #428bca;
 $primary-darker: #2a6496;
-
+$primary-lighter: #4a9de4;
 
 // ========== Mixins ========== //
 
@@ -3356,7 +3356,7 @@ nav {
 							border-radius: 0;
 
 							&:hover {
-								background: $primary-darker; 
+								background: $primary-lighter; 
 							}
 
 							@media screen and (max-width: 992px) {
