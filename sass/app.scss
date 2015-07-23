@@ -3354,6 +3354,7 @@ nav {
 							color: $white;
 							font-size: 14px;
 							border-radius: 0;
+							@include transition(all .1s ease-in-out);
 
 							&:hover {
 								background: $black; 
