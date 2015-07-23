@@ -3934,7 +3934,7 @@ nav {
 	#primary,
 	#secondary {
 		&.col-sm-12 {
-			max-width: 780px;
+			max-width: 900px;
 			margin: 0 auto;
 			float: none;
 			
@@ -4724,6 +4724,7 @@ header.page-header {
 
 article {
 	margin-bottom: 60px;
+	text-align: center;
 
 	@media screen and (max-width: 992px) {
 		margin-bottom: 50px;
@@ -4850,6 +4851,14 @@ article {
 		}
 
 		.entry-image {
+			.genericon {
+				font-size: 40px;
+				color: $white;
+				background-color: $primary;
+				padding: 17px;
+				@include border-radius(100%);
+			}
+
 			.thumbnail {
 				margin-right: 0 !important;
 				margin-bottom: 0;
@@ -4890,9 +4899,23 @@ article {
 		margin-bottom: 30px;
 	}
 
-	.post-meta,
-	.post-format {
-		color: $dark-grey;
+	.post-meta {
+		font: {
+			size: 15px;
+			style: italic;
+		}
+		color: $grey;
+
+		a {
+			color: $grey;
+			@include transition(all .1s ease-in-out);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: $primary;
+			}
+		}
 
 		& > div {
 			float: left;
