@@ -6,10 +6,10 @@
 // Base class
 .well {
   min-height: 20px;
-  padding: 20px 5px;
+  padding: 19px;
   margin-bottom: 20px;
   background-color: $well-bg;
-  border: 1px solid $well-border;
+  border: 1px solid darken($well-bg, 7%);
   border-radius: $border-radius-base;
   @include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
   blockquote {
@@ -26,9 +26,4 @@
 .well-sm {
   padding: 9px;
   border-radius: $border-radius-small;
-}
-
-.clearfix {
-  float: none;
-  margin: 0;
 }

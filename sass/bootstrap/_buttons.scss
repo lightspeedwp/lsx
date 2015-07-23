@@ -6,6 +6,7 @@
 // Base styles
 // --------------------------------------------------
 
+// Core styles
 .btn {
   display: inline-block;
   margin-bottom: 0; // For input.btn
@@ -19,12 +20,8 @@
   @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
   @include user-select(none);
 
-  &,
-  &:active,
-  &.active {
-    &:focus {
-      @include tab-focus();
-    }
+  &:focus {
+    @include tab-focus();
   }
 
   &:hover,
@@ -48,6 +45,7 @@
     @include opacity(.65);
     @include box-shadow(none);
   }
+
 }
 
 
@@ -60,14 +58,6 @@
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
-// Success appears as green
-.btn-success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-}
-// Info appears as blue-green
-.btn-info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-}
 // Warning appears as orange
 .btn-warning {
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
@@ -75,6 +65,14 @@
 // Danger and error appear as red
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+// Success appears as green
+.btn-success {
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+// Info appears as blue-green
+.btn-info {
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }
 
 
@@ -125,12 +123,13 @@
   // line-height: ensure even-numbered height of button next to large input
   @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 }
-.btn-sm {
+.btn-sm,
+.btn-xs {
   // line-height: ensure proper height of button next to small input
   @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
 }
 .btn-xs {
-  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+  padding: 1px 5px;
 }
 
 
@@ -140,6 +139,8 @@
 .btn-block {
   display: block;
   width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 // Vertically space out multiple block buttons
