@@ -10,8 +10,8 @@ gulp.task('clean-upgrade', function(cb) {
 
 gulp.task('bootstrap-upgrade', function() {
 	gulp.src('components/bower/sass-bootstrap/lib/*.*').pipe(gulp.dest('sass/bootstrap/').on('error', function (err) {console.log('Error!', err);}));
-	gulp.src('components/bower/sass-bootstrap/dist/js/bootstrap.min.js').pipe(gulp.dest('js/').on('error', function (err) {console.log('Error!', err);}));
-	console.log('Bootstrap Files copied over');	
+	gulp.src('components/bower/sass-bootstrap/dist/js/bootstrap.min.js').pipe(gulp.dest('js/vendor/').on('error', function (err) {console.log('Error!', err);}));
+	console.log('Bootstrap Files copied over');
 });
 
 gulp.task('upgrade-components', ['clean-upgrade'], function() {

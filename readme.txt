@@ -99,6 +99,10 @@ Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/
 Support - https://www.lsdev.biz/contact-us/ 
 
 == Changlog ==
+= 1.2.5 =
+* Renamed the scripts being included more intuitively.
+* Removed unused JS and CSS files.
+* Added in a Customizer option to create a "Sticky" header.
 
 = 1.2.4 =
 * Removed the unused readme.txt in the languages directory.
