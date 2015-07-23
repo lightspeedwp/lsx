@@ -13,13 +13,31 @@
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() ) { ?>
 		<div class="entry-image">
-			<a class="thumbnail pull-left" href="<?php the_permalink(); ?>">
-				 <?php //lsx_thumbnail( 'thumbnail-single' ); ?>
-				 <?php lsx_thumbnail('thumbnail-single'); ?>
+			<a class="thumbnail" href="<?php the_permalink(); ?>">
+				 <img <?php lsx_thumbnail('banner'); ?>>
 			</a>
+			
+			<?php 
+				$format = get_post_format();
+				if ( false === $format ) {
+					$format = 'standard';
+				}
+			?>
+			<span class="genericon genericon-<?php echo $format ?>"></span>
+
 			<br clear="all" />
 		</div>
 	<?php } ?>
+
+		<div class="entry-meta">
+			<?php if ( 'post' == get_post_type() ) : ?>
+				
+				<?php lsx_post_format(); ?>
+				  
+			<?php endif; ?>
+
+			<?php lsx_post_meta(); ?>	
+		</div><!-- .footer-meta -->
 
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -47,21 +65,17 @@
 					'before' => '<div class="page-links">' . __( 'Pages:', 'lsx' ),
 					'after'  => '</div>',
 				) );
-			?>		
+			?>
+
 		</div><!-- .entry-content -->
 	<?php endif; ?>
 
+	<div class="post-tags">
+				<?php echo get_the_tag_list('<div class="post-tags"></div>'); ?>
+			</div>
+
 	<?php lsx_entry_bottom(); ?>
 
-	<footer class="footer-meta">
-		<?php if ( 'post' == get_post_type() ) : ?>
-			
-			<?php lsx_post_format(); ?>
-			  
-		<?php endif; ?>
-
-		<?php lsx_post_meta(); ?>	
-	</footer><!-- .footer-meta -->
 
 	<div class="clearfix"></div>
 

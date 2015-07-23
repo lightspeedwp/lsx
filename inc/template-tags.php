@@ -94,8 +94,6 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
 		
 		<div class="post-meta">
-			<div class="post-date">
-				<span class="genericon genericon-month"></span>
 				<?php
 					$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 					
@@ -105,24 +103,18 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 						esc_attr( get_the_modified_date( 'c' ) ),
 						get_the_modified_date()
 					);
-					printf( '<a href="%2$s" rel="bookmark">%3$s</a>',
+					printf( 'Posted on <a href="%2$s" rel="bookmark">%3$s</a>',
 						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
 						esc_url( get_permalink() ),
 						$time_string
 					);
 				?>
-			</div>
 
-			<div class="post-author">
-
-				<span class="genericon genericon-user"></span>
-
-				<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
+				<?php printf( 'by <a class="url fn n" href="%2$s">%3$s</a>',
 					_x( 'Author', 'Used before post author name.', 'lsx' ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
 				); ?>
-			</div>
 
 
 			<?php 
@@ -133,15 +125,8 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
 		    	}
 		    	if(!empty($cats)){ ?>
-					<div class="post-categories">
-						<span class="genericon genericon-category"></span>		    	
-						<?php echo implode(', ', $cats); ?>
-					</div>					
+						in <?php echo implode(', ', $cats); ?>
 			<?php } ?>
-
-
-			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
-
 			
 			<div class="clearfix"></div>
 		</div>
