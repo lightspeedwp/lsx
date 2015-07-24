@@ -16,8 +16,6 @@
 			<a class="thumbnail" href="<?php the_permalink(); ?>">
 				 <img <?php lsx_thumbnail('banner'); ?>>
 			</a>
-
-			<br clear="all" />
 		</div>
 	<?php } ?>
 
@@ -47,9 +45,9 @@
 		</h1>		
 	</header><!-- .entry-header -->	
 
-	<?php if ( !is_singular() ) : // Only display Excerpts for Search and Archives ?>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>		
+	<?php if ( !is_singular() && !has_post_format( array('video', 'audio', 'quote') ) ) : // Only display Excerpts for Search and Archives ?>
+		<div class="entry-summary"> 
+			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 	<?php else : ?>
 		<div class="entry-content">
@@ -66,11 +64,13 @@
 
 		</div><!-- .entry-content -->
 	<?php endif; ?>
+
 	<div class="post-tags-wrapper">
-	<div class="post-tags">
-	<?php echo get_the_tag_list('<div class="post-tags-wrapper"><div class="post-tags"></div></div>'); ?>
+		<div class="post-tags">
+			<?php echo get_the_tag_list(''); ?>
+		</div>
 	</div>
-	</div>
+
 	<?php lsx_entry_bottom(); ?>
 
 

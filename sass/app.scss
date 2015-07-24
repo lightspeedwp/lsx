@@ -1118,7 +1118,7 @@ ul {
 }
 
 .lsx-breaker {
-	margin: 100px -9999rem 140px;
+	margin: 100px -9999rem 160px;
 	padding: 1px 9999rem;
 	border-bottom: 1px solid #ddd;
 }
@@ -4808,8 +4808,9 @@ article {
 	}
 
 	header.entry-header {
+		text-align: center;
+
 		h1.entry-title {
-			text-align: center;
 			position: relative;
 			line-height: 130%;
 			font: {
@@ -4870,15 +4871,15 @@ article {
 					}
 				}
 			}
+		}
 
-			.format-link {
-				font-size: 40px;
-				color: $white;
-				background-color: $primary;
-				margin: -40px 0 30px;
-				padding: 17px;
-				@include border-radius(100%);
-			}
+		.format-link {
+			font-size: 40px;
+			color: $white;
+			background-color: $primary;
+			margin: -40px 0 30px;
+			padding: 17px;
+			@include border-radius(100%);
 		}
 
 		.entry-image {
