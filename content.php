@@ -22,8 +22,10 @@
 				if ( false === $format ) {
 					$format = 'standard';
 				}
+
+				$format_link = get_post_format_link($format);
 			?>
-			<span class="genericon genericon-<?php echo $format ?>"></span>
+			<a href="<?php $format_link; ?>" class="genericon genericon-<?php echo $format ?>"></a>
 
 			<br clear="all" />
 		</div>
