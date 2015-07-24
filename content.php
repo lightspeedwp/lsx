@@ -16,20 +16,21 @@
 			<a class="thumbnail" href="<?php the_permalink(); ?>">
 				 <img <?php lsx_thumbnail('banner'); ?>>
 			</a>
-			
-			<?php 
-				$format = get_post_format();
-				if ( false === $format ) {
-					$format = 'standard';
-				}
-
-				$format_link = get_post_format_link($format);
-			?>
-			<a href="<?php $format_link; ?>" class="genericon genericon-<?php echo $format ?>"></a>
 
 			<br clear="all" />
 		</div>
 	<?php } ?>
+
+	<?php 
+		$format = get_post_format();
+		if ( false === $format ) {
+			$format = 'standard';
+		}
+
+		$format_link = get_post_format_link($format);
+		?>
+
+		<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
 
 		<div class="entry-meta">
 			<?php lsx_post_meta(); ?>	

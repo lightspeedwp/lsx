@@ -4870,12 +4870,8 @@ article {
 					}
 				}
 			}
-		}
 
-		.entry-image {
-			text-align: center;
-
-			.genericon {
+			.format-link {
 				font-size: 40px;
 				color: $white;
 				background-color: $primary;
@@ -4883,7 +4879,12 @@ article {
 				padding: 17px;
 				@include border-radius(100%);
 			}
+		}
 
+		.entry-image {
+			text-align: center;
+
+			
 			.thumbnail {
 				margin-right: 0 !important;
 				margin-bottom: 0;
