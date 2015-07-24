@@ -654,7 +654,7 @@ $primary-lighter: #4a9de4;
 		top: 0;
 		margin-top: 0;
 		background-color: $black;
-		padding: 390px 0;
+		padding: 360px 0;
 		z-index: -1;
 		@include transition(all .08s ease-in-out);
 		
@@ -4802,16 +4802,29 @@ article {
 
 	header.entry-header {
 		h1.entry-title {
+			text-align: center;
 			position: relative;
 			line-height: 130%;
+			font-size: 42px;
 			margin: {
 				top: 30px;
-				bottom: 20px;
+				bottom: 40px;
 			}
+			@include transition(all .1s ease-in-out);
 
 			@media screen and (max-width: 768px) {
 				line-height: 130%;
 				font-size: 30px;
+			}
+
+			a {
+				color: $black !important;
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: $primary-darker !important;
+				}
 			}
 
 			.label {
@@ -4850,10 +4863,13 @@ article {
 		}
 
 		.entry-image {
+			text-align: center;
+
 			.genericon {
 				font-size: 40px;
 				color: $white;
 				background-color: $primary;
+				margin: -40px 0 30px;
 				padding: 17px;
 				@include border-radius(100%);
 			}
@@ -4861,6 +4877,11 @@ article {
 			.thumbnail {
 				margin-right: 0 !important;
 				margin-bottom: 0;
+
+				& > img {
+					max-width: 900px;
+					margin-left: -115px;
+				}
 
 				&.pull-left,
 				&.pull-right {
@@ -4895,7 +4916,18 @@ article {
 	}
 
 	.entry-summary {
+		font: {
+			family: 'Noto Serif', sans-serif;
+			size: 18px;
+		}
+		color: $dark-grey;
+		line-height: 1.98;
 		margin-bottom: 30px;
+
+		.moretag {
+			border-bottom: 1px solid;
+			padding-bottom: 3px;
+		}
 	}
 
 	.post-meta {
@@ -4984,9 +5016,8 @@ article {
 		}
 	}
 
-	footer.footer-meta {
-		border-top: 3px solid #ddd;
-		padding: 20px 0;
+	.entry-meta {
+		text-align: center;
 	}
 }
 

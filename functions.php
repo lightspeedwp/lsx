@@ -278,6 +278,8 @@ $lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
 function lsx_add_viewport_meta_tag() {
 	?>
   		<meta name="viewport" content="width=device-width">
+  		<!-- Noto Sans -->
+  		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:700' rel='stylesheet' type='text/css'>
   	<?php }
 add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
 
@@ -308,5 +310,13 @@ function lsx_register_social_menu() {
   register_nav_menu('social', __( 'Social Menu' , 'lsx' ));
 }
 add_action( 'init', 'lsx_register_social_menu' );
+
+
+// Replaces the excerpt "more" text by a link
+function new_excerpt_more($more) {
+       global $post;
+	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue reading</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 ?>
