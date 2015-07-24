@@ -4812,7 +4812,10 @@ article {
 			text-align: center;
 			position: relative;
 			line-height: 130%;
-			font-size: 42px;
+			font: {
+				size: 42px;
+				weight: 800;
+			}
 			margin: {
 				top: 30px;
 				bottom: 40px;
@@ -4886,7 +4889,7 @@ article {
 				margin-bottom: 0;
 
 				& > img {
-					max-width: 900px;
+					min-width: 900px;
 					margin-left: -115px;
 				}
 
