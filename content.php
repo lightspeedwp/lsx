@@ -32,12 +32,6 @@
 	<?php } ?>
 
 		<div class="entry-meta">
-			<?php if ( 'post' == get_post_type() ) : ?>
-				
-				<?php lsx_post_format(); ?>
-				  
-			<?php endif; ?>
-
 			<?php lsx_post_meta(); ?>	
 		</div><!-- .footer-meta -->
 

@@ -137,7 +137,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 /**
  * Add customisable post format html.
  */
-/*
+
 if ( ! function_exists( 'lsx_post_format' ) ) {
 	function lsx_post_format() {
 		
