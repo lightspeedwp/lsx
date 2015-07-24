@@ -60,7 +60,7 @@ function lsx_setup() {
 	*
 	* See: https://codex.wordpress.org/Post_Formats
 	*/
-	add_theme_support( 'post-formats', array('image', 'video', 'gallery', 'audio', 'link', 'quote') );
+	add_theme_support( 'post-formats', array('image', 'video', 'gallery', 'audio', 'link', 'quote', 'aside') );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

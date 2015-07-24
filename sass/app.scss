@@ -4448,7 +4448,7 @@ header.page-header {
 	header.page-header {
 		h1.page-title {
 			width: 100%;
-			max-width: 1140px;
+			max-width: 100%;
 			color: $white;
 			text-align: center;
 			font-size: 58px;
@@ -4732,6 +4732,12 @@ header.page-header {
 article {
 	margin-bottom: 60px;
 
+	.blog & {
+		&:first-child {
+			margin-top: 80px;
+		} 
+	}
+
 	@media screen and (max-width: 992px) {
 		margin-bottom: 50px;
 	}
@@ -4805,6 +4811,23 @@ article {
 
 	.single & {
 		margin-bottom: 0;
+	}
+
+	&.post_format-post-format-quote {
+		h1.entry-title {
+			display: none;
+		}
+
+		.entry-content {
+			line-height: 1.6;
+			text-align: center;
+			margin-top: 20px;
+			font: {
+				family: Noto Serif, serif;
+				size: 33px;
+				style: italic;
+			}
+		}
 	}
 
 	header.entry-header {
@@ -4944,6 +4967,7 @@ article {
 
 	.post-tags-wrapper {
 		text-align: center;
+		margin-top: 40px;
 
 		.post-tags {
 			display: inline-block;
