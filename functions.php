@@ -319,4 +319,11 @@ function lsx_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'lsx_excerpt_more');
 
+function get_my_url() {
+    if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+        return false;
+ 
+    return esc_url_raw( $matches[1] );
+}
+
 ?>

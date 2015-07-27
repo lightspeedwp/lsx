@@ -24,7 +24,11 @@ get_header(); ?>
 			<header class="page-header">
 				
 				<h1 class="page-title">
-					<?php the_archive_title(); ?>
+					<?php if ( has_post_format() && !is_category() && !is_tag() ) { ?>
+						Type: <?php the_archive_title(); ?>
+					<?php } else { ?>
+						<?php the_archive_title(); ?>
+					<?php } ?>
 				</h1>
 
 			</header><!-- .page-header -->
