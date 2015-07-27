@@ -78,10 +78,6 @@ endif;
 
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Add customisable post meta */
-/*-----------------------------------------------------------------------------------*/
-
 /**
  * Add customisable post meta.
  *
@@ -94,8 +90,6 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
 		
 		<div class="post-meta">
-			<div class="post-date">
-				<span class="genericon genericon-month"></span>
 				<?php
 					$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 					
@@ -105,24 +99,18 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 						esc_attr( get_the_modified_date( 'c' ) ),
 						get_the_modified_date()
 					);
-					printf( '<a href="%2$s" rel="bookmark">%3$s</a>',
+					printf( '%1$s <a href="%2$s" rel="bookmark">%3$s</a>',
 						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
 						esc_url( get_permalink() ),
 						$time_string
 					);
 				?>
-			</div>
 
-			<div class="post-author">
-
-				<span class="genericon genericon-user"></span>
-
-				<?php printf( '<a class="url fn n" href="%2$s">%3$s</a>',
+				<?php printf( 'by <a class="url fn n" href="%2$s">%3$s</a>',
 					_x( 'Author', 'Used before post author name.', 'lsx' ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
 				); ?>
-			</div>
 
 
 			<?php 
@@ -133,15 +121,8 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
 		    	}
 		    	if(!empty($cats)){ ?>
-					<div class="post-categories">
-						<span class="genericon genericon-category"></span>		    	
-						<?php echo implode(', ', $cats); ?>
-					</div>					
+						<?php _e('in','lsx'); ?> <?php echo implode(', ', $cats); ?>
 			<?php } ?>
-
-
-			<?php echo get_the_tag_list('<div class="post-tags"><span class="genericon genericon-tag"></span> ',', ','</div>'); ?>
-
 			
 			<div class="clearfix"></div>
 		</div>
@@ -385,6 +366,7 @@ if(!function_exists('lsx_nav_menu')){
 	}
 }
 
+
 /**
  * Outputs Pages for the Sitemap Template
  *
@@ -505,7 +487,7 @@ function lsx_sitemap_taxonomy_clouds(){
  */
 add_action( 'lsx_footer_before', 'lsx_footer_subscription_cta', 10 );
 function lsx_footer_subscription_cta() {
-
+	if(!function_exists('lsx_is_form_enabled')){ return; }
 	$subscribe_form_id = lsx_is_form_enabled('subscribe');
 	if(false == $subscribe_form_id) { return; }
 
@@ -526,4 +508,56 @@ function lsx_footer_subscription_cta() {
 		</div>
 	</section>
 	<?php
+}
+
+/**
+ * Adds our top menu to the theme
+ *
+ * @package 	lsx
+ * @subpackage	hooks
+ * @category	menu
+ */
+add_action( 'lsx_header_top', 'lsx_add_top_menu' );
+function lsx_add_top_menu() {
+	if (has_nav_menu('top-menu')) { ?>
+		<div id="top-menu">
+			<div class="container">
+				<nav class="top-menu" role="navigation">
+		    		<?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
+		    	</nav>	
+	    	</div>
+	    </div>
+	<?php }
+}
+
+/**
+ * Checks if a caldera form with your slug exists
+ *
+ * @package 	lsx
+ * @subpackage	template-tag
+ * @category 	forms
+ */
+if ( ! function_exists( 'lsx_post_meta' ) ) {
+	function lsx_is_form_enabled($slug = false) {
+		if(false == $slug){ return false; }
+	
+		$match = false;
+		$forms = get_option( '_caldera_forms' , false );
+		if(false !== $forms ) {
+			foreach($forms as $form_id=>$form_maybe){
+				if( trim(strtolower($slug)) == strtolower($form_maybe['name']) ){
+					$match = $form_id;
+					break;
+				}
+			}
+		}
+		if( false === $match ){
+			$is_form = Caldera_Forms::get_form( strtolower( $slug ) );
+			if( !empty( $is_form ) ){
+				return strtolower( $slug );
+			}
+		}
+	
+		return $match;
+	}
 }

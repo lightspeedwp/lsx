@@ -92,7 +92,8 @@ function lsx_get_customizer_controls(){
 	 		'default' => esc_html__( 'Default', 'lsx' ),
 	   		'red' => esc_html__( 'Red', 'lsx' ),
 	 	  	'green' => esc_html__( 'Green', 'lsx' ),
-	      	'brown' => esc_html__( 'Brown', 'lsx' )
+	      	'brown' => esc_html__( 'Brown', 'lsx' ),
+	      	'orange' => esc_html__( 'Orange', 'lsx' )
 	 	),
 	 	'control'   =>  'LSX_Customize_Colour_Control',
 		'priority' => 1,
@@ -136,6 +137,20 @@ function lsx_get_customizer_controls(){
 	    'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
 	    'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
 	  );
+	  
+	  /// add the setting
+	  $lsx_controls['settings']['lsx_header_fixed']  = array(
+	  		'default'       =>  false, //Default setting/value to save
+	  		'sanitize_callback' => 'lsx_sanitize_checkbox',
+	  		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  );
+	  
+	  /// add the control
+	  $lsx_controls['fields']['lsx_header_fixed'] = array(
+	  		'label'         =>  __('Fixed Header','lsx'),
+	  		'section'       =>  'lsx-layout',
+	  		'type'       =>  'checkbox',
+	  );	  
 	  
 	  /// add the control
 	  $lsx_controls['fields']['lsx_layout'] = array(
@@ -228,7 +243,26 @@ function lsx_get_customizer_controls(){
 	        ),
 	    ),
 	  'priority' => 2,
-	  );  	  
+	  ); 
+	  
+	  
+	  $lsx_controls['sections']['lsx-metaplate'] = array(
+	  		'title'       =>  'Metaplate'
+	  );	  
+	  /// add the setting
+	  $lsx_controls['settings']['lsx_header_email_address']  = array(
+	  		'default'       =>  'email@address.com', //Default setting/value to save
+	  		'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
+	  		'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	  		'sanitize_callback' => 'lsx_sanitize_email',
+	  );
+	  /// add the control
+	  $lsx_controls['fields']['lsx_header_email_address'] = array(
+	  		'label'         =>  esc_html__( 'Email Address', 'lsx' ),
+	  		'section'       =>  'lsx-metaplate',
+	  		'type'          =>  'email',
+	  );	 
+	  
 	  
 	$lsx_controls = apply_filters('lsx_customizer_controls', $lsx_controls); 
 
@@ -244,6 +278,8 @@ $lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
 function lsx_add_viewport_meta_tag() {
 	?>
   		<meta name="viewport" content="width=device-width">
+  		<!-- Noto Sans -->
+  		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:700' rel='stylesheet' type='text/css'>
   	<?php }
 add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
 
@@ -259,11 +295,35 @@ add_image_size( 'lsx-thumbnail-single', 750, 350, true );
 
 
 /**
+* Register Top Navigation
+*/
+function lsx_register_top_menu() {
+  register_nav_menu('top-menu', __( 'Top Menu' , 'lsx' ));
+}
+add_action( 'init', 'lsx_register_top_menu' );
+
+
+/**
 * Register Social Navigation
 */
 function lsx_register_social_menu() {
   register_nav_menu('social', __( 'Social Menu' , 'lsx' ));
 }
 add_action( 'init', 'lsx_register_social_menu' );
+
+
+// Replaces the excerpt "more" text by a link
+function lsx_excerpt_more($more) {
+       global $post;
+	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue reading</a>';
+}
+add_filter('excerpt_more', 'lsx_excerpt_more');
+
+function get_my_url() {
+    if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+        return false;
+ 
+    return esc_url_raw( $matches[1] );
+}
 
 ?>

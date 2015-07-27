@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: LSX 1.2.4\n"
+"Project-Id-Version: LSX 1.2.5\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/lsx-theme\n"
-"POT-Creation-Date: 2015-04-15 07:59:41+00:00\n"
+"POT-Creation-Date: 2015-07-27 17:08:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: 404.php:15
-msgid "Oops! That page can&rsquo;t be found."
+msgid "Whoops!"
 msgstr ""
 
 #: 404.php:19
@@ -38,12 +38,8 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: author.php:30
-msgid "Published by %s"
-msgstr ""
-
-#: author.php:39
-msgid "Posts by %s"
+#: author.php:24
+msgid "Author: %s"
 msgstr ""
 
 #: comment.php:12
@@ -84,27 +80,27 @@ msgstr ""
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: content-page.php:25 content-portfolio-single.php:49 content-single.php:44
-#: content.php:68 image.php:43 image.php:109
+#: content-page.php:23 content-portfolio-single.php:53 content-single.php:44
+#: content.php:91 image.php:43 image.php:109
 #: page-templates/template-archives.php:48
 #: page-templates/template-sitemap.php:33
 msgid "Edit"
 msgstr ""
 
-#: content-portfolio-single.php:44 content-single.php:31 content.php:47
+#: content-portfolio-single.php:48 content-single.php:31 content.php:72
 #: image.php:95 page-templates/template-portfolio.php:28
 msgid "Pages:"
 msgstr ""
 
-#: content.php:27 content.php:30
+#: content.php:50 content.php:53
 msgid "Featured"
 msgstr ""
 
-#: content.php:42
+#: content.php:67
 msgid "Continue reading %s"
 msgstr ""
 
-#: footer.php:43
+#: footer.php:44 footer.php:81
 msgid "&#169; %1$s %2$s All Rights Reserved."
 msgstr ""
 
@@ -132,52 +128,76 @@ msgstr ""
 msgid "Brown"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:96
+msgid "Orange"
+msgstr ""
+
+#: functions.php:118
 msgid "Header"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:130
 msgid "Layout"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:131
 msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
 msgstr ""
 
-#: functions.php:142
-msgid "Body"
+#: functions.php:150
+msgid "Fixed Header"
 msgstr ""
 
 #: functions.php:157
+msgid "Body"
+msgstr ""
+
+#: functions.php:172
 msgid "Font"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:190
 msgid "Raleway"
 msgstr ""
 
-#: functions.php:181 functions.php:223
+#: functions.php:196 functions.php:238
 msgid "Open Sans"
 msgstr ""
 
-#: functions.php:189
+#: functions.php:204
 msgid "Noto Serif"
 msgstr ""
 
-#: functions.php:195 functions.php:203 functions.php:209
+#: functions.php:210 functions.php:218 functions.php:224
 msgid "Noto Sans"
 msgstr ""
 
-#: functions.php:217
+#: functions.php:232
 msgid "Alegreya"
 msgstr ""
 
-#: functions.php:265
+#: functions.php:261
+msgid "Email Address"
+msgstr ""
+
+#: functions.php:301
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:310
 msgid "Social Menu"
 msgstr ""
 
-#: header.php:29
+#: header.php:32
 msgid "Toggle navigation"
+msgstr ""
+
+#: header.php:90
+msgid "Get your Tourism Establishment Online"
+msgstr ""
+
+#: header.php:102
+msgid "Questions? Email Us: "
 msgstr ""
 
 #: image.php:33
@@ -216,15 +236,15 @@ msgstr ""
 msgid "Disable"
 msgstr ""
 
-#: inc/extras.php:81
+#: inc/extras.php:84
 msgid "Page %s"
 msgstr ""
 
-#: inc/jetpack.php:227 inc/template-tags.php:186
+#: inc/jetpack.php:227 inc/template-tags.php:168
 msgid "Client"
 msgstr ""
 
-#: inc/jetpack.php:236 inc/template-tags.php:215
+#: inc/jetpack.php:236 inc/template-tags.php:197
 msgid "Website"
 msgstr ""
 
@@ -252,68 +272,76 @@ msgstr ""
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/layout.php:86
+#: inc/layout.php:122
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/template-tags.php:108
+#: inc/template-tags.php:103
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr ""
 
-#: inc/template-tags.php:120
+#: inc/template-tags.php:110
 msgctxt "Used before post author name."
 msgid "Author"
 msgstr ""
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:121
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:164
+#: inc/template-tags.php:124
+msgid "in"
+msgstr ""
+
+#: inc/template-tags.php:146
 msgid "View all %s posts"
 msgstr ""
 
-#: inc/template-tags.php:197
+#: inc/template-tags.php:179
 msgid "Industry"
 msgstr ""
 
-#: inc/template-tags.php:206
+#: inc/template-tags.php:188
 msgid "Services"
 msgstr ""
 
-#: inc/template-tags.php:271
+#: inc/template-tags.php:253
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/template-tags.php:272
+#: inc/template-tags.php:254
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:273
+#: inc/template-tags.php:255
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:316
+#: inc/template-tags.php:298
 msgctxt "Previous post link"
 msgid "<div class=\"previous\"><p class=\"nav-links-description\">Previous Post:</p><span class=\"meta-nav\">&larr;</span> %title</div>"
 msgstr ""
 
-#: inc/template-tags.php:321
+#: inc/template-tags.php:303
 msgctxt "Next post link"
 msgid "<div class=\"next\"><p class=\"nav-links-description\">Next Post:</p>%title <span class=\"meta-nav\">&rarr;</span></div>"
 msgstr ""
 
-#: inc/template-tags.php:379
+#: inc/template-tags.php:362
 msgid "Create a menu and assign it here via the \"Navigation\" panel."
 msgstr ""
 
-#: inc/template-tags.php:408
+#: inc/template-tags.php:392
 msgid "Pages"
 msgstr ""
 
-#: inc/template-tags.php:458 inc/template-tags.php:490
+#: inc/template-tags.php:442 inc/template-tags.php:474
 msgid "%1$s"
+msgstr ""
+
+#: inc/template-tags.php:504
+msgid "Subscribe to Our Newsletter"
 msgstr ""
 
 #: inc/widgets.php:10
@@ -328,7 +356,11 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: inc/wp_bootstrap_navwalker.php:206
+#: inc/widgets.php:37
+msgid "Footer Call to Action"
+msgstr ""
+
+#: inc/wp_bootstrap_navwalker.php:208
 msgid "Add a menu"
 msgstr ""
 
@@ -405,6 +437,14 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Home Hero"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Metaplate Alt"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Metaplate"
 msgstr ""
 
 #. Template Name of the plugin/theme

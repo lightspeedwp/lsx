@@ -22,15 +22,15 @@ function lsx_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-
-	wp_enqueue_script('lsx_scripts', get_template_directory_uri() . '/js/scripts.min.js', false, null, false);
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', false, 'c9f983e2965b9c7888dac272e56c4f4b', false);
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.7.0.min.js', false, null, false);
 	wp_enqueue_script('mousewheel', get_template_directory_uri() . '/js/vendor/jquery.mousewheel.min.js', false, null, false);
 	wp_enqueue_script('smoothscroll', get_template_directory_uri() . '/js/vendor/jquery.simplr.smoothscroll.min.js', false, null, false);
 	wp_enqueue_script('sticky', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', false, null, false);
+	
 	wp_enqueue_script('masonry');
-	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js', array('jquery','masonry'));	
-	wp_enqueue_script('lsx_custom', get_template_directory_uri() . '/js/custom/general.js', array('masonry'), null, false);
+	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/vendor/imagesloaded.pkgd.min.js', array('jquery','masonry'));	
+	wp_enqueue_script('lsx_script', get_template_directory_uri() . '/js/lsx-script.js', array('masonry'), null, false);
 	
 	//Set some parameters that we can use in the JS
 	$is_portfolio = false;
@@ -42,15 +42,13 @@ function lsx_scripts() {
 	);
 	//Set the columns for the archives
 	$param_array['columns'] = apply_filters('lsx_archive_column_number',3);
-	
-	wp_localize_script( 'lsx_custom', 'lsx_params', $param_array );
+	wp_localize_script( 'lsx_script', 'lsx_params', $param_array );
 	
 	
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css' );
 	
 	if(is_child_theme() && file_exists(get_stylesheet_directory() . '/custom.css')) {
 		wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css' );
-	
 	}
 
 	ob_start();

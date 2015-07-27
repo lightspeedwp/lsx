@@ -48,9 +48,28 @@
         	$("body").removeClass('header-central');
         	$("body").removeClass('header-expanded');
             $("body").addClass('header-'+newval);
-            console.log($("body"));
         } );
     });
+
+    //Update the fixed header in real time...
+	wp.customize( 'lsx_header_fixed', function( value ) {
+		value.bind( function( newval ) {
+			
+			if(true == newval){
+				$('body header.navbar').addClass('navbar-static-top');
+			}else{
+				$('body header.navbar').removeClass('navbar-static-top');
+			}
+		} );
+	} );
+    
+	//Update the headers layout.css
+    wp.customize("lsx_header_email_address", function(value) {
+        value.bind(function(newval) {
+        	$(".header-links .email-address a").html(newval);
+        	$(".header-links .email-address a").attr('href',newval);            
+        } );
+    });    
 	
 
 } )( jQuery );

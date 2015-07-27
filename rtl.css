@@ -20,15 +20,15 @@ body {
 
 
 @media (min-width: 1200px) {
-	body.rtl header.navbar nav {
+	body.rtl.header-inline  header.navbar nav {
 		float:left;
 	}
-	body.rtl header.navbar .navbar-header {
+	body.rtl.header-inline  header.navbar .navbar-header {
   	  	float: right;
 	}	
 }
 
-body.rtl header.banner nav .nav.navbar-nav li ul.dropdown-menu {
+body.rtl.header-inline header.banner nav .nav.navbar-nav li ul.dropdown-menu {
 	float:right;
 	right:0;
 	text-align:right;
@@ -48,6 +48,7 @@ body.rtl header.banner nav .nav.navbar-nav li a .caret {
 	}
 }
 
+body.rtl code {white-space: normal;}
 
 /*
  *	Form Styles 

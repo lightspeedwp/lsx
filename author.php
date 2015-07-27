@@ -18,25 +18,10 @@ get_header(); ?>
 		<?php lsx_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>
-			<?php
-			$author_id = get_the_author_meta('ID');
-			if ( get_post_type() == 'post' ) {
-				?>
-					<div class="author-box well col-xs-12">
-						<div class="image col-sm-2">
-							<img class="pull-left img-circle" src="<?php echo lsx_get_avatar_url( $author_id, '80' ); ?>" alt="Author Image"/>
-						</div>
-						<div class="content col-sm-10">
-							<h3><?php printf( __('Published by %s','lsx'), get_the_author_meta( 'display_name', $author_id )) ; ?></h3>
-							<p><?php echo get_the_author_meta( 'description', $author_id ); ?></p>
-						</div>						
-					</div>
-				<?php								
-			};
-			?>
+
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php printf( __( 'Posts by %s', 'lsx' ), get_the_author() ); ?>
+					<?php printf( __( 'Author: %s', 'lsx' ), get_the_author() ); ?>
 				</h1>
 
 			</header><!-- .page-header -->

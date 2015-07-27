@@ -60,7 +60,7 @@ function lsx_setup() {
 	*
 	* See: https://codex.wordpress.org/Post_Formats
 	*/
-	add_theme_support( 'post-formats', array('image', 'video', 'gallery') );
+	add_theme_support( 'post-formats', array('image', 'video', 'gallery', 'audio', 'link', 'quote', 'aside') );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -119,33 +119,3 @@ function lsx_page_comments_off( $data ) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
-
-/**
- * Checks if a caldera form with your slug exists
- *
- * @package 	classybeds-lsx-child
- * @subpackage	setup
- * @category 	helper
- */
-function lsx_is_form_enabled($slug = false) {
-	if(false == $slug){ return false; }
-
-	$match = false;
-	$forms = get_option( '_caldera_forms' , false );
-	if(false !== $forms ) {
-		foreach($forms as $form_id=>$form_maybe){
-			if( trim(strtolower($slug)) == strtolower($form_maybe['name']) ){
-				$match = $form_id;
-				break;
-			}
-		}
-	}
-	if( false === $match ){
-		$is_form = Caldera_Forms::get_form( strtolower( $slug ) );
-		if( !empty( $is_form ) ){
-			return strtolower( $slug );
-		}
-	}
-	
-	return $match;
-}

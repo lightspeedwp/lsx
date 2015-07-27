@@ -39,11 +39,25 @@ jQuery(document).ready(function($) {
 	});
 
 	$(window).scroll(function(){
-	    if($(window).scrollTop() > 250) {
+	    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {
+	        $('#top-menu').slideUp();
 	        $('header.banner').addClass('scrolled');
 	    } else {
+	        $('#top-menu').slideDown();
 	        $('header.banner').removeClass('scrolled');
 	    }
+	});
+	
+	$(window).resize(function () {
+		$(window).scroll(function(){
+		    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {
+		        $('#top-menu').slideUp();
+		        $('header.banner').addClass('scrolled');
+		    } else {
+		        $('#top-menu').slideDown();
+		        $('header.banner').removeClass('scrolled');
+		    }
+		});
 	});
 
 	$('img:not([alt])').each(function(){
@@ -66,17 +80,6 @@ jQuery(document).ready(function($) {
 	        $(".home-bg-image").show();
 	        $(".page-banner").show();
 	    }
-	});
-
-    if ( $('header.banner').height() > 130 ) {
-        $('body').addClass('header-expanded');
-    }
-
-
-	$(window).resize(function () {
-	    if ( $('.navbar-header').width() + $('.primary-navbar').width() > $('header.banner .container').width() )  {
-			$('body').addClass('header-expanded');
-		}
 	});
 
 	// Sticky Info Box widget
@@ -106,7 +109,7 @@ jQuery(document).ready(function($) {
 	// Sticky Enquire Now widget
 	$(".sticky-enquire").sticky({ 
 		topSpacing: spacing,
-		bottomSpacing: 1660,
+		bottomSpacing: 2000,
 		getWidthFrom: '#secondary',
 		responsiveWidth: true,
 		responsiveBreakpoint: 992

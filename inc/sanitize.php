@@ -71,3 +71,39 @@ function lsx_customizer_sanitize_get_default( $id ) {
 		return $setting['default'];
 	}
 }
+
+/**
+ * Sanitizes an email input
+ *
+ * @package lsx-theme
+ * @subpackage sanitize
+ *
+ * @param string $email
+ * @param obj $setting
+ * @return string $default
+ */
+function lsx_sanitize_email( $email, $setting ) {
+	// Sanitize $input as a hex value without the hash prefix.
+	$email = sanitize_email( $email );
+
+	// If $email is a valid email, return it; otherwise, return the default.
+	return ( ! is_null( $email ) ? $email : $setting->default );
+}
+
+/**
+ * Sanitizes an single or multiple checkbox input
+ *
+ * @package lsx-theme
+ * @subpackage sanitize
+ *
+ * @param array $input
+ * @return array $output
+ */
+function lsx_sanitize_checkbox( $input ) {
+	if ( $input ) {
+		$output = '1';
+	} else {
+		$output = false;
+	}
+	return $output;
+}
