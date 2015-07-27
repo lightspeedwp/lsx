@@ -35,7 +35,7 @@
 		</div><!-- .footer-meta -->
 
 		<h1 class="entry-title">
-			<?php if ( has_post_format( array('video', 'audio', 'quote', 'link') ) ) { ?>
+			<?php if ( has_post_format( array('link') ) ) { ?>
 				<a href="<?php echo esc_url(get_url_in_content());?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -53,6 +53,8 @@
 		<div class="entry-summary"> 
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
+	<?php elseif ( has_post_format( array('link') ) ) : ?>
+
 	<?php else : ?>
 		<div class="entry-content">
 			<?php the_content(sprintf(
