@@ -35,7 +35,11 @@
 		</div><!-- .footer-meta -->
 
 		<h1 class="entry-title">
-			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+			<?php if ( has_post_format( array('video', 'audio', 'quote', 'link') ) ) { ?>
+				<a href="<?php echo esc_url(get_url_in_content());?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
+			<?php } else { ?>
+				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+			<?php } ?>
 			<?php if ( is_sticky() && has_post_thumbnail() ) { ?>
 				<span class="label label-default label-sticky"><?php _e('Featured','lsx'); ?></span>
 			<?php 
@@ -45,7 +49,7 @@
 		</h1>		
 	</header><!-- .entry-header -->	
 
-	<?php if ( !is_singular() && !has_post_format( array('video', 'audio', 'quote') ) ) : // Only display Excerpts for Search and Archives ?>
+	<?php if ( !is_singular() && !has_post_format( array('video', 'audio', 'quote', 'link') ) ) : // Only display Excerpts for Search and Archives ?>
 		<div class="entry-summary"> 
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
