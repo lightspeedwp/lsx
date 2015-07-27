@@ -35,8 +35,14 @@
 		</div><!-- .footer-meta -->
 
 		<h1 class="entry-title">
-			<?php if ( has_post_format( array('link') ) ) { ?>
-				<a href="<?php echo esc_url(get_url_in_content());?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
+			<?php if ( has_post_format( array('link') ) ) { 
+				$content = get_the_content();
+
+  				$has_url = get_url_in_content( $content );
+
+    			$the_link = ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() ); ?>
+
+				<a href="<?php echo get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			<?php } ?>
