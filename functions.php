@@ -313,10 +313,10 @@ add_action( 'init', 'lsx_register_social_menu' );
 
 
 // Replaces the excerpt "more" text by a link
-function new_excerpt_more($more) {
+function lsx_excerpt_more($more) {
        global $post;
 	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue reading</a>';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'lsx_excerpt_more');
 
 ?>

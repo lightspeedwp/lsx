@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function lsx_widgets_init() {
+function lsx_widget_area_init() {
 	
 	register_sidebar( array(
 		'name'          => __( 'Home', 'lsx' ),
@@ -42,7 +42,7 @@ function lsx_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'lsx_widgets_init' );
+add_action( 'widgets_init', 'lsx_widget_area_init' );
 
 function lsx_sidebar_footer_params( $params ) {
 

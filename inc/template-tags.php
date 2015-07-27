@@ -99,7 +99,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 						esc_attr( get_the_modified_date( 'c' ) ),
 						get_the_modified_date()
 					);
-					printf( 'Posted on <a href="%2$s" rel="bookmark">%3$s</a>',
+					printf( '%1$s <a href="%2$s" rel="bookmark">%3$s</a>',
 						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
 						esc_url( get_permalink() ),
 						$time_string
@@ -121,7 +121,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
 		    	}
 		    	if(!empty($cats)){ ?>
-						in <?php echo implode(', ', $cats); ?>
+						<?php _e('in','lsx'); ?> <?php echo implode(', ', $cats); ?>
 			<?php } ?>
 			
 			<div class="clearfix"></div>
