@@ -78,6 +78,31 @@ function lsx_home_sidebar_class() {
 	return lsx_layout_selector( 'sidebar', 'home' );
 }
 
+/**
+ * Output the classes for the header
+ *
+ * @package 	lsx
+ * @subpackage	layout
+ * @category	classes
+ */
+function lsx_header_classes($additional = false) {
+	
+	$classes = 'banner navbar navbar-default';
+	
+	//Fixed header
+	$fixed_header = get_theme_mod('lsx_header_fixed',false);
+	if(false != $fixed_header){
+		$classes .= ' navbar-static-top';
+	}
+	
+	if(false != $additional){
+		$classes .= ' '.$additional;
+	}
+	echo $classes;
+}
+
+
+
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {

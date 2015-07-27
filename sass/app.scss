@@ -3036,12 +3036,16 @@ hr {
 	 ========================================================================== */
 
 header.banner {
-	position: fixed;
+	position: inherit;
 	width: 100%;
 	top: 0;
 	background: $white;
 	border: none;
 	@include box-shadow(0px 1px 1px rgba(0, 0, 0, .15));
+	
+	&.navbar-static-top {
+		position: fixed;
+	}
 
 	& > .container {
 		@media screen and (min-width: 1200px) {

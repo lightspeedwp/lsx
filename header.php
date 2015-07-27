@@ -24,7 +24,7 @@ global $lsx_options;
 <?php if ( !is_singular('landing-page') && !is_page_template('page-templates/template-metaplate.php') && !is_page_template('page-templates/template-metaplate-alt.php') ) { ?>
 
 	<?php lsx_header_before(); ?>
-		 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
+		 	<header class="<?php lsx_header_classes(); ?>" role="banner">
 		  		<?php lsx_header_top(); ?>
 			  	<div class="container">
 			    	<div class="navbar-header">

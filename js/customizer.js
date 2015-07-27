@@ -54,9 +54,12 @@
     //Update the fixed header in real time...
 	wp.customize( 'lsx_header_fixed', function( value ) {
 		value.bind( function( newval ) {
-			$('body').removeClass('header-true');
-			$('body').removeClass('header-false');
-			$('body').addClass('header-'+newval);
+			
+			if(true == newval){
+				$('body header.navbar').addClass('navbar-static-top');
+			}else{
+				$('body header.navbar').removeClass('navbar-static-top');
+			}
 		} );
 	} );
     
