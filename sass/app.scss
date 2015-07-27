@@ -3945,7 +3945,7 @@ nav {
 	#primary,
 	#secondary {
 		&.col-sm-12 {
-			max-width: 700px;
+			max-width: 700px !important;
 			margin: 0 auto;
 			float: none;
 			
@@ -3954,7 +3954,7 @@ nav {
 			.post-type-archive-jetpack-portfolio &,
 			.page-template &,
 			.archive &,
-			.post-type-archive &			 {
+			.post-type-archive & {
 				max-width: 100%;
 			}
 		}	
