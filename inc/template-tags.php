@@ -78,10 +78,6 @@ endif;
 
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Add customisable post meta */
-/*-----------------------------------------------------------------------------------*/
-
 /**
  * Add customisable post meta.
  *
@@ -514,6 +510,13 @@ function lsx_footer_subscription_cta() {
 	<?php
 }
 
+/**
+ * Adds our top menu to the theme
+ *
+ * @package 	lsx
+ * @subpackage	hooks
+ * @category	menu
+ */
 add_action( 'lsx_header_top', 'lsx_add_top_menu' );
 function lsx_add_top_menu() {
 	if (has_nav_menu('top-menu')) { ?>
@@ -525,4 +528,36 @@ function lsx_add_top_menu() {
 	    	</div>
 	    </div>
 	<?php }
+}
+
+/**
+ * Checks if a caldera form with your slug exists
+ *
+ * @package 	lsx
+ * @subpackage	template-tag
+ * @category 	forms
+ */
+if ( ! function_exists( 'lsx_post_meta' ) ) {
+	function lsx_is_form_enabled($slug = false) {
+		if(false == $slug){ return false; }
+	
+		$match = false;
+		$forms = get_option( '_caldera_forms' , false );
+		if(false !== $forms ) {
+			foreach($forms as $form_id=>$form_maybe){
+				if( trim(strtolower($slug)) == strtolower($form_maybe['name']) ){
+					$match = $form_id;
+					break;
+				}
+			}
+		}
+		if( false === $match ){
+			$is_form = Caldera_Forms::get_form( strtolower( $slug ) );
+			if( !empty( $is_form ) ){
+				return strtolower( $slug );
+			}
+		}
+	
+		return $match;
+	}
 }
