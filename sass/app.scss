@@ -4417,6 +4417,24 @@ header.page-header {
 	}
 }
 
+body.archive {
+	.breadcrumbs-container {
+		display: none;
+	}
+
+	.archive-header {
+		margin: -40px -9999rem 120px;
+	    padding: 60px 9999rem 40px;
+	    background: $primary-darker;
+	    color: $white;
+	    text-align: center;
+
+	    .archive-title {
+	    	font-weight: 700;
+	    }
+	}
+}
+
 .front-page {
 	#home-widgets {
 		aside.widget {
