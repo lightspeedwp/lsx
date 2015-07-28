@@ -19,7 +19,18 @@
 		<header class="entry-header">
 			<h1 class="entry-title"><?php the_title(); ?></h1>		
 		</header><!-- .entry-header -->
-	<?php } ?>
+	<?php } 
+
+	$format = get_post_format();
+	if ( false === $format ) {
+		$format = 'standard';
+	}
+	$format_link = get_post_format_link($format);
+	?>
+	<div class="entry-meta">
+		<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+		<?php lsx_post_meta(); ?>	
+	</div><!-- .footer-meta -->
 
 	<div class="entry-content">
 		<?php
@@ -32,20 +43,14 @@
 	</div><!-- .entry-content -->
 
 	<footer class="footer-meta">
-		<?php if ( 'post' == get_post_type() ) : ?>
-			
-			<?php lsx_post_format(); ?>
-			  
-		<?php endif; ?>
-
 		<?php lsx_post_meta(); ?>	
 	</footer><!-- .footer-meta -->
 	
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
-	<?php lsx_post_nav(); ?>
-	
 	<?php lsx_entry_bottom(); ?>
+
+	<?php lsx_post_nav(); ?>
 
 </article><!-- #post-## -->
 

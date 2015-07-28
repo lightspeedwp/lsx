@@ -34,7 +34,7 @@ function lsx_body_class($classes) {
   $post_types = array('page','post');
   $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
 
-  if((is_singular($post_types) && has_post_thumbnail() && !is_front_page())
+  if((is_singular($post_types) && !is_singular('post') && has_post_thumbnail() && !is_front_page())
   	 || (is_page_template('contact.php') && !is_front_page()) 
   || (is_singular('jetpack-portfolio'))){
   	$classes[] = 'page-has-banner';
@@ -366,10 +366,13 @@ if(!function_exists('lsx_page_banner')){
 	        ?>
 	        
 	        <div class="page-banner" style="background-position: 50% 50%" <?php echo $bg_image;  ?>>
-	          <header class="page-header">
-	            <h1 class="page-title"><?php the_title(); ?></h1>   
-	            <?php lsx_banner_content(); ?>
-	          </header><!-- .entry-header -->
+	        	<div class="container">
+		            <header class="page-header">
+		            	<h1 class="page-title"><?php the_title(); ?></h1> 
+		            	  
+		           		<?php lsx_banner_content(); ?>
+		            </header><!-- .entry-header -->
+		        </div>
 	        </div>
 	    <?php } 
 	}

@@ -4465,6 +4465,48 @@ body.blog {
 	}
 }
 
+body.single-post {
+	.page-banner {
+		padding: 580px 0 80px;
+		text-align: left;
+
+		h1.page-title {
+			text-align: left !important;
+			font-size: 44px !important;
+			padding: 0 !important;
+		}
+	}
+
+	.wrap {
+		margin-top: 40px;
+
+		.format-link {
+			margin: -80px 0 0
+		}
+
+		header.page-header {
+			display: none !important;
+		}
+
+		.entry-content {
+			font: {
+				family: 'Noto Serif', serif;
+				size: 19px;
+			}
+			color: $dark-grey;
+			line-height: 1.98;
+		    margin: {
+		    	top: 30px;
+		    	bottom: 30px;
+		    }
+		    
+			@media screen and (max-width: 768px) {
+				font-size: 17.5px;
+			}
+		}
+	}
+}
+
 .front-page {
 	#home-widgets {
 		aside.widget {
@@ -4889,6 +4931,15 @@ article {
 		}
 	}
 
+	.format-link {
+		font-size: 40px;
+		color: $white;
+		background-color: $primary;
+		margin: -40px 0 30px;
+		padding: 17px;
+		@include border-radius(100%);
+	}
+
 	header.entry-header {
 		text-align: center;
 
@@ -4955,15 +5006,6 @@ article {
 			}
 		}
 
-		.format-link {
-			font-size: 40px;
-			color: $white;
-			background-color: $primary;
-			margin: -40px 0 30px;
-			padding: 17px;
-			@include border-radius(100%);
-		}
-
 		.entry-image {
 			text-align: center;
 
@@ -5021,7 +5063,7 @@ article {
 
 	.entry-summary {
 		font: {
-			family: 'Noto Serif', sans-serif;
+			family: 'Noto Serif', serif;
 			size: 19px;
 		}
 		color: $dark-grey;
