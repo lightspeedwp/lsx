@@ -24,6 +24,10 @@ get_header(); ?>
 					<?php printf( __( 'Author: %s', 'lsx' ), get_the_author() ); ?>
 				</h1>
 
+				<?php if (get_the_author_meta('description')) { ?>
+				    <p class="author-desc"><?php echo get_the_author_meta('description') ?></p>
+				<?php } ?>
+
 			</header><!-- .archive-header -->
 
 			<?php /* Start the Loop */ ?>
