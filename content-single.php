@@ -39,18 +39,33 @@
 		} else {
 			the_content(); 
 		} ?>
-		<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="footer-meta">
-		<?php lsx_post_meta(); ?>	
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() ) : ?>
+				<a class="comments-link post-meta-link" data-toggle="collapse" href="#comments-collapse"><strong><?php echo get_comments_number() ?></strong> Comments <span class="genericon genericon-expand"></span></a>
+
+				<div class="collapse" id="comments-collapse">
+					<?php 
+						comments_template();
+					?>
+				</div>
+		<?php endif; ?>
+
+		<div class="post-tags-wrapper">
+			<div class="post-tags">
+				<?php echo get_the_tag_list(''); ?>
+			</div>
+		</div>
 	</footer><!-- .footer-meta -->
 	
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
 	<?php lsx_entry_bottom(); ?>
 
-	<?php lsx_post_nav(); ?>
+	
 
 </article><!-- #post-## -->
 

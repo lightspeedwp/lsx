@@ -1314,7 +1314,12 @@ img,
 			.nav-links-description {
 				color: $grey;
 				margin-bottom: 0;
-				font-weight: 500;
+				font: {
+					family: 'Noto Serif', serif !important;
+					size: 15px;
+					weight: 500;
+				}
+				line-height: 1.6;
 			}
 		}
 
@@ -1325,6 +1330,12 @@ img,
 				}
 			}
 		}
+	}
+
+	.previous,
+	.next {
+		color: $black;
+    	font-size: 24px;
 	}
 
 	.previous {
@@ -1353,24 +1364,40 @@ img,
 
 
 blockquote {
+	max-width: 370px;
 	position: relative;
-	padding: 0 30px;
-	margin: 0 0 20px;
+	padding: 0 0 17px;
+	margin: 0 0 17px;
+	border-bottom: 2px solid;
+    display: inline-block;
 	font: {
 		family: 'Noto Serif', serif;
-		size: 17px;
+		size: 20px;
+		style: italic;
 	}
 	border-left: none;
-	line-height: 180%;
 
-	&:before {
-		content: '\f106';
-		font: {
-			family: genericons;
-			size: 20px;
+	p {
+		font-size: 20px;
+		line-height: 1.7;
+	}
+
+	&.alignleft {
+		float: left;
+		margin-right: 30px;
+
+		@media screen and (min-width: 992px) {
+			margin-left: -155px;
 		}
-		position: absolute;
-		left: 0;
+	}
+
+	&.alignright {
+		float: right;
+		margin-left: 30px;
+
+		@media screen and (min-width: 992px) {
+			margin-right: -155px;
+		}
 	}
 }
 
@@ -4519,6 +4546,30 @@ body.single-post {
 				}
 		    }
 		}
+
+		.footer-meta {
+			text-align: center;
+		}
+
+		.post-meta-link {
+			font: {
+				family: 'Noto Serif', serif;
+				size: 20px;
+			}
+			color: $black;
+			@include transition(all .1s ease-in-out);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: $primary;
+			}
+
+			.genericon {
+				font-size: 18px;
+				vertical-align: middle;
+			}
+		}
 	}
 }
 
@@ -5105,6 +5156,7 @@ article {
 			a {
 				background: #ccc;
 				padding: 3px 16px;
+				font-size: 16px;
 				margin: 3px;
 				float: left;
 				color: $dark-grey;
@@ -5247,20 +5299,6 @@ article {
 		display: none !important;
 	}
 
-	h3 {
-		font: {
-			family: 'Raleway', 'Open Sans', sans-serif !important;
-			size: 28px !important;
-			weight: 600 !important;
-		}
-		margin: 20px 0 !important;
-
-		&:before,
-		em:before {
-			display: none !important;
-		}
-	}
-
 	.jp-relatedposts-post {
 		font-family: 'Open Sans', sans-serif;
 
@@ -5293,8 +5331,22 @@ article {
 
 .sharedaddy {
 	margin: 40px 0;
+	text-align: center;
 
-	.sd-social-icon-text {
+	.sd-sharing {
+		.sd-title {
+		    font: {
+		    	family: 'Noto Serif', serif !important;
+		    	size: 20px;
+		    	weight: 400;
+		    }
+		    color: $black;
+
+		    &:before {
+		    	display: none;
+		    }
+		}
+
 		.sd-content {
 			ul {
 				li {
