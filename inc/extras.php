@@ -278,7 +278,7 @@ function lsx_get_thumbnail($size,$image_src = false){
  * @subpackage extras
  * @category thumbnails
  */
-function lsx_thumbnail($size = 'thumbnail',$image_src = false){
+function lsx_thumbnail($size = 'thumbnail',$image_src = true){
 	echo lsx_get_thumbnail($size,$image_src);
 }
 
