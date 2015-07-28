@@ -4417,6 +4417,10 @@ header.page-header {
 	}
 }
 
+
+
+// New Archive Styles
+
 body.archive {
 	.breadcrumbs-container {
 		display: none;
@@ -4437,6 +4441,14 @@ body.archive {
 				size: 40px;
 				weight: 700;
 			}
+	    }
+
+	    & > p {
+	    	text-align: left;
+
+	    	&:nth-of-type(1) {
+	    		margin-top: 24px;
+	    	}
 	    }
 	}
 }

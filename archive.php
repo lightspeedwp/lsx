@@ -30,13 +30,9 @@ get_header(); ?>
 					<?php } ?>
 				</h1>
 
+				<?php echo term_description(); ?>
+
 			</header><!-- .archive-header -->
-			
-			<?php if(is_tax()){ ?>
-				<div class="entry-content">		
-					<?php the_archive_description(); ?>
-				</div>
-			<?php } ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
