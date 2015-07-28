@@ -295,12 +295,12 @@ function lsx_post_nav() {
 		<div class="nav-links pager row">
 
 			<?php
-				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous"><p class="nav-links-description">Previous Post:</p>%title</div>', 'Previous post link', 'lsx' ) );
+				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous"><p class="nav-links-description">Previous Post:</p><h2>%title</h2></div>', 'Previous post link', 'lsx' ) );
 				$previous_post = str_replace('<a','<a',$previous_post);
 				echo $previous_post;
 			?>
 			<?php
-				$next_post = get_next_post_link(     '%link', _x( '<div class="next"><p class="nav-links-description">Next Post:</p>%title</div>', 'Next post link',     'lsx' ) );
+				$next_post = get_next_post_link(     '%link', _x( '<div class="next"><p class="nav-links-description">Next Post:</p><h2>%title</h2></div>', 'Next post link',     'lsx' ) );
 				$next_post = str_replace('<a','<a',$next_post);
 				echo $next_post;
 			?>
