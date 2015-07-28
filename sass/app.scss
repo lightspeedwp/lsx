@@ -1127,6 +1127,10 @@ ul {
 	}
 }
 
+code {
+	whitespace: inherit !important;
+}
+
 figure,
 iframe, 
 img,
@@ -1337,8 +1341,9 @@ img,
 
 		&:hover {
 			div {
-				.nav-links-description {
-					color: $dark-grey;
+				.previous,
+				.next {
+					color: $primary-darker;
 				}
 			}
 		}
@@ -1348,6 +1353,7 @@ img,
 	.next {
 		color: $black;
     	font-size: 24px;
+    	@include transition(.1s all ease-in-out);
 	}
 
 	.previous {
