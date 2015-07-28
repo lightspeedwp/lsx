@@ -4491,7 +4491,7 @@ body.single-post {
 		.entry-content {
 			font: {
 				family: 'Noto Serif', serif;
-				size: 19px;
+				size: 17px;
 			}
 			color: $dark-grey;
 			line-height: 1.98;
@@ -4499,10 +4499,25 @@ body.single-post {
 		    	top: 30px;
 		    	bottom: 30px;
 		    }
-		    
-			@media screen and (max-width: 768px) {
-				font-size: 17.5px;
-			}
+
+		    img {
+		    	min-width: 980px;
+		    	margin: {
+		    		top: 40px;
+		    		bottom: 40px;
+		    	}
+				margin-left: -155px;
+
+				@media screen and (max-width: 768px) {
+					min-width: 780px;
+					margin-left: -50px;
+				}
+
+				@media screen and (max-width: 600px) {
+					min-width: 106%;
+					margin-left: -3%;
+				}
+		    }
 		}
 	}
 }
