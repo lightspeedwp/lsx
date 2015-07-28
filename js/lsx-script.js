@@ -60,18 +60,6 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-	$('.single-blog .entry-content img').each(function(){
-	    var $img = $(this);
-	    var filename = $img.attr('data-desktop')
-	    $img.attr('src', filename.substring(0, filename.lastIndexOf('.')));
-	});
-
-	$('img:not([alt])').each(function(){
-	    var $img = $(this);
-	    var filename = $img.attr('src')
-	    $img.attr('alt', filename.substring(0, filename.lastIndexOf('.')));
-	});
-
 	// Disabling homepage slider, background image area and page banners on mobile
 	$(window).resize(function () {
 		var screen = $(window)
