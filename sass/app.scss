@@ -1121,6 +1121,10 @@ ul {
 	margin: 80px -9999rem 160px;
 	padding: 1px 9999rem;
 	border-bottom: 1px solid #ddd;
+
+	.single-post & {
+	    margin: 80px -9999rem 50px;	
+	}
 }
 
 figure,
@@ -1295,6 +1299,8 @@ img,
 }
 
 .pager {
+	margin: 0 !important;
+
 	@media print {
 		display: none !important;
 	}
@@ -4568,6 +4574,8 @@ body.single-post {
 			}
 			color: $black;
 			@include transition(all .1s ease-in-out);
+			padding: 0 20px 30px;
+   			border-bottom: 1px solid #ccc;
 
 			&:hover,
 			&:active,
@@ -5158,7 +5166,7 @@ article {
 
 	.post-tags-wrapper {
 		text-align: center;
-		margin-top: 40px;
+		margin-top: 60px;
 
 		.post-tags {
 			display: inline-block;
@@ -5340,10 +5348,14 @@ article {
 }
 
 .sharedaddy {
-	margin: 40px 0;
+	margin: 60px 0 0;
 	text-align: center;
 
 	.sd-sharing {
+		display: inline-block;
+		padding: 20px 20px 30px;
+   		border-bottom: 1px solid #ccc;
+
 		.sd-title {
 		    font: {
 		    	family: 'Noto Serif', serif !important;

@@ -65,7 +65,8 @@
 
 	<?php lsx_entry_bottom(); ?>
 
-	
+	<div class="lsx-breaker">
+	</div>
 
 </article><!-- #post-## -->
 
