@@ -4424,13 +4424,19 @@ body.archive {
 
 	.archive-header {
 		margin: -40px -9999rem 120px;
-	    padding: 60px 9999rem 40px;
+	    padding: 60px 9999rem;
 	    background: $primary-darker;
 	    color: $white;
 	    text-align: center;
 
 	    .archive-title {
-	    	font-weight: 700;
+			color: $white;
+			margin: 0;
+			line-height: 1.6;
+			font: {
+				size: 40px;
+				weight: 700;
+			}
 	    }
 	}
 }
