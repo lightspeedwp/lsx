@@ -4421,7 +4421,14 @@ header.page-header {
 
 // New Archive Styles
 
-body.archive {
+body.archive,
+body.blog {
+	@media screen and (max-width: 992px) {
+		.wrap {
+
+		}
+	}
+
 	.breadcrumbs-container {
 		display: none;
 	}
@@ -4968,6 +4975,16 @@ article {
 				& > img {
 					min-width: 980px;
 					margin-left: -155px;
+
+					@media screen and (max-width: 768px) {
+						min-width: 780px;
+						margin-left: -50px;
+					}
+
+					@media screen and (max-width: 600px) {
+						min-width: 106%;
+    					margin-left: -3%;
+					}
 				}
 
 				&.pull-left,
@@ -5026,9 +5043,9 @@ article {
 			
 			a {
 				background: #ccc;
-				padding: 9px 16px;
+				padding: 3px 16px;
 				margin: 3px;
-				font-size: 15px;
+				float: left;
 				color: $dark-grey;
 				@include border-radius(3px);
 				@include transition(all .1s ease-in-out);
