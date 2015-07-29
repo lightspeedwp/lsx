@@ -1131,7 +1131,9 @@ ul {
 	}
 
 	.archive #primary.col-md-8 &,
+	.archive #primary.col-sm-8 &,
 	.blog #primary.col-md-8 &,
+	.blog #primary.col-sm-8 &,
 	.single-post #primary.col-md-8 &,
 	.single-post #primary.col-sm-8 & {
 		margin: 60px 0;
@@ -3942,12 +3944,6 @@ nav {
 	.has-top-menu.home & {
 		@media screen and (min-width: 992px) {
 			margin-top: 124px;
-		}
-	}
-
-	.has-top-menu.blog & {
-		@media screen and (min-width: 992px) {
-			margin-top: 300px !important;
 		}
 	}
 
