@@ -67,12 +67,12 @@ jQuery(document).ready(function($) {
 	        $(".home .soliloquy-slider").hide();
 	        $(".home-bg-image").hide();
 	        $(".home-bg-image-footer").hide();
-	        $(".page-banner").hide();
+	        $("body:not('single-post') .page-banner").hide();
 	    } else {
 	    	$(".home .soliloquy-slider").show();
 	    	$(".home-bg-image-footer").show();
 	        $(".home-bg-image").show();
-	        $(".page-banner").show();
+	        $("body:not('single-post') .page-banner").show();
 	    }
 	});
 
