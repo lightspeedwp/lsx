@@ -5104,7 +5104,8 @@ article {
 		padding: 17px;
 		@include border-radius(100%);
 
-		.archive &.has-thumb {
+		.archive #primary.col-sm-8 &.has-thumb,
+		.archive #primary.col-md-8 &.has-thumb {
 			margin: -40px 0 30px;
 		}
 	}
