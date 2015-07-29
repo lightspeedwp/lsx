@@ -5100,9 +5100,14 @@ article {
 		font-size: 40px;
 		color: $white;
 		background-color: $primary;
-		margin: 40px 0 30px;
+		margin: -40px 0 30px;
 		padding: 17px;
 		@include border-radius(100%);
+
+		.archive #primary.col-sm-8,
+		.archive #primary.col-md-8 {
+			margin: 40px 0 30px;
+		}
 
 		.archive #primary.col-sm-8 &.has-thumb,
 		.archive #primary.col-md-8 &.has-thumb {
