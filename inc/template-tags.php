@@ -520,7 +520,7 @@ function lsx_footer_subscription_cta() {
 add_action( 'lsx_header_top', 'lsx_add_top_menu' );
 function lsx_add_top_menu() {
 	if (has_nav_menu('top-menu')) { ?>
-		<div id="top-menu">
+		<div id="top-menu" class="<?php lsx_top_menu_classes(); ?>">
 			<div class="container">
 				<nav class="top-menu" role="navigation">
 		    		<?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>

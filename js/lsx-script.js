@@ -40,22 +40,22 @@ jQuery(document).ready(function($) {
 
 	$(window).scroll(function(){
 	    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {
-	        $('#top-menu').slideUp();
-	        $('header.banner').addClass('scrolled');
+	        $('#top-menu.top-menu-fixed').slideUp();
+	        $('header.banner.navbar-static-top').addClass('scrolled');
 	    } else {
-	        $('#top-menu').slideDown();
-	        $('header.banner').removeClass('scrolled');
+	        $('#top-menu.top-menu-fixed').slideDown();
+	        $('header.banner.navbar-static-top').removeClass('scrolled');
 	    }
 	});
 	
 	$(window).resize(function () {
 		$(window).scroll(function(){
 		    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {
-		        $('#top-menu').slideUp();
-		        $('header.banner').addClass('scrolled');
+		        $('#top-menu.top-menu-fixed').slideUp();
+		        $('header.banner.navbar-static-top').addClass('scrolled');
 		    } else {
-		        $('#top-menu').slideDown();
-		        $('header.banner').removeClass('scrolled');
+		        $('#top-menu.top-menu-fixed').slideDown();
+		        $('header.banner.navbar-static-top').removeClass('scrolled');
 		    }
 		});
 	});
