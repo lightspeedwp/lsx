@@ -1337,6 +1337,8 @@ img,
 					weight: 700;
 				}
 				margin: 0;
+				color: #555;
+				@include transition(all .1s ease-in-out);
 			}
 
 			.nav-links-description {
@@ -1351,11 +1353,10 @@ img,
 		}
 
 		&:hover {
-			div {
-				.previous,
-				.next {
-					color: $primary-darker;
-				}
+			h3 {
+				border-bottom: 2px solid;
+			    display: inline-block;
+			    padding-bottom: 1px;
 			}
 		}
 	}
