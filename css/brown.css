@@ -152,7 +152,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #5b452e;
+  background: #333;
 }
 
 @media screen and (max-width: 992px) {
@@ -620,4 +620,17 @@ select {
 .page-template-template-home-hero #home-widgets a:focus,
 .page-template-template-home-hero #home-widgets a:active {
   color: #5b452e !important;
+}
+
+nav.primary-navbar .nav.navbar-nav li.active > a {
+  color: #333 !important;
+  background: #8c6a45 !important;
+}
+
+#top-menu nav.top-menu ul li a:before {
+  color: #dfad55;
+}
+
+#top-menu nav.top-menu ul li a:hover {
+  color: #dfad55;
 }

@@ -152,7 +152,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-	background: #3d4a30;
+	background: #333;
 }
 
 @media screen and (max-width: 992px) {
@@ -630,4 +630,9 @@ select {
 #top-menu nav.top-menu ul li a:active, 
 #top-menu nav.top-menu ul li a:focus {
   color: #a5a370;
+}
+
+nav.primary-navbar .nav.navbar-nav li.active > a {
+  color: #fff !important;
+  background: #3d4a30 !important;
 }
