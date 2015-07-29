@@ -20,7 +20,7 @@
 		</header><!-- .entry-header -->
 	<?php } 
 
-	if ( is_singular('post') && has_post_thumbnail() ) { ?>
+	if ( is_singular('post') && !has_post_thumbnail() ) { ?>
 		<header class="single-header">
 			<h1 class="single-title"><?php the_title(); ?></h1>		
 		</header><!-- .entry-header -->
