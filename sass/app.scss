@@ -4511,8 +4511,10 @@ body.blog {
 						}
 					    padding-bottom: 18px;
 					    border-bottom: 2px solid #555;
-					    font-weight: 700;
-					    font-size: 36px;
+					    font: {
+					    	size: 36px;
+					    	weight: 700;
+					    }
 					}
 				}
 			}
@@ -5098,9 +5100,13 @@ article {
 		font-size: 40px;
 		color: $white;
 		background-color: $primary;
-		margin: -40px 0 30px;
+		margin: 40px 0 30px;
 		padding: 17px;
 		@include border-radius(100%);
+
+		.archive &.has-thumb {
+			margin: -40px 0 30px;
+		}
 	}
 
 	header.entry-header {
