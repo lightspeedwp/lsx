@@ -4175,7 +4175,7 @@ header.page-header {
 					}
 
 					.soliloquy-caption-inside {
-						background: rgba(35, 34, 34, 0.92);
+						background: rgba(255, 255, 255, 0.88);
 						text-align: left;
 						padding: 40px 50px;
 						height: 527px;
@@ -4199,7 +4199,7 @@ header.page-header {
 							}
 
 							a {
-								color: $white !important;
+								color: $primary !important;
 
 								&:hover,
 								&:focus,
@@ -4210,7 +4210,7 @@ header.page-header {
 						}
 
 						.website-link {
-							color: $white !important;
+							color: $primary !important;
 							border-bottom: 1px solid;
 							font-size: 15px;
 
@@ -4222,13 +4222,14 @@ header.page-header {
 						}
 
 						p {
-							color: $off-white;
-							font-size: 15px;
+							color: $black;
+							font-size: 16px;
 							line-height: 175%;
 							margin: 28px 0px 31px;
 						}
 
-						.btn {
+						.btn,
+						.lsx-border-button {
 							padding: 14px 20px;
 							font-size: 16px;
 							@include border-radius(3px);
