@@ -1015,6 +1015,10 @@ body {
 
 a {
 	text-decoration: none !important;
+
+	.wrap & {
+		@include transition(all .1s ease-in-out);
+	}
 }
 
 p {
@@ -1126,7 +1130,8 @@ ul {
 	    margin: 80px -9999rem 50px;	
 	}
 
-	.archive #primary.col-md-8 & {
+	.archive #primary.col-md-8 &,
+	.blog #primary.col-md-8 & {
 		margin: 60px 0;
 		padding: 1px 0;
 	}
@@ -1408,6 +1413,10 @@ blockquote {
 	&.alignleft {
 		float: left;
 		margin-right: 30px;
+
+		.single-post & {
+			margin-right: 0 !important;
+		}
 
 		@media screen and (min-width: 992px) {
 			margin-left: -155px;
@@ -4204,7 +4213,7 @@ header.page-header {
 								&:hover,
 								&:focus,
 								&:active {
-									color: $grey !important;
+									color: $black !important;
 								}
 							}
 						}
@@ -4378,15 +4387,15 @@ header.page-header {
 
 				.btn,
 				button {
-					@include lsx-border-button($white, $black);
+					@include lsx-border-button($black, $blacker);
 
 					.btn,
 					button {
 						&:hover,
 						&:focus,
 						&:active {
-							background: $white !important;
-							border-color: $white !important;
+							background: $blacker !important;
+							border-color: $blacker !important;
 						}
 					}
 				}
