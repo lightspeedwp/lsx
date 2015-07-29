@@ -1,0 +1,99 @@
+/*
+Theme Name: lsx
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*
+ *	Nav Styles 
+ */
+
+
+@media (min-width: 1200px) {
+	body.rtl.header-inline  header.navbar nav {
+		float:left;
+	}
+	body.rtl.header-inline  header.navbar .navbar-header {
+  	  	float: right;
+	}	
+}
+
+body.rtl.header-inline header.banner nav .nav.navbar-nav li ul.dropdown-menu {
+	float:right;
+	right:0;
+	text-align:right;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 0px;
+}
+
+body.rtl header.banner nav .nav.navbar-nav li a .caret {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+@media (max-width: 1200px) {
+	.navbar-toggle,
+	.mobile-menu-title {
+		float:left;
+	}
+}
+
+body.rtl code {white-space: normal;}
+
+/*
+ *	Form Styles 
+ */
+.input-group .form-control:last-child,
+.input-group .ginput_container input:last-child,
+.ginput_container .input-group input:last-child,
+.input-group .ginput_container select:last-child,
+.ginput_container .input-group select:last-child,
+.input-group .ginput_container textarea:last-child,
+.ginput_container .input-group textarea:last-child,
+.input-group-addon:last-child, .input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .gform_button,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .btn-group > .gform_button,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .gform_button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
+.input-group-btn:first-child > .btn-group:not(:first-child) > .gform_button {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;    
+}
+
+.input-group .form-control:first-child,
+.input-group .ginput_container input:first-child,
+.ginput_container .input-group input:first-child,
+.input-group .ginput_container select:first-child,
+.ginput_container .input-group select:first-child,
+.input-group .ginput_container textarea:first-child,
+.ginput_container .input-group textarea:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .gform_button,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .btn-group > .gform_button,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .gform_button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+.input-group-btn:last-child > .btn-group:not(:last-child) > .gform_button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;  
+}
