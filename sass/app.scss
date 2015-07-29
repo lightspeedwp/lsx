@@ -1132,7 +1132,8 @@ ul {
 
 	.archive #primary.col-md-8 &,
 	.blog #primary.col-md-8 &,
-	.single-post #primary.col-md-8 & {
+	.single-post #primary.col-md-8 &,
+	.single-post #primary.col-sm-8 & {
 		margin: 60px 0;
 		padding: 1px 0;
 	}
@@ -1333,6 +1334,7 @@ img,
 			}
 
 			h3 {
+				display: inline-block;
 				font: {
 					weight: 700;
 				}
@@ -1354,7 +1356,6 @@ img,
 
 		&:hover {
 			h3 {
-			    display: inline-block;
 			    @include box-shadow(0 2px);
 			}
 		}
@@ -1362,9 +1363,9 @@ img,
 
 	.previous,
 	.next {
+		max-width: 30%;
 		color: $black;
     	font-size: 24px;
-    	@include transition(.1s all ease-in-out);
 	}
 
 	.previous {
