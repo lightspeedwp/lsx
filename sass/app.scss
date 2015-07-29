@@ -1326,7 +1326,7 @@ img,
 		font-weight: 600;
 
 		div {
-			width: 50%;
+			max-width: 30%;
 
 			@media screen and (max-width: 768px) {
 				width: 100%;
@@ -4546,13 +4546,25 @@ body.single-post {
 		}
 	}
 
+	.single-header {
+		text-align: center;
+
+		.single-title {
+			margin-top: 0;
+		}
+	}
+
 	.breadcrumbs-container {
 		display: none !important;
 	}
 
 	.wrap {
 		.format-link {
-			margin: -80px 0 0
+			margin: 0 0 40px;
+
+			&.has-thumb {
+				margin: -80px 0 0;
+			}
 		}
 
 		header.page-header {
