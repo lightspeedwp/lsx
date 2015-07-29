@@ -57,8 +57,10 @@
 			
 			if(true == newval){
 				$('body header.navbar').addClass('navbar-static-top');
+				$('body').addClass('lsx-fixed-header');
 			}else{
 				$('body header.navbar').removeClass('navbar-static-top');
+				$('body').removeClass('lsx-fixed-header');
 			}
 		} );
 	} );

@@ -101,6 +101,23 @@ function lsx_header_classes($additional = false) {
 	echo $classes;
 }
 
+/**
+ * Output the classes for the header
+ *
+ * @package 	lsx
+ * @subpackage	layout
+ * @category	classes
+ */
+function lsx_header_fixed_body_class($classes, $class) {
+	$fixed_header = get_theme_mod('lsx_header_fixed',false);
+	if(false != $fixed_header){
+		$classes[] = 'lsx-fixed-header';
+	}
+	
+	return $classes;
+}
+add_filter( 'body_class', 'lsx_header_fixed_body_class' , 2 , 10 );
+
 
 
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );

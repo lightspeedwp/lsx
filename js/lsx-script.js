@@ -168,8 +168,6 @@ jQuery(document).ready(function($) {
 			});
 		}
 
-
-
 		// Parallax Effect on Banners
 		function parallax(){
 	    var scrolled = $(window).scrollTop();
