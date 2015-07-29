@@ -11,7 +11,7 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 
 	$layout = get_theme_mod('lsx_layout','2cr');
 
-	$default_size = 'md';
+	$default_size = 'sm';
 	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
 	switch ( $layout ) {
