@@ -1363,7 +1363,6 @@ img,
 
 	.previous,
 	.next {
-		max-width: 30%;
 		color: $black;
     	font-size: 24px;
 	}
@@ -4538,6 +4537,7 @@ body.single-post {
 	.page-banner {
 		padding: 580px 0 80px;
 		text-align: left;
+		margin-bottom: -172px;
 
 		h1.page-title {
 			text-align: left !important;
@@ -4551,8 +4551,6 @@ body.single-post {
 	}
 
 	.wrap {
-		margin-top: 40px;
-
 		.format-link {
 			margin: -80px 0 0
 		}
@@ -4573,21 +4571,24 @@ body.single-post {
 		    }
 
 		    img {
-		    	min-width: 980px;
-		    	margin: {
-		    		top: 40px;
-		    		bottom: 40px;
-		    	}
-				margin-left: -155px;
-
-				@media screen and (max-width: 768px) {
-					min-width: 780px;
-					margin-left: -50px;
+		    	#primary.col-md-8 &,
+				#primary.col-sm-8 & {
+					width: 100%;
 				}
 
-				@media screen and (max-width: 600px) {
-					min-width: 106%;
-					margin-left: -3%;
+				#primary.col-md-12 & {
+					min-width: 980px;
+					margin-left: -155px;
+
+					@media screen and (max-width: 768px) {
+						min-width: 780px;
+						margin-left: -50px;
+					}
+
+					@media screen and (max-width: 600px) {
+						min-width: 106%;
+    					margin-left: -3%;
+					}
 				}
 		    }
 		}
