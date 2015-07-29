@@ -1015,6 +1015,10 @@ body {
 
 a {
 	text-decoration: none !important;
+
+	.wrap & {
+		@include transition(all .1s ease-in-out);
+	}
 }
 
 p {
@@ -1126,7 +1130,9 @@ ul {
 	    margin: 80px -9999rem 50px;	
 	}
 
-	.archive #primary.col-md-8 & {
+	.archive #primary.col-md-8 &,
+	.blog #primary.col-md-8 &,
+	.single-post #primary.col-md-8 & {
 		margin: 60px 0;
 		padding: 1px 0;
 	}
@@ -1331,6 +1337,8 @@ img,
 					weight: 700;
 				}
 				margin: 0;
+				color: #555;
+				@include transition(all .1s ease-in-out);
 			}
 
 			.nav-links-description {
@@ -1345,11 +1353,9 @@ img,
 		}
 
 		&:hover {
-			div {
-				.previous,
-				.next {
-					color: $primary-darker;
-				}
+			h3 {
+			    display: inline-block;
+			    @include box-shadow(0 2px);
 			}
 		}
 	}
@@ -1409,6 +1415,10 @@ blockquote {
 		float: left;
 		margin-right: 30px;
 
+		.single-post & {
+			margin-left: 0 !important;
+		}
+
 		@media screen and (min-width: 992px) {
 			margin-left: -155px;
 		}
@@ -1417,6 +1427,10 @@ blockquote {
 	&.alignright {
 		float: right;
 		margin-left: 30px;
+
+		.single-post & {
+			margin-right: 0 !important;
+		}
 
 		@media screen and (min-width: 992px) {
 			margin-right: -155px;
@@ -4175,7 +4189,7 @@ header.page-header {
 					}
 
 					.soliloquy-caption-inside {
-						background: rgba(35, 34, 34, 0.92);
+						background: rgba(255, 255, 255, 0.88);
 						text-align: left;
 						padding: 40px 50px;
 						height: 527px;
@@ -4199,18 +4213,18 @@ header.page-header {
 							}
 
 							a {
-								color: $white !important;
+								color: $primary !important;
 
 								&:hover,
 								&:focus,
 								&:active {
-									color: $grey !important;
+									color: $black !important;
 								}
 							}
 						}
 
 						.website-link {
-							color: $white !important;
+							color: $primary !important;
 							border-bottom: 1px solid;
 							font-size: 15px;
 
@@ -4222,13 +4236,14 @@ header.page-header {
 						}
 
 						p {
-							color: $off-white;
-							font-size: 15px;
+							color: $black;
+							font-size: 16px;
 							line-height: 175%;
 							margin: 28px 0px 31px;
 						}
 
-						.btn {
+						.btn,
+						.lsx-border-button {
 							padding: 14px 20px;
 							font-size: 16px;
 							@include border-radius(3px);
@@ -4377,15 +4392,15 @@ header.page-header {
 
 				.btn,
 				button {
-					@include lsx-border-button($white, $black);
+					@include lsx-border-button($black, $blacker);
 
 					.btn,
 					button {
 						&:hover,
 						&:focus,
 						&:active {
-							background: $white !important;
-							border-color: $white !important;
+							background: $blacker !important;
+							border-color: $blacker !important;
 						}
 					}
 				}
@@ -5112,7 +5127,8 @@ article {
 				margin-bottom: 0;
 
 				& > img {
-					#primary.col-md-8 & {
+					#primary.col-md-8 &,
+					#primary.col-sm-8 & {
 						width: 100%;
 					}
 
@@ -5302,6 +5318,8 @@ article {
 }
 
 #respond {
+	margin-top: 60px;
+
 	.comment-notes {
 		margin-bottom: 15px;
 	}
