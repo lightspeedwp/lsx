@@ -60,19 +60,17 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-	// Disabling homepage slider, background image area and page banners on mobile
+	// Disabling homepage slider, background image area on mobile
 	$(window).resize(function () {
 		var screen = $(window)
 	    if (screen.width() < 768) {
 	        $(".home .soliloquy-slider").hide();
 	        $(".home-bg-image").hide();
 	        $(".home-bg-image-footer").hide();
-	        $("body:not('single-post') .page-banner").hide();
 	    } else {
 	    	$(".home .soliloquy-slider").show();
 	    	$(".home-bg-image-footer").show();
 	        $(".home-bg-image").show();
-	        $("body:not('single-post') .page-banner").show();
 	    }
 	});
 
