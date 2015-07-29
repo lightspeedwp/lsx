@@ -4501,36 +4501,48 @@ body.blog {
 		display: none;
 	}
 
-	.archive-header {
-		margin: -40px -9999rem 120px;
-	    padding: 60px 9999rem;
-	    background: $primary-darker;
-	    color: $white;
-	    text-align: center;
-
-	    .archive-title {
-			color: $white;
-			margin: 0;
-			line-height: 1.6;
-			font: {
-				size: 40px;
-				weight: 700;
+	#primary {
+		&.col-md-8,
+		&.col-sm-8 {
+			.archive-header {
+				text-align: left;
 			}
-	    }
+		}
 
-	    & > p {
-	    	text-align: left;
+		&.col-md-12,
+		&.col-sm-12 {
+			.archive-header {
+				margin: -40px -9999rem 120px;
+			    padding: 60px 9999rem;
+			    background: $primary-darker;
+			    color: $white;
+			    text-align: center;
 
-	    	&:nth-of-type(1) {
-	    		margin-top: 24px;
-	    	}
+			    .archive-title {
+					color: $white;
+					margin: 0;
+					line-height: 1.6;
+					font: {
+						size: 40px;
+						weight: 700;
+					}
+			    }
 
-	    	&.author-desc {
-	    		text-align: center;
-	    		margin-bottom: 0 !important;
-	    	}
-	    }
-	}
+			    & > p {
+			    	text-align: left;
+
+			    	&:nth-of-type(1) {
+			    		margin-top: 24px;
+			    	}
+
+			    	&.author-desc {
+			    		text-align: center;
+			    		margin-bottom: 0 !important;
+			    	}
+			    }
+			}
+		}
+	}	
 }
 
 body.single-post {
