@@ -1354,9 +1354,8 @@ img,
 
 		&:hover {
 			h3 {
-				border-bottom: 2px solid;
 			    display: inline-block;
-			    padding-bottom: 1px;
+			    @include box-shadow(0 2px);
 			}
 		}
 	}
@@ -5319,6 +5318,8 @@ article {
 }
 
 #respond {
+	margin-top: 60px;
+
 	.comment-notes {
 		margin-bottom: 15px;
 	}
