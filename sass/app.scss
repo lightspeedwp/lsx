@@ -1125,6 +1125,10 @@ ul {
 	.single-post & {
 	    margin: 80px -9999rem 50px;	
 	}
+
+	.archive .#primary.cold-md-8 {
+		display: none !important;
+	}
 }
 
 code {
@@ -3987,6 +3991,16 @@ nav {
 		}
 	}
 
+	#primary {
+		@media (min-width: 768px) {
+			width: 65%;
+		}
+	}
+
+	#secondary {
+		float: right;
+	}
+
 	#primary,
 	#secondary {
 		&.col-sm-12 {
@@ -4467,12 +4481,6 @@ header.page-header {
 
 body.archive,
 body.blog {
-	@media screen and (max-width: 992px) {
-		.wrap {
-
-		}
-	}
-
 	.breadcrumbs-container {
 		display: none;
 	}
@@ -5103,17 +5111,23 @@ article {
 				margin-bottom: 0;
 
 				& > img {
-					min-width: 980px;
-					margin-left: -155px;
-
-					@media screen and (max-width: 768px) {
-						min-width: 780px;
-						margin-left: -50px;
+					#primary.col-md-8 & {
+						width: 100%;
 					}
 
-					@media screen and (max-width: 600px) {
-						min-width: 106%;
-    					margin-left: -3%;
+					#primary.col-md-12 & {
+						min-width: 980px;
+						margin-left: -155px;
+
+						@media screen and (max-width: 768px) {
+							min-width: 780px;
+							margin-left: -50px;
+						}
+
+						@media screen and (max-width: 600px) {
+							min-width: 106%;
+	    					margin-left: -3%;
+						}
 					}
 				}
 
@@ -5678,19 +5692,18 @@ footer.content-info {
 }
  
 .gform_wrapper .gfield_error {
- 
-		.gfield_label {
-			color: $state-danger-text;
-		}
- 
-		input,
-		select,
-		textarea {
-			border-color: $alert-danger-border;
-			background-color: $alert-danger-bg;
-			color: $alert-danger-text;
-			@include form-control-focus( $alert-danger-text );
-		}
+	.gfield_label {
+		color: $state-danger-text;
+	}
+
+	input,
+	select,
+	textarea {
+		border-color: $alert-danger-border;
+		background-color: $alert-danger-bg;
+		color: $alert-danger-text;
+		@include form-control-focus( $alert-danger-text );
+	}
 }
  
 .validation_error {

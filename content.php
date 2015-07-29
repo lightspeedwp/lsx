@@ -24,7 +24,6 @@
 		if ( false === $format ) {
 			$format = 'standard';
 		}
-
 		$format_link = get_post_format_link($format);
 		?>
 
@@ -77,11 +76,13 @@
 		</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	<div class="post-tags-wrapper">
-		<div class="post-tags">
-			<?php echo get_the_tag_list(''); ?>
+	<?php if ( has_tag() ) { ?>
+		<div class="post-tags-wrapper">
+			<div class="post-tags">
+				<?php echo get_the_tag_list(''); ?>
+			</div>
 		</div>
-	</div>
+	<?php } ?>
 
 	<?php lsx_entry_bottom(); ?>
 
