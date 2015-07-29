@@ -3338,10 +3338,6 @@ nav {
 
 				& > a {
 					@include border-radius(4px);
-
-					@media screen and (max-width: 992px) {
-						padding-left: 0 !important;
-					}
 				}
 			}
 
@@ -3367,6 +3363,7 @@ nav {
 					@media screen and (max-width: 992px) {
 						background: none !important;
 						font-size: 20px;
+						margin-left: 6px;
 
 						&:hover {
 							color: $black !important;
@@ -4008,7 +4005,8 @@ nav {
 		}
 	}
 
-	#primary {
+	#primary.col-md-8,
+	#primary.col-sm-8 {
 		@media (min-width: 768px) {
 			width: 65%;
 		}
