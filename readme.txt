@@ -12,15 +12,21 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-LSX is a clean, modern, minimal and fully responsive parent theme. This theme is ideal for developers looking for a Bootstrap parent theme. LSX has been designed to be minimal and lean, the does however have theme options that allow you to control fonts, color options, home page configuration and add contact details. The theme is built using Bootstrap 3, which makes it responsive and mobile friendly.
-
+LSX is a clean, modern, minimal and fully responsive parent theme that is ideal for developers looking for a Bootstrap parent theme.
+ 
+LSX has been designed to be minimal and lean, while still having rich features and customizability options, such allowing you to control fonts, color options, home page configuration and much more.
+ 
+The theme is built using Twitter Bootstrap 3 and Underscores by Automattic, which ensure that sites built with LSX put your content front and center and are responsive and mobile friendly.  Its lightweight build ensures better load times, a bonus for both user experience and SEO.
+ 
+LSX comes out the box with a complete set of page templates that are intuitively named so that you can get that particular layout you need when creating your pages without having to labour through formatting.
+ 
 * Responsive Layout
 * Custom Colors
 * Custom Background
 * Social Links
 * Menu Description
 * Post Formats
-* The GPL v2.0 or later license. 
+* The GPL v2.0 or later license.
 
 == Installation ==
 
@@ -98,12 +104,145 @@ Social networks that aren't currently supported will be indicated by a generic s
 Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/
 Support - https://www.lsdev.biz/contact-us/ 
 
+== Hooks / Actions ==
+e.g
+ * add_action('lsx_body_top','your_function_name'); 
+ * function your_function_name() { echo 'content'; }
+
+
+Below is a layout of where the actions are located, so you can easily position you HTML.
+
+<head>
+
+	lsx_head_top();
+	
+	lsx_head_bottom();
+	
+</head>
+
+<body>
+
+	lsx_body_top();
+		
+	lsx_header_before();
+	
+		<header>
+		
+			lsx_header_top();
+			
+				lsx_nav_before();
+				
+				lsx_nav_after();
+			
+			lsx_header_bottom();
+	
+		</header>
+		
+		lsx_banner_content();
+	
+	lsx_header_after();
+		
+		<div id="primary">
+		
+			lsx_content_before();
+			
+				<main id="main">
+				
+					lsx_content_top();
+					
+					lsx_entry_before();
+					
+						<article>
+						
+							lsx_entry_top();
+							
+							lsx_entry_bottom();
+						
+						</article>
+						
+					lsx_entry_after();
+					
+					lsx_comments_before();
+						<section id="comments">
+						</section>
+ 					lsx_comments_after();
+											
+					lsx_content_bottom();
+					
+				</main>
+			
+			lsx_content_after();
+		
+		</div>
+		
+		lsx_sidebars_before();
+		
+			<div id="secondary">
+			
+				lsx_sidebar_top();
+				
+ 				lsx_sidebar_bottom();
+ 				
+			</div>
+			
+ 		lsx_sidebars_after();
+ 		
+ 		
+ 		lsx_footer_before();
+ 			
+ 			<footer>
+ 			
+ 				lsx_footer_top();
+ 				
+ 				lsx_footer_bottom();
+ 			
+ 			</footer>
+ 			
+ 		lsx_footer_after();
+	
+	lsx_body_bottom();
+	
+</body>
+
+
+== Filters ==
+
+'lsx_allowed_post_type_banners' - receives 1 paramter, allow you 'enable' the banners on any custom post types you have registered.
+ * $post_types = array('post','page');
+ 
+'lsx_thumbnail_size' - receives 1 paramter, allows you to change the size of the thumbnail being called. Without having to edit the templates.
+ * $size = 'lsx-thumbnail-wide' or array('width','height');
+ 
+ 'lsx_wp_nav_menu_item' - receives 1 paramter, allows you to change the HTML output of a nav item.
+ * $item_html = '<a href="#">Home</a>';
+ 
+ 'lsx_archive_column_number' - receives 1 paramter, allows you to change the number of columns on a masonry layout.
+ * $column = 3;
+ 
+ 'lsx_post_navigation_labels' - receives 1 paramter, allows you to change the posts navigation text.
+ * $labels = array(
+		'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
+		'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
+		'title' 	=> __( 'Posts navigation', 'lsx' )
+	);
+	
+'lsx_customizer_controls' - receives 1 paramter, allows you to add and remove Customizer options.
+ * $lsx_controls = array();
+ * You can see examples of different customizer field in 'functions.php line 32'. 	
+
 == Changlog ==
-= 1.2.5 =
+
+= 1.3 =
+* Added in support for 'post formats'.
+* Improved Blog Template Styling; Single, Archive and Author pages.
+* Improved Responsivness for the Blog templates.
+* Updated the Colour stylesheets.
 * Renamed the scripts being included more intuitively.
 * Removed unused JS and CSS files.
-* Added in a Customizer option to create a "Sticky" header.
+* Added in a Customizer option to create a "Fixed" header.
 * Added in a Page Template "Metaplate".
+* Added RTL styling fixes for the various header layouts
+* Added in translation encapsulation for missing strings.
 
 = 1.2.4 =
 * Removed the unused readme.txt in the languages directory.

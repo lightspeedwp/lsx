@@ -40,45 +40,37 @@ jQuery(document).ready(function($) {
 
 	$(window).scroll(function(){
 	    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {
-	        $('#top-menu').slideUp();
-	        $('header.banner').addClass('scrolled');
+	        $('#top-menu.top-menu-fixed').slideUp();
+	        $('header.banner.navbar-static-top').addClass('scrolled');
 	    } else {
-	        $('#top-menu').slideDown();
-	        $('header.banner').removeClass('scrolled');
+	        $('#top-menu.top-menu-fixed').slideDown();
+	        $('header.banner.navbar-static-top').removeClass('scrolled');
 	    }
 	});
 	
 	$(window).resize(function () {
 		$(window).scroll(function(){
 		    if ( $(window).scrollTop() > 250 && $(window).width() > 768 ) {
-		        $('#top-menu').slideUp();
-		        $('header.banner').addClass('scrolled');
+		        $('#top-menu.top-menu-fixed').slideUp();
+		        $('header.banner.navbar-static-top').addClass('scrolled');
 		    } else {
-		        $('#top-menu').slideDown();
-		        $('header.banner').removeClass('scrolled');
+		        $('#top-menu.top-menu-fixed').slideDown();
+		        $('header.banner.navbar-static-top').removeClass('scrolled');
 		    }
 		});
 	});
 
-	$('img:not([alt])').each(function(){
-	    var $img = $(this);
-	    var filename = $img.attr('src')
-	    $img.attr('alt', filename.substring(0, filename.lastIndexOf('.')));
-	});
-
-	// Disabling homepage slider, background image area and page banners on mobile
+	// Disabling homepage slider, background image area on mobile
 	$(window).resize(function () {
 		var screen = $(window)
 	    if (screen.width() < 768) {
 	        $(".home .soliloquy-slider").hide();
 	        $(".home-bg-image").hide();
 	        $(".home-bg-image-footer").hide();
-	        $(".page-banner").hide();
 	    } else {
 	    	$(".home .soliloquy-slider").show();
 	    	$(".home-bg-image-footer").show();
 	        $(".home-bg-image").show();
-	        $(".page-banner").show();
 	    }
 	});
 
@@ -173,8 +165,6 @@ jQuery(document).ready(function($) {
 				$(this).removeAttr('data-toggle');
 			});
 		}
-
-
 
 		// Parallax Effect on Banners
 		function parallax(){

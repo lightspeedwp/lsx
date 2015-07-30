@@ -152,7 +152,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-	background: #3d4a30;
+	background: #333;
 }
 
 @media screen and (max-width: 992px) {
@@ -630,4 +630,36 @@ select {
 #top-menu nav.top-menu ul li a:active, 
 #top-menu nav.top-menu ul li a:focus {
   color: #a5a370;
+}
+
+nav.primary-navbar .nav.navbar-nav li.active > a {
+  color: #fff !important;
+  background: #596b46 !important;
+}
+
+#primary.col-md-12 .archive-header,
+article .post-tags-wrapper .post-tags a:hover,
+article .post-tags-wrapper .post-tags a:active,
+article .post-tags-wrapper .post-tags a:focus {
+  background: #596b46 !important;
+}
+
+article .format-link {
+  background-color: #3d4a30 !important;
+  color: #fff !important;
+}
+
+article .post-meta a:hover,
+article .post-meta a:active,
+article .post-meta a:focus,
+article header.entry-header h1.entry-title a:hover,
+article header.entry-header h1.entry-title a:focus,
+article header.entry-header h1.entry-title a:active {
+  color: #596b46 !important;
+}
+
+.comments-link:hover,
+.comments-linK:active,
+.comments-link:focus {
+  color: #a5a370 !important;
 }

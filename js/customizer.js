@@ -57,8 +57,10 @@
 			
 			if(true == newval){
 				$('body header.navbar').addClass('navbar-static-top');
+				$('body').addClass('top-menu-fixed');
 			}else{
 				$('body header.navbar').removeClass('navbar-static-top');
+				$('body').removeClass('top-menu-fixed');
 			}
 		} );
 	} );

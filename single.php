@@ -22,20 +22,16 @@ get_header(); ?>
 		<?php endwhile; // end of the loop. ?>
 		
 		<?php lsx_content_bottom(); ?>
-		
-		<?php
-			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || '0' != get_comments_number() ) :
-				comments_template();
-			endif;
-		?>		
 
 		</main><!-- #main -->			
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_sidebar( 'alt' ); ?>
+
+<?php lsx_post_nav(); ?>
+
 <?php get_footer(); ?>
