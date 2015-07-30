@@ -70,6 +70,8 @@
 		<?php wp_footer(); ?>
 
 	<?php } else { ?>
+	
+		<?php lsx_footer_before(); ?>
 
 		<footer class="content-info" role="contentinfo">
 			<div class="container">

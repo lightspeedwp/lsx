@@ -115,7 +115,7 @@ nav.page-nav p {
 }
 
 header.banner {
-	background: #260e03 !important;
+	background: #fff !important;
 }
 
 header.banner .site-title {
@@ -127,7 +127,7 @@ header.banner .site-description {
 }
 
 header.banner nav .nav.navbar-nav li a {
-	color: #fff;
+	color: #333;
 	border: none !important;
 }
 
@@ -156,7 +156,8 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover,
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:focus,
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
-	background: #e49435;
+	color: #fff !important;
+	background: #333;
 }
 
 @media screen and (max-width: 992px) {
@@ -739,4 +740,47 @@ select {
 .caldera-clarity-grid input[type="search"]:focus, 
 .caldera-clarity-grid select:focus {
 	border-color: #cc4800 !important;
+}
+
+nav.primary-navbar .nav.navbar-nav li.active > a {
+  color: #333 !important;
+  background: #fbaf3f !important;
+}
+
+#top-menu nav.top-menu ul li a:before {
+  color: #cc4800;
+}
+
+#top-menu nav.top-menu ul li a:hover {
+  color: #cc4800;
+}
+
+#primary.col-md-12 .archive-header {
+  background: #cc4800 !important;
+}
+
+article .post-tags-wrapper .post-tags a:hover,
+article .post-tags-wrapper .post-tags a:active,
+article .post-tags-wrapper .post-tags a:focus {
+  background: #e4701e !important;
+}
+
+article .format-link {
+  background-color: #cc4800 !important;
+  color: #fff !important;
+}
+
+article .post-meta a:hover,
+article .post-meta a:active,
+article .post-meta a:focus,
+article header.entry-header h1.entry-title a:hover,
+article header.entry-header h1.entry-title a:focus,
+article header.entry-header h1.entry-title a:active {
+  color: #e4701e !important;
+}
+
+.comments-link:hover,
+.comments-linK:active,
+.comments-link:focus {
+  color: #cc4800 !important;
 }

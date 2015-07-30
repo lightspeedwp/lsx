@@ -19,12 +19,16 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
+			<header class="archive-header">
+				<h1 class="archive-title">
 					<?php printf( __( 'Author: %s', 'lsx' ), get_the_author() ); ?>
 				</h1>
 
-			</header><!-- .page-header -->
+				<?php if (get_the_author_meta('description')) { ?>
+				    <p class="author-desc"><?php echo get_the_author_meta('description') ?></p>
+				<?php } ?>
+
+			</header><!-- .archive-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>

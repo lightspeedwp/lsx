@@ -152,7 +152,7 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 }
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-  background: #87291c;
+  background: #333;
 }
 
 @media screen and (max-width: 992px) {
@@ -620,4 +620,47 @@ select {
 .page-template-template-home-hero #home-widgets a:focus,
 .page-template-template-home-hero #home-widgets a:active {
   color: #87291c !important;
+}
+
+nav.primary-navbar .nav.navbar-nav li.active > a {
+  color: #fff !important;
+  background: #b64d3f !important;
+}
+
+#top-menu nav.top-menu ul li a:before {
+  color: #eaa520;
+}
+
+#top-menu nav.top-menu ul li a:hover {
+  color: #eaa520;
+}
+
+#primary.col-md-12 .archive-header {
+  background: #87291c !important;
+}
+
+article .post-tags-wrapper .post-tags a:hover,
+article .post-tags-wrapper .post-tags a:active,
+article .post-tags-wrapper .post-tags a:focus {
+  background: #b64d3f !important;
+}
+
+article .format-link {
+  background-color: #87291c !important;
+  color: #fff !important;
+}
+
+article .post-meta a:hover,
+article .post-meta a:active,
+article .post-meta a:focus,
+article header.entry-header h1.entry-title a:hover,
+article header.entry-header h1.entry-title a:focus,
+article header.entry-header h1.entry-title a:active {
+  color: #b64d3f !important;
+}
+
+.comments-link:hover,
+.comments-linK:active,
+.comments-link:focus {
+  color: #eaa520 !important;
 }

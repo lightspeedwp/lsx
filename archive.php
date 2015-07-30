@@ -21,9 +21,8 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				
-				<h1 class="page-title">
+			<header class="archive-header">
+				<h1 class="archive-title">
 					<?php if ( has_post_format() && !is_category() && !is_tag() ) { ?>
 						Type: <?php the_archive_title(); ?>
 					<?php } else { ?>
@@ -31,13 +30,9 @@ get_header(); ?>
 					<?php } ?>
 				</h1>
 
-			</header><!-- .page-header -->
-			
-			<?php if(is_tax()){ ?>
-				<div class="entry-content">		
-					<?php the_archive_description(); ?>
-				</div>
-			<?php } ?>
+				<?php echo term_description(); ?>
+
+			</header><!-- .archive-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
