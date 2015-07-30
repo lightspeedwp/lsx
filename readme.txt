@@ -235,10 +235,14 @@ Below is a layout of where the actions are located, so you can easily position y
 = 1.3 =
 * Added in support for 'post formats'.
 * Improved Blog Template Styling; Single, Archive and Author pages.
+* Improved Responsivness for the Blog templates.
+* Updated the Colour stylesheets.
 * Renamed the scripts being included more intuitively.
 * Removed unused JS and CSS files.
 * Added in a Customizer option to create a "Fixed" header.
 * Added in a Page Template "Metaplate".
+* Added RTL styling fixes for the various header layouts
+* Added in translation encapsulation for missing strings.
 
 = 1.2.4 =
 * Removed the unused readme.txt in the languages directory.
