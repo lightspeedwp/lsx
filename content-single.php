@@ -11,7 +11,6 @@
 	<?php lsx_entry_top(); ?>
 
 	<?php if ( is_single() ) { ?>
-
 		<header class="page-header">
 			<h1 class="page-title"><?php the_title(); ?></h1>		
 		</header><!-- .entry-header -->
@@ -21,6 +20,12 @@
 		</header><!-- .entry-header -->
 	<?php } 
 
+	if ( is_singular('post') && !has_post_thumbnail() ) { ?>
+		<header class="single-header">
+			<h1 class="single-title"><?php the_title(); ?></h1>		
+		</header><!-- .entry-header -->
+	<?php }
+
 	$format = get_post_format();
 	if ( false === $format ) {
 		$format = 'standard';
@@ -28,7 +33,12 @@
 	$format_link = get_post_format_link($format);
 	?>
 	<div class="entry-meta">
-		<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+		<?php if ( has_post_thumbnail() ) { ?>
+			<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb genericon genericon-<?php echo $format ?>"></a>
+		<?php } else { ?>
+			<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+		<?php } ?>
+
 		<?php lsx_post_meta(); ?>	
 	</div><!-- .footer-meta -->
 

@@ -295,12 +295,12 @@ function lsx_post_nav() {
 		<div class="nav-links pager row">
 
 			<?php
-				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous"><p class="nav-links-description">Previous Post:</p><h3>%title</h3></div>', 'Previous post link', 'lsx' ) );
+				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous col-md-6"><p class="nav-links-description">Previous Post:</p><h3>%title</h3></div>', 'Previous post link', 'lsx' ) );
 				$previous_post = str_replace('<a','<a',$previous_post);
 				echo $previous_post;
 			?>
 			<?php
-				$next_post = get_next_post_link(     '%link', _x( '<div class="next"><p class="nav-links-description">Next Post:</p><h3>%title</h3></div>', 'Next post link',     'lsx' ) );
+				$next_post = get_next_post_link(     '%link', _x( '<div class="next col-md-6"><p class="nav-links-description">Next Post:</p><h3>%title</h3></div>', 'Next post link',     'lsx' ) );
 				$next_post = str_replace('<a','<a',$next_post);
 				echo $next_post;
 			?>
@@ -520,7 +520,7 @@ function lsx_footer_subscription_cta() {
 add_action( 'lsx_header_top', 'lsx_add_top_menu' );
 function lsx_add_top_menu() {
 	if (has_nav_menu('top-menu')) { ?>
-		<div id="top-menu">
+		<div id="top-menu" class="<?php lsx_top_menu_classes(); ?>">
 			<div class="container">
 				<nav class="top-menu" role="navigation">
 		    		<?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>

@@ -102,23 +102,27 @@ function lsx_header_classes($additional = false) {
 }
 
 /**
- * Output the classes for the header
+ * Output the classes for the top-menu
  *
  * @package 	lsx
  * @subpackage	layout
  * @category	classes
  */
-function lsx_header_fixed_body_class($classes, $class) {
+function lsx_top_menu_classes($additional = false) {
+	
+	$classes = 'top-menu-default';
+	
+	//Fixed header
 	$fixed_header = get_theme_mod('lsx_header_fixed',false);
 	if(false != $fixed_header){
-		$classes[] = 'lsx-fixed-header';
+		$classes .= ' top-menu-fixed';
 	}
 	
-	return $classes;
+	if(false != $additional){
+		$classes .= ' '.$additional;
+	}
+	echo $classes;
 }
-add_filter( 'body_class', 'lsx_header_fixed_body_class' , 2 , 10 );
-
-
 
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 

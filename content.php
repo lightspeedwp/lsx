@@ -27,7 +27,11 @@
 		$format_link = get_post_format_link($format);
 		?>
 
-		<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+		<?php if ( has_post_thumbnail() ) { ?>
+			<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb genericon genericon-<?php echo $format ?>"></a>
+		<?php } else { ?>
+			<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+		<?php } ?>
 
 		<div class="entry-meta">
 			<?php lsx_post_meta(); ?>	
