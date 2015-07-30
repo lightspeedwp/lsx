@@ -106,8 +106,8 @@ Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/
 Support - https://www.lsdev.biz/contact-us/ 
 
 ## Hooks / Actions
-```add_action('lsx_body_top','your_function_name'); 
-function your_function_name() { echo 'content'; }```
+`add_action('lsx_body_top','your_function_name'); 
+`function your_function_name() { echo 'content'; }
 
 Below is a layout of where the actions are located, so you can easily position you HTML.
 ```
@@ -207,26 +207,32 @@ Below is a layout of where the actions are located, so you can easily position y
 ## Filters
 
 'lsx_allowed_post_type_banners' - receives 1 paramter, allow you 'enable' the banners on any custom post types you have registered.
-```$post_types = array('post','page');```
+
+`$post_types = array('post','page');
  
 'lsx_thumbnail_size' - receives 1 paramter, allows you to change the size of the thumbnail being called. Without having to edit the templates.
-```$size = 'lsx-thumbnail-wide' or array('width','height');```
+
+`$size = 'lsx-thumbnail-wide' or array('width','height');`
  
  'lsx_wp_nav_menu_item' - receives 1 paramter, allows you to change the HTML output of a nav item.
-```$item_html = '<a href="#">Home</a>';```
+ 
+`$item_html = <a href="#">Home</a>;
  
  'lsx_archive_column_number' - receives 1 paramter, allows you to change the number of columns on a masonry layout.
-```$column = 3;```
+ 
+`$column = 3;`
  
  'lsx_post_navigation_labels' - receives 1 paramter, allows you to change the posts navigation text.
-```$labels = array(
+ 
+`$labels = array(
 		'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
 		'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
 		'title' 	=> __( 'Posts navigation', 'lsx' )
-	);```
+	);`
 	
 'lsx_customizer_controls' - receives 1 paramter, allows you to add and remove Customizer options, You can see examples of different customizer field in 'functions.php line 32'. 
-```$lsx_controls = array();```
+
+`$lsx_controls = array();`
  
 
 ## Gulp + Bower Files 
@@ -248,10 +254,12 @@ This is also know as Node Package Manager, this is what we will use to install G
 Run the following two commands,   this will install Gulp and Bower. 
 
 This you can do from any directory,  it is installing the files GLOBALY,  so you can run Gulp and Bower command inside different project folders 
-```npm install -g bower```
+
+`npm install -g bower`
  
 Wait for the terminal to finish and test by running
-```bower -v```
+
+`bower -v`
 
 NB: GULP we will download on a per project basis, this is how it works.
 
@@ -269,15 +277,18 @@ CD to the themes directory, if you are not there already.  You will be working i
 
 #### Step 1
  Run the command below in your terminal window,  this will read the bower.json file in the theme and download the list of components (e.g bootstrap).
- ```bower install```
+ 
+ `bower install`
  
 #### Step 2
 This part we actualy use Gulp to move and concatenate the files we need. So run the command below,  to read the package.json and download the "node_modules".
-```npm install```
+
+`npm install`
  
 #### Step 3
 Here is finally where we use gulp,  there are a few tasks set up.
-```gulp upgrade-components```
+
+`gulp upgrade-components`
  
 This will do the following
 
@@ -287,11 +298,13 @@ This will do the following
 #### Install a new component for bower
 Change bootstrap to the name of the component here - http://bower.io/search/
 Its important to have the parameter --save,  so it save the package and version of the componenet to the bower.json file.
-```bower install bootstrap --save```
+
+`bower install bootstrap --save`
  
 ### Gulp Componenets
 Run the command below in your terminal window,  this will install the sass and unminified Bootstrap 
-```bower install```
+
+`bower install`
 
 ## Changlog
 
