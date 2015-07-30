@@ -1,15 +1,15 @@
 # LSX
-Contributors: the LightSpeed team
-Author: LightSpeed
-Author URI: https://www.lsdev.biz/
-Theme Name: LSX
-Theme URI: https://www.lsdev.biz/project/lsx/
-Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-Requires at least: 4.1
-Tested up to: 4.1
-Stable tag: 4.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Contributors: the LightSpeed team
+* Author: LightSpeed
+* Author URI: https://www.lsdev.biz/
+* Theme Name: LSX
+* Theme URI: https://www.lsdev.biz/project/lsx/
+* Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+* Requires at least: 4.1
+* Tested up to: 4.1
+* Stable tag: 4.1
+* License: GPLv2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description
 LSX is a clean, modern, minimal and fully responsive parent theme that is ideal for developers looking for a Bootstrap parent theme.
@@ -101,17 +101,16 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 ## Documentation & Support
 
-Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/
+Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/ 
+
 Support - https://www.lsdev.biz/contact-us/ 
 
 ## Hooks / Actions
-e.g
- * add_action('lsx_body_top','your_function_name'); 
- * function your_function_name() { echo 'content'; }
-
+```add_action('lsx_body_top','your_function_name'); 
+function your_function_name() { echo 'content'; }```
 
 Below is a layout of where the actions are located, so you can easily position you HTML.
-'''
+```
 <head>
 
 	lsx_head_top();
@@ -203,32 +202,31 @@ Below is a layout of where the actions are located, so you can easily position y
 	lsx_body_bottom();
 	
 </body>
-'''
+```
 
 ## Filters
 
 'lsx_allowed_post_type_banners' - receives 1 paramter, allow you 'enable' the banners on any custom post types you have registered.
- * $post_types = array('post','page');
+```$post_types = array('post','page');```
  
 'lsx_thumbnail_size' - receives 1 paramter, allows you to change the size of the thumbnail being called. Without having to edit the templates.
- * $size = 'lsx-thumbnail-wide' or array('width','height');
+```$size = 'lsx-thumbnail-wide' or array('width','height');```
  
  'lsx_wp_nav_menu_item' - receives 1 paramter, allows you to change the HTML output of a nav item.
- * $item_html = '<a href="#">Home</a>';
+```$item_html = '<a href="#">Home</a>';```
  
  'lsx_archive_column_number' - receives 1 paramter, allows you to change the number of columns on a masonry layout.
- * $column = 3;
+```$column = 3;```
  
  'lsx_post_navigation_labels' - receives 1 paramter, allows you to change the posts navigation text.
- * $labels = array(
+```$labels = array(
 		'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
 		'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
 		'title' 	=> __( 'Posts navigation', 'lsx' )
-	);
+	);```
 	
-'lsx_customizer_controls' - receives 1 paramter, allows you to add and remove Customizer options.
- * $lsx_controls = array();
- * You can see examples of different customizer field in 'functions.php line 32'. 
+'lsx_customizer_controls' - receives 1 paramter, allows you to add and remove Customizer options, You can see examples of different customizer field in 'functions.php line 32'. 
+```$lsx_controls = array();```
  
 
 ## Gulp + Bower Files 
@@ -248,48 +246,52 @@ This is also know as Node Package Manager, this is what we will use to install G
 
 ### 2: Install Bower
 Run the following two commands,   this will install Gulp and Bower. 
+
 This you can do from any directory,  it is installing the files GLOBALY,  so you can run Gulp and Bower command inside different project folders 
- * Run "npm install -g bower"
+```npm install -g bower```
  
 Wait for the terminal to finish and test by running
- * Run "bower -v"
+```bower -v```
 
 NB: GULP we will download on a per project basis, this is how it works.
 
 
 ## Development Workflow
-
 There are two types terminal scripts you can run on the LSX theme
+
  * Firstly,  if you want to upgrade bootstrap or the components that LSX uses, follow the "Bower Componenets" heading.
  * Secondly,  if you want to minify/write the themes custom JS and SASS files. Follow the "Gulp Componenets" heading.
  
 ### Bower Components Upgrade
 Please note,  you will only ever run this to upgrade the vendor packages we use.  Otherwise you dont need these as the minified version of these are included in the theme.
+
 CD to the themes directory, if you are not there already.  You will be working in here from now on.
 
 #### Step 1
- * Run "bower install" in your terminal window,  this will read the bower.json file in the theme and download the list of components (e.g bootstrap).
+ Run the command below in your terminal window,  this will read the bower.json file in the theme and download the list of components (e.g bootstrap).
+ ```bower install```
  
 #### Step 2
 This part we actualy use Gulp to move and concatenate the files we need. So run the command below,  to read the package.json and download the "node_modules".
- * Run "npm install"
+```npm install```
  
 #### Step 3
 Here is finally where we use gulp,  there are a few tasks set up.
- * Run "gulp upgrade-components"
+```gulp upgrade-components```
  
 This will do the following
+
  * Grab the Sass files from the components folder and move them into /sass/bootstrap/ so app.css can use the mixins
  * Concatenate and Minify all of the bootstraps js file and moves them into /js/ as scripts.min.js 
  
 #### Install a new component for bower
 Change bootstrap to the name of the component here - http://bower.io/search/
 Its important to have the parameter --save,  so it save the package and version of the componenet to the bower.json file.
- * bower install bootstrap --save
+```bower install bootstrap --save```
  
 ### Gulp Componenets
- * run "bower install" in your terminal window,  this will install the sass and unminified Bootstrap 
- 	
+Run the command below in your terminal window,  this will install the sass and unminified Bootstrap 
+```bower install```
 
 ## Changlog
 
