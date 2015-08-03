@@ -292,6 +292,19 @@ Its important to have the parameter --save,  so it save the package and version 
 Run the command below in your terminal window,  this will install the sass and unminified Bootstrap 
 `bower install`
 
+
+## Developer Help - Usefull Gists
+
+### Banners
+
+ * Enable banners on custom post types - https://gist.github.com/krugazul/5eeb9482160a43f7afdb 
+ * Add aditional content to the banner - https://gist.github.com/krugazul/7d855205857b76887094 
+ 
+### Templates
+
+ * Redirect a user to a login form if they are logged out (with template) - https://gist.github.com/krugazul/e92749510d31d4a10906
+
+
 ## Changlog
 
 ### 1.3
