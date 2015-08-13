@@ -34,4 +34,4 @@ get_header(); ?>
 
 <?php lsx_post_nav(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

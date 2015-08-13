@@ -19,4 +19,4 @@ if(isset($GLOBALS['comment_depth'])){
 <?php endif; ?>
 
 <?php comment_text(); ?>
-<?php comment_reply_link(array('depth' => $depth,'max_depth' => $depth)); ?>
+<?php comment_reply_link(array('depth' => $depth,'max_depth' => $depth));

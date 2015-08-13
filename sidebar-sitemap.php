@@ -36,4 +36,4 @@
 
 	<?php lsx_sidebars_after(); ?>
 
-<?php endif; ?>
+<?php endif;

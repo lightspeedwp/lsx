@@ -108,4 +108,4 @@ global $lsx_options;
 			
 		<?php lsx_header_after(); ?>
 
-	<?php } ?>
+	<?php }

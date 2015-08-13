@@ -6,7 +6,15 @@
 
 <?php lsx_entry_before(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php 
+	if ( has_post_thumbnail() ) { 
+		$thumb_class = 'has-thumb';
+	} else {
+		$thumb_class = 'no-thumb';
+	} 
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class($thumb_class); ?>>
 
 	<?php lsx_entry_top(); ?>
 
@@ -100,4 +108,4 @@
 	<?php } ?>
 </article><!-- #post-## -->
 
-<?php lsx_entry_after(); ?>
+<?php lsx_entry_after();
