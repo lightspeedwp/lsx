@@ -24,9 +24,6 @@ gulp.task('upgrade-components', ['clean-upgrade'], function() {
 	gulp.start('jquery-sticky-upgrade');
 });
 
-
-https://github.com/garand/sticky.git
-
 gulp.task('compile-sass', function() {	
 	gulp.src('sass/app.scss')
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )

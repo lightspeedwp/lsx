@@ -92,7 +92,7 @@ global $lsx_options;
 			    	<?php 
 			    	if(is_singular('landing-page')){ 
 			    			$email_address = get_post_meta(get_the_ID(),'email_address',true);
-			    			if(false == $email_address){
+			    			if(false === $email_address){
 								$email_address = 'email@address.com';
 							}
 			    	}else{

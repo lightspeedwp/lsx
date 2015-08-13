@@ -4386,7 +4386,7 @@ header.page-header {
 	}
 
 	.wrap {
-		margin-top: 60px !important;
+		margin-top: 180px !important;
 	}
 
 	#primary {
@@ -4666,6 +4666,12 @@ body.search {
 				    }
 				}
 			}
+
+			.no-thumb {
+				.format-link {
+					margin-top: 20px;
+				}
+			}
 		}
 
 		&.col-md-12,
@@ -4709,6 +4715,10 @@ body.search {
 
 	#secondary {
 		margin-top: 40px;
+
+		@media (max-width: 768px) {
+			width: 100% !important;
+		}
 	}
 }
 
@@ -5562,6 +5572,10 @@ article {
 		text-align: center;
 		margin-top: 80px;
 
+		.sinlge-post & {
+			margin-bottom: 60px;
+		}
+
 		.post-tags {
 			display: inline-block;
 			
@@ -5810,6 +5824,10 @@ article {
 		&:hover {
 			background: $black !important;
 		}
+	}
+
+	button {
+		border-radius: 0 !important;
 	}
 }
 

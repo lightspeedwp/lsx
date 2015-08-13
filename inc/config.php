@@ -19,12 +19,6 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 function lsx_setup() {
 	global $content_width;
 	
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on lsx, use a find and replace
-	 * to change 'lsx' to the name of your theme in all the template files
-	 */
 	load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
 	
 	$args = array(
@@ -35,31 +29,12 @@ function lsx_setup() {
 			'size' => 'medium',
 	);
 	add_theme_support( 'site-logo', $args );
-
-	
 	add_theme_support( 'custom-background', array(
-	// Background color default
 	'default-color' => 'FFF',
-	// Background image default
 	) );	
-
-	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
 	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
 	add_theme_support( 'post-thumbnails' );
-	
-	/*
-	 * Enable support for Post Formats.
-	*
-	* See: https://codex.wordpress.org/Post_Formats
-	*/
 	add_theme_support( 'post-formats', array('image', 'video', 'gallery', 'audio', 'link', 'quote', 'aside') );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -69,12 +44,11 @@ function lsx_setup() {
 		'social'=> __( 'Social Menu' , 'lsx' )
 	) );	
 
+	//Set the content width
 	$content_width = 750;
 	
-	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
-	
-	add_theme_support( 'html5', array( 'caption' ) );
-	
+	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );	
+	add_theme_support( 'html5', array( 'caption' ) );	
 }
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );

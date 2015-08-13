@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
 
 	// Disabling homepage slider, background image area on mobile
 	$(window).resize(function () {
-		var screen = $(window)
+		var screen = $(window);
 	    if (screen.width() < 768) {
 	        $(".home .soliloquy-slider").hide();
 	        $(".home-bg-image").hide();
@@ -80,10 +80,11 @@ jQuery(document).ready(function($) {
 	});
 
 	// Sticky Info Box widget
+	var spacing = 0;
 	if ($('body').hasClass('logged-in')) {
-		var spacing = 125;
+		spacing = 125;
 	} else {
-		var spacing = 93;
+		spacing = 93;
 	}
 
 	$(".info-box-sticky").sticky({ 
@@ -127,21 +128,6 @@ jQuery(document).ready(function($) {
 				jQuery('#main').css('opacity', '1' );
 			    
 		    });			
-			
-		     /*var infinite_count = 0;
-		     // Triggers re-layout on infinite scroll
-		     $( document.body ).on( 'post-load', function () {
-				infinite_count = infinite_count + 1;
-	
-				var selector = $('#infinite-view-' + infinite_count);
-				//var $elements = $selector.find('.jetpack-portfolio');
-				  var elements = [];
-				  selector.find('.filter-item').each( function() {
-					  elements.push( $(this) );
-					  $('.filter-items-container').append($(this));
-				});
-				  selector.remove();
-		     });*/
     	}
     	
     	//Portfolio Hover Class
@@ -232,7 +218,7 @@ function lsxResizeBanner(width) {
 	if(width <= 400){
 		banner_attribute_name = 'data-mobile';
 	}			
-	if(undefined != jQuery('.page-banner') && jQuery('.page-banner').attr('data-desktop') !== undefined){		
+	if(undefined !== jQuery('.page-banner') && undefined !== jQuery('.page-banner').attr('data-desktop')){		
 		var image_url = 'url('+jQuery('.page-banner').attr(banner_attribute_name)+')';
 		jQuery('.page-banner').css('background-image',image_url);	
 	}	
