@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
  * Adds Yoast Breadcrumbs to lsx_content_top
@@ -212,7 +212,7 @@ function lsx_is_element_empty($element) {
  */
 function lsx_get_thumbnail($size,$image_src = false){
 	
-	if(false == $image_src){
+	if(false === $image_src){
 		$post_id = get_the_ID();
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	}elseif(false != $image_src	){
@@ -276,8 +276,8 @@ function lsx_thumbnail($size = 'thumbnail',$image_src = false){
 function lsx_get_attachment_id_from_src($image_src) {
 	global $wpdb;
 	$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src' LIMIT 1";
-	$id = $wpdb->get_var($query);
-	return $id;
+	$post_id = $wpdb->get_var($query);
+	return $post_id;
 }
 
 /**
