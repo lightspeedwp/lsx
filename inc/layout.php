@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function lsx_layout_selector( $class, $area = 'site' ) {
 
 	$layout = get_theme_mod('lsx_layout','2cr');
+	$layout = apply_filters( 'lsx_layout', $layout );
 
 	$default_size = 'sm';
 	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );

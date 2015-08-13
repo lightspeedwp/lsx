@@ -1,5 +1,10 @@
 var filter_item_width;
 jQuery(document).ready(function($) {
+	if ( $("header.banner").hasClass("navbar-static-top") ) {
+		$("body").addClass("top-menu-fixed");
+	}
+	
+	$(".dropdown-toggle").dropdown();
 
 	filter_item_width = jQuery('.filter-items-container').width();
 	if(jQuery('.filter-items-container .filter-item').hasClass('column-1')){
@@ -176,9 +181,12 @@ jQuery(document).ready(function($) {
 		    $('.page-banner').css('top', (scrolled * 0.1) + 'px');
 		}
 
-		$(window).scroll(function(e){
-		    parallax();
-		});
+		if ( $("header.banner").hasClass("navbar-static-top") ) {
+
+		  	$(window).scroll(function(e){
+			    parallax();
+			});
+		}
 		
 		//Page Banner		
 		lsxResizeBanner(width);	

@@ -292,6 +292,8 @@ function lsx_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
+		<div class="lsx-breaker"></div>
+
 		<div class="nav-links pager row">
 
 			<?php

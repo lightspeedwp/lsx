@@ -17,6 +17,9 @@ require get_template_directory() . '/inc/scripts.php';
 require get_template_directory() . '/inc/nav.php';
 require get_template_directory() . '/inc/comment-walker.php';
 require get_template_directory() . '/inc/jetpack.php';
+if(class_exists('BuddyPress')){
+	require get_template_directory() . '/inc/buddypress.php';
+}
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
@@ -290,27 +293,8 @@ function lsx_form_submit_button($button, $form){
     return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
 }
 
-add_image_size( 'lsx-thumbnail-wide', 350, 230, true );
-add_image_size( 'lsx-thumbnail-single', 750, 350, true );
-
-
-/**
-* Register Top Navigation
-*/
-function lsx_register_top_menu() {
-  register_nav_menu('top-menu', __( 'Top Menu' , 'lsx' ));
-}
-add_action( 'init', 'lsx_register_top_menu' );
-
-
-/**
-* Register Social Navigation
-*/
-function lsx_register_social_menu() {
-  register_nav_menu('social', __( 'Social Menu' , 'lsx' ));
-}
-add_action( 'init', 'lsx_register_social_menu' );
-
+add_image_size( 'thumbnail-wide', 350, 230, true );
+add_image_size( 'thumbnail-single', 750, 350, true );
 
 // Replaces the excerpt "more" text by a link
 function lsx_excerpt_more($more) {
@@ -319,11 +303,13 @@ function lsx_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'lsx_excerpt_more');
 
-function get_my_url() {
+
+/**
+* Return URL from a link in the content
+*/
+function lsx_get_my_url() {
     if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
         return false;
  
     return esc_url_raw( $matches[1] );
 }
-
-?>

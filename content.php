@@ -45,7 +45,7 @@
 
     			$the_link = ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() ); ?>
 
-				<a href="<?php echo get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
+				<a href="<?php echo lsx_get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			<?php } ?>
@@ -95,7 +95,7 @@
 
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
 
-	<?php if ( !is_singular() ) { // Display full-width divider on Archives ?>
+	<?php if ( !is_singular() && !is_single() ) { // Display full-width divider on Archives ?>
 		<div class="lsx-breaker"></div>
 	<?php } ?>
 </article><!-- #post-## -->

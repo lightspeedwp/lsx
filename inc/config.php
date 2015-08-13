@@ -65,13 +65,13 @@ function lsx_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'lsx' ),
+		'top-menu'=> __( 'Top Menu' , 'lsx' ),
+		'social'=> __( 'Social Menu' , 'lsx' )
 	) );	
-	
+
 	$content_width = 750;
 	
 	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
-	
-	
 	
 	add_theme_support( 'html5', array( 'caption' ) );
 	

@@ -15,6 +15,8 @@
 	} else {
 
 		$layout = get_theme_mod('lsx_layout','2cr');
+		$layout = apply_filters( 'lsx_layout', $layout );
+		
 		if('posts' == $show_on_front && is_home()){
 			$sidebar = 'home';
 		}else{
