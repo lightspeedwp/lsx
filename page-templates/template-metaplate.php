@@ -10,4 +10,4 @@ get_header() ?>
 		<?php get_template_part( 'content', 'page' ); ?>
 
 	<?php endwhile; // end of the loop. ?>	
-<?php get_footer(); ?>
+<?php get_footer();

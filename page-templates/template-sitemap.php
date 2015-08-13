@@ -50,4 +50,4 @@ get_header(); ?>
 
 <?php get_sidebar('sitemap'); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

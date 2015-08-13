@@ -406,3 +406,28 @@ function mv_browser_body_class($classes) {
         return $classes;
 }
 add_filter('body_class','mv_browser_body_class');
+
+// Replaces the excerpt "more" text by a link
+function lsx_excerpt_more($more) {
+	global $post;
+	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue reading</a>';
+}
+add_filter('excerpt_more', 'lsx_excerpt_more');
+
+/**
+ * Return URL from a link in the content
+ */
+function lsx_get_my_url() {
+	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+		return false;
+
+	return esc_url_raw( $matches[1] );
+}
+
+/**
+ * filter the Gravity Forms button type
+ */
+add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
+function lsx_form_submit_button($button, $form){
+	return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
+}

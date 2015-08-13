@@ -48,4 +48,4 @@
 		<?php lsx_content_after(); ?>
 
 	</div><!-- #primary -->
-<?php get_footer(); ?>
+<?php get_footer();

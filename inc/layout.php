@@ -192,3 +192,14 @@ function lsx_blog_page_title() {
 		
 }
 add_action('lsx_content_top','lsx_blog_page_title',20);
+
+/**
+ * Add Viewport Meta Tag to head
+ */
+function lsx_add_viewport_meta_tag() {
+	?>
+  		<meta name="viewport" content="width=device-width">
+  		<!-- Noto Sans -->
+  		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:700' rel='stylesheet' type='text/css'>
+  	<?php }
+add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
