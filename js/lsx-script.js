@@ -119,7 +119,7 @@ jQuery(document).ready(function($) {
 		
     	// The sorter for the portfolio.
     	var has_filter = $('#filterNav');
-    	if('undefined' != has_filter){
+    	if('undefined' !== has_filter){
 			$('#main').imagesLoaded( function(){
 				
 				lsxProjectThumbInit();
@@ -159,17 +159,13 @@ jQuery(document).ready(function($) {
 
 		// Parallax Effect on Banners
 		function parallax(){
-	    var scrolled = $(window).scrollTop();
-		    $('.page-banner').css('top', (scrolled) + 'px');
-		}
-		function parallax(){
 		    var scrolled = $(window).scrollTop();
 		    $('.page-banner').css('top', (scrolled * 0.1) + 'px');
 		}
 
 		if ( $("header.banner").hasClass("navbar-static-top") ) {
 
-		  	$(window).scroll(function(e){
+		  	$(window).scroll(function(){
 			    parallax();
 			});
 		}
@@ -280,7 +276,7 @@ function lsxProjectFilterInit() {
 		
 		jQuery('.filter-items-container .filter-item').each(function(){
 			
-			if(jQuery(this).hasClass(selector) || '*' == selector){
+			if(jQuery(this).hasClass(selector) || '*' === selector){
 				jQuery(this).show();
 			}else{
 				jQuery(this).hide();

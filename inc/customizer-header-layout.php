@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
  * Customizer Header Swatch Control Class
@@ -62,7 +62,7 @@ class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 	 */
 	public function render_content() {
 		
-		$id    = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
+		$post_id    = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
 		$class = 'customize-control customize-control-' . $this->type;
 		$value = $this->value();
 
@@ -85,7 +85,7 @@ class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 			}
 
 			?>
-			<input <?php $this->link(); ?> class="selected-header-layout <?php echo $class; ?>" id="<?php echo $id; ?>" type="hidden" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>>
+			<input <?php $this->link(); ?> class="selected-header-layout <?php echo $class; ?>" id="<?php echo $post_id; ?>" type="hidden" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>>
 			</div>
 		</label>
 	<?php

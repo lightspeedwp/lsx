@@ -275,17 +275,16 @@ function lsx_website_meta_box( $object, $box ) { ?>
 function lsx_portfolio_sorter(){ ?>
 	<ul id="filterNav" class="clearfix">
 		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'lsx'); ?></a></li>
-		<?php $j=1;
+		<?php 
 		$types = get_terms('jetpack-portfolio-type');
 		
 		if(is_array($types)){
 			foreach ($types as $type) {
-				$a = '<li><a href="#" data-filter=".'.$type->slug.'">';
-		    	$a .= $type->name;					
-				$a .= '</a></li>';
-				echo $a;
+				$content = '<li><a href="#" data-filter=".'.$type->slug.'">';
+		    	$content .= $type->name;					
+				$content .= '</a></li>';
+				echo $content;
 				echo "\n";
-				$j++;
 			}
 		}?>
 	</ul>

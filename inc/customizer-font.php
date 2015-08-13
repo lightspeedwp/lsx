@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
  * LSX_Customize_Font_Control Class

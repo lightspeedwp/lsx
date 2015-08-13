@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
  * Customizer Header Fixed Class
@@ -62,7 +62,7 @@ class LSX_Customize_Header_Fixed_Control extends WP_Customize_Control {
 	 */
 	public function render_content() {
 		
-		$id    = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
+		$post_id    = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
 		$class = 'customize-control customize-control-' . $this->type;
 		$value = $this->value();
 
@@ -76,7 +76,7 @@ class LSX_Customize_Header_Fixed_Control extends WP_Customize_Control {
 			<?php } ?>
 			<div class="header-fixed">
 				<label>
-					<input <?php $this->link(); ?> type="checkbox" id="<?php echo $id; ?>" class="header-fixed <?php echo $class; ?>" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>> Uncheck for standard header
+					<input <?php $this->link(); ?> type="checkbox" id="<?php echo $post_id; ?>" class="header-fixed <?php echo $class; ?>" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>> Uncheck for standard header
 				</label>
 			</div>
 		</label>

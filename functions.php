@@ -4,7 +4,7 @@
  *
  * @package lsx
  */
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 
 require get_template_directory() . '/inc/config.php';
