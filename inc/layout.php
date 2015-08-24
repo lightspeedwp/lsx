@@ -203,3 +203,15 @@ function lsx_add_viewport_meta_tag() {
   		<link href='http://fonts.googleapis.com/css?family=Noto+Sans:700' rel='stylesheet' type='text/css'>
   	<?php }
 add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
+
+
+/**
+ * Add a search form to just above the nav menu
+ */
+function lsx_header_search_form() {
+	$search_form = get_theme_mod( 'lsx_header_search', 0 );
+	if($search_form || is_customize_preview()){
+		get_search_form( true );
+	}
+}
+add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );

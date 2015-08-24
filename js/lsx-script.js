@@ -3,6 +3,10 @@ jQuery(document).ready(function($) {
 	if ( $("header.banner").hasClass("navbar-static-top") ) {
 		$("body").addClass("top-menu-fixed");
 	}
+
+	if ( $('header.banner .container form').hasClass('search-form') ) {
+		$('body').addClass('has-header-search');
+	}
 	
 	$(".dropdown-toggle").dropdown();
 

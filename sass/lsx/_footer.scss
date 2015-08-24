@@ -1,0 +1,209 @@
+// Footer CTA
+
+#footer-cta {
+	.home & {
+		display: none;
+	}
+
+	.lsx-full-width-alt,
+	.lsx-full-width {
+		margin: {
+			top: 0 !important;
+			bottom: 0 !important;
+		}
+		padding: {
+			top: 40px;
+			bottom: 40px;
+		}
+
+		.widget {
+			.widget-title {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+// Footer Widgets
+
+#footer-widgets {
+	background: $black;
+
+	.footer-widgets-title {
+		display: none;
+	}
+
+	.widget {
+		margin: 70px 0 90px;
+		color: #ccc;
+
+		@media screen and (max-width: 768px) {
+			margin: 50px 0;
+		}
+
+		h3.widget-title {
+			color: $light-grey;
+		}
+
+		a {
+			color: $light-grey;
+
+			&:hover {
+				color: $grey;
+			}
+		}
+
+		.btn,
+		button {
+			color: $white;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background: $blacker;
+			}
+		}
+
+		&.widget_tag_cloud {
+			.tagcloud a {
+				display: inline-block;
+				background: $grey;
+				color: $white;
+				line-height: 2;
+				font-size: 14px !important;
+				padding: 2px 10px;
+				margin: 2px 0px;
+				border: none !important;
+				@include transition(all .1s ease-in-out);
+				@include border-radius(3px);
+			
+				&:hover {
+					background: $primary;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+// Footer
+
+footer.content-info {
+	background: $blacker;
+	text-align: center;
+
+	@media screen and (min-width: 1200px) {
+		& > .container {
+			width: 100%;
+			padding: {
+				left: 30px;
+				right: 30px;
+			}
+		}
+	}
+
+	.credit {
+		color: $white;
+		margin: 20px 0;
+		font-size: 15px;
+
+		@media screen and (max-width: 992px) {
+			font-size: 17px;
+			text-align: left;
+		}
+
+		&.credit-float {
+			float: left;
+		}
+	}
+}
+
+// Footer Subscribe
+
+.footer-subscribe {
+	background: $primary;
+	padding: 55px 0 60px;
+
+	@media screen and (max-width: 768px) {
+		padding: 40px 0;
+	}
+
+	h2 {
+		text-align: center;
+		font-weight: normal;
+		color: $light-grey;
+		margin: {
+			top: 0;
+			bottom: 45px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-bottom: 30px;
+	        font-size: 30px;
+		}
+	}
+
+	.caldera-grid {
+		@media screen and (max-width: 768px) {
+			max-width: 70%;
+			margin: 0 auto;
+		}
+
+		@media screen and (max-width: 768px) {
+			max-width: 100%;
+		}
+
+		.form-group {
+			display: inline-block;
+			width: auto;
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+			}
+
+			&:nth-child(1),
+			&:nth-child(2) {
+				width: 38%;
+				margin-right: 20px;
+
+				@media screen and (max-width: 1200px) {
+					margin-right: 10px;
+				}
+
+				@media screen and (max-width: 992px) {
+					width: 34.5%;
+				}
+
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	input[type="submit"] {
+		line-height: inherit;
+		padding: 7px 50px;
+		margin: {
+			top: -3px;
+			bottom: 0;
+		}
+		background: none !important;
+		border: 3px solid $white !important;
+		font-size: 18px;
+
+		@media screen and (max-width: 768px) {
+			width: 100%;
+			margin-top: 5px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $white !important;
+			color: $black !important;
+		}	
+	}
+}

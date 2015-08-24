@@ -20,6 +20,9 @@ get_header(); ?>
 
 					</div> <!-- .row -->
 					<?php get_search_form(); ?>
+					<br />
+
+					<p><?php _e( 'Alternatively, you can check out the', 'lsx' ); ?> <a href="/sitemap"><strong><?php _e( 'sitemap', 'lsx' ); ?></strong></a></p>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->

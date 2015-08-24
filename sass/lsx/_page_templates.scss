@@ -1,0 +1,480 @@
+// Metaplate
+.page-template-template-metaplate,
+.page-template-template-metaplate-alt {
+	header.banner {
+		.navbar-header {
+			float: left;
+		}
+
+		.header-links {
+			float: right;
+			margin: 47px 0;
+
+			strong {
+				margin-right: 20px;
+			}
+
+			a {
+				border-bottom: 1px solid;
+				@include transition(all .2s ease-in-out);
+
+				&:hover,
+				&:active,
+				&:focus {
+					border-bottom: none;
+				}
+			}
+		}
+
+		&.scrolled {
+			.header-links {
+				margin: 32px 0;
+			}
+		}
+	}
+
+	.page-banner,
+	.page-header {
+		display: none !important;
+	}
+
+	.wrap {
+		margin: {
+			bottom: 0 !important;
+		}
+		padding-bottom: 0 !important;
+
+		#primary {
+			margin: 0 auto;
+			float: none;
+		}
+		
+		.lst-landing-page-top {
+			.lsx-hero-unit {
+				margin: 20px auto 60px;
+
+				.lst-landing-page-headline {
+					margin-top: 0;
+					line-height: 1.52;
+				}
+			}
+
+			.signup-headline {
+				margin-bottom: 50px;
+			}
+		}
+
+		.lst-landing-page-middle {
+			&.signup-middle {
+				margin-bottom: 80px;
+
+				.signup-reasons {
+					font-size: 15px;
+					padding: 20px 30px;
+					background-color: #eee;
+
+					a {
+						font-weight: bold;
+					}
+				}
+
+				input[type="submit"] {
+					background: #2b75bb !important;
+
+					&:hover,
+					&:focus,
+					&:active {
+						background: #23609a !important;
+					}
+				}
+			}
+
+			.lst-landing-page-introduction-content {
+				.lst-landing-page-introduction-content-title {
+					margin-top: 0;
+				}
+
+				.lst-landing-page-cta-btn {
+					background: #d93a3a !important;
+					padding: 11px 30px;
+					margin-top: 12px;
+					font: {
+						size: 18px;
+						weight: bold;
+					}
+					text-transform: uppercase;
+
+					&:hover,
+					&:focus,
+					&:active {
+						background: #b53434 !important;
+					}
+
+  					.genericon {
+  						font-size: 14px;
+						vertical-align: middle;
+						margin-left: 23px;
+						width: 8px;
+  					}
+				}
+			}
+		}
+
+		.lst-landing-page-bottom {
+			@include lsx-full-width($black, $white);
+			margin-bottom: 0;
+
+			ul {
+				@include clear-list;
+			}
+
+			.lst-landing-page-features {
+				.lst-landing-page-feature {
+					position: relative;
+					padding-left: 38px;
+					margin-bottom: 30px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					&:before {
+						content: '\f418';
+						display: block;
+						font: {
+							family: genericons;
+							size: 28px;
+						}
+						position: absolute;
+						top: -2px;
+						left: 0;
+					}
+
+					.lst-landing-page-feature-title {
+						margin-bottom: 10px;
+					}
+
+					.lst-landing-page-feature-content {
+						font-size: 15px;
+						line-height: 2;
+						color: #ccc;
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			.lst-landing-page-testimonials {
+				.lst-landing-page-testimonials-title {
+					font-size: 22px;
+				 	margin-bottom: 38px;
+				}
+
+				.lst-landing-page-testimonial {
+					margin-bottom: 36px;
+
+					.lst-landing-page-testimonial-image {
+						display: block;
+						height: 110px;
+						background-color: #555;
+					}
+
+					.lst-landing-page-testimonial-content {
+						font-size: 15px;
+
+						p {
+							line-height: 2;
+						}
+
+						.lst-landing-page-testimonial-content-quote {
+							font: {
+								size: 16px;
+								style: italic;
+							}
+							margin: {
+								top: 2px;
+								bottom: 11px;
+							}
+							letter-spacing: .6px;
+							color: #ccc;
+						}
+
+						.lst-landing-page-testimonial-content-company-info {
+							margin-bottom: 0;
+
+							span {
+								font-weight: bold;
+								margin-right: 7px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.signup-footer {
+			font-size: 14px;
+			padding-top: 12px;
+			border-top: 1px solid #ccc;
+			margin-top: 20px;
+
+			a {
+				border-bottom: 1px solid;
+				@include transition(all .1s ease-in-out);
+
+				&:hover,
+				&:focus,
+				&:active {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.sharedaddy,
+	footer.entry-meta {
+		display: none !important;
+	}
+}
+
+// Classy Homepage Template
+
+.page-template-classy-home {
+	.wrap {
+		margin: 0 auto !important;
+	}
+}
+
+.classy-home-content {
+	.classy-home-content-section-wrapper {
+		@include lsx-full-width($off-white, #777);
+		margin: {
+			top: 0;
+			bottom: 0;
+		}
+		padding: {
+			top: 70px;
+			bottom: 70px;
+		}
+		border-bottom: 1px solid #ddd;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+
+
+		a {
+			color: $primary;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: $primary-darker;
+			}
+		}
+
+		.classy-home-content-section {
+			text-align: center;
+				
+			@media screen and (max-width: 992px) {
+				margin-bottom: 60px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			& > h3 {
+				color: $black;
+				font-size: 30px;
+				margin-bottom: 14px;
+			}
+
+			& > span {
+				display: block;
+				font-size: 19px;
+				margin-bottom: 40px;
+			}
+
+			[class*="-slider"] {
+				.slide-container {
+					background-size: cover;
+					padding: 120px 40px;
+
+					@media screen and (max-width: 992px) {
+						padding: 100px 40px;
+					}
+
+					@media screen and (max-width: 768px) {
+						margin-bottom: 80px 40px;
+					}
+
+					.caption {
+						h3 {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+
+		&#classy-home-intro {
+			.lsx-hero-unit {
+				text-align: left;
+				font-size: 18px;
+
+				h1 {
+					text-align: center;
+					color: $black;
+					margin-bottom: 40px;
+
+					@media screen and (max-width: 992px) {
+						text-align: left;
+					}
+				}
+
+				h3 {
+					color: $black;
+					margin-bottom: 24px;
+				}
+
+				ul {
+					@include clear-list;
+
+					li {
+						margin-bottom: 12px;
+
+						.genericon {
+							vertical-align: middle;
+							color: $black;
+							margin-right: 10px;
+							font-size: 20px;
+						}
+					}
+				}
+			}
+		}
+
+		&#classy-home-intro,
+		&#classy-home-blog,
+		&#classy-home-activities-restaurants {
+			background: $white;
+		}
+
+		&#classy-home-offers {
+			@include lsx-full-width($primary, #ccc);
+
+			.classy-home-content-section {
+				margin: 0 auto;
+				float: none;
+
+				& > h3 {
+					color: $white;
+				}
+
+				& > span {
+					a {
+						color: $white !important;
+
+						&:hover,
+						&:active,
+						&:focus {
+							color: $black !important;
+						}
+					}
+				}
+			}
+
+			.offer-slider {
+				.slick-track {
+					width: auto !important;
+				}
+
+				.slide-title {
+					color: $black;
+					margin: 0 !important;
+				}
+			}
+		}
+
+		&#classy-home-gallery {
+			img  {
+				@media screen and (max-width: 768px) {
+					margin-bottom: 24px;
+				}
+			}
+		}
+
+		&#classy-home-blog {
+			.post {
+				@include lsx-hover-cards;
+			}
+		}
+	}
+}
+
+
+.page-template-template-page-hero {
+	ul.breadcrumb {
+		position: absolute;
+		top: -25px;
+
+		li.active {
+			@include border-radius-top(0);
+		}
+
+		@media screen and (max-width: 1200px) {
+  			top: -17px;
+		}
+
+		@media screen and (max-width: 992px) {
+  			top: -7px;
+		}
+	}
+
+	.lsx-full-width-footer {
+		margin-bottom: -120px;
+		padding: 40px 9999rem;
+
+
+		@media screen and (max-width: 992px) {
+  			margin-bottom: -110px;
+  			padding: 30px 9999rem;
+		}
+
+		@media screen and (max-width: 768px) {
+  			margin-bottom: -80px;
+  			padding: 20px 9999rem;
+		}
+	}
+
+	.edit-link {
+		display: none !important;
+	}
+
+}
+
+// 404 Template
+
+.error404 {
+	.wrap {
+		margin-top: 205px;
+		margin-bottom: 110px;
+
+		#primary {
+			width: 100%;
+
+			.error-404 {
+				text-align: center;
+
+				.page-title {
+					border: none;
+					padding: 0;
+					margin-bottom: 18px;
+					font-size: 60px;
+					color: #999;
+				}
+			}
+		}
+	}
+}	

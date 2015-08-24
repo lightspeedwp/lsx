@@ -25,21 +25,6 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 /**
- * Returns an array of $controls for the customizer class to generate.
- *
- * @package 	lsx
- * @subpackage	functions
- * @category	customizer
- * @return		$lsx_controls array()
- */
-function lsx_get_customizer_controls(){
-	$lsx_controls = array(); 
-	$lsx_controls = apply_filters('lsx_customizer_controls', $lsx_controls); 
-	return $lsx_controls;
-}
-$lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
-
-/**
  * Returns an array of the hompage slider.
  *
  * @package 	lsx
@@ -143,6 +128,16 @@ function lsx_customizer_layout_controls($lsx_controls) {
 			'section'       =>  'lsx-layout',
 			'type'       =>  'checkbox',
 	);
+	$lsx_controls['settings']['lsx_header_search']  = array(
+			'default'       =>  false, //Default setting/value to save
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+	);
+	$lsx_controls['fields']['lsx_header_search'] = array(
+			'label'         =>  __('Search Box in Header','lsx'),
+			'section'       =>  'lsx-layout',
+			'type'       =>  'checkbox',
+	);	
 	$lsx_controls['fields']['lsx_layout'] = array(
 			'label'         =>  __('Body','lsx'),
 			'section'       =>  'lsx-layout',
@@ -269,6 +264,20 @@ function lsx_customizer_metaplate_controls($lsx_controls) {
 }
 add_filter('lsx_customizer_controls','lsx_customizer_metaplate_controls');
 
+/**
+ * Returns an array of $controls for the customizer class to generate.
+ *
+ * @package 	lsx
+ * @subpackage	functions
+ * @category	customizer
+ * @return		$lsx_controls array()
+ */
+function lsx_get_customizer_controls(){
+	$lsx_controls = array();
+	$lsx_controls = apply_filters('lsx_customizer_controls', $lsx_controls);
+	return $lsx_controls;
+}
+$lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
 
 add_image_size( 'thumbnail-wide', 350, 230, true );
 add_image_size( 'thumbnail-single', 750, 350, true );

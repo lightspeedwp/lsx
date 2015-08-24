@@ -19,7 +19,7 @@
  */
  function lsx_buddypress_page_columns($layout) {
  	
-	if(bp_is_profile_component()|| bp_is_settings_component() || !bp_is_activity_component() || bp_is_group() || bp_is_messages_component()
+	if(bp_is_profile_component()|| bp_is_settings_component() || bp_is_activity_component() || bp_is_group() || bp_is_messages_component()
 		|| bp_is_members_directory() || bp_is_groups_directory() || bp_is_groups_component() || bp_is_members_component()){
 		$layout = '1c';
 	}

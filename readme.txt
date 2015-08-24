@@ -232,6 +232,10 @@ Below is a layout of where the actions are located, so you can easily position y
 
 == Changlog ==
 
+= 1.3.1 =
+* Fixed the post meta not showing on a custom homepage (child theme)
+* Fixed the archive layout support when BuddyPress is active.
+
 = 1.3 =
 * Added in support for 'post formats'.
 * Improved Blog Template Styling; Single, Archive and Author pages.

@@ -213,7 +213,7 @@ function lsx_is_element_empty($element) {
 function lsx_get_thumbnail($size,$image_src = false){
 	
 	if(false === $image_src){
-		$post_id = get_the_ID();
+		$post_id = get_the_ID(); 
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	}elseif(false != $image_src	){
 		if(is_numeric($image_src)){

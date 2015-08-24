@@ -64,6 +64,18 @@
 			}
 		} );
 	} );
+	
+    //Update the fixed header in real time...
+	wp.customize( 'lsx_header_search', function( value ) {
+		value.bind( function( newval ) {
+			
+			if(true == newval){
+				$('body #searchform').show();
+			}else{
+				$('body #searchform').hide();
+			}
+		} );
+	} );	
     
 	//Update the headers layout.css
     wp.customize("lsx_header_email_address", function(value) {

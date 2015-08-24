@@ -87,7 +87,7 @@ endif;
 
 if ( ! function_exists( 'lsx_post_meta' ) ) {
 	function lsx_post_meta() {
-		if ( is_page() && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
+		if ( (is_page() && !(is_home() || is_front_page())) && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
 		
 		<div class="post-meta">
 				<?php
@@ -259,6 +259,7 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 			extract($labels);
 			?>
 			<nav class="navigation paging-navigation" role="navigation">
+				<div class="lsx-breaker"></div>
 				<h1 class="screen-reader-text"><?php echo $title; ?></h1>
 				<div class="nav-links">
 					<?php if ( get_next_posts_link() ) : ?>
@@ -268,7 +269,8 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 					<?php if ( get_previous_posts_link() ) : ?>
 					<div class="nav-next"><?php previous_posts_link( $previous ); ?></div>
 					<?php endif; ?>
-		
+					
+					<div class="clearfix"></div>
 				</div><!-- .nav-links -->
 			</nav><!-- .navigation -->
 			<?php
