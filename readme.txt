@@ -95,7 +95,7 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 * The main content width is 750px
 * The sidebar width is 360px
-* Featured Images are 750px wide by 300px high
+* Featured Images are 980px wide by 500px high
 * Portfolio feature images are 360px wide by 270px high
 * Portfolio single gallery images are minimum 1140px wide
 
@@ -233,8 +233,17 @@ Below is a layout of where the actions are located, so you can easily position y
 == Changlog ==
 
 = 1.3.1 =
+* Added in a "Continue Reading" link for excerpts.
+* Added in the singular.php template
+* Fixed the Post Format Link handeling
 * Fixed the post meta not showing on a custom homepage (child theme)
 * Fixed the archive layout support when BuddyPress is active.
+* Fixed the mobile nav menu toggle text in the orange color scheme
+* Removed the Page Hero Page template
+* Renamed the Full Width Narrow template to No Sidebar.
+* Renamed content-single.php to content-post.php
+* Renamed the Color Scheme CSS files with a "color-scheme-prefix"
+
 
 = 1.3 =
 * Added in support for 'post formats'.

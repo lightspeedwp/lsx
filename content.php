@@ -31,14 +31,21 @@
 		$format = get_post_format();
 		if ( false === $format ) {
 			$format = 'standard';
+			$show_on_front = get_option('show_on_front','posts');
+			if('page' == $show_on_front){
+				$archive_link = get_permalink(get_option('page_for_posts'));
+			}else{
+				$archive_link = home_url();
+			}
+		}else{
+			$archive_link = get_post_format_link($format);
 		}
-		$format_link = get_post_format_link($format);
 		?>
 
 		<?php if ( has_post_thumbnail() ) { ?>
-			<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb genericon genericon-<?php echo $format ?>"></a>
+			<a href="<?php echo esc_url($archive_link) ?>" class="format-link has-thumb genericon genericon-<?php echo $format ?>"></a>
 		<?php } else { ?>
-			<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+			<a href="<?php echo esc_url($archive_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
 		<?php } ?>
 
 		<div class="entry-meta">
@@ -46,13 +53,7 @@
 		</div><!-- .footer-meta -->
 
 		<h1 class="entry-title">
-			<?php if ( has_post_format( array('link') ) ) { 
-				$content = get_the_content();
-
-  				$has_url = get_url_in_content( $content );
-
-    			$the_link = ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() ); ?>
-
+			<?php if ( has_post_format( array('link') ) ) { ?>
 				<a href="<?php echo lsx_get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>

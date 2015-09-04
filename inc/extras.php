@@ -225,25 +225,25 @@ function lsx_get_thumbnail($size,$image_src = false){
 	
 	$size = apply_filters('lsx_thumbnail_size',$size);
 	
-	if('thumbnail-single' == $size){
-		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
+	if('lsx-thumbnail-single' == $size){
+		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
 
 		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 
-	}elseif('thumbnail-wide' == $size){
+	}elseif('lsx-thumbnail-wide' == $size){
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
 
 		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
 	
 	}elseif('banner' == $size){
 		
 		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $image_src );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );
+		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
+		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
 				
 		$img = ' src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'"';
 		
@@ -296,8 +296,8 @@ function lsx_the_content_responsive_image_filter($content) {
 					
 					$post_thumbnail_id = lsx_get_attachment_id_from_src($matches[1]);
 					if(false != $post_thumbnail_id){
-						$data_tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-single' );
-						$data_mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'thumbnail-wide' );					
+						$data_tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
+						$data_mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );					
 						$data_desktop = $matches[1];
 						
 						return '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$data_desktop.'" data-tablet="'.$data_tablet[0].'" data-mobile="'.$data_mobile[0].'" />';
@@ -407,6 +407,8 @@ function mv_browser_body_class($classes) {
 }
 add_filter('body_class','mv_browser_body_class');
 
+
+
 // Replaces the excerpt "more" text by a link
 function lsx_excerpt_more($more) {
 	global $post;
@@ -414,20 +416,54 @@ function lsx_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'lsx_excerpt_more');
 
-/**
- * Return URL from a link in the content
- */
-function lsx_get_my_url() {
-	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
-		return false;
-
-	return esc_url_raw( $matches[1] );
-}
 
 /**
  * filter the Gravity Forms button type
+ * 
+ * @subpackage 	extras
+ * @category 	gforms
+ * 
+ * @param		$button		String
+ * @param		$form		Object
+ * @return		String
  */
-add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
 function lsx_form_submit_button($button, $form){
 	return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
 }
+add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
+
+
+/**
+ * Add a continue reading link to the excerpt
+ * @subpackage 	extras
+ * @category 	excerpt
+ * 
+ * @param		$excerpt	String
+ * @return		$excerpt	String
+ */
+function lsx_the_excerpt_filter($excerpt){
+	if('' !== $excerpt  && !stristr($excerpt,'moretag')){
+		$excerpt .= ' <a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a>';
+	}
+	return $excerpt;
+}
+add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
+
+
+/**
+ * Adding conditional Blog header
+ */
+/*
+function lsx_blog_header() { 
+	$body_classes = get_body_class();
+	if(in_array('blog', $body_classes)) {
+	?>
+		<header class="archive-header">
+			<h1 class="archive-title">
+				<?php _e('Blog','lsx'); ?>
+			</h1>
+		</header>
+	<?php }
+}
+add_action("lsx_blog_header", "lsx_content_top");
+*/

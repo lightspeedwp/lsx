@@ -565,3 +565,17 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		return $match;
 	}
 }
+
+/**
+ * Return URL from a link in the content
+ * 
+ * @package 	lsx
+ * @subpackage 	extras
+ * @category 	urls
+ */
+function lsx_get_my_url() {
+	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+		return false;
+
+	return esc_url_raw( $matches[1] );
+}

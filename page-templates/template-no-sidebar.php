@@ -1,26 +1,22 @@
 <?php
-/**
- * Template Name: Page Hero
- *
- * @package lsx
- */
+/* Template Name: No Sidebar */
 
-get_header(); ?>
-
-	<div id="primary" class="content-area col-sm-12">
-
+	get_header(); ?>
+	
+	<div id="primary" class="content-area col-sm-8">
+	
 		<?php lsx_content_before(); ?>
-
+		
 		<main id="main" class="site-main" role="main">
 
-			<?php lsx_content_top(); ?>
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'page' ); ?>
-
-			<?php endwhile; // end of the loop. ?>
+			<?php lsx_content_top(); ?>		
 			
+				<?php while ( have_posts() ) : the_post(); ?>
+		
+					<?php get_template_part( 'content', 'page' ); ?>
+		
+				<?php endwhile; // end of the loop. ?>		
+				
 			<?php lsx_content_bottom(); ?>
 			
 			<?php
@@ -28,12 +24,11 @@ get_header(); ?>
 				if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 				endif;
-			?>
-			
-		</main><!-- #main -->
-
-		<?php lsx_content_after(); ?>
+			?>			
 		
-	</div><!-- #primary -->
+		</main><!-- #main -->
+		
+		<?php lsx_content_after(); ?>
 
+	</div><!-- #primary -->
 <?php get_footer();

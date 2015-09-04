@@ -279,5 +279,5 @@ function lsx_get_customizer_controls(){
 }
 $lsx_customizer = new LSX_Theme_Customizer( lsx_get_customizer_controls() );
 
-add_image_size( 'thumbnail-wide', 350, 230, true );
-add_image_size( 'thumbnail-single', 750, 350, true );
+add_image_size( 'lsx-thumbnail-wide', 350, 230, true );
+add_image_size( 'lsx-thumbnail-single', 750, 350, true );

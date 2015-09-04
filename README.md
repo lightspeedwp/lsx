@@ -307,6 +307,18 @@ Run the command below in your terminal window,  this will install the sass and u
 
 ## Changlog
 
+### 1.3.3
+* Added in a "Continue Reading" link for excerpts.
+* Added in the singular.php template
+* Fixed the Post Format Link handeling
+* Fixed the post meta not showing on a custom homepage (child theme)
+* Fixed the archive layout support when BuddyPress is active.
+* Fixed the mobile nav menu toggle text in the orange color scheme
+* Removed the Page Hero Page template
+* Renamed the Full Width Narrow template to No Sidebar.
+* Renamed content-single.php to content-post.php
+* Renamed the Color Scheme CSS files with a "color-scheme-prefix"
+
 ### 1.3
 * Added in the bower.json, package.json and the gulpfile.js for easier development.
 * Added in the SASS raw files for use in development.

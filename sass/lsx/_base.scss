@@ -58,14 +58,10 @@ h6 {
 		family: 'Raleway', 'Open Sans', sans-serif;
 		weight: 600;
 	}
-	line-height: inherit;
+	line-height: 1.4;
 
 	&.lsx-section-heading {
 		@include lsx-section-heading;
-	}
-
-	@media screen and (max-width: 768px) {
-		line-height: 1.4;
 	}
 }
 
@@ -192,16 +188,18 @@ img,
 figure {
 	&.wp-caption {
 		border: 1px solid #ddd;
-		margin-bottom: 25px;
+		margin: 40px 0;
 		@include border-radius(3px);
 		@include box-shadow(0 1px 5px rgba(0, 0, 0, 0.1));
 
 		figcaption.wp-caption-text {
 			font: {
-				size: 15px;
-				weight: bold;
+				family: 'Noto Sans', sans-serif;
+				size: 16px;
+				weight: normal;
 			}
 			padding: 7px 17px;
+			border-top: 1px solid #ddd;
 		}
 	}
 
@@ -214,6 +212,10 @@ figure {
 		    margin-left: 0 !important;
 		    margin-top: 0 !important;
 		}
+	}
+
+	img {
+		@include lsx-clear-image;
 	}
 }
 
@@ -379,6 +381,7 @@ img,
 
 	    .genericon {
 	    	font-size: 19px;
+	    	background: $white;
 	    }
 
 	    &:hover,
@@ -455,6 +458,69 @@ img,
 				}
 			}
 		}
+	}
+}
+
+.wp-pagenavi-wrapper {
+	text-align: center;
+    margin-bottom: 60px;
+
+    .lsx-breaker {
+    	margin-bottom: 60px;
+    }
+}
+
+.wp-pagenavi {
+	@media (min-width: 992px) {
+		margin: {
+			left: -35px;
+			right: -35px;
+		}
+	}
+
+	span {
+		border: none !important;
+
+		&.current {
+			border: none !important;
+		}
+	}
+
+	.pages {
+		display: block;
+		border: none !important;
+		margin-bottom: 30px;
+		color: $black;
+		font: {
+			size: 24px;
+			weight: bold;
+		}
+	}
+
+	a,
+	.current,
+	.extend {
+		display: inline-block;
+		padding: 5px 12px;
+    	margin: 0 3px 14px;
+    	line-height: 1.4;
+	}
+
+	.current {
+		font-weight: bold;
+	}
+
+	a {
+	    border-radius: 3px;
+	    border: 2px solid #ccc;
+	    color: $black;
+	    @include transition(all .2s ease-in-out);
+
+	    &:hover,
+	    &:active,
+	    &:focus {
+	    	border: 2px solid $black;
+	    }
 	}
 }
 
@@ -669,6 +735,12 @@ table {
 	}
 }
 
+header.banner {
+	.search-toggle {
+		display: none !important;
+	}
+}
+
 .ccselect2-container {
 	display: block !important;
 
@@ -690,14 +762,6 @@ table {
 
 	@media screen and (max-width: 768px) {
 		display: none;
-	}
-}
-
-
-.no-results,
-.not-found {
-	#main & {
-		margin: 200px 0;
 	}
 }
 
