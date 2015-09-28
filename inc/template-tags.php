@@ -541,7 +541,7 @@ function lsx_add_top_menu() {
  * @subpackage	template-tag
  * @category 	forms
  */
-if ( ! function_exists( 'lsx_post_meta' ) ) {
+if ( ! function_exists( 'lsx_is_form_enabled' ) ) {
 	function lsx_is_form_enabled($slug = false) {
 		if(false == $slug){ return false; }
 	
