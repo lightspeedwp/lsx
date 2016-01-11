@@ -250,8 +250,8 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 		}else{
 			
 			$labels = array(
-				'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
-				'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
+				'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
+				'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
 				'title' 	=> __( 'Posts navigation', 'lsx' )
 			);
 			$labels = apply_filters('lsx_post_navigation_labels',$labels);
@@ -299,12 +299,12 @@ function lsx_post_nav() {
 		<div class="nav-links pager row">
 
 			<?php
-				$previous_post = get_previous_post_link( '%link', _x( '<div class="previous col-md-6"><p class="nav-links-description">Previous Post:</p><h3>%title</h3></div>', 'Previous post link', 'lsx' ) );
+				$previous_post = get_previous_post_link( '%link', '<div class="previous col-md-6"><p class="nav-links-description">'._x( 'Previous Post', 'Previous post link', 'lsx' ).':</p><h3>%title</h3></div>' );
 				$previous_post = str_replace('<a','<a',$previous_post);
 				echo $previous_post;
 			?>
 			<?php
-				$next_post = get_next_post_link(     '%link', _x( '<div class="next col-md-6"><p class="nav-links-description">Next Post:</p><h3>%title</h3></div>', 'Next post link',     'lsx' ) );
+				$next_post = get_next_post_link( '%link', '<div class="next col-md-6"><p class="nav-links-description">'._x( 'Next Post', 'Next post link', 'lsx' ).':</p><h3>%title</h3></div>' );
 				$next_post = str_replace('<a','<a',$next_post);
 				echo $next_post;
 			?>
@@ -336,6 +336,38 @@ if(!function_exists('lsx_site_identity')){
 	}
 }
 
+
+/**
+ * Outputs the Nav Menu
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ * @category	navigation
+ */
+if(!function_exists('lsx_navbar_header')){
+	function lsx_navbar_header(){ ?>
+	   	<div class="navbar-header">
+	   	
+	   		<?php 
+	   		$nav_menu = get_theme_mod('nav_menu_locations',false);
+			//print_r(get_nav_menu_locations());
+
+	   		if(false != $nav_menu && isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+		   		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
+		        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		   		</button>
+	   			<span class="mobile-menu-title">Menu</span>
+	   		<?php } ?>
+			<?php lsx_site_identity(); ?>
+	    </div>
+	<?php }
+}
+//the if statement is for backwards compatability with previous versions of the theme.
+add_action('lsx_nav_before','lsx_navbar_header');
+
 /**
  * Outputs the Nav Menu
  *
@@ -349,7 +381,7 @@ if(!function_exists('lsx_nav_menu')){
 		
 		//print_r(get_nav_menu_locations());
 
-	    if(false != $nav_menu && 0 != $nav_menu['primary']){ ?>
+	    if(false != $nav_menu && isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
 			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
 		    	<?php
 				wp_nav_menu( array(
@@ -369,7 +401,6 @@ if(!function_exists('lsx_nav_menu')){
 	  	<?php }
 	}
 }
-
 
 /**
  * Outputs Pages for the Sitemap Template
@@ -541,7 +572,7 @@ function lsx_add_top_menu() {
  * @subpackage	template-tag
  * @category 	forms
  */
-if ( ! function_exists( 'lsx_post_meta' ) ) {
+if ( ! function_exists( 'lsx_is_form_enabled' ) ) {
 	function lsx_is_form_enabled($slug = false) {
 		if(false == $slug){ return false; }
 	
@@ -564,4 +595,18 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 	
 		return $match;
 	}
+}
+
+/**
+ * Return URL from a link in the content
+ * 
+ * @package 	lsx
+ * @subpackage 	extras
+ * @category 	urls
+ */
+function lsx_get_my_url() {
+	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+		return false;
+
+	return esc_url_raw( $matches[1] );
 }

@@ -10,7 +10,6 @@
 		var clicked = $(this),
 			parent = clicked.closest('.colours-selector'),
 			input = parent.find('.selected-colour');
-		console.log( this );
 		parent.find( '.colour-button' ).css('border', '1px solid transparent');
 
 		clicked.css( 'border', '1px solid rgb(43, 166, 203)');

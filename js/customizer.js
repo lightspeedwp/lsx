@@ -32,11 +32,20 @@
 
 		value.bind( function( newval ) {
 			
-			$("<link/>", {
-				   rel: "stylesheet",
-				   type: "text/css",
-				   href: lsx_customizer_params.template_directory+"/css/"+newval+".css"
-			}).appendTo("head");
+			$('link[rel="stylesheet"]').each(function(){
+				
+				if ($(this).attr('href').indexOf(lsx_customizer_params.template_directory+"/css/color-scheme") !=-1) {
+					$("<link/>", {
+						   rel: "stylesheet",
+						   type: "text/css",
+						   href: lsx_customizer_params.template_directory+"/css/color-scheme-"+newval+".css"
+					}).appendTo("head");					
+					$(this).remove();
+					return;
+				}
+			});
+			
+
 			
 		} );
 	} );

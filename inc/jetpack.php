@@ -302,8 +302,8 @@ function lsx_portfolio_naviagtion_labels($labels){
 	
 	if(is_post_type_archive('jetpack-portfolio')){
 		$labels = array(
-				'next' 		=> __( '<span class="meta-nav">&larr;</span> Older', 'lsx' ),
-				'previous' 	=> __( 'Newer <span class="meta-nav">&rarr;</span>', 'lsx' ),
+				'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older', 'lsx' ),
+				'previous' 	=> __( 'Newer', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
 				'title' 	=> __( 'Portfolio navigation', 'lsx' )
 		);
 	}

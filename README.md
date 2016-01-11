@@ -219,8 +219,8 @@ Below is a layout of where the actions are located, so you can easily position y
  
 'lsx_post_navigation_labels' - receives 1 paramter, allows you to change the posts navigation text.
 `$labels = array(
-		'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
-		'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
+		'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
+		'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
 		'title' 	=> __( 'Posts navigation', 'lsx' )
 	);`
 	
@@ -306,6 +306,22 @@ Run the command below in your terminal window,  this will install the sass and u
 
 
 ## Changlog
+
+### 1.3.3
+* Added in a "Continue Reading" link for excerpts.
+* Added in the singular.php template
+* Added support for the WordPress Responsive images.
+* Fixed the Post Format Link handeling
+* Fixed the post meta not showing on a custom homepage (child theme)
+* Fixed the archive layout support when BuddyPress is active.
+* Fixed the mobile nav menu toggle text in the orange color scheme
+* Fixed the Mobile menu showing up when no Primary menu is assigned
+* Fixed various translatable string errors.
+* Removed the Page Hero Page template
+* Removed our custom code that controls responsive images.
+* Renamed the Full Width Narrow template to No Sidebar.
+* Renamed content-single.php to content-post.php
+* Renamed the Color Scheme CSS files with a "color-scheme-prefix"
 
 ### 1.3
 * Added in the bower.json, package.json and the gulpfile.js for easier development.

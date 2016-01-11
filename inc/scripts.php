@@ -15,18 +15,17 @@ function lsx_scripts() {
 	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/css/app.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
 	
 	$style = get_theme_mod( 'lsx_color_scheme','default');
-	wp_enqueue_style('lsx_color_scheme', get_template_directory_uri() . '/css/'.$style.'.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
-	
+	wp_enqueue_style('lsx_color_scheme', get_template_directory_uri() . '/css/color-scheme-'.$style.'.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', false, 'c9f983e2965b9c7888dac272e56c4f4b', false);
-	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.7.0.min.js', false, null, false);
-	wp_enqueue_script('mousewheel', get_template_directory_uri() . '/js/vendor/jquery.mousewheel.min.js', false, null, false);
-	wp_enqueue_script('smoothscroll', get_template_directory_uri() . '/js/vendor/jquery.simplr.smoothscroll.min.js', false, null, false);
-	wp_enqueue_script('sticky', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', false, null, false);
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array('jquery'), 'c9f983e2965b9c7888dac272e56c4f4b', false);
+	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.7.0.min.js', array('jquery'), null, false);
+	wp_enqueue_script('mousewheel', get_template_directory_uri() . '/js/vendor/jquery.mousewheel.min.js', array('jquery'), null, false);
+	wp_enqueue_script('smoothscroll', get_template_directory_uri() . '/js/vendor/jquery.simplr.smoothscroll.min.js', array('jquery'), null, false);
+	wp_enqueue_script('sticky', get_template_directory_uri() . '/js/vendor/jquery.sticky.js', array('jquery'), null, false);
 
 	wp_enqueue_script('masonry');
 	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/vendor/imagesloaded.pkgd.min.js', array('jquery','masonry'));	
