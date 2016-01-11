@@ -232,14 +232,18 @@ Below is a layout of where the actions are located, so you can easily position y
 
 == Changlog ==
 
-= 1.3.2 =
+= 1.4 =
 * Added in a "Continue Reading" link for excerpts.
 * Added in the singular.php template
+* Added support for the WordPress Responsive images.
 * Fixed the Post Format Link handeling
 * Fixed the post meta not showing on a custom homepage (child theme)
 * Fixed the archive layout support when BuddyPress is active.
 * Fixed the mobile nav menu toggle text in the orange color scheme
+* Fixed the Mobile menu showing up when no Primary menu is assigned
+* Fixed various translatable string errors.
 * Removed the Page Hero Page template
+* Removed our custom code that controls responsive images.
 * Renamed the Full Width Narrow template to No Sidebar.
 * Renamed content-single.php to content-post.php
 * Renamed the Color Scheme CSS files with a "color-scheme-prefix"

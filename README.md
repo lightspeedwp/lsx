@@ -310,11 +310,15 @@ Run the command below in your terminal window,  this will install the sass and u
 ### 1.3.3
 * Added in a "Continue Reading" link for excerpts.
 * Added in the singular.php template
+* Added support for the WordPress Responsive images.
 * Fixed the Post Format Link handeling
 * Fixed the post meta not showing on a custom homepage (child theme)
 * Fixed the archive layout support when BuddyPress is active.
 * Fixed the mobile nav menu toggle text in the orange color scheme
+* Fixed the Mobile menu showing up when no Primary menu is assigned
+* Fixed various translatable string errors.
 * Removed the Page Hero Page template
+* Removed our custom code that controls responsive images.
 * Renamed the Full Width Narrow template to No Sidebar.
 * Renamed content-single.php to content-post.php
 * Renamed the Color Scheme CSS files with a "color-scheme-prefix"
