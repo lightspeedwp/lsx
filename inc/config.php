@@ -93,3 +93,19 @@ function lsx_page_comments_off( $data ) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
+
+/**
+ * Disable the comments form by default for the page post type.
+ * @package	lsx
+ * @subpackage config
+ */
+function lsx_is_legacy($data) {
+
+	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == __('Auto Draft','lsx') ) {
+		$data['comment_status'] = 0;
+		$data['ping_status'] = 0;
+	}
+
+	return $data;
+}
+add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );

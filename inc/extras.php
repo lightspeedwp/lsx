@@ -226,34 +226,8 @@ function lsx_get_thumbnail($size,$image_src = false){
 	$size = apply_filters('lsx_thumbnail_size',$size);
 	$img = false;
 	
-	if('lsx-thumbnail-single' == $size){
-		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
-
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
-
-	}elseif('lsx-thumbnail-wide' == $size){
-		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
-
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive-banner lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
+	$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
 	
-	}elseif('banner' == $size){
-		
-		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $image_src );
-		$tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
-		$mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );
-				
-		$img = ' src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'"';
-		
-	}elseif(is_array($size)){
-		
-		$thumbnail = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$thumbnail[0].'" data-desktop="'.$thumbnail[0].'" data-tablet="'.$tablet[0].'" data-mobile="'.$mobile[0].'" />';
-		
-	}
 	return $img;
 }
 
@@ -280,47 +254,6 @@ function lsx_get_attachment_id_from_src($image_src) {
 	$post_id = $wpdb->get_var($query);
 	return $post_id;
 }
-
-/**
- * Gets the attachments ID from the src
- * @package lsx
- * @subpackage extras
- * @category thumbnails
- */
-function lsx_the_content_responsive_image_filter($content) {
-	if('post' == get_post_type() && is_single()){
-		/*$content = preg_replace('#<img.+?src="([^"]*)".*?/?>#i', '<a href="$1">$0</a>', $content);*/
-		
-		$content = preg_replace_callback(
-				'#<img.+?src="([^"]*)".*?/?>#i',
-				function ($matches) {
-					
-					$post_thumbnail_id = lsx_get_attachment_id_from_src($matches[1]);
-					if(false != $post_thumbnail_id){
-						$data_tablet = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-single' );
-						$data_mobile = wp_get_attachment_image_src( $post_thumbnail_id, 'lsx-thumbnail-wide' );					
-						$data_desktop = $matches[1];
-						
-						return '<img class="attachment-responsive wp-post-image lsx-responsive" data-desktop="'.$data_desktop.'" data-tablet="'.$data_tablet[0].'" data-mobile="'.$data_mobile[0].'" />';
-						
-					}else{
-						return $matches[0];
-					}
-				},
-				$content
-		);	
-		
-	}
-	return $content;
-}
-add_action('the_content','lsx_the_content_responsive_image_filter');
-
-/**
- * A callback function for the preg_replace that changes the images stored in post_content to their responsive counterparts.
- * @package lsx
- * @subpackage extras
- * @category thumbnails
- */
 
 /**
  * Add Featured Image as Banner on Single Pages.

@@ -336,6 +336,32 @@ if(!function_exists('lsx_site_identity')){
 	}
 }
 
+
+/**
+ * Outputs the Nav Menu
+ *
+ * @package 	lsx
+ * @subpackage	template-tags
+ * @category	navigation
+ */
+if(!function_exists('lsx_navbar_header')){
+	function lsx_navbar_header(){ ?>
+	   	<div class="navbar-header">
+	   		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
+	        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	        	<span class="icon-bar"></span>
+	   		</button>
+	
+	   		<span class="mobile-menu-title">Menu</span>
+			<?php lsx_site_identity(); ?>
+	    </div>
+	<?php }
+}
+//the if statement is for backwards compatability with previous versions of the theme.
+add_action('lsx_nav_before','lsx_navbar_header');
+
 /**
  * Outputs the Nav Menu
  *
@@ -369,7 +395,6 @@ if(!function_exists('lsx_nav_menu')){
 	  	<?php }
 	}
 }
-
 
 /**
  * Outputs Pages for the Sitemap Template

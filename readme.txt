@@ -232,7 +232,7 @@ Below is a layout of where the actions are located, so you can easily position y
 
 == Changlog ==
 
-= 1.3.1 =
+= 1.3.2 =
 * Added in a "Continue Reading" link for excerpts.
 * Added in the singular.php template
 * Fixed the Post Format Link handeling
