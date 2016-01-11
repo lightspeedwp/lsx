@@ -347,14 +347,20 @@ if(!function_exists('lsx_site_identity')){
 if(!function_exists('lsx_navbar_header')){
 	function lsx_navbar_header(){ ?>
 	   	<div class="navbar-header">
-	   		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
-	        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-	   		</button>
-	
-	   		<span class="mobile-menu-title">Menu</span>
+	   	
+	   		<?php 
+	   		$nav_menu = get_theme_mod('nav_menu_locations',false);
+			//print_r(get_nav_menu_locations());
+
+	   		if(false != $nav_menu && isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
+		   		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
+		        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		   		</button>
+	   			<span class="mobile-menu-title">Menu</span>
+	   		<?php } ?>
 			<?php lsx_site_identity(); ?>
 	    </div>
 	<?php }
@@ -375,7 +381,7 @@ if(!function_exists('lsx_nav_menu')){
 		
 		//print_r(get_nav_menu_locations());
 
-	    if(false != $nav_menu && 0 != $nav_menu['primary']){ ?>
+	    if(false != $nav_menu && isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
 			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
 		    	<?php
 				wp_nav_menu( array(

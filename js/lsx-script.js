@@ -197,8 +197,6 @@ jQuery(document).ready(function($) {
 		}
 		
 		//Page Banner		
-		lsxResizeBanner(width);	
-		lsxResizeSingleThumbnail(width);
 		
 		//Does everything it did on top
 		$(window).resize(function() {
@@ -215,61 +213,11 @@ jQuery(document).ready(function($) {
 					$(this).attr('data-toggle','dropdown');
 				});				
 			}
-			
-			lsxResizeBanner(width);	
-			lsxResizeSingleThumbnail(width);
 		});	
-		
-		$( document.body ).on( 'post-load', function () {
-			lsxResizeBanner(width);	
-			lsxResizeSingleThumbnail(width);			
-		});
+
 	});
 });
 
-///////////////////////////////
-//Apply the correct banner size
-///////////////////////////////
-
-function lsxResizeBanner(width) {
-	
-	var banner_attribute_name = 'data-desktop';
-	if(width <= 768){
-		banner_attribute_name = 'data-tablet';
-	}
-	if(width <= 400){
-		banner_attribute_name = 'data-mobile';
-	}			
-	if(undefined !== jQuery('.page-banner') && undefined !== jQuery('.page-banner').attr('data-desktop')){		
-		var image_url = 'url('+jQuery('.page-banner').attr(banner_attribute_name)+')';
-		jQuery('.page-banner').css('background-image',image_url);	
-	}	
-
-}
-
-///////////////////////////////
-//Apply the correct single thumbnail size
-///////////////////////////////
-
-function lsxResizeSingleThumbnail(width) {
-	var attribute_name = 'data-desktop';
-	//1200, 992, 768
-	if (width >= 992) {
-		attribute_name = 'data-desktop';
-	} else {
-		if (width < 992 && width >= 768) {
-			attribute_name = 'data-tablet';
-		} else {
-			attribute_name = 'data-mobile';
-		}
-	}
-
-	jQuery('img.lsx-responsive').each( function(){
-		if(jQuery(this).attr('data-desktop') !== undefined){
-			jQuery(this).attr('src',jQuery(this).attr(attribute_name));
-		}
-	});	
-}
 
 ///////////////////////////////
 //Project thumbs
