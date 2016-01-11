@@ -44,8 +44,8 @@ get_header();
                         </div><!-- .entry-meta -->
  
                         <nav id="image-navigation" class="site-navigation">
-                            <span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'lsx' ) ); ?></span>
-                            <span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'lsx' ) ); ?></span>
+                            <span class="previous-image"><?php previous_image_link( false, '&larr; '.__( 'Previous', 'lsx' ) ); ?></span>
+                            <span class="next-image"><?php next_image_link( false, __( 'Next', 'lsx' ).' &rarr;' ); ?></span>
                         </nav><!-- #image-navigation -->
                     </header><!-- .entry-header -->
  

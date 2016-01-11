@@ -250,8 +250,8 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 		}else{
 			
 			$labels = array(
-				'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
-				'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
+				'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
+				'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
 				'title' 	=> __( 'Posts navigation', 'lsx' )
 			);
 			$labels = apply_filters('lsx_post_navigation_labels',$labels);

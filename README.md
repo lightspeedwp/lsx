@@ -219,8 +219,8 @@ Below is a layout of where the actions are located, so you can easily position y
  
 'lsx_post_navigation_labels' - receives 1 paramter, allows you to change the posts navigation text.
 `$labels = array(
-		'next' 		=> __( '<span class="meta-nav">&larr;</span> Older posts', 'lsx' ),
-		'previous' 	=> __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'lsx' ),
+		'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
+		'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
 		'title' 	=> __( 'Posts navigation', 'lsx' )
 	);`
 	
