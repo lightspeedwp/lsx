@@ -280,11 +280,12 @@ if(!function_exists('lsx_page_banner')){
 	        <?php 
 	        	$bg_image = '';
 	        	if(has_post_thumbnail()){
-	        		$bg_image = lsx_get_thumbnail('banner',get_post_thumbnail_id(get_the_ID()));
+	        		$bg_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+	        		$bg_image = $bg_image[0];
 	        	}
 	        ?>
 	        
-	        <div class="page-banner" style="background-position: 50% 50%" <?php echo $bg_image;  ?>>
+	        <div class="page-banner" style="background-position: 50% 50%; background-image:url(<?php echo $bg_image;  ?>);">
 	        	<div class="container">
 		            <header class="page-header">
 		            	<h1 class="page-title"><?php the_title(); ?></h1> 
