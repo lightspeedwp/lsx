@@ -1,14 +1,14 @@
-# Copyright (C) 2015 LightSpeed
+# Copyright (C) 2016 LightSpeed
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: LSX 1.4\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/lsx-theme\n"
-"POT-Creation-Date: 2015-07-27 17:08:42+00:00\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/lsx\n"
+"POT-Creation-Date: 2016-01-11 12:25:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -20,20 +20,28 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:14
+#: 404.php:25
+msgid "Alternatively, you can check out the"
+msgstr ""
+
+#: 404.php:25
+msgid "sitemap"
+msgstr ""
+
+#: archive-jetpack-portfolio.php:13
 msgid "Portfolio"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:51 content-none.php:13
+#: archive-jetpack-portfolio.php:50 content-none.php:13
 #: page-templates/template-portfolio.php:68
 msgid "Nothing Found"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:57 page-templates/template-portfolio.php:74
+#: archive-jetpack-portfolio.php:56 page-templates/template-portfolio.php:74
 msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: archive-jetpack-portfolio.php:61 content-none.php:28
+#: archive-jetpack-portfolio.php:60 content-none.php:28
 #: page-templates/template-portfolio.php:78
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
@@ -80,123 +88,115 @@ msgstr ""
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: content-page.php:23 content-portfolio-single.php:53 content-single.php:44
-#: content.php:91 image.php:43 image.php:109
+#: content-page.php:23 content-portfolio-single.php:53 content-post.php:74
+#: content-single.php:74 content.php:107 image.php:43 image.php:109
 #: page-templates/template-archives.php:48
 #: page-templates/template-sitemap.php:33
 msgid "Edit"
 msgstr ""
 
-#: content-portfolio-single.php:48 content-single.php:31 content.php:72
-#: image.php:95 page-templates/template-portfolio.php:28
+#: content-portfolio-single.php:48 content.php:86 image.php:95
+#: page-templates/template-portfolio.php:28
 msgid "Pages:"
 msgstr ""
 
-#: content.php:50 content.php:53
+#: content.php:64 content.php:67
 msgid "Featured"
 msgstr ""
 
-#: content.php:67
+#: content.php:81
 msgid "Continue reading %s"
 msgstr ""
 
-#: footer.php:44 footer.php:81
+#: footer.php:44 footer.php:83
 msgid "&#169; %1$s %2$s All Rights Reserved."
 msgstr ""
 
-#: functions.php:69
+#: functions.php:50
 msgid "Select Slider"
 msgstr ""
 
-#: functions.php:88
+#: functions.php:75
 msgid "Color Scheme"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:79
 msgid "Default"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:80
 msgid "Red"
 msgstr ""
 
-#: functions.php:94
+#: functions.php:81
 msgid "Green"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:82
 msgid "Brown"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:83
 msgid "Orange"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:107
 msgid "Header"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:113
 msgid "Layout"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:114
 msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
 msgstr ""
 
-#: functions.php:150
+#: functions.php:128
 msgid "Fixed Header"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:138
+msgid "Search Box in Header"
+msgstr ""
+
+#: functions.php:143
 msgid "Body"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:162
 msgid "Font"
 msgstr ""
 
-#: functions.php:190
+#: functions.php:180
 msgid "Raleway"
 msgstr ""
 
-#: functions.php:196 functions.php:238
+#: functions.php:186 functions.php:228
 msgid "Open Sans"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:194
 msgid "Noto Serif"
 msgstr ""
 
-#: functions.php:210 functions.php:218 functions.php:224
+#: functions.php:200 functions.php:208 functions.php:214
 msgid "Noto Sans"
 msgstr ""
 
-#: functions.php:232
+#: functions.php:222
 msgid "Alegreya"
 msgstr ""
 
-#: functions.php:261
+#: functions.php:260
 msgid "Email Address"
 msgstr ""
 
-#: functions.php:301
-msgid "Top Menu"
-msgstr ""
-
-#: functions.php:310
-msgid "Social Menu"
-msgstr ""
-
-#: header.php:32
-msgid "Toggle navigation"
-msgstr ""
-
-#: header.php:90
+#: header.php:78
 msgid "Get your Tourism Establishment Online"
 msgstr ""
 
-#: header.php:102
+#: header.php:90
 msgid "Questions? Email Us: "
 msgstr ""
 
@@ -205,11 +205,11 @@ msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=
 msgstr ""
 
 #: image.php:47
-msgid "&larr; Previous"
+msgid "Previous"
 msgstr ""
 
 #: image.php:48
-msgid "Next &rarr;"
+msgid "Next"
 msgstr ""
 
 #: image.php:106
@@ -224,11 +224,19 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/config.php:67
+#: inc/config.php:42
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/config.php:114
+#: inc/config.php:43
+msgid "Top Menu"
+msgstr ""
+
+#: inc/config.php:44
+msgid "Social Menu"
+msgstr ""
+
+#: inc/config.php:88 inc/config.php:104
 msgid "Auto Draft"
 msgstr ""
 
@@ -236,8 +244,12 @@ msgstr ""
 msgid "Disable"
 msgstr ""
 
-#: inc/extras.php:84
+#: inc/extras.php:85
 msgid "Page %s"
+msgstr ""
+
+#: inc/extras.php:381
+msgid "Continue reading"
 msgstr ""
 
 #: inc/jetpack.php:227 inc/template-tags.php:168
@@ -260,19 +272,19 @@ msgstr ""
 msgid "All"
 msgstr ""
 
+#: inc/jetpack.php:305
+msgid "Older"
+msgstr ""
+
 #: inc/jetpack.php:306
-msgid "<span class=\"meta-nav\">&larr;</span> Older"
+msgid "Newer"
 msgstr ""
 
 #: inc/jetpack.php:307
-msgid "Newer <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/jetpack.php:308
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/layout.php:122
+#: inc/layout.php:144
 msgid "Footer Widgets"
 msgstr ""
 
@@ -307,40 +319,44 @@ msgid "Services"
 msgstr ""
 
 #: inc/template-tags.php:253
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgid "Older posts"
 msgstr ""
 
 #: inc/template-tags.php:254
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts"
 msgstr ""
 
 #: inc/template-tags.php:255
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:298
+#: inc/template-tags.php:302
 msgctxt "Previous post link"
-msgid "<div class=\"previous\"><p class=\"nav-links-description\">Previous Post:</p><span class=\"meta-nav\">&larr;</span> %title</div>"
+msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:303
+#: inc/template-tags.php:307
 msgctxt "Next post link"
-msgid "<div class=\"next\"><p class=\"nav-links-description\">Next Post:</p>%title <span class=\"meta-nav\">&rarr;</span></div>"
+msgid "Next Post"
 msgstr ""
 
-#: inc/template-tags.php:362
+#: inc/template-tags.php:357
+msgid "Toggle navigation"
+msgstr ""
+
+#: inc/template-tags.php:398
 msgid "Create a menu and assign it here via the \"Navigation\" panel."
 msgstr ""
 
-#: inc/template-tags.php:392
+#: inc/template-tags.php:427
 msgid "Pages"
 msgstr ""
 
-#: inc/template-tags.php:442 inc/template-tags.php:474
+#: inc/template-tags.php:477 inc/template-tags.php:509
 msgid "%1$s"
 msgstr ""
 
-#: inc/template-tags.php:504
+#: inc/template-tags.php:539
 msgid "Subscribe to Our Newsletter"
 msgstr ""
 
@@ -384,19 +400,19 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:10 searchform.php:13
+#: searchform.php:23
 msgid "Search"
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:24
 msgid "Search for:"
 msgstr ""
 
-#: sidebar.php:51
+#: sidebar.php:53
 msgid "Archives"
 msgstr ""
 
-#: sidebar.php:58
+#: sidebar.php:60
 msgid "Meta"
 msgstr ""
 #. Theme Name of the plugin/theme
@@ -408,7 +424,7 @@ msgid "https://www.lsdev.biz/project/lsx/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "LightSpeed X Theme Framework"
+msgid "LSX is a minimalistic responsive WordPress theme that allows users to create fast, efficient and attractive websites that are rich with features. Based on Underscores by Automattic and Twitter Bootstrap, the theme is sure to display perfectly on all desktop and portable devices. Its lightweight build ensures better load times, a bonus for both user experience and SEO."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -428,10 +444,6 @@ msgid "Front Page */"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Full Width Narrow */"
-msgstr ""
-
-#. Template Name of the plugin/theme
 msgid "Full Width */"
 msgstr ""
 
@@ -448,7 +460,7 @@ msgid "Metaplate"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Page Hero"
+msgid "No Sidebar */"
 msgstr ""
 
 #. Template Name of the plugin/theme
