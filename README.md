@@ -6,8 +6,8 @@
 * Theme URI: https://www.lsdev.biz/project/lsx/
 * Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 * Requires at least: 4.1
-* Tested up to: 4.1
-* Stable tag: 4.1
+* Tested up to: 4.4.1
+* Stable tag: 4.4.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -307,7 +307,12 @@ Run the command below in your terminal window,  this will install the sass and u
 
 ## Changlog
 
-### 1.3.3
+### 1.4.1
+* Fixed the Fatal error with the Caldera forms class
+* Fixed the output of the lsx-thumbnail-single and lsx-thumbnail-wide size
+* Fixed the styling of the WPML Language switcher dropdown
+
+### 1.4
 * Added in a "Continue Reading" link for excerpts.
 * Added in the singular.php template
 * Added support for the WordPress Responsive images.
@@ -323,19 +328,19 @@ Run the command below in your terminal window,  this will install the sass and u
 * Renamed content-single.php to content-post.php
 * Renamed the Color Scheme CSS files with a "color-scheme-prefix"
 
+
 ### 1.3
-* Added in the bower.json, package.json and the gulpfile.js for easier development.
-* Added in the SASS raw files for use in development.
 * Added in support for 'post formats'.
 * Improved Blog Template Styling; Single, Archive and Author pages.
-* Improved Responsivness for the Blog templates.
-* Updated the Colour stylesheets.
+* Updated Responsive CSS for all templates.
+* Updated the Colour Scheme stylesheets.
 * Renamed the scripts being included more intuitively.
 * Removed unused JS and CSS files.
 * Added in a Customizer option to create a "Fixed" header.
 * Added in a Page Template "Metaplate".
-* Added RTL styling fixes for the various header layouts
+* Fixed RTL styling fixes for the various header layouts
 * Added in translation encapsulation for missing strings.
+* Added in support for BuddyPress Pages (forced to 1 column)
 
 ### 1.2.4
 * Removed the unused readme.txt in the languages directory.

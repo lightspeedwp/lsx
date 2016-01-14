@@ -228,6 +228,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 	
 	$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
 	
+	if($size === 'lsx-thumbnail-single' || 'lsx-thumbnail-wide') { $img = '<img class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />'; }
 	return $img;
 }
 

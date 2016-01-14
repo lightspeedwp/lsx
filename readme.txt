@@ -6,8 +6,8 @@ Theme Name: LSX
 Theme URI: https://www.lsdev.biz/project/lsx/
 Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.1
-Tested up to: 4.1
-Stable tag: 4.1
+Tested up to: 4.4.1
+Stable tag: 4.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -231,6 +231,10 @@ Below is a layout of where the actions are located, so you can easily position y
  * You can see examples of different customizer field in 'functions.php line 32'. 	
 
 == Changlog ==
+1.4.1
+* Fixed the Fatal error with the Caldera forms class
+* Fixed the output of the lsx-thumbnail-single and lsx-thumbnail-wide size
+* Fixed the styling of the WPML Language switcher dropdown
 
 = 1.4 =
 * Added in a "Continue Reading" link for excerpts.

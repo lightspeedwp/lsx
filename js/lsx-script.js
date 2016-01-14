@@ -3,6 +3,10 @@ jQuery(document).ready(function($) {
 	if ( $("header.banner").hasClass("navbar-static-top") ) {
 		$("body").addClass("top-menu-fixed");
 	}
+	
+	if($('li.menu-item-language-current.dropdown').length){
+		$('li.menu-item-language-current.dropdown').find('a:first').append('<span class="caret"></span>');
+	}
 
 	$('.wp-pagenavi').wrap('<div class="wp-pagenavi-wrapper"></div>');
 	$('<div class="lsx-breaker"></div>').prependTo( ".wp-pagenavi-wrapper" );
