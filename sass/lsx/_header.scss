@@ -157,6 +157,19 @@ nav {
 						}
 					}
 				}
+				
+				&.menu-item-language-current.dropdown {
+					ul.dropdown-menu {
+						right:0;
+						left:inherit;
+						-webkit-border-top-left-radius: 3px;
+						-moz-border-top-left-radius: 3px;
+						border-top-left-radius: 3px;		
+						-webkit-border-top-right-radius: 0px;
+						-moz-border-top-right-radius: 0px;
+						border-top-right-radius: 0px;											
+					}
+				}
 
 				ul.dropdown-menu {
 					background: $primary;

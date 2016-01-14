@@ -5227,6 +5227,15 @@ nav.primary-navbar {
       nav.primary-navbar .nav.navbar-nav li:hover > a, nav.primary-navbar .nav.navbar-nav li.open > a, nav.primary-navbar .nav.navbar-nav li.active > a {
         background: none !important;
         color: #333333 !important; } }
+  nav.primary-navbar .nav.navbar-nav li.menu-item-language-current.dropdown ul.dropdown-menu {
+    right: 0;
+    left: inherit;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 0px;
+    -moz-border-top-right-radius: 0px;
+    border-top-right-radius: 0px; }
   nav.primary-navbar .nav.navbar-nav li ul.dropdown-menu {
     background: #428bca;
     padding: 0;
@@ -11375,11 +11384,11 @@ figure.alignright {
 .gallery-caption,
 .sticky {
   font-style: inherit; }
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-}
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
