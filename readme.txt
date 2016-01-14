@@ -233,6 +233,8 @@ Below is a layout of where the actions are located, so you can easily position y
 == Changlog ==
 1.4.1
 * Fixed the Fatal error with the Caldera forms class
+* Fixed the output of the lsx-thumbnail-single and lsx-thumbnail-wide size
+* Fixed the styling of the WPML Language switcher dropdown
 
 = 1.4 =
 * Added in a "Continue Reading" link for excerpts.
