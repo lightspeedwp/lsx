@@ -217,3 +217,14 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 		}
 	}
 }
+
+
+/**
+ * Add in our custom classes to the menus
+ */
+function wpml_nav_language_switcher_fix( $items , $args ) {
+	$items = str_replace('menu-item-language-current','menu-item-language-current dropdown',$items);
+	$items = str_replace('submenu-languages','submenu-languages dropdown-menu',$items);
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'wpml_nav_language_switcher_fix', 10, 2 );
