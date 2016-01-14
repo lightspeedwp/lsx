@@ -6,8 +6,8 @@
 * Theme URI: https://www.lsdev.biz/project/lsx/
 * Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 * Requires at least: 4.1
-* Tested up to: 4.1
-* Stable tag: 4.1
+* Tested up to: 4.4.1
+* Stable tag: 4.4.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

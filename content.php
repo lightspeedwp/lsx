@@ -22,10 +22,8 @@
 		<?php if ( has_post_thumbnail() ) { ?>
 		<div class="entry-image">
 			<a class="thumbnail" href="<?php the_permalink(); ?>">
-				 <img <?php lsx_thumbnail('lsx-single-thumbnail'); ?>>
+				 <?php lsx_thumbnail('lsx-single-thumbnail'); ?>
 			</a>
-			
-			<?php echo the_post_thumbnail('full'); ?>
 		</div>
 	<?php } ?>
 
