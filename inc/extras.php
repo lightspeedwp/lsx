@@ -225,11 +225,17 @@ function lsx_get_thumbnail($size,$image_src = false){
 	
 	$size = apply_filters('lsx_thumbnail_size',$size);
 	$img = false;
-	
-	$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
-	
-	if($size === 'lsx-thumbnail-single' || 'lsx-thumbnail-wide') { $img = '<img class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />'; }
+	if($size === 'lsx-thumbnail-wide'){
+		$img = wp_get_attachment_image_src($post_thumbnail_id,$size);
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$img[0].'" />';
+	}elseif($size === 'lsx-thumbnail-single'){
+		$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
+	}else{
+		$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
+	}
 	return $img;
+	
 }
 
 /**
