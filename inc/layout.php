@@ -141,7 +141,6 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 		<?php endif; ?>
 
 		<section id="footer-widgets">
-			<h2 class="footer-widgets-title"><?php _e('Footer Widgets','lsx'); ?></h2>
 			<div class="container">
 				<div class="row">
 					<?php dynamic_sidebar( 'sidebar-footer' ); ?>
