@@ -253,6 +253,11 @@ nav {
 							color: $white;						
 						}
 					}
+					
+					& li.active a {
+						color: $white;
+						background: $black !important;
+					}
 				}
 
 				&.menu-highlight {

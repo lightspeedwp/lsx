@@ -77,6 +77,9 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
 			
+			if ( in_array( 'current-menu-parent', $classes ) )
+				$class_names .= ' active';			
+			
 			//Check if this is ment to be a "social" type menu
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
