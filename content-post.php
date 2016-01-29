@@ -55,7 +55,7 @@
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() ) : ?>
-				<a class="comments-link post-meta-link" data-toggle="collapse" href="#comments-collapse"><strong><?php echo get_comments_number() ?></strong> Comments <span class="genericon genericon-expand"></span></a>
+				<a class="comments-link post-meta-link" data-toggle="collapse" href="#comments-collapse"><strong><?php echo get_comments_number() ?></strong> <?php _e('Comments','lsx'); ?> <span class="genericon genericon-expand"></span></a>
 
 				<div class="collapse" id="comments-collapse">
 					<?php 

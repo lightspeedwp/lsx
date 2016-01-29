@@ -353,7 +353,7 @@ add_filter('body_class','mv_browser_body_class');
 // Replaces the excerpt "more" text by a link
 function lsx_excerpt_more($more) {
 	global $post;
-	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue reading</a>';
+	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Continue reading','lsx').'</a>';
 }
 add_filter('excerpt_more', 'lsx_excerpt_more');
 
