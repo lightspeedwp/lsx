@@ -5293,6 +5293,9 @@ nav.primary-navbar {
     color: white; }
   nav.primary-navbar .nav.navbar-nav li.active:hover > a {
     color: white; }
+  nav.primary-navbar .nav.navbar-nav li.active li.active a {
+    color: white;
+    background: #333333 !important; }
   nav.primary-navbar .nav.navbar-nav li.menu-highlight a {
     background: #333333 !important;
     color: white !important; }
@@ -6029,7 +6032,8 @@ img,
 .page-has-banner.top-menu-fixed .page-banner,
 .single-jetpack-portfolio.top-menu-fixed .page-banner {
   position: fixed;
-  padding: 390px 0; }
+  padding: 390px 0;
+  height: 0px; }
   @media (max-width: 768px) {
     .page-has-banner.top-menu-fixed .page-banner,
     .single-jetpack-portfolio.top-menu-fixed .page-banner {
@@ -9133,8 +9137,6 @@ article {
 
 #footer-widgets {
   background: #333333; }
-  #footer-widgets .footer-widgets-title {
-    display: none; }
   #footer-widgets .widget {
     margin: 70px 0 90px;
     color: #ccc; }

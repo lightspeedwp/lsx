@@ -306,6 +306,11 @@ Run the command below in your terminal window,  this will install the sass and u
 
 
 ## Changlog
+### 1.4.2
+* Added in three missing text encapsulations
+* Fixed the background image size on single Jetpack Portfolio pages.
+* Fixed the active state highlighting for 2nd tier menu items.
+* Removed the unused 'Footer Widgets' title and CSS
 
 ### 1.4.1
 * Fixed the Fatal error with the Caldera forms class

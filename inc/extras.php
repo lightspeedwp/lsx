@@ -222,14 +222,19 @@ function lsx_get_thumbnail($size,$image_src = false){
 			$post_thumbnail_id = lsx_get_attachment_id_from_src($image_src);
 		}
 	}
-	
 	$size = apply_filters('lsx_thumbnail_size',$size);
 	$img = false;
-	
-	$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
-	
-	if($size === 'lsx-thumbnail-single' || 'lsx-thumbnail-wide') { $img = '<img class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />'; }
+	if($size === 'lsx-thumbnail-wide'){
+		$img = wp_get_attachment_image_src($post_thumbnail_id,$size);
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" src="'.$img[0].'" />';
+	}elseif($size === 'lsx-single-thumbnail'){
+		$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
+		$img = '<img class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
+	}else{
+		$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
+	}
 	return $img;
+	
 }
 
 /**
@@ -348,7 +353,7 @@ add_filter('body_class','mv_browser_body_class');
 // Replaces the excerpt "more" text by a link
 function lsx_excerpt_more($more) {
 	global $post;
-	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">Continue reading</a>';
+	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Continue reading','lsx').'</a>';
 }
 add_filter('excerpt_more', 'lsx_excerpt_more');
 
