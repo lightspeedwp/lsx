@@ -231,6 +231,13 @@ Below is a layout of where the actions are located, so you can easily position y
  * You can see examples of different customizer field in 'functions.php line 32'. 	
 
 == Changlog ==
+1.4.2
+* Added in three missing text encapsulations
+* Fixed the background image size on single Jetpack Portfolio pages.
+* Fixed the active state highlighting for 2nd tier menu items.
+* Removed the unused 'Footer Widgets' title and CSS
+
+
 1.4.1
 * Fixed the Fatal error with the Caldera forms class
 * Fixed the output of the lsx-thumbnail-single and lsx-thumbnail-wide size
