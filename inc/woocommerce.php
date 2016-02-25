@@ -33,7 +33,7 @@ function lsx_woocommerce_before_content(){ ?>
 		<main id="main" class="site-main" role="main">
 		
 		<?php lsx_content_top(); ?>
-<?php }s
+<?php }
 
 /**
  * Adds the closing divs for primary and main to woocommerce.

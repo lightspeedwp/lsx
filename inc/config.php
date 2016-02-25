@@ -51,6 +51,7 @@ function lsx_setup() {
 	add_theme_support( 'html5', array( 'caption' ) );
 
 	add_theme_support( 'woocommerce' );	
+	add_theme_support( 'sensei' );
 }
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );
