@@ -24,6 +24,9 @@ if(class_exists('BuddyPress')){
 if(class_exists('WooCommerce')){
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+if(class_exists('Sensei_WC')){
+	require get_template_directory() . '/inc/sensei.php';
+}
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
