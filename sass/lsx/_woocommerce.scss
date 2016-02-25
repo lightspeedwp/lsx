@@ -1,0 +1,11 @@
+.woocommerce {
+	.woocommerce-breadcrumb a {
+		color: $primary;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $primary-darker;
+		}
+	}
+}
