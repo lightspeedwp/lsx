@@ -392,19 +392,15 @@ add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
 
 
 /**
- * Adding conditional Blog header
+ * Adding WooCommerce Hooks and Theme Support
  */
-/*
-function lsx_blog_header() { 
-	$body_classes = get_body_class();
-	if(in_array('blog', $body_classes)) {
-	?>
-		<header class="archive-header">
-			<h1 class="archive-title">
-				<?php _e('Blog','lsx'); ?>
-			</h1>
-		</header>
-	<?php }
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'lsx_content_before', 10);
+add_action('woocommerce_after_main_content', 'lsx_content_after', 10);
+
+add_action( 'after_setup_theme', 'lsx_woocommerce_support' );
+function lsx_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
 }
-add_action("lsx_blog_header", "lsx_content_top");
-*/
