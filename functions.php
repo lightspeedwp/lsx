@@ -21,6 +21,9 @@ require get_template_directory() . '/inc/jetpack.php';
 if(class_exists('BuddyPress')){
 	require get_template_directory() . '/inc/buddypress.php';
 }
+if(class_exists('WooCommerce')){
+	require get_template_directory() . '/inc/woocommerce.php';
+}
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';

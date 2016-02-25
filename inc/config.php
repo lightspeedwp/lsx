@@ -48,7 +48,9 @@ function lsx_setup() {
 	$content_width = 750;
 	
 	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );	
-	add_theme_support( 'html5', array( 'caption' ) );	
+	add_theme_support( 'html5', array( 'caption' ) );
+
+	add_theme_support( 'woocommerce' );	
 }
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );
