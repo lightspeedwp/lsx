@@ -35,6 +35,7 @@ function lsx_woocommerce_before_content(){ ?>
 		<?php lsx_content_top(); ?>
 <?php }
 
+
 /**
  * Adds the closing divs for primary and main to woocommerce.
  * @package lsx
