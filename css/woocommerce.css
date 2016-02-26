@@ -673,13 +673,13 @@ input[type="number"] {
   background: #fff !important;
   height: auto;
   font-size: 16px;
-  padding: 12px 16px;
+  padding: 8px 14px;
   color: #555;
   border: 3px solid #ddd;
   box-shadow: none;
   border-radius: 3px;
   transition: all 0.1s ease-in-out ease-in-out 0.2s;
-  padding: 0;
+  padding: 0 !important;
 }
 input[type="number"]:hover {
   border: 3px solid #ddd;
@@ -898,7 +898,6 @@ p.demo_store a {
   margin: 0 0 1em;
   padding: 0;
   font-size: 0.92em;
-  color: #777;
 }
 .woocommerce .woocommerce-breadcrumb:before, .woocommerce .woocommerce-breadcrumb:after {
   content: " ";
@@ -906,9 +905,6 @@ p.demo_store a {
 }
 .woocommerce .woocommerce-breadcrumb:after {
   clear: both;
-}
-.woocommerce .woocommerce-breadcrumb a {
-  color: #777;
 }
 .woocommerce .quantity .qty {
   width: 3.631em;
@@ -1161,8 +1157,8 @@ p.demo_store a {
   left: -.5em;
   margin: 0;
   border-radius: 100%;
-  background-color: #222;
-  color: #a2a2a2;
+  background-color: #2a6496;
+  color: #fff;
   font-size: .857em;
   -webkit-font-smoothing: antialiased;
 }
@@ -1556,7 +1552,7 @@ p.demo_store a {
 }
 .woocommerce .star-rating:before {
   content: "\73\73\73\73\73";
-  color: #c3d4e2;
+  color: #ffcc00;
   float: left;
   top: 0;
   left: 0;
@@ -1575,6 +1571,7 @@ p.demo_store a {
   top: 0;
   position: absolute;
   left: 0;
+  color: #ffcc00;
 }
 .woocommerce .woocommerce-product-rating {
   *zoom: 1;
@@ -1890,6 +1887,38 @@ p.demo_store a {
 .woocommerce .widget_shopping_cart .buttons:after {
   clear: both;
 }
+.woocommerce form select,
+.woocommerce form .select2-choice,
+.woocommerce form .input-checkbox,
+.woocommerce form input.input-text,
+.woocommerce form textarea {
+  background: #fff !important;
+  height: auto;
+  font-size: 16px;
+  padding: 8px 14px;
+  color: #555;
+  border: 3px solid #ddd;
+  box-shadow: none;
+  border-radius: 3px;
+  transition: all 0.1s ease-in-out ease-in-out 0.2s;
+}
+.woocommerce form select:hover,
+.woocommerce form .select2-choice:hover,
+.woocommerce form .input-checkbox:hover,
+.woocommerce form input.input-text:hover,
+.woocommerce form textarea:hover {
+  border: 3px solid #ddd;
+  box-shadow: none;
+}
+.woocommerce form select:focus,
+.woocommerce form .select2-choice:focus,
+.woocommerce form .input-checkbox:focus,
+.woocommerce form input.input-text:focus,
+.woocommerce form textarea:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) 0 0 8px rgba(102, 175, 233, 0.6) 3px 3px #888;
+}
 .woocommerce form .form-row {
   padding: 3px;
   margin: 0 0 6px;
@@ -1908,38 +1937,6 @@ p.demo_store a {
 }
 .woocommerce form .form-row label.inline {
   display: inline;
-}
-.woocommerce form .form-row select,
-.woocommerce form .form-row .select2-container,
-.woocommerce form .form-row .input-checkbox,
-.woocommerce form .form-row input.input-text,
-.woocommerce form .form-row textarea {
-  background: #fff !important;
-  height: auto;
-  font-size: 16px;
-  padding: 12px 16px;
-  color: #555;
-  border: 3px solid #ddd;
-  box-shadow: none;
-  border-radius: 3px;
-  transition: all 0.1s ease-in-out ease-in-out 0.2s;
-}
-.woocommerce form .form-row select:hover,
-.woocommerce form .form-row .select2-container:hover,
-.woocommerce form .form-row .input-checkbox:hover,
-.woocommerce form .form-row input.input-text:hover,
-.woocommerce form .form-row textarea:hover {
-  border: 3px solid #ddd;
-  box-shadow: none;
-}
-.woocommerce form .form-row select:focus,
-.woocommerce form .form-row .select2-container:focus,
-.woocommerce form .form-row .input-checkbox:focus,
-.woocommerce form .form-row input.input-text:focus,
-.woocommerce form .form-row textarea:focus {
-  border-color: #66afe9;
-  outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) 0 0 8px rgba(102, 175, 233, 0.6) 3px 3px #888;
 }
 .woocommerce form .form-row select {
   cursor: pointer;
@@ -1975,6 +1972,9 @@ p.demo_store a {
 .woocommerce form .form-row .select2-container {
   width: 100%;
   line-height: 2em;
+}
+.woocommerce form .form-row .select2-container .select2-choice {
+  padding: 1px 16px;
 }
 .woocommerce form .form-row.woocommerce-invalid label {
   color: #a00;
@@ -2251,16 +2251,20 @@ p.demo_store a {
 .woocommerce-cart table.cart td {
   vertical-align: middle;
 }
-.woocommerce-cart table.cart td.actions .coupon .input-text {
-  float: left;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid #c3d4e2;
-  padding: 6px 6px 5px;
-  margin: 0 4px 0 0;
-  outline: 0;
-  line-height: 1;
+.woocommerce-cart table.cart td.actions .coupon {
+  /*
+  .input-text {
+  	float: left;
+  	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+  	border: 1px solid darken( $secondary, 10% );
+  	padding: 6px 6px 5px;
+  	margin: 0 4px 0 0;
+  	outline: 0;
+  	line-height: 1;
+  }
+  */
 }
 .woocommerce-cart table.cart input {
   margin: 0;

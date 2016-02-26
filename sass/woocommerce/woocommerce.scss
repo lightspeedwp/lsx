@@ -37,7 +37,7 @@
 
 input[type="number"] {
 	@include lsx-form-field;
-	padding: 0;
+	padding: 0 !important;
 }
 
 
@@ -180,11 +180,6 @@ p.demo_store {
 		margin: 0 0 1em;
 		padding: 0;
 		font-size: 0.92em;
-		color: $subtext;
-
-		a {
-			color: $subtext;
-		}
 	}
 
 	.quantity {
@@ -484,8 +479,8 @@ p.demo_store {
 		left: -.5em;
 		margin: 0;
 		border-radius: 100%;
-		background-color: $highlight;
-		color: $highlightext;
+		background-color: $primary-darker;
+		color: $white;
 		font-size: .857em;
 		-webkit-font-smoothing: antialiased;
 	}
@@ -883,7 +878,7 @@ p.demo_store {
 
 		&:before {
 			content: "\73\73\73\73\73";
-			color: darken( $secondary, 10% );
+			color: #ffcc00;
 			float: left;
 			top: 0;
 			left: 0;
@@ -904,6 +899,7 @@ p.demo_store {
 			top: 0;
 			position: absolute;
 			left: 0;
+			color: #ffcc00;
 		}
 	}
 
@@ -1252,6 +1248,14 @@ p.demo_store {
 	 * Forms
 	 */
 	form {
+		select,
+		.select2-choice,
+		.input-checkbox,
+		input.input-text,
+		textarea {
+			@include lsx-form-field;
+		}
+
 		.form-row {
 			padding: 3px;
 			margin: 0 0 6px;
@@ -1273,14 +1277,6 @@ p.demo_store {
 
 			label.inline {
 				display: inline;
-			}
-
-			select,
-			.select2-container,
-			.input-checkbox,
-			input.input-text,
-			textarea {
-				@include lsx-form-field;
 			}
 
 			select {
@@ -1322,6 +1318,10 @@ p.demo_store {
 			.select2-container {
 				width: 100%;
 				line-height: 2em;
+
+				.select2-choice {
+					padding: 1px 16px;
+				}
 			}
 
 			&.woocommerce-invalid {
@@ -1638,6 +1638,7 @@ p.demo_store {
 
 		td.actions {
 			.coupon {
+				/*
 				.input-text {
 					float: left;
 					-webkit-box-sizing: border-box;
@@ -1649,6 +1650,7 @@ p.demo_store {
 					outline: 0;
 					line-height: 1;
 				}
+				*/
 			}
 		}
 
