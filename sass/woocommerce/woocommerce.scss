@@ -9,10 +9,37 @@
  */
 @import "_bourbon.scss";
 @import "_mixins.scss";
+@import "../lsx/_mixins.scss";
 @import "_variables.scss";
 @import "_animation.scss";
 @import "_fonts.scss";
 @import "woocommerce-layout.scss";
+
+/* LSX */
+
+.wrap {
+	body.woocommerce & {
+		margin: {
+			top: 40px;
+			bottom: 40px;
+		}
+	}
+
+	body.woocommerce.top-menu-fixed & {
+		margin-top: 180px;
+
+		@media screen and (max-width: 768px) {
+			margin-top: 0;
+		}
+	}
+	
+}
+
+input[type="number"] {
+	@include lsx-form-field;
+	padding: 0;
+}
+
 
 /**
  * Global styles
@@ -604,10 +631,26 @@ p.demo_store {
 	/**
 	 * Buttons
 	 */
+	 
 	a.button,
 	button.button,
 	input.button,
 	#respond input#submit {
+		@include lsx-button;
+		background: $primary;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $primary-darker;
+		}
+
+		&.single_add_to_cart_button {
+			margin: 0;
+			padding: 3px 26px;
+		}
+
+		/*
 		font-size: 100%;
 		margin: 0;
 		line-height: 1;
@@ -698,6 +741,7 @@ p.demo_store {
 				background-color: $secondary;
 			}
 		}
+		*/
 	}
 
 	.cart .button,
@@ -1231,6 +1275,14 @@ p.demo_store {
 				display: inline;
 			}
 
+			select,
+			.select2-container,
+			.input-checkbox,
+			input.input-text,
+			textarea {
+				@include lsx-form-field;
+			}
+
 			select {
 				cursor: pointer;
 				margin: 0;
@@ -1259,7 +1311,7 @@ p.demo_store {
 			}
 
 			textarea {
-				height: 4em;
+				height: auto;
 				line-height: 1.5;
 				display: block;
 				-moz-box-shadow: none;

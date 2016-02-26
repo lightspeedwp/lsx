@@ -57,7 +57,7 @@ function lsx_woocommerce_after_content(){ ?>
  */
 
 /**
- * Removes WooCommerce plugin styles and enqueues WooCommerce style from the theme instead
+ * Removes WooCommerce plugin styles and enqueues WooCommerce style from the theme instead.
  * @package lsx
  * @subpackage woocommerce
  * @category 	styles
