@@ -160,3 +160,13 @@ function lsx_yoast_seo_amp_glue_init() {
 	}
 }
 add_action( 'init', 'lsx_yoast_seo_amp_glue_init', 12 );
+
+/**
+ * Load custom CSS
+ */
+function lsx_add_amp_css() { 
+	?>
+		<link href="<?php echo get_stylesheet_directory_uri(); ?>/css/amp.css" rel="stylesheet" type="text/css">
+	<?php
+}
+add_action( 'amp_post_template_head', 'lsx_add_amp_css');
