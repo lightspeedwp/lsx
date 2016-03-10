@@ -37,7 +37,7 @@
 
 input[type="number"] {
 	@include lsx-form-field;
-	padding: 0 !important;
+	padding: 9px 0 !important;
 }
 
 
@@ -172,7 +172,10 @@ p.demo_store {
 
 		.product_title {
 			clear: none;
-			margin-top: 0;
+			margin: {
+				top: 0;
+				bottom: 0;
+			}
 			padding: 0;
 		}
 
@@ -355,7 +358,7 @@ p.demo_store {
 
 			div.quantity {
 				float: left;
-				margin: 0 4px 0 0;
+				margin: 10px 4px 0 0;
 			}
 
 			table {
@@ -381,6 +384,10 @@ p.demo_store {
 				border: 0;
 				width: 100%;
 
+				tr {
+					background: none;
+				}
+
 				td,
 				th {
 					border: 0;
@@ -390,6 +397,8 @@ p.demo_store {
 
 				label {
 					font-weight: 700;
+					color: $mid-grey;
+					font-size: 16px;
 				}
 
 				select {
@@ -441,7 +450,7 @@ p.demo_store {
 
 	span.onsale {
 		min-height: 3.236em;
-		min-width: 3.236em;
+		min-width: 3.55em;
 		padding: .202em;
 		font-size: 1em;
 		font-weight: 700;
@@ -608,6 +617,7 @@ p.demo_store {
 		@include lsx-button;
 		background: $primary;
 		line-height: 1.42857143;
+	    padding: 9.5px 26px;
 
 		&:hover,
 		&:focus,
@@ -669,6 +679,7 @@ p.demo_store {
 			ol.commentlist {
 				@include clearfix();
 				margin: 0;
+				padding: 0;
 				width: 100%;
 				background: none;
 				list-style: none;
@@ -934,6 +945,11 @@ p.demo_store {
 		width: 100%;
 		border-collapse: separate;
 		border-radius: 5px;
+
+		th,
+		td {
+			border-bottom: none;
+		}
 
 		th {
 			font-weight: 700;
@@ -1211,11 +1227,21 @@ p.demo_store {
 	form.login,
 	form.checkout_coupon,
 	form.register {
-		border: 1px solid darken( $secondary, 10% );
+		border: 1px solid #ddd;
 		padding: 20px;
 		margin: 2em 0 2em 0px;
 		text-align: left;
 		border-radius: 5px;
+	}
+
+	form.checkout_coupon {
+		.form-row {
+			margin: 0;
+
+			.button {
+				margin: 0;
+			}
+		}
 	}
 
 	ul#shipping_method {
@@ -1485,6 +1511,7 @@ p.demo_store {
 		th,
 		td {
 			vertical-align: middle;
+			border-bottom: none;
 		}
 
 		td.actions {
@@ -1508,7 +1535,6 @@ p.demo_store {
 		input {
 			margin: 0;
 			vertical-align: middle;
-			line-height: 1;
 		}
 	}
 
@@ -1752,7 +1778,7 @@ p.demo_store {
 			&:before {
 				content: "";
 				display: block;
-				border: 1em solid $mid-grey; /* arrow size / color */
+				border: 1em solid #e5e5e5; /* arrow size / color */
 				border-right-color: transparent;
 				border-left-color: transparent;
 				border-top-color: transparent;
