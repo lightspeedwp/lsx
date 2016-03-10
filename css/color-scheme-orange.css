@@ -19,15 +19,46 @@ a:active {
 }
 
 .btn,
-button {
+button,
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce input[type="submit"], 
+.woocommerce #respond input#submit {
 	background: #fbaf3f;
+	color: #260e03;
+}
+
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, 
+.woocommerce input[type="submit"], 
+.woocommerce #respond input#submit {
+	background: #fbaf3f !important;
 	color: #260e03;
 }
 
 .btn:hover,
 .btn:focus,
 .btn:active,
-button:hover {
+button:hover,
+button:active,
+button:focus,
+.woocommerce a.button:hover,
+.woocommerce a.button:active,
+.woocommerce a.button:focus, 
+.woocommerce button.button:hover,
+.woocommerce button.button:active,
+.woocommerce button.button:focus, 
+.woocommerce input.button:hover,
+.woocommerce input.button:active,
+.woocommerce input.button:focus, 
+.woocommerce input[type="submit"]:hover,
+.woocommerce input[type="submit"]:active,
+.woocommerce input[type="submit"]:focus, 
+.woocommerce #respond input#submit:hover,
+.woocommerce #respond input#submit:active,
+.woocommerce #respond input#submit:focus {
 	background: #e49435 !important;
 	color: #260e03;
 }
@@ -784,4 +815,20 @@ article header.entry-header h1.entry-title a:active {
 .comments-linK:active,
 .comments-link:focus {
   color: #cc4800 !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+  border: 1px solid #eac9b1 !important;
+  border-right: none !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  border-right: 1px solid #eac9b1 !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li a:focus {
+  background: #f5e5d9 !important;
+  color: #ca7538 !important;
 }

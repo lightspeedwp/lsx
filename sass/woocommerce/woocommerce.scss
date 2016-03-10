@@ -114,9 +114,9 @@ p.demo_store {
 		padding: 1em 2em 1em 3.5em !important;
 		margin: 0 0 2em !important;
 		position: relative;
-		background-color: lighten($secondary,5%);
-		color: $secondarytext;
-		border-top: 3px solid $primary;
+		background-color: $off-white;
+		color: $mid-grey;
+		border-top: 3px solid $mid-grey;
 		list-style: none outside !important;
 		@include clearfix();
 		width: auto;
@@ -139,32 +139,6 @@ p.demo_store {
 			list-style: none outside !important;
 			padding-left: 0 !important;
 			margin-left: 0 !important;
-		}
-	}
-
-	.woocommerce-message {
-		border-top-color: #8fae1b;
-
-		&:before {
-			content: "\e015";
-			color: #8fae1b;
-		}
-	}
-
-	.woocommerce-info {
-		border-top-color: #1e85be;
-
-		&:before {
-			color: #1e85be;
-		}
-	}
-
-	.woocommerce-error {
-		border-top-color: #b81c23;
-
-		&:before {
-			content: "\e016";
-			color: #b81c23;
 		}
 	}
 
@@ -284,8 +258,8 @@ p.demo_store {
 				position: relative;
 
 				li {
-					border: 1px solid darken( $secondary, 10% );
-					background-color: $secondary;
+					border: 1px solid #ddd;
+					background-color: $light-grey;
 					display: inline-block;
 					position: relative;
 					z-index: 0;
@@ -297,12 +271,11 @@ p.demo_store {
 						display: inline-block;
 						padding: .5em 0;
 						font-weight: 700;
-						color: $secondarytext;
 						text-decoration: none;
 
 						&:hover {
 							text-decoration: none;
-							color: lighten( $secondarytext, 10% );
+							color: $mid-grey;
 						}
 					}
 
@@ -327,7 +300,7 @@ p.demo_store {
 
 					&:before,
 					&:after {
-						border: 1px solid darken( $secondary, 10% );
+						border: 1px solid #ddd;
 						position: absolute;
 						bottom: -1px;
 						width: 5px;
@@ -360,7 +333,7 @@ p.demo_store {
 					width: 100%;
 					bottom: 0;
 					left: 0;
-					border-bottom: 1px solid darken( $secondary, 10% );
+					border-bottom: 1px solid #ddd;
 					z-index: 1;
 				}
 			}
@@ -479,7 +452,7 @@ p.demo_store {
 		left: -.5em;
 		margin: 0;
 		border-radius: 100%;
-		background-color: $primary-darker;
+		background-color: $blacker;
 		color: $white;
 		font-size: .857em;
 		-webkit-font-smoothing: antialiased;
@@ -1120,7 +1093,7 @@ p.demo_store {
 	&.widget_shopping_cart,
 	.widget_shopping_cart {
 		.total {
-			border-top: 3px double $secondary;
+			border-top: 3px double $light-grey;
 			padding: 4px 0 0;
 
 			strong {
@@ -1220,7 +1193,7 @@ p.demo_store {
 				-webkit-box-shadow: none;
 				box-shadow: none;
 			}
-			
+
 			::-webkit-input-placeholder {
 				line-height: normal;
 			}
@@ -1396,7 +1369,7 @@ p.demo_store {
 			z-index: 2;
 			width: 1em;
 			height: 1em;
-			background-color: $primary;
+			background-color: $black;
 			border-radius: 1em;
 			cursor: ew-resize;
 			outline: none;
@@ -1414,12 +1387,12 @@ p.demo_store {
 			display: block;
 			border: 0;
 			border-radius: 1em;
-			background-color: $primary;
+			background-color: $black;
 		}
 
 		.price_slider_wrapper .ui-widget-content {
 			border-radius: 1em;
-			background-color: $primary - #444;
+			background-color: $grey;
 			border: 0;
 		}
 
@@ -1666,14 +1639,14 @@ p.demo_store {
 	}
 
 	#payment {
-		background: $secondary;
+		background: $off-white;
 		border-radius: 5px;
 
 		ul.payment_methods {
 			@include clearfix();
 			text-align: left;
 			padding: 1em;
-			border-bottom: 1px solid darken( $secondary, 10% );
+			//border-bottom: 1px solid darken( $secondary, 10% );
 			margin: 0;
 			list-style: none outside;
 
@@ -1715,24 +1688,11 @@ p.demo_store {
 			font-size: 0.92em;
 			border-radius: 2px;
 			line-height: 1.5;
-			background-color: darken( $secondary, 5% );
-			color: $secondarytext;
+			background-color: #e5e5e5;
 
 			input.input-text, textarea {
-				border-color: darken( $secondary, 15% );
-				border-top-color: darken( $secondary, 20% );
-			}
-
-			::-webkit-input-placeholder {
-				color: darken( $secondary, 20% );
-			}
-
-			:-moz-placeholder {
-				color: darken( $secondary, 20% );
-			}
-
-			:-ms-input-placeholder {
-				color: darken( $secondary, 20% );
+				border-color: $mid-grey;
+				border-top-color: $mid-grey;
 			}
 
 			.wc-credit-card-form-card-number,
@@ -1792,7 +1752,7 @@ p.demo_store {
 			&:before {
 				content: "";
 				display: block;
-				border: 1em solid darken( $secondary, 5% ); /* arrow size / color */
+				border: 1em solid $mid-grey; /* arrow size / color */
 				border-right-color: transparent;
 				border-left-color: transparent;
 				border-top-color: transparent;
