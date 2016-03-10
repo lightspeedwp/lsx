@@ -630,6 +630,7 @@ p.demo_store {
 	a.button,
 	button.button,
 	input.button,
+	input[type="submit"],
 	#respond input#submit {
 		@include lsx-button;
 		background: $primary;
@@ -1252,6 +1253,7 @@ p.demo_store {
 		.select2-choice,
 		.input-checkbox,
 		input.input-text,
+		input[type="search"],
 		textarea {
 			@include lsx-form-field;
 		}
@@ -1323,7 +1325,7 @@ p.demo_store {
 					padding: 1px 16px;
 				}
 			}
-
+			/*
 			&.woocommerce-invalid {
 				label {
 					color: $red;
@@ -1342,7 +1344,7 @@ p.demo_store {
 					border-color: $green - #111;
 				}
 			}
-
+			*/
 			::-webkit-input-placeholder {
 				line-height: normal;
 			}

@@ -1286,6 +1286,7 @@ p.demo_store a {
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
+.woocommerce input[type="submit"],
 .woocommerce #respond input#submit {
   background: #333;
   color: #fff;
@@ -1398,6 +1399,8 @@ p.demo_store a {
 .woocommerce button.button:focus,
 .woocommerce input.button:hover,
 .woocommerce input.button:focus,
+.woocommerce input[type="submit"]:hover,
+.woocommerce input[type="submit"]:focus,
 .woocommerce #respond input#submit:hover,
 .woocommerce #respond input#submit:focus {
   background: #232222;
@@ -1410,6 +1413,9 @@ p.demo_store a {
 .woocommerce input.button:hover,
 .woocommerce input.button:focus,
 .woocommerce input.button:active,
+.woocommerce input[type="submit"]:hover,
+.woocommerce input[type="submit"]:focus,
+.woocommerce input[type="submit"]:active,
 .woocommerce #respond input#submit:hover,
 .woocommerce #respond input#submit:focus,
 .woocommerce #respond input#submit:active {
@@ -1418,6 +1424,7 @@ p.demo_store a {
 .woocommerce a.button.single_add_to_cart_button,
 .woocommerce button.button.single_add_to_cart_button,
 .woocommerce input.button.single_add_to_cart_button,
+.woocommerce input[type="submit"].single_add_to_cart_button,
 .woocommerce #respond input#submit.single_add_to_cart_button {
   margin: 0;
   padding: 3px 26px;
@@ -1891,6 +1898,7 @@ p.demo_store a {
 .woocommerce form .select2-choice,
 .woocommerce form .input-checkbox,
 .woocommerce form input.input-text,
+.woocommerce form input[type="search"],
 .woocommerce form textarea {
   background: #fff !important;
   height: auto;
@@ -1906,6 +1914,7 @@ p.demo_store a {
 .woocommerce form .select2-choice:hover,
 .woocommerce form .input-checkbox:hover,
 .woocommerce form input.input-text:hover,
+.woocommerce form input[type="search"]:hover,
 .woocommerce form textarea:hover {
   border: 3px solid #ddd;
   box-shadow: none;
@@ -1914,6 +1923,7 @@ p.demo_store a {
 .woocommerce form .select2-choice:focus,
 .woocommerce form .input-checkbox:focus,
 .woocommerce form input.input-text:focus,
+.woocommerce form input[type="search"]:focus,
 .woocommerce form textarea:focus {
   border-color: #66afe9;
   outline: 0;
@@ -1922,6 +1932,26 @@ p.demo_store a {
 .woocommerce form .form-row {
   padding: 3px;
   margin: 0 0 6px;
+  			/*
+  			&.woocommerce-invalid {
+  				label {
+  					color: $red;
+  				}
+  				.select2-container,
+  				input.input-text,
+  				select {
+  					border-color: $red;
+  				}
+  			}
+  
+  			&.woocommerce-validated {
+  				.select2-container,
+  				input.input-text,
+  				select {
+  					border-color: $green - #111;
+  				}
+  			}
+  			*/
 }
 .woocommerce form .form-row [placeholder]:focus::-webkit-input-placeholder {
   -webkit-transition: opacity 0.5s 0.5s ease;
@@ -1975,19 +2005,6 @@ p.demo_store a {
 }
 .woocommerce form .form-row .select2-container .select2-choice {
   padding: 1px 16px;
-}
-.woocommerce form .form-row.woocommerce-invalid label {
-  color: #a00;
-}
-.woocommerce form .form-row.woocommerce-invalid .select2-container,
-.woocommerce form .form-row.woocommerce-invalid input.input-text,
-.woocommerce form .form-row.woocommerce-invalid select {
-  border-color: #a00;
-}
-.woocommerce form .form-row.woocommerce-validated .select2-container,
-.woocommerce form .form-row.woocommerce-validated input.input-text,
-.woocommerce form .form-row.woocommerce-validated select {
-  border-color: #69bf29;
 }
 .woocommerce form .form-row ::-webkit-input-placeholder {
   line-height: normal;
