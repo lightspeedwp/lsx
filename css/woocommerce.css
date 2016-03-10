@@ -1301,98 +1301,7 @@ p.demo_store a {
   border-radius: 3px;
   transition: all 0.1s ease-in-out ease-in-out 0.2s;
   background: #428bca;
-  		/*
-  		font-size: 100%;
-  		margin: 0;
-  		line-height: 1;
-  		cursor: pointer;
-  		position: relative;
-  		font-family: inherit;
-  		text-decoration: none;
-  		overflow: visible;
-  		padding: .618em 1em;
-  		font-weight: 700;
-  		border-radius: 3px;
-  		left: auto;
-  		color: $secondarytext;
-  		background-color: $secondary;
-  		border: 0;
-  		white-space: nowrap;
-  		display: inline-block;
-  		background-image: none;
-  		box-shadow: none;
-  		-webkit-box-shadow: none;
-  		text-shadow: none;
-  
-  		&.loading {
-  			opacity: 0.25;
-  			padding-right: 2.618em;
-  
-  			&:after {
-  				font-family: "WooCommerce";
-  				content: "\e01c";
-  				vertical-align: top;
-  				-webkit-font-smoothing: antialiased;
-  				font-weight: 400;
-  				position: absolute;
-  				top: .618em;
-  				right: 1em;
-  				-webkit-animation: spin 2s linear infinite;
-  			    -moz-animation: spin 2s linear infinite;
-  			    animation: spin 2s linear infinite;
-  			}
-  		}
-  
-  		&.added {
-  			&:after {
-  				font-family: 'WooCommerce';
-  				content: "\e017";
-  				margin-left: .53em;
-  				vertical-align: bottom;
-  			}
-  		}
-  
-  		&:hover {
-  			background-color: $secondary - #111;
-  			text-decoration: none;
-  			background-image: none;
-  			color: $secondarytext;
-  		}
-  
-  		&.alt {
-  			background-color: $primary;
-  			color: $primarytext;
-  			-webkit-font-smoothing: antialiased;
-  
-  			&:hover {
-  				background-color: $primary - #111;
-  				color: $primarytext;
-  			}
-  
-  			&.disabled,
-  			&:disabled,
-  			&:disabled[disabled],
-  			&.disabled:hover,
-  			&:disabled:hover,
-  			&:disabled[disabled]:hover {
-  				background-color: $primary;
-  				color: $primarytext;
-  			}
-  		}
-  
-  		&:disabled,
-  		&.disabled,
-  		&:disabled[disabled] {
-  			color: inherit;
-  			cursor: not-allowed;
-  			opacity: 0.5;
-  
-  			&:hover {
-  				color: inherit;
-  				background-color: $secondary;
-  			}
-  		}
-  		*/
+  line-height: 1.42857143;
 }
 .woocommerce a.button:hover, .woocommerce a.button:focus,
 .woocommerce button.button:hover,
@@ -1420,14 +1329,6 @@ p.demo_store a {
 .woocommerce #respond input#submit:focus,
 .woocommerce #respond input#submit:active {
   background: #2a6496;
-}
-.woocommerce a.button.single_add_to_cart_button,
-.woocommerce button.button.single_add_to_cart_button,
-.woocommerce input.button.single_add_to_cart_button,
-.woocommerce input[type="submit"].single_add_to_cart_button,
-.woocommerce #respond input#submit.single_add_to_cart_button {
-  margin: 0;
-  padding: 3px 26px;
 }
 .woocommerce .cart .button,
 .woocommerce .cart input.button {
@@ -1909,6 +1810,7 @@ p.demo_store a {
   box-shadow: none;
   border-radius: 3px;
   transition: all 0.1s ease-in-out ease-in-out 0.2s;
+  line-height: 1.42857143;
 }
 .woocommerce form select:hover,
 .woocommerce form .select2-choice:hover,
@@ -1932,26 +1834,6 @@ p.demo_store a {
 .woocommerce form .form-row {
   padding: 3px;
   margin: 0 0 6px;
-  			/*
-  			&.woocommerce-invalid {
-  				label {
-  					color: $red;
-  				}
-  				.select2-container,
-  				input.input-text,
-  				select {
-  					border-color: $red;
-  				}
-  			}
-  
-  			&.woocommerce-validated {
-  				.select2-container,
-  				input.input-text,
-  				select {
-  					border-color: $green - #111;
-  				}
-  			}
-  			*/
 }
 .woocommerce form .form-row [placeholder]:focus::-webkit-input-placeholder {
   -webkit-transition: opacity 0.5s 0.5s ease;
@@ -1998,13 +1880,6 @@ p.demo_store a {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-}
-.woocommerce form .form-row .select2-container {
-  width: 100%;
-  line-height: 2em;
-}
-.woocommerce form .form-row .select2-container .select2-choice {
-  padding: 1px 16px;
 }
 .woocommerce form .form-row ::-webkit-input-placeholder {
   line-height: normal;
