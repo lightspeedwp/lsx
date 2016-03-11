@@ -179,10 +179,15 @@
 	}
 
 	.woocommerce-result-count {
-		float: left;
+		@media (min-width: 540px) {
+			float: left;
+		}
+		
 	}
 	.woocommerce-ordering {
-		float: right;
+		@media (min-width: 540px) {
+			float: right;
+		}
 	}
 
 	.woocommerce-pagination {

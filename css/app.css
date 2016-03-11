@@ -7243,8 +7243,10 @@ nav#social-navigation ul li a[href*="twitch.tv"]:before {
     width: 65%;
   }
 }
-.wrap #secondary {
-  float: right;
+@media (min-width: 768px) {
+  .wrap #secondary {
+    float: right;
+  }
 }
 .wrap #primary.col-sm-12,
 .wrap #secondary.col-sm-12 {

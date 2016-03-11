@@ -888,7 +888,9 @@ nav {
 	}
 
 	#secondary {
-		float: right;
+		@media (min-width: 768px) {
+			float: right;	
+		}
 	}
 
 	#primary,

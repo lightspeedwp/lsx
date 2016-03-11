@@ -376,11 +376,15 @@
 .woocommerce.columns-6 ul.products li.product, .woocommerce-page.columns-6 ul.products li.product {
   width: 13.5%;
 }
-.woocommerce .woocommerce-result-count, .woocommerce-page .woocommerce-result-count {
-  float: left;
+@media (min-width: 540px) {
+  .woocommerce .woocommerce-result-count, .woocommerce-page .woocommerce-result-count {
+    float: left;
+  }
 }
-.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
-  float: right;
+@media (min-width: 540px) {
+  .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+    float: right;
+  }
 }
 .woocommerce .woocommerce-pagination ul.page-numbers, .woocommerce-page .woocommerce-pagination ul.page-numbers {
   *zoom: 1;
@@ -2020,20 +2024,8 @@ p.demo_store a {
   vertical-align: middle;
   border-bottom: none;
 }
-.woocommerce-cart table.cart td.actions .coupon {
-  /*
-  .input-text {
-  	float: left;
-  	-webkit-box-sizing: border-box;
-  	-moz-box-sizing: border-box;
-  	box-sizing: border-box;
-  	border: 1px solid darken( $secondary, 10% );
-  	padding: 6px 6px 5px;
-  	margin: 0 4px 0 0;
-  	outline: 0;
-  	line-height: 1;
-  }
-  */
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+  margin: 0 10px 0 0;
 }
 .woocommerce-cart table.cart input {
   margin: 0;
