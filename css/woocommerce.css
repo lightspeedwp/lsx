@@ -1156,15 +1156,12 @@ p.demo_store a {
   border-radius: 3px;
   transition: all 0.2s ease-in-out ease-in-out 0.2s;
 }
+.woocommerce nav.woocommerce-pagination ul li .current,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 .woocommerce nav.woocommerce-pagination ul li a:focus {
-  background: none;
+  background: #333;
   border-color: #333;
-}
-.woocommerce nav.woocommerce-pagination ul li .current {
-  background: none;
-  border: none;
-  color: #333;
+  color: #fff;
 }
 .woocommerce a.button,
 .woocommerce button.button,
