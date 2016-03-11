@@ -1146,34 +1146,25 @@ p.demo_store a {
 }
 .woocommerce nav.woocommerce-pagination ul li {
   display: inline-block;
-  float: left;
+  margin: 0 3px;
 }
 .woocommerce nav.woocommerce-pagination ul li a,
 .woocommerce nav.woocommerce-pagination ul li span {
-  position: relative;
-  padding: 6px 12px;
-  line-height: 1.42857;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  margin-left: -1px;
+  padding: 5px 12px;
+  border: 2px solid #ccc;
+  color: #333;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out ease-in-out 0.2s;
 }
-.woocommerce nav.woocommerce-pagination ul li:first-child a,
-.woocommerce nav.woocommerce-pagination ul li:first-child span {
-  margin-left: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-.woocommerce nav.woocommerce-pagination ul li:last-child a,
-.woocommerce nav.woocommerce-pagination ul li:last-child span {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-}
-.woocommerce nav.woocommerce-pagination ul li span.current,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 .woocommerce nav.woocommerce-pagination ul li a:focus {
-  background: #e5ecf3;
-  color: #5b89b1;
+  background: none;
+  border-color: #333;
+}
+.woocommerce nav.woocommerce-pagination ul li .current {
+  background: none;
+  border: none;
+  color: #333;
 }
 .woocommerce a.button,
 .woocommerce button.button,
