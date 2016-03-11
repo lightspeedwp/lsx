@@ -142,6 +142,35 @@ p.demo_store {
 		}
 	}
 
+	.woocommerce-message {
+		border-top-color: #8fae1b;
+
+		&:before,
+		a {
+			content: "\e015";
+			color: #8fae1b;
+		}
+	}
+
+	.woocommerce-info {
+		border-top-color: #1e85be;
+
+		&:before,
+		a {
+			color: #1e85be;
+		}
+	}
+
+	.woocommerce-error {
+		border-top-color: #b81c23;
+
+		&:before,
+		a {
+			content: "\e016";
+			color: #b81c23;
+		}
+	}
+
 	small.note {
 		display: block;
 		color: $subtext;
@@ -1208,6 +1237,25 @@ p.demo_store {
 				-moz-box-shadow: none;
 				-webkit-box-shadow: none;
 				box-shadow: none;
+			}
+
+			&.woocommerce-invalid {
+				label {
+					color: $red;
+				}
+				.select2-container,
+				input.input-text,
+				select {
+					border-color: $red;
+				}
+			}
+
+			&.woocommerce-validated {
+				.select2-container,
+				input.input-text,
+				select {
+					border-color: $green - #111;
+				}
 			}
 
 			::-webkit-input-placeholder {

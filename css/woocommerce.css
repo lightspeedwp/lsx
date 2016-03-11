@@ -750,6 +750,29 @@ p.demo_store a {
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
+.woocommerce .woocommerce-message {
+  border-top-color: #8fae1b;
+}
+.woocommerce .woocommerce-message:before,
+.woocommerce .woocommerce-message a {
+  content: "\e015";
+  color: #8fae1b;
+}
+.woocommerce .woocommerce-info {
+  border-top-color: #1e85be;
+}
+.woocommerce .woocommerce-info:before,
+.woocommerce .woocommerce-info a {
+  color: #1e85be;
+}
+.woocommerce .woocommerce-error {
+  border-top-color: #b81c23;
+}
+.woocommerce .woocommerce-error:before,
+.woocommerce .woocommerce-error a {
+  content: "\e016";
+  color: #b81c23;
+}
 .woocommerce small.note {
   display: block;
   color: #777;
@@ -1754,6 +1777,19 @@ p.demo_store a {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+.woocommerce form .form-row.woocommerce-invalid label {
+  color: #a00;
+}
+.woocommerce form .form-row.woocommerce-invalid .select2-container,
+.woocommerce form .form-row.woocommerce-invalid input.input-text,
+.woocommerce form .form-row.woocommerce-invalid select {
+  border-color: #a00;
+}
+.woocommerce form .form-row.woocommerce-validated .select2-container,
+.woocommerce form .form-row.woocommerce-validated input.input-text,
+.woocommerce form .form-row.woocommerce-validated select {
+  border-color: #69bf29;
 }
 .woocommerce form .form-row ::-webkit-input-placeholder {
   line-height: normal;
