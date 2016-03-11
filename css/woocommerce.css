@@ -1143,30 +1143,31 @@ p.demo_store a {
   display: inline-block;
   white-space: nowrap;
   padding: 0;
-  clear: both;
-  border: 1px solid #c3d4e2;
-  border-right: 0;
-  margin: 1px;
 }
 .woocommerce nav.woocommerce-pagination ul li {
-  border-right: 1px solid #c3d4e2;
-  padding: 0;
-  margin: 0;
+  display: inline-block;
   float: left;
-  display: inline;
-  overflow: hidden;
 }
 .woocommerce nav.woocommerce-pagination ul li a,
 .woocommerce nav.woocommerce-pagination ul li span {
-  margin: 0;
+  position: relative;
+  padding: 6px 12px;
+  line-height: 1.42857;
   text-decoration: none;
-  padding: 0;
-  line-height: 1;
-  font-size: 1em;
-  font-weight: normal;
-  padding: .5em;
-  min-width: 1em;
-  display: block;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+.woocommerce nav.woocommerce-pagination ul li:first-child a,
+.woocommerce nav.woocommerce-pagination ul li:first-child span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.woocommerce nav.woocommerce-pagination ul li:last-child a,
+.woocommerce nav.woocommerce-pagination ul li:last-child span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
 }
 .woocommerce nav.woocommerce-pagination ul li span.current,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
