@@ -57,7 +57,7 @@ function lsx_woocommerce_after_content(){ ?>
  */
 
 /**
- * Removes WooCommerce plugin styles and enqueues WooCommerce style from the theme instead.
+ * Removes WooCommerce plugin styles and enqueues WooCommerce styles from the theme instead.
  * @package lsx
  * @subpackage woocommerce
  * @category 	styles
@@ -65,6 +65,6 @@ function lsx_woocommerce_after_content(){ ?>
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 function lsx_woocommerce_styles() {
-    wp_enqueue_style( 'style-name', get_template_directory_uri() . '/css/woocommerce.css' );
+    wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
 }
 add_action( 'wp_enqueue_scripts', 'lsx_woocommerce_styles' );

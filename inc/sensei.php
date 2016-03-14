@@ -56,3 +56,20 @@ function lsx_sensei_after_content(){ ?>
 
 	<?php get_sidebar(); ?>
 <?php }
+
+/*
+ * Styles
+ */
+
+/**
+ * Removes Sensei plugin styles and enqueues Sensei styles from the theme instead.
+ * @package lsx
+ * @subpackage woocommerce
+ * @category 	styles
+ */
+add_filter( 'sensei_disable_styles', '__return_true' );
+
+function lsx_sensei_styles() {
+    wp_enqueue_style( 'sensei', get_template_directory_uri() . '/css/sensei.css' );
+}
+add_action( 'wp_enqueue_scripts', 'lsx_sensei_styles' );
