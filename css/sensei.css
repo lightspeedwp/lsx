@@ -88,8 +88,8 @@ body.sensei .wrap {
 /* Font Awesome Icons */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2") format("woff2"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#svgFontName") format("svg");
+  src: url("../sass/sensei/fonts/fontawesome-webfont.eot");
+  src: url("../sass/sensei/fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../sass/sensei/fonts/fontawesome-webfont.woff2") format("woff2"), url("../sass/sensei/fonts/fontawesome-webfont.woff") format("woff"), url("../sass/sensei/fonts/fontawesome-webfont.ttf") format("truetype"), url("../sass/sensei/fonts/fontawesome-webfont.svg#svgFontName") format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -446,6 +446,10 @@ a.sensei-certificate-link {
 div.course-container div.course {
   display: block;
   padding: 5px;
+}
+
+.course-container .course .course-price {
+  padding-left: 10px;
 }
 
 .course-excerpt {
