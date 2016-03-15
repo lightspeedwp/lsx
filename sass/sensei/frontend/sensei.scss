@@ -52,7 +52,7 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
 
 /* Font Awesome Icons */
 @font-face {
-  font-family: 'FontAwesomeSensei';
+  font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot');
   src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
      url('../fonts/fontawesome-webfont.woff2') format('woff2'),
@@ -180,9 +180,6 @@ a.sensei-certificate-link {
     .status {
       float: left;
       margin-right: .236em;
-      background: none;
-      color: $bg_dark;
-      border: 2px solid;
       font-size: 16px;
     }
   }
@@ -192,7 +189,11 @@ a.sensei-certificate-link {
 
   .course-lessons {
     article {
-      margin: 0;
+      margin-bottom: 40px;
+
+      img {
+        float: none;
+      }
 
       h2 {
         font-size: 24px;
@@ -228,6 +229,7 @@ a.sensei-certificate-link {
       }
     }
     &.in-progress  {
+      background: $info;
       &:before  {
         content: "\f110";
       }
