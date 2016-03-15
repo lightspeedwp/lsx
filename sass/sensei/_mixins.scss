@@ -6,7 +6,7 @@ $color_links:       #52a8e8;        // Links / Main theme colour
 $color_body:        #555;           // Body Copy
 $border_main:       #e6e6e6;        // The 1px grey rules used throughout the WF
 $bg_light:          #fafafa;
-$bg_dark:           #d3d3d3;
+$bg_dark:           #333;
 $success:           #63a95f;
 $info:              #3c8bae;
 $error:             #ed6c6c;
@@ -21,14 +21,14 @@ $serif_google:      "Droid Serif", sans-serif;
 
 // Paths
 $imagepath:         'images';
-$fontpath:          'includes/fonts/';
+$fontpath:          '/fonts/';
 
 /**
  * Functions
  */
 @mixin iconafter()
 {
-    font-family: 'FontAwesomeSensei';
+    font-family: 'FontAwesome';
     display: inline-block;
     font-size:100%;
     margin-left:.618em;
@@ -40,7 +40,7 @@ $fontpath:          'includes/fonts/';
 
 @mixin iconbefore()
 {
-    font-family: 'FontAwesomeSensei';
+    font-family: 'FontAwesome';
     display: inline-block;
     font-size:100%;
     margin-right:.618em;
