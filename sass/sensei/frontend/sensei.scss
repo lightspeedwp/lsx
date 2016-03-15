@@ -304,6 +304,7 @@ a.sensei-certificate-link {
           position: relative;
           z-index: 1;
           margin: .53em 0;
+          padding: 0;
           li {
             &.right_answer {
               color: green;
@@ -315,7 +316,7 @@ a.sensei-certificate-link {
             &.user_wrong {
               color: red;
             }
-            margin: 0 0 .382em;
+            margin: 0;
             font-weight: normal;
             font-size: 0.9em;
             list-style: none;
@@ -324,6 +325,7 @@ a.sensei-certificate-link {
             }
             label  {
               vertical-align: middle;
+              font-weight: normal;
             }
           }
         }
@@ -376,17 +378,6 @@ a.sensei-certificate-link {
     }
     input.quiz-submit  {
       margin-right: 10px;
-    }
-  }
-}
-
-.quiz, .lesson  {
-  input.quiz-submit  {
-    &.complete  {
-      background: $success;
-    }
-    &.reset  {
-      background: $error;
     }
   }
 }
@@ -728,7 +719,7 @@ div.course-container div.course { display: block; padding: 5px; }
     display: block;
     padding: 1px 10px 0 0;
     height: 100%;
-    background-color: #555;
+    background-color: $success;
     position: relative;
     overflow: hidden;
     text-align: right;
@@ -741,10 +732,10 @@ div.course-container div.course { display: block; padding: 5px; }
     @include borderbox();
   }
   &.orange > span {
-    background: #555;
+    background: #3c8bae;
   }
   &.red > span {
-    background: #555;
+    background: $error;
   }
 }
 
@@ -837,12 +828,6 @@ div.course-container div.course { display: block; padding: 5px; }
       background:#eee;
       &:before  {
         content: '\f05a';
-      }
-      a  {
-        color: darken($color_body, 10%);;
-        &:hover  {
-          color: darken($color_body, 15%);
-        }
       }
       &.info-special {
         background:#dbf1ff;
