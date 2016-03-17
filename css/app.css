@@ -14310,9 +14310,11 @@ figure.alignright {
   clear: both;
   height: 0;
 }
+.envira-tags-filter-list .envira-tags-filter,
 .envira-tags-filter-list .envira-tag-filter {
   margin: 0 5px 10px 0;
 }
+.envira-tags-filter-list .envira-tags-filter .envira-tags-filter-link,
 .envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link {
   padding: 5px 12px;
   margin: 0 3px;
@@ -14329,7 +14331,11 @@ figure.alignright {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:hover, .envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:active, .envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:focus, .envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link.envira-tags-filter-active {
+.envira-tags-filter-list .envira-tags-filter .envira-tags-filter-link:hover, .envira-tags-filter-list .envira-tags-filter .envira-tags-filter-link:active, .envira-tags-filter-list .envira-tags-filter .envira-tags-filter-link:focus, .envira-tags-filter-list .envira-tags-filter .envira-tags-filter-link.envira-tags-filter-active,
+.envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:hover,
+.envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:active,
+.envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:focus,
+.envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link.envira-tags-filter-active {
   background: #333;
   border-color: #333;
   color: #fff;
