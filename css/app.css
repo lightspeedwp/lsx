@@ -14267,4 +14267,35 @@ figure.alignright {
   overflow: hidden;
 }
 
+/* Envira Gallery Support */
+.envira-pagination {
+  text-align: center;
+}
+.envira-pagination a,
+.envira-pagination span {
+  padding: 5px 12px;
+  margin: 0 3px;
+  border: 2px solid #ccc;
+  color: #333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.envira-pagination a:hover, .envira-pagination a:active, .envira-pagination a:focus, .envira-pagination a.current,
+.envira-pagination span:hover,
+.envira-pagination span:active,
+.envira-pagination span:focus,
+.envira-pagination span.current {
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}
+
 /*# sourceMappingURL=app.css.map */
