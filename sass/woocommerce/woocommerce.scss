@@ -32,7 +32,12 @@
 			margin-top: 0;
 		}
 	}
-	
+
+	body.woocommerce-page & {
+		#primary.col-sm-12 {
+			max-width: 100%;
+		}
+	}
 }
 
 input[type="number"] {
