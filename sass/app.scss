@@ -941,11 +941,12 @@ figure.alignright { margin-left: 25px; }
 
 	.envira-tags-filter,
 	.envira-tag-filter {
-		margin: 0 5px 10px 0;
+		margin: 0 5px 10px 0 !important;
 
 
 		.envira-tags-filter-link {
-			padding: 5px 12px;
+			display: inline-block;
+			padding: 8px 12px;
 	    	margin: 0 3px;
 		    border: 2px solid #ccc;
 		    color: #333;
