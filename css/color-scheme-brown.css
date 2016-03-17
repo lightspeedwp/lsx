@@ -83,7 +83,8 @@ button:focus,
 .quiz .submit, 
 .quiz input[type=submit], 
 .quiz input.button, 
-.quiz button.button {
+.quiz button.button,
+.view-results {
   background: #8c6a45 !important;
 }
 
@@ -182,7 +183,10 @@ button:focus,
 .quiz input.button:active, 
 .quiz button.button:hover, 
 .quiz button.button:focus, 
-.quiz button.button:active {
+.quiz button.button:active,
+.view-results:hover,
+.view-results:focus,
+.view-results:active {
   background: !important;background: #5b452e !important;
   color: #fff;
 }

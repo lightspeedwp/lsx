@@ -72,7 +72,8 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
 /**
  * Base
  */
-body.sensei .wrap {
+body.sensei .wrap,
+body.course-results .wrap {
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -96,20 +97,34 @@ body.sensei .wrap {
 a.view-results,
 a.view-results-link,
 a.sensei-certificate-link {
-  display: inline-block;
-  padding: .236em .857em;
-  background: #e6e6e6;
-  float: right;
-  margin-left: .236em;
-  padding: .382em 1em;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  background: #333;
+  color: #fff;
+  border: none !important;
+  box-shadow: none;
+  font-size: 17px;
+  line-height: inherit;
+  white-space: nowrap;
+  padding: 11px 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  -webkit-transition: all 0.1s ease-in-out ease-in-out 0.2s;
+  -moz-transition: all 0.1s ease-in-out ease-in-out 0.2s;
+  -ms-transition: all 0.1s ease-in-out ease-in-out 0.2s;
+  -o-transition: all 0.1s ease-in-out ease-in-out 0.2s;
+  transition: all 0.1s ease-in-out ease-in-out 0.2s;
+}
+a.view-results:hover, a.view-results:focus,
+a.view-results-link:hover,
+a.view-results-link:focus,
+a.sensei-certificate-link:hover,
+a.sensei-certificate-link:focus {
+  background: #232222;
   color: #fff;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 /* Courses */
@@ -752,6 +767,12 @@ div.course-container div.course {
 }
 
 /* Course Results */
+.course-results-lessons .course {
+  border-bottom: none;
+}
+.course-results-lessons .course h2 {
+  font-size: 20px;
+}
 .course-results-lessons h2 {
   margin: 20px 0;
 }

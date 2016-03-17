@@ -31,7 +31,8 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
  * Base
  */
 
- body.sensei {
+ body.sensei,
+ body.course-results {
   .wrap {
     margin: {
       top: 40px;
@@ -66,16 +67,7 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
 a.view-results,
 a.view-results-link,
 a.sensei-certificate-link {
-  display: inline-block;
-  padding: .236em .857em;
-  background: $border_main;
-  float: right;
-  margin-left: .236em;
-  padding: .382em 1em;
-  @include border_radius(5px);
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
+  @include lsx-button;
 }
 
 /* Courses */
@@ -688,6 +680,14 @@ div.course-container div.course { display: block; padding: 5px; }
 
 /* Course Results */
 .course-results-lessons {
+  .course {
+    border-bottom: none;
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
   h2 {
     margin: 20px 0;
     &.total-grade {
