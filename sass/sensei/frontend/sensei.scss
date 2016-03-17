@@ -265,117 +265,115 @@ a.sensei-certificate-link {
 }
 
 .quiz  {
-  form  {
-    ol#sensei-quiz-list  {
-      margin: 0 0 1.618em 0;
-      li  {
+  ol#sensei-quiz-list  {
+    margin: 0 0 1.618em 0;
+    li  {
+      position: relative;
+      margin: 0 0 1.618em;
+      font-size: 1.1em;
+      > span  {
+        display: block;
+        margin: 0 0 1em;
+        font-weight: bold;
+        span {
+          float: right;
+        }
+      }
+      .question_media_display {
+        margin: 10px 0;
+        dd {
+          font-style: italic;
+        }
+      }
+      .submitted_file {
+        font-weight: bold;
+      }
+      .reupload_notice {
+        font-style: italic;
+        margin-bottom: 5px;
+      }
+      .max_upload_size {
+        font-style: italic;
+        font-size: 75%;
+      }
+      ul  {
         position: relative;
-        margin: 0 0 1.618em;
-        font-size: 1.1em;
-        > span  {
-          display: block;
-          margin: 0 0 1em;
-          font-weight: bold;
-          span {
-            float: right;
-          }
-        }
-        .question_media_display {
-          margin: 10px 0;
-          dd {
-            font-style: italic;
-          }
-        }
-        .submitted_file {
-          font-weight: bold;
-        }
-        .reupload_notice {
-          font-style: italic;
-          margin-bottom: 5px;
-        }
-        .max_upload_size {
-          font-style: italic;
-          font-size: 75%;
-        }
-        ul  {
-          position: relative;
-          z-index: 1;
-          margin: .53em 0;
-          padding: 0;
-          li {
-            &.right_answer {
-              color: green;
-            }
-            &.user_right {
-              color: green;
-              font-weight: 700;
-            }
-            &.user_wrong {
-              color: red;
-            }
-            margin: 0;
-            font-weight: normal;
-            font-size: 0.9em;
-            list-style: none;
-            input  {
-              margin: 0 .382em 0 0;
-            }
-            label  {
-              vertical-align: middle;
-              font-weight: normal;
-            }
-          }
-        }
-        .answer_message {
-          position: absolute;
-          right: 0;
-          top: 50%;
-          width: 50%;
-          z-index: 2;
-          text-align: right;
-          span {
-            text-align: right;
+        z-index: 1;
+        margin: .53em 0;
+        padding: 0;
+        li {
+          &.right_answer {
+            color: green;
           }
           &.user_right {
             color: green;
-            border-color: green;
+            font-weight: 700;
           }
           &.user_wrong {
             color: red;
-            border-color: red;
           }
-          .notes {
-            display: none;
-            cursor: help;
-            z-index: 9;
-            position: absolute;
-            top: 20px;
-            right: 0;
-            width: 100%;
-            background: #FFF;
-            border: 1px solid;
-            @include border_radius();
-            padding: 10px;
-            font-size: 85%;
-            text-align: left;
+          margin: 0;
+          font-weight: normal;
+          font-size: 0.9em;
+          list-style: none;
+          input  {
+            margin: 0 .382em 0 0;
+          }
+          label  {
+            vertical-align: middle;
+            font-weight: normal;
           }
         }
-        &.essay-paste, &.gap-fill, &.multi-line, &.single-line {
-          .answer_message {
-            position: relative;
-            width: 100%;
-            margin: 10px 0;
-            text-align: right;
-            .notes {
-              width: 50%;
-            }
+      }
+      .answer_message {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 50%;
+        z-index: 2;
+        text-align: right;
+        span {
+          text-align: right;
+        }
+        &.user_right {
+          color: green;
+          border-color: green;
+        }
+        &.user_wrong {
+          color: red;
+          border-color: red;
+        }
+        .notes {
+          display: none;
+          cursor: help;
+          z-index: 9;
+          position: absolute;
+          top: 20px;
+          right: 0;
+          width: 100%;
+          background: #FFF;
+          border: 1px solid;
+          @include border_radius();
+          padding: 10px;
+          font-size: 85%;
+          text-align: left;
+        }
+      }
+      &.essay-paste, &.gap-fill, &.multi-line, &.single-line {
+        .answer_message {
+          position: relative;
+          width: 100%;
+          margin: 10px 0;
+          text-align: right;
+          .notes {
+            width: 50%;
           }
         }
       }
     }
-    input.quiz-submit  {
-      margin-right: 10px;
-    }
+  }
+  input.quiz-submit  {
+    margin-right: 10px;
   }
 }
 
