@@ -117,6 +117,9 @@ a.sensei-certificate-link {
   -ms-transition: all 0.1s ease-in-out ease-in-out 0.2s;
   -o-transition: all 0.1s ease-in-out ease-in-out 0.2s;
   transition: all 0.1s ease-in-out ease-in-out 0.2s;
+  display: inline-block;
+  margin: 0;
+  padding: 6px 26px;
 }
 a.view-results:hover, a.view-results:focus,
 a.view-results-link:hover,
@@ -768,7 +771,7 @@ div.course-container div.course {
 
 /* Course Results */
 .course-results-lessons .course {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 .course-results-lessons .course h2 {
   font-size: 20px;

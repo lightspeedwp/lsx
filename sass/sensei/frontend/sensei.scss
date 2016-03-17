@@ -68,6 +68,9 @@ a.view-results,
 a.view-results-link,
 a.sensei-certificate-link {
   @include lsx-button;
+  display: inline-block;
+  margin: 0;
+  padding: 6px 26px;
 }
 
 /* Courses */
@@ -681,7 +684,7 @@ div.course-container div.course { display: block; padding: 5px; }
 /* Course Results */
 .course-results-lessons {
   .course {
-    border-bottom: none;
+    border-bottom: none !important;
 
     h2 {
       font-size: 20px;
