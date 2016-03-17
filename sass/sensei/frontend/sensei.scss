@@ -431,6 +431,7 @@ div.course-container div.course { display: block; padding: 5px; }
       vertical-align: middle;
     }
     input.input-text, textarea {
+      @include lsx-form-field;
       @include borderbox();
       width: 100%;
       margin: 0;
