@@ -14268,6 +14268,10 @@ figure.alignright {
 }
 
 /* Envira Gallery Support */
+.envira-gallery-wrap .envira-gallery-public {
+  margin: 20px auto 40px auto;
+}
+
 .envira-pagination {
   text-align: center;
 }
@@ -14293,6 +14297,39 @@ figure.alignright {
 .envira-pagination span:active,
 .envira-pagination span:focus,
 .envira-pagination span.current {
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}
+
+.envira-tags-filter-list:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
+}
+.envira-tags-filter-list .envira-tag-filter {
+  margin: 0 5px 10px 0;
+}
+.envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link {
+  padding: 5px 12px;
+  margin: 0 3px;
+  border: 2px solid #ccc;
+  color: #333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:hover, .envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:active, .envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link:focus, .envira-tags-filter-list .envira-tag-filter .envira-tags-filter-link.envira-tags-filter-active {
   background: #333;
   border-color: #333;
   color: #fff;
