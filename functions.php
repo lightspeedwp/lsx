@@ -25,6 +25,9 @@ if(class_exists('BuddyPress')){
 if(class_exists('WooCommerce')){
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+if(class_exists('WP_Job_Manager')){
+	require get_template_directory() . '/inc/wp-job-manager.php';
+}
 if(true === apply_filters( 'amp_is_enabled', true ) ){
 	require get_template_directory() . '/inc/amp.php';
 }
