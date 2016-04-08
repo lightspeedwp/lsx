@@ -2,8 +2,14 @@
 	WP Job Manager Styles for LSX
 */
 
-body.jobs {
-	&.page.top-menu-fixed {
+@import "lsx/_mixins.scss";
+
+body.jobs,
+body.single-job_listing,
+body.post-a-job,
+body.resumes {
+	&.page.top-menu-fixed,
+	&.single.top-menu-fixed {
 		.wrap {
 			margin-top: 80px;
 		
@@ -11,6 +17,62 @@ body.jobs {
 				max-width: 100%;
 				float: left;
 			}
+		}
+	}
+
+	input[type="text"],
+	select {
+		@include lsx-form-field;
+	}
+
+	input[type="button"],
+	input[type="submit"] {
+		@include lsx-button;
+		background: $primary;
+		line-height: 1.42857143;
+	    padding: 9.5px 26px;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: $primary-darker;
+		}
+	}
+}
+
+body.single-job_listing {
+	article {
+		header.entry-header {
+			text-align: left;
+
+			.format-link,
+			.entry-meta {
+				display: none;
+			}
+		}
+	}
+}
+
+.job_listings {
+	.job_listing {
+		.company_logo {
+			height: auto !important;
+		}
+	}
+}
+
+.job_listing_packages_title {
+	@include lsx-clear-div;
+
+	h2 {
+		font-size: 24px;
+		margin-top: 7px !important;
+	}
+
+	.button {
+		margin: {
+			top: 0 !important;
+			bottom: 0 !important;
 		}
 	}
 }

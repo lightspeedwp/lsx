@@ -1,10 +1,166 @@
 /*
 	WP Job Manager Styles for LSX
 */
-body.jobs.page.top-menu-fixed .wrap {
+body.jobs.page.top-menu-fixed .wrap, body.jobs.single.top-menu-fixed .wrap,
+body.single-job_listing.page.top-menu-fixed .wrap,
+body.single-job_listing.single.top-menu-fixed .wrap,
+body.post-a-job.page.top-menu-fixed .wrap,
+body.post-a-job.single.top-menu-fixed .wrap,
+body.resumes.page.top-menu-fixed .wrap,
+body.resumes.single.top-menu-fixed .wrap {
   margin-top: 80px; }
-  body.jobs.page.top-menu-fixed .wrap #primary.col-sm-12 {
+  body.jobs.page.top-menu-fixed .wrap #primary.col-sm-12, body.jobs.single.top-menu-fixed .wrap #primary.col-sm-12,
+  body.single-job_listing.page.top-menu-fixed .wrap #primary.col-sm-12,
+  body.single-job_listing.single.top-menu-fixed .wrap #primary.col-sm-12,
+  body.post-a-job.page.top-menu-fixed .wrap #primary.col-sm-12,
+  body.post-a-job.single.top-menu-fixed .wrap #primary.col-sm-12,
+  body.resumes.page.top-menu-fixed .wrap #primary.col-sm-12,
+  body.resumes.single.top-menu-fixed .wrap #primary.col-sm-12 {
     max-width: 100%;
     float: left; }
+body.jobs input[type="text"],
+body.jobs select,
+body.single-job_listing input[type="text"],
+body.single-job_listing select,
+body.post-a-job input[type="text"],
+body.post-a-job select,
+body.resumes input[type="text"],
+body.resumes select {
+  background: #fff !important;
+  height: auto;
+  font-size: 16px;
+  padding: 8px 14px;
+  color: #555;
+  border: 3px solid #ddd;
+  box-shadow: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }
+  body.jobs input[type="text"]:hover,
+  body.jobs select:hover,
+  body.single-job_listing input[type="text"]:hover,
+  body.single-job_listing select:hover,
+  body.post-a-job input[type="text"]:hover,
+  body.post-a-job select:hover,
+  body.resumes input[type="text"]:hover,
+  body.resumes select:hover {
+    border: 3px solid #ddd;
+    box-shadow: none; }
+  body.jobs input[type="text"]:focus,
+  body.jobs select:focus,
+  body.single-job_listing input[type="text"]:focus,
+  body.single-job_listing select:focus,
+  body.post-a-job input[type="text"]:focus,
+  body.post-a-job select:focus,
+  body.resumes input[type="text"]:focus,
+  body.resumes select:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    -ms-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+body.jobs input[type="button"],
+body.jobs input[type="submit"],
+body.single-job_listing input[type="button"],
+body.single-job_listing input[type="submit"],
+body.post-a-job input[type="button"],
+body.post-a-job input[type="submit"],
+body.resumes input[type="button"],
+body.resumes input[type="submit"] {
+  background: #333;
+  color: #fff;
+  border: none !important;
+  box-shadow: none;
+  font-size: 17px;
+  line-height: inherit;
+  white-space: nowrap;
+  padding: 11px 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  background: #428bca;
+  line-height: 1.42857143;
+  padding: 9.5px 26px; }
+  body.jobs input[type="button"]:hover, body.jobs input[type="button"]:focus,
+  body.jobs input[type="submit"]:hover,
+  body.jobs input[type="submit"]:focus,
+  body.single-job_listing input[type="button"]:hover,
+  body.single-job_listing input[type="button"]:focus,
+  body.single-job_listing input[type="submit"]:hover,
+  body.single-job_listing input[type="submit"]:focus,
+  body.post-a-job input[type="button"]:hover,
+  body.post-a-job input[type="button"]:focus,
+  body.post-a-job input[type="submit"]:hover,
+  body.post-a-job input[type="submit"]:focus,
+  body.resumes input[type="button"]:hover,
+  body.resumes input[type="button"]:focus,
+  body.resumes input[type="submit"]:hover,
+  body.resumes input[type="submit"]:focus {
+    background: #232222;
+    color: #fff; }
+  body.jobs input[type="button"]:hover, body.jobs input[type="button"]:focus, body.jobs input[type="button"]:active,
+  body.jobs input[type="submit"]:hover,
+  body.jobs input[type="submit"]:focus,
+  body.jobs input[type="submit"]:active,
+  body.single-job_listing input[type="button"]:hover,
+  body.single-job_listing input[type="button"]:focus,
+  body.single-job_listing input[type="button"]:active,
+  body.single-job_listing input[type="submit"]:hover,
+  body.single-job_listing input[type="submit"]:focus,
+  body.single-job_listing input[type="submit"]:active,
+  body.post-a-job input[type="button"]:hover,
+  body.post-a-job input[type="button"]:focus,
+  body.post-a-job input[type="button"]:active,
+  body.post-a-job input[type="submit"]:hover,
+  body.post-a-job input[type="submit"]:focus,
+  body.post-a-job input[type="submit"]:active,
+  body.resumes input[type="button"]:hover,
+  body.resumes input[type="button"]:focus,
+  body.resumes input[type="button"]:active,
+  body.resumes input[type="submit"]:hover,
+  body.resumes input[type="submit"]:focus,
+  body.resumes input[type="submit"]:active {
+    background: #2a6496; }
+
+body.single-job_listing article header.entry-header {
+  text-align: left; }
+  body.single-job_listing article header.entry-header .format-link,
+  body.single-job_listing article header.entry-header .entry-meta {
+    display: none; }
+
+.job_listings .job_listing .company_logo {
+  height: auto !important; }
+
+.job_listing_packages_title:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0; }
+.job_listing_packages_title h2 {
+  font-size: 24px;
+  margin-top: 7px !important; }
+.job_listing_packages_title .button {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
 
 /*# sourceMappingURL=wp-job-manager.css.map */
