@@ -335,6 +335,29 @@ body.single-resume article .company_logo {
         -ms-border-bottom-right-radius: 5px;
         -o-border-bottom-right-radius: 5px;
         border-bottom-right-radius: 5px; }
+      .job_listings ul.job_listings li.job_listing > a:hover, .job_listings ul.job_listings li.job_listing > a:active, .job_listings ul.job_listings li.job_listing > a:focus,
+      .job_listings ul.job_listings li.resume > a:hover,
+      .job_listings ul.job_listings li.resume > a:active,
+      .job_listings ul.job_listings li.resume > a:focus,
+      .job_listings ul.resumes li.job_listing > a:hover,
+      .job_listings ul.resumes li.job_listing > a:active,
+      .job_listings ul.resumes li.job_listing > a:focus,
+      .job_listings ul.resumes li.resume > a:hover,
+      .job_listings ul.resumes li.resume > a:active,
+      .job_listings ul.resumes li.resume > a:focus,
+      .resumes ul.job_listings li.job_listing > a:hover,
+      .resumes ul.job_listings li.job_listing > a:active,
+      .resumes ul.job_listings li.job_listing > a:focus,
+      .resumes ul.job_listings li.resume > a:hover,
+      .resumes ul.job_listings li.resume > a:active,
+      .resumes ul.job_listings li.resume > a:focus,
+      .resumes ul.resumes li.job_listing > a:hover,
+      .resumes ul.resumes li.job_listing > a:active,
+      .resumes ul.resumes li.job_listing > a:focus,
+      .resumes ul.resumes li.resume > a:hover,
+      .resumes ul.resumes li.resume > a:active,
+      .resumes ul.resumes li.resume > a:focus {
+        background-color: #f8f8f8; }
       .job_listings ul.job_listings li.job_listing .company_logo,
       .job_listings ul.job_listings li.resume .company_logo,
       .job_listings ul.resumes li.job_listing .company_logo,
@@ -372,6 +395,13 @@ body.single-resume article .company_logo {
 .single-resume-content .resume-manager-experience h3 {
   font-size: 18px;
   margin-bottom: 10px; }
+.single-resume-content .resume-manager-education small.date:before,
+.single-resume-content .resume-manager-experience small.date:before {
+  font-family: job-manager !important;
+  font-style: normal;
+  font-size: 11px;
+  margin: 0 5px 0px 0;
+  content: '\e80f'; }
 
 .job_listing_packages_title:after {
   visibility: hidden;

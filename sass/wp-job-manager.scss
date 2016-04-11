@@ -119,6 +119,14 @@ body.single-resume {
 				@include border-radius-bottom(5px);
 			}
 
+			& > a {
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: #f8f8f8;
+				}
+			}
+
 			.company_logo {
 				height: auto !important;
 			}
@@ -149,6 +157,16 @@ body.single-resume {
 		h3 {
 			font-size: 18px;
 			margin-bottom: 10px;
+		}
+
+		small.date {
+			&:before {
+				font-family: job-manager!important;
+			    font-style: normal;
+			    font-size: 11px;
+			    margin: 0 5px 0px 0;
+			    content: '\e80f';
+			}
 		}
 	}
 }
