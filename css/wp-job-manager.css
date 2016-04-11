@@ -1,23 +1,32 @@
 /*
 	WP Job Manager Styles for LSX
 */
+body.jobs.page.top-menu-fixed .wrap #primary.col-sm-12, body.jobs.single.top-menu-fixed .wrap #primary.col-sm-12,
+body.resumes.page.top-menu-fixed .wrap #primary.col-sm-12,
+body.resumes.single.top-menu-fixed .wrap #primary.col-sm-12,
+body.candidate-dashboard.page.top-menu-fixed .wrap #primary.col-sm-12,
+body.candidate-dashboard.single.top-menu-fixed .wrap #primary.col-sm-12,
+body.listings-stats-dashboard.page.top-menu-fixed .wrap #primary.col-sm-12,
+body.listings-stats-dashboard.single.top-menu-fixed .wrap #primary.col-sm-12 {
+  max-width: 100%;
+  float: left; }
+
 body.jobs.page.top-menu-fixed .wrap, body.jobs.single.top-menu-fixed .wrap,
 body.single-job_listing.page.top-menu-fixed .wrap,
 body.single-job_listing.single.top-menu-fixed .wrap,
 body.post-a-job.page.top-menu-fixed .wrap,
 body.post-a-job.single.top-menu-fixed .wrap,
 body.resumes.page.top-menu-fixed .wrap,
-body.resumes.single.top-menu-fixed .wrap {
+body.resumes.single.top-menu-fixed .wrap,
+body.single-resume.page.top-menu-fixed .wrap,
+body.single-resume.single.top-menu-fixed .wrap,
+body.candidate-dashboard.page.top-menu-fixed .wrap,
+body.candidate-dashboard.single.top-menu-fixed .wrap,
+body.listings-stats-dashboard.page.top-menu-fixed .wrap,
+body.listings-stats-dashboard.single.top-menu-fixed .wrap,
+body.submit-resume.page.top-menu-fixed .wrap,
+body.submit-resume.single.top-menu-fixed .wrap {
   margin-top: 80px; }
-  body.jobs.page.top-menu-fixed .wrap #primary.col-sm-12, body.jobs.single.top-menu-fixed .wrap #primary.col-sm-12,
-  body.single-job_listing.page.top-menu-fixed .wrap #primary.col-sm-12,
-  body.single-job_listing.single.top-menu-fixed .wrap #primary.col-sm-12,
-  body.post-a-job.page.top-menu-fixed .wrap #primary.col-sm-12,
-  body.post-a-job.single.top-menu-fixed .wrap #primary.col-sm-12,
-  body.resumes.page.top-menu-fixed .wrap #primary.col-sm-12,
-  body.resumes.single.top-menu-fixed .wrap #primary.col-sm-12 {
-    max-width: 100%;
-    float: left; }
 body.jobs input[type="text"],
 body.jobs select,
 body.single-job_listing input[type="text"],
@@ -25,7 +34,15 @@ body.single-job_listing select,
 body.post-a-job input[type="text"],
 body.post-a-job select,
 body.resumes input[type="text"],
-body.resumes select {
+body.resumes select,
+body.single-resume input[type="text"],
+body.single-resume select,
+body.candidate-dashboard input[type="text"],
+body.candidate-dashboard select,
+body.listings-stats-dashboard input[type="text"],
+body.listings-stats-dashboard select,
+body.submit-resume input[type="text"],
+body.submit-resume select {
   background: #fff !important;
   height: auto;
   font-size: 16px;
@@ -50,7 +67,15 @@ body.resumes select {
   body.post-a-job input[type="text"]:hover,
   body.post-a-job select:hover,
   body.resumes input[type="text"]:hover,
-  body.resumes select:hover {
+  body.resumes select:hover,
+  body.single-resume input[type="text"]:hover,
+  body.single-resume select:hover,
+  body.candidate-dashboard input[type="text"]:hover,
+  body.candidate-dashboard select:hover,
+  body.listings-stats-dashboard input[type="text"]:hover,
+  body.listings-stats-dashboard select:hover,
+  body.submit-resume input[type="text"]:hover,
+  body.submit-resume select:hover {
     border: 3px solid #ddd;
     box-shadow: none; }
   body.jobs input[type="text"]:focus,
@@ -60,7 +85,15 @@ body.resumes select {
   body.post-a-job input[type="text"]:focus,
   body.post-a-job select:focus,
   body.resumes input[type="text"]:focus,
-  body.resumes select:focus {
+  body.resumes select:focus,
+  body.single-resume input[type="text"]:focus,
+  body.single-resume select:focus,
+  body.candidate-dashboard input[type="text"]:focus,
+  body.candidate-dashboard select:focus,
+  body.listings-stats-dashboard input[type="text"]:focus,
+  body.listings-stats-dashboard select:focus,
+  body.submit-resume input[type="text"]:focus,
+  body.submit-resume select:focus {
     border-color: #66afe9;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -75,7 +108,15 @@ body.single-job_listing input[type="submit"],
 body.post-a-job input[type="button"],
 body.post-a-job input[type="submit"],
 body.resumes input[type="button"],
-body.resumes input[type="submit"] {
+body.resumes input[type="submit"],
+body.single-resume input[type="button"],
+body.single-resume input[type="submit"],
+body.candidate-dashboard input[type="button"],
+body.candidate-dashboard input[type="submit"],
+body.listings-stats-dashboard input[type="button"],
+body.listings-stats-dashboard input[type="submit"],
+body.submit-resume input[type="button"],
+body.submit-resume input[type="submit"] {
   background: #333;
   color: #fff;
   border: none !important;
@@ -113,7 +154,23 @@ body.resumes input[type="submit"] {
   body.resumes input[type="button"]:hover,
   body.resumes input[type="button"]:focus,
   body.resumes input[type="submit"]:hover,
-  body.resumes input[type="submit"]:focus {
+  body.resumes input[type="submit"]:focus,
+  body.single-resume input[type="button"]:hover,
+  body.single-resume input[type="button"]:focus,
+  body.single-resume input[type="submit"]:hover,
+  body.single-resume input[type="submit"]:focus,
+  body.candidate-dashboard input[type="button"]:hover,
+  body.candidate-dashboard input[type="button"]:focus,
+  body.candidate-dashboard input[type="submit"]:hover,
+  body.candidate-dashboard input[type="submit"]:focus,
+  body.listings-stats-dashboard input[type="button"]:hover,
+  body.listings-stats-dashboard input[type="button"]:focus,
+  body.listings-stats-dashboard input[type="submit"]:hover,
+  body.listings-stats-dashboard input[type="submit"]:focus,
+  body.submit-resume input[type="button"]:hover,
+  body.submit-resume input[type="button"]:focus,
+  body.submit-resume input[type="submit"]:hover,
+  body.submit-resume input[type="submit"]:focus {
     background: #232222;
     color: #fff; }
   body.jobs input[type="button"]:hover, body.jobs input[type="button"]:focus, body.jobs input[type="button"]:active,
@@ -137,17 +194,126 @@ body.resumes input[type="submit"] {
   body.resumes input[type="button"]:active,
   body.resumes input[type="submit"]:hover,
   body.resumes input[type="submit"]:focus,
-  body.resumes input[type="submit"]:active {
+  body.resumes input[type="submit"]:active,
+  body.single-resume input[type="button"]:hover,
+  body.single-resume input[type="button"]:focus,
+  body.single-resume input[type="button"]:active,
+  body.single-resume input[type="submit"]:hover,
+  body.single-resume input[type="submit"]:focus,
+  body.single-resume input[type="submit"]:active,
+  body.candidate-dashboard input[type="button"]:hover,
+  body.candidate-dashboard input[type="button"]:focus,
+  body.candidate-dashboard input[type="button"]:active,
+  body.candidate-dashboard input[type="submit"]:hover,
+  body.candidate-dashboard input[type="submit"]:focus,
+  body.candidate-dashboard input[type="submit"]:active,
+  body.listings-stats-dashboard input[type="button"]:hover,
+  body.listings-stats-dashboard input[type="button"]:focus,
+  body.listings-stats-dashboard input[type="button"]:active,
+  body.listings-stats-dashboard input[type="submit"]:hover,
+  body.listings-stats-dashboard input[type="submit"]:focus,
+  body.listings-stats-dashboard input[type="submit"]:active,
+  body.submit-resume input[type="button"]:hover,
+  body.submit-resume input[type="button"]:focus,
+  body.submit-resume input[type="button"]:active,
+  body.submit-resume input[type="submit"]:hover,
+  body.submit-resume input[type="submit"]:focus,
+  body.submit-resume input[type="submit"]:active {
     background: #2a6496; }
 
-body.single-job_listing article header.entry-header {
+body.single-job_listing article header.entry-header,
+body.single-resume article header.entry-header {
   text-align: left; }
   body.single-job_listing article header.entry-header .format-link,
-  body.single-job_listing article header.entry-header .entry-meta {
+  body.single-job_listing article header.entry-header .entry-meta,
+  body.single-resume article header.entry-header .format-link,
+  body.single-resume article header.entry-header .entry-meta {
     display: none; }
 
-.job_listings .job_listing .company_logo {
-  height: auto !important; }
+.job_listings,
+.resumes {
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+  .job_listings .job_filters,
+  .job_listings .resume_filters,
+  .resumes .job_filters,
+  .resumes .resume_filters {
+    background: #428bca;
+    border-bottom: 1px solid #ddd;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -ms-border-top-left-radius: 3px;
+    -o-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -ms-border-top-right-radius: 3px;
+    -o-border-top-right-radius: 3px;
+    border-top-right-radius: 3px; }
+  .job_listings ul.job_listings,
+  .job_listings ul.resumes,
+  .resumes ul.job_listings,
+  .resumes ul.resumes {
+    border: none; }
+    .job_listings ul.job_listings li.job_listing,
+    .job_listings ul.job_listings li.resume,
+    .job_listings ul.resumes li.job_listing,
+    .job_listings ul.resumes li.resume,
+    .resumes ul.job_listings li.job_listing,
+    .resumes ul.job_listings li.resume,
+    .resumes ul.resumes li.job_listing,
+    .resumes ul.resumes li.resume {
+      border-bottom: 1px solid #ddd; }
+      .job_listings ul.job_listings li.job_listing:last-child,
+      .job_listings ul.job_listings li.resume:last-child,
+      .job_listings ul.resumes li.job_listing:last-child,
+      .job_listings ul.resumes li.resume:last-child,
+      .resumes ul.job_listings li.job_listing:last-child,
+      .resumes ul.job_listings li.resume:last-child,
+      .resumes ul.resumes li.job_listing:last-child,
+      .resumes ul.resumes li.resume:last-child {
+        border-bottom: none; }
+      .job_listings ul.job_listings li.job_listing .company_logo,
+      .job_listings ul.job_listings li.resume .company_logo,
+      .job_listings ul.resumes li.job_listing .company_logo,
+      .job_listings ul.resumes li.resume .company_logo,
+      .resumes ul.job_listings li.job_listing .company_logo,
+      .resumes ul.job_listings li.resume .company_logo,
+      .resumes ul.resumes li.job_listing .company_logo,
+      .resumes ul.resumes li.resume .company_logo {
+        height: auto !important; }
+      .job_listings ul.job_listings li.job_listing .location:before,
+      .job_listings ul.job_listings li.job_listing .candidate-location:before,
+      .job_listings ul.job_listings li.resume .location:before,
+      .job_listings ul.job_listings li.resume .candidate-location:before,
+      .job_listings ul.resumes li.job_listing .location:before,
+      .job_listings ul.resumes li.job_listing .candidate-location:before,
+      .job_listings ul.resumes li.resume .location:before,
+      .job_listings ul.resumes li.resume .candidate-location:before,
+      .resumes ul.job_listings li.job_listing .location:before,
+      .resumes ul.job_listings li.job_listing .candidate-location:before,
+      .resumes ul.job_listings li.resume .location:before,
+      .resumes ul.job_listings li.resume .candidate-location:before,
+      .resumes ul.resumes li.job_listing .location:before,
+      .resumes ul.resumes li.job_listing .candidate-location:before,
+      .resumes ul.resumes li.resume .location:before,
+      .resumes ul.resumes li.resume .candidate-location:before {
+        content: '\f417';
+        display: inline-block;
+        float: left;
+        font-family: genericons;
+        font-size: 20px;
+        margin-top: 1px;
+        margin-right: 3px; }
+
+.single-resume-content .resume-manager-education h3,
+.single-resume-content .resume-manager-experience h3 {
+  font-size: 18px;
+  margin-bottom: 10px; }
 
 .job_listing_packages_title:after {
   visibility: hidden;

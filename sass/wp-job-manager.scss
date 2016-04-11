@@ -5,18 +5,32 @@
 @import "lsx/_mixins.scss";
 
 body.jobs,
-body.single-job_listing,
-body.post-a-job,
-body.resumes {
+body.resumes,
+body.candidate-dashboard,
+body.listings-stats-dashboard {
 	&.page.top-menu-fixed,
 	&.single.top-menu-fixed {
 		.wrap {
-			margin-top: 80px;
-		
 			#primary.col-sm-12 {
 				max-width: 100%;
 				float: left;
 			}
+		}
+	}
+}
+
+body.jobs,
+body.single-job_listing,
+body.post-a-job,
+body.resumes,
+body.single-resume,
+body.candidate-dashboard,
+body.listings-stats-dashboard,
+body.submit-resume {
+	&.page.top-menu-fixed,
+	&.single.top-menu-fixed {
+		.wrap {
+			margin-top: 80px;
 		}
 	}
 
@@ -40,7 +54,8 @@ body.resumes {
 	}
 }
 
-body.single-job_listing {
+body.single-job_listing,
+body.single-resume {
 	article {
 		header.entry-header {
 			text-align: left;
@@ -53,10 +68,60 @@ body.single-job_listing {
 	}
 }
 
-.job_listings {
-	.job_listing {
-		.company_logo {
-			height: auto !important;
+.job_listings,
+.resumes {
+	border: 1px solid #ddd;
+	@include border-radius(5px);
+
+	.job_filters,
+	.resume_filters {
+		background: $primary;
+		border-bottom: 1px solid #ddd;
+		@include border-radius-top(3px);
+	}
+
+	ul.job_listings,
+	ul.resumes {
+		border: none;
+
+		li.job_listing,
+		li.resume {
+			border-bottom: 1px solid #ddd;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.company_logo {
+				height: auto !important;
+			}
+
+			.location,
+			.candidate-location {
+				&:before {
+					content: '\f417';
+					display: inline-block;
+				    float: left;
+				    font: {
+				    	family: genericons;
+				    	size: 20px;
+				    }
+				    margin: {
+				    	top: 1px;
+				    	right: 3px;
+				    }
+				}
+			}
+		}
+	}
+}
+
+.single-resume-content {
+	.resume-manager-education,
+	.resume-manager-experience {
+		h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
 		}
 	}
 }
