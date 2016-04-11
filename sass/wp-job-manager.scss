@@ -168,6 +168,25 @@ body.single-resume {
 			    content: '\e80f';
 			}
 		}
+
+	}
+
+	.resume-manager-skills {
+		li {
+			padding: 0 !important;
+
+			&:before {
+				content: '\f418';
+			    font-family: genericons;
+			    font-size: 22px;
+			    vertical-align: middle;
+			    margin-right: 2px;
+			}
+		}
+	}
+
+	.candidate-video {
+		clear: both;
 	}
 }
 
