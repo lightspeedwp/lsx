@@ -29,20 +29,28 @@ body.submit-resume.single.top-menu-fixed .wrap {
   margin-top: 80px; }
 body.jobs input[type="text"],
 body.jobs select,
+body.jobs textarea,
 body.single-job_listing input[type="text"],
 body.single-job_listing select,
+body.single-job_listing textarea,
 body.post-a-job input[type="text"],
 body.post-a-job select,
+body.post-a-job textarea,
 body.resumes input[type="text"],
 body.resumes select,
+body.resumes textarea,
 body.single-resume input[type="text"],
 body.single-resume select,
+body.single-resume textarea,
 body.candidate-dashboard input[type="text"],
 body.candidate-dashboard select,
+body.candidate-dashboard textarea,
 body.listings-stats-dashboard input[type="text"],
 body.listings-stats-dashboard select,
+body.listings-stats-dashboard textarea,
 body.submit-resume input[type="text"],
-body.submit-resume select {
+body.submit-resume select,
+body.submit-resume textarea {
   background: #fff !important;
   height: auto;
   font-size: 16px;
@@ -62,38 +70,54 @@ body.submit-resume select {
   transition: all 0.1s ease-in-out; }
   body.jobs input[type="text"]:hover,
   body.jobs select:hover,
+  body.jobs textarea:hover,
   body.single-job_listing input[type="text"]:hover,
   body.single-job_listing select:hover,
+  body.single-job_listing textarea:hover,
   body.post-a-job input[type="text"]:hover,
   body.post-a-job select:hover,
+  body.post-a-job textarea:hover,
   body.resumes input[type="text"]:hover,
   body.resumes select:hover,
+  body.resumes textarea:hover,
   body.single-resume input[type="text"]:hover,
   body.single-resume select:hover,
+  body.single-resume textarea:hover,
   body.candidate-dashboard input[type="text"]:hover,
   body.candidate-dashboard select:hover,
+  body.candidate-dashboard textarea:hover,
   body.listings-stats-dashboard input[type="text"]:hover,
   body.listings-stats-dashboard select:hover,
+  body.listings-stats-dashboard textarea:hover,
   body.submit-resume input[type="text"]:hover,
-  body.submit-resume select:hover {
+  body.submit-resume select:hover,
+  body.submit-resume textarea:hover {
     border: 3px solid #ddd;
     box-shadow: none; }
   body.jobs input[type="text"]:focus,
   body.jobs select:focus,
+  body.jobs textarea:focus,
   body.single-job_listing input[type="text"]:focus,
   body.single-job_listing select:focus,
+  body.single-job_listing textarea:focus,
   body.post-a-job input[type="text"]:focus,
   body.post-a-job select:focus,
+  body.post-a-job textarea:focus,
   body.resumes input[type="text"]:focus,
   body.resumes select:focus,
+  body.resumes textarea:focus,
   body.single-resume input[type="text"]:focus,
   body.single-resume select:focus,
+  body.single-resume textarea:focus,
   body.candidate-dashboard input[type="text"]:focus,
   body.candidate-dashboard select:focus,
+  body.candidate-dashboard textarea:focus,
   body.listings-stats-dashboard input[type="text"]:focus,
   body.listings-stats-dashboard select:focus,
+  body.listings-stats-dashboard textarea:focus,
   body.submit-resume input[type="text"]:focus,
-  body.submit-resume select:focus {
+  body.submit-resume select:focus,
+  body.submit-resume textarea:focus {
     border-color: #66afe9;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -229,6 +253,30 @@ body.single-resume article header.entry-header {
   body.single-resume article header.entry-header .format-link,
   body.single-resume article header.entry-header .entry-meta {
     display: none; }
+  body.single-job_listing article header.entry-header .thumbnail,
+  body.single-resume article header.entry-header .thumbnail {
+    float: left;
+    margin-right: 30px !important; }
+    body.single-job_listing article header.entry-header .thumbnail img,
+    body.single-resume article header.entry-header .thumbnail img {
+      min-width: auto !important;
+      max-width: 150px !important;
+      margin-top: auto !important;
+      margin-left: auto !important;
+      margin-right: auto !important; }
+body.single-job_listing article .company:after,
+body.single-resume article .company:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0; }
+body.single-job_listing article .company_logo,
+body.single-resume article .company_logo {
+  position: relative;
+  height: auto;
+  left: 0; }
 
 .job_listings,
 .resumes {
@@ -244,16 +292,16 @@ body.single-resume article header.entry-header {
   .resumes .resume_filters {
     background: #428bca;
     border-bottom: 1px solid #ddd;
-    -webkit-border-top-left-radius: 3px;
-    -moz-border-top-left-radius: 3px;
-    -ms-border-top-left-radius: 3px;
-    -o-border-top-left-radius: 3px;
-    border-top-left-radius: 3px;
-    -webkit-border-top-right-radius: 3px;
-    -moz-border-top-right-radius: 3px;
-    -ms-border-top-right-radius: 3px;
-    -o-border-top-right-radius: 3px;
-    border-top-right-radius: 3px; }
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -ms-border-top-left-radius: 5px;
+    -o-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -ms-border-top-right-radius: 5px;
+    -o-border-top-right-radius: 5px;
+    border-top-right-radius: 5px; }
   .job_listings ul.job_listings,
   .job_listings ul.resumes,
   .resumes ul.job_listings,
@@ -276,7 +324,17 @@ body.single-resume article header.entry-header {
       .resumes ul.job_listings li.resume:last-child,
       .resumes ul.resumes li.job_listing:last-child,
       .resumes ul.resumes li.resume:last-child {
-        border-bottom: none; }
+        border-bottom: none;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-bottom-left-radius: 5px;
+        -ms-border-bottom-left-radius: 5px;
+        -o-border-bottom-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-bottom-right-radius: 5px;
+        -ms-border-bottom-right-radius: 5px;
+        -o-border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px; }
       .job_listings ul.job_listings li.job_listing .company_logo,
       .job_listings ul.job_listings li.resume .company_logo,
       .job_listings ul.resumes li.job_listing .company_logo,
@@ -328,5 +386,8 @@ body.single-resume article header.entry-header {
 .job_listing_packages_title .button {
   margin-top: 0 !important;
   margin-bottom: 0 !important; }
+
+.job-manager-form fieldset .wp-editor-container {
+  border: 3px solid #ddd; }
 
 /*# sourceMappingURL=wp-job-manager.css.map */

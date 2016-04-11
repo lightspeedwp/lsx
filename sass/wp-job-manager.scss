@@ -35,7 +35,8 @@ body.submit-resume {
 	}
 
 	input[type="text"],
-	select {
+	select,
+	textarea {
 		@include lsx-form-field;
 	}
 
@@ -64,6 +65,31 @@ body.single-resume {
 			.entry-meta {
 				display: none;
 			}
+
+			.thumbnail {
+				float: left;
+				margin-right: 30px !important;
+
+				img {
+					min-width: auto !important;
+					max-width: 150px !important;
+					margin: {
+						top: auto !important;
+						left: auto !important;
+						right: auto !important;
+					}
+				}
+			}
+		}
+
+		.company {
+			@include lsx-clear-div;
+		}
+
+		.company_logo {
+			position: relative;
+			height: auto;
+			left: 0;
 		}
 	}
 }
@@ -77,7 +103,7 @@ body.single-resume {
 	.resume_filters {
 		background: $primary;
 		border-bottom: 1px solid #ddd;
-		@include border-radius-top(3px);
+		@include border-radius-top(5px);
 	}
 
 	ul.job_listings,
@@ -90,6 +116,7 @@ body.single-resume {
 
 			&:last-child {
 				border-bottom: none;
+				@include border-radius-bottom(5px);
 			}
 
 			.company_logo {
@@ -140,4 +167,8 @@ body.single-resume {
 			bottom: 0 !important;
 		}
 	}
+}
+
+.job-manager-form fieldset .wp-editor-container {
+	border: 3px solid #ddd ;
 }
