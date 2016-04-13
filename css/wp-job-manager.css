@@ -7,7 +7,9 @@ body.resumes.single.top-menu-fixed .wrap #primary.col-sm-12,
 body.candidate-dashboard.page.top-menu-fixed .wrap #primary.col-sm-12,
 body.candidate-dashboard.single.top-menu-fixed .wrap #primary.col-sm-12,
 body.listings-stats-dashboard.page.top-menu-fixed .wrap #primary.col-sm-12,
-body.listings-stats-dashboard.single.top-menu-fixed .wrap #primary.col-sm-12 {
+body.listings-stats-dashboard.single.top-menu-fixed .wrap #primary.col-sm-12,
+body.my-bookmarks.page.top-menu-fixed .wrap #primary.col-sm-12,
+body.my-bookmarks.single.top-menu-fixed .wrap #primary.col-sm-12 {
   max-width: 100%;
   float: left; }
 
@@ -25,7 +27,9 @@ body.candidate-dashboard.single.top-menu-fixed .wrap,
 body.listings-stats-dashboard.page.top-menu-fixed .wrap,
 body.listings-stats-dashboard.single.top-menu-fixed .wrap,
 body.submit-resume.page.top-menu-fixed .wrap,
-body.submit-resume.single.top-menu-fixed .wrap {
+body.submit-resume.single.top-menu-fixed .wrap,
+body.my-bookmarks.page.top-menu-fixed .wrap,
+body.my-bookmarks.single.top-menu-fixed .wrap {
   margin-top: 80px; }
 body.jobs input[type="text"],
 body.jobs select,
@@ -50,7 +54,10 @@ body.listings-stats-dashboard select,
 body.listings-stats-dashboard textarea,
 body.submit-resume input[type="text"],
 body.submit-resume select,
-body.submit-resume textarea {
+body.submit-resume textarea,
+body.my-bookmarks input[type="text"],
+body.my-bookmarks select,
+body.my-bookmarks textarea {
   background: #fff !important;
   height: auto;
   font-size: 16px;
@@ -91,7 +98,10 @@ body.submit-resume textarea {
   body.listings-stats-dashboard textarea:hover,
   body.submit-resume input[type="text"]:hover,
   body.submit-resume select:hover,
-  body.submit-resume textarea:hover {
+  body.submit-resume textarea:hover,
+  body.my-bookmarks input[type="text"]:hover,
+  body.my-bookmarks select:hover,
+  body.my-bookmarks textarea:hover {
     border: 3px solid #ddd;
     box-shadow: none; }
   body.jobs input[type="text"]:focus,
@@ -117,7 +127,10 @@ body.submit-resume textarea {
   body.listings-stats-dashboard textarea:focus,
   body.submit-resume input[type="text"]:focus,
   body.submit-resume select:focus,
-  body.submit-resume textarea:focus {
+  body.submit-resume textarea:focus,
+  body.my-bookmarks input[type="text"]:focus,
+  body.my-bookmarks select:focus,
+  body.my-bookmarks textarea:focus {
     border-color: #66afe9;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -140,7 +153,9 @@ body.candidate-dashboard input[type="submit"],
 body.listings-stats-dashboard input[type="button"],
 body.listings-stats-dashboard input[type="submit"],
 body.submit-resume input[type="button"],
-body.submit-resume input[type="submit"] {
+body.submit-resume input[type="submit"],
+body.my-bookmarks input[type="button"],
+body.my-bookmarks input[type="submit"] {
   background: #333;
   color: #fff;
   border: none !important;
@@ -194,7 +209,11 @@ body.submit-resume input[type="submit"] {
   body.submit-resume input[type="button"]:hover,
   body.submit-resume input[type="button"]:focus,
   body.submit-resume input[type="submit"]:hover,
-  body.submit-resume input[type="submit"]:focus {
+  body.submit-resume input[type="submit"]:focus,
+  body.my-bookmarks input[type="button"]:hover,
+  body.my-bookmarks input[type="button"]:focus,
+  body.my-bookmarks input[type="submit"]:hover,
+  body.my-bookmarks input[type="submit"]:focus {
     background: #232222;
     color: #fff; }
   body.jobs input[type="button"]:hover, body.jobs input[type="button"]:focus, body.jobs input[type="button"]:active,
@@ -242,7 +261,13 @@ body.submit-resume input[type="submit"] {
   body.submit-resume input[type="button"]:active,
   body.submit-resume input[type="submit"]:hover,
   body.submit-resume input[type="submit"]:focus,
-  body.submit-resume input[type="submit"]:active {
+  body.submit-resume input[type="submit"]:active,
+  body.my-bookmarks input[type="button"]:hover,
+  body.my-bookmarks input[type="button"]:focus,
+  body.my-bookmarks input[type="button"]:active,
+  body.my-bookmarks input[type="submit"]:hover,
+  body.my-bookmarks input[type="submit"]:focus,
+  body.my-bookmarks input[type="submit"]:active {
     background: #2a6496; }
 
 body.single-job_listing article header.entry-header,
@@ -430,20 +455,38 @@ body.single-resume article .company_logo {
 .job-manager-form fieldset .wp-editor-container {
   border: 3px solid #ddd; }
 
-#resume-manager-candidate-dashboard table.resume-manager-resumes thead {
+#resume-manager-candidate-dashboard table.resume-manager-resumes thead,
+#resume-manager-candidate-dashboard table.job-manager-bookmarks thead,
+#job-manager-bookmarks table.resume-manager-resumes thead,
+#job-manager-bookmarks table.job-manager-bookmarks thead {
   border-left: 1px solid #ddd;
   border-top: 1px solid #ddd; }
-  #resume-manager-candidate-dashboard table.resume-manager-resumes thead th {
+  #resume-manager-candidate-dashboard table.resume-manager-resumes thead th,
+  #resume-manager-candidate-dashboard table.job-manager-bookmarks thead th,
+  #job-manager-bookmarks table.resume-manager-resumes thead th,
+  #job-manager-bookmarks table.job-manager-bookmarks thead th {
     border-right: 1px solid #ddd; }
-#resume-manager-candidate-dashboard table.resume-manager-resumes tbody {
+#resume-manager-candidate-dashboard table.resume-manager-resumes tbody,
+#resume-manager-candidate-dashboard table.job-manager-bookmarks tbody,
+#job-manager-bookmarks table.resume-manager-resumes tbody,
+#job-manager-bookmarks table.job-manager-bookmarks tbody {
   border-bottom: 1px solid #ddd;
   border-left: 1px solid #ddd; }
-  #resume-manager-candidate-dashboard table.resume-manager-resumes tbody td {
+  #resume-manager-candidate-dashboard table.resume-manager-resumes tbody td,
+  #resume-manager-candidate-dashboard table.job-manager-bookmarks tbody td,
+  #job-manager-bookmarks table.resume-manager-resumes tbody td,
+  #job-manager-bookmarks table.job-manager-bookmarks tbody td {
     border-right: 1px solid #ddd; }
-#resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td {
+#resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td,
+#resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td,
+#job-manager-bookmarks table.resume-manager-resumes tfoot td,
+#job-manager-bookmarks table.job-manager-bookmarks tfoot td {
   text-align: center;
   border: none; }
-  #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a {
+  #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a,
+  #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a,
+  #job-manager-bookmarks table.resume-manager-resumes tfoot td a,
+  #job-manager-bookmarks table.job-manager-bookmarks tfoot td a {
     display: inline-block;
     background: #333;
     color: #fff;
@@ -469,10 +512,25 @@ body.single-resume article .company_logo {
     font-size: 14px;
     margin: 10px 0;
     padding: 7px 40px; }
-    #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus {
+    #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus,
+    #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:hover,
+    #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:focus,
+    #job-manager-bookmarks table.resume-manager-resumes tfoot td a:hover,
+    #job-manager-bookmarks table.resume-manager-resumes tfoot td a:focus,
+    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:hover,
+    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:focus {
       background: #232222;
       color: #fff; }
-    #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:active, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover {
+    #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:active, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover,
+    #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:active,
+    #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:focus,
+    #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:hover,
+    #job-manager-bookmarks table.resume-manager-resumes tfoot td a:active,
+    #job-manager-bookmarks table.resume-manager-resumes tfoot td a:focus,
+    #job-manager-bookmarks table.resume-manager-resumes tfoot td a:hover,
+    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:active,
+    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:focus,
+    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:hover {
       background: #2a6496; }
 
 /*# sourceMappingURL=wp-job-manager.css.map */

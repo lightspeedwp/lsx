@@ -7,7 +7,8 @@
 body.jobs,
 body.resumes,
 body.candidate-dashboard,
-body.listings-stats-dashboard {
+body.listings-stats-dashboard,
+body.my-bookmarks {
 	&.page.top-menu-fixed,
 	&.single.top-menu-fixed {
 		.wrap {
@@ -26,7 +27,8 @@ body.resumes,
 body.single-resume,
 body.candidate-dashboard,
 body.listings-stats-dashboard,
-body.submit-resume {
+body.submit-resume,
+body.my-bookmarks {
 	&.page.top-menu-fixed,
 	&.single.top-menu-fixed {
 		.wrap {
@@ -210,8 +212,10 @@ body.single-resume {
 	border: 3px solid #ddd ;
 }
 
-#resume-manager-candidate-dashboard {
-	table.resume-manager-resumes {
+#resume-manager-candidate-dashboard,
+#job-manager-bookmarks {
+	table.resume-manager-resumes,
+	table.job-manager-bookmarks {
 		thead {
 			border-left: 1px solid #ddd;
 			border-top: 1px solid #ddd;
