@@ -430,4 +430,49 @@ body.single-resume article .company_logo {
 .job-manager-form fieldset .wp-editor-container {
   border: 3px solid #ddd; }
 
+#resume-manager-candidate-dashboard table.resume-manager-resumes thead {
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd; }
+  #resume-manager-candidate-dashboard table.resume-manager-resumes thead th {
+    border-right: 1px solid #ddd; }
+#resume-manager-candidate-dashboard table.resume-manager-resumes tbody {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd; }
+  #resume-manager-candidate-dashboard table.resume-manager-resumes tbody td {
+    border-right: 1px solid #ddd; }
+#resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td {
+  text-align: center;
+  border: none; }
+  #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    border: none !important;
+    box-shadow: none;
+    font-size: 17px;
+    line-height: inherit;
+    white-space: nowrap;
+    padding: 11px 26px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    background: #428bca;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 7px 40px; }
+    #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus {
+      background: #232222;
+      color: #fff; }
+    #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:active, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover {
+      background: #2a6496; }
+
 /*# sourceMappingURL=wp-job-manager.css.map */

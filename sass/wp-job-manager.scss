@@ -209,3 +209,55 @@ body.single-resume {
 .job-manager-form fieldset .wp-editor-container {
 	border: 3px solid #ddd ;
 }
+
+#resume-manager-candidate-dashboard {
+	table.resume-manager-resumes {
+		thead {
+			border-left: 1px solid #ddd;
+			border-top: 1px solid #ddd;
+
+			th {
+				border-right: 1px solid #ddd;
+			}
+		}
+
+		tbody {
+			border-bottom: 1px solid #ddd;
+			border-left: 1px solid #ddd;
+
+			td {
+				border-right: 1px solid #ddd;
+			}
+		}
+
+		tfoot {
+			td {
+				text-align: center;
+				border: none;
+
+				a {
+					display: inline-block;
+					@include lsx-button;
+					background: $primary;
+					font-size: 14px;
+					margin: 10px 0;
+				    padding: 7px 40px;
+
+
+					&:active,
+					&:focus,
+					&:hover {
+						background: $primary-darker;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
