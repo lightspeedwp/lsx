@@ -40,8 +40,17 @@ body.my-bookmarks {
 	input[type="text"],
 	select,
 	textarea,
-	input#chart-date-range {
+	input#chart-date-range,
+	ul.chosen-choices {
 		@include lsx-form-field;
+	}
+
+	ul.chosen-choices {
+		input[type="text"] {
+			padding: 0;
+			margin: 0;
+			color: #aaa;
+		}
 	}
 
 	input[type="button"],
