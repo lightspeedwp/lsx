@@ -286,46 +286,6 @@ body.single-post {
 			}
 		}
 
-		#primary.col-md-8,
-		#primary.col-sm-8 {
-			.entry-content {
-				img {
-					width: 100%;
-				}
-			}
-		}
-
-		#primary.col-md-12,
-		#primary.col-sm-12 {
-			.entry-content {
-				img {
-					min-width: 980px;
-					max-width: 980px;
-					margin-left: -155px;
-					margin: {
-						top: 30px;
-						bottom: 30px;
-					}
-
-					@media screen and (max-width: 768px) {
-						min-width: 780px;
-						max-width: 780px;
-						margin-left: -50px;
-						margin: {
-							top: 20px;
-							bottom: 20px;
-						}
-					}
-
-					@media screen and (max-width: 600px) {
-						min-width: 108%;
-						max-width: 108%;
-						margin-left: -4%;
-					}
-				}
-			}	
-		}
-
 		.format-link {
 			margin: 0 0 40px;
 
