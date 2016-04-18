@@ -254,7 +254,8 @@ body.single-job_listing {
 					small {
 						background: $primary-darker;
 					    color: $white;
-					    padding: 5px 9px;
+					    padding: 4px 9px;
+					    margin-left: 5px;
 					    @include border-radius(3px);
 					}
 				}
@@ -291,7 +292,7 @@ body.single-job_listing {
 		thead {
 			th {
 				&:first-child {
-					width: 640px;
+					width: 440px;
 				}
 			}
 		}
