@@ -47,9 +47,9 @@ body.my-bookmarks {
 
 	ul.chosen-choices {
 		input[type="text"] {
-			padding: 0;
-			margin: 0;
-			color: #aaa;
+			padding: 0 !important;
+			margin: 0 !important;
+			color: #aaa !important;
 		}
 	}
 
@@ -128,6 +128,12 @@ body.single-job_listing {
 		background: $primary;
 		border-bottom: 1px solid #ddd;
 		@include border-radius-top(5px);
+	}
+
+	.search_jobs {
+		ul.chosen-choices {
+		    margin-top: 5px;
+		}
 	}
 
 	ul.job_listings,

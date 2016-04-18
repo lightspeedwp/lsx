@@ -203,9 +203,9 @@ body.candidate-dashboard ul.chosen-choices input[type="text"],
 body.listings-stats-dashboard ul.chosen-choices input[type="text"],
 body.submit-resume ul.chosen-choices input[type="text"],
 body.my-bookmarks ul.chosen-choices input[type="text"] {
-  padding: 0;
-  margin: 0;
-  color: #aaa; }
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #aaa !important; }
 body.jobs input[type="button"],
 body.jobs input[type="submit"],
 body.single-job_listing input[type="button"],
@@ -409,6 +409,9 @@ body.single-job_listing .job_description {
     -ms-border-top-right-radius: 5px;
     -o-border-top-right-radius: 5px;
     border-top-right-radius: 5px; }
+  .job_listings .search_jobs ul.chosen-choices,
+  .resumes .search_jobs ul.chosen-choices {
+    margin-top: 5px; }
   .job_listings ul.job_listings,
   .job_listings ul.resumes,
   .resumes ul.job_listings,
