@@ -237,7 +237,15 @@ body.single-job_listing {
 }
 
 .job-manager-form fieldset .wp-editor-container {
-	border: 3px solid #ddd ;
+	border: 3px solid #ddd;
+
+	button {
+		&:hover,
+		&:active,
+		&:focus {
+			background: $white;
+		}
+	}
 }
 
 #resume-manager-candidate-dashboard,
