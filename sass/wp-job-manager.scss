@@ -346,6 +346,7 @@ body.job-dashboard {
 	#job-manager-job-applications {
 		div.job-applications {
 			background: $black;
+			margin-top: 30px;
 
 			ul.job-applications {
 				li.job-application {
@@ -365,6 +366,8 @@ body.job-dashboard {
 			background: $primary;
 			line-height: 1.42857143;
 		    padding: 9.5px 26px;
+		    margin-bottom: 0;
+		    margin-top: -10px;
 
 			&:hover,
 			&:focus,
