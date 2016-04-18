@@ -535,7 +535,6 @@ p.demo_store {
 			h3 {
 				padding: .5em 0;
 				margin: 0;
-				font-size: 1em;
 			}
 
 			a {
@@ -546,7 +545,7 @@ p.demo_store {
 				width: 100%;
 				height: auto;
 				display: block;
-				margin: 0 0 1em;
+				margin: 0;
 				box-shadow: none;
 			}
 
@@ -559,7 +558,7 @@ p.demo_store {
 			}
 
 			.button {
-				margin-top: 1em;
+				display: inline-block;
 			}
 
 			.price {
@@ -567,7 +566,6 @@ p.demo_store {
 				display: block;
 				font-weight: normal;
 				margin-bottom: .5em;
-				font-size: .857em;
 
 				del {
 					color: inherit;
