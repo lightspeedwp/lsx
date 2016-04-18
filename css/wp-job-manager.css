@@ -26,6 +26,8 @@ body.single-resume.page.top-menu-fixed .wrap,
 body.single-resume.single.top-menu-fixed .wrap,
 body.candidate-dashboard.page.top-menu-fixed .wrap,
 body.candidate-dashboard.single.top-menu-fixed .wrap,
+body.job-dashboard.page.top-menu-fixed .wrap,
+body.job-dashboard.single.top-menu-fixed .wrap,
 body.listings-stats-dashboard.page.top-menu-fixed .wrap,
 body.listings-stats-dashboard.single.top-menu-fixed .wrap,
 body.submit-resume.page.top-menu-fixed .wrap,
@@ -63,6 +65,11 @@ body.candidate-dashboard select,
 body.candidate-dashboard textarea,
 body.candidate-dashboard input#chart-date-range,
 body.candidate-dashboard ul.chosen-choices,
+body.job-dashboard input[type="text"],
+body.job-dashboard select,
+body.job-dashboard textarea,
+body.job-dashboard input#chart-date-range,
+body.job-dashboard ul.chosen-choices,
 body.listings-stats-dashboard input[type="text"],
 body.listings-stats-dashboard select,
 body.listings-stats-dashboard textarea,
@@ -125,6 +132,11 @@ body.my-bookmarks ul.chosen-choices {
   body.candidate-dashboard textarea:hover,
   body.candidate-dashboard input#chart-date-range:hover,
   body.candidate-dashboard ul.chosen-choices:hover,
+  body.job-dashboard input[type="text"]:hover,
+  body.job-dashboard select:hover,
+  body.job-dashboard textarea:hover,
+  body.job-dashboard input#chart-date-range:hover,
+  body.job-dashboard ul.chosen-choices:hover,
   body.listings-stats-dashboard input[type="text"]:hover,
   body.listings-stats-dashboard select:hover,
   body.listings-stats-dashboard textarea:hover,
@@ -172,6 +184,11 @@ body.my-bookmarks ul.chosen-choices {
   body.candidate-dashboard textarea:focus,
   body.candidate-dashboard input#chart-date-range:focus,
   body.candidate-dashboard ul.chosen-choices:focus,
+  body.job-dashboard input[type="text"]:focus,
+  body.job-dashboard select:focus,
+  body.job-dashboard textarea:focus,
+  body.job-dashboard input#chart-date-range:focus,
+  body.job-dashboard ul.chosen-choices:focus,
   body.listings-stats-dashboard input[type="text"]:focus,
   body.listings-stats-dashboard select:focus,
   body.listings-stats-dashboard textarea:focus,
@@ -200,6 +217,7 @@ body.post-a-job ul.chosen-choices input[type="text"],
 body.resumes ul.chosen-choices input[type="text"],
 body.single-resume ul.chosen-choices input[type="text"],
 body.candidate-dashboard ul.chosen-choices input[type="text"],
+body.job-dashboard ul.chosen-choices input[type="text"],
 body.listings-stats-dashboard ul.chosen-choices input[type="text"],
 body.submit-resume ul.chosen-choices input[type="text"],
 body.my-bookmarks ul.chosen-choices input[type="text"] {
@@ -218,6 +236,8 @@ body.single-resume input[type="button"],
 body.single-resume input[type="submit"],
 body.candidate-dashboard input[type="button"],
 body.candidate-dashboard input[type="submit"],
+body.job-dashboard input[type="button"],
+body.job-dashboard input[type="submit"],
 body.listings-stats-dashboard input[type="button"],
 body.listings-stats-dashboard input[type="submit"],
 body.submit-resume input[type="button"],
@@ -270,6 +290,10 @@ body.my-bookmarks input[type="submit"] {
   body.candidate-dashboard input[type="button"]:focus,
   body.candidate-dashboard input[type="submit"]:hover,
   body.candidate-dashboard input[type="submit"]:focus,
+  body.job-dashboard input[type="button"]:hover,
+  body.job-dashboard input[type="button"]:focus,
+  body.job-dashboard input[type="submit"]:hover,
+  body.job-dashboard input[type="submit"]:focus,
   body.listings-stats-dashboard input[type="button"]:hover,
   body.listings-stats-dashboard input[type="button"]:focus,
   body.listings-stats-dashboard input[type="submit"]:hover,
@@ -318,6 +342,12 @@ body.my-bookmarks input[type="submit"] {
   body.candidate-dashboard input[type="submit"]:hover,
   body.candidate-dashboard input[type="submit"]:focus,
   body.candidate-dashboard input[type="submit"]:active,
+  body.job-dashboard input[type="button"]:hover,
+  body.job-dashboard input[type="button"]:focus,
+  body.job-dashboard input[type="button"]:active,
+  body.job-dashboard input[type="submit"]:hover,
+  body.job-dashboard input[type="submit"]:focus,
+  body.job-dashboard input[type="submit"]:active,
   body.listings-stats-dashboard input[type="button"]:hover,
   body.listings-stats-dashboard input[type="button"]:focus,
   body.listings-stats-dashboard input[type="button"]:active,
@@ -343,6 +373,7 @@ body.post-a-job input[type="file"],
 body.resumes input[type="file"],
 body.single-resume input[type="file"],
 body.candidate-dashboard input[type="file"],
+body.job-dashboard input[type="file"],
 body.listings-stats-dashboard input[type="file"],
 body.submit-resume input[type="file"],
 body.my-bookmarks input[type="file"] {
@@ -730,5 +761,39 @@ body.listings-stats-dashboard .wpjms-legend {
   body.listings-stats-dashboard .wpjms-legend ul {
     padding: 0;
     margin: 0; }
+
+body.job-dashboard #job-manager-job-applications div.job-applications {
+  background: #333; }
+  body.job-dashboard #job-manager-job-applications div.job-applications ul.job-applications li.job-application footer ul.meta li {
+    color: #555; }
+body.job-dashboard #job-manager-job-applications .job-applications-download-csv {
+  background: #333;
+  color: #fff;
+  border: none !important;
+  box-shadow: none;
+  font-size: 17px;
+  line-height: inherit;
+  white-space: nowrap;
+  padding: 11px 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  background: #428bca;
+  line-height: 1.42857143;
+  padding: 9.5px 26px; }
+  body.job-dashboard #job-manager-job-applications .job-applications-download-csv:hover, body.job-dashboard #job-manager-job-applications .job-applications-download-csv:focus {
+    background: #232222;
+    color: #fff; }
+  body.job-dashboard #job-manager-job-applications .job-applications-download-csv:hover, body.job-dashboard #job-manager-job-applications .job-applications-download-csv:focus, body.job-dashboard #job-manager-job-applications .job-applications-download-csv:active {
+    background: #2a6496; }
 
 /*# sourceMappingURL=wp-job-manager.css.map */

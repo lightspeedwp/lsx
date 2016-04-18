@@ -27,6 +27,7 @@ body.post-a-job,
 body.resumes,
 body.single-resume,
 body.candidate-dashboard,
+body.job-dashboard,
 body.listings-stats-dashboard,
 body.submit-resume,
 body.my-bookmarks {
@@ -341,8 +342,38 @@ body.listings-stats-dashboard {
 	}
 }
 
+body.job-dashboard {
+	#job-manager-job-applications {
+		div.job-applications {
+			background: $black;
 
+			ul.job-applications {
+				li.job-application {
+					footer {
+						ul.meta {
+							li {
+								color: #555;
+							}
+						}
+					}
+				}
+			}
+		}
 
+		.job-applications-download-csv {
+			@include lsx-button;
+			background: $primary;
+			line-height: 1.42857143;
+		    padding: 9.5px 26px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background: $primary-darker;
+			}
+		}
+	}
+}
 
 
 
