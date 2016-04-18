@@ -249,6 +249,15 @@ body.single-job_listing {
 
 			td {
 				border-right: 1px solid #ddd;
+
+				&.job_title {
+					small {
+						background: $primary-darker;
+					    color: $white;
+					    padding: 5px 9px;
+					    @include border-radius(3px);
+					}
+				}
 			}
 		}
 
@@ -271,6 +280,18 @@ body.single-job_listing {
 					&:hover {
 						background: $primary-darker;
 					}
+				}
+			}
+		}
+	}
+}
+
+#job-manager-job-dashboard {
+	table.job-manager-jobs {
+		thead {
+			th {
+				&:first-child {
+					width: 640px;
 				}
 			}
 		}

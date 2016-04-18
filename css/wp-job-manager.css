@@ -525,6 +525,23 @@ body.single-job_listing .job_description {
   #job-manager-job-dashboard table.job-manager-bookmarks tbody td,
   #job-manager-job-dashboard table.job-manager-jobs tbody td {
     border-right: 1px solid #ddd; }
+    #resume-manager-candidate-dashboard table.resume-manager-resumes tbody td.job_title small,
+    #resume-manager-candidate-dashboard table.job-manager-bookmarks tbody td.job_title small,
+    #resume-manager-candidate-dashboard table.job-manager-jobs tbody td.job_title small,
+    #job-manager-bookmarks table.resume-manager-resumes tbody td.job_title small,
+    #job-manager-bookmarks table.job-manager-bookmarks tbody td.job_title small,
+    #job-manager-bookmarks table.job-manager-jobs tbody td.job_title small,
+    #job-manager-job-dashboard table.resume-manager-resumes tbody td.job_title small,
+    #job-manager-job-dashboard table.job-manager-bookmarks tbody td.job_title small,
+    #job-manager-job-dashboard table.job-manager-jobs tbody td.job_title small {
+      background: #2a6496;
+      color: #fff;
+      padding: 5px 9px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px; }
 #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td,
 #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td,
 #resume-manager-candidate-dashboard table.job-manager-jobs tfoot td,
@@ -615,5 +632,8 @@ body.single-job_listing .job_description {
     #job-manager-job-dashboard table.job-manager-jobs tfoot td a:focus,
     #job-manager-job-dashboard table.job-manager-jobs tfoot td a:hover {
       background: #2a6496; }
+
+#job-manager-job-dashboard table.job-manager-jobs thead th:first-child {
+  width: 640px; }
 
 /*# sourceMappingURL=wp-job-manager.css.map */
