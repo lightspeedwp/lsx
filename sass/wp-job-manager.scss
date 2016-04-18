@@ -39,7 +39,8 @@ body.my-bookmarks {
 
 	input[type="text"],
 	select,
-	textarea {
+	textarea,
+	input#chart-date-range {
 		@include lsx-form-field;
 	}
 
