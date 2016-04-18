@@ -221,9 +221,16 @@ body.single-job_listing {
 }
 
 #resume-manager-candidate-dashboard,
-#job-manager-bookmarks {
+#job-manager-bookmarks,
+#job-manager-job-dashboard {
 	table.resume-manager-resumes,
-	table.job-manager-bookmarks {
+	table.job-manager-bookmarks,
+	table.job-manager-jobs {
+		th,
+		td {
+		    padding: 8px 18px;
+		}
+
 		thead {
 			border-left: 1px solid #ddd;
 			border-top: 1px solid #ddd;

@@ -461,41 +461,90 @@ body.single-job_listing .job_description {
 .job-manager-form fieldset .wp-editor-container {
   border: 3px solid #ddd; }
 
+#resume-manager-candidate-dashboard table.resume-manager-resumes th,
+#resume-manager-candidate-dashboard table.resume-manager-resumes td,
+#resume-manager-candidate-dashboard table.job-manager-bookmarks th,
+#resume-manager-candidate-dashboard table.job-manager-bookmarks td,
+#resume-manager-candidate-dashboard table.job-manager-jobs th,
+#resume-manager-candidate-dashboard table.job-manager-jobs td,
+#job-manager-bookmarks table.resume-manager-resumes th,
+#job-manager-bookmarks table.resume-manager-resumes td,
+#job-manager-bookmarks table.job-manager-bookmarks th,
+#job-manager-bookmarks table.job-manager-bookmarks td,
+#job-manager-bookmarks table.job-manager-jobs th,
+#job-manager-bookmarks table.job-manager-jobs td,
+#job-manager-job-dashboard table.resume-manager-resumes th,
+#job-manager-job-dashboard table.resume-manager-resumes td,
+#job-manager-job-dashboard table.job-manager-bookmarks th,
+#job-manager-job-dashboard table.job-manager-bookmarks td,
+#job-manager-job-dashboard table.job-manager-jobs th,
+#job-manager-job-dashboard table.job-manager-jobs td {
+  padding: 8px 18px; }
 #resume-manager-candidate-dashboard table.resume-manager-resumes thead,
 #resume-manager-candidate-dashboard table.job-manager-bookmarks thead,
+#resume-manager-candidate-dashboard table.job-manager-jobs thead,
 #job-manager-bookmarks table.resume-manager-resumes thead,
-#job-manager-bookmarks table.job-manager-bookmarks thead {
+#job-manager-bookmarks table.job-manager-bookmarks thead,
+#job-manager-bookmarks table.job-manager-jobs thead,
+#job-manager-job-dashboard table.resume-manager-resumes thead,
+#job-manager-job-dashboard table.job-manager-bookmarks thead,
+#job-manager-job-dashboard table.job-manager-jobs thead {
   border-left: 1px solid #ddd;
   border-top: 1px solid #ddd; }
   #resume-manager-candidate-dashboard table.resume-manager-resumes thead th,
   #resume-manager-candidate-dashboard table.job-manager-bookmarks thead th,
+  #resume-manager-candidate-dashboard table.job-manager-jobs thead th,
   #job-manager-bookmarks table.resume-manager-resumes thead th,
-  #job-manager-bookmarks table.job-manager-bookmarks thead th {
+  #job-manager-bookmarks table.job-manager-bookmarks thead th,
+  #job-manager-bookmarks table.job-manager-jobs thead th,
+  #job-manager-job-dashboard table.resume-manager-resumes thead th,
+  #job-manager-job-dashboard table.job-manager-bookmarks thead th,
+  #job-manager-job-dashboard table.job-manager-jobs thead th {
     border-right: 1px solid #ddd;
     border-bottom: none;
     background: #333;
     color: #fff; }
 #resume-manager-candidate-dashboard table.resume-manager-resumes tbody,
 #resume-manager-candidate-dashboard table.job-manager-bookmarks tbody,
+#resume-manager-candidate-dashboard table.job-manager-jobs tbody,
 #job-manager-bookmarks table.resume-manager-resumes tbody,
-#job-manager-bookmarks table.job-manager-bookmarks tbody {
+#job-manager-bookmarks table.job-manager-bookmarks tbody,
+#job-manager-bookmarks table.job-manager-jobs tbody,
+#job-manager-job-dashboard table.resume-manager-resumes tbody,
+#job-manager-job-dashboard table.job-manager-bookmarks tbody,
+#job-manager-job-dashboard table.job-manager-jobs tbody {
   border-bottom: 1px solid #ddd;
   border-left: 1px solid #ddd; }
   #resume-manager-candidate-dashboard table.resume-manager-resumes tbody td,
   #resume-manager-candidate-dashboard table.job-manager-bookmarks tbody td,
+  #resume-manager-candidate-dashboard table.job-manager-jobs tbody td,
   #job-manager-bookmarks table.resume-manager-resumes tbody td,
-  #job-manager-bookmarks table.job-manager-bookmarks tbody td {
+  #job-manager-bookmarks table.job-manager-bookmarks tbody td,
+  #job-manager-bookmarks table.job-manager-jobs tbody td,
+  #job-manager-job-dashboard table.resume-manager-resumes tbody td,
+  #job-manager-job-dashboard table.job-manager-bookmarks tbody td,
+  #job-manager-job-dashboard table.job-manager-jobs tbody td {
     border-right: 1px solid #ddd; }
 #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td,
 #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td,
+#resume-manager-candidate-dashboard table.job-manager-jobs tfoot td,
 #job-manager-bookmarks table.resume-manager-resumes tfoot td,
-#job-manager-bookmarks table.job-manager-bookmarks tfoot td {
+#job-manager-bookmarks table.job-manager-bookmarks tfoot td,
+#job-manager-bookmarks table.job-manager-jobs tfoot td,
+#job-manager-job-dashboard table.resume-manager-resumes tfoot td,
+#job-manager-job-dashboard table.job-manager-bookmarks tfoot td,
+#job-manager-job-dashboard table.job-manager-jobs tfoot td {
   text-align: center;
   border: none; }
   #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a,
   #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a,
+  #resume-manager-candidate-dashboard table.job-manager-jobs tfoot td a,
   #job-manager-bookmarks table.resume-manager-resumes tfoot td a,
-  #job-manager-bookmarks table.job-manager-bookmarks tfoot td a {
+  #job-manager-bookmarks table.job-manager-bookmarks tfoot td a,
+  #job-manager-bookmarks table.job-manager-jobs tfoot td a,
+  #job-manager-job-dashboard table.resume-manager-resumes tfoot td a,
+  #job-manager-job-dashboard table.job-manager-bookmarks tfoot td a,
+  #job-manager-job-dashboard table.job-manager-jobs tfoot td a {
     display: inline-block;
     background: #333;
     color: #fff;
@@ -524,22 +573,47 @@ body.single-job_listing .job_description {
     #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus,
     #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:hover,
     #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:focus,
+    #resume-manager-candidate-dashboard table.job-manager-jobs tfoot td a:hover,
+    #resume-manager-candidate-dashboard table.job-manager-jobs tfoot td a:focus,
     #job-manager-bookmarks table.resume-manager-resumes tfoot td a:hover,
     #job-manager-bookmarks table.resume-manager-resumes tfoot td a:focus,
     #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:hover,
-    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:focus {
+    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:focus,
+    #job-manager-bookmarks table.job-manager-jobs tfoot td a:hover,
+    #job-manager-bookmarks table.job-manager-jobs tfoot td a:focus,
+    #job-manager-job-dashboard table.resume-manager-resumes tfoot td a:hover,
+    #job-manager-job-dashboard table.resume-manager-resumes tfoot td a:focus,
+    #job-manager-job-dashboard table.job-manager-bookmarks tfoot td a:hover,
+    #job-manager-job-dashboard table.job-manager-bookmarks tfoot td a:focus,
+    #job-manager-job-dashboard table.job-manager-jobs tfoot td a:hover,
+    #job-manager-job-dashboard table.job-manager-jobs tfoot td a:focus {
       background: #232222;
       color: #fff; }
     #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:active, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:focus, #resume-manager-candidate-dashboard table.resume-manager-resumes tfoot td a:hover,
     #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:active,
     #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:focus,
     #resume-manager-candidate-dashboard table.job-manager-bookmarks tfoot td a:hover,
+    #resume-manager-candidate-dashboard table.job-manager-jobs tfoot td a:active,
+    #resume-manager-candidate-dashboard table.job-manager-jobs tfoot td a:focus,
+    #resume-manager-candidate-dashboard table.job-manager-jobs tfoot td a:hover,
     #job-manager-bookmarks table.resume-manager-resumes tfoot td a:active,
     #job-manager-bookmarks table.resume-manager-resumes tfoot td a:focus,
     #job-manager-bookmarks table.resume-manager-resumes tfoot td a:hover,
     #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:active,
     #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:focus,
-    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:hover {
+    #job-manager-bookmarks table.job-manager-bookmarks tfoot td a:hover,
+    #job-manager-bookmarks table.job-manager-jobs tfoot td a:active,
+    #job-manager-bookmarks table.job-manager-jobs tfoot td a:focus,
+    #job-manager-bookmarks table.job-manager-jobs tfoot td a:hover,
+    #job-manager-job-dashboard table.resume-manager-resumes tfoot td a:active,
+    #job-manager-job-dashboard table.resume-manager-resumes tfoot td a:focus,
+    #job-manager-job-dashboard table.resume-manager-resumes tfoot td a:hover,
+    #job-manager-job-dashboard table.job-manager-bookmarks tfoot td a:active,
+    #job-manager-job-dashboard table.job-manager-bookmarks tfoot td a:focus,
+    #job-manager-job-dashboard table.job-manager-bookmarks tfoot td a:hover,
+    #job-manager-job-dashboard table.job-manager-jobs tfoot td a:active,
+    #job-manager-job-dashboard table.job-manager-jobs tfoot td a:focus,
+    #job-manager-job-dashboard table.job-manager-jobs tfoot td a:hover {
       background: #2a6496; }
 
 /*# sourceMappingURL=wp-job-manager.css.map */
