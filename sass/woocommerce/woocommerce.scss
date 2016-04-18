@@ -261,6 +261,12 @@ p.demo_store {
 
 		div.summary {
 			margin-bottom: 2em;
+
+			.product_meta {
+				& > span {
+					display: block;
+				}
+			}
 		}
 
 		div.social {
