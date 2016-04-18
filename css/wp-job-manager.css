@@ -2,6 +2,8 @@
 	WP Job Manager Styles for LSX
 */
 body.jobs.page.top-menu-fixed .wrap #primary.col-sm-12, body.jobs.single.top-menu-fixed .wrap #primary.col-sm-12,
+body.single-job_listing.page.top-menu-fixed .wrap #primary.col-sm-12,
+body.single-job_listing.single.top-menu-fixed .wrap #primary.col-sm-12,
 body.resumes.page.top-menu-fixed .wrap #primary.col-sm-12,
 body.resumes.single.top-menu-fixed .wrap #primary.col-sm-12,
 body.candidate-dashboard.page.top-menu-fixed .wrap #primary.col-sm-12,
@@ -303,6 +305,10 @@ body.single-resume article .company_logo {
   height: auto;
   left: 0; }
 
+body.single-job_listing .job_description {
+  max-width: 700px;
+  margin: 0 auto; }
+
 .job_listings,
 .resumes {
   border: 1px solid #ddd;
@@ -465,7 +471,10 @@ body.single-resume article .company_logo {
   #resume-manager-candidate-dashboard table.job-manager-bookmarks thead th,
   #job-manager-bookmarks table.resume-manager-resumes thead th,
   #job-manager-bookmarks table.job-manager-bookmarks thead th {
-    border-right: 1px solid #ddd; }
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+    background: #333;
+    color: #fff; }
 #resume-manager-candidate-dashboard table.resume-manager-resumes tbody,
 #resume-manager-candidate-dashboard table.job-manager-bookmarks tbody,
 #job-manager-bookmarks table.resume-manager-resumes tbody,

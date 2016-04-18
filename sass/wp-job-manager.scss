@@ -5,6 +5,7 @@
 @import "lsx/_mixins.scss";
 
 body.jobs,
+body.single-job_listing,
 body.resumes,
 body.candidate-dashboard,
 body.listings-stats-dashboard,
@@ -93,6 +94,13 @@ body.single-resume {
 			height: auto;
 			left: 0;
 		}
+	}
+}
+
+body.single-job_listing {
+	.job_description {
+		max-width: 700px;
+    	margin: 0 auto;
 	}
 }
 
@@ -222,6 +230,9 @@ body.single-resume {
 
 			th {
 				border-right: 1px solid #ddd;
+				border-bottom: none;
+				background: $black;
+				color: $white;
 			}
 		}
 
