@@ -42,7 +42,7 @@ function lsx_setup() {
 		'primary' => __( 'Primary Menu', 'lsx' ),
 		'top-menu'=> __( 'Top Menu' , 'lsx' ),
 		'social'=> __( 'Social Menu' , 'lsx' ),
-		'legal'=> __( 'Legal Menu' , 'lsx' )
+		'footer'=> __( 'Footer Menu' , 'lsx' )
 	) );	
 
 	//Set the content width
