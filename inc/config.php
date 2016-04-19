@@ -41,7 +41,8 @@ function lsx_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'lsx' ),
 		'top-menu'=> __( 'Top Menu' , 'lsx' ),
-		'social'=> __( 'Social Menu' , 'lsx' )
+		'social'=> __( 'Social Menu' , 'lsx' ),
+		'legal'=> __( 'Legal Menu' , 'lsx' )
 	) );	
 
 	//Set the content width

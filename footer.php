@@ -41,7 +41,7 @@
 
 			    		<?php lsx_footer_top(); ?>
 
-			      		<p class="credit <?php if ( has_nav_menu( 'social' ) ) { ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), date_i18n( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
+			      		<p class="credit <?php if ( has_nav_menu( 'social' ) || has_nav_menu( 'legal' ) ) { ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), date_i18n( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
 						<?php if ( has_nav_menu( 'social' ) ) { ?>
 							<nav id="social-navigation" class="social-navigation" role="navigation">
 								<?php
@@ -52,6 +52,17 @@
 									) );
 								?>
 							</nav><!-- .social-navigation -->
+						<?php } ?>
+						<?php if ( has_nav_menu( 'legal' ) ) { ?>
+							<nav id="legal-navigation" class="legal-navigation" role="navigation">
+								<?php
+									// Legal links navigation menu.
+									wp_nav_menu( array(
+										'theme_location' => 'legal',
+										'depth'          => 1,
+									) );
+								?>
+							</nav><!-- .legal-navigation -->
 						<?php } ?>
 
 			      		<?php lsx_footer_bottom(); ?>

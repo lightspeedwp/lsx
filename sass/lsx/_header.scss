@@ -313,6 +313,46 @@ nav {
 		}
 	}
 
+	&#legal-navigation {
+		float: right;
+		margin: 21px 0 10px !important;
+		background: none;
+
+		@media screen and (max-width: 992px) {
+			float: left;
+			position: relative;
+			clear: both;
+
+			ul {
+				margin: -20px 0 0 -40px !important;
+			}
+		}
+
+		ul {
+			list-style: none;
+			margin: 0 0 -30px 0;
+
+			li {
+				float: left;
+				margin-right: 15px;
+				margin-bottom: 15px;
+
+				@media screen and (max-width: 992px) {
+					margin-right: 20px;
+					margin-bottom: 20px;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				a {
+					display: block;
+				}
+			}
+		}
+	}
+
 	&#social-navigation {
 		float: right;
 		margin: 26px 0 10px !important;
