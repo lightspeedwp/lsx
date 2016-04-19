@@ -180,6 +180,10 @@ a.sensei-certificate-link {
   }
   .course-video {
     margin-bottom: 1.618em;
+
+    iframe {
+      width: auto;
+    }
   }
 
   .course-lessons {
@@ -241,6 +245,10 @@ a.sensei-certificate-link {
 .lesson  {
   .lesson-meta  {
     margin: 0 0 1.618em;
+
+    & > span {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -973,6 +981,14 @@ div.course-container div.course { display: block; padding: 5px; }
       }
     }
   }
+}
+
+/*
+LSX Additions
+*/
+
+body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
+  margin: -50px -9999rem 60px;
 }
 
 /**

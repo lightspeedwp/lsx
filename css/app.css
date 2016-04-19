@@ -5975,9 +5975,6 @@ figure img {
   margin-top: 0  !important;
   margin-bottom: 0  !important; }
 
-iframe {
-  width: 100%; }
-
 button,
 .btn,
 .button-primary {
@@ -8531,13 +8528,21 @@ body.search #primary.col-sm-12 .archive-header {
     body.search #primary.col-md-12 .archive-header,
     body.search #primary.col-sm-12 .archive-header {
       margin: 0 -9999rem 120px; } }
-  body.archive #primary.col-md-12 .archive-header .archive-title, body.archive #primary.col-sm-12 .archive-header .archive-title,
+  body.archive #primary.col-md-12 .archive-header .archive-title,
+  body.archive #primary.col-md-12 .archive-header h1, body.archive #primary.col-sm-12 .archive-header .archive-title,
+  body.archive #primary.col-sm-12 .archive-header h1,
   body.blog #primary.col-md-12 .archive-header .archive-title,
+  body.blog #primary.col-md-12 .archive-header h1,
   body.blog #primary.col-sm-12 .archive-header .archive-title,
+  body.blog #primary.col-sm-12 .archive-header h1,
   body.page #primary.col-md-12 .archive-header .archive-title,
+  body.page #primary.col-md-12 .archive-header h1,
   body.page #primary.col-sm-12 .archive-header .archive-title,
+  body.page #primary.col-sm-12 .archive-header h1,
   body.search #primary.col-md-12 .archive-header .archive-title,
-  body.search #primary.col-sm-12 .archive-header .archive-title {
+  body.search #primary.col-md-12 .archive-header h1,
+  body.search #primary.col-sm-12 .archive-header .archive-title,
+  body.search #primary.col-sm-12 .archive-header h1 {
     color: #fff;
     margin: 0;
     line-height: 1.6;
