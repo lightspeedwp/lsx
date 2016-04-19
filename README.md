@@ -228,31 +228,26 @@ Below is a layout of where the actions are located, so you can easily position y
 `$lsx_controls = array();`
  
 
-## Gulp + Bower Files 
+## Setup
  * Open your terminal
  * Open another terminal tab, and use "sudo bash" to log in as the administrator.
  * Always have a terminal window open.
 
-## Setup
-If you have Gulp and Bower installed already. Skip the next 2 steps.
-
 ### 1: Install Node.js
-This is also know as Node Package Manager, this is what we will use to install Gulp and Bower
+This is also know as Node Package Manager, this is what we will use to install Gulp
  
  * First test to see if you have Node installed already, run "npm -v".
  * You will either see a version number, or it will comlain and say Node isnt installed.
  * If its not installed, run "sudo npm install npm -g".
 
-### 2: Install Bower
-Run the following two commands,   this will install Gulp and Bower. 
+### 2: Install Gulp
+Run the following two commands,   this will install all the Node Modules including Gulp. 
 
-This you can do from any directory,  it is installing the files GLOBALY,  so you can run Gulp and Bower command inside different project folders 
-`npm install -g bower`
+This you need to do while inside the themes directory.
+`npm install`
  
 Wait for the terminal to finish and test by running
-`bower -v`
-
-NB: GULP we will download on a per project basis, this is how it works.
+`gulp`
 
 
 ## Development Workflow
@@ -265,16 +260,12 @@ There are two types terminal scripts you can run on the LSX theme
 Please note,  you will only ever run this to upgrade the vendor packages we use.  Otherwise you dont need these as the minified version of these are included in the theme.
 
 CD to the themes directory, if you are not there already.  You will be working in here from now on.
-
-#### Step 1
-Run the command below in your terminal window,  this will read the bower.json file in the theme and download the list of components (e.g bootstrap).
-`bower install`
  
-#### Step 2
+#### Step 1
 This part we actualy use Gulp to move and concatenate the files we need. So run the command below,  to read the package.json and download the "node_modules".
 `npm install`
  
-#### Step 3
+#### Step 2
 Here is finally where we use gulp,  there are a few tasks set up.
 `gulp upgrade-components`
  
@@ -283,14 +274,10 @@ This will do the following
  * Grab the Sass files from the components folder and move them into /sass/bootstrap/ so app.css can use the mixins
  * Concatenate and Minify all of the bootstraps js file and moves them into /js/ as scripts.min.js 
  
-#### Install a new component for bower
-Change bootstrap to the name of the component here - http://bower.io/search/
-Its important to have the parameter --save,  so it save the package and version of the componenet to the bower.json file.
-`bower install bootstrap --save`
- 
-### Gulp Componenets
-Run the command below in your terminal window,  this will install the sass and unminified Bootstrap 
-`bower install`
+#### Install a new component for Node
+Change bootstrap to the name of the component here - https://www.npmjs.com/
+Its important to have the parameter --save,  so it save the package and version of the componenet to the package.json file.
+`npm install bootstrap --save`
 
 
 ## Developer Help - Usefull Gists
