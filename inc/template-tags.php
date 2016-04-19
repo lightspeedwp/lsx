@@ -388,7 +388,7 @@ if(!function_exists('lsx_nav_menu')){
 		    	<?php
 				wp_nav_menu( array(
 					'menu' => $nav_menu['primary'],
-					'depth' => 2,
+					'depth' => 3,
 					'container' => false,
 					'menu_class' => 'nav navbar-nav',
 					'walker' => new lsx_bootstrap_navwalker())
