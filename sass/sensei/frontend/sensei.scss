@@ -287,6 +287,11 @@ a.sensei-certificate-link {
           float: right;
         }
       }
+
+      input[type="text"] {
+        @include lsx-form-field;
+      }
+
       .question_media_display {
         margin: 10px 0;
         dd {
@@ -998,6 +1003,23 @@ body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
   #user-course-status-toggle {
     a.active{
       color: #D4D4D4;
+    }
+  }
+}
+
+#attached-media {
+  ul {
+    padding-left: 20px;
+    list-style: none;
+
+    li {
+      &:before {
+        content: '\f416';
+        font-family: genericons;
+        font-size: 20px;
+        vertical-align: middle;
+        margin-right: 3px;
+      }
     }
   }
 }
