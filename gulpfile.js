@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var del = require('del');
 var cleanCSS = require('gulp-clean-css');
+var jshint = require('gulp-jshint');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 gulp.task('default', function() {	 
 	console.log('Use the following commands');
@@ -77,6 +80,15 @@ gulp.task('compile-css-job-manager', function() {
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )
   		.pipe(cleanCSS())
  	 	.pipe(gulp.dest('css/'));
+});
+
+gulp.task('compile-js-theme', function () {
+	gulp.src('js/lsx-script.js')	 
+	.pipe(jshint())	 
+	.pipe(jshint.reporter('fail'))	 
+	.pipe(concat('lsx-script.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('js')); 
 });
 
 gulp.task('watch', function() {	 
