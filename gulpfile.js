@@ -13,12 +13,12 @@ gulp.task('default', function() {
 
 /*   UPGRADE THE COMPONENTS WE USE	*/
 gulp.task('clean-upgrade', function(cb) {
-    del(['css/bootstrap/*.*','js/bootstrap.min.js','js/vendor/jquery.sticky.js'], cb);
+    del(['sass/bootstrap/*','js/vendor/bootstrap.min.js','js/vendor/jquery.sticky.js'], cb);
 });
 
 gulp.task('bootstrap-upgrade', function() {
-	gulp.src('node_modules/bootstrap-sass/stylesheets/*.*').pipe(gulp.dest('sass/bootstrap/').on('error', function (err) {console.log('Error!', err);}));
-	gulp.src('node_modules/bootstrap-sass/javascripts/bootstrap.min.js').pipe(gulp.dest('js/vendor/').on('error', function (err) {console.log('Error!', err);}));
+	gulp.src('node_modules/bootstrap-sass/assets/stylesheets/**/*').pipe(gulp.dest('sass/bootstrap/').on('error', function (err) {console.log('Error!', err);}));
+	gulp.src('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js').pipe(gulp.dest('js/vendor/').on('error', function (err) {console.log('Error!', err);}));
 	console.log('Bootstrap Files copied over');
 });
 
