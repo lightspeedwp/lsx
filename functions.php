@@ -28,6 +28,9 @@ if(class_exists('WooCommerce')){
 if(class_exists('WP_Job_Manager')){
 	require get_template_directory() . '/inc/wp-job-manager.php';
 }
+if(class_exists('Tribe__Events__Main')){
+	require get_template_directory() . '/inc/the-events-calendar.php';
+}
 if(true === apply_filters( 'amp_is_enabled', true ) ){
 	require get_template_directory() . '/inc/amp.php';
 }

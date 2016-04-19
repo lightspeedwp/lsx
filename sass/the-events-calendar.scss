@@ -1,0 +1,54 @@
+/*
+	The Events Calendar Styles for LSX
+*/
+
+@import "lsx/_mixins.scss";
+
+#tribe-events {
+	.tribe-events-back {
+		a {
+			@include lsx-button;
+		}
+	}
+
+	.tribe-events-button {
+		background: $primary !important;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: $primary-darker !important; 
+		}
+	}
+
+	.tribe-events-event-meta {
+		.tribe-event-schedule-details {
+			margin-bottom: 10px;
+		}
+
+		.tribe-events-venue-details {
+			line-height: 1.6;
+		}
+	}
+
+	.tribe-events-schedule {
+		h2 {
+			margin: 0;
+    		font-size: 20px;
+		}
+
+		.tribe-events-divider {
+			display: none;
+		}
+	}
+
+	.tribe-events-page-title {
+		margin-top: 0;
+	}
+
+	.tribe-events-event-image {
+		img {
+			max-width: 500px;
+		}
+	}
+}

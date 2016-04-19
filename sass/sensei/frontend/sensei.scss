@@ -241,6 +241,10 @@ a.sensei-certificate-link {
 .lesson  {
   .lesson-meta  {
     margin: 0 0 1.618em;
+
+    & > span {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -279,6 +283,11 @@ a.sensei-certificate-link {
           float: right;
         }
       }
+
+      input[type="text"] {
+        @include lsx-form-field;
+      }
+
       .question_media_display {
         margin: 10px 0;
         dd {
@@ -975,15 +984,53 @@ div.course-container div.course { display: block; padding: 5px; }
   }
 }
 
+/*
+LSX Additions
+*/
+
+body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
+  margin: -50px -9999rem 60px;
+}
+
 /**
 * sensei_user_course shortcode styles
 */
+
+.tax-course-category {
+  .wrap {
+    #primary.col-sm-12 {
+      max-width: 100%;
+    }
+  }
+}
+
 #sensei-user-courses {
   #user-course-status-toggle {
     a.active{
       color: #D4D4D4;
     }
   }
+}
+
+#attached-media {
+  ul {
+    padding-left: 20px;
+    list-style: none;
+
+    li {
+      &:before {
+        content: '\f50b';
+        font-family: genericons;
+        font-size: 20px;
+        vertical-align: middle;
+        margin-right: 3px;
+      }
+    }
+  }
+}
+
+.post-entries {
+  @include lsx-clear-div;
 }
 
 /**

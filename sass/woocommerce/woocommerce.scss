@@ -470,7 +470,8 @@ p.demo_store {
 
 			.button {
 				vertical-align: middle;
-				float: left;
+				float: right;
+				margin-left: 5px;
 			}
 
 			.group_table {
@@ -985,7 +986,6 @@ p.demo_store {
 
 		td {
 			border-top: 1px solid rgba(0,0,0,0.1);
-			padding: 6px 12px;
 			vertical-align: middle;
 
 			small {
@@ -2075,5 +2075,40 @@ p.demo_store {
 				margin-right: 0;
 			}
 		}
+	}
+}
+
+/* LSX Additions */
+
+.single-product {
+	.product {
+		form.cart {
+			margin-bottom: 1.618em;
+		    padding: 1.618em 0;
+		    border-top: 3px solid rgba(0,0,0,.025);
+		    border-bottom: 3px solid rgba(0,0,0,.025);
+
+			table.variations {
+				th, 
+				td {
+					padding: 0;
+				} 
+			}
+
+			.woocommerce-variation-price,
+			.product-addon:last-of-type {
+				padding-bottom: 1.618em;
+			    margin-bottom: 1.618em;
+			    border-bottom: 3px solid rgba(0,0,0,.025);
+			}
+		}
+
+		.product_meta {
+			.sku_wrapper {
+				margin-bottom: 5px;
+			    padding-bottom: 5px;
+			    border-bottom: 1px solid #f1f1f1;
+			}
+		} 
 	}
 }
