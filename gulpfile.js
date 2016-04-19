@@ -47,30 +47,35 @@ gulp.task('compile-css-theme', function() {
 gulp.task('compile-css-amp', function() {	
 	gulp.src('sass/amp.scss')
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )
+  		.pipe(cleanCSS())
  	 	.pipe(gulp.dest('css/'));
 });
 
 gulp.task('compile-css-woocommerce', function() {	
 	gulp.src('sass/woocommerce/woocommerce.scss')
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )
+  		.pipe(cleanCSS())
  	 	.pipe(gulp.dest('css/'));
 });
 
 gulp.task('compile-css-sensei', function() {	
 	gulp.src('sass/sensei/frontend/sensei.scss')
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )
+  		.pipe(cleanCSS())
  	 	.pipe(gulp.dest('css/'));
 });
 
 gulp.task('compile-css-events-calendar', function() {	
 	gulp.src('sass/the-events-calendar.scss')
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )
+  		.pipe(cleanCSS())
  	 	.pipe(gulp.dest('css/'));
 });
 
 gulp.task('compile-css-job-manager', function() {	
 	gulp.src('sass/wp-job-manager.scss')
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )
+  		.pipe(cleanCSS())
  	 	.pipe(gulp.dest('css/'));
 });
 
