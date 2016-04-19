@@ -180,10 +180,6 @@ a.sensei-certificate-link {
   }
   .course-video {
     margin-bottom: 1.618em;
-
-    iframe {
-      width: auto;
-    }
   }
 
   .course-lessons {
@@ -999,6 +995,15 @@ body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
 /**
 * sensei_user_course shortcode styles
 */
+
+.tax-course-category {
+  .wrap {
+    #primary.col-sm-12 {
+      max-width: 100%;
+    }
+  }
+}
+
 #sensei-user-courses {
   #user-course-status-toggle {
     a.active{
@@ -1014,7 +1019,7 @@ body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
 
     li {
       &:before {
-        content: '\f416';
+        content: '\f50b';
         font-family: genericons;
         font-size: 20px;
         vertical-align: middle;
@@ -1022,6 +1027,10 @@ body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
       }
     }
   }
+}
+
+.post-entries {
+  @include lsx-clear-div;
 }
 
 /**
