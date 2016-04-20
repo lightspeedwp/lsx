@@ -35,7 +35,7 @@ get_header(); ?>
 			<?php 
 			$layout = get_theme_mod('lsx_layout','2cr');
 			$layout = apply_filters( 'lsx_layout', $layout );
-			if('1c' === $layout && !is_archive('tribe_events')){
+			if('1c' === $layout && !is_post_type_archive('tribe_events')){
 				lsx_breadcrumbs();
 			}
 			?>
