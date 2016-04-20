@@ -44,12 +44,12 @@ function lsx_sensei_wp_head(){
 	$layout = get_theme_mod('lsx_layout','2cr');
 	$layout = apply_filters( 'lsx_layout', $layout );
 
-	if('1c' === $layout && (is_post_type_archive(array('course','lesson')) || is_tax(array('module','course-category')))) {
+	if('1c' === $layout && is_post_type_archive(array('course','lesson'))) {
 		add_action('sensei_archive_before_course_loop', 'lsx_breadcrumbs', 11 );
 	}
 	
-	if('1c' === $layout && (is_tax(array('module','course-category')))) {
-		remove_action('lsx_content_top', 'lsx_breadcrumbs', 11 );
+	if('1c' === $layout && is_tax(array('module','course-category'))) {
+		remove_action('lsx_content_top', 'lsx_breadcrumbs');
 		add_action( 'sensei_loop_course_before', 'lsx_breadcrumbs', 80 , 1 );
 	}
 		
