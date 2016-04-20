@@ -292,6 +292,10 @@ a.sensei-certificate-link {
         @include lsx-form-field;
       }
 
+      input[type="file"] {
+        line-height: 10px;
+      }
+
       .question_media_display {
         margin: 10px 0;
         dd {
@@ -403,7 +407,7 @@ a.sensei-certificate-link {
 
   .video {
     margin-bottom: 1.618em;
-    
+
     iframe {
       width: 100%;
     }
