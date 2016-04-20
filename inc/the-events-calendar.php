@@ -35,7 +35,7 @@ function lsx_tribe_breadcrumbs($output) {
 	if(isset($wp_query->tribe_is_event) && true === $wp_query->tribe_is_event){
 		if(function_exists('woocommerce_breadcrumb')){
 		 	$closing_div = '</nav>';
-		 	print_r(get_queried_object());
+		 	print_r($wp_query);
 		 	if( is_single()) {
 		 		$single_event = get_queried_object();
 		 		$output = str_replace('Page','<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.__('Events','lsx').'</a>',$output);
