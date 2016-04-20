@@ -1006,11 +1006,13 @@ div.course-container div.course { display: block; padding: 5px; }
 LSX Additions
 */
 
-body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
+body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header,
+body.search-results.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
   margin: -50px -9999rem 60px;
 }
 
-body.course-results {
+body.course-results,
+body.module-archive {
   .wrap {
     #primary.col-sm-12 {
       max-width: 100%;
