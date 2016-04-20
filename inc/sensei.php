@@ -50,6 +50,7 @@ function lsx_sensei_wp_head(){
 	
 	if('1c' === $layout && (is_tax(array('module','course-category')))) {
 		remove_action('lsx_content_top', 'lsx_breadcrumbs', 11 );
+		add_action( 'sensei_loop_course_before', 'lsx_breadcrumbs', 80 , 1 );
 	}
 		
 }
