@@ -10,40 +10,48 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
  * @param string $sep Your custom separator
  */
 function lsx_breadcrumbs() {
-  if (!function_exists('yoast_breadcrumb')) {
+  if (!function_exists('yoast_breadcrumb') && !function_exists('woocommerce_breadcrumb')) {
     return null;
   }
+  
+  $show_on_front = get_option('show_on_front');
+  if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
+  	return;
+  } 
 
-  // Default Yoast Breadcrumbs Separator
-  $old_sep = '\&raquo\;';
-
-  // Get the crumbs
-  $crumbs = yoast_breadcrumb(null, null, false);
-
-  // Remove wrapper <span xmlns:v />
-  $output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
-  $output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
-
-  $crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
-
-  $crumb = array_map(
-    create_function('$crumb', '
-      if (preg_match(\'/\<span\40class=\"breadcrumb_last\"/\', $crumb)) {
-        return \'<li class="active">\' . $crumb . \'</li>\';
-      }
-      return \'<li>\' . $crumb . \' </li>\';
-      '),
-    $crumb
-    );
-
-   if (function_exists('yoast_breadcrumb')) {
-	  $output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
-	  $output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+  if(function_exists('woocommerce_breadcrumb')){
+  		woocommerce_breadcrumb();
+  }elseif(function_exists('yoast_breadcrumb')){
+	  	// Default Yoast Breadcrumbs Separator
+	  	$old_sep = '\&raquo\;';
+	  	
+	  	// Get the crumbs
+	  	$crumbs = yoast_breadcrumb(null, null, false);
+	  	
+	  	// Remove wrapper <span xmlns:v />
+	  	$output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
+	  	$output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
+	  	
+	  	$crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
+	  	
+	  	$crumb = array_map(
+	  			create_function('$crumb', '
+		      if (preg_match(\'/\<span\40class=\"breadcrumb_last\"/\', $crumb)) {
+		        return \'<li class="active">\' . $crumb . \'</li>\';
+		      }
+		      return \'<li>\' . $crumb . \' </li>\';
+		      '),
+	  			$crumb
+	  			);
+	  	
+	  	$output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+	  	$output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+	  	
+	  	// Print
+	  	echo $output;  	
   }
-
-  // Print
-  echo $output;
 }
+add_action( 'lsx_content_top', 'lsx_breadcrumbs', 10 );
 
 /**
  * Replaces the seperator with a blank space.

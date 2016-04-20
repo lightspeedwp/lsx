@@ -186,3 +186,18 @@ function lsx_is_legacy($data) {
 	return $data;
 }
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
+
+/**
+ * Run the init command
+ * @package	lsx
+ * @subpackage config
+ */
+function lsx_init() {
+
+	if(function_exists('WooCommerce')){
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	}
+
+	return $data;
+}
+add_filter( 'init', 'lsx_init' );

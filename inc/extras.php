@@ -2,20 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
- * Adds Yoast Breadcrumbs to lsx_content_top
- */
-function lsx_yoast_breadcrumbs(){
-	
-	$show_on_front = get_option('show_on_front');	
-	
-	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
-		return;
-	}
-	lsx_breadcrumbs();
-}
-add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
-
-/**
  * Add and remove body_class() classes
  */
 function lsx_body_class($classes) {
