@@ -37,10 +37,14 @@ function lsx_tribe_breadcrumbs($output) {
 		 	$closing_div = '</nav>';
 
 		 	if( is_single()) {
-		 		$single_event = get_queried_object();
 		 		$output = str_replace('Page','<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.__('Events','lsx').'</a>',$output);
-		 		$output = str_replace($closing_div,apply_filters('the_title',$single_event->post_title).$closing_div,$output);
-		 	}if( is_tax()) {
+		 		if(isset($wp_query->query_vars['eventDisplay']) && 'all' === $wp_query->query_vars['eventDisplay']){
+		 			$output = str_replace($closing_div,get_the_title($wp_query->query_vars['post_parent']).$closing_div,$output);
+		 		}else{
+		 			$single_event = get_queried_object();
+		 			$output = str_replace($closing_div,apply_filters('the_title',$single_event->post_title).$closing_div,$output);		 			
+		 		}
+		 	}elseif( is_tax()) {
 		 		$tax_event = get_queried_object();
 		 		$output = str_replace('Page','<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.__('Events','lsx').'</a>',$output);
 		 		$output = str_replace($closing_div,'&nbsp;/&nbsp;'.apply_filters('the_title',$tax_event->name).$closing_div,$output);
@@ -54,7 +58,7 @@ function lsx_tribe_breadcrumbs($output) {
 		 	if( is_single()) {
 		 		$single_event = get_queried_object();
 		 		$output = str_replace($closing_div,'<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.__('Events','lsx').'</a>&nbsp;/&nbsp;'.apply_filters('the_title',$single_event->post_title),$output);
-		 	}if( is_tax()) {
+		 	}elseif( is_tax()) {
 		 		$tax_event = get_queried_object();
 		 		$output = str_replace($last_breadcrumb,'<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.__('Events','lsx').'</a>&nbsp;/&nbsp;'.apply_filters('the_title',$tax_event->name),$output);
 		 		
