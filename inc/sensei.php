@@ -18,6 +18,12 @@ remove_action( 'sensei_after_main_content', array( $woothemes_sensei->frontend, 
 add_action('sensei_before_main_content', 'lsx_sensei_before_content', 10);
 add_action('sensei_after_main_content', 'lsx_sensei_after_content', 10);
 
+
+// Moving course image up in DOM
+remove_action('sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) ,10, 1 );
+add_action('sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) ,1, 1 );
+
+
 /*
  * Layout
  */
