@@ -973,14 +973,19 @@ p.demo_store {
 		border-collapse: separate;
 		border-radius: 5px;
 
+		&.cart {
+			th {
+				background: $black;
+				color: $white;
+			}
+		}
+
 		th,
 		td {
 			border-bottom: none;
 		}
 
 		th {
-			background: $black;
-			color: $white;
 			font-weight: 700;
 			padding: 9px 12px;
 		}
