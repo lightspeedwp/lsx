@@ -193,15 +193,26 @@ add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
  * @subpackage config
  */
 function lsx_init() {
-
-	if(function_exists('WooCommerce')){
+	if(class_exists('WooCommerce')){
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
-		
-		if(is_search()){
-			remove_action('lsx_content_top', 'lsx_breadcrumbs', 100 );
-		}
+	}
+}
+add_action( 'init', 'lsx_init',100 );
+
+/**
+ * Run on the wp_head 
+ * @package	lsx
+ * @subpackage config
+ */
+function lsx_wp_head() {
+
+	$layout = get_theme_mod('lsx_layout','2cr');
+	$layout = apply_filters( 'lsx_layout', $layout );
+	
+	if('1c' === $layout && is_search()){
+		remove_action('lsx_content_top', 'lsx_breadcrumbs', 100 );
 	}
 
 	return $data;
 }
-add_filter( 'init', 'lsx_init' );
+add_action( 'wp_head', 'lsx_wp_head',100 );

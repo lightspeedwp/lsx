@@ -19,7 +19,13 @@ get_header(); ?>
 			<h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 		</header><!-- .page-header -->	
 		
-		<?php lsx_breadcrumbs(); ?>	
+		<?php 
+		$layout = get_theme_mod('lsx_layout','2cr');
+		$layout = apply_filters( 'lsx_layout', $layout );
+		if('1c' === $layout && is_search()){
+			lsx_breadcrumbs();
+		}
+		?>	
 
 		<?php if ( have_posts() ) : ?>
 
