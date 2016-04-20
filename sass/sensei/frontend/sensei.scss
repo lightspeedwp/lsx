@@ -35,8 +35,8 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
  body.course-results {
   .wrap {
     margin: {
-      top: 40px;
-      bottom: 40px;
+      top: 120px;
+      bottom: 60px;
     }
   }
  }
@@ -1008,6 +1008,14 @@ LSX Additions
 
 body.archive.top-menu-fixed .wrap #primary.col-sm-12 .archive-header {
   margin: -50px -9999rem 60px;
+}
+
+body.course-results {
+  .wrap {
+    #primary.col-sm-12 {
+      max-width: 100%;
+    }
+  }
 }
 
 .sensei-share-your-grade {
