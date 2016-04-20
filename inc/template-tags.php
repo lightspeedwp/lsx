@@ -19,12 +19,12 @@ function lsx_breadcrumbs() {
   	return;
   }
 
-  /*if(function_exists('woocommerce_breadcrumb')){
+  if(function_exists('woocommerce_breadcrumb')){
   		ob_start();
   		woocommerce_breadcrumb();
   		$output = ob_get_clean();
   		$output = str_replace('woocommerce-breadcrumb', 'woocommerce-breadcrumb breadcrumbs-container', $output);
-  }else*/if(function_exists('yoast_breadcrumb')){
+  }elseif(function_exists('yoast_breadcrumb')){
 	  	// Default Yoast Breadcrumbs Separator
 	  	$old_sep = '\&raquo\;';
 	  	

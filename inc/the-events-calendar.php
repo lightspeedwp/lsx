@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_events_styles' );
 function lsx_tribe_breadcrumbs($output) {
 	global $wp_query;
 	if(isset($wp_query->tribe_is_event) && true === $wp_query->tribe_is_event){
-		/*if(function_exists('woocommerce_breadcrumb')){
+		if(function_exists('woocommerce_breadcrumb')){
 		 	$closing_div = '</nav>';
 		 	if( is_single()) {
 		 		$single_event = get_queried_object();
@@ -46,7 +46,7 @@ function lsx_tribe_breadcrumbs($output) {
 		 	}else{
 		 		$output = str_replace('Page',__('Events','lsx'),$output);
 		 	}		 	
-		 }else*/if(function_exists('yoast_breadcrumb')){
+		 }elseif(function_exists('yoast_breadcrumb')){
 		 	$closing_div = '</div>';
 		 	$last_breadcrumb = '<span class="breadcrumb_last">'.__('Events','lsx').'</span>';
 		 	
