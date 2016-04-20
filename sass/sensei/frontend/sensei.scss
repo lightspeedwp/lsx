@@ -180,6 +180,10 @@ a.sensei-certificate-link {
   }
   .course-video {
     margin-bottom: 1.618em;
+
+    iframe {
+      width: 100%;
+    }
   }
 
   .course-lessons {
@@ -286,6 +290,10 @@ a.sensei-certificate-link {
 
       input[type="text"] {
         @include lsx-form-field;
+      }
+
+      input[type="file"] {
+        line-height: 10px;
       }
 
       .question_media_display {
@@ -395,6 +403,14 @@ a.sensei-certificate-link {
 .single-lesson {
   .lesson_button_form {
     display: inline;
+  }
+
+  .video {
+    margin-bottom: 1.618em;
+
+    iframe {
+      width: 100%;
+    }
   }
 }
 
