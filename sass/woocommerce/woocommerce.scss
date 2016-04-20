@@ -138,6 +138,10 @@ p.demo_store {
 
 		.button {
 			float: right;
+			background: none;
+		    padding: 0;
+		    margin: 0;
+		    color: $primary;
 		}
 
 		li {
@@ -972,6 +976,13 @@ p.demo_store {
 		width: 100%;
 		border-collapse: separate;
 		border-radius: 5px;
+
+		&.cart {
+			th {
+				background: $black;
+				color: $white;
+			}
+		}
 
 		th,
 		td {
