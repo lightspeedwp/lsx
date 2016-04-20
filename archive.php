@@ -1,6 +1,4 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
-
 /**
  * The template for displaying Archive pages.
  *
@@ -33,6 +31,14 @@ get_header(); ?>
 				<?php echo term_description(); ?>
 
 			</header><!-- .archive-header -->
+			
+			<?php 
+			$layout = get_theme_mod('lsx_layout','2cr');
+			$layout = apply_filters( 'lsx_layout', $layout );
+			if('1c' === $layout && is_search()){
+				lsx_breadcrumbs();
+			}
+			?>			
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
