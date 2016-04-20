@@ -389,22 +389,3 @@ function lsx_the_excerpt_filter($excerpt){
 	return $excerpt;
 }
 add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
-
-
-/**
- * Adding conditional Blog header
- */
-/*
-function lsx_blog_header() { 
-	$body_classes = get_body_class();
-	if(in_array('blog', $body_classes)) {
-	?>
-		<header class="archive-header">
-			<h1 class="archive-title">
-				<?php _e('Blog','lsx'); ?>
-			</h1>
-		</header>
-	<?php }
-}
-add_action("lsx_blog_header", "lsx_content_top");
-*/

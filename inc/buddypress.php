@@ -3,7 +3,7 @@
  * Buddypress Functionality
  *
  * @package lsx
- * @subpackage jetpack
+ * @subpackage buddypress
  */
 
 /*

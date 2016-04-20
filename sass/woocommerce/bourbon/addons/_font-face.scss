@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/// Generates an `@font-face` declaration. You can choose the specific file
+/// formats you need to output; the mixin supports `eot`, `ttf`, `svg`, `woff2`
+/// and `woff`. The mixin also supports usage with the Rails Asset Pipeline,
+/// which you can enable per use, or globally in the `$bourbon()` settings.
+/// Finally, any additional CSS properties that are included in the `@include`
+/// directive will be output within the `@font-face` declaration, e.g. you can
+/// pass in `font-weight`, `font-style` and/or `unicode-range`.
+///
+/// @argument {string} $font-family
+///
+/// @argument {string} $file-path
+///
+/// @argument {string} $asset-pipeline [false]
+///   Set to `true` if you’re using the Rails Asset Pipeline (place the fonts
+///   in `app/assets/fonts/`).
+///
+/// @argument {list} $file-formats [("ttf", "woff2", "woff")]
+///   Pass a list of file formats to support,
+///   for example ("eot", "ttf", "svg", "woff2", woff").
+///
+/// @example scss
+///   @include font-face(
+///     "source-sans-pro",
+///     "fonts/source-sans-pro-regular",
+///     $file-formats: ("eot", "ttf")
+///   );
+///
+/// @example css
+///   @font-face {
+///     font-family: "source-sans-pro";
+///     src: url("fonts/source-sans-pro-regular.eot?#iefix")
+///          format("embedded-opentype"),
+///          url("fonts/source-sans-pro-regular.ttf")
+///          format("truetype");
+///   }
+///
+/// @require {function} _font-source-declaration
+///
+/// @require {function} _bourbon-get-setting
+
+@mixin font-face(
+    $font-family,
+    $file-path,
+    $asset-pipeline: _bourbon-get-setting("rails-asset-pipeline"),
+    $file-formats: _bourbon-get-setting("global-font-file-formats")
+  ) {
+
+  @font-face {
+    font-family: $font-family;
+    src: _font-source-declaration(
+      $font-family,
+      $file-path,
+      $asset-pipeline,
+      $file-formats
+    );
+    @content;
+  }
+}

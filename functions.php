@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 define('LSX_VERSION', '1.4');
 
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/config.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/sanitize.php';
@@ -21,9 +22,24 @@ require get_template_directory() . '/inc/jetpack.php';
 if(class_exists('BuddyPress')){
 	require get_template_directory() . '/inc/buddypress.php';
 }
+if(class_exists('WooCommerce')){
+	require get_template_directory() . '/inc/woocommerce.php';
+}
+if(class_exists('WP_Job_Manager')){
+	require get_template_directory() . '/inc/wp-job-manager.php';
+}
+if(class_exists('Tribe__Events__Main')){
+	require get_template_directory() . '/inc/the-events-calendar.php';
+}
+if(true === apply_filters( 'amp_is_enabled', true ) ){
+	require get_template_directory() . '/inc/amp.php';
+}
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+if(class_exists('Sensei_WC')){
+	require get_template_directory() . '/inc/sensei.php';
+}
 
 /**
  * Returns an array of the hompage slider.

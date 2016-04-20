@@ -29,7 +29,11 @@ function lsx_scripts() {
 
 	wp_enqueue_script('masonry');
 	wp_enqueue_script('imagesLoaded', get_template_directory_uri().'/js/vendor/imagesloaded.pkgd.min.js', array('jquery','masonry'));	
-	wp_enqueue_script('lsx_script', get_template_directory_uri() . '/js/lsx-script.js', array('masonry'), null, false);
+	if(defined('WP_DEBUG') && true === WP_DEBUG){
+		wp_enqueue_script('lsx_script', get_template_directory_uri() . '/js/lsx-script.js', array('masonry'), null, false);
+	}else{
+		wp_enqueue_script('lsx_script', get_template_directory_uri() . '/js/lsx-script.min.js', array('masonry'), null, false);
+	}
 	
 	//Set some parameters that we can use in the JS
 	$is_portfolio = false;
