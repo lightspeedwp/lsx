@@ -18,6 +18,13 @@ remove_action( 'sensei_after_main_content', array( $woothemes_sensei->frontend, 
 add_action('sensei_before_main_content', 'lsx_sensei_before_content', 10);
 add_action('sensei_after_main_content', 'lsx_sensei_after_content', 10);
 
+//Switching the course filters and the headers around
+remove_action('sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 10, 0 );
+remove_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_sorting' ) );
+remove_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_filters' ) );
+add_action('sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 11, 0 );
+add_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_sorting' ),12 );
+add_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_filters' ),12 );
 
 // Moving course image up in DOM
 remove_action('sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) ,10, 1 );
@@ -25,6 +32,7 @@ add_action('sensei_course_content_inside_before', array( Sensei()->course, 'cour
 
 remove_action( 'sensei_single_course_content_inside_before', array( Sensei()->course , 'course_image'), 20 );
 add_action( 'sensei_single_course_content_inside_before', array( Sensei()->course , 'course_image'), 12 );
+
 
 /*
  * Layout

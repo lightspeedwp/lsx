@@ -38,6 +38,9 @@ get_header(); ?>
 			if('1c' === $layout && !is_archive('tribe_events')){
 				lsx_breadcrumbs();
 			}
+			?>
+			
+			<?php 
 			?>			
 
 			<?php /* Start the Loop */ ?>
