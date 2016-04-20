@@ -7,19 +7,19 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main" role="main">
 
 		<?php lsx_content_top(); ?>
+		
+		<header class="page-header">
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header><!-- .page-header -->		
 
 		<?php if ( have_posts() ) : ?>
-
-			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -42,7 +42,7 @@ get_header(); ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 

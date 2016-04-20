@@ -20,7 +20,10 @@ function lsx_breadcrumbs() {
   } 
 
   if(function_exists('woocommerce_breadcrumb')){
+  		ob_start();
   		woocommerce_breadcrumb();
+  		$output = ob_get_clean();
+  		$output = str_replace('woocommerce-breadcrumb', 'woocommerce-breadcrumb breadcrumbs-container', $output);
   }elseif(function_exists('yoast_breadcrumb')){
 	  	// Default Yoast Breadcrumbs Separator
 	  	$old_sep = '\&raquo\;';
@@ -31,27 +34,12 @@ function lsx_breadcrumbs() {
 	  	// Remove wrapper <span xmlns:v />
 	  	$output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
 	  	$output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
-	  	
-	  	$crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
-	  	
-	  	$crumb = array_map(
-	  			create_function('$crumb', '
-		      if (preg_match(\'/\<span\40class=\"breadcrumb_last\"/\', $crumb)) {
-		        return \'<li class="active">\' . $crumb . \'</li>\';
-		      }
-		      return \'<li>\' . $crumb . \' </li>\';
-		      '),
-	  			$crumb
-	  			);
-	  	
-	  	$output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
-	  	$output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
-	  	
-	  	// Print
-	  	echo $output;  	
+	  	$output = '<div class="breadcrumbs-container">' . $output . '</div>';
   }
+  
+  echo $output;
 }
-add_action( 'lsx_content_top', 'lsx_breadcrumbs', 10 );
+add_action( 'lsx_content_top', 'lsx_breadcrumbs', 100 );
 
 /**
  * Replaces the seperator with a blank space.
