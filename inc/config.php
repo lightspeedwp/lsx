@@ -209,7 +209,7 @@ function lsx_wp_head() {
 	$layout = get_theme_mod('lsx_layout','2cr');
 	$layout = apply_filters( 'lsx_layout', $layout );
 	
-	if('1c' === $layout && is_search()){
+	if('1c' === $layout && (is_search() || is_archive())){
 		remove_action('lsx_content_top', 'lsx_breadcrumbs', 100 );
 	}
 
