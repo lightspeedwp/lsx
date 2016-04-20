@@ -339,6 +339,12 @@ body.single-post {
 article {
 	margin-bottom: 60px;
 
+	&:last-of-type {
+		.lsx-breaker {
+			display: none;
+		}
+	}
+
 	&.post {
 		.blog &,
 		.archive & {
