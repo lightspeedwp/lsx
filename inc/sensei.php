@@ -106,6 +106,12 @@ function lsx_sensei_after_content(){ ?>
  */
 add_filter( 'sensei_disable_styles', '__return_true' );
 
+/**
+ * Includes the sensei specific styles.
+ * @package lsx
+ * @subpackage sensei
+ * @category styles
+ */
 function lsx_sensei_styles() {
     wp_enqueue_style( 'sensei', get_template_directory_uri() . '/css/sensei.css' );
 }
@@ -117,10 +123,24 @@ add_action( 'wp_enqueue_scripts', 'lsx_sensei_styles' );
  * @subpackage woocommerce
  * @category 	styles
  */
-function redirect_to_home( $query ){
-    if(is_post_type_archive( 'lesson' ) ) {
+function lsx_sensei_redirect_to_home( $query ){
+    if(!is_admin() && is_post_type_archive( 'lesson' ) ) {
          wp_redirect( home_url() . '/courses-overview' );
          exit;
      }
 }
-add_action( 'parse_query', 'redirect_to_home' );
+add_action( 'parse_query', 'lsx_sensei_redirect_to_home' );
+
+/**
+ * Filters the archive title
+ * @package lsx
+ * @subpackage woocommerce
+ * @category 	styles
+ */
+function lsx_sensei_category_title( $html,$term_id ){
+	$html = str_replace('h2','h1',$html);
+	$html = str_replace('sensei-category-title','archive-title',$html);
+	
+	return '<header class="archive-header">'.$html.'</header>';
+}
+add_filter( 'course_category_title', 'lsx_sensei_category_title',1,10 );
