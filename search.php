@@ -22,7 +22,7 @@ get_header(); ?>
 		<?php 
 		$layout = get_theme_mod('lsx_layout','2cr');
 		$layout = apply_filters( 'lsx_layout', $layout );
-		if('1c' === $layout && is_search()){
+		if('1c' === $layout){
 			lsx_breadcrumbs();
 		}
 		?>	
