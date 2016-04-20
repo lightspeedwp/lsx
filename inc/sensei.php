@@ -56,8 +56,8 @@ function lsx_sensei_wp_head(){
 			remove_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 20 );
 			add_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 40 );
 			
-			remove_action('sensei_content_lesson_inside_before', array('Sensei_Lesson', 'module_archive_description'), 11);
-			add_action('sensei_content_lesson_inside_before', array('Sensei_Core_Modules', 'module_archive_description'), 50);
+			remove_action('sensei_content_lesson_inside_before', array('Sensei_Core_Modules', 'module_archive_description'), 11);
+			//add_action('sensei_content_lesson_inside_before', array('Sensei_Core_Modules', 'module_archive_description'), 50);
 			
 		}
 	}
