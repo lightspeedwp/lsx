@@ -47,6 +47,11 @@
 	}
 
 	.tribe-events-event-image {
+		@media (min-width: 768px) {
+			float: left;
+			margin: 0 30px 40px 0;
+		}
+
 		img {
 			max-width: 500px;
 		}
@@ -61,5 +66,9 @@
 				@include border-radius(3px);
 			}
 		}
+	}
+
+	.tribe-events-single-section {
+		clear: both;
 	}
 }
