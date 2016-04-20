@@ -83,9 +83,7 @@ global $lsx_options;
 			    			if(false === $email_address){
 								$email_address = 'email@address.com';
 							}
-			    	}else{
-							$email_address = get_theme_mod('lsx_header_email_address','email@address.com');
-					} ?>
+			    	} ?>
 			    	
 			    	<span class="email-address"><?php _e( 'Questions? Email Us: ', 'lsx' ); ?><a href="mailto:<?php echo $email_address; ?>"><?php echo $email_address; ?></a></span>
 			    </div>

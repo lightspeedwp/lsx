@@ -255,33 +255,6 @@ function lsx_customizer_font_controls($lsx_controls) {
 add_filter('lsx_customizer_controls','lsx_customizer_font_controls');
 
 /**
- * Returns an array of the hompage slider.
- *
- * @package 	lsx
- * @subpackage	functions
- * @category	customizer
- * @return		$lsx_controls array()
- */
-function lsx_customizer_metaplate_controls($lsx_controls) {
-	$lsx_controls['sections']['lsx-metaplate'] = array(
-			'title'       =>  'Metaplate'
-	);
-	$lsx_controls['settings']['lsx_header_email_address']  = array(
-			'default'       =>  'email@address.com', //Default setting/value to save
-			'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-			'sanitize_callback' => 'lsx_sanitize_email',
-	);
-	$lsx_controls['fields']['lsx_header_email_address'] = array(
-			'label'         =>  esc_html__( 'Email Address', 'lsx' ),
-			'section'       =>  'lsx-metaplate',
-			'type'          =>  'email',
-	);	
-	return $lsx_controls;
-}
-add_filter('lsx_customizer_controls','lsx_customizer_metaplate_controls');
-
-/**
  * Returns an array of $controls for the customizer class to generate.
  *
  * @package 	lsx
