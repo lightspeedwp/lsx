@@ -51,4 +51,15 @@
 			max-width: 500px;
 		}
 	}
+
+	.tribe-events-list {
+		.tribe-events-event-cost {
+			span {
+				background: $primary-darker;
+				color: $white;
+				border: none;
+				@include border-radius(3px);
+			}
+		}
+	}
 }
