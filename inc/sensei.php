@@ -51,6 +51,11 @@ function lsx_sensei_wp_head(){
 	if('1c' === $layout && is_tax(array('module','course-category'))) {
 		remove_action('lsx_content_top', 'lsx_breadcrumbs');
 		add_action( 'sensei_loop_course_before', 'lsx_breadcrumbs', 80 , 1 );
+		
+		if(is_tax('module')){
+			remove_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 20 );
+			add_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 40 );
+		}
 	}
 		
 }
