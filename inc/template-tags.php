@@ -17,7 +17,7 @@ function lsx_breadcrumbs() {
   $show_on_front = get_option('show_on_front');
   if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
   	return;
-  } 
+  }
 
   if(function_exists('woocommerce_breadcrumb')){
   		ob_start();

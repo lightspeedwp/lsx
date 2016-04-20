@@ -15,9 +15,11 @@ get_header(); ?>
 
 		<?php lsx_content_top(); ?>
 		
-		<header class="page-header">
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		</header><!-- .page-header -->		
+		<header class="archive-header">
+			<h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header><!-- .page-header -->	
+		
+		<?php lsx_breadcrumbs(); ?>	
 
 		<?php if ( have_posts() ) : ?>
 

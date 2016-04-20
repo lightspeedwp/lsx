@@ -196,6 +196,10 @@ function lsx_init() {
 
 	if(function_exists('WooCommerce')){
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+		
+		if(is_search()){
+			remove_action('lsx_content_top', 'lsx_breadcrumbs', 100 );
+		}
 	}
 
 	return $data;
