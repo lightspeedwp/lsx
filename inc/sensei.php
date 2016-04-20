@@ -33,6 +33,22 @@ add_action('sensei_course_content_inside_before', array( Sensei()->course, 'cour
 remove_action( 'sensei_single_course_content_inside_before', array( Sensei()->course , 'course_image'), 20 );
 add_action( 'sensei_single_course_content_inside_before', array( Sensei()->course , 'course_image'), 12 );
 
+/**
+ * Adds the top and primary divs for the layout.
+ * @package lsx
+ * @subpackage sensei
+ * @category 	layout
+ */
+function lsx_sensei_wp_head(){
+
+	$layout = get_theme_mod('lsx_layout','2cr');
+	$layout = apply_filters( 'lsx_layout', $layout );
+
+	if('1c' === $layout && is_post_type_archive('course')){
+		add_action('sensei_archive_before_course_loop', 'lsx_breadcrumbs', 11 );
+	}
+}
+add_action('wp_head', 'lsx_sensei_wp_head', 10);
 
 /*
  * Layout
