@@ -6,7 +6,7 @@
  */
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
-define('LSX_VERSION', '1.4');
+define('LSX_VERSION', '1.5');
 
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/config.php';

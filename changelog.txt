@@ -1,4 +1,22 @@
 ## Changlog
+
+### 1.5
+* Added in support for the following plugins, with their own stylesheets.
+ * Jetpack
+ * Soliloquy Slider
+ * Envira Gallery 
+ * WP Job Manager
+ * WooCommerce
+ * Sensei
+* Support added for new WordPress 4.5 Site Logo
+* Add backwards compatibility for Jetpack Site Logo
+* Updated the Development workflow to only use Node and Gulp,  Bower is no longer needed. (see the readme for details)
+* Fixed the Display of the Breadcrumbs
+* Fixed the display of images in a blog post set to full width - https://github.com/lightspeeddevelopment/lsx/issues/33
+* Fixed the primary nav toggle displaying if no menu has been assigned - https://github.com/lightspeeddevelopment/lsx/issues/34
+* Removed the Footer Widget title - https://github.com/lightspeeddevelopment/lsx/issues/37
+
+
 ### 1.4.2
 * Added in three missing text encapsulations
 * Fixed the background image size on single Jetpack Portfolio pages.
