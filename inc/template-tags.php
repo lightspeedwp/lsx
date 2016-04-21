@@ -13,7 +13,7 @@ function lsx_breadcrumbs() {
   if (!function_exists('yoast_breadcrumb')) {
     return null;
   }
-
+  
   // Default Yoast Breadcrumbs Separator
   $old_sep = '\&raquo\;';
 
