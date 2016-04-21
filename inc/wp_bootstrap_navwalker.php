@@ -67,7 +67,7 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'menu-item-' . $item->ID;
 
-			//apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args )
+			$classes = apply_filters( 'lsx_nav_menu_css_class', array_filter( $classes ), $item, $args , $depth );
 			
 			$class_names = join( ' ', $classes );
 

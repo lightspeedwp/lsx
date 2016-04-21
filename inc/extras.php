@@ -2,20 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
- * Adds Yoast Breadcrumbs to lsx_content_top
- */
-function lsx_yoast_breadcrumbs(){
-	
-	$show_on_front = get_option('show_on_front');	
-	
-	if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
-		return;
-	}
-	lsx_breadcrumbs();
-}
-add_action( 'lsx_content_top', 'lsx_yoast_breadcrumbs', 10 );
-
-/**
  * Add and remove body_class() classes
  */
 function lsx_body_class($classes) {
@@ -389,22 +375,3 @@ function lsx_the_excerpt_filter($excerpt){
 	return $excerpt;
 }
 add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
-
-
-/**
- * Adding conditional Blog header
- */
-/*
-function lsx_blog_header() { 
-	$body_classes = get_body_class();
-	if(in_array('blog', $body_classes)) {
-	?>
-		<header class="archive-header">
-			<h1 class="archive-title">
-				<?php _e('Blog','lsx'); ?>
-			</h1>
-		</header>
-	<?php }
-}
-add_action("lsx_blog_header", "lsx_content_top");
-*/

@@ -219,10 +219,6 @@ figure {
 	}
 }
 
-iframe {
-	width: 100%;
-}
-
 button,
 .btn {
 	background: $primary;
@@ -751,17 +747,6 @@ header.banner {
 		b {
 			background-position: -4px 13px !important;
 		}
-	}
-}
-
-.breadcrumbs-container {
-	.page-template-template-page-hero &,
-	.blog & {
-		display: none;
-	}
-
-	@media screen and (max-width: 768px) {
-		display: none;
 	}
 }
 

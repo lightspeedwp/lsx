@@ -10,40 +10,42 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
  * @param string $sep Your custom separator
  */
 function lsx_breadcrumbs() {
-  if (!function_exists('yoast_breadcrumb')) {
+  if (!function_exists('yoast_breadcrumb') && !function_exists('woocommerce_breadcrumb')) {
     return null;
   }
   
-  // Default Yoast Breadcrumbs Separator
-  $old_sep = '\&raquo\;';
-
-  // Get the crumbs
-  $crumbs = yoast_breadcrumb(null, null, false);
-
-  // Remove wrapper <span xmlns:v />
-  $output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
-  $output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
-
-  $crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
-
-  $crumb = array_map(
-    create_function('$crumb', '
-      if (preg_match(\'/\<span\40class=\"breadcrumb_last\"/\', $crumb)) {
-        return \'<li class="active">\' . $crumb . \'</li>\';
-      }
-      return \'<li>\' . $crumb . \' </li>\';
-      '),
-    $crumb
-    );
-
-   if (function_exists('yoast_breadcrumb')) {
-	  $output = '<div class="breadcrumbs-container" xmlns="http://rdf.data-vocabulary.org/#"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
-	  $output = '<div class="breadcrumbs-container"> <ul class="breadcrumb">' . implode("", $crumb) . '</ul></div>';
+  $show_on_front = get_option('show_on_front');
+  if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
+  	return;
   }
 
-  // Print
+  if(function_exists('woocommerce_breadcrumb')){
+  		ob_start();
+  		woocommerce_breadcrumb();
+  		$output = ob_get_clean();
+  		$output = str_replace('woocommerce-breadcrumb', 'woocommerce-breadcrumb breadcrumbs-container', $output);
+  }elseif(function_exists('yoast_breadcrumb')){
+	  	// Default Yoast Breadcrumbs Separator
+	  	$old_sep = '\&raquo\;';
+	  	
+	  	// Get the crumbs
+	  	$crumbs = yoast_breadcrumb(null, null, false);
+	  	
+	  	// Remove wrapper <span xmlns:v />
+	  	$output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
+	  	$output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
+	  	
+	  	$crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
+
+	  	$output = implode(" ", $crumb);	  	
+	  	$output = str_replace('</a>', '</a> / ', $output);
+	  	$output = '<div class="breadcrumbs-container">' . $output . '</div>';
+  }
+  
+  $output = apply_filters('lsx_breadcrumbs',$output);
   echo $output;
 }
+add_action( 'lsx_content_top', 'lsx_breadcrumbs', 100 );
 
 /**
  * Replaces the seperator with a blank space.
@@ -325,7 +327,9 @@ endif;
 if(!function_exists('lsx_site_identity')){
 	function lsx_site_identity(){
 
-		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+		if ( function_exists('has_site_icon') && has_site_icon() ) {
+			the_site_logo();
+		}elseif ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
 		}else{
 			// shouldn't show both together.. its just strange
@@ -386,7 +390,7 @@ if(!function_exists('lsx_nav_menu')){
 		    	<?php
 				wp_nav_menu( array(
 					'menu' => $nav_menu['primary'],
-					'depth' => 2,
+					'depth' => 3,
 					'container' => false,
 					'menu_class' => 'nav navbar-nav',
 					'walker' => new lsx_bootstrap_navwalker())

@@ -4,9 +4,6 @@ body.archive,
 body.blog,
 body.page,
 body.search {
-	.breadcrumbs-container {
-		display: none;
-	}
 
 	.wrap {
 		margin-top: 0;
@@ -140,7 +137,8 @@ body.search {
 			    	margin: 0 -9999rem 120px;
 			    }
 
-			    .archive-title {
+			    .archive-title,
+			    h1 {
 					color: $white;
 					margin: 0;
 					line-height: 1.6;
@@ -244,10 +242,6 @@ body.single-post {
 		}
 	}
 
-	.breadcrumbs-container {
-		display: none !important;
-	}
-
 	&.top-menu-fixed {
 		.format-link {
 			margin: 80px 0 40px;
@@ -284,46 +278,6 @@ body.single-post {
 			.lsx-breaker {
 				display: none;
 			}
-		}
-
-		#primary.col-md-8,
-		#primary.col-sm-8 {
-			.entry-content {
-				img {
-					width: 100%;
-				}
-			}
-		}
-
-		#primary.col-md-12,
-		#primary.col-sm-12 {
-			.entry-content {
-				img {
-					min-width: 980px;
-					max-width: 980px;
-					margin-left: -155px;
-					margin: {
-						top: 30px;
-						bottom: 30px;
-					}
-
-					@media screen and (max-width: 768px) {
-						min-width: 780px;
-						max-width: 780px;
-						margin-left: -50px;
-						margin: {
-							top: 20px;
-							bottom: 20px;
-						}
-					}
-
-					@media screen and (max-width: 600px) {
-						min-width: 108%;
-						max-width: 108%;
-						margin-left: -4%;
-					}
-				}
-			}	
 		}
 
 		.format-link {
@@ -384,6 +338,12 @@ body.single-post {
 
 article {
 	margin-bottom: 60px;
+
+	&:last-of-type {
+		.lsx-breaker {
+			display: none;
+		}
+	}
 
 	&.post {
 		.blog &,
@@ -561,7 +521,7 @@ article {
 			position: relative;
 			line-height: 130%;
 			font: {
-				size: 42px;
+				size: 40px;
 				weight: 800;
 			}
 			margin: {
@@ -626,37 +586,6 @@ article {
 			.thumbnail {
 				margin-right: 0 !important;
 				margin-bottom: 0;
-
-				& > img {
-					#primary.col-md-8 &,
-					#primary.col-sm-8 & {
-						width: 100%;
-					}
-
-					#primary.col-md-12 &,
-					#primary.col-sm-12 & {
-						min-width: 980px;
-						max-width: 980px;
-						margin-left: -155px;
-						margin-top: -160px;
-
-						@media screen and (max-width: 992px) {
-							margin-top: -100px;
-						}
-
-						@media screen and (max-width: 768px) {
-							min-width: 780px;
-							max-width: 780px;
-							margin-left: -50px;
-						}
-
-						@media screen and (max-width: 600px) {
-							min-width: 108%;
-							max-width: 108%;
-	    					margin-left: -4%;
-						}
-					}
-				}
 
 				&.pull-left,
 				&.pull-right {

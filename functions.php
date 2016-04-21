@@ -6,8 +6,9 @@
  */
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
-define('LSX_VERSION', '1.4');
+define('LSX_VERSION', '1.5');
 
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/config.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/sanitize.php';
@@ -21,9 +22,24 @@ require get_template_directory() . '/inc/jetpack.php';
 if(class_exists('BuddyPress')){
 	require get_template_directory() . '/inc/buddypress.php';
 }
+if(class_exists('WooCommerce')){
+	require get_template_directory() . '/inc/woocommerce.php';
+}
+if(class_exists('WP_Job_Manager')){
+	require get_template_directory() . '/inc/wp-job-manager.php';
+}
+if(class_exists('Tribe__Events__Main')){
+	require get_template_directory() . '/inc/the-events-calendar.php';
+}
+if(true === apply_filters( 'amp_is_enabled', true ) ){
+	require get_template_directory() . '/inc/amp.php';
+}
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+if(class_exists('Sensei_WC')){
+	require get_template_directory() . '/inc/sensei.php';
+}
 
 /**
  * Returns an array of the hompage slider.
@@ -237,33 +253,6 @@ function lsx_customizer_font_controls($lsx_controls) {
 	return $lsx_controls;
 }
 add_filter('lsx_customizer_controls','lsx_customizer_font_controls');
-
-/**
- * Returns an array of the hompage slider.
- *
- * @package 	lsx
- * @subpackage	functions
- * @category	customizer
- * @return		$lsx_controls array()
- */
-function lsx_customizer_metaplate_controls($lsx_controls) {
-	$lsx_controls['sections']['lsx-metaplate'] = array(
-			'title'       =>  'Metaplate'
-	);
-	$lsx_controls['settings']['lsx_header_email_address']  = array(
-			'default'       =>  'email@address.com', //Default setting/value to save
-			'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-			'sanitize_callback' => 'lsx_sanitize_email',
-	);
-	$lsx_controls['fields']['lsx_header_email_address'] = array(
-			'label'         =>  esc_html__( 'Email Address', 'lsx' ),
-			'section'       =>  'lsx-metaplate',
-			'type'          =>  'email',
-	);	
-	return $lsx_controls;
-}
-add_filter('lsx_customizer_controls','lsx_customizer_metaplate_controls');
 
 /**
  * Returns an array of $controls for the customizer class to generate.

@@ -1,13 +1,26 @@
 {
   "name": "lsx",
-  "version": "1.4.2",
+  "version": "1.5",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lightspeeddevelopment/lsx"
+  },
+  "author": "LightSpeed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lightspeeddevelopment/lsx/issues"
+  },
   "dependencies": {
+    "bootstrap-sass": "^3.3.6",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
     "gulp-dest": "^0.2.2",
     "gulp-jshint": "^1.11.2",
-    "gulp-ruby-sass": "^1.0.5",
     "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.2.0"
+    "gulp-uglify": "^1.2.0",
+    "jquery-sticky": "git+https://github.com/garand/sticky.git"
   }
 }
