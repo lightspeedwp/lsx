@@ -209,7 +209,7 @@ function lsx_wp_head() {
 	$layout = get_theme_mod('lsx_layout','2cr');
 	$layout = apply_filters( 'lsx_layout', $layout );
 
-	if('1c' === $layout && (is_author() || is_search() || is_archive() || (is_post_type_archive() && !is_post_type_archive('tribe_events')) || is_tag() || is_category()) ){
+	if('1c' === $layout && (is_author() || is_search() || (is_post_type_archive(array('post','page','jetpack-portfolio')) && !is_post_type_archive('tribe_events')) || is_tag() || is_category()) ){
 		remove_action('lsx_content_top', 'lsx_breadcrumbs', 100 );
 	}
 
