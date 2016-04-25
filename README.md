@@ -251,12 +251,8 @@ Wait for the terminal to finish and test by running
 
 
 ## Development Workflow
-There are two types terminal scripts you can run on the LSX theme
-
- * Firstly,  if you want to upgrade bootstrap or the components that LSX uses, follow the "Bower Componenets" heading.
- * Secondly,  if you want to minify/write the themes custom JS and SASS files. Follow the "Gulp Componenets" heading.
  
-### Bower Components Upgrade
+### Components Upgrade
 Please note,  you will only ever run this to upgrade the vendor packages we use.  Otherwise you dont need these as the minified version of these are included in the theme.
 
 CD to the themes directory, if you are not there already.  You will be working in here from now on.
