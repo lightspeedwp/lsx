@@ -212,7 +212,5 @@ function lsx_wp_head() {
 	if('1c' === $layout && (is_author() || is_search() || (is_post_type_archive(array('post','page','jetpack-portfolio')) && !is_post_type_archive('tribe_events')) || is_tag() || is_category()) ){
 		remove_action('lsx_content_top', 'lsx_breadcrumbs', 100 );
 	}
-
-	return $data;
 }
 add_action( 'wp_head', 'lsx_wp_head',100 );
