@@ -327,8 +327,8 @@ endif;
 if(!function_exists('lsx_site_identity')){
 	function lsx_site_identity(){
 
-		if ( function_exists('has_site_icon') && has_site_icon() ) {
-			the_site_logo();
+		if ( function_exists('has_custom_logo') && has_custom_logo() ) {
+			the_custom_logo();
 		}elseif ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
 		}else{

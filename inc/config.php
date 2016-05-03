@@ -21,14 +21,13 @@ function lsx_setup() {
 	
 	load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
 	
-	$args = array(
-			'header-text' => array(
-					'site-title',
-					'site-description',
-			),
-			'size' => 'medium',
-	);
-	add_theme_support( 'site-logo', $args );
+
+	add_theme_support( 'custom-logo', array(
+			'height'      => 75,
+			'width'       => 150,
+			'flex-width' => true,
+			'flex-height' => true,
+	) );	
 	add_theme_support( 'custom-background', array(
 	'default-color' => 'FFF',
 	) );	
