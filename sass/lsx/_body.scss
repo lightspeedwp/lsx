@@ -336,6 +336,12 @@ body.single-post {
 	 Posts
 	 ========================================================================== */
 
+.single-post {
+	.woocommerce-breadcrumb {
+		margin-top: -170px;
+	}
+}
+
 article {
 	margin-bottom: 60px;
 
@@ -459,7 +465,7 @@ article {
 		}
 
 		&.has-post-thumbnail {
-			margin-top: -170px;
+			margin-top: 80px;
 		}
 	}
 
