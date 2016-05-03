@@ -20,10 +20,18 @@ function lsx_setup() {
 	global $content_width;
 	
 	load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
-	
 
+	$args = array(
+			'header-text' => array(
+					'site-title',
+					'site-description',
+			),
+			'size' => 'medium',
+	);
+	add_theme_support( 'site-logo', $args );
+	
 	add_theme_support( 'custom-logo', array(
-			'height'      => 75,
+			'height'      => 50,
 			'width'       => 150,
 			'flex-width' => true,
 			'flex-height' => true,
