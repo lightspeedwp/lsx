@@ -741,7 +741,8 @@ header.banner {
 			}
 		}
 
-		.site-logo-link {
+		.site-logo-link,
+		.custom-logo-link {
 			img {
 				width: auto;
 				max-height: 50px;
@@ -779,7 +780,8 @@ header.banner {
 
 	&.scrolled {
 		.navbar-header {
-			.site-logo-link {
+			.site-logo-link,
+			.custom-logo-link {
 				img {
 					max-height: 40px;
 				    margin: 29px 0 !important;
