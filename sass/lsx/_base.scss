@@ -242,6 +242,47 @@ button,
 		padding: 9px 28px;
 	    font-size: 17px;
 	}
+
+	&.cta-btn {
+		background: $orange !important;
+		color: $white !important;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: $orange-dark !important;
+			color: $white !important;
+		}
+	}
+
+	&.border-btn {
+		background: none !important;
+	    padding: 7px 24px;
+	    border: 3px solid $black !important;
+	    color: $black !important;
+
+	    &:hover,
+	    &:active,
+	    &:focus {
+	    	background: $black !important;
+	    	color: $white !important;
+	    }
+	}
+
+	&.cta-border-btn {
+		background: none !important;
+	    padding: 7px 24px;
+	    border: 3px solid $orange !important;
+	    color: $orange !important;
+
+	    &:hover,
+	    &:active,
+	    &:focus {
+	    	background: $orange-dark !important;
+	    	border: 3px solid $orange-dark !important;
+	    	color: $white !important;
+	    }
+	}
 }
 
 address {
