@@ -375,3 +375,15 @@ function lsx_the_excerpt_filter($excerpt){
 	return $excerpt;
 }
 add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
+
+
+// Add an archive header to the default Blog landing
+function lsx_blog_header() {
+	$classes = get_body_class();
+	if (in_array('blog',$classes)) { ?>
+		<header class="archive-header">
+			<h1 class="page-title"><?php _e('Blog', 'lsx'); ?></h1>
+		</header>
+	<?php }
+}
+add_action('lsx_content_before', 'lsx_blog_header');
