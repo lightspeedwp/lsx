@@ -315,7 +315,7 @@ nav {
 
 	&#footer-navigation {
 		float: right;
-		margin: 21px 0 10px !important;
+		margin: 31px 0 10px !important;
 		background: none;
 
 		@media screen and (max-width: 992px) {
@@ -334,8 +334,10 @@ nav {
 
 			li {
 				float: left;
-				margin-right: 15px;
-				margin-bottom: 15px;
+				margin-right: 10px;
+				padding-left: 10px;
+				border-right: 1px solid #eee;
+				line-height: 1;
 
 				@media screen and (max-width: 992px) {
 					margin-right: 20px;
@@ -344,6 +346,8 @@ nav {
 
 				&:last-child {
 					margin-right: 0;
+					padding-right: 0;
+					border-right: 0;
 				}
 
 				a {
