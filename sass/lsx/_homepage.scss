@@ -387,15 +387,7 @@
 	.page-banner {
 		position: relative;
 		padding: 0;
-		min-height: calc(100vh-175px);
-
-		@media (max-width: 992px) {
-			min-height: calc(100vh-143px);
-		}
-
-		@media (max-width: 768px) {
-			min-height: calc(100vh-114px);
-		}
+		min-height: 100vh;
 
 		& > .container {
 			width: 100%;
