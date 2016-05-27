@@ -24,6 +24,8 @@
 	.widget {
 		margin: 70px 0 90px;
 		color: #ccc;
+		font-size: 15px;
+		line-height: 1.4;
 
 		@media screen and (max-width: 768px) {
 			margin: 50px 0;
@@ -31,24 +33,43 @@
 
 		h3.widget-title {
 			color: $light-grey;
+			font-size: 18px;
+			margin-bottom: 20px;
+			padding-bottom: 7px;
+			border-bottom: 1px solid #aaa;
 		}
 
 		a {
-			color: $light-grey;
+			color: $primary;
+			font-size: 15px;
 
 			&:hover {
-				color: $grey;
+				color: $primary-darker;
 			}
 		}
 
 		.btn,
 		button {
 			color: $white;
+			background: $primary;
 
 			&:hover,
 			&:active,
 			&:focus {
-				background: $blacker;
+				background: $primary-darker;
+			}
+		}
+
+		form {
+			.btn {
+				width: 100%;
+				background: $primary;
+
+				&:hover,
+				&:active,
+				&:focus {
+					background: $primary-darker;
+				}
 			}
 		}
 
