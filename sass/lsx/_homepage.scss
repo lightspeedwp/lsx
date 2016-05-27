@@ -382,3 +382,20 @@
 		}
 	}
 }
+
+.home {
+	.page-banner {
+		position: relative;
+		padding: 0;
+		min-height: 100vh;
+
+		& > .container {
+			position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    -webkit-transform: translate(-50%, -50%);
+		    -moz-transform: translate(-50%, -50%);
+		    transform: translate(-50%, -50%);
+		}
+	}
+}
