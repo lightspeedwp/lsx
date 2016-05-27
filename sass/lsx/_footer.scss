@@ -39,6 +39,10 @@
 			border-bottom: 1px solid #aaa;
 		}
 
+		ul {
+			@include clear-list;
+		}
+
 		a {
 			color: $primary;
 			font-size: 15px;
@@ -61,6 +65,10 @@
 		}
 
 		form {
+			.form-group {
+				margin-bottom: 10px;
+			}
+
 			.btn {
 				width: 100%;
 				background: $primary;
