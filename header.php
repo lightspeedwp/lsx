@@ -21,7 +21,7 @@ global $lsx_options;
 <body <?php body_class( 'lsx' ); ?>>
 <?php lsx_body_top(); ?>
 
-<?php if ( !is_singular('landing-page') && !is_page_template('page-templates/template-metaplate.php') && !is_page_template('page-templates/template-metaplate-alt.php') ) { ?>
+<?php if ( !is_singular('landing-page') ) { ?>
 
 	<?php lsx_header_before(); ?>
 		 	<header class="<?php lsx_header_classes(); ?>" role="banner">
@@ -43,24 +43,6 @@ global $lsx_options;
 			
 			<div class="wrap container" role="document">
 				<div class="content role row">
-
-	<?php } elseif ( is_page_template('page-templates/template-metaplate-alt.php') ) { ?>
-
-		<?php lsx_header_before(); ?>
-
-	 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
-	  		<?php lsx_header_top(); ?>
-
-		  	<div class="container">
-		    	<div class="navbar-header">
-					<?php lsx_site_identity(); ?>
-			    </div>
-		  	</div>
-
-		  	<?php lsx_header_bottom(); ?>
-		</header>
-			
-		<?php lsx_header_after(); ?>
 
 	<?php } else { ?>
 
