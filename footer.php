@@ -7,7 +7,7 @@
  * @package lsx
  */
 ?>
-<?php if ( !is_singular('landing-page') && !is_page_template('page-templates/template-metaplate.php') && !is_page_template('page-templates/template-metaplate-alt.php') ) { ?>
+<?php if ( !is_singular('landing-page') ) { ?>
 
 			</div><!-- .content -->
 		</div><!-- wrap -->
@@ -75,10 +75,6 @@
 		<?php lsx_footer_after(); ?>
 
 		<?php wp_footer(); ?> 
-
-	<?php } else if ( is_page_template('page-templates/template-metaplate-alt.php') ) { ?>
-
-		<?php wp_footer(); ?>
 
 	<?php } else { ?>
 	
