@@ -237,8 +237,19 @@ nav {
 							}
 						}
 
+						&.menu-item-has-children {
+							a {
+								margin-bottom: 5px;
+							}
+						}
+
 						ul.dropdown-menu {
-							margin-top: 0;
+							background: $primary-darker;
+							position: relative;
+							float: none;
+							width: 94%;
+							min-width: auto;
+							margin: 0 auto 5px auto;
 						}
 					}
 				}
