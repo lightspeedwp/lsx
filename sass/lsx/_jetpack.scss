@@ -30,6 +30,30 @@
 			}
 		}
 	}
+
+	.masonry {
+		article {
+			[class*="-content-wrapper"] {
+				[class*="-thumbnail"] {
+					img {
+						height: 240.69px; // 230px column resized
+
+						@media screen and (max-width: 1199px) {
+							height: 203.48px; // 230px column resized
+						}
+
+						@media screen and (max-width: 991px) {
+							height: 239.84px; // 230px column resized
+						}
+
+						@media screen and (max-width: 767px) {
+							height: 200px; // 230px column resized
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .single-jetpack-portfolio {
