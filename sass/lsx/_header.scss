@@ -56,7 +56,7 @@ nav {
 		border: none !important;
 		@include transition(all .3s ease-in-out);
 
-		@media screen and (max-width: 1200px) {
+		@media screen and (max-width: 1199px) {
 			width: 100%;
 			border: none !important;
 		    box-shadow: none !important;
@@ -67,17 +67,17 @@ nav {
 		    float: none !important;
 		}
 
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			padding-top: 20px;
 			margin: 0 !important;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			transition: none !important;
 		}
 
 		.nav.navbar-nav {
-			@media screen and (max-width: 992px) {
+			@media screen and (max-width: 991px) {
 				margin: 0;
 			}
 
@@ -88,7 +88,7 @@ nav {
 					margin-left: 0;
 				}
 
-				@media screen and (max-width: 1200px) {
+				@media screen and (max-width: 1199px) {
 					margin-left: 0;
 					float: left;
  					clear: both;
@@ -113,12 +113,12 @@ nav {
 					.caret {
 						margin-left: 6px;
 
-						@media screen and (max-width: 992px) {
+						@media screen and (max-width: 991px) {
 							display: none;
 						}
 					}
 
-					@media screen and (max-width: 992px) {
+					@media screen and (max-width: 991px) {
 						background: none !important;
 						font-size: 20px;
 						margin-left: 6px;
@@ -135,7 +135,7 @@ nav {
 					}	 
 				}
 
-				@media screen and (max-width: 992px) {
+				@media screen and (max-width: 991px) {
 					float: none;
 				}		
 
@@ -151,7 +151,7 @@ nav {
 							border-bottom-color: $white;
 						}
 
-						@media screen and (max-width: 992px) {
+						@media screen and (max-width: 991px) {
 							background: none !important;
 							color: $black !important;
 						}
@@ -189,7 +189,7 @@ nav {
 					-moz-border-bottom-right-radius: 3px;
 					border-bottom-right-radius: 3px;
 
-					@media screen and (max-width: 992px) {
+					@media screen and (max-width: 991px) {
 						display: block;
 						position: relative;
 						width: 100%;
@@ -210,7 +210,7 @@ nav {
 								background: $black; 
 							}
 
-							@media screen and (max-width: 992px) {
+							@media screen and (max-width: 991px) {
 								color: $grey;
 								font-size: 17px;
 								margin-left: 20px;
@@ -329,7 +329,7 @@ nav {
 		margin: 31px 0 10px !important;
 		background: none;
 
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			float: left;
 			position: relative;
 			clear: both;
@@ -350,7 +350,7 @@ nav {
 				border-right: 1px solid #eee;
 				line-height: 1;
 
-				@media screen and (max-width: 992px) {
+				@media screen and (max-width: 991px) {
 					margin-right: 20px;
 					margin-bottom: 20px;
 				}
@@ -373,7 +373,7 @@ nav {
 		margin: 26px 0 10px !important;
 		background: none;
 
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			float: left;
 			position: relative;
 			clear: both;
@@ -392,7 +392,7 @@ nav {
 				margin-right: 15px;
 				margin-bottom: 15px;
 
-				@media screen and (max-width: 992px) {
+				@media screen and (max-width: 991px) {
 					margin-right: 20px;
 					margin-bottom: 20px;
 				}
@@ -408,7 +408,7 @@ nav {
 					height: 24px;
 					overflow: hidden;
 
-					@media screen and (max-width: 992px) {
+					@media screen and (max-width: 991px) {
 						width: 30px;
 						height: 30px;
 					}
@@ -431,7 +431,7 @@ nav {
 						-webkit-font-smoothing: antialiased;
 						speak: none;
 
-						@media screen and (max-width: 992px) {
+						@media screen and (max-width: 991px) {
 							font-size: 30px;
 						}
 					}
@@ -544,7 +544,7 @@ nav {
 
 // Medium nav break backup
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .navbar-header {
         float: none;
     }
@@ -588,11 +588,11 @@ nav {
 		margin: 32px 0;
 	}
 
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 991px) {
 		margin: 32px 0;
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		margin: 19px 0;
 	}
 }
@@ -607,19 +607,19 @@ nav {
 		margin: 30px 10px;
 	}
 
-	@media screen and (min-width: 450px) and (max-width: 1200px) {
+	@media screen and (min-width: 450px) and (max-width: 1199px) {
 		display: block;
 	}
 
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 991px) {
 		margin: 31px 10px !important;
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		margin: 20px 10px !important;
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		margin: 20px 10px !important;
 	}
 
@@ -630,7 +630,7 @@ nav {
 
 .pager {
 	.next {
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			text-align: left;
 
 			.meta-nav {
@@ -647,7 +647,7 @@ nav {
 #top-menu {
 	background: $black;
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		max-height: 44px;
 		overflow: hidden;
 		margin: {
@@ -662,7 +662,7 @@ nav {
 			padding: 0;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			padding: 0;
 		}
 	}
@@ -676,7 +676,7 @@ nav {
 	nav.top-menu {
 		float: right;
 
-		@media screen and (max-width: 1200px) {
+		@media screen and (max-width: 1199px) {
 			float: right !important;
 		}
 
@@ -693,7 +693,7 @@ nav {
 
 				&:not(.cta) {
 					a {
-						@media screen and (max-width: 768px) {
+						@media screen and (max-width: 767px) {
 							width: 36px;
 							height: 36px;
 
@@ -726,7 +726,7 @@ nav {
 						color: $primary;
 						@include transition(all .1s ease-in-out);
 
-						@media screen and (max-width: 768px) {
+						@media screen and (max-width: 767px) {
 							margin-right: 0;
 
 							&:hover,
@@ -807,7 +807,7 @@ nav {
 							background: #9f2020;
 						}
 
-						@media screen and (max-width: 768px) {
+						@media screen and (max-width: 767px) {
 							padding: 5px 22px;
 							margin-left: 8px;
 						}
@@ -845,22 +845,22 @@ nav {
 			border-bottom: none;
 			@include title-shadow;
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 767px) {
 				font-size: 42px;
 			}
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 767px) {
 				font-size: 24px;
 			}
 		}
 	}
 
-	@media screen and (max-width: 992px) {
+	@media screen and (max-width: 991px) {
 		margin-top: 70px;
 		padding: 140px 0;
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		margin-top: 0;
 		padding: 100px 0;
 	}
@@ -879,7 +879,7 @@ nav {
 	.top-menu-fixed & {
 		margin-top: 180px;
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			margin-top: 0;
 		}
 	}
@@ -894,11 +894,11 @@ nav {
 	.top-menu-fixed.has-top-menu.has-page-banner & {
 		margin-top: 220px;
 
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			margin-top: 180px;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			margin-top: 20px;
 		}
 	}
@@ -906,11 +906,11 @@ nav {
 	.top-menu-fixed.has-top-menu.home.has-page-banner & {
 		margin-top: 280px;
 
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			margin-top: 180px;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			margin-top: 20px;
 		}
 	}
@@ -926,11 +926,11 @@ nav {
 	}
 
 	.top-menu-fixed.page-template-template-page-hero & {
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			margin-top: 110px !important;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			margin-top: 40px !important;
 		}
 	}

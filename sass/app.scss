@@ -262,7 +262,7 @@
 				@include transition(all 0.4s ease-in-out);
 				@include text-shadow(0px -3px 50px rgba(0, 0, 0, 0.3), 2px 2px 1px rgba(0, 0, 0, 0.8));
 
-				@media screen and (max-width: 992px) {
+				@media screen and (max-width: 991px) {
 					font-size: 18px;
 				}
 
@@ -280,7 +280,7 @@
 			}
 		}
 
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			width: 50% !important;
 		}
 
@@ -340,11 +340,11 @@
 	h4,
 	h5,
 	h6 {
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			margin-top: 0;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 767px) {
 			margin-top: 0;
 		}
 	}
@@ -701,12 +701,12 @@ header.banner {
 			}
 		}
 
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			position: relative;
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 767px) {
 		position: relative !important;
 		top: 0 !important;
 		padding: 0 15px;
@@ -723,16 +723,16 @@ header.banner {
 
 	.navbar-header {
 		.has-header-search & {
-			@media (max-width: 1200px) {
+			@media (max-width: 1199px) {
 				width: 95%;
     			float: left;
 			}
 
-			@media (max-width: 992px) {
+			@media (max-width: 991px) {
 				width: 94%;
 			}
 
-			@media (max-width: 768px) {
+			@media (max-width: 767px) {
 				width: 97%;
 			}
 
@@ -753,24 +753,24 @@ header.banner {
 				.header-expanded & {
 					margin: 30px 0 0;
 
-					@media screen and (max-width: 1200px) {
+					@media screen and (max-width: 1199px) {
 						margin: 40px 0 !important;
 					}
 
-					@media screen and (max-width: 992px) {
+					@media screen and (max-width: 991px) {
 						margin: 24px 0 !important;
 					}
 
-					@media screen and (max-width: 768px) {
+					@media screen and (max-width: 767px) {
 						margin: 29px 0 !important;
 					}
 				}
 
-				@media screen and (max-width: 992px) {
+				@media screen and (max-width: 991px) {
 					margin: 24px 0 !important;
 				}
 
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 767px) {
 					max-height: 40px !important;
 					margin: 16px 0 !important;
 				}
@@ -807,12 +807,12 @@ header.banner {
 			}
 			font-weight: bold;
 
-			@media screen and (max-width: 992px) {
+			@media screen and (max-width: 991px) {
 				float: left;
 				font-size: 30px;
 			}
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 767px) {
 				margin-top: 18px;
 				font-size: 26px;
 			}
@@ -829,7 +829,7 @@ header.banner {
 				margin-bottom: 0;
 			}
 
-			@media screen and (max-width: 992px) {
+			@media screen and (max-width: 991px) {
 				display: none;
 			}
 		}
@@ -843,7 +843,7 @@ header.banner {
 			float: none;
 			text-align: center;
 
-			@media screen and (max-width: 1200px) {
+			@media screen and (max-width: 1199px) {
 				text-align: left;
 			}
 		}
@@ -865,7 +865,7 @@ header.banner {
 			float: none;
 			width: 50%;
 
-			@media screen and (max-width: 1200px) {
+			@media screen and (max-width: 1199px) {
 				width: 100%;
 			}
 		}	
