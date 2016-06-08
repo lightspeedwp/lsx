@@ -877,7 +877,7 @@ nav {
 		}
 
 		@media only screen and (min-width: 992px) {
-			margin-top: 181px !important;
+			margin-top: 176px !important;
 		}
 	}
 }
@@ -889,7 +889,7 @@ nav {
 	}
 
 	.top-menu-fixed & {
-		margin-top: 181px;
+		margin-top: 176px;
 
 		@media screen and (max-width: 991px) {
 			margin-top: 143px;
@@ -934,13 +934,12 @@ nav {
 		margin-top: 280px;
 	}
 
-	.top-menu-fixed.page-template-template-page-hero & {
-		@media screen and (max-width: 991px) {
-			margin-top: 110px !important;
-		}
+	.top-menu-fixed.page-template-template-page-hero .page-banner + &,
+	.top-menu-fixed.page-template-template-front-page .page-banner + & {
+		margin-top: 0 !important;
 
 		@media screen and (max-width: 767px) {
-			margin-top: 40px !important;
+			margin-top: 20px !important;
 		}
 	}
 
