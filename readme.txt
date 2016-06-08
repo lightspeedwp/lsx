@@ -4,7 +4,7 @@ Author: LightSpeed
 Author URI: https://www.lsdev.biz/
 Theme Name: LSX
 Theme URI: https://www.lsdev.biz/project/lsx/
-Tags: black, blue, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: one-column, two-columns, three-column, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, portfolio, blog, e-commerce, translation-ready, theme-options, footer-widgets, featured-images, full-width-template, grid-layout
 Requires at least: 4.1
 Tested up to: 4.4.1
 Stable tag: 4.4.1
@@ -12,21 +12,17 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-LSX is a clean, modern, minimal and fully responsive parent theme that is ideal for developers looking for a Bootstrap parent theme.
- 
-LSX has been designed to be minimal and lean, while still having rich features and customizability options, such allowing you to control fonts, color options, home page configuration and much more.
- 
-The theme is built using Twitter Bootstrap 3 and Underscores by Automattic, which ensure that sites built with LSX put your content front and center and are responsive and mobile friendly.  Its lightweight build ensures better load times, a bonus for both user experience and SEO.
- 
-LSX comes out the box with a complete set of page templates that are intuitively named so that you can get that particular layout you need when creating your pages without having to labour through formatting.
- 
-* Responsive Layout
-* Custom Colors
-* Custom Background
-* Social Links
-* Menu Description
-* Post Formats
-* The GPL v2.0 or later license.
+
+LSX is a fully responsive theme that’s built with clarity in mind. Instead of flooding you with an overwhelming amount of theme
+options, LSX keeps it clear and help you make decisions. Its lightweight build ensures better load times, a bonus for both user
+experience and SEO.
+
+LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color
+options, home page configuration, widget areas and much more.
+
+It’s a great choice for your next WooCommerce project, supporting the eCommerce plugin beautifully out the box. 
+
+LSX also supports a variety of other top quality plugins like Sensei, WP Job Manager and JetPack. 
 
 == Installation ==
 
