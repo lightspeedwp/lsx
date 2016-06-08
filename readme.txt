@@ -1,11 +1,11 @@
-=== LSX ===
+= LSX =
 Contributors: the LightSpeed team
 Author: LightSpeed
 Author URI: https://www.lsdev.biz/
 Theme Name: LSX
 Theme URI: https://www.lsdev.biz/product/lsx-wordpress-theme/
-Tags: one-column, two-columns, three-column, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, portfolio, blog, e-commerce, translation-ready, theme-options, footer-widgets, featured-images, full-width-template, grid-layout
-Requires at least: 4.1
+Tags: one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, portfolio, blog, e-commerce, translation-ready, theme-options, footer-widgets, featured-images, full-width-template, grid-layout
+Requires at least: 4.5
 Tested up to: 4.5.2
 Stable tag: 4.5.2
 License: GPLv2 or later
@@ -36,9 +36,15 @@ LSX also supports a variety of other top quality plugins like Sensei, WP Job Man
 Theme documentation is available on hhttps://www.lsdev.biz/documentation/lsx/
 Support - https://www.lsdev.biz/contact-us/ 
 
+== Resources ==
+
+* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
+* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* Genericons (http://genericons.com/) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html) 
+
 == Frequently Asked Questions ==
 
-= How do I change the color scheme? =
+=== How do I change the color scheme? ===
 
 You can change the colors of your site really easily using LSX.
 
@@ -47,7 +53,7 @@ You can change the colors of your site really easily using LSX.
 5. You can now change your color scheme by selecting one of the predefined ones. Choose a color scheme you want from Base Color Scheme dropdown. You can preview the change in the Customizer.
 6. Once you are happy with your color changes you can click save and your changes will be reflected on your live site.
 
-= How do I add the social links to the sidebar? =
+=== How do I add the social links to the sidebar? ===
 
 LSX allows you display links to your social media profiles, like Twitter and Facebook, with icons.
 
@@ -86,7 +92,7 @@ Available icons: (Linking to any of the following sites will automatically displ
 
 Social networks that aren't currently supported will be indicated by a generic share icon.
 
-= Quick Specs =
+=== Quick Specs ===
 
 * The main content width is 750px
 * The sidebar width is 360px
@@ -242,7 +248,7 @@ Wait for the terminal to finish and test by running
 `gulp`
 
 
-== Development Workflow ==
+= Development Workflow =
 
 Please note,  you will only ever run this to upgrade the vendor packages we use.  Otherwise you dont need these as the minified version of these are included in the theme.
 
@@ -277,13 +283,3 @@ Its important to have the parameter --save,  so it save the package and version 
 ### Templates
 
  * Redirect a user to a login form if they are logged out (with template) - https://gist.github.com/krugazul/e92749510d31d4a10906 
-
-== Upgrade Notice ==
-
-= 1.2.4 =
-* Upgrade to remove the security related bug with the Genericons Example.html file.
-
-== Resources ==
-* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
-* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* Genericons (http://genericons.com/) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html) 
