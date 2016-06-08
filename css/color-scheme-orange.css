@@ -315,12 +315,6 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu {
 	background: #fbaf3f;
 }
 
-@media screen and (max-width: 992px) {
-	header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-		background: #fbaf3f;
-	}
-}
-
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li ul.dropdown-menu {
   background: #cc4800;
 }
@@ -334,25 +328,6 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:focus,
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
 	color: #fff !important;
 	background: #333;
-}
-
-@media screen and (max-width: 992px) {
-	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-		color: #333 !important;
-	}
-
-	header.banner nav .nav.navbar-nav li:hover > a,
-	header.banner nav .nav.navbar-nav li:focus > a,
-	header.banner nav .nav.navbar-nav li:active > a, 
-	header.banner nav .nav.navbar-nav li.open > a {
-		color: #fbaf3f !important;
-	}
-
-	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover,
-	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:focus,
-	header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:active {
-		color: #fbaf3f !important;
-	}
 }
 
 header.banner nav .nav.navbar-nav li.active a {

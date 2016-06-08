@@ -15,12 +15,6 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu {
   background: #428bca;
 }
 
-@media screen and (max-width: 992px) {
-  header.banner nav .nav.navbar-nav li ul.dropdown-menu {
-    background: none;
-  }
-}
-
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li ul.dropdown-menu {
   background: #2a6496;
 }
@@ -31,16 +25,6 @@ header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
 
 header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
   background: #333333;
-}
-
-@media screen and (max-width: 992px) {
-  header.banner nav .nav.navbar-nav li ul.dropdown-menu li a {
-    color: #555555;
-  }
-
-  header.banner nav .nav.navbar-nav li ul.dropdown-menu li a:hover {
-    color: #333333;
-  }
 }
 
 header.banner nav .nav.navbar-nav li.active a {
