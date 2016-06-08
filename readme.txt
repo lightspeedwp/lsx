@@ -3,7 +3,7 @@ Contributors: the LightSpeed team
 Author: LightSpeed
 Author URI: https://www.lsdev.biz/
 Theme Name: LSX
-Theme URI: https://www.lsdev.biz/project/lsx/
+Theme URI: https://www.lsdev.biz/product/lsx-wordpress-theme/
 Tags: one-column, two-columns, three-column, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, portfolio, blog, e-commerce, translation-ready, theme-options, footer-widgets, featured-images, full-width-template, grid-layout
 Requires at least: 4.1
 Tested up to: 4.5.2
@@ -31,11 +31,10 @@ LSX also supports a variety of other top quality plugins like Sensei, WP Job Man
 * Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 * Click Activate to use your new theme right away.
 
-== Page Templates ==
+== Documentation & Support ==
 
-* Sitemap
-* Archives
-* Full width layout
+Theme documentation is available on hhttps://www.lsdev.biz/documentation/lsx/
+Support - https://www.lsdev.biz/contact-us/ 
 
 == Frequently Asked Questions ==
 
@@ -94,11 +93,6 @@ Social networks that aren't currently supported will be indicated by a generic s
 * Featured Images are 980px wide by 500px high
 * Portfolio feature images are 360px wide by 270px high
 * Portfolio single gallery images are minimum 1140px wide
-
-== Documentation & Support ==
-
-Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/
-Support - https://www.lsdev.biz/contact-us/ 
 
 == Hooks / Actions ==
 e.g
