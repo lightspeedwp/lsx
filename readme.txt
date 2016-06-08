@@ -6,8 +6,8 @@ Theme Name: LSX
 Theme URI: https://www.lsdev.biz/project/lsx/
 Tags: one-column, two-columns, three-column, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, portfolio, blog, e-commerce, translation-ready, theme-options, footer-widgets, featured-images, full-width-template, grid-layout
 Requires at least: 4.1
-Tested up to: 4.4.1
-Stable tag: 4.4.1
+Tested up to: 4.5.2
+Stable tag: 4.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
