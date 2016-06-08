@@ -5,9 +5,11 @@ body.blog,
 body.page,
 body.search {
 
-	.wrap {
+	.page-banner + .wrap {
 		margin-top: 0;
 	}
+
+	margin-top: 15px;
 
 	&.top-menu-fixed {
 		&.header-central,
@@ -21,7 +23,7 @@ body.search {
 
 		.wrap {
 			@media (min-width: 992px) {
-				margin-top: 180px;
+				margin-top: 181px;
 			}
 
 			#primary {
@@ -32,7 +34,7 @@ body.search {
 					    padding: 60px 9999rem;
 
 					    @media (max-width: 991px) {
-				    		margin: 140px -9999rem 40px;
+				    		margin: 0 -9999rem 40px;
 					    }
 
 					    @media (max-width: 767px) {
@@ -69,8 +71,6 @@ body.search {
 			}
 
 			#secondary {
-				margin-top: 0;
-
 				@media (max-width: 991px) {
 					margin: {
 						top: 140px;
@@ -127,15 +127,11 @@ body.search {
 		&.col-md-12,
 		&.col-sm-12 {
 			.archive-header {
-				margin: 0 -9999rem 260px;
+				margin: 0 -9999rem 60px;
 			    padding: 60px 9999rem;
 			    background: $primary-darker;
 			    color: $white;
 			    text-align: center;
-
-			    @media (max-width: 991px) {
-			    	margin: 0 -9999rem 120px;
-			    }
 
 			    .archive-title,
 			    h1 {
@@ -335,12 +331,6 @@ body.single-post {
 /* ==========================================================================
 	 Posts
 	 ========================================================================== */
-
-.single-post {
-	.woocommerce-breadcrumb {
-		margin-top: -170px;
-	}
-}
 
 article {
 	margin-bottom: 60px;

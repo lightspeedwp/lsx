@@ -211,6 +211,10 @@
 .page-template-template-home-hero {
 	background: $primary-darker !important;
 
+	.wrap {
+		margin-top: 60px !important;
+	}
+
 	&.header-central,
 	&.header-expanded {
 		.wrap {
@@ -233,19 +237,33 @@
 	}
 
 	&.top-menu-fixed {
-		.wrap {
+		header {
+			& + .wrap {
+				margin-top: 240px !important;
+
+				@media screen and (max-width: 991px) {
+					margin-top: 180px !important;
+				}
+
+				@media screen and (max-width: 767px) {
+					margin-top: 40px !important;
+				}
+			}
+		}
+
+		.page-banner {
 			@media screen and (max-width: 991px) {
-	  			margin-top: 180px !important;
+				margin-top: 143px !important;
 			}
 
 			@media screen and (max-width: 767px) {
-	  			margin-top: 40px !important;
+				margin-top: 0 !important;
+			}
+
+			& + .wrap {
+				margin-top: 40px !important;
 			}
 		}
-	}
-
-	.wrap {
-		margin-top: 240px !important;
 	}
 
 	#primary {

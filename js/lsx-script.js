@@ -193,7 +193,7 @@ jQuery(document).ready(function($) {
 		    $('.page-banner').css('top', (scrolled * 0.1) + 'px');
 		}
 
-		if ( $("header.banner").hasClass("navbar-static-top") ) {
+		if ( 991 < width && ! $("body").hasClass("home") && $("header.banner").hasClass("navbar-static-top") ) {
 
 		  	$(window).scroll(function(){
 			    parallax();
