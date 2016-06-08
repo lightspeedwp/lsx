@@ -3,11 +3,11 @@
 * Author: LightSpeed
 * Author URI: https://www.lsdev.biz/
 * Theme Name: LSX
-* Theme URI: https://www.lsdev.biz/project/lsx/
+* Theme URI: https://www.lsdev.biz/product/lsx-wordpress-theme/
 * Tags: black, one-column, two-columns, three-column, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, portfolio, blog, e-commerce, translation-ready, theme-options, footer-widgets, featured-images, full-width-template, grid-layout
-* Requires at least: 4.1
-* Tested up to: 4.4.1
-* Stable tag: 4.4.1
+* Requires at least: 4.5
+* Tested up to: 4.5.2
+* Stable tag: 4.5.2
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,11 +31,11 @@ LSX also supports a variety of other top quality plugins like Sensei, WP Job Man
 * Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 * Click Activate to use your new theme right away.
 
-## Page Templates
+## Documentation & Support
 
-* Sitemap
-* Archives
-* Full width layout
+Theme documentation is available on hhttps://www.lsdev.biz/documentation/lsx/ 
+
+Support - https://www.lsdev.biz/contact-us/ 
 
 ## Frequently Asked Questions
 
@@ -94,12 +94,6 @@ Social networks that aren't currently supported will be indicated by a generic s
 * Featured Images are 750px wide by 300px high
 * Portfolio feature images are 360px wide by 270px high
 * Portfolio single gallery images are minimum 1140px wide
-
-## Documentation & Support
-
-Theme documentation is available on hhttps://www.lsdev.biz/lsx/documentation/ 
-
-Support - https://www.lsdev.biz/contact-us/ 
 
 ## Hooks / Actions
 `add_action('lsx_body_top','your_function_name'); 
@@ -265,7 +259,7 @@ This will do the following
 
  * Grab the Sass files from the components folder and move them into /sass/bootstrap/ so app.css can use the mixins
  * Concatenate and Minify all of the bootstraps js file and moves them into /js/ as scripts.min.js 
- 
+
 #### Install a new component for Node
 Change bootstrap to the name of the component here - https://www.npmjs.com/
 Its important to have the parameter --save,  so it save the package and version of the componenet to the package.json file.
@@ -278,7 +272,7 @@ Its important to have the parameter --save,  so it save the package and version 
 
  * Enable banners on custom post types - https://gist.github.com/krugazul/5eeb9482160a43f7afdb 
  * Add aditional content to the banner - https://gist.github.com/krugazul/7d855205857b76887094 
- 
+
 ### Templates
 
  * Redirect a user to a login form if they are logged out (with template) - https://gist.github.com/krugazul/e92749510d31d4a10906
