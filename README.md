@@ -33,7 +33,7 @@ LSX also supports a variety of other top quality plugins like Sensei, WP Job Man
 
 ## Documentation & Support
 
-Theme documentation is available on hhttps://www.lsdev.biz/documentation/lsx/ 
+Theme documentation is available on https://www.lsdev.biz/documentation/lsx/ 
 
 Support - https://www.lsdev.biz/contact-us/ 
 
