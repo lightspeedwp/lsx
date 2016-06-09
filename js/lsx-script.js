@@ -212,7 +212,7 @@ jQuery(document).ready(function($) {
 		$(window).resize(function() {
 			width = $(window).width();
 			
-			if (1186 < width){
+			if (1199 < width){
 				$('.navbar-nav li.dropdown a').each(function(){
 					$(this).removeClass('dropdown-toggle');
 					$(this).removeAttr('data-toggle');
