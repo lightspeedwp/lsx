@@ -180,18 +180,21 @@ jQuery(document).ready(function($) {
 		
 
 		//Bootstrat Menu
-		if(1199 < width){
-			$('.navbar-nav li.dropdown a').each(function(){
+		if (1199 < width) {
+			$('.navbar-nav li.dropdown a').each(function() {
 				$(this).removeClass('dropdown-toggle');
 				$(this).removeAttr('data-toggle');
 			});
 		}
-		if(1200 > width){
-			$('.dropdown').on('show.bs.dropdown', function () {
+		
+		$('.dropdown').on('show.bs.dropdown', function() {
+			var width = $(window).width();
+
+			if (1200 > width) {
 				$(this).siblings('.open').removeClass('open').find('a.dropdown-toggle').attr('data-toggle', 'dropdown');
 				$(this).find('a.dropdown-toggle').removeAttr('data-toggle');
-			});
-		}
+			}
+		});
 
 		// Parallax Effect on Banners
 		function parallax(){
@@ -212,13 +215,13 @@ jQuery(document).ready(function($) {
 		$(window).resize(function() {
 			width = $(window).width();
 			
-			if (1199 < width){
-				$('.navbar-nav li.dropdown a').each(function(){
+			if (1199 < width) {
+				$('.navbar-nav li.dropdown a').each(function() {
 					$(this).removeClass('dropdown-toggle');
 					$(this).removeAttr('data-toggle');
 				});
-			}else{
-				$('.navbar-nav li.dropdown a').each(function(){
+			} else {
+				$('.navbar-nav li.dropdown a').each(function() {
 					$(this).addClass('dropdown-toggle');
 					$(this).attr('data-toggle','dropdown');
 				});				
