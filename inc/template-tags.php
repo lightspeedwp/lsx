@@ -43,6 +43,7 @@ function lsx_breadcrumbs() {
   }
   
   $output = apply_filters('lsx_breadcrumbs',$output);
+
   echo $output;
 }
 add_action( 'lsx_content_top', 'lsx_breadcrumbs', 100 );

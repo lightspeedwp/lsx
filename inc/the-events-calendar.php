@@ -32,7 +32,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_events_styles' );
 
 function lsx_tribe_breadcrumbs($output) {
 	global $wp_query;
-	if(isset($wp_query->tribe_is_event) && true === $wp_query->tribe_is_event){
+	if( (isset($wp_query->tribe_is_event) && true === $wp_query->tribe_is_event) || (isset($wp_query->query_vars['post_type']) && !is_array($wp_query->query_vars['post_type']) && 'tribe_venue' === $wp_query->query_vars['post_type'])){
 		if(function_exists('woocommerce_breadcrumb')){
 		 	$closing_div = '</nav>';
 
