@@ -179,7 +179,13 @@ jQuery(document).ready(function($) {
 		var width = $(window).width();
 		
 
-		//Dropdown Toggle
+		//Bootstrat Menu
+		if(1199 < width){
+			$('.navbar-nav li.dropdown a').each(function(){
+				$(this).removeClass('dropdown-toggle');
+				$(this).removeAttr('data-toggle');
+			});
+		}
 		if(1200 > width){
 			$('.dropdown').on('show.bs.dropdown', function () {
 				$(this).siblings('.open').removeClass('open').find('a.dropdown-toggle').attr('data-toggle', 'dropdown');

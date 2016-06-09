@@ -383,4 +383,4 @@ function lsx_blog_header() {
 		</header>
 	<?php }
 }
-add_action('lsx_content_before', 'lsx_blog_header');
+add_action('lsx_content_top', 'lsx_blog_header');
