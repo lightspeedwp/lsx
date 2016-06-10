@@ -176,8 +176,7 @@ jQuery(document).ready(function($) {
 	        $(this).removeClass('active');
 	    });
 		
-		var width = $(window).width();
-		
+		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 		//Bootstrat Menu
 		if (1199 < width) {
@@ -188,7 +187,7 @@ jQuery(document).ready(function($) {
 		}
 		
 		$('.dropdown').on('show.bs.dropdown', function() {
-			var width = $(window).width();
+			width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
 			if (1200 > width) {
 				$(this).siblings('.open').removeClass('open').find('a.dropdown-toggle').attr('data-toggle', 'dropdown');
@@ -202,8 +201,7 @@ jQuery(document).ready(function($) {
 		    $('.page-banner').css('top', (scrolled * 0.1) + 'px');
 		}
 
-		if ( 991 < width && ! $("body").hasClass("home") && $("header.banner").hasClass("navbar-static-top") ) {
-
+		if (991 < width && ! $("body").hasClass("home") && $("header.banner").hasClass("navbar-static-top")) {
 		  	$(window).scroll(function(){
 			    parallax();
 			});
@@ -213,7 +211,7 @@ jQuery(document).ready(function($) {
 		
 		//Does everything it did on top
 		$(window).resize(function() {
-			width = $(window).width();
+			width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 			
 			if (1199 < width) {
 				$('.navbar-nav li.dropdown a').each(function() {
