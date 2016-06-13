@@ -243,7 +243,18 @@ jQuery(document).ready(function($) {
 					$(this).attr('data-toggle','dropdown');
 				});				
 			}
-		});	
+		});
+
+		// Sensei breadcrumb
+		if ($('body').hasClass('sensei')) {
+			if ($('header.archive-header').length > 0) {
+				$('.woocommerce-breadcrumb').insertAfter('.archive-header');
+
+				if ($('.woocommerce-breadcrumb').length > 1) {
+					$('.woocommerce-breadcrumb').slice(1).remove();
+				}
+			}
+		}
 
 	});
 });
