@@ -31,7 +31,6 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
  * Base
  */
 
-// LSX removes
 /* body.sensei,
  body.course-results {
   .wrap {
@@ -252,6 +251,15 @@ a.sensei-certificate-link {
       margin-right: 10px;
     }
   }
+}
+
+#main .lesson {
+  @include clearfix();
+  position: relative;
+  margin: 0 0 1.618em;
+  padding: 0 0 1em;
+  border-bottom: 1px solid #e2e2e2;
+  list-style: none;
 }
 
 .sensei-breadcrumb  {
