@@ -202,8 +202,27 @@ jQuery(document).ready(function($) {
 		}
 
 		if (991 < width && ! $("body").hasClass("home") && $("header.banner").hasClass("navbar-static-top")) {
+		  	parallax();
 		  	$(window).scroll(function(){
 			    parallax();
+			});
+		}
+
+		function parallaxHome(){
+			var headerHeight = $('header.banner').height(),
+				windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+				windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+			if (991 < windowWidth) {
+				$('.page-banner').css({'min-height': '0', 'height': (windowHeight - headerHeight) + 'px'});
+			} else {
+				$('.page-banner').css({'min-height': '', 'height': ''});
+			}
+		}
+		if (991 < width && $("body").hasClass("home")) {
+		  	 parallaxHome();
+		  	 $(window).resize(function(){
+			    parallaxHome();
 			});
 		}
 		
