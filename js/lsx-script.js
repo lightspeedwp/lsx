@@ -208,7 +208,7 @@ jQuery(document).ready(function($) {
 			});
 		}
 
-		function parallaxHome(){
+		function adjustHeightHome(){
 			var headerHeight = $('header.banner').height(),
 				windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
 				windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -220,9 +220,9 @@ jQuery(document).ready(function($) {
 			}
 		}
 		if (991 < width && $("body").hasClass("home")) {
-		  	 parallaxHome();
+		  	 adjustHeightHome();
 		  	 $(window).resize(function(){
-			    parallaxHome();
+			    adjustHeightHome();
 			});
 		}
 		
