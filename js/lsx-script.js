@@ -214,7 +214,9 @@ jQuery(document).ready(function($) {
 				windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 			if (991 < windowWidth) {
-				$('.page-banner').css({'min-height': '0', 'height': (windowHeight - headerHeight) + 'px'});
+				var height = windowHeight - headerHeight;
+				if ($("body").hasClass("admin-bar")) height -= 32;
+				$('.page-banner').css({'min-height': '0', 'height': height + 'px'});
 			} else {
 				$('.page-banner').css({'min-height': '', 'height': ''});
 			}
