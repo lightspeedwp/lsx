@@ -30,7 +30,7 @@ body.search {
 				&.col-md-12,
 				&.col-sm-12 {
 					.archive-header {
-						margin: -10px -9999rem 60px;
+						margin: -10px -9999rem 40px;
 					    padding: 60px 9999rem;
 
 					    @media (max-width: 991px) {
@@ -87,6 +87,10 @@ body.search {
 	}
 			
 	#primary {
+		article.no-thumb {
+			margin-top: 60px;
+		}
+
 		&.col-md-8,
 		&.col-sm-8 {
 			.archive-header {
@@ -127,7 +131,7 @@ body.search {
 		&.col-md-12,
 		&.col-sm-12 {
 			.archive-header {
-				margin: 0 -9999rem 60px;
+				margin: 0 -9999rem 40px;
 			    padding: 60px 9999rem;
 			    background: $primary-darker;
 			    color: $white;
