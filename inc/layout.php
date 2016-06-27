@@ -152,30 +152,6 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 }
 
 /**
- * Displays the hompage slider if Soliliquy Lite is active and the Customizer settings are set.
- *
- * @package lsx-theme
- * @subpackage layout
- * @category slider
- */
-if ( ! function_exists( 'lsx_homepage_slider' ) && function_exists('soliloquy')  ) { 
-	add_action( 'lsx_header_after', 'lsx_homepage_slider' );
-	function lsx_homepage_slider() {
-		$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
-		$show_on_front = get_option('show_on_front');
-		if('0' != $slider && (('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()))) {
-			 ?>
-				<section class="soliloquy-slider lsx-homepage-slider slider-<?php echo $slider;?>">
-					<?php soliloquy_slider( $slider ); ?>
-
-					<?php classybeds_enquire_bar(); ?>
-				</section>
-			<?php
-		}
-	}
-};
-
-/**
  * Displays the blog page title
  *
  * @package lsx-theme

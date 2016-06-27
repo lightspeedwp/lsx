@@ -42,38 +42,6 @@ if(class_exists('Sensei_WC')){
 }
 
 /**
- * Returns an array of the hompage slider.
- *
- * @package 	lsx
- * @subpackage	functions
- * @category	customizer
- * @return		$lsx_controls array()
- */
-function lsx_customizer_slider_controls($lsx_controls) {
-	if(function_exists('soliloquy')){
-		// add homepage slider section
-		$lsx_controls['sections']['lsx-homepage'] = array(
-				'title'       =>  'Homepage'
-		);
-		/// add the setting
-		$lsx_controls['settings']['lsx_homepage_slider']  = array(
-				'default'       =>  '0', //Default setting/value to save
-				'type'        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-				'transport'     =>  'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-		);
-		/// add the control
-		$lsx_controls['fields']['lsx_homepage_slider'] = array(
-				'label'         =>  esc_html__( 'Select Slider', 'lsx' ),
-				'section'       =>  'lsx-homepage',
-				'type'          =>  'select',
-				'choices'       =>  LSX_Theme_Customizer::get_slider_post_type_choices()
-		);		 
-	}	
-	return $lsx_controls;
-}
-add_filter('lsx_customizer_controls','lsx_customizer_slider_controls');
-
-/**
  * Returns an array of for Colour Scheme Picker.
  *
  * @package 	lsx

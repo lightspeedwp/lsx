@@ -256,7 +256,6 @@ if(!function_exists('lsx_page_banner')){
 
 		$show_on_front = get_option('show_on_front','posts');
 		$full_experience = get_theme_mod('home_full_experience_enable',false);
-		$slider = get_theme_mod( 'lsx_homepage_slider', 0 );
 		
 		if('page' == $show_on_front && is_front_page() && false != $full_experience) { return; }
 		

@@ -290,31 +290,6 @@ if(!class_exists('LSX_Theme_Customizer')){
 		<?php
 
 		}
-
-		public static function get_slider_post_type_choices() {
-		
-			/* Set an array. */
-			$data = array(
-					'0' => __( 'Disable', 'lsx' )
-			);
-		
-			/* Get Soliloquy Sliders. */
-			$query_args = array(
-					'post_type' 		=> 'soliloquy',
-					'posts_per_page' 	=> -1
-			);
-		
-			$items = get_posts( $query_args );
-		
-			/* Loop sliders data. */
-			foreach ( $items as $item ) {
-				$data[$item->ID] = $item->post_title;
-			}
-		
-			/* Return array. */
-			return $data;
-		
-		}	
 		
 		/**
 		 * Returns the site title via ajax
