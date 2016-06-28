@@ -29,6 +29,11 @@ body.search {
 				border-radius: 5px;
 				box-shadow: 1px 1px 1px 1px #eee;
 				margin: 30px 0 !important;
+				overflow: hidden;
+
+				&:last-child {
+					margin-bottom: 60px !important;
+				}
 
 				header.entry-header {
 					h1.entry-title {
