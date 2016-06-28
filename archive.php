@@ -21,7 +21,7 @@ get_header(); ?>
 
 			<header class="archive-header">
 				<h1 class="archive-title">
-					<?php if ( has_post_format() && !is_category() && !is_tag() ) { ?>
+					<?php if ( has_post_format() && !is_category() && !is_tag() && !is_date() ) { ?>
 						Type: <?php the_archive_title(); ?>
 					<?php } else { ?>
 						<?php the_archive_title(); ?>
