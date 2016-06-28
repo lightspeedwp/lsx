@@ -43,29 +43,30 @@
 		$format = lsx_translate_format_to_fontawesome($format);
 		?>
 
-		<?php if ( has_post_thumbnail() ) { ?>
-			<a href="<?php echo esc_url($archive_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
-		<?php } else { ?>
-			<a href="<?php echo esc_url($archive_link) ?>" class="format-link fa fa-<?php echo $format ?>"></a>
-		<?php } ?>
-
-		<div class="entry-meta">
-			<?php lsx_post_meta(); ?>	
-		</div><!-- .footer-meta -->
-
 		<h1 class="entry-title">
+			<?php if ( has_post_thumbnail() ) { ?>
+				<a href="<?php echo esc_url($archive_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
+			<?php } else { ?>
+				<a href="<?php echo esc_url($archive_link) ?>" class="format-link fa fa-<?php echo $format ?>"></a>
+			<?php } ?>
+
 			<?php if ( has_post_format( array('link') ) ) { ?>
 				<a href="<?php echo lsx_get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="fa fa-external-link"></span></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			<?php } ?>
+
 			<?php if ( is_sticky() && has_post_thumbnail() ) { ?>
 				<span class="label label-default label-sticky"><?php _e('Featured','lsx'); ?></span>
 			<?php 
 				} elseif ( is_sticky() && ! has_post_thumbnail() ) { ?>
 					<span class="label label-default label-sticky no-thumb"><?php _e('Featured','lsx'); ?></span>
 			<?php } ?>
-		</h1>		
+		</h1>
+
+		<div class="entry-meta">
+			<?php lsx_post_meta(); ?>
+		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->	
 
 	<?php if ( !is_singular() && !has_post_format( array('video', 'audio', 'quote', 'link') ) ) : // Only display Excerpts for Search and Archives ?>
@@ -93,8 +94,16 @@
 	<?php if ( has_tag() ) { ?>
 		<div class="post-tags-wrapper">
 			<div class="post-tags">
-				<?php echo get_the_tag_list(''); ?>
+				<span><?php _e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
 			</div>
+			
+			<?php if ( comments_open() && ! empty( get_comments_number() ) ) : ?>
+				<div class="post-comments">
+					<!--<a href="<?php the_permalink() ?>">-->
+						<?php printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'lsx' ), number_format_i18n( get_comments_number() ) ) ?>
+					<!--</a>-->
+				</div>
+			<?php endif ?>
 		</div>
 	<?php } ?>
 
