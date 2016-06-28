@@ -27,30 +27,6 @@
 		} );
 	} );
 	
-	//Update site background color...
-	wp.customize( 'lsx_color_scheme', function( value ) {
-
-		value.bind( function( newval ) {
-			
-			$('link[rel="stylesheet"]').each(function(){
-				
-				if ($(this).attr('href').indexOf(lsx_customizer_params.template_directory+"/css/color-scheme") !=-1) {
-					$("<link/>", {
-						   rel: "stylesheet",
-						   type: "text/css",
-						   href: lsx_customizer_params.template_directory+"/css/color-scheme-"+newval+".css"
-					}).appendTo("head");					
-					$(this).remove();
-					return;
-				}
-			});
-			
-
-			
-		} );
-	} );
-	
-	
 	//Update the headers layout.css
     wp.customize("lsx_header_layout", function(value) {
         value.bind(function(newval) {

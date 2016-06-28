@@ -14,9 +14,6 @@ function lsx_scripts() {
 	
 	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/css/app.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
 	
-	$style = get_theme_mod( 'lsx_color_scheme','default');
-	wp_enqueue_style('lsx_color_scheme', get_template_directory_uri() . '/css/color-scheme-'.$style.'.css', false, '48a2bd26791de3fa7cab2d2af5fec6a2');
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

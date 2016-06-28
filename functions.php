@@ -42,38 +42,6 @@ if(class_exists('Sensei_WC')){
 }
 
 /**
- * Returns an array of for Colour Scheme Picker.
- *
- * @package 	lsx
- * @subpackage	functions
- * @category	customizer
- * @return		$lsx_controls array()
- */
-function lsx_customizer_colour_scheme_controls($lsx_controls) {
-	$lsx_controls['settings']['lsx_color_scheme']  = array(
-			'default'       =>  'default', //Default setting/value to save
-			'type'	        =>  'theme_mod', //Is this an 'option' or a 'theme_mod'?
-			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-	);
-	$lsx_controls['fields']['lsx_color_scheme'] = array(
-			'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
-			'section'       =>  'colors',
-			'type'          =>  'select',
-			'choices'  => array(
-		 		'default' => esc_html__( 'Default', 'lsx' ),
-					'red' => esc_html__( 'Red', 'lsx' ),
-					'green' => esc_html__( 'Green', 'lsx' ),
-					'brown' => esc_html__( 'Brown', 'lsx' ),
-					'orange' => esc_html__( 'Orange', 'lsx' )
-			),
-			'control'   =>  'LSX_Customize_Colour_Control',
-			'priority' => 1,
-	);	
-	return $lsx_controls;
-}
-add_filter('lsx_customizer_controls','lsx_customizer_colour_scheme_controls');
-
-/**
  * Returns an array of the layout panel.
  *
  * @package 	lsx
