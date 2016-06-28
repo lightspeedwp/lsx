@@ -253,17 +253,6 @@ $primary-lighter: #4a9de4;
 	overflow: visible !important;
 	margin-bottom: 40px;
 
-	.stars {
-		max-height: 24px;
-		
-		.genericon-star,
-		.genericon-rating-full {
-			color: #ffcc00;
-			font-size: 22px;
-			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
-		}
-	}
-
 	.child-policy {
 		margin-bottom: 40px;
 	}
@@ -357,181 +346,6 @@ $primary-lighter: #4a9de4;
 	}
 }
 
-@mixin lsx-masonry-post-type-styles {
-	overflow: visible !important;
-	margin-bottom: 60px !important;
-
-	@media screen and (max-width: 767px) {
-		margin-bottom: 40px !important;
-	}
-
-	@media screen and (max-width: 500px) {
-		margin-bottom: 20px !important;
-	}
-
-	.stars {
-		max-height: 24px;
-
-		.genericon-star {
-			color: #ffcc00;
-			font-size: 22px;
-			@include text-shadow(0 1px 0px rgba(0, 0, 0, .2));
-		}
-	}
-
-	&.active {
-		.accommodation-content {
-			background: $white !important;
-		}
-	}
-
-	[class*="content-wrapper"] {
-		@include lsx-box;
-
-		[class*="thumbnail"] {
-			@include border-radius-top(3px);
-
-			img {
-				width: 100%;
-				opacity: 1 !important;
-				@include border-radius-top(3px);
-			}
-		}
-
-		[class*="content"] {
-			background: #f3f3f3;
-			font-size: 15px;
-			text-align: left;
-			@include transition(all .1s ease-in-out);
-
-			&:hover,
-			&:focus,
-			&:hover {
-				background: $white;
-				cursor: default;
-			}
-
-			[class*="-top"] {
-				padding: 15px 20px;
-				border-bottom: 1px solid #ddd;
-
-				& > div {
-					.connected-property,
-					.property-location {
-						font-size: 16px;
-					}
-
-					.stars {
-						float: right;
-						margin-top: 9px;
-						margin-right: 4px;
-
-						@media screen and (max-width: 450px) {
-
-						}
-
-						.genericon {
-							color: #ffcc00;
-							font-size: 18px;
-							width: 12px;
-						}
-					}
-				}
-			}
-
-			h3 {
-				margin: {
-					top: 0;
-					bottom: 0;
-				}
-
-				a {
-					font: {
-						size: 20px;
-						weight: bold;
-					}
-					color: $black;
-					@include transition(all .1s ease-in-out);
-
-					&:hover {
-						color: $mid-grey;
-					}
-				}
-			}
-
-			.price-wrapper {
-				padding: 15px 20px;
-				border: {
-					bottom: 1px solid #ddd;
-				}
-
-				.price {
-					color: #999;
-
-					.price-inner {
-						display: inline-block;
-						margin-top: -3px;
-						color: $grey;
-						font: {
-							size: 17px;
-							weight: bold;
-						}
-						vertical-align: middle;
-
-						.hb_symbol {
-							font-size: 15px;
-							vertical-align: top;
-							margin-right: 3px;
-						}
-					}
-				}
-			}
-
-			[class*="-excerpt"] {
-				height: 190px;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				margin: 0;
-				padding: 15px 20px;
-				border-bottom: 1px solid #ddd;
-			}
-
-			[class*="-bottom"] {
-				font-size: 16px;
-				@include lsx-clear-div;
-
-				[class*="-country"] {
-					display: inline-block;
-					padding: 8px 20px;
-
-					.genericon {
-						vertical-align: middle;
- 						font-size: 18px;
-					}
-				}
-
-				[class*="-read-more"] {
-					float: right;
-					padding: 8px 20px;
-					border-left: 1px solid #ddd;
-					-webkit-border-bottom-right-radius: 3px;
-					-moz-border-bottom-right-radius: 3px;
-					border-bottom-right-radius: 3px;
-					@include transition(all .1s ease-in-out);
-
-					&:hover,
-					&:active,
-					&:focus {
-						border-color: $primary;
-						background: $primary;
-						color: $white;
-					}
-				}
-			}
-		}
-	}
-}
-
 @mixin lsx-box {
 	background: $white;
 	text-align: center;
@@ -569,7 +383,7 @@ $primary-lighter: #4a9de4;
 		p {
 			margin: 0 0 10px;
 
-			.genericon {
+			.fa {
 				vertical-align: middle;
 			}
 		}
@@ -759,9 +573,9 @@ $primary-lighter: #4a9de4;
 			margin: 0;
 		}
 
-		.genericon {
+		.fa {
 			display: inline-block !important;
-			margin-right: 5px;
+			margin-right: 8px;
 			vertical-align: middle;
 		}
 	}

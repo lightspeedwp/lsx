@@ -44,9 +44,10 @@ function lsx_scripts() {
 	//Set the columns for the archives
 	$param_array['columns'] = apply_filters('lsx_archive_column_number',3);
 	wp_localize_script( 'lsx_script', 'lsx_params', $param_array );
+
+
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css');
 	
-	
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css' );
 	
 	if(is_child_theme() && file_exists(get_stylesheet_directory() . '/custom.css')) {
 		wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css' );

@@ -324,8 +324,8 @@ body.single-post {
 				color: $primary;
 			}
 
-			.genericon {
-				font-size: 18px;
+			.fa {
+				font-size: 12px;
 				vertical-align: middle;
 			}
 		}
@@ -489,19 +489,27 @@ article {
 	}
 
 	&.post_format-post-format-link {
-		.genericon {
-			font-size: 36px;
-			vertical-align: middle;
+		.entry-title {
+			.fa {
+				font-size: 20px;
+				padding: 8px;
+				vertical-align: middle;
+			}
 		}
 	}
 
 	.format-link {
-		font-size: 40px;
+		font-size: 30px;
 		color: $white;
 		background-color: $primary;
-		margin: -40px 0 30px;
-		padding: 17px;
+		margin: -37px 0 20px;
 		@include border-radius(100%);
+
+		width: 74px;
+		height: 74px;
+		line-height: 74px;
+		text-align: center;
+		overflow: hidden;
 
 		.archive #primary.col-sm-8,
 		.archive #primary.col-md-8 {
@@ -697,7 +705,7 @@ article {
 			}
 		}
 
-		.genericon {
+		.fa {
 			vertical-align: middle;
 		}
 	}
@@ -711,7 +719,7 @@ article {
 		float: left;
 		margin-right: 20px;
 
-		.genericon {
+		.fa {
 			margin-right: 5px;
 		}
 	}

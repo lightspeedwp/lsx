@@ -31,12 +31,13 @@
 		$format = 'standard';
 	}
 	$format_link = get_post_format_link($format);
+	$format = lsx_translate_format_to_fontawesome($format);
 	?>
 	<div class="entry-meta">
 		<?php if ( has_post_thumbnail() ) { ?>
-			<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb genericon genericon-<?php echo $format ?>"></a>
+			<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
 		<?php } else { ?>
-			<a href="<?php echo esc_url($format_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+			<a href="<?php echo esc_url($format_link) ?>" class="format-link fa fa-<?php echo $format ?>"></a>
 		<?php } ?>
 
 		<?php lsx_post_meta(); ?>	
@@ -55,7 +56,7 @@
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() ) : ?>
-				<a class="comments-link post-meta-link" data-toggle="collapse" href="#comments-collapse"><strong><?php echo get_comments_number() ?></strong> <?php _e('Comments','lsx'); ?> <span class="genericon genericon-expand"></span></a>
+				<a class="comments-link post-meta-link" data-toggle="collapse" href="#comments-collapse"><strong><?php echo get_comments_number() ?></strong> <?php _e('Comments','lsx'); ?> <span class="fa fa-chevron-down"></span></a>
 
 				<div class="collapse" id="comments-collapse">
 					<?php 

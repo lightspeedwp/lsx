@@ -371,9 +371,9 @@ nav {
 					}
 
 					&:before {
-						display: inline-block;
+						display: block;
 						font: {
-							family: "Genericons";
+							family: "fontawesome";
 							size: 24px;
 							weight: normal;
 							variant: normal;
@@ -394,104 +394,104 @@ nav {
 					}
 
 					&[href$="/feed/"]:before {
-						content: "\f413";
+						content: "\f09e";
 					}
 
 					&[href*="codepen.io"]:before {
-						content: "\f216";
+						content: "\f1cb";
 					}
 
 					&[href*="digg.com"]:before {
-						content: "\f221";
+						content: "\f1a6";
 					}
 
 					&[href*="dribbble.com"]:before {
-						content: "\f201";
+						content: "\f17d";
 					}
 
 					&[href*="dropbox.com"]:before {
-						content: "\f225";
+						content: "\f16b";
 					}
 
 					&[href*="facebook.com"]:before {
-						content: "\f203";
+						content: "\f230";
 					}
 
 					&[href*="flickr.com"]:before {
-						content: "\f211";
+						content: "\f16e";
 					}
 
 					&[href*="foursquare.com"]:before {
-						content: "\f226";
+						content: "\f180";
 					}
 
 					&[href*="plus.google.com"]:before {
-						content: "\f206";
+						content: "\f0d5";
 					}
 
 					&[href*="github.com"]:before {
-						content: "\f200";
+						content: "\f09b";
 					}
 
 					&[href*="instagram.com"]:before {
-						content: "\f215";
+						content: "\f16d";
 					}
 
 					&[href*="linkedin.com"]:before {
-						content: "\f208";
+						content: "\f0e1";
 					}
 
 					&[href*="pinterest.com"]:before {
-						content: "\f210";
+						content: "\f0d2";
 					}
 
 					&[href*="getpocket.com"]:before {
-						content: "\f224";
+						content: "\f265";
 					}
 
 					&[href*="polldaddy.com"]:before {
-						content: "\f217";
+						content: "\f128";
 					}
 
 					&[href*="reddit.com"]:before {
-						content: "\f222";
+						content: "\f1a1";
 					}
 
 					&[href*="stumbleupon.com"]:before {
-						content: "\f223";
+						content: "\f1a4";
 					}
 
 					&[href*="tumblr.com"]:before {
-						content: "\f214";
+						content: "\f173";
 					}
 
 					&[href*="twitter.com"]:before {
-						content: "\f202";
+						content: "\f099";
 					}
 
 					&[href*="vimeo.com"]:before {
-						content: "\f212";
+						content: "\f27d";
 					}
 
 					&[href*="wordpress.com"]:before,
 					&[href*="wordpress.org"]:before {
-						content: "\f205";
+						content: "\f19a";
 					}
 
 					&[href*="youtube.com"]:before {
-						content: "\f213";
+						content: "\f167";
 					}
 
 					&[href*="mailto:"]:before {
-						content: "\f410";
+						content: "\f0e0";
 					}
 
 					&[href*="spotify.com"]:before {
-						content: "\f515";
+						content: "\f1bc";
 					}
 
 					&[href*="twitch.tv"]:before {
-						content: "\f516";
+						content: "\f1e8";
 					}
 				}
 			}
@@ -675,11 +675,11 @@ nav {
 					&:before {
 						float: left;
 						font: {
-							family: genericons;
+							family: fontawesome;
 							size: 17px;
 							weight: bold;
 						}
-						margin-right: 7px;
+						margin-right: 9px;
 						color: $primary;
 						@include transition(all .1s ease-in-out);
 
@@ -704,7 +704,7 @@ nav {
 				&.tel {
 					a {
 						&:before {
-							content: '\f50c';
+							content: '\f095';
 							font-size: 17px;
 						}
 					}
@@ -713,7 +713,7 @@ nav {
 				&.email {
 					a {
 						&:before {
-							content: '\f410';
+							content: '\f0e0';
 							font-size: 18px;
 						}
 					}
@@ -722,9 +722,8 @@ nav {
 				&.map {
 					a {
 						&:before {
-							content: '\f417';
+							content: '\f041';
 							font-size: 20px;
-							margin-right: 4px;
 						}
 					}
 				}
@@ -736,8 +735,8 @@ nav {
 
 					a {
 						&:before {
-							content: '\f453';
-							font-size: 16px;
+							content: '\f10b';
+							font-size: 22px;
 						}
 					}
 				}

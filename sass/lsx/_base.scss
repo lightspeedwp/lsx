@@ -375,8 +375,7 @@ img,
 				font-weight: bold;
 				z-index: 9999;
 
-				.genericon {
-					color: $blacker !important;
+				.fa {
 					font-weight: bold;
 				}
 			}
@@ -417,12 +416,13 @@ img,
 }
 
 .search-submit {
-	padding: 11px 22px;
+	padding: 0 22px;
 	line-height: 1.2;
 
-	.genericon {
+	.fa {
 		vertical-align: middle;
-		font-size: 21px;
+		font-size: 16px;
+		line-height: 44px;
 	}
 
 	header.banner & {
@@ -431,8 +431,9 @@ img,
 	    color: $black !important;
 	    z-index: 999;
 
-	    .genericon {
-	    	font-size: 19px;
+	    .fa {
+	    	font-size: 14px;
+			line-height: 1;
 	    	background: $white;
 	    }
 
@@ -441,7 +442,7 @@ img,
 	    &:focus {
 	    	color: $blacker;
 
-	    	.genericon {
+	    	.fa {
 	    		font-weight: bold;
 	    	}
 	    }

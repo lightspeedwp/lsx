@@ -40,12 +40,13 @@
 		}else{
 			$archive_link = get_post_format_link($format);
 		}
+		$format = lsx_translate_format_to_fontawesome($format);
 		?>
 
 		<?php if ( has_post_thumbnail() ) { ?>
-			<a href="<?php echo esc_url($archive_link) ?>" class="format-link has-thumb genericon genericon-<?php echo $format ?>"></a>
+			<a href="<?php echo esc_url($archive_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
 		<?php } else { ?>
-			<a href="<?php echo esc_url($archive_link) ?>" class="format-link genericon genericon-<?php echo $format ?>"></a>
+			<a href="<?php echo esc_url($archive_link) ?>" class="format-link fa fa-<?php echo $format ?>"></a>
 		<?php } ?>
 
 		<div class="entry-meta">
@@ -54,7 +55,7 @@
 
 		<h1 class="entry-title">
 			<?php if ( has_post_format( array('link') ) ) { ?>
-				<a href="<?php echo lsx_get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="genericon genericon-external"></span></a>
+				<a href="<?php echo lsx_get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="fa fa-external-link"></span></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			<?php } ?>

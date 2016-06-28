@@ -134,23 +134,47 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 }
 
 /**
- * Add customisable post format html.
+ * Translate post format to Font Awesome class
  */
 
-if ( ! function_exists( 'lsx_post_format' ) ) {
-	function lsx_post_format() {
-		
-		$post_format = get_post_format();
-		
-		if('standard' != $post_format && '' != $post_format) {
-			$format_link = get_post_format_link($post_format);
-			?>
-	    	<div class="post-format">
-	    		<?php echo '<span class="genericon"></span><a href="' . esc_url($format_link) . '" title="' . sprintf( __( "View all %s posts" , 'lsx' ), ucfirst($post_format) ) . '" ' . '>' . ucfirst($post_format) . '</a> '; ?>
-	    	</div>			
-			<?php 
+if ( ! function_exists( 'lsx_translate_format_to_fontawesome' ) ) {
+	function lsx_translate_format_to_fontawesome( $format ) {
+		switch ( $format ) {
+			case 'image':
+				$format = 'camera';
+				break;
+			
+			case 'video':
+				$format = 'play';
+				break;
+			
+			case 'gallery':
+				$format = 'picture-o';
+				break;
+			
+			case 'audio':
+				$format = 'volume-up';
+				break;
+			
+			case 'link':
+				$format = 'link';
+				break;
+			
+			case 'quote':
+				$format = 'quote-right';
+				break;
+			
+			case 'aside':
+				$format = 'circle-o';
+				break;
+			
+			default:
+				$format = 'file-text-o';
+				break;
 		}
-	} // End lsx_post_format()
+
+		return $format;
+	}
 }
 
 /**
@@ -168,7 +192,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);
 				if(false != $client){ ?>
 					<div class="portfolio-client">
-						<span><span class="genericon genericon-user"></span><?php _e('Client','lsx'); ?></span>
+						<span><span class="fa fa-user"></span><?php _e('Client','lsx'); ?></span>
 						<span><?php echo $client ?></span>
 					</div>				
 			<?php }	?>
@@ -179,7 +203,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				if($portfolio_type){
 					?>
 					<div class="portfolio-industry">
-						<span><span class="genericon genericon-category"></span><?php _e('Industry','lsx'); ?></span>
+						<span><span class="fa fa-folder-open"></span><?php _e('Industry','lsx'); ?></span>
 						<?php echo $portfolio_type; ?>
 					</div>			
 			<?php } ?>
@@ -188,7 +212,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				$services = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
 				if(false != $services){ ?>
 					<div class="portfolio-services">
-						<span><span class="genericon genericon-cog"></span><?php _e('Services','lsx'); ?></span>
+						<span><span class="fa fa-cog"></span><?php _e('Services','lsx'); ?></span>
 						<?php echo $services ?>
 					</div>				
 			<?php }	?>
@@ -197,7 +221,7 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				$website = esc_url( get_post_meta(get_the_ID(),'lsx-website',true) );
 				if(false != $website){ ?>
 					<div class="portfolio-website">
-						<span><span class="genericon genericon-link"></span><?php _e('Website','lsx'); ?></span>
+						<span><span class="fa fa-link"></span><?php _e('Website','lsx'); ?></span>
 						<a target="_blank" href="<?php echo esc_url($website); ?>"><?php echo $website ?></a>
 					</div>				
 			<?php }	?>

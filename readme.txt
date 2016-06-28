@@ -40,7 +40,7 @@ Support - https://www.lsdev.biz/contact-us/
 
 * WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
 * Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* Genericons (http://genericons.com/) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html) 
+* Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) 
 
 == Frequently Asked Questions ==
 

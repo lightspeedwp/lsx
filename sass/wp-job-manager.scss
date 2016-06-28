@@ -151,16 +151,16 @@ body.single-resume {
 			.location,
 			.candidate-location {
 				&:before {
-					content: '\f417';
+					content: '\e81d';
 					display: inline-block;
 				    float: left;
 				    font: {
-				    	family: genericons;
-				    	size: 20px;
+				    	family: job-manager;
+				    	size: 16px;
 				    }
 				    margin: {
 				    	top: 1px;
-				    	right: 3px;
+				    	right: 6px;
 				    }
 				}
 			}
@@ -193,11 +193,11 @@ body.single-resume {
 			padding: 0 !important;
 
 			&:before {
-				content: '\f418';
-			    font-family: genericons;
-			    font-size: 22px;
+				content: '\f00c';
+			    font-family: fontawesome;
+			    font-size: 12px;
 			    vertical-align: middle;
-			    margin-right: 2px;
+			    margin-right: 5px;
 			}
 		}
 	}
