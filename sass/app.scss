@@ -12,6 +12,135 @@
 	}
 }
 
+.masonry { 
+	margin-left: -10px;
+	margin-right: -10px;
+
+	& > h2 {
+		clear: both;
+		margin-bottom: 30px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.col-md-4,
+	.col-md-6 {
+		article {
+			width: 100% !important;
+			margin-bottom: 40px !important;	
+		}
+	}
+
+	.col-md-8 & {
+		article {
+			width: 50% !important;
+			margin-bottom: 20px;
+
+			@media screen and (max-width: 540px) {
+				width: 100% !important;
+			}
+		}
+	}
+	
+	.wrap & .accommodation {
+		margin-bottom: 20px !important;
+		
+		& [class*="content-wrapper"] {
+			margin-bottom: 0px;
+		}
+	}
+	
+	article {
+		width: 33.3%;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		display: block;
+		float: left;
+		height: auto !important;
+
+		&.column-4 {
+			@include lsx-masonry-styles;
+
+			[class*="-content-wrapper"] {
+				[class*="-thumbnail"] {
+					min-height: 100%;
+				}
+			}
+		}
+
+		[class*="-content-wrapper"] {
+			position: relative;
+			background: $blacker;
+			margin-bottom: 0;
+
+			[class*="-thumbnail"] {
+				overflow: hidden;
+
+				a {
+					border: none !important;
+				}
+
+				img {
+					width: 100%;
+					@include transition(all .4s ease-in-out);
+
+					@media screen and (max-width: 540px) {
+						min-height: 0;
+					}
+				}
+			}
+
+			[class*="-title"] {
+				font: {
+					size: 20px;
+					weight: bold;
+				}
+				color: white;
+				text-align: center;
+				padding: 0 20px;
+				margin-bottom: 10px;
+				display: block;
+				position: absolute;
+				line-height: 1.4;
+				top: 50%;
+				margin: 0 auto;
+				width: 100%;
+				border: none !important;
+				text-transform: capitalize;
+				@include transition(all 0.4s ease-in-out);
+				@include text-shadow(0px -3px 50px rgba(0, 0, 0, 0.3), 2px 2px 1px rgba(0, 0, 0, 0.8));
+
+				@media screen and (max-width: 991px) {
+					font-size: 18px;
+				}
+
+				@media screen and (max-width: 540px) {
+					font-weight: bold;
+				}
+			}
+		}
+
+		&.active,
+		&.restaurant:hover,
+		&.offer:hover {
+			img {
+				opacity: .1;
+			}
+		}
+
+		@media screen and (max-width: 991px) {
+			width: 50% !important;
+		}
+
+		@media screen and (max-width: 540px) {
+			width: 100% !important;
+			margin-bottom: 20px;
+		}
+	}
+}
+
 // Archive Filters
 
 #filterNav { 
