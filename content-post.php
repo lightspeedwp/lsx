@@ -73,22 +73,26 @@
 	</div><!-- .entry-content -->
 
 	<footer class="footer-meta">
-		<div class="post-tags-wrapper">
-			<div class="post-tags">
-				<span><?php _e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
-			</div>
+		<?php if ( has_tag() || ( function_exists( 'sharing_display' ) || class_exists( 'Jetpack_Likes' ) ) ) : ?>
+			<div class="post-tags-wrapper">
+				<?php if ( has_tag() ) : ?>
+					<div class="post-tags">
+						<span><?php _e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
+					</div>
+				<?php endif ?>
 
-			<?php  
-				if ( function_exists( 'sharing_display' ) ) {
-					sharing_display( '', true );
-				}
-				
-				if ( class_exists( 'Jetpack_Likes' ) ) {
-					$custom_likes = new Jetpack_Likes;
-					echo $custom_likes->post_likes( '' );
-				}
-			?>
-		</div>
+				<?php  
+					if ( function_exists( 'sharing_display' ) ) {
+						sharing_display( '', true );
+					}
+					
+					if ( class_exists( 'Jetpack_Likes' ) ) {
+						$custom_likes = new Jetpack_Likes;
+						echo $custom_likes->post_likes( '' );
+					}
+				?>
+			</div>
+		<?php endif ?>
 
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template

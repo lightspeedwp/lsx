@@ -90,12 +90,14 @@
 
 		</div><!-- .entry-content -->
 	<?php endif; ?>
-
-	<?php if ( has_tag() ) { ?>
+	
+	<?php if ( has_tag() || ( comments_open() && ! empty( get_comments_number() ) ) ) : ?>
 		<div class="post-tags-wrapper">
-			<div class="post-tags">
-				<span><?php _e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
-			</div>
+			<?php if ( has_tag() ) : ?>
+				<div class="post-tags">
+					<span><?php _e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
+				</div>
+			<?php endif ?>
 			
 			<?php if ( comments_open() && ! empty( get_comments_number() ) ) : ?>
 				<div class="post-comments">
@@ -105,7 +107,7 @@
 				</div>
 			<?php endif ?>
 		</div>
-	<?php } ?>
+	<?php endif ?>
 
 	<?php lsx_entry_bottom(); ?>
 
