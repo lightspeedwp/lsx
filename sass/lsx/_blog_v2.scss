@@ -380,11 +380,10 @@ body.search {
 }
 
 
-// ---------- Single (post, page) ----------
+// ---------- Single (post) ----------
 
 
-body.single-post,
-body.page {
+body.single-post {
 	@extend %module-single-banner;
 
 	.wrap {
@@ -422,6 +421,50 @@ body.page {
 				.edit-link {
 					display: none;
 				}
+			}
+		}
+	}
+}
+
+
+// ---------- Single (other) ----------
+
+
+body.single:not(.single-post) {
+	.wrap {
+		#primary {
+			article {
+				@extend %module-single-no-box;
+
+				.entry-content {
+					@extend %module-single-text;
+				}
+
+				//.lsx-breaker,
+				.edit-link {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+
+// ---------- Single (page) ----------
+
+
+body.page {
+	@extend %module-single-banner;
+
+	.wrap {
+		#primary {
+			.entry-content {
+				@extend %module-single-text;
+			}
+
+			//.lsx-breaker,
+			.edit-link {
+				display: none;
 			}
 		}
 	}
