@@ -156,6 +156,24 @@
 	}
 }
 
+%module-single-related-posts {
+	margin-top: 30px;
+	padding: 20px 0 13px 0;
+
+	h3.jp-relatedposts-headline {
+		font-size: 30px;
+		text-align: center;
+		float: none;
+		display: block;
+
+		em {
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
 %module-single-footer_archive {
 	@include lsx-clear-div;
 					
@@ -421,6 +439,25 @@
 // ---------- Placeholders Comments ----------
 
 
+%module-single-comments-cta {
+	border-top: none;
+	font-size: 15px;
+	padding: 10px 0 5px 0;
+	width: 100%;
+	text-align: left;
+	display: inline-block;
+	font-family: inherit;
+
+	&:before {
+		@extend %font-awesome;
+		content: '\f086';
+	}
+
+	.fa {
+		margin-left: 3px;
+	}
+}
+
 %module-single-comments-list {
 	padding-top: 20px;
 
@@ -526,6 +563,12 @@
 				@media only screen and (min-width: 768px) {
 					width: 49%;
 				}
+			}
+		}
+
+		.comment-subscription-form {
+			label {
+				font-size: 15px
 			}
 		}
 	}
@@ -686,27 +729,16 @@ body.single-post {
 					@extend %module-single-text;
 				}
 
+				#jp-relatedposts {
+					@extend %module-single-related-posts;
+				}
+
 				.post-tags-wrapper {
 					@extend %module-single-footer_single;
 				}
 
 				.post-meta-link {
-					border-top: none;
-					font-size: 15px;
-					padding: 10px 0 5px 0;
-					width: 100%;
-					text-align: left;
-					display: inline-block;
-					font-family: inherit;
-
-					&:before {
-						@extend %font-awesome;
-						content: '\f086';
-					}
-
-					.fa {
-						margin-left: 3px;
-					}
+					@extend %module-single-comments-cta;
 				}
 
 				#comments-collapse {

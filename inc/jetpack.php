@@ -106,15 +106,30 @@ add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' , 100 );
  * @subpackage jetpack
  * @category portfolio
  */
-function lsx_remove_single_portfolio_related_posts() {
-	
-	if(is_single() && 'jetpack-portfolio' == get_post_type() && class_exists('Jetpack_RelatedPosts')){
+function lsx_remove_portfolio_related_posts() {
+	if ( is_single() && 'jetpack-portfolio' == get_post_type() && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		$jprp = Jetpack_RelatedPosts::init();
 		$callback = array( $jprp, 'filter_add_target_to_dom' );
 		remove_filter( 'the_content', $callback, 40 );
 	}
 }
-add_filter( 'wp', 'lsx_remove_single_portfolio_related_posts', 20 );
+add_filter( 'wp', 'lsx_remove_portfolio_related_posts', 20 );
+
+/**
+ * Remove the related posts from below the content area.
+ * 
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+function lsx_remove_single_related_posts() {
+    if ( is_single() && class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'lsx_remove_single_related_posts', 20 );
 
 /**
  * A template tag to call the Portfolios Related posts
