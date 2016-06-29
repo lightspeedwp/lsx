@@ -359,6 +359,7 @@
 	.jp-relatedposts-items-visual {
 		display: inline-block;
 		margin: 0;
+		width: 100%;
 
 		.jp-relatedposts-post {
 			border-radius: 5px;
@@ -759,13 +760,13 @@ body.single-post {
 					}
 				}
 
-				/*&.post_format-post-format-quote {
+				&.post_format-post-format-quote {
 					header.entry-header {
 						h1.entry-title {
 							@extend %module-single-title_quote;
 						}
 					}
-				}*/
+				}
 
 				.entry-meta {
 					@extend %module-single-meta;
