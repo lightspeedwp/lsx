@@ -131,7 +131,7 @@ function lsx_portfolio_related_posts(){
 			</div>
 		</div>			
 	<?php }
-} 
+}
 
 /**
  * Remove the sharing from below the content on single portfolio pages.
@@ -141,20 +141,35 @@ function lsx_portfolio_related_posts(){
  * @category portfolio
  */
 function lsx_portfolio_remove_share() {
-
-	if( (is_single() && 'jetpack-portfolio' == get_post_type())
-	 || is_page_template('page-templates/template-portfolio.php')){
-
+	if ( ( is_single() && 'jetpack-portfolio' == get_post_type() ) || is_page_template( 'page-templates/template-portfolio.php' ) ) {
 		remove_filter( 'the_content', 'sharing_display',19 );
 		remove_filter( 'the_excerpt', 'sharing_display',19 );
+
 		if ( class_exists( 'Jetpack_Likes' ) ) {
 			remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
 		}
 	}
 }
-
 add_action( 'loop_start', 'lsx_portfolio_remove_share' );
 
+/**
+ * Remove the sharing from single
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category post
+ */
+function lsx_single_remove_share() {
+	if ( is_single() ) {
+		remove_filter( 'the_content', 'sharing_display',19 );
+		remove_filter( 'the_excerpt', 'sharing_display',19 );
+
+		if ( class_exists( 'Jetpack_Likes' ) ) {
+			remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+		}
+	}
+}
+add_action( 'loop_start', 'lsx_single_remove_share' );
 
 /**
  * Redirect the template archive to our one

@@ -75,8 +75,19 @@
 	<footer class="footer-meta">
 		<div class="post-tags-wrapper">
 			<div class="post-tags">
-				<?php echo get_the_tag_list(''); ?>
+				<span><?php _e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
 			</div>
+
+			<?php  
+				if ( function_exists( 'sharing_display' ) ) {
+					sharing_display( '', true );
+				}
+				
+				if ( class_exists( 'Jetpack_Likes' ) ) {
+					$custom_likes = new Jetpack_Likes;
+					echo $custom_likes->post_likes( '' );
+				}
+			?>
 		</div>
 
 		<?php
