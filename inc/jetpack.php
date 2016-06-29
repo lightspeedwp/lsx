@@ -106,15 +106,30 @@ add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' , 100 );
  * @subpackage jetpack
  * @category portfolio
  */
-function lsx_remove_single_portfolio_related_posts() {
-	
-	if(is_single() && 'jetpack-portfolio' == get_post_type() && class_exists('Jetpack_RelatedPosts')){
+function lsx_remove_portfolio_related_posts() {
+	if ( is_single() && 'jetpack-portfolio' == get_post_type() && class_exists( 'Jetpack_RelatedPosts' ) ) {
 		$jprp = Jetpack_RelatedPosts::init();
 		$callback = array( $jprp, 'filter_add_target_to_dom' );
 		remove_filter( 'the_content', $callback, 40 );
 	}
 }
-add_filter( 'wp', 'lsx_remove_single_portfolio_related_posts', 20 );
+add_filter( 'wp', 'lsx_remove_portfolio_related_posts', 20 );
+
+/**
+ * Remove the related posts from below the content area.
+ * 
+ * @package lsx
+ * @subpackage jetpack
+ * @category portfolio
+ */
+function lsx_remove_single_related_posts() {
+    if ( is_single() && class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'lsx_remove_single_related_posts', 20 );
 
 /**
  * A template tag to call the Portfolios Related posts
@@ -131,7 +146,7 @@ function lsx_portfolio_related_posts(){
 			</div>
 		</div>			
 	<?php }
-} 
+}
 
 /**
  * Remove the sharing from below the content on single portfolio pages.
@@ -141,20 +156,35 @@ function lsx_portfolio_related_posts(){
  * @category portfolio
  */
 function lsx_portfolio_remove_share() {
-
-	if( (is_single() && 'jetpack-portfolio' == get_post_type())
-	 || is_page_template('page-templates/template-portfolio.php')){
-
+	if ( ( is_single() && 'jetpack-portfolio' == get_post_type() ) || is_page_template( 'page-templates/template-portfolio.php' ) ) {
 		remove_filter( 'the_content', 'sharing_display',19 );
 		remove_filter( 'the_excerpt', 'sharing_display',19 );
+
 		if ( class_exists( 'Jetpack_Likes' ) ) {
 			remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
 		}
 	}
 }
-
 add_action( 'loop_start', 'lsx_portfolio_remove_share' );
 
+/**
+ * Remove the sharing from single
+ *
+ * @package lsx
+ * @subpackage jetpack
+ * @category post
+ */
+function lsx_single_remove_share() {
+	if ( is_single() ) {
+		remove_filter( 'the_content', 'sharing_display',19 );
+		remove_filter( 'the_excerpt', 'sharing_display',19 );
+
+		if ( class_exists( 'Jetpack_Likes' ) ) {
+			remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+		}
+	}
+}
+add_action( 'loop_start', 'lsx_single_remove_share' );
 
 /**
  * Redirect the template archive to our one

@@ -40,7 +40,7 @@
 					if ( class_exists( 'Jetpack_Likes' ) ) {
 						$custom_likes = new Jetpack_Likes;
 						echo $custom_likes->post_likes( '' );
-					}				
+					}
 				?>
 				
 				<?php lsx_portfolio_related_posts(); ?>

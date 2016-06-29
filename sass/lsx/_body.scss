@@ -490,10 +490,12 @@ article {
 
 	&.post_format-post-format-link {
 		.entry-title {
-			.fa {
-				font-size: 20px;
-				padding: 8px;
-				vertical-align: middle;
+			a:not(.format-link) {
+				.fa {
+					font-size: 20px;
+					padding: 8px;
+					vertical-align: middle;
+				}
 			}
 		}
 	}
@@ -542,7 +544,7 @@ article {
 				font-size: 30px;
 			}
 
-			a {
+			a:not(.format-link) {
 				color: $black !important;
 				@include transition(all .1s ease-in-out);
 

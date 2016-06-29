@@ -65,9 +65,27 @@ if (have_comments()) : ?>
 
 <?php endif; ?>
 
-<?php 
+<?php
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+	$html_req = ( $req ? " required='required'" : '' );
+	
 	$comment_form_args = array(
-		'comment_field' => '<p class="comment-form-comment"><textarea  id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+		'comment_field' => '<p class="comment-form-comment"><textarea placeholder="'. __( 'Comment', 'lsx' ) .'" id="comment" class="form-control" name="comment" cols="45" rows="8"'. $aria_req . $html_req .'></textarea></p>',
+		
+		'fields' => array(
+			'author' => '<p class="comment-form-author"><label for="author">'. __( 'Name', 'lsx' ) .'</label> ' .
+				( $req ? '<span class="required">*</span>' : '' ) .
+				'<input class="form-control" placeholder="'. __( 'Name', 'lsx' ) .'" id="author" name="author" type="text" value="'. esc_attr( $commenter['comment_author'] ) .'" size="30"'. $aria_req . $html_req .'></p>',
+
+			'email' => '<p class="comment-form-email"><label for="email">'. __( 'Email', 'lsx' ) .'</label> ' .
+				( $req ? '<span class="required">*</span>' : '' ) .
+				'<input class="form-control" placeholder="'. __( 'Email', 'lsx' ) .'" id="email" name="email" type="text" value="'. esc_attr(  $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . $html_req . '></p>',
+
+			'url' => '<p class="comment-form-url"><label for="url">'. __( 'Website', 'lsx' ) .'</label>' .
+				'<input class="form-control" placeholder="'. __( 'Website', 'lsx' ) .'" id="url" name="url" type="text" value="'. esc_attr( $commenter['comment_author_url'] ) .'" size="30"></p>'
+		)
 	);
 ?>
 <?php comment_form($comment_form_args);

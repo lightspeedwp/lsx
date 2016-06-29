@@ -102,15 +102,15 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 						esc_attr( get_the_modified_date( 'c' ) ),
 						get_the_modified_date()
 					);
-					printf( '%1$s <a href="%2$s" rel="bookmark">%3$s</a>',
-						_x( 'Posted on', 'Used before publish date.', 'lsx' ),
+					printf( '<span class="post-meta-time"><span>%1$s</span> <a href="%2$s" rel="bookmark">%3$s</a></span>',
+						_x( 'Posted on:', 'Used before publish date.', 'lsx' ),
 						esc_url( get_permalink() ),
 						$time_string
 					);
 				?>
 
-				<?php printf( 'by <a class="url fn n" href="%2$s">%3$s</a>',
-					_x( 'Author', 'Used before post author name.', 'lsx' ),
+				<?php printf( '<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
+					_x( 'Posted by:', 'Used before post author name.', 'lsx' ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
 				); ?>
@@ -124,7 +124,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
 		    	}
 		    	if(!empty($cats)){ ?>
-						<?php _e('in','lsx'); ?> <?php echo implode(', ', $cats); ?>
+						<span class="post-meta-categories"><span><?php _e('Posted in:','lsx'); ?></span> <?php echo implode(', ', $cats); ?></span>
 			<?php } ?>
 			
 			<div class="clearfix"></div>
@@ -326,12 +326,12 @@ function lsx_post_nav() {
 		<div class="nav-links pager row">
 
 			<?php
-				$previous_post = get_previous_post_link( '%link', '<div class="previous col-md-6"><p class="nav-links-description">'._x( 'Previous Post', 'Previous post link', 'lsx' ).':</p><h3>%title</h3></div>' );
+				$previous_post = get_previous_post_link( '%link', '<div class="previous col-md-6"><p class="nav-links-description">'._x( 'Previous Post', 'Previous post link', 'lsx' ).'</p><h3>%title</h3></div>' );
 				$previous_post = str_replace('<a','<a',$previous_post);
 				echo $previous_post;
 			?>
 			<?php
-				$next_post = get_next_post_link( '%link', '<div class="next col-md-6"><p class="nav-links-description">'._x( 'Next Post', 'Next post link', 'lsx' ).':</p><h3>%title</h3></div>' );
+				$next_post = get_next_post_link( '%link', '<div class="next col-md-6"><p class="nav-links-description">'._x( 'Next Post', 'Next post link', 'lsx' ).'</p><h3>%title</h3></div>' );
 				$next_post = str_replace('<a','<a',$next_post);
 				echo $next_post;
 			?>
