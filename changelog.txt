@@ -1,5 +1,23 @@
 ## Change log
 
+### 1.6
+* New blog archive and single template design
+* Added Glyphicons resources (icons font from Bootstrap)
+* Removed Genericons, switched to Font Awesome
+* Removed LST styles (custom styles from a deprecated plugin)
+* Removed extra stylesheets for the colour schemes and removed the customizer option
+* Defer parsing of JavaScript to allow visual elements to be loaded first
+* Removed Soliloquy homepage slider code
+* IE 11: fixed issues (banner alignment)
+* IE 11: polyfill for img[srcset]
+* Bootstrap Modal: increase size of modal close button
+* Home banner: in home banner, check if the WP admin bar is enable to decrease 32px in banner height
+* Sensei: fix pages (lessons) divisors
+* Sensei: fix pages with breadcrumb
+* Home parallax: improve parallax effect
+* Nav menu: always require the CSS for nav menu (small screens devices)
+* Nav menu: use the correct window.width information
+
 ### 1.5.2
 * Updated the readme.txt
 * Fixed Bootstrap HTML structure
