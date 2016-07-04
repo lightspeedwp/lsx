@@ -75,6 +75,7 @@ function lsx_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'lsx_wp_title', 10, 2 );
 
+
 /**
  * Wrap embedded media as suggested by Readability
  *
@@ -86,10 +87,6 @@ function lsx_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
 }
 add_filter('embed_oembed_html', 'lsx_embed_wrap', 10, 4);
 
-// function lsx_excerpt_more($more) {
-//   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'roots') . '</a>';
-// }
-// add_filter('excerpt_more', 'lsx_excerpt_more');
 
 /**
  * Remove unnecessary self-closing tags
@@ -113,14 +110,13 @@ function lsx_clean_style_tag($input) {
 }
 add_filter('style_loader_tag', 'lsx_clean_style_tag');
 
+
 if (!function_exists('lsx_get_attachment_id')) {
 	/**
 	 * Get the Attachment ID for a given image URL.
 	 *
 	 * @link   http://wordpress.stackexchange.com/a/7094
-	 *
 	 * @param  string $url
-	 *
 	 * @return boolean|integer
 	 */
 	function lsx_get_attachment_id($url) {
@@ -171,6 +167,7 @@ if (!function_exists('lsx_get_attachment_id')) {
 	}
 }
 
+
 /**
  * Get the Avatar Url
  */
@@ -179,6 +176,7 @@ function lsx_get_avatar_url($author_id, $size) {
 	preg_match("/src='(.*?)'/i", $get_avatar, $matches);
 	return ($matches[1]);
 }
+
 
 /**
  * Checks if a Nav $element is empty or not
@@ -231,6 +229,7 @@ function lsx_thumbnail($size = 'thumbnail',$image_src = false){
 	echo lsx_get_thumbnail($size,$image_src);
 }
 
+
 /**
  * Gets the attachments ID from the src
  * @package lsx
@@ -244,6 +243,7 @@ function lsx_get_attachment_id_from_src($image_src) {
 	return $post_id;
 }
 
+
 /**
  * Add Featured Image as Banner on Single Pages.
  *
@@ -251,7 +251,7 @@ function lsx_get_attachment_id_from_src($image_src) {
  * @subpackage extras
  * @category banner
  */
-if(!function_exists('lsx_page_banner')){
+if (!function_exists('lsx_page_banner')) {
 	function lsx_page_banner() {
 
 		$show_on_front = get_option('show_on_front','posts');
@@ -299,8 +299,8 @@ function lsx_allow_sms_protocol( $protocols ) {
     $protocols[] = 'sms';
     return $protocols;
 }
-
 add_filter( 'kses_allowed_protocols', 'lsx_allow_sms_protocol' );
+
 
 /**
  * Adding browser and user-agent classes to body
@@ -331,15 +331,6 @@ function mv_browser_body_class($classes) {
 add_filter('body_class','mv_browser_body_class');
 
 
-
-// Replaces the excerpt "more" text by a link
-function lsx_excerpt_more($more) {
-	global $post;
-	return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Continue reading','lsx').'</a>';
-}
-add_filter('excerpt_more', 'lsx_excerpt_more');
-
-
 /**
  * filter the Gravity Forms button type
  * 
@@ -357,23 +348,107 @@ add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
 
 
 /**
- * Add a continue reading link to the excerpt
- * @subpackage 	extras
- * @category 	excerpt
- * 
- * @param		$excerpt	String
- * @return		$excerpt	String
+ * Replaces the excerpt "more" text by a link
  */
-function lsx_the_excerpt_filter($excerpt){
-	if('' !== $excerpt  && !stristr($excerpt,'moretag')){
-		$excerpt .= ' <a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a>';
+function lsx_excerpt_more($more) {
+	var_dump( $more );
+	global $post;
+	//return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Continue reading','lsx').'</a>';
+	return '...';
+}
+add_filter( 'excerpt_more', 'lsx_excerpt_more' );
+
+
+/**
+ * Add a continue reading link to the excerpt
+ */
+function lsx_the_excerpt_filter($excerpt) {
+	$show_full_content = has_post_format(array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio'));
+
+	if (!$show_full_content) {
+		if ('' !== $excerpt  && !stristr($excerpt, 'moretag')) {
+			$excerpt .= ' <a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a>';
+		}
 	}
+
 	return $excerpt;
 }
 add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
 
 
-// Add an archive header to the default Blog landing
+/**
+ * Allow HTML tags in excerpt
+ */
+if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
+	function wpse_custom_wp_trim_excerpt($wpse_excerpt) {
+		global $post;
+		$raw_excerpt = $wpse_excerpt;
+
+		if ( '' == $wpse_excerpt ) {
+			$wpse_excerpt = get_the_content('');
+			$show_full_content = has_post_format(array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio'));
+
+			if (!$show_full_content) {
+				$wpse_excerpt = strip_shortcodes( $wpse_excerpt );
+				$wpse_excerpt = apply_filters('the_content', $wpse_excerpt);
+				$wpse_excerpt = str_replace(']]>', ']]>', $wpse_excerpt);
+				//$wpse_excerpt = strip_tags($wpse_excerpt, '<blockquote>,<p>');
+
+				$excerpt_word_count = 50;
+				$excerpt_word_count = apply_filters('excerpt_length', $excerpt_word_count);
+				$tokens = array();
+				$excerptOutput = '';
+				$has_more = false;
+				$count = 0;
+
+				preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $wpse_excerpt, $tokens);
+
+				foreach ($tokens[0] as $token) { 
+					if ($count >= $excerpt_word_count && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) {
+						$excerptOutput .= trim($token);
+						$has_more = true;
+						break;
+					}
+
+					$count++;
+					$excerptOutput .= $token;
+				}
+
+				$wpse_excerpt = trim(force_balance_tags($excerptOutput));
+
+				if ($has_more) {
+					$excerpt_end = '<a class="moretag" href="'.get_permalink().'">'.__('More','lsx').'</a>';
+					$excerpt_end = apply_filters('excerpt_more', ' ' . $excerpt_end); 
+
+					$pos = strrpos($wpse_excerpt, '</');
+
+					if ($pos !== false) {
+						// Inside last HTML tag
+						$wpse_excerpt = substr_replace($wpse_excerpt, $excerpt_end, $pos, 0); /* Add read more next to last word */
+					} else {
+						// After the content
+						$wpse_excerpt .= $excerpt_end; /*Add read more in new paragraph */
+					}
+				}
+			} else {
+				$wpse_excerpt = apply_filters('the_content', $wpse_excerpt);
+				$wpse_excerpt = str_replace(']]>', ']]>', $wpse_excerpt);
+				//$wpse_excerpt = strip_tags($wpse_excerpt, '<blockquote>,<p>');
+			}
+
+			return $wpse_excerpt;
+		}
+
+		return apply_filters('wpse_custom_wp_trim_excerpt', $wpse_excerpt, $raw_excerpt);
+	}
+}
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
+
+
+/**
+ * Add an archive header to the default Blog landing
+ */
 function lsx_blog_header() {
 	$classes = get_body_class();
 	if (in_array('blog',$classes)) { ?>
