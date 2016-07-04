@@ -13,464 +13,1209 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
-"X-Generator: Poedit 1.8.6\n"
 
-#: 404.php:15
-msgid "Whoops!"
+# wpml-name: b6755d218d5f4e1cef9cce9cc39aeda9
+#: <aside id="meta" class="widget"> <h1 class="widget-title"><?php _e( 'Meta',
+#: 'lsx' ); ?></h1>
+msgid "Meta"
 msgstr ""
 
-#: 404.php:19
-msgid "It looks like nothing was found at this location. Maybe try a search?"
+# wpml-name: 178fde647037235223ac2a188a7106b1
+#: <aside id="archives" class="widget"> <h1 class="widget-title"><?php _e(
+#: 'Archives', 'lsx' ); ?></h1>
+msgid "Archives"
 msgstr ""
 
-#: 404.php:25
-msgid "Alternatively, you can check out the"
+# wpml-name: 13348442cc6a27032d2b4aa28b75a5d3
+#: <form role="search" method="get" <?php echo $style; ?> class="search-form
+#: form-inline" id="searchform" action="<?php home_url('/'); ?>"> <div
+#: class="input-group"> <input type="search" value="<?php if (is_search()) {
+#: get_search_query(); } ?>" name="s" class="search-field form-control"
+#: placeholder="<?php esc_attr_e('Search', 'lsx'); get_bloginfo('name');
+msgid "Search"
 msgstr ""
 
-#: 404.php:25
-msgid "sitemap"
+# wpml-name: 75ecaaafd1f677d07360709be6528768
+#: <div class="input-group"> <input type="search" value="<?php if (is_search())
+#: { echo get_search_query(); } ?>" name="s" class="search-field form-control"
+#: placeholder="<?php esc_attr_e('Search', 'lsx'); ?> <?php
+#: get_bloginfo('name'); ?>"> <label class="hide"><?php _e('Search for:',
+#: ?></label>
+msgid "Search for:"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:13
-msgid "Portfolio"
+# wpml-name: 6a72ef42bbe774e009e378ce57f408e4
+#: <header class="archive-header"> <h1 class="archive-title"><?php printf( __(
+#: 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() '</span>'
+#: ); ?></h1>
+msgid "Search Results for: %s"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:50 content-none.php:13
-#: page-templates/template-portfolio.php:68
-msgid "Nothing Found"
+# wpml-name: 129bdee5264c5ff60b0d8ce062a1d572
+#: </ul> <h2><?php _e( 'Monthly Archives', 'lsx' ); ?></h3>
+msgid "Monthly Archives"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:56 page-templates/template-portfolio.php:74
-msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
+# wpml-name: af1b98adf7f686b84cd0b443e022b7a0
+#: <?php lsx_sidebar_top(); ?> <h2><?php _e('Categories','lsx'); ?></h2>
+msgid "Categories"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:60 content-none.php:28
-#: page-templates/template-portfolio.php:78
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+# wpml-name: a5d491060952aa8ad5fdee071be752de
+#: <?php if ( $loop->have_posts() ) { while $loop->the_post(); ?>
+#: $loop->is_home = false; <li><a href="<?php the_permalink(); ?>"><?php
+#: the_title(); ?></a> - the_time( get_option( 'date_format' ); echo
+#: $post->comment_count; _e( 'comments', 'lsx' ?></li>
+msgid "comments"
 msgstr ""
 
-#: author.php:24
-msgid "Author: %s"
+# wpml-name: 02025461a1c1b0b21a6331c9dd36088c
+#: <div class="entry-content"> <h2><?php _e( 'The Last 30 Posts', 'lsx' );
+#: ?></h3>
+msgid "The Last 30 Posts"
 msgstr ""
 
-#: comment.php:12
-msgid "%1$s on %2$s"
+# wpml-name: 7d4663290ec03a784bc123b33a3845a1
+#: $fb_output .= '>'; '<li><a href="' . admin_url( 'nav-menus.php' )
+#: '">'.__('Add a menu','lsx').'</a></li>';
+msgid "Add a menu"
 msgstr ""
 
-#: comment.php:13
-msgid "(Edit)"
+# wpml-name: 18c8938b7adb65c9815dec5946d52ee2
+#: register_sidebar( array( 'name' => __( 'Footer Call to Action', 'lsx' ),
+msgid "Footer Call to Action"
 msgstr ""
 
-#: comment.php:17
-msgid "Your comment is awaiting moderation."
+# wpml-name: ded40f2a77c30efc6062db0cbd857746
+#: register_sidebar( array( 'name' => __( 'Footer', 'lsx' ),
+msgid "Footer"
 msgstr ""
 
-#: comments.php:27
-msgid "One Response to &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s Responses to &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
-#: comments.php:37
-msgid "&larr; Older comments"
+# wpml-name: 219ff7705d67d0c798779951dcf82e95
+#: register_sidebar( array( 'name' => __( 'Sidebar', 'lsx' ),
+msgid "Sidebar"
 msgstr ""
 
-#: comments.php:40
-msgid "Newer comments &rarr;"
+# wpml-name: 8cf04a9734132302f96da8e113e80ce5
+#: register_sidebar( array( 'name' => __( 'Home', 'lsx' ),
+msgid "Home"
 msgstr ""
 
-#: comments.php:48 comments.php:60
-msgid "Comments are closed."
+# wpml-name: 87f9f735a1d36793ceaecd4e47124b63
+#: if( is_single()) { $single_event = get_queried_object(); $output
+#: str_replace($closing_div,'<a href="'.get_post_type_archive_link(
+#: 'tribe_events'
+#: ).'">'.__('Events','lsx').'</a>&nbsp;/&nbsp;'.apply_filters('the_title',$single_event->post_title),$output);
+msgid "Events"
 msgstr ""
 
-#: content-none.php:19
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: content-none.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: content-page.php:23 content-portfolio-single.php:53 content-post.php:74
-#: content-single.php:74 content.php:105 image.php:43 image.php:109
-#: page-templates/template-archives.php:48
-#: page-templates/template-sitemap.php:33
-msgid "Edit"
-msgstr ""
-
-#: content-portfolio-single.php:48 content.php:84 image.php:95
-#: page-templates/template-portfolio.php:28
-msgid "Pages:"
-msgstr ""
-
-#: content-post.php:58 content-single.php:58
-msgid "Comments"
-msgstr ""
-
-#: content.php:62 content.php:65
-msgid "Featured"
-msgstr ""
-
-#: content.php:79
-msgid "Continue reading %s"
-msgstr ""
-
-#: footer.php:44 footer.php:83
-msgid "&#169; %1$s %2$s All Rights Reserved."
-msgstr ""
-
-#: functions.php:50
-msgid "Select Slider"
-msgstr ""
-
-#: functions.php:75
-msgid "Color Scheme"
-msgstr ""
-
-#: functions.php:79
-msgid "Default"
-msgstr ""
-
-#: functions.php:80
-msgid "Red"
-msgstr ""
-
-#: functions.php:81
-msgid "Green"
-msgstr ""
-
-#: functions.php:82
-msgid "Brown"
-msgstr ""
-
-#: functions.php:83
-msgid "Orange"
-msgstr ""
-
-#: functions.php:107
-msgid "Header"
-msgstr ""
-
-#: functions.php:113
-msgid "Layout"
-msgstr ""
-
-#: functions.php:114
-msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
-msgstr ""
-
-#: functions.php:128
-msgid "Fixed Header"
-msgstr ""
-
-#: functions.php:138
-msgid "Search Box in Header"
-msgstr ""
-
-#: functions.php:143
-msgid "Body"
-msgstr ""
-
-#: functions.php:162
-msgid "Font"
-msgstr ""
-
-#: functions.php:180
-msgid "Raleway"
-msgstr ""
-
-#: functions.php:186 functions.php:228
-msgid "Open Sans"
-msgstr ""
-
-#: functions.php:194
-msgid "Noto Serif"
-msgstr ""
-
-#: functions.php:200 functions.php:208 functions.php:214
-msgid "Noto Sans"
-msgstr ""
-
-#: functions.php:222
-msgid "Alegreya"
-msgstr ""
-
-#: functions.php:260
-msgid "Email Address"
-msgstr ""
-
-#: header.php:78
-msgid "Get your Tourism Establishment Online"
-msgstr ""
-
-#: header.php:90
-msgid "Questions? Email Us: "
-msgstr ""
-
-#: image.php:33
-msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
-msgstr ""
-
-#: image.php:47
-msgid "Previous"
-msgstr ""
-
-#: image.php:48
-msgid "Next"
-msgstr ""
-
-#: image.php:106
-msgid "Leave a comment"
-msgstr ""
-
-#: image.php:106
-msgid "1 Comment"
-msgstr ""
-
-#: image.php:106
-msgid "% Comments"
-msgstr ""
-
-#: inc/config.php:42
-msgid "Primary Menu"
-msgstr ""
-
-#: inc/config.php:43
-msgid "Top Menu"
-msgstr ""
-
-#: inc/config.php:44
-msgid "Social Menu"
-msgstr ""
-
-#: inc/config.php:88 inc/config.php:104
-msgid "Auto Draft"
-msgstr ""
-
-#: inc/customizer.php:298
-msgid "Disable"
-msgstr ""
-
-#: inc/extras.php:85
-msgid "Page %s"
-msgstr ""
-
-#: inc/extras.php:356 inc/extras.php:387
-msgid "Continue reading"
-msgstr ""
-
-#: inc/jetpack.php:227 inc/template-tags.php:168
-msgid "Client"
-msgstr ""
-
-#: inc/jetpack.php:236 inc/template-tags.php:197
-msgid "Website"
-msgstr ""
-
-#: inc/jetpack.php:251
-msgid "Enter the name of the project client"
-msgstr ""
-
-#: inc/jetpack.php:262
-msgid "Enter the URL of the project website"
-msgstr ""
-
-#: inc/jetpack.php:277
-msgid "All"
-msgstr ""
-
-#: inc/jetpack.php:305
-msgid "Older"
-msgstr ""
-
-#: inc/jetpack.php:306
-msgid "Newer"
-msgstr ""
-
-#: inc/jetpack.php:307
-msgid "Portfolio navigation"
-msgstr ""
-
-#: inc/template-tags.php:103
-msgctxt "Used before publish date."
-msgid "Posted on"
-msgstr ""
-
-#: inc/template-tags.php:110
-msgctxt "Used before post author name."
-msgid "Author"
-msgstr ""
-
-#: inc/template-tags.php:121
-msgid "View all posts in %s"
-msgstr ""
-
-#: inc/template-tags.php:124
-msgid "in"
-msgstr ""
-
-#: inc/template-tags.php:146
-msgid "View all %s posts"
-msgstr ""
-
-#: inc/template-tags.php:179
-msgid "Industry"
-msgstr ""
-
-#: inc/template-tags.php:188
-msgid "Services"
-msgstr ""
-
-#: inc/template-tags.php:253
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:254
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:255
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:302
-msgctxt "Previous post link"
-msgid "Previous Post"
-msgstr ""
-
-#: inc/template-tags.php:307
+# wpml-name: d17e21dca8afcdfcafd8762928cf8bf8
+#: ?> <?php $next_post = get_next_post_link( '%link', '<div class="next
+#: col-md-6"><p class="nav-links-description">'._x( 'Next Post', post link',
+#: 'lsx' ).'</p><h3>%title</h3></div>' );
 msgctxt "Next post link"
 msgid "Next Post"
 msgstr ""
 
-#: inc/template-tags.php:357
-msgid "Toggle navigation"
+# wpml-name: d0215db3a3b973e1d423e01881bfc813
+#: <?php $previous_post = get_previous_post_link( '%link', '<div
+#: class="previous col-md-6"><p class="nav-links-description">'._x( 'Previous
+#: Post', post link', 'lsx' ).'</p><h3>%title</h3></div>' );
+msgctxt "Previous post link"
+msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:398
-msgid "Create a menu and assign it here via the \"Navigation\" panel."
+# wpml-name: 2da98d62f706d93d7d673265f73bffe0
+#: <?php printf( '<span class="post-meta-author"><span>%1$s</span> <a
+#: href="%2$s">%3$s</a></span>', _x( 'Posted by:', 'Used before post author
+#: name.', 'lsx' ),
+msgctxt "Used before post author name."
+msgid "Posted by:"
 msgstr ""
 
-#: inc/template-tags.php:427
-msgid "Pages"
+# wpml-name: 88a11208346ae5b4ca218d90fa29eb8b
+#: ); printf( '<span class="post-meta-time"><span>%1$s</span> <a href="%2$s"
+#: rel="bookmark">%3$s</a></span>', _x( 'Posted on:', 'Used before publish
+#: date.', 'lsx' ),
+msgctxt "Used before publish date."
+msgid "Posted on:"
 msgstr ""
 
-#: inc/template-tags.php:477 inc/template-tags.php:509
-msgid "%1$s"
-msgstr ""
-
-#: inc/template-tags.php:539
+# wpml-name: a679b2a496436499dd55383a12524ad6
+#: <div class="row"> class="col-md-12"> <h2><?php _e( 'Subscribe to Our
+#: Newsletter', 'lsx' ); ?></h2>
 msgid "Subscribe to Our Newsletter"
 msgstr ""
 
-#: inc/widgets.php:10
-msgid "Home"
+# wpml-name: a1524e434a0ec596ea1f7539e065a92f
+#: <?php } elseif(is_customize_preview()) { ?> <nav class="primary-navbar
+#: collapse navbar-collapse" role="navigation"> <div class="alert alert-info"
+#: role="alert"><?php _e('Create a menu and assign it here via the "Navigation"
+#: panel.','lsx');?></div>
+msgid "Create a menu and assign it here via the \"Navigation\" panel."
 msgstr ""
 
-#: inc/widgets.php:19
-msgid "Sidebar"
+# wpml-name: 6c7195551da0802a39b5e2bc7187df54
+#: if(false != $nav_menu && isset($nav_menu['primary']) 0
+#: $nav_menu['primary']){ ?> <button type="button" class="navbar-toggle"
+#: data-toggle="collapse" data-target=".primary-navbar"> <span
+#: class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
+msgid "Toggle navigation"
 msgstr ""
 
-#: inc/widgets.php:28
-msgid "Footer"
+# wpml-name: 992a0f0542384f1ee5ef51b7cf4ae6c4
+#: if(false != $services){ ?> <div class="portfolio-services"> <span><span
+#: class="fa fa-cog"></span><?php _e('Services','lsx'); ?></span>
+msgid "Services"
 msgstr ""
 
-#: inc/widgets.php:37
-msgid "Footer Call to Action"
+# wpml-name: 4fd0a37b0a02153b23bbb61d7915a429
+#: ?> <div class="portfolio-industry"> <span><span class="fa
+#: fa-folder-open"></span><?php _e('Industry','lsx'); ?></span>
+msgid "Industry"
 msgstr ""
 
-#: inc/wp_bootstrap_navwalker.php:213
-msgid "Add a menu"
+# wpml-name: 9e2d8077785925fb583c0c202538b924
+#: } if(!empty($cats)){ ?> <span class="post-meta-categories"><span><?php
+#: _e('Posted in:','lsx'); ?></span> <?php echo implode(', ', $cats);
+msgid "Posted in:"
 msgstr ""
 
-#: page-templates/template-archives.php:27
-msgid "The Last 30 Posts"
+# wpml-name: 986d4fa7acae0e82ad00499c786f67ff
+#: $tag_cloud = wp_tag_cloud(array('taxonomy'=>$taxonomy_id,'echo'=>false));
+#: if(null != $tag_cloud){ printf( '<h2>'.__( '%1$s', 'lsx' ).'</h2>',
+#: $taxonomy );
+msgid "%1$s"
 msgstr ""
 
-#: page-templates/template-archives.php:32
-msgid "comments"
+# wpml-name: 453aceb005ceaf54a47da15fee8b2a26
+#: if($pages->have_posts()){ echo '<h2>'.__( 'Pages', 'lsx' ).'</h2>';
+msgid "Pages"
 msgstr ""
 
-#: page-templates/template-archives.php:36 sidebar-sitemap.php:26
-msgid "Categories"
+# wpml-name: f1c1c49bfded55aea8653de74504cb8f
+#: 'next' => '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx'
+#: ), 'previous' __( 'Newer ).' <span class="meta-nav">&rarr;</span>', 'title'
+#: 'Posts navigation', )
+msgid "Posts navigation"
 msgstr ""
 
-#: page-templates/template-archives.php:42
-msgid "Monthly Archives"
+# wpml-name: b15c43b073417418c0219f1640e3c48d
+#: $labels = array( 'next' => '<span class="meta-nav">&larr;</span> '.__(
+#: 'Older posts', 'lsx' ), 'previous' __( 'Newer ).' <span
+#: class="meta-nav">&rarr;</span>',
+msgid "Newer posts"
 msgstr ""
 
-#: search.php:21
-msgid "Search Results for: %s"
+# wpml-name: 583c33ef369f771a80774b77d7f9923c
+#: $labels = array( 'next' => '<span class="meta-nav">&larr;</span> '.__(
+#: 'Older posts', 'lsx' ),
+msgid "Older posts"
 msgstr ""
 
-#: searchform.php:23
-msgid "Search"
+# wpml-name: 3db79079242860e568af9b596639ffb5
+#: foreach($post_categories as $c){ $cat = get_category( $c ); $cats[] '<a
+#: href="' . get_category_link( $cat->term_id ) '" title="' sprintf( __( "View
+#: all posts in %s" , 'lsx' ), $cat->name ' '>' $cat->name.'</a>';
+msgid "View all posts in %s"
 msgstr ""
 
-#: searchform.php:24
-msgid "Search for:"
+# wpml-name: b1c94ca2fbc3e78fc30069c8d0f01680
+#: function lsx_portfolio_sorter(){ ?> <ul id="filterNav" class="clearfix"> <li
+#: class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All',
+#: 'lsx'); ?></a></li>
+msgid "All"
 msgstr ""
 
-#: sidebar.php:53
-msgid "Archives"
+# wpml-name: ec717cefca1da3d42be0278df9ca0924
+#: <input class="widefat" type="text" name="lsx-website" id="lsx-website"
+#: value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-website', true
+#: ) ); ?>" size="30" /> <br /><br <label for="lsx-website"><?php _e( "Enter
+#: the URL of project website", 'lsx' ?></label>
+msgid "Enter the URL of the project website"
 msgstr ""
 
-#: sidebar.php:60
-msgid "Meta"
+# wpml-name: ba6819dd7e0252d8672374e7d0911c99
+#: <input class="widefat" type="text" name="lsx-client" id="lsx-client"
+#: value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-client', true )
+#: ); ?>" size="30" /> <br /><br <label for="lsx-client"><?php _e( "Enter the
+#: name of project client", 'lsx' ?></label>
+msgid "Enter the name of the project client"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "LSX"
+# wpml-name: 577d7068826de925ea2aec01dbadf5e4
+#: if(false != $client){ ?> <div class="portfolio-client"> <span><span
+#: class="fa fa-user"></span><?php _e('Client','lsx'); ?></span>
+msgid "Client"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-msgid "https://www.lsdev.biz/project/lsx/"
+# wpml-name: dbd036c6e6232669c6d655503dfa0bbf
+#: 'next' => '<span class="meta-nav">&larr;</span> '.__( 'Older', 'lsx' ),
+#: 'previous' __( 'Newer', ).' <span class="meta-nav">&rarr;</span>', 'title'
+#: 'Portfolio navigation', )
+msgid "Portfolio navigation"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid "LSX is a minimalistic responsive WordPress theme that allows users to create fast, efficient and attractive websites that are rich with features. Based on Underscores by Automattic and Twitter Bootstrap, the theme is sure to display perfectly on all desktop and portable devices. Its lightweight build ensures better load times, a bonus for both user experience and SEO."
+# wpml-name: 236c7642a79eeb1b4154eb4712bd4068
+#: $labels = array( 'next' => '<span class="meta-nav">&larr;</span> '.__(
+#: 'Older', 'lsx' ), 'previous' __( 'Newer', ).' <span
+#: class="meta-nav">&rarr;</span>',
+msgid "Newer"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "LightSpeed"
+# wpml-name: 625fd29749d91880963143cfd589bd8f
+#: if(is_post_type_archive('jetpack-portfolio')){ $labels = array( 'next' =>
+#: '<span class="meta-nav">&larr;</span> '.__( 'Older', 'lsx' ),
+msgid "Older"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "https://www.lsdev.biz/"
+# wpml-name: be8df1f28c0abc85a0ed0c6860e5d832
+#: if (in_array('blog',$classes)) { ?> <header class="archive-header"> <h1
+#: class="page-title"><?php _e('Blog', 'lsx'); ?></h1>
+msgid "Blog"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Archives */"
+# wpml-name: d3da97e2d9aee5c8fbe03156ad051c99
+#: if ($has_more) { $excerpt_end = '<a class="moretag"
+#: href="'.get_permalink().'">'.__('More','lsx').'</a>';
+msgid "More"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Front Page */"
+# wpml-name: 8f25a8a29f4eaeafcaf475c388eee4ef
+#: if (!$show_full_content) { ('' !== $excerpt && !stristr($excerpt,
+#: 'moretag')) .= ' <a class="moretag"
+#: href="'.get_permalink().'">'.__('Continue reading','lsx').'</a>';
+msgid "Continue reading"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Full Width */"
+# wpml-name: ec2e9a76f283943d0ccde5352785731c
+#: // Add a page number if necessary: ( $paged >= 2 || $page ) { $title .= "
+#: $sep . sprintf( __( 'Page %s', 'lsx' ), max( $paged, );
+msgid "Page %s"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Home Hero"
+# wpml-name: c54b990ffbbdda1e68e034f7c988c871
+#: function lsx_is_legacy($data) { if( $data['post_type'] == 'page' &&
+#: $data['post_status'] 'auto-draft' $data['post_title'] __('Auto Draft','lsx')
+#: )
+msgid "Auto Draft"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Metaplate Alt"
+# wpml-name: a9f45e0f2d55afaf3c89b67ddb6156f9
+#: 'top-menu'=> __( 'Top Menu' , 'lsx' ), 'social'=> 'Social 'footer'=> 'Footer
+#: )
+msgid "Footer Menu"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Metaplate"
+# wpml-name: ada48f83ae872fec32d0c1dbde2b437b
+#: 'primary' => __( 'Primary Menu', 'lsx' ), 'top-menu'=> 'Top Menu' ,
+#: 'social'=> 'Social
+msgid "Social Menu"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "No Sidebar */"
+# wpml-name: 414dac15e5166aa77554974b81fd6014
+#: register_nav_menus( array( 'primary' => __( 'Primary Menu', 'lsx' ),
+#: 'top-menu'=> 'Top Menu' ,
+msgid "Top Menu"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Portfolio Archive"
+# wpml-name: fe0b3c606cebba195685c2b313f52f4b
+#: // This theme uses wp_nav_menu() in one location. register_nav_menus( array(
+#: 'primary' => __( 'Primary Menu', 'lsx' ),
+msgid "Primary Menu"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Sitemap */"
+# wpml-name: e9a3137d08f5fcb7ea634dc4bd6c2cd4
+#: switch ( $type ) { case 'all': $text = _nx( 'All <span
+#: class="count">(%s)</span>', $count, 'plugins', 'lsx' );
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgstr ""
+
+# wpml-name: d8c35752fb346f2ab47c2f791511dce6
+#: printf( // WPCS: xss ok. '<div id="message" class="updated"><p>%1$s
+#: %2$s.</p></div>', esc_html( _n( 'The following plugin was activated
+#: successfully:', plugins were $count, 'lsx' ) ),
+msgid "The following plugins were activated successfully:"
+msgstr ""
+
+# wpml-name: be10acf96c07de040541aac8002db280
+#: break; case 'activate': $text = _n( 'To Activate <span
+#: class="count">(%s)</span>', $count, 'lsx' );
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgstr ""
+
+# wpml-name: 95ac4b37cc9b023e14a42b7d043fc11d
+#: break; case 'update': $text = _n( 'Update Available <span
+#: class="count">(%s)</span>', $count, 'lsx' );
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgstr ""
+
+# wpml-name: 8649e3b29e9d76ce9cb1b4ca293336ab
+#: break; case 'install': $text = _n( 'To Install <span
+#: class="count">(%s)</span>', $count, 'lsx' );
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgstr ""
+
+# wpml-name: be5d5d37542d75f93a87094459f76678
+#: $plugin_names = array_map( array( 'TGMPA_Utils', 'wrap_in_strong' ), );
+#: $last_plugin array_pop( // Pop off last name to prep for readability.
+#: $imploded empty( ) ? : ( implode( ', . ' esc_html_x( 'and', 'plugin A *and*
+#: plugin B', 'lsx'
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+# wpml-name: 3d2b3af061f0ad743561232ea9fe1ad2
+#: // Display the 'Activate' action link, but only if plugin meets minimum
+#: version. ( $this->tgmpa->can_plugin_activate( $item['slug'] ) {
+#: $actions['activate'] = _x( 'Activate %2$s', '%2$s name in screen reader
+#: markup', 'lsx' );
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
+
+# wpml-name: 30a47c48bc396796ee5f6d5521b71dda
+#: // Display the 'Update' action link if an update is available and WP
+#: complies with plugin minimum. ( false !==
+#: $this->tgmpa->does_plugin_have_update( $item['slug'] ) &&
+#: $this->tgmpa->can_plugin_update( { $actions['update'] = _x( 'Update %2$s',
+#: '%2$s name in screen reader markup', 'lsx' );
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+# wpml-name: 63e2bc8d23f826ac7a87f9c63aaa9cd0
+#: // Display the 'Install' action link if plugin is not yet available. ( !
+#: $this->tgmpa->is_plugin_installed( $item['slug'] ) { $actions['install'] =
+#: _x( 'Install %2$s', '%2$s name in screen reader markup', 'lsx' );
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+# wpml-name: ad921d60486366258809553a3db49a4a
+#: if ( $this->tgmpa->is_plugin_installed( $item['slug'] ) { $installed = !
+#: empty( $item['installed_version'] ? : _x( 'unknown', 'as in: "version nr
+#: unknown"', 'lsx' );
+msgctxt "as in: \"version nr unknown"
+msgid "unknown"
+msgstr ""
+
+# wpml-name: b024db677e7a3544f4024465dd1b5081
+#: return sprintf( _x( '%1$s, %2$s', '%1$s = install status, %2$s update
+#: status', 'lsx' ),
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+# wpml-name: 93a14746fccf11d84b17b66d8ede812c
+#: public function show_tgmpa_version() { echo '<p style="float: right;
+#: padding: 0em 1.5em 0.5em 0;"><strong><small>', esc_html( sprintf( _x( 'TGMPA
+#: v%s', '%s = version number', 'lsx' ), self::TGMPA_VERSION )
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+# wpml-name: 0b8c1d6179d1c4a20f002d67dc49bc0c
+#: // Default installation strings.
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The process is
+#: starting. This may take a while on some hosts, so please be patient.', 'lsx'
+#: ); $this->upgrader->strings['skin_update_successful'] esc_html__( '%1$s
+#: installed successfully.', ) . ' <a href="#" class="hide-if-no-js"
+#: onclick="%2$s"><span>' 'Show Details', '</span><span class="hidden">' 'Hide
+#: '</span>.</a>';
+msgid "%1$s installed successfully."
+msgstr ""
+
+# wpml-name: 7c5fb72b2ab0d57476a8b930a59f0650
+#: // Default installation strings.
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The process is
+#: starting. This may take a while on some hosts, so please be patient.', 'lsx'
+#: ); $this->upgrader->strings['skin_update_successful'] esc_html__( '%1$s
+#: installed successfully.', ) . ' <a href="#" class="hide-if-no-js"
+#: onclick="%2$s"><span>' 'Show Details', '</span><span class="hidden">' 'Hide
+#: '</span>.</a>';
+msgid "Hide Details"
+msgstr ""
+
+# wpml-name: 06c883a79771ecda24de1687ed7915ba
+#: // Default installation strings.
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The process is
+#: starting. This may take a while on some hosts, so please be patient.', 'lsx'
+#: ); $this->upgrader->strings['skin_update_successful'] esc_html__( '%1$s
+#: installed successfully.', ) . ' <a href="#" class="hide-if-no-js"
+#: onclick="%2$s"><span>' 'Show Details', '</span><span class="hidden">' 'Hide
+#: '</span>.</a>';
+msgid "Show Details"
+msgstr ""
+
+# wpml-name: 1646015930dff0c9b9af0f7132d25376
+#: // Return early if there are no plugins to activate. ( empty(
+#: $plugins_to_activate ) { echo '<div id="message" class="error"><p>',
+#: esc_html__( 'No available be activated at this time.', 'lsx' ),
+#: '</p></div>';
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+# wpml-name: 03b30c31d71dd6e0f601169e5051ce01
+#: // Did user actually select any plugins to activate ? if ( empty(
+#: $_POST['plugin'] ) { echo '<div id="message" class="error"><p>', esc_html__(
+#: 'No were selected be activated. No action taken.', 'lsx' ), '</p></div>';
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+# wpml-name: fe14a1a82858d426bd698bfd336d3d49
+#: <td colspan="', absint( $this->get_column_count() ), '" class="plugin-update
+#: colspanchange"> <div class="update-message">', esc_html__( 'Upgrade message
+#: from the plugin author:', 'lsx'
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+# wpml-name: 58d5fd7cdf545224a930d7b9d059fad3
+#: } elseif ( empty( $subdir_name ) { return new WP_Error( 'packaged_wrong',
+#: esc_html__( 'The remote plugin package consists of more than one file, but
+#: the files are not packaged in a folder.', 'lsx' . ' 'Please contact provider
+#: and ask them to their according WordPress guidelines.', ), array( 'found' =>
+#: $subdir_name, 'expected' $desired_slug );
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+# wpml-name: bb29545b68b66e79e7a5c3573a0fdc7f
+#: } elseif ( empty( $subdir_name ) { return new WP_Error( 'packaged_wrong',
+#: esc_html__( 'The remote plugin package consists of more than one file, but
+#: the files are not packaged in a folder.', 'lsx' . ' 'Please contact provider
+#: and ask them to their according WordPress guidelines.', ), array( 'found' =>
+#: $subdir_name, 'expected' $desired_slug );
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+# wpml-name: fca4795f2c2f8a8b496ca5e7419bb54a
+#: return trailingslashit( $to ); } else { new WP_Error( 'rename_failed',
+#: esc_html__( 'The remote plugin package does not contain a folder with the
+#: desired slug and renaming did work.', 'lsx' ) . ' 'Please contact provider
+#: ask them to their according WordPress guidelines.', ), array( 'found' =>
+#: $subdir_name, 'expected' $desired_slug
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+# wpml-name: 5ab741fb6675b5c6bb34dc16996a53bd
+#: $update_actions['dashboard'] = sprintf( esc_html(
+#: $this->tgmpa->strings['complete'] ), '<a href="' . esc_url( self_admin_url()
+#: ) '">' esc_html__( 'Return to the Dashboard', 'lsx' '</a>'
+msgid "Return to the Dashboard"
+msgstr ""
+
+# wpml-name: aaf83959b5747c06b5cd53fc22f63390
+#: esc_url( $this->get_tgmpa_status_url( 'update' ) ), esc_attr__( 'This plugin
+#: needs to be updated compatible with your theme.', 'lsx' esc_html__( 'Update
+#: Required',
+msgid "Update Required"
+msgstr ""
+
+# wpml-name: 657b74f6fd4ba4f8f694b30c05009c16
+#: '<a href="%1$s" title="%2$s" class="edit">%3$s</a>', esc_url(
+#: $this->get_tgmpa_status_url( 'update' ) ), esc_attr__( 'This plugin needs to
+#: be updated compatible with your theme.', 'lsx'
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+# wpml-name: 4cee13af8289e47431d5b934e6ecd69f
+#: $this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s
+#: installed successfully.', 'lsx' ) . ' <a href="#" class="hide-if-no-js"
+#: onclick="%2$s"><span>' 'Show Details', '</span><span class="hidden">' 'Hide
+#: '</span>.</a>'; $this->upgrader->strings['skin_upgrade_end'] __( 'All
+#: installations have been completed.', );
+#: $this->upgrader->strings['skin_before_update_header'] 'Installing Plugin
+#: %1$s (%2$d/%3$d)',
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+# wpml-name: 003b8672b471e60c83cb28552f948625
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The installation
+#: process is starting. This may take a while on some hosts, so please be
+#: patient.', 'lsx' ); $this->upgrader->strings['skin_update_successful']
+#: esc_html__( '%1$s installed successfully.', ) . ' <a href="#"
+#: class="hide-if-no-js" onclick="%2$s"><span>' 'Show Details', '</span><span
+#: class="hidden">' 'Hide '</span>.</a>';
+#: $this->upgrader->strings['skin_upgrade_end'] 'All installations have been
+#: completed.',
+msgid "All installations have been completed."
+msgstr ""
+
+# wpml-name: 071037479108e80816f433d094a06632
+#: } else { // Default installation strings.
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The process is
+#: starting. This may take a while on some hosts, so please be patient.', 'lsx'
+#: );
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+# wpml-name: de6d25fb7d974d4e615b386367ff986f
+#: $this->upgrader->strings['skin_update_successful'] = __( '%1$s installed and
+#: activated successfully.', 'lsx' ) . ' <a href="#" class="hide-if-no-js"
+#: onclick="%2$s"><span>' esc_html__( 'Show Details', '</span><span
+#: class="hidden">' 'Hide '</span>.</a>';
+#: $this->upgrader->strings['skin_upgrade_end'] 'All installations activations
+#: have been completed.', );
+#: $this->upgrader->strings['skin_before_update_header'] 'Installing Activating
+#: Plugin %1$s (%2$d/%3$d)',
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+# wpml-name: a612d8f63518b69a843a62347bef74f4
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The installation and
+#: activation process is starting. This may take a while on some hosts, so
+#: please be patient.', 'lsx' );
+#: $this->upgrader->strings['skin_update_successful'] '%1$s installed activated
+#: successfully.', ) . ' <a href="#" class="hide-if-no-js"
+#: onclick="%2$s"><span>' esc_html__( 'Show Details', '</span><span
+#: class="hidden">' 'Hide '</span>.</a>';
+#: $this->upgrader->strings['skin_upgrade_end'] 'All installations activations
+#: have been completed.',
+msgid "All installations and activations have been completed."
+msgstr ""
+
+# wpml-name: b2c308c165b8f7aa1e51da66dab37826
+#: // Automatic activation strings.
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The installation and
+#: process is starting. This may take a while on some hosts, so please be
+#: patient.', 'lsx' ); $this->upgrader->strings['skin_update_successful'] '%1$s
+#: installed activated successfully.', ) . ' <a href="#" class="hide-if-no-js"
+#: onclick="%2$s"><span>' esc_html__( 'Show Details', '</span><span
+#: class="hidden">' 'Hide '</span>.</a>';
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+# wpml-name: 370eb8fcb15bff522689322a97ab88f7
+#: if ( $this->tgmpa->is_automatic ) { // Automatic activation strings.
+#: $this->upgrader->strings['skin_upgrade_start'] = __( 'The installation and
+#: process is starting. This may take a while on some hosts, so please be
+#: patient.', 'lsx' );
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+# wpml-name: 630ad046884e381655ca1fccd0667601
+#: } else { $this->upgrader->strings['skin_update_failed_error'] = __( 'An
+#: error occurred while installing %1$s: <strong>%2$s</strong>.', 'lsx' );
+#: $this->upgrader->strings['skin_update_failed'] 'The installation of %1$s
+#: failed.',
+msgid "The installation of %1$s failed."
+msgstr ""
+
+# wpml-name: 2ef4da25e6e03ae8e862d7689b2ba554
+#: $this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin
+#: %1$s (%2$d/%3$d)', 'lsx' ); } else {
+#: $this->upgrader->strings['skin_update_failed_error'] 'An error occurred
+#: while installing %1$s: <strong>%2$s</strong>.',
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+# wpml-name: 0efdbbd67a26af3f2097acaa0b9a21e9
+#: if ( 'update' === $this->options['install_type'] ) { parent::add_strings();
+#: $this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin
+#: %1$s (%2$d/%3$d)', 'lsx' );
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+# wpml-name: edc3d85dac34a37710b4a9c2e24b8b75
+#: */ public function activate_strings() { $this->strings['activation_failed']
+#: = __( 'Plugin activation failed.', 'lsx' );
+msgid "Plugin activation failed."
+msgstr ""
+
+# wpml-name: c3fa68f1a18fe25ac48b7b0b3242ddcc
+#: $message = __( 'No plugins are available to be installed at this time.',
+#: 'lsx' ); } else { updated
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+# wpml-name: 31892b3c81fc5642c8080b4a25f429ee
+#: if ( empty( $plugins_to_install ) { 'install' === $install_type $message =
+#: __( 'No plugins are available to be installed at this time.', 'lsx' );
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+# wpml-name: b8a5a076175d4a807e0bed3caedc2a4b
+#: $message = __( 'No plugins were selected to be installed. No action taken.',
+#: 'lsx' ); } else { updated.
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+# wpml-name: 92dd49659bcab42087fd5ca92ff478c6
+#: if ( empty( $_POST['plugin'] ) { 'install' === $install_type $message = __(
+#: 'No plugins were selected to be installed. No action taken.', 'lsx' );
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+# wpml-name: a13367a8e2a3f3bf4f3409079e3fdf87
+#: } if ( current_user_can( 'activate_plugins' ) {
+#: $actions['tgmpa-bulk-activate'] = __( 'Activate', 'lsx' );
+msgid "Activate"
+msgstr ""
+
+# wpml-name: 06933067aafd48425d67bcb01bba5cb6
+#: if ( 'install' !== $this->view_context ) { current_user_can(
+#: 'update_plugins' $actions['tgmpa-bulk-update'] = __( 'Update', 'lsx' );
+msgid "Update"
+msgstr ""
+
+# wpml-name: 349838fb1d851d3e2014b9fe39203275
+#: if ( 'update' !== $this->view_context && 'activate' ) { current_user_can(
+#: 'install_plugins' $actions['tgmpa-bulk-install'] = __( 'Install', 'lsx' );
+msgid "Install"
+msgstr ""
+
+# wpml-name: ec53a8c4f07baed5d8825072c89799be
+#: if ( 'all' === $this->view_context || 'update' ) { $columns['version'] = __(
+#: 'Version', 'lsx' ); $columns['status'] 'Status',
+msgid "Status"
+msgstr ""
+
+# wpml-name: 34b6cd75171affba6957e308dcbd92be
+#: if ( 'all' === $this->view_context || 'update' ) { $columns['version'] = __(
+#: 'Version', 'lsx' );
+msgid "Version"
+msgstr ""
+
+# wpml-name: a1fa27779242b4902f7ae3bdd5c6d508
+#: 'plugin' => __( 'Plugin', 'lsx' ), 'source' 'Source', 'type' 'Type',
+msgid "Type"
+msgstr ""
+
+# wpml-name: f31bbdd1b3e85bccd652680e16935819
+#: 'cb' => '<input type="checkbox" />', 'plugin' __( 'Plugin', 'lsx' ),
+#: 'source' 'Source',
+msgid "Source"
+msgstr ""
+
+# wpml-name: 409c1892b68cb394799262ac57f6d4f1
+#: $columns = array( 'cb' => '<input type="checkbox" />', 'plugin' __(
+#: 'Plugin', 'lsx' ),
+msgid "Plugin"
+msgstr ""
+
+# wpml-name: 63685f1a38f0babb4a2bccc60db8ea67
+#: */ public function no_items() { printf( wp_kses_post( __( 'No plugins to
+#: install, update or activate. <a href="%1$s">Return the Dashboard</a>', 'lsx'
+#: ) ), esc_url( self_admin_url() );
+msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
+msgstr ""
+
+# wpml-name: d122edb5d91c246aba401b99c20683e2
+#: $output[] = sprintf( '<p><span style="min-width: 32px; text-align: right;
+#: float: right;%1$s">%2$s</span>' . __( 'Available version:', 'lsx' ) '</p>',
+msgid "Available version:"
+msgstr ""
+
+# wpml-name: ef4198d0c49b3b1cc787d79d69e5a8bc
+#: if ( ! empty( $item['minimum_version'] ) { $output[] = sprintf( '<p><span
+#: style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __(
+#: 'Minimum required version:', 'lsx' '</p>',
+msgid "Minimum required version:"
+msgstr ""
+
+# wpml-name: 416faa92dbbbc3b74be0dcb5d6314052
+#: $output[] = sprintf( '<p><span style="min-width: 32px; text-align: right;
+#: float: right;%1$s">%2$s</span>' . __( 'Installed version:', 'lsx' ) '</p>',
+msgid "Installed version:"
+msgstr ""
+
+# wpml-name: 4aeef8c1b1367ceeabafca62ef3ddaf5
+#: } elseif ( false !== $this->tgmpa->does_plugin_have_update( $slug ) {
+#: $update_status = __( 'Update recommended', 'lsx' );
+msgid "Update recommended"
+msgstr ""
+
+# wpml-name: 50541f6698d7220ddb930ccbb050e4ec
+#: } elseif ( $this->tgmpa->does_plugin_require_update( $slug ) {
+#: $update_status = __( 'Requires Update', 'lsx' );
+msgid "Requires Update"
+msgstr ""
+
+# wpml-name: 56f86712ba4f8686c8c5dfe1c8609649
+#: if ( $this->tgmpa->does_plugin_require_update( $slug ) && false ===
+#: $this->tgmpa->does_plugin_have_update( { $update_status = __( 'Required
+#: Update not Available', 'lsx' );
+msgid "Required Update not Available"
+msgstr ""
+
+# wpml-name: 4d3d769b812b6faa6b76e1a8abaece2d
+#: $install_status = __( 'Installed But Not Activated', 'lsx' ); } else {
+#: 'Active',
+msgid "Active"
+msgstr ""
+
+# wpml-name: 5996488c02e895d82c39733547ede973
+#: if ( ! $this->tgmpa->is_plugin_active( $slug ) { $install_status = __(
+#: 'Installed But Not Activated', 'lsx' );
+msgid "Installed But Not Activated"
+msgstr ""
+
+# wpml-name: ddd8eef6f86868a07f62b0e3810711f0
+#: protected function get_plugin_status_text( $slug ) { if ( !
+#: $this->tgmpa->is_plugin_installed( return __( 'Not Installed', 'lsx' );
+msgid "Not Installed"
+msgstr ""
+
+# wpml-name: 0b75c554830973695016efb11cdf1504
+#: break; case 'bundled': $string = __( 'Pre-Packaged', 'lsx' );
+msgid "Pre-Packaged"
+msgstr ""
+
+# wpml-name: df6d8ea725c83d85194e03ee5d86cd6c
+#: break; case 'external': $string = __( 'External Source', 'lsx' );
+msgid "External Source"
+msgstr ""
+
+# wpml-name: 1f595cbbf20d9305968ef706e97d3105
+#: switch ( $type ) { case 'repo': $string = __( 'WordPress Repository', 'lsx'
+#: );
+msgid "WordPress Repository"
+msgstr ""
+
+# wpml-name: 654866693fd91ce8e9764a218f569918
+#: } return __( 'Recommended', 'lsx' );
+msgid "Recommended"
+msgstr ""
+
+# wpml-name: b651efdb98a5d6bd2b3935d0c3f4a5e2
+#: protected function get_plugin_advise_type_text( $required ) { if ( true ===
+#: return __( 'Required', 'lsx' );
+msgid "Required"
+msgstr ""
+
+# wpml-name: d5a441c680bd89a8c32768c2caa4fe77
+#: 'complete' => __( 'All plugins installed and activated successfully. %1$s',
+#: 'lsx' ), 'dismiss' 'Dismiss this notice', 'contact_admin' 'Please contact
+#: the administrator of site for help.',
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+# wpml-name: 3146b03cfc1c9f2fc7110fb73f7307de
+#: 'plugin_needs_higher_version' => __( 'Plugin not activated. A higher version
+#: of %s is needed for this theme. Please update the plugin.', 'lsx' ),
+#: 'complete' 'All plugins installed and activated successfully. %1$s',
+#: 'dismiss' 'Dismiss notice',
+msgid "Dismiss this notice"
+msgstr ""
+
+# wpml-name: 3c48d813eb0b1f244fa131cc5de6be0e
+#: 'plugin_already_active' => __( 'No action taken. Plugin %1$s was already
+#: active.', 'lsx' ), 'plugin_needs_higher_version' 'Plugin not activated. A
+#: higher version of %s is needed for this theme. Please update the plugin.',
+#: 'complete' 'All plugins installed and activated successfully. %1$s',
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+# wpml-name: b4100ea853d762a3924ca18fa8680ba2
+#: 'activated_successfully' => __( 'The following plugin was activated
+#: successfully:', 'lsx' ), 'plugin_already_active' 'No action taken. Plugin
+#: %1$s already active.', 'plugin_needs_higher_version' 'Plugin not activated.
+#: A higher version of %s is needed for this theme. Please update the plugin.',
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+# wpml-name: 8b22c7f3c16ad269acd401fb7d9db35a
+#: 'plugin_activated' => __( 'Plugin activated successfully.', 'lsx' ),
+#: 'activated_successfully' 'The following plugin was successfully:',
+#: 'plugin_already_active' 'No action taken. Plugin %1$s already active.',
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+# wpml-name: 5a088d527373890f64540c7e47a89df5
+#: printf( // WPCS: xss ok. '<div id="message" class="updated"><p>%1$s
+#: %2$s.</p></div>', esc_html( _n( 'The following plugin was activated
+#: successfully:', plugins were $count, 'lsx' ) ),
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+# wpml-name: 37829e778cf85fe234ef2d80be24527a
+#: public function activate_strings() { $this->strings['activation_failed'] =
+#: __( 'Plugin activation failed.', 'lsx' );
+#: $this->strings['activation_success'] activated successfully.',
+msgid "Plugin activated successfully."
+msgstr ""
+
+# wpml-name: b567eed83515450026f11b84fe91f470
+#: ), 'return' => __( 'Return to Required Plugins Installer', 'lsx' 'dashboard'
+#: the dashboard',
+msgid "Return to the dashboard"
+msgstr ""
+
+# wpml-name: bb885c3eedde441b8398dbc9586e09b5
+#: 'lsx' ), 'return' => __( 'Return to Required Plugins Installer',
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+# wpml-name: a5971f89797a3dc6d0b203dc73e74aeb
+#: 'menu_title' => __( 'Install Plugins', 'lsx' ), 'installing' 'Installing
+#: Plugin: %s', 'oops' 'Something went wrong with the plugin API.',
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+# wpml-name: 07867e5fd7b858b877323ffd402ac38e
+#: 'page_title' => __( 'Install Required Plugins', 'lsx' ), 'menu_title'
+#: 'installing' 'Installing Plugin: %s',
+msgid "Installing Plugin: %s"
+msgstr ""
+
+# wpml-name: 4eff3a34f0ddf963f7d0610d3cb79354
+#: $this->strings = array( 'page_title' => __( 'Install Required Plugins',
+#: 'lsx' ), 'menu_title'
+msgid "Install Plugins"
+msgstr ""
+
+# wpml-name: 8d496fe225b423ae91cafb2913fe60fc
+#: // Load class strings. $this->strings = array( 'page_title' => __( 'Install
+#: Required Plugins', 'lsx' ),
+msgid "Install Required Plugins"
+msgstr ""
+
+# wpml-name: 941cd1f6d18dbbe7a0bd27f8cf869f43
+#: <?php if ( ! post_password_required() && comments_open() || '0' !=
+#: get_comments_number() ) : ?> <span class="comments-link"><?php
+#: comments_popup_link( __( 'Leave a comment', 'lsx' ), '1 Comment', '%
+#: Comments', ); ?></span>
+msgid "% Comments"
+msgstr ""
+
+# wpml-name: 0f0c0c1c95507b2503aa8c432c3c3188
+#: <?php if ( ! post_password_required() && comments_open() || '0' !=
+#: get_comments_number() ) : ?> <span class="comments-link"><?php
+#: comments_popup_link( __( 'Leave a comment', 'lsx' ), '1 Comment', '%
+#: Comments', ); ?></span>
+msgid "1 Comment"
+msgstr ""
+
+# wpml-name: 4d475654cf26db0264212bc50e9cf6d2
+#: <?php if ( ! post_password_required() && comments_open() || '0' !=
+#: get_comments_number() ) : ?> <span class="comments-link"><?php
+#: comments_popup_link( __( 'Leave a comment', 'lsx' ), '1 Comment', '%
+#: Comments', ); ?></span>
+msgid "Leave a comment"
+msgstr ""
+
+# wpml-name: 10ac3d04253ef7e1ddc73e6091c0cd55
+#: <nav id="image-navigation" class="site-navigation"> <span
+#: class="previous-image"><?php previous_image_link( false, '&larr; '.__(
+#: 'Previous', 'lsx' ) ); ?></span> class="next-image"><?php next_image_link(
+#: __( 'Next', ).' &rarr;'
+msgid "Next"
+msgstr ""
+
+# wpml-name: dd1f775e443ff3b9a89270713580a51b
+#: <nav id="image-navigation" class="site-navigation"> <span
+#: class="previous-image"><?php previous_image_link( false, '&larr; '.__(
+#: 'Previous', 'lsx' ) ); ?></span>
+msgid "Previous"
+msgstr ""
+
+# wpml-name: e7f91f6555e4674b406ecd68343137d7
+#: <?php $metadata = wp_get_attachment_metadata(); printf( __( 'Published <span
+#: class="entry-date"><time class="entry-date" datetime="%1$s"
+#: pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size
+#: image">%4$s &times; %5$s</a> in href="%6$s" title="Return %7$s"
+#: rel="gallery">%7$s</a>', 'lsx' ),
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+# wpml-name: 112dfa3705e939f0e03f0f1e33c71d9d
+#: } ?> <span class="email-address"><?php _e( 'Questions? Email Us: ', 'lsx' );
+#: ?><a href="mailto:<?php echo $email_address; ?>"><?php ?></a></span>
+msgid "Questions? Email Us: "
+msgstr ""
+
+# wpml-name: 031d712ff773ab8076c79b8b9a7b0deb
+#: <div class="header-links"> <strong><?php _e( 'Get your Tourism Establishment
+#: Online', 'lsx' ); ?></strong>
+msgid "Get your Tourism Establishment Online"
+msgstr ""
+
+# wpml-name: ebd9bec4d70abc789d439c1f136b0538
+#: ); $lsx_controls['sections']['lsx-layout'] = array( 'title' => esc_html__(
+#: 'Layout', 'lsx' ),
+msgid "Layout"
+msgstr ""
+
+# wpml-name: d7c8dbb6ef5395bb70b480779497f201
+#: 'alegreya_open_sans' => array( 'header' "title" __( 'Alegreya', 'lsx' ),
+msgid "Alegreya"
+msgstr ""
+
+# wpml-name: 8914892a3c29d8d868590910dc02daf8
+#: ), 'body' => array( "title" __( 'Noto Sans', 'lsx'
+msgid "Noto Sans"
+msgstr ""
+
+# wpml-name: d7fec6c5901654cd28dd730c7a56cd65
+#: 'noto_serif_noto_sans' => array( 'header' "title" __( 'Noto Serif', 'lsx' ),
+msgid "Noto Serif"
+msgstr ""
+
+# wpml-name: 7c791ebc702a122fcfd9402c7c51621d
+#: ), 'body' => array( "title" __( 'Open Sans', 'lsx'
+msgid "Open Sans"
+msgstr ""
+
+# wpml-name: f8ac7b0ae9ec6d45be568052f50b9149
+#: 'raleway_open_sans' => array( 'header' "title" __( 'Raleway', 'lsx' ),
+msgid "Raleway"
+msgstr ""
+
+# wpml-name: 194f5394ae2e9c74dc3c441b92862d1d
+#: function lsx_customizer_font_controls($lsx_controls) {
+#: $lsx_controls['sections']['lsx-font'] = array( 'title' => __( 'Font', 'lsx'
+#: ),
+msgid "Font"
+msgstr ""
+
+# wpml-name: ac101b32dda4448cf13a93fe283dddd8
+#: ); $lsx_controls['fields']['lsx_layout'] = array( 'label' =>
+#: __('Body','lsx'),
+msgid "Body"
+msgstr ""
+
+# wpml-name: 63790da52ce95eb8f1575f3a80fa5423
+#: ); $lsx_controls['fields']['lsx_header_search'] = array( 'label' =>
+#: __('Search Box in Header','lsx'),
+msgid "Search Box in Header"
+msgstr ""
+
+# wpml-name: e2e9fdf18cbea761edf3d2c208dfb3d8
+#: ); $lsx_controls['fields']['lsx_header_fixed'] = array( 'label' => __('Fixed
+#: Header','lsx'),
+msgid "Fixed Header"
+msgstr ""
+
+# wpml-name: a56e455ccc59cd02e7967e7f22baba12
+#: $lsx_controls['sections']['lsx-layout'] = array( 'title' => esc_html__(
+#: 'Layout', 'lsx' ), 'description' __( 'Change the layout sitewide. If your
+#: homepage is set to use a page with template, following will not apply it.',
+msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
+msgstr ""
+
+# wpml-name: bf50d5e661106d0abe925af3c2e6f7e7
+#: ); $lsx_controls['fields']['lsx_header_layout'] = array( 'label' =>
+#: __('Header','lsx'),
+msgid "Header"
+msgstr ""
+
+# wpml-name: fd3b5ebdfb0207eed5682750c0453546
+#: <?php lsx_footer_top(); ?> <p class="credit if ( has_nav_menu( 'social' ) {
+#: ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights
+#: Reserved.', 'lsx' ), date_i18n( 'Y' get_bloginfo( 'name' ); ?></p>
+msgid "&#169; %1$s %2$s All Rights Reserved."
+msgstr ""
+
+# wpml-name: bc4346af7ea750b595557037cbe80f77
+#: <div class="post-comments"> <!--<a href="<?php the_permalink() ?>">--> <?php
+#: printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'lsx' ),
+#: number_format_i18n( get_comments_number() ) ?>
+msgid "%1$s Comments"
+msgstr ""
+
+# wpml-name: 4b36ac646a902ab56ab7146229c5f021
+#: <div class="post-comments"> <!--<a href="<?php the_permalink() ?>">--> <?php
+#: printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'lsx' ),
+#: number_format_i18n( get_comments_number() ) ?>
+msgid "One Comment"
+msgstr ""
+
+# wpml-name: 15422d54ec0d47000dc86a9820a5237e
+#: <?php } elseif ( is_sticky() && ! has_post_thumbnail() ) { ?> <span
+#: class="label label-default label-sticky no-thumb"><?php
+#: _e('Featured','lsx'); ?></span>
+msgid "Featured"
+msgstr ""
+
+# wpml-name: 71bfb711908ea603a75e86c3e5dbb47a
+#: <div class="entry-content"> <?php the_content(sprintf( __( 'Continue reading
+#: %s', 'lsx' ),
+msgid "Continue reading %s"
+msgstr ""
+
+# wpml-name: 8413c683b4b27cc3f4dbd4c90329d8ba
+#: // If comments are open or we have at least one comment, load up the comment
+#: template if ( comments_open() || '0' != get_comments_number() ) : ?> <a
+#: class="comments-link post-meta-link" data-toggle="collapse"
+#: href="#comments-collapse"><strong><?php echo ?></strong> <?php
+#: _e('Comments','lsx'); <span class="fa fa-chevron-down"></span></a>
+msgid "Comments"
+msgstr ""
+
+# wpml-name: a9349782a388acd9dcf268cf67083812
+#: <?php if ( has_tag() ) : ?> <div class="post-tags"> <span><?php _e('Tagged
+#: as:','lsx'); ?></span> echo get_the_tag_list('');
+msgid "Tagged as:"
+msgstr ""
+
+# wpml-name: 0974d2c2f4c6420089275c2a41c4b41c
+#: <?php the_content(); ?> wp_link_pages(array('before' => '<nav
+#: class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' '</p></nav>'));
+msgid "Pages:"
+msgstr ""
+
+# wpml-name: 7dce122004969d56ae2e0245cb754d35
+#: <div class="clearfix"></div> <?php edit_post_link( __( 'Edit', 'lsx' ),
+#: '<span class="edit-link">', '</span>' ); ?>
+msgid "Edit"
+msgstr ""
+
+# wpml-name: a83aa51c0da986da0b2762a68514f937
+#: <?php elseif ( is_search() ) : ?> <p><?php _e( 'Sorry, but nothing matched
+#: your search terms. Please try again with some different keywords.', 'lsx' );
+#: ?></p>
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+# wpml-name: d26c560da4a5ffc2d7f556b6b7622fe6
+#: <?php if ( is_home() && current_user_can( 'publish_posts' ) : ?> <p><?php
+#: printf( __( 'Ready to publish your first post? <a href="%1$s">Get started
+#: here</a>.', 'lsx' ), esc_url( admin_url( 'post-new.php' ); ?></p>
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+# wpml-name: 5146481cce29bdec19f528a1ac67eb2b
+#: <section id="comments"> <h3><?php printf(_n('One Response to
+#: &ldquo;%2$s&rdquo;', '%1$s Responses get_comments_number(), 'lsx'),
+#: number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
+msgid "%1$s Responses to &ldquo;%2$s&rdquo;"
+msgstr ""
+
+# wpml-name: 24f6f45b57bad810a9ac20999067b947
+#: <section id="comments"> <h3><?php printf(_n('One Response to
+#: &ldquo;%2$s&rdquo;', '%1$s Responses get_comments_number(), 'lsx'),
+#: number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
+msgid "One Response to &ldquo;%2$s&rdquo;"
+msgstr ""
+
+# wpml-name: 496c558a09bbbcfc869aa80b2f037261
+#: <section id="comments"> <div class="alert alert-warning"> <?php _e('Comments
+#: are closed.', 'lsx'); ?>
+msgid "Comments are closed."
+msgstr ""
+
+# wpml-name: 15bbb9d0bbf25e8d2978de1168c749dc
+#: if(false != $website){ ?> <div class="portfolio-website"> <span><span
+#: class="fa fa-link"></span><?php _e('Website','lsx'); ?></span>
+msgid "Website"
+msgstr ""
+
+# wpml-name: ce8ae9da5b7cd6c3df2929543a9af92d
+#: 'email' => '<p class="comment-form-email"><label for="email">'. __( 'Email',
+#: 'lsx' ) .'</label> ' . ( $req ? '<span class="required">*</span>' : ''
+#: '<input class="form-control" placeholder="'. .'" id="email" name="email"
+#: type="text" value="'. esc_attr( $commenter['comment_author_email']
+#: size="30"' $aria_req $html_req '></p>',
+msgid "Email"
+msgstr ""
+
+# wpml-name: 49ee3087348e8d44e1feda1917443987
+#: 'author' => '<p class="comment-form-author"><label for="author">'. __(
+#: 'Name', 'lsx' ) .'</label> ' . ( $req ? '<span class="required">*</span>' :
+#: '' '<input class="form-control" placeholder="'. .'" id="author"
+#: name="author" type="text" value="'. esc_attr( $commenter['comment_author']
+#: size="30"'. $aria_req $html_req .'></p>',
+msgid "Name"
+msgstr ""
+
+# wpml-name: 0be8406951cdfda82f00f79328cf4efc
+#: $comment_form_args = array( 'comment_field' => '<p
+#: class="comment-form-comment"><textarea placeholder="'. __( 'Comment', 'lsx'
+#: ) .'" id="comment" class="form-control" name="comment" cols="45" rows="8"'.
+#: $aria_req . $html_req .'></textarea></p>',
+msgid "Comment"
+msgstr ""
+
+# wpml-name: f4184fedee521dc1b451f1a44954789d
+#: <?php endif; ?> if (get_next_comments_link()) : <li class="next"><?php
+#: next_comments_link(__('Newer comments &rarr;', 'lsx')); ?></li>
+msgid "Newer comments &rarr;"
+msgstr ""
+
+# wpml-name: c005246c11f310562275fe86f0cb203a
+#: <ul class="pager"> <?php if (get_previous_comments_link()) : ?> <li
+#: class="previous"><?php previous_comments_link(__('&larr; Older comments',
+#: 'lsx')); ?></li>
+msgid "&larr; Older comments"
+msgstr ""
+
+# wpml-name: 6954378552054e698cfff1a52b0eca9d
+#: <?php if ($comment->comment_approved == '0') : ?> <div class="alert
+#: alert-info"> _e('Your comment is awaiting moderation.', 'lsx');
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+# wpml-name: a4a149c62d8238973112920f8d30034b
+#: <h4 class="media-heading"><?php echo get_comment_author_link(); ?></h4>
+#: <time datetime="<?php comment_date('c'); ?>"><a href="<?php
+#: esc_url(get_comment_link($comment->comment_ID)); ?>"><?php printf(__('%1$s
+#: on %2$s', 'lsx'), get_comment_date(), get_comment_time()); ?></a></time>
+#: <?php edit_comment_link(__('(Edit)', '', ''); ?>
+msgid "(Edit)"
+msgstr ""
+
+# wpml-name: 9b8d8a252955b2de195c7fa72b7353cb
+#: <div class="media-body"> <h4 class="media-heading"><?php echo
+#: get_comment_author_link(); ?></h4> <time datetime="<?php comment_date('c');
+#: ?>"><a href="<?php esc_url(get_comment_link($comment->comment_ID));
+#: ?>"><?php printf(__('%1$s on %2$s', 'lsx'), get_comment_date(),
+#: get_comment_time()); ?></a></time>
+msgid "%1$s on %2$s"
+msgstr ""
+
+# wpml-name: e5faeb6f171222cac35905b7c3e5a3a6
+#: <header class="archive-header"> <h1 class="archive-title"> <?php printf( __(
+#: 'Author: %s', 'lsx' ), get_the_author() ); ?>
+msgid "Author: %s"
+msgstr ""
+
+# wpml-name: ece4c2ab5162d27e5874a6d33bf368a3
+#: <?php else : ?> <p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re
+#: looking for. Perhaps searching can help.', 'lsx' ); ?></p>
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+# wpml-name: 795d59a96adcde416d31c5b1b6fae364
+#: <section class="no-results not-found"> <header class="page-header"> <h1
+#: class="page-title"><?php _e( 'Nothing Found', 'lsx' ); ?></h1>
+msgid "Nothing Found"
+msgstr ""
+
+# wpml-name: d4f859a96c13f551a2771b7fc3a78d38
+#: <header class="page-header"> <?php if(is_post_type_archive()){ ?> <h1
+#: class="page-title"><?php _e('Portfolio','lsx'); ?></h1>
+msgid "Portfolio"
+msgstr ""
+
+# wpml-name: 030aa7d7900a0c53bee6533a2717726f
+#: <?php if ( current_user_can( 'publish_posts' ) : ?> <p><?php printf( __(
+#: 'Ready to publish your first project? <a href="%1$s">Get started here</a>.',
+#: 'lsx' ), esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' );
+#: ?></p>
+msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+# wpml-name: e1da49db34b0bdfdddaba2ad6552f848
+#: <br /> <p><?php _e( 'Alternatively, you can check out the', 'lsx' ); ?> <a
+#: href="/sitemap"><strong><?php 'sitemap', ?></strong></a></p>
+msgid "sitemap"
+msgstr ""
+
+# wpml-name: 2c5a7c9994d161db43555f470bca064e
+#: <br /> <p><?php _e( 'Alternatively, you can check out the', 'lsx' ); ?> <a
+#: href="/sitemap"><strong><?php 'sitemap', ?></strong></a></p>
+msgid "Alternatively, you can check out the"
+msgstr ""
+
+# wpml-name: 363bf2b6495668fdd47646dcc720044c
+#: <div class="page-content"> <p><?php _e( 'It looks like nothing was found at
+#: this location. Maybe try a search?', 'lsx' ); ?></p>
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+# wpml-name: 4c804230ba35d8d73bdd287ec8bf590b
+#: <section class="error-404 not-found"> <header class="page-header"> <h1
+#: class="page-title"><?php _e( 'Whoops!', 'lsx' ); ?></h1>
+msgid "Whoops!"
 msgstr ""
