@@ -351,7 +351,6 @@ add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
  * Replaces the excerpt "more" text by a link
  */
 function lsx_excerpt_more($more) {
-	var_dump( $more );
 	global $post;
 	//return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Continue reading','lsx').'</a>';
 	return '...';
