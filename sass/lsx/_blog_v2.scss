@@ -144,6 +144,7 @@
 
 %module-single-text {
 	font-size: 16px;
+	line-height: 30px;
 	color: #333;
 	margin-bottom: 30px;
 
@@ -158,12 +159,27 @@
 
 	figure {
 		&.wp-caption {
-			margin: 8px 0 20px 0;
+			margin: 8px 0 20px 0 !important;
 
 			figcaption {
 				&.wp-caption-text {
 					font-family: inherit;
 				}
+			}
+
+			&.aligncenter {
+				margin: {
+					right: auto !important;
+					left: auto !important;
+				}
+			}
+
+			&.alignleft {
+				margin-right: 20px !important;
+			}
+
+			&.alignright {
+				margin-left: 20px !important;
 			}
 		}
 	}
