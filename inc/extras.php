@@ -433,6 +433,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 				$wpse_excerpt = apply_filters('the_content', $wpse_excerpt);
 				$wpse_excerpt = str_replace(']]>', ']]>', $wpse_excerpt);
 				//$wpse_excerpt = strip_tags($wpse_excerpt, '<blockquote>,<p>');
+				$wpse_excerpt = trim(force_balance_tags($wpse_excerpt));
 			}
 
 			return $wpse_excerpt;
@@ -443,6 +444,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
+remove_filter( 'the_excerpt', 'wpautop' );
 
 
 /**
