@@ -24,7 +24,7 @@
 	border-radius: 5px;
 	box-shadow: 1px 1px 1px 1px #eee;
 	overflow: hidden;
-	margin: 30px 0 !important;
+	margin: 40px 0 !important;
 
 	&:last-child {
 		margin-bottom: 60px !important;
@@ -38,7 +38,7 @@
 }
 
 %module-single-no-box {
-	margin: 30px 0 !important;
+	margin: 40px 0 !important;
 }
 
 %module-single-title {
@@ -145,6 +145,7 @@
 %module-single-text {
 	font-size: 16px;
 	color: #333;
+	margin-bottom: 30px;
 
 	@media only screen and (max-width: 767px) {
 		padding: 0 20px;
@@ -154,6 +155,28 @@
 		border-bottom: none;
 		padding-bottom: 0;
 	}
+
+	figure {
+		&.wp-caption {
+			margin: 0 0 20px 0;
+
+			figcaption {
+				&.wp-caption-text {
+					font-family: inherit;
+				}
+			}
+		}
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+%module-single-text-quote {
+	font-size: 33px;
+	color: #777;
+	line-height: 1.6;
 }
 
 %module-single-footer_archive {
@@ -691,6 +714,7 @@ body.archive.date,
 body.archive.tag,
 body.archive.category,
 body.archive.author,
+body.archive.tax-post_format,
 body.search {
 	.wrap {
 		#primary {
@@ -722,6 +746,13 @@ body.search {
 				.entry-summary,
 				.entry-content {
 					@extend %module-single-text;
+				}
+
+				&.post_format-post-format-quote {
+					.entry-summary,
+					.entry-content {
+						@extend %module-single-text-quote;
+					}
 				}
 
 				.post-tags-wrapper {
@@ -779,6 +810,12 @@ body.single-post {
 					@extend %module-single-text;
 				}
 
+				&.post_format-post-format-quote {
+					.entry-content {
+						@extend %module-single-text-quote;
+					}
+				}
+
 				.post-tags-wrapper {
 					@extend %module-single-footer_single;
 				}
@@ -829,6 +866,12 @@ body.single:not(.single-post) {
 
 				.entry-content {
 					@extend %module-single-text;
+				}
+
+				&.post_format-post-format-quote {
+					.entry-content {
+						@extend %module-single-text-quote;
+					}
 				}
 
 				.edit-link {

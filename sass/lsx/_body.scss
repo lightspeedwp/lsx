@@ -149,14 +149,13 @@ body.search {
 			    }
 
 			    & > p {
-			    	text-align: left;
+			    	text-align: center;
 
 			    	&:nth-of-type(1) {
 			    		margin-top: 24px;
 			    	}
 
-			    	&.author-desc {
-			    		text-align: center;
+			    	&:last-child {
 			    		margin-bottom: 0 !important;
 			    	}
 			    }

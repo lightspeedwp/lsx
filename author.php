@@ -50,6 +50,8 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
+			
+			<?php lsx_paging_nav(); ?>
 
 		<?php else : ?>
 
