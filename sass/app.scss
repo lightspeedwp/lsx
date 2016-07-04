@@ -1,5 +1,5 @@
 /*!
- * LSX 1.5.1
+ * LSX 1.6
  */
 
 @import "lsx/lsx.scss";
@@ -820,3 +820,58 @@ figure.alignright { margin-left: 25px; }
     max-width: 700px;
     margin: 0 auto 100px;
 }
+
+// Bootstrap Sliders
+
+.carousel {
+	margin-bottom: 50px;
+
+	& > p {
+		margin: 0;
+	}
+
+	.carousel-indicators {
+		bottom: -50px;
+
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	.carousel-inner {
+		.item {
+			@media screen and (max-width: 767px) {
+				margin-bottom: 20px;
+				position: relative !important;
+				display: block !important;
+				left: 0 !important;
+				transform: none !important;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.carousel-control {
+		display: block;
+		background: none;
+		text-shadow: none;
+		color: #000;
+		width: 10%;
+
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+
+		&.left {
+			margin-left: -10%;
+		}
+
+		&.right {
+			margin-right: -10%;
+		}
+	}
+}
+
