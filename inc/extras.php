@@ -366,7 +366,7 @@ function lsx_the_excerpt_filter($excerpt) {
 
 	if (!$show_full_content) {
 		if ('' !== $excerpt  && !stristr($excerpt, 'moretag')) {
-			$excerpt .= ' <a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a>';
+			$excerpt .= '<p><a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a></p>';
 		}
 	}
 
