@@ -664,6 +664,15 @@ $primary-lighter: #4a9de4;
 			}
 		}
 	}
+
+	// Single post
+	&.single-post {
+		.page-banner {
+			.container {
+				display: none;
+			}
+		}
+	}
 }
 
 @mixin lsx-info-box {
