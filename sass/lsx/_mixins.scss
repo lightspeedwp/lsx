@@ -448,7 +448,6 @@ $primary-lighter: #4a9de4;
 
 @mixin lsx-parallax-banner {
 	.page-banner {
-		z-index: -3;
 		position: relative;
 
 		width: 100%;
@@ -468,7 +467,7 @@ $primary-lighter: #4a9de4;
 		}
 
 		.page-banner-image {
-			z-index: -2;
+			z-index: 1;
 			position: absolute;
 			top: -130px;
 			right: 0;
@@ -485,7 +484,7 @@ $primary-lighter: #4a9de4;
 			//@include transition(top .04s linear, bottom .04s linear);
 
 			&:after {
-				z-index: -1;
+				z-index: 2;
 				content: '';
 				position: absolute;
 				top: 0;
@@ -497,6 +496,8 @@ $primary-lighter: #4a9de4;
 		}
 
 		.container {
+			z-index: 3;
+
 			margin: {
 				top: 50px;
 				bottom: 50px;
