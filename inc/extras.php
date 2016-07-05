@@ -20,8 +20,7 @@ function lsx_body_class($classes) {
   $post_types = array('page','post');
   $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
 
-  if((is_singular($post_types) && !is_singular('post') && has_post_thumbnail() && !is_front_page())
-  	 || (is_page_template('contact.php') && !is_front_page()) 
+  if((is_singular($post_types) && has_post_thumbnail()) 
   || (is_singular('jetpack-portfolio'))){
   	$classes[] = 'page-has-banner';
   }
@@ -254,11 +253,6 @@ function lsx_get_attachment_id_from_src($image_src) {
 if (!function_exists('lsx_page_banner')) {
 	function lsx_page_banner() {
 
-		$show_on_front = get_option('show_on_front','posts');
-		$full_experience = get_theme_mod('home_full_experience_enable',false);
-		
-		if('page' == $show_on_front && is_front_page() && false != $full_experience) { return; }
-		
 		$post_types = array('page','post');
 		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
 		
@@ -273,13 +267,14 @@ if (!function_exists('lsx_page_banner')) {
 	        	}
 	        ?>
 	        
-	        <div class="page-banner" style="background-position: 50% 50%; background-image:url(<?php echo $bg_image;  ?>);">
+	        <div class="page-banner">
+	        	<div class="page-banner-image" style="background-image:url(<?php echo $bg_image; ?>);"></div>
+
 	        	<div class="container">
 		            <header class="page-header">
 		            	<h1 class="page-title"><?php the_title(); ?></h1> 
-		            	  
 		           		<?php lsx_banner_content(); ?>
-		            </header><!-- .entry-header -->
+		            </header>
 		        </div>
 	        </div>
 	    <?php } 

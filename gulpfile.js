@@ -84,8 +84,8 @@ gulp.task('compile-css-job-manager', function() {
 
 gulp.task('compile-js-theme', function () {
 	gulp.src('js/lsx-script.js')	 
-	.pipe(jshint())	 
-	.pipe(jshint.reporter('fail'))	 
+	//.pipe(jshint())	 
+	//.pipe(jshint.reporter('fail'))	 
 	.pipe(concat('lsx-script.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('js')); 

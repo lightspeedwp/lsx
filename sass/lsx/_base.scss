@@ -303,8 +303,6 @@ address {
 	line-height: inherit;
 }
 
-
-
 img,
 .thumbnail {
 	height: auto;
@@ -332,17 +330,8 @@ img,
 	}
 }
 
-.page-has-banner,
-.single-jetpack-portfolio {
+body.page-has-banner {
 	@include lsx-parallax-banner;
-}
-
-.page-has-banner {
-	&.home.header-central {
-		.wrap {
-			margin-bottom: 0;
-		}
-	}
 }
 
 .search-form {

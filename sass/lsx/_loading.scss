@@ -1,0 +1,45 @@
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+body {
+	&:before {
+		content: " ";
+		background: #fff;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 100000;
+		opacity: 1;
+		visibility: visible;
+		@include transition(opacity 500ms ease-in-out 500ms, visibility 0s ease-in-out 1s);
+	}
+	&.html-loaded:before {
+		opacity: 0;
+		visibility: hidden;
+	}
+	&:after {
+		content: " ";
+		background: url(../svg/loading.svg) no-repeat center center;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		height: 70px;
+		width: 70px;
+		margin: -35px 0 0 -35px;
+		z-index: 100001;
+		opacity: 1;
+		visibility: visible;
+		@include transition(opacity 500ms ease-in-out 0s, visibility 0s ease-in-out 500ms);
+	}
+	&.html-loaded:after {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

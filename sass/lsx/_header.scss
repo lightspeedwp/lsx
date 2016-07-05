@@ -774,128 +774,31 @@ nav {
 	}
 }
 
-.page-banner {
-	background: {
-		repeat: no-repeat;
-		size: cover !important;
-		position: 50%;
-		color: $black;
-	}
-	width: 100%;
-	padding: 240px 0;
-
-	.home & {
-		margin-top: 0;
-		background-position: 50% 50% !important;
-	}
-
-	header.page-header {
-		h1.page-title {
-			width: 100%;
-			max-width: 100%;
-			color: $white;
-			text-align: center;
-			font-size: 58px;
-			padding: 0 20px 0;
-			margin: 0 auto;
-			border-bottom: none;
-			@include title-shadow;
-
-			@media screen and (max-width: 767px) {
-				font-size: 42px;
-			}
-
-			@media screen and (max-width: 767px) {
-				font-size: 24px;
-			}
-		}
-	}
-
-	@media screen and (max-width: 991px) {
-		margin-top: 70px;
-		padding: 140px 0;
-	}
-
-	@media screen and (max-width: 767px) {
-		margin-top: 0;
-		padding: 100px 0;
-	}
-
-	@media screen and (max-width: 430px) {
-		padding: 80px 0;
-	}
-}
-
-.page-banner {
-	.home.top-menu-fixed & {
-		@media only screen and (min-width: 768px) {
-			margin-top: 143px !important;
-		}
-
-		@media only screen and (min-width: 992px) {
-			margin-top: 176px !important;
-		}
-	}
-}
-
 .wrap {
+	width: 100%;
+	padding: 0;
+	background: $white;
+	margin-bottom: 0;
+	padding-bottom: 60px;
+	border-top: 1px solid #ddd;
+
 	margin: {
 		top: 0;
 		bottom: 0;
 	}
 
-	.top-menu-fixed & {
-		margin-top: 176px;
-
-		@media screen and (max-width: 991px) {
+	// Menu fixed + NOT Banner
+	body.top-menu-fixed:not(.page-has-banner) & {
+		@media only screen and (min-width: 768px) and (max-width: 991px) {
 			margin-top: 143px;
 		}
 
-		@media screen and (max-width: 767px) {
-			margin-top: 0;
-		}
-	}
-
-	.top-menu-fixed.has-top-menu.has-page-banner & {
-		margin-top: 220px;
-
-		@media screen and (max-width: 991px) {
-			margin-top: 180px;
+		@media only screen and (min-width: 992px) and (max-width: 1199px) {
+			margin-top: 176px;
 		}
 
-		@media screen and (max-width: 767px) {
-			margin-top: 20px;
-		}
-	}
-
-	.top-menu-fixed.has-top-menu.home.has-page-banner & {
-		margin-top: 280px;
-
-		@media screen and (max-width: 991px) {
-			margin-top: 180px;
-		}
-
-		@media screen and (max-width: 767px) {
-			margin-top: 20px;
-		}
-	}
-
-	.top-menu-fixed.header-expanded &,
-	.top-menu-fixed.header-central & {
-		margin-top: 320px;
-	}
-
-	.top-menu-fixed.home.header-expanded &,
-	.top-menu-fixed.home.header-central & {
-		margin-top: 280px;
-	}
-
-	.top-menu-fixed.page-template-template-page-hero .page-banner + &,
-	.top-menu-fixed.page-template-template-front-page .page-banner + & {
-		margin-top: 0 !important;
-
-		@media screen and (max-width: 767px) {
-			margin-top: 20px !important;
+		@media only screen and (min-width: 1200px) {
+			margin-top: 176px;
 		}
 	}
 
@@ -952,10 +855,8 @@ nav {
 
 	& > .content {
 		padding-top: 40px;
-
-		@media screen and (max-width: 991px) {
-			padding-top: 40px;
-		}
+		max-width: 1140px;
+		margin: 0 auto;
 
 		@media screen and (max-width: 767px) {
 			padding-top: 20px;
@@ -984,17 +885,9 @@ header.page-header {
 		}
 	}
 
-	.page-template-template-page-hero & {
+	/*body.home & {
 		display: none;
-	}
-
-	.page-template-template-home-hero & {
-		display: block !important;
-	}
-
-	.home & {
-		display: none;
-	}
+	}*/
 }
 
 [class*="-archive-header"] {

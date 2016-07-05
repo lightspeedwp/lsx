@@ -667,61 +667,6 @@
 }
 
 
-// ---------- Placeholders Banners ----------
-
-
-%module-single-banner {
-	.page-banner {
-		height: 0;
-		padding: 0 0 36% 0;
-
-		@media only screen and (min-width: 1200px) {
-			padding-bottom: 427px; // 36% of 1185px (internal window with of 1200px)... so it's like max-padding-bottom: 427px
-		}
-
-		.page-title {
-			display: none;
-		}
-	}
-
-	&:not(.top-menu-fixed) {
-		.page-banner {
-			@extend %module-single-banner_without-menu-fixed;
-		}
-	}
-
-	&.top-menu-fixed {
-		.page-banner {
-			@extend %module-single-banner_with-menu-fixed;
-		}
-	}
-
-	.page-banner + .wrap {
-		margin-top: 0;
-	}
-}
-
-%module-single-banner_without-menu-fixed {
-	@media only screen and (min-width: 768px) {
-		margin-top: 0;
-	}
-}
-
-%module-single-banner_with-menu-fixed {
-	@media only screen and (min-width: 768px) and (max-width: 991px) {
-		margin-top: 143px;
-	}
-
-	@media only screen and (min-width: 992px) and (max-width: 1199px) {
-		margin-top: 176px;
-	}
-
-	@media only screen and (min-width: 1200px) {
-		margin-top: 176px;
-	}
-}
-
-
 // ---------- Archives (blog, year, month, day, tag, category, author, search) ----------
 
 
@@ -793,8 +738,6 @@ body.search {
 
 
 body.single-post {
-	@extend %module-single-banner;
-
 	.wrap {
 		#primary {
 			&.col-sm-12 {
@@ -903,8 +846,6 @@ body.single:not(.single-post) {
 
 
 body.page {
-	@extend %module-single-banner;
-
 	.wrap {
 		#primary {
 			.entry-content {

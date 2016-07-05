@@ -447,93 +447,218 @@ $primary-lighter: #4a9de4;
 }
 
 @mixin lsx-parallax-banner {
-	&.top-menu-fixed {
-		.page-banner {
-			position: fixed;
-			padding: 390px 0;
-			height:0px;
-
-			@media (max-width: 767px) {
-				display: none;
-			}
-		}
-
-		.wrap {
-			margin-top: 640px !important;
-
-			@media screen and (max-width: 1199px) {
-				margin-top: 600px !important;
-			}
-
-			@media screen and (max-width: 767px) {
-				margin-top: 0 !important;
-			}
-
-			@media print {
-				margin-top: 20px !important;
-			}
-		}
-	}
-
-	&.header-central,
-	&.header-expanded {
-		.wrap {
-			margin-top: 50px;
-		}
-
-		.page-banner {
-			padding: 420px 0;
-		}
-	}
-
 	.page-banner {
+		z-index: -3;
 		position: relative;
-		top: 0;
-		margin-top: 0;
-		background-color: $black;
-		padding: 200px 0;
-		z-index: -1;
-		@include transition(all .08s ease-in-out);
+
+		width: 100%;
+		min-height: 50vh;
+
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+
+		justify-content: center;
+		align-items: center;
+		flex-flow: column;
 		
-		@media print {
+		@media only print {
 			display: none !important;
 		}
 
-		.has-top-menu & {
-			padding: 360px 0;
+		.page-banner-image {
+			z-index: -2;
+			position: absolute;
+			top: -130px;
+			right: 0;
+			bottom: -130px;
+			left: 0;
+
+			background: {
+				repeat: no-repeat;
+				size: cover;
+				position: 50% 0%;
+				color: $black;
+			}
+
+			//@include transition(top .04s linear, bottom .04s linear);
+
+			&:after {
+				z-index: -1;
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: rgba(0, 0, 0, 0.3);
+			}
 		}
 
-		@media (max-width: 767px) {
-			display: none;
+		.container {
+			margin: {
+				top: 50px;
+				bottom: 50px;
+			}
+
+			//@include transition(padding-top .04s linear);
+		}
+
+		h1.page-title {
+			text-align: center;
+			font-size: 58px;
+			padding: 0 20px;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 100%;
+			color: $white;
+
+			@media screen and (max-width: 767px) {
+				font-size: 44px;
+			}
+
+			@media screen and (max-width: 767px) {
+				font-size: 30px;
+			}
 		}
 	}
 
-	.wrap {
-		width: 100%;
-		padding: 0;
-		margin: {
-			top: 0;
-			bottom: 0;
+	// Home
+	&.home {
+		.page-banner {
+			@media screen and (min-width: 992px) {
+				min-height: 100vh;
+			}
+
+			/*.page-banner-image {
+				&:after {
+					display: none;
+				}
+			}*/
 		}
-		background: $white;
-		margin-bottom: 0;
-		padding-bottom: 60px;
-		border-top: 1px solid #ddd;
 
-		& > .content {
-			max-width: 1140px;
-			margin: 0 auto;
-
-			header.page-header {
-				display: none;
-
-				@media print {
-					display: block;
+		// NOT WordPress admin bar + NOT Menu fixed
+		&:not(.admin-bar):not(.top-menu-fixed) {
+			.page-banner {
+				@media only screen and (min-width: 992px) {
+					top: 0px - 176px;
+					margin-bottom: 0px - 176px;
 				}
 
-				@media screen and (max-width: 767px) {
-					display: block;
-					text-align: center;
+				.container {
+					@media only screen and (min-width: 992px) {
+						margin-top: 176px;
+					}
+				}
+			}
+		}
+
+		// WordPress admin bar + NOT Menu fixed
+		&.admin-bar:not(.top-menu-fixed) {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 782px) {
+					top: -46px;
+					margin-bottom: -46px;
+				}
+
+				@media only screen and (min-width: 783px) and (max-width: 991px) {
+					top: -32px;
+					margin-bottom: -32px;
+				}
+
+				@media only screen and (min-width: 992px) {
+					top: 0px - 176px - 32px;
+					margin-bottom: 0px - 176px - 32px;
+				}
+
+				.container {
+					@media only screen and (min-width: 768px) and (max-width: 782px) {
+						margin-top: 50px + 46px;
+					}
+
+					@media only screen and (min-width: 783px) and (max-width: 991px) {
+						margin-top: 50px + 32px;
+					}
+
+					@media only screen and (min-width: 992px) {
+						margin-top: 176px;
+					}
+				}
+			}
+		}
+
+		// NOT WordPress admin bar + Menu fixed
+		&:not(.admin-bar).top-menu-fixed {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 991px) {
+					margin-top: 143px;
+				}
+
+				.container {
+					@media only screen and (min-width: 992px) {
+						margin-top: 176px;
+					}
+				}
+			}
+		}
+
+		// WordPress admin bar + Menu fixed
+		&.admin-bar.top-menu-fixed {
+			.page-banner {
+				@media only screen and (min-width: 768px)and (max-width: 782px) {
+					margin-top: 143px - 46px;
+				}
+
+				@media only screen and (min-width: 783px) and (max-width: 991px) {
+					margin-top: 143px - 32px;
+				}
+
+				@media only screen and (min-width: 992px) {
+					margin-top: -32px;
+				}
+
+				.container {
+					@media only screen and (min-width: 768px) and (max-width: 782px) {
+						margin-top: 50px + 46px;
+					}
+
+					@media only screen and (min-width: 783px) and (max-width: 991px) {
+						margin-top: 50px + 32px;
+					}
+
+					@media only screen and (min-width: 992px) {
+						margin-top: 176px;
+					}
+				}
+			}
+		}
+	}
+
+	// NOT Home
+	&:not(.home) {
+		// NOT WordPress admin bar + Menu fixed
+		&:not(.admin-bar).top-menu-fixed {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 991px) {
+					margin-top: 143px;
+				}
+
+				@media only screen and (min-width: 992px) {
+					margin-top: 176px;
+				}
+			}
+		}
+
+		// WordPress admin bar + Menu fixed
+		&.admin-bar.top-menu-fixed {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 991px) {
+					margin-top: 143px;
+				}
+
+				@media only screen and (min-width: 992px) {
+					margin-top: 176px;
 				}
 			}
 		}

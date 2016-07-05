@@ -4,28 +4,10 @@ body.archive,
 body.blog,
 body.page,
 body.search {
-
-	.page-banner + .wrap {
-		margin-top: 0;
-	}
-
 	margin-top: 15px;
 
 	&.top-menu-fixed {
-		&.header-central,
-		&.header-expanded {
-			@media (min-width: 992px) {
-				.wrap {
-					margin-top: 260px;
-				}
-			}
-		}
-
 		.wrap {
-			@media (min-width: 992px) {
-				margin-top: 176px;
-			}
-
 			#primary {
 				&.col-md-12,
 				&.col-sm-12 {
@@ -188,35 +170,6 @@ body.search {
 }
 
 body.single-post {
-	.page-banner {
-		padding: 580px 40px 80px;
-		text-align: left;
-		margin-top: 100px;
-
-		@media screen and (max-width: 767px) {
-			padding: 300px 20px 80px;
-			margin-top: 0;
-		}
-
-		h1.page-title {
-			text-align: center !important;
-			font-size: 44px !important;
-			padding: 0 !important;
-
-			@media screen and (max-width: 767px) {
-				text-align: center !important;
-			}
-		}
-	}
-
-	&.has-sidebar {
-		.page-banner {
-			h1.page-title {
-				text-align: left !important;
-			}
-		}
-	}
-
 	#secondary {
 		margin: {
 			top: 40px;
@@ -252,15 +205,7 @@ body.single-post {
 
 		&.header-central,
 		&.header-expanded {
-			.page-banner {
-				@media (min-width: 992px) {
-					margin-top: 160px;
-				}
-			}
-
 			.wrap {
-				margin-top: 60px !important;
-
 				.format-link {
 					margin: -40px 0 40px;
 
