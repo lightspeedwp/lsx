@@ -80,10 +80,6 @@
 %module-single-meta {
 	margin-bottom: 15px;
 
-	@media only screen and (max-width: 767px) {
-		padding: 0 20px;
-	}
-
 	.post-meta {
 		font-style: normal;
 		color: #333;
@@ -142,15 +138,17 @@
 	}
 }
 
+%module-single-meta-box {
+	@media only screen and (max-width: 767px) {
+		padding: 0 20px;
+	}
+}
+
 %module-single-text {
 	font-size: 16px;
 	line-height: 30px;
 	color: #333;
 	margin-bottom: 30px;
-
-	@media only screen and (max-width: 767px) {
-		padding: 0 20px;
-	}
 
 	.moretag {
 		border-bottom: none;
@@ -186,6 +184,12 @@
 
 	> *:last-child {
 		margin-bottom: 0;
+	}
+}
+
+%module-single-text-box {
+	@media only screen and (max-width: 767px) {
+		padding: 0 20px;
 	}
 }
 
@@ -702,11 +706,13 @@ body.search {
 
 				.entry-meta {
 					@extend %module-single-meta;
+					@extend %module-single-meta-box;
 				}
 
 				.entry-summary,
 				.entry-content {
 					@extend %module-single-text;
+					@extend %module-single-text-box;
 				}
 
 				&.post_format-post-format-quote {

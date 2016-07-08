@@ -887,9 +887,9 @@ header.page-header {
 		}
 	}
 
-	/*body.home & {
+	body.home:not(.page-has-banner) & {
 		display: none;
-	}*/
+	}
 }
 
 [class*="-archive-header"] {
