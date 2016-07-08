@@ -9,14 +9,31 @@ h4,
 h5,
 h6 {
   font-family: 'Raleway', sans-serif !important;
+
 }
+
+blockquote,
+article .entry-content,
+article .entry-summary,
+article .entry-meta,
+article .post-tags-wrapper,
+article .post-meta-link,
+
+article #comments .media-body,
+article #respond #commentform,
+
+.textwidget,
+
+.wp-pagenavi-wrapper,
 
 .btn,
-button {
-  font-family: 'Raleway', sans-serif !important;
+button,
+input[type="submit"] {
+  font-family: 'Raleway', serif !important;
 }
 
-ul.breadcrumb {
+ul.breadcrumb,
+.breadcrumbs-container {
   font-family: 'Raleway', sans-serif !important;
 }
 
@@ -48,6 +65,10 @@ article header.entry-header h1.entry-title .label {
   font-family: 'Raleway', sans-serif !important;
 }
 
+.collapsibles > a {
+  font-family: 'Raleway', sans-serif !important;
+}
+
 .home-bg-image .home-bg-image-header #home-bg-image-navbtn .home-bg-image-nav-title {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 600;
@@ -59,4 +80,13 @@ article header.entry-header h1.entry-title .label {
 
 .collapsibles > a {
   font-family: 'Raleway', sans-serif !important;
+}
+
+.slick-list .slide-container .caption .slide-title,
+.offer-slider .slick-list .slide-container .caption .slide-title, 
+.room-slider .slick-list .slide-container .caption .slide-title, 
+.accommodation-slider .slick-list .slide-container .caption .slide-title, 
+.restaurants-slider .slick-list .slide-container .caption .slide-title, 
+.activities-slider .slick-list .slide-container .caption .slide-title {
+  font-family: 'Raleway', serif !important;
 }
