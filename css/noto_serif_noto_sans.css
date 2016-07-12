@@ -2,6 +2,7 @@ body {
   font-family: 'Noto Sans', sans-serif !important;
 }
 
+blockquote,
 h1,
 h2,
 h3,
@@ -22,7 +23,6 @@ h6 .label {
 
 }
 
-blockquote,
 article .entry-content,
 article .entry-summary,
 article .entry-meta,
@@ -32,6 +32,9 @@ article .post-meta-link,
 article #comments .media-body,
 article #respond #commentform,
 
+.post-navigation .pager a div .nav-links-description,
+body.single-post .wrap #primary #main>article #comments-collapse #respond #reply-title,
+
 .textwidget,
 
 .wp-pagenavi-wrapper,
@@ -40,6 +43,10 @@ article #respond #commentform,
 button,
 input[type="submit"] {
 	font-family: 'Noto Sans', serif !important;
+}
+
+.post_format-post-format-quote .entry-content {
+  font-family: 'Noto Serif', serif !important;
 }
 
 ul.breadcrumb,
@@ -95,4 +102,12 @@ article header.entry-header h1.entry-title .label {
 .restaurants-slider .slick-list .slide-container .caption .slide-title, 
 .activities-slider .slick-list .slide-container .caption .slide-title {
   font-family: 'Noto Serif', serif !important;
+}
+
+figure.wp-caption figcaption.wp-caption-text {
+  font-family: 'Noto Sans', sans-serif !important;
+}
+
+.sharedaddy .sd-sharing .sd-title {
+  font-family: 'Noto Sans', sans-serif !important;
 }
