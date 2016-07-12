@@ -687,7 +687,7 @@ body.search {
 				max-width: 768px;
 			}
 
-			article {
+			#main > article {
 				@extend %module-single-box;
 
 				header.entry-header {
@@ -750,7 +750,7 @@ body.single-post {
 				max-width: 768px;
 			}
 
-			article {
+			#main > article {
 				@extend %module-single-no-box;
 
 				header.single-header {
@@ -826,7 +826,7 @@ body.single-post {
 body.single:not(.single-post) {
 	.wrap {
 		#primary {
-			article {
+			#main > article {
 				@extend %module-single-no-box;
 
 				.entry-content {
@@ -854,12 +854,14 @@ body.single:not(.single-post) {
 body.page {
 	.wrap {
 		#primary {
-			.entry-content {
-				@extend %module-single-text;
-			}
+			#main > article {
+				.entry-content {
+					@extend %module-single-text;
+				}
 
-			.edit-link {
-				display: none;
+				.edit-link {
+					display: none;
+				}
 			}
 		}
 	}
