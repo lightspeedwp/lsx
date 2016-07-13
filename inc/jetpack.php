@@ -403,3 +403,16 @@ add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
 		}
 	}
  }
+
+/**
+ * Change the “Related” headline at the top of the Related Posts section
+ * 
+ * @package lsx
+ * @subpackage jetpack
+ * @category related posts
+ */
+function lsx_related_posts_headline( $headline ) {
+	$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html( 'Related Posts' ) );
+	return $headline;
+}
+add_filter( 'jetpack_relatedposts_filter_headline', 'lsx_related_posts_headline' );
