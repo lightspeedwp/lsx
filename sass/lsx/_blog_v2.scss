@@ -27,7 +27,7 @@
 	margin: 40px 0 !important;
 
 	&:last-child {
-		margin-bottom: 60px !important;
+		margin-bottom: 10px !important;
 	}
 
 	.entry-meta,
@@ -441,7 +441,7 @@
 
 
 %module-single-pagenavi {
-	margin: 50px 0 40px 0;
+	margin: 50px 0 0 0;
 
 	.lsx-breaker,
 	.pages {
@@ -461,6 +461,8 @@
 }
 
 %module-single-post-navigation {
+	margin-bottom: 20px;
+
 	.pager {
 		margin: {
 			left: -15px !important;
