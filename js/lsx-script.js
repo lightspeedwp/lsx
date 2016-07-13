@@ -197,17 +197,22 @@ jQuery(document).ready(function($) {
 			$bannerImage,
 			$bannerContainer,
 			bannerHeight,
+			bannerContainerBaseSize,
 			bannerParallax = function() {
 				if ($window.scrollTop() <= windowHeight) {
 					var scrolled = $window.scrollTop() / windowHeight * 100,
 						paddingTop = (4 * scrolled),
 						base = -130,
 						top = base + (3 * scrolled),
-						bottom = base - (3 * scrolled);
+						bottom = base - (3 * scrolled),
+						breakpoint = bannerContainerBaseSize + paddingTop;
 
 					$bannerImage.css('top', top + 'px');
 					$bannerImage.css('bottom', bottom + 'px');
-					$bannerContainer.css('padding-top', paddingTop + 'px');
+
+					if (breakpoint < bannerHeight) {
+						$bannerContainer.css('padding-top', paddingTop + 'px');
+					}
 				}
 			}
 
@@ -218,10 +223,18 @@ jQuery(document).ready(function($) {
 				$bannerImage = $banner.children('.page-banner-image');
 				$bannerContainer = $banner.children('.container');
 				bannerHeight = $banner.height();
+				bannerContainerBaseSize = $bannerContainer.height() + 
+											parseInt(($bannerContainer.css('margin-top')).replace('px', '')) + 
+											parseInt(($bannerContainer.css('margin-bottom')).replace('px', '')) + 
+											parseInt(($bannerContainer.css('padding-bottom')).replace('px', ''));
 				bannerParallax();
 
 				$window.resize(function(){
 					bannerHeight = $banner.height();
+					bannerContainerBaseSize = $bannerContainer.height() + 
+												parseInt(($bannerContainer.css('margin-top')).replace('px', '')) + 
+												parseInt(($bannerContainer.css('margin-bottom')).replace('px', '')) + 
+												parseInt(($bannerContainer.css('padding-bottom')).replace('px', ''));
 				});
 
 				$window.scroll(function(){
