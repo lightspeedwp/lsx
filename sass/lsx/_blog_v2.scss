@@ -214,6 +214,7 @@
 
 	.post-tags {
 		@extend %module-single-tags;
+		width: 75%;
 	}
 
 	.post-comments {
@@ -234,6 +235,7 @@
 
 	.post-tags {
 		@extend %module-single-tags;
+		width: 50%;
 	}
 
 	.sharedaddy {
@@ -244,7 +246,6 @@
 %module-single-tags {
 	display: block;
 	float: left;
-	width: 50%;
 
 	@media only screen and (max-width: 767px) {
 		width: 100%;
@@ -285,7 +286,7 @@
 %module-single-comments-counter {
 	display: block;
 	float: right;
-	width: 50%;
+	width: 25%;
 	text-align: right;
 	line-height: 24px;
 	font-size: 15px;
