@@ -101,9 +101,9 @@
 			
 			<?php if ( comments_open() && ! empty( get_comments_number() ) ) : ?>
 				<div class="post-comments">
-					<!--<a href="<?php the_permalink() ?>">-->
+					<a href="<?php the_permalink() ?>#comments">
 						<?php printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'lsx' ), number_format_i18n( get_comments_number() ) ) ?>
-					<!--</a>-->
+					</a>
 				</div>
 			<?php endif ?>
 		</div>
