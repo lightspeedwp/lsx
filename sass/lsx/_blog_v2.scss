@@ -260,6 +260,10 @@
 		content: '\f02c';
 		float: left;
 		line-height: 24px;
+
+		@media only screen and (max-width: 767px) {
+			display: none;
+		}
 	}
 
 	& > span {
@@ -268,6 +272,10 @@
 		line-height: 24px;
 		font-size: 15px;
 		color: #333;
+
+		@media only screen and (max-width: 767px) {
+			display: none;
+		}
 	}
 
 	& > a {
@@ -283,6 +291,12 @@
 		&:active,
 		&:focus {
 			background-color: #dedede;
+		}
+
+		@media only screen and (max-width: 767px) {
+			&:first-of-type {
+				margin-left: 0;
+			}
 		}
 	}
 }
@@ -331,6 +345,10 @@
 		width: 100%;
 		margin-top: 10px;
 		text-align: left;
+
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 
 	.sd-sharing {
@@ -352,10 +370,18 @@
 				min-width: auto;
 				margin-bottom: 0;
 			}
+
+			@media only screen and (max-width: 767px) {
+				display: none;
+			}
 		}
 
 		.sd-content {
 			float: right;
+
+			@media only screen and (max-width: 767px) {
+				float: left;
+			}
 
 			ul {
 				display: block;
@@ -376,6 +402,18 @@
 						
 						&:before {
 							font-size: 12px;
+						}
+					}
+
+					@media only screen and (max-width: 767px) {
+						&.share-print {
+							display: none;
+						}
+
+						a.sd-button {
+							&:before {
+								font-size: 24px;
+							}
 						}
 					}
 				}
