@@ -308,6 +308,21 @@ jQuery(document).ready(function($) {
 			});
 		}
 
+		if ((new RegExp("#comment-", "gi")).test(document.location.hash)) {
+			var margin = jQuery('body').hasClass('top-menu-fixed') ? jQuery('header.banner').height() : 0;
+			margin += jQuery('body').hasClass('admin-bar') ? jQuery('#wpadminbar').height() : 0;
+
+			jQuery('html, body').animate({
+				scrollTop: jQuery('.comments-link').offset().top - margin
+			}, 500, function() {
+				jQuery('.comments-link').trigger('click');
+
+				jQuery('html, body').animate({
+					scrollTop: jQuery(document.location.hash).offset().top - margin
+				}, 500);
+			});
+		}
+
 		// Sensei breadcrumb
 		if ($('body').hasClass('sensei')) {
 			if ($('header.archive-header').length > 0) {

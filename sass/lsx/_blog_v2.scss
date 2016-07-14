@@ -666,6 +666,20 @@
 				p {
 					font-size: 16px;
 					line-height: 25px;
+					margin-bottom: 15px;
+
+					&:first-of-type {
+						margin-top: 15px;
+					}
+				}
+
+				.comment-reply-link {
+					font-size: 14px;
+				}
+
+				ul {
+					padding-left: 0;
+					list-style: none;
 				}
 			}
 		}
@@ -883,6 +897,7 @@ body.single-post {
 						@extend %module-single-comments-form;
 					}
 
+					#comments #respond ,
 					#comments + #respond {
 						@extend %module-single-comments-form-after-comments;
 					}

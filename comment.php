@@ -1,9 +1,11 @@
 <?php 
-if(isset($GLOBALS['comment_depth'])){
-	$depth = intval($GLOBALS['comment_depth']);
-}else{
-	$depth = 3;
-}
+	if ( isset( $GLOBALS['comment_depth'] ) ) {
+		$depth = intval( $GLOBALS['comment_depth'] );
+	} else {
+		$depth = 1;
+	}
+
+	$max_depth = intval( get_option( 'thread_comments_depth' ) );
 ?>
 
 <?php echo get_avatar($comment, '64'); ?>
@@ -19,4 +21,4 @@ if(isset($GLOBALS['comment_depth'])){
 <?php endif; ?>
 
 <?php comment_text(); ?>
-<?php comment_reply_link(array('depth' => $depth,'max_depth' => $depth));
+<?php comment_reply_link( array( 'depth' => $depth, 'max_depth' => $max_depth ) );
