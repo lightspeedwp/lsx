@@ -361,7 +361,20 @@ function lsx_the_excerpt_filter($excerpt) {
 
 	if (!$show_full_content) {
 		if ('' !== $excerpt  && !stristr($excerpt, 'moretag')) {
-			$excerpt .= '<p><a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a></p>';
+			$pagination = wp_link_pages( array(
+							'before' => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
+							'after' => '</div></div>',
+							'link_before' => '<span>',
+							'link_after' => '</span>',
+							'echo' => 0
+						) );
+
+			if ( ! empty( $pagination ) ) {
+				$excerpt .= $pagination;
+			}
+			else {
+				$excerpt .= '<p><a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a></p>';
+			}
 		}
 	}
 

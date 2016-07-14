@@ -77,17 +77,16 @@
 
 	<?php else : ?>
 		<div class="entry-content">
-			<?php the_content(sprintf(
-				__( 'Continue reading %s', 'lsx' ),
-				the_title( '<span class="screen-reader-text">', '</span>', false ))); ?>
-			
 			<?php
+				the_content();
+
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'lsx' ),
-					'after'  => '</div>',
+					'before' => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
+					'after' => '</div></div>',
+					'link_before' => '<span>',
+					'link_after' => '</span>'
 				) );
 			?>
-
 		</div><!-- .entry-content -->
 	<?php endif; ?>
 	

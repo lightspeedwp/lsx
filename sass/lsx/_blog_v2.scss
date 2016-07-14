@@ -184,6 +184,10 @@
 		}
 	}
 
+	.lsx-postnav-wrapper {
+		@extend %module-postnav;
+	}
+
 	> *:last-child {
 		margin-bottom: 0;
 	}
@@ -449,7 +453,7 @@
 // ---------- Placeholders Pagination ----------
 
 
-%module-single-pagenavi {
+%module-pagenavi {
 	margin: 50px 0 0 0;
 
 	.lsx-breaker,
@@ -465,6 +469,45 @@
 			color: #fff;
 			border-radius: 3px;
 			border: 2px solid transparent !important;
+		}
+	}
+}
+
+%module-postnav {
+	padding: 20px 0 0 0;
+	font-size: 15px;
+
+	.lsx-postnav {
+		& > span,
+		& > a {
+			display: inline-block;
+			padding: 5px 12px;
+			margin: 0 1px 14px;
+			line-height: 1.4;
+			border-radius: 3px;
+			border: 2px solid transparent;
+		}
+
+		& > span {
+			font-weight: bold;
+			background-color: #333;
+			color: #fff;
+		}
+
+		& > a {
+			border-color: #ccc;
+			color: #333;
+
+			-webkit-transition: all .2s ease-in-out;
+			-moz-transition: all .2s ease-in-out;
+			-ms-transition: all .2s ease-in-out;
+			-o-transition: all .2s ease-in-out;
+
+			&:active,
+			&:focus,
+			&:hover {
+				border: 2px solid #333;
+			}
 		}
 	}
 }
@@ -737,7 +780,7 @@ body.search {
 			}
 
 			.wp-pagenavi-wrapper {
-				@extend %module-single-pagenavi;
+				@extend %module-pagenavi;
 			}
 		}
 	}

@@ -91,8 +91,16 @@ get_header();
                             <?php endif; ?>
                         </div><!-- .entry-attachment -->
  
-                        <?php the_content(); ?>
-                        <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'lsx' ), 'after' => '</div>' ) ); ?>
+                        <?php
+                            the_content();
+
+                            wp_link_pages( array(
+                                'before' => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
+                                'after' => '</div></div>',
+                                'link_before' => '<span>',
+                                'link_after' => '</span>'
+                            ) );
+                        ?>
  
                     </div><!-- .entry-content -->
                     

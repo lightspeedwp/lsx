@@ -17,8 +17,16 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
+		<?php
+			the_content();
+
+			wp_link_pages( array(
+				'before' => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
+				'after' => '</div></div>',
+				'link_before' => '<span>',
+				'link_after' => '</span>'
+			) );
+		?>
 	</div><!-- .entry-content -->
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
