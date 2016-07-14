@@ -176,7 +176,8 @@ jQuery(document).ready(function($) {
 	        $(this).removeClass('active');
 	    });
 
-		//Bootstrat Menu
+		// Bootstrat Menu
+
 		if (1199 < windowWidth) {
 			$('.navbar-nav li.dropdown a').each(function() {
 				$(this).removeClass('dropdown-toggle');
@@ -190,6 +191,57 @@ jQuery(document).ready(function($) {
 				$(this).find('a.dropdown-toggle').removeAttr('data-toggle');
 			}
 		});
+
+		$window.resize(function() {
+			if (1199 < windowWidth) {
+				$('.navbar-nav li.dropdown a').each(function() {
+					$(this).removeClass('dropdown-toggle');
+					$(this).removeAttr('data-toggle');
+				});
+			} else {
+				$('.navbar-nav li.dropdown a').each(function() {
+					$(this).addClass('dropdown-toggle');
+					$(this).attr('data-toggle','dropdown');
+				});				
+			}
+		});
+
+		// Grandchild Menu
+
+		var fixDropdownPosition = function() {
+			$('.navbar-nav .menu-item:last-child').each(function() {
+				if ($(this).hasClass('menu-item-has-children')) {
+					var $firstMenuItem = $(this),
+						$dropdown = $firstMenuItem.children('.dropdown-menu'),
+						$dropdownItem = $dropdown.children('.menu-item-has-children'),
+						dropdownWidth,
+						firstMenuItemRight;
+
+					if ($dropdownItem.length > 0) {
+						dropdownWidth = $dropdown.outerWidth(),
+						firstMenuItemRight = (windowWidth - ($firstMenuItem.offset().left + $firstMenuItem.outerWidth()));
+
+						if (firstMenuItemRight < dropdownWidth) {
+							$dropdown.addClass('pull-right');
+							$dropdownItem.addClass('dropdown-menu-left');
+						}
+					}
+				}
+			});
+		};
+
+		if (1199 < windowWidth) {
+			fixDropdownPosition();
+		} else {
+			$('.dropdown .dropdown > a').on("click", function(e) {
+				if (!$(this).hasClass('open')) {
+					$(this).addClass('open');
+					$(this).next('.dropdown-menu').toggle();
+					e.stopPropagation();
+					e.preventDefault();
+				}
+			});
+		}
 
 		// Parallax Effect on Banners
 
@@ -229,7 +281,7 @@ jQuery(document).ready(function($) {
 											parseInt(($bannerContainer.css('padding-bottom')).replace('px', ''));
 				bannerParallax();
 
-				$window.resize(function(){
+				$window.resize(function() {
 					bannerHeight = $banner.height();
 					bannerContainerBaseSize = $bannerContainer.height() + 
 												parseInt(($bannerContainer.css('margin-top')).replace('px', '')) + 
@@ -242,21 +294,6 @@ jQuery(document).ready(function($) {
 				});
 			}
 		}
-		
-		//Does everything it did on top
-		$window.resize(function() {
-			if (1199 < windowWidth) {
-				$('.navbar-nav li.dropdown a').each(function() {
-					$(this).removeClass('dropdown-toggle');
-					$(this).removeAttr('data-toggle');
-				});
-			} else {
-				$('.navbar-nav li.dropdown a').each(function() {
-					$(this).addClass('dropdown-toggle');
-					$(this).attr('data-toggle','dropdown');
-				});				
-			}
-		});
 
 		// Sensei breadcrumb
 		if ($('body').hasClass('sensei')) {

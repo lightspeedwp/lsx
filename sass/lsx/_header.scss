@@ -94,12 +94,13 @@ nav {
 				a {
 					background-color: inherit;
 					color: $dark-grey;
+					padding: 10px 16px;
+
 					font: {
 						family: 'Raleway', 'Open Sans', sans-serif;
 						size: 17px;
 						weight: 500;
 					}
-					padding: 10px 16px;
 
 					.caret {
 						margin-left: 6px;
@@ -130,9 +131,11 @@ nav {
 					ul.dropdown-menu {
 						right:0;
 						left:inherit;
+
 						-webkit-border-top-left-radius: 3px;
 						-moz-border-top-left-radius: 3px;
-						border-top-left-radius: 3px;		
+						border-top-left-radius: 3px;	
+
 						-webkit-border-top-right-radius: 0px;
 						-moz-border-top-right-radius: 0px;
 						border-top-right-radius: 0px;											
@@ -145,6 +148,7 @@ nav {
 					margin-top: -3px;
 					box-shadow: none;
 					border: none;
+
 					-webkit-border-top-right-radius: 3px;
 					-moz-border-top-right-radius: 3px;
 					border-top-right-radius: 3px;
@@ -192,21 +196,41 @@ nav {
 						}
 
 						&.menu-item-has-children {
-							& > a {
-								margin-bottom: 5px;
+							& > a:after {
+								content: '';
+								display: block;
+								float: right;
+								width: 0;
+								height: 0;
+								margin: 5px 0;
+
+								border: {
+									top: 4px dashed;
+									top: 4px solid\9;
+									left: 4px solid transparent;
+									right: 4px solid transparent;
+								}
 							}
 
-							@media (max-width: 1199px) {
-								display: none;
-							}
-						}
+							@media screen and (min-width: 1200px) {
+								ul.dropdown-menu {
+									position: absolute;
+									top: 0;
+									margin-top: 0;
+								}
 
-						ul.dropdown-menu {
-							position: relative;
-							float: none;
-							width: 94%;
-							min-width: auto;
-							margin: 0 auto 5px auto;
+								&:not(.dropdown-menu-left) {
+									ul.dropdown-menu {
+										left: 100%;
+									}
+								}
+
+								&.dropdown-menu-left {
+									ul.dropdown-menu {
+										left: -100%;
+									}
+								}
+							}
 						}
 					}
 				}
