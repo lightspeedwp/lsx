@@ -50,13 +50,13 @@ if(class_exists('Sensei_WC')){
  * @return		$lsx_controls array()
  */
 function lsx_customizer_colour_scheme_controls($lsx_controls) {
-	$lsx_controls['settings']['lsx_color_scheme'] = array(
+	$lsx_controls['settings']['color_scheme'] = array(
 		'default'       =>  'default',
 		'type'	        =>  'theme_mod',
 		'transport'     =>  'postMessage',
 	);
-	$lsx_controls['fields']['lsx_color_scheme'] = array(
-		'label'         =>  esc_html__( 'Color Scheme', 'lsx' ),
+	$lsx_controls['fields']['color_scheme'] = array(
+		'label'         =>  esc_html__( 'Base Color Scheme', 'lsx' ),
 		'section'       =>  'colors',
 		'type'          =>  'select',
 		'priority'      =>  1,
@@ -66,7 +66,6 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 									'default' => array(
 										'label'  => __( 'Default', 'lsx' ),
 										'colors' => array(
-											'#1a1a1a',
 											'#ffffff',
 											'#007acc',
 											'#1a1a1a',
@@ -76,7 +75,6 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 									'dark' => array(
 										'label'  => __( 'Dark', 'lsx' ),
 										'colors' => array(
-											'#262626',
 											'#1a1a1a',
 											'#9adffd',
 											'#e5e5e5',
@@ -86,7 +84,6 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 									'gray' => array(
 										'label'  => __( 'Gray', 'lsx' ),
 										'colors' => array(
-											'#616a73',
 											'#4d545c',
 											'#c7c7c7',
 											'#f2f2f2',
@@ -96,7 +93,6 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 									'red' => array(
 										'label'  => __( 'Red', 'lsx' ),
 										'colors' => array(
-											'#ffffff',
 											'#ff675f',
 											'#640c1f',
 											'#402b30',
@@ -106,7 +102,6 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 									'yellow' => array(
 										'label'  => __( 'Yellow', 'lsx' ),
 										'colors' => array(
-											'#3b3721',
 											'#ffef8e',
 											'#774e24',
 											'#3b3721',
@@ -115,18 +110,6 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 									),
 								)
 							)
-	);
-
-	$lsx_controls['settings']['page_background_color'] = array(
-		'default'       =>  '#ffffff',
-		'type'	        =>  'theme_mod',
-		'transport'     =>  'postMessage',
-		'sanitize_callback' => 'sanitize_hex_color',
-	);
-	$lsx_controls['fields']['page_background_color'] = array(
-		'label'         =>  esc_html__( 'Page Background Color', 'lsx' ),
-		'section'       =>  'colors',
-		'control'       =>  'WP_Customize_Color_Control',
 	);
 
 	$lsx_controls['settings']['link_color'] = array(

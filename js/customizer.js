@@ -19,33 +19,25 @@
 			$( '.site-description' ).html( newval );
 		} );
 	} );
-
-	//Update site background color...
-	wp.customize( 'background_color', function( value ) {
-		value.bind( function( newval ) {
-			$('body').css('background-color', newval );
-		} );
-	} );
 	
 	//Update the headers layout.css
-    wp.customize("lsx_header_layout", function(value) {
-        value.bind(function(newval) {
-        	$("body").removeClass('header-central');
-        	$("body").removeClass('header-expanded');
-            $("body").addClass('header-'+newval);
+    wp.customize( 'lsx_header_layout', function( value ) {
+        value.bind( function( newval ) {
+        	$( 'body' ).removeClass( 'header-central' );
+        	$( 'body' ).removeClass( 'header-expanded' );
+            $( 'body' ).addClass( 'header-'+ newval );
         } );
     });
 
     //Update the fixed header in real time...
 	wp.customize( 'lsx_header_fixed', function( value ) {
 		value.bind( function( newval ) {
-			
-			if(true == newval){
-				$('body header.navbar').addClass('navbar-static-top');
-				$('body').addClass('top-menu-fixed');
-			}else{
-				$('body header.navbar').removeClass('navbar-static-top');
-				$('body').removeClass('top-menu-fixed');
+			if ( true == newval ) {
+				$( 'body header.navbar' ).addClass( 'navbar-static-top' );
+				$( 'body' ).addClass( 'top-menu-fixed');
+			} else {
+				$( 'body header.navbar' ).removeClass( 'navbar-static-top' );
+				$( 'body' ).removeClass( 'top-menu-fixed' );
 			}
 		} );
 	} );
@@ -60,7 +52,20 @@
 				$('body #searchform').hide();
 			}
 		} );
-	} );	 
-	
+	} );
+
+	//Update site colours...
+	var style = $( '#lsx-color-scheme-css' );
+
+	if ( ! style.length ) {
+		style = $( 'head' ).append( '<style type="text/css" id="lsx-color-scheme-css" />' ).find( '#lsx-color-scheme-css' );
+	}
+
+	// Color Scheme CSS.
+	wp.customize.bind( 'preview-ready', function() {
+		wp.customize.preview.bind( 'update-color-scheme-css', function( css ) {
+			style.html( css );
+		} );
+	} );
 
 } )( jQuery );
