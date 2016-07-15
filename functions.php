@@ -56,49 +56,131 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 		'default' => array(
 			'label'  => __( 'Default', 'lsx' ),
 			'colors' => array(
-				'#ffffff',
-				'#007acc',
-				'#1a1a1a',
-				'#686868',
-			),
-		),
-		'dark' => array(
-			'label'  => __( 'Dark', 'lsx' ),
-			'colors' => array(
-				'#1a1a1a',
-				'#9adffd',
-				'#e5e5e5',
-				'#c1c1c1',
-			),
-		),
-		'gray' => array(
-			'label'  => __( 'Gray', 'lsx' ),
-			'colors' => array(
-				'#4d545c',
-				'#c7c7c7',
-				'#f2f2f2',
-				'#f2f2f2',
-			),
+				// Button
+				'#428bca', '#2a6496', '#ffffff', '#ffffff',
+				// Button CTA
+				'#f7941d', '#f7741d', '#ffffff', '#ffffff',
+				// Top Menu
+				'#333333', '#ffffff', '#428bca',
+				// Header
+				'#ffffff', '#337ab7', '#23527c', '#777777',
+				// Main Menu
+				'', '', '', '',
+				// Banner
+				'', '', '', '',
+				// Body
+				'', '',
+				// Footer CTA
+				'', '', '', '',
+				// Footer Widgets
+				'', '', '', '',
+				// Footer
+				'', '', '', ''
+			)
 		),
 		'red' => array(
 			'label'  => __( 'Red', 'lsx' ),
 			'colors' => array(
-				'#ff675f',
-				'#640c1f',
-				'#402b30',
-				'#402b30',
-			),
+				// Button
+				'#b64d3f', '#87291c', '#ffffff', '#ffffff',
+				// Button CTA
+				'#f7941d', '#f7741d', '#ffffff', '#ffffff',
+				// Top Menu
+				'#333333', '#ffffff', '#eaa520',
+				// Header
+				'#ffffff', '#b64d3f', '#87291c', '#777777',
+				// Main Menu
+				'', '', '', '',
+				// Banner
+				'', '', '', '',
+				// Body
+				'', '',
+				// Footer CTA
+				'', '', '', '',
+				// Footer Widgets
+				'', '', '', '',
+				// Footer
+				'', '', '', ''
+			)
 		),
-		'yellow' => array(
-			'label'  => __( 'Yellow', 'lsx' ),
+		'orange' => array(
+			'label'  => __( 'Orange', 'lsx' ),
 			'colors' => array(
-				'#ffef8e',
-				'#774e24',
-				'#3b3721',
-				'#5b4d3e',
-			),
+				// Button
+				'#fbaf3f', '#e49435', '#260e03', '#260e03',
+				// Button CTA
+				'#f7941d', '#f7741d', '#ffffff', '#ffffff',
+				// Top Menu
+				'#333333', '#ffffff', '#cc4800',
+				// Header
+				'#ffffff', '#e4701e', '#cc4800', '#777777',
+				// Main Menu
+				'', '', '', '',
+				// Banner
+				'', '', '', '',
+				// Body
+				'', '',
+				// Footer CTA
+				'', '', '', '',
+				// Footer Widgets
+				'', '', '', '',
+				// Footer
+				'', '', '', ''
+			)
 		),
+		'green' => array(
+			'label'  => __( 'Green', 'lsx' ),
+			'colors' => array(
+				// Button
+				'#596b46', '#3d4a30', '#ffffff', '#ffffff',
+				// Button CTA
+				'#f7941d', '#f7741d', '#ffffff', '#ffffff',
+				// Top Menu
+				'#333333', '#ffffff', '#a5a370',
+				// Header
+				'#ffffff', '#596b46', '#3d4a30', '#777777',
+				// Main Menu
+				'', '', '', '',
+				// Banner
+				'', '', '', '',
+				// Body
+				'', '',
+				// Footer CTA
+				'', '', '', '',
+				// Footer Widgets
+				'', '', '', '',
+				// Footer
+				'', '', '', ''
+			)
+		),
+		'brown' => array(
+			'label'  => __( 'Brown', 'lsx' ),
+			'colors' => array(
+				// Button
+				'#8c6a45', '#5b452e', '#ffffff', '#ffffff',
+				// Button CTA
+				'#f7941d', '#f7741d', '#ffffff', '#ffffff',
+				// Top Menu
+				'#333333', '#ffffff', '#dfad55',
+				// Header
+				'#ffffff', '#8c6a45', '#5b452e', '#777777',
+				// Main Menu
+				'', '', '', '',
+				// Banner
+				'', '', '', '',
+				// Body
+				'', '',
+				// Footer CTA
+				'', '', '', '',
+				// Footer Widgets
+				'', '', '', '',
+				// Footer
+				'', '', '', ''
+			)
+		)
 	);
+
+	// Base
 	
 	$lsx_controls['settings']['color_scheme'] = array(
 		'default'       =>  'default',
@@ -114,41 +196,257 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 		'choices'       =>  $customizer_colour_choices
 	);
 
-	$lsx_controls['settings']['link_color'] = array(
-		'default'       =>  '#007acc',
+	// Button
+
+	$lsx_controls['settings']['button_background_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][0],
 		'type'	        =>  'theme_mod',
 		'transport'     =>  'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	);
-	$lsx_controls['fields']['link_color'] = array(
-		'label'         =>  esc_html__( 'Link Color', 'lsx' ),
+	$lsx_controls['fields']['button_background_color'] = array(
+		'label'         =>  esc_html__( 'Button: Background', 'lsx' ),
 		'section'       =>  'colors',
 		'control'       =>  'WP_Customize_Color_Control',
 	);
 
-	$lsx_controls['settings']['main_text_color'] = array(
-		'default'       =>  '#1a1a1a',
+	$lsx_controls['settings']['button_background_hover_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][1],
 		'type'	        =>  'theme_mod',
 		'transport'     =>  'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	);
-	$lsx_controls['fields']['main_text_color'] = array(
-		'label'         =>  esc_html__( 'Main Text Color', 'lsx' ),
+	$lsx_controls['fields']['button_background_hover_color'] = array(
+		'label'         =>  esc_html__( 'Button: Background (hover)', 'lsx' ),
 		'section'       =>  'colors',
 		'control'       =>  'WP_Customize_Color_Control',
 	);
 
-	$lsx_controls['settings']['secondary_text_color'] = array(
-		'default'       =>  '#686868',
+	$lsx_controls['settings']['button_text_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][2],
 		'type'	        =>  'theme_mod',
 		'transport'     =>  'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	);
-	$lsx_controls['fields']['secondary_text_color'] = array(
-		'label'         =>  esc_html__( 'Secondary Text Color', 'lsx' ),
+	$lsx_controls['fields']['button_text_color'] = array(
+		'label'         =>  esc_html__( 'Button: Text', 'lsx' ),
 		'section'       =>  'colors',
 		'control'       =>  'WP_Customize_Color_Control',
 	);
+
+	$lsx_controls['settings']['button_text_color_hover'] = array(
+		'default'       =>  $customizer_colour_choices['default'][3],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['button_text_color_hover'] = array(
+		'label'         =>  esc_html__( 'Button: Text (hover)', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	// Button CTA
+
+	$lsx_controls['settings']['button_cta_background_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][4],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['button_cta_background_color'] = array(
+		'label'         =>  esc_html__( 'Button CTA: Background', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['button_cta_background_hover_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][5],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['button_cta_background_hover_color'] = array(
+		'label'         =>  esc_html__( 'Button CTA: Background (hover)', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['button_cta_text_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][6],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['button_cta_text_color'] = array(
+		'label'         =>  esc_html__( 'Button CTA: Text', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['button_cta_text_color_hover'] = array(
+		'default'       =>  $customizer_colour_choices['default'][7],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['button_cta_text_color_hover'] = array(
+		'label'         =>  esc_html__( 'Button CTA: Text (hover)', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	// Top Menu
+
+	$lsx_controls['settings']['top_menu_background_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][8],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['top_menu_background_color'] = array(
+		'label'         =>  esc_html__( 'Top Menu: Background', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['top_menu_text_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][9],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['top_menu_text_color'] = array(
+		'label'         =>  esc_html__( 'Top Menu: Text', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['top_menu_text_hover_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][10],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['top_menu_text_hover_color'] = array(
+		'label'         =>  esc_html__( 'Top Menu: Text (hover)', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	// Header
+
+	$lsx_controls['settings']['header_background_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][11],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['header_background_color'] = array(
+		'label'         =>  esc_html__( 'Header: Background', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['header_title_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][12],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['header_title_color'] = array(
+		'label'         =>  esc_html__( 'Header: Title', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['header_title_hover_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][13],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['header_title_hover_color'] = array(
+		'label'         =>  esc_html__( 'Header: Title (hover)', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['header_description_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][14],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['header_description_color'] = array(
+		'label'         =>  esc_html__( 'Header: Description', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	// Main Menu
+
+	/*
+	$lsx_controls['settings']['main_menu_background_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][15],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['main_menu_background_color'] = array(
+		'label'         =>  esc_html__( 'Menu: Background', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['main_menu_background_hover_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][16],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['main_menu_background_hover_color'] = array(
+		'label'         =>  esc_html__( 'Menu: Background (hover)', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['main_menu_text_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][17],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['main_menu_text_color'] = array(
+		'label'         =>  esc_html__( 'Menu: Text', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+
+	$lsx_controls['settings']['main_menu_text_hover_color'] = array(
+		'default'       =>  $customizer_colour_choices['default'][18],
+		'type'	        =>  'theme_mod',
+		'transport'     =>  'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	);
+	$lsx_controls['fields']['main_menu_text_hover_color'] = array(
+		'label'         =>  esc_html__( 'Menu: Text (hover)', 'lsx' ),
+		'section'       =>  'colors',
+		'control'       =>  'WP_Customize_Color_Control',
+	);
+	*/
+
+	// Banner
+
+	// Body
+
+	// Footer CTA
+
+	// Footer Widgets
+
+	// Footer
+
+	// Return
 
 	return $lsx_controls;
 }
