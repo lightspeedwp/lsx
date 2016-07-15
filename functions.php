@@ -50,6 +50,56 @@ if(class_exists('Sensei_WC')){
  * @return		$lsx_controls array()
  */
 function lsx_customizer_colour_scheme_controls($lsx_controls) {
+	global $customizer_colour_choices;
+
+	$customizer_colour_choices = array(
+		'default' => array(
+			'label'  => __( 'Default', 'lsx' ),
+			'colors' => array(
+				'#ffffff',
+				'#007acc',
+				'#1a1a1a',
+				'#686868',
+			),
+		),
+		'dark' => array(
+			'label'  => __( 'Dark', 'lsx' ),
+			'colors' => array(
+				'#1a1a1a',
+				'#9adffd',
+				'#e5e5e5',
+				'#c1c1c1',
+			),
+		),
+		'gray' => array(
+			'label'  => __( 'Gray', 'lsx' ),
+			'colors' => array(
+				'#4d545c',
+				'#c7c7c7',
+				'#f2f2f2',
+				'#f2f2f2',
+			),
+		),
+		'red' => array(
+			'label'  => __( 'Red', 'lsx' ),
+			'colors' => array(
+				'#ff675f',
+				'#640c1f',
+				'#402b30',
+				'#402b30',
+			),
+		),
+		'yellow' => array(
+			'label'  => __( 'Yellow', 'lsx' ),
+			'colors' => array(
+				'#ffef8e',
+				'#774e24',
+				'#3b3721',
+				'#5b4d3e',
+			),
+		),
+	);
+	
 	$lsx_controls['settings']['color_scheme'] = array(
 		'default'       =>  'default',
 		'type'	        =>  'theme_mod',
@@ -61,55 +111,7 @@ function lsx_customizer_colour_scheme_controls($lsx_controls) {
 		'type'          =>  'select',
 		'priority'      =>  1,
 		'control'       =>  'LSX_Customize_Colour_Control',
-		'choices'       =>  apply_filters( 'lsx_color_schemes',
-								array(
-									'default' => array(
-										'label'  => __( 'Default', 'lsx' ),
-										'colors' => array(
-											'#ffffff',
-											'#007acc',
-											'#1a1a1a',
-											'#686868',
-										),
-									),
-									'dark' => array(
-										'label'  => __( 'Dark', 'lsx' ),
-										'colors' => array(
-											'#1a1a1a',
-											'#9adffd',
-											'#e5e5e5',
-											'#c1c1c1',
-										),
-									),
-									'gray' => array(
-										'label'  => __( 'Gray', 'lsx' ),
-										'colors' => array(
-											'#4d545c',
-											'#c7c7c7',
-											'#f2f2f2',
-											'#f2f2f2',
-										),
-									),
-									'red' => array(
-										'label'  => __( 'Red', 'lsx' ),
-										'colors' => array(
-											'#ff675f',
-											'#640c1f',
-											'#402b30',
-											'#402b30',
-										),
-									),
-									'yellow' => array(
-										'label'  => __( 'Yellow', 'lsx' ),
-										'colors' => array(
-											'#ffef8e',
-											'#774e24',
-											'#3b3721',
-											'#5b4d3e',
-										),
-									),
-								)
-							)
+		'choices'       =>  $customizer_colour_choices
 	);
 
 	$lsx_controls['settings']['link_color'] = array(
