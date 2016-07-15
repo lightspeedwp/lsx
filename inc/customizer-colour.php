@@ -6,22 +6,13 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-if( !class_exists( 'WP_Customize_Control' ) ){
+
+if ( !class_exists( 'WP_Customize_Control' ) ) {
 	return;
 }
+
 class LSX_Customize_Colour_Control extends WP_Customize_Control {
-	/**
-	 * @access public
-	 * @var string
-	 */
-	public $type = 'style';
-
-	/**
-	 * @access public
-	 * @var array
-	 */
-	public $statuses;
-
+	
 	/**
 	 * @access public
 	 * @var array
@@ -40,7 +31,8 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
-		if( !empty( $args['choices'] ) ){
+
+		if ( ! empty( $args['choices'] ) ) {
 			$this->colours = $args['choices'];
 		}
 	}
@@ -51,7 +43,6 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 	 * @since 3.4.0
 	 */
 	public function enqueue() { 
-		// 
 		wp_enqueue_script( 'lsx-colour-control', get_template_directory_uri() .'/js/customizer-colour.js', array('jquery'), null, true );
 	}
 
@@ -61,35 +52,64 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 	 * @since 3.4.0
 	 */
 	public function render_content() {
-		
-		$post_id    = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
-		$class = 'customize-control customize-control-' . $this->type;
-		$value = $this->value();
+		$set_value = $this->value();
 
 		?> 
 		<label>
 			<?php if ( ! empty( $this->label ) ) { ?>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ) ?></span>
 			<?php }
 			if ( ! empty( $this->description ) ) { ?>
-				<span class="description customize-control-description"><?php echo $this->description; ?></span>
+				<span class="description customize-control-description"><?php echo $this->description ?></span>
 			<?php } ?>
-			<div class="colours-selector">
-			<?php
-			foreach( $this->colours as $colour => $colour_label ){
-				$sel = 'border: 1px solid transparent;';
-				if( $value == $colour ){
-					$sel = 'border: 1px solid rgb(43, 166, 203);';
+			<select <?php $this->link() ?>>
+				<?php
+				foreach ( $this->colours as $key => $value ) {
+					$sel = '';
+					if ( $set_value == $key ) {
+						$sel = ' selected="selected"';
+					}
+					echo '<option value="'. $key .'"'. $sel .'>'. $value['label'] .'</option>';
 				}
-				echo '<img class="colour-button" style="padding:2px;'. $sel .'" src="' . get_template_directory_uri() .'/img/' . $colour . '.png" data-option="' . $colour . '">';
-			}
-
-			?>
-			<input <?php $this->link(); ?> class="selected-colour <?php echo $class; ?>" id="<?php echo $post_id; ?>" type="hidden" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>>
+				?>
+			</select>
 			</div>
 		</label>
 	<?php
 	}
+	
+	/*
+	public function get_color_scheme_choices() {
+		$color_schemes                = $this->colours;
+		$color_scheme_control_options = array();
 
+		foreach ( $color_schemes as $color_scheme => $value ) {
+			$color_scheme_control_options[ $color_scheme ] = $value['label'];
+		}
+
+		return $color_scheme_control_options;
+	}
+
+	public function get_color_scheme() {
+		$color_scheme_option = get_theme_mod( 'color_scheme', 'default' );
+		$color_schemes       = $this->colours;
+
+		if ( array_key_exists( $color_scheme_option, $color_schemes ) ) {
+			return $color_schemes[ $color_scheme_option ]['colors'];
+		}
+
+		return $color_schemes['default']['colors'];
+	}
+
+	public function sanitize_color_scheme( $value ) {
+		$color_schemes = LSX_Customize_Colour_Control::get_color_scheme_choices();
+
+		if ( ! array_key_exists( $value, $color_schemes ) ) {
+			return 'default';
+		}
+
+		return $value;
+	}
+	*/
 }
 ?>
