@@ -140,7 +140,7 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 			</section>
 		<?php endif; ?>
 
-		<?php if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
+		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 			<section id="footer-widgets">
 				<div class="container">
 					<div class="row">
