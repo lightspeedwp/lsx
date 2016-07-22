@@ -357,8 +357,8 @@ add_filter( 'excerpt_more', 'lsx_excerpt_more' );
  * Add a continue reading link to the excerpt
  */
 function lsx_the_excerpt_filter($excerpt) {
-	$show_full_content = has_post_format(array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio'));
-
+	$show_full_content = has_post_format(apply_filters('lsx_the_excerpt_filter_post_types', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio')));
+	
 	if (!$show_full_content) {
 		if ('' !== $excerpt  && !stristr($excerpt, 'moretag')) {
 			$pagination = wp_link_pages( array(
