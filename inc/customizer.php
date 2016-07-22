@@ -24,11 +24,6 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) {
 		private $controls = array();
 		
 		/**
-		 * An array of the customizer CSS settings
-		 */
-		private $css = array();
-
-		/**
 		 * Initialize the plugin by setting localization and loading public scripts
 		 * and styles.
 		 *
@@ -139,11 +134,6 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) {
 		 * @since     1.0.0
 		 */		
 		private function add_setting( $slug, $args, $wp_customize ) {
-			// add css live setting for output
-			if( !empty( $args['css'] ) ){
-				unset( $args['css'] );
-			}
-
 			$wp_customize->add_setting( $slug, //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
 				array_merge( array(
 					'default' 			=> null, //Default setting/value to save
