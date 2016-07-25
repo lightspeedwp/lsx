@@ -120,7 +120,7 @@ $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', arr
 			// Header
 			'#ffffff', '#e4701e', '#cc4800', '#777777',
 			// Main Menu
-			'#fbaf3f', '#333333', '#555555', '#555555', '#ffffff',
+			'#fbaf3f', '#333333', '#555555', '#ffffff', '#ffffff',
 			// Banner
 			'#e49435', '#ffffff', '#ffffff',
 			// Body
