@@ -740,7 +740,9 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 	input[type="text"]:focus,
 	input[type="search"]:focus,
-	input[type="email"]:focus {
+	input[type="email"]:focus,
+	textarea:focus,
+	select:focus {
 		border-color: {$colors['body_link_hover_color']} !important;
 	}
 CSS;
