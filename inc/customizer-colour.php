@@ -113,7 +113,8 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Button */
 
 	.btn,
@@ -125,15 +126,56 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	#searchform .input-group span.input-group-btn button.search-submit,
 	#searchform .input-group span.input-group-btn button.search-submit:visited,
 	.caldera-clarity-grid .btn,
-	.caldera-clarity-grid .button-primary,
-	.caldera-grid .btn,
-	.caldera-grid .button-primary,
 	.caldera-clarity-grid .btn:visited,
+	.caldera-clarity-grid .button-primary,
 	.caldera-clarity-grid .button-primary:visited,
+	.caldera-grid .btn,
 	.caldera-grid .btn:visited,
-	.caldera-grid .button-primary:visited {
+	.caldera-grid .button-primary,
+	.caldera-grid .button-primary:visited,
+	#footer-widgets .widget form .btn,
+	#footer-widgets .widget form .btn:visited,
+	#footer-widgets .widget form .button-primary,
+	#footer-widgets .widget form .button-primary:visited {
 		background-color: {$colors['button_background_color']};
 		color: {$colors['button_text_color']};
+	}
+
+	.btn:hover,
+	.btn:active,
+	.btn:focus,
+	.button:hover,
+	.button:active,
+	.button:focus,
+	button:hover,
+	button:active,
+	button:focus,
+	input[type="submit"]:hover,
+	input[type="submit"]:active,
+	input[type="submit"]:focus,
+	#searchform .input-group span.input-group-btn button.search-submit:hover,
+	#searchform .input-group span.input-group-btn button.search-submit:active,
+	#searchform .input-group span.input-group-btn button.search-submit:focus,
+	.caldera-clarity-grid .btn:hover,
+	.caldera-clarity-grid .btn:active,
+	.caldera-clarity-grid .btn:focus,
+	.caldera-clarity-grid .button-primary:hover,
+	.caldera-clarity-grid .button-primary:active,
+	.caldera-clarity-grid .button-primary:focus,
+	.caldera-grid .btn:hover,
+	.caldera-grid .btn:active,
+	.caldera-grid .btn:focus,
+	.caldera-grid .button-primary:hover,
+	.caldera-grid .button-primary:active,
+	.caldera-grid .button-primary:focus,
+	#footer-widgets .widget form .btn:hover,
+	#footer-widgets .widget form .btn:active,
+	#footer-widgets .widget form .btn:focus,
+	#footer-widgets .widget form .button-primary:hover,
+	#footer-widgets .widget form .button-primary:active,
+	#footer-widgets .widget form .button-primary:focus {
+		background-color: {$colors['button_background_hover_color']};
+		color: {$colors['button_text_color_hover']};
 	}
 
 	article header.entry-header h1.entry-title a.format-link,
@@ -142,42 +184,35 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 		color: {$colors['button_text_color']} !important;
 	}
 
-	.btn:hover,
-	.btn:active,
-	.button:hover,
-	.button:active,
-	button:hover,
-	button:active,
-	input[type="submit"]:hover,
-	input[type="submit"]:active,
-	#searchform .input-group span.input-group-btn button.search-submit:hover,
-	#searchform .input-group span.input-group-btn button.search-submit:active,
-	.caldera-clarity-grid .btn:hover,
-	.caldera-clarity-grid .button-primary:hover,
-	.caldera-grid .btn:hover,
-	.caldera-grid .button-primary:hover,
-	.caldera-clarity-grid .btn:active,
-	.caldera-clarity-grid .button-primary:active,
-	.caldera-grid .btn:active,
-	.caldera-grid .button-primary:active {
-		background-color: {$colors['button_background_hover_color']};
-		color: {$colors['button_text_color_hover']};
-	}
-
+	.border-btn.button-primary,
+	.border-btn.button-primary:visited,
+	.btn.border-btn,
+	.btn.border-btn:visited,
+	button.border-btn,
+	button.border-btn:visited,
 	.wp-pagenavi a,
 	.wp-pagenavi a:visited,
 	.lsx-postnav > a,
 	.lsx-postnav > a:visited {
 		border-color: {$colors['button_background_color']} !important;
-		color: {$colors['button_text_color']} !important;
+		color: {$colors['button_background_color']} !important;
 	}
 
+	.border-btn.button-primary:hover,
+	.border-btn.button-primary:active,
+	.border-btn.button-primary:focus,
+	.btn.border-btn:hover,
+	.btn.border-btn:active,
+	.btn.border-btn:focus,
+	button.border-btn:hover,
+	button.border-btn:active,
+	button.border-btn:focus,
+	.wp-pagenavi a:hover,
 	.wp-pagenavi a:active,
 	.wp-pagenavi a:focus,
-	.wp-pagenavi a:hover,
+	.lsx-postnav > a:hover,
 	.lsx-postnav > a:active,
-	.lsx-postnav > a:focus,
-	.lsx-postnav > a:hover {
+	.lsx-postnav > a:focus {
 		background-color: {$colors['button_background_hover_color']} !important;
 		border-color: {$colors['button_background_hover_color']} !important;
 		color: {$colors['button_text_color_hover']} !important;
@@ -189,6 +224,8 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 		color: {$colors['button_text_color']} !important;
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_button', $css, $colors );
 }
 
 
@@ -236,7 +273,8 @@ function lsx_customizer_colour__button_cta_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Button CTA */
 
 	.btn.cta-btn,
@@ -255,19 +293,25 @@ function lsx_customizer_colour__button_cta_get_css( $colors ) {
 
 	.btn.cta-btn:hover,
 	.btn.cta-btn:active,
+	.btn.cta-btn:focus,
 	#top-menu nav.top-menu ul li.cta a:hover,
 	#top-menu nav.top-menu ul li.cta a:active,
+	#top-menu nav.top-menu ul li.cta a:focus,
 	.btn.cta-border-btn:hover,
-	.btn.cta-border-btn:active {
+	.btn.cta-border-btn:active,
+	.btn.cta-border-btn:focus {
 		background-color: {$colors['button_cta_background_hover_color']} !important;
 		color: {$colors['button_cta_text_color_hover']} !important;
 	}
 
 	.btn.cta-border-btn:hover,
-	.btn.cta-border-btn:active {
+	.btn.cta-border-btn:active,
+	.btn.cta-border-btn:focus {
 		border-color: {$colors['button_cta_background_hover_color']} !important;
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_button_cta', $css, $colors );
 }
 
 
@@ -314,7 +358,8 @@ function lsx_customizer_colour__top_menu_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Top Menu */
 
 	#top-menu {
@@ -328,14 +373,17 @@ function lsx_customizer_colour__top_menu_get_css( $colors ) {
 
 	#top-menu nav.top-menu ul li a:hover,
 	#top-menu nav.top-menu ul li a:active,
-
+	#top-menu nav.top-menu ul li a:focus,
 	#top-menu nav.top-menu ul li a:before,
 	#top-menu nav.top-menu ul li a:visited:before,
 	#top-menu nav.top-menu ul li a:hover:before,
-	#top-menu nav.top-menu ul li a:active:before {
+	#top-menu nav.top-menu ul li a:active:before,
+	#top-menu nav.top-menu ul li a:focus:before {
 		color: {$colors['top_menu_text_hover_color']};
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_top_menu', $css, $colors );
 }
 
 
@@ -383,7 +431,8 @@ function lsx_customizer_colour__header_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Header */
 
 	header.banner {
@@ -397,7 +446,8 @@ function lsx_customizer_colour__header_get_css( $colors ) {
 	}
 
 	header.banner .site-branding .site-title a:hover,
-	header.banner .site-branding .site-title a:active {
+	header.banner .site-branding .site-title a:active,
+	header.banner .site-branding .site-title a:focus {
 		color: {$colors['header_title_hover_color']};
 	}
 
@@ -405,6 +455,8 @@ function lsx_customizer_colour__header_get_css( $colors ) {
 		color: {$colors['header_description_color']};
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_header', $css, $colors );
 }
 
 
@@ -453,7 +505,8 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Main Menu */
 
 	nav.primary-navbar .nav.navbar-nav li a {
@@ -500,6 +553,8 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 		background-color: {$colors['main_menu_text_hover1_color']};
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_main_menu', $css, $colors );
 }
 
 
@@ -546,7 +601,8 @@ function lsx_customizer_colour__banner_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Banner */
 
 	#primary.col-md-12 .archive-header,
@@ -565,6 +621,8 @@ function lsx_customizer_colour__banner_get_css( $colors ) {
 		color: {$colors['banner_text_image_color']} !important;
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_banner', $css, $colors );
 }
 
 
@@ -614,7 +672,8 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Body */
 
 	body,
@@ -637,13 +696,16 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 	h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
 	h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active,
+	h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus,
 	body.single-post .wrap #primary .post-navigation .pager a:hover div h3,
-	body.single-post .wrap #primary .post-navigation .pager a:active div h3 {
+	body.single-post .wrap #primary .post-navigation .pager a:active div h3 ,
+	body.single-post .wrap #primary .post-navigation .pager a:focus div h3 {
 		color: {$colors['body_link_hover_color']};
 	}
 
 	article header.entry-header h1.entry-title a:hover,
-	article header.entry-header h1.entry-title a:active {
+	article header.entry-header h1.entry-title a:active,
+	article header.entry-header h1.entry-title a:focus {
 		color: {$colors['body_link_hover_color']} !important;
 	}
 
@@ -672,40 +734,47 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	a,
 	a:visited,
 	.entry-content a,
-	.entry-summary a,
 	.entry-content a:visited,
+	.entry-summary a,
 	.entry-summary a:visited {
 		color: {$colors['body_link_color']};
 	}
 
+	a:hover,
+	a:active,
+	a:focus,
+	.entry-content a:hover,
+	.entry-content a:active,
+	.entry-content a:focus,
+	.entry-summary a:hover,
+	.entry-summary a:active,
+	.entry-summary a:focus {
+		color: {$colors['body_link_hover_color']};
+	}
+
 	.post-meta-author a,
-	.post-meta-categories a,
-	.post-meta-time a,
-	.post-tags-wrapper .post-comments a,
 	.post-meta-author a:visited,
+	.post-meta-categories a,
 	.post-meta-categories a:visited,
+	.post-meta-time a,
 	.post-meta-time a:visited,
+	.post-tags-wrapper .post-comments a,
 	.post-tags-wrapper .post-comments a:visited {
 		color: {$colors['body_link_color']} !important;
 	}
 
-	a:hover,
-	a:active,
-	.entry-content a:hover,
-	.entry-summary a:hover,
-	.entry-content a:active,
-	.entry-summary a:active {
-		color: {$colors['body_link_hover_color']};
-	}
-
 	.post-meta-author a:hover,
-	.post-meta-categories a:hover,
-	.post-meta-time a:hover,
-	.post-tags-wrapper .post-comments a:hover,
 	.post-meta-author a:active,
+	.post-meta-author a:focus,
+	.post-meta-categories a:hover,
 	.post-meta-categories a:active,
+	.post-meta-categories a:focus,
+	.post-meta-time a:hover,
 	.post-meta-time a:active,
-	.post-tags-wrapper .post-comments a:active {
+	.post-meta-time a:focus,
+	.post-tags-wrapper .post-comments a:hover,
+	.post-tags-wrapper .post-comments a:active,
+	.post-tags-wrapper .post-comments a:focus {
 		color: {$colors['body_link_hover_color']} !important;
 	}
 
@@ -746,6 +815,8 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 		border-color: {$colors['body_link_hover_color']} !important;
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_body', $css, $colors );
 }
 
 
@@ -793,7 +864,8 @@ function lsx_customizer_colour__footer_cta_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Footer CTA */
 
 	#footer-cta,
@@ -812,43 +884,53 @@ function lsx_customizer_colour__footer_cta_get_css( $colors ) {
 	}
 
 	#footer-cta a,
-	#footer-cta h1 a,
-	#footer-cta h2 a,
-	#footer-cta h3 a,
-	#footer-cta h4 a,
-	#footer-cta h5 a,
-	#footer-cta h6 a,
-	#footer-cta .textwidget a,
 	#footer-cta a:visited,
+	#footer-cta h1 a,
 	#footer-cta h1 a:visited,
+	#footer-cta h2 a,
 	#footer-cta h2 a:visited,
+	#footer-cta h3 a,
 	#footer-cta h3 a:visited,
+	#footer-cta h4 a,
 	#footer-cta h4 a:visited,
+	#footer-cta h5 a,
 	#footer-cta h5 a:visited,
+	#footer-cta h6 a,
 	#footer-cta h6 a:visited,
+	#footer-cta .textwidget a,
 	#footer-cta .textwidget a:visited {
 		color: {$colors['footer_cta_link_color']};
 	}
 
 	#footer-cta a:hover,
-	#footer-cta h1 a:hover,
-	#footer-cta h2 a:hover,
-	#footer-cta h3 a:hover,
-	#footer-cta h4 a:hover,
-	#footer-cta h5 a:hover,
-	#footer-cta h6 a:hover,
-	#footer-cta .textwidget a:hover,
 	#footer-cta a:active,
+	#footer-cta a:focus,
+	#footer-cta h1 a:hover,
 	#footer-cta h1 a:active,
+	#footer-cta h1 a:focus,
+	#footer-cta h2 a:hover,
 	#footer-cta h2 a:active,
+	#footer-cta h2 a:focus,
+	#footer-cta h3 a:hover,
 	#footer-cta h3 a:active,
+	#footer-cta h3 a:focus,
+	#footer-cta h4 a:hover,
 	#footer-cta h4 a:active,
+	#footer-cta h4 a:focus,
+	#footer-cta h5 a:hover,
 	#footer-cta h5 a:active,
+	#footer-cta h5 a:focus,
+	#footer-cta h6 a:hover,
 	#footer-cta h6 a:active,
-	#footer-cta .textwidget a:active {
+	#footer-cta h6 a:focus,
+	#footer-cta .textwidget a:hover,
+	#footer-cta .textwidget a:active,
+	#footer-cta .textwidget a:focus {
 		color: {$colors['footer_cta_link_hover_color']};
 	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_footer_cta', $css, $colors );
 }
 
 
@@ -896,7 +978,8 @@ function lsx_customizer_colour__footer_widgets_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Footer Widgets */
 
 	#footer-widgets {
@@ -909,28 +992,33 @@ function lsx_customizer_colour__footer_widgets_get_css( $colors ) {
 		color: {$colors['footer_widgets_text_color']};
 	}
 
-	#footer-widgets .widget h3.widget-title {
-		border-bottom-color: {$colors['footer_widgets_text_color']};
-	}
-
 	#footer-widgets a,
-	#footer-widgets .widget a,
-	#footer-widgets .widget h3.widget-title a,
 	#footer-widgets a:visited,
+	#footer-widgets .widget a,
 	#footer-widgets .widget a:visited,
+	#footer-widgets .widget h3.widget-title a,
 	#footer-widgets .widget h3.widget-title a:visited {
 		color: {$colors['footer_widgets_link_color']};
 	}
 
 	#footer-widgets a:hover,
-	#footer-widgets .widget a:hover,
-	#footer-widgets .widget h3.widget-title :hover,
 	#footer-widgets a:active,
+	#footer-widgets a:focus,
+	#footer-widgets .widget a:hover,
 	#footer-widgets .widget a:active,
-	#footer-widgets .widget h3.widget-title a:active {
+	#footer-widgets .widget a:focus,
+	#footer-widgets .widget h3.widget-title :hover,
+	#footer-widgets .widget h3.widget-title a:active,
+	#footer-widgets .widget h3.widget-title a:focus {
 		color: {$colors['footer_widgets_link_hover_color']};
 	}
+
+	#footer-widgets .widget h3.widget-title {
+		border-bottom-color: {$colors['footer_widgets_text_color']};
+	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_footer_widgets', $css, $colors );
 }
 
 
@@ -978,7 +1066,8 @@ function lsx_customizer_colour__footer_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
-	return <<<CSS
+	$css = <<<CSS
+	
 	/* Footer */
 
 	footer.content-info {
@@ -995,15 +1084,18 @@ function lsx_customizer_colour__footer_get_css( $colors ) {
 		color: {$colors['footer_link_color']};
 	}
 
+	footer.content-info a:hover,
+	footer.content-info a:active,
+	footer.content-info a:focus {
+		color: {$colors['footer_link_hover_color']};
+	}
+
 	nav#footer-navigation ul li {
 		border-right: {$colors['footer_link_color']};
 	}
-
-	footer.content-info a:hover,
-	footer.content-info a:active {
-		color: {$colors['footer_link_hover_color']};
-	}
 CSS;
+
+	return apply_filters( 'lsx_customizer_colour_selectors_footer', $css, $colors );
 }
 
 
