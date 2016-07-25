@@ -4,7 +4,7 @@ Author: LightSpeed
 Author URI: https://www.lsdev.biz/
 Theme Name: LSX
 Theme URI: https://www.lsdev.biz/product/lsx-wordpress-theme/
-Tags: one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, portfolio, blog, e-commerce, translation-ready, theme-options, footer-widgets, featured-images, full-width-template, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.5
 Tested up to: 4.5.2
 Stable tag: 4.5.2
