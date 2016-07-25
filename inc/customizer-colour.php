@@ -123,7 +123,15 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	input[type="submit"],
 	input[type="submit"]:visited,
 	#searchform .input-group span.input-group-btn button.search-submit,
-	#searchform .input-group span.input-group-btn button.search-submit:visited {
+	#searchform .input-group span.input-group-btn button.search-submit:visited,
+	.caldera-clarity-grid .btn,
+	.caldera-clarity-grid .button-primary,
+	.caldera-grid .btn,
+	.caldera-grid .button-primary,
+	.caldera-clarity-grid .btn:visited,
+	.caldera-clarity-grid .button-primary:visited,
+	.caldera-grid .btn:visited,
+	.caldera-grid .button-primary:visited {
 		background-color: {$colors['button_background_color']};
 		color: {$colors['button_text_color']};
 	}
@@ -143,7 +151,15 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	input[type="submit"]:hover,
 	input[type="submit"]:active,
 	#searchform .input-group span.input-group-btn button.search-submit:hover,
-	#searchform .input-group span.input-group-btn button.search-submit:active {
+	#searchform .input-group span.input-group-btn button.search-submit:active,
+	.caldera-clarity-grid .btn:hover,
+	.caldera-clarity-grid .button-primary:hover,
+	.caldera-grid .btn:hover,
+	.caldera-grid .button-primary:hover,
+	.caldera-clarity-grid .btn:active,
+	.caldera-clarity-grid .button-primary:active,
+	.caldera-grid .btn:active,
+	.caldera-grid .button-primary:active {
 		background-color: {$colors['button_background_hover_color']};
 		color: {$colors['button_text_color_hover']};
 	}
@@ -720,6 +736,12 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 	.page-header {
 		border-bottom-color: {$colors['body_line_color']};
+	}
+
+	input[type="text"]:focus,
+	input[type="search"]:focus,
+	input[type="email"]:focus {
+		border-color: {$colors['body_link_hover_color']} !important;
 	}
 CSS;
 }
