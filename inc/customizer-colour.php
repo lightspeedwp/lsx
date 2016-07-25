@@ -121,9 +121,17 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	.button,
 	.button:visited,
 	input[type="submit"],
-	input[type="submit"]:visited {
+	input[type="submit"]:visited,
+	#searchform .input-group span.input-group-btn button.search-submit,
+	#searchform .input-group span.input-group-btn button.search-submit:visited {
 		background-color: {$colors['button_background_color']};
 		color: {$colors['button_text_color']};
+	}
+
+	article header.entry-header h1.entry-title a.format-link,
+	article header.entry-header h1.entry-title a.format-link:visited {
+		background-color: {$colors['button_background_color']};
+		color: {$colors['button_text_color']} !important;
 	}
 
 	.btn:hover,
@@ -133,7 +141,9 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	button:hover,
 	button:active,
 	input[type="submit"]:hover,
-	input[type="submit"]:active {
+	input[type="submit"]:active,
+	#searchform .input-group span.input-group-btn button.search-submit:hover,
+	#searchform .input-group span.input-group-btn button.search-submit:active {
 		background-color: {$colors['button_background_hover_color']};
 		color: {$colors['button_text_color_hover']};
 	}
@@ -655,9 +665,11 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.post-meta-author a,
 	.post-meta-categories a,
 	.post-meta-time a,
+	.post-tags-wrapper .post-comments a,
 	.post-meta-author a:visited,
 	.post-meta-categories a:visited,
-	.post-meta-time a:visited {
+	.post-meta-time a:visited,
+	.post-tags-wrapper .post-comments a:visited {
 		color: {$colors['body_link_color']} !important;
 	}
 
@@ -670,12 +682,14 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 		color: {$colors['body_link_hover_color']};
 	}
 
-	post-meta-author a:hover,
+	.post-meta-author a:hover,
 	.post-meta-categories a:hover,
 	.post-meta-time a:hover,
+	.post-tags-wrapper .post-comments a:hover,
 	.post-meta-author a:active,
 	.post-meta-categories a:active,
-	.post-meta-time a:active {
+	.post-meta-time a:active,
+	.post-tags-wrapper .post-comments a:active {
 		color: {$colors['body_link_hover_color']} !important;
 	}
 
