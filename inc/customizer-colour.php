@@ -552,6 +552,17 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 	.navbar-default .navbar-toggle .icon-bar {
 		background-color: {$colors['main_menu_text_hover1_color']};
 	}
+
+	header.banner .search-submit,
+	header.banner .search-submit:visited {
+		color: {$colors['main_menu_text_color']} !important;
+	}
+
+	header.banner .search-submit:hover,
+	header.banner .search-submit:active,
+	header.banner .search-submit:focus {
+		color: #333 !important;
+	}
 CSS;
 
 	return apply_filters( 'lsx_customizer_colour_selectors_main_menu', $css, $colors );
