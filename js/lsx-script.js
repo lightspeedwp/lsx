@@ -18,8 +18,12 @@ jQuery(document).ready(function($) {
 		$('li.menu-item-language-current.dropdown').find('a:first').append('<span class="caret"></span>');
 	}
 
-	$('.wp-pagenavi').wrap('<div class="wp-pagenavi-wrapper"></div>');
-	$('<div class="lsx-breaker"></div>').prependTo( ".wp-pagenavi-wrapper" );
+	if ($('.wp-pagenavi').children().length == 0) {
+		$('.wp-pagenavi').remove();
+	} else {
+		$('.wp-pagenavi').wrap('<div class="wp-pagenavi-wrapper"></div>');
+		$('<div class="lsx-breaker"></div>').prependTo( ".wp-pagenavi-wrapper" );
+	}
 
 	var sidebarExists = document.getElementById("secondary");
 	if (sidebarExists) {
