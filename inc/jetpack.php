@@ -405,7 +405,7 @@ add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
  }
 
 /**
- * Change the “Related” headline at the top of the Related Posts section
+ * Change the Related headline at the top of the Related Posts section
  * 
  * @package lsx
  * @subpackage jetpack
