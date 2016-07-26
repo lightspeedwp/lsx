@@ -125,6 +125,8 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	input[type="submit"]:visited,
 	#searchform .input-group span.input-group-btn button.search-submit,
 	#searchform .input-group span.input-group-btn button.search-submit:visited,
+	#respond #submit,
+	#respond #submit:visited,
 	.caldera-clarity-grid .btn,
 	.caldera-clarity-grid .btn:visited,
 	.caldera-clarity-grid .button-primary,
@@ -156,6 +158,9 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	#searchform .input-group span.input-group-btn button.search-submit:hover,
 	#searchform .input-group span.input-group-btn button.search-submit:active,
 	#searchform .input-group span.input-group-btn button.search-submit:focus,
+	#respond #submit:hover,
+	#respond #submit:active,
+	#respond #submit:focus,
 	.caldera-clarity-grid .btn:hover,
 	.caldera-clarity-grid .btn:active,
 	.caldera-clarity-grid .btn:focus,
@@ -744,22 +749,22 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 	a,
 	a:visited,
-	.entry-content a,
-	.entry-content a:visited,
-	.entry-summary a,
-	.entry-summary a:visited {
+	.entry-content a:not(.btn),
+	.entry-content a:not(.btn):visited,
+	.entry-summary a:not(.btn),
+	.entry-summary a:not(.btn):visited {
 		color: {$colors['body_link_color']};
 	}
 
 	a:hover,
 	a:active,
 	a:focus,
-	.entry-content a:hover,
-	.entry-content a:active,
-	.entry-content a:focus,
-	.entry-summary a:hover,
-	.entry-summary a:active,
-	.entry-summary a:focus {
+	.entry-content a:not(.btn):hover,
+	.entry-content a:not(.btn):active,
+	.entry-content a:not(.btn):focus,
+	.entry-summary a:not(.btn):hover,
+	.entry-summary a:not(.btn):active,
+	.entry-summary a:not(.btn):focus {
 		color: {$colors['body_link_hover_color']};
 	}
 
