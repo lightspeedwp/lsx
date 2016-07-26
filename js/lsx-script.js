@@ -273,7 +273,7 @@ jQuery(document).ready(function($) {
 			}
 
 		if (991 < windowWidth) {
-			$banner = $('.page-banner');
+			$banner = $('.page-banner:not(.gmap-banner)');
 
 			if ($banner.length > 0) {
 				$bannerImage = $banner.children('.page-banner-image');
