@@ -174,7 +174,7 @@ function lsx_customizer_font_controls($lsx_controls) {
 	);
 	/// add the control
 	$lsx_controls['fields']['lsx_font'] = array(
-			'label'         =>  __( '', 'lsx' ),
+			'label'         =>  '',
 			'section'       =>  'lsx-font',
 			'settings'      =>  'lsx_font',
 			'control'   =>  'LSX_Customize_Font_Control',
