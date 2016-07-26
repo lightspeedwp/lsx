@@ -74,7 +74,7 @@ function lsx_customizer_colour_scheme_controls( $lsx_controls ) {
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$lsx_controls['settings'][$key] = array(
-			'default'       =>  $customizer_colour_choices['default'][$counter],
+			'default'       =>  $customizer_colour_choices['default']['colors'][$counter],
 			'type'	        =>  'theme_mod',
 			'transport'     =>  'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
