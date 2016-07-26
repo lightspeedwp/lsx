@@ -489,13 +489,13 @@ article {
 			}
 
 			a:not(.format-link) {
-				color: $black !important;
+				color: $black;
 				@include transition(all .1s ease-in-out);
 
 				&:hover,
 				&:active,
 				&:focus {
-					color: $primary !important;
+					color: $primary;
 				}
 			}
 

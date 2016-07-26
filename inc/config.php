@@ -35,10 +35,8 @@ function lsx_setup() {
 			'width'       => 150,
 			'flex-width' => true,
 			'flex-height' => true,
-	) );	
-	add_theme_support( 'custom-background', array(
-	'default-color' => 'FFF',
-	) );	
+	) );
+	
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );

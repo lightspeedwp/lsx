@@ -1,20 +1,51 @@
 /**
- * Theme Customizer layout control JS
- *
+ * Add a listener to the Color Scheme control to update other color controls to new values/defaults.
+ * Also trigger an update of the Color Scheme CSS when a color is changed.
  */
 
-( function( $ ) {
-	
-	// custom controls
-	$(document).on('click', '.colour-button', function(){
-		var clicked = $(this),
-			parent = clicked.closest('.colours-selector'),
-			input = parent.find('.selected-colour');
-		parent.find( '.colour-button' ).css('border', '1px solid transparent');
+( function( api ) {
+	var cssTemplate = wp.template( 'lsx-color-scheme' );
 
-		clicked.css( 'border', '1px solid rgb(43, 166, 203)');
-		$(input).val( clicked.data('option') ).trigger('change');
+	api.controlConstructor.select = api.Control.extend( {
+		ready: function() {
+			if ( 'color_scheme' === this.id ) {
+				this.setting.bind( 'change', function( value ) {
+					var colors = colorScheme[value].colors;
 
-	});
+					_.each( colors, function( color, i ) {
+						if (typeof api( colorSchemeKeys[i] ) == 'function') {
+							api( colorSchemeKeys[i] ).set( color );
+							api.control( colorSchemeKeys[i] ).container.find( '.color-picker-hex' )
+								.data( 'data-default-color', color )
+								.wpColorPicker( 'defaultColor', color );
+						}
+					} );
+				} );
+			}
+		}
+	} );
 
-} )( jQuery );
+	// Generate the CSS for the current Color Scheme.
+	function updateCSS() {
+		var scheme = api( 'color_scheme' )(),
+			css,
+			colors = _.object( colorSchemeKeys, colorScheme[ scheme ].colors );
+
+		// Merge in color scheme overrides.
+		_.each( colorSchemeKeys, function( setting ) {
+			if (typeof api( setting ) == 'function') {
+				colors[ setting ] = api( setting )();
+			}
+		} );
+
+		css = cssTemplate( colors );
+		api.previewer.send( 'update-color-scheme-css', css );
+	}
+
+	// Update the CSS whenever a color setting is changed.
+	_.each( colorSchemeKeys, function( setting ) {
+		api( setting, function( setting ) {
+			setting.bind( updateCSS );
+		} );
+	} );
+} )( wp.customize );
