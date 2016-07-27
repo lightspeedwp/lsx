@@ -21,6 +21,7 @@ require get_template_directory() . '/inc/scripts.php';
 require get_template_directory() . '/inc/nav.php';
 require get_template_directory() . '/inc/comment-walker.php';
 require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/lazyload.php';
 if(class_exists('BuddyPress')){
 	require get_template_directory() . '/inc/buddypress.php';
 }
