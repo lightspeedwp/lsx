@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) return;
  *   widget_text
  *   post_thumbnail_html
  *   get_avatar
- *   lsx_thumbnail_html_tag
  */
 class LSX_LazyLoadImages {
 	protected static $enabled = true;
@@ -42,7 +41,7 @@ class LSX_LazyLoadImages {
 		add_filter( 'get_avatar', array( __CLASS__, 'filter_images' ), 200 );
 		
 		// LSX
-		add_filter( 'lsx_thumbnail_html_tag', array( __CLASS__, 'filter_images' ), 200 );
+		add_filter( 'lsx_lazyload_filter_images', array( __CLASS__, 'filter_images' ), 200 );
 	}
 
 	static function add_scripts() {
@@ -142,4 +141,3 @@ class LSX_LazyLoadImages {
 }
 
 add_action( 'init', array( 'LSX_LazyLoadImages', 'init' ) );
-add_filter( 'lsx_lazyload_filter_images', array( 'LSX_LazyLoadImages', 'filter_images' ) );
