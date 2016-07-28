@@ -174,10 +174,8 @@ add_action('lsx_content_top','lsx_blog_page_title',20);
  */
 function lsx_add_viewport_meta_tag() {	
 	?>
-  		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-  		<!-- Noto Sans -->
-  		<link href='http<?php if(is_ssl()){ echo 's'; } ?>://fonts.googleapis.com/css?family=Noto+Sans:700' rel='stylesheet' type='text/css'>
-  	<?php }
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+	<?php }
 add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
 
 
