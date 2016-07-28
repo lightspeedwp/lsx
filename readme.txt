@@ -33,14 +33,9 @@ LSX also supports a variety of other top quality plugins like Sensei, WP Job Man
 
 == Documentation & Support ==
 
-Theme documentation is available on hhttps://www.lsdev.biz/documentation/lsx/
+Theme documentation is available on https://www.lsdev.biz/documentation/lsx/ 
+
 Support - https://www.lsdev.biz/contact-us/ 
-
-== Resources ==
-
-* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
-* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) 
 
 == Frequently Asked Questions ==
 
@@ -104,7 +99,6 @@ Social networks that aren't currently supported will be indicated by a generic s
 e.g
  * add_action('lsx_body_top','your_function_name'); 
  * function your_function_name() { echo 'content'; }
-
 
 Below is a layout of where the actions are located, so you can easily position you HTML.
 
@@ -203,35 +197,36 @@ Below is a layout of where the actions are located, so you can easily position y
 
 == Filters ==
 
-'lsx_allowed_post_type_banners' - receives 1 paramter, allow you 'enable' the banners on any custom post types you have registered.
+'lsx_allowed_post_type_banners' - receives 1 parameter, allow you 'enable' the banners on any custom post types you have registered.
  * $post_types = array('post','page');
  
-'lsx_thumbnail_size' - receives 1 paramter, allows you to change the size of the thumbnail being called. Without having to edit the templates.
+'lsx_thumbnail_size' - receives 1 parameter, allows you to change the size of the thumbnail being called. Without having to edit the templates.
  * $size = 'lsx-thumbnail-wide' or array('width','height');
  
- 'lsx_wp_nav_menu_item' - receives 1 paramter, allows you to change the HTML output of a nav item.
+ 'lsx_wp_nav_menu_item' - receives 1 parameter, allows you to change the HTML output of a nav item.
  * $item_html = '<a href="#">Home</a>';
  
- 'lsx_archive_column_number' - receives 1 paramter, allows you to change the number of columns on a masonry layout.
+ 'lsx_archive_column_number' - receives 1 parameter, allows you to change the number of columns on a masonry layout.
  * $column = 3;
  
- 'lsx_post_navigation_labels' - receives 1 paramter, allows you to change the posts navigation text.
+ 'lsx_post_navigation_labels' - receives 1 parameter, allows you to change the posts navigation text.
  * $labels = array(
 		'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
 		'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
 		'title' 	=> __( 'Posts navigation', 'lsx' )
 	);
 	
-'lsx_customizer_controls' - receives 1 paramter, allows you to add and remove Customizer options.
+'lsx_customizer_controls' - receives 1 parameter, allows you to add and remove Customizer options.
  * $lsx_controls = array();
- * You can see examples of different customizer field in 'functions.php line 32'. 	
  
 == Setup ==
+
  * Open your terminal
  * Open another terminal tab, and use "sudo bash" to log in as the administrator.
  * Always have a terminal window open.
 
 === 1: Install Node.js ===
+
 This is also know as Node Package Manager, this is what we will use to install Gulp
  
  * First test to see if you have Node installed already, run "npm -v".
@@ -239,6 +234,7 @@ This is also know as Node Package Manager, this is what we will use to install G
  * If its not installed, run "sudo npm install npm -g".
 
 === 2: Install Gulp ===
+
 Run the following two commands,   this will install all the Node Modules including Gulp. 
 
 This you need to do while inside the themes directory.
@@ -247,10 +243,10 @@ This you need to do while inside the themes directory.
 Wait for the terminal to finish and test by running
 `gulp`
 
-
 = Development Workflow =
 
-Please note,  you will only ever run this to upgrade the vendor packages we use.  Otherwise you dont need these as the minified version of these are included in the theme.
+### Components Upgrade
+Please note, you will only ever run this to upgrade the vendor packages we use. Otherwise you dont need these as the minified version of these are included in the theme.
 
 CD to the themes directory, if you are not there already.  You will be working in here from now on.
  
@@ -272,7 +268,6 @@ Change bootstrap to the name of the component here - https://www.npmjs.com/
 Its important to have the parameter --save,  so it save the package and version of the componenet to the package.json file.
 `npm install bootstrap --save`
 
-
 ## Developer Help - Usefull Gists
 
 ### Banners
@@ -283,3 +278,9 @@ Its important to have the parameter --save,  so it save the package and version 
 ### Templates
 
  * Redirect a user to a login form if they are logged out (with template) - https://gist.github.com/krugazul/e92749510d31d4a10906 
+
+## Resources
+* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
+* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+* Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+* lazysizes (https://github.com/aFarkas/lazysizes) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
