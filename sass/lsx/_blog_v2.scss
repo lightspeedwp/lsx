@@ -793,6 +793,14 @@ body.search {
 						@extend %module-single-title;
 						@extend %module-single-title-box;
 					}
+
+					.entry-image {
+						.thumbnail {
+							img {
+								width: 100%;
+							}
+						}
+					}
 				}
 
 				&.post_format-post-format-quote {
