@@ -39,9 +39,8 @@ gulp.task('upgrade-components', ['clean-upgrade'], function() {
 
 gulp.task('compile-css', ['compile-css-theme','compile-css-amp','compile-css-woocommerce','compile-css-sensei','compile-css-events-calendar','compile-css-job-manager']);
 
-
 gulp.task('compile-css-theme', function() {	
-	gulp.src('sass/app.scss')
+	gulp.src(['sass/app.scss', 'sass/alegreya_open_sans.scss', 'sass/noto_sans_noto_sans.scss', 'sass/noto_serif_noto_sans.scss', 'sass/raleway_open_sans.scss', 'sass/medium-nav-break.scss'])
   		.pipe( sass().on('error', function (err) {console.log('Error!', err);}) )
   		.pipe(cleanCSS())
  	 	.pipe(gulp.dest('css/'));

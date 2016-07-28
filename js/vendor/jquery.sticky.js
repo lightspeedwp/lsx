@@ -1,4 +1,4 @@
-// Sticky Plugin v1.0.3 for jQuery
+// Sticky Plugin v1.0.4 for jQuery
 // =============
 // Author: Anthony Garand
 // Improvements by German M. Bravo (Kronuz) and Ruud Kamphuis (ruudk)
@@ -162,7 +162,11 @@
             .attr('id', wrapperId)
             .addClass(o.wrapperClassName);
 
-          stickyElement.wrapAll(wrapper);
+          stickyElement.wrapAll(function() {
+            if ($(this).parent("#" + wrapperId).length == 0) {
+                    return wrapper;
+            }
+});
 
           var stickyWrapper = stickyElement.parent();
 
@@ -202,12 +206,21 @@
           });
           mutationObserver.observe(stickyElement, {subtree: true, childList: true});
         } else {
-          stickyElement.addEventListener('DOMNodeInserted', function() {
-            methods.setWrapperHeight(stickyElement);
-          }, false);
-          stickyElement.addEventListener('DOMNodeRemoved', function() {
-            methods.setWrapperHeight(stickyElement);
-          }, false);
+          if (window.addEventListener) {
+            stickyElement.addEventListener('DOMNodeInserted', function() {
+              methods.setWrapperHeight(stickyElement);
+            }, false);
+            stickyElement.addEventListener('DOMNodeRemoved', function() {
+              methods.setWrapperHeight(stickyElement);
+            }, false);
+          } else if (window.attachEvent) {
+            stickyElement.attachEvent('onDOMNodeInserted', function() {
+              methods.setWrapperHeight(stickyElement);
+            });
+            stickyElement.attachEvent('onDOMNodeRemoved', function() {
+              methods.setWrapperHeight(stickyElement);
+            });
+          }
         }
       },
       update: scroller,
