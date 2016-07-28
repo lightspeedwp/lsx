@@ -213,7 +213,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 	}else{
 		$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
 	}
-	$img = '<img src="" alt="'.get_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
+	$img = '<img src="" alt="'.get_the_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
 	return $img;
 }
 
