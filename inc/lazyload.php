@@ -63,7 +63,7 @@ class LSX_LazyLoadImages {
 			return $content;
 		}
 
-		$skip_images_regex = '/class=".*lazyload.*"/';
+		$skip_images_regex = '/class=".*(lazyload|disable-lazyload).*"/';
 		$placeholder_image = apply_filters( 'lsx_lazyload_placeholder_image', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' );
 
 		$matches = array();
