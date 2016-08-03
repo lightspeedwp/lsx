@@ -76,21 +76,21 @@ class LSX_LazyLoadImages {
 			if ( ! ( preg_match( $skip_images_regex, $img_html ) ) ) {
 				$add_class = false;
 
-				if ( ! preg_match( '/src=/', $img_html ) && preg_match( '/srcset=/', $img_html ) ) {
+				if ( ! preg_match( '/src=[\'"]([^\'"]+)[\'"]/', $img_html ) && preg_match( '/srcset=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
 					$replace_html = preg_replace( '/<img(.*?)srcset=/i', '<img$1srcset="' . $placeholder_image . '" data-srcset=', $img_html );
 
-					if ( preg_match( '/sizes=/', $img_html ) ) {
+					if ( preg_match( '/sizes=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
 						$replace_html = preg_replace( '/sizes=/i', 'data-sizes=', $replace_html );
 					} else {
 						$replace_html = preg_replace( '/data-srcset=/i', 'data-sizes="auto" data-srcset=', $replace_html );
 					}
 
 					$add_class = true;
-				} elseif ( preg_match( '/src=/', $img_html ) ) {
+				} elseif ( preg_match( '/src=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
 					$replace_html = preg_replace( '/<img(.*?)src=/i', '<img$1src="' . $placeholder_image . '" data-src=', $img_html );
 
-					if ( preg_match( '/srcset=/', $img_html ) ) {
-						if ( preg_match( '/sizes=/', $img_html ) ) {
+					if ( preg_match( '/srcset=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
+						if ( preg_match( '/sizes=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
 							$replace_html = preg_replace( '/srcset=/i', 'data-srcset=', $replace_html );
 							$replace_html = preg_replace( '/sizes=/i', 'data-sizes=', $replace_html );
 						} else {
@@ -116,7 +116,7 @@ class LSX_LazyLoadImages {
 	}
 
 	static function add_class( $html_string = '', $new_class ) {
-		$pattern = '/class=[\'"]?([^\'"]*)[\'"]?/';
+		$pattern = '/class=[\'"]([^\'"]*)[\'"]/';
 
 		if ( preg_match( $pattern, $html_string, $matches ) ) {
 			$defined_classes = explode( ' ', $matches[1] );
