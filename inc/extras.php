@@ -17,13 +17,15 @@ function lsx_body_class($classes) {
     $classes[] = basename(get_permalink());
   }
   
-  $post_types = array('page','post');
-  $post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
+  if(!class_exists('Lsx_Banners')){
+		$post_types = array('page','post');
+		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
 
-  if((is_singular($post_types) && has_post_thumbnail()) 
-  || (is_singular('jetpack-portfolio'))){
-  	$classes[] = 'page-has-banner';
-  }
+		if((is_singular($post_types) && has_post_thumbnail()) 
+		|| (is_singular('jetpack-portfolio'))){
+			$classes[] = 'page-has-banner';
+		}
+	}
 
   if (has_nav_menu('top-menu')) {
   	$classes[] = 'has-top-menu';
