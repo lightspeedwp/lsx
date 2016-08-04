@@ -24,8 +24,7 @@ class LSX_LazyLoadImages {
 		if ( is_admin() )
 			return;
 
-		// '' is equal to disable, '1' is equal to enable, false is equal to enable (never saved)
-		if ( get_option( 'lsx_lazyload_status' ) === '' ) {
+		if ( get_theme_mod( 'lsx_lazyload_status', '1' ) === false ) {
 			self::$enabled = false;
 			return;
 		}

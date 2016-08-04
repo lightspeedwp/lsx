@@ -45,7 +45,38 @@ if(class_exists('Sensei_WC')){
 }
 
 /**
- * Returns an array of for Colour Scheme Picker.
+ * Returns an array of the core panel.
+ *
+ * @package 	lsx
+ * @subpackage	functions
+ * @category	customizer
+ * @return		$lsx_controls array()
+ */
+function lsx_customizer_core_controls( $lsx_controls ) {
+	$lsx_controls['sections']['lsx-core'] = array(
+		'title'       =>  esc_html__( 'Core Settings', 'lsx' ),
+		'description' => __( 'Change the core settings.', 'lsx' ),
+		'priority'    => 21
+	);
+
+	$lsx_controls['settings']['lsx_lazyload_status'] = array(
+		'default'           =>  '1',
+		'sanitize_callback' => 'lsx_sanitize_checkbox',
+		'transport'         =>  'postMessage',
+	);
+
+	$lsx_controls['fields']['lsx_lazyload_status'] = array(
+		'label'         =>  __( 'Lazy Loading Images', 'lsx' ),
+		'section'       =>  'lsx-core',
+		'type'          =>  'checkbox',
+	);
+
+	return $lsx_controls;
+}
+add_filter( 'lsx_customizer_controls', 'lsx_customizer_core_controls' );
+
+/**
+ * Returns an array of the colour scheme picker.
  *
  * @package 	lsx
  * @subpackage	functions
@@ -117,7 +148,7 @@ function lsx_customizer_layout_controls($lsx_controls) {
 	$lsx_controls['sections']['lsx-layout'] = array(
 			'title'       =>  esc_html__( 'Layout', 'lsx' ),
 			'description' => __( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
-			'priority' => 112
+			'priority' => 22
 	);
 	$lsx_controls['settings']['lsx_layout']  = array(
 			'default'       =>  '2cr', //Default setting/value to save
@@ -166,7 +197,7 @@ function lsx_customizer_font_controls($lsx_controls) {
 	$lsx_controls['sections']['lsx-font'] = array(
 			'title'       =>  __( 'Font', 'lsx' ),
 			'description' => 'Change the fonts sitewide.',
-			'priority' => 42
+			'priority' => 41
 	);
 	$lsx_controls['settings']['lsx_font']  = array(
 			'default'       =>  'raleway_open_sans', //Default setting/value to save
