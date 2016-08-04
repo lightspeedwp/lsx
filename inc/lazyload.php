@@ -47,6 +47,9 @@ class LSX_LazyLoadImages {
 		
 		// LSX
 		add_filter( 'lsx_lazyload_filter_images', array( __CLASS__, 'filter_images' ), 200 );
+
+		// Envira Gallery
+		add_filter( 'envira_gallery_output_image', array( __CLASS__, 'filter_images' ), 200 );
 	}
 
 	static function add_scripts() {
