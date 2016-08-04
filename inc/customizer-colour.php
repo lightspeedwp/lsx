@@ -696,6 +696,9 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 	$colors = wp_parse_args( $colors, $colors_template );
 
+	$rgb = lsx_customizer_colour__hex2rgb( $colors['body_line_color'] );
+	$colors['body_line_color_rgba'] = "rgba({$rgb['red']}, {$rgb['green']}, {$rgb['blue']}, 0.5)";
+
 	$css = <<<CSS
 	
 	/* Body */
@@ -809,7 +812,8 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	body.archive.tax-post_format .wrap #primary #main > article,
 	body.blog .wrap #primary #main > article,
 	body.search .wrap #primary #main > article {
-		box-shadow: 1px 1px 3px 0 {$colors['body_line_color']};
+		-webkit-box-shadow: 1px 1px 3px 0 {$colors['body_line_color_rgba']};
+		box-shadow: 1px 1px 3px 0 {$colors['body_line_color_rgba']};
 		border-color: {$colors['body_line_color']};
 	}
 
