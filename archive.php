@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+	<?php lsx_content_wrap_before(); ?>
+
 	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
@@ -18,19 +20,6 @@ get_header(); ?>
 		<?php lsx_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>
-
-			<header class="archive-header">
-				<h1 class="archive-title">
-					<?php if ( has_post_format() && !is_category() && !is_tag() && !is_date() && !is_tax('post_format') ) { ?>
-						Type: <?php the_archive_title(); ?>
-					<?php } else { ?>
-						<?php the_archive_title(); ?>
-					<?php } ?>
-				</h1>
-
-				<?php echo term_description(); ?>
-
-			</header><!-- .archive-header -->
 			
 			<?php 
 			$layout = get_theme_mod('lsx_layout','2cr');
@@ -71,6 +60,8 @@ get_header(); ?>
 		<?php lsx_content_after(); ?>
 		
 	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 
 <?php get_sidebar(); ?>
 

@@ -13,7 +13,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<?php lsx_content_wrap_before(); ?>
+
+	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 
@@ -50,7 +52,9 @@ get_header(); ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 
 <?php get_sidebar( 'sidebar' ); ?>
 <?php get_footer();

@@ -26,7 +26,9 @@ add_action('woocommerce_after_main_content', 'lsx_woocommerce_after_content', 10
  * @category 	layout
  */
 function lsx_woocommerce_before_content(){ ?>
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<?php lsx_content_wrap_before(); ?>
+
+	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 
@@ -48,7 +50,9 @@ function lsx_woocommerce_after_content(){ ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 <?php }
 
 

@@ -7,17 +7,15 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area portfolio-template col-sm-12">
+	<?php lsx_content_wrap_before(); ?>
+
+	<section id="primary" class="content-area portfolio-template col-sm-12">
 
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main" role="main">
 
 			<?php lsx_content_top(); ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php the_title(); ?></h1>		
-			</header><!-- .entry-header -->
 
 			<?php if(have_posts()) { ?>
 				<?php while(have_posts()) { the_post(); ?>
@@ -90,6 +88,8 @@ get_header(); ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 	
 <?php get_footer();

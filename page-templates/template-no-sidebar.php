@@ -1,9 +1,11 @@
 <?php
 /* Template Name: No Sidebar */
 
-	get_header(); ?>
+get_header(); ?>
+
+	<?php lsx_content_wrap_before(); ?>
 	
-	<div id="primary" class="content-area col-sm-8">
+	<section id="primary" class="content-area col-sm-8">
 	
 		<?php lsx_content_before(); ?>
 		
@@ -30,5 +32,8 @@
 		
 		<?php lsx_content_after(); ?>
 
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
+
 <?php get_footer();

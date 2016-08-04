@@ -7,7 +7,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<?php lsx_content_wrap_before(); ?>
+
+	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 		
@@ -28,7 +30,9 @@ get_header(); ?>
 		<?php lsx_content_after(); ?>
 		<?php lsx_post_nav(); ?>
 
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 
 <?php get_sidebar(); ?>
 <?php get_sidebar( 'alt' ); ?>

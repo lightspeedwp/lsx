@@ -1,21 +1,14 @@
 <?php get_header(); ?>
 
-	<div id="primary" class="content-area portfolio-template col-sm-12">
+	<?php lsx_content_wrap_before(); ?>
+
+	<section id="primary" class="content-area portfolio-template col-sm-12">
 
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main" role="main">
 
 			<?php lsx_content_top(); ?>
-
-			<header class="page-header">
-				<?php if(is_post_type_archive()){ ?>
-					<h1 class="page-title"><?php _e('Portfolio','lsx'); ?></h1>
-				<?php } else { ?>
-					<h1 class="page-title"><?php the_archive_title(); ?></h1>
-				<?php } ?>	
-			</header><!-- .entry-header -->
-
 			
 			<?php if(is_tax()){ ?> 
 				<div class="entry-content">		
@@ -72,6 +65,8 @@
 
 		<?php lsx_content_after(); ?>
 		
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 	
 <?php get_footer();

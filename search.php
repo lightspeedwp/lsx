@@ -7,17 +7,15 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<?php lsx_content_wrap_before(); ?>
+
+	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main" role="main">
 
-		<?php lsx_content_top(); ?>
-		
-		<header class="archive-header">
-			<h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		</header><!-- .page-header -->	
+		<?php lsx_content_top(); ?>	
 		
 		<?php 
 		$layout = get_theme_mod('lsx_layout','2cr');
@@ -50,7 +48,9 @@ get_header(); ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 
 <?php get_sidebar(); ?>
 

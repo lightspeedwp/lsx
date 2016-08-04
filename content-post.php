@@ -19,35 +19,9 @@
 	$format = lsx_translate_format_to_fontawesome($format);
 	?>
 
-	<?php if ( is_single() ) { ?>
-		<header class="page-header">
-			<h1 class="page-title">
-				<?php if ( has_post_thumbnail() ) { ?>
-					<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
-				<?php } else { ?>
-					<a href="<?php echo esc_url($format_link) ?>" class="format-link fa fa-<?php echo $format ?>"></a>
-				<?php } ?>
-
-				<span><?php the_title(); ?></span>
-			</h1>
-		</header><!-- .entry-header -->
-	<?php } else { ?>
+	<?php if ( ! is_single() ) { ?>
 		<header class="entry-header">
 			<h1 class="entry-title">
-				<?php if ( has_post_thumbnail() ) { ?>
-					<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
-				<?php } else { ?>
-					<a href="<?php echo esc_url($format_link) ?>" class="format-link fa fa-<?php echo $format ?>"></a>
-				<?php } ?>
-
-				<span><?php the_title(); ?></span>
-			</h1>
-		</header><!-- .entry-header -->
-	<?php } 
-
-	if ( is_singular('post') ) { ?>
-		<header class="single-header">
-			<h1 class="single-title">
 				<?php if ( has_post_thumbnail() ) { ?>
 					<a href="<?php echo esc_url($format_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
 				<?php } else { ?>

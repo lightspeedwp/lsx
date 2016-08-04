@@ -629,15 +629,15 @@ function lsx_customizer_colour__banner_get_css( $colors ) {
 	
 	/* Banner */
 
-	#primary.col-md-12 .archive-header,
-	#primary.col-sm-12 .archive-header {
+	.wrap .archive-header,
+	.wrap .archive-header {
 		background-color: {$colors['banner_background_color']} !important;
 	}
 
-	#primary.col-md-12 .archive-header .archive-title,
-	#primary.col-md-12 .archive-header h1,
-	#primary.col-sm-12 .archive-header .archive-title,
-	#primary.col-sm-12 .archive-header h1 {
+	.wrap .archive-header .archive-title,
+	.wrap .archive-header h1,
+	.wrap .archive-header .archive-title,
+	.wrap .archive-header h1 {
 		color: {$colors['banner_text_color']} !important;
 	}
 

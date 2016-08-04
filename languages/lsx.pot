@@ -2,17 +2,367 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: LSX 1.7.0\n"
+"Project-Id-Version: LSX 1.7.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/lsx\n"
 "POT-Creation-Date: 2016-01-29 01:28:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-06-29 16:21-0300\n"
+"PO-Revision-Date: 2016-08-04 13:10-0300\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
+
+#: function test_lsx_customizer_colour_names( $array ) {
+#: $array['test_text_color'] = esc_html__( 'TEST: Text', 'lsx' );
+#: $array['test_text_color_hover'] = esc_html__( 'TEST: Text (hover)', 'lsx' );
+# wpml-name: 66aace9366a274e40f7c8a3fd1bf4250
+msgid "TEST: Text (hover)"
+msgstr ""
+
+#: */
+#: function test_lsx_customizer_colour_names( $array ) {
+#: $array['test_text_color'] = esc_html__( 'TEST: Text', 'lsx' );
+# wpml-name: 2c748435c402d27e7ae63d3ee5c630ff
+msgid "TEST: Text"
+msgstr ""
+
+#: function test_lsx_customizer_colour_choices( $array ) {
+#: $array['test'] = array(
+#: 'label'  => __( 'Test', 'lsx' ),
+# wpml-name: 0cbc6611f5540bd0809a388dc95a615b
+msgid "Test"
+msgstr ""
+
+#: 'footer_text_color'                 => esc_html__( 'FOOTER: Text', 'lsx' ),
+#: 'footer_link_color'                 => esc_html__( 'FOOTER: Link', 'lsx' ),
+#: 'footer_link_hover_color'           => esc_html__( 'FOOTER: Link (hover)', 'lsx' )
+# wpml-name: bddcb66bd5c78158b9cd30ab88a34139
+msgid "FOOTER: Link (hover)"
+msgstr ""
+
+#: 'footer_background_color'           => esc_html__( 'FOOTER: Background', 'lsx' ),
+#: 'footer_text_color'                 => esc_html__( 'FOOTER: Text', 'lsx' ),
+#: 'footer_link_color'                 => esc_html__( 'FOOTER: Link', 'lsx' ),
+# wpml-name: cdf8d956365898b40763668a422b0bba
+msgid "FOOTER: Link"
+msgstr ""
+
+#: 
+#: 'footer_background_color'           => esc_html__( 'FOOTER: Background', 'lsx' ),
+#: 'footer_text_color'                 => esc_html__( 'FOOTER: Text', 'lsx' ),
+# wpml-name: 423db55c9dd6789e35c6b7e8763c7a5b
+msgid "FOOTER: Text"
+msgstr ""
+
+#: 'footer_widgets_link_hover_color'   => esc_html__( 'FOOTER WIDGETS: Link (hover)', 'lsx' ),
+#: 
+#: 'footer_background_color'           => esc_html__( 'FOOTER: Background', 'lsx' ),
+# wpml-name: 62f46a01df8f3800984e540f696d7769
+msgid "FOOTER: Background"
+msgstr ""
+
+#: 'footer_widgets_text_color'         => esc_html__( 'FOOTER WIDGETS: Text', 'lsx' ),
+#: 'footer_widgets_link_color'         => esc_html__( 'FOOTER WIDGETS: Link', 'lsx' ),
+#: 'footer_widgets_link_hover_color'   => esc_html__( 'FOOTER WIDGETS: Link (hover)', 'lsx' ),
+# wpml-name: 61f4937a488f088f0f24ab9d0777975e
+msgid "FOOTER WIDGETS: Link (hover)"
+msgstr ""
+
+#: 'footer_widgets_background_color'   => esc_html__( 'FOOTER WIDGETS: Background', 'lsx' ),
+#: 'footer_widgets_text_color'         => esc_html__( 'FOOTER WIDGETS: Text', 'lsx' ),
+#: 'footer_widgets_link_color'         => esc_html__( 'FOOTER WIDGETS: Link', 'lsx' ),
+# wpml-name: ea0bf4edb69059ce1c94e28e3c0f87c1
+msgid "FOOTER WIDGETS: Link"
+msgstr ""
+
+#: 
+#: 'footer_widgets_background_color'   => esc_html__( 'FOOTER WIDGETS: Background', 'lsx' ),
+#: 'footer_widgets_text_color'         => esc_html__( 'FOOTER WIDGETS: Text', 'lsx' ),
+# wpml-name: df9168710306e5ef040af04a333622e8
+msgid "FOOTER WIDGETS: Text"
+msgstr ""
+
+#: 'footer_cta_link_hover_color'       => esc_html__( 'FOOTER CTA: Link (hover)', 'lsx' ),
+#: 
+#: 'footer_widgets_background_color'   => esc_html__( 'FOOTER WIDGETS: Background', 'lsx' ),
+# wpml-name: 13192927140ea848a93a773a1035297a
+msgid "FOOTER WIDGETS: Background"
+msgstr ""
+
+#: 'footer_cta_text_color'             => esc_html__( 'FOOTER CTA: Text', 'lsx' ),
+#: 'footer_cta_link_color'             => esc_html__( 'FOOTER CTA: Link', 'lsx' ),
+#: 'footer_cta_link_hover_color'       => esc_html__( 'FOOTER CTA: Link (hover)', 'lsx' ),
+# wpml-name: e7ae6911c63e516ae32859555c39df97
+msgid "FOOTER CTA: Link (hover)"
+msgstr ""
+
+#: 'footer_cta_background_color'       => esc_html__( 'FOOTER CTA: Background', 'lsx' ),
+#: 'footer_cta_text_color'             => esc_html__( 'FOOTER CTA: Text', 'lsx' ),
+#: 'footer_cta_link_color'             => esc_html__( 'FOOTER CTA: Link', 'lsx' ),
+# wpml-name: aee237f4655feef0b2843a052fabcdff
+msgid "FOOTER CTA: Link"
+msgstr ""
+
+#: 
+#: 'footer_cta_background_color'       => esc_html__( 'FOOTER CTA: Background', 'lsx' ),
+#: 'footer_cta_text_color'             => esc_html__( 'FOOTER CTA: Text', 'lsx' ),
+# wpml-name: 9eb3d4a5cf53e21609b0d1bfb9a51932
+msgid "FOOTER CTA: Text"
+msgstr ""
+
+#: 'body_link_hover_color'             => esc_html__( 'BODY: Link (hover)', 'lsx' ),
+#: 
+#: 'footer_cta_background_color'       => esc_html__( 'FOOTER CTA: Background', 'lsx' ),
+# wpml-name: f88df2c4ce97eb43d674aa88d0845343
+msgid "FOOTER CTA: Background"
+msgstr ""
+
+#: 'body_text_color'                   => esc_html__( 'BODY: Text', 'lsx' ),
+#: 'body_link_color'                   => esc_html__( 'BODY: Link', 'lsx' ),
+#: 'body_link_hover_color'             => esc_html__( 'BODY: Link (hover)', 'lsx' ),
+# wpml-name: 80da06bd1fdfc11d9de6151ea70abe8e
+msgid "BODY: Link (hover)"
+msgstr ""
+
+#: 'body_text_heading_color'           => esc_html__( 'BODY: Text (heading)', 'lsx' ),
+#: 'body_text_color'                   => esc_html__( 'BODY: Text', 'lsx' ),
+#: 'body_link_color'                   => esc_html__( 'BODY: Link', 'lsx' ),
+# wpml-name: 53c22c73fd4552b70dc305b0e8c38f57
+msgid "BODY: Link"
+msgstr ""
+
+#: 'body_line_color'                   => esc_html__( 'BODY: Line', 'lsx' ),
+#: 'body_text_heading_color'           => esc_html__( 'BODY: Text (heading)', 'lsx' ),
+#: 'body_text_color'                   => esc_html__( 'BODY: Text', 'lsx' ),
+# wpml-name: fb01b8f0c90aaa2379f3002860a0df31
+msgid "BODY: Text"
+msgstr ""
+
+#: 'body_background_color'             => esc_html__( 'BODY: Background', 'lsx' ),
+#: 'body_line_color'                   => esc_html__( 'BODY: Line', 'lsx' ),
+#: 'body_text_heading_color'           => esc_html__( 'BODY: Text (heading)', 'lsx' ),
+# wpml-name: cfef3a77d9954ac515d99068735bcb40
+msgid "BODY: Text (heading)"
+msgstr ""
+
+#: 
+#: 'body_background_color'             => esc_html__( 'BODY: Background', 'lsx' ),
+#: 'body_line_color'                   => esc_html__( 'BODY: Line', 'lsx' ),
+# wpml-name: f7c25b9213472186e640b05afd431d92
+msgid "BODY: Line"
+msgstr ""
+
+#: 'banner_text_image_color'           => esc_html__( 'BANNER: Text (over image)', 'lsx' ),
+#: 
+#: 'body_background_color'             => esc_html__( 'BODY: Background', 'lsx' ),
+# wpml-name: 29cc9c1924f4fdcf49be570725269206
+msgid "BODY: Background"
+msgstr ""
+
+#: 'banner_background_color'           => esc_html__( 'BANNER: Background', 'lsx' ),
+#: 'banner_text_color'                 => esc_html__( 'BANNER: Text', 'lsx' ),
+#: 'banner_text_image_color'           => esc_html__( 'BANNER: Text (over image)', 'lsx' ),
+# wpml-name: cb29df3ae84151d584318027ab67abd8
+msgid "BANNER: Text (over image)"
+msgstr ""
+
+#: 
+#: 'banner_background_color'           => esc_html__( 'BANNER: Background', 'lsx' ),
+#: 'banner_text_color'                 => esc_html__( 'BANNER: Text', 'lsx' ),
+# wpml-name: 2e38110f685afc75a4635fab8c9de384
+msgid "BANNER: Text"
+msgstr ""
+
+#: 'main_menu_text_hover2_color'       => esc_html__( 'MENU: Text (L2 hover)', 'lsx' ),
+#: 
+#: 'banner_background_color'           => esc_html__( 'BANNER: Background', 'lsx' ),
+# wpml-name: 4785967e0e582b9c48a021fd9b6b4bd6
+msgid "BANNER: Background"
+msgstr ""
+
+#: 'main_menu_text_color'              => esc_html__( 'MENU: Text (L1)', 'lsx' ),
+#: 'main_menu_text_hover1_color'       => esc_html__( 'MENU: Text (L1 hover)', 'lsx' ),
+#: 'main_menu_text_hover2_color'       => esc_html__( 'MENU: Text (L2 hover)', 'lsx' ),
+# wpml-name: 561de0c7c90d7bf5a643612ba81f6f2e
+msgid "MENU: Text (L2 hover)"
+msgstr ""
+
+#: 'main_menu_background_hover2_color' => esc_html__( 'MENU: Background (L2 hover)', 'lsx' ),
+#: 'main_menu_text_color'              => esc_html__( 'MENU: Text (L1)', 'lsx' ),
+#: 'main_menu_text_hover1_color'       => esc_html__( 'MENU: Text (L1 hover)', 'lsx' ),
+# wpml-name: faf2a0a0759d5a262c5e44a689f91a69
+msgid "MENU: Text (L1 hover)"
+msgstr ""
+
+#: 'main_menu_background_hover1_color' => esc_html__( 'MENU: Background (L1 hover)', 'lsx' ),
+#: 'main_menu_background_hover2_color' => esc_html__( 'MENU: Background (L2 hover)', 'lsx' ),
+#: 'main_menu_text_color'              => esc_html__( 'MENU: Text (L1)', 'lsx' ),
+# wpml-name: 0cb7363c2f6a41943f0cd027722fd956
+msgid "MENU: Text (L1)"
+msgstr ""
+
+#: 
+#: 'main_menu_background_hover1_color' => esc_html__( 'MENU: Background (L1 hover)', 'lsx' ),
+#: 'main_menu_background_hover2_color' => esc_html__( 'MENU: Background (L2 hover)', 'lsx' ),
+# wpml-name: e7a04cf578310eaa037b9da825fe3402
+msgid "MENU: Background (L2 hover)"
+msgstr ""
+
+#: 'header_description_color'          => esc_html__( 'HEADER: Description', 'lsx' ),
+#: 
+#: 'main_menu_background_hover1_color' => esc_html__( 'MENU: Background (L1 hover)', 'lsx' ),
+# wpml-name: 687deb84a8b3081e32958a4bad5d0c72
+msgid "MENU: Background (L1 hover)"
+msgstr ""
+
+#: 'header_title_color'                => esc_html__( 'HEADER: Title', 'lsx' ),
+#: 'header_title_hover_color'          => esc_html__( 'HEADER: Title (hover)', 'lsx' ),
+#: 'header_description_color'          => esc_html__( 'HEADER: Description', 'lsx' ),
+# wpml-name: fa8009f1cb89a4401a85c35d93ed34b1
+msgid "HEADER: Description"
+msgstr ""
+
+#: 'header_background_color'           => esc_html__( 'HEADER: Background', 'lsx' ),
+#: 'header_title_color'                => esc_html__( 'HEADER: Title', 'lsx' ),
+#: 'header_title_hover_color'          => esc_html__( 'HEADER: Title (hover)', 'lsx' ),
+# wpml-name: c0504edb702071399d1219260dfeb721
+msgid "HEADER: Title (hover)"
+msgstr ""
+
+#: 
+#: 'header_background_color'           => esc_html__( 'HEADER: Background', 'lsx' ),
+#: 'header_title_color'                => esc_html__( 'HEADER: Title', 'lsx' ),
+# wpml-name: c9c89993aa4d41385dbae6c008d553cd
+msgid "HEADER: Title"
+msgstr ""
+
+#: 'top_menu_text_hover_color'         => esc_html__( 'TOP MENU: Text (hover)', 'lsx' ),
+#: 
+#: 'header_background_color'           => esc_html__( 'HEADER: Background', 'lsx' ),
+# wpml-name: f84b3552bfeb355a073d335a0f5bbaf3
+msgid "HEADER: Background"
+msgstr ""
+
+#: 'top_menu_background_color'         => esc_html__( 'TOP MENU: Background', 'lsx' ),
+#: 'top_menu_text_color'               => esc_html__( 'TOP MENU: Text', 'lsx' ),
+#: 'top_menu_text_hover_color'         => esc_html__( 'TOP MENU: Text (hover)', 'lsx' ),
+# wpml-name: c51293467b8d3aa829f7704b6c1bf689
+msgid "TOP MENU: Text (hover)"
+msgstr ""
+
+#: 
+#: 'top_menu_background_color'         => esc_html__( 'TOP MENU: Background', 'lsx' ),
+#: 'top_menu_text_color'               => esc_html__( 'TOP MENU: Text', 'lsx' ),
+# wpml-name: a64898daf32e1ed49c122baa5fbbf2a2
+msgid "TOP MENU: Text"
+msgstr ""
+
+#: 'button_cta_text_color_hover'       => esc_html__( 'BUTTON CTA: Text (hover)', 'lsx' ),
+#: 
+#: 'top_menu_background_color'         => esc_html__( 'TOP MENU: Background', 'lsx' ),
+# wpml-name: 4946e70933c84e0f55d2083ff4844569
+msgid "TOP MENU: Background"
+msgstr ""
+
+#: 'button_cta_background_hover_color' => esc_html__( 'BUTTON CTA: Background (hover)', 'lsx' ),
+#: 'button_cta_text_color'             => esc_html__( 'BUTTON CTA: Text', 'lsx' ),
+#: 'button_cta_text_color_hover'       => esc_html__( 'BUTTON CTA: Text (hover)', 'lsx' ),
+# wpml-name: c1d280abe95c8055a214ff9686294c4d
+msgid "BUTTON CTA: Text (hover)"
+msgstr ""
+
+#: 'button_cta_background_color'       => esc_html__( 'BUTTON CTA: Background', 'lsx' ),
+#: 'button_cta_background_hover_color' => esc_html__( 'BUTTON CTA: Background (hover)', 'lsx' ),
+#: 'button_cta_text_color'             => esc_html__( 'BUTTON CTA: Text', 'lsx' ),
+# wpml-name: 038a37ba7751eb97e495e0658726c11d
+msgid "BUTTON CTA: Text"
+msgstr ""
+
+#: 
+#: 'button_cta_background_color'       => esc_html__( 'BUTTON CTA: Background', 'lsx' ),
+#: 'button_cta_background_hover_color' => esc_html__( 'BUTTON CTA: Background (hover)', 'lsx' ),
+# wpml-name: f73f082b163ff09f30d1e11204425ba6
+msgid "BUTTON CTA: Background (hover)"
+msgstr ""
+
+#: 'button_text_color_hover'           => esc_html__( 'BUTTON: Text (hover)', 'lsx' ),
+#: 
+#: 'button_cta_background_color'       => esc_html__( 'BUTTON CTA: Background', 'lsx' ),
+# wpml-name: e634eb035b50da92cd522789942e087b
+msgid "BUTTON CTA: Background"
+msgstr ""
+
+#: 'button_background_hover_color'     => esc_html__( 'BUTTON: Background (hover)', 'lsx' ),
+#: 'button_text_color'                 => esc_html__( 'BUTTON: Text', 'lsx' ),
+#: 'button_text_color_hover'           => esc_html__( 'BUTTON: Text (hover)', 'lsx' ),
+# wpml-name: 8bc96fc13710b401132a2a286ef7b2da
+msgid "BUTTON: Text (hover)"
+msgstr ""
+
+#: 'button_background_color'           => esc_html__( 'BUTTON: Background', 'lsx' ),
+#: 'button_background_hover_color'     => esc_html__( 'BUTTON: Background (hover)', 'lsx' ),
+#: 'button_text_color'                 => esc_html__( 'BUTTON: Text', 'lsx' ),
+# wpml-name: 95c5c37bc87cdd44fa6c36cc76e9e4f0
+msgid "BUTTON: Text"
+msgstr ""
+
+#: $customizer_colour_names = apply_filters( 'lsx_customizer_colour_names', array(
+#: 'button_background_color'           => esc_html__( 'BUTTON: Background', 'lsx' ),
+#: 'button_background_hover_color'     => esc_html__( 'BUTTON: Background (hover)', 'lsx' ),
+# wpml-name: f695a3feb2b5bb9546bcd5602dd866a8
+msgid "BUTTON: Background (hover)"
+msgstr ""
+
+#: 
+#: $customizer_colour_names = apply_filters( 'lsx_customizer_colour_names', array(
+#: 'button_background_color'           => esc_html__( 'BUTTON: Background', 'lsx' ),
+# wpml-name: 2cd9166126d6a7b6b0069cc2d4a0b606
+msgid "BUTTON: Background"
+msgstr ""
+
+#: ),
+#: 'brown' => array(
+#: 'label'  => __( 'Brown', 'lsx' ),
+# wpml-name: ed63fc91500594c3086714f86b3001e4
+msgid "Brown"
+msgstr ""
+
+#: ),
+#: 'green' => array(
+#: 'label'  => __( 'Green', 'lsx' ),
+# wpml-name: d382816a3cbeed082c9e216e7392eed1
+msgid "Green"
+msgstr ""
+
+#: ),
+#: 'orange' => array(
+#: 'label'  => __( 'Orange', 'lsx' ),
+# wpml-name: 909cea0c97058cfe2e3ea8d675cb08e1
+msgid "Orange"
+msgstr ""
+
+#: ),
+#: 'red' => array(
+#: 'label'  => __( 'Red', 'lsx' ),
+# wpml-name: ee38e4d5dd68c4e440825018d549cb47
+msgid "Red"
+msgstr ""
+
+#: $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', array(
+#: 'default' => array(
+#: 'label'  => __( 'Default', 'lsx' ),
+# wpml-name: 7a1920d61156abc05a60135aefe8bc67
+msgid "Default"
+msgstr ""
+
+#: 
+#: $lsx_controls['fields']['color_scheme'] = array(
+#: 'label'         =>  esc_html__( 'Base Color Scheme', 'lsx' ),
+# wpml-name: ceedb3bf225585229f9113f1d05a1c4b
+msgid "Base Color Scheme"
+msgstr ""
 
 #: 
 #: <aside id="meta" class="widget">
@@ -42,7 +392,7 @@ msgstr ""
 msgid "Search for:"
 msgstr ""
 
-#: 
+#: ?>
 #: <header class="archive-header">
 #: <h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 # wpml-name: 6a72ef42bbe774e009e378ce57f408e4
@@ -284,9 +634,9 @@ msgstr ""
 msgid "Older"
 msgstr ""
 
-#: if (in_array('blog',$classes)) { ?>
+#: if (in_array('blog', $classes)) { ?>
 #: <header class="archive-header">
-#: <h1 class="page-title"><?php _e('Blog', 'lsx'); ?></h1>
+#: <h1 class="archive-title"><?php _e('Blog', 'lsx'); ?></h1>
 # wpml-name: be8df1f28c0abc85a0ed0c6860e5d832
 msgid "Blog"
 msgstr ""
@@ -298,9 +648,9 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: if (!$show_full_content) {
-#: if ('' !== $excerpt  && !stristr($excerpt, 'moretag')) {
-#: $excerpt .= ' <a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a>';
+#: }
+#: else {
+#: $excerpt .= '<p><a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a></p>';
 # wpml-name: 8f25a8a29f4eaeafcaf475c388eee4ef
 msgid "Continue reading"
 msgstr ""
@@ -1028,14 +1378,14 @@ msgid "&#169; %1$s %2$s All Rights Reserved."
 msgstr ""
 
 #: <div class="post-comments">
-#: <!--<a href="<?php the_permalink() ?>">-->
+#: <a href="<?php the_permalink() ?>#comments">
 #: <?php printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'lsx' ), number_format_i18n( get_comments_number() ) ) ?>
 # wpml-name: bc4346af7ea750b595557037cbe80f77
 msgid "%1$s Comments"
 msgstr ""
 
 #: <div class="post-comments">
-#: <!--<a href="<?php the_permalink() ?>">-->
+#: <a href="<?php the_permalink() ?>#comments">
 #: <?php printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'lsx' ), number_format_i18n( get_comments_number() ) ) ?>
 # wpml-name: 4b36ac646a902ab56ab7146229c5f021
 msgid "One Comment"
@@ -1048,9 +1398,6 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: <div class="entry-content">
-#: <?php the_content(sprintf(
-#: __( 'Continue reading %s', 'lsx' ),
 # wpml-name: 71bfb711908ea603a75e86c3e5dbb47a
 msgid "Continue reading %s"
 msgstr ""
@@ -1202,9 +1549,6 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: <header class="page-header">
-#: <?php if(is_post_type_archive()){ ?>
-#: <h1 class="page-title"><?php _e('Portfolio','lsx'); ?></h1>
 # wpml-name: d4f859a96c13f551a2771b7fc3a78d38
 msgid "Portfolio"
 msgstr ""

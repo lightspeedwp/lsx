@@ -1,11 +1,17 @@
 ## Change log
 
 ### 1.7.1
-* Customizer colour swatch: print the custom styles in footer
-* Lazy Loading Images: add a class to bypass a image
+* Customizer colour swatch: printing the custom styles in footer
+* Customizer colour swatch: fixed the box-shadow color from articles in blog pages
+* Lazy Loading Images: added a class to bypass a image
+* Lazy Loading Images: improved the regular expressions for only replace the images with source
+* Lazy Loading Images: added an option in WP admin to enable/disable it
 * Banners: resolved conflict between LSX Banners and LSX
-* Customize Colors: fixed the box-shadow color from articles in blog pages
-* Added in a filter to remove the "Custom Fields" meta box.
+* Fixed with fallback: for some reason sometimes wp_get_attachment_image_srcset fails
+* Added in a filter to remove the "Custom Fields" meta box
+* Two new hooks/actions added in all layouts: lsx_content_wrap_before and lsx_content_wrap_after
+* Fixed: sometimes the image banner show up without an image set
+* Titles for pages and posts standardised
 
 ### 1.7.0
 * Added a colour swatch to customizer

@@ -273,6 +273,8 @@ if (!function_exists('lsx_page_banner')) {
 	        		$bg_image = $bg_image[0];
 	        	}
 	        ?>
+
+	   		<?php if ( ! empty( $bg_image ) ) : ?>
 	        
 	        <div class="page-banner">
 	        	<div class="page-banner-image" style="background-image:url(<?php echo $bg_image; ?>);"></div>
@@ -284,6 +286,9 @@ if (!function_exists('lsx_page_banner')) {
 		            </header>
 		        </div>
 	        </div>
+
+	    	<?php endif ?>
+
 	    <?php } 
 	}
 }
@@ -460,17 +465,3 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
 remove_filter( 'the_excerpt', 'wpautop' );
-
-
-/**
- * Add an archive header to the default Blog landing
- */
-function lsx_blog_header() {
-	$classes = get_body_class();
-	if (in_array('blog',$classes)) { ?>
-		<header class="archive-header">
-			<h1 class="page-title"><?php _e('Blog', 'lsx'); ?></h1>
-		</header>
-	<?php }
-}
-add_action('lsx_content_top', 'lsx_blog_header');

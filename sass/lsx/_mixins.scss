@@ -514,6 +514,7 @@ $primary-lighter: #4a9de4;
 			width: 100%;
 			max-width: 100%;
 			color: $white;
+			font-weight: 400;
 
 			@media screen and (max-width: 767px) {
 				font-size: 44px;
@@ -665,11 +666,24 @@ $primary-lighter: #4a9de4;
 		}
 	}
 
-	// Single post
-	&.single-post {
+	// Single
+	&.single {
 		.page-banner {
-			.container {
-				display: none;
+			& + .wrap {
+				header.archive-header {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// Page
+	&.page {
+		.page-banner {
+			& + .wrap {
+				header.archive-header {
+					display: none;
+				}
 			}
 		}
 	}

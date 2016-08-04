@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+	<?php lsx_content_wrap_before(); ?>
+
 	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 		
 		<?php lsx_content_before(); ?>
@@ -19,17 +21,6 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="archive-header">
-				<h1 class="archive-title">
-					<?php printf( __( 'Author: %s', 'lsx' ), get_the_author() ); ?>
-				</h1>
-
-				<?php if (get_the_author_meta('description')) { ?>
-				    <p class="author-desc"><?php echo get_the_author_meta('description') ?></p>
-				<?php } ?>
-
-			</header><!-- .archive-header -->
-			
 			<?php 
 			$layout = get_theme_mod('lsx_layout','2cr');
 			$layout = apply_filters( 'lsx_layout', $layout );
@@ -66,6 +57,8 @@ get_header(); ?>
 		<?php lsx_content_after(); ?>
 		
 	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 
 <?php get_sidebar(); ?>
 

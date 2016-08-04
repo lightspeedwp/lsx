@@ -817,7 +817,7 @@ nav {
 	#primary,
 	#secondary {
 		&.col-sm-12 {
-			max-width: 700px;
+			max-width: 768px;
 			margin: 0 auto;
 			float: none;
 			
@@ -861,13 +861,11 @@ nav {
 			padding-top: 20px;
 		}
 
-		.content-area.col-sm-12 {
-			.archive-header {
-				margin-top: -40px !important;
+		.archive-header {
+			margin-top: -40px !important;
 
-				@media screen and (max-width: 991px) {
-					margin-top: -40px !important;
-				}
+			@media screen and (max-width: 767px) {
+				margin-top: -20px !important;
 			}
 		}
 	}

@@ -7,11 +7,13 @@
 
 get_header(); ?>
 
-	<div id="secondary" class="widget-area col-md-4" role="complementary">
-		<?php lsx_portfolio_meta(); ?>
-	</div><!-- #secondary -->
+	<?php lsx_content_wrap_before(); ?>
 
-	<div id="primary" class="content-area single-portfolio col-sm-8">
+	<section id="secondary" class="widget-area col-md-4" role="complementary">
+		<?php lsx_portfolio_meta(); ?>
+	</section><!-- #secondary -->
+
+	<section id="primary" class="content-area single-portfolio col-sm-8">
 
 		<?php lsx_content_before(); ?>
 
@@ -29,6 +31,8 @@ get_header(); ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</div><!-- #primary -->
+	</section><!-- #primary -->
+
+	<?php lsx_content_wrap_after(); ?>
 
 <?php get_footer();

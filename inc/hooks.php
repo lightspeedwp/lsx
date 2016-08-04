@@ -88,6 +88,14 @@ function lsx_banner_content() {
 * 
 * $lsx_supports[] = 'content';
 */
+function lsx_content_wrap_before() {
+	do_action( 'lsx_content_wrap_before' );
+}
+
+function lsx_content_wrap_after() {
+	do_action( 'lsx_content_wrap_after' );
+}
+
 function lsx_content_before() {
 	do_action( 'lsx_content_before' );
 }
