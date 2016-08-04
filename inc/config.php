@@ -268,7 +268,7 @@ function lsx_theme_settings() {
 
 /**
  * Theme settings fields
- * 'Lazy Load Images' status (field)
+ * 'Lazy Loading Images' status (field)
  * @package	lsx
  * @subpackage config
  */
@@ -287,7 +287,7 @@ function lsx_theme_settings_field_lazyload_status() {
  */
 function lsx_theme_settings_fields() {
 	add_settings_section( 'lsx_theme_settings_section', 'Settings', null, 'lsx_theme_settings_options' );
-	add_settings_field( 'lsx_lazyload_status', 'Lazy Load Images', 'lsx_theme_settings_field_lazyload_status', 'lsx_theme_settings_options', 'lsx_theme_settings_section' );
+	add_settings_field( 'lsx_lazyload_status', 'Lazy Loading Images', 'lsx_theme_settings_field_lazyload_status', 'lsx_theme_settings_options', 'lsx_theme_settings_section' );
 	register_setting( 'lsx_theme_settings_section', 'lsx_lazyload_status' );
 }
 
