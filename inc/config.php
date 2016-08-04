@@ -62,6 +62,17 @@ function lsx_setup() {
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );
 
+/**
+ * Removes the "Custom Fields" meta box.
+ */
+function lsx_remove_meta_boxes() {
+	$post_types = get_post_types();
+	foreach($post_types as $post_type){
+		remove_meta_box( 'postcustom' , $post_type , 'normal' ); 
+	}
+}
+add_action( 'admin_menu' , 'lsx_remove_meta_boxes' );
+
 
 add_action( 'tgmpa_register', 'lsx_register_required_plugins' );
 /**
