@@ -339,18 +339,20 @@ jQuery(document).ready(function($) {
 		}
 
 		//Lazy Load //Envira Gallery FIX
-		if (jQuery('.lazyload, .lazyloaded').length > 0) {
-			if (typeof envira_isotopes == 'object') {
-				jQuery('.envira-gallery-wrap').each(function() {
-					var id = jQuery(this).attr('id');
-					id = id.replace('envira-gallery-wrap-', '');
+		setTimeout(function() {
+			if (jQuery('.lazyload, .lazyloaded').length > 0) {
+				if (typeof envira_isotopes == 'object') {
+					jQuery('.envira-gallery-wrap').each(function() {
+						var id = jQuery(this).attr('id');
+						id = id.replace('envira-gallery-wrap-', '');
 
-					if (typeof envira_isotopes[id] == 'object') {
-						envira_isotopes[id].enviratope('layout');
-					}
-				});
+						if (typeof envira_isotopes[id] == 'object') {
+							envira_isotopes[id].enviratope('layout');
+						}
+					});
+				}
 			}
-		}
+		}, 200);
 
 		//Final load - LAST CODE TO EXECUTE
 		$('body').addClass('html-loaded');
