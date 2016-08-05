@@ -522,33 +522,46 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 	
 	/* Main Menu */
 
-	nav.primary-navbar .nav.navbar-nav li a {
+	nav.primary-navbar .nav.navbar-nav > li > a {
 		color: {$colors['main_menu_text_color']};
 	}
 
-	nav.primary-navbar .nav.navbar-nav li ul.dropdown-menu li a,
-	nav.primary-navbar .nav.navbar-nav li.active a,
-	nav.primary-navbar .nav.navbar-nav li.active:hover > a {
+	nav.primary-navbar .nav.navbar-nav > li.active > a,
+	nav.primary-navbar .nav.navbar-nav > li.active:hover > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li:hover > a {
 		color: {$colors['main_menu_text_hover1_color']};
 	}
 
-	nav.primary-navbar .nav.navbar-nav li.active > a .caret,
-	nav.primary-navbar .nav.navbar-nav li.open > a .caret,
-	nav.primary-navbar .nav.navbar-nav li:hover > a .caret {
+	nav.primary-navbar .nav.navbar-nav > li.active > a .caret,
+	nav.primary-navbar .nav.navbar-nav > li.open > a .caret,
+	nav.primary-navbar .nav.navbar-nav > li:hover > a .caret
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.active > a .caret,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.open > a .caret,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li:hover > a .caret {
 		border-top-color: {$colors['main_menu_text_hover1_color']};
 		border-bottom-color: {$colors['main_menu_text_hover1_color']};
 	}
 
-	nav.primary-navbar .nav.navbar-nav li.active > a,
-	nav.primary-navbar .nav.navbar-nav li.open > a,
-	nav.primary-navbar .nav.navbar-nav li:hover > a,
-	nav.primary-navbar .nav.navbar-nav li ul.dropdown-menu {
+	nav.primary-navbar .nav.navbar-nav > li.active > a,
+	nav.primary-navbar .nav.navbar-nav > li.open > a,
+	nav.primary-navbar .nav.navbar-nav > li:hover > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.active > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.open > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li:hover > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li.active > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li.open > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li:hover > a {
 		background-color: {$colors['main_menu_background_hover1_color']};
 		color: {$colors['main_menu_text_hover1_color']};
 	}
 
-	nav.primary-navbar .nav.navbar-nav li ul.dropdown-menu li a:hover,
-	nav.primary-navbar .nav.navbar-nav li.active li.active a {
+	nav.primary-navbar .nav.navbar-nav > li.active ul.dropdown-menu > li.active > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li > a:hover,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.active ul.dropdown-menu > li.active > a,
+	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li > a:hover {
 		background-color: {$colors['main_menu_background_hover2_color']};
 		color: {$colors['main_menu_text_hover2_color']};
 	}

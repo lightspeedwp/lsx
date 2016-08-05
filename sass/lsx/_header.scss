@@ -90,8 +90,10 @@ nav {
 				}
 			}
 
-			li {
-				a {
+			& > li,
+			ul.dropdown-menu > li {
+				& > a,
+				ul.dropdown-menu > li > a {
 					background-color: inherit;
 					color: $dark-grey;
 					padding: 10px 16px;
@@ -161,8 +163,8 @@ nav {
 					-moz-border-bottom-right-radius: 3px;
 					border-bottom-right-radius: 3px;
 
-					li {
-						a {
+					& > li {
+						& > a {
 							background: none;
 							background-color: inherit;
 							color: $white;

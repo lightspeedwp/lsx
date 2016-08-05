@@ -414,6 +414,7 @@ if(!function_exists('lsx_nav_menu')){
 			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
 		    	<?php
 				wp_nav_menu( array(
+					'theme_location' => 'primary',
 					'menu' => $nav_menu['primary'],
 					'depth' => 3,
 					'container' => false,
