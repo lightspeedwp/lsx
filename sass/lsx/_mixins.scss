@@ -666,19 +666,17 @@ $primary-lighter: #4a9de4;
 		}
 	}
 
-	// Single
-	&.single {
-		.page-banner {
-			& + .wrap {
-				header.archive-header {
-					display: none;
-				}
+	// Home
+	&.home {
+		.wrap {
+			header.archive-header {
+				display: none;
 			}
 		}
 	}
 
-	// Page
-	&.page {
+	// NOT Home
+	&:not(.home) {
 		.page-banner {
 			& + .wrap {
 				header.archive-header {
