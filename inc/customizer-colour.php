@@ -535,7 +535,7 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 
 	nav.primary-navbar .nav.navbar-nav > li.active > a .caret,
 	nav.primary-navbar .nav.navbar-nav > li.open > a .caret,
-	nav.primary-navbar .nav.navbar-nav > li:hover > a .caret
+	nav.primary-navbar .nav.navbar-nav > li:hover > a .caret,
 	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.active > a .caret,
 	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.open > a .caret,
 	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li:hover > a .caret {
