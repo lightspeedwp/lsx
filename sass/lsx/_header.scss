@@ -639,14 +639,20 @@ nav {
 			display: inline-block;
 		}
 
-		ul {
+		& > ul {
 			@include clear-list;
 
-			li {
+			& > li {
 				float: left;
 
+				@media screen and (min-width: 1200px) {
+					&.dropdown:hover > ul.dropdown-menu {
+						display: block;
+					}	 
+				}
+
 				&:not(.cta) {
-					a {
+					& > a {
 						@media screen and (max-width: 767px) {
 							width: 36px;
 							height: 36px;
@@ -662,7 +668,7 @@ nav {
 					}
 				}
 
-				a {
+				& > a {
 					display: block;
 					color: $white;
 					font-size: 14px;
@@ -699,7 +705,7 @@ nav {
 				}
 
 				&.tel {
-					a {
+					& > a {
 						&:before {
 							content: '\f095';
 							font-size: 17px;
@@ -708,7 +714,7 @@ nav {
 				}
 
 				&.email {
-					a {
+					& > a {
 						&:before {
 							content: '\f0e0';
 							font-size: 18px;
@@ -717,7 +723,7 @@ nav {
 				}
 
 				&.map {
-					a {
+					& > a {
 						&:before {
 							content: '\f041';
 							font-size: 20px;
@@ -730,7 +736,7 @@ nav {
 						display: none;
 					}
 
-					a {
+					& > a {
 						&:before {
 							content: '\f10b';
 							font-size: 22px;
@@ -739,7 +745,7 @@ nav {
 				}
 
 				&.cta {
-					a {
+					& > a {
 						background: #d93a3a;
 						color: $white !important;
 						padding: 5px 40px;
@@ -764,6 +770,29 @@ nav {
 							padding: 5px 22px;
 							margin-left: 8px;
 						}
+					}
+				}
+
+				ul.dropdown-menu {
+					padding: 0;
+					margin-top: -3px;
+					box-shadow: none;
+					border: none;
+
+					-webkit-border-top-right-radius: 3px;
+					-moz-border-top-right-radius: 3px;
+					border-top-right-radius: 3px;
+
+					-webkit-border-bottom-left-radius: 3px;
+					-moz-border-bottom-left-radius: 3px;
+					border-bottom-left-radius: 3px;
+
+					-webkit-border-bottom-right-radius: 3px;
+					-moz-border-bottom-right-radius: 3px;
+					border-bottom-right-radius: 3px;
+
+					& > li {
+
 					}
 				}
 			}

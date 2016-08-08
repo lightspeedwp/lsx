@@ -588,7 +588,12 @@ function lsx_add_top_menu() {
 		<div id="top-menu" class="<?php lsx_top_menu_classes(); ?>">
 			<div class="container">
 				<nav class="top-menu" role="navigation">
-		    		<?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
+		    		<?php
+		    			wp_nav_menu( array(
+							'theme_location' => 'top-menu',
+							'walker' => new lsx_bootstrap_navwalker())
+						);
+		    		?>
 		    	</nav>	
 	    	</div>
 	    </div>
