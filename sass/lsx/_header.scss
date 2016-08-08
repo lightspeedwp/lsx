@@ -603,7 +603,6 @@ nav {
 
 	@media screen and (max-width: 767px) {
 		max-height: 44px;
-		overflow: hidden;
 		margin: {
 			left: -15px;
 			right: -15px;
@@ -645,10 +644,8 @@ nav {
 			& > li {
 				float: left;
 
-				@media screen and (min-width: 1200px) {
-					&.dropdown:hover > ul.dropdown-menu {
-						display: block;
-					}	 
+				&.dropdown:hover > ul.dropdown-menu {
+					display: block;
 				}
 
 				&:not(.cta) {
@@ -656,6 +653,7 @@ nav {
 						@media screen and (max-width: 767px) {
 							width: 36px;
 							height: 36px;
+							overflow: hidden;
 
 							&:hover,
 							&:active,
