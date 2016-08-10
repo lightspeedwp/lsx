@@ -16,7 +16,7 @@ gulp.task('default', function() {
 	console.log('gulp compile-js			to compile the custom.js to custom.min.js');
 	console.log('gulp watch					to continue watching the files for changes.');
 	console.log('gulp upgrade-components	recopy over the node_module files.');
-	console.log('gulp wordpress-pot			to compile the lsx-mega-menus.pot');
+	console.log('gulp wordpress-pot			to compile the lsx.pot, en_EN.po and en_EN.mo');
 });
 
 /*   UPGRADE THE COMPONENTS WE USE	*/
