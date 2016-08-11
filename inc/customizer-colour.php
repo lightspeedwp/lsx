@@ -1132,7 +1132,7 @@ function lsx_customizer_colour__footer_get_css( $colors ) {
 	}
 
 	nav#footer-navigation ul li {
-		border-right: {$colors['footer_link_color']};
+		border-right-color: {$colors['footer_link_color']};
 	}
 CSS;
 
