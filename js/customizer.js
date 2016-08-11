@@ -58,7 +58,7 @@
 	var style = $( '#lsx-color-scheme-css' );
 
 	if ( ! style.length ) {
-		style = $( 'head' ).append( '<style type="text/css" id="lsx-color-scheme-css" />' ).find( '#lsx-color-scheme-css' );
+		style = $( 'body' ).append( '<style type="text/css" id="lsx-color-scheme-css" />' ).find( '#lsx-color-scheme-css' );
 	}
 
 	// Color Scheme CSS.
