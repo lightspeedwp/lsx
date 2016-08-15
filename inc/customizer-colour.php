@@ -799,7 +799,9 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.post-meta-time a,
 	.post-meta-time a:visited,
 	.post-tags-wrapper .post-comments a,
-	.post-tags-wrapper .post-comments a:visited {
+	.post-tags-wrapper .post-comments a:visited,
+	.post-meta-link,
+	.post-meta-link:visited {
 		color: {$colors['body_link_color']} !important;
 	}
 
@@ -814,7 +816,10 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.post-meta-time a:focus,
 	.post-tags-wrapper .post-comments a:hover,
 	.post-tags-wrapper .post-comments a:active,
-	.post-tags-wrapper .post-comments a:focus {
+	.post-tags-wrapper .post-comments a:focus,
+	.post-meta-link:active,
+	.post-meta-link:focus,
+	.post-meta-link:hover {
 		color: {$colors['body_link_hover_color']} !important;
 	}
 
