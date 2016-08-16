@@ -776,9 +776,7 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.entry-content a:not(.btn),
 	.entry-content a:not(.btn):visited,
 	.entry-summary a:not(.btn),
-	.entry-summary a:not(.btn):visited,
-	.facetwp-alpha.available,
-	.facetwp-alpha.selected {
+	.entry-summary a:not(.btn):visited {
 		color: {$colors['body_link_color']};
 	}
 
@@ -790,9 +788,7 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.entry-content a:not(.btn):focus,
 	.entry-summary a:not(.btn):hover,
 	.entry-summary a:not(.btn):active,
-	.entry-summary a:not(.btn):focus,
-	.facetwp-alpha.available:hover,
-	.facetwp-alpha.selected:hover {
+	.entry-summary a:not(.btn):focus {
 		color: {$colors['body_link_hover_color']};
 	}
 
@@ -805,7 +801,9 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.post-tags-wrapper .post-comments a,
 	.post-tags-wrapper .post-comments a:visited,
 	.post-meta-link,
-	.post-meta-link:visited {
+	.post-meta-link:visited,
+	.facetwp-alpha.available,
+	.facetwp-alpha.selected {
 		color: {$colors['body_link_color']} !important;
 	}
 
@@ -823,7 +821,9 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.post-tags-wrapper .post-comments a:focus,
 	.post-meta-link:active,
 	.post-meta-link:focus,
-	.post-meta-link:hover {
+	.post-meta-link:hover,
+	.facetwp-alpha.available:hover,
+	.facetwp-alpha.selected:hover {
 		color: {$colors['body_link_hover_color']} !important;
 	}
 
