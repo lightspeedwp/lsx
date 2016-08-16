@@ -776,7 +776,9 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.entry-content a:not(.btn),
 	.entry-content a:not(.btn):visited,
 	.entry-summary a:not(.btn),
-	.entry-summary a:not(.btn):visited {
+	.entry-summary a:not(.btn):visited,
+	.facetwp-alpha.available,
+	.facetwp-alpha.selected {
 		color: {$colors['body_link_color']};
 	}
 
@@ -788,7 +790,9 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	.entry-content a:not(.btn):focus,
 	.entry-summary a:not(.btn):hover,
 	.entry-summary a:not(.btn):active,
-	.entry-summary a:not(.btn):focus {
+	.entry-summary a:not(.btn):focus,
+	.facetwp-alpha.available:hover,
+	.facetwp-alpha.selected:hover {
 		color: {$colors['body_link_hover_color']};
 	}
 
