@@ -447,6 +447,15 @@ $primary-lighter: #4a9de4;
 }
 
 @mixin lsx-parallax-banner {
+	.page-banner-wrap {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+
+		flex-flow: row;
+	}
+
 	.page-banner {
 		position: relative;
 
@@ -677,7 +686,7 @@ $primary-lighter: #4a9de4;
 
 	// NOT Home
 	&:not(.home) {
-		.page-banner {
+		.page-banner-wrap {
 			& + .wrap {
 				header.archive-header {
 					display: none;
