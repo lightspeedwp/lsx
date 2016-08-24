@@ -674,26 +674,6 @@ $primary-lighter: #4a9de4;
 			}
 		}
 	}
-
-	// Home
-	&.home {
-		.wrap {
-			header.archive-header {
-				display: none;
-			}
-		}
-	}
-
-	// NOT Home
-	&:not(.home) {
-		.page-banner-wrap {
-			& + .wrap {
-				header.archive-header {
-					display: none;
-				}
-			}
-		}
-	}
 }
 
 @mixin lsx-info-box {
