@@ -5,6 +5,9 @@
  * @package lsx
  */
 
+// Allow Plugins and themes to disable the sidebar incase of very customized layouts.
+$sidebar_enabled = apply_filters('lsx_sidebar_enable',true);
+if(true !== $sidebar_enabled){return true;}
 ?>
 <?php
 	$show_on_front = get_option('show_on_front');
