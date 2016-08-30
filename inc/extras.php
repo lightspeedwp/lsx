@@ -276,16 +276,18 @@ if (!function_exists('lsx_page_banner')) {
 
 	   		<?php if ( ! empty( $bg_image ) ) : ?>
 	        
-	        <div class="page-banner">
-	        	<div class="page-banner-image" style="background-image:url(<?php echo $bg_image; ?>);"></div>
+	        <div class="page-banner-wrap">
+		        <div class="page-banner">
+		        	<div class="page-banner-image" style="background-image:url(<?php echo $bg_image; ?>);"></div>
 
-	        	<div class="container">
-		            <header class="page-header">
-		            	<h1 class="page-title"><?php the_title(); ?></h1> 
-		           		<?php lsx_banner_content(); ?>
-		            </header>
+		        	<div class="container">
+			            <header class="page-header">
+			            	<h1 class="page-title"><?php the_title(); ?></h1> 
+			           		<?php lsx_banner_content(); ?>
+			            </header>
+			        </div>
 		        </div>
-	        </div>
+		    </div>
 
 	    	<?php endif ?>
 

@@ -210,6 +210,8 @@ article {
 	&.post {
 		.blog &,
 		.archive & {
+			position: relative;
+
 			&:last-of-type {
 				.lsx-breaker {
 					display: none !important;
@@ -390,7 +392,6 @@ article {
 		text-align: center;
 
 		h1.entry-title {
-			position: relative;
 			line-height: 130%;
 			font: {
 				size: 40px;
@@ -430,23 +431,14 @@ article {
 
 				&.label-sticky {
 					position: absolute;
-					top: 0;
-					left: 40px;
+					right: 10px;
+					top: 10px;
 					background: rgba(0, 0, 0, .7);
 					padding: 10px 15px;
 					margin: 0;
 					font: {
 						size: 18px;
 						weight: 600;
-					}
-
-					&.no-thumb {
-						position: relative;
-						font-size: 16px;
-						vertical-align: middle;
-						margin-top: -5px;
-						margin-left: 10px;
-						left: auto;
 					}
 				}
 			}

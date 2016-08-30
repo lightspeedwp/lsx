@@ -307,8 +307,6 @@ address {
 
 img,
 .thumbnail {
-	height: auto;
-
 	.caption {
 		padding: 12px 10px 7px;
 	}
@@ -332,8 +330,30 @@ img,
 	}
 }
 
-body.page-has-banner {
-	@include lsx-parallax-banner;
+body {
+	&.page-has-banner {
+		@include lsx-parallax-banner;
+	}
+
+	// Home
+	&.home {
+		.wrap {
+			header.archive-header {
+				display: none;
+			}
+		}
+	}
+
+	// NOT Home
+	&:not(.home) {
+		.page-banner-wrap {
+			& + .wrap {
+				header.archive-header {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
 .search-form {
