@@ -76,7 +76,7 @@ add_action('wp_head', 'lsx_sensei_wp_head', 10);
 function lsx_sensei_before_content(){ ?>
 	<?php lsx_content_wrap_before(); ?>
 
-	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
 
 		<?php lsx_content_before(); ?>
 
@@ -99,7 +99,7 @@ function lsx_sensei_after_content(){ ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>
 

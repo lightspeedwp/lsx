@@ -5,7 +5,7 @@ get_header(); ?>
 
 	<?php lsx_content_wrap_before(); ?>
 	
-	<section id="primary" class="content-area col-sm-12">
+	<div id="primary" class="content-area col-sm-12">
 	
 		<?php lsx_content_before(); ?>
 		
@@ -32,7 +32,7 @@ get_header(); ?>
 		
 		<?php lsx_content_after(); ?>
 
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>
 	

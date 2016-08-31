@@ -5,7 +5,7 @@ get_header(); ?>
 
 	<?php lsx_content_wrap_before(); ?>
 	
-	<section id="primary" class="content-area front-page col-sm-12">
+	<div id="primary" class="content-area front-page col-sm-12">
 	
 		<?php lsx_content_before(); ?>
 		
@@ -34,14 +34,14 @@ get_header(); ?>
 			
 			<?php endif; ?>
 			
-			<section id="home-widgets">
+			<div id="home-widgets">
 			
 				<?php if ( ! dynamic_sidebar( 'sidebar-home' ) ) : ?>
 				
 				
 				<?php endif; // end sidebar widget area ?>
 				
-			</section>		
+			</div>		
 				
 			<?php lsx_content_bottom(); ?>
 		
@@ -49,7 +49,7 @@ get_header(); ?>
 		
 		<?php lsx_content_after(); ?>
 
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>
 	

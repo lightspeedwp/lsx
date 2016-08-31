@@ -129,7 +129,7 @@ add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {
 		if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
-			<section id="footer-cta">
+			<div id="footer-cta">
 				<div class="container">
 					<div class="lsx-full-width">
 						<div class="lsx-hero-unit">
@@ -137,7 +137,7 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
