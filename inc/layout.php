@@ -141,13 +141,13 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 		<?php endif; ?>
 
 		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
-			<section id="footer-widgets">
+			<div id="footer-widgets">
 				<div class="container">
 					<div class="row">
 						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 					</div>
 				</div>
-			</section>
+			</div>
 		<?php endif;
 	}
 }
