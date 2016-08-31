@@ -219,7 +219,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 			$img = $img[0];
 		}
 	}
-	$img = '<img src="" alt="'.get_the_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
+	$img = '<img alt="'.get_the_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" src="'.$img.'" />';
 	$img = apply_filters('lsx_lazyload_filter_images',$img);
 	return $img;
 }

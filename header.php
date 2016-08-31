@@ -24,7 +24,7 @@ global $lsx_options;
 <?php if ( !is_singular('landing-page') ) { ?>
 
 	<?php lsx_header_before(); ?>
-		 	<header class="<?php lsx_header_classes(); ?>" role="banner">
+		 	<header class="<?php lsx_header_classes(); ?>">
 		  		<?php lsx_header_top(); ?>
 			  	<div class="container">
 
@@ -48,11 +48,11 @@ global $lsx_options;
 
 		<?php lsx_header_before(); ?>
 
-	 	<header class="banner navbar navbar-default navbar-static-top" role="banner">
+	 	<header class="banner navbar navbar-default navbar-static-top">
 	  		<?php lsx_header_top(); ?>
 
 		  	<div class="container">
-		    	<div class="navbar-header">
+		    	<div class="navbar-header" itemscope itemtype="http://schema.org/WebPage">
 					<?php lsx_site_identity(); ?>
 			    </div>
 

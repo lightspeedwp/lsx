@@ -80,7 +80,7 @@ function lsx_sensei_before_content(){ ?>
 
 		<?php lsx_content_before(); ?>
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 		
 		<?php lsx_content_top(); ?>
 <?php }

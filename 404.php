@@ -8,7 +8,7 @@
 get_header(); ?>
 
 	<section id="primary" class="content-area <?php echo lsx_main_class(); ?>">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">

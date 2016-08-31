@@ -375,7 +375,7 @@ if(!function_exists('lsx_site_identity')){
  */
 if(!function_exists('lsx_navbar_header')){
 	function lsx_navbar_header(){ ?>
-	   	<div class="navbar-header">
+	   	<div class="navbar-header" itemscope itemtype="http://schema.org/WebPage">
 	   	
 	   		<?php 
 	   		$nav_menu = get_theme_mod('nav_menu_locations',false);
@@ -411,7 +411,7 @@ if(!function_exists('lsx_nav_menu')){
 		//print_r(get_nav_menu_locations());
 
 	    if(false != $nav_menu && isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
-			<nav class="primary-navbar collapse navbar-collapse" role="navigation">
+			<nav class="primary-navbar collapse navbar-collapse">
 		    	<?php
 				wp_nav_menu( array(
 					'theme_location' => 'primary',
@@ -424,7 +424,7 @@ if(!function_exists('lsx_nav_menu')){
 				?>
 		   		</nav>
 	    <?php } elseif(is_customize_preview()) { ?>
-	    		<nav class="primary-navbar collapse navbar-collapse" role="navigation">
+	    		<nav class="primary-navbar collapse navbar-collapse">
 	    			<div class="alert alert-info" role="alert"><?php _e('Create a menu and assign it here via the "Navigation" panel.','lsx');?></div>
 	    		</nav>
 	    </div>
@@ -587,7 +587,7 @@ function lsx_add_top_menu() {
 	if (has_nav_menu('top-menu')) { ?>
 		<div id="top-menu" class="<?php lsx_top_menu_classes(); ?>">
 			<div class="container">
-				<nav class="top-menu" role="navigation">
+				<nav class="top-menu">
 		    		<?php
 		    			wp_nav_menu( array(
 							'theme_location' => 'top-menu',
