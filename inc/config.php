@@ -51,7 +51,7 @@ function lsx_setup() {
 	) );	
 
 	//Set the content width
-	$content_width = 750;
+	$content_width = 1140;
 	
 	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );	
 	add_theme_support( 'html5', array( 'caption' ) );
