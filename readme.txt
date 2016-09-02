@@ -134,7 +134,7 @@ Below is a layout of where the actions are located, so you can easily position y
 		
 		lsx_content_wrap_before();
 
-		<section id="primary">
+		<div id="primary">
 		
 			lsx_content_before();
 			
@@ -165,7 +165,7 @@ Below is a layout of where the actions are located, so you can easily position y
 			
 			lsx_content_after();
 		
-		</section>
+		</div>
 
 		lsx_content_wrap_after();
 		

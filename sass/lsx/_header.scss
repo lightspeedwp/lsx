@@ -729,6 +729,111 @@ nav {
 					}
 				}
 
+				& {
+					& > a {
+						&[href$="/feed/"]:before {
+							content: "\f09e";
+						}
+
+						&[href*="codepen.io"]:before {
+							content: "\f1cb";
+						}
+
+						&[href*="digg.com"]:before {
+							content: "\f1a6";
+						}
+
+						&[href*="dribbble.com"]:before {
+							content: "\f17d";
+						}
+
+						&[href*="dropbox.com"]:before {
+							content: "\f16b";
+						}
+
+						&[href*="facebook.com"]:before {
+							content: "\f230";
+						}
+
+						&[href*="flickr.com"]:before {
+							content: "\f16e";
+						}
+
+						&[href*="foursquare.com"]:before {
+							content: "\f180";
+						}
+
+						&[href*="plus.google.com"]:before {
+							content: "\f0d5";
+						}
+
+						&[href*="github.com"]:before {
+							content: "\f09b";
+						}
+
+						&[href*="instagram.com"]:before {
+							content: "\f16d";
+						}
+
+						&[href*="linkedin.com"]:before {
+							content: "\f0e1";
+						}
+
+						&[href*="pinterest.com"]:before {
+							content: "\f0d2";
+						}
+
+						&[href*="getpocket.com"]:before {
+							content: "\f265";
+						}
+
+						&[href*="polldaddy.com"]:before {
+							content: "\f128";
+						}
+
+						&[href*="reddit.com"]:before {
+							content: "\f1a1";
+						}
+
+						&[href*="stumbleupon.com"]:before {
+							content: "\f1a4";
+						}
+
+						&[href*="tumblr.com"]:before {
+							content: "\f173";
+						}
+
+						&[href*="twitter.com"]:before {
+							content: "\f099";
+						}
+
+						&[href*="vimeo.com"]:before {
+							content: "\f27d";
+						}
+
+						&[href*="wordpress.com"]:before,
+						&[href*="wordpress.org"]:before {
+							content: "\f19a";
+						}
+
+						&[href*="youtube.com"]:before {
+							content: "\f167";
+						}
+
+						&[href*="mailto:"]:before {
+							content: "\f0e0";
+						}
+
+						&[href*="spotify.com"]:before {
+							content: "\f1bc";
+						}
+
+						&[href*="twitch.tv"]:before {
+							content: "\f1e8";
+						}
+					}
+				}
+
 				&.mobile {
 					@media screen and (min-width: 768px) {
 						display: none;

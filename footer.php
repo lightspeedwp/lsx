@@ -14,7 +14,7 @@
 
 		<?php lsx_footer_before(); ?>
 
-		<footer class="content-info" role="contentinfo">
+		<footer class="content-info">
 			<div class="container">
 				<div class="row">
 				    	<div class="col-sm-12">
@@ -43,7 +43,7 @@
 
 			      		<p class="credit <?php if ( has_nav_menu( 'social' ) || has_nav_menu( 'footer' ) ) { ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), date_i18n( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
 						<?php if ( has_nav_menu( 'social' ) ) { ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation">
+							<nav id="social-navigation" class="social-navigation">
 								<?php
 									// Social links navigation menu.
 									wp_nav_menu( array(
@@ -54,7 +54,7 @@
 							</nav><!-- .social-navigation -->
 						<?php } ?>
 						<?php if ( has_nav_menu( 'footer' ) ) { ?>
-							<nav id="footer-navigation" class="footer-navigation" role="navigation">
+							<nav id="footer-navigation" class="footer-navigation">
 								<?php
 									// Footer links navigation menu.
 									wp_nav_menu( array(
@@ -80,7 +80,7 @@
 	
 		<?php lsx_footer_before(); ?>
 
-		<footer class="content-info" role="contentinfo">
+		<footer class="content-info">
 			<div class="container">
 			  	<div class="row">
 			    	<div class="col-sm-12">

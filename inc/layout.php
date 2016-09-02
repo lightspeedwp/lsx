@@ -21,16 +21,16 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 			$sidebar_class = 'col-' . $size . '-12';
 			break;
 		case '2cr':
-			$main_class = 'col-' . $size . '-8';
-			$sidebar_class = 'col-' . $size . '-4';
+			$main_class = 'col-' . $size . '-9';
+			$sidebar_class = 'col-' . $size . '-3';
 			break;
 		case '2cl':
-			$main_class = 'col-' . $size . '-8 col-' . $size . '-push-4';
-			$sidebar_class = 'col-' . $size . '-4 col-' . $size . '-pull-8';
+			$main_class = 'col-' . $size . '-9 col-' . $size . '-push-3';
+			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-pull-9';
 			break;
 		default:
-			$main_class = 'col-' . $size . '-8';
-			$sidebar_class = 'col-' . $size . '-4';
+			$main_class = 'col-' . $size . '-9';
+			$sidebar_class = 'col-' . $size . '-3';
 			break;
 	}
 
@@ -129,7 +129,7 @@ add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
 	function lsx_add_footer_sidebar_area() {
 		if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
-			<section id="footer-cta">
+			<div id="footer-cta">
 				<div class="container">
 					<div class="lsx-full-width">
 						<div class="lsx-hero-unit">
@@ -137,17 +137,17 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
-			<section id="footer-widgets">
+			<div id="footer-widgets">
 				<div class="container">
 					<div class="row">
 						<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 					</div>
 				</div>
-			</section>
+			</div>
 		<?php endif;
 	}
 }

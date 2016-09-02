@@ -2,11 +2,11 @@
 
 	<?php lsx_content_wrap_before(); ?>
 
-	<section id="primary" class="content-area portfolio-template col-sm-12">
+	<div id="primary" class="content-area portfolio-template col-sm-12">
 
 		<?php lsx_content_before(); ?>
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 			<?php lsx_content_top(); ?>
 			
@@ -65,7 +65,7 @@
 
 		<?php lsx_content_after(); ?>
 		
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>
 	

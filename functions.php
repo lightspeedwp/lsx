@@ -8,7 +8,6 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 define('LSX_VERSION', '1.7.3');
 
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/config.php';
 //require get_template_directory() . '/inc/example/customizer-colour-extended.php';
 require get_template_directory() . '/inc/customizer-colour-options.php';

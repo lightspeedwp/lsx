@@ -13,11 +13,11 @@ get_header(); ?>
 		<?php lsx_portfolio_meta(); ?>
 	</section><!-- #secondary -->
 
-	<section id="primary" class="content-area single-portfolio col-sm-8">
+	<div id="primary" class="content-area single-portfolio col-sm-8">
 
 		<?php lsx_content_before(); ?>
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 			<?php lsx_content_top(); ?>
 			
@@ -31,7 +31,7 @@ get_header(); ?>
 
 		<?php lsx_content_after(); ?>
 		
-	</section><!-- #primary -->
+	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>
 
