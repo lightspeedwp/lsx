@@ -645,3 +645,27 @@ function lsx_get_my_url() {
 
 	return esc_url_raw( $matches[1] );
 }
+
+/**
+ * Return URL from a link in the content
+ * 
+ * @package 	lsx
+ * @subpackage 	extras
+ * @category 	urls
+ */
+function lsx_get_template_part($slug,$part) {
+	$template = array();
+	$part = (string) $part;
+	if ( '' !== $part ){
+		$template = "{$slug}-{$part}.php";
+	}else{
+		$template = "{$slug}.php";
+	}
+	$file_path = apply_filters('lsx_content_path',false,$slug,$part);
+
+	if ( false !== $file_path && '' == locate_template( array( $template ) ) && file_exists( $file_path.$template) ) {
+		load_template( $file_path.$template, false );
+	}else{
+		get_template_part($slug,$part);
+	}
+}

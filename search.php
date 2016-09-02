@@ -25,12 +25,12 @@ get_header(); ?>
 		}
 		?>	
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : global $lsx_archive; $lsx_archive = 1; ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'search' ); ?>
+				<?php lsx_get_template_part( 'content', get_post_type() ); ?>
 
 			<?php endwhile; ?>
 
@@ -38,9 +38,9 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php lsx_get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; ?>
+		<?php endif; $lsx_archive = 0; ?>
 
 		<?php lsx_content_bottom(); ?>
 

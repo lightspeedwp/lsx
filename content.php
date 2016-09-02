@@ -15,7 +15,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($thumb_class); ?>>
-
 	<?php lsx_entry_top(); ?>
 
 	<header class="entry-header">
