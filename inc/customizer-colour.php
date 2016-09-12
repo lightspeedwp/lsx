@@ -234,6 +234,7 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	.wp-pagenavi span.current,
 	.lsx-postnav > span {
 		background-color: {$colors['button_background_color']} !important;
+		border-color: {$colors['button_background_color']} !important;
 		color: {$colors['button_text_color']} !important;
 	}
 CSS;
