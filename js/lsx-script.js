@@ -263,6 +263,13 @@ jQuery(document).ready(function($) {
 			}
 		});
 
+		jQuery(document).on('blur', 'header.banner #searchform .search-field', function(e) {
+			if (1200 > windowWidth) {
+				var form = jQuery(this).closest('form');
+				form.removeClass('hover');
+			}
+		});
+
 		// Parallax Effect on Banners
 
 		var $banner,
