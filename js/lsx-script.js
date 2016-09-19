@@ -247,6 +247,22 @@ jQuery(document).ready(function($) {
 			});
 		}
 
+		// Search menu (in mobile)
+
+		jQuery(document).on('click', 'header.banner #searchform button.search-submit', function(e) {
+			if (1200 > windowWidth) {
+				e.preventDefault();
+				var form = jQuery(this).closest('form');
+
+				if (form.hasClass('hover')) {
+					form.submit();
+				} else {
+					form.addClass('hover');
+					form.find('.search-field').focus();
+				}
+			}
+		});
+
 		// Parallax Effect on Banners
 
 		var $banner,
