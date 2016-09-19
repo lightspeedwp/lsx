@@ -61,17 +61,14 @@ nav {
 			border: none !important;
 		    box-shadow: none !important;
 		    margin: 0 !important;
-		    padding: {
-		    	bottom: 40px !important;
-		    }
 		    float: none !important;
 		}
 
-		@media screen and (max-width: 767px) {
-			transition: none !important;
-		}
-
 		.nav.navbar-nav {
+			@media screen and (max-width: 1199px) {
+				padding-bottom: 40px !important;
+			}
+
 			& > li {
 				margin-left: 10px;
 
