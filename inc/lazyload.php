@@ -21,6 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) return;
 class LSX_LazyLoadImages {
 	protected static $enabled = true;
 
+	protected static $noscript_id = 0;
+	protected static $noscripts   = array();
+
 	static function init() {
 		if ( is_admin() )
 			return;
@@ -73,71 +76,90 @@ class LSX_LazyLoadImages {
 			return $content;
 		}
 
-		$libxml_previous_state = libxml_use_internal_errors( true );
-		$post = new DOMDocument( '1.0', 'UTF-8' );
-		$loaded = $post->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
-		libxml_clear_errors();
-		libxml_use_internal_errors( $libxml_previous_state );
+		$skip_images_regex = '/class=".*(lazyload|disable-lazyload).*"/';
+		$placeholder_image = apply_filters( 'lsx_lazyload_placeholder_image', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' );
+
+		$matches = array();
+		$search = array();
+		$replace = array();
 		
-		if ( ! $loaded ) {
-			return $content;
+		$content = preg_replace_callback( '~<noscript.+?</noscript>~s', 'self::noscripts_remove', $content );
+		preg_match_all( '/<img[^>]*>/', $content, $matches );
+
+		foreach ( $matches[0] as $img_html ) {
+			if ( ! ( preg_match( $skip_images_regex, $img_html ) ) ) {
+				$add_class = false;
+
+				if ( ! preg_match( '/src=[\'"]([^\'"]+)[\'"]/', $img_html ) && preg_match( '/srcset=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
+					$replace_html = preg_replace( '/<img(.*?)srcset=/i', '<img$1srcset="' . $placeholder_image . '" data-srcset=', $img_html );
+
+					if ( preg_match( '/sizes=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
+						$replace_html = preg_replace( '/sizes=/i', 'data-sizes=', $replace_html );
+					} else {
+						$replace_html = preg_replace( '/data-srcset=/i', 'data-sizes="auto" data-srcset=', $replace_html );
+					}
+
+					$add_class = true;
+				} elseif ( preg_match( '/src=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
+					$replace_html = preg_replace( '/<img(.*?)src=/i', '<img$1src="' . $placeholder_image . '" data-src=', $img_html );
+
+					if ( preg_match( '/srcset=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
+						if ( preg_match( '/sizes=[\'"]([^\'"]+)[\'"]/', $img_html ) ) {
+							$replace_html = preg_replace( '/srcset=/i', 'data-srcset=', $replace_html );
+							$replace_html = preg_replace( '/sizes=/i', 'data-sizes=', $replace_html );
+						} else {
+							$replace_html = preg_replace( '/srcset=/i', 'data-sizes="auto" data-srcset=', $replace_html );
+						}
+					}
+
+					$add_class = true;
+				}
+
+				if ( $add_class ) {
+					$replace_html = self::add_class( $replace_html, 'lazyload' );
+					$replace_html .= '<noscript>' . $img_html . '</noscript>';
+					
+					array_push( $search, $img_html );
+					array_push( $replace, $replace_html );
+				}
+			}
 		}
 
-		$placeholder_image = apply_filters( 'lsx_lazyload_placeholder_image', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' );
-		$imgs = $post->getElementsByTagName( 'img' );
+		$content = str_replace( $search, $replace, $content );
+		$content = preg_replace_callback( '~' . chr(20) . '([0-9]+)' . chr(20) . '~', 'self::noscripts_restore', $content );
+		return $content;
+	}
 
-		foreach( $imgs as $img ) {
-			$class = '';
+	static function noscripts_remove( $match ) {
+		self::$noscript_id++;
+		self::$noscripts[self::$noscript_id] = $match[0];
+		return chr(20) . self::$noscript_id . chr(20);
+	}
 
-			if ( $img->hasAttribute( 'class' ) ) {
-				$class = $img->getAttribute( 'class' );
+	static function noscripts_restore( $match ) {
+		return self::$noscripts[(int) $match[1]];
+	}
 
-				if ( strstr( $class, 'lazyload' ) ) {
-					continue;
-				}
+	static function add_class( $html_string = '', $new_class ) {
+		$pattern = '/class=[\'"]([^\'"]*)[\'"]/';
+
+		if ( preg_match( $pattern, $html_string, $matches ) ) {
+			$defined_classes = explode( ' ', $matches[1] );
+
+			if ( ! in_array( $new_class, $defined_classes ) ) {
+				$defined_classes[] = $new_class;
+
+				$html_string = str_replace(
+					$matches[0],
+					sprintf( 'class="%s"', implode( ' ', $defined_classes ) ),
+					$html_string
+				);
 			}
+		} else {
+			$html_string = preg_replace( '/(\<.+\s)/', sprintf( '$1class="%s" ', $new_class ), $html_string );
+		}
 
-			if ( $img->parentNode->tagName == 'noscript' ) {
-				continue;
-			}
-
-			$src_test = $img->hasAttribute( 'src' ) && ! empty( $img->getAttribute( 'src' ) );
-			$srcset_test = $img->hasAttribute( 'srcset' ) && ! empty( $img->getAttribute( 'srcset' ) );
-			
-			if ( $src_test || $srcset_test ) {
-				$clone = $img->cloneNode();
-				$sizes_test = $img->hasAttribute( 'sizes' ) && ! empty( $img->getAttribute( 'sizes' ) );
-
-				if ( $src_test ) {
-					$src = $img->getAttribute( 'src' );
-					$img->setAttribute( 'src', $placeholder_image );
-					$img->setAttribute( 'data-src', $src );
-				}
-
-				if ( $srcset_test ) {
-					$srcset = $img->getAttribute( 'srcset' );
-					$img->setAttribute( 'srcset', $placeholder_image );
-					$img->setAttribute( 'data-srcset', $srcset );
-				}
-				
-				if ( $sizes_test ) {
-					$sizes = $img->getAttribute( 'sizes' );
-					$img->removeAttribute( 'sizes' );   
-					$img->setAttribute( 'data-sizes', $sizes );
-				} else {
-					$img->setAttribute( 'data-sizes', 'auto' );
-				}
-
-				$classes = array( $class, 'lazyload' );
-				$img->setAttribute( 'class', implode( ' ', $classes ) );
-
-				$no_script = $post->createElement( 'noscript' );
-				$no_script->appendChild( $clone );
-				$img->parentNode->insertBefore( $no_script, $img );
-			}
-		};
-
-		return $post->saveHTML();
+		return $html_string;
 	}
 
 	static function is_enabled() {
