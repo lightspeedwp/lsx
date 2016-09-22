@@ -247,6 +247,29 @@ jQuery(document).ready(function($) {
 			});
 		}
 
+		// Search menu (in mobile)
+
+		jQuery(document).on('click', 'header.banner #searchform button.search-submit', function(e) {
+			if (1200 > windowWidth) {
+				e.preventDefault();
+				var form = jQuery(this).closest('form');
+
+				if (form.hasClass('hover')) {
+					form.submit();
+				} else {
+					form.addClass('hover');
+					form.find('.search-field').focus();
+				}
+			}
+		});
+
+		jQuery(document).on('blur', 'header.banner #searchform .search-field', function(e) {
+			if (1200 > windowWidth) {
+				var form = jQuery(this).closest('form');
+				form.removeClass('hover');
+			}
+		});
+
 		// Parallax Effect on Banners
 
 		var $banner,

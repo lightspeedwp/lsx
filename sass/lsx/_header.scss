@@ -54,24 +54,21 @@ nav {
 		margin: 45px 0;
 		padding: 0;
 		border: none !important;
-		@include transition(all .3s ease-in-out);
+		//@include transition(all .3s ease-in-out);
 
 		@media screen and (max-width: 1199px) {
 			width: 100%;
 			border: none !important;
 		    box-shadow: none !important;
 		    margin: 0 !important;
-		    padding: {
-		    	bottom: 40px !important;
-		    }
 		    float: none !important;
 		}
 
-		@media screen and (max-width: 767px) {
-			transition: none !important;
-		}
-
 		.nav.navbar-nav {
+			@media screen and (max-width: 1199px) {
+				padding-bottom: 40px !important;
+			}
+
 			& > li {
 				margin-left: 10px;
 

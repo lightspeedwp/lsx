@@ -239,13 +239,23 @@ This is also know as Node Package Manager, this is what we will use to install G
 
 ### 2: Install Gulp
 
-Run the following two commands,   this will install all the Node Modules including Gulp. 
+Run the following two commands, this will install all the Node Modules including Gulp. 
 
 This you need to do while inside the themes directory.
 `npm install`
  
 Wait for the terminal to finish and test by running
 `gulp`
+
+### 3: Install Composer
+
+Run the following two commands, this will install all the Composer Modules. 
+
+This you need to do while inside the themes directory.
+`curl -sS https://getcomposer.org/installer | php`
+ 
+Wait for the terminal to finish and test by running
+`php composer.phar install`
 
 ## Development Workflow
  

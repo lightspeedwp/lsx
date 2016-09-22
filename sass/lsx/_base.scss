@@ -371,23 +371,46 @@ body {
 			width: auto;
 		}
 
-		&:hover,
-		&:active,
-		&:focus {
-			.search-field {
-				opacity: 1;
-				width: 300px;
-				z-index: 999;
-			}
+		@media (min-width: 1200px) {
+			&:hover,
+			&:active,
+			&:focus {
+				.search-field {
+					opacity: 1;
+					width: 290px;
+					z-index: 999;
+				}
 
-			.search-submit {
-				cursor: pointer;
-				color: $blacker !important;
-				font-weight: bold;
-				z-index: 9999;
-
-				.fa {
+				.search-submit {
+					cursor: pointer;
+					color: $blacker !important;
 					font-weight: bold;
+					z-index: 9999;
+
+					.fa {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1199px) {
+			&.hover {
+				.search-field {
+					opacity: 1;
+					width: 290px;
+					z-index: 999;
+				}
+
+				.search-submit {
+					cursor: pointer;
+					color: $blacker !important;
+					font-weight: bold;
+					z-index: 9999;
+
+					.fa {
+						font-weight: bold;
+					}
 				}
 			}
 		}
@@ -416,12 +439,14 @@ body {
     	padding: 7px 11px;
     	@include transition(all .4s ease-in-out);
 
-    	&:hover,
-		&:active,
-		&:focus {
-			opacity: 1;
-			width: 300px;
-			z-index: 999;
+    	@media (min-width: 1200px) {
+	    	&:hover,
+			&:active,
+			&:focus {
+				opacity: 1;
+				width: 290px;
+				z-index: 999;
+			}
 		}
 	}
 }
@@ -448,15 +473,21 @@ body {
 	    	//background: $white;
 	    }
 
-	    &:hover,
-	    &:active,
-	    &:focus {
-	    	color: $blacker;
-
-	    	.fa {
-	    		font-weight: bold;
-	    	}
+	    &:active {
+	    	box-shadow: none;
 	    }
+
+	    @media (min-width: 1200px) {
+		    &:hover,
+		    &:active,
+		    &:focus {
+		    	color: $blacker;
+
+		    	.fa {
+		    		font-weight: bold;
+		    	}
+		    }
+		}
 	}
 }
 

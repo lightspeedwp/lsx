@@ -2,6 +2,30 @@
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
+ * Transform SCSS to CSS
+ */
+function lsx_customizer_colour__scss_to_css( $scss ) {
+	$css = '';
+	$scssphp_file = get_template_directory() .'/vendor/leafo/scssphp/scss.inc.php';
+
+	if ( ! empty( $scss ) && file_exists( $scssphp_file ) ) {
+		require_once $scssphp_file;
+
+		$compiler = new \Leafo\ScssPhp\Compiler();
+		$compiler->setFormatter( 'Leafo\ScssPhp\Formatter\Compact' );
+
+		try {
+			$css = $compiler->compile( $scss );
+		} catch ( Exception $e ) {
+			$error = $e->getMessage();
+			return "/*\n\n\$error:\n\n{$error}\n\n\$scss:\n\n{$scss} */";
+		}
+	}
+
+	return $css;
+}
+
+/**
  * 
  */
 function lsx_customizer_colour__add_footer_styles() {
@@ -18,7 +42,7 @@ function lsx_customizer_colour__color_scheme_css_template() {
 	$colors = array();
 
 	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = '{{ data.'.$key.' }}';
+		$colors[$key] = 'unquote("{{ data.'.$key.' }}")';
 	}
 	?>
 	<script type="text/html" id="tmpl-lsx-color-scheme">
@@ -81,31 +105,60 @@ function lsx_customizer_colour__hex2rgb( $color ) {
 
 
 /**
+ * Assign CSS to button theme mod.
+ */
+function lsx_customizer_colour__button_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__button_get_theme_mods();
+	$styles     = lsx_customizer_colour__button_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__button_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__button_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__button_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the button.
  */
 function lsx_customizer_colour__button_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__button_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__button_get_theme_mods();
+		$styles     = lsx_customizer_colour__button_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__button_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__button_css', 12 );
+
+/**
+ * Get button CSS theme mods.
+ */
+function lsx_customizer_colour__button_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
-		'button_background_color' => get_theme_mod( 'button_background_color', $colors['button_background_color'] ),
+	return array(
+		'button_background_color' =>       get_theme_mod( 'button_background_color',       $colors['button_background_color'] ),
 		'button_background_hover_color' => get_theme_mod( 'button_background_hover_color', $colors['button_background_hover_color'] ),
-		'button_text_color' => get_theme_mod( 'button_text_color', $colors['button_text_color'] ),
-		'button_text_color_hover' => get_theme_mod( 'button_text_color_hover', $colors['button_text_color_hover'] )
+		'button_text_color' =>             get_theme_mod( 'button_text_color',             $colors['button_text_color'] ),
+		'button_text_color_hover' =>       get_theme_mod( 'button_text_color_hover',       $colors['button_text_color_hover'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__button_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__button_css', 12 );
 
 /**
  * Returns CSS for the button.
@@ -122,124 +175,96 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Button */
+		/*
+		 *
+		 * Button
+		 *
+		 */
 
-	.btn,
-	.btn:visited,
-	.button,
-	.button:visited,
-	input[type="submit"],
-	input[type="submit"]:visited,
-	#searchform .input-group span.input-group-btn button.search-submit,
-	#searchform .input-group span.input-group-btn button.search-submit:visited,
-	#respond #submit,
-	#respond #submit:visited,
-	.caldera-clarity-grid .btn,
-	.caldera-clarity-grid .btn:visited,
-	.caldera-clarity-grid .button-primary,
-	.caldera-clarity-grid .button-primary:visited,
-	.caldera-grid .btn,
-	.caldera-grid .btn:visited,
-	.caldera-grid .button-primary,
-	.caldera-grid .button-primary:visited,
-	#footer-widgets .widget form .btn,
-	#footer-widgets .widget form .btn:visited,
-	#footer-widgets .widget form .button-primary,
-	#footer-widgets .widget form .button-primary:visited {
-		background-color: {$colors['button_background_color']};
-		color: {$colors['button_text_color']};
-	}
+		.btn,
+		.button,
+		input[type="submit"],
+		#searchform .input-group span.input-group-btn button.search-submit,
+		#respond #submit {
+			&,
+			&:visited {
+				background-color: {$colors['button_background_color']};
+				color: {$colors['button_text_color']};
+			}
 
-	.btn:hover,
-	.btn:active,
-	.btn:focus,
-	.button:hover,
-	.button:active,
-	.button:focus,
-	button:hover,
-	button:active,
-	button:focus,
-	input[type="submit"]:hover,
-	input[type="submit"]:active,
-	input[type="submit"]:focus,
-	#searchform .input-group span.input-group-btn button.search-submit:hover,
-	#searchform .input-group span.input-group-btn button.search-submit:active,
-	#searchform .input-group span.input-group-btn button.search-submit:focus,
-	#respond #submit:hover,
-	#respond #submit:active,
-	#respond #submit:focus,
-	.caldera-clarity-grid .btn:hover,
-	.caldera-clarity-grid .btn:active,
-	.caldera-clarity-grid .btn:focus,
-	.caldera-clarity-grid .button-primary:hover,
-	.caldera-clarity-grid .button-primary:active,
-	.caldera-clarity-grid .button-primary:focus,
-	.caldera-grid .btn:hover,
-	.caldera-grid .btn:active,
-	.caldera-grid .btn:focus,
-	.caldera-grid .button-primary:hover,
-	.caldera-grid .button-primary:active,
-	.caldera-grid .button-primary:focus,
-	#footer-widgets .widget form .btn:hover,
-	#footer-widgets .widget form .btn:active,
-	#footer-widgets .widget form .btn:focus,
-	#footer-widgets .widget form .button-primary:hover,
-	#footer-widgets .widget form .button-primary:active,
-	#footer-widgets .widget form .button-primary:focus {
-		background-color: {$colors['button_background_hover_color']};
-		color: {$colors['button_text_color_hover']};
-	}
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: {$colors['button_background_hover_color']};
+				color: {$colors['button_text_color_hover']};
+			}
+		}
 
-	article header.entry-header h1.entry-title a.format-link,
-	article header.entry-header h1.entry-title a.format-link:visited {
-		background-color: {$colors['button_background_color']};
-		color: {$colors['button_text_color']} !important;
-	}
+		.caldera-grid,
+		.caldera-clarity-grid,
+		#footer-widgets .widget form {
+			.btn,
+			.button-primary {
+				&,
+				&:visited {
+					background-color: {$colors['button_background_color']};
+					color: {$colors['button_text_color']};
+				}
 
-	.border-btn.button-primary,
-	.border-btn.button-primary:visited,
-	.btn.border-btn,
-	.btn.border-btn:visited,
-	button.border-btn,
-	button.border-btn:visited,
-	.wp-pagenavi a,
-	.wp-pagenavi a:visited,
-	.lsx-postnav > a,
-	.lsx-postnav > a:visited {
-		border-color: {$colors['button_background_color']} !important;
-		color: {$colors['button_background_color']} !important;
-	}
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: {$colors['button_background_hover_color']};
+					color: {$colors['button_text_color_hover']};
+				}
+			}
+		}
 
-	.border-btn.button-primary:hover,
-	.border-btn.button-primary:active,
-	.border-btn.button-primary:focus,
-	.btn.border-btn:hover,
-	.btn.border-btn:active,
-	.btn.border-btn:focus,
-	button.border-btn:hover,
-	button.border-btn:active,
-	button.border-btn:focus,
-	.wp-pagenavi a:hover,
-	.wp-pagenavi a:active,
-	.wp-pagenavi a:focus,
-	.lsx-postnav > a:hover,
-	.lsx-postnav > a:active,
-	.lsx-postnav > a:focus {
-		background-color: {$colors['button_background_hover_color']} !important;
-		border-color: {$colors['button_background_hover_color']} !important;
-		color: {$colors['button_text_color_hover']} !important;
-	}
+		article {
+			header.entry-header {
+				h1.entry-title {
+					a.format-link {
+						&,
+						&:visited {
+							background-color: {$colors['button_background_color']};
+							color: {$colors['button_text_color']} !important;
+						}
+					}
+				}
+			}
+		}
 
-	.wp-pagenavi span.current,
-	.lsx-postnav > span {
-		background-color: {$colors['button_background_color']} !important;
-		border-color: {$colors['button_background_color']} !important;
-		color: {$colors['button_text_color']} !important;
-	}
+		.button-primary.border-btn,
+		.btn.border-btn,
+		button.border-btn,
+		.wp-pagenavi a,
+		.lsx-postnav > a {
+			&,
+			&:visited {
+				border-color: {$colors['button_background_color']} !important;
+				color: {$colors['button_background_color']} !important;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: {$colors['button_background_hover_color']} !important;
+				border-color: {$colors['button_background_hover_color']} !important;
+				color: {$colors['button_text_color_hover']} !important;
+			}
+		}
+
+		.wp-pagenavi span.current,
+		.lsx-postnav > span {
+			background-color: {$colors['button_background_color']} !important;
+			border-color: {$colors['button_background_color']} !important;
+			color: {$colors['button_text_color']} !important;
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_button', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_button', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
@@ -247,31 +272,60 @@ CSS;
 
 
 /**
+ * Assign CSS to button cta theme mod.
+ */
+function lsx_customizer_colour__button_cta_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__button_cta_get_theme_mods();
+	$styles     = lsx_customizer_colour__button_cta_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__button_cta_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__button_cta_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__button_cta_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the button cta.
  */
 function lsx_customizer_colour__button_cta_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__button_cta_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__button_cta_get_theme_mods();
+		$styles     = lsx_customizer_colour__button_cta_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__button_cta_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__button_cta_css', 12 );
+
+/**
+ * Get button cta CSS theme mods.
+ */
+function lsx_customizer_colour__button_cta_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
-		'button_cta_background_color' => get_theme_mod( 'button_cta_background_color', $colors['button_cta_background_color'] ),
+	return array(
+		'button_cta_background_color' =>       get_theme_mod( 'button_cta_background_color',       $colors['button_cta_background_color'] ),
 		'button_cta_background_hover_color' => get_theme_mod( 'button_cta_background_hover_color', $colors['button_cta_background_hover_color'] ),
-		'button_cta_text_color' => get_theme_mod( 'button_cta_text_color', $colors['button_cta_text_color'] ),
-		'button_cta_text_color_hover' => get_theme_mod( 'button_cta_text_color_hover', $colors['button_cta_text_color_hover'] )
+		'button_cta_text_color' =>             get_theme_mod( 'button_cta_text_color',             $colors['button_cta_text_color'] ),
+		'button_cta_text_color_hover' =>       get_theme_mod( 'button_cta_text_color_hover',       $colors['button_cta_text_color_hover'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__button_cta_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__button_cta_css', 12 );
 
 /**
  * Returns CSS for the button cta.
@@ -288,44 +342,72 @@ function lsx_customizer_colour__button_cta_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Button CTA */
+		/*
+		 *
+		 * Button CTA
+		 *
+		 */
 
-	.btn.cta-btn,
-	.btn.cta-btn:visited,
-	#top-menu nav.top-menu ul li.cta a,
-	#top-menu nav.top-menu ul li.cta a:visited {
-		background-color: {$colors['button_cta_background_color']} !important;
-		color: {$colors['button_cta_text_color']} !important;
-	}
+		.btn {
+			&.cta-btn {
+				&,
+				&:visited {
+					background-color: {$colors['button_cta_background_color']} !important;
+					color: {$colors['button_cta_text_color']} !important;
+				}
 
-	.btn.cta-border-btn,
-	.btn.cta-border-btn:visited {
-		border-color: {$colors['button_cta_background_color']} !important;
-		color: {$colors['button_cta_background_color']} !important;
-	}
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: {$colors['button_cta_background_hover_color']} !important;
+					color: {$colors['button_cta_text_color_hover']} !important;
+				}
+			}
 
-	.btn.cta-btn:hover,
-	.btn.cta-btn:active,
-	.btn.cta-btn:focus,
-	#top-menu nav.top-menu ul li.cta a:hover,
-	#top-menu nav.top-menu ul li.cta a:active,
-	#top-menu nav.top-menu ul li.cta a:focus,
-	.btn.cta-border-btn:hover,
-	.btn.cta-border-btn:active,
-	.btn.cta-border-btn:focus {
-		background-color: {$colors['button_cta_background_hover_color']} !important;
-		color: {$colors['button_cta_text_color_hover']} !important;
-	}
+			&.cta-border-btn {
+				&,
+				&:visited {
+					border-color: {$colors['button_cta_background_color']} !important;
+					color: {$colors['button_cta_background_color']} !important;
+				}
 
-	.btn.cta-border-btn:hover,
-	.btn.cta-border-btn:active,
-	.btn.cta-border-btn:focus {
-		border-color: {$colors['button_cta_background_hover_color']} !important;
-	}
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: {$colors['button_cta_background_hover_color']} !important;
+					border-color: {$colors['button_cta_background_hover_color']} !important;
+					color: {$colors['button_cta_text_color_hover']} !important;
+				}
+			}
+		}
+
+		#top-menu {
+			nav.top-menu {
+				ul {
+					li.cta {
+						a {
+							&,
+							&:visited {
+								background-color: {$colors['button_cta_background_color']} !important;
+								color: {$colors['button_cta_text_color']} !important;
+							}
+
+							&:hover,
+							&:active,
+							&:focus {
+								background-color: {$colors['button_cta_background_hover_color']} !important;
+								color: {$colors['button_cta_text_color_hover']} !important;
+							}
+						}
+					}
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_button_cta', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_button_cta', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
@@ -333,30 +415,59 @@ CSS;
 
 
 /**
+ * Assign CSS to top menu theme mod.
+ */
+function lsx_customizer_colour__top_menu_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__top_menu_get_theme_mods();
+	$styles     = lsx_customizer_colour__top_menu_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__top_menu_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__top_menu_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__top_menu_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the top menu.
  */
 function lsx_customizer_colour__top_menu_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__top_menu_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__top_menu_get_theme_mods();
+		$styles     = lsx_customizer_colour__top_menu_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__top_menu_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__top_menu_css', 12 );
+
+/**
+ * Get top menu CSS theme mods.
+ */
+function lsx_customizer_colour__top_menu_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
+	return array(
 		'top_menu_background_color' => get_theme_mod( 'top_menu_background_color', $colors['top_menu_background_color'] ),
-		'top_menu_text_color' => get_theme_mod( 'top_menu_text_color', $colors['top_menu_text_color'] ),
+		'top_menu_text_color' =>       get_theme_mod( 'top_menu_text_color',       $colors['top_menu_text_color'] ),
 		'top_menu_text_hover_color' => get_theme_mod( 'top_menu_text_hover_color', $colors['top_menu_text_hover_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__top_menu_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__top_menu_css', 12 );
 
 /**
  * Returns CSS for the top menu.
@@ -373,31 +484,46 @@ function lsx_customizer_colour__top_menu_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Top Menu */
+		/*
+		 *
+		 * Top Menu
+		 *
+		 */
 
-	#top-menu {
-		background-color: {$colors['top_menu_background_color']};
-	}
+		#top-menu {
+			background-color: {$colors['top_menu_background_color']};
 
-	#top-menu nav.top-menu ul li a,
-	#top-menu nav.top-menu ul li a:visited {
-		color: {$colors['top_menu_text_color']};
-	}
+			nav.top-menu {
+				ul {
+					li {
+						a {
+							&,
+							&:visited {
+								color: {$colors['top_menu_text_color']};
+							}
 
-	#top-menu nav.top-menu ul li a:hover,
-	#top-menu nav.top-menu ul li a:active,
-	#top-menu nav.top-menu ul li a:focus,
-	#top-menu nav.top-menu ul li a:before,
-	#top-menu nav.top-menu ul li a:visited:before,
-	#top-menu nav.top-menu ul li a:hover:before,
-	#top-menu nav.top-menu ul li a:active:before,
-	#top-menu nav.top-menu ul li a:focus:before {
-		color: {$colors['top_menu_text_hover_color']};
-	}
+							&:before {
+								color: {$colors['top_menu_text_hover_color']};
+							}
+
+							&:hover,
+							&:active,
+							&:focus {
+								&,
+								&:before {
+									color: {$colors['top_menu_text_hover_color']};
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_top_menu', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_top_menu', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
@@ -405,31 +531,60 @@ CSS;
 
 
 /**
+ * Assign CSS to header theme mod.
+ */
+function lsx_customizer_colour__header_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__header_get_theme_mods();
+	$styles     = lsx_customizer_colour__header_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__header_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__header_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__header_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the header.
  */
 function lsx_customizer_colour__header_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__header_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__header_get_theme_mods();
+		$styles     = lsx_customizer_colour__header_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__header_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__header_css', 12 );
+
+/**
+ * Get header CSS theme mods.
+ */
+function lsx_customizer_colour__header_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
-		'header_background_color' => get_theme_mod( 'header_background_color', $colors['header_background_color'] ),
-		'header_title_color' => get_theme_mod( 'header_title_color', $colors['header_title_color'] ),
+	return array(
+		'header_background_color'  => get_theme_mod( 'header_background_color',  $colors['header_background_color'] ),
+		'header_title_color'       => get_theme_mod( 'header_title_color',       $colors['header_title_color'] ),
 		'header_title_hover_color' => get_theme_mod( 'header_title_hover_color', $colors['header_title_hover_color'] ),
 		'header_description_color' => get_theme_mod( 'header_description_color', $colors['header_description_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__header_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__header_css', 12 );
 
 /**
  * Returns CSS for the header.
@@ -446,31 +601,43 @@ function lsx_customizer_colour__header_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Header */
+		/*
+		 *
+		 * Header
+		 *
+		 */
 
-	header.banner {
-		background-color: {$colors['header_background_color']};
-	}
+		header.banner {
+			background-color: {$colors['header_background_color']};
 
-	header.banner .site-branding .site-title,
-	header.banner .site-branding .site-title a,
-	header.banner .site-branding .site-title a:visited {
-		color: {$colors['header_title_color']};
-	}
+			.site-branding {
+				.site-title {
+					color: {$colors['header_title_color']};
 
-	header.banner .site-branding .site-title a:hover,
-	header.banner .site-branding .site-title a:active,
-	header.banner .site-branding .site-title a:focus {
-		color: {$colors['header_title_hover_color']};
-	}
+					a {
+						&,
+						&:visited {
+							color: {$colors['header_title_color']};
+						}
 
-	header.banner .site-branding .site-description {
-		color: {$colors['header_description_color']};
-	}
+						&:hover,
+						&:active,
+						&:focus {
+							color: {$colors['header_title_hover_color']};
+						}
+					}
+				}
+
+				.site-description {
+					color: {$colors['header_description_color']};
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_header', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_header', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
@@ -478,32 +645,61 @@ CSS;
 
 
 /**
+ * Assign CSS to main menu theme mod.
+ */
+function lsx_customizer_colour__main_menu_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__main_menu_get_theme_mods();
+	$styles     = lsx_customizer_colour__main_menu_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__main_menu_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__main_menu_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__main_menu_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the main menu.
  */
 function lsx_customizer_colour__main_menu_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__main_menu_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__main_menu_get_theme_mods();
+		$styles     = lsx_customizer_colour__main_menu_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__main_menu_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__main_menu_css', 12 );
+
+/**
+ * Get main menu CSS theme mods.
+ */
+function lsx_customizer_colour__main_menu_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
+	return array(
 		'main_menu_background_hover1_color' => get_theme_mod( 'main_menu_background_hover1_color', $colors['main_menu_background_hover1_color'] ),
 		'main_menu_background_hover2_color' => get_theme_mod( 'main_menu_background_hover2_color', $colors['main_menu_background_hover2_color'] ),
-		'main_menu_text_color' => get_theme_mod( 'main_menu_text_color', $colors['main_menu_text_color'] ),
-		'main_menu_text_hover1_color' => get_theme_mod( 'main_menu_text_hover1_color', $colors['main_menu_text_hover1_color'] ),
-		'main_menu_text_hover2_color' => get_theme_mod( 'main_menu_text_hover2_color', $colors['main_menu_text_hover2_color'] )
+		'main_menu_text_color' =>              get_theme_mod( 'main_menu_text_color',              $colors['main_menu_text_color'] ),
+		'main_menu_text_hover1_color' =>       get_theme_mod( 'main_menu_text_hover1_color',       $colors['main_menu_text_hover1_color'] ),
+		'main_menu_text_hover2_color' =>       get_theme_mod( 'main_menu_text_hover2_color',       $colors['main_menu_text_hover2_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__main_menu_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__main_menu_css', 12 );
 
 /**
  * Returns CSS for the main menu.
@@ -520,79 +716,105 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Main Menu */
+		/*
+		 *
+		 * Main Menu
+		 *
+		 */
 
-	nav.primary-navbar .nav.navbar-nav > li > a {
-		color: {$colors['main_menu_text_color']};
-	}
+		nav.primary-navbar {
+			.nav.navbar-nav {
+				& > li,
+				ul.dropdown-menu > li {
+					& > a,
+					ul.dropdown-menu > li > a {
+						color: {$colors['main_menu_text_color']};
+					}
+					
+					&:hover,
+					&.open,
+					&.active {
+						& > a {
+							background-color: {$colors['main_menu_background_hover1_color']};
+							color: {$colors['main_menu_text_hover1_color']};
 
-	nav.primary-navbar .nav.navbar-nav > li.active > a,
-	nav.primary-navbar .nav.navbar-nav > li.active:hover > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li:hover > a {
-		color: {$colors['main_menu_text_hover1_color']};
-	}
+							.caret {
+								border-top-color: {$colors['main_menu_text_hover1_color']};
+								border-bottom-color: {$colors['main_menu_text_hover1_color']};
+							}
+						}
+					}
 
-	nav.primary-navbar .nav.navbar-nav > li.active > a .caret,
-	nav.primary-navbar .nav.navbar-nav > li.open > a .caret,
-	nav.primary-navbar .nav.navbar-nav > li:hover > a .caret,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.active > a .caret,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.open > a .caret,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li:hover > a .caret {
-		border-top-color: {$colors['main_menu_text_hover1_color']};
-		border-bottom-color: {$colors['main_menu_text_hover1_color']};
-	}
+					ul.dropdown-menu {
+						background-color: {$colors['main_menu_background_hover1_color']};
 
-	nav.primary-navbar .nav.navbar-nav > li.active > a,
-	nav.primary-navbar .nav.navbar-nav > li.open > a,
-	nav.primary-navbar .nav.navbar-nav > li:hover > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.active > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.open > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li:hover > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li.active > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li.open > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li:hover > a {
-		background-color: {$colors['main_menu_background_hover1_color']};
-		color: {$colors['main_menu_text_hover1_color']};
-	}
+						& > li {
+							& > a {
+								color: {$colors['main_menu_text_hover1_color']};
 
-	nav.primary-navbar .nav.navbar-nav > li.active ul.dropdown-menu > li.active > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li > a:hover,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li.active ul.dropdown-menu > li.active > a,
-	nav.primary-navbar .nav.navbar-nav > li ul.dropdown-menu > li ul.dropdown-menu > li > a:hover {
-		background-color: {$colors['main_menu_background_hover2_color']};
-		color: {$colors['main_menu_text_hover2_color']};
-	}
+								&:hover {
+									color: {$colors['main_menu_text_hover1_color']};
+								}
+							}
+						}
+					}
 
-	.navbar-default .navbar-toggle,
-	.navbar-default .navbar-toggle:visited,
-	.navbar-default .navbar-toggle:focus,
-	.navbar-default .navbar-toggle:hover,
-	.navbar-default .navbar-toggle:active {
-		border-color: {$colors['main_menu_background_hover1_color']};
-		background-color: {$colors['main_menu_background_hover1_color']};
-	}
+					&.active {
+						a {
+							color: {$colors['main_menu_text_hover1_color']};
+						}
 
-	.navbar-default .navbar-toggle .icon-bar {
-		background-color: {$colors['main_menu_text_hover1_color']};
-	}
+						&:hover {
+							& > a {
+								color: {$colors['main_menu_text_hover1_color']};
+							}
+						}
+						
+						& li.active a {
+							background-color: {$colors['main_menu_background_hover2_color']} !important;
+							color: {$colors['main_menu_text_hover2_color']};
+						}
+					}
+				}
+			}
+		}
 
-	header.banner .search-submit,
-	header.banner .search-submit:visited {
-		color: {$colors['main_menu_text_color']} !important;
-	}
+		.navbar-default {
+			.navbar-toggle {
+				&,
+				&:visited,
+				&:focus,
+				&:hover,
+				&:active {
+					border-color: {$colors['main_menu_background_hover1_color']};
+					background-color: {$colors['main_menu_background_hover1_color']};
+				}
 
-	header.banner .search-submit:hover,
-	header.banner .search-submit:active,
-	header.banner .search-submit:focus {
-		color: #333 !important;
-	}
+				.icon-bar {
+					background-color: {$colors['main_menu_text_hover1_color']};
+				}
+			}
+		}
+
+		header.banner {
+			.search-submit {
+				&,
+				&:visited {
+					color: {$colors['main_menu_text_color']} !important;
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: #333 !important; /* @TODO */
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_main_menu', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_main_menu', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
@@ -600,30 +822,59 @@ CSS;
 
 
 /**
+ * Assign CSS to banner theme mod.
+ */
+function lsx_customizer_colour__banner_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__banner_get_theme_mods();
+	$styles     = lsx_customizer_colour__banner_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__banner_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__banner_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__banner_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the banner.
  */
 function lsx_customizer_colour__banner_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__banner_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__banner_get_theme_mods();
+		$styles     = lsx_customizer_colour__banner_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__banner_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__banner_css', 12 );
+
+/**
+ * Get banner CSS theme mods.
+ */
+function lsx_customizer_colour__banner_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
+	return array(
 		'banner_background_color' => get_theme_mod( 'banner_background_color', $colors['banner_background_color'] ),
-		'banner_text_color' => get_theme_mod( 'banner_text_color', $colors['banner_text_color'] ),
+		'banner_text_color' =>       get_theme_mod( 'banner_text_color',       $colors['banner_text_color'] ),
 		'banner_text_image_color' => get_theme_mod( 'banner_text_image_color', $colors['banner_text_image_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__banner_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__banner_css', 12 );
 
 /**
  * Returns CSS for the banner.
@@ -640,27 +891,35 @@ function lsx_customizer_colour__banner_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Banner */
+		/*
+		 *
+		 * Banner
+		 *
+		 */
 
-	.wrap .archive-header,
-	.wrap .archive-header {
-		background-color: {$colors['banner_background_color']} !important;
-	}
+		.wrap {
+			.archive-header {
+				background-color: {$colors['banner_background_color']} !important;
 
-	.wrap .archive-header .archive-title,
-	.wrap .archive-header h1,
-	.wrap .archive-header .archive-title,
-	.wrap .archive-header h1 {
-		color: {$colors['banner_text_color']} !important;
-	}
+				.archive-title,
+				h1 {
+					color: {$colors['banner_text_color']} !important;
+				}
+			}
+		}
 
-	body.page-has-banner .page-banner h1.page-title {
-		color: {$colors['banner_text_image_color']} !important;
-	}
+		body.page-has-banner {
+			.page-banner {
+				h1.page-title {
+					color: {$colors['banner_text_image_color']} !important;
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_banner', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_banner', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
@@ -668,33 +927,62 @@ CSS;
 
 
 /**
+ * Assign CSS to body theme mod.
+ */
+function lsx_customizer_colour__body_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__body_get_theme_mods();
+	$styles     = lsx_customizer_colour__body_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__body_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__body_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__body_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the body.
  */
 function lsx_customizer_colour__body_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__body_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__body_get_theme_mods();
+		$styles     = lsx_customizer_colour__body_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__body_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__body_css', 12 );
+
+/**
+ * Get body CSS theme mods.
+ */
+function lsx_customizer_colour__body_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
-		'body_background_color' => get_theme_mod( 'body_background_color', $colors['body_background_color'] ),
-		'body_line_color' => get_theme_mod( 'body_line_color', $colors['body_line_color'] ),
+	return array(
+		'body_background_color' =>   get_theme_mod( 'body_background_color',   $colors['body_background_color'] ),
+		'body_line_color' =>         get_theme_mod( 'body_line_color',         $colors['body_line_color'] ),
 		'body_text_heading_color' => get_theme_mod( 'body_text_heading_color', $colors['body_text_heading_color'] ),
-		'body_text_color' => get_theme_mod( 'body_text_color', $colors['body_text_color'] ),
-		'body_link_color' => get_theme_mod( 'body_link_color', $colors['body_link_color'] ),
-		'body_link_hover_color' => get_theme_mod( 'body_link_hover_color', $colors['body_link_hover_color'] )
+		'body_text_color' =>         get_theme_mod( 'body_text_color',         $colors['body_text_color'] ),
+		'body_link_color' =>         get_theme_mod( 'body_link_color',         $colors['body_link_color'] ),
+		'body_link_hover_color' =>   get_theme_mod( 'body_link_hover_color',   $colors['body_link_hover_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__body_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__body_css', 12 );
 
 /**
  * Returns CSS for the body.
@@ -714,160 +1002,250 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 	$colors['body_line_color_rgba'] = "rgba({$rgb['red']}, {$rgb['green']}, {$rgb['blue']}, 0.5)";
 
 	$css = <<<CSS
-	
-	/* Body */
+		/*
+		 *
+		 * Body
+		 *
+		 */
 
-	body,
-	.wrap {
-		background-color: {$colors['body_background_color']};
-	}
+		body {
+			background-color: {$colors['body_background_color']};
+			color: {$colors['body_text_color']};
+			
+			&.archive.author,
+			&.archive.category,
+			&.archive.date,
+			&.archive.tag,
+			&.archive.tax-post_format,
+			&.blog,
+			&.search {
+				.wrap {
+					#primary {
+						#main {
+							& > article {
+								-webkit-box-shadow: 1px 1px 3px 0 {$colors['body_line_color_rgba']};
+								box-shadow: 1px 1px 3px 0 {$colors['body_line_color_rgba']};
+								border-color: {$colors['body_line_color']};
+							}
+						}
+					}
+				}
+			}
 
-	h1, h2, h3, h4, h5, h6,
-	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-	h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited,
-	body.single-post .wrap #primary .post-navigation .pager a div h3,
-	body.single-post .wrap #primary .post-navigation .pager a:visited div h3 {
-		color: {$colors['body_text_heading_color']};
-	}
+			&.single-post {
+				.wrap {
+					#primary {
+						#main {
+							& > article {
+								.post-tags-wrapper {
+									border-top-color: {$colors['body_line_color']};
+									border-bottom-color: {$colors['body_line_color']};
+								}
+							}
+						}
 
-	article header.entry-header h1.entry-title a,
-	article header.entry-header h1.entry-title a:visited {
-		color: {$colors['body_text_heading_color']} !important;
-	}
+						.post-navigation {
+							.pager {
+								a {
+									&,
+									&:visited {
+										div {
+											h3 {
+												color: {$colors['body_text_heading_color']};
+											}
+										}
+									}
 
-	h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
-	h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active,
-	h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus,
-	body.single-post .wrap #primary .post-navigation .pager a:hover div h3,
-	body.single-post .wrap #primary .post-navigation .pager a:active div h3 ,
-	body.single-post .wrap #primary .post-navigation .pager a:focus div h3 {
-		color: {$colors['body_link_hover_color']};
-	}
+									&:hover,
+									&:active,
+									&:focus {
+										div {
+											h3 {
+												color: {$colors['body_link_hover_color']};
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
-	article header.entry-header h1.entry-title a:hover,
-	article header.entry-header h1.entry-title a:active,
-	article header.entry-header h1.entry-title a:focus {
-		color: {$colors['body_link_hover_color']} !important;
-	}
+		.wrap {
+			background-color: {$colors['body_background_color']};
+		}
 
-	body {
-		color: {$colors['body_text_color']};
-	}
+		h1, h2, h3, h4, h5, h6 {
+			color: {$colors['body_text_heading_color']};
 
-	article .entry-content,
-	article .entry-summary,
-	.sharedaddy .sd-sharing .sd-title,
-	.sharedaddy .sd-sharing .sd-title:before,
-	.entry-meta .post-meta,
-	.nav-links-description,
-	.post-meta-author:before,
-	.post-meta-categories:before,
-	.post-meta-time:before,
-	.post-comments:before,
-	.post-tags:before,
-	#reply-title:before,
-	.post-meta-link:before,
-	.nav-links-description:after,
-	.nav-links-description:before {
-		color: {$colors['body_text_color']} !important;
-	}
+			a {
+				&,
+				&:visited {
+					color: {$colors['body_text_heading_color']};
+				}
 
-	a,
-	a:visited,
-	.entry-content a:not(.btn),
-	.entry-content a:not(.btn):visited,
-	.entry-summary a:not(.btn),
-	.entry-summary a:not(.btn):visited {
-		color: {$colors['body_link_color']};
-	}
+				&:hover,
+				&:active,
+				&:focus {
+					color: {$colors['body_link_hover_color']};
+				}
+			}
+		}
 
-	a:hover,
-	a:active,
-	a:focus,
-	.entry-content a:not(.btn):hover,
-	.entry-content a:not(.btn):active,
-	.entry-content a:not(.btn):focus,
-	.entry-summary a:not(.btn):hover,
-	.entry-summary a:not(.btn):active,
-	.entry-summary a:not(.btn):focus {
-		color: {$colors['body_link_hover_color']};
-	}
+		article {
+			header.entry-header {
+				h1.entry-title {
+					a {
+						&,
+						&:visited {
+							color: {$colors['body_text_heading_color']} !important;
+						}
 
-	.post-meta-author a,
-	.post-meta-author a:visited,
-	.post-meta-categories a,
-	.post-meta-categories a:visited,
-	.post-meta-time a,
-	.post-meta-time a:visited,
-	.post-tags-wrapper .post-comments a,
-	.post-tags-wrapper .post-comments a:visited,
-	.post-meta-link,
-	.post-meta-link:visited,
-	.facetwp-alpha.available,
-	.facetwp-alpha.selected {
-		color: {$colors['body_link_color']} !important;
-	}
+						&:hover,
+						&:active,
+						&:focus {
+							color: {$colors['body_link_hover_color']} !important;
+						}
+					}
+				}
+			}
 
-	.post-meta-author a:hover,
-	.post-meta-author a:active,
-	.post-meta-author a:focus,
-	.post-meta-categories a:hover,
-	.post-meta-categories a:active,
-	.post-meta-categories a:focus,
-	.post-meta-time a:hover,
-	.post-meta-time a:active,
-	.post-meta-time a:focus,
-	.post-tags-wrapper .post-comments a:hover,
-	.post-tags-wrapper .post-comments a:active,
-	.post-tags-wrapper .post-comments a:focus,
-	.post-meta-link:active,
-	.post-meta-link:focus,
-	.post-meta-link:hover,
-	.facetwp-alpha.available:hover,
-	.facetwp-alpha.selected:hover {
-		color: {$colors['body_link_hover_color']} !important;
-	}
+			.entry-content,
+			.entry-summary {
+				color: {$colors['body_text_color']} !important;
+			}
+		}
 
-	body.archive.author .wrap #primary #main > article,
-	body.archive.category .wrap #primary #main > article,
-	body.archive.date .wrap #primary #main > article,
-	body.archive.tag .wrap #primary #main > article,
-	body.archive.tax-post_format .wrap #primary #main > article,
-	body.blog .wrap #primary #main > article,
-	body.search .wrap #primary #main > article {
-		-webkit-box-shadow: 1px 1px 3px 0 {$colors['body_line_color_rgba']};
-		box-shadow: 1px 1px 3px 0 {$colors['body_line_color_rgba']};
-		border-color: {$colors['body_line_color']};
-	}
+		.sharedaddy {
+			.sd-sharing {
+				border-top-color: {$colors['body_line_color']};
 
-	body.single-post .wrap #primary #main > article .post-tags-wrapper {
-		border-top-color: {$colors['body_line_color']};
-		border-bottom-color: {$colors['body_line_color']};
-	}
+				.sd-title {
+					&,
+					&:before {
+						color: {$colors['body_text_color']} !important;
+					}
+				}
+			}
+		}
 
-	figure.wp-caption {
-		border-color: {$colors['body_line_color']};
-	}
+		.entry-meta {
+			.post-meta {
+				color: {$colors['body_text_color']} !important;
+			}
+		}
 
-	figure.wp-caption figcaption.wp-caption-text,
-	.sharedaddy .sd-sharing {
-		border-top-color: {$colors['body_line_color']};
-	}
+		.nav-links-description {
+			color: {$colors['body_text_color']} !important;
+			
+			&:after,
+			&:before {
+				color: {$colors['body_text_color']} !important;
+			}
+		}
 
-	.page-header {
-		border-bottom-color: {$colors['body_line_color']};
-	}
+		.post-meta-author,
+		.post-meta-categories,
+		.post-meta-time,
+		.post-comments {
+			&:before {
+				color: {$colors['body_text_color']} !important;
+			}
 
-	input[type="text"]:focus,
-	input[type="search"]:focus,
-	input[type="email"]:focus,
-	textarea:focus,
-	select:focus {
-		border-color: {$colors['body_link_hover_color']} !important;
-	}
+			a {
+				&,
+				&:visited {
+					color: {$colors['body_link_color']} !important;
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: {$colors['body_link_hover_color']} !important;
+				}
+			}
+		}
+
+		.post-meta-link {
+			&:before {
+				color: {$colors['body_text_color']} !important;
+			}
+
+			&,
+			&:visited {
+				color: {$colors['body_link_color']} !important;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: {$colors['body_link_hover_color']} !important;
+			}
+		}
+		
+		.post-tags,
+		#reply-title {
+			&:before {
+				color: {$colors['body_text_color']} !important;
+			}
+		}
+
+		a {
+			&,
+			.entry-content &:not(.btn),
+			.entry-summary &:not(.btn) {
+				&,
+				&:visited {
+					color: {$colors['body_link_color']};
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: {$colors['body_link_hover_color']};
+				}
+			}
+		}
+
+		.facetwp-alpha {
+			&.available,
+			&.selected {
+				color: {$colors['body_link_color']} !important;
+
+				&:hover {
+					color: {$colors['body_link_hover_color']} !important;
+				}
+			}
+		}
+
+		figure.wp-caption {
+			border-color: {$colors['body_line_color']};
+
+			figcaption.wp-caption-text {
+				border-top-color: {$colors['body_line_color']};
+			}
+		}
+
+		.page-header {
+			border-bottom-color: {$colors['body_line_color']};
+		}
+
+		input[type="text"],
+		input[type="search"],
+		input[type="email"],
+		textarea,
+		select {
+			&:focus {
+				border-color: {$colors['body_link_hover_color']} !important;
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_body', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_body', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
@@ -875,31 +1253,60 @@ CSS;
 
 
 /**
+ * Assign CSS to footer cta theme mod.
+ */
+function lsx_customizer_colour__footer_cta_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__footer_cta_get_theme_mods();
+	$styles     = lsx_customizer_colour__footer_cta_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__footer_cta_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__footer_cta_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__footer_cta_set_theme_mod' );
+
+/**
  * Enqueues front-end CSS for the footer cta.
  */
 function lsx_customizer_colour__footer_cta_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__footer_cta_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__footer_cta_get_theme_mods();
+		$styles     = lsx_customizer_colour__footer_cta_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__footer_cta_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__footer_cta_css', 12 );
+
+/**
+ * Get footer cta CSS theme mods.
+ */
+function lsx_customizer_colour__footer_cta_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
+	return array(
 		'footer_cta_background_color' => get_theme_mod( 'footer_cta_background_color', $colors['footer_cta_background_color'] ),
-		'footer_cta_text_color' => get_theme_mod( 'footer_cta_text_color', $colors['footer_cta_text_color'] ),
-		'footer_cta_link_color' => get_theme_mod( 'footer_cta_link_color', $colors['footer_cta_link_color'] ),
+		'footer_cta_text_color'       => get_theme_mod( 'footer_cta_text_color',       $colors['footer_cta_text_color'] ),
+		'footer_cta_link_color'       => get_theme_mod( 'footer_cta_link_color',       $colors['footer_cta_link_color'] ),
 		'footer_cta_link_hover_color' => get_theme_mod( 'footer_cta_link_hover_color', $colors['footer_cta_link_hover_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__footer_cta_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__footer_cta_css', 12 );
 
 /**
  * Returns CSS for the footer cta.
@@ -916,104 +1323,101 @@ function lsx_customizer_colour__footer_cta_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Footer CTA */
+		/*
+		 *
+		 * Footer CTA
+		 *
+		 */
 
-	#footer-cta,
-	.lsx-full-width {
-		background-color: {$colors['footer_cta_background_color']};
-	}
+		#footer-cta {
+			&,
+			.lsx-full-width {
+				background-color: {$colors['footer_cta_background_color']};
+			}
 
-	#footer-cta h1,
-	#footer-cta h2,
-	#footer-cta h3,
-	#footer-cta h4,
-	#footer-cta h5,
-	#footer-cta h6,
-	#footer-cta .textwidget {
-		color: {$colors['footer_cta_text_color']};
-	}
+			h1, h2, h3, h4, h5, h6,
+			.textwidget {
+				color: {$colors['footer_cta_text_color']};
 
-	#footer-cta a,
-	#footer-cta a:visited,
-	#footer-cta h1 a,
-	#footer-cta h1 a:visited,
-	#footer-cta h2 a,
-	#footer-cta h2 a:visited,
-	#footer-cta h3 a,
-	#footer-cta h3 a:visited,
-	#footer-cta h4 a,
-	#footer-cta h4 a:visited,
-	#footer-cta h5 a,
-	#footer-cta h5 a:visited,
-	#footer-cta h6 a,
-	#footer-cta h6 a:visited,
-	#footer-cta .textwidget a,
-	#footer-cta .textwidget a:visited {
-		color: {$colors['footer_cta_link_color']};
-	}
+				a {
+					&,
+					&:visited {
+						color: {$colors['footer_cta_link_color']};
+					}
 
-	#footer-cta a:hover,
-	#footer-cta a:active,
-	#footer-cta a:focus,
-	#footer-cta h1 a:hover,
-	#footer-cta h1 a:active,
-	#footer-cta h1 a:focus,
-	#footer-cta h2 a:hover,
-	#footer-cta h2 a:active,
-	#footer-cta h2 a:focus,
-	#footer-cta h3 a:hover,
-	#footer-cta h3 a:active,
-	#footer-cta h3 a:focus,
-	#footer-cta h4 a:hover,
-	#footer-cta h4 a:active,
-	#footer-cta h4 a:focus,
-	#footer-cta h5 a:hover,
-	#footer-cta h5 a:active,
-	#footer-cta h5 a:focus,
-	#footer-cta h6 a:hover,
-	#footer-cta h6 a:active,
-	#footer-cta h6 a:focus,
-	#footer-cta .textwidget a:hover,
-	#footer-cta .textwidget a:active,
-	#footer-cta .textwidget a:focus {
-		color: {$colors['footer_cta_link_hover_color']};
-	}
+					&:hover,
+					&:active,
+					&:focus {
+						color: {$colors['footer_cta_link_hover_color']};
+					}
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_footer_cta', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_footer_cta', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
 /* ################################################################################# */
 
+/**
+ * Assign CSS to footer widgets theme mod.
+ */
+function lsx_customizer_colour__footer_widgets_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__footer_widgets_get_theme_mods();
+	$styles     = lsx_customizer_colour__footer_widgets_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__footer_widgets_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__footer_widgets_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__footer_widgets_set_theme_mod' );
 
 /**
  * Enqueues front-end CSS for the footer widgets.
  */
 function lsx_customizer_colour__footer_widgets_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__footer_widgets_theme_mod' );
+	
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__footer_widgets_get_theme_mods();
+		$styles     = lsx_customizer_colour__footer_widgets_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__footer_widgets_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__footer_widgets_css', 12 );
+
+/**
+ * Get footer widgets CSS theme mods.
+ */
+function lsx_customizer_colour__footer_widgets_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
+	return array(
 		'footer_widgets_background_color' => get_theme_mod( 'footer_widgets_background_color', $colors['footer_widgets_background_color'] ),
-		'footer_widgets_text_color' => get_theme_mod( 'footer_widgets_text_color', $colors['footer_widgets_text_color'] ),
-		'footer_widgets_link_color' => get_theme_mod( 'footer_widgets_link_color', $colors['footer_widgets_link_color'] ),
+		'footer_widgets_text_color'       => get_theme_mod( 'footer_widgets_text_color',       $colors['footer_widgets_text_color'] ),
+		'footer_widgets_link_color'       => get_theme_mod( 'footer_widgets_link_color',       $colors['footer_widgets_link_color'] ),
 		'footer_widgets_link_hover_color' => get_theme_mod( 'footer_widgets_link_hover_color', $colors['footer_widgets_link_hover_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__footer_widgets_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__footer_widgets_css', 12 );
 
 /**
  * Returns CSS for the footer widgets.
@@ -1030,78 +1434,105 @@ function lsx_customizer_colour__footer_widgets_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Footer Widgets */
+		/*
+		 *
+		 * Footer Widgets
+		 *
+		 */
 
-	#footer-widgets {
-		background-color: {$colors['footer_widgets_background_color']};
-	}
+		#footer-widgets {
+			background-color: {$colors['footer_widgets_background_color']};
 
-	#footer-widgets,
-	#footer-widgets .widget,
-	#footer-widgets .widget h3.widget-title {
-		color: {$colors['footer_widgets_text_color']};
-	}
+			&,
+			.widget,
+			.widget h3.widget-title {
+				color: {$colors['footer_widgets_text_color']};
 
-	#footer-widgets a,
-	#footer-widgets a:visited,
-	#footer-widgets .widget a,
-	#footer-widgets .widget a:visited,
-	#footer-widgets .widget h3.widget-title a,
-	#footer-widgets .widget h3.widget-title a:visited {
-		color: {$colors['footer_widgets_link_color']};
-	}
+				a {
+					&,
+					&:visited {
+						color: {$colors['footer_widgets_link_color']};
+					}
 
-	#footer-widgets a:hover,
-	#footer-widgets a:active,
-	#footer-widgets a:focus,
-	#footer-widgets .widget a:hover,
-	#footer-widgets .widget a:active,
-	#footer-widgets .widget a:focus,
-	#footer-widgets .widget h3.widget-title :hover,
-	#footer-widgets .widget h3.widget-title a:active,
-	#footer-widgets .widget h3.widget-title a:focus {
-		color: {$colors['footer_widgets_link_hover_color']};
-	}
+					&:hover,
+					&:active,
+					&:focus {
+						color: {$colors['footer_widgets_link_hover_color']};
+					}
+				}
+			}
 
-	#footer-widgets .widget h3.widget-title {
-		border-bottom-color: {$colors['footer_widgets_text_color']};
-	}
+			.widget {
+				h3.widget-title {
+					border-bottom-color: {$colors['footer_widgets_text_color']};
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_footer_widgets', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_footer_widgets', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 
 /* ################################################################################# */
 
+/**
+ * Assign CSS to footer theme mod.
+ */
+function lsx_customizer_colour__footer_set_theme_mod() {
+	$theme_mods = lsx_customizer_colour__footer_get_theme_mods();
+	$styles     = lsx_customizer_colour__footer_get_css( $theme_mods );
+	
+	set_theme_mod( 'lsx_customizer_colour__footer_theme_mod', $styles );
+}
+add_action( 'after_switch_theme',   'lsx_customizer_colour__footer_set_theme_mod' );
+add_action( 'customize_save_after', 'lsx_customizer_colour__footer_set_theme_mod' );
 
 /**
  * Enqueues front-end CSS for the footer.
  */
 function lsx_customizer_colour__footer_css() {
+	$styles_from_theme_mod = get_theme_mod( 'lsx_customizer_colour__footer_theme_mod' );
+
+	if ( is_customize_preview() || false === $styles_from_theme_mod ) {
+		$theme_mods = lsx_customizer_colour__footer_get_theme_mods();
+		$styles     = lsx_customizer_colour__footer_get_css( $theme_mods );
+		
+		if ( false === $styles_from_theme_mod ) {
+			set_theme_mod( 'lsx_customizer_colour__footer_theme_mod', $styles );
+		}
+	} else {
+		$styles = $styles_from_theme_mod;
+	}
+
+	wp_add_inline_style( 'lsx_customizer_colour', $styles );
+}
+add_action( 'wp_footer', 'lsx_customizer_colour__footer_css', 12 );
+
+/**
+ * Get footer CSS theme mods.
+ */
+function lsx_customizer_colour__footer_get_theme_mods() {
 	global $customizer_colour_names;
 
 	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors = array();
-	$counter = 0;
+	$colors       = array();
+	$counter      = 0;
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors[$key] = $color_scheme[$counter];
 		$counter++;
 	}
 
-	$inline_colors = array(
+	return array(
 		'footer_background_color' => get_theme_mod( 'footer_background_color', $colors['footer_background_color'] ),
-		'footer_text_color' => get_theme_mod( 'footer_text_color', $colors['footer_text_color'] ),
-		'footer_link_color' => get_theme_mod( 'footer_link_color', $colors['footer_link_color'] ),
+		'footer_text_color'       => get_theme_mod( 'footer_text_color',       $colors['footer_text_color'] ),
+		'footer_link_color'       => get_theme_mod( 'footer_link_color',       $colors['footer_link_color'] ),
 		'footer_link_hover_color' => get_theme_mod( 'footer_link_hover_color', $colors['footer_link_hover_color'] )
 	);
-
-	$color_scheme_css = lsx_customizer_colour__footer_get_css( $inline_colors );
-	wp_add_inline_style( 'lsx_customizer_colour', $color_scheme_css );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__footer_css', 12 );
 
 /**
  * Returns CSS for the footer.
@@ -1118,35 +1549,46 @@ function lsx_customizer_colour__footer_get_css( $colors ) {
 	$colors = wp_parse_args( $colors, $colors_template );
 
 	$css = <<<CSS
-	
-	/* Footer */
+		/*
+		 *
+		 * Footer
+		 *
+		 */
 
-	footer.content-info {
-		background-color: {$colors['footer_background_color']};
-	}
+		footer.content-info {
+			background-color: {$colors['footer_background_color']};
 
-	footer.content-info,
-	footer.content-info .credit {
-		color: {$colors['footer_text_color']};
-	}
+			&,
+			& .credit {
+				color: {$colors['footer_text_color']};
+			}
 
-	footer.content-info a,
-	footer.content-info a:visited {
-		color: {$colors['footer_link_color']};
-	}
+			a {
+				&,
+				&:visited {
+					color: {$colors['footer_link_color']};
+				}
 
-	footer.content-info a:hover,
-	footer.content-info a:active,
-	footer.content-info a:focus {
-		color: {$colors['footer_link_hover_color']};
-	}
+				&:hover,
+				&:active,
+				&:focus {
+					color: {$colors['footer_link_hover_color']};
+				}
+			}
+		}
 
-	nav#footer-navigation ul li {
-		border-right-color: {$colors['footer_link_color']};
-	}
+		nav#footer-navigation {
+			ul {
+				li {
+					border-right-color: {$colors['footer_link_color']};
+				}
+			}
+		}
 CSS;
 
-	return apply_filters( 'lsx_customizer_colour_selectors_footer', $css, $colors );
+	$css = apply_filters( 'lsx_customizer_colour_selectors_footer', $css, $colors );
+	$css = lsx_customizer_colour__scss_to_css( $css );
+	return $css;
 }
 
 

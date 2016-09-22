@@ -16,9 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) return;
  *   widget_text
  *   post_thumbnail_html
  *   get_avatar
+ *   envira_gallery_output_image
  */
 class LSX_LazyLoadImages {
 	protected static $enabled = true;
+
+	protected static $noscript_id = 0;
+	protected static $noscripts   = array();
 
 	static function init() {
 		if ( is_admin() )
@@ -59,8 +63,9 @@ class LSX_LazyLoadImages {
 	}
 
 	static function filter_images( $content ) {
-		if ( ! self::is_enabled() )
+		if ( ! self::is_enabled() ) {
 			return $content;
+		}
 
 		if ( is_feed()
 			|| is_preview()
@@ -78,7 +83,8 @@ class LSX_LazyLoadImages {
 		$search = array();
 		$replace = array();
 		
-		preg_match_all( '/<img\s+.*?>/', $content, $matches );
+		$content = preg_replace_callback( '~<noscript.+?</noscript>~s', 'self::noscripts_remove', $content );
+		preg_match_all( '/<img[^>]*>/', $content, $matches );
 
 		foreach ( $matches[0] as $img_html ) {
 			if ( ! ( preg_match( $skip_images_regex, $img_html ) ) ) {
@@ -120,7 +126,18 @@ class LSX_LazyLoadImages {
 		}
 
 		$content = str_replace( $search, $replace, $content );
+		$content = preg_replace_callback( '~' . chr(20) . '([0-9]+)' . chr(20) . '~', 'self::noscripts_restore', $content );
 		return $content;
+	}
+
+	static function noscripts_remove( $match ) {
+		self::$noscript_id++;
+		self::$noscripts[self::$noscript_id] = $match[0];
+		return chr(20) . self::$noscript_id . chr(20);
+	}
+
+	static function noscripts_restore( $match ) {
+		return self::$noscripts[(int) $match[1]];
 	}
 
 	static function add_class( $html_string = '', $new_class ) {
