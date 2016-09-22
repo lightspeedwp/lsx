@@ -1,43 +1,28 @@
-# Travis CI (MIT License) configuration file for the LSX WordPress theme.
-# @link https://travis-ci.org/
-
-# For use with the LSX WordPress theme.
-# @link https://github.com/lightspeeddevelopment/lsx/
-
 # Declare project language.
-# @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
-  # aliased to a recent 5.5.x version
-  - "5.5"
-  # aliased to a recent 5.4.x version
-  - "5.4"
-  # aliased to a recent 5.3.x version
-  - "5.3"
-  # Current $required_php_version for WordPress: 5.2.4
-  - "5.2"
+  - "7.0"  
+ # - "5.6"  
+ # - "5.5"
+ # - "5.4"
+ # - "5.3"
+ # - "5.2"
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
 env:
-  # Trunk
-  # @link https://github.com/WordPress/WordPress
   - WP_VERSION=master WP_MULTISITE=0
   - WP_VERSION=master WP_MULTISITE=1
-  # WordPress 4.2
-  # @link https://github.com/WordPress/WordPress/tree/4.2-branch
-  - WP_VERSION=4.2 WP_MULTISITE=0
-  - WP_VERSION=4.2 WP_MULTISITE=1
-  # WordPress 4.1
-  # @link https://github.com/WordPress/WordPress/tree/4.1-branch
-  - WP_VERSION=4.1 WP_MULTISITE=0
-  - WP_VERSION=4.1 WP_MULTISITE=1
+ # - WP_VERSION=4.5 WP_MULTISITE=0
+ # - WP_VERSION=4.5 WP_MULTISITE=1
+ # - WP_VERSION=4.4 WP_MULTISITE=0
+ # - WP_VERSION=4.4 WP_MULTISITE=1
+ # - WP_VERSION=4.3 WP_MULTISITE=0
+ # - WP_VERSION=4.3 WP_MULTISITE=1  
 
 # Declare 5.6 beta in test matrix.
-# @link https://buddypress.trac.wordpress.org/ticket/5620
-# @link http://docs.travis-ci.com/user/build-configuration/
 matrix:
   include:
     - php: 5.6
@@ -104,9 +89,3 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
-
-# Receive notifications for build results.
-# @link http://docs.travis-ci.com/user/notifications/#Email-notifications
-notifications:
-  email: webmaster@lsdev.biz
-  slack: feedmychat:tFIuB2vjsKv4CjFXUvejUrhc
