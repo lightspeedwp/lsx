@@ -382,7 +382,7 @@ jQuery(document).ready(function($) {
 		}
 
 		//Final load - LAST CODE TO EXECUTE
-		$('body').addClass('html-loaded');
+		$('body.preloader-content-enable').addClass('html-loaded');
 	});
 });
 

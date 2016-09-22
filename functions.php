@@ -70,6 +70,18 @@ function lsx_customizer_core_controls( $lsx_controls ) {
 		'type'          =>  'checkbox',
 	);
 
+	$lsx_controls['settings']['lsx_preloader_content_status'] = array(
+		'default'           =>  '1',
+		'sanitize_callback' => 'lsx_sanitize_checkbox',
+		'transport'         =>  'postMessage',
+	);
+
+	$lsx_controls['fields']['lsx_preloader_content_status'] = array(
+		'label'         =>  __( 'Preloader Content', 'lsx' ),
+		'section'       =>  'lsx-core',
+		'type'          =>  'checkbox',
+	);
+
 	return $lsx_controls;
 }
 add_filter( 'lsx_customizer_controls', 'lsx_customizer_core_controls' );

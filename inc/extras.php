@@ -31,6 +31,10 @@ function lsx_body_class($classes) {
   	$classes[] = 'has-top-menu';
   }
 
+	if ( get_theme_mod( 'lsx_preloader_content_status', '1' ) === '1' ) {
+		$classes[] = 'preloader-content-enable';
+	}
+
   // Remove unnecessary classes
   $home_id_class = 'page-id-' . get_option('page_on_front');
   $remove_classes = array(
