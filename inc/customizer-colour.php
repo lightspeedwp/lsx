@@ -200,6 +200,21 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 			}
 		}
 
+		#infinite-handle span {
+			&,
+			&:visited {
+				background-color: {$colors['button_background_color']} !important;
+				color: {$colors['button_text_color']} !important;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: {$colors['button_background_hover_color']} !important;
+				color: {$colors['button_text_color_hover']} !important;
+			}
+		}
+
 		.caldera-grid,
 		.caldera-clarity-grid,
 		#footer-widgets .widget form {
