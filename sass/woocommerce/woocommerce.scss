@@ -2316,6 +2316,14 @@ body:not(.search-results) {
 			margin-top: 0;
 		}
 	}
+
+	&.archive.woocommerce {
+		#main {
+			& > .page-title {
+				display: none;
+			}
+		}
+	}
 }
 
 .woocommerce-breadcrumb {

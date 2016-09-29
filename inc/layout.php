@@ -204,6 +204,13 @@ function lsx_global_header() {
 			<?php } ?>
 		</header>
 		<?php
+	elseif (is_archive() && class_exists('WooCommerce') && is_post_type_archive('product') ) :
+		?>
+		<header class="archive-header">
+			<h1 class="archive-title"><?php _e('Shop', 'lsx'); ?></h1>
+			<?php echo term_description(); ?>
+		</header>
+		<?php
 	elseif (is_archive()) :
 		?>
 		<header class="archive-header">
