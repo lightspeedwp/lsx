@@ -2148,13 +2148,19 @@ body:not(.search-results) {
 	 */
 	.star-rating {
 		&:before {
-			color: rgb(255, 204, 0);
+			color: rgb(255, 204, 0) !important;
 		}
 
 		span {
 			&:before {
-				color: rgb(255, 204, 0);
+				color: rgb(255, 204, 0) !important;
 			}
+		}
+	}
+	
+	p.stars {
+		a {
+			color: rgb(255, 204, 0) !important;
 		}
 	}
 
