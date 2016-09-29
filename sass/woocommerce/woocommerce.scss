@@ -2122,12 +2122,6 @@ body:not(.search-results) {
 		padding: 9.5px 26px;
 	}
 
-	input[type="number"] {
-		@include lsx-form-field;
-		line-height: 1.42857143;
-		padding: 8px !important;
-	}
-
 	/**
 	 * Forms
 	 */
@@ -2140,6 +2134,12 @@ body:not(.search-results) {
 		textarea {
 			@include lsx-form-field;
 			line-height: 1.42857143;
+		}
+
+		input[type="number"] {
+			@include lsx-form-field;
+			line-height: 1.42857143;
+			padding: 8px !important;
 		}
 	}
 
@@ -2154,6 +2154,29 @@ body:not(.search-results) {
 		span {
 			&:before {
 				color: rgb(255, 204, 0);
+			}
+		}
+	}
+
+	/**
+	 * Products
+	 */
+	div.product {
+		form.cart {
+			div.quantity {
+				margin: 10px 10px 0 0;
+			}
+		}
+	}
+
+	#reviews {
+		#comments {
+			ol.commentlist {
+				li {
+					.comment-text {
+						margin-left: 0;
+					}
+				}
 			}
 		}
 	}
