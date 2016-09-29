@@ -290,15 +290,15 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 			#respond input#submit {
 				&,
 				&:visited {
-					background-color: {$colors['button_background_color']};
-					color: {$colors['button_text_color']};
+					background-color: {$colors['button_background_color']} !important;
+					color: {$colors['button_text_color']} !important;
 				}
 
 				&:hover,
 				&:active,
 				&:focus {
-					background-color: {$colors['button_background_hover_color']};
-					color: {$colors['button_text_color_hover']};
+					background-color: {$colors['button_background_hover_color']} !important;
+					color: {$colors['button_text_color_hover']} !important;
 				}
 			}
 		}
