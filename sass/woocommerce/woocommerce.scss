@@ -2155,6 +2155,12 @@ body:not(.search-results) {
 				width: 100%;
 			}
 		}
+
+		fieldset:not(:first-child) {
+			legend {
+				padding-top: 20px;
+			}
+		}
 	}
 
 	table.cart {
