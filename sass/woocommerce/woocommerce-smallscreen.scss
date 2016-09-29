@@ -6,9 +6,9 @@
 /**
  * Imports
  */
-@import "_bourbon.scss";
-@import "_mixins.scss";
-@import "_variables.scss";
+@import "bourbon";
+@import "mixins";
+@import "variables";
 
 /**
  * Style begins
@@ -143,18 +143,23 @@
 				float: none;
 				@include clearfix();
 				padding-bottom: .5em;
+
+				input,
+				.button,
+				.input-text {
+					width: 48%;
+					box-sizing: border-box;
+				}
+
+				.input-text + .button,
+				.button.alt {
+					float: right;
+				}
 			}
 
-			input,
-			.button,
-			.input-text {
-				width: 48%;
-				box-sizing: border-box;
-			}
-
-			.input-text + .button,
-			.button.alt {
-				float: right;
+			.button {
+				display: block;
+				width: 100%;
 			}
 		}
 	}
@@ -205,6 +210,14 @@
 			float: none;
 			margin-right: 0;
 		}
+	}
+}
+
+.woocommerce-account {
+	.woocommerce-MyAccount-navigation,
+	.woocommerce-MyAccount-content {
+		float: none;
+		width: 100%;
 	}
 }
 
