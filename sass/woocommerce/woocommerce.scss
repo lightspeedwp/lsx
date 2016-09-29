@@ -2083,14 +2083,14 @@ body:not(.search-results) {
 	input.button,
 	input[type="submit"],
 	#respond input#submit {
-		@include lsx-button;
 		line-height: 1.42857143;
 		padding: 9.5px 26px;
+		@include lsx-button;
 	}
 
 	input[type="number"] {
-		@include lsx-button;
 		padding: 8px !important;
+		@include lsx-button;
 	}
 
 	/**
@@ -2103,6 +2103,7 @@ body:not(.search-results) {
 		input.input-text,
 		input[type="search"],
 		textarea {
+			line-height: 1.42857143;
 			@include lsx-form-field;
 		}
 	}
