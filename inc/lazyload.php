@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) return;
  *   widget_text
  *   post_thumbnail_html
  *   get_avatar
- *   envira_gallery_output_image
  */
 class LSX_LazyLoadImages {
 	protected static $enabled = true;
@@ -51,9 +50,6 @@ class LSX_LazyLoadImages {
 		
 		// LSX
 		add_filter( 'lsx_lazyload_filter_images', array( __CLASS__, 'filter_images' ), 200 );
-
-		// Envira Gallery
-		add_filter( 'envira_gallery_output_image', array( __CLASS__, 'filter_images' ), 200 );
 	}
 
 	static function add_scripts() {
