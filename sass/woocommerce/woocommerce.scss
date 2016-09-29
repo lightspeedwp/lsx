@@ -2130,7 +2130,11 @@ body:not(.search-results) {
 		.select2-choice,
 		.input-checkbox,
 		input.input-text,
+		input[type="text"],
 		input[type="search"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
 		textarea {
 			@include lsx-form-field;
 			line-height: 1.42857143 !important;
@@ -2140,6 +2144,16 @@ body:not(.search-results) {
 			@include lsx-form-field;
 			line-height: 1.42857143 !important;
 			padding: 8px !important;
+		}
+
+		&#commentform {
+			input[type="text"],
+			input[type="search"],
+			input[type="email"],
+			input[type="number"],
+			input[type="password"] {
+				width: 100%;
+			}
 		}
 	}
 

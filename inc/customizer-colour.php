@@ -280,6 +280,7 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 		input[type="search"],
 		input[type="email"],
 		input[type="number"],
+		input[type="password"],
 		textarea,
 		select {
 			&:focus {
