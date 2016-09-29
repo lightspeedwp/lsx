@@ -2106,6 +2106,21 @@ body:not(.search-results) {
 			@include lsx-form-field;
 		}
 	}
+
+	/**
+	 * Rating
+	 */
+	.star-rating {
+		&:before {
+			color: rgb(255, 204, 0);
+		}
+
+		span {
+			&:before {
+				color: rgb(255, 204, 0);
+			}
+		}
+	}
 }
 
 .woocommerce-breadcrumb {
