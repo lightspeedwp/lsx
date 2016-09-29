@@ -326,7 +326,7 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 				}
 			}
 
-			.nav.woocommerce-pagination a {
+			nav.woocommerce-pagination a {
 				&,
 				&:visited {
 					border-color: {$colors['button_background_color']} !important;
@@ -342,7 +342,7 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 				}
 			}
 
-			.nav.woocommerce-pagination span.current {
+			nav.woocommerce-pagination span.current {
 				background-color: {$colors['button_background_color']} !important;
 				border-color: {$colors['button_background_color']} !important;
 				color: {$colors['button_text_color']} !important;
