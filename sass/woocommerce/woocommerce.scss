@@ -9,32 +9,9 @@
  */
 @import "bourbon";
 @import "mixins";
-//@import "../lsx/_mixins.scss";
 @import "variables";
 @import "animation";
 @import "fonts";
- 
-/* LSX */
-
-/*.wrap {
-	body.woocommerce & {
-		margin: {
-			top: 0;
-			bottom: 40px;
-		}
-	}
-
-	body.woocommerce-page & {
-		#primary.col-sm-12 {
-			max-width: 100%;
-		}
-	}
-}
-
-input[type="number"] {
-	@include lsx-form-field;
-	padding: 8px !important;
-}*/
 
 /**
  * Global styles
@@ -2075,4 +2052,29 @@ body:not(.search-results) {
 		background: inherit;
 		color: inherit;
 	}
+}
+
+/**
+ * LSX specific styles
+ */
+@import "../lsx/_mixins.scss";
+
+.wrap {
+	body.woocommerce & {
+		margin: {
+			top: 0;
+			bottom: 40px;
+		}
+	}
+
+	body.woocommerce-page & {
+		#primary.col-sm-12 {
+			max-width: 100%;
+		}
+	}
+}
+
+input[type="number"] {
+	@include lsx-form-field;
+	padding: 8px !important;
 }
