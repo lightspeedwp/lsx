@@ -2157,7 +2157,7 @@ body:not(.search-results) {
 			}
 		}
 	}
-	
+
 	p.stars {
 		a {
 			color: rgb(255, 204, 0) !important;
@@ -2171,6 +2171,26 @@ body:not(.search-results) {
 		form.cart {
 			div.quantity {
 				margin: 10px 10px 0 0;
+			}
+		}
+
+		.woocommerce-tabs {
+			ul.tabs {
+				margin-bottom: 0;
+
+				&:before {
+					border-bottom: 0;
+				}
+			}
+
+			.panel {
+				border: 1px solid #d3ced2;
+				margin-top: -1px;
+				padding: 2em;
+
+				h2 {
+					margin-top: 0;
+				}
 			}
 		}
 	}
