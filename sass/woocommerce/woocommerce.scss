@@ -2074,23 +2074,23 @@ body:not(.search-results) {
 	}
 }
 
-input[type="number"] {
-	@include lsx-form-field;
-	//padding: 8px !important;
-}
-
 .woocommerce {
 	/**
 	 * Buttons
 	 */
-	 
 	a.button,
 	button.button,
 	input.button,
 	input[type="submit"],
-	input[type="number"],
 	#respond input#submit {
 		@include lsx-button;
+		line-height: 1.42857143;
+		padding: 9.5px 26px;
+	}
+
+	input[type="number"] {
+		@include lsx-button;
+		padding: 8px !important;
 	}
 
 	/**
