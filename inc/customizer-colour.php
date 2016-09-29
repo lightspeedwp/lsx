@@ -276,6 +276,17 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 			color: {$colors['button_text_color']} !important;
 		}
 
+		input[type="text"],
+		input[type="search"],
+		input[type="email"],
+		input[type="number"],
+		textarea,
+		select {
+			&:focus {
+				border-color: {$colors['button_background_color']} !important;
+			}
+		}
+
 		/*
 		 *
 		 * Button WooCommerce
@@ -1301,16 +1312,6 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 		.page-header {
 			border-bottom-color: {$colors['body_line_color']};
-		}
-
-		input[type="text"],
-		input[type="search"],
-		input[type="email"],
-		textarea,
-		select {
-			&:focus {
-				border-color: {$colors['body_link_hover_color']} !important;
-			}
 		}
 CSS;
 
