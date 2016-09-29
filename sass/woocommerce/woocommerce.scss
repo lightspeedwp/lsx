@@ -2118,7 +2118,7 @@ body:not(.search-results) {
 	input[type="submit"],
 	#respond input#submit {
 		@include lsx-button;
-		line-height: 1.42857143;
+		line-height: 1.42857143 !important;
 		padding: 9.5px 26px;
 	}
 
@@ -2133,13 +2133,27 @@ body:not(.search-results) {
 		input[type="search"],
 		textarea {
 			@include lsx-form-field;
-			line-height: 1.42857143;
+			line-height: 1.42857143 !important;
 		}
 
 		input[type="number"] {
 			@include lsx-form-field;
-			line-height: 1.42857143;
+			line-height: 1.42857143 !important;
 			padding: 8px !important;
+		}
+	}
+
+	.woocommerce-cart {
+		table.cart {
+			td.actions {
+				.coupon {
+					.input-text {
+						border: 3px solid #ddd !important;
+						padding: 8px 14px !important;
+						width: 150px;
+					}
+				}
+			}
 		}
 	}
 

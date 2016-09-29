@@ -312,6 +312,20 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 					color: {$colors['button_text_color_hover']} !important;
 				}
 			}
+
+			.woocommerce-cart {
+				table.cart {
+					td.actions {
+						.coupon {
+							.input-text {
+								&:focus {
+									border-color: {$colors['button_background_color']} !important;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 CSS;
 
