@@ -313,7 +313,7 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 				}
 			}
 
-			.woocommerce-cart {
+			&.woocommerce-cart {
 				table.cart {
 					td.actions {
 						.coupon {
