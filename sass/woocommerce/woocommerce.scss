@@ -2123,7 +2123,7 @@ body:not(.search-results) {
 	}
 
 	input[type="number"] {
-		@include lsx-button;
+		@include lsx-form-field;
 		line-height: 1.42857143;
 		padding: 8px !important;
 	}
@@ -2138,8 +2138,8 @@ body:not(.search-results) {
 		input.input-text,
 		input[type="search"],
 		textarea {
-			line-height: 1.42857143;
 			@include lsx-form-field;
+			line-height: 1.42857143;
 		}
 	}
 
