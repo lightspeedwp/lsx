@@ -325,6 +325,28 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 					}
 				}
 			}
+
+			.nav.woocommerce-pagination a {
+				&,
+				&:visited {
+					border-color: {$colors['button_background_color']} !important;
+					color: {$colors['button_background_color']} !important;
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: {$colors['button_background_hover_color']} !important;
+					border-color: {$colors['button_background_hover_color']} !important;
+					color: {$colors['button_text_color_hover']} !important;
+				}
+			}
+
+			.nav.woocommerce-pagination span.current {
+				background-color: {$colors['button_background_color']} !important;
+				border-color: {$colors['button_background_color']} !important;
+				color: {$colors['button_text_color']} !important;
+			}
 		}
 CSS;
 
