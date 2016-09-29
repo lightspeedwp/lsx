@@ -2076,5 +2076,34 @@ body:not(.search-results) {
 
 input[type="number"] {
 	@include lsx-form-field;
-	padding: 8px !important;
+	//padding: 8px !important;
+}
+
+.woocommerce {
+	/**
+	 * Buttons
+	 */
+	 
+	a.button,
+	button.button,
+	input.button,
+	input[type="submit"],
+	input[type="number"],
+	#respond input#submit {
+		@include lsx-button;
+	}
+
+	/**
+	 * Forms
+	 */
+	form {
+		select,
+		.select2-choice,
+		.input-checkbox,
+		input.input-text,
+		input[type="search"],
+		textarea {
+			@include lsx-form-field;
+		}
+	}
 }
