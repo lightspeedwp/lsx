@@ -497,7 +497,8 @@ p.demo_store {
 		}
 	}
 
-	nav.woocommerce-pagination {
+	/* LSX commented in 2.6.4 */
+	/*nav.woocommerce-pagination {
 		text-align: center;
 
 		ul {
@@ -534,6 +535,39 @@ p.demo_store {
 				a:hover,
 				a:focus {
 					background: $secondary;
+					color: darken( $secondary, 40% );
+				}
+			}
+		}
+	}*/
+
+	/* LSX new in 2.6.4 */
+	nav.woocommerce-pagination {
+		text-align: center;
+
+		ul {
+			display: inline-block;
+			white-space: nowrap;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin: 0 3px;
+
+				a,
+				span {
+					padding: 5px 12px;
+					border: 2px solid #ccc;
+					color: #333;
+					@include border-radius(3px);
+					@include transition(all 0.2s ease-in-out);
+				}
+
+				span.current,
+				a:hover,
+				a:focus {
+					background: $secondary;
+					border-color: $secondary;
 					color: darken( $secondary, 40% );
 				}
 			}
@@ -582,8 +616,8 @@ p.demo_store {
 				top: .618em;
 				right: 1em;
 				-webkit-animation: spin 2s linear infinite;
-			    -moz-animation: spin 2s linear infinite;
-			    animation: spin 2s linear infinite;
+				-moz-animation: spin 2s linear infinite;
+				animation: spin 2s linear infinite;
 			}
 		}
 
@@ -2055,7 +2089,7 @@ body:not(.search-results) {
 }
 
 /**
- * LSX specific styles
+ * LSX specific styles in 2.6.4
  */
 @import "../lsx/_mixins.scss";
 
