@@ -313,14 +313,12 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 				}
 			}
 
-			&.woocommerce-cart {
-				table.cart {
-					td.actions {
-						.coupon {
-							.input-text {
-								&:focus {
-									border-color: {$colors['button_background_color']} !important;
-								}
+			table.cart {
+				td.actions {
+					.coupon {
+						.input-text {
+							&:focus {
+								border-color: {$colors['button_background_color']} !important;
 							}
 						}
 					}

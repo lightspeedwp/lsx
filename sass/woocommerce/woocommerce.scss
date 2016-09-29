@@ -2143,15 +2143,13 @@ body:not(.search-results) {
 		}
 	}
 
-	&.woocommerce-cart {
-		table.cart {
-			td.actions {
-				.coupon {
-					.input-text {
-						border: 3px solid #ddd !important;
-						padding: 8px 14px !important;
-						width: 150px;
-					}
+	table.cart {
+		td.actions {
+			.coupon {
+				.input-text {
+					border: 3px solid #ddd !important;
+					padding: 8px 14px !important;
+					width: 150px !important;
 				}
 			}
 		}
