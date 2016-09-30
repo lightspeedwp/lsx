@@ -76,7 +76,7 @@ add_action('wp_head', 'lsx_sensei_wp_head', 10);
 function lsx_sensei_before_content(){ ?>
 	<?php lsx_content_wrap_before(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
 
 		<?php lsx_content_before(); ?>
 

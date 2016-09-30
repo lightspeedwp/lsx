@@ -45,7 +45,7 @@ if (have_comments()) : ?>
 
 <?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
 	<div class="alert alert-warning">
-		<?php _e('Comments are closed.', 'lsx'); ?>
+		<?php esc_html_e('Comments are closed.', 'lsx'); ?>
 	</div>
 <?php endif; ?>
 </section><!-- /#comments -->
@@ -57,7 +57,7 @@ if (have_comments()) : ?>
 <?php if (!have_comments() && !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
 	<section id="comments">
 		<div class="alert alert-warning">
-			<?php _e('Comments are closed.', 'lsx'); ?>
+			<?php esc_html_e('Comments are closed.', 'lsx'); ?>
 		</div>
 	</section><!-- /#comments -->
 

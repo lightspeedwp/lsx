@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<?php lsx_content_wrap_before(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
 
 		<?php lsx_content_before(); ?>
 		

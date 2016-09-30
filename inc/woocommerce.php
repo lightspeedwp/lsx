@@ -28,7 +28,7 @@ add_action('woocommerce_after_main_content', 'lsx_woocommerce_after_content', 10
 function lsx_woocommerce_before_content(){ ?>
 	<?php lsx_content_wrap_before(); ?>
 
-	<div id="primary" class="content-area <?php echo lsx_main_class(); ?>">
+	<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
 
 		<?php lsx_content_before(); ?>
 
