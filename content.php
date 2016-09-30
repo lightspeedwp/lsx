@@ -44,19 +44,19 @@
 
 		<h1 class="entry-title">
 			<?php if ( has_post_thumbnail() ) { ?>
-				<a href="<?php echo esc_url($archive_link) ?>" class="format-link has-thumb fa fa-<?php echo $format ?>"></a>
+				<a href="<?php echo esc_url($archive_link) ?>" class="format-link has-thumb fa fa-<?php echo esc_attr( $format ) ?>"></a>
 			<?php } else { ?>
-				<a href="<?php echo esc_url($archive_link) ?>" class="format-link fa fa-<?php echo $format ?>"></a>
+				<a href="<?php echo esc_url($archive_link) ?>" class="format-link fa fa-<?php echo esc_attr( $format ) ?>"></a>
 			<?php } ?>
 
 			<?php if ( has_post_format( array('link') ) ) { ?>
-				<a href="<?php echo lsx_get_my_url(); ?>" rel="bookmark"><?php the_title(); ?> <span class="fa fa-external-link"></span></a>
+				<a href="<?php echo esc_url( lsx_get_my_url() ); ?>" rel="bookmark"><?php the_title(); ?> <span class="fa fa-external-link"></span></a>
 			<?php } else { ?>
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			<?php } ?>
 
 			<?php if ( is_sticky() ) { ?>
-				<span class="label label-default label-sticky"><?php _e('Featured','lsx'); ?></span>
+				<span class="label label-default label-sticky"><?php esc_html_e('Featured','lsx'); ?></span>
 			<?php } ?>
 		</h1>
 
@@ -90,14 +90,17 @@
 		<div class="post-tags-wrapper">
 			<?php if ( has_tag() ) : ?>
 				<div class="post-tags">
-					<span><?php _e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
+					<span><?php esc_html_e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
 				</div>
 			<?php endif ?>
 			
 			<?php if ( comments_open() && ! empty( get_comments_number() ) ) : ?>
 				<div class="post-comments">
 					<a href="<?php the_permalink() ?>#comments">
-						<?php printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'lsx' ), number_format_i18n( get_comments_number() ) ) ?>
+						<?php
+							$count = get_comments_number();
+							printf( esc_html( _n( 'One Comment', '%1$s Comments', $count, 'lsx' ) ), esc_html( number_format_i18n( $count ) ) );
+						?>
 					</a>
 				</div>
 			<?php endif ?>

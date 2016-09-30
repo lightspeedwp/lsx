@@ -41,7 +41,7 @@
 
 			    		<?php lsx_footer_top(); ?>
 
-			      		<p class="credit <?php if ( has_nav_menu( 'social' ) || has_nav_menu( 'footer' ) ) { ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), date_i18n( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
+			      		<p class="credit <?php if ( has_nav_menu( 'social' ) || has_nav_menu( 'footer' ) ) { ?>credit-float<?php } ?>"><?php printf( esc_html__( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), esc_html( date_i18n( 'Y' ) ), get_bloginfo( 'name' ) ); ?></p>
 						<?php if ( has_nav_menu( 'social' ) ) { ?>
 							<nav id="social-navigation" class="social-navigation">
 								<?php
@@ -87,7 +87,7 @@
 
 			    		<?php lsx_footer_top(); ?>
 
-			      		<p class="credit <?php if ( has_nav_menu( 'social' ) ) { ?>credit-float<?php } ?>"><?php printf( __( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), date_i18n( 'Y' ), get_bloginfo( 'name' ) ); ?></p>
+			      		<p class="credit <?php if ( has_nav_menu( 'social' ) ) { ?>credit-float<?php } ?>"><?php printf( esc_html__( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), esc_html( date_i18n( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?></p>
 						<?php if ( has_nav_menu( 'social' ) ) { ?>
 							<nav id="social-navigation" class="social-navigation" role="navigation">
 								<?php

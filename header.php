@@ -57,7 +57,7 @@ global $lsx_options;
 			    </div>
 
 			    <div class="header-links">
-			    	<strong><?php _e( 'Get your Tourism Establishment Online', 'lsx' ); ?></strong>
+			    	<strong><?php esc_html_e( 'Get your Tourism Establishment Online', 'lsx' ); ?></strong>
 			    	
 			    	<?php 
 			    	if(is_singular('landing-page')){ 
@@ -67,7 +67,7 @@ global $lsx_options;
 							}
 			    	} ?>
 			    	
-			    	<span class="email-address"><?php _e( 'Questions? Email Us: ', 'lsx' ); ?><a href="mailto:<?php echo $email_address; ?>"><?php echo $email_address; ?></a></span>
+			    	<span class="email-address"><?php esc_html_e( 'Questions? Email Us: ', 'lsx' ); ?><a href="mailto:<?php echo esc_attr( $email_address ); ?>"><?php echo esc_html( $email_address ); ?></a></span>
 			    </div>
 		  	</div>
 
