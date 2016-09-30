@@ -46,19 +46,19 @@ function lsx_customizer_colour__color_scheme_css_template() {
 	}
 	?>
 	<script type="text/html" id="tmpl-lsx-color-scheme">
-		<?php echo lsx_customizer_colour__top_menu_get_css( $colors ) ?>
-		<?php echo lsx_customizer_colour__header_get_css( $colors ) ?>
-		<?php echo lsx_customizer_colour__main_menu_get_css( $colors ) ?>
+		<?php echo esc_html( lsx_customizer_colour__top_menu_get_css( $colors ) ) ?>
+		<?php echo esc_html( lsx_customizer_colour__header_get_css( $colors ) ) ?>
+		<?php echo esc_html( lsx_customizer_colour__main_menu_get_css( $colors ) ) ?>
 
-		<?php echo lsx_customizer_colour__banner_get_css( $colors ) ?>
-		<?php echo lsx_customizer_colour__body_get_css( $colors ) ?>
+		<?php echo esc_html( lsx_customizer_colour__banner_get_css( $colors ) ) ?>
+		<?php echo esc_html( lsx_customizer_colour__body_get_css( $colors ) ) ?>
 
-		<?php echo lsx_customizer_colour__footer_cta_get_css( $colors ) ?>
-		<?php echo lsx_customizer_colour__footer_widgets_get_css( $colors ) ?>
-		<?php echo lsx_customizer_colour__footer_get_css( $colors ) ?>
+		<?php echo esc_html( lsx_customizer_colour__footer_cta_get_css( $colors ) ) ?>
+		<?php echo esc_html( lsx_customizer_colour__footer_widgets_get_css( $colors ) ) ?>
+		<?php echo esc_html( lsx_customizer_colour__footer_get_css( $colors ) ) ?>
 
-		<?php echo lsx_customizer_colour__button_get_css( $colors ) ?>
-		<?php echo lsx_customizer_colour__button_cta_get_css( $colors ) ?>
+		<?php echo esc_html( lsx_customizer_colour__button_get_css( $colors ) ) ?>
+		<?php echo esc_html( lsx_customizer_colour__button_cta_get_css( $colors ) ) ?>
 	</script>
 	<?php
 }
@@ -1741,12 +1741,12 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 				<span class="customize-control-title"><?php echo esc_html( $this->label ) ?></span>
 			<?php }
 			if ( ! empty( $this->description ) ) { ?>
-				<span class="description customize-control-description"><?php echo $this->description ?></span>
+				<span class="description customize-control-description"><?php echo esc_html( $this->description ) ?></span>
 			<?php } ?>
 			<select <?php $this->link() ?>>
 				<?php
 					foreach ( $this->choices as $value => $label ) {
-						echo '<option value="'. esc_attr( $value ) .'"'. selected( $this->value(), $value, false ) .'>'. $label['label'] .'</option>';
+						echo '<option value="'. esc_attr( $value ) .'"'. selected( $this->value(), $value, false ) .'>'. esc_html( $label['label'] ) .'</option>';
 					}
 				?>
 			</select>

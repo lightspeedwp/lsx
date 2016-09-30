@@ -184,5 +184,3 @@ $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', arr
 		) )
 	)
 ) );
-
-?>

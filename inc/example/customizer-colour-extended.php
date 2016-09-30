@@ -332,5 +332,3 @@ CSS;
 	return $css;
 }
 add_filter( 'lsx_customizer_colour_selectors_footer', 'test_lsx_customizer_colour_selectors_footer', 10, 2 );
-
-?>

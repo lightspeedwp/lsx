@@ -8,10 +8,13 @@
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
+		<exclude name="Generic.Classes.OpeningBraceSameLine" />
 		<exclude name="Generic.Commenting" />
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
 		<exclude name="Generic.Files.EndFileNewline" />
+		<exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
 		<exclude name="Generic.Functions" />
+		<exclude name="Generic.PHP.LowerCaseConstant.Found" />
 		<exclude name="Generic.Strings.UnnecessaryStringConcat.Found" />
 		<exclude name="Generic.WhiteSpace" />
 

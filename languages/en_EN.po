@@ -36,8 +36,12 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:49, page-templates/template-portfolio.php:72
-msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
+#: archive-jetpack-portfolio.php:49
+msgid "Ready to publish your first project?"
+msgstr ""
+
+#: archive-jetpack-portfolio.php:49, content-none.php:19
+msgid "Get started here"
 msgstr ""
 
 #: archive-jetpack-portfolio.php:53, content-none.php:28, page-templates/template-portfolio.php:76
@@ -56,49 +60,49 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: comments.php:27
+#: comments.php:30
 msgid "One Response to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s Responses to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:37
+#: comments.php:42
 msgid "&larr; Older comments"
 msgstr ""
 
-#: comments.php:40
+#: comments.php:45
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: comments.php:48, comments.php:60
+#: comments.php:53, comments.php:65
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:75
+#: comments.php:80
 msgid "Comment"
 msgstr ""
 
-#: comments.php:78, comments.php:80
+#: comments.php:83, comments.php:85
 msgid "Name"
 msgstr ""
 
-#: comments.php:82, comments.php:84
+#: comments.php:87, comments.php:89
 msgid "Email"
 msgstr ""
 
-#: comments.php:86, comments.php:87, inc/jetpack.php:266, inc/template-tags.php:224
+#: comments.php:91, comments.php:92, inc/jetpack.php:266, inc/template-tags.php:224
 msgid "Website"
 msgstr ""
 
 #: content-none.php:19
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post?"
 msgstr ""
 
 #: content-none.php:23
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: content-page.php:27, content-portfolio-single.php:56, content-post.php:91, content-single.php:91, content.php:113, image.php:45, image.php:119, page-templates/template-archives.php:46, page-templates/template-sitemap.php:31
+#: content-page.php:27, content-portfolio-single.php:56, content-post.php:91, content-single.php:91, content.php:115, image.php:48, image.php:122, page-templates/template-archives.php:46, page-templates/template-sitemap.php:31
 msgid "Edit"
 msgstr ""
 
@@ -106,7 +110,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-post.php:61, content-single.php:61, content.php:94
+#: content-post.php:61, content-single.php:61, content.php:93
 msgid "Tagged as:"
 msgstr ""
 
@@ -114,11 +118,11 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: content.php:60
+#: content.php:59
 msgid "Featured"
 msgstr ""
 
-#: content.php:101
+#: content.php:102
 msgid "One Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
@@ -128,67 +132,71 @@ msgstr[1] ""
 msgid "&#169; %1$s %2$s All Rights Reserved."
 msgstr ""
 
-#: functions.php:56
+#: functions.php:53
 msgid "Core Settings"
 msgstr ""
 
-#: functions.php:57
+#: functions.php:54
 msgid "Change the core settings."
 msgstr ""
 
-#: functions.php:68
+#: functions.php:65
 msgid "Lazy Loading Images"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:77
+msgid "Preloader Content"
+msgstr ""
+
+#: functions.php:105
 msgid "Base Color Scheme"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:151
 msgid "Header"
 msgstr ""
 
-#: functions.php:148
+#: functions.php:157
 msgid "Layout"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:158
 msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
 msgstr ""
 
-#: functions.php:163
+#: functions.php:172
 msgid "Fixed Header"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:182
 msgid "Search Box in Header"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:187
 msgid "Body"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:206
 msgid "Font"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:224
 msgid "Raleway"
 msgstr ""
 
-#: functions.php:221, functions.php:263
+#: functions.php:230, functions.php:272
 msgid "Open Sans"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:238
 msgid "Noto Serif"
 msgstr ""
 
-#: functions.php:235, functions.php:243, functions.php:249
+#: functions.php:244, functions.php:252, functions.php:258
 msgid "Noto Sans"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:266
 msgid "Alegreya"
 msgstr ""
 
@@ -200,27 +208,35 @@ msgstr ""
 msgid "Questions? Email Us: "
 msgstr ""
 
-#: image.php:35
-msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+#: image.php:36
+msgid "Published"
 msgstr ""
 
-#: image.php:49
+#: image.php:39
+msgid "at"
+msgstr ""
+
+#: image.php:43
+msgid "in"
+msgstr ""
+
+#: image.php:52
 msgid "Previous"
 msgstr ""
 
-#: image.php:50
+#: image.php:53
 msgid "Next"
 msgstr ""
 
-#: image.php:116
+#: image.php:119
 msgid "Leave a comment"
 msgstr ""
 
-#: image.php:116
+#: image.php:119
 msgid "1 Comment"
 msgstr ""
 
-#: image.php:116
+#: image.php:119
 msgid "% Comments"
 msgstr ""
 
@@ -440,15 +456,15 @@ msgstr ""
 msgid "Test"
 msgstr ""
 
-#: inc/extras.php:72
+#: inc/extras.php:76
 msgid "Page %s"
 msgstr ""
 
-#: inc/extras.php:371, inc/extras.php:397
+#: inc/extras.php:375, inc/extras.php:401
 msgid "Continue reading"
 msgstr ""
 
-#: inc/extras.php:448
+#: inc/extras.php:452
 msgid "More"
 msgstr ""
 
@@ -488,7 +504,11 @@ msgstr ""
 msgid "Author: %s"
 msgstr ""
 
-#: inc/layout.php:236
+#: inc/layout.php:210
+msgid "Shop"
+msgstr ""
+
+#: inc/layout.php:243
 msgid "Blog"
 msgstr ""
 
@@ -598,6 +618,10 @@ msgstr ""
 
 #: page-templates/template-archives.php:40
 msgid "Monthly Archives"
+msgstr ""
+
+#: page-templates/template-portfolio.php:72
+msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: searchform.php:23
