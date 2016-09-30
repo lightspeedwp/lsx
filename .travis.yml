@@ -44,21 +44,22 @@ before_script:
   - export WP_DEVELOP_DIR=/tmp/wordpress/
   - mkdir -p $WP_DEVELOP_DIR
   # Use the Git mirror of WordPress.
-  - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
+  #- git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
   # Set up theme information.
   - theme_slug=$(basename $(pwd))
-  - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
+  #- theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
+  - theme_dir=$WP_DEVELOP_DIR/$theme_slug
   - cd ..
   - mv $theme_slug $theme_dir
   # Set up WordPress configuration.
   - cd $WP_DEVELOP_DIR
   - echo $WP_DEVELOP_DIR
-  - cp wp-tests-config-sample.php wp-tests-config.php
-  - sed -i "s/youremptytestdbnamehere/wordpress_test/" wp-tests-config.php
-  - sed -i "s/yourusernamehere/root/" wp-tests-config.php
-  - sed -i "s/yourpasswordhere//" wp-tests-config.php
+  #- cp wp-tests-config-sample.php wp-tests-config.php
+  #- sed -i "s/youremptytestdbnamehere/wordpress_test/" wp-tests-config.php
+  #- sed -i "s/yourusernamehere/root/" wp-tests-config.php
+  #- sed -i "s/yourpasswordhere//" wp-tests-config.php
   # Create WordPress database.
-  - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
+  #- mysql -e 'CREATE DATABASE wordpress_test;' -uroot
   # Install CodeSniffer for WordPress Coding Standards checks.
   - git clone https://github.com/squizlabs/PHP_CodeSniffer.git php-codesniffer
   # Install WordPress Coding Standards.
@@ -88,4 +89,4 @@ script:
   # -n flag: Do not print warnings. (shortcut for --warning-severity=0)
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
-  - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
+  - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php --ignore=*/vendor/*
