@@ -58,7 +58,7 @@
 			<div class="post-tags-wrapper">
 				<?php if ( has_tag() ) : ?>
 					<div class="post-tags">
-						<span><?php esc_html_e('Tagged as:','lsx'); ?></span> <?php echo get_the_tag_list(''); ?>
+						<span><?php esc_html_e('Tagged as:','lsx'); ?></span> <?php echo wp_kses_post( get_the_tag_list('') ); ?>
 					</div>
 				<?php endif ?>
 

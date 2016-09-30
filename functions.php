@@ -33,9 +33,6 @@ if(class_exists('WP_Job_Manager')){
 if(class_exists('Tribe__Events__Main')){
 	require get_template_directory() . '/inc/the-events-calendar.php';
 }
-if(true === apply_filters( 'amp_is_enabled', true ) ){
-	require get_template_directory() . '/inc/amp.php';
-}
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';

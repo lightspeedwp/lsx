@@ -42,12 +42,12 @@ get_header();
                                     get_the_title( $post->post_parent )
                                 );
                             ?>
-                            <?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
+                            <?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
                         </div><!-- .entry-meta -->
  
                         <nav id="image-navigation" class="site-navigation">
-                            <span class="previous-image"><?php previous_image_link( false, '&larr; '.__( 'Previous', 'lsx' ) ); ?></span>
-                            <span class="next-image"><?php next_image_link( false, __( 'Next', 'lsx' ).' &rarr;' ); ?></span>
+                            <span class="previous-image"><?php previous_image_link( false, '&larr; '.esc_html__( 'Previous', 'lsx' ) ); ?></span>
+                            <span class="next-image"><?php next_image_link( false, esc_html__( 'Next', 'lsx' ).' &rarr;' ); ?></span>
                         </nav><!-- #image-navigation -->
                     </header><!-- .entry-header -->
  
@@ -113,10 +113,10 @@ get_header();
 						<?php endif ?>
 				
 						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-						<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'lsx' ), __( '1 Comment', 'lsx' ), __( '% Comments', 'lsx' ) ); ?></span>
+						<span class="comments-link"><?php comments_popup_link( esc_html__( 'Leave a comment', 'lsx' ), esc_html__( '1 Comment', 'lsx' ), esc_html__( '% Comments', 'lsx' ) ); ?></span>
 						<?php endif; ?>			
 				
-						<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
 					</footer><!-- .entry-meta -->                    
  
  				<?php lsx_entry_bottom(); ?>

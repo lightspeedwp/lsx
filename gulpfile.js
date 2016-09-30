@@ -40,17 +40,10 @@ gulp.task('upgrade-components', ['clean-upgrade'], function() {
 	gulp.start('jquery-sticky-upgrade');
 });
 
-gulp.task('compile-css', ['compile-css-theme','compile-css-amp','compile-css-woocommerce','compile-css-sensei','compile-css-events-calendar','compile-css-job-manager']);
+gulp.task('compile-css', ['compile-css-theme','compile-css-woocommerce','compile-css-sensei','compile-css-events-calendar','compile-css-job-manager']);
 
 gulp.task('compile-css-theme', function() {	
 	gulp.src(['sass/app.scss', 'sass/alegreya_open_sans.scss', 'sass/noto_sans_noto_sans.scss', 'sass/noto_serif_noto_sans.scss', 'sass/raleway_open_sans.scss', 'sass/medium-nav-break.scss'])
-		.pipe(sass().on('error', function(err) { console.log('Error!', err); }))
-		.pipe(cleanCSS())
-		.pipe(gulp.dest('css/'));
-});
-
-gulp.task('compile-css-amp', function() {
-	gulp.src('sass/amp.scss')
 		.pipe(sass().on('error', function(err) { console.log('Error!', err); }))
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('css/'));
@@ -95,7 +88,6 @@ gulp.task('compile-js-theme', function () {
 
 gulp.task('watch', function() {
 	gulp.watch('sass/app.scss', ['compile-css-theme']);
-	gulp.watch('sass/amp.scss', ['compile-css-amp']);
 	gulp.watch('sass/woocommerce/woocommerce.scss', ['compile-css-woocommerce']);
 	gulp.watch('sass/sensei/frontend/sensei.scss', ['compile-css-sensei']);
 	gulp.watch('sass/the-events-calendar.scss', ['compile-css-events-calendar']);
