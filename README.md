@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/lightspeeddevelopment/lsx-theme.png?label=ready&title=Ready)](https://waffle.io/lightspeeddevelopment/lsx-theme)
 # LSX
 * Contributors: the LightSpeed team
 * Author: LightSpeed
