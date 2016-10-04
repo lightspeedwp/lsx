@@ -16,21 +16,27 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php lsx_content_top(); ?>	
-		
-		<?php 
-		$layout = get_theme_mod('lsx_layout','2cr');
-		$layout = apply_filters( 'lsx_layout', $layout );
-		if('1c' === $layout){
-			lsx_breadcrumbs();
-		}
-		?>	
 
 		<?php if ( have_posts() ) : global $lsx_archive; $lsx_archive = 1; ?>
+		
+			<?php 
+			$layout = get_theme_mod('lsx_layout','2cr');
+			$layout = apply_filters( 'lsx_layout', $layout );
+			if('1c' === $layout){
+				lsx_breadcrumbs();
+			}
+			?>	
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php lsx_get_template_part( 'content', get_post_type() ); ?>
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+				?>
 
 			<?php endwhile; ?>
 
@@ -38,7 +44,7 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php lsx_get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; $lsx_archive = 0; ?>
 
