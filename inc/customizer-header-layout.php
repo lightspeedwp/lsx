@@ -72,7 +72,7 @@ class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<?php }
 			if ( ! empty( $this->description ) ) { ?>
-				<span class="description customize-control-description"><?php echo $this->description; ?></span>
+				<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 			<?php } ?>
 			<div class="header-layouts-selector">
 			<?php
@@ -81,11 +81,11 @@ class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 				if( $value == $layout ){
 					$sel = 'border: 1px solid rgb(43, 166, 203);';
 				}
-				echo '<img class="header-layout-button" style="padding:2px;'. $sel .'" src="' . get_template_directory_uri() .'/img/header-' . $layout . '.png" data-option="' . $layout . '">';
+				echo '<img class="header-layout-button" style="padding:2px;'. esc_attr( $sel ) .'" src="' . esc_attr( get_template_directory_uri() ) .'/img/header-' . esc_attr( $layout ) . '.png" data-option="' . esc_attr( $layout ) . '">';
 			}
 
 			?>
-			<input <?php $this->link(); ?> class="selected-header-layout <?php echo $class; ?>" id="<?php echo $post_id; ?>" type="hidden" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>>
+			<input <?php $this->link(); ?> class="selected-header-layout <?php echo esc_attr( $class ); ?>" id="<?php echo esc_attr( $post_id ); ?>" type="hidden" value="<?php echo esc_attr( $value ); ?>" <?php $this->input_attrs(); ?>>
 			</div>
 		</label>
 	<?php

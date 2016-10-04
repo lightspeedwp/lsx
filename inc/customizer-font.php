@@ -52,7 +52,7 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 			<select <?php $this->link(); ?>>
 				<?php
 				foreach ( $this->choices as $value => $conf ){
-					echo '<option value="' . esc_attr( $value ) . '">' . $value . '</option>';
+					echo '<option value="' . esc_attr( $value ) . '">' . esc_html( $value ) . '</option>';
 				}
 				?>
 			</select>
@@ -67,9 +67,9 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 						}
 						
 						?>
-						<li class="font-choice <?php echo $class; ?>">
-							<div class="<?php echo $font['header']['cssClass']; ?>"><?php echo esc_html($font['header']['title']); ?></div>
-							<small class="<?php echo $font['body']['cssClass']; ?>"><?php echo esc_html($font['body']['title']); ?></small>
+						<li class="font-choice <?php echo esc_attr( $class ); ?>">
+							<div class="<?php echo esc_attr( $font['header']['cssClass'] ); ?>"><?php echo esc_html( $font['header']['title'] ); ?></div>
+							<small class="<?php echo esc_attr( $font['body']['cssClass'] ); ?>"><?php echo esc_html( $font['body']['title'] ); ?></small>
 						</li>
 						<?php
 					}

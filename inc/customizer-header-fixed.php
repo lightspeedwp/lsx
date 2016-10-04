@@ -72,11 +72,11 @@ class LSX_Customize_Header_Fixed_Control extends WP_Customize_Control {
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<?php }
 			if ( ! empty( $this->description ) ) { ?>
-				<span class="description customize-control-description"><?php echo $this->description; ?></span>
+				<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 			<?php } ?>
 			<div class="header-fixed">
 				<label>
-					<input <?php $this->link(); ?> type="checkbox" id="<?php echo $post_id; ?>" class="header-fixed <?php echo $class; ?>" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>> Uncheck for standard header
+					<input <?php $this->link(); ?> type="checkbox" id="<?php echo esc_attr( $post_id ); ?>" class="header-fixed <?php echo esc_attr( $class ); ?>" value="<?php echo esc_attr($value); ?>" <?php $this->input_attrs(); ?>> Uncheck for standard header
 				</label>
 			</div>
 		</label>

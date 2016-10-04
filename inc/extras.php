@@ -104,18 +104,6 @@ add_filter('comment_id_fields',   'lsx_remove_self_closing_tags'); // <input />
 add_filter('post_thumbnail_html', 'lsx_remove_self_closing_tags'); // <img />
 
 
-/**
- * Clean up output of stylesheet <link> tags
- */
-function lsx_clean_style_tag($input) {
-  preg_match_all("!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches);
-  // Only display media if it is meaningful
-  $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
-  return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
-}
-add_filter('style_loader_tag', 'lsx_clean_style_tag');
-
-
 if (!function_exists('lsx_get_attachment_id')) {
 	/**
 	 * Get the Attachment ID for a given image URL.
@@ -242,8 +230,8 @@ function lsx_get_thumbnail($size,$image_src = false){
  * @subpackage extras
  * @category thumbnails
  */
-function lsx_thumbnail($size = 'thumbnail',$image_src = false){
-	echo lsx_get_thumbnail($size,$image_src);
+function lsx_thumbnail( $size = 'thumbnail', $image_src = false ) {
+	echo wp_kses_post( lsx_get_thumbnail( $size, $image_src ) );
 }
 
 
@@ -253,10 +241,16 @@ function lsx_thumbnail($size = 'thumbnail',$image_src = false){
  * @subpackage extras
  * @category thumbnails
  */
-function lsx_get_attachment_id_from_src($image_src) {
-	global $wpdb;
-	$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src' LIMIT 1";
-	$post_id = $wpdb->get_var($query);
+function lsx_get_attachment_id_from_src( $image_src ) {
+	$post_id = wp_cache_get( $image_src, 'lsx_get_attachment_id_from_src' );
+	
+	if ( false === $post_id ) {
+		global $wpdb;
+		$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src' LIMIT 1";
+		$post_id = $wpdb->get_var( $query );
+		wp_cache_set( $image_src, $post_id, 'lsx_get_attachment_id_from_src', 3600 );
+	}
+
 	return $post_id;
 }
 
@@ -289,7 +283,7 @@ if (!function_exists('lsx_page_banner')) {
 	        
 	        <div class="page-banner-wrap">
 		        <div class="page-banner">
-		        	<div class="page-banner-image" style="background-image:url(<?php echo $bg_image; ?>);"></div>
+		        	<div class="page-banner-image" style="background-image:url(<?php echo esc_attr( $bg_image ); ?>);"></div>
 
 		        	<div class="container">
 			            <header class="page-header">
@@ -326,6 +320,9 @@ add_filter( 'kses_allowed_protocols', 'lsx_allow_sms_protocol' );
  * Adding browser and user-agent classes to body
  */
 function mv_browser_body_class($classes) {
+		$http_user_agent = sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) );
+		$http_user_agent = ! empty( $http_user_agent ) ? $http_user_agent : '';
+
         global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
         if($is_lynx) $classes[] = 'lynx';
         elseif($is_gecko) $classes[] = 'gecko';
@@ -335,15 +332,15 @@ function mv_browser_body_class($classes) {
         elseif($is_chrome) $classes[] = 'chrome';
         elseif($is_IE) {
                 $classes[] = 'ie';
-                if(preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version))
+                if(preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $http_user_agent, $browser_version))
                 $classes[] = 'ie'.$browser_version[1];
         } else $classes[] = 'unknown';
         if($is_iphone) $classes[] = 'iphone';
-        if ( stristr( $_SERVER['HTTP_USER_AGENT'],"mac") ) {
+        if ( stristr( $http_user_agent, "mac") ) {
                  $classes[] = 'osx';
-           } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"linux") ) {
+           } elseif ( stristr( $http_user_agent, "linux") ) {
                  $classes[] = 'linux';
-           } elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"windows") ) {
+           } elseif ( stristr( $http_user_agent, "windows") ) {
                  $classes[] = 'windows';
            }
         return $classes;
