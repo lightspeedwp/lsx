@@ -35,7 +35,7 @@ if(class_exists('Tribe__Events__Main')){
 }
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
-require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 if(class_exists('Sensei_WC')){
 	require get_template_directory() . '/inc/sensei.php';
 }

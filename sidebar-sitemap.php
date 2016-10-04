@@ -23,7 +23,7 @@
 	<div id="secondary" class="widget-area <?php echo esc_attr(lsx_sidebar_class()); ?>" role="complementary">
 
 		<?php lsx_sidebar_top(); ?>
-		<h2><?php _e('Categories','lsx'); ?></h2>
+		<h2><?php esc_attr_e( 'Categories', 'lsx' ); ?></h2>
         <aside id="categories" class="widget widget_categories">
         	<?php echo wp_tag_cloud(array('taxonomy'=>'category')); ?>
         </aside>		

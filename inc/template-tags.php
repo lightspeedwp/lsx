@@ -44,7 +44,7 @@ function lsx_breadcrumbs() {
   
   $output = apply_filters('lsx_breadcrumbs',$output);
 
-  echo $output;
+  echo wp_kses_post( $output );
 }
 add_action( 'lsx_content_top', 'lsx_breadcrumbs', 100 );
 
@@ -111,9 +111,9 @@ if ( ! function_exists( 'lsx_post_meta_date' ) ) {
 		);
 
 		printf( '<span class="post-meta-time"><span>%1$s</span> <a href="%2$s" rel="bookmark">%3$s</a></span>',
-			_x( 'Posted on:', 'Used before publish date.', 'lsx' ),
+			esc_html_x( 'Posted on:', 'Used before publish date.', 'lsx' ),
 			esc_url( get_permalink() ),
-			$time_string
+			wp_kses_post( $time_string )
 		);
 	}
 }
@@ -125,7 +125,7 @@ add_action( 'lsx_content_post_meta', 'lsx_post_meta_date', 10 );
 if ( ! function_exists( 'lsx_post_meta_author' ) ) {
 	function lsx_post_meta_author() {
 		printf( '<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
-			_x( 'Posted by:', 'Used before post author name.', 'lsx' ),
+			esc_html_x( 'Posted by:', 'Used before post author name.', 'lsx' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			get_the_author()
 		);
@@ -148,7 +148,7 @@ if ( ! function_exists( 'lsx_post_meta_category' ) ) {
 
 		if ( ! empty( $cats ) ) {
 			?>
-			<span class="post-meta-categories"><span><?php esc_html_e( 'Posted in:', 'lsx' ); ?></span> <?php echo implode( ', ', $cats ); ?></span>
+			<span class="post-meta-categories"><span><?php esc_html_e( 'Posted in:', 'lsx' ); ?></span> <?php echo wp_kses_post( implode( ', ', $cats ) ); ?></span>
 			<?php
 		}
 	}
@@ -246,8 +246,8 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);
 				if(false != $client){ ?>
 					<div class="portfolio-client">
-						<span><span class="fa fa-user"></span><?php _e('Client','lsx'); ?></span>
-						<span><?php echo $client ?></span>
+						<span><span class="fa fa-user"></span><?php esc_html_e( 'Client','lsx' ); ?></span>
+						<span><?php echo esc_html( $client ); ?></span>
 					</div>				
 			<?php }	?>
 
@@ -257,8 +257,8 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				if($portfolio_type){
 					?>
 					<div class="portfolio-industry">
-						<span><span class="fa fa-folder-open"></span><?php _e('Industry','lsx'); ?></span>
-						<?php echo $portfolio_type; ?>
+						<span><span class="fa fa-folder-open"></span><?php esc_html_e( 'Industry', 'lsx' ); ?></span>
+						<?php echo wp_kses_post( $portfolio_type ); ?>
 					</div>			
 			<?php } ?>
 
@@ -266,8 +266,8 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				$services = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
 				if(false != $services){ ?>
 					<div class="portfolio-services">
-						<span><span class="fa fa-cog"></span><?php _e('Services','lsx'); ?></span>
-						<?php echo $services ?>
+						<span><span class="fa fa-cog"></span><?php esc_html_e( 'Services', 'lsx' ); ?></span>
+						<?php echo wp_kses_post( $services ); ?>
 					</div>				
 			<?php }	?>
 
@@ -275,8 +275,8 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 				$website = esc_url( get_post_meta(get_the_ID(),'lsx-website',true) );
 				if(false != $website){ ?>
 					<div class="portfolio-website">
-						<span><span class="fa fa-link"></span><?php _e('Website','lsx'); ?></span>
-						<a target="_blank" href="<?php echo esc_url($website); ?>"><?php echo $website ?></a>
+						<span><span class="fa fa-link"></span><?php esc_html_e( 'Website', 'lsx' ); ?></span>
+						<a target="_blank" href="<?php echo esc_url( $website ); ?>"><?php echo esc_html( $website ) ?></a>
 					</div>				
 			<?php }	?>
 
@@ -305,7 +305,7 @@ if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
 			}
 				
 			if(!empty($media_array)){
-				echo gallery_shortcode(array('size'=>'full','ids'=>implode(',', $media_array)));
+				echo wp_kses_post( gallery_shortcode( array( 'size' => 'full', 'ids' => implode( ',', $media_array ) ) ) );
 			}
 		}
 		
@@ -341,7 +341,7 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 			?>
 			<nav class="navigation paging-navigation" role="navigation">
 				<div class="lsx-breaker"></div>
-				<h1 class="screen-reader-text"><?php echo $title; ?></h1>
+				<h1 class="screen-reader-text"><?php echo esc_html( $title ); ?></h1>
 				<div class="nav-links">
 					<?php if ( get_next_posts_link() ) : ?>
 					<div class="nav-previous"><?php next_posts_link( $next ); ?></div>
@@ -382,12 +382,12 @@ function lsx_post_nav() {
 			<?php
 				$previous_post = get_previous_post_link( '%link', '<div class="previous col-md-6"><p class="nav-links-description">'._x( 'Previous Post', 'Previous post link', 'lsx' ).'</p><h3>%title</h3></div>' );
 				$previous_post = str_replace('<a','<a',$previous_post);
-				echo $previous_post;
+				echo wp_kses_post( $previous_post );
 			?>
 			<?php
 				$next_post = get_next_post_link( '%link', '<div class="next col-md-6"><p class="nav-links-description">'._x( 'Next Post', 'Next post link', 'lsx' ).'</p><h3>%title</h3></div>' );
 				$next_post = str_replace('<a','<a',$next_post);
-				echo $next_post;
+				echo wp_kses_post( $next_post );
 			?>
 
 		</div><!-- .nav-links -->
@@ -437,7 +437,7 @@ if(!function_exists('lsx_navbar_header')){
 
 	   		if(false != $nav_menu && isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
 		   		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
-		        	<span class="sr-only"><?php _e('Toggle navigation','lsx'); ?></span>
+		        	<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'lsx' ); ?></span>
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
@@ -473,13 +473,13 @@ if(!function_exists('lsx_nav_menu')){
 					'depth' => 3,
 					'container' => false,
 					'menu_class' => 'nav navbar-nav',
-					'walker' => new lsx_bootstrap_navwalker())
+					'walker' => new Lsx_Bootstrap_Navwalker())
 				);
 				?>
 		   		</nav>
 	    <?php } elseif(is_customize_preview()) { ?>
 	    		<nav class="primary-navbar collapse navbar-collapse">
-	    			<div class="alert alert-info" role="alert"><?php _e('Create a menu and assign it here via the "Navigation" panel.','lsx');?></div>
+	    			<div class="alert alert-info" role="alert"><?php esc_html_e( 'Create a menu and assign it here via the "Navigation" panel.', 'lsx' );?></div>
 	    		</nav>
 	    </div>
 	  	<?php }
@@ -508,11 +508,11 @@ function lsx_sitemap_pages(){
 	$pages = new WP_Query($page_args);
 	if($pages->have_posts()){
 
-		echo '<h2>'.__( 'Pages', 'lsx' ).'</h2>';
+		echo '<h2>' . esc_html__( 'Pages', 'lsx' ) . '</h2>';
 
 		echo '<ul>';
 		while($pages->have_posts()){ $pages->the_post();
-			echo '<li class="page_item page-item-'.get_the_ID().'"><a href="'.get_permalink().'" title="">'.get_the_title().'</a></li>';
+			echo '<li class="page_item page-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
 		}
 		echo '</ul>';
 		
@@ -558,11 +558,11 @@ function lsx_sitemap_custom_post_type(){
 		
 		if($post_type_items->have_posts()){
 	
-			printf( '<h2>'.__( '%1$s', 'lsx' ).'</h2>', $title );
+			printf( '<h2>' . esc_html__( '%1$s', 'lsx' ) . '</h2>', esc_html( $title ) );
 	
 			echo '<ul>';
 			while($post_type_items->have_posts()){ $post_type_items->the_post();
-				echo '<li class="'.get_post_type().'_item '.get_post_type().'-item-'.get_the_ID().'"><a href="'.get_permalink().'" title="">'.get_the_title().'</a></li>';
+				echo '<li class="' . esc_attr( get_post_type() ) . '_item ' . esc_attr( get_post_type() ) . '-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
 			}
 			echo '</ul>';
 	
@@ -590,8 +590,8 @@ function lsx_sitemap_taxonomy_clouds(){
 
 				$tag_cloud = wp_tag_cloud(array('taxonomy'=>$taxonomy_id,'echo'=>false));
 				if(null != $tag_cloud){
-					printf( '<h2>'.__( '%1$s', 'lsx' ).'</h2>', $taxonomy );
-					echo '<aside id="'.$taxonomy_id.'" class="widget widget_'.$taxonomy_id.'">'.$tag_cloud.'</aside>';
+					printf( '<h2>' . esc_html__( '%1$s', 'lsx' ) . '</h2>', esc_html( $taxonomy ) );
+					echo '<aside id="' . esc_attr( $taxonomy_id ) . '" class="widget widget_' . esc_attr( $taxonomy_id ) . '">' . esc_html( $tag_cloud ) . '</aside>';
 		        }
 	        }
         } 
@@ -620,7 +620,7 @@ function lsx_footer_subscription_cta() {
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2><?php _e( 'Subscribe to Our Newsletter', 'lsx' ); ?></h2>
+					<h2><?php esc_html_e( 'Subscribe to Our Newsletter', 'lsx' ); ?></h2>
 					<?php echo do_shortcode( '[caldera_form id="'.$subscribe_form_id.'"]' ); ?>
 				</div>
 			</div>
@@ -645,7 +645,7 @@ function lsx_add_top_menu() {
 		    		<?php
 		    			wp_nav_menu( array(
 							'theme_location' => 'top-menu',
-							'walker' => new lsx_bootstrap_navwalker())
+							'walker' => new Lsx_Bootstrap_Navwalker())
 						);
 		    		?>
 		    	</nav>	

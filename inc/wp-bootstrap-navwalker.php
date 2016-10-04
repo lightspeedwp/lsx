@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
-class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
+class Lsx_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker::start_lvl()
@@ -216,7 +216,7 @@ class lsx_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $container )
 				$fb_output .= '</' . $container . '>';
 
-			echo $fb_output;
+			echo wp_kses_post( $fb_output );
 		}
 	}
 }

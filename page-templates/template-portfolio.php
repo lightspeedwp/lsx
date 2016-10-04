@@ -39,7 +39,7 @@ get_header(); ?>
 
 				$args = array(
 					'post_type'      => 'jetpack-portfolio',
-					'posts_per_page' => -1,
+					'posts_per_page' => 99,
 				);
 				$project_query = new WP_Query ( $args );
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
@@ -63,17 +63,17 @@ get_header(); ?>
 
 				<section class="no-results not-found">
 					<header class="page-header">
-						<h1 class="page-title"><?php _e( 'Nothing Found', 'lsx' ); ?></h1>
+						<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'lsx' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
 						<?php if ( current_user_can( 'publish_posts' ) ) : ?>
 
-							<p><?php printf( __( 'Ready to publish your first project? <a href="%1$s">Get started here</a>.', 'lsx' ), esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' ) ) ); ?></p>
+							<p><?php esc_html_e( 'Ready to publish your first project?', 'lsx' ); ?> <a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' ) ) ?>"><?php esc_html_e( 'Get started here', 'lsx' ); ?></a></p>
 
 						<?php else : ?>
 
-							<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'lsx' ); ?></p>
+							<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'lsx' ); ?></p>
 							<?php get_search_form(); ?>
 
 						<?php endif; ?>
