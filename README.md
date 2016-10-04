@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master)](https://travis-ci.org/lightspeeddevelopment/lsx)
+
 # LSX
 * Contributors: the LightSpeed team
 * Author: LightSpeed
