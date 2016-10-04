@@ -87,7 +87,7 @@ add_filter( 'wp_title', 'lsx_wp_title', 10, 2 );
  * @link https://gist.github.com/965956
  * @link http://www.readability.com/publishers/guidelines#publisher
  */
-function lsx_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
+function lsx_embed_wrap($cache, $url, $attr = '', $post_id = '') {
   return '<div class="entry-content-asset">' . $cache . '</div>';
 }
 add_filter('embed_oembed_html', 'lsx_embed_wrap', 10, 4);
@@ -322,14 +322,14 @@ function mv_browser_body_class($classes) {
 		$http_user_agent = sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) );
 		$http_user_agent = ! empty( $http_user_agent ) ? $http_user_agent : '';
 
-        global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
+        global $is_lynx, $is_gecko, $is_ie, $is_opera, $is_ns4, $is_safari, $is_chrome, $is_iphone;
         if($is_lynx) $classes[] = 'lynx';
         elseif($is_gecko) $classes[] = 'gecko';
         elseif($is_opera) $classes[] = 'opera';
-        elseif($is_NS4) $classes[] = 'ns4';
+        elseif($is_ns4) $classes[] = 'ns4';
         elseif($is_safari) $classes[] = 'safari';
         elseif($is_chrome) $classes[] = 'chrome';
-        elseif($is_IE) {
+        elseif($is_ie) {
                 $classes[] = 'ie';
                 if(preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $http_user_agent, $browser_version))
                 $classes[] = 'ie'.$browser_version[1];
@@ -425,7 +425,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 				$excerpt_word_count = 50;
 				$excerpt_word_count = apply_filters('excerpt_length', $excerpt_word_count);
 				$tokens = array();
-				$excerptOutput = '';
+				$excerpt_output = '';
 				$has_more = false;
 				$count = 0;
 
@@ -433,16 +433,16 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 
 				foreach ($tokens[0] as $token) { 
 					if ($count >= $excerpt_word_count && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) {
-						$excerptOutput .= trim($token);
+						$excerpt_output .= trim($token);
 						$has_more = true;
 						break;
 					}
 
 					$count++;
-					$excerptOutput .= $token;
+					$excerpt_output .= $token;
 				}
 
-				$wpse_excerpt = trim(force_balance_tags($excerptOutput));
+				$wpse_excerpt = trim(force_balance_tags($excerpt_output));
 
 				if ($has_more) {
 					$excerpt_end = '<a class="moretag" href="'.get_permalink().'">'.__('More','lsx').'</a>';
