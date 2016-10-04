@@ -172,6 +172,22 @@ if ( ! function_exists( 'lsx_post_tags' ) ) {
 add_action( 'lsx_content_post_tags', 'lsx_post_tags', 10 );
 
 /**
+ * Add customisable post info: related posts
+ */
+function lsx_related_posts() {
+	if ( is_singular( 'post' ) && class_exists( 'Jetpack_RelatedPosts' ) ) {
+		?>
+			<div class="row row-related-posts">
+				<div class="col-md-12">
+					<?php echo do_shortcode('[jetpack-related-posts]'); ?>
+				</div>
+			</div>
+		<?php
+	}
+}
+add_action( 'lsx_entry_bottom', 'lsx_related_posts', 10 );
+
+/**
  * Translate post format to Font Awesome class
  */
 

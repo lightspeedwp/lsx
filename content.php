@@ -105,7 +105,6 @@
 
 	<?php lsx_entry_bottom(); ?>
 
-
 	<div class="clearfix"></div>
 
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>

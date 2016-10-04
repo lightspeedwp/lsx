@@ -85,8 +85,6 @@
 	</footer><!-- .footer-meta -->
 	
 	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-				
-	<?php lsx_portfolio_related_posts(); ?>
 
 	<?php lsx_entry_bottom(); ?>
 
