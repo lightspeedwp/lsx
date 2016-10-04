@@ -246,7 +246,7 @@ function lsx_get_attachment_id_from_src( $image_src ) {
 	
 	if ( false === $post_id ) {
 		global $wpdb;
-		$query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src' LIMIT 1";
+		$query = $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE guid='%s' LIMIT 1", $image_src );
 		$post_id = $wpdb->get_var( $query );
 		wp_cache_set( $image_src, $post_id, 'lsx_get_attachment_id_from_src', 3600 );
 	}

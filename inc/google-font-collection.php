@@ -31,10 +31,10 @@ class LSX_Google_Font_Collection
 	}
 
 	/**
-	 * getFontFamilyNameArray Function
+	 * get_font_family_name_array Function
 	 * this function returns an array containing all of the font family names
 	**/
-	function getFontFamilyNameArray()
+	function get_font_family_name_array()
 	{
 		$result;
 		foreach ($this->fonts as $key => $value) 
@@ -45,40 +45,40 @@ class LSX_Google_Font_Collection
 	}
 
 	/**
-	 * getTitle
+	 * get_title
 	 * this function returns the font title
 	**/
-	function getTitle($key)
+	function get_title($key)
 	{
 		return $this->fonts[$key]->__get("title");
 	}
 
 	/**
-	 * getLocation
+	 * get_location
 	 * this function returns the font location
 	**/
-	function getLocation($key)
+	function get_location($key)
 	{
 		return $this->fonts[$key]->__get("location");
 	}
 
 	/**
-	 * getCssDeclaration
+	 * get_css_declaration
 	 * this function returns the font css declaration
 	**/
-	function getCssDeclaration($key)
+	function get_css_declaration($key)
 	{
 		return $this->fonts[$key]->__get("cssDeclaration");
 	}
 
 
 	/**
-	 * getCssClassArray
+	 * get_css_class_array
 	 * this function returns an array of css classes
 	 * this function is used when displaying the fancy list of fonts in the theme customizer
 	 * this function is used to send a JS file an array for the postMessage transport option in the theme customizer
 	**/
-	function getCssClassArray()
+	function get_css_class_array()
 	{
 		$result;
 		foreach ($this->fonts as $key => $value) 
@@ -89,35 +89,35 @@ class LSX_Google_Font_Collection
 	}
 
 	/**
-	 * getTotalNumberOfFonts
+	 * get_total_number_of_fonts
 	 * this function returns the total number of fonts
 	**/
-	function getTotalNumberOfFonts()
+	function get_total_number_of_fonts()
 	{
 		return count($this->fonts);
 	}
 
 	/**
-	 * printThemeCustomizerCssLocations
+	 * print_theme_customizer_css_locations
 	 * this function prints the links to the css files for the theme customizer
 	**/
-	function printThemeCustomizerCssLocations()
+	function print_theme_customizer_css_locations()
 	{
 		foreach ($this->fonts as $key => $value) 
 		{
 			$protocol = 'http';
 			if(is_ssl()){ $protocol.='s'; }
 			?>
-			<link href="<?php echo $protocol; ?>://fonts.googleapis.com/css?family=<?php echo $value->__get("location"); ?>" rel='stylesheet' type='text/css'>
+			<?php echo wp_keses_post( '<' ); ?>link href="<?php echo esc_attr( $protocol ); ?>://fonts.googleapis.com/css?family=<?php echo esc_attr( $value->__get( "location" ) ); ?>" rel='stylesheet' type='text/css'<?php echo wp_keses_post( '>' ); ?>
 			<?php
 		}
 	}
 
 	/**
-	 * printThemeCustomizerCssClasses
+	 * print_theme_customizer_css_classes
 	 * this function prints the theme customizer css classes necessary to display all of the fonts
 	**/
-	function printThemeCustomizerCssClasses()
+	function print_theme_customizer_css_classes()
 	{
 		?>
 		<style type="text/css">
@@ -125,8 +125,8 @@ class LSX_Google_Font_Collection
 			foreach ($this->fonts as $key => $value) 
 			{
 				?>
-				.<?php echo $value->__get("cssClass")?>{
-					font-family: <?php echo $value->__get("cssDeclaration"); ?>;
+				.<?php echo esc_attr( $value->__get( "cssClass" ) ); ?>{
+					font-family: <?php echo esc_attr( $value->__get( "cssDeclaration" ) ); ?>;
 				}
 				<?php
 			}

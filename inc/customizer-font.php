@@ -38,12 +38,12 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 		
 		$this->fonts = new LSX_Google_Font_Collection( $fonts );
 
-		$fonts = $this->fonts->getFontFamilyNameArray();
+		$fonts = $this->fonts->get_font_family_name_array();
 		//print links to css files
-		$this->fonts->printThemeCustomizerCssLocations();
+		$this->fonts->print_theme_customizer_css_locations();
 
 		//print css to display individual fonts
-		$this->fonts->printThemeCustomizerCssClasses();
+		$this->fonts->print_theme_customizer_css_classes();
 		
 		$set_value = $this->value();
 
@@ -59,7 +59,7 @@ class LSX_Customize_Font_Control extends WP_Customize_Control{
 			<div class="fancyDisplay">
 				<ul>
 					<?php
-					//$cssClassArray = $this->fonts->getCssClassArray();
+					//$cssClassArray = $this->fonts->get_css_class_array();
 					foreach ($this->choices as $key => $font){
 						$class = null;
 						if( $key == $set_value ){

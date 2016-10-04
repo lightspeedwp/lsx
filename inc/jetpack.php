@@ -61,7 +61,7 @@ function lsx_portfolio_infinite_scroll(){
 		
 		if(class_exists('The_Neverending_Home_Page')){
 			$_wp_theme_features['infinite-scroll'][0]['container'] = 'portfolio-infinite-scroll-wrapper';
-			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = -1;
+			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = 99;
 		}
 	}
 
@@ -81,7 +81,7 @@ function lsx_portfolio_infinite_scroll_disable($supported){
 	}
 	return $supported;
 }
-add_filter( 'infinite_scroll_archive_supported', 'lsx_portfolio_infinite_scroll_disable' , 1 , 10 );
+add_filter( 'infinite_scroll_archive_supported', 'lsx_portfolio_infinite_scroll_disable', 1, 10 );
 
 /**
  * Set the Portfolio to 9 posts per page
@@ -218,11 +218,12 @@ add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
 add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
 
 function lsx_save_portfolio_post_meta( $post_id, $post ) {
+	$lsx_website_nonce = sanitize_text_field( wp_unslash( $_POST['lsx_website_nonce'] ) );
+	$lsx_client_nonce = sanitize_text_field( wp_unslash( $_POST['lsx_client_nonce'] ) );
 
-
-	if ( (!isset( $_POST['lsx_website_nonce'] ) || !wp_verify_nonce( $_POST['lsx_website_nonce'], basename( __FILE__ ) ))
-	|| (!isset( $_POST['lsx_client_nonce'] ) || !wp_verify_nonce( $_POST['lsx_client_nonce'], basename( __FILE__ ) )) )
+	if ( ! wp_verify_nonce( $lsx_website_nonce, basename( __FILE__ ) ) || ! wp_verify_nonce( $lsx_client_nonce, basename( __FILE__ ) ) ) {
 		return $post_id;
+	}
 
 	$post_type = get_post_type_object( $post->post_type );
 
@@ -233,8 +234,8 @@ function lsx_save_portfolio_post_meta( $post_id, $post ) {
 	$meta_keys = array('lsx-website','lsx-client');
 
 	foreach($meta_keys as $meta_key){
-
-		$new_meta_value = ( isset( $_POST[$meta_key] ) ? sanitize_text_field($_POST[$meta_key]) : '' );
+		$new_meta_value = sanitize_text_field( wp_unslash( $_POST[$meta_key] ) );
+		$new_meta_value = ! empty( $new_meta_value ) ? $new_meta_value : '';
 
 		$meta_value = get_post_meta( $post_id, $meta_key, true );
 
@@ -278,7 +279,7 @@ function lsx_client_meta_box( $object, $box ) { ?>
   <p>
     <input class="widefat" type="text" name="lsx-client" id="lsx-client" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-client', true ) ); ?>" size="30" />
     <br /><br />
-    <label for="lsx-client"><?php _e( "Enter the name of the project client", 'lsx' ); ?></label>
+    <label for="lsx-client"><?php esc_html_e( 'Enter the name of the project client', 'lsx' ); ?></label>
   </p>
 <?php }
 
@@ -289,7 +290,7 @@ function lsx_website_meta_box( $object, $box ) { ?>
   <p>
     <input class="widefat" type="text" name="lsx-website" id="lsx-website" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-website', true ) ); ?>" size="30" />
     <br /><br />
-    <label for="lsx-website"><?php _e( "Enter the URL of the project website", 'lsx' ); ?></label>
+    <label for="lsx-website"><?php esc_html_e( 'Enter the URL of the project website', 'lsx' ); ?></label>
   </p>
 <?php }
 
@@ -304,7 +305,7 @@ function lsx_website_meta_box( $object, $box ) { ?>
 
 function lsx_portfolio_sorter(){ ?>
 	<ul id="filterNav" class="clearfix">
-		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php _e('All', 'lsx'); ?></a></li>
+		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php esc_html_e( 'All', 'lsx' ); ?></a></li>
 		<?php 
 		$types = get_terms('jetpack-portfolio-type');
 		
@@ -313,7 +314,7 @@ function lsx_portfolio_sorter(){ ?>
 				$content = '<li><a href="#" data-filter=".'.$type->slug.'">';
 		    	$content .= $type->name;					
 				$content .= '</a></li>';
-				echo $content;
+				echo wp_kses_post( $content );
 				echo "\n";
 			}
 		}?>
