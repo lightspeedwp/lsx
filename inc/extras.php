@@ -136,8 +136,8 @@ if (!function_exists('lsx_get_attachment_id')) {
 		if (!empty($ids)) {
 			foreach ($ids as $id) {
 				// first entry of returned array is the URL
-				$temp_url = wp_get_attachment_image_src($id, 'full');
-				if ($url === array_shift($temp_url)) {
+				$temp_url = wp_get_attachment_image_src( $id, 'full' );
+				if ( array_shift( $temp_url ) === $url ) {
 					return $id;
 				}
 			}
@@ -150,8 +150,8 @@ if (!function_exists('lsx_get_attachment_id')) {
 		}
 		foreach ($ids as $id) {
 			$meta = wp_get_attachment_metadata($id);
-			foreach ($meta['sizes'] as $size => $values) {
-				if ($values['file'] === $file && $url === array_shift(wp_get_attachment_image_src($id, $size))) {
+			foreach ( $meta['sizes'] as $size => $values ) {
+				if ( $values['file'] === $file && array_shift( wp_get_attachment_image_src( $id, $size ) ) === $url ) {
 					return $id;
 				}
 			}
@@ -201,20 +201,20 @@ function lsx_get_thumbnail($size,$image_src = false){
 	}
 	$size = apply_filters('lsx_thumbnail_size',$size);
 	$img = false;
-	if($size === 'lsx-thumbnail-wide' || $size === 'thumbnail'){
+	if ( 'lsx-thumbnail-wide' === $size || 'thumbnail' === $size ) {
 		$srcset = false;
 		$img = wp_get_attachment_image_src($post_thumbnail_id,$size);
 		$img = $img[0];
-	}else{
+	} else {
 		$srcset = true;
 		$img = wp_get_attachment_image_srcset($post_thumbnail_id,$size);
-		if($img == false) {
+		if ( false == $img ) {
 			$srcset = false;
 			$img = wp_get_attachment_image_src($post_thumbnail_id,$size);
 			$img = $img[0];
 		}
 	}
-	if ($srcset) {
+	if ( $srcset ) {
 		$img = '<img alt="'.get_the_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
 	} else {
 		$img = '<img alt="'.get_the_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" src="'.$img.'" />';
@@ -450,7 +450,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 
 					$pos = strrpos($wpse_excerpt, '</');
 
-					if ($pos !== false) {
+					if ( false !== $pos ) {
 						// Inside last HTML tag
 						$wpse_excerpt = substr_replace($wpse_excerpt, $excerpt_end, $pos, 0); /* Add read more next to last word */
 					} else {

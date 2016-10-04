@@ -52,16 +52,15 @@ class Lsx_Bootstrap_Navwalker extends Walker_Nav_Menu {
 		 * comparison that is not case sensitive. The strcasecmp() function returns
 		 * a 0 if the strings are equal.
 		 */
-		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
+		if ( 0 == strcasecmp( $item->attr_title, 'divider' ) && 1 === $depth ) {
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) {
+		} elseif ( 0 == strcasecmp( $item->title, 'divider' ) && 1 === $depth ) {
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
+		} elseif ( 0 == strcasecmp( $item->attr_title, 'dropdown-header' ) && 1 === $depth ) {
 			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
-		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
+		} elseif ( 0 == strcasecmp( $item->attr_title, 'disabled' ) ) {
 			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 		} else {
-
 			$class_names = $value = '';
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;

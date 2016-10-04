@@ -14,7 +14,7 @@
   <time datetime="<?php echo comment_date('c'); ?>"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>"><?php printf(esc_html__('%1$s on %2$s', 'lsx'), get_comment_date(),  get_comment_time()); ?></a></time>
   <?php edit_comment_link(esc_html__('(Edit)', 'lsx'), '', ''); ?>
   
-  <?php if ($comment->comment_approved == '0') : ?>
+  <?php if ( '0' == $comment->comment_approved ) : ?>
   <div class="alert alert-info">
     <?php esc_html_e('Your comment is awaiting moderation.', 'lsx'); ?>
   </div>

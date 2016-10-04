@@ -34,11 +34,11 @@ function lsx_layout_selector( $class, $area = 'site' ) {
 			break;
 	}
 
-	if ( $class == 'main' ) {
+	if ( 'main' == $class ) {
 		return $main_class;
 	}
 
-	if ( $class == 'sidebar' ) {
+	if ( 'sidebar' == $class ) {
 		return $sidebar_class;
 	}
 }

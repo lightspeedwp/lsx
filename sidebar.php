@@ -26,7 +26,7 @@ if(true !== $sidebar_enabled){return true;}
 			$sidebar = 'sidebar-1';
 		}
 	}
-	if ( $layout !== '1c' ) : ?>
+	if ( '1c' !== $layout ) : ?>
 
 	<?php lsx_sidebars_before(); ?>
 

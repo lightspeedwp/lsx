@@ -102,8 +102,7 @@ add_action('wp_head','lsx_process_content_width');
  * @subpackage config
  */
 function lsx_page_comments_off( $data ) {
-
-	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == __('Auto Draft','lsx') ) {
+	if ( 'page' == $data['post_type'] && 'auto-draft' == $data['post_status'] && esc_html__( 'Auto Draft', 'lsx' ) == $data['post_title'] ) {
 		$data['comment_status'] = 0;
 		$data['ping_status'] = 0;
 	}
@@ -118,8 +117,7 @@ add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );
  * @subpackage config
  */
 function lsx_is_legacy($data) {
-
-	if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' && $data['post_title'] == __('Auto Draft','lsx') ) {
+	if ( 'page' == $data['post_type'] && 'auto-draft' == $data['post_status'] && esc_html__( 'Auto Draft', 'lsx' ) == $data['post_title'] ) {
 		$data['comment_status'] = 0;
 		$data['ping_status'] = 0;
 	}
