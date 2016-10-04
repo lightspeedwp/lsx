@@ -88,32 +88,10 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 			return;
 		}
 		?>
-		
 			<div class="post-meta">
-				<?php
-					lsx_content_post_meta();
-				?>
-
-				<?php printf( '<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
-					_x( 'Posted by:', 'Used before post author name.', 'lsx' ),
-					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-					get_the_author()
-				); ?>
-
-				<?php 
-					$post_categories = wp_get_post_categories( get_the_ID() );
-					$cats = array();
-					foreach($post_categories as $c){
-							$cat = get_category( $c );
-							$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
-					}
-					if(!empty($cats)){ ?>
-							<span class="post-meta-categories"><span><?php _e('Posted in:','lsx'); ?></span> <?php echo implode(', ', $cats); ?></span>
-				<?php } ?>
-				
+				<?php lsx_content_post_meta(); ?>
 				<div class="clearfix"></div>
 			</div>
-
 		<?php
 	}
 }
@@ -140,6 +118,42 @@ if ( ! function_exists( 'lsx_post_meta_date' ) ) {
 	}
 }
 add_action( 'lsx_content_post_meta', 'lsx_post_meta_date', 10 );
+
+/**
+ * Add customisable post meta: post author
+ */
+if ( ! function_exists( 'lsx_post_meta_author' ) ) {
+	function lsx_post_meta_author() {
+		printf( '<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
+			_x( 'Posted by:', 'Used before post author name.', 'lsx' ),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			get_the_author()
+		);
+	}
+}
+add_action( 'lsx_content_post_meta', 'lsx_post_meta_author', 20 );
+
+/**
+ * Add customisable post meta: post category(ies)
+ */
+if ( ! function_exists( 'lsx_post_meta_category' ) ) {
+	function lsx_post_meta_category() {
+		$post_categories = wp_get_post_categories( get_the_ID() );
+		$cats = array();
+
+		foreach( $post_categories as $c ) {
+			$cat = get_category( $c );
+			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( esc_html__( 'View all posts in %s' , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name . '</a>';
+		}
+
+		if ( ! empty( $cats ) ) {
+			?>
+			<span class="post-meta-categories"><span><?php esc_html_e( 'Posted in:', 'lsx' ); ?></span> <?php echo implode( ', ', $cats ); ?></span>
+			<?php
+		}
+	}
+}
+add_action( 'lsx_content_post_meta', 'lsx_post_meta_category', 30 );
 
 /**
  * Translate post format to Font Awesome class
