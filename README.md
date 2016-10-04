@@ -1,5 +1,5 @@
-[![built with gulp](https://img.shields.io/badge/gulp-builds_this_project-eb4a4b.svg?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAYAAAAOCAMAAAA7QZ0XAAAABlBMVEUAAAD%2F%2F%2F%2Bl2Z%2FdAAAAAXRSTlMAQObYZgAAABdJREFUeAFjAAFGRjSSEQzwUgwQkjAFAAtaAD0Ls2nMAAAAAElFTkSuQmCC)](http://gulpjs.com/)
-[![Build Status](https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master)](https://travis-ci.org/lightspeeddevelopment/lsx)
+[![built with gulp.js](https://img.shields.io/badge/build%20with-gulp.js-red.svg)](http://gulpjs.com/)
+[![build status](https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master)](https://travis-ci.org/lightspeeddevelopment/lsx)
 
 # LSX
 * Contributors: the LightSpeed team
