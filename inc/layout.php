@@ -99,7 +99,7 @@ function lsx_header_classes($additional = false) {
 	if(false != $additional){
 		$classes .= ' '.$additional;
 	}
-	echo $classes;
+	echo esc_attr( $classes );
 }
 
 /**
@@ -122,7 +122,7 @@ function lsx_top_menu_classes($additional = false) {
 	if(false != $additional){
 		$classes .= ' '.$additional;
 	}
-	echo $classes;
+	echo esc_attr( $classes );
 }
 
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
@@ -175,7 +175,7 @@ function lsx_global_header() {
 		?>
 		<header class="archive-header">
 			<h1 class="archive-title">
-				<i class="format-link fa fa-<?php echo $format ?>"></i>
+				<i class="format-link fa fa-<?php echo esc_attr( $format ) ?>"></i>
 				<span><?php the_title(); ?></span>
 			</h1>
 		</header>
@@ -189,25 +189,25 @@ function lsx_global_header() {
 	elseif (is_search()) :
 		?>
 		<header class="archive-header">
-			<h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 		</header>
 		<?php
 	elseif (is_author()) :
 		?>
 		<header class="archive-header">
 			<h1 class="archive-title">
-				<?php printf( __( 'Author: %s', 'lsx' ), get_the_author() ); ?>
+				<?php printf( esc_html__( 'Author: %s', 'lsx' ), get_the_author() ); ?>
 			</h1>
 
 			<?php if (get_the_author_meta('description')) { ?>
-			    <p class="author-desc"><?php echo get_the_author_meta('description') ?></p>
+			    <p class="author-desc"><?php echo esc_html( get_the_author_meta( 'description' ) ) ?></p>
 			<?php } ?>
 		</header>
 		<?php
 	elseif (is_archive() && class_exists('WooCommerce') && is_post_type_archive('product') ) :
 		?>
 		<header class="archive-header">
-			<h1 class="archive-title"><?php _e('Shop', 'lsx'); ?></h1>
+			<h1 class="archive-title"><?php esc_html_e( 'Shop', 'lsx' ); ?></h1>
 			<?php echo term_description(); ?>
 		</header>
 		<?php
@@ -240,7 +240,7 @@ function lsx_blog_header() {
 
 	if (in_array('blog', $classes)) { ?>
 		<header class="archive-header">
-			<h1 class="archive-title"><?php _e('Blog', 'lsx'); ?></h1>
+			<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>
 		</header>
 	<?php }
 }

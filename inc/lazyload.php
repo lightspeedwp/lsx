@@ -67,11 +67,14 @@ class LSX_LazyLoadImages {
 			return $content;
 		}
 
+		$http_user_agent = sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) );
+		$http_user_agent = ! empty( $http_user_agent ) ? $http_user_agent : '';
+
 		if ( is_feed()
 			|| is_preview()
 			|| intval( get_query_var( 'print' ) ) == 1
 			|| intval( get_query_var( 'printpage' ) ) == 1
-			|| strpos( $_SERVER['HTTP_USER_AGENT'], 'Opera Mini' ) !== false
+			|| strpos( $http_user_agent, 'Opera Mini' ) !== false
 		) {
 			return $content;
 		}

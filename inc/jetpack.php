@@ -218,12 +218,8 @@ add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
 add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
 
 function lsx_save_portfolio_post_meta( $post_id, $post ) {
-	$lsx_website_nonce = sanitize_text_field( wp_unslash( $_POST['lsx_website_nonce'] ) );
-	$lsx_client_nonce = sanitize_text_field( wp_unslash( $_POST['lsx_client_nonce'] ) );
-
-	if ( ! wp_verify_nonce( $lsx_website_nonce, basename( __FILE__ ) ) || ! wp_verify_nonce( $lsx_client_nonce, basename( __FILE__ ) ) ) {
-		return $post_id;
-	}
+	check_admin_referer( 'lsx_save_portfolio', '_lsx_client_nonce' );
+	check_admin_referer( 'lsx_save_portfolio', '_lsx_website_nonce' );
 
 	$post_type = get_post_type_object( $post->post_type );
 
@@ -274,7 +270,7 @@ function lsx_add_portfolio_post_meta_boxes() {
 
 function lsx_client_meta_box( $object, $box ) { ?>
 
-  <?php wp_nonce_field( basename( __FILE__ ), 'lsx_client_nonce' ); ?>
+  <?php wp_nonce_field( 'lsx_save_portfolio', '_lsx_client_nonce' ); ?>
 
   <p>
     <input class="widefat" type="text" name="lsx-client" id="lsx-client" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-client', true ) ); ?>" size="30" />
@@ -285,7 +281,7 @@ function lsx_client_meta_box( $object, $box ) { ?>
 
 function lsx_website_meta_box( $object, $box ) { ?>
 
-  <?php wp_nonce_field( basename( __FILE__ ), 'lsx_website_nonce' ); ?>
+  <?php wp_nonce_field( 'lsx_save_portfolio', '_lsx_website_nonce' ); ?>
 
   <p>
     <input class="widefat" type="text" name="lsx-website" id="lsx-website" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-website', true ) ); ?>" size="30" />

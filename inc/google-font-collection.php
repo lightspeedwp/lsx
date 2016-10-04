@@ -108,7 +108,7 @@ class LSX_Google_Font_Collection
 			$protocol = 'http';
 			if(is_ssl()){ $protocol.='s'; }
 			?>
-			<?php echo wp_keses_post( '<' ); ?>link href="<?php echo esc_attr( $protocol ); ?>://fonts.googleapis.com/css?family=<?php echo esc_attr( $value->__get( "location" ) ); ?>" rel='stylesheet' type='text/css'<?php echo wp_keses_post( '>' ); ?>
+			<link href="<?php echo esc_attr( $protocol ); ?>://fonts.googleapis.com/css?family=<?php echo esc_attr( $value->__get( "location" ) ); ?>" rel='stylesheet'>
 			<?php
 		}
 	}
