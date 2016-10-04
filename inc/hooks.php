@@ -112,6 +112,10 @@ function lsx_content_bottom() {
 	do_action( 'lsx_content_bottom' );
 }
 
+function lsx_content_post_meta() {
+	do_action( 'lsx_content_post_meta' );
+}
+
 /**
 * Semantic <entry> hooks
 * 

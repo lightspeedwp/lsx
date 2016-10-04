@@ -79,34 +79,19 @@ if ( ! function_exists( 'lsx_site_title' ) ) :
 	}
 endif;
 
-
-
 /**
  * Add customisable post meta.
- *
- * Add customisable post meta, using shortcodes,
- * to be added/modified where necessary.
  */
-
 if ( ! function_exists( 'lsx_post_meta' ) ) {
 	function lsx_post_meta() {
-		if ( (is_page() && !(is_home() || is_front_page())) && ! is_page_template( 'page-templates/template-blog.php' ) ) { return; } ?>
+		if ( ( is_page() && ! ( is_home() || is_front_page() ) ) && ! is_page_template( 'page-templates/template-blog.php' ) ) {
+			return;
+		}
+		?>
 		
-		<div class="post-meta">
+			<div class="post-meta">
 				<?php
-					$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-					
-					$time_string = sprintf( $time_string,
-						esc_attr( get_the_date( 'c' ) ),
-						get_the_date(),
-						esc_attr( get_the_modified_date( 'c' ) ),
-						get_the_modified_date()
-					);
-					printf( '<span class="post-meta-time"><span>%1$s</span> <a href="%2$s" rel="bookmark">%3$s</a></span>',
-						_x( 'Posted on:', 'Used before publish date.', 'lsx' ),
-						esc_url( get_permalink() ),
-						$time_string
-					);
+					lsx_content_post_meta();
 				?>
 
 				<?php printf( '<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
@@ -115,23 +100,46 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 					get_the_author()
 				); ?>
 
+				<?php 
+					$post_categories = wp_get_post_categories( get_the_ID() );
+					$cats = array();
+					foreach($post_categories as $c){
+							$cat = get_category( $c );
+							$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
+					}
+					if(!empty($cats)){ ?>
+							<span class="post-meta-categories"><span><?php _e('Posted in:','lsx'); ?></span> <?php echo implode(', ', $cats); ?></span>
+				<?php } ?>
+				
+				<div class="clearfix"></div>
+			</div>
 
-			<?php 
-		    	$post_categories = wp_get_post_categories( get_the_ID() );
-		    	$cats = array();
-		    	foreach($post_categories as $c){
-		    			$cat = get_category( $c );
-		    			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( __( "View all posts in %s" , 'lsx' ), $cat->name ) . '" ' . '>' . $cat->name.'</a>';
-		    	}
-		    	if(!empty($cats)){ ?>
-						<span class="post-meta-categories"><span><?php _e('Posted in:','lsx'); ?></span> <?php echo implode(', ', $cats); ?></span>
-			<?php } ?>
-			
-			<div class="clearfix"></div>
-		</div>
-
-	<?php } // End lsx_post_meta() 
+		<?php
+	}
 }
+
+/**
+ * Add customisable post meta: post date
+ */
+if ( ! function_exists( 'lsx_post_meta_date' ) ) {
+	function lsx_post_meta_date() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+				
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			get_the_date(),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			get_the_modified_date()
+		);
+
+		printf( '<span class="post-meta-time"><span>%1$s</span> <a href="%2$s" rel="bookmark">%3$s</a></span>',
+			_x( 'Posted on:', 'Used before publish date.', 'lsx' ),
+			esc_url( get_permalink() ),
+			$time_string
+		);
+	}
+}
+add_action( 'lsx_content_post_meta', 'lsx_post_meta_date', 10 );
 
 /**
  * Translate post format to Font Awesome class
