@@ -32,9 +32,7 @@ class LSX_Walker_Comment extends Walker_Comment {
     if (!empty($args['callback'])) {
       call_user_func($args['callback'], $comment, $args, $depth);
       return;
-    }
-
-    extract($args, EXTR_SKIP);?>
+    }?>
 
   	<li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
     <?php get_template_part('comment'); ?>

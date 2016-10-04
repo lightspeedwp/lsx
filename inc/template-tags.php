@@ -331,24 +331,22 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 		}else{
 			
 			$labels = array(
-				'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
-				'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
-				'title' 	=> __( 'Posts navigation', 'lsx' )
+				'next' 		=> '<span class="meta-nav">&larr;</span> '.esc_html__( 'Older posts', 'lsx' ),
+				'previous' 	=> esc_html__( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
+				'title' 	=> esc_html__( 'Posts navigation', 'lsx' )
 			);
 			$labels = apply_filters('lsx_post_navigation_labels',$labels);
-			
-			extract($labels);
 			?>
 			<nav class="navigation paging-navigation" role="navigation">
 				<div class="lsx-breaker"></div>
-				<h1 class="screen-reader-text"><?php echo esc_html( $title ); ?></h1>
+				<h1 class="screen-reader-text"><?php echo esc_html( $labels['title'] ); ?></h1>
 				<div class="nav-links">
 					<?php if ( get_next_posts_link() ) : ?>
-					<div class="nav-previous"><?php next_posts_link( $next ); ?></div>
+					<div class="nav-previous"><?php next_posts_link( $labels['next'] ); ?></div>
 					<?php endif; ?>
 		
 					<?php if ( get_previous_posts_link() ) : ?>
-					<div class="nav-next"><?php previous_posts_link( $previous ); ?></div>
+					<div class="nav-next"><?php previous_posts_link( $labels['previous'] ); ?></div>
 					<?php endif; ?>
 					
 					<div class="clearfix"></div>
@@ -558,7 +556,7 @@ function lsx_sitemap_custom_post_type(){
 		
 		if($post_type_items->have_posts()){
 	
-			printf( '<h2>' . esc_html__( '%1$s', 'lsx' ) . '</h2>', esc_html( $title ) );
+			echo '<h2>' . esc_html( $title ) . '</h2>';
 	
 			echo '<ul>';
 			while($post_type_items->have_posts()){ $post_type_items->the_post();
@@ -590,7 +588,7 @@ function lsx_sitemap_taxonomy_clouds(){
 
 				$tag_cloud = wp_tag_cloud(array('taxonomy'=>$taxonomy_id,'echo'=>false));
 				if(null != $tag_cloud){
-					printf( '<h2>' . esc_html__( '%1$s', 'lsx' ) . '</h2>', esc_html( $taxonomy ) );
+					echo '<h2>' . esc_html( $taxonomy ) . '</h2>';
 					echo '<aside id="' . esc_attr( $taxonomy_id ) . '" class="widget widget_' . esc_attr( $taxonomy_id ) . '">' . esc_html( $tag_cloud ) . '</aside>';
 		        }
 	        }

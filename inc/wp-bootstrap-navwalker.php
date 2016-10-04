@@ -184,37 +184,34 @@ class Lsx_Bootstrap_Navwalker extends Walker_Nav_Menu {
 	 */
 	public static function fallback( $args ) {
 		if ( current_user_can( 'manage_options' ) ) {
-
-			extract( $args );
-
 			$fb_output = null;
 
-			if ( $container ) {
-				$fb_output = '<' . $container;
+			if ( $args['container'] ) {
+				$fb_output = '<' . $args['container'];
 
-				if ( $container_id )
-					$fb_output .= ' id="' . $container_id . '"';
+				if ( $args['container_id'] )
+					$fb_output .= ' id="' . $args['container_id'] . '"';
 
-				if ( $container_class )
-					$fb_output .= ' class="' . $container_class . '"';
+				if ( $args['container_class'] )
+					$fb_output .= ' class="' . $args['container_class'] . '"';
 
 				$fb_output .= '>';
 			}
 
 			$fb_output .= '<ul';
 
-			if ( $menu_id )
-				$fb_output .= ' id="' . $menu_id . '"';
+			if ( $args['menu_id'] )
+				$fb_output .= ' id="' . $args['menu_id'] . '"';
 
-			if ( $menu_class )
-				$fb_output .= ' class="' . $menu_class . '"';
+			if ( $args['menu_class'] )
+				$fb_output .= ' class="' . $args['menu_class'] . '"';
 
 			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.__('Add a menu','lsx').'</a></li>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">' . esc_html__( 'Add a menu', 'lsx' ) . '</a></li>';
 			$fb_output .= '</ul>';
 
-			if ( $container )
-				$fb_output .= '</' . $container . '>';
+			if ( $args['container'] )
+				$fb_output .= '</' . $args['container'] . '>';
 
 			echo wp_kses_post( $fb_output );
 		}
