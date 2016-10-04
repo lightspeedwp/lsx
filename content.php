@@ -14,7 +14,7 @@
 	} 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class($thumb_class); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $thumb_class ); ?>>
 	<?php lsx_entry_top(); ?>
 
 	<header class="entry-header">
@@ -88,11 +88,7 @@
 	
 	<?php if ( has_tag() || ( comments_open() && ! empty( get_comments_number() ) ) ) : ?>
 		<div class="post-tags-wrapper">
-			<?php if ( has_tag() ) : ?>
-				<div class="post-tags">
-					<span><?php esc_html_e('Tagged as:','lsx'); ?></span> <?php echo wp_kses_post( get_the_tag_list('') ); ?>
-				</div>
-			<?php endif ?>
+			<?php lsx_content_post_tags(); ?>
 			
 			<?php if ( comments_open() && ! empty( get_comments_number() ) ) : ?>
 				<div class="post-comments">

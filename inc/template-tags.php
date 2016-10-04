@@ -156,6 +156,22 @@ if ( ! function_exists( 'lsx_post_meta_category' ) ) {
 add_action( 'lsx_content_post_meta', 'lsx_post_meta_category', 30 );
 
 /**
+ * Add customisable post meta: post tag(s)
+ */
+if ( ! function_exists( 'lsx_post_tags' ) ) {
+	function lsx_post_tags() {
+		if ( has_tag() ) :
+			?>
+			<div class="post-tags">
+				<span><?php esc_html_e( 'Tagged as:', 'lsx' ); ?></span> <?php echo wp_kses_post( get_the_tag_list( '' ) ); ?>
+			</div>
+			<?php
+		endif;
+	}
+}
+add_action( 'lsx_content_post_tags', 'lsx_post_tags', 10 );
+
+/**
  * Translate post format to Font Awesome class
  */
 

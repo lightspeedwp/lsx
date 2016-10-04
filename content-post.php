@@ -56,17 +56,13 @@
 	<footer class="footer-meta">
 		<?php if ( has_tag() || ( function_exists( 'sharing_display' ) || class_exists( 'Jetpack_Likes' ) ) ) : ?>
 			<div class="post-tags-wrapper">
-				<?php if ( has_tag() ) : ?>
-					<div class="post-tags">
-						<span><?php esc_html_e('Tagged as:','lsx'); ?></span> <?php echo wp_kses_post( get_the_tag_list('') ); ?>
-					</div>
-				<?php endif ?>
+				<?php lsx_content_post_tags(); ?>
 
-				<?php  
+				<?php
 					if ( function_exists( 'sharing_display' ) ) {
 						sharing_display( '', true );
 					}
-					
+
 					if ( class_exists( 'Jetpack_Likes' ) ) {
 						$custom_likes = new Jetpack_Likes;
 						echo wp_kses_post( $custom_likes->post_likes( '' ) );

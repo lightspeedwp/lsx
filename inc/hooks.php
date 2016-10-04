@@ -116,6 +116,10 @@ function lsx_content_post_meta() {
 	do_action( 'lsx_content_post_meta' );
 }
 
+function lsx_content_post_tags() {
+	do_action( 'lsx_content_post_tags' );
+}
+
 /**
 * Semantic <entry> hooks
 * 
