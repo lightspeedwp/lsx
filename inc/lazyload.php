@@ -40,6 +40,8 @@ class LSX_LazyLoadImages {
 
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'add_scripts' ) );
 		add_action( 'wp_head', array( __CLASS__, 'setup_filters' ), 9999 );
+		add_filter( 'wp_kses_allowed_html', array( __CLASS__, 'kses_allowed_html' ), 10, 2 );
+		add_filter( 'kses_allowed_protocols', array( __CLASS__, 'kses_allowed_protocols' ) );
 	}
 
 	static function setup_filters() {
@@ -167,6 +169,21 @@ class LSX_LazyLoadImages {
 
 	static function is_enabled() {
 		return self::$enabled;
+	}
+
+	static function kses_allowed_html( $allowedtags, $context ) {
+		$allowedtags['noscript'] = array();
+		
+		$allowedtags['img']['data-src'] = true;
+		$allowedtags['img']['data-srcset'] = true;
+		$allowedtags['img']['data-sizes'] = true;
+
+		return $allowedtags;
+	}
+
+	static function kses_allowed_protocols( $allowedprotocols ) {
+		$allowedprotocols[] = 'data';
+		return $allowedprotocols;
 	}
 }
 
