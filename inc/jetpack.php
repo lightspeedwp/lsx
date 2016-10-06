@@ -218,14 +218,22 @@ add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
 add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
 
 function lsx_save_portfolio_post_meta( $post_id, $post ) {
-	check_admin_referer( 'lsx_save_portfolio', '_lsx_client_nonce' );
-	check_admin_referer( 'lsx_save_portfolio', '_lsx_website_nonce' );
+	if ( 'jetpack-portfolio' != $post->post_type ) {
+		return;
+	}
+
+	if ( ! isset( $_POST['lsx-website'] ) && ! isset( $_POST['lsx-client'] ) ) {
+		return;
+	}
 
 	$post_type = get_post_type_object( $post->post_type );
 
-	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
-		return $post_id;
+	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+		return;
+	}
 
+	check_admin_referer( 'lsx_save_portfolio', '_lsx_client_nonce' );
+	check_admin_referer( 'lsx_save_portfolio', '_lsx_website_nonce' );
 
 	$meta_keys = array('lsx-website','lsx-client');
 
@@ -243,7 +251,6 @@ function lsx_save_portfolio_post_meta( $post_id, $post ) {
 
 		elseif ( '' == $new_meta_value && $meta_value )
 		delete_post_meta( $post_id, $meta_key, $meta_value );
-
 	}
 }
 
