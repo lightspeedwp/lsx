@@ -288,6 +288,51 @@
 	}
 }
 
+.nf-before-form-content {
+	margin-bottom: 20px;
+}
+
+.nf-field-element {
+	input,
+	select,
+	textarea,
+	.ccselect2-choice {
+		@include lsx-form-field;
+	}
+}
+
+.field-wrap {
+	input[type="submit"],
+	input[type="button"],
+	button {
+		@include lsx-button;
+	}
+}
+
+.nf-error-msg {
+	// Copied from Caldera Forms
+	background-color: #f2dede;
+	border: 1px solid #d59595;
+	color: #a94442;
+	padding: 10px 20px;
+
+	.nf-after-field & {
+		margin-right: 0;
+	}
+}
+
+.nf-response-msg {
+	// Copied from Caldera Forms
+	background-color: #dff0d8;
+	border: 1px solid #a3d48e;
+	color: #3c763d;
+	padding: 10px 20px;
+
+	&:empty {
+		display: none;
+	}
+}
+
 
 // Modals
 
