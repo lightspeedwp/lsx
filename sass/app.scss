@@ -309,16 +309,29 @@
 	}
 }
 
-.nf-error-msg {
-	// Copied from Caldera Forms
-	background-color: #f2dede;
-	border: 1px solid #d59595;
-	color: #a94442;
-	padding: 10px 20px;
-
-	.nf-after-field & {
-		margin-right: 0;
+.nf-error {
+	.ninja-forms-field {
+		border: 3px solid #dd4b39 !important;
 	}
+}
+
+.nf-error-msg {
+	color: #E80000;
+	font-size: 15px;
+}
+
+.nf-field-label {
+	label {
+		font-weight: normal !important;
+	}
+
+	.nf-error & {
+		color: #E80000;
+	}
+}
+
+.ninja-forms-req-symbol {
+	color: #E80000;
 }
 
 .nf-response-msg {
@@ -326,10 +339,19 @@
 	background-color: #dff0d8;
 	border: 1px solid #a3d48e;
 	color: #3c763d;
+	margin-bottom: 20px;
 	padding: 10px 20px;
 
 	&:empty {
 		display: none;
+	}
+
+	p {
+		margin-bottom: 5px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 
