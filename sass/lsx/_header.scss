@@ -882,6 +882,12 @@ nav {
 					}
 				}
 
+				&.menu-item-language {
+					.caret {
+						margin-left: 10px;
+					}
+				}
+
 				ul.dropdown-menu {
 					padding: 0;
 					margin-top: -3px;
@@ -900,8 +906,16 @@ nav {
 					-moz-border-bottom-right-radius: 3px;
 					border-bottom-right-radius: 3px;
 
-					& > li {
+					&.submenu-languages {
+						left: auto;
+						min-width: 120px;
+						right: 0;
+					}
 
+					& > li {
+						a {
+							padding: 10px 16px;
+						}
 					}
 				}
 			}

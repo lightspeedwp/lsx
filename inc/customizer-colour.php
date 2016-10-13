@@ -652,6 +652,25 @@ function lsx_customizer_colour__top_menu_get_css( $colors ) {
 							}
 						}
 					}
+
+					&.submenu-languages {
+						& > li {
+							a {
+								&,
+								&:visited {
+									background-color: {$colors['top_menu_background_color']};
+									color: {$colors['top_menu_text_color']};
+								}
+
+								&:hover,
+								&:active,
+								&:focus {
+									background-color: {$colors['top_menu_background_color']};
+									color: {$colors['top_menu_text_hover_color']};
+								}
+							}
+						}
+					}
 				}
 			}
 		}
