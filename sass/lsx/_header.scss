@@ -195,19 +195,28 @@ nav {
 						}
 
 						&.menu-item-has-children {
-							& > a:after {
-								content: '';
-								display: block;
-								float: right;
-								width: 0;
-								height: 0;
-								margin: 8px 0;
+							& > a {
+								display: -webkit-box;
+								display: -webkit-flex;
+								display: -ms-flexbox;
+								display: flex;
 
-								border: {
-									top: 4px dashed;
-									top: 4px solid\9;
-									left: 4px solid transparent;
-									right: 4px solid transparent;
+								flex-flow: row;
+
+								&:after {
+									content: '';
+									display: block;
+									float: right;
+									width: 0;
+									height: 0;
+									margin: 8px 0 8px 10px;
+
+									border: {
+										top: 4px dashed;
+										top: 4px solid\9;
+										left: 4px solid transparent;
+										right: 4px solid transparent;
+									}
 								}
 							}
 
