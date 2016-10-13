@@ -895,7 +895,8 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 						}
 					}
 
-					&.active {
+					&.active,
+					&.menu-highlight {
 						a {
 							color: {$colors['main_menu_text_hover1_color']};
 						}
