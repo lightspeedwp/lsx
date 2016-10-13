@@ -103,6 +103,8 @@ function test_lsx_customizer_colour_choices( $array ) {
 			'#333333', '#eeeeee', '#dddddd', '#cccccc',
 			// Footer
 			'#232222', '#ffffff', '#337ab7', '#969696',
+			// Body section full
+			'#428bca', '#ffffff', '#333333', '#ffffff',
 			// Test
 			'#ddddd6', '#eeeee6'
 		)
@@ -260,6 +262,10 @@ function test_lsx_customizer_colour_selectors_body( $css, $colors ) {
 		attr4: {$colors['body_text_color']};
 		attr5: {$colors['body_link_color']};
 		attr6: {$colors['body_link_hover_color']};
+		attr7: {$colors['body_section_full_background_color']};
+		attr8: {$colors['body_section_full_text_color']};
+		attr9: {$colors['body_section_full_cta_background_color']};
+		attr10: {$colors['body_section_full_cta_text_color']};
 	}
 CSS;
 

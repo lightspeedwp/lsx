@@ -54,7 +54,12 @@ $customizer_colour_names = apply_filters( 'lsx_customizer_colour_names', array(
 	'footer_background_color'           => esc_html__( 'FOOTER: Background', 'lsx' ),
 	'footer_text_color'                 => esc_html__( 'FOOTER: Text', 'lsx' ),
 	'footer_link_color'                 => esc_html__( 'FOOTER: Link', 'lsx' ),
-	'footer_link_hover_color'           => esc_html__( 'FOOTER: Link (hover)', 'lsx' )
+	'footer_link_hover_color'           => esc_html__( 'FOOTER: Link (hover)', 'lsx' ),
+
+	'body_section_full_background_color'     => esc_html__( 'BODY: Section full (background)', 'lsx' ),
+	'body_section_full_text_color'           => esc_html__( 'BODY: Section full (text)', 'lsx' ),
+	'body_section_full_cta_background_color' => esc_html__( 'BODY: Section full CTA (background)', 'lsx' ),
+	'body_section_full_cta_text_color'       => esc_html__( 'BODY: Section full CTA (text)', 'lsx' ),
 ) );
 
 $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', array(
@@ -80,7 +85,9 @@ $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', arr
 			// Footer Widgets
 			'#333333', '#eeeeee', '#dddddd', '#cccccc',
 			// Footer
-			'#232222', '#ffffff', '#337ab7', '#969696'
+			'#232222', '#ffffff', '#337ab7', '#969696',
+			// Body section full
+			'#428bca', '#ffffff', '#333333', '#ffffff'
 		) )
 	),
 	'red' => array(
@@ -105,7 +112,9 @@ $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', arr
 			// Footer Widgets
 			'#333333', '#eeeeee', '#dddddd', '#cccccc',
 			// Footer
-			'#232222', '#ffffff', '#b64d3f', '#969696'
+			'#232222', '#ffffff', '#b64d3f', '#969696',
+			// Body section full
+			'#b64d3f', '#ffffff', '#333333', '#ffffff'
 		) )
 	),
 	'orange' => array(
@@ -130,7 +139,9 @@ $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', arr
 			// Footer Widgets
 			'#333333', '#eeeeee', '#dddddd', '#cccccc',
 			// Footer
-			'#232222', '#ffffff', '#e4701e', '#969696'
+			'#232222', '#ffffff', '#e4701e', '#969696',
+			// Body section full
+			'#fbaf3f', '#ffffff', '#333333', '#ffffff'
 		) )
 	),
 	'green' => array(
@@ -155,7 +166,9 @@ $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', arr
 			// Footer Widgets
 			'#333333', '#eeeeee', '#dddddd', '#cccccc',
 			// Footer
-			'#232222', '#ffffff', '#596b46', '#969696'
+			'#232222', '#ffffff', '#596b46', '#969696',
+			// Body section full
+			'#596b46', '#ffffff', '#333333', '#ffffff'
 		) )
 	),
 	'brown' => array(
@@ -180,7 +193,9 @@ $customizer_colour_choices = apply_filters( 'lsx_customizer_colour_choices', arr
 			// Footer Widgets
 			'#333333', '#eeeeee', '#dddddd', '#cccccc',
 			// Footer
-			'#232222', '#ffffff', '#8c6a45', '#969696'
+			'#232222', '#ffffff', '#8c6a45', '#969696',
+			// Body section full
+			'#8c6a45', '#ffffff', '#333333', '#ffffff'
 		) )
 	)
 ) );

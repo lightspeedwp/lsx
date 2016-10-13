@@ -1130,7 +1130,12 @@ function lsx_customizer_colour__body_get_theme_mods() {
 		'body_text_heading_color' => get_theme_mod( 'body_text_heading_color', $colors['body_text_heading_color'] ),
 		'body_text_color' =>         get_theme_mod( 'body_text_color',         $colors['body_text_color'] ),
 		'body_link_color' =>         get_theme_mod( 'body_link_color',         $colors['body_link_color'] ),
-		'body_link_hover_color' =>   get_theme_mod( 'body_link_hover_color',   $colors['body_link_hover_color'] )
+		'body_link_hover_color' =>   get_theme_mod( 'body_link_hover_color',   $colors['body_link_hover_color'] ),
+
+		'body_section_full_background_color' =>     get_theme_mod( 'body_section_full_background_color',     $colors['body_section_full_background_color'] ),
+		'body_section_full_text_color' =>           get_theme_mod( 'body_section_full_text_color',           $colors['body_section_full_text_color'] ),
+		'body_section_full_cta_background_color' => get_theme_mod( 'body_section_full_cta_background_color', $colors['body_section_full_cta_background_color'] ),
+		'body_section_full_cta_text_color' =>       get_theme_mod( 'body_section_full_cta_text_color',       $colors['body_section_full_cta_text_color'] )
 	);
 }
 
@@ -1380,6 +1385,36 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 
 		.page-header {
 			border-bottom-color: {$colors['body_line_color']};
+		}
+
+		#main {
+			.lsx-full-width {
+				background-color: {$colors['body_section_full_background_color']};
+				color: {$colors['body_section_full_text_color']};
+
+				h1, h2, h3, h4, h5, h6,
+				a, .lsx-hero-unit {
+					color: {$colors['body_section_full_text_color']};
+				}
+
+				.lsx-border-button {
+					border-color: {$colors['body_section_full_text_color']} !important;
+				}
+			}
+
+			.lsx-full-width-alt {
+				background-color: {$colors['body_section_full_cta_background_color']};
+				color: {$colors['body_section_full_cta_text_color']};
+
+				h1, h2, h3, h4, h5, h6,
+				a, .lsx-hero-unit {
+					color: {$colors['body_section_full_cta_text_color']};
+				}
+
+				.lsx-border-button {
+					border-color: {$colors['body_section_full_text_color']} !important;
+				}
+			}
 		}
 CSS;
 
