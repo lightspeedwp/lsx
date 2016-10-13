@@ -1398,7 +1398,15 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 				}
 
 				.lsx-border-button {
+					color: {$colors['body_section_full_text_color']} !important;
 					border-color: {$colors['body_section_full_text_color']} !important;
+
+					&:hover,
+					&:active,
+					&focus {
+						color: {$colors['body_section_full_background_color']} !important;
+						background-color: {$colors['body_section_full_text_color']} !important;
+					}
 				}
 			}
 
@@ -1412,7 +1420,15 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 				}
 
 				.lsx-border-button {
-					border-color: {$colors['body_section_full_text_color']} !important;
+					color: {$colors['body_section_full_cta_text_color']} !important;
+					border-color: {$colors['body_section_full_cta_text_color']} !important;
+
+					&:hover,
+					&:active,
+					&focus {
+						color: {$colors['body_section_full_cta_background_color']} !important;
+						background-color: {$colors['body_section_full_cta_text_color']} !important;
+					}
 				}
 			}
 		}
