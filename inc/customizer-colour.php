@@ -895,21 +895,34 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 						}
 					}
 
-					&.active,
+					&.active {
+						& li.active a {
+							background-color: {$colors['main_menu_background_hover2_color']} !important;
+							color: {$colors['main_menu_text_hover2_color']};
+						}
+					}
+
 					&.menu-highlight {
 						a {
-							color: {$colors['main_menu_text_hover1_color']};
+							background-color: {$colors['main_menu_background_hover1_color']} !important;
+							color: {$colors['main_menu_text_hover1_color']} !important;
+
+							.caret {
+								border-top-color: {$colors['main_menu_text_hover1_color']} !important;
+								border-bottom-color: {$colors['main_menu_text_hover1_color']} !important;
+							}
 						}
 
 						&:hover {
 							& > a {
-								color: {$colors['main_menu_text_hover1_color']};
+								background-color: {$colors['main_menu_background_hover1_color']} !important;
+								color: {$colors['main_menu_text_hover1_color']} !important;
 							}
 						}
 						
-						& li.active a {
+						& li.menu-highlight a {
 							background-color: {$colors['main_menu_background_hover2_color']} !important;
-							color: {$colors['main_menu_text_hover2_color']};
+							color: {$colors['main_menu_text_hover2_color']} !important;
 						}
 					}
 				}
