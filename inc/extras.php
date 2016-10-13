@@ -420,7 +420,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 				$wpse_excerpt = strip_shortcodes( $wpse_excerpt );
 				$wpse_excerpt = apply_filters('the_content', $wpse_excerpt);
 				$wpse_excerpt = str_replace(']]>', ']]>', $wpse_excerpt);
-				//$wpse_excerpt = strip_tags($wpse_excerpt, '<blockquote>,<p>');
+				$wpse_excerpt = strip_tags($wpse_excerpt, '<blockquote>,<p>,<br>,<b>,<strong>,<i>,<u>,<ul>,<li>,<span>,<div>');
 
 				$excerpt_word_count = 50;
 				$excerpt_word_count = apply_filters('excerpt_length', $excerpt_word_count);
