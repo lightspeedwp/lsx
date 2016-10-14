@@ -355,6 +355,29 @@
 	}
 }
 
+.nf-after-form-content {
+	.nf-error-msg {
+		// Copied from Caldera Forms
+		background-color: #f2dede;
+		border: 1px solid #d59595;
+		color: #a94442;
+		margin-bottom: 20px;
+		padding: 10px 20px;
+
+		&:empty {
+			display: none;
+		}
+
+		p {
+			margin-bottom: 5px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
 
 // Modals
 
