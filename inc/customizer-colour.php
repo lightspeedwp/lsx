@@ -949,7 +949,8 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 								color: {$colors['main_menu_text_hover1_color']};
 
 								&:hover {
-									color: {$colors['main_menu_text_hover1_color']};
+									background-color: {$colors['main_menu_background_hover2_color']};
+									color: {$colors['main_menu_text_hover2_color']};
 								}
 							}
 						}
