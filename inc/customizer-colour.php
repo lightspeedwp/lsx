@@ -511,6 +511,46 @@ function lsx_customizer_colour__button_cta_get_css( $colors ) {
 			}
 		}
 
+		nav.primary-navbar {
+			.nav.navbar-nav {
+				& > li,
+				ul.dropdown-menu > li {
+					&.menu-highlight {
+						a {
+							background-color: {$colors['button_cta_background_color']} !important;
+							color: {$colors['button_cta_text_color']} !important;
+
+							.caret {
+								border-top-color: {$colors['button_cta_text_color']} !important;
+								border-bottom-color: {$colors['button_cta_text_color']} !important;
+							}
+						}
+
+						&:hover {
+							& > a {
+								background-color: {$colors['button_cta_background_color']} !important;
+								color: {$colors['button_cta_text_color']} !important;
+							}
+						}
+
+						ul.dropdown-menu {
+							& > li {
+								& > a {
+									background-color: {$colors['button_cta_background_color']} !important;
+									color: {$colors['button_cta_text_color']} !important;
+
+									&:hover {
+										background-color: {$colors['button_cta_background_hover_color']} !important;
+										color: {$colors['button_cta_text_color_hover']} !important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		/*
 		 *
 		 * Button CTA WooCommerce
@@ -918,30 +958,6 @@ function lsx_customizer_colour__main_menu_get_css( $colors ) {
 						& li.active a {
 							background-color: {$colors['main_menu_background_hover2_color']} !important;
 							color: {$colors['main_menu_text_hover2_color']};
-						}
-					}
-
-					&.menu-highlight {
-						a {
-							background-color: {$colors['main_menu_background_hover1_color']} !important;
-							color: {$colors['main_menu_text_hover1_color']} !important;
-
-							.caret {
-								border-top-color: {$colors['main_menu_text_hover1_color']} !important;
-								border-bottom-color: {$colors['main_menu_text_hover1_color']} !important;
-							}
-						}
-
-						&:hover {
-							& > a {
-								background-color: {$colors['main_menu_background_hover1_color']} !important;
-								color: {$colors['main_menu_text_hover1_color']} !important;
-							}
-						}
-						
-						& li.menu-highlight a {
-							background-color: {$colors['main_menu_background_hover2_color']} !important;
-							color: {$colors['main_menu_text_hover2_color']} !important;
 						}
 					}
 				}
