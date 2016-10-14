@@ -213,7 +213,7 @@ jQuery(document).ready(function($) {
 		// Grandchild Menu
 
 		var fixDropdownPosition = function() {
-			$('.navbar-nav .menu-item:last-child').each(function() {
+			$('.navbar-nav > .menu-item:last-child').each(function() {
 				if ($(this).hasClass('menu-item-has-children')) {
 					var $firstMenuItem = $(this),
 						$dropdown = $firstMenuItem.children('.dropdown-menu'),
@@ -221,7 +221,7 @@ jQuery(document).ready(function($) {
 						dropdownWidth,
 						firstMenuItemRight;
 
-					if ($dropdownItem.length > 0) {
+					//if ($dropdownItem.length > 0) {
 						dropdownWidth = $dropdown.outerWidth(),
 						firstMenuItemRight = (windowWidth - ($firstMenuItem.offset().left + $firstMenuItem.outerWidth()));
 
@@ -229,7 +229,7 @@ jQuery(document).ready(function($) {
 							$dropdown.addClass('pull-right');
 							$dropdownItem.addClass('dropdown-menu-left');
 						}
-					}
+					//}
 				}
 			});
 		};
