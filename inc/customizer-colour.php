@@ -217,9 +217,10 @@ function lsx_customizer_colour__button_get_css( $colors ) {
 
 		.caldera-grid,
 		.caldera-clarity-grid,
-		#footer-widgets .widget form {
+		#footer-widgets .widget {
 			.btn,
-			.button-primary {
+			.button-primary,
+			button {
 				&,
 				&:visited {
 					background-color: {$colors['button_background_color']};
@@ -1674,7 +1675,7 @@ function lsx_customizer_colour__footer_widgets_get_css( $colors ) {
 			.widget h3.widget-title {
 				color: {$colors['footer_widgets_text_color']};
 
-				a {
+				a:not(.btn) {
 					&,
 					&:visited {
 						color: {$colors['footer_widgets_link_color']};
