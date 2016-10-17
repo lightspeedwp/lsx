@@ -1,5 +1,37 @@
 ## Change log
 
+### 1.8.0
+* Made LSX compatible (visual) with Ninja Forms
+* Made LSX compatible with LSX Blog Customizer (plugin)
+* Made LSX compatible (visual) with LSX Banners new feature: background videos
+* Spinning preloader: added an option to enable/disable it in WP Customizer
+* Customizer Colors: fixed/implemented several CSS/SASS selectors
+* Main menu: made highlight items use button CTA colours
+* Main menu: small caret style fix for wider menu items
+* Main menu: float to right always the last menu item with dropdown
+* Top menu: implemented style for WPML (plugin)
+* Top menu: added the social icons as social menu at the bottom
+* Breadcrumbs: small fix in visual
+* Search results: small fix in visual
+* Blog/archive sticker (featured): small fix in position
+* Improved the mobile navigation and header display
+* In excerpts (only in posts lists), allowed these tags: <blockquote>,<p>,<br>,<b>,<strong>,<i>,<u>,<ul>,<li>,<span>,<div> (all others will be removed)
+* Made some fixes for W3C HTML validation
+* Removed TGM (plugin) feature
+* Changed the site width (WordPress variable) from 750 to 1140
+* Customizer Colors: print the custom styles in <head> (moved from <body>)
+* Customizer Colors: improve the performance in front-end
+* Customizer Colors: implement the CSS inline using SCSS
+* Code sniffers: Travis CI configured
+* Code sniffers: fixed the code sniffers alerts (basic alerts)
+* Badges: added two badges (Travis CI deploy; Gulp.js)
+* Updated WooCommerce assets to the latest version (version 2.6.4)
+* Updated FontAwesome to the latest version (version 4.6.3)
+* Updated Bootstrap to the latest version (version 3.3.7)
+* Added in a lsx_get_template_part function, which check for templates in a plugin before it loads the usual templates
+* Added in a lsx_sidebar_enable filter so that plugins and child themes can disable the sidebar by force if they need to
+
+
 ### 1.7.3
 * Removed blue banner (with title) from the homepage (always)
 * Added a wrap in banner to fix IE10/11 vertical alignment
