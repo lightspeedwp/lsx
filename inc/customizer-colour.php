@@ -31,7 +31,7 @@ function lsx_customizer_colour__scss_to_css( $scss ) {
 function lsx_customizer_colour__add_footer_styles() {
 	wp_enqueue_style( 'lsx_customizer_colour', get_stylesheet_uri() );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__add_footer_styles', 11 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__add_footer_styles', 999 );
 
 /**
  * Outputs an Underscore template for generating CSS for the color scheme.
@@ -135,7 +135,7 @@ function lsx_customizer_colour__button_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__button_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__button_css', 9999 );
 
 /**
  * Get button CSS theme mods.
@@ -410,7 +410,7 @@ function lsx_customizer_colour__button_cta_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__button_cta_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__button_cta_css', 9999 );
 
 /**
  * Get button cta CSS theme mods.
@@ -622,7 +622,7 @@ function lsx_customizer_colour__top_menu_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__top_menu_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__top_menu_css', 9999 );
 
 /**
  * Get top menu CSS theme mods.
@@ -757,7 +757,7 @@ function lsx_customizer_colour__header_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__header_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__header_css', 9999 );
 
 /**
  * Get header CSS theme mods.
@@ -871,7 +871,7 @@ function lsx_customizer_colour__main_menu_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__main_menu_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__main_menu_css', 9999 );
 
 /**
  * Get main menu CSS theme mods.
@@ -1039,7 +1039,7 @@ function lsx_customizer_colour__banner_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__banner_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__banner_css', 9999 );
 
 /**
  * Get banner CSS theme mods.
@@ -1144,7 +1144,7 @@ function lsx_customizer_colour__body_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__body_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__body_css', 9999 );
 
 /**
  * Get body CSS theme mods.
@@ -1511,7 +1511,7 @@ function lsx_customizer_colour__footer_cta_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__footer_cta_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__footer_cta_css', 9999 );
 
 /**
  * Get footer cta CSS theme mods.
@@ -1622,7 +1622,7 @@ function lsx_customizer_colour__footer_widgets_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__footer_widgets_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__footer_widgets_css', 9999 );
 
 /**
  * Get footer widgets CSS theme mods.
@@ -1737,7 +1737,7 @@ function lsx_customizer_colour__footer_css() {
 
 	wp_add_inline_style( 'lsx_customizer_colour', $styles );
 }
-add_action( 'wp_footer', 'lsx_customizer_colour__footer_css', 12 );
+add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__footer_css', 9999 );
 
 /**
  * Get footer CSS theme mods.
