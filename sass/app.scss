@@ -936,10 +936,6 @@ figure.alignright { margin-left: 25px; }
 	.carousel-indicators {
 		bottom: -50px;
 
-		@media screen and (max-width: 767px) {
-			display: none;
-		}
-
 		li {
 			border: 1px solid #444;
 		}
@@ -949,18 +945,32 @@ figure.alignright { margin-left: 25px; }
 		}
 	}
 
+	&:not(#page-banner-slider) {
+		.carousel-indicators {
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
+		}
+	}
+
 	.carousel-inner {
 		.item {
-			@media screen and (max-width: 767px) {
-				margin-bottom: 20px;
-				position: relative !important;
-				display: block !important;
-				left: 0 !important;
-				transform: none !important;
-			}
-
 			img {
 				width: 100%;
+			}
+		}
+	}
+
+	&:not(#page-banner-slider) {
+		.carousel-inner {
+			.item {
+				@media screen and (max-width: 767px) {
+					margin-bottom: 20px;
+					position: relative !important;
+					display: block !important;
+					left: 0 !important;
+					transform: none !important;
+				}
 			}
 		}
 	}
