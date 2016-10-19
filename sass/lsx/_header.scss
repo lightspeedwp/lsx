@@ -84,6 +84,165 @@ nav {
 
 				& > a {
 					@include border-radius(4px);
+
+					@media screen and (min-width: 1200px) {
+						&[href$="/feed/"],
+						&[href*="codepen.io"],
+						&[href*="digg.com"],
+						&[href*="dribbble.com"],
+						&[href*="dropbox.com"],
+						&[href*="facebook.com"],
+						&[href*="flickr.com"],
+						&[href*="foursquare.com"],
+						&[href*="plus.google.com"],
+						&[href*="github.com"],
+						&[href*="instagram.com"],
+						&[href*="linkedin.com"],
+						&[href*="pinterest.com"],
+						&[href*="getpocket.com"],
+						&[href*="polldaddy.com"],
+						&[href*="reddit.com"],
+						&[href*="stumbleupon.com"],
+						&[href*="tumblr.com"],
+						&[href*="twitter.com"],
+						&[href*="vimeo.com"],
+						&[href*="wordpress.com"],
+						&[href*="wordpress.org"],
+						&[href*="youtube.com"],
+						&[href*="mailto:"],
+						&[href*="spotify.com"],
+						&[href*="twitch.tv"] {
+							font-size: 0;
+							line-height: 1;
+							padding: 8px 14px;
+							visibility: hidden;
+
+							&:before {
+								display: block;
+								font: {
+									family: "fontawesome";
+									size: 24px;
+									weight: normal;
+									variant: normal;
+								}
+								line-height: 1;
+								text-decoration: none !important;
+								-moz-transition: color .1s ease-in 0;
+								-webkit-transition: color .1s ease-in 0;
+								text-decoration: inherit;
+								text-transform: none;
+								-moz-osx-font-smoothing: grayscale;
+								-webkit-font-smoothing: antialiased;
+								speak: none;
+								visibility: visible;
+
+								@media screen and (max-width: 991px) {
+									font-size: 30px;
+								}
+							}
+						}
+
+						&[href$="/feed/"]:before {
+							content: "\f09e";
+						}
+
+						&[href*="codepen.io"]:before {
+							content: "\f1cb";
+						}
+
+						&[href*="digg.com"]:before {
+							content: "\f1a6";
+						}
+
+						&[href*="dribbble.com"]:before {
+							content: "\f17d";
+						}
+
+						&[href*="dropbox.com"]:before {
+							content: "\f16b";
+						}
+
+						&[href*="facebook.com"]:before {
+							content: "\f230";
+						}
+
+						&[href*="flickr.com"]:before {
+							content: "\f16e";
+						}
+
+						&[href*="foursquare.com"]:before {
+							content: "\f180";
+						}
+
+						&[href*="plus.google.com"]:before {
+							content: "\f0d5";
+						}
+
+						&[href*="github.com"]:before {
+							content: "\f09b";
+						}
+
+						&[href*="instagram.com"]:before {
+							content: "\f16d";
+						}
+
+						&[href*="linkedin.com"]:before {
+							content: "\f0e1";
+						}
+
+						&[href*="pinterest.com"]:before {
+							content: "\f0d2";
+						}
+
+						&[href*="getpocket.com"]:before {
+							content: "\f265";
+						}
+
+						&[href*="polldaddy.com"]:before {
+							content: "\f128";
+						}
+
+						&[href*="reddit.com"]:before {
+							content: "\f1a1";
+						}
+
+						&[href*="stumbleupon.com"]:before {
+							content: "\f1a4";
+						}
+
+						&[href*="tumblr.com"]:before {
+							content: "\f173";
+						}
+
+						&[href*="twitter.com"]:before {
+							content: "\f099";
+						}
+
+						&[href*="vimeo.com"]:before {
+							content: "\f27d";
+						}
+
+						&[href*="wordpress.com"]:before,
+						&[href*="wordpress.org"]:before {
+							content: "\f19a";
+						}
+
+						&[href*="youtube.com"]:before {
+							content: "\f167";
+						}
+
+						&[href*="mailto:"]:before {
+							content: "\f0e0";
+						}
+
+						&[href*="spotify.com"]:before {
+							content: "\f1bc";
+						}
+
+						&[href*="twitch.tv"]:before {
+							content: "\f1e8";
+						}
+					}
 				}
 			}
 
