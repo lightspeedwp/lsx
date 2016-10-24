@@ -1,5 +1,7 @@
-[![built with gulp.js](https://img.shields.io/badge/build%20with-gulp.js-red.svg)](http://gulpjs.com/)
+[![built with gulp.js](https://img.shields.io/badge/built%20with-gulp.js-green.svg)](http://gulpjs.com/)
 [![build status](https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master)](https://travis-ci.org/lightspeeddevelopment/lsx)
+[![Code Climate](https://codeclimate.com/github/lightspeeddevelopment/lsx/badges/gpa.svg)](https://codeclimate.com/github/lightspeeddevelopment/lsx)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/?branch=master)
 
 # LSX
 * Contributors: the LightSpeed team
