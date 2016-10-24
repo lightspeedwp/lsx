@@ -2,6 +2,7 @@
 [![build status](https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master)](https://travis-ci.org/lightspeeddevelopment/lsx)
 [![Code Climate](https://codeclimate.com/github/lightspeeddevelopment/lsx/badges/gpa.svg)](https://codeclimate.com/github/lightspeeddevelopment/lsx)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/lightspeeddevelopment/lsx/badge.svg?branch=master)](https://coveralls.io/github/lightspeeddevelopment/lsx?branch=master)
 
 # LSX
 * Contributors: the LightSpeed team
