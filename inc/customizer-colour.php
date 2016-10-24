@@ -46,19 +46,19 @@ function lsx_customizer_colour__color_scheme_css_template() {
 	}
 	?>
 	<script type="text/html" id="tmpl-lsx-color-scheme">
-		<?php echo esc_html( lsx_customizer_colour__top_menu_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__header_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__main_menu_get_css( $colors ) ) ?>
+		<?php echo lsx_customizer_colour__top_menu_get_css( $colors ) ?>
+		<?php echo lsx_customizer_colour__header_get_css( $colors ) ?>
+		<?php echo lsx_customizer_colour__main_menu_get_css( $colors ) ?>
 
-		<?php echo esc_html( lsx_customizer_colour__banner_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__body_get_css( $colors ) ) ?>
+		<?php echo lsx_customizer_colour__banner_get_css( $colors ) ?>
+		<?php echo lsx_customizer_colour__body_get_css( $colors ) ?>
 
-		<?php echo esc_html( lsx_customizer_colour__footer_cta_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__footer_widgets_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__footer_get_css( $colors ) ) ?>
+		<?php echo lsx_customizer_colour__footer_cta_get_css( $colors ) ?>
+		<?php echo lsx_customizer_colour__footer_widgets_get_css( $colors ) ?>
+		<?php echo lsx_customizer_colour__footer_get_css( $colors ) ?>
 
-		<?php echo esc_html( lsx_customizer_colour__button_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__button_cta_get_css( $colors ) ) ?>
+		<?php echo lsx_customizer_colour__button_get_css( $colors ) ?>
+		<?php echo lsx_customizer_colour__button_cta_get_css( $colors ) ?>
 	</script>
 	<?php
 }
