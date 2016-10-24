@@ -110,14 +110,18 @@ function lsx_customizer_colour_scheme_controls( $lsx_controls ) {
 		'choices'       =>  $customizer_colour_choices
 	);
 
-	$counter = 0;
-
 	foreach ( $customizer_colour_names as $key => $value ) {
+		$sanitize_callback = 'sanitize_hex_color';
+
+		if ( 'background_color' === $key ) {
+			$sanitize_callback = 'sanitize_hex_color_no_hash';
+		}
+
 		$lsx_controls['settings'][$key] = array(
-			'default'       =>  $customizer_colour_choices['default']['colors'][$counter],
-			'type'	        =>  'theme_mod',
-			'transport'     =>  'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => $customizer_colour_choices['default']['colors'][$key],
+			'type'	            => 'theme_mod',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => $sanitize_callback,
 		);
 
 		$lsx_controls['fields'][$key] = array(
@@ -125,8 +129,6 @@ function lsx_customizer_colour_scheme_controls( $lsx_controls ) {
 			'section'       =>  'colors',
 			'control'       =>  'WP_Customize_Color_Control',
 		);
-
-		$counter++;
 	}
 
 	return $lsx_controls;

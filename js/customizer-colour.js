@@ -4,22 +4,28 @@
  */
 
 ( function( api ) {
-	var cssTemplate = wp.template( 'lsx-color-scheme' );
+	var cssTemplate = wp.template( 'lsx-color-scheme' ),
+		skipUpdateCss = false;
 
 	api.controlConstructor.select = api.Control.extend( {
 		ready: function() {
 			if ( 'color_scheme' === this.id ) {
-				this.setting.bind( 'change', function( value ) {
-					var colors = colorScheme[value].colors;
+				this.setting.bind( 'change', function( _value ) {
+					skipUpdateCss = true;
 
-					_.each( colors, function( color, i ) {
-						if (typeof api( colorSchemeKeys[i] ) == 'function') {
-							api( colorSchemeKeys[i] ).set( color );
-							api.control( colorSchemeKeys[i] ).container.find( '.color-picker-hex' )
-								.data( 'data-default-color', color )
-								.wpColorPicker( 'defaultColor', color );
+					var _colors = colorScheme[_value].colors;
+
+					_.each( _colors, function( _color, _setting ) {
+						if ('function' === typeof api( _setting )) {
+							api( _setting ).set( _color );
+							api.control( _setting ).container.find( '.color-picker-hex' )
+								.data( 'data-default-color', _color )
+								.wpColorPicker( 'defaultColor', _color );
 						}
 					} );
+
+					skipUpdateCss = false;
+					updateCSS();
 				} );
 			}
 		}
@@ -27,25 +33,29 @@
 
 	// Generate the CSS for the current Color Scheme.
 	function updateCSS() {
-		var scheme = api( 'color_scheme' )(),
-			css,
-			colors = _.object( colorSchemeKeys, colorScheme[ scheme ].colors );
+		if (skipUpdateCss) {
+			return;
+		}
+
+		var __scheme = api( 'color_scheme' )(),
+			__css,
+			__colors = colorScheme[ __scheme ].colors;
 
 		// Merge in color scheme overrides.
-		_.each( colorSchemeKeys, function( setting ) {
-			if (typeof api( setting ) == 'function') {
-				colors[ setting ] = api( setting )();
+		_.each( colorSchemeKeys, function( __setting ) {
+			if ('function' === typeof api( __setting )) {
+				__colors[ __setting ] = api( __setting )();
 			}
 		} );
 
-		css = cssTemplate( colors );
-		api.previewer.send( 'update-color-scheme-css', css );
+		__css = cssTemplate( __colors );
+		api.previewer.send( 'update-color-scheme-css', __css );
 	}
 
 	// Update the CSS whenever a color setting is changed.
-	_.each( colorSchemeKeys, function( setting ) {
-		api( setting, function( setting ) {
-			setting.bind( updateCSS );
+	_.each( colorSchemeKeys, function( __setting ) {
+		api( __setting, function( __setting ) {
+			__setting.bind( updateCSS );
 		} );
 	} );
 } )( wp.customize );

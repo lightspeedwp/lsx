@@ -92,8 +92,6 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) {
 			$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 			$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 			$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
-
-			$wp_customize->remove_control( 'background_color' );
 		}
 
 		/**

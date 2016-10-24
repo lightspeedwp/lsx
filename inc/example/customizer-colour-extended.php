@@ -19,8 +19,8 @@ add_filter( 'lsx_customizer_colour_names', 'test_lsx_customizer_colour_names' );
  * Add the new colors (test) in default scheme
  */
 function test_lsx_customizer_colour_choices_default( $array ) {
-	$array[] = '#ddddd1';
-	$array[] = '#eeeee1';
+	$array['test_text_color'] = '#ddddd1';
+	$array['test_text_color_hover'] = '#eeeee1';
 	return $array;
 }
 add_filter( 'lsx_customizer_colour_choices_default', 'test_lsx_customizer_colour_choices_default' );
@@ -31,8 +31,8 @@ add_filter( 'lsx_customizer_colour_choices_default', 'test_lsx_customizer_colour
  * Add the new colors (test) in red scheme
  */
 function test_lsx_customizer_colour_choices_red( $array ) {
-	$array[] = '#ddddd2';
-	$array[] = '#eeeee2';
+	$array['test_text_color'] = '#ddddd2';
+	$array['test_text_color_hover'] = '#eeeee2';
 	return $array;
 }
 add_filter( 'lsx_customizer_colour_choices_red', 'test_lsx_customizer_colour_choices_red' );
@@ -43,8 +43,8 @@ add_filter( 'lsx_customizer_colour_choices_red', 'test_lsx_customizer_colour_cho
  * Add the new colors (test) in orange scheme
  */
 function test_lsx_customizer_colour_choices_orange( $array ) {
-	$array[] = '#ddddd3';
-	$array[] = '#eeeee3';
+	$array['test_text_color'] = '#ddddd3';
+	$array['test_text_color_hover'] = '#eeeee3';
 	return $array;
 }
 add_filter( 'lsx_customizer_colour_choices_orange', 'test_lsx_customizer_colour_choices_orange' );
@@ -55,8 +55,8 @@ add_filter( 'lsx_customizer_colour_choices_orange', 'test_lsx_customizer_colour_
  * Add the new colors (test) in green scheme
  */
 function test_lsx_customizer_colour_choices_green( $array ) {
-	$array[] = '#ddddd4';
-	$array[] = '#eeeee4';
+	$array['test_text_color'] = '#ddddd4';
+	$array['test_text_color_hover'] = '#eeeee4';
 	return $array;
 }
 add_filter( 'lsx_customizer_colour_choices_green', 'test_lsx_customizer_colour_choices_green' );
@@ -67,8 +67,8 @@ add_filter( 'lsx_customizer_colour_choices_green', 'test_lsx_customizer_colour_c
  * Add the new colors (test) in brown scheme
  */
 function test_lsx_customizer_colour_choices_brown( $array ) {
-	$array[] = '#ddddd5';
-	$array[] = '#eeeee5';
+	$array['test_text_color'] = '#ddddd5';
+	$array['test_text_color_hover'] = '#eeeee5';
 	return $array;
 }
 add_filter( 'lsx_customizer_colour_choices_brown', 'test_lsx_customizer_colour_choices_brown' );
@@ -83,30 +83,62 @@ function test_lsx_customizer_colour_choices( $array ) {
 	$array['test'] = array(
 		'label'  => __( 'Test', 'lsx' ),
 		'colors' => array(
-			// Button
-			'#428bca', '#2a6496', '#ffffff', '#ffffff',
-			// Button CTA
-			'#f7941d', '#f7741d', '#ffffff', '#ffffff',
-			// Top Menu
-			'#333333', '#ffffff', '#428bca',
-			// Header
-			'#ffffff', '#337ab7', '#23527c', '#777777',
-			// Main Menu
-			'#428bca', '#333333', '#555555', '#ffffff', '#ffffff',
-			// Banner
-			'#2a6496', '#ffffff', '#ffffff',
-			// Body
-			'#ffffff', '#dddddd', '#333333', '#333333', '#337ab7', '#23527c',
-			// Footer CTA
-			'#428bca', '#ffffff', '#eeeeee', '#dddddd',
-			// Footer Widgets
-			'#333333', '#eeeeee', '#dddddd', '#cccccc',
-			// Footer
-			'#232222', '#ffffff', '#337ab7', '#969696',
-			// Body section full
-			'#428bca', '#ffffff', '#333333', '#ffffff',
-			// Test
-			'#ddddd6', '#eeeee6'
+			'button_background_color'                => '#428bca',
+			'button_background_hover_color'          => '#2a6496',
+			'button_text_color'                      => '#ffffff',
+			'button_text_color_hover'                => '#ffffff',
+
+			'button_cta_background_color'            => '#f7941d',
+			'button_cta_background_hover_color'      => '#f7741d',
+			'button_cta_text_color'                  => '#ffffff',
+			'button_cta_text_color_hover'            => '#ffffff',
+
+			'top_menu_background_color'              => '#333333',
+			'top_menu_text_color'                    => '#ffffff',
+			'top_menu_text_hover_color'              => '#428bca',
+
+			'header_background_color'                => '#ffffff',
+			'header_title_color'                     => '#337ab7',
+			'header_title_hover_color'               => '#23527c',
+			'header_description_color'               => '#777777',
+
+			'main_menu_background_hover1_color'      => '#428bca',
+			'main_menu_background_hover2_color'      => '#333333',
+			'main_menu_text_color'                   => '#555555',
+			'main_menu_text_hover1_color'            => '#ffffff',
+			'main_menu_text_hover2_color'            => '#ffffff',
+
+			'banner_background_color'                => '#2a6496',
+			'banner_text_color'                      => '#ffffff',
+			'banner_text_image_color'                => '#ffffff',
+
+			'body_line_color'                        => '#dddddd',
+			'body_text_heading_color'                => '#333333',
+			'body_text_color'                        => '#333333',
+			'body_link_color'                        => '#337ab7',
+			'body_link_hover_color'                  => '#23527c',
+			'body_section_full_background_color'     => '#428bca',
+			'body_section_full_text_color'           => '#ffffff',
+			'body_section_full_cta_background_color' => '#333333',
+			'body_section_full_cta_text_color'       => '#ffffff',
+
+			'footer_cta_background_color'            => '#428bca',
+			'footer_cta_text_color'                  => '#ffffff',
+			'footer_cta_link_color'                  => '#eeeeee',
+			'footer_cta_link_hover_color'            => '#dddddd',
+
+			'footer_widgets_background_color'        => '#333333',
+			'footer_widgets_text_color'              => '#eeeeee',
+			'footer_widgets_link_color'              => '#dddddd',
+			'footer_widgets_link_hover_color'        => '#cccccc',
+
+			'footer_background_color'                => '#232222',
+			'footer_text_color'                      => '#ffffff',
+			'footer_link_color'                      => '#337ab7',
+			'footer_link_hover_color'                => '#969696',
+
+			'test_text_color'                        => '#ddddd6',
+			'test_text_color_hover'                  => '#eeeee6',
 		)
 	);
 
@@ -256,7 +288,7 @@ function test_lsx_customizer_colour_selectors_body( $css, $colors ) {
 	/* Body TEST */
 
 	.selector-test-body {
-		attr1: {$colors['body_background_color']};
+		attr1: {$colors['background_color']};
 		attr2: {$colors['body_line_color']};
 		attr3: {$colors['body_text_heading_color']};
 		attr4: {$colors['body_text_color']};

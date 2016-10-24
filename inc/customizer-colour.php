@@ -46,19 +46,19 @@ function lsx_customizer_colour__color_scheme_css_template() {
 	}
 	?>
 	<script type="text/html" id="tmpl-lsx-color-scheme">
-		<?php echo esc_html( lsx_customizer_colour__top_menu_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__header_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__main_menu_get_css( $colors ) ) ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__top_menu_get_css( $colors ) ) ); ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__header_get_css( $colors ) ) ); ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__main_menu_get_css( $colors ) ) ); ?>
 
-		<?php echo esc_html( lsx_customizer_colour__banner_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__body_get_css( $colors ) ) ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__banner_get_css( $colors ) ) ); ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__body_get_css( $colors ) ) ); ?>
 
-		<?php echo esc_html( lsx_customizer_colour__footer_cta_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__footer_widgets_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__footer_get_css( $colors ) ) ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__footer_cta_get_css( $colors ) ) ); ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__footer_widgets_get_css( $colors ) ) ); ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__footer_get_css( $colors ) ) ); ?>
 
-		<?php echo esc_html( lsx_customizer_colour__button_get_css( $colors ) ) ?>
-		<?php echo esc_html( lsx_customizer_colour__button_cta_get_css( $colors ) ) ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__button_get_css( $colors ) ) ); ?>
+		<?php echo str_replace( '&gt;', '>', esc_html( lsx_customizer_colour__button_cta_get_css( $colors ) ) ); ?>
 	</script>
 	<?php
 }
@@ -141,16 +141,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__button_css', 9999 );
  * Get button CSS theme mods.
  */
 function lsx_customizer_colour__button_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'button_background_color' =>       get_theme_mod( 'button_background_color',       $colors['button_background_color'] ),
@@ -416,16 +407,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__button_cta_css', 9999 
  * Get button cta CSS theme mods.
  */
 function lsx_customizer_colour__button_cta_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'button_cta_background_color' =>       get_theme_mod( 'button_cta_background_color',       $colors['button_cta_background_color'] ),
@@ -628,16 +610,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__top_menu_css', 9999 );
  * Get top menu CSS theme mods.
  */
 function lsx_customizer_colour__top_menu_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'top_menu_background_color' => get_theme_mod( 'top_menu_background_color', $colors['top_menu_background_color'] ),
@@ -763,16 +736,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__header_css', 9999 );
  * Get header CSS theme mods.
  */
 function lsx_customizer_colour__header_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'header_background_color'  => get_theme_mod( 'header_background_color',  $colors['header_background_color'] ),
@@ -877,16 +841,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__main_menu_css', 9999 )
  * Get main menu CSS theme mods.
  */
 function lsx_customizer_colour__main_menu_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'main_menu_background_hover1_color' => get_theme_mod( 'main_menu_background_hover1_color', $colors['main_menu_background_hover1_color'] ),
@@ -1045,16 +1000,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__banner_css', 9999 );
  * Get banner CSS theme mods.
  */
 function lsx_customizer_colour__banner_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'banner_background_color' => get_theme_mod( 'banner_background_color', $colors['banner_background_color'] ),
@@ -1150,25 +1096,21 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__body_css', 9999 );
  * Get body CSS theme mods.
  */
 function lsx_customizer_colour__body_get_theme_mods() {
-	global $customizer_colour_names;
+	$colors = lsx_customizer_colour__get_color_scheme();
 
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
+	$background_color = get_theme_mod( 'background_color', $colors['background_color'] );
+	
+	if ( '#' !== substr( $background_color, 0, 1 ) ) {
+		$background_color = '#' . $background_color;
 	}
 
 	return array(
-		'body_background_color' =>   get_theme_mod( 'body_background_color',   $colors['body_background_color'] ),
-		'body_line_color' =>         get_theme_mod( 'body_line_color',         $colors['body_line_color'] ),
-		'body_text_heading_color' => get_theme_mod( 'body_text_heading_color', $colors['body_text_heading_color'] ),
-		'body_text_color' =>         get_theme_mod( 'body_text_color',         $colors['body_text_color'] ),
-		'body_link_color' =>         get_theme_mod( 'body_link_color',         $colors['body_link_color'] ),
-		'body_link_hover_color' =>   get_theme_mod( 'body_link_hover_color',   $colors['body_link_hover_color'] ),
-
+		'background_color' =>                       $background_color,
+		'body_line_color' =>                        get_theme_mod( 'body_line_color',                        $colors['body_line_color'] ),
+		'body_text_heading_color' =>                get_theme_mod( 'body_text_heading_color',                $colors['body_text_heading_color'] ),
+		'body_text_color' =>                        get_theme_mod( 'body_text_color',                        $colors['body_text_color'] ),
+		'body_link_color' =>                        get_theme_mod( 'body_link_color',                        $colors['body_link_color'] ),
+		'body_link_hover_color' =>                  get_theme_mod( 'body_link_hover_color',                  $colors['body_link_hover_color'] ),
 		'body_section_full_background_color' =>     get_theme_mod( 'body_section_full_background_color',     $colors['body_section_full_background_color'] ),
 		'body_section_full_text_color' =>           get_theme_mod( 'body_section_full_text_color',           $colors['body_section_full_text_color'] ),
 		'body_section_full_cta_background_color' => get_theme_mod( 'body_section_full_cta_background_color', $colors['body_section_full_cta_background_color'] ),
@@ -1181,8 +1123,6 @@ function lsx_customizer_colour__body_get_theme_mods() {
  */
 function lsx_customizer_colour__body_get_css( $colors ) {
 	global $customizer_colour_names;
-	
-	$colors_template = array();
 
 	foreach ( $customizer_colour_names as $key => $value ) {
 		$colors_template[$key] = '';
@@ -1201,7 +1141,6 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 		 */
 
 		body {
-			background-color: {$colors['body_background_color']};
 			color: {$colors['body_text_color']};
 			
 			&.archive.author,
@@ -1266,7 +1205,7 @@ function lsx_customizer_colour__body_get_css( $colors ) {
 		}
 
 		.wrap {
-			background-color: {$colors['body_background_color']};
+			background-color: {$colors['background_color']};
 		}
 
 		h1, h2, h3, h4, h5, h6 {
@@ -1473,6 +1412,7 @@ CSS;
 
 	$css = apply_filters( 'lsx_customizer_colour_selectors_body', $css, $colors );
 	$css = lsx_customizer_colour__scss_to_css( $css );
+
 	return $css;
 }
 
@@ -1517,16 +1457,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__footer_cta_css', 9999 
  * Get footer cta CSS theme mods.
  */
 function lsx_customizer_colour__footer_cta_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'footer_cta_background_color' => get_theme_mod( 'footer_cta_background_color', $colors['footer_cta_background_color'] ),
@@ -1628,16 +1559,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__footer_widgets_css', 9
  * Get footer widgets CSS theme mods.
  */
 function lsx_customizer_colour__footer_widgets_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'footer_widgets_background_color' => get_theme_mod( 'footer_widgets_background_color', $colors['footer_widgets_background_color'] ),
@@ -1743,16 +1665,7 @@ add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__footer_css', 9999 );
  * Get footer CSS theme mods.
  */
 function lsx_customizer_colour__footer_get_theme_mods() {
-	global $customizer_colour_names;
-
-	$color_scheme = lsx_customizer_colour__get_color_scheme();
-	$colors       = array();
-	$counter      = 0;
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$colors[$key] = $color_scheme[$counter];
-		$counter++;
-	}
+	$colors = lsx_customizer_colour__get_color_scheme();
 
 	return array(
 		'footer_background_color' => get_theme_mod( 'footer_background_color', $colors['footer_background_color'] ),
