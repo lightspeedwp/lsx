@@ -2,6 +2,17 @@
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
+ * Enable extra attributes (srcset, sizes) in img tag
+ */
+function lsx_kses_allowed_html( $allowedtags, $context ) {
+	$allowedtags['img']['srcset'] = true;
+	$allowedtags['img']['sizes'] = true;
+
+	return $allowedtags;
+}
+add_filter( 'wp_kses_allowed_html', 'lsx_kses_allowed_html', 10, 2 );
+
+/**
  * Add and remove body_class() classes
  */
 function lsx_body_class($classes) {
