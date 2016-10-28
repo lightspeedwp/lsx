@@ -32,6 +32,7 @@
 * Added in a lsx_sidebar_enable filter so that plugins and child themes can disable the sidebar by force if they need to
 * Parallax banner: fixed parallax effect (doesn't run it when don't exist a image and container)
 * LSX Banners: making LSX compatible with new LSX Banners slider
+* Enabled extra attributes (srcset, sizes) in img tag (add_filter: wp_kses_allowed_html)
 
 ### 1.7.3
 * Removed blue banner (with title) from the homepage (always)
