@@ -247,16 +247,6 @@ This you need to do while inside the themes directory.
 Wait for the terminal to finish and test by running
 `gulp`
 
-=== 3: Install Composer ===
-
-Run the following two commands, this will install all the Composer Modules. 
-
-This you need to do while inside the themes directory.
-`curl -sS https://getcomposer.org/installer | php`
- 
-Wait for the terminal to finish and test by running
-`php composer.phar install`
-
 = Development Workflow =
 
 ### Components Upgrade

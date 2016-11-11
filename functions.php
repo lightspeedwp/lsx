@@ -9,8 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 define('LSX_VERSION', '1.8.0');
 
 require get_template_directory() . '/inc/config.php';
-//require get_template_directory() . '/inc/example/customizer-colour-extended.php';
-require get_template_directory() . '/inc/customizer-colour-options.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/sanitize.php';
 require get_template_directory() . '/inc/layout.php';
@@ -82,58 +80,6 @@ function lsx_customizer_core_controls( $lsx_controls ) {
 	return $lsx_controls;
 }
 add_filter( 'lsx_customizer_controls', 'lsx_customizer_core_controls' );
-
-/**
- * Returns an array of the colour scheme picker.
- *
- * @package 	lsx
- * @subpackage	functions
- * @category	customizer
- * @return		$lsx_controls array()
- */
-function lsx_customizer_colour_scheme_controls( $lsx_controls ) {
-	global $customizer_colour_names;
-	global $customizer_colour_choices;
-	
-	$lsx_controls['settings']['color_scheme'] = array(
-		'default'       =>  'default',
-		'type'	        =>  'theme_mod',
-		'transport'     =>  'postMessage',
-	);
-
-	$lsx_controls['fields']['color_scheme'] = array(
-		'label'         =>  esc_html__( 'Base Color Scheme', 'lsx' ),
-		'section'       =>  'colors',
-		'type'          =>  'select',
-		'priority'      =>  1,
-		'control'       =>  'LSX_Customize_Colour_Control',
-		'choices'       =>  $customizer_colour_choices
-	);
-
-	foreach ( $customizer_colour_names as $key => $value ) {
-		$sanitize_callback = 'sanitize_hex_color';
-
-		if ( 'background_color' === $key ) {
-			$sanitize_callback = 'sanitize_hex_color_no_hash';
-		}
-
-		$lsx_controls['settings'][$key] = array(
-			'default'           => $customizer_colour_choices['default']['colors'][$key],
-			'type'	            => 'theme_mod',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => $sanitize_callback,
-		);
-
-		$lsx_controls['fields'][$key] = array(
-			'label'         =>  $value,
-			'section'       =>  'colors',
-			'control'       =>  'WP_Customize_Color_Control',
-		);
-	}
-
-	return $lsx_controls;
-}
-add_filter( 'lsx_customizer_controls', 'lsx_customizer_colour_scheme_controls' );
 
 /**
  * Returns an array of the layout panel.
