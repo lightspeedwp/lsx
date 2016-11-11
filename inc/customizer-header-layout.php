@@ -52,7 +52,7 @@ class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		// 
-		wp_enqueue_script( 'lsx-header-layout-control', get_template_directory_uri() .'/js/customizer-header-layout.js', array('jquery'), null, true );
+		wp_enqueue_script( 'lsx-header-layout-control', get_template_directory_uri() .'/js/customizer-header-layout.js', array('jquery'), LSX_VERSION, true );
 	}
 
 	/**

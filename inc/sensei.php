@@ -125,7 +125,7 @@ add_filter( 'sensei_disable_styles', '__return_true' );
  * @category styles
  */
 function lsx_sensei_styles() {
-    wp_enqueue_style( 'sensei', get_template_directory_uri() . '/css/sensei.css' );
+    wp_enqueue_style( 'sensei', get_template_directory_uri() . '/css/sensei.css', array(), LSX_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'lsx_sensei_styles' );
 

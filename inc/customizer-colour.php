@@ -29,7 +29,7 @@ function lsx_customizer_colour__scss_to_css( $scss ) {
  * 
  */
 function lsx_customizer_colour__add_footer_styles() {
-	wp_enqueue_style( 'lsx_customizer_colour', get_stylesheet_uri() );
+	wp_enqueue_style( 'lsx_customizer_colour', get_stylesheet_uri(), array(), LSX_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'lsx_customizer_colour__add_footer_styles', 999 );
 
@@ -1750,7 +1750,7 @@ class LSX_Customize_Colour_Control extends WP_Customize_Control {
 	 * Enqueue control related scripts/styles.
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'lsx-colour-control', get_template_directory_uri() .'/js/customizer-colour.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), null, true );
+		wp_enqueue_script( 'lsx-colour-control', get_template_directory_uri() .'/js/customizer-colour.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), LSX_VERSION, true );
 		wp_localize_script( 'lsx-colour-control', 'colorScheme', $this->choices );
 
 		global $customizer_colour_names;

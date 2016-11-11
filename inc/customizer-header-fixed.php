@@ -52,7 +52,7 @@ class LSX_Customize_Header_Fixed_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		// 
-		wp_enqueue_script( 'lsx-header-fixed-control', get_template_directory_uri() .'/js/customizer-header-fixed.js', array('jquery'), null, true );
+		wp_enqueue_script( 'lsx-header-fixed-control', get_template_directory_uri() .'/js/customizer-header-fixed.js', array('jquery'), LSX_VERSION, true );
 	}
 
 	/**

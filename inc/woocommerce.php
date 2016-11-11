@@ -69,8 +69,8 @@ function lsx_woocommerce_after_content(){ ?>
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 function lsx_woocommerce_styles() {
-    wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/css/woocommerce-layout.css', array(), WC_VERSION, 'all' );
-    wp_enqueue_style( 'woocommerce-smallscreen', get_template_directory_uri() . '/css/woocommerce-smallscreen.css', array( 'woocommerce-layout' ), WC_VERSION, 'only screen and (max-width: 767px)' );
-    wp_enqueue_style( 'woocommerce-general', get_template_directory_uri() . '/css/woocommerce.css', array(), WC_VERSION, 'all' );
+    wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/css/woocommerce-layout.css', array(), LSX_VERSION, 'all' );
+    wp_enqueue_style( 'woocommerce-smallscreen', get_template_directory_uri() . '/css/woocommerce-smallscreen.css', array( 'woocommerce-layout' ), LSX_VERSION, 'only screen and (max-width: 767px)' );
+    wp_enqueue_style( 'woocommerce-general', get_template_directory_uri() . '/css/woocommerce.css', array(), LSX_VERSION, 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'lsx_woocommerce_styles' );

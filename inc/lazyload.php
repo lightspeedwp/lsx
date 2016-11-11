@@ -59,9 +59,9 @@ class LSX_LazyLoadImages {
 	}
 
 	static function add_scripts() {
-		wp_enqueue_script( 'lazysizes', get_template_directory_uri() .'/js/vendor/lazysizes.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'lazysizes', get_template_directory_uri() .'/js/vendor/lazysizes.min.js', array( 'jquery' ), LSX_VERSION, true );
 		// Plugin that enables use lazysizes in brackground images
-		//wp_enqueue_script( 'lazysizes', get_template_directory_uri() .'/js/vendor/ls.unveilhooks.min.js', array( 'jquery', 'lazysizes' ), null, true );
+		//wp_enqueue_script( 'lazysizes', get_template_directory_uri() .'/js/vendor/ls.unveilhooks.min.js', array( 'jquery', 'lazysizes' ), LSX_VERSION, true );
 	}
 
 	static function filter_images( $content ) {

@@ -18,7 +18,7 @@
  */
 
 function lsx_events_styles() {
-    wp_enqueue_style( 'events', get_template_directory_uri() . '/css/the-events-calendar.css' );
+    wp_enqueue_style( 'events', get_template_directory_uri() . '/css/the-events-calendar.css', array(), LSX_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'lsx_events_styles' );
 
