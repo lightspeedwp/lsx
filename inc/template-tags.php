@@ -475,12 +475,7 @@ if(!function_exists('lsx_nav_menu')){
 				);
 				?>
 		   		</nav>
-	    <?php } elseif(is_customize_preview()) { ?>
-	    		<nav class="primary-navbar collapse navbar-collapse">
-	    			<div class="alert alert-info" role="alert"><?php esc_html_e( 'Create a menu and assign it here via the "Navigation" panel.', 'lsx' );?></div>
-	    		</nav>
-	    </div>
-	  	<?php }
+	    <?php }
 	}
 }
 
