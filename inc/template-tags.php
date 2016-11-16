@@ -487,14 +487,9 @@ if(!function_exists('lsx_nav_menu')){
  * @category	sitemap
  */
 function lsx_sitemap_pages(){
-	$posts_per_page = get_option('posts_per_page');
-	if(false == $posts_per_page){
-		$posts_per_page = 10;
-	}
-	
 	$page_args = array(
 		'post_type'		=>	'page',
-		'posts_per_page'=>	$posts_per_page,
+		'posts_per_page'=>	99,
 		'post_status'	=>	'publish',
 		'post_type'		=>	'page',
 	);
@@ -521,24 +516,18 @@ function lsx_sitemap_pages(){
  * @category	sitemap
  */
 function lsx_sitemap_custom_post_type(){
-	
-	$posts_per_page = get_option('posts_per_page');
-	if(false == $posts_per_page){
-		$posts_per_page = 10;
-	}
-	
 	$args = array(
-			'public'				=> true,
-			'_builtin' 				=> false
+		'public'				=> true,
+		'_builtin' 				=> false
 	);
 	$post_types = get_post_types($args , 'names');
 	foreach($post_types as $post_type){	
 
 		$post_type_args = array(
-				'post_type'		=>	'page',
-				'posts_per_page'=>	$posts_per_page,
-				'post_status'	=>	'publish',
-				'post_type'		=>	$post_type,
+			'post_type'		=>	'page',
+			'posts_per_page'=>	99,
+			'post_status'	=>	'publish',
+			'post_type'		=>	$post_type,
 		);
 		$post_type_items = new WP_Query($post_type_args);
 		
