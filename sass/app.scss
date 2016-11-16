@@ -282,6 +282,27 @@
 	}
 }
 
+.give-form {
+	.give-input {
+		@include lsx-form-field;
+		@include lsx-form-field-give-override;
+	}
+
+	.give-btn {
+		@include lsx-button;
+	}
+
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin-top: 0px;
+		margin-bottom: 7px;
+	}
+
+	label.floatlabel-label {
+		display: none !important;
+	}
+}
+
 .btn-mobile-fullwidth {
 	@media screen and (max-width: 767px) {
 		width: 100%;

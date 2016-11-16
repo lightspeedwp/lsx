@@ -446,6 +446,22 @@ $primary-lighter: #4a9de4;
 	}
 }
 
+@mixin lsx-form-field-give-override {
+	font-size: 16px !important;
+	padding: 8px 14px !important;
+	color: $dark-grey !important;
+	border: 3px solid #ddd !important;
+	@include border-radius(3px !important);
+
+	&:hover {
+		border: 3px solid #ddd !important;
+	}
+
+	&:focus {
+		border-color: #66afe9 !important;
+	}
+}
+
 @mixin lsx-parallax-banner {
 	.page-banner-wrap {
 		display: -webkit-box;
@@ -550,8 +566,8 @@ $primary-lighter: #4a9de4;
 			}*/
 		}
 
-		// NOT WordPress admin bar + NOT Menu fixed
-		&:not(.admin-bar):not(.top-menu-fixed) {
+		// NOT WordPress admin bar + NOT Menu fixed + EXIST Top Menu
+		&:not(.admin-bar):not(.top-menu-fixed).has-top-menu {
 			.page-banner {
 				@media only screen and (min-width: 992px) {
 					top: 0px - 176px;
@@ -572,8 +588,8 @@ $primary-lighter: #4a9de4;
 			}
 		}
 
-		// WordPress admin bar + NOT Menu fixed
-		&.admin-bar:not(.top-menu-fixed) {
+		// WordPress admin bar + NOT Menu fixed + EXIST Top Menu
+		&.admin-bar:not(.top-menu-fixed).has-top-menu {
 			.page-banner {
 				@media only screen and (min-width: 768px) and (max-width: 782px) {
 					top: -46px;
@@ -620,8 +636,8 @@ $primary-lighter: #4a9de4;
 			}
 		}
 
-		// NOT WordPress admin bar + Menu fixed
-		&:not(.admin-bar).top-menu-fixed {
+		// NOT WordPress admin bar + Menu fixed + EXIST Top Menu
+		&:not(.admin-bar).top-menu-fixed.has-top-menu {
 			.page-banner {
 				@media only screen and (min-width: 768px) and (max-width: 991px) {
 					margin-top: 143px;
@@ -641,8 +657,8 @@ $primary-lighter: #4a9de4;
 			}
 		}
 
-		// WordPress admin bar + Menu fixed
-		&.admin-bar.top-menu-fixed {
+		// WordPress admin bar + Menu fixed + EXIST Top Menu
+		&.admin-bar.top-menu-fixed.has-top-menu {
 			.page-banner {
 				@media only screen and (min-width: 768px)and (max-width: 782px) {
 					margin-top: 143px - 46px;
@@ -685,12 +701,148 @@ $primary-lighter: #4a9de4;
 				}
 			}
 		}
+
+		// NOT WordPress admin bar + NOT Menu fixed + NOT EXIST Top Menu
+		&:not(.admin-bar):not(.top-menu-fixed):not(.has-top-menu) {
+			.page-banner {
+				@media only screen and (min-width: 992px) {
+					top: 0px - (176px - 45px);
+					margin-bottom: 0px - (176px - 45px);
+				}
+
+				.container {
+					@media only screen and (min-width: 992px) {
+						margin-top: 50px + (176px - 45px);
+					}
+				}
+
+				.video-background {
+					@media only screen and (min-width: 992px) {
+						margin-top: (176px - 45px);
+					}
+				}
+			}
+		}
+
+		// WordPress admin bar + NOT Menu fixed + NOT EXIST Top Menu
+		&.admin-bar:not(.top-menu-fixed):not(.has-top-menu) {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 782px) {
+					top: -46px;
+					margin-bottom: -46px;
+				}
+
+				@media only screen and (min-width: 783px) and (max-width: 991px) {
+					top: -32px;
+					margin-bottom: -32px;
+				}
+
+				@media only screen and (min-width: 992px) {
+					top: 0px - (176px - 45px) - 32px;
+					margin-bottom: 0px - (176px - 45px) - 32px;
+				}
+
+				.container {
+					@media only screen and (min-width: 768px) and (max-width: 782px) {
+						margin-top: 50px + 46px;
+					}
+
+					@media only screen and (min-width: 783px) and (max-width: 991px) {
+						margin-top: 50px + 32px;
+					}
+
+					@media only screen and (min-width: 992px) {
+						margin-top: 50px + (176px - 45px);
+					}
+				}
+
+				.video-background {
+					@media only screen and (min-width: 768px) and (max-width: 782px) {
+						margin-top: 46px;
+					}
+
+					@media only screen and (min-width: 783px) and (max-width: 991px) {
+						margin-top: 32px;
+					}
+
+					@media only screen and (min-width: 992px) {
+						margin-top: 32px + (176px - 45px);
+					}
+				}
+			}
+		}
+
+		// NOT WordPress admin bar + Menu fixed + NOT EXIST Top Menu
+		&:not(.admin-bar).top-menu-fixed:not(.has-top-menu) {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 991px) {
+					margin-top: (143px - 45px);
+				}
+
+				.container {
+					@media only screen and (min-width: 992px) {
+						margin-top: 50px + (176px - 45px);
+					}
+				}
+
+				.video-background {
+					@media only screen and (min-width: 992px) {
+						margin-top: (176px - 45px);
+					}
+				}
+			}
+		}
+
+		// WordPress admin bar + Menu fixed + NOT EXIST Top Menu
+		&.admin-bar.top-menu-fixed:not(.has-top-menu) {
+			.page-banner {
+				@media only screen and (min-width: 768px)and (max-width: 782px) {
+					margin-top: (143px - 45px) - 46px;
+				}
+
+				@media only screen and (min-width: 783px) and (max-width: 991px) {
+					margin-top: (143px - 45px) - 32px;
+				}
+
+				@media only screen and (min-width: 992px) {
+					margin-top: -32px;
+				}
+
+				.container {
+					@media only screen and (min-width: 768px) and (max-width: 782px) {
+						margin-top: 50px + 46px;
+					}
+
+					@media only screen and (min-width: 783px) and (max-width: 991px) {
+						margin-top: 50px + 32px;
+					}
+
+					@media only screen and (min-width: 992px) {
+						margin-top: 50px + (176px - 45px);
+					}
+				}
+
+				.video-background {
+					@media only screen and (min-width: 768px) and (max-width: 782px) {
+						margin-top: 46px;
+					}
+
+					@media only screen and (min-width: 783px) and (max-width: 991px) {
+						margin-top: 32px;
+					}
+
+					@media only screen and (min-width: 992px) {
+						margin-top: 32px + (176px - 45px);
+					}
+				}
+			}
+		}
 	}
 
 	// NOT Home
 	&:not(.home) {
-		// NOT WordPress admin bar + Menu fixed
-		&:not(.admin-bar).top-menu-fixed {
+		// NOT WordPress admin bar + Menu fixed + EXIST Top Menu
+		&:not(.admin-bar).top-menu-fixed.has-top-menu {
 			.page-banner {
 				@media only screen and (min-width: 768px) and (max-width: 991px) {
 					margin-top: 143px;
@@ -702,8 +854,8 @@ $primary-lighter: #4a9de4;
 			}
 		}
 
-		// WordPress admin bar + Menu fixed
-		&.admin-bar.top-menu-fixed {
+		// WordPress admin bar + Menu fixed + EXIST Top Menu
+		&.admin-bar.top-menu-fixed.has-top-menu {
 			.page-banner {
 				@media only screen and (min-width: 768px) and (max-width: 991px) {
 					margin-top: 143px;
@@ -711,6 +863,32 @@ $primary-lighter: #4a9de4;
 
 				@media only screen and (min-width: 992px) {
 					margin-top: 176px;
+				}
+			}
+		}
+
+		// NOT WordPress admin bar + Menu fixed + NOT EXIST Top Menu
+		&:not(.admin-bar).top-menu-fixed:not(.has-top-menu) {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 991px) {
+					margin-top: (143px - 45px);
+				}
+
+				@media only screen and (min-width: 992px) {
+					margin-top: (176px - 45px);
+				}
+			}
+		}
+
+		// WordPress admin bar + Menu fixed + NOT EXIST Top Menu
+		&.admin-bar.top-menu-fixed:not(.has-top-menu) {
+			.page-banner {
+				@media only screen and (min-width: 768px) and (max-width: 991px) {
+					margin-top: (143px - 45px);
+				}
+
+				@media only screen and (min-width: 992px) {
+					margin-top: (176px - 45px);
 				}
 			}
 		}

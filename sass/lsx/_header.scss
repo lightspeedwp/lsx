@@ -1095,18 +1095,40 @@ nav {
 		bottom: 0;
 	}
 
-	// Menu fixed + NOT Banner
-	body.top-menu-fixed:not(.page-has-banner) & {
+	// 1 = Menu is fixed + NOT EXIST Banner + EXIST Top Menu
+	// 2 = Menu is fixed + NOT EXIST Banner + NOT EXIST Top Menu
+	
+	$wrap_margin_top_768_991:  143px (143px - 45px);
+	$wrap_margin_top_992_1199: 176px (176px - 45px);
+	$wrap_margin_top_1200_x:   176px (176px - 45px);
+
+	// Menu is fixed + NOT EXIST Banner + EXIST Top Menu
+	body.top-menu-fixed:not(.page-has-banner).has-top-menu & {
 		@media only screen and (min-width: 768px) and (max-width: 991px) {
-			margin-top: 143px;
+			margin-top: nth($wrap_margin_top_768_991, 1);
 		}
 
 		@media only screen and (min-width: 992px) and (max-width: 1199px) {
-			margin-top: 176px;
+			margin-top: nth($wrap_margin_top_992_1199, 1);
 		}
 
 		@media only screen and (min-width: 1200px) {
-			margin-top: 176px;
+			margin-top: nth($wrap_margin_top_1200_x, 1);
+		}
+	}
+
+	// Menu is fixed + NOT EXIST Banner + NOT EXIST Top Menu
+	body.top-menu-fixed:not(.page-has-banner):not(.has-top-menu) & {
+		@media only screen and (min-width: 768px) and (max-width: 991px) {
+			margin-top: nth($wrap_margin_top_768_991, 2);
+		}
+
+		@media only screen and (min-width: 992px) and (max-width: 1199px) {
+			margin-top: nth($wrap_margin_top_992_1199, 2);
+		}
+
+		@media only screen and (min-width: 1200px) {
+			margin-top: nth($wrap_margin_top_1200_x, 2);
 		}
 	}
 
