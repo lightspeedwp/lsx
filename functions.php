@@ -49,7 +49,7 @@ if(class_exists('Sensei_WC')){
 function lsx_customizer_core_controls( $lsx_controls ) {
 	$lsx_controls['sections']['lsx-core'] = array(
 		'title'       =>  esc_html__( 'Core Settings', 'lsx' ),
-		'description' => __( 'Change the core settings.', 'lsx' ),
+		'description' => esc_html__( 'Change the core settings.', 'lsx' ),
 		'priority'    => 21
 	);
 
@@ -60,7 +60,7 @@ function lsx_customizer_core_controls( $lsx_controls ) {
 	);
 
 	$lsx_controls['fields']['lsx_lazyload_status'] = array(
-		'label'         =>  __( 'Lazy Loading Images', 'lsx' ),
+		'label'         =>  esc_html__( 'Lazy Loading Images', 'lsx' ),
 		'section'       =>  'lsx-core',
 		'type'          =>  'checkbox',
 	);
@@ -72,7 +72,7 @@ function lsx_customizer_core_controls( $lsx_controls ) {
 	);
 
 	$lsx_controls['fields']['lsx_preloader_content_status'] = array(
-		'label'         =>  __( 'Preloader Content', 'lsx' ),
+		'label'         =>  esc_html__( 'Preloader Content', 'lsx' ),
 		'section'       =>  'lsx-core',
 		'type'          =>  'checkbox',
 	);
@@ -96,14 +96,14 @@ function lsx_customizer_layout_controls($lsx_controls) {
 			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
 	);
 	$lsx_controls['fields']['lsx_header_layout'] = array(
-			'label'         =>  __('Header','lsx'),
+			'label'         =>  esc_html__('Header','lsx'),
 			'section'       =>  'lsx-layout',
 			'control'   =>  'LSX_Customize_Header_Layout_Control',
 			'choices'		=>	array('central','expanded','inline')
 	);	
 	$lsx_controls['sections']['lsx-layout'] = array(
 			'title'       =>  esc_html__( 'Layout', 'lsx' ),
-			'description' => __( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
+			'description' => esc_html__( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
 			'priority' => 22
 	);
 	$lsx_controls['settings']['lsx_layout']  = array(
@@ -117,7 +117,7 @@ function lsx_customizer_layout_controls($lsx_controls) {
 			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
 	);
 	$lsx_controls['fields']['lsx_header_fixed'] = array(
-			'label'         =>  __('Fixed Header','lsx'),
+			'label'         =>  esc_html__('Fixed Header','lsx'),
 			'section'       =>  'lsx-layout',
 			'type'       =>  'checkbox',
 	);
@@ -127,12 +127,12 @@ function lsx_customizer_layout_controls($lsx_controls) {
 			'transport'     =>  'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
 	);
 	$lsx_controls['fields']['lsx_header_search'] = array(
-			'label'         =>  __('Search Box in Header','lsx'),
+			'label'         =>  esc_html__('Search Box in Header','lsx'),
 			'section'       =>  'lsx-layout',
 			'type'       =>  'checkbox',
 	);	
 	$lsx_controls['fields']['lsx_layout'] = array(
-			'label'         =>  __('Body','lsx'),
+			'label'         =>  esc_html__('Body','lsx'),
 			'section'       =>  'lsx-layout',
 			'control'   =>  'LSX_Customize_Layout_Control',
 			'choices'		=>	array('1c','2cr','2cl')
@@ -151,7 +151,7 @@ add_filter('lsx_customizer_controls','lsx_customizer_layout_controls');
  */
 function lsx_customizer_font_controls($lsx_controls) {
 	$lsx_controls['sections']['lsx-font'] = array(
-			'title'       =>  __( 'Font', 'lsx' ),
+			'title'       =>  esc_html__( 'Font', 'lsx' ),
 			'description' => 'Change the fonts sitewide.',
 			'priority' => 41
 	);
@@ -169,13 +169,13 @@ function lsx_customizer_font_controls($lsx_controls) {
 			'choices'   =>  array(
 					'raleway_open_sans' => array(
 							'header'  => array(
-									"title" => __( 'Raleway', 'lsx' ),
+									"title" => esc_html__( 'Raleway', 'lsx' ),
 									"location" => "Raleway",
 									"cssDeclaration" => "'Raleway', sans-serif",
 									"cssClass" => "raleway",
 							),
 							'body'  => array(
-									"title" => __( 'Open Sans', 'lsx' ),
+									"title" => esc_html__( 'Open Sans', 'lsx' ),
 									"location" => "Open+Sans",
 									"cssDeclaration" => "'Open Sans', sans-serif",
 									"cssClass" => "openSans"
@@ -183,13 +183,13 @@ function lsx_customizer_font_controls($lsx_controls) {
 					),
 					'noto_serif_noto_sans' => array(
 							'header'  => array(
-									"title" => __( 'Noto Serif', 'lsx' ),
+									"title" => esc_html__( 'Noto Serif', 'lsx' ),
 									"location" => "Noto+Serif",
 									"cssDeclaration" => "'Noto Serif', serif",
 									"cssClass" => "notoSerif",
 							),
 							'body'  => array(
-									"title" => __( 'Noto Sans', 'lsx' ),
+									"title" => esc_html__( 'Noto Sans', 'lsx' ),
 									"location" => "Noto+Sans",
 									"cssDeclaration" => "'Noto Sans', sans-serif",
 									"cssClass" => "notoSans",
@@ -197,13 +197,13 @@ function lsx_customizer_font_controls($lsx_controls) {
 					),
 					'noto_sans_noto_sans' => array(
 					'header'  => array(
-					"title" => __( 'Noto Sans', 'lsx' ),
+					"title" => esc_html__( 'Noto Sans', 'lsx' ),
 					"location" => "Noto+Sans",
 					"cssDeclaration" => "'Noto Sans', sans-serif",
 					"cssClass" => "notoSans",
 					),
 					'body'  => array(
-					"title" => __( 'Noto Sans', 'lsx' ),
+					"title" => esc_html__( 'Noto Sans', 'lsx' ),
 					"location" => "Noto+Sans",
 					"cssDeclaration" => "'Noto Sans', sans-serif",
 					"cssClass" => "notoSans",
@@ -211,13 +211,13 @@ function lsx_customizer_font_controls($lsx_controls) {
 					),
 					'alegreya_open_sans' => array(
 					'header'  => array(
-					"title" => __( 'Alegreya', 'lsx' ),
+					"title" => esc_html__( 'Alegreya', 'lsx' ),
 					"location" => "Alegreya",
 					"cssDeclaration" => "'Alegreya', serif",
 					"cssClass" => "alegreya",
 					),
 					'body'  => array(
-					"title" => __( 'Open Sans', 'lsx' ),
+					"title" => esc_html__( 'Open Sans', 'lsx' ),
 					"location" => "Open+Sans",
 					"cssDeclaration" => "'Open Sans', sans-serif",
 					"cssClass" => "openSans"

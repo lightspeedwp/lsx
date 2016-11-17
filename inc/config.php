@@ -45,10 +45,10 @@ function lsx_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'lsx' ),
-		'top-menu'=> __( 'Top Menu' , 'lsx' ),
-		'social'=> __( 'Social Menu' , 'lsx' ),
-		'footer'=> __( 'Footer Menu' , 'lsx' )
+		'primary' => esc_html__( 'Primary Menu', 'lsx' ),
+		'top-menu'=> esc_html__( 'Top Menu' , 'lsx' ),
+		'social'=> esc_html__( 'Social Menu' , 'lsx' ),
+		'footer'=> esc_html__( 'Footer Menu' , 'lsx' )
 	) );	
 
 	//Set the content width

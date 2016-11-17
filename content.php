@@ -107,7 +107,7 @@
 
 	<div class="clearfix"></div>
 
-	<?php edit_post_link( __( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
+	<?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<span class="edit-link">', '</span>' ); ?>
 
 	<?php if ( !is_singular() && !is_single() ) { // Display full-width divider on Archives ?>
 		<div class="lsx-breaker"></div>

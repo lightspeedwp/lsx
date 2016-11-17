@@ -336,9 +336,9 @@ function lsx_portfolio_naviagtion_labels($labels){
 	
 	if(is_post_type_archive('jetpack-portfolio')){
 		$labels = array(
-				'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older', 'lsx' ),
-				'previous' 	=> __( 'Newer', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
-				'title' 	=> __( 'Portfolio navigation', 'lsx' )
+				'next' 		=> '<span class="meta-nav">&larr;</span> '.esc_html__( 'Older', 'lsx' ),
+				'previous' 	=> esc_html__( 'Newer', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
+				'title' 	=> esc_html__( 'Portfolio navigation', 'lsx' )
 		);
 	}
 	return $labels;
@@ -416,7 +416,7 @@ add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
  * @category related posts
  */
 function lsx_related_posts_headline( $headline ) {
-	$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html( 'Related Posts' ) );
+	$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html__( 'Related Posts', 'lsx' ) );
 	return $headline;
 }
 add_filter( 'jetpack_relatedposts_filter_headline', 'lsx_related_posts_headline' );

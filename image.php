@@ -112,7 +112,7 @@ get_header();
 					<footer class="entry-meta">
 						
 						<?php if ( ! is_single() ) : ?>
-							<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
+							<a class="read-more" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'lsx' ); ?></a>
 						<?php endif ?>
 				
 						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>

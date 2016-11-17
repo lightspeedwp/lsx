@@ -379,7 +379,7 @@ add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
  */
 function lsx_excerpt_more($more) {
 	global $post;
-	//return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.__('Continue reading','lsx').'</a>';
+	//return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.esc_html__('Continue reading','lsx').'</a>';
 	return '...';
 }
 add_filter( 'excerpt_more', 'lsx_excerpt_more' );
@@ -405,7 +405,7 @@ function lsx_the_excerpt_filter($excerpt) {
 				$excerpt .= $pagination;
 			}
 			else {
-				$excerpt .= '<p><a class="moretag" href="'.get_permalink().'">'.__('Continue reading','lsx').'</a></p>';
+				$excerpt .= '<p><a class="moretag" href="'.get_permalink().'">'.esc_html__('Continue reading','lsx').'</a></p>';
 			}
 		}
 	}
@@ -456,7 +456,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 				$wpse_excerpt = trim(force_balance_tags($excerpt_output));
 
 				if ($has_more) {
-					$excerpt_end = '<a class="moretag" href="'.get_permalink().'">'.__('More','lsx').'</a>';
+					$excerpt_end = '<a class="moretag" href="'.get_permalink().'">'.esc_html__('More','lsx').'</a>';
 					$excerpt_end = apply_filters('excerpt_more', ' ' . $excerpt_end); 
 
 					$pos = strrpos($wpse_excerpt, '</');

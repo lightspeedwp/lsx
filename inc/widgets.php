@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 function lsx_widget_area_init() {
 	
 	register_sidebar( array(
-		'name'          => __( 'Home', 'lsx' ),
+		'name'          => esc_html__( 'Home', 'lsx' ),
 		'id'            => 'sidebar-home',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -16,7 +16,7 @@ function lsx_widget_area_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'lsx' ),
+		'name'          => esc_html__( 'Sidebar', 'lsx' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -25,7 +25,7 @@ function lsx_widget_area_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer', 'lsx' ),
+		'name'          => esc_html__( 'Footer', 'lsx' ),
 		'id'            => 'sidebar-footer',
 		'before_widget' => '<div class="styler"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',
@@ -34,7 +34,7 @@ function lsx_widget_area_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Call to Action', 'lsx' ),
+		'name'          => esc_html__( 'Footer Call to Action', 'lsx' ),
 		'id'            => 'sidebar-footer-cta',
 		'before_widget' => '<div class="styler"><aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside></div>',

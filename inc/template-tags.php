@@ -440,7 +440,7 @@ if(!function_exists('lsx_navbar_header')){
 		        	<span class="icon-bar"></span>
 		        	<span class="icon-bar"></span>
 		   		</button>
-	   			<span class="mobile-menu-title">Menu</span>
+	   			<span class="mobile-menu-title"><?php esc_html_e( 'Menu', 'lsx' ); ?></span>
 	   		<?php } ?>
 			<?php lsx_site_identity(); ?>
 	    </div>

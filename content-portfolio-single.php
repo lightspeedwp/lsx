@@ -48,12 +48,12 @@
 				
 				<?php lsx_portfolio_related_posts(); ?>
 				
-				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
+				<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . esc_html__('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
 			</div><!-- .entry-content -->
 		</div>
 	</div>
 		
-	<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 	
 	<?php lsx_entry_bottom(); ?>
 
