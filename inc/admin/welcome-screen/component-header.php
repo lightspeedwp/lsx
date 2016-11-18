@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="col-md-6">
-		<p class="review"><?php echo sprintf( esc_html__( '%sEnjoying LSX?%s Why not %sleave a review%s on WordPress.org? We\'re looking foward to all our users\' feedback!', 'lsx' ), '<strong>', '</strong>', '<a href="https://wordpress.org/themes/lsx" target="_blank">', '</a>' ); ?></p>
+		<p class="review"><?php echo sprintf( esc_html__( '%1$sEnjoying LSX?%2$s Why not %3$sleave a review%4$s on WordPress.org? We\'re looking foward to all our users\' feedback!', 'lsx' ), '<strong>', '</strong>', '<a href="https://wordpress.org/themes/lsx" target="_blank">', '</a>' ); ?></p>
 	</div>
 </div>
 
@@ -39,7 +39,7 @@
 							$rss_items = array();
 
 							if ( ! is_wp_error( $rss ) ) {
-								$maxitems 	= $rss->get_item_quantity( 1 );
+								$maxitems 	= $rss->get_item_quantity( 3 );
 								$rss_items 	= $rss->get_items( 0, $maxitems );
 							}
 

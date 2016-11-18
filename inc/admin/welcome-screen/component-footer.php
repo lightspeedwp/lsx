@@ -24,7 +24,7 @@
 	<div class="col-md-4">
 		<div class="box support">
 			<h2><?php esc_html_e( 'Get support', 'lsx' ); ?></h2>
-			<p><?php printf( esc_html__( 'You\'ll find information on how to use and customize the LSX theme in our %sdocumentation%s section. However, please do %scontact us%s for support should you still find yourself unable to achieve your needs.', 'lsx' ), '<a href="https://www.lsdev.biz/documentation/lsx/" target="_blank">', '</a>', '<a href="https://www.lsdev.biz/contact-us/" target="_blank">', '</a>' ); ?></p>
+			<p><?php printf( esc_html__( 'You\'ll find information on how to use and customize the LSX theme in our %1$sdocumentation%2$s section. However, please do %3$scontact us%4$s for support should you still find yourself unable to achieve your needs.', 'lsx' ), '<a href="https://www.lsdev.biz/documentation/lsx/" target="_blank">', '</a>', '<a href="https://www.lsdev.biz/contact-us/" target="_blank">', '</a>' ); ?></p>
 
 			<div class="more-button">
 				<a href="https://www.lsdev.biz/contact-us/" target="_blank" class="button button-primary">
@@ -37,7 +37,7 @@
 	<div class="col-md-4">
 		<div class="box suggest">
 			<h2><?php esc_html_e( 'Suggest a feature', 'lsx' ); ?></h2>
-			<p><?php printf( esc_html__( 'If you\'d like to suggest a feature for inclusion in upcoming releases of the LSX theme, please don\'t hesitate to %scontact us%s directly. We\'re always on the lookout for fresh ideas to help make LSX even better.', 'lsx' ), '<a href="https://www.lsdev.biz/contact-us/" target="_blank">', '</a>' ); ?></p>
+			<p><?php printf( esc_html__( 'If you\'d like to suggest a feature for inclusion in upcoming releases of the LSX theme, please don\'t hesitate to %1$scontact us%2$s directly. We\'re always on the lookout for fresh ideas to help make LSX even better.', 'lsx' ), '<a href="https://www.lsdev.biz/contact-us/" target="_blank">', '</a>' ); ?></p>
 
 			<div class="more-button">
 				<a href="https://www.lsdev.biz/contact-us/" target="_blank" class="button button-primary">
