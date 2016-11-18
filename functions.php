@@ -37,6 +37,7 @@ require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 if(class_exists('Sensei_WC')){
 	require get_template_directory() . '/inc/sensei.php';
 }
+require get_template_directory() . '/inc/welcome.php';
 
 /**
  * Returns an array of the core panel.
