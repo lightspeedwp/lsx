@@ -23,7 +23,7 @@
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://www.lsdev.biz/product/lsx-banners/" target="_blank"><?php esc_html_e( 'Banners', 'lsx' ); ?> - <span class="price">$99.00</span></a>
+						<a href="https://www.lsdev.biz/product/lsx-banners/" target="_blank"><?php esc_html_e( 'Banners', 'lsx' ); ?> - <span class="price">$49.00</span></a>
 						<p><?php esc_html_e( 'The LSX Banners extension adds advanced banner configuration options to your WordPress site running LSX theme.', 'lsx' ); ?></p>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://www.lsdev.biz/product/lsx-login/" target="_blank"><?php esc_html_e( 'Login', 'lsx' ); ?> - <span class="price">$99.00</span></a>
+						<a href="https://www.lsdev.biz/product/lsx-login/" target="_blank"><?php esc_html_e( 'Login', 'lsx' ); ?> - <span class="price">$49.00</span></a>
 						<p><?php esc_html_e( 'The LSX Login extension allows users to log into a dashboard and then see configurable content based on which users can access which content.', 'lsx' ); ?></p>
 					</div>
 				</div>
@@ -69,15 +69,15 @@
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="#" target="_blank"><?php esc_html_e( 'Projects', 'lsx' ); ?> - <span class="price">$99.00</span></a>
-						<p><?php esc_html_e( 'Lorem ipsum...', 'lsx' ); ?></p>
+						<a href="#" target="_blank"><?php esc_html_e( 'Projects', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'Coming soon.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="#" target="_blank"><?php esc_html_e( 'Documentation', 'lsx' ); ?> - <span class="price">$99.00</span></a>
-						<p><?php esc_html_e( 'Lorem ipsum...', 'lsx' ); ?></p>
+						<a href="#" target="_blank"><?php esc_html_e( 'Documentation', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'Coming soon.', 'lsx' ); ?></p>
 					</div>
 				</div>
 			</div>
