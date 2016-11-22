@@ -69,14 +69,14 @@
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="#" target="_blank"><?php esc_html_e( 'Projects', 'lsx' ); ?></a>
+						<a><?php esc_html_e( 'Projects', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'Coming soon.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="#" target="_blank"><?php esc_html_e( 'Documentation', 'lsx' ); ?></a>
+						<a><?php esc_html_e( 'Documentation', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'Coming soon.', 'lsx' ); ?></p>
 					</div>
 				</div>
