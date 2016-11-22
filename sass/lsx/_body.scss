@@ -91,7 +91,8 @@ body.single {
 	}
 }
 
-body.single-post {
+body.single-post,
+body.single-team {
 	#secondary {
 		margin: {
 			top: 40px;
@@ -316,7 +317,8 @@ article {
 		}
 	}	
 
-	.single-post & {
+	.single-post &,
+	.single-team & {
 		margin: {
 			top: 40px;
 			bottom: 0;
