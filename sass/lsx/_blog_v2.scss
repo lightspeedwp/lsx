@@ -851,8 +851,7 @@ body.search {
 // ---------- Single (post, team) ----------
 
 
-body.single-post,
-body.single-team {
+body.single-post {
 	.wrap {
 		#primary {
 			&.col-sm-12 {
@@ -934,7 +933,7 @@ body.single-team {
 // ---------- Single (other) ----------
 
 
-body.single:not(.single-post):not(.single-team) {
+body.single:not(.single-post) {
 	.wrap {
 		#primary {
 			#main > article,

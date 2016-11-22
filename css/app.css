@@ -8891,67 +8891,51 @@ body.single {
       body.single #secondary {
         width: 100% !important; } }
 
-body.single-post #secondary,
-body.single-team #secondary {
+body.single-post #secondary {
   margin-top: 40px;
   margin-bottom: 40px; }
 
-body.single-post .single-header,
-body.single-team .single-header {
+body.single-post .single-header {
   text-align: center; }
-  body.single-post .single-header .single-title,
-  body.single-team .single-header .single-title {
+  body.single-post .single-header .single-title {
     margin-top: 0;
     margin-bottom: 44px;
     font-weight: 700;
     line-height: 1.3; }
     @media screen and (min-width: 992px) {
-      body.single-post .single-header .single-title,
-      body.single-team .single-header .single-title {
+      body.single-post .single-header .single-title {
         font-size: 44px; } }
 
-body.single-post.top-menu-fixed .format-link,
-body.single-team.top-menu-fixed .format-link {
+body.single-post.top-menu-fixed .format-link {
   margin: 80px 0 40px; }
-  body.single-post.top-menu-fixed .format-link.has-thumb,
-  body.single-team.top-menu-fixed .format-link.has-thumb {
+  body.single-post.top-menu-fixed .format-link.has-thumb {
     margin: 130px 0 40px; }
 
-body.single-post.top-menu-fixed.header-central .wrap .format-link, body.single-post.top-menu-fixed.header-expanded .wrap .format-link,
-body.single-team.top-menu-fixed.header-central .wrap .format-link,
-body.single-team.top-menu-fixed.header-expanded .wrap .format-link {
+body.single-post.top-menu-fixed.header-central .wrap .format-link, body.single-post.top-menu-fixed.header-expanded .wrap .format-link {
   margin: -40px 0 40px; }
-  body.single-post.top-menu-fixed.header-central .wrap .format-link.has-thumb, body.single-post.top-menu-fixed.header-expanded .wrap .format-link.has-thumb,
-  body.single-team.top-menu-fixed.header-central .wrap .format-link.has-thumb,
-  body.single-team.top-menu-fixed.header-expanded .wrap .format-link.has-thumb {
+  body.single-post.top-menu-fixed.header-central .wrap .format-link.has-thumb, body.single-post.top-menu-fixed.header-expanded .wrap .format-link.has-thumb {
     margin: -100px 0 40px; }
 
-body.single-post .wrap #primary .lsx-breaker,
-body.single-team .wrap #primary .lsx-breaker {
+body.single-post .wrap #primary .lsx-breaker {
   display: none; }
 
-body.single-post .wrap .format-link,
-body.single-team .wrap .format-link {
+body.single-post .wrap .format-link {
   margin: 0 10px 0 0; }
 
-body.single-post .wrap header.page-header,
-body.single-team .wrap header.page-header {
+body.single-post .wrap header.page-header {
   display: none !important; }
 
-body.single-post .wrap .entry-content,
-body.single-team .wrap .entry-content {
+body.single-post .wrap .entry-content {
   font-family: 'Noto Serif', serif;
   color: #555;
   line-height: 1.98;
   margin-top: 30px;
   margin-bottom: 30px; }
 
-body.single-post .wrap .footer-meta,
-body.single-team .wrap .footer-meta {
+body.single-post .wrap .footer-meta {
   text-align: center; }
 
-body.single-post .wrap .post-meta-link,
-body.single-team .wrap .post-meta-link {
+body.single-post .wrap .post-meta-link {
   font-family: 'Noto Serif', serif;
   font-size: 20px;
   color: #333;
@@ -8962,13 +8946,9 @@ body.single-team .wrap .post-meta-link {
   transition: all 0.1s ease-in-out;
   padding: 30px 20px 34px;
   border-top: 1px solid #ccc; }
-  body.single-post .wrap .post-meta-link:hover, body.single-post .wrap .post-meta-link:active, body.single-post .wrap .post-meta-link:focus,
-  body.single-team .wrap .post-meta-link:hover,
-  body.single-team .wrap .post-meta-link:active,
-  body.single-team .wrap .post-meta-link:focus {
+  body.single-post .wrap .post-meta-link:hover, body.single-post .wrap .post-meta-link:active, body.single-post .wrap .post-meta-link:focus {
     color: #428bca; }
-  body.single-post .wrap .post-meta-link .fa,
-  body.single-team .wrap .post-meta-link .fa {
+  body.single-post .wrap .post-meta-link .fa {
     font-size: 12px;
     vertical-align: middle; }
 
@@ -9963,9 +9943,7 @@ body.archive.tax-post_format .wrap #primary #main > article .entry-meta .post-me
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before,
 body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:before,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before,
-body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:before,
-body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
+body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
 body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before,
 body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
 body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before,
@@ -9979,9 +9957,7 @@ body.archive.tax-post_format .wrap #primary #main > article .entry-meta .post-me
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before,
 body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before,
-body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
-body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
+body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
 body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before,
 body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
 body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before,
@@ -9995,9 +9971,7 @@ body.archive.tax-post_format .wrap #primary #main > article .entry-meta .post-me
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before,
 body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before,
-body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
-body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before, body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
+body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before, body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
 body.blog .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
 body.archive.date .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
 body.archive.date .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
@@ -10011,9 +9985,7 @@ body.archive.tax-post_format .wrap #primary #main > article .post-tags-wrapper .
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
 body.search .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
 body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
-body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
-body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before, body.blog .wrap #primary #main > article .post-tags-wrapper .post-comments:before,
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before, body.blog .wrap #primary #main > article .post-tags-wrapper .post-comments:before,
 body.blog .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-comments:before,
 body.archive.date .wrap #primary #main > article .post-tags-wrapper .post-comments:before,
 body.archive.date .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-comments:before,
@@ -10027,17 +9999,9 @@ body.archive.tax-post_format .wrap #primary #main > article .post-tags-wrapper .
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-comments:before,
 body.search .wrap #primary #main > article .post-tags-wrapper .post-comments:before,
 body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-comments:before, body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before,
-body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before,
-body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before, body.single-post .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before,
-body.single-team .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before, body.single-post .wrap #primary .post-navigation .pager a div.next .nav-links-description:after,
-body.single-team .wrap #primary .post-navigation .pager a div.next .nav-links-description:after, body.single-post .wrap #primary #main > article .post-meta-link:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link:before,
-body.single-team .wrap #primary #main > article .post-meta-link:before,
-body.single-team .wrap #primary #main > .infinite-wrap > article .post-meta-link:before, body.single-post .wrap #primary #main > article #comments-collapse #respond #reply-title:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title:before,
-body.single-team .wrap #primary #main > article #comments-collapse #respond #reply-title:before,
-body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title:before {
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before, body.single-post .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before, body.single-post .wrap #primary .post-navigation .pager a div.next .nav-links-description:after, body.single-post .wrap #primary #main > article .post-meta-link:before,
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link:before, body.single-post .wrap #primary #main > article #comments-collapse #respond #reply-title:before,
+body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title:before {
   content: '';
   color: #333;
   margin-right: 5px;
@@ -10149,10 +10113,8 @@ body.search .wrap #primary #main > .infinite-wrap > article {
     padding: 0 40px; }
 
 body.single-post .wrap #primary #main > article,
-body.single-post .wrap #primary #main > .infinite-wrap > article,
-body.single-team .wrap #primary #main > article,
-body.single-team .wrap #primary #main > .infinite-wrap > article, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article,
-body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article {
+body.single-post .wrap #primary #main > .infinite-wrap > article, body.single:not(.single-post) .wrap #primary #main > article,
+body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article {
   margin: 40px 0 !important; }
 
 body.blog .wrap #primary #main > article header.entry-header h1.entry-title,
@@ -10169,9 +10131,7 @@ body.archive.tax-post_format .wrap #primary #main > article header.entry-header 
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title,
 body.search .wrap #primary #main > article header.entry-header h1.entry-title,
 body.search .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title, body.single-post .wrap #primary #main > article header.single-header h1.single-title,
-body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title,
-body.single-team .wrap #primary #main > article header.single-header h1.single-title,
-body.single-team .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title {
+body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title {
   display: block;
   font-size: 30px;
   margin: 30px 0 20px 0; }
@@ -10189,9 +10149,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article header.single-h
   body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title .format-link,
   body.search .wrap #primary #main > article header.entry-header h1.entry-title .format-link,
   body.search .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title .format-link, body.single-post .wrap #primary #main > article header.single-header h1.single-title .format-link,
-  body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title .format-link,
-  body.single-team .wrap #primary #main > article header.single-header h1.single-title .format-link,
-  body.single-team .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title .format-link {
+  body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title .format-link {
     margin: 0 5px 0 0;
     width: 30px;
     height: 30px;
@@ -10212,9 +10170,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article header.single-h
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title .format-link.fa-file-text-o,
     body.search .wrap #primary #main > article header.entry-header h1.entry-title .format-link.fa-file-text-o,
     body.search .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title .format-link.fa-file-text-o, body.single-post .wrap #primary #main > article header.single-header h1.single-title .format-link.fa-file-text-o,
-    body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title .format-link.fa-file-text-o,
-    body.single-team .wrap #primary #main > article header.single-header h1.single-title .format-link.fa-file-text-o,
-    body.single-team .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title .format-link.fa-file-text-o {
+    body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title .format-link.fa-file-text-o {
       display: none; }
   body.blog .wrap #primary #main > article header.entry-header h1.entry-title a:not(.format-link),
   body.blog .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title a:not(.format-link),
@@ -10230,9 +10186,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article header.single-h
   body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title a:not(.format-link),
   body.search .wrap #primary #main > article header.entry-header h1.entry-title a:not(.format-link),
   body.search .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title a:not(.format-link), body.single-post .wrap #primary #main > article header.single-header h1.single-title a:not(.format-link),
-  body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title a:not(.format-link),
-  body.single-team .wrap #primary #main > article header.single-header h1.single-title a:not(.format-link),
-  body.single-team .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title a:not(.format-link), body.blog .wrap #primary #main > article header.entry-header h1.entry-title span,
+  body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title a:not(.format-link), body.blog .wrap #primary #main > article header.entry-header h1.entry-title span,
   body.blog .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title span,
   body.archive.date .wrap #primary #main > article header.entry-header h1.entry-title span,
   body.archive.date .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title span,
@@ -10246,9 +10200,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article header.single-h
   body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title span,
   body.search .wrap #primary #main > article header.entry-header h1.entry-title span,
   body.search .wrap #primary #main > .infinite-wrap > article header.entry-header h1.entry-title span, body.single-post .wrap #primary #main > article header.single-header h1.single-title span,
-  body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title span,
-  body.single-team .wrap #primary #main > article header.single-header h1.single-title span,
-  body.single-team .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title span {
+  body.single-post .wrap #primary #main > .infinite-wrap > article header.single-header h1.single-title span {
     display: inline;
     vertical-align: middle; }
 
@@ -10283,9 +10235,7 @@ body.archive.tax-post_format .wrap #primary #main > article.post_format-post-for
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title .format-link,
 body.search .wrap #primary #main > article.post_format-post-format-quote header.entry-header h1.entry-title .format-link,
 body.search .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title .format-link, body.single-post .wrap #primary #main > article.post_format-post-format-quote header.single-header h1.single-title .format-link,
-body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title .format-link,
-body.single-team .wrap #primary #main > article.post_format-post-format-quote header.single-header h1.single-title .format-link,
-body.single-team .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title .format-link {
+body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title .format-link {
   margin-right: 0; }
 
 body.blog .wrap #primary #main > article.post_format-post-format-quote header.entry-header h1.entry-title a:not(.format-link),
@@ -10302,9 +10252,7 @@ body.archive.tax-post_format .wrap #primary #main > article.post_format-post-for
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title a:not(.format-link),
 body.search .wrap #primary #main > article.post_format-post-format-quote header.entry-header h1.entry-title a:not(.format-link),
 body.search .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title a:not(.format-link), body.single-post .wrap #primary #main > article.post_format-post-format-quote header.single-header h1.single-title a:not(.format-link),
-body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title a:not(.format-link),
-body.single-team .wrap #primary #main > article.post_format-post-format-quote header.single-header h1.single-title a:not(.format-link),
-body.single-team .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title a:not(.format-link), body.blog .wrap #primary #main > article.post_format-post-format-quote header.entry-header h1.entry-title span,
+body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title a:not(.format-link), body.blog .wrap #primary #main > article.post_format-post-format-quote header.entry-header h1.entry-title span,
 body.blog .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title span,
 body.archive.date .wrap #primary #main > article.post_format-post-format-quote header.entry-header h1.entry-title span,
 body.archive.date .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title span,
@@ -10318,9 +10266,7 @@ body.archive.tax-post_format .wrap #primary #main > article.post_format-post-for
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title span,
 body.search .wrap #primary #main > article.post_format-post-format-quote header.entry-header h1.entry-title span,
 body.search .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.entry-header h1.entry-title span, body.single-post .wrap #primary #main > article.post_format-post-format-quote header.single-header h1.single-title span,
-body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title span,
-body.single-team .wrap #primary #main > article.post_format-post-format-quote header.single-header h1.single-title span,
-body.single-team .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title span {
+body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote header.single-header h1.single-title span {
   display: none; }
 
 body.blog .wrap #primary #main > article .entry-meta,
@@ -10337,9 +10283,7 @@ body.archive.tax-post_format .wrap #primary #main > article .entry-meta,
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta,
 body.search .wrap #primary #main > article .entry-meta,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-meta, body.single-post .wrap #primary #main > article .entry-meta,
-body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta,
-body.single-team .wrap #primary #main > article .entry-meta,
-body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
+body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta {
   margin-bottom: 15px; }
   body.blog .wrap #primary #main > article .entry-meta .post-meta,
   body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta,
@@ -10355,9 +10299,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
   body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta,
   body.search .wrap #primary #main > article .entry-meta .post-meta,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta, body.single-post .wrap #primary #main > article .entry-meta .post-meta,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta,
-  body.single-team .wrap #primary #main > article .entry-meta .post-meta,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta {
     font-style: normal;
     color: #333; }
     body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
@@ -10374,9 +10316,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time,
     body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time,
-    body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
     body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
     body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
@@ -10390,9 +10330,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
     body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
-    body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
     body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
     body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
@@ -10406,9 +10344,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
     body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
-    body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories {
       margin: 0 0 0 25px; }
       body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:first-child,
       body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:first-child,
@@ -10424,9 +10360,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:first-child,
       body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:first-child,
       body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:first-child, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:first-child,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:first-child,
-      body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:first-child,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:first-child, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:first-child,
+      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:first-child, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:first-child,
       body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:first-child,
       body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:first-child,
       body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:first-child,
@@ -10440,9 +10374,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:first-child,
       body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:first-child,
       body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:first-child, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:first-child,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:first-child,
-      body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:first-child,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:first-child, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:first-child,
+      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:first-child, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:first-child,
       body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:first-child,
       body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:first-child,
       body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:first-child,
@@ -10456,9 +10388,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:first-child,
       body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:first-child,
       body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:first-child, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:first-child,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:first-child,
-      body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:first-child,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:first-child {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:first-child {
         margin-left: 0; }
       @media only screen and (max-width: 767px) {
         body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
@@ -10475,9 +10405,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
@@ -10491,9 +10419,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
@@ -10507,9 +10433,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories {
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories {
           margin: 0;
           display: block;
           text-align: left; } }
@@ -10527,9 +10451,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a,
       body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a,
       body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a,
-      body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a,
+      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a,
       body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a,
       body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a,
       body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a,
@@ -10543,9 +10465,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a,
       body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a,
       body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a,
-      body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a,
+      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a,
       body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a,
       body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a,
       body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a,
@@ -10559,9 +10479,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a,
       body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a,
       body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a,
-      body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a {
         color: #337ab7; }
         body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:hover,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:hover,
@@ -10577,9 +10495,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:hover,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:hover,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:hover, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:hover,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:hover,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:hover,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:hover, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:active,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:hover, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:active,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:active,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:active,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:active,
@@ -10593,9 +10509,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:active,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:active,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:active, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:active,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:active,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:active,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:active, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:focus,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:active, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:focus,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:focus,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:focus,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:focus,
@@ -10609,9 +10523,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:focus,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:focus,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:focus, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:focus,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:focus,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time a:focus,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:focus, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:hover,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time a:focus, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:hover,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:hover,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:hover,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:hover,
@@ -10625,9 +10537,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:hover,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:hover,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:hover, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:hover,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:hover,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:hover,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:hover, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:active,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:hover, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:active,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:active,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:active,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:active,
@@ -10641,9 +10551,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:active,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:active,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:active, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:active,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:active,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:active,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:active, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:focus,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:active, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:focus,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:focus,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:focus,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:focus,
@@ -10657,9 +10565,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:focus,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:focus,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:focus, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:focus,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:focus,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author a:focus,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:focus, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:hover,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author a:focus, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:hover,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:hover,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:hover,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:hover,
@@ -10673,9 +10579,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:hover,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:hover,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:hover, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:hover,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:hover,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:hover,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:hover, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:active,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:hover, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:active,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:active,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:active,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:active,
@@ -10689,9 +10593,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:active,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:active,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:active, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:active,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:active,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:active,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:active, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:focus,
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:active, body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:focus,
         body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:focus,
         body.archive.date .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:focus,
         body.archive.date .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:focus,
@@ -10705,9 +10607,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
         body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:focus,
         body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:focus,
         body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:focus, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:focus,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:focus,
-        body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories a:focus,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:focus {
+        body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories a:focus {
           color: #23527c; }
     body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time > span,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time > span,
@@ -10723,9 +10623,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time > span,
     body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time > span,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time > span, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time > span,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time > span,
-    body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time > span,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time > span {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time > span {
       display: none; }
     body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:before,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before,
@@ -10741,9 +10639,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before,
     body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:before,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:before,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before,
-    body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-time:before,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-time:before {
       content: '\f073'; }
     body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before,
@@ -10759,9 +10655,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before,
     body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before,
-    body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-author:before,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-author:before {
       content: '\f007'; }
     body.blog .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before,
@@ -10777,9 +10671,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta {
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before,
     body.search .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before, body.single-post .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before,
-    body.single-team .wrap #primary #main > article .entry-meta .post-meta .post-meta-categories:before,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-meta .post-meta .post-meta-categories:before {
       content: '\f07c'; }
 
 @media only screen and (max-width: 767px) {
@@ -10827,10 +10719,8 @@ body.search .wrap #primary #main > article .entry-summary,
 body.search .wrap #primary #main > article .entry-content,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-summary,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-content, body.single-post .wrap #primary #main > article .entry-content,
-body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content,
-body.single-team .wrap #primary #main > article .entry-content,
-body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content,
-body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content, body.page .wrap #primary #main > article .entry-content,
+body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content, body.single:not(.single-post) .wrap #primary #main > article .entry-content,
+body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content, body.page .wrap #primary #main > article .entry-content,
 body.page .wrap #primary #main > .infinite-wrap > article .entry-content {
   font-size: 16px;
   line-height: 30px;
@@ -10864,10 +10754,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content {
   body.search .wrap #primary #main > article .entry-content .moretag,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .moretag,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-content .moretag, body.single-post .wrap #primary #main > article .entry-content .moretag,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .moretag,
-  body.single-team .wrap #primary #main > article .entry-content .moretag,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .moretag, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .moretag,
-  body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .moretag, body.page .wrap #primary #main > article .entry-content .moretag,
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .moretag, body.single:not(.single-post) .wrap #primary #main > article .entry-content .moretag,
+  body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .moretag, body.page .wrap #primary #main > article .entry-content .moretag,
   body.page .wrap #primary #main > .infinite-wrap > article .entry-content .moretag {
     border-bottom: none;
     padding-bottom: 0; }
@@ -10899,10 +10787,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content {
   body.search .wrap #primary #main > article .entry-content figure.wp-caption,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-summary figure.wp-caption,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption, body.single-post .wrap #primary #main > article .entry-content figure.wp-caption,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption,
-  body.single-team .wrap #primary #main > article .entry-content figure.wp-caption,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content figure.wp-caption,
-  body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption, body.page .wrap #primary #main > article .entry-content figure.wp-caption,
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption, body.single:not(.single-post) .wrap #primary #main > article .entry-content figure.wp-caption,
+  body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption, body.page .wrap #primary #main > article .entry-content figure.wp-caption,
   body.page .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption {
     margin: 8px 0 20px 0 !important; }
     body.blog .wrap #primary #main > article .entry-summary figure.wp-caption.aligncenter,
@@ -10933,10 +10819,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content {
     body.search .wrap #primary #main > article .entry-content figure.wp-caption.aligncenter,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-summary figure.wp-caption.aligncenter,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.aligncenter, body.single-post .wrap #primary #main > article .entry-content figure.wp-caption.aligncenter,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.aligncenter,
-    body.single-team .wrap #primary #main > article .entry-content figure.wp-caption.aligncenter,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.aligncenter, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content figure.wp-caption.aligncenter,
-    body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.aligncenter, body.page .wrap #primary #main > article .entry-content figure.wp-caption.aligncenter,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.aligncenter, body.single:not(.single-post) .wrap #primary #main > article .entry-content figure.wp-caption.aligncenter,
+    body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.aligncenter, body.page .wrap #primary #main > article .entry-content figure.wp-caption.aligncenter,
     body.page .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.aligncenter {
       margin-right: auto !important;
       margin-left: auto !important; }
@@ -10968,10 +10852,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content {
     body.search .wrap #primary #main > article .entry-content figure.wp-caption.alignleft,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-summary figure.wp-caption.alignleft,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignleft, body.single-post .wrap #primary #main > article .entry-content figure.wp-caption.alignleft,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignleft,
-    body.single-team .wrap #primary #main > article .entry-content figure.wp-caption.alignleft,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignleft, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content figure.wp-caption.alignleft,
-    body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignleft, body.page .wrap #primary #main > article .entry-content figure.wp-caption.alignleft,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignleft, body.single:not(.single-post) .wrap #primary #main > article .entry-content figure.wp-caption.alignleft,
+    body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignleft, body.page .wrap #primary #main > article .entry-content figure.wp-caption.alignleft,
     body.page .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignleft {
       margin-right: 20px !important; }
     body.blog .wrap #primary #main > article .entry-summary figure.wp-caption.alignright,
@@ -11002,10 +10884,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content {
     body.search .wrap #primary #main > article .entry-content figure.wp-caption.alignright,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-summary figure.wp-caption.alignright,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignright, body.single-post .wrap #primary #main > article .entry-content figure.wp-caption.alignright,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignright,
-    body.single-team .wrap #primary #main > article .entry-content figure.wp-caption.alignright,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignright, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content figure.wp-caption.alignright,
-    body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignright, body.page .wrap #primary #main > article .entry-content figure.wp-caption.alignright,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignright, body.single:not(.single-post) .wrap #primary #main > article .entry-content figure.wp-caption.alignright,
+    body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignright, body.page .wrap #primary #main > article .entry-content figure.wp-caption.alignright,
     body.page .wrap #primary #main > .infinite-wrap > article .entry-content figure.wp-caption.alignright {
       margin-left: 20px !important; }
   body.blog .wrap #primary #main > article .entry-summary > *:last-child,
@@ -11036,10 +10916,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content {
   body.search .wrap #primary #main > article .entry-content > *:last-child,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-summary > *:last-child,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-content > *:last-child, body.single-post .wrap #primary #main > article .entry-content > *:last-child,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content > *:last-child,
-  body.single-team .wrap #primary #main > article .entry-content > *:last-child,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content > *:last-child, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content > *:last-child,
-  body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content > *:last-child, body.page .wrap #primary #main > article .entry-content > *:last-child,
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content > *:last-child, body.single:not(.single-post) .wrap #primary #main > article .entry-content > *:last-child,
+  body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content > *:last-child, body.page .wrap #primary #main > article .entry-content > *:last-child,
   body.page .wrap #primary #main > .infinite-wrap > article .entry-content > *:last-child {
     margin-bottom: 0; }
 
@@ -11102,10 +10980,8 @@ body.search .wrap #primary #main > article.post_format-post-format-quote .entry-
 body.search .wrap #primary #main > article.post_format-post-format-quote .entry-content,
 body.search .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote .entry-summary,
 body.search .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote .entry-content, body.single-post .wrap #primary #main > article.post_format-post-format-quote .entry-content,
-body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote .entry-content,
-body.single-team .wrap #primary #main > article.post_format-post-format-quote .entry-content,
-body.single-team .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote .entry-content, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article.post_format-post-format-quote .entry-content,
-body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote .entry-content {
+body.single-post .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote .entry-content, body.single:not(.single-post) .wrap #primary #main > article.post_format-post-format-quote .entry-content,
+body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article.post_format-post-format-quote .entry-content {
   font-size: 33px;
   color: #777;
   line-height: 1.6; }
@@ -11180,17 +11056,13 @@ body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper {
     width: 75%; }
 
 body.single-post .wrap #primary #main > article .post-tags-wrapper,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper,
-body.single-team .wrap #primary #main > article .post-tags-wrapper,
-body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper {
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper {
   margin: 40px 0 20px 0;
   padding: 20px 0 13px 0;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd; }
   body.single-post .wrap #primary #main > article .post-tags-wrapper:after,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper:after,
-  body.single-team .wrap #primary #main > article .post-tags-wrapper:after,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper:after {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper:after {
     visibility: hidden;
     display: block;
     font-size: 0;
@@ -11198,9 +11070,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
     clear: both;
     height: 0; }
   body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags,
-  body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags {
     width: 50%; }
 
 body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags,
@@ -11217,9 +11087,7 @@ body.archive.tax-post_format .wrap #primary #main > article .post-tags-wrapper .
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags,
 body.search .wrap #primary #main > article .post-tags-wrapper .post-tags,
 body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags,
-body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags,
-body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags {
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags {
   display: block;
   float: left; }
   @media only screen and (max-width: 767px) {
@@ -11237,9 +11105,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags,
     body.search .wrap #primary #main > article .post-tags-wrapper .post-tags,
     body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags,
-    body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags {
       width: 100%; } }
   body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
   body.blog .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
@@ -11255,9 +11121,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
   body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
   body.search .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
   body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
-  body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before {
     content: '\f02c';
     float: left;
     line-height: 24px; }
@@ -11276,9 +11140,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
       body.search .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
       body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before,
-      body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags:before,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags:before {
         display: none; } }
   body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags > span,
   body.blog .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span,
@@ -11294,9 +11156,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
   body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span,
   body.search .wrap #primary #main > article .post-tags-wrapper .post-tags > span,
   body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags > span,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span,
-  body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags > span,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span {
     display: block;
     float: left;
     line-height: 24px;
@@ -11317,9 +11177,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span,
       body.search .wrap #primary #main > article .post-tags-wrapper .post-tags > span,
       body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags > span,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span,
-      body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags > span,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > span {
         display: none; } }
   body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags > a,
   body.blog .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a,
@@ -11335,9 +11193,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
   body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a,
   body.search .wrap #primary #main > article .post-tags-wrapper .post-tags > a,
   body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags > a,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a,
-  body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags > a,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a {
     line-height: 26px;
     border-radius: 13px;
     padding: 0 15px;
@@ -11359,9 +11215,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:hover,
     body.search .wrap #primary #main > article .post-tags-wrapper .post-tags > a:hover,
     body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:hover, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags > a:hover,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:hover,
-    body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags > a:hover,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:hover, body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags > a:active,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:hover, body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags > a:active,
     body.blog .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:active,
     body.archive.date .wrap #primary #main > article .post-tags-wrapper .post-tags > a:active,
     body.archive.date .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:active,
@@ -11375,9 +11229,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:active,
     body.search .wrap #primary #main > article .post-tags-wrapper .post-tags > a:active,
     body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:active, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags > a:active,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:active,
-    body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags > a:active,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:active, body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags > a:focus,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:active, body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags > a:focus,
     body.blog .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:focus,
     body.archive.date .wrap #primary #main > article .post-tags-wrapper .post-tags > a:focus,
     body.archive.date .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:focus,
@@ -11391,9 +11243,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
     body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:focus,
     body.search .wrap #primary #main > article .post-tags-wrapper .post-tags > a:focus,
     body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:focus, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags > a:focus,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:focus,
-    body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags > a:focus,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:focus {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:focus {
       background-color: #dedede; }
     @media only screen and (max-width: 767px) {
       body.blog .wrap #primary #main > article .post-tags-wrapper .post-tags > a:first-of-type,
@@ -11410,9 +11260,7 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
       body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:first-of-type,
       body.search .wrap #primary #main > article .post-tags-wrapper .post-tags > a:first-of-type,
       body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:first-of-type, body.single-post .wrap #primary #main > article .post-tags-wrapper .post-tags > a:first-of-type,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:first-of-type,
-      body.single-team .wrap #primary #main > article .post-tags-wrapper .post-tags > a:first-of-type,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:first-of-type {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-tags > a:first-of-type {
         margin-left: 0; } }
 
 body.blog .wrap #primary #main > article .post-tags-wrapper .post-comments,
@@ -11528,9 +11376,7 @@ body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .
       color: #23527c; }
 
 body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy,
-body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy,
-body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy {
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy {
   margin: 0 0 7px 0;
   float: right;
   width: 50%;
@@ -11539,36 +11385,26 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
   text-align: right; }
   @media only screen and (max-width: 767px) {
     body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy,
-    body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy {
       width: 100%;
       margin-top: 10px;
       text-align: left; }
       body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy:first-child,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy:first-child,
-      body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy:first-child,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy:first-child {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy:first-child {
         margin-top: 0; } }
   body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing,
-  body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing {
     padding: 0;
     border-top: none;
     width: 100%; }
     body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title,
-    body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title {
       font-size: 15px;
       line-height: 26px;
       margin: 0 8px 0 0;
       display: inline-block; }
       body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before,
-      body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before {
         content: '\f1e0';
         border-top: none;
         width: auto;
@@ -11576,91 +11412,63 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrap
         margin-bottom: 0; }
       @media only screen and (max-width: 767px) {
         body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title,
-        body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title {
+        body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title {
           display: none; } }
     body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content,
-    body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content {
+    body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content {
       float: right; }
       @media only screen and (max-width: 767px) {
         body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content,
-        body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content {
+        body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content {
           float: left; } }
       body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul,
-      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul,
-      body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul,
-      body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul {
+      body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul {
         display: block;
         float: left;
         margin: 0 !important; }
         body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li,
-        body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li,
-        body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li,
-        body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li {
+        body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li {
           margin-right: 5px !important;
           float: left;
           display: block; }
           body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button,
-          body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button,
-          body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button,
-          body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button {
+          body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button {
             padding: 7px;
             display: block;
             float: none;
             margin: 0;
             top: 0; }
             body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before,
-            body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before,
-            body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before,
-            body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before {
+            body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before {
               font-size: 12px; }
           @media only screen and (max-width: 767px) {
             body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li.share-print,
-            body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li.share-print,
-            body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li.share-print,
-            body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li.share-print {
+            body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li.share-print {
               display: none; }
             body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before,
-            body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before,
-            body.single-team .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before,
-            body.single-team .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before {
+            body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-content ul li a.sd-button:before {
               font-size: 24px; } }
 
 body.single-post .wrap #primary #main > article #jp-relatedposts,
-body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts,
-body.single-team .wrap #primary #main > article #jp-relatedposts,
-body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts {
+body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts {
   margin: 0;
   padding: 40px 0 0 0; }
   body.single-post .wrap #primary #main > article #jp-relatedposts h3.jp-relatedposts-headline,
-  body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts h3.jp-relatedposts-headline,
-  body.single-team .wrap #primary #main > article #jp-relatedposts h3.jp-relatedposts-headline,
-  body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts h3.jp-relatedposts-headline {
+  body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts h3.jp-relatedposts-headline {
     font-size: 26px;
     text-align: center;
     float: none;
     display: block; }
     body.single-post .wrap #primary #main > article #jp-relatedposts h3.jp-relatedposts-headline em:before,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts h3.jp-relatedposts-headline em:before,
-    body.single-team .wrap #primary #main > article #jp-relatedposts h3.jp-relatedposts-headline em:before,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts h3.jp-relatedposts-headline em:before {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts h3.jp-relatedposts-headline em:before {
       display: none; }
   body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual,
-  body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual,
-  body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual,
-  body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual {
+  body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual {
     display: inline-block;
     margin: 0;
     width: 100%; }
     body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post,
-    body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
       border-radius: 5px;
       overflow: hidden;
       border: 1px solid #ddd;
@@ -11670,37 +11478,25 @@ body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedpost
       margin: 0 0 10px 0; }
       @media only screen and (min-width: 768px) {
         body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post,
-        body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post,
-        body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post,
-        body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
+        body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post {
           width: 31.833333%;
           margin-right: 2.25%; }
           body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post:last-child,
-          body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post:last-child,
-          body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post:last-child,
-          body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post:last-child {
+          body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post:last-child {
             margin-right: 0; } }
       body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img,
-      body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img {
         margin-bottom: 0 !important; }
       body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title,
-      body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title {
         padding: 15px 20px;
         margin: 0 !important;
         line-height: 25px !important; }
         body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title a,
-        body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title a,
-        body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title a,
-        body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title a {
+        body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title a {
           font-size: 15px !important; }
       body.single-post .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-excerpt,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-excerpt,
-      body.single-team .wrap #primary #main > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-excerpt,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-excerpt {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-excerpt {
         display: none; }
 
 body.blog .wrap #primary .wp-pagenavi-wrapper,
@@ -11773,10 +11569,8 @@ body.search .wrap #primary #main > article .entry-summary .lsx-postnav-wrapper,
 body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper,
 body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper,
-body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper,
-body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper,
-body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper,
-body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper,
+body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper,
+body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper,
 body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper {
   padding: 20px 0 0 0;
   font-size: 15px; }
@@ -11808,10 +11602,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-po
   body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > span,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
+  body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
   body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.blog .wrap #primary #main > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a,
   body.blog .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
   body.blog .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a,
@@ -11840,10 +11632,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-po
   body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
+  body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
   body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a {
     display: inline-block;
     padding: 5px 12px;
@@ -11879,10 +11669,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-po
   body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > span,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
-  body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
+  body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span,
   body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > span {
     font-weight: bold;
     background-color: #333;
@@ -11915,10 +11703,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-po
   body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a,
   body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
-  body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
+  body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
+  body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a,
   body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a {
     border-color: #ccc;
     color: #333;
@@ -11954,10 +11740,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-po
     body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a:active,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
-    body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
-    body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
+    body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active,
     body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:active, body.blog .wrap #primary #main > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a:focus,
     body.blog .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a:focus,
@@ -11986,10 +11770,8 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-po
     body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a:focus,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
-    body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
-    body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
+    body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus,
     body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:focus, body.blog .wrap #primary #main > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a:hover,
     body.blog .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
     body.blog .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a:hover,
@@ -12018,48 +11800,35 @@ body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-po
     body.search .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-summary .lsx-postnav-wrapper .lsx-postnav > a:hover,
     body.search .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover, body.single-post .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
-    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
-    body.single-team .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
-    body.single-team .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover, body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
-    body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
+    body.single-post .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover, body.single:not(.single-post) .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
+    body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover, body.page .wrap #primary #main > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover,
     body.page .wrap #primary #main > .infinite-wrap > article .entry-content .lsx-postnav-wrapper .lsx-postnav > a:hover {
       border: 2px solid #333; }
 
-body.single-post .wrap #primary .post-navigation,
-body.single-team .wrap #primary .post-navigation {
+body.single-post .wrap #primary .post-navigation {
   margin-bottom: 20px; }
-  body.single-post .wrap #primary .post-navigation .pager,
-  body.single-team .wrap #primary .post-navigation .pager {
+  body.single-post .wrap #primary .post-navigation .pager {
     margin-left: -15px !important;
     margin-right: -15px !important; }
-    body.single-post .wrap #primary .post-navigation .pager a div .nav-links-description,
-    body.single-team .wrap #primary .post-navigation .pager a div .nav-links-description {
+    body.single-post .wrap #primary .post-navigation .pager a div .nav-links-description {
       color: #333;
       line-height: 30px; }
-    body.single-post .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before,
-    body.single-team .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before {
+    body.single-post .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before {
       content: '\f060';
       font-size: 14px; }
-    body.single-post .wrap #primary .post-navigation .pager a div.next .nav-links-description:after,
-    body.single-team .wrap #primary .post-navigation .pager a div.next .nav-links-description:after {
+    body.single-post .wrap #primary .post-navigation .pager a div.next .nav-links-description:after {
       content: '\f061';
       font-size: 14px;
       margin-right: 0;
       margin-left: 5px; }
-    body.single-post .wrap #primary .post-navigation .pager a div h3,
-    body.single-team .wrap #primary .post-navigation .pager a div h3 {
+    body.single-post .wrap #primary .post-navigation .pager a div h3 {
       font-size: 22px;
       color: #337ab7; }
-    body.single-post .wrap #primary .post-navigation .pager a:hover div h3,
-    body.single-team .wrap #primary .post-navigation .pager a:hover div h3, body.single-post .wrap #primary .post-navigation .pager a:active div h3,
-    body.single-team .wrap #primary .post-navigation .pager a:active div h3, body.single-post .wrap #primary .post-navigation .pager a:focus div h3,
-    body.single-team .wrap #primary .post-navigation .pager a:focus div h3 {
+    body.single-post .wrap #primary .post-navigation .pager a:hover div h3, body.single-post .wrap #primary .post-navigation .pager a:active div h3, body.single-post .wrap #primary .post-navigation .pager a:focus div h3 {
       color: #23527c; }
 
 body.single-post .wrap #primary #main > article .post-meta-link,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link,
-body.single-team .wrap #primary #main > article .post-meta-link,
-body.single-team .wrap #primary #main > .infinite-wrap > article .post-meta-link {
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link {
   border-top: none;
   font-size: 15px;
   padding: 10px 0 5px 0;
@@ -12067,193 +11836,121 @@ body.single-team .wrap #primary #main > .infinite-wrap > article .post-meta-link
   text-align: left;
   display: inline-block; }
   body.single-post .wrap #primary #main > article .post-meta-link:before,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link:before,
-  body.single-team .wrap #primary #main > article .post-meta-link:before,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-meta-link:before {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link:before {
     content: '\f086'; }
   body.single-post .wrap #primary #main > article .post-meta-link .fa,
-  body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link .fa,
-  body.single-team .wrap #primary #main > article .post-meta-link .fa,
-  body.single-team .wrap #primary #main > .infinite-wrap > article .post-meta-link .fa {
+  body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link .fa {
     margin-left: 3px; }
 
 body.single-post .wrap #primary #main > article #comments-collapse #comments,
-body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments,
-body.single-team .wrap #primary #main > article #comments-collapse #comments,
-body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments {
+body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments {
   padding-top: 20px; }
   body.single-post .wrap #primary #main > article #comments-collapse #comments > h3,
-  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > h3,
-  body.single-team .wrap #primary #main > article #comments-collapse #comments > h3,
-  body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > h3 {
+  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > h3 {
     display: none; }
   body.single-post .wrap #primary #main > article #comments-collapse #comments > ol,
-  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol,
-  body.single-team .wrap #primary #main > article #comments-collapse #comments > ol,
-  body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol {
+  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol {
     margin: 0; }
     body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment > img,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment > img,
-    body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment > img,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment > img {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment > img {
       margin-right: 5px; }
     body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body,
-    body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body {
       text-align: left; }
       body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body h4,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body h4,
-      body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body h4,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body h4 {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body h4 {
         font-size: 16px;
         margin-bottom: 0; }
       body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body time,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body time,
-      body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body time,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body time {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body time {
         font-size: 14px; }
       body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body .comment-edit-link,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body .comment-edit-link,
-      body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body .comment-edit-link,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body .comment-edit-link {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body .comment-edit-link {
         font-size: 16px; }
       body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body p,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body p,
-      body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body p,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body p {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body p {
         font-size: 16px;
         line-height: 25px;
         margin-bottom: 15px; }
         body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body p:first-of-type,
-        body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body p:first-of-type,
-        body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body p:first-of-type,
-        body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body p:first-of-type {
+        body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body p:first-of-type {
           margin-top: 15px; }
       body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body .comment-reply-link,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body .comment-reply-link,
-      body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body .comment-reply-link,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body .comment-reply-link {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body .comment-reply-link {
         font-size: 14px; }
       body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body ul,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body ul,
-      body.single-team .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body ul,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body ul {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body ul {
         padding-left: 0;
         list-style: none; }
 
 body.single-post .wrap #primary #main > article #comments-collapse #respond,
-body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond,
-body.single-team .wrap #primary #main > article #comments-collapse #respond,
-body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond {
+body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond {
   margin: 0;
   padding: 0 0 20px 0; }
   body.single-post .wrap #primary #main > article #comments-collapse #respond #reply-title,
-  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title,
-  body.single-team .wrap #primary #main > article #comments-collapse #respond #reply-title,
-  body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title {
+  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title {
     font-size: 15px;
     color: #333;
     font-weight: normal;
     text-align: left;
     margin-bottom: 10px; }
     body.single-post .wrap #primary #main > article #comments-collapse #respond #reply-title:before,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title:before,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #reply-title:before,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title:before {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title:before {
       content: '\f075'; }
   body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform,
-  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform,
-  body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform,
-  body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform {
+  body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform {
     text-align: left; }
     body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .logged-in-as,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .logged-in-as,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .logged-in-as,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .logged-in-as, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-notes,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-notes,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-notes,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-notes {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .logged-in-as, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-notes,
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-notes {
       font-size: 15px;
       text-align: left;
       margin-bottom: 15px;
       line-height: 25px; }
     body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email {
       display: inline-block;
       width: 100%; }
       @media only screen and (min-width: 768px) {
         body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author,
-        body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author,
-        body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author,
-        body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
-        body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email,
-        body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
-        body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email {
+        body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
+        body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email {
           width: 49%; } }
       body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author label,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author label,
-      body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author label,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author label, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author .required,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author .required,
-      body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author .required,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author .required, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email label,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email label,
-      body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email label,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email label, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email .required,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email .required,
-      body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email .required,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email .required {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author label, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-author .required,
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-author .required, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email label,
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email label, body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email .required,
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email .required {
         display: none; }
     @media only screen and (min-width: 768px) {
       body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email,
-      body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-email,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-email {
         float: right; } }
     body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-url,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-url,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-form-url,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-url {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-form-url {
       display: none; }
     body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .form-submit,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .form-submit,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit {
       text-align: left; }
       body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .form-submit #submit,
-      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit #submit,
-      body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .form-submit #submit,
-      body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit #submit {
+      body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit #submit {
         font-size: 16px;
         line-height: 25px;
         padding: 4px 40px;
         width: 100%; }
         @media only screen and (min-width: 768px) {
           body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .form-submit #submit,
-          body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit #submit,
-          body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .form-submit #submit,
-          body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit #submit {
+          body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .form-submit #submit {
             width: 49%; } }
     body.single-post .wrap #primary #main > article #comments-collapse #respond #commentform .comment-subscription-form label,
-    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-subscription-form label,
-    body.single-team .wrap #primary #main > article #comments-collapse #respond #commentform .comment-subscription-form label,
-    body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-subscription-form label {
+    body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #commentform .comment-subscription-form label {
       font-size: 15px; }
 
 body.single-post .wrap #primary #main > article #comments-collapse #comments #respond,
 body.single-post .wrap #primary #main > article #comments-collapse #comments + #respond,
 body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments #respond,
-body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments + #respond,
-body.single-team .wrap #primary #main > article #comments-collapse #comments #respond,
-body.single-team .wrap #primary #main > article #comments-collapse #comments + #respond,
-body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments #respond,
-body.single-team .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments + #respond {
+body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments + #respond {
   margin: 20px 0 0 0;
   padding: 20px 0;
   border-top: 1px solid #ddd; }
@@ -12313,18 +12010,15 @@ body.search .wrap #primary #main > .infinite-wrap > article .lsx-breaker,
 body.search .wrap #primary #main > .infinite-wrap > article .edit-link {
   display: none; }
 
-body.single-post .wrap #primary.col-sm-12,
-body.single-team .wrap #primary.col-sm-12 {
+body.single-post .wrap #primary.col-sm-12 {
   max-width: 768px; }
 
 body.single-post .wrap #primary #main > article footer.entry-meta,
-body.single-post .wrap #primary #main > .infinite-wrap > article footer.entry-meta,
-body.single-team .wrap #primary #main > article footer.entry-meta,
-body.single-team .wrap #primary #main > .infinite-wrap > article footer.entry-meta {
+body.single-post .wrap #primary #main > .infinite-wrap > article footer.entry-meta {
   display: none; }
 
-body.single:not(.single-post):not(.single-team) .wrap #primary #main > article .edit-link,
-body.single:not(.single-post):not(.single-team) .wrap #primary #main > .infinite-wrap > article .edit-link {
+body.single:not(.single-post) .wrap #primary #main > article .edit-link,
+body.single:not(.single-post) .wrap #primary #main > .infinite-wrap > article .edit-link {
   display: none; }
 
 body.page .wrap #primary #main > article .edit-link,
