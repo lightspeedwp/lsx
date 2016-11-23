@@ -46,7 +46,8 @@ function lsx_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'lsx' ),
-		'top-menu'=> esc_html__( 'Top Menu' , 'lsx' ),
+		'top-menu'=> esc_html__( 'Top Menu (right)' , 'lsx' ),
+		'top-menu-left'=> esc_html__( 'Top Menu (left)' , 'lsx' ),
 		'social'=> esc_html__( 'Social Menu' , 'lsx' ),
 		'footer'=> esc_html__( 'Footer Menu' , 'lsx' )
 	) );	

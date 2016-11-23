@@ -38,7 +38,7 @@ function lsx_body_class($classes) {
 		}
 	}
 
-  if (has_nav_menu('top-menu')) {
+  if (has_nav_menu('top-menu') || has_nav_menu('top-menu-left')) {
   	$classes[] = 'has-top-menu';
   }
 

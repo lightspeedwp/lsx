@@ -618,23 +618,36 @@ function lsx_footer_subscription_cta() {
  * @subpackage	hooks
  * @category	menu
  */
-add_action( 'lsx_header_top', 'lsx_add_top_menu' );
 function lsx_add_top_menu() {
-	if (has_nav_menu('top-menu')) { ?>
+	if ( has_nav_menu( 'top-menu' ) || has_nav_menu(' top-menu-left' ) ) : ?>
 		<div id="top-menu" class="<?php lsx_top_menu_classes(); ?>">
 			<div class="container">
-				<nav class="top-menu">
-		    		<?php
-		    			wp_nav_menu( array(
-							'theme_location' => 'top-menu',
-							'walker' => new Lsx_Bootstrap_Navwalker())
-						);
-		    		?>
-		    	</nav>	
-	    	</div>
-	    </div>
-	<?php }
+				<?php if ( has_nav_menu( 'top-menu' ) ) : ?>
+					<nav class="top-menu">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'top-menu',
+								'walker' => new Lsx_Bootstrap_Navwalker())
+							);
+						?>
+					</nav>
+				<?php endif; ?>
+
+				<?php if ( has_nav_menu( 'top-menu-left' ) ) : ?>
+					<nav class="top-menu pull-left">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'top-menu-left',
+								'walker' => new Lsx_Bootstrap_Navwalker())
+							);
+						?>
+					</nav>
+				<?php endif; ?>
+			</div>
+		</div>
+	<?php endif;
 }
+add_action( 'lsx_header_top', 'lsx_add_top_menu' );
 
 /**
  * Checks if a caldera form with your slug exists
