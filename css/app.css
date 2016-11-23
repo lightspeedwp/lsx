@@ -6598,7 +6598,7 @@ nav#social-navigation {
   #top-menu nav.top-menu {
     float: right; }
     @media screen and (max-width: 1199px) {
-      #top-menu nav.top-menu {
+      #top-menu nav.top-menu:not(.pull-left) {
         float: right !important; } }
     .header-central #top-menu nav.top-menu {
       float: none;

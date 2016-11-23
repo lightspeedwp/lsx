@@ -792,8 +792,10 @@ nav {
 	nav.top-menu {
 		float: right;
 
-		@media screen and (max-width: 1199px) {
-			float: right !important;
+		&:not(.pull-left) {
+			@media screen and (max-width: 1199px) {
+				float: right !important;
+			}
 		}
 
 		.header-central & {
