@@ -39,9 +39,17 @@ LSX also supports a variety of other top quality plugins like Sensei, WP Job Man
 
 ## Documentation & Support
 
-Theme documentation is available on https://www.lsdev.biz/documentation/lsx/ 
+You can find documentation for the theme and its various extensions below: 
 
-Support - https://www.lsdev.biz/contact-us/ 
+* [LSX Core](https://www.lsdev.biz/documentation/lsx/)
+* [Banners](https://www.lsdev.biz/documentation/lsx-banners/)
+* [Currencies](https://www.lsdev.biz/documentation/lsx-currencies/)
+* [Customizer](https://www.lsdev.biz/documentation/lsx-customizer/)
+* [Mega Menus](https://www.lsdev.biz/documentation/lsx-mega-menus/)
+* [Team](https://www.lsdev.biz/documentation/lsx-team/)
+* [Testimonials](https://www.lsdev.biz/documentation/lsx-testimonials/)
+
+For support please [contact us](https://www.lsdev.biz/contact-us/).
 
 ## Frequently Asked Questions
 
