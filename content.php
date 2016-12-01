@@ -90,7 +90,7 @@
 		<div class="post-tags-wrapper">
 			<?php lsx_content_post_tags(); ?>
 			
-			<?php if ( comments_open() && ! empty( get_comments_number() ) ) : ?>
+			<?php if ( comments_open() && 0 != get_comments_number() ) : ?>
 				<div class="post-comments">
 					<a href="<?php the_permalink() ?>#comments">
 						<?php
