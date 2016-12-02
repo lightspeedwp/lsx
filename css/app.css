@@ -6736,6 +6736,7 @@ nav#social-navigation {
           margin-top: -3px;
           box-shadow: none;
           border: none;
+          min-width: 120px;
           -webkit-border-top-right-radius: 3px;
           -moz-border-top-right-radius: 3px;
           border-top-right-radius: 3px;
@@ -6745,12 +6746,11 @@ nav#social-navigation {
           -webkit-border-bottom-right-radius: 3px;
           -moz-border-bottom-right-radius: 3px;
           border-bottom-right-radius: 3px; }
-          #top-menu nav.top-menu > ul > li ul.dropdown-menu.submenu-languages {
-            left: auto;
-            min-width: 120px;
-            right: 0; }
           #top-menu nav.top-menu > ul > li ul.dropdown-menu > li a {
             padding: 10px 16px; }
+    #top-menu nav.top-menu:not(.pull-left) > ul > li ul.dropdown-menu {
+      left: auto;
+      right: 0; }
 
 .wrap {
   position: relative;

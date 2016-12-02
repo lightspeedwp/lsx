@@ -1052,6 +1052,7 @@ nav {
 					margin-top: -3px;
 					box-shadow: none;
 					border: none;
+					min-width: 120px;
 
 					-webkit-border-top-right-radius: 3px;
 					-moz-border-top-right-radius: 3px;
@@ -1065,16 +1066,21 @@ nav {
 					-moz-border-bottom-right-radius: 3px;
 					border-bottom-right-radius: 3px;
 
-					&.submenu-languages {
-						left: auto;
-						min-width: 120px;
-						right: 0;
-					}
-
 					& > li {
 						a {
 							padding: 10px 16px;
 						}
+					}
+				}
+			}
+		}
+
+		&:not(.pull-left) {
+			& > ul {
+				& > li {
+					ul.dropdown-menu {
+						left: auto;
+						right: 0;
 					}
 				}
 			}
