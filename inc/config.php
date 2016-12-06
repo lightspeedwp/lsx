@@ -60,6 +60,175 @@ function lsx_setup() {
 
 	add_theme_support( 'woocommerce' );	
 	add_theme_support( 'sensei' );
+
+	add_theme_support( 'starter-content', array(
+		'widgets' => array(
+			'sidebar-home' => array(
+				'custom_widget_1' => array(
+					'text',
+					array(
+						'title' => '',
+						'text' => wp_kses_post( '<div class="lsx-full-width"><div class="row"><div class="col-sm-6"><h3>Full Width Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn cta-btn">Lorem ipsum</a></p></div><div class="col-sm-6"><h3>Full Width Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p></div></div></div>' ),
+					)
+				),
+				'custom_widget_2' => array(
+					'text',
+					array(
+						'title' => '',
+						'text' => wp_kses_post( '<div class="row"><div class="col-sm-6"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p></div><div class="col-sm-6"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque <a href="#">volutpat mattis eros</a>.</p></div></div>' ),
+					)
+				),
+				'custom_widget_3' => array(
+					'text',
+					array(
+						'title' => '',
+						'text' => wp_kses_post( '<div class="lsx-full-width-alt"><div class="row"><div class="col-sm-6"><h3>Full Width CTA Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn cta-btn">Lorem ipsum</a></p></div><div class="col-sm-6"><h3>Full Width CTA Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn">Lorem ipsum</a></p></div></div></div>' ),
+					)
+				),
+				'custom_widget_4' => array(
+					'text',
+					array(
+						'title' => '',
+						'text' => wp_kses_post( '<div class="row"><div class="col-sm-12"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p></div></div>' ),
+					)
+				),
+			),
+
+			'sidebar-footer' => array(
+				'custom_widget_1' => array(
+					'text',
+					array(
+						'title' => esc_html__( 'Footer Widget', 'lsx' ),
+						'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
+					)
+				),
+				'custom_widget_2' => array(
+					'text',
+					array(
+						'title' => esc_html__( 'Footer Widget', 'lsx' ),
+						'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
+					)
+				),
+				'custom_widget_3' => array(
+					'text',
+					array(
+						'title' => esc_html__( 'Footer Widget', 'lsx' ),
+						'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
+					)
+				),
+			),
+
+			'sidebar-footer-cta' => array(
+				'custom_widget_1' => array(
+					'text',
+					array(
+						'title' => esc_html__( 'Footer Call to Action Widget', 'lsx' ),
+						'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.', 'lsx' ),
+					)
+				),
+			),
+
+			'sidebar-1' => array(
+				'search',
+			),
+		),
+
+		'posts' => array(
+			'home' => array(
+				'template' => 'page-templates/template-front-page.php',
+				'thumbnail' => '{{image-banner-placeholder-01}}',
+			),
+			'about' => array(
+				'thumbnail' => '{{image-banner-placeholder-02}}',
+			),
+			'blog',
+			'contact' => array(
+				'thumbnail' => '{{image-banner-placeholder-03}}',
+			),
+		),
+
+		'attachments' => array(
+			'image-banner-placeholder-01' => array(
+				'post_title' => esc_html_x( 'Banner Placeholder 01', 'Theme starter content', 'lsx' ),
+				'file' => 'img/banner-placeholder-01.jpg',
+			),
+			'image-banner-placeholder-02' => array(
+				'post_title' => esc_html_x( 'Banner Placeholder 02', 'Theme starter content', 'lsx' ),
+				'file' => 'img/banner-placeholder-02.jpg',
+			),
+			'image-banner-placeholder-03' => array(
+				'post_title' => esc_html_x( 'Banner Placeholder 03', 'Theme starter content', 'lsx' ),
+				'file' => 'img/banner-placeholder-03.jpg',
+			),
+		),
+
+		'options' => array(
+			'show_on_front' => 'page',
+			'page_on_front' => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+
+		'nav_menus' => array(
+			'primary' => array(
+				'name' => esc_html__( 'Primary Menu', 'lsx' ),
+				'items' => array(
+					'page_home',
+					'page_about',
+					'page_blog',
+					'page_contact',
+				),
+			),
+			'top-menu' => array(
+				'name' => esc_html__( 'Top Menu', 'lsx' ),
+				'items' => array(
+					'custom_link_1' => array(
+						'title' => 'View Map',
+						'url' => 'https://www.google.com/maps/place/LightSpeed+WordPress+Development/@-33.92945,18.45345,17z/data=!3m1!4b1!4m2!3m1!1s0x1dcc5da1b2446d25:0xc8ecdb1cc8afd170',
+						'classes' => 'map',
+					),
+					'custom_link_2' => array(
+						'title' => '+27 21 448 9843',
+						'url' => 'tel:+27214489843',
+						'classes' => 'tel',
+					),
+					'custom_link_3' => array(
+						'title' => 'info@lsdev.biz',
+						'url' => 'mailto:info@lsdev.biz',
+						'classes' => 'email',
+					),
+					'page_contact' => array(
+						'classes' => 'cta',
+					),
+				),
+			),
+			'social' => array(
+				'name' => esc_html__( 'Social Menu', 'lsx' ),
+				'items' => array(
+					'link_facebook',
+					'link_foursquare',
+					'link_github',
+					'link_instagram',
+					'link_linkedin',
+					'link_pinterest',
+					'link_twitter',
+					'link_youtube',
+				),
+			),
+			'footer' => array(
+				'name' => esc_html__( 'Footer Menu', 'lsx' ),
+				'items' => array(
+					'page_about',
+					'page_contact',
+				),
+			),
+		),
+
+		'theme_mods' => array(
+			'lsx_header_fixed' => '1',
+			'lsx_header_search' => '1',
+			'lsx_layout' => '1c',
+		),
+	) );
 }
 endif; // lsx_setup
 add_action( 'after_setup_theme', 'lsx_setup' );
