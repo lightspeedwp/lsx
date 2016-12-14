@@ -136,10 +136,10 @@ add_action( 'wp_enqueue_scripts', 'lsx_sensei_styles' );
  * @category 	styles
  */
 function lsx_sensei_redirect_to_home( $query ){
-    if(!is_admin() && is_post_type_archive( 'lesson' ) ) {
-         wp_redirect( home_url() . '/courses-overview' );
-         exit;
-     }
+	if ( ! is_admin() && is_post_type_archive( 'lesson' ) && $query->is_main_query() ) {
+		wp_redirect( home_url() . '/courses-overview' );
+		exit;
+	}
 }
 add_action( 'parse_query', 'lsx_sensei_redirect_to_home' );
 
