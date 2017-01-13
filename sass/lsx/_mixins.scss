@@ -488,6 +488,10 @@ $primary-lighter: #4a9de4;
 			display: none !important;
 		}
 
+		&.page-banner-soliloquy {
+			min-height: auto;
+		}
+
 		.page-banner-image {
 			z-index: 1;
 			position: absolute;
@@ -555,6 +559,10 @@ $primary-lighter: #4a9de4;
 				min-height: 100vh;
 			}
 
+			&.page-banner-soliloquy {
+				min-height: auto;
+			}
+
 			/*.page-banner-image {
 				&:after {
 					display: none;
@@ -576,7 +584,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 992px) {
 						margin-top: 176px;
 					}
@@ -616,7 +625,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 768px) and (max-width: 782px) {
 						margin-top: 46px;
 					}
@@ -645,7 +655,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 992px) {
 						margin-top: 176px;
 					}
@@ -682,7 +693,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 768px) and (max-width: 782px) {
 						margin-top: 46px;
 					}
@@ -712,7 +724,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 992px) {
 						margin-top: (176px - 45px);
 					}
@@ -752,7 +765,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 768px) and (max-width: 782px) {
 						margin-top: 46px;
 					}
@@ -781,7 +795,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 992px) {
 						margin-top: (176px - 45px);
 					}
@@ -818,7 +833,8 @@ $primary-lighter: #4a9de4;
 					}
 				}
 
-				.video-background {
+				.video-background,
+				.soliloquy-outer-container {
 					@media only screen and (min-width: 768px) and (max-width: 782px) {
 						margin-top: 46px;
 					}

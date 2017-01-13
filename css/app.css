@@ -7272,6 +7272,8 @@ body.page-has-banner .page-banner {
   @media only print {
     body.page-has-banner .page-banner {
       display: none !important; } }
+  body.page-has-banner .page-banner.page-banner-soliloquy {
+    min-height: auto; }
   body.page-has-banner .page-banner .page-banner-image {
     z-index: 1;
     position: absolute;
@@ -7321,6 +7323,8 @@ body.page-has-banner.home .page-banner {
   @media screen and (min-width: 992px) {
     body.page-has-banner.home .page-banner {
       min-height: 100vh; } }
+  body.page-has-banner.home .page-banner.page-banner-soliloquy {
+    min-height: auto; }
 
 @media only screen and (min-width: 992px) {
   body.page-has-banner.home:not(.admin-bar):not(.top-menu-fixed).has-top-menu .page-banner {
@@ -7332,7 +7336,8 @@ body.page-has-banner.home .page-banner {
     margin-top: 226px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home:not(.admin-bar):not(.top-menu-fixed).has-top-menu .page-banner .video-background {
+  body.page-has-banner.home:not(.admin-bar):not(.top-menu-fixed).has-top-menu .page-banner .video-background,
+  body.page-has-banner.home:not(.admin-bar):not(.top-menu-fixed).has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 176px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
@@ -7363,15 +7368,18 @@ body.page-has-banner.home .page-banner {
     margin-top: 226px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
-  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .video-background {
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .video-background,
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 46px; } }
 
 @media only screen and (min-width: 783px) and (max-width: 991px) {
-  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .video-background {
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .video-background,
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 32px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .video-background {
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .video-background,
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed).has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 208px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -7383,7 +7391,8 @@ body.page-has-banner.home .page-banner {
     margin-top: 226px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home:not(.admin-bar).top-menu-fixed.has-top-menu .page-banner .video-background {
+  body.page-has-banner.home:not(.admin-bar).top-menu-fixed.has-top-menu .page-banner .video-background,
+  body.page-has-banner.home:not(.admin-bar).top-menu-fixed.has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 176px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
@@ -7411,15 +7420,18 @@ body.page-has-banner.home .page-banner {
     margin-top: 226px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
-  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .video-background {
+  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .video-background,
+  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 46px; } }
 
 @media only screen and (min-width: 783px) and (max-width: 991px) {
-  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .video-background {
+  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .video-background,
+  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 32px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .video-background {
+  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .video-background,
+  body.page-has-banner.home.admin-bar.top-menu-fixed.has-top-menu .page-banner .soliloquy-outer-container {
     margin-top: 208px; } }
 
 @media only screen and (min-width: 992px) {
@@ -7432,7 +7444,8 @@ body.page-has-banner.home .page-banner {
     margin-top: 181px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home:not(.admin-bar):not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home:not(.admin-bar):not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home:not(.admin-bar):not(.top-menu-fixed):not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 131px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
@@ -7463,15 +7476,18 @@ body.page-has-banner.home .page-banner {
     margin-top: 181px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
-  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 46px; } }
 
 @media only screen and (min-width: 783px) and (max-width: 991px) {
-  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 32px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home.admin-bar:not(.top-menu-fixed):not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 163px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -7483,7 +7499,8 @@ body.page-has-banner.home .page-banner {
     margin-top: 181px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home:not(.admin-bar).top-menu-fixed:not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home:not(.admin-bar).top-menu-fixed:not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home:not(.admin-bar).top-menu-fixed:not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 131px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
@@ -7511,15 +7528,18 @@ body.page-has-banner.home .page-banner {
     margin-top: 181px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 782px) {
-  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 46px; } }
 
 @media only screen and (min-width: 783px) and (max-width: 991px) {
-  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 32px; } }
 
 @media only screen and (min-width: 992px) {
-  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .video-background {
+  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .video-background,
+  body.page-has-banner.home.admin-bar.top-menu-fixed:not(.has-top-menu) .page-banner .soliloquy-outer-container {
     margin-top: 163px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
