@@ -13738,16 +13738,19 @@ figure.alignright {
   .carousel .carousel-indicators {
     bottom: -50px; }
     .carousel .carousel-indicators li {
-      border: 1px solid #444; }
+      border: 1px solid #444;
+      height: 12px;
+      margin: 0 3px;
+      width: 12px; }
     .carousel .carousel-indicators .active {
       background-color: #444; }
   @media screen and (max-width: 767px) {
-    .carousel:not(#page-banner-slider) .carousel-indicators {
+    .carousel:not(#page-banner-slider):not(#categories-slider) .carousel-indicators {
       display: none; } }
   .carousel .carousel-inner .item img {
     width: 100%; }
   @media screen and (max-width: 767px) {
-    .carousel:not(#page-banner-slider) .carousel-inner .item {
+    .carousel:not(#page-banner-slider):not(#categories-slider) .carousel-inner .item {
       margin-bottom: 20px;
       position: relative !important;
       display: block !important;

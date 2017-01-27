@@ -959,6 +959,9 @@ figure.alignright { margin-left: 25px; }
 
 		li {
 			border: 1px solid #444;
+			height: 12px;
+			margin: 0 3px;
+			width: 12px;
 		}
 
 		.active {
@@ -966,7 +969,7 @@ figure.alignright { margin-left: 25px; }
 		}
 	}
 
-	&:not(#page-banner-slider) {
+	&:not(#page-banner-slider):not(#categories-slider) {
 		.carousel-indicators {
 			@media screen and (max-width: 767px) {
 				display: none;
@@ -982,7 +985,7 @@ figure.alignright { margin-left: 25px; }
 		}
 	}
 
-	&:not(#page-banner-slider) {
+	&:not(#page-banner-slider):not(#categories-slider) {
 		.carousel-inner {
 			.item {
 				@media screen and (max-width: 767px) {
