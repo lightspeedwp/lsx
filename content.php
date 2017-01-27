@@ -11,35 +11,62 @@
 		$thumb_class = 'has-thumb';
 	} else {
 		$thumb_class = 'no-thumb';
-	} 
+	}
+
+	$grid_layout_enabled = ( ! is_singular() && apply_filters( 'lsx_blog_grid_layout', false ) );
+	$image_src           = '';
+	$image_class         = '';
+
+	if ( true === $grid_layout_enabled ) {
+		$thumbnail_id = get_post_thumbnail_id( get_the_ID() );
+		$image_arr    = wp_get_attachment_image_src( $thumbnail_id, 'lsx-single-thumbnail' );
+
+		if ( is_array( $image_arr ) ) {
+			$image_src = $image_arr[0];
+		}
+
+		$image_class = 'hidden-sm hidden-md hidden-ls';
+	}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $thumb_class ); ?>>
 	<?php lsx_entry_top(); ?>
 
-	<header class="entry-header">
-		<?php if ( has_post_thumbnail() ) { ?>
-		<div class="entry-image">
-			<a class="thumbnail" href="<?php the_permalink(); ?>">
-				 <?php lsx_thumbnail('lsx-single-thumbnail'); ?>
-			</a>
-		</div>
+	<?php if ( true === $grid_layout_enabled ) { ?>
+		<div class="entry-grid-layout">
 	<?php } ?>
 
-	<?php 
-		$format = get_post_format();
-		if ( false === $format ) {
-			$format = 'standard';
-			$show_on_front = get_option('show_on_front','posts');
-			if('page' == $show_on_front){
-				$archive_link = get_permalink(get_option('page_for_posts'));
+	<?php if ( has_post_thumbnail() && true === $grid_layout_enabled ) { ?>
+		<div class="entry-grid-layout-content entry-grid-layout-content-67">
+	<?php } ?>
+
+	<?php if ( ! has_post_thumbnail() && true === $grid_layout_enabled ) { ?>
+		<div class="entry-grid-layout-content entry-grid-layout-content-100">
+	<?php } ?>
+
+	<header class="entry-header">
+		<?php if ( has_post_thumbnail() ) { ?>
+			<div class="entry-image <?php echo esc_attr( $image_class ); ?>">
+				<a class="thumbnail" href="<?php the_permalink(); ?>">
+					 <?php lsx_thumbnail('lsx-single-thumbnail'); ?>
+				</a>
+			</div>
+		<?php } ?>
+
+		<?php 
+			$format = get_post_format();
+			if ( false === $format ) {
+				$format = 'standard';
+				$show_on_front = get_option('show_on_front','posts');
+				if('page' == $show_on_front){
+					$archive_link = get_permalink(get_option('page_for_posts'));
+				}else{
+					$archive_link = home_url();
+				}
 			}else{
-				$archive_link = home_url();
+				$archive_link = get_post_format_link($format);
 			}
-		}else{
-			$archive_link = get_post_format_link($format);
-		}
-		$format = lsx_translate_format_to_fontawesome($format);
+			$format = lsx_translate_format_to_fontawesome($format);
 		?>
 
 		<h1 class="entry-title">
@@ -89,6 +116,24 @@
 			?>
 		</div><!-- .entry-content -->
 	<?php endif; ?>
+
+	<?php if ( true === $grid_layout_enabled ) { ?>
+		</div>
+	<?php } ?>
+	
+	<?php if ( has_post_thumbnail() && true === $grid_layout_enabled ) { ?>
+		<div class="entry-image hidden-xs">
+			<a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo esc_url( $image_src ); ?>);">
+				<?php lsx_thumbnail( 'lsx-single-thumbnail' ); ?>
+			</a>
+		</div>
+	<?php } ?>
+
+	<?php if ( true === $grid_layout_enabled ) { ?>
+		</div>
+	<?php } ?>
+	
+	<div class="clearfix"></div>
 	
 	<?php if ( has_tag() || ( comments_open() && ! empty( get_comments_number() ) ) ) : ?>
 		<div class="post-tags-wrapper">
