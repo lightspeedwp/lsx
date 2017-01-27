@@ -65,12 +65,16 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->	
 
-	<?php if ( !is_singular() && !has_post_format( array('video', 'audio', 'quote', 'link') ) ) : // Only display Excerpts for Search and Archives ?>
+	<?php if ( !is_singular() && !has_post_format( array('video', 'audio', 'quote', 'link') ) && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : // Only display Excerpts for Search and Archives ?>
 		<div class="entry-summary"> 
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
 	<?php elseif ( has_post_format( array('link') ) ) : ?>
 
+	<?php elseif ( apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div><!-- .entry-content -->
 	<?php else : ?>
 		<div class="entry-content">
 			<?php
