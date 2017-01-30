@@ -83,20 +83,20 @@ jQuery(document).ready(function($) {
 
 	$window.scroll(function(){
 	    if ( $window.scrollTop() > 250 && windowWidth > 768 ) {
-	        $('#top-menu.top-menu-fixed').slideUp();
+	        $('#top-menu.top-menu-fixed:not(.top-menu-always-visible)').slideUp();
 	        $('header.banner.navbar-static-top').addClass('scrolled');
 	    } else {
-	        $('#top-menu.top-menu-fixed').slideDown();
+	        $('#top-menu.top-menu-fixed:not(.top-menu-always-visible)').slideDown();
 	        $('header.banner.navbar-static-top').removeClass('scrolled');
 	    }
 	});
 	
 	$window.resize(function () {
 		if ( $window.scrollTop() > 250 && windowWidth > 768 ) {
-	        $('#top-menu.top-menu-fixed').slideUp();
+	        $('#top-menu.top-menu-fixed:not(.top-menu-always-visible)').slideUp();
 	        $('header.banner.navbar-static-top').addClass('scrolled');
 	    } else {
-	        $('#top-menu.top-menu-fixed').slideDown();
+	        $('#top-menu.top-menu-fixed:not(.top-menu-always-visible)').slideDown();
 	        $('header.banner.navbar-static-top').removeClass('scrolled');
 	    }
 
