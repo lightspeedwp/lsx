@@ -7218,7 +7218,8 @@ img.alignright, img.pull-right,
 img.alignleft, img.pull-left,
 .thumbnail.alignleft,
 .thumbnail.pull-left {
-  margin: 0 20px 15px 0; }
+  margin: 0 20px 15px 0;
+  padding: 0 !important; }
 
 img.aligncenter,
 .thumbnail.aligncenter {
@@ -11860,7 +11861,7 @@ body.single-post .wrap #primary #main > .infinite-wrap > article #comments-colla
     margin: 0; }
     body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment > img,
     body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment > img {
-      margin-right: 5px; }
+      margin-right: 15px; }
     body.single-post .wrap #primary #main > article #comments-collapse #comments > ol .comment .media-body,
     body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #comments > ol .comment .media-body {
       text-align: left; }
