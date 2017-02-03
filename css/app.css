@@ -8024,17 +8024,14 @@ header.banner .search-field {
     @media print {
       .post-navigation .pager {
         display: none !important; } }
-    .post-navigation .pager a {
-      border: none !important;
-      font-weight: 600; }
-      .post-navigation .pager a div {
-        max-width: 30%; }
-        @media screen and (max-width: 991px) {
-          .post-navigation .pager a div {
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 15px; } }
-        .post-navigation .pager a div h3 {
+    .post-navigation .pager div {
+      margin-bottom: 15px; }
+      .post-navigation .pager div a {
+        border: none !important;
+        display: block;
+        float: none;
+        font-weight: 600; }
+        .post-navigation .pager div a h3 {
           display: inline-block;
           font-weight: 700;
           margin: 0;
@@ -8044,7 +8041,7 @@ header.banner .search-field {
           -ms-transition: all 0.1s ease-in-out;
           -o-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out; }
-        .post-navigation .pager a div .nav-links-description {
+        .post-navigation .pager div a .nav-links-description {
           color: #777;
           margin-bottom: 0;
           font-family: 'Noto Serif', serif !important;
@@ -8055,28 +8052,19 @@ header.banner .search-field {
           -ms-transition: all 0.1s ease-in-out;
           -o-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out; }
-      .post-navigation .pager a:hover h3 {
-        color: #232222; }
-      .post-navigation .pager a:hover .nav-links-description {
-        color: #333; }
-    .post-navigation .pager .previous,
-    .post-navigation .pager .next {
-      color: #333;
-      font-size: 24px; }
-      @media screen and (max-width: 991px) {
-        .post-navigation .pager .previous,
-        .post-navigation .pager .next {
-          text-align: left !important; } }
-    .post-navigation .pager .previous {
-      text-align: left;
-      float: left; }
-      .post-navigation .pager .previous span {
-        margin-right: 5px; }
-    .post-navigation .pager .next {
-      text-align: right;
-      float: right; }
-      .post-navigation .pager .next span {
-        margin-left: 5px; }
+        .post-navigation .pager div a:hover h3 {
+          color: #232222; }
+        .post-navigation .pager div a:hover .nav-links-description {
+          color: #333; }
+      .post-navigation .pager div.previous, .post-navigation .pager div.next {
+        color: #333;
+        font-size: 24px;
+        text-align: left; }
+        .post-navigation .pager div.previous span, .post-navigation .pager div.next span {
+          margin-left: 5px; }
+      @media screen and (min-width: 992px) {
+        .post-navigation .pager div.next {
+          text-align: right; } }
     @media screen and (max-width: 991px) {
       .post-navigation .pager {
         margin: 20px 15px; } }
@@ -10019,7 +10007,7 @@ body.archive.tax-post_format .wrap #primary #main > article .post-tags-wrapper .
 body.archive.tax-post_format .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-comments:before,
 body.search .wrap #primary #main > article .post-tags-wrapper .post-comments:before,
 body.search .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .post-comments:before, body.single-post .wrap #primary #main > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before,
-body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before, body.single-post .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before, body.single-post .wrap #primary .post-navigation .pager a div.next .nav-links-description:after, body.single-post .wrap #primary #main > article .post-meta-link:before,
+body.single-post .wrap #primary #main > .infinite-wrap > article .post-tags-wrapper .sharedaddy .sd-sharing .sd-title:before, body.single-post .wrap #primary .post-navigation .pager div.previous .nav-links-description:before, body.single-post .wrap #primary .post-navigation .pager div.next .nav-links-description:after, body.single-post .wrap #primary #main > article .post-meta-link:before,
 body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link:before, body.single-post .wrap #primary #main > article #comments-collapse #respond #reply-title:before,
 body.single-post .wrap #primary #main > .infinite-wrap > article #comments-collapse #respond #reply-title:before {
   content: '';
@@ -11829,22 +11817,22 @@ body.single-post .wrap #primary .post-navigation {
   body.single-post .wrap #primary .post-navigation .pager {
     margin-left: -15px !important;
     margin-right: -15px !important; }
-    body.single-post .wrap #primary .post-navigation .pager a div .nav-links-description {
+    body.single-post .wrap #primary .post-navigation .pager div a .nav-links-description {
       color: #333;
       line-height: 30px; }
-    body.single-post .wrap #primary .post-navigation .pager a div.previous .nav-links-description:before {
+    body.single-post .wrap #primary .post-navigation .pager div a h3 {
+      font-size: 22px;
+      color: #337ab7; }
+    body.single-post .wrap #primary .post-navigation .pager div a:hover h3, body.single-post .wrap #primary .post-navigation .pager div a:active h3, body.single-post .wrap #primary .post-navigation .pager div a:focus h3 {
+      color: #23527c; }
+    body.single-post .wrap #primary .post-navigation .pager div.previous .nav-links-description:before {
       content: '\f060';
       font-size: 14px; }
-    body.single-post .wrap #primary .post-navigation .pager a div.next .nav-links-description:after {
+    body.single-post .wrap #primary .post-navigation .pager div.next .nav-links-description:after {
       content: '\f061';
       font-size: 14px;
       margin-right: 0;
       margin-left: 5px; }
-    body.single-post .wrap #primary .post-navigation .pager a div h3 {
-      font-size: 22px;
-      color: #337ab7; }
-    body.single-post .wrap #primary .post-navigation .pager a:hover div h3, body.single-post .wrap #primary .post-navigation .pager a:active div h3, body.single-post .wrap #primary .post-navigation .pager a:focus div h3 {
-      color: #23527c; }
 
 body.single-post .wrap #primary #main > article .post-meta-link,
 body.single-post .wrap #primary #main > .infinite-wrap > article .post-meta-link {

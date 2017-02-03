@@ -642,18 +642,14 @@ body {
 			display: none !important;
 		}
 
-		a {
-			border: none !important;
-			font-weight: 600;
-
-			div {
-				max-width: 30%;
-
-				@media screen and (max-width: 991px) {
-					width: 100%;
-					max-width: 100%;
-					margin-bottom: 15px;
-				}
+		div {
+			margin-bottom: 15px;
+			
+			a {
+				border: none !important;
+				display: block;
+				float: none;
+				font-weight: 600;
 
 				h3 {
 					display: inline-block;
@@ -675,45 +671,34 @@ body {
 					}
 					@include transition(all .1s ease-in-out);
 				}
-			}
 
-			&:hover {
-				h3 {
-				    color: $blacker;
+				&:hover {
+					h3 {
+					    color: $blacker;
+					}
+
+					.nav-links-description {
+						color: $black;
+					}
 				}
+			}
 
-				.nav-links-description {
-					color: $black;
+			&.previous,
+			&.next {
+				color: $black;
+		    	font-size: 24px;
+				text-align: left;
+				
+				span {
+					margin-left: 5px;
 				}
 			}
-		}
 
-		.previous,
-		.next {
-			color: $black;
-	    	font-size: 24px;
-
-	    	@media screen and (max-width: 991px) {
-	    		text-align: left !important;
-	    	}
-		}
-
-		.previous {
-			text-align: left;
-			float: left;
-			
-			span {
-				margin-right: 5px;
+			&.next {
+		    	@media screen and (min-width: 992px) {
+		    		text-align: right;
+		    	}
 			}
-		}
-
-		.next {
-			text-align: right;
-			float: right;
-			
-			span {
-				margin-left: 5px;
-			}   
 		}
 
 		@media screen and (max-width: 991px) {

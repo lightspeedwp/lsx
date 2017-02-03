@@ -559,50 +559,48 @@
 			right: -15px !important;
 		}
 
-		a {
-			div {
+		div {
+			a {
 				.nav-links-description {
 					color: #333;
 					line-height: 30px;
-				}
-
-				&.previous {
-					.nav-links-description {
-						&:before {
-							@extend %font-awesome;
-							content: '\f060';
-							font-size: 14px;
-						}
-					}
-				}
-
-				&.next {
-					.nav-links-description {
-						&:after {
-							@extend %font-awesome;
-							content: '\f061';
-							font-size: 14px;
-
-							margin: {
-								right: 0;
-								left: 5px;
-							}
-						}
-					}
 				}
 
 				h3 {
 					font-size: 22px;
 					color: #337ab7;
 				}
-			}
 
-			&:hover,
-			&:active,
-			&:focus {
-				div{
+				&:hover,
+				&:active,
+				&:focus {
 					h3 {
 						color: #23527c;
+					}
+				}
+			}
+
+			&.previous {
+				.nav-links-description {
+					&:before {
+						@extend %font-awesome;
+						content: '\f060';
+						font-size: 14px;
+					}
+				}
+			}
+
+			&.next {
+				.nav-links-description {
+					&:after {
+						@extend %font-awesome;
+						content: '\f061';
+						font-size: 14px;
+
+						margin: {
+							right: 0;
+							left: 5px;
+						}
 					}
 				}
 			}
