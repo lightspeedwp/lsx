@@ -56,6 +56,9 @@ function lsx_get_avatar($avatar) {
 }
 add_filter('get_avatar', 'lsx_get_avatar');
 
+add_action( 'admin_bar_menu', function() { remove_filter( 'get_avatar','lsx_get_avatar' ); }, 0 );
+add_action( 'wp_after_admin_bar_render', function() { add_filter( 'get_avatar','lsx_get_avatar' ); } );
+
 /**
  * Comment Form Field Filter
  *
