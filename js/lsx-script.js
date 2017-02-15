@@ -183,7 +183,7 @@ jQuery(document).ready(function($) {
 		// Bootstrat Menu
 
 		if (1199 < windowWidth) {
-			$('.navbar-nav li.dropdown a').each(function() {
+			$('.navbar-nav li.dropdown a, #top-menu li.dropdown a').each(function() {
 				$(this).removeClass('dropdown-toggle');
 				$(this).removeAttr('data-toggle');
 			});
