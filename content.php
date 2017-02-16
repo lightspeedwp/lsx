@@ -135,9 +135,7 @@
 	
 	<div class="clearfix"></div>
 	
-	<?php
-        $comments_number = get_comments_number();
-        if ( has_tag() || ( comments_open() && ! empty( $comments_number ) ) ) : ?>
+	<?php if ( has_tag() || ( comments_open() && ! empty( get_comments_number() ) ) ) : ?>
 		<div class="post-tags-wrapper">
 			<?php lsx_content_post_tags(); ?>
 			
