@@ -15,10 +15,10 @@ get_header(); ?>
 
 		<main id="main" class="site-main">
 
-		<?php lsx_content_top(); ?>	
+		<?php lsx_content_top(); ?>
 
 		<?php if ( have_posts() ) : global $lsx_archive; $lsx_archive = 1; ?>
-		
+
 			<?php 
 			$layout = get_theme_mod('lsx_layout','2cr');
 			$layout = apply_filters( 'lsx_layout', $layout );
