@@ -51,7 +51,7 @@ function lsx_sidebar_footer_params( $params ) {
         $total_widgets = wp_get_sidebars_widgets();
         $sidebar_widgets = count($total_widgets[$sidebar_id]);
 
-        $params[0]['before_widget'] = str_replace('class="styler', 'class="col-sm-' . floor(12 / $sidebar_widgets), $params[0]['before_widget']);
+        $params[0]['before_widget'] = str_replace('class="styler', 'class="col-md-' . floor(12 / $sidebar_widgets), $params[0]['before_widget']);
     }
 
     return $params;

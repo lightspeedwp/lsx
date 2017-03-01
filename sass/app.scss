@@ -969,7 +969,7 @@ figure.alignright { margin-left: 25px; }
 		}
 	}
 
-	&:not(#page-banner-slider):not(#categories-slider) {
+	&:not(#page-banner-slider):not(#categories-slider):not(.lsx-to-slider) {
 		.carousel-indicators {
 			@media screen and (max-width: 767px) {
 				display: none;
@@ -985,7 +985,7 @@ figure.alignright { margin-left: 25px; }
 		}
 	}
 
-	&:not(#page-banner-slider):not(#categories-slider) {
+	&:not(#page-banner-slider):not(#categories-slider):not(.lsx-to-slider) {
 		.carousel-inner {
 			.item {
 				@media screen and (max-width: 767px) {

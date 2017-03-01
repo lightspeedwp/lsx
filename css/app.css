@@ -9467,7 +9467,7 @@ article {
     color: #ccc;
     font-size: 15px;
     line-height: 1.4; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 991px) {
       #footer-widgets .widget {
         margin: 50px 0; } }
     #footer-widgets .widget h3.widget-title {
@@ -13733,12 +13733,12 @@ figure.alignright {
     .carousel .carousel-indicators .active {
       background-color: #444; }
   @media screen and (max-width: 767px) {
-    .carousel:not(#page-banner-slider):not(#categories-slider) .carousel-indicators {
+    .carousel:not(#page-banner-slider):not(#categories-slider):not(.lsx-to-slider) .carousel-indicators {
       display: none; } }
   .carousel .carousel-inner .item img {
     width: 100%; }
   @media screen and (max-width: 767px) {
-    .carousel:not(#page-banner-slider):not(#categories-slider) .carousel-inner .item {
+    .carousel:not(#page-banner-slider):not(#categories-slider):not(.lsx-to-slider) .carousel-inner .item {
       margin-bottom: 20px;
       position: relative !important;
       display: block !important;
