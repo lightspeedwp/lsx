@@ -124,10 +124,21 @@ add_action( 'lsx_content_post_meta', 'lsx_post_meta_date', 10 );
  */
 if ( ! function_exists( 'lsx_post_meta_author' ) ) {
 	function lsx_post_meta_author() {
+		$author = get_the_author();
+		$author_url = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+
+		if ( empty( $author ) ) {
+			global $post;
+
+			$author = get_user_by( 'ID', $post->post_author );
+			$author = $author->display_name;
+			$author_url = esc_url( get_author_posts_url( $post->post_author ) );
+		}
+
 		printf( '<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
 			esc_html_x( 'Posted by:', 'Used before post author name.', 'lsx' ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			get_the_author()
+			$author_url,
+			$author
 		);
 	}
 }
