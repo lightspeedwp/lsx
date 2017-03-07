@@ -15,17 +15,17 @@ get_header(); ?>
 
 		<main id="main" class="site-main">
 
-		<?php lsx_content_top(); ?>
-
-		<?php if ( have_posts() ) : global $lsx_archive; $lsx_archive = 1; ?>
-
-			<?php 
+		<?php
 			$layout = get_theme_mod('lsx_layout','2cr');
 			$layout = apply_filters( 'lsx_layout', $layout );
 			if('1c' === $layout){
 				lsx_breadcrumbs();
 			}
-			?>	
+		?>
+
+		<?php lsx_content_top(); ?>
+
+		<?php if ( have_posts() ) : global $lsx_archive; $lsx_archive = 1; ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
