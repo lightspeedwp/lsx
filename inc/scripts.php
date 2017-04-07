@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 function lsx_scripts() {
 	global $content_width;
 	
-	wp_enqueue_style('lsx_main_style', get_stylesheet_uri(), array(), LSX_VERSION);
+	wp_enqueue_style('lsx_main_style', get_template_directory_uri() . '/style.css', array(), LSX_VERSION);
 	
-	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/css/app.css', array(), LSX_VERSION);
+	wp_enqueue_style('lsx_main', get_template_directory_uri() . '/css/app.css', array( 'lsx_main_style', 'fontawesome', 'medium-break' ), LSX_VERSION);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -50,7 +50,7 @@ function lsx_scripts() {
 	
 	
 	if(is_child_theme() && file_exists(get_stylesheet_directory() . '/custom.css')) {
-		wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css', array(), LSX_VERSION );
+		wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css', array( 'lsx_main' ), LSX_VERSION );
 	}
 
 	wp_enqueue_style('medium-break', get_template_directory_uri() . '/css/medium-nav-break.css', array(), LSX_VERSION);
