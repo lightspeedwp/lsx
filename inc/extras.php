@@ -484,4 +484,4 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
-remove_filter( 'the_excerpt', 'wpautop' );
+//remove_filter( 'the_excerpt', 'wpautop' );
