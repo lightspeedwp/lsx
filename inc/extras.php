@@ -443,7 +443,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 				preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $wpse_excerpt, $tokens);
 
 				foreach ($tokens[0] as $token) { 
-					if ($count >= $excerpt_word_count && preg_match('/[\,\;\?\.\!]\s*$/uS', $token)) {
+					if ($count >= $excerpt_word_count) {
 						$excerpt_output .= trim($token);
 						$has_more = true;
 						break;
