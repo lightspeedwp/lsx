@@ -1,0 +1,18 @@
+{
+  "folders":
+  [
+    {
+      "path": "/",
+      "folder_exclude_patterns": [".git", "node_modules", "vendor"],
+      "file_exclude_patterns": []
+    }
+  ],
+  "build_systems":
+    [
+      {
+        "name": "nandotess",
+        "working_dir": "${project_path}",
+        "shell_cmd": "./bin/nandotess.command"
+      }
+    ]
+}
