@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 /**
  * Yoast Breadcrumbs on Twitter Bootstrap
- * 
+ *
  * @author Novrian <me@novrian.info>
  * @copyright (c) 2013. Novrian Y.F.
  * @license MIT License
@@ -13,7 +13,7 @@ function lsx_breadcrumbs() {
   if (!function_exists('yoast_breadcrumb') && !function_exists('woocommerce_breadcrumb')) {
     return null;
   }
-  
+
   $show_on_front = get_option('show_on_front');
   if ( ('posts' == $show_on_front && is_home()) || ('page' == $show_on_front && is_front_page()) ) {
   	return;
@@ -27,21 +27,21 @@ function lsx_breadcrumbs() {
   }elseif(function_exists('yoast_breadcrumb')){
 	  	// Default Yoast Breadcrumbs Separator
 	  	$old_sep = '\&raquo\;';
-	  	
+
 	  	// Get the crumbs
 	  	$crumbs = yoast_breadcrumb(null, null, false);
-	  	
+
 	  	// Remove wrapper <span xmlns:v />
 	  	$output = preg_replace("/^\<span xmlns\:v=\"http\:\/\/rdf\.data\-vocabulary\.org\/#\"\>/", "", $crumbs);
 	  	$output = preg_replace("/\<\/span\><\/span\>$/", "", $output);
-	  	
+
 	  	$crumb = preg_split("/\40(" . $old_sep . ")\40/", $output);
 
-	  	$output = implode(" ", $crumb);	  	
+	  	$output = implode(" ", $crumb);
 	  	$output = str_replace('</a>', '</a> / ', $output);
 	  	$output = '<div class="breadcrumbs-container">' . $output . '</div>';
   }
-  
+
   $output = apply_filters('lsx_breadcrumbs',$output);
 
   echo wp_kses_post( $output );
@@ -74,8 +74,8 @@ if ( ! function_exists( 'lsx_site_title' ) ) :
 			<div class="site-branding">
 				<h1 class="site-title"><a title="<?php bloginfo( 'name' ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-			</div>		
-		<?php 
+			</div>
+		<?php
 	}
 endif;
 
@@ -102,7 +102,7 @@ if ( ! function_exists( 'lsx_post_meta' ) ) {
 if ( ! function_exists( 'lsx_post_meta_date' ) ) {
 	function lsx_post_meta_date() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-				
+
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			get_the_date(),
@@ -208,31 +208,31 @@ if ( ! function_exists( 'lsx_translate_format_to_fontawesome' ) ) {
 			case 'image':
 				$format = 'camera';
 				break;
-			
+
 			case 'video':
 				$format = 'play';
 				break;
-			
+
 			case 'gallery':
 				$format = 'picture-o';
 				break;
-			
+
 			case 'audio':
 				$format = 'volume-up';
 				break;
-			
+
 			case 'link':
 				$format = 'link';
 				break;
-			
+
 			case 'quote':
 				$format = 'quote-right';
 				break;
-			
+
 			case 'aside':
 				$format = 'circle-o';
 				break;
-			
+
 			default:
 				$format = 'file-text-o';
 				break;
@@ -253,47 +253,47 @@ if ( ! function_exists( 'lsx_portfolio_meta' ) ) {
 	function lsx_portfolio_meta() {
 		?>
 		<div id="portfolio-meta" class="portfolio-meta info-box-sticky info-box sticky-wrapper">
-			<?php 
+			<?php
 				$client = get_post_meta(get_the_ID(),'lsx-client',true);
 				if(false != $client){ ?>
 					<div class="portfolio-client">
 						<span><span class="fa fa-user"></span><?php esc_html_e( 'Client','lsx' ); ?></span>
 						<span><?php echo esc_html( $client ); ?></span>
-					</div>				
+					</div>
 			<?php }	?>
 
-			<?php 
+			<?php
 				$portfolio_type = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
-				
+
 				if($portfolio_type){
 					?>
 					<div class="portfolio-industry">
 						<span><span class="fa fa-folder-open"></span><?php esc_html_e( 'Industry', 'lsx' ); ?></span>
 						<?php echo wp_kses_post( $portfolio_type ); ?>
-					</div>			
+					</div>
 			<?php } ?>
 
-			<?php 
+			<?php
 				$services = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
 				if(false != $services){ ?>
 					<div class="portfolio-services">
 						<span><span class="fa fa-cog"></span><?php esc_html_e( 'Services', 'lsx' ); ?></span>
 						<?php echo wp_kses_post( $services ); ?>
-					</div>				
+					</div>
 			<?php }	?>
 
-			<?php 
+			<?php
 				$website = esc_url( get_post_meta(get_the_ID(),'lsx-website',true) );
 				if(false != $website){ ?>
 					<div class="portfolio-website">
 						<span><span class="fa fa-link"></span><?php esc_html_e( 'Website', 'lsx' ); ?></span>
 						<a target="_blank" href="<?php echo esc_url( $website ); ?>"><?php echo esc_html( $website ) ?></a>
-					</div>				
+					</div>
 			<?php }	?>
 
 		</div>
 
-	<?php } // End lsx_portfolio_meta() 
+	<?php } // End lsx_portfolio_meta()
 }
 
 /**
@@ -307,19 +307,19 @@ if ( ! function_exists( 'lsx_portfolio_gallery' ) ) {
 		$media = get_attached_media( 'image' );
 		$media_array = array();
 		$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
-		
+
 		if(!empty($media)){
 			foreach($media as $media_item){
 				if($post_thumbnail_id != $media_item->ID) {
 					$media_array[] = $media_item->ID;
 				}
 			}
-				
+
 			if(!empty($media_array)){
 				echo wp_kses_post( gallery_shortcode( array( 'size' => 'full', 'ids' => implode( ',', $media_array ) ) ) );
 			}
 		}
-		
+
 	}
 }
 
@@ -334,13 +334,13 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 			return;
 		}
-		
+
 		if(current_theme_supports('infinite-scroll') && class_exists('The_Neverending_Home_Page')){
 			return true;
 		}elseif(function_exists('wp_pagenavi')){
 			wp_pagenavi();
 		}else{
-			
+
 			$labels = array(
 				'next' 		=> '<span class="meta-nav">&larr;</span> '.esc_html__( 'Older posts', 'lsx' ),
 				'previous' 	=> esc_html__( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
@@ -355,11 +355,11 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 					<?php if ( get_next_posts_link() ) : ?>
 					<div class="nav-previous"><?php next_posts_link( $labels['next'] ); ?></div>
 					<?php endif; ?>
-		
+
 					<?php if ( get_previous_posts_link() ) : ?>
 					<div class="nav-next"><?php previous_posts_link( $labels['previous'] ); ?></div>
 					<?php endif; ?>
-					
+
 					<div class="clearfix"></div>
 				</div><!-- .nav-links -->
 			</nav><!-- .navigation -->
@@ -439,8 +439,8 @@ if(!function_exists('lsx_site_identity')){
 if(!function_exists('lsx_navbar_header')){
 	function lsx_navbar_header(){ ?>
 	   	<div class="navbar-header" itemscope itemtype="http://schema.org/WebPage">
-	   	
-	   		<?php 
+
+	   		<?php
 	   		$nav_menu = get_theme_mod('nav_menu_locations',false);
 			//print_r(get_nav_menu_locations());
 
@@ -470,7 +470,7 @@ add_action('lsx_nav_before','lsx_navbar_header');
 if(!function_exists('lsx_nav_menu')){
 	function lsx_nav_menu(){
 		$nav_menu = get_theme_mod('nav_menu_locations',false);
-		
+
 		//print_r(get_nav_menu_locations());
 
 	    if(false != $nav_menu && isset($nav_menu['primary']) && 0 != $nav_menu['primary']){ ?>
@@ -482,7 +482,7 @@ if(!function_exists('lsx_nav_menu')){
 					'depth' => 3,
 					'container' => false,
 					'menu_class' => 'nav navbar-nav',
-					'walker' => new Lsx_Bootstrap_Navwalker())
+					'walker' => new LSX_Bootstrap_Navwalker())
 				);
 				?>
 		   		</nav>
@@ -514,7 +514,7 @@ function lsx_sitemap_pages(){
 			echo '<li class="page_item page-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
 		}
 		echo '</ul>';
-		
+
 		wp_reset_postdata();
 	}
 }
@@ -532,7 +532,7 @@ function lsx_sitemap_custom_post_type(){
 		'_builtin' 				=> false
 	);
 	$post_types = get_post_types($args , 'names');
-	foreach($post_types as $post_type){	
+	foreach($post_types as $post_type){
 
 		$post_type_args = array(
 			'post_type'		=>	'page',
@@ -541,27 +541,27 @@ function lsx_sitemap_custom_post_type(){
 			'post_type'		=>	$post_type,
 		);
 		$post_type_items = new WP_Query($post_type_args);
-		
+
 		$post_type_object = get_post_type_object($post_type);
 		if(null != $post_type_object){
 			$title = $post_type_object->labels->name;
 		}else{
 			$title = ucwords($post_type);
 		}
-		
+
 		if($post_type_items->have_posts()){
-	
+
 			echo '<h2>' . esc_html( $title ) . '</h2>';
-	
+
 			echo '<ul>';
 			while($post_type_items->have_posts()){ $post_type_items->the_post();
 				echo '<li class="' . esc_attr( get_post_type() ) . '_item ' . esc_attr( get_post_type() ) . '-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
 			}
 			echo '</ul>';
-	
+
 			wp_reset_postdata();
 		}
-	}	
+	}
 }
 
 /**
@@ -587,7 +587,7 @@ function lsx_sitemap_taxonomy_clouds(){
 					echo '<aside id="' . esc_attr( $taxonomy_id ) . '" class="widget widget_' . esc_attr( $taxonomy_id ) . '">' . esc_html( $tag_cloud ) . '</aside>';
 		        }
 	        }
-        } 
+        }
 }
 
 /**
@@ -638,7 +638,7 @@ function lsx_add_top_menu() {
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'top-menu',
-								'walker' => new Lsx_Bootstrap_Navwalker())
+								'walker' => new LSX_Bootstrap_Navwalker())
 							);
 						?>
 					</nav>
@@ -649,7 +649,7 @@ function lsx_add_top_menu() {
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'top-menu-left',
-								'walker' => new Lsx_Bootstrap_Navwalker())
+								'walker' => new LSX_Bootstrap_Navwalker())
 							);
 						?>
 					</nav>
@@ -670,7 +670,7 @@ add_action( 'lsx_header_top', 'lsx_add_top_menu' );
 if ( class_exists('Caldera_Forms') && !function_exists( 'lsx_is_form_enabled' ) ) {
 	function lsx_is_form_enabled($slug = false) {
 		if(false == $slug){ return false; }
-	
+
 		$match = false;
 		$forms = get_option( '_caldera_forms' , false );
 		if(false !== $forms ) {
@@ -687,14 +687,14 @@ if ( class_exists('Caldera_Forms') && !function_exists( 'lsx_is_form_enabled' ) 
 				return strtolower( $slug );
 			}
 		}
-	
+
 		return $match;
 	}
 }
 
 /**
  * Return URL from a link in the content
- * 
+ *
  * @package 	lsx
  * @subpackage 	extras
  * @category 	urls
@@ -708,7 +708,7 @@ function lsx_get_my_url() {
 
 /**
  * Return URL from a link in the content
- * 
+ *
  * @package 	lsx
  * @subpackage 	extras
  * @category 	urls

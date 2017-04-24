@@ -1,6 +1,6 @@
 <?php
 /**
- * LSXfunctions and definitions - Scripts
+ * LSX functions and definitions - Scripts
  *
  * @package    lsx
  * @subpackage scripts

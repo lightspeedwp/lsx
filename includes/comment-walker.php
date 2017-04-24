@@ -1,78 +1,59 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
-
 /**
- * lsx Comment Walker
+ * LSX functions and definitions - Comment Walker
  *
- * @package lsx
+ * @package    lsx
+ * @subpackage comment
  */
 
-/**
- * Use Bootstrap's media object for listing comments
- *
- * @link http://getbootstrap.com/components/#media
- */
-class LSX_Walker_Comment extends Walker_Comment {
-  function start_lvl(&$output, $depth = 0, $args = array()) {
-    $GLOBALS['comment_depth'] = $depth + 1; ?>
-    <ul <?php comment_class('media unstyled comment-' . get_comment_ID()); ?>>
-    <?php
-  }
-
-  function end_lvl(&$output, $depth = 0, $args = array()) {
-    $GLOBALS['comment_depth'] = $depth + 1;
-    echo '</ul>';
-  }
-
-  function start_el(&$output, $comment, $depth = 0, $args = array(), $id = 0) {
-    $depth++;
-    $GLOBALS['comment_depth'] = $depth;
-    $GLOBALS['comment'] = $comment;
-
-    if (!empty($args['callback'])) {
-      call_user_func($args['callback'], $comment, $args, $depth);
-      return;
-    }?>
-
-  	<li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
-    <?php get_template_part('comment'); ?>
-  <?php
-  }
-
-  function end_el(&$output, $comment, $depth = 0, $args = array()) {
-    if (!empty($args['end-callback'])) {
-      call_user_func($args['end-callback'], $comment, $args, $depth);
-      return;
-    }
-    echo "</div></li>\n";
-  }
-  
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-function lsx_get_avatar($avatar) {
-  $avatar = str_replace("class='avatar", "class='avatar pull-left media-object ", $avatar);
-  $avatar = str_replace('class="avatar', 'class="avatar pull-left media-object ', $avatar);
-  return $avatar;
-}
-add_filter('get_avatar', 'lsx_get_avatar');
+if ( ! function_exists( 'lsx_get_avatar' ) ) :
 
-add_action( 'admin_bar_menu', function() { remove_filter( 'get_avatar','lsx_get_avatar' ); }, 0 );
-add_action( 'wp_after_admin_bar_render', function() { add_filter( 'get_avatar','lsx_get_avatar' ); } );
-
-/**
- * Comment Form Field Filter
- *
- * @package lsx-theme
- * @subpackage layout
- */
-function lsx_comment_form_fields_filter($fields) {	
-	foreach($fields as &$field){
-		if(stristr('class=', $field)){
-			$field = str_replace('class="', 'class="form-control ', $field);
-		}else{
-			$field = str_replace('<input', '<input class="form-control" ', $field);
-		}
+	/**
+	 * Comment Form Field Filter
+	 *
+	 * @package    lsx
+	 * @subpackage comment
+	 */
+	function lsx_get_avatar( $avatar ) {
+		$avatar = str_replace( "class='avatar", "class='avatar pull-left media-object ", $avatar );
+		$avatar = str_replace( 'class="avatar', 'class="avatar pull-left media-object ', $avatar );
+		return $avatar;
 	}
-	return $fields;
-}
-add_filter( 'comment_form_default_fields', 'lsx_comment_form_fields_filter');
+
+endif;
+add_filter( 'get_avatar', 'lsx_get_avatar' );
+
+add_action( 'admin_bar_menu', function() {
+	remove_filter( 'get_avatar', 'lsx_get_avatar' );
+}, 0 );
+
+add_action( 'wp_after_admin_bar_render', function() {
+	add_filter( 'get_avatar','lsx_get_avatar' );
+} );
+
+if ( ! function_exists( 'lsx_comment_form_fields_filter' ) ) :
+
+	/**
+	 * Comment Form Field Filter
+	 *
+	 * @package    lsx
+	 * @subpackage comment
+	 */
+	function lsx_comment_form_fields_filter( $fields ) {
+		foreach( $fields as &$field ) {
+			if ( stristr( 'class=', $field ) ) {
+				$field = str_replace( 'class="', 'class="form-control ', $field );
+			} else {
+				$field = str_replace( '<input', '<input class="form-control" ', $field );
+			}
+		}
+
+		return $fields;
+	}
+
+endif;
+add_filter( 'comment_form_default_fields', 'lsx_comment_form_fields_filter' );

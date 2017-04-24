@@ -1,6 +1,6 @@
 <?php
 /**
- * LSXfunctions and definitions - Hooks
+ * LSX functions and definitions - Hooks
  *
  * @package    lsx
  * @subpackage hooks

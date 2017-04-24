@@ -19,33 +19,36 @@ require get_template_directory() . '/includes/layout.php';
 require get_template_directory() . '/includes/hooks.php';
 require get_template_directory() . '/includes/widgets.php';
 require get_template_directory() . '/includes/scripts.php';
-require get_template_directory() . '/includes/nav.php';
+require get_template_directory() . '/includes/classes/nav-navwalker.php';
+require get_template_directory() . '/includes/nav-navwalker.php';
+require get_template_directory() . '/includes/classes/nav-bootstrap-navwalker.php';
+require get_template_directory() . '/includes/nav-bootstrap-navwalker.php';
 require get_template_directory() . '/includes/comment-walker.php';
-require get_template_directory() . '/includes/jetpack.php';
-require get_template_directory() . '/includes/lazyload.php';
+require get_template_directory() . '/includes/classes/lazyload.php';
+require get_template_directory() . '/includes/template-tags.php';
+require get_template_directory() . '/includes/extras.php';
+require get_template_directory() . '/includes/welcome.php';
+
+if ( class_exists( 'Jetpack' ) ) {
+	require get_template_directory() . '/includes/third-party/jetpack.php';
+}
 
 if ( class_exists( 'BuddyPress' ) ) {
-	require get_template_directory() . '/includes/buddypress.php';
+	require get_template_directory() . '/includes/third-party/buddypress.php';
 }
 
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/includes/woocommerce.php';
+	require get_template_directory() . '/includes/third-party/woocommerce.php';
 }
 
 if ( class_exists( 'WP_Job_Manager' ) ) {
-	require get_template_directory() . '/includes/wp-job-manager.php';
+	require get_template_directory() . '/includes/third-party/wp-job-manager.php';
 }
 
 if ( class_exists( 'Tribe__Events__Main' ) ) {
-	require get_template_directory() . '/includes/the-events-calendar.php';
+	require get_template_directory() . '/includes/third-party/the-events-calendar.php';
 }
-
-require get_template_directory() . '/includes/template-tags.php';
-require get_template_directory() . '/includes/extras.php';
-require get_template_directory() . '/includes/wp-bootstrap-navwalker.php';
 
 if ( class_exists( 'Sensei_WC' ) ) {
-	require get_template_directory() . '/includes/sensei.php';
+	require get_template_directory() . '/includes/third-party/sensei.php';
 }
-
-require get_template_directory() . '/includes/welcome.php';

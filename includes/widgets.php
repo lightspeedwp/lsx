@@ -1,6 +1,6 @@
 <?php
 /**
- * LSXfunctions and definitions - Widgets
+ * LSX functions and definitions - Widgets
  *
  * @package    lsx
  * @subpackage widgets

@@ -1,12 +1,22 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
+/**
+ * LSX functions and definitions - Welcome page
+ *
+ * @package    lsx
+ * @subpackage welcome-page
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! function_exists( 'lsx_activation_admin_notice' ) ) :
+
 	/**
 	 * Adds an admin notice upon successful activation.
 	 *
-	 * @since 1.8.0
-	 * @package lsx
+	 * @package    lsx
+	 * @subpackage welcome-page
 	 */
 	function lsx_activation_admin_notice() {
 		global $pagenow;
@@ -15,15 +25,15 @@ if ( ! function_exists( 'lsx_activation_admin_notice' ) ) :
 			add_action( 'admin_notices', 'lsx_welcome_admin_notice', 99 );
 		}
 	}
-endif; // lsx_activation_admin_notice
+endif;
 add_action( 'load-themes.php', 'lsx_activation_admin_notice' );
 
 if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 	/**
 	 * Display an admin notice linking to the welcome screen.
 	 *
-	 * @since 1.8.0
-	 * @package lsx
+	 * @package    lsx
+	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_admin_notice() {
 		?>
@@ -33,43 +43,44 @@ if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 			</div>
 		<?php
 	}
-endif; // lsx_welcome_admin_notice
+endif;
 
 if ( ! function_exists( 'lsx_welcome_style' ) ) :
 	/**
 	 * Load welcome screen css.
 	 *
+	 * @package    lsx
+	 * @subpackage welcome-page
+	 *
 	 * @param string $hook_suffix the current page hook suffix.
-	 * @since 1.8.0
-	 * @package lsx
 	 */
 	function lsx_welcome_style( $hook_suffix ) {
 		if ( 'appearance_page_lsx-welcome' == $hook_suffix ) {
 			wp_enqueue_style( 'lsx-welcome-screen', get_template_directory_uri() . '/assets/css/lsx-admin-welcome.css', array(), LSX_VERSION );
 		}
 	}
-endif; // lsx_welcome_style
+endif;
 add_action( 'admin_enqueue_scripts', 'lsx_welcome_style' );
 
 if ( ! function_exists( 'lsx_welcome_register_menu' ) ) :
 	/**
 	 * Creates the dashboard page.
 	 *
-	 * @since 1.8.0
-	 * @package lsx
+	 * @package    lsx
+	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_register_menu() {
 		add_theme_page( 'LSX', 'LSX', 'activate_plugins', 'lsx-welcome', 'lsx_welcome_screen' );
 	}
-endif; // lsx_welcome_register_menu
+endif;
 add_action( 'admin_menu', 'lsx_welcome_register_menu' );
 
 if ( ! function_exists( 'lsx_welcome_screen' ) ) :
 	/**
 	 * The welcome screen.
 	 *
-	 * @since 1.8.0
-	 * @package lsx
+	 * @package    lsx
+	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_screen() {
 		require_once( ABSPATH . 'wp-load.php' );
@@ -89,43 +100,43 @@ if ( ! function_exists( 'lsx_welcome_screen' ) ) :
 		</div>
 		<?php
 	}
-endif; // lsx_welcome_screen
+endif;
 
 if ( ! function_exists( 'lsx_welcome_header' ) ) :
 	/**
 	 * Welcome screen intro
 	 *
-	 * @since 1.8.0
-	 * @package lsx
+	 * @package    lsx
+	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_header() {
 		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-header.php' );
 	}
-endif; // lsx_welcome_header
+endif;
 add_action( 'lsx_welcome', 'lsx_welcome_header', 10 );
 
 if ( ! function_exists( 'lsx_welcome_enhance' ) ) :
 	/**
 	 * Welcome screen enhance section
 	 *
-	 * @since 1.8.0
-	 * @package lsx
+	 * @package    lsx
+	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_enhance() {
 		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-enhance.php' );
 	}
-endif; // lsx_welcome_enhance
+endif;
 add_action( 'lsx_welcome', 'lsx_welcome_enhance', 20 );
 
 if ( ! function_exists( 'lsx_welcome_footer' ) ) :
 	/**
 	 * Welcome screen contribute section
 	 *
-	 * @since 1.8.0
-	 * @package lsx
+	 * @package    lsx
+	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_footer() {
 		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-footer.php' );
 	}
-endif; // lsx_welcome_footer
+endif;
 add_action( 'lsx_welcome', 'lsx_welcome_footer', 30 );
