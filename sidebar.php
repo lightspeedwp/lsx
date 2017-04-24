@@ -34,7 +34,7 @@ if(true !== $sidebar_enabled){return true;}
 	
 		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_home_sidebar_class()); ?>" role="complementary">
 		
-	<?php elseif ( is_page_template('page-templates/template-blog.php') ) : ?>
+	<?php elseif ( is_page_template('templates/template-blog.php') ) : ?>
 	
 		<div id="secondary" class="widget-area <?php echo esc_attr(lsx_sidebar_class()); ?>" role="complementary">
 		

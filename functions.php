@@ -8,36 +8,36 @@ if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
 define('LSX_VERSION', '2.0.0');
 
-require get_template_directory() . '/inc/config.php';
-require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/sanitize.php';
-require get_template_directory() . '/inc/layout.php';
-require get_template_directory() . '/inc/hooks.php';
-require get_template_directory() . '/inc/widgets.php';
-require get_template_directory() . '/inc/scripts.php';
-require get_template_directory() . '/inc/nav.php';
-require get_template_directory() . '/inc/comment-walker.php';
-require get_template_directory() . '/inc/jetpack.php';
-require get_template_directory() . '/inc/lazyload.php';
+require get_template_directory() . '/includes/config.php';
+require get_template_directory() . '/includes/customizer.php';
+require get_template_directory() . '/includes/sanitize.php';
+require get_template_directory() . '/includes/layout.php';
+require get_template_directory() . '/includes/hooks.php';
+require get_template_directory() . '/includes/widgets.php';
+require get_template_directory() . '/includes/scripts.php';
+require get_template_directory() . '/includes/nav.php';
+require get_template_directory() . '/includes/comment-walker.php';
+require get_template_directory() . '/includes/jetpack.php';
+require get_template_directory() . '/includes/lazyload.php';
 if(class_exists('BuddyPress')){
-	require get_template_directory() . '/inc/buddypress.php';
+	require get_template_directory() . '/includes/buddypress.php';
 }
 if(class_exists('WooCommerce')){
-	require get_template_directory() . '/inc/woocommerce.php';
+	require get_template_directory() . '/includes/woocommerce.php';
 }
 if(class_exists('WP_Job_Manager')){
-	require get_template_directory() . '/inc/wp-job-manager.php';
+	require get_template_directory() . '/includes/wp-job-manager.php';
 }
 if(class_exists('Tribe__Events__Main')){
-	require get_template_directory() . '/inc/the-events-calendar.php';
+	require get_template_directory() . '/includes/the-events-calendar.php';
 }
-require get_template_directory() . '/inc/template-tags.php';
-require get_template_directory() . '/inc/extras.php';
-require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+require get_template_directory() . '/includes/template-tags.php';
+require get_template_directory() . '/includes/extras.php';
+require get_template_directory() . '/includes/wp-bootstrap-navwalker.php';
 if(class_exists('Sensei_WC')){
-	require get_template_directory() . '/inc/sensei.php';
+	require get_template_directory() . '/includes/sensei.php';
 }
-require get_template_directory() . '/inc/welcome.php';
+require get_template_directory() . '/includes/welcome.php';
 
 /**
  * Returns an array of the core panel.

@@ -105,7 +105,7 @@ if ( ! function_exists( 'lsx_welcome_header' ) ) :
 	 * @package lsx
 	 */
 	function lsx_welcome_header() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/component-header.php' );
+		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-header.php' );
 	}
 endif; // lsx_welcome_header
 add_action( 'lsx_welcome', 'lsx_welcome_header', 10 );
@@ -119,7 +119,7 @@ if ( ! function_exists( 'lsx_welcome_enhance' ) ) :
 	 * @package lsx
 	 */
 	function lsx_welcome_enhance() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/component-enhance.php' );
+		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-enhance.php' );
 	}
 endif; // lsx_welcome_enhance
 add_action( 'lsx_welcome', 'lsx_welcome_enhance', 20 );
@@ -133,7 +133,7 @@ if ( ! function_exists( 'lsx_welcome_footer' ) ) :
 	 * @package lsx
 	 */
 	function lsx_welcome_footer() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/component-footer.php' );
+		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-footer.php' );
 	}
 endif; // lsx_welcome_footer
 add_action( 'lsx_welcome', 'lsx_welcome_footer', 30 );

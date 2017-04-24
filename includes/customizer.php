@@ -30,12 +30,12 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) {
 		 * @since     1.0.0
 		 */
 		public function __construct( $controls ) {
-			require get_template_directory() . '/inc/google-font.php';
-			require get_template_directory() . '/inc/google-font-collection.php';
-			require get_template_directory() . '/inc/customizer-core.php';
-			require get_template_directory() . '/inc/customizer-layout.php';
-			require get_template_directory() . '/inc/customizer-font.php';
-			require get_template_directory() . '/inc/customizer-header-layout.php';
+			require get_template_directory() . '/includes/google-font.php';
+			require get_template_directory() . '/includes/google-font-collection.php';
+			require get_template_directory() . '/includes/customizer-core.php';
+			require get_template_directory() . '/includes/customizer-layout.php';
+			require get_template_directory() . '/includes/customizer-font.php';
+			require get_template_directory() . '/includes/customizer-header-layout.php';
 
 			$this->controls = $controls;
 
