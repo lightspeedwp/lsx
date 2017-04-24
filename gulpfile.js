@@ -20,6 +20,8 @@ var gettext = require('gulp-gettext');
 var plumber = require('gulp-plumber');
 var autoPrefixer = require('gulp-autoprefixer');
 var gUtil = require('gulp-util');
+var rename = require('gulp-rename');
+var minify = require('gulp-minify-css');
 
 var browserList = ['last 2 version', '> 1%'];
 
@@ -32,6 +34,17 @@ gulp.task('styles', function () {
         .on('error', gUtil.log)
         .pipe(sourceMaps.write('../../maps'))
         .pipe(gulp.dest('assets/css'))
+});
+
+gulp.task('vendor-styles', function () {
+    return gulp.src(['assets/css/vendor/*.scss'])
+        .pipe(plumber({ errorHandler: function (err) { console.log(err); this.emit('end'); } }))
+        .pipe(sass({ errLogToConsole: true, includePaths: ['assets/css/vendor'] }))
+        .pipe(autoPrefixer({ browsers: browserList, casacade: true }))
+        .pipe(minify())
+        .pipe(rename({ suffix: '.min' }))
+        .on('error', gUtil.log)
+        .pipe(gulp.dest('assets/css/vendor'))
 });
 
 gulp.task('sass', function() {
@@ -70,7 +83,7 @@ gulp.task('sass-admin-welcome', function() {
 		.pipe(gulp.dest('css/admin/welcome-screen/'));
 });
 
-gulp.task('compile-css', ['styles']);
+gulp.task('compile-css', ['styles', 'vendor-styles']);
 
 gulp.task('js', function() {
 	gulp.src('assets/js/lsx-script.js')
