@@ -1,0 +1,32 @@
+.fontPickerCustomControl {
+	.fancyDisplay {
+		display: none;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				cursor: pointer;
+				float: left;
+				font-size:1.6em;
+				margin: .3em 5% .3em 0;
+				padding: 2% 0;
+				padding-right: 2%;
+				width: 100%;
+				opacity: .5;
+
+				small {
+					font-size: .6em;
+					margin-left: 1px;
+				}
+
+				&:hover,
+				&.selected {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

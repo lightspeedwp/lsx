@@ -20,7 +20,7 @@ get_header(); ?>
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main">
-		
+
 		<?php lsx_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>
@@ -37,9 +37,9 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-			
+
 			<?php lsx_paging_nav(); ?>
-			
+
 		<?php else : ?>
 
 			<?php get_template_part( 'partials/content', 'none' ); ?>
@@ -51,7 +51,7 @@ get_header(); ?>
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>

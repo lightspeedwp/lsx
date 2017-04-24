@@ -30,7 +30,7 @@ msgstr ""
 msgid "sitemap"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:43, content-none.php:13, page-templates/template-portfolio.php:66
+#: archive-jetpack-portfolio.php:43, page-templates/template-portfolio.php:66, partials/content-none.php:13
 msgid "Nothing Found"
 msgstr ""
 
@@ -38,11 +38,11 @@ msgstr ""
 msgid "Ready to publish your first project?"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:49, content-none.php:19, page-templates/template-portfolio.php:72
+#: archive-jetpack-portfolio.php:49, page-templates/template-portfolio.php:72, partials/content-none.php:19
 msgid "Get started here"
 msgstr ""
 
-#: archive-jetpack-portfolio.php:53, content-none.php:28, page-templates/template-portfolio.php:76
+#: archive-jetpack-portfolio.php:53, page-templates/template-portfolio.php:76, partials/content-none.php:28
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
@@ -88,114 +88,12 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:91, comments.php:92, inc/jetpack.php:270, inc/template-tags.php:289
+#: comments.php:91, comments.php:92, includes/jetpack.php:270, includes/template-tags.php:289
 msgid "Website"
 msgstr ""
 
-#: content-none.php:19
-msgid "Ready to publish your first post?"
-msgstr ""
-
-#: content-none.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: content-page.php:27, content-portfolio-single.php:56, content-post.php:87, content-single.php:87, content.php:160, image.php:48, image.php:122, page-templates/template-archives.php:46, page-templates/template-sitemap.php:31
-msgid "Edit"
-msgstr ""
-
-#: content-portfolio-single.php:51, page-templates/template-portfolio.php:26
-msgid "Pages:"
-msgstr ""
-
-#: content-post.php:77, content-single.php:77
-msgid "Comments"
-msgstr ""
-
-#: content.php:83
-msgid "Featured"
-msgstr ""
-
-#: content.php:133
-msgid "One Comment"
-msgid_plural "%1$s Comments"
-msgstr[0] ""
-msgstr[1] ""
-
-#: footer.php:44, footer.php:90
+#: footer.php:22
 msgid "&#169; %1$s %2$s All Rights Reserved."
-msgstr ""
-
-#: functions.php:52
-msgid "Core Settings"
-msgstr ""
-
-#: functions.php:53
-msgid "Change the core settings."
-msgstr ""
-
-#: functions.php:64
-msgid "Lazy Loading Images"
-msgstr ""
-
-#: functions.php:76
-msgid "Preloader Content"
-msgstr ""
-
-#: functions.php:100
-msgid "Header"
-msgstr ""
-
-#: functions.php:106
-msgid "Layout"
-msgstr ""
-
-#: functions.php:107
-msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
-msgstr ""
-
-#: functions.php:121
-msgid "Fixed Header"
-msgstr ""
-
-#: functions.php:131
-msgid "Search Box in Header"
-msgstr ""
-
-#: functions.php:136
-msgid "Body"
-msgstr ""
-
-#: functions.php:155
-msgid "Font"
-msgstr ""
-
-#: functions.php:173
-msgid "Raleway"
-msgstr ""
-
-#: functions.php:179, functions.php:221
-msgid "Open Sans"
-msgstr ""
-
-#: functions.php:187
-msgid "Noto Serif"
-msgstr ""
-
-#: functions.php:193, functions.php:201, functions.php:207
-msgid "Noto Sans"
-msgstr ""
-
-#: functions.php:215
-msgid "Alegreya"
-msgstr ""
-
-#: header.php:60
-msgid "Get your Tourism Establishment Online"
-msgstr ""
-
-#: header.php:70
-msgid "Questions? Email Us: "
 msgstr ""
 
 #: image.php:36
@@ -208,6 +106,10 @@ msgstr ""
 
 #: image.php:43
 msgid "in"
+msgstr ""
+
+#: image.php:48, image.php:122, page-templates/template-archives.php:46, page-templates/template-sitemap.php:31, partials/content-page.php:27, partials/content-portfolio-single.php:56, partials/content-post.php:87, partials/content-single.php:87, partials/content.php:160
+msgid "Edit"
 msgstr ""
 
 #: image.php:52
@@ -246,230 +148,294 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: sidebar.php:56
+#: sidebar.php:45
 msgid "Archives"
 msgstr ""
 
-#: sidebar.php:63
+#: sidebar.php:53
 msgid "Meta"
 msgstr ""
 
-#: inc/config.php:48, inc/config.php:173
+#: includes/config.php:58, includes/config.php:200
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/config.php:49
+#: includes/config.php:59
 msgid "Top Menu (right)"
 msgstr ""
 
-#: inc/config.php:50
+#: includes/config.php:60
 msgid "Top Menu (left)"
 msgstr ""
 
-#: inc/config.php:51, inc/config.php:205
+#: includes/config.php:61, includes/config.php:239
 msgid "Social Menu"
 msgstr ""
 
-#: inc/config.php:52, inc/config.php:218
+#: includes/config.php:62, includes/config.php:254
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/config.php:101, inc/config.php:108, inc/config.php:115
+#: includes/config.php:118, includes/config.php:127, includes/config.php:136
 msgid "Footer Widget"
 msgstr ""
 
-#: inc/config.php:102, inc/config.php:109, inc/config.php:116
+#: includes/config.php:119, includes/config.php:128, includes/config.php:137
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida."
 msgstr ""
 
-#: inc/config.php:125
+#: includes/config.php:147
 msgid "Footer Call to Action Widget"
 msgstr ""
 
-#: inc/config.php:126
+#: includes/config.php:148
 msgid "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
 msgstr ""
 
-#: inc/config.php:152
+#: includes/config.php:177
 msgctxt "Theme starter content"
 msgid "Banner Placeholder 01"
 msgstr ""
 
-#: inc/config.php:156
+#: includes/config.php:182
 msgctxt "Theme starter content"
 msgid "Banner Placeholder 02"
 msgstr ""
 
-#: inc/config.php:160
+#: includes/config.php:187
 msgctxt "Theme starter content"
 msgid "Banner Placeholder 03"
 msgstr ""
 
-#: inc/config.php:182
+#: includes/config.php:211
 msgid "Top Menu"
 msgstr ""
 
-#: inc/config.php:276, inc/config.php:291
+#: includes/config.php:349
 msgid "Auto Draft"
 msgstr ""
 
-#: inc/extras.php:87
+#: includes/customizer.php:25
+msgid "Core Settings"
+msgstr ""
+
+#: includes/customizer.php:26
+msgid "Change the core settings."
+msgstr ""
+
+#: includes/customizer.php:37
+msgid "Lazy Loading Images"
+msgstr ""
+
+#: includes/customizer.php:49
+msgid "Preloader Content"
+msgstr ""
+
+#: includes/customizer.php:78
+msgid "Header"
+msgstr ""
+
+#: includes/customizer.php:89
+msgid "Layout"
+msgstr ""
+
+#: includes/customizer.php:90
+msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
+msgstr ""
+
+#: includes/customizer.php:107
+msgid "Fixed Header"
+msgstr ""
+
+#: includes/customizer.php:119
+msgid "Search Box in Header"
+msgstr ""
+
+#: includes/customizer.php:125
+msgid "Body"
+msgstr ""
+
+#: includes/customizer.php:153
+msgid "Font"
+msgstr ""
+
+#: includes/customizer.php:172
+msgid "Raleway"
+msgstr ""
+
+#: includes/customizer.php:178, includes/customizer.php:220
+msgid "Open Sans"
+msgstr ""
+
+#: includes/customizer.php:186
+msgid "Noto Serif"
+msgstr ""
+
+#: includes/customizer.php:192, includes/customizer.php:200, includes/customizer.php:206
+msgid "Noto Sans"
+msgstr ""
+
+#: includes/customizer.php:214
+msgid "Alegreya"
+msgstr ""
+
+#: includes/extras.php:87
 msgid "Page %s"
 msgstr ""
 
-#: inc/extras.php:408
+#: includes/extras.php:408
 msgid "Continue reading"
 msgstr ""
 
-#: inc/extras.php:459
+#: includes/extras.php:459
 msgid "More"
 msgstr ""
 
-#: inc/jetpack.php:261, inc/template-tags.php:260
+#: includes/jetpack.php:261, includes/template-tags.php:260
 msgid "Client"
 msgstr ""
 
-#: inc/jetpack.php:285
+#: includes/jetpack.php:285
 msgid "Enter the name of the project client"
 msgstr ""
 
-#: inc/jetpack.php:296
+#: includes/jetpack.php:296
 msgid "Enter the URL of the project website"
 msgstr ""
 
-#: inc/jetpack.php:311
+#: includes/jetpack.php:311
 msgid "All"
 msgstr ""
 
-#: inc/jetpack.php:339
+#: includes/jetpack.php:339
 msgid "Older"
 msgstr ""
 
-#: inc/jetpack.php:340
+#: includes/jetpack.php:340
 msgid "Newer"
 msgstr ""
 
-#: inc/jetpack.php:341
+#: includes/jetpack.php:341
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/jetpack.php:419
+#: includes/jetpack.php:419
 msgid "Related Posts"
 msgstr ""
 
-#: inc/layout.php:192
+#: includes/layout.php:207
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/layout.php:199
+#: includes/layout.php:214
 msgid "Author: %s"
 msgstr ""
 
-#: inc/layout.php:210
+#: includes/layout.php:225
 msgid "Shop"
 msgstr ""
 
-#: inc/layout.php:243
+#: includes/layout.php:258
 msgid "Blog"
 msgstr ""
 
-#: inc/template-tags.php:114
+#: includes/template-tags.php:114
 msgctxt "Used before publish date."
 msgid "Posted on:"
 msgstr ""
 
-#: inc/template-tags.php:139
+#: includes/template-tags.php:139
 msgctxt "Used before post author name."
 msgid "Posted by:"
 msgstr ""
 
-#: inc/template-tags.php:157
+#: includes/template-tags.php:157
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:162
+#: includes/template-tags.php:162
 msgid "Posted in:"
 msgstr ""
 
-#: inc/template-tags.php:177
+#: includes/template-tags.php:177
 msgid "Tagged as:"
 msgstr ""
 
-#: inc/template-tags.php:271
+#: includes/template-tags.php:271
 msgid "Industry"
 msgstr ""
 
-#: inc/template-tags.php:280
+#: includes/template-tags.php:280
 msgid "Services"
 msgstr ""
 
-#: inc/template-tags.php:345
+#: includes/template-tags.php:345
 msgid "Older posts"
 msgstr ""
 
-#: inc/template-tags.php:346
+#: includes/template-tags.php:346
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:347
+#: includes/template-tags.php:347
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:392
+#: includes/template-tags.php:392
 msgctxt "Previous post link"
 msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:398
+#: includes/template-tags.php:398
 msgctxt "Next post link"
 msgid "Next Post"
 msgstr ""
 
-#: inc/template-tags.php:449
+#: includes/template-tags.php:449
 msgid "Toggle navigation"
 msgstr ""
 
-#: inc/template-tags.php:454
+#: includes/template-tags.php:454
 msgid "Menu"
 msgstr ""
 
-#: inc/template-tags.php:510
+#: includes/template-tags.php:510
 msgid "Pages"
 msgstr ""
 
-#: inc/template-tags.php:616
+#: includes/template-tags.php:616
 msgid "Subscribe to Our Newsletter"
 msgstr ""
 
-#: inc/the-events-calendar.php:40, inc/the-events-calendar.php:49, inc/the-events-calendar.php:52, inc/the-events-calendar.php:56, inc/the-events-calendar.php:60, inc/the-events-calendar.php:63, inc/the-events-calendar.php:66
+#: includes/the-events-calendar.php:40, includes/the-events-calendar.php:49, includes/the-events-calendar.php:52, includes/the-events-calendar.php:56, includes/the-events-calendar.php:60, includes/the-events-calendar.php:63, includes/the-events-calendar.php:66
 msgid "Events"
 msgstr ""
 
-#: inc/welcome.php:33
+#: includes/welcome.php:31
 msgid "Thanks for choosing LSX! You can read hints and tips on how get the most out of your new theme on the %1$swelcome screen%2$s."
 msgstr ""
 
-#: inc/welcome.php:34
+#: includes/welcome.php:32
 msgid "Get started with LSX"
 msgstr ""
 
-#: inc/widgets.php:10
+#: includes/widgets.php:23
 msgid "Home"
 msgstr ""
 
-#: inc/widgets.php:19
+#: includes/widgets.php:32
 msgid "Sidebar"
 msgstr ""
 
-#: inc/widgets.php:28
+#: includes/widgets.php:41
 msgid "Footer"
 msgstr ""
 
-#: inc/widgets.php:37
+#: includes/widgets.php:50
 msgid "Footer Call to Action"
 msgstr ""
 
-#: inc/wp-bootstrap-navwalker.php:209
+#: includes/wp-bootstrap-navwalker.php:209
 msgid "Add a menu"
 msgstr ""
 
@@ -485,122 +451,148 @@ msgstr ""
 msgid "Monthly Archives"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:13
+#: page-templates/template-portfolio.php:26, partials/content-portfolio-single.php:51
+msgid "Pages:"
+msgstr ""
+
+#: partials/content-none.php:19
+msgid "Ready to publish your first post?"
+msgstr ""
+
+#: partials/content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: partials/content-post.php:77, partials/content-single.php:77
+msgid "Comments"
+msgstr ""
+
+#: partials/content.php:83
+msgid "Featured"
+msgstr ""
+
+#: partials/content.php:133
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/welcome-screen/component-enhance.php:13
 msgid "Enhance LSX"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:14
+#: includes/admin/welcome-screen/component-enhance.php:14
 msgid "Take a look at our range of extensions that add to the already rich functionality of the LSX WordPress theme.."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:19
+#: includes/admin/welcome-screen/component-enhance.php:19
 msgid "Currencies"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:20
+#: includes/admin/welcome-screen/component-enhance.php:20
 msgid "The LSX Currencies extension adds currency selection functionality to sites, allowing users to view your products in whatever currencies you choose to sell in."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:26
+#: includes/admin/welcome-screen/component-enhance.php:26
 msgid "Banners"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:27
+#: includes/admin/welcome-screen/component-enhance.php:27
 msgid "The LSX Banners extension adds advanced banner configuration options to your WordPress site running LSX theme."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:33
+#: includes/admin/welcome-screen/component-enhance.php:33
 msgid "Testimonials"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:34
+#: includes/admin/welcome-screen/component-enhance.php:34
 msgid "The LSX Testimonials extension adds the \"Testimonials\" post type, which you can display front-and-centre on your site."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:42
+#: includes/admin/welcome-screen/component-enhance.php:42
 msgid "Team"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:43
+#: includes/admin/welcome-screen/component-enhance.php:43
 msgid "The LSX Team Extension provides a custom post type that allows you to easily show off the people that make up your business."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:49
+#: includes/admin/welcome-screen/component-enhance.php:49
 msgid "Mega Menus"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:50
+#: includes/admin/welcome-screen/component-enhance.php:50
 msgid "Create custom, full-width dropdown menus that contain images, widgets and more that seamlessly tie into your LSX WordPress site."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:56
+#: includes/admin/welcome-screen/component-enhance.php:56
 msgid "Login"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-enhance.php:57
+#: includes/admin/welcome-screen/component-enhance.php:57
 msgid "The LSX Login extension allows users to log into a dashboard and then see configurable content based on which users can access which content."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:13, inc/admin/welcome-screen/component-footer.php:18
+#: includes/admin/welcome-screen/component-footer.php:13, includes/admin/welcome-screen/component-footer.php:18
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:14
+#: includes/admin/welcome-screen/component-footer.php:14
 msgid "You've installed LSX, so now why not make it all yours? Whether it's a small CSS tweak or changing the entire layout of pages, posts or archives, please make use of the Theme Customizer plugin. Click below to install and get custom!"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:26
+#: includes/admin/welcome-screen/component-footer.php:26
 msgid "Get support"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:27
+#: includes/admin/welcome-screen/component-footer.php:27
 msgid "You'll find information on how to use and customize the LSX theme in our %1$sdocumentation%2$s section. However, please do %3$scontact us%4$s for support should you still find yourself unable to achieve your needs."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:31
+#: includes/admin/welcome-screen/component-footer.php:31
 msgid "Get in touch"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:39
+#: includes/admin/welcome-screen/component-footer.php:39
 msgid "Suggest a feature"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:40
+#: includes/admin/welcome-screen/component-footer.php:40
 msgid "If you'd like to suggest a feature for inclusion in upcoming releases of the LSX theme, please don't hesitate to %1$scontact us%2$s directly. We're always on the lookout for fresh ideas to help make LSX even better."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-footer.php:44
+#: includes/admin/welcome-screen/component-footer.php:44
 msgid "Submit a request"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:12
+#: includes/admin/welcome-screen/component-header.php:12
 msgid "LSX"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:16
+#: includes/admin/welcome-screen/component-header.php:16
 msgid "%1$sEnjoying LSX?%2$s Why not %3$sleave a review%4$s on WordPress.org? We're looking foward to all our users' feedback!"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:23
+#: includes/admin/welcome-screen/component-header.php:23
 msgid "Built to enrich your WordPress experience"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:24
+#: includes/admin/welcome-screen/component-header.php:24
 msgid "Whether you're using LSX for your personal blog, as the platform for a powerful WooCommerce store or as the foundation for your own child-theme, you'll find it's the perfect fit for WordPress."
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:30
+#: includes/admin/welcome-screen/component-header.php:30
 msgid "LSX News &amp; Documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:34
+#: includes/admin/welcome-screen/component-header.php:34
 msgid "Recent News"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:60
+#: includes/admin/welcome-screen/component-header.php:60
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/component-header.php:64
+#: includes/admin/welcome-screen/component-header.php:64
 msgid "Installation &amp; configuration"
 msgstr ""

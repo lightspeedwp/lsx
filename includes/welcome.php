@@ -1,7 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
-
 if ( ! function_exists( 'lsx_activation_admin_notice' ) ) :
 	/**
 	 * Adds an admin notice upon successful activation.
@@ -18,7 +17,6 @@ if ( ! function_exists( 'lsx_activation_admin_notice' ) ) :
 	}
 endif; // lsx_activation_admin_notice
 add_action( 'load-themes.php', 'lsx_activation_admin_notice' );
-
 
 if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 	/**
@@ -37,7 +35,6 @@ if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 	}
 endif; // lsx_welcome_admin_notice
 
-
 if ( ! function_exists( 'lsx_welcome_style' ) ) :
 	/**
 	 * Load welcome screen css.
@@ -48,12 +45,11 @@ if ( ! function_exists( 'lsx_welcome_style' ) ) :
 	 */
 	function lsx_welcome_style( $hook_suffix ) {
 		if ( 'appearance_page_lsx-welcome' == $hook_suffix ) {
-			wp_enqueue_style( 'lsx-welcome-screen', get_template_directory_uri() . '/css/admin/welcome-screen/welcome.css', array(), LSX_VERSION );
+			wp_enqueue_style( 'lsx-welcome-screen', get_template_directory_uri() . '/assets/css/lsx-admin-welcome.css', array(), LSX_VERSION );
 		}
 	}
 endif; // lsx_welcome_style
 add_action( 'admin_enqueue_scripts', 'lsx_welcome_style' );
-
 
 if ( ! function_exists( 'lsx_welcome_register_menu' ) ) :
 	/**
@@ -67,7 +63,6 @@ if ( ! function_exists( 'lsx_welcome_register_menu' ) ) :
 	}
 endif; // lsx_welcome_register_menu
 add_action( 'admin_menu', 'lsx_welcome_register_menu' );
-
 
 if ( ! function_exists( 'lsx_welcome_screen' ) ) :
 	/**
@@ -96,7 +91,6 @@ if ( ! function_exists( 'lsx_welcome_screen' ) ) :
 	}
 endif; // lsx_welcome_screen
 
-
 if ( ! function_exists( 'lsx_welcome_header' ) ) :
 	/**
 	 * Welcome screen intro
@@ -110,7 +104,6 @@ if ( ! function_exists( 'lsx_welcome_header' ) ) :
 endif; // lsx_welcome_header
 add_action( 'lsx_welcome', 'lsx_welcome_header', 10 );
 
-
 if ( ! function_exists( 'lsx_welcome_enhance' ) ) :
 	/**
 	 * Welcome screen enhance section
@@ -123,7 +116,6 @@ if ( ! function_exists( 'lsx_welcome_enhance' ) ) :
 	}
 endif; // lsx_welcome_enhance
 add_action( 'lsx_welcome', 'lsx_welcome_enhance', 20 );
-
 
 if ( ! function_exists( 'lsx_welcome_footer' ) ) :
 	/**

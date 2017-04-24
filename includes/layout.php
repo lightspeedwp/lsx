@@ -1,132 +1,145 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
-
 /**
- * Layout hooks
+ * LSX functions and definitions - Layout
  *
- * @package lsx
+ * @package    lsx
+ * @subpackage layout
  */
 
-function lsx_layout_selector( $class, $area = 'site' ) {
-
-	$layout = get_theme_mod('lsx_layout','2cr');
-	$layout = apply_filters( 'lsx_layout', $layout );
-
-	$default_size = 'sm';
-	$size = apply_filters( 'lsx_bootstrap_column_size', $default_size );
-
-	switch ( $layout ) {
-		case '1c':
-			$main_class = 'col-' . $size . '-12';
-			$sidebar_class = 'col-' . $size . '-12';
-			break;
-		case '2cr':
-			$main_class = 'col-' . $size . '-9';
-			$sidebar_class = 'col-' . $size . '-3';
-			break;
-		case '2cl':
-			$main_class = 'col-' . $size . '-9 col-' . $size . '-push-3';
-			$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-pull-9';
-			break;
-		default:
-			$main_class = 'col-' . $size . '-9';
-			$sidebar_class = 'col-' . $size . '-3';
-			break;
-	}
-
-	if ( 'main' == $class ) {
-		return $main_class;
-	}
-
-	if ( 'sidebar' == $class ) {
-		return $sidebar_class;
-	}
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-/**
- * .main classes
- */
-function lsx_main_class() {
-	return lsx_layout_selector( 'main' );
-}
+if ( ! function_exists( 'lsx_layout_selector' ) ) :
 
-function lsx_home_main_class() {
-	return lsx_layout_selector( 'main', 'home' );
-}
+	/**
+	 * Layout selector.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_layout_selector( $class, $area = 'site' ) {
+		$layout       = get_theme_mod( 'lsx_layout', '2cr' );
+		$layout       = apply_filters( 'lsx_layout', $layout );
+		$default_size = 'sm';
+		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
-/**
- * Outputs the class for the main div on the index.php page only
- */
-function lsx_index_main_class() {
+		switch ( $layout ) {
+			case '1c':
+				$main_class    = 'col-' . $size . '-12';
+				$sidebar_class = 'col-' . $size . '-12';
+				break;
+			case '2cr':
+				$main_class    = 'col-' . $size . '-9';
+				$sidebar_class = 'col-' . $size . '-3';
+				break;
+			case '2cl':
+				$main_class    = 'col-' . $size . '-9 col-' . $size . '-push-3';
+				$sidebar_class = 'col-' . $size . '-3 col-' . $size . '-pull-9';
+				break;
+			default:
+				$main_class    = 'col-' . $size . '-9';
+				$sidebar_class = 'col-' . $size . '-3';
+				break;
+		}
 
-	$show_on_front = get_option('show_on_front');
-	if('page' == $show_on_front){
-		return lsx_layout_selector( 'main', 'home' );
-	}else{
-		return lsx_layout_selector( 'main', 'site' );
+		if ( 'main' == $class ) {
+			return $main_class;
+		}
+
+		if ( 'sidebar' == $class ) {
+			return $sidebar_class;
+		}
 	}
 
-}
+endif;
 
-/**
- * .sidebar classes
- */
-function lsx_sidebar_class() {
-	return lsx_layout_selector( 'sidebar' );
-}
+if ( ! function_exists( 'lsx_main_class' ) ) :
 
-function lsx_home_sidebar_class() {
-	return lsx_layout_selector( 'sidebar', 'home' );
-}
-
-/**
- * Output the classes for the header
- *
- * @package 	lsx
- * @subpackage	layout
- * @category	classes
- */
-function lsx_header_classes($additional = false) {
-	
-	$classes = 'banner navbar navbar-default';
-	
-	//Fixed header
-	$fixed_header = get_theme_mod('lsx_header_fixed',false);
-	if(false != $fixed_header){
-		$classes .= ' navbar-static-top';
+	/**
+	 * .main classes.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_main_class() {
+		return lsx_layout_selector( 'main' );
 	}
-	
-	if(false != $additional){
-		$classes .= ' '.$additional;
-	}
-	echo esc_attr( $classes );
-}
 
-/**
- * Output the classes for the top-menu
- *
- * @package 	lsx
- * @subpackage	layout
- * @category	classes
- */
-function lsx_top_menu_classes($additional = false) {
-	
-	$classes = 'top-menu-default';
-	
-	//Fixed header
-	$fixed_header = get_theme_mod('lsx_header_fixed',false);
-	if(false != $fixed_header){
-		$classes .= ' top-menu-fixed';
-	}
-	
-	if(false != $additional){
-		$classes .= ' '.$additional;
-	}
-	echo esc_attr( $classes );
-}
+endif;
 
-add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
-if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) { 
+if ( ! function_exists( 'lsx_sidebar_class' ) ) :
+
+	/**
+	 * .sidebar classes.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_sidebar_class() {
+		return lsx_layout_selector( 'sidebar' );
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_header_classes' ) ) :
+
+	/**
+	 * Output the classes for the header.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_header_classes( $additional = false ) {
+		$classes      = 'banner navbar navbar-default';
+		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
+
+		if ( false !== $fixed_header ) {
+			$classes .= ' navbar-static-top';
+		}
+
+		if ( false != $additional ) {
+			$classes .= ' ' . $additional;
+		}
+
+		echo esc_attr( $classes );
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_top_menu_classes' ) ) :
+
+	/**
+	 * Output the classes for the top-menu.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_top_menu_classes( $additional = false ) {
+		$classes      = 'top-menu-default';
+		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
+
+		if ( false !== $fixed_header ) {
+			$classes .= ' top-menu-fixed';
+		}
+
+		if ( false != $additional ) {
+			$classes .= ' ' . $additional;
+		}
+
+		echo esc_attr( $classes );
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) :
+
+	/**
+	 * Output the Footer CTA and/pr Footer Widgets.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
 	function lsx_add_footer_sidebar_area() {
 		if ( is_active_sidebar( 'sidebar-footer-cta' ) ) : ?>
 			<div id="footer-cta">
@@ -150,7 +163,9 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) {
 			</div>
 		<?php endif;
 	}
-}
+
+endif;
+add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 
 /**
  * Displays the global header
@@ -162,7 +177,7 @@ function lsx_global_header() {
 	/*if ('page' == get_option('show_on_front') && get_option('page_for_posts') == get_the_ID()) :
 		?>
 		<header class="archive-header">
-			<h1 class="archive-title"><?php echo get_the_title($blog_page); ?></h1>		
+			<h1 class="archive-title"><?php echo get_the_title($blog_page); ?></h1>
 		</header>
 		<?php
 	else*/if (is_singular('post')) :
@@ -183,7 +198,7 @@ function lsx_global_header() {
 	elseif (is_page() || is_single()) :
 		?>
 		<header class="archive-header">
-			<h1 class="archive-title"><?php the_title() ?></h1>		
+			<h1 class="archive-title"><?php the_title() ?></h1>
 		</header>
 		<?php
 	elseif (is_search()) :
@@ -249,7 +264,7 @@ add_action('lsx_content_wrap_before', 'lsx_blog_header');
 /**
  * Add Viewport Meta Tag to head
  */
-function lsx_add_viewport_meta_tag() {	
+function lsx_add_viewport_meta_tag() {
 	?>
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
 	<?php }

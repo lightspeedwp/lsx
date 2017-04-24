@@ -19,31 +19,51 @@ var wppot = require('gulp-wp-pot');
 var gettext = require('gulp-gettext');
 var plumber = require('gulp-plumber');
 var autoPrefixer = require('gulp-autoprefixer');
-var gUtil = require('gulp-util');
+var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 var minify = require('gulp-minify-css');
+var map = require('map-stream');
 
 var browserList = ['last 2 version', '> 1%'];
 
+var errorReporter = map(function(file, cb) {
+	if (file.jshint.success) {
+		return cb(null, file);
+	}
+
+	console.log('JSHINT fail in', file.path);
+
+	file.jshint.results.forEach(function (result) {
+		if (!result.error) {
+			return;
+		}
+
+		const err = result.error
+		console.log(`  line ${err.line}, col ${err.character}, code ${err.code}, ${err.reason}`);
+	});
+
+	cb(null, file);
+});
+
 gulp.task('styles', function () {
     return gulp.src(['assets/css/scss/*.scss'])
-        .pipe(plumber({ errorHandler: function (err) { console.log(err); this.emit('end'); } }))
+        .pipe(plumber({ errorHandler: function(err) { console.log(err); this.emit('end'); } }))
         .pipe(sourceMaps.init())
         .pipe(sass({ errLogToConsole: true, includePaths: ['assets/css/scss'] }))
         .pipe(autoPrefixer({ browsers: browserList, casacade: true }))
-        .on('error', gUtil.log)
-        .pipe(sourceMaps.write('../../maps'))
+        .on('error', gutil.log)
+        .pipe(sourceMaps.write('maps'))
         .pipe(gulp.dest('assets/css'))
 });
 
 gulp.task('vendor-styles', function () {
     return gulp.src(['assets/css/vendor/*.scss'])
-        .pipe(plumber({ errorHandler: function (err) { console.log(err); this.emit('end'); } }))
+        .pipe(plumber({ errorHandler: function(err) { console.log(err); this.emit('end'); } }))
         .pipe(sass({ errLogToConsole: true, includePaths: ['assets/css/vendor'] }))
         .pipe(autoPrefixer({ browsers: browserList, casacade: true }))
         .pipe(minify())
         .pipe(rename({ suffix: '.min' }))
-        .on('error', gUtil.log)
+        .on('error', gutil.log)
         .pipe(gulp.dest('assets/css/vendor'))
 });
 
@@ -86,10 +106,10 @@ gulp.task('sass-admin-welcome', function() {
 gulp.task('compile-css', ['styles', 'vendor-styles']);
 
 gulp.task('js', function() {
-	gulp.src('assets/js/lsx-script.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('fail'))
-		.pipe(concat('lsx-script.min.js'))
+	gulp.src('assets/js/src/lsx.js')
+        .pipe(jshint())
+		.pipe(errorReporter)
+		.pipe(concat('lsx.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js'));
 });
