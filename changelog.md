@@ -1,4 +1,4 @@
-## Change log
+## LSX Changelog
 
 ### 2.0.0
 * New totally awesome version!
@@ -79,7 +79,6 @@
 * Adjusted LSX border button size
 * Created a welcome page
 * Added a new menu option: top menu (left)
-
 
 ### 1.7.3
 * Removed blue banner (with title) from the homepage (always)
@@ -211,7 +210,6 @@
 * Removed the Footer Widget title - https://github.com/lightspeeddevelopment/lsx/issues/37
 * Added in support for third level dropdowns - https://github.com/lightspeeddevelopment/lsx/issues/16
 
-
 ### 1.4.2
 * Added in three missing text encapsulations
 * Fixed the background image size on single Jetpack Portfolio pages.
@@ -272,7 +270,6 @@
 * Fixed the Masonry layout selecting different column layouts.
 * Added in an info box for the naviagation panel
 * Added in the sidebar for the sitemap template, and changed the amount of items called through on each section.
-
 
 ### 1.2
 * Fixed the mixed content warning for the Google Fonts API calls.
