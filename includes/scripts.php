@@ -35,7 +35,7 @@ function lsx_scripts() {
 	
 	//Set some parameters that we can use in the JS
 	$is_portfolio = false;
-	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag') || is_page_template('templates/template-portfolio.php')){
+	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag') || is_page_template('page-templates/template-portfolio.php')){
 		$is_portfolio = true;
 	}
 	$param_array = array(

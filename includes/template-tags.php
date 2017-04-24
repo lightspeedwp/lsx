@@ -84,7 +84,7 @@ endif;
  */
 if ( ! function_exists( 'lsx_post_meta' ) ) {
 	function lsx_post_meta() {
-		if ( ( is_page() && ! ( is_home() || is_front_page() ) ) && ! is_page_template( 'templates/template-blog.php' ) ) {
+		if ( ( is_page() && ! ( is_home() || is_front_page() ) ) && ! is_page_template( 'page-templates/template-blog.php' ) ) {
 			return;
 		}
 		?>

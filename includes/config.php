@@ -135,7 +135,7 @@ function lsx_setup() {
 
 		'posts' => array(
 			'home' => array(
-				'template' => 'templates/template-front-page.php',
+				'template' => 'page-templates/template-front-page.php',
 				'thumbnail' => '{{image-banner-placeholder-01}}',
 			),
 			'about' => array(
@@ -255,9 +255,9 @@ function lsx_process_content_width() {
 	global $content_width;
 
 	if(
-		is_page_template('templates/template-portfolio.php') ||
-		is_page_template('templates/template-front-page.php') ||
-		is_page_template('templates/template-full-width.php') ||
+		is_page_template('page-templates/template-portfolio.php') ||
+		is_page_template('page-templates/template-front-page.php') ||
+		is_page_template('page-templates/template-full-width.php') ||
 		is_post_type_archive('jetpack-portfolio') ||
 		is_tax(array('jetpack-portfolio-type','jetpack-portfolio-tag')) ||
 		is_singular('jetpack-portfolio')
