@@ -10,12 +10,29 @@ gulp.task('default', function() {
 });
 
 var sass = require('gulp-sass');
+var sourceMaps = require('gulp-sourcemaps');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sort = require('gulp-sort');
 var wppot = require('gulp-wp-pot');
 var gettext = require('gulp-gettext');
+var plumber = require('gulp-plumber');
+var autoPrefixer = require('gulp-autoprefixer');
+var gUtil = require('gulp-util');
+
+var browserList = ['last 2 version', '> 1%'];
+
+gulp.task('styles', function () {
+    return gulp.src(['assets/css/scss/*.scss'])
+        .pipe(plumber({ errorHandler: function (err) { console.log(err); this.emit('end'); } }))
+        .pipe(sourceMaps.init())
+        .pipe(sass({ errLogToConsole: true, includePaths: ['assets/css/scss'] }))
+        .pipe(autoPrefixer({ browsers: browserList, casacade: true }))
+        .on('error', gUtil.log)
+        .pipe(sourceMaps.write('../../maps'))
+        .pipe(gulp.dest('assets/css'))
+});
 
 gulp.task('sass', function() {
 	gulp.src(['sass/app.scss', 'sass/alegreya_open_sans.scss', 'sass/noto_sans_noto_sans.scss', 'sass/noto_serif_noto_sans.scss', 'sass/raleway_open_sans.scss', 'sass/medium-nav-break.scss'])
@@ -53,7 +70,7 @@ gulp.task('sass-admin-welcome', function() {
 		.pipe(gulp.dest('css/admin/welcome-screen/'));
 });
 
-gulp.task('compile-css', ['sass','sass-woocommerce','sass-sensei','sass-events-calendar','sass-job-manager','sass-admin-welcome']);
+gulp.task('compile-css', ['styles']);
 
 gulp.task('js', function() {
 	gulp.src('assets/js/lsx-script.js')
@@ -63,7 +80,7 @@ gulp.task('js', function() {
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js'));
 });
- 
+
 gulp.task('compile-js', ['js']);
 
 /*
