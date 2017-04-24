@@ -34,9 +34,9 @@ if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
 		);
 
 		$lsx_controls['fields']['lsx_lazyload_status'] = array(
-			'label'         =>  esc_html__( 'Lazy Loading Images', 'lsx' ),
-			'section'       =>  'lsx-core',
-			'type'          =>  'checkbox',
+			'label'   => esc_html__( 'Lazy Loading Images', 'lsx' ),
+			'section' => 'lsx-core',
+			'type'    => 'checkbox',
 		);
 
 		$lsx_controls['settings']['lsx_preloader_content_status'] = array(
@@ -46,9 +46,9 @@ if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
 		);
 
 		$lsx_controls['fields']['lsx_preloader_content_status'] = array(
-			'label'         =>  esc_html__( 'Preloader Content', 'lsx' ),
-			'section'       =>  'lsx-core',
-			'type'          =>  'checkbox',
+			'label'   => esc_html__( 'Preloader Content', 'lsx' ),
+			'section' => 'lsx-core',
+			'type'    => 'checkbox',
 		);
 
 		return $lsx_controls;
@@ -98,27 +98,27 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 		);
 
 		$lsx_controls['settings']['lsx_header_fixed'] = array(
-			'default'           =>  false,
+			'default'           => false,
 			'sanitize_callback' => 'lsx_sanitize_checkbox',
-			'transport'         =>  'postMessage',
+			'transport'         => 'postMessage',
 		);
 
 		$lsx_controls['fields']['lsx_header_fixed'] = array(
-			'label'   =>  esc_html__( 'Fixed Header', 'lsx' ),
-			'section' =>  'lsx-layout',
-			'type'    =>  'checkbox',
+			'label'   => esc_html__( 'Fixed Header', 'lsx' ),
+			'section' => 'lsx-layout',
+			'type'    => 'checkbox',
 		);
 
 		$lsx_controls['settings']['lsx_header_search'] = array(
-			'default'           =>  false,
+			'default'           => false,
 			'sanitize_callback' => 'lsx_sanitize_checkbox',
-			'transport'         =>  'postMessage',
+			'transport'         => 'postMessage',
 		);
 
 		$lsx_controls['fields']['lsx_header_search'] = array(
-			'label'   =>  esc_html__( 'Search Box in Header', 'lsx' ),
-			'section' =>  'lsx-layout',
-			'type'    =>  'checkbox',
+			'label'   => esc_html__( 'Search Box in Header', 'lsx' ),
+			'section' => 'lsx-layout',
+			'type'    => 'checkbox',
 		);
 
 		$lsx_controls['fields']['lsx_layout'] = array(
@@ -150,23 +150,23 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 	 */
 	function lsx_customizer_font_controls( $lsx_controls ) {
 		$lsx_controls['sections']['lsx-font'] = array(
-			'title'       =>  esc_html__( 'Font', 'lsx' ),
-			'description' => 'Change the fonts sitewide.',
+			'title'       => esc_html__( 'Font', 'lsx' ),
+			'description' => esc_html__( 'Change the fonts sitewide.', 'lsx' ),
 			'priority'    => 41
 		);
 
 		$lsx_controls['settings']['lsx_font']  = array(
-			'default'   =>  'raleway_open_sans',
-			'type'      =>  'theme_mod',
-			'transport' =>  'refresh',
+			'default'   => 'raleway_open_sans',
+			'type'      => 'theme_mod',
+			'transport' => 'refresh',
 		);
 
 		$lsx_controls['fields']['lsx_font'] = array(
-			'label'    =>  '',
-			'section'  =>  'lsx-font',
-			'settings' =>  'lsx_font',
-			'control'  =>  'LSX_Customize_Font_Control',
-			'choices'  =>  array(
+			'label'    => '',
+			'section'  => 'lsx-font',
+			'settings' => 'lsx_font',
+			'control'  => 'LSX_Customize_Font_Control',
+			'choices'  => array(
 				'raleway_open_sans' => array(
 					'header' => array(
 						'title'          => esc_html__( 'Raleway', 'lsx' ),
