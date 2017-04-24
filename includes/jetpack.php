@@ -401,9 +401,9 @@ add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
 		the_post();
 		
 		if('jetpack-portfolio' == get_post_type()){
-			get_template_part( 'content', 'portfolio' );
+			get_template_part( 'partials/content', 'portfolio' );
 		}else{
-			get_template_part( 'content', get_post_type() );
+			get_template_part( 'partials/content', get_post_type() );
 		}
 	}
  }

@@ -26,7 +26,7 @@
 					<div id="portfolio-infinite-scroll-wrapper" class="filter-items-container lsx-portfolio masonry">
 						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php get_template_part( 'content', 'portfolio' ); ?>
+							<?php get_template_part( 'partials/content', 'portfolio' ); ?>
 
 						<?php endwhile; ?>
 					</div>

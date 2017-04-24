@@ -52,7 +52,7 @@ get_header(); ?>
 						<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
 							<?php if(has_post_thumbnail()) { ?>
-								<?php get_template_part( 'content', 'portfolio' ); ?>
+								<?php get_template_part( 'partials/content', 'portfolio' ); ?>
 							<?php } ?>
 
 						<?php endwhile; ?>
