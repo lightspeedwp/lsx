@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <ruleset name="WordPress Theme Coding Standards">
-	<!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-	<!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/blob/develop/WordPress-Core/ruleset.xml -->
-
-	<!-- Set a description for this ruleset. -->
-	<description>A custom set of code standard rules to check for WordPress themes.</description>
-
-	<!-- Include the WordPress ruleset, with exclusions. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<rule ref="WordPress">
+		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
+		<exclude name="WordPress.VIP" />
+
+		<!--
 		<exclude name="Generic.Classes.OpeningBraceSameLine" />
 		<exclude name="Generic.Commenting" />
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
@@ -35,7 +35,7 @@
 		<exclude name="WordPress.WP.I18n.MissingSingularPlaceholder" />
 		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
 		<exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
-		
+
 		<exclude name="WordPress.VIP.RestrictedFunctions.get_adjacent_post" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.get_adjacent_post_get_adjacent_post" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.get_adjacent_post_get_previous_post_link" />
@@ -45,5 +45,6 @@
 		<exclude name="WordPress.VIP.RestrictedFunctions.wp_get_post_terms" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.wp_get_post_terms_wp_get_post_categories" />
 		<exclude name="WordPress.VIP.ValidatedSanitizedInput.InputNotValidated" />
+	-->
 	</rule>
 </ruleset>
