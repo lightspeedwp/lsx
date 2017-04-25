@@ -148,11 +148,16 @@ gulp.task('js', function() {
 
 gulp.task('compile-js', ['js']);
 
-/*
-gulp.task('watch', function() {
-	// @TODO
+
+gulp.task('watch-css', function () {
+    gulp.watch('assets/css/scss/**', ['compile-css']);
 });
-*/
+
+gulp.task('watch-js', function () {
+	gulp.watch('assets/js/src/**', ['compile-js']);
+});
+
+gulp.task('watch', ['watch-css', 'watch-js']);
 
 gulp.task('wordpress-pot', function() {
 	return gulp.src('**/*.php')
