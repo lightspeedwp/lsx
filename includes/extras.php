@@ -322,20 +322,6 @@ add_action( 'lsx_header_after', 'lsx_page_banner' );
 
 
 /**
- * Add SMS support
- *
- * @package lsx
- * @subpackage extras
- * @category mobile
- */
-function lsx_allow_sms_protocol( $protocols ) {
-    $protocols[] = 'sms';
-    return $protocols;
-}
-add_filter( 'kses_allowed_protocols', 'lsx_allow_sms_protocol' );
-
-
-/**
  * Adding browser and user-agent classes to body
  */
 function lsx_browser_body_class($classes) {
