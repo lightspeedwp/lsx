@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Customizer - Google Font
+ * LSX functions and definitions - Customizer - Google Fonts Collection.
  *
  * @package    lsx
  * @subpackage customizer
+ * @category   google-fonts
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,20 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'LSX_Google_Font_Collection' ) ) :
 
 	/**
-	 * Google Font Collection
+	 * Google Font Collection.
 	 *
-	 * Controls all of the data for the custom fonts used in the theme customizer
+	 * Controls all of the data for the custom fonts used in the theme customizer.
 	 *
 	 * @package    lsx
 	 * @subpackage customizer
+	 * @category   google-fonts
 	 */
 	class LSX_Google_Font_Collection {
 
 		private $fonts;
 
-		/**
-		 * Constructor.
-		 */
 		public function __construct( $fonts ) {
 			if ( empty( $fonts ) ) {
 				return false;

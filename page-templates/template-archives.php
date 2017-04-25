@@ -1,5 +1,12 @@
 <?php
-/* Template Name: Archives */
+/**
+ * Archives Template.
+ *
+ * Template Name: Archives
+ *
+ * @package    lsx
+ * @subpackage template
+ */
 
 get_header(); ?>
 
@@ -13,52 +20,71 @@ get_header(); ?>
 
 			<?php lsx_content_top(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php if ( have_posts() ) : ?>
 
-				<?php lsx_entry_before(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php lsx_entry_before(); ?>
 
-					<?php lsx_entry_top(); ?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<div class="entry-content">
-						<h2><?php esc_html_e( 'The Last 30 Posts', 'lsx' ); ?></h3>
-                        <ul>
-                            <?php $loop = new WP_Query( array( 'posts_per_page' => 30 ) ); ?>
-                            <?php if ( $loop->have_posts() ) { while ( $loop->have_posts() ) { $loop->the_post(); ?>
-                                <?php $loop->is_home = false; ?>
-                                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> - <?php the_time( get_option( 'date_format' ) ); ?> - <?php echo esc_html( $post->comment_count ); ?> <?php esc_html_e( 'comments', 'lsx' ); ?></li>
-                            <?php } } wp_reset_postdata(); ?>
-                        </ul>
+						<?php lsx_entry_top(); ?>
 
-                        <h2><?php esc_html_e( 'Categories', 'lsx' ); ?></h3>
+						<div class="entry-content">
+							<h2><?php esc_html_e( 'The Last 30 Posts', 'lsx' ); ?></h3>
 
-                        <ul>
-                            <?php wp_list_categories( 'title_li=&hierarchical=0&show_count=1' ); ?>
-                        </ul>
+							<ul>
+								<?php $loop = new WP_Query( array( 'posts_per_page' => 30 ) ); ?>
 
-                        <h2><?php esc_html_e( 'Monthly Archives', 'lsx' ); ?></h3>
+								<?php if ( $loop->have_posts() ) : ?>
 
-                        <ul>
-                            <?php wp_get_archives( 'type=monthly&show_post_count=1' ); ?>
-                        </ul>
-					</div><!-- .entry-content -->
-					<?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+									<?php while ( $loop->have_posts() ) : ?>
 
-					<?php lsx_entry_bottom(); ?>
-					
-				</article><!-- #post-## -->
+										<?php
+											$loop->the_post();
+											$loop->is_home = false;
+										?>
 
-				<?php lsx_entry_after(); ?>
+										<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> - <?php the_time( get_option( 'date_format' ) ); ?> - <?php echo esc_html( $post->comment_count ); ?> <?php esc_html_e( 'comments', 'lsx' ); ?></li>
 
-			<?php endwhile; // end of the loop. ?>
+									<?php endwhile; ?>
+
+								<?php endif; ?>
+
+								<?php wp_reset_postdata(); ?>
+							</ul>
+
+							<h2><?php esc_html_e( 'Categories', 'lsx' ); ?></h3>
+
+							<ul>
+								<?php wp_list_categories( 'title_li=&hierarchical=0&show_count=1' ); ?>
+							</ul>
+
+							<h2><?php esc_html_e( 'Monthly Archives', 'lsx' ); ?></h3>
+
+							<ul>
+								<?php wp_get_archives( 'type=monthly&show_post_count=1' ); ?>
+							</ul>
+						</div><!-- .entry-content -->
+
+						<?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+
+						<?php lsx_entry_bottom(); ?>
+
+					</article><!-- #post-## -->
+
+					<?php lsx_entry_after(); ?>
+
+				<?php endwhile; ?>
+
+			<?php endif; ?>
 
 			<?php lsx_content_bottom(); ?>
 
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>

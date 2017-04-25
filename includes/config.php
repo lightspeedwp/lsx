@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Config
+ * LSX functions and definitions - Config.
  *
  * @package    lsx
  * @subpackage config
@@ -272,6 +272,7 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 	}
 
 endif;
+
 add_action( 'after_setup_theme', 'lsx_setup' );
 
 if ( ! function_exists( 'lsx_init' ) ) :
@@ -289,6 +290,7 @@ if ( ! function_exists( 'lsx_init' ) ) :
 	}
 
 endif;
+
 add_action( 'init', 'lsx_init', 100 );
 
 if ( ! function_exists( 'lsx_wp_head' ) ) :
@@ -309,6 +311,7 @@ if ( ! function_exists( 'lsx_wp_head' ) ) :
 	}
 
 endif;
+
 add_action( 'wp_head', 'lsx_wp_head', 100 );
 
 if ( ! function_exists( 'lsx_process_content_width' ) ) :
@@ -335,6 +338,7 @@ if ( ! function_exists( 'lsx_process_content_width' ) ) :
 	}
 
 endif;
+
 add_action( 'wp_head', 'lsx_process_content_width' );
 
 if ( ! function_exists( 'lsx_page_comments_off' ) ) :
@@ -355,4 +359,5 @@ if ( ! function_exists( 'lsx_page_comments_off' ) ) :
 	}
 
 endif;
+
 add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );

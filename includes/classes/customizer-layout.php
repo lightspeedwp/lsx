@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Customizer - Font
+ * LSX functions and definitions - Customizer - Layout.
  *
  * @package    lsx
  * @subpackage customizer
+ * @category   layout
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,10 +18,11 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 if ( ! class_exists( 'LSX_Customize_Layout_Control' ) ) :
 
 	/**
-	 * LSX_Customize_Layout_Control Class
+	 * LSX_Customize_Layout_Control Class.
 	 *
 	 * @package    lsx
 	 * @subpackage customizer
+	 * @category   layout
 	 */
 	class LSX_Customize_Layout_Control extends WP_Customize_Control {
 
@@ -28,9 +30,6 @@ if ( ! class_exists( 'LSX_Customize_Layout_Control' ) ) :
 		public $statuses;
 		public $layouts  = array();
 
-		/**
-		 * Constructor.
-		 */
 		public function __construct( $manager, $id, $args = array() ) {
 			parent::__construct( $manager, $id, $args );
 			if( !empty( $args['choices'] ) ){

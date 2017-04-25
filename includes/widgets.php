@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Widgets
+ * LSX functions and definitions - Widgets.
  *
  * @package    lsx
  * @subpackage widgets
@@ -57,6 +57,7 @@ if ( ! function_exists( 'lsx_widget_area_init' ) ) :
 	}
 
 endif;
+
 add_action( 'widgets_init', 'lsx_widget_area_init' );
 
 if ( ! function_exists( 'lsx_sidebar_footer_params' ) ) :
@@ -80,4 +81,5 @@ if ( ! function_exists( 'lsx_sidebar_footer_params' ) ) :
 	}
 
 endif;
+
 add_filter( 'dynamic_sidebar_params', 'lsx_sidebar_footer_params' );

@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Integrations - The Events Calendar
+ * LSX functions and definitions - Integrations - The Events Calendar.
  *
  * @package    lsx
  * @subpackage plugins
+ * @category   the-events-calendar
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,24 +14,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'lsx_the_events_calendar_styles' ) ) :
 
 	/**
-	 * Adds The Events Calendar custom stylesheet
+	 * Adds The Events Calendar custom stylesheet.
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   the-events-calendar
 	 */
 	function lsx_the_events_calendar_styles() {
 	    wp_enqueue_style( 'lsx_the_events_calendar', get_template_directory_uri() . '/assets/css/plugins/the-events-calendar.css', array( 'lsx_main' ), LSX_VERSION );
 	}
 
 endif;
+
 add_action( 'wp_enqueue_scripts', 'lsx_events_calendar_styles' );
 
 if ( ! function_exists( 'lsx_the_events_calendar_breadcrumbs' ) ) :
 	/**
-	 * Change breadcrumb for The Events Calendar
+	 * Change breadcrumb for The Events Calendar.
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   the-events-calendar
 	 */
 	function lsx_the_events_calendar_breadcrumbs( $output ) {
 		global $wp_query;
@@ -75,4 +79,5 @@ if ( ! function_exists( 'lsx_the_events_calendar_breadcrumbs' ) ) :
 	}
 
 endif;
+
 add_filter( 'lsx_breadcrumbs', 'lsx_the_events_calendar_breadcrumbs', 1, 10 );

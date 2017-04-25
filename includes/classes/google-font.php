@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Customizer - Google Font
+ * LSX functions and definitions - Customizer - Google Fonts.
  *
  * @package    lsx
  * @subpackage customizer
+ * @category   google-fonts
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,6 +18,7 @@ if ( ! class_exists( 'LSX_Google_Font' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage customizer
+	 * @category   google-fonts
 	 */
 	class LSX_Google_Font {
 
@@ -25,9 +27,6 @@ if ( ! class_exists( 'LSX_Google_Font' ) ) :
 		private $css_declaration;
 		private $css_class;
 
-		/**
-		 * Constructor
-		 */
 		public function __construct( $title, $location, $css_declaration, $css_class ) {
 			$this->title           = $title;
 			$this->location        = $location;
@@ -35,9 +34,6 @@ if ( ! class_exists( 'LSX_Google_Font' ) ) :
 			$this->css_class       = $css_class;
 		}
 
-		/**
-		 * Getter
-		 */
 		public function __get( $property ) {
 			if ( property_exists( $this, $property ) ) {
 				return $this->$property;

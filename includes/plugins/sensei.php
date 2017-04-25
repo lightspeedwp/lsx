@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Integrations - Sensei
+ * LSX functions and definitions - Integrations - Sensei.
  *
  * @package    lsx
  * @subpackage plugins
+ * @category   sensei
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,6 +34,7 @@ if ( ! function_exists( 'lsx_sensei_wp_head' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   sensei
 	 */
 	function lsx_sensei_wp_head() {
 		$layout = get_theme_mod( 'lsx_layout', '2cr' );
@@ -56,6 +58,7 @@ if ( ! function_exists( 'lsx_sensei_wp_head' ) ) :
 	}
 
 endif;
+
 add_action( 'wp_head', 'lsx_sensei_wp_head', 10 );
 
 if ( ! function_exists( 'lsx_sensei_before_content' ) ) :
@@ -65,6 +68,7 @@ if ( ! function_exists( 'lsx_sensei_before_content' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   sensei
 	 */
 	function lsx_sensei_before_content() {
 		lsx_content_wrap_before(); ?>
@@ -77,6 +81,7 @@ if ( ! function_exists( 'lsx_sensei_before_content' ) ) :
 	}
 
 endif;
+
 remove_action( 'sensei_before_main_content', array( $woothemes_sensei->frontend, 'sensei_output_content_wrapper' ), 10 );
 add_action( 'sensei_before_main_content', 'lsx_sensei_before_content', 10 );
 
@@ -87,6 +92,7 @@ if ( ! function_exists( 'lsx_sensei_after_content' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   sensei
 	 */
 	function lsx_sensei_after_content() {
 				lsx_content_bottom(); ?>
@@ -100,22 +106,25 @@ if ( ! function_exists( 'lsx_sensei_after_content' ) ) :
 	}
 
 endif;
+
 remove_action( 'sensei_after_main_content', array( $woothemes_sensei->frontend, 'sensei_output_content_wrapper_end' ), 10 );
 add_action( 'sensei_after_main_content', 'lsx_sensei_after_content', 10 );
 
 if ( ! function_exists( 'lsx_sensei_styles' ) ) :
 
 	/**
-	 * Adds Sensei custom stylesheet
+	 * Adds Sensei custom stylesheet.
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   sensei
 	 */
 	function lsx_sensei_styles() {
 	    wp_enqueue_style( 'sensei', get_template_directory_uri() . '/assets/css/plugins/sensei.css', array( 'lsx_main' ), LSX_VERSION );
 	}
 
 endif;
+
 // @TODO - Sensei is currently on version 1.9.14, the styles package imported is 1.5
 //add_filter( 'sensei_disable_styles', '__return_true' );
 //add_action( 'wp_enqueue_scripts', 'lsx_sensei_styles' );
@@ -127,6 +136,7 @@ if ( ! function_exists( 'lsx_sensei_redirect_to_home' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   sensei
 	 */
 	function lsx_sensei_redirect_to_home( $query ) {
 		if ( ! is_admin() && is_post_type_archive( 'lesson' ) && $query->is_main_query() ) {
@@ -136,15 +146,17 @@ if ( ! function_exists( 'lsx_sensei_redirect_to_home' ) ) :
 	}
 
 endif;
+
 add_action( 'parse_query', 'lsx_sensei_redirect_to_home' );
 
 if ( ! function_exists( 'lsx_sensei_category_title' ) ) :
 
 	/**
-	 * Filters the archive title
+	 * Filters the archive title.
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   sensei
 	 */
 	function lsx_sensei_category_title( $html, $term_id ) {
 		$html = str_replace( 'h2', 'h1', $html );
@@ -153,4 +165,5 @@ if ( ! function_exists( 'lsx_sensei_category_title' ) ) :
 	}
 
 endif;
+
 add_filter( 'course_category_title', 'lsx_sensei_category_title', 1, 10 );

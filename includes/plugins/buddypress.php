@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Integrations - Buddypress
+ * LSX functions and definitions - Integrations - Buddypress.
  *
  * @package    lsx
  * @subpackage plugins
+ * @category   budypress
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,10 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'lsx_buddypress_page_columns' ) ) :
 
 	/**
-	 * Forces the Buddypress Profile Pages to be 1 column (layout)
+	 * Forces the Buddypress Profile Pages to be 1 column (layout).
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   budypress
 	 */
 	function lsx_buddypress_page_columns( $layout ) {
 		if ( bp_is_profile_component()
@@ -35,4 +37,5 @@ if ( ! function_exists( 'lsx_buddypress_page_columns' ) ) :
 	}
 
 endif;
+
 add_filter( 'lsx_layout', 'lsx_buddypress_page_columns', 1, 100 );

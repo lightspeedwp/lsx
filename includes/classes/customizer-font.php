@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Customizer - Font
+ * LSX functions and definitions - Customizer - Font.
  *
  * @package    lsx
  * @subpackage customizer
+ * @category   font
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,6 +22,7 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage customizer
+	 * @category   font
 	 */
 	class LSX_Customize_Font_Control extends WP_Customize_Control {
 

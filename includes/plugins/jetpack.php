@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Integrations - Jetpack
+ * LSX functions and definitions - Integrations - Jetpack.
  *
  * @package    lsx
  * @subpackage plugins
+ * @category   jetpack
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,6 +18,7 @@ if ( ! function_exists( 'lsx_allowed_related_post_types' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_allowed_related_post_types( $allowed_post_types ) {
 		$allowed_post_types[] = 'jetpack-portfolio';
@@ -39,6 +41,7 @@ if ( ! function_exists( 'lsx_remove_related_post_context' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_remove_related_post_context() {
 		add_filter( 'jetpack_relatedposts_filter_post_context', '__return_empty_string' );
@@ -46,6 +49,7 @@ if ( ! function_exists( 'lsx_remove_related_post_context' ) ) :
 	}
 
 endif;
+
 add_action( 'init', 'lsx_remove_related_post_context', 20 );
 
 if ( ! function_exists( 'lsx_site_logo_title_tag' ) ) :
@@ -55,6 +59,7 @@ if ( ! function_exists( 'lsx_site_logo_title_tag' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_site_logo_title_tag( $html ) {
 		$html = str_replace( '<a', '<a title="' . get_bloginfo( 'name' ) . '" ', $html );
@@ -62,6 +67,7 @@ if ( ! function_exists( 'lsx_site_logo_title_tag' ) ) :
 	}
 
 endif;
+
 add_filter( 'jetpack_the_site_logo', 'lsx_site_logo_title_tag' );
 
 if ( ! function_exists( 'lsx_portfolio_infinite_scroll' ) ) :
@@ -71,6 +77,7 @@ if ( ! function_exists( 'lsx_portfolio_infinite_scroll' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_portfolio_infinite_scroll() {
 		global $_wp_theme_features, $wp_query;
@@ -84,6 +91,7 @@ if ( ! function_exists( 'lsx_portfolio_infinite_scroll' ) ) :
 	}
 
 endif;
+
 add_action( 'wp_head', 'lsx_portfolio_infinite_scroll', 1000 );
 
 if ( ! function_exists( 'lsx_portfolio_infinite_scroll_disable' ) ) :
@@ -93,6 +101,7 @@ if ( ! function_exists( 'lsx_portfolio_infinite_scroll_disable' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_portfolio_infinite_scroll_disable( $supported ) {
 		if ( is_post_type_archive('jetpack-portfolio' ) ) {
@@ -103,6 +112,7 @@ if ( ! function_exists( 'lsx_portfolio_infinite_scroll_disable' ) ) :
 	}
 
 endif;
+
 add_filter( 'infinite_scroll_archive_supported', 'lsx_portfolio_infinite_scroll_disable', 1, 10 );
 
 if ( ! function_exists( 'lsx_portfolio_archive_pagination' ) ) :
@@ -112,6 +122,7 @@ if ( ! function_exists( 'lsx_portfolio_archive_pagination' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	*/
 	function lsx_portfolio_archive_pagination( $query ) {
 		if ( ! is_admin() ) {
@@ -122,6 +133,7 @@ if ( ! function_exists( 'lsx_portfolio_archive_pagination' ) ) :
 	}
 
 endif;
+
 add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' , 100 );
 
 if ( ! function_exists( 'lsx_remove_portfolio_related_posts' ) ) :
@@ -131,6 +143,7 @@ if ( ! function_exists( 'lsx_remove_portfolio_related_posts' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_remove_portfolio_related_posts() {
 		if ( is_single() && 'jetpack-portfolio' === get_post_type() && class_exists( 'Jetpack_RelatedPosts' ) ) {
@@ -141,6 +154,7 @@ if ( ! function_exists( 'lsx_remove_portfolio_related_posts' ) ) :
 	}
 
 endif;
+
 add_filter( 'wp', 'lsx_remove_portfolio_related_posts', 20 );
 
 if ( ! function_exists( 'lsx_remove_single_related_posts' ) ) :
@@ -150,6 +164,7 @@ if ( ! function_exists( 'lsx_remove_single_related_posts' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_remove_single_related_posts() {
 		if ( is_single() && class_exists( 'Jetpack_RelatedPosts' ) ) {
@@ -160,6 +175,7 @@ if ( ! function_exists( 'lsx_remove_single_related_posts' ) ) :
 	}
 
 endif;
+
 add_filter( 'wp', 'lsx_remove_single_related_posts', 20 );
 
 if ( ! function_exists( 'lsx_portfolio_related_posts' ) ) :
@@ -169,6 +185,7 @@ if ( ! function_exists( 'lsx_portfolio_related_posts' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_portfolio_related_posts() {
 		if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
@@ -191,6 +208,7 @@ if ( ! function_exists( 'lsx_portfolio_remove_share' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_portfolio_remove_share() {
 		if ( ( is_single() && 'jetpack-portfolio' === get_post_type() ) || is_page_template( 'page-templates/template-portfolio.php' ) ) {
@@ -204,6 +222,7 @@ if ( ! function_exists( 'lsx_portfolio_remove_share' ) ) :
 	}
 
 endif;
+
 add_action( 'loop_start', 'lsx_portfolio_remove_share' );
 
 if ( ! function_exists( 'lsx_single_remove_share' ) ) :
@@ -213,6 +232,7 @@ if ( ! function_exists( 'lsx_single_remove_share' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_single_remove_share() {
 		if ( is_single() ) {
@@ -226,6 +246,7 @@ if ( ! function_exists( 'lsx_single_remove_share' ) ) :
 	}
 
 endif;
+
 add_action( 'loop_start', 'lsx_single_remove_share' );
 
 if ( ! function_exists( 'lsx_portfolio_taxonomy_template' ) ) :
@@ -235,6 +256,7 @@ if ( ! function_exists( 'lsx_portfolio_taxonomy_template' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	*/
 	function lsx_portfolio_taxonomy_template( $template ) {
 		if ( is_tax( array( 'jetpack-portfolio-type', 'jetpack-portfolio-tag' ) ) ) {
@@ -249,6 +271,7 @@ if ( ! function_exists( 'lsx_portfolio_taxonomy_template' ) ) :
 	}
 
 endif;
+
 add_filter( 'template_include', 'lsx_portfolio_taxonomy_template', 99 );
 
 if ( ! function_exists( 'lsx_save_portfolio_post_meta' ) ) :
@@ -258,6 +281,7 @@ if ( ! function_exists( 'lsx_save_portfolio_post_meta' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_save_portfolio_post_meta( $post_id, $post ) {
 		if ( 'jetpack-portfolio' !== $post->post_type ) {
@@ -297,6 +321,7 @@ if ( ! function_exists( 'lsx_save_portfolio_post_meta' ) ) :
 	}
 
 endif;
+
 add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
 
 if ( ! function_exists( 'lsx_add_portfolio_post_meta_boxes' ) ) :
@@ -306,6 +331,7 @@ if ( ! function_exists( 'lsx_add_portfolio_post_meta_boxes' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_add_portfolio_post_meta_boxes() {
 		add_meta_box(
@@ -328,6 +354,7 @@ if ( ! function_exists( 'lsx_add_portfolio_post_meta_boxes' ) ) :
 	}
 
 endif;
+
 add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
 
 if ( ! function_exists( 'lsx_client_meta_box' ) ) :
@@ -337,6 +364,7 @@ if ( ! function_exists( 'lsx_client_meta_box' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_client_meta_box( $object, $box ) {
 		wp_nonce_field( 'lsx_save_portfolio', '_lsx_client_nonce' );
@@ -358,6 +386,7 @@ if ( ! function_exists( 'lsx_website_meta_box' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_website_meta_box( $object, $box ) {
 		wp_nonce_field( 'lsx_save_portfolio', '_lsx_website_nonce' );
@@ -379,6 +408,7 @@ if ( ! function_exists( 'lsx_portfolio_sorter' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 
 	function lsx_portfolio_sorter() {
@@ -413,6 +443,7 @@ if ( ! function_exists( 'lsx_portfolio_naviagtion_labels' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_portfolio_naviagtion_labels( $labels ) {
 		if ( is_post_type_archive( 'jetpack-portfolio' ) ) {
@@ -427,6 +458,7 @@ if ( ! function_exists( 'lsx_portfolio_naviagtion_labels' ) ) :
 	}
 
 endif;
+
 add_filter( 'lsx_post_navigation_labels', 'lsx_portfolio_naviagtion_labels', 1, 10 );
 
 if ( ! function_exists( 'lsx_jetpack_infinite_scroll_after_setup' ) ) :
@@ -436,6 +468,7 @@ if ( ! function_exists( 'lsx_jetpack_infinite_scroll_after_setup' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_jetpack_infinite_scroll_after_setup() {
 		$infinite_scroll_args = array(
@@ -449,6 +482,7 @@ if ( ! function_exists( 'lsx_jetpack_infinite_scroll_after_setup' ) ) :
 	}
 
 endif;
+
 add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
 
 if ( ! function_exists( 'lsx_infinite_scroll_render' ) ) :
@@ -459,6 +493,7 @@ if ( ! function_exists( 'lsx_infinite_scroll_render' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_infinite_scroll_render() {
 		global $wp_query;
@@ -483,6 +518,7 @@ if ( ! function_exists( 'lsx_related_posts_headline' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   jetpack
 	 */
 	function lsx_related_posts_headline( $headline ) {
 		$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html__( 'Related Posts', 'lsx' ) );
@@ -490,4 +526,5 @@ if ( ! function_exists( 'lsx_related_posts_headline' ) ) :
 	}
 
 endif;
+
 add_filter( 'jetpack_relatedposts_filter_headline', 'lsx_related_posts_headline' );

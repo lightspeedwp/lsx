@@ -2,8 +2,6 @@
 /**
  * The template for displaying Archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package lsx
  */
 
@@ -16,46 +14,40 @@ get_header(); ?>
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main">
-			
-		<?php 
-			$layout = get_theme_mod('lsx_layout','2cr');
-			$layout = apply_filters( 'lsx_layout', $layout );
-			if('1c' === $layout && !is_post_type_archive('tribe_events')){
-				lsx_breadcrumbs();
-			}
-		?>
 
-		<?php lsx_content_top(); ?>
+			<?php
+				$layout = get_theme_mod( 'lsx_layout', '2cr' );
+				$layout = apply_filters( 'lsx_layout', $layout );
 
-		<?php if ( have_posts() ) : ?>	
+				if ( '1c' === $layout && ! is_post_type_archive( 'tribe_events' ) ) {
+					lsx_breadcrumbs();
+				}
+			?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php lsx_content_top(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'partials/content', get_post_format() );
-				?>
+			<?php if ( have_posts() ) : ?>
 
-			<?php endwhile; ?>
-			
-			<?php lsx_paging_nav(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php else : ?>
+					<?php get_template_part( 'partials/content', get_post_format() ); ?>
 
-			<?php get_template_part( 'partials/content', 'none' ); ?>
+				<?php endwhile; ?>
 
-		<?php endif; ?>
+				<?php lsx_paging_nav(); ?>
 
-		<?php lsx_content_bottom(); ?>
+			<?php else : ?>
+
+				<?php get_template_part( 'partials/content', 'none' ); ?>
+
+			<?php endif; ?>
+
+			<?php lsx_content_bottom(); ?>
 
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>

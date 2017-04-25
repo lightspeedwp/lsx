@@ -1,16 +1,15 @@
 <?php
 /**
- * The template for displaying search forms in lsx
+ * The template for displaying search forms in LSX.
  *
  * @package lsx
  */
 
-// This is to help the customizer function better
 $style = '';
 
 if ( is_customize_preview() ) {
 	$search_form = get_theme_mod( 'lsx_header_search', 0 );
-	
+
 	if ( ! $search_form ) {
 		$style = 'display:none;';
 	}
@@ -21,6 +20,7 @@ if ( is_customize_preview() ) {
 	<div class="input-group">
 		<input type="search" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" class="search-field form-control" placeholder="<?php esc_attr_e( 'Search', 'lsx' ); ?> <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 		<label class="hide"><?php esc_attr_e( 'Search for:', 'lsx' ); ?></label>
+
 		<span class="input-group-btn">
 			<button type="submit" class="search-submit btn btn-default"><span class="fa fa-search"></span></button>
 		</span>

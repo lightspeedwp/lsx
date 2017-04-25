@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Navigation Walker
+ * LSX functions and definitions - Navigation Walker.
  *
  * @package    lsx
  * @subpackage navigation
+ * @category   bootstrap-walker
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,11 +16,12 @@ add_filter( 'nav_menu_item_id', '__return_null' );
 if ( ! function_exists( 'lsx_nav_menu_css_class' ) ) :
 
 	/**
-	 * Remove the id="" on nav menu items
-	 * Return 'menu-slug' for nav menu classes
+	 * Remove the id="" on nav menu items.
+	 * Return 'menu-slug' for nav menu classes.
 	 *
 	 * @package    lsx
 	 * @subpackage navigation
+	 * @category   bootstrap-walker
 	 */
 	function lsx_nav_menu_css_class( $classes, $item ) {
 		$slug    = sanitize_title( $item->title );
@@ -33,18 +35,20 @@ if ( ! function_exists( 'lsx_nav_menu_css_class' ) ) :
 	}
 
 endif;
+
 add_filter( 'nav_menu_css_class', 'lsx_nav_menu_css_class', 10, 2 );
 
 if ( ! function_exists( 'lsx_nav_menu_args' ) ) :
 
 	/**
-	 * Clean up wp_nav_menu_args
+	 * Clean up wp_nav_menu_args.
 	 *
-	 * Remove the container
-	 * Use LSX_Nav_Walker() by default
+	 * Remove the container.
+	 * Use LSX_Nav_Walker() by default.
 	 *
 	 * @package    lsx
 	 * @subpackage navigation
+	 * @category   bootstrap-walker
 	 */
 	function lsx_nav_menu_args( $args = '' ) {
 		$roots_nav_menu_args['container'] = false;
@@ -65,4 +69,5 @@ if ( ! function_exists( 'lsx_nav_menu_args' ) ) :
 	}
 
 endif;
+
 add_filter( 'wp_nav_menu_args', 'lsx_nav_menu_args' );

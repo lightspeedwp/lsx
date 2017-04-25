@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Welcome page
+ * LSX functions and definitions - Welcome page.
  *
  * @package    lsx
  * @subpackage welcome-page
@@ -25,10 +25,13 @@ if ( ! function_exists( 'lsx_activation_admin_notice' ) ) :
 			add_action( 'admin_notices', 'lsx_welcome_admin_notice', 99 );
 		}
 	}
+
 endif;
+
 add_action( 'load-themes.php', 'lsx_activation_admin_notice' );
 
 if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
+
 	/**
 	 * Display an admin notice linking to the welcome screen.
 	 *
@@ -43,9 +46,11 @@ if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 			</div>
 		<?php
 	}
+
 endif;
 
 if ( ! function_exists( 'lsx_welcome_style' ) ) :
+
 	/**
 	 * Load welcome screen css.
 	 *
@@ -55,14 +60,17 @@ if ( ! function_exists( 'lsx_welcome_style' ) ) :
 	 * @param string $hook_suffix the current page hook suffix.
 	 */
 	function lsx_welcome_style( $hook_suffix ) {
-		if ( 'appearance_page_lsx-welcome' == $hook_suffix ) {
+		if ( 'appearance_page_lsx-welcome' === $hook_suffix ) {
 			wp_enqueue_style( 'lsx-welcome-screen', get_template_directory_uri() . '/assets/css/admin/welcome.css', array(), LSX_VERSION );
 		}
 	}
+
 endif;
+
 add_action( 'admin_enqueue_scripts', 'lsx_welcome_style' );
 
 if ( ! function_exists( 'lsx_welcome_register_menu' ) ) :
+
 	/**
 	 * Creates the dashboard page.
 	 *
@@ -72,10 +80,13 @@ if ( ! function_exists( 'lsx_welcome_register_menu' ) ) :
 	function lsx_welcome_register_menu() {
 		add_theme_page( 'LSX', 'LSX', 'activate_plugins', 'lsx-welcome', 'lsx_welcome_screen' );
 	}
+
 endif;
+
 add_action( 'admin_menu', 'lsx_welcome_register_menu' );
 
 if ( ! function_exists( 'lsx_welcome_screen' ) ) :
+
 	/**
 	 * The welcome screen.
 	 *
@@ -100,11 +111,13 @@ if ( ! function_exists( 'lsx_welcome_screen' ) ) :
 		</div>
 		<?php
 	}
+
 endif;
 
 if ( ! function_exists( 'lsx_welcome_header' ) ) :
+
 	/**
-	 * Welcome screen intro
+	 * Welcome screen intro.
 	 *
 	 * @package    lsx
 	 * @subpackage welcome-page
@@ -112,12 +125,15 @@ if ( ! function_exists( 'lsx_welcome_header' ) ) :
 	function lsx_welcome_header() {
 		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-header.php' );
 	}
+
 endif;
+
 add_action( 'lsx_welcome', 'lsx_welcome_header', 10 );
 
 if ( ! function_exists( 'lsx_welcome_enhance' ) ) :
+
 	/**
-	 * Welcome screen enhance section
+	 * Welcome screen enhance section.
 	 *
 	 * @package    lsx
 	 * @subpackage welcome-page
@@ -125,12 +141,15 @@ if ( ! function_exists( 'lsx_welcome_enhance' ) ) :
 	function lsx_welcome_enhance() {
 		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-enhance.php' );
 	}
+
 endif;
+
 add_action( 'lsx_welcome', 'lsx_welcome_enhance', 20 );
 
 if ( ! function_exists( 'lsx_welcome_footer' ) ) :
+
 	/**
-	 * Welcome screen contribute section
+	 * Welcome screen contribute section.
 	 *
 	 * @package    lsx
 	 * @subpackage welcome-page
@@ -138,5 +157,7 @@ if ( ! function_exists( 'lsx_welcome_footer' ) ) :
 	function lsx_welcome_footer() {
 		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-footer.php' );
 	}
+
 endif;
+
 add_action( 'lsx_welcome', 'lsx_welcome_footer', 30 );

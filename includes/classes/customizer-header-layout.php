@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Customizer - Font
+ * LSX functions and definitions - Customizer - Header Layout.
  *
  * @package    lsx
  * @subpackage customizer
+ * @category   header-layout
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,6 +22,7 @@ if ( ! class_exists( 'LSX_Customize_Header_Layout_Control' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage customizer
+	 * @category   header-layout
 	 */
 	class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 
@@ -28,9 +30,6 @@ if ( ! class_exists( 'LSX_Customize_Header_Layout_Control' ) ) :
 		public $statuses;
 		public $layouts  = array();
 
-		/**
-		 * Constructor.
-		 */
 		public function __construct( $manager, $id, $args = array() ) {
 			parent::__construct( $manager, $id, $args );
 

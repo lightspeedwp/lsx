@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Layout
+ * LSX functions and definitions - Layout.
  *
  * @package    lsx
  * @subpackage layout
@@ -165,119 +165,152 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) :
 	}
 
 endif;
+
 add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 
-/**
- * Displays the global header
- *
- * @package lsx-theme
- * @subpackage layout
- */
-function lsx_global_header() {
-	/*if ('page' == get_option('show_on_front') && get_option('page_for_posts') == get_the_ID()) :
-		?>
-		<header class="archive-header">
-			<h1 class="archive-title"><?php echo get_the_title($blog_page); ?></h1>
-		</header>
-		<?php
-	else*/if (is_singular('post')) :
-		$format = get_post_format();
-		if ( false === $format ) {
-			$format = 'standard';
-		}
-		$format_link = get_post_format_link($format);
-		$format = lsx_translate_format_to_fontawesome($format);
-		?>
-		<header class="archive-header">
-			<h1 class="archive-title">
-				<i class="format-link fa fa-<?php echo esc_attr( $format ) ?>"></i>
-				<span><?php the_title(); ?></span>
-			</h1>
-		</header>
-		<?php
-	elseif (is_page() || is_single()) :
-		?>
-		<header class="archive-header">
-			<h1 class="archive-title"><?php the_title() ?></h1>
-		</header>
-		<?php
-	elseif (is_search()) :
-		?>
-		<header class="archive-header">
-			<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		</header>
-		<?php
-	elseif (is_author()) :
-		?>
-		<header class="archive-header">
-			<h1 class="archive-title">
-				<?php printf( esc_html__( 'Author: %s', 'lsx' ), get_the_author() ); ?>
-			</h1>
+if ( ! function_exists( 'lsx_global_header' ) ) :
 
-			<?php if (get_the_author_meta('description')) { ?>
-			    <p class="author-desc"><?php echo esc_html( get_the_author_meta( 'description' ) ) ?></p>
-			<?php } ?>
-		</header>
-		<?php
-	elseif (is_archive() && class_exists('WooCommerce') && is_post_type_archive('product') ) :
-		?>
-		<header class="archive-header">
-			<h1 class="archive-title"><?php esc_html_e( 'Shop', 'lsx' ); ?></h1>
-			<?php echo term_description(); ?>
-		</header>
-		<?php
-	elseif (is_archive()) :
-		?>
-		<header class="archive-header">
-			<h1 class="archive-title">
-				<?php if ( has_post_format() && !is_category() && !is_tag() && !is_date() && !is_tax('post_format') ) { ?>
-					Type: <?php the_archive_title(); ?>
-				<?php } else { ?>
-					<?php the_archive_title(); ?>
+	/**
+	 * Displays the global header.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_global_header() {
+		/*if ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_for_posts' ) == get_the_ID() ) :
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php echo get_the_title( $blog_page ); ?></h1>
+			</header>
+			<?php
+		else*/
+		if ( is_singular( 'post' ) ) :
+			$format = get_post_format();
+
+			if ( false === $format ) {
+				$format = 'standard';
+			}
+
+			$format_link = get_post_format_link( $format );
+			$format      = lsx_translate_format_to_fontawesome( $format );
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title">
+					<i class="format-link fa fa-<?php echo esc_attr( $format ); ?>"></i>
+					<span><?php the_title(); ?></span>
+				</h1>
+			</header>
+			<?php
+		elseif ( is_page() || is_single() ) :
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php the_title(); ?></h1>
+			</header>
+			<?php
+		elseif ( is_search() ) :
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			</header>
+			<?php
+		elseif ( is_author() ) :
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title">
+					<?php printf( esc_html__( 'Author: %s', 'lsx' ), get_the_author() ); ?>
+				</h1>
+
+				<?php if (get_the_author_meta('description')) { ?>
+				    <p class="author-desc"><?php echo esc_html( get_the_author_meta( 'description' ) ) ?></p>
 				<?php } ?>
-			</h1>
+			</header>
+			<?php
+		elseif ( is_archive() && class_exists( 'WooCommerce' ) && is_post_type_archive( 'product' ) ) :
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php esc_html_e( 'Shop', 'lsx' ); ?></h1>
+				<?php echo term_description(); ?>
+			</header>
+			<?php
+		elseif ( is_archive() ) :
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title">
+					<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && !is_tax('post_format') ) { ?>
+						Type: <?php the_archive_title(); ?>
+					<?php } else { ?>
+						<?php the_archive_title(); ?>
+					<?php } ?>
+				</h1>
 
-			<?php echo term_description(); ?>
-		</header>
-		<?php
-	endif;
-}
-add_action('lsx_content_wrap_before', 'lsx_global_header');
+				<?php echo term_description(); ?>
+			</header>
+			<?php
+		endif;
+	}
 
-/**
- * Displays the global header in default Blog landing
- *
- * @package lsx-theme
- * @subpackage layout
- */
-function lsx_blog_header() {
-	$classes = get_body_class();
+endif;
 
-	if (in_array('blog', $classes)) { ?>
-		<header class="archive-header">
-			<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>
-		</header>
-	<?php }
-}
-add_action('lsx_content_wrap_before', 'lsx_blog_header');
+add_action( 'lsx_content_wrap_before', 'lsx_global_header' );
 
-/**
- * Add Viewport Meta Tag to head
- */
-function lsx_add_viewport_meta_tag() {
-	?>
+if ( ! function_exists( 'lsx_blog_header' ) ) :
+
+	/**
+	 * Displays the global header in default Blog landing.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_blog_header() {
+		$classes = get_body_class();
+
+		if ( in_array( 'blog', $classes ) ) {
+			?>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>
+			</header>
+			<?php
+		}
+	}
+
+endif;
+
+add_action( 'lsx_content_wrap_before', 'lsx_blog_header' );
+
+if ( ! function_exists( 'lsx_add_viewport_meta_tag' ) ) :
+
+	/**
+	 * Add Viewport Meta Tag to head.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_add_viewport_meta_tag() {
+		?>
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-	<?php }
+		<?php
+	}
+
+endif;
+
 add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
 
+if ( ! function_exists( 'lsx_header_search_form' ) ) :
 
-/**
- * Add a search form to just above the nav menu
- */
-function lsx_header_search_form() {
-	$search_form = get_theme_mod( 'lsx_header_search', 0 );
-	if($search_form || is_customize_preview()){
-		get_search_form( true );
+	/**
+	 * Add a search form to just above the nav menu.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_header_search_form() {
+		$search_form = get_theme_mod( 'lsx_header_search', 0 );
+
+		if ( $search_form || is_customize_preview() ) {
+			get_search_form( true );
+		}
 	}
-}
+
+endif;
+
 add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );

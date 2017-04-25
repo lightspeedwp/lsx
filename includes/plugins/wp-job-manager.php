@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Integrations - WP Job Manager
+ * LSX functions and definitions - Integrations - WP Job Manager.
  *
  * @package    lsx
  * @subpackage plugins
+ * @category   wp-job-manager
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,14 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'lsx_wp_job_manager_styles' ) ) :
 
 	/**
-	 * Adds WP Job Manager custom stylesheet
+	 * Adds WP Job Manager custom stylesheet.
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   wp-job-manager
 	 */
 	function lsx_wp_job_manager_styles() {
 		wp_enqueue_style( 'lsx_wp_job_manager', get_template_directory_uri() . '/assets/css/plugins/wp-job-manager.css', array( 'lsx_main' ), LSX_VERSION );
 	}
 
 endif;
+
 add_action( 'wp_enqueue_scripts', 'lsx_wp_job_manager_styles' );

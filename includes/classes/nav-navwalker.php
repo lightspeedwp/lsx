@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Navigation Walker
+ * LSX functions and definitions - Navigation Walker.
  *
  * @package    lsx
  * @subpackage navigation
+ * @category   bootstrap-walker
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,6 +30,7 @@ if ( ! class_exists( 'LSX_Nav_Walker' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage navigation
+	 * @category   bootstrap-walker
 	 */
 	class LSX_Nav_Walker extends Walker_Nav_Menu {
 

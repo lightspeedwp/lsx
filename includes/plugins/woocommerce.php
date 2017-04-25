@@ -1,9 +1,10 @@
 <?php
 /**
- * LSX functions and definitions - Integrations - WooCommerce
+ * LSX functions and definitions - Integrations - WooCommerce.
  *
  * @package    lsx
  * @subpackage plugins
+ * @category   woocommerce
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,6 +18,7 @@ if ( ! function_exists( 'lsx_woocommerce_before_content' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   woocommerce
 	 */
 	function lsx_woocommerce_before_content() {
 		lsx_content_wrap_before(); ?>
@@ -29,6 +31,7 @@ if ( ! function_exists( 'lsx_woocommerce_before_content' ) ) :
 	}
 
 endif;
+
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 add_action( 'woocommerce_before_main_content', 'lsx_woocommerce_before_content', 10 );
 
@@ -39,6 +42,7 @@ if ( ! function_exists( 'lsx_woocommerce_after_content' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   woocommerce
 	 */
 	function lsx_woocommerce_after_content() {
 				lsx_content_bottom(); ?>
@@ -51,6 +55,7 @@ if ( ! function_exists( 'lsx_woocommerce_after_content' ) ) :
 	}
 
 endif;
+
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 add_action( 'woocommerce_after_main_content', 'lsx_woocommerce_after_content', 10 );
 
@@ -61,6 +66,7 @@ if ( ! function_exists( 'lsx_woocommerce_styles' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage plugins
+	 * @category   woocommerce
 	 */
 	function lsx_woocommerce_styles() {
 	    wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/assets/css/plugins/woocommerce-layout.css', array( 'lsx_main' ), LSX_VERSION, 'all' );
@@ -69,6 +75,7 @@ if ( ! function_exists( 'lsx_woocommerce_styles' ) ) :
 	}
 
 endif;
+
 // @TODO - WooCommerce is currently on version 3.0.4, the styles package imported is 2.6.4
 //add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 //add_action( 'wp_enqueue_scripts', 'lsx_woocommerce_styles' );

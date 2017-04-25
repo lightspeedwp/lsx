@@ -86,7 +86,7 @@ endif;
 if ( ! function_exists( 'lsx_sanitize_email' ) ) :
 
 	/**
-	 * Sanitizes an email input
+	 * Sanitizes an email input.
 	 *
 	 * @package    lsx
 	 * @subpackage sanitize
@@ -105,7 +105,7 @@ endif;
 if ( ! function_exists( 'lsx_sanitize_checkbox' ) ) :
 
 	/**
-	 * Sanitizes an single or multiple checkbox input
+	 * Sanitizes an single or multiple checkbox input.
 	 *
 	 * @package    lsx
 	 * @subpackage sanitize

@@ -1,8 +1,11 @@
 <?php
 /**
+ * Portfolio Archive Template.
+ *
  * Template Name: Portfolio Archive
  *
- * @package lsx
+ * @package    lsx
+ * @subpackage template
  */
 
 get_header(); ?>
@@ -17,45 +20,52 @@ get_header(); ?>
 
 			<?php lsx_content_top(); ?>
 
-			<?php if(have_posts()) { ?>
-				<?php while(have_posts()) { the_post(); ?>
+			<?php if ( have_posts() ) : ?>
+
+				<?php while ( have_posts() ) : the_post(); ?>
+
 					<div class="entry-content">
-						
 						<?php the_content(); ?>
-						
-						<?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'lsx'), 'after' => '</p></nav>')); ?>
+						<?php wp_link_pages( array( 'before' => '<nav class="page-nav"><p>' . esc_html__( 'Pages:', 'lsx' ), 'after' => '</p></nav>' ) ); ?>
 					</div><!-- .entry-content -->
-				<?php } ?>
-			<?php } ?>
+
+				<?php endwhile; ?>
+
+			<?php endif; ?>
 
 			<?php
-				if ( get_query_var( 'paged' ) ) :
+				if ( get_query_var( 'paged' ) ) {
 					$paged = get_query_var( 'paged' );
-				elseif ( get_query_var( 'page' ) ) :
+				} elseif ( get_query_var( 'page' ) ) {
 					$paged = get_query_var( 'page' );
-				else :
+				} else {
 					$paged = 1;
-				endif;
+				}
 
 				$args = array(
 					'post_type'      => 'jetpack-portfolio',
 					'posts_per_page' => 99,
 				);
+
 				$project_query = new WP_Query ( $args );
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
 			?>
-			
+
 				<?php lsx_portfolio_sorter(); ?>
 
 				<div class="filter-items-wrapper lsx-portfolio-wrapper">
 					<div class="filter-items-container lsx-portfolio masonry">
-						<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
 
-							<?php if(has_post_thumbnail()) { ?>
+						<?php while ( $project_query->have_posts() ) : $project_query->the_post(); ?>
+
+							<?php if ( has_post_thumbnail() ) : ?>
+
 								<?php get_template_part( 'partials/content', 'portfolio' ); ?>
-							<?php } ?>
+
+							<?php endif; ?>
 
 						<?php endwhile; ?>
+
 					</div>
 				</div><!-- .portfolio-wrapper -->
 
@@ -67,6 +77,7 @@ get_header(); ?>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
+
 						<?php if ( current_user_can( 'publish_posts' ) ) : ?>
 
 							<p><?php esc_html_e( 'Ready to publish your first project?', 'lsx' ); ?> <a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=jetpack-portfolio' ) ) ?>"><?php esc_html_e( 'Get started here', 'lsx' ); ?></a></p>
@@ -77,19 +88,20 @@ get_header(); ?>
 							<?php get_search_form(); ?>
 
 						<?php endif; ?>
+
 					</div><!-- .page-content -->
 				</section><!-- .no-results -->
 
-			<?php endif; ?>	
+			<?php endif; ?>
 
 			<div class="clearfix"></div>
 
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>
-	
+
 <?php get_footer();

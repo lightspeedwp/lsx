@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Scripts
+ * LSX functions and definitions - Scripts.
  *
  * @package    lsx
  * @subpackage scripts
@@ -115,6 +115,7 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 	}
 
 endif;
+
 add_action( 'wp_enqueue_scripts', 'lsx_scripts' );
 
 if ( ! function_exists( 'lsx_scripts_defer_parsing' ) ) :
@@ -137,4 +138,5 @@ if ( ! function_exists( 'lsx_scripts_defer_parsing' ) ) :
 	}
 
 endif;
+
 add_filter( 'clean_url', 'lsx_scripts_defer_parsing', 11, 1 );

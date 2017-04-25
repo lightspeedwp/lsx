@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying single portfolio posts
+ * The template for displaying single portfolio posts.
  *
  * @package lsx
  */
@@ -20,7 +20,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<?php lsx_content_top(); ?>
-			
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'partials/content', 'portfolio-single' ); ?>
@@ -30,7 +30,7 @@ get_header(); ?>
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>

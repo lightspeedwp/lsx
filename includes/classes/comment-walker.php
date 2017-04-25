@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Comment Walker
+ * LSX functions and definitions - Comment Walker.
  *
  * @package    lsx
  * @subpackage comment
@@ -17,7 +17,7 @@ if ( ! class_exists( 'Walker_Comment' ) ) {
 if ( ! class_exists( 'LSX_Walker_Comment' ) ) :
 
 	/**
-	 * Use Bootstrap's media object for listing comments
+	 * Use Bootstrap's media object for listing comments.
 	 *
 	 * @link http://getbootstrap.com/components/#media
 	 *

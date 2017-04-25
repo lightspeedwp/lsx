@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Lazyload
+ * LSX functions and definitions - Lazyload.
  *
  * @package    lsx
  * @subpackage lazyload

@@ -4,6 +4,7 @@
  *
  * @package    lsx
  * @subpackage navigation
+ * @category   bootstrap-navigation-walker
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,6 +22,7 @@ if ( ! class_exists( 'LSX_Bootstrap_Navwalker' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage navigation
+	 * @category   bootstrap-navigation-walker
 	 */
 	class LSX_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
@@ -239,6 +241,7 @@ if ( ! class_exists( 'LSX_Bootstrap_Navwalker' ) ) :
 				echo wp_kses_post( $fb_output );
 			}
 		}
+
 	}
 
 endif;

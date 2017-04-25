@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Customizer
+ * LSX functions and definitions - Customizer.
  *
  * @package    lsx
  * @subpackage customizer

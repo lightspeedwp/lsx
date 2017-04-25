@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Hooks
+ * LSX functions and definitions - Hooks.
  *
  * @package    lsx
  * @subpackage hooks
@@ -17,11 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 function lsx_body_top() {
-	 do_action( 'lsx_body_top' );
+	do_action( 'lsx_body_top' );
 }
 
 function lsx_body_bottom() {
-	 do_action( 'lsx_body_bottom' );
+	do_action( 'lsx_body_bottom' );
 }
 
 /**

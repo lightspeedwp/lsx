@@ -1,6 +1,6 @@
 <?php
 /**
- * LSX functions and definitions - Customizer
+ * LSX functions and definitions - Customizer.
  *
  * @package    lsx
  * @subpackage customizer
@@ -55,6 +55,7 @@ if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
 	}
 
 endif;
+
 add_filter( 'lsx_customizer_controls', 'lsx_customizer_core_controls' );
 
 if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
@@ -136,6 +137,7 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 	}
 
 endif;
+
 add_filter( 'lsx_customizer_controls', 'lsx_customizer_layout_controls' );
 
 if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
@@ -231,6 +233,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 	}
 
 endif;
+
 add_filter( 'lsx_customizer_controls', 'lsx_customizer_font_controls' );
 
 if ( ! function_exists( 'lsx_get_customizer_controls' ) ) :
