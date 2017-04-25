@@ -10,68 +10,65 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+if ( ! function_exists( 'lsx_woocommerce_before_content' ) ) :
 
-add_action('woocommerce_before_main_content', 'lsx_woocommerce_before_content', 10);
-add_action('woocommerce_after_main_content', 'lsx_woocommerce_after_content', 10);
+	/**
+	 * Adds the top and primary divs for the layout.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_woocommerce_before_content() {
+		lsx_content_wrap_before(); ?>
 
-/*
- * Layout
- */
+		<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
+			<?php lsx_content_before(); ?>
 
-/**
- * Adds the top and primary divs for the layout.
- * @package lsx
- * @subpackage woocommerce
- * @category 	layout
- */
-function lsx_woocommerce_before_content(){ ?>
-	<?php lsx_content_wrap_before(); ?>
+			<main id="main" class="site-main">
+				<?php lsx_content_top();
+	}
 
-	<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
+endif;
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+add_action( 'woocommerce_before_main_content', 'lsx_woocommerce_before_content', 10 );
 
-		<?php lsx_content_before(); ?>
+if ( ! function_exists( 'lsx_woocommerce_after_content' ) ) :
 
-		<main id="main" class="site-main">
+	/**
+	 * Adds the closing divs for primary and main to woocommerce.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_woocommerce_after_content() {
+				lsx_content_bottom(); ?>
+			</main><!-- #main -->
 
-		<?php lsx_content_top(); ?>
-<?php }
+			<?php lsx_content_after(); ?>
+		</div><!-- #primary -->
 
-/**
- * Adds the closing divs for primary and main to woocommerce.
- * @package lsx
- * @subpackage woocommerce
- * @category 	layout
- */
-function lsx_woocommerce_after_content(){ ?>
-		<?php lsx_content_bottom(); ?>
+		<?php lsx_content_wrap_after();
+	}
 
-		</main><!-- #main -->
+endif;
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+add_action( 'woocommerce_after_main_content', 'lsx_woocommerce_after_content', 10 );
 
-		<?php lsx_content_after(); ?>
+if ( ! function_exists( 'lsx_woocommerce_styles' ) ) :
 
-	</div><!-- #primary -->
+	/**
+	 * Removes WooCommerce plugin styles and enqueues WooCommerce styles from the theme instead.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_woocommerce_styles() {
+	    wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/assets/css/plugins/woocommerce-layout.css', array( 'lsx_main' ), LSX_VERSION, 'all' );
+	    wp_enqueue_style( 'woocommerce-smallscreen', get_template_directory_uri() . '/assets/css/plugins/woocommerce-smallscreen.css', array( 'lsx_main', 'woocommerce-layout' ), LSX_VERSION, 'only screen and (max-width: 767px)' );
+	    wp_enqueue_style( 'woocommerce-general', get_template_directory_uri() . '/assets/css/plugins/woocommerce.css', array( 'lsx_main' ), LSX_VERSION, 'all' );
+	}
 
-	<?php lsx_content_wrap_after(); ?>
-<?php }
-
-
-/*
- * Styles
- */
-
-/**
- * Removes WooCommerce plugin styles and enqueues WooCommerce styles from the theme instead.
- * @package lsx
- * @subpackage woocommerce
- * @category 	styles
- */
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-
-function lsx_woocommerce_styles() {
-    wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/css/woocommerce-layout.css', array(), LSX_VERSION, 'all' );
-    wp_enqueue_style( 'woocommerce-smallscreen', get_template_directory_uri() . '/css/woocommerce-smallscreen.css', array( 'woocommerce-layout' ), LSX_VERSION, 'only screen and (max-width: 767px)' );
-    wp_enqueue_style( 'woocommerce-general', get_template_directory_uri() . '/css/woocommerce.css', array(), LSX_VERSION, 'all' );
-}
-add_action( 'wp_enqueue_scripts', 'lsx_woocommerce_styles' );
+endif;
+// @TODO - WooCommerce is currently on version 3.0.4, the styles package imported is 2.6.4
+//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+//add_action( 'wp_enqueue_scripts', 'lsx_woocommerce_styles' );

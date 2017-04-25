@@ -56,7 +56,10 @@ gulp.task('styles', function () {
 			outputStyle: 'compact',
 			includePaths: ['assets/css/scss']
 		}).on('error', gutil.log))
-		.pipe(autoprefixer({ browsers: browserlist, casacade: true }))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
 		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest('assets/css'))
 });
@@ -73,7 +76,10 @@ gulp.task('vendor-styles', function () {
 			outputStyle: 'compact',
 			includePaths: ['assets/css/vendor']
 		}).on('error', gutil.log))
-		.pipe(autoprefixer({ browsers: browserlist, casacade: true }))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
 		//.pipe(minify())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('assets/css/vendor'))
@@ -92,7 +98,10 @@ gulp.task('admin-styles', function () {
 			outputStyle: 'compact',
 			includePaths: ['assets/css/admin']
 		}).on('error', gutil.log))
-		.pipe(autoprefixer({ browsers: browserlist, casacade: true }))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
 		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest('assets/css/admin'))
 });
@@ -110,18 +119,15 @@ gulp.task('plugins-styles', function () {
 			outputStyle: 'compact',
 			includePaths: ['assets/css/plugins']
 		}).on('error', gutil.log))
-		.pipe(autoprefixer({ browsers: browserlist, casacade: true }))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
 		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest('assets/css/plugins'))
 });
 
 /*
-gulp.task('sass', function() {
-	gulp.src(['sass/app.scss', 'sass/alegreya_open_sans.scss', 'sass/noto_sans_noto_sans.scss', 'sass/noto_serif_noto_sans.scss', 'sass/raleway_open_sans.scss', 'sass/medium-nav-break.scss'])
-		.pipe(sass().on('error', function(err) { console.log('Error!', err); }))
-		.pipe(gulp.dest('css/'));
-});
-
 gulp.task('sass-woocommerce', function() {
 	gulp.src(['sass/woocommerce/woocommerce-layout.scss', 'sass/woocommerce/woocommerce-smallscreen.scss', 'sass/woocommerce/woocommerce.scss'])
 		.pipe(sass().on('error', function(err) { console.log('Error!', err); }))
@@ -150,11 +156,11 @@ gulp.task('compile-js', ['js']);
 
 
 gulp.task('watch-css', function () {
-    gulp.watch('assets/css/scss/**', ['compile-css']);
+	gulp.watch('assets/css/**/*.scss', ['compile-css']);
 });
 
 gulp.task('watch-js', function () {
-	gulp.watch('assets/js/src/**', ['compile-js']);
+	gulp.watch('assets/js/src/**/*.js', ['compile-js']);
 });
 
 gulp.task('watch', ['watch-css', 'watch-js']);

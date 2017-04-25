@@ -30,8 +30,8 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 		 * Enqueue the styles and scripts.
 		 */
 		public function enqueue() {
-			wp_enqueue_style( 'lsx-font-picker-custom-control', get_template_directory_uri() . '/assets/css/admin/lsx-admin-customizer-font.css', array(), LSX_VERSION );
-			wp_enqueue_script( 'lsx-font-picker-custom-control', get_template_directory_uri() . '/assets/js/admin/lsx-admin-customizer-font.js', array(), LSX_VERSION );
+			wp_enqueue_style( 'lsx-font-picker-custom-control', get_template_directory_uri() . '/assets/css/admin/customizer-font.css', array(), LSX_VERSION );
+			wp_enqueue_script( 'lsx-font-picker-custom-control', get_template_directory_uri() . '/assets/js/admin/customizer-font.js', array(), LSX_VERSION );
 		}
 
 		/**

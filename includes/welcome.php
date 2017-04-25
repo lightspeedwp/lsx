@@ -56,7 +56,7 @@ if ( ! function_exists( 'lsx_welcome_style' ) ) :
 	 */
 	function lsx_welcome_style( $hook_suffix ) {
 		if ( 'appearance_page_lsx-welcome' == $hook_suffix ) {
-			wp_enqueue_style( 'lsx-welcome-screen', get_template_directory_uri() . '/assets/css/admin/lsx-admin-welcome.css', array(), LSX_VERSION );
+			wp_enqueue_style( 'lsx-welcome-screen', get_template_directory_uri() . '/assets/css/admin/welcome.css', array(), LSX_VERSION );
 		}
 	}
 endif;
