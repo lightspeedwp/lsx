@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'lsx_buddypress_page_columns' ) ) :
 
 	/**
-	 * Forces the BP Profile Pages to be 1 Column
+	 * Forces the Buddypress Profile Pages to be 1 column (layout)
 	 *
 	 * @package    lsx
 	 * @subpackage plugins

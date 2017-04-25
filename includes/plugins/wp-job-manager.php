@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'lsx_wp_job_manager_styles' ) ) :
 
 	/**
-	 * Adds WP Job Manager stylesheet
+	 * Adds WP Job Manager custom stylesheet
 	 *
 	 * @package    lsx
 	 * @subpackage plugins

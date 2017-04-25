@@ -1,18 +1,18 @@
 <?php
 /**
- * Jetpack Functionality
+ * LSX functions and definitions - Integrations - Jetpack
  *
- * @package lsx
- * @subpackage jetpack
+ * @package    lsx
+ * @subpackage plugins
  */
 
-/*
- * General Jetpack Functionality
- */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Adds portfolio and removes pages to the jetpack related posts.
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category general
@@ -29,7 +29,7 @@ function lsx_allowed_related_post_types($allowed_post_types) {
 
 /**
  * Adds the Site Title in Settings->General as a "title" attribute for the logo link.
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category site-logo
@@ -58,7 +58,7 @@ function lsx_portfolio_infinite_scroll(){
 	global $_wp_theme_features,$wp_query;
 
 	if(is_post_type_archive('jetpack-portfolio') || is_tax('jetpack-portfolio-type') || is_tax('jetpack-portfolio-tag')){
-		
+
 		if(class_exists('The_Neverending_Home_Page')){
 			$_wp_theme_features['infinite-scroll'][0]['container'] = 'portfolio-infinite-scroll-wrapper';
 			$_wp_theme_features['infinite-scroll'][0]['posts_per_page'] = 99;
@@ -101,7 +101,7 @@ add_action( 'pre_get_posts', 'lsx_portfolio_archive_pagination' , 100 );
 
 /**
  * Remove the related posts from below the content area.
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category portfolio
@@ -117,7 +117,7 @@ add_filter( 'wp', 'lsx_remove_portfolio_related_posts', 20 );
 
 /**
  * Remove the related posts from below the content area.
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category portfolio
@@ -133,7 +133,7 @@ add_filter( 'wp', 'lsx_remove_single_related_posts', 20 );
 
 /**
  * A template tag to call the Portfolios Related posts
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category portfolio
@@ -144,7 +144,7 @@ function lsx_portfolio_related_posts(){
 			<div class="col-md-12">
 				<?php echo do_shortcode('[jetpack-related-posts]'); ?>
 			</div>
-		</div>			
+		</div>
 	<?php }
 }
 
@@ -188,7 +188,7 @@ add_action( 'loop_start', 'lsx_single_remove_share' );
 
 /**
  * Redirect the template archive to our one
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category portfolio
@@ -304,25 +304,25 @@ function lsx_website_meta_box( $object, $box ) { ?>
  * @package lsx
  * @subpackage jetpack
  * @category portfolio
- */   
+ */
 
 function lsx_portfolio_sorter(){ ?>
 	<ul id="filterNav" class="clearfix">
 		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php esc_html_e( 'All', 'lsx' ); ?></a></li>
-		<?php 
+		<?php
 		$types = get_terms('jetpack-portfolio-type');
-		
+
 		if(is_array($types)){
 			foreach ($types as $type) {
 				$content = '<li><a href="#" data-filter=".'.$type->slug.'">';
-		    	$content .= $type->name;					
+		    	$content .= $type->name;
 				$content .= '</a></li>';
 				echo wp_kses_post( $content );
 				echo "\n";
 			}
 		}?>
 	</ul>
-<?php } 
+<?php }
 
 /**
  * A project type filter for the portfolio template
@@ -332,8 +332,8 @@ function lsx_portfolio_sorter(){ ?>
  * @category portfolio
  */
 
-function lsx_portfolio_naviagtion_labels($labels){ 
-	
+function lsx_portfolio_naviagtion_labels($labels){
+
 	if(is_post_type_archive('jetpack-portfolio')){
 		$labels = array(
 				'next' 		=> '<span class="meta-nav">&larr;</span> '.esc_html__( 'Older', 'lsx' ),
@@ -352,7 +352,7 @@ add_filter('lsx_post_navigation_labels','lsx_portfolio_naviagtion_labels',1,10);
 
 /**
  * Remove the Category from the Jetpack related posts.
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category related-posts
@@ -389,17 +389,17 @@ add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
 /**
  * Set the code to be rendered on for calling posts,
  * hooked to template parts when possible.
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category infinite scroll
  */
  function lsx_infinite_scroll_render() {
 	global $wp_query;
-	
+
 	while(have_posts()){
 		the_post();
-		
+
 		if('jetpack-portfolio' == get_post_type()){
 			get_template_part( 'partials/content', 'portfolio' );
 		}else{
@@ -410,7 +410,7 @@ add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
 
 /**
  * Change the Related headline at the top of the Related Posts section
- * 
+ *
  * @package lsx
  * @subpackage jetpack
  * @category related posts

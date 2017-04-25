@@ -1,14 +1,15 @@
 <?php
 /**
- * WooCommerce Layout and  Functionality
+ * LSX functions and definitions - Integrations - WooCommerce
  *
- * @package lsx
- * @subpackage woocommerce
+ * @package    lsx
+ * @subpackage plugins
  */
 
-/*
- * Hooks
- */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
@@ -33,7 +34,7 @@ function lsx_woocommerce_before_content(){ ?>
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main">
-		
+
 		<?php lsx_content_top(); ?>
 <?php }
 
@@ -49,7 +50,7 @@ function lsx_woocommerce_after_content(){ ?>
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>

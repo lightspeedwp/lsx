@@ -1,5 +1,14 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
+/**
+ * LSX functions and definitions - Integrations - Template Tags
+ *
+ * @package    lsx
+ * @subpackage template-tags
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Yoast Breadcrumbs on Twitter Bootstrap

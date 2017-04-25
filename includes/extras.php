@@ -1,5 +1,14 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
+/**
+ * LSX functions and definitions - Integrations - Extras
+ *
+ * @package    lsx
+ * @subpackage extras
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Enable extra attributes (srcset, sizes) in img tag
@@ -21,18 +30,18 @@ function lsx_body_class($classes) {
 	 */
 	$header_layout = get_theme_mod('lsx_header_layout','inline');
 	$classes[] = 'header-'.$header_layout;
-		
-	
+
+
   // Add post/page slug
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
   }
-  
+
   if(!class_exists('Lsx_Banners')){
 		$post_types = array('page','post');
-		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);  
+		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);
 
-		if((is_singular($post_types) && has_post_thumbnail()) 
+		if((is_singular($post_types) && has_post_thumbnail())
 		|| (is_singular('jetpack-portfolio'))){
 			$classes[] = 'page-has-banner';
 		}
@@ -193,15 +202,15 @@ function lsx_is_element_empty($element) {
 
 /**
  * return the responsive images.
- * 
+ *
  * @package lsx
  * @subpackage extras
  * @category thumbnails
  */
 function lsx_get_thumbnail($size,$image_src = false){
-	
+
 	if(false === $image_src){
-		$post_id = get_the_ID(); 
+		$post_id = get_the_ID();
 		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
 	}elseif(false != $image_src	){
 		if(is_numeric($image_src)){
@@ -236,7 +245,7 @@ function lsx_get_thumbnail($size,$image_src = false){
 
 /**
  * Output the Resonsive Images
- * 
+ *
  * @package lsx
  * @subpackage extras
  * @category thumbnails
@@ -254,7 +263,7 @@ function lsx_thumbnail( $size = 'thumbnail', $image_src = false ) {
  */
 function lsx_get_attachment_id_from_src( $image_src ) {
 	$post_id = wp_cache_get( $image_src, 'lsx_get_attachment_id_from_src' );
-	
+
 	if ( false === $post_id ) {
 		global $wpdb;
 		$post_id = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE guid='%s' LIMIT 1", $image_src ) );
@@ -276,12 +285,12 @@ if (!function_exists('lsx_page_banner')) {
 	function lsx_page_banner() {
 
 		$post_types = array('page','post');
-		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);	
-		
+		$post_types = apply_filters('lsx_allowed_post_type_banners',$post_types);
+
 		if ( (is_singular($post_types) && has_post_thumbnail())
 		 || (is_singular('jetpack-portfolio')) ) { ?>
-	        
-	        <?php 
+
+	        <?php
 	        	$bg_image = '';
 	        	if(has_post_thumbnail()){
 	        		$bg_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
@@ -290,14 +299,14 @@ if (!function_exists('lsx_page_banner')) {
 	        ?>
 
 	   		<?php if ( ! empty( $bg_image ) ) : ?>
-	        
+
 	        <div class="page-banner-wrap">
 		        <div class="page-banner">
 		        	<div class="page-banner-image" style="background-image:url(<?php echo esc_attr( $bg_image ); ?>);"></div>
 
 		        	<div class="container">
 			            <header class="page-header">
-			            	<h1 class="page-title"><?php the_title(); ?></h1> 
+			            	<h1 class="page-title"><?php the_title(); ?></h1>
 			           		<?php lsx_banner_content(); ?>
 			            </header>
 			        </div>
@@ -306,7 +315,7 @@ if (!function_exists('lsx_page_banner')) {
 
 	    	<?php endif ?>
 
-	    <?php } 
+	    <?php }
 	}
 }
 add_action( 'lsx_header_after', 'lsx_page_banner' );
@@ -329,7 +338,7 @@ add_filter( 'kses_allowed_protocols', 'lsx_allow_sms_protocol' );
 /**
  * Adding browser and user-agent classes to body
  */
-function mv_browser_body_class($classes) {
+function lsx_browser_body_class($classes) {
 		$http_user_agent = sanitize_text_field( wp_unslash( $_SERVER['HTTP_USER_AGENT'] ) );
 		$http_user_agent = ! empty( $http_user_agent ) ? $http_user_agent : '';
 
@@ -355,15 +364,15 @@ function mv_browser_body_class($classes) {
            }
         return $classes;
 }
-add_filter('body_class','mv_browser_body_class');
+add_filter('body_class','lsx_browser_body_class');
 
 
 /**
  * filter the Gravity Forms button type
- * 
+ *
  * @subpackage 	extras
  * @category 	gforms
- * 
+ *
  * @param		$button		String
  * @param		$form		Object
  * @return		String
@@ -390,7 +399,7 @@ add_filter( 'excerpt_more', 'lsx_excerpt_more' );
  */
 function lsx_the_excerpt_filter($excerpt) {
 	$show_full_content = has_post_format(apply_filters('lsx_the_excerpt_filter_post_types', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio')));
-	
+
 	if (!$show_full_content) {
 		if ('' !== $excerpt  && !stristr($excerpt, 'moretag')) {
 			$pagination = wp_link_pages( array(
@@ -418,8 +427,8 @@ add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
 /**
  * Allow HTML tags in excerpt
  */
-if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
-	function wpse_custom_wp_trim_excerpt($wpse_excerpt) {
+if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) {
+	function lsx_custom_wp_trim_excerpt($wpse_excerpt) {
 		global $post;
 		$raw_excerpt = $wpse_excerpt;
 
@@ -442,7 +451,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 
 				preg_match_all('/(<[^>]+>|[^<>\s]+)\s*/u', $wpse_excerpt, $tokens);
 
-				foreach ($tokens[0] as $token) { 
+				foreach ($tokens[0] as $token) {
 					if ($count >= $excerpt_word_count) {
 						$excerpt_output .= trim($token);
 						$has_more = true;
@@ -457,7 +466,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 
 				if ($has_more) {
 					$excerpt_end = '<a class="moretag" href="'.get_permalink().'">'.esc_html__('More','lsx').'</a>';
-					$excerpt_end = apply_filters('excerpt_more', ' ' . $excerpt_end); 
+					$excerpt_end = apply_filters('excerpt_more', ' ' . $excerpt_end);
 
 					$pos = strrpos($wpse_excerpt, '</');
 
@@ -479,9 +488,9 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) {
 			return $wpse_excerpt;
 		}
 
-		return apply_filters('wpse_custom_wp_trim_excerpt', $wpse_excerpt, $raw_excerpt);
+		return apply_filters('lsx_custom_wp_trim_excerpt', $wpse_excerpt, $raw_excerpt);
 	}
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
+add_filter('get_the_excerpt', 'lsx_custom_wp_trim_excerpt');
 //remove_filter( 'the_excerpt', 'wpautop' );

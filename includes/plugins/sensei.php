@@ -1,16 +1,16 @@
 <?php
 /**
- * Sensei Layout and Functionality
+ * LSX functions and definitions - Integrations - Sensei
  *
- * @package lsx
- * @subpackage sensei
+ * @package    lsx
+ * @subpackage plugins
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 global $woothemes_sensei;
-
-/*
- * Hooks
- */
 
 remove_action( 'sensei_before_main_content', array( $woothemes_sensei->frontend, 'sensei_output_content_wrapper' ), 10 );
 remove_action( 'sensei_after_main_content', array( $woothemes_sensei->frontend, 'sensei_output_content_wrapper_end' ), 10 );
@@ -47,19 +47,19 @@ function lsx_sensei_wp_head(){
 	if('1c' === $layout && is_post_type_archive(array('course','lesson'))) {
 		add_action('sensei_archive_before_course_loop', 'lsx_breadcrumbs', 11 );
 	}
-	
+
 	if('1c' === $layout && is_tax(array('module','course-category'))) {
 		remove_action('lsx_content_top', 'lsx_breadcrumbs');
 		add_action( 'sensei_loop_course_before', 'lsx_breadcrumbs', 80 , 1 );
-		
+
 		if(is_tax('module')){
 			remove_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 20 );
 			add_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 40 );
-			
+
 			remove_action('sensei_content_lesson_inside_before', array('Sensei_Core_Modules', 'module_archive_description'), 11);
 		}
 	}
-		
+
 }
 add_action('wp_head', 'lsx_sensei_wp_head', 10);
 
@@ -81,7 +81,7 @@ function lsx_sensei_before_content(){ ?>
 		<?php lsx_content_before(); ?>
 
 		<main id="main" class="site-main">
-		
+
 		<?php lsx_content_top(); ?>
 <?php }
 
@@ -98,7 +98,7 @@ function lsx_sensei_after_content(){ ?>
 		</main><!-- #main -->
 
 		<?php lsx_content_after(); ?>
-		
+
 	</div><!-- #primary -->
 
 	<?php lsx_content_wrap_after(); ?>
@@ -152,7 +152,7 @@ add_action( 'parse_query', 'lsx_sensei_redirect_to_home' );
 function lsx_sensei_category_title( $html,$term_id ){
 	$html = str_replace('h2','h1',$html);
 	$html = str_replace('sensei-category-title','archive-title',$html);
-	
+
 	return '<header class="archive-header">'.$html.'</header>';
 }
 add_filter( 'course_category_title', 'lsx_sensei_category_title',1,10 );
