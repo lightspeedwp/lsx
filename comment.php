@@ -17,7 +17,7 @@ echo get_avatar( $comment, '64' );
 ?>
 <div class="media-body">
 	<h4 class="media-heading"><?php echo get_comment_author_link(); ?></h4>
-	<time datetime="<?php echo comment_date( 'c' ); ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( esc_html__( '%1$s on %2$s', 'lsx' ), get_comment_date(),  get_comment_time() ); ?></a></time>
+	<time datetime="<?php echo comment_date( 'c' ); ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( esc_html__( '%1$s on %2$s', 'lsx' ), get_comment_date(), get_comment_time() ); ?></a></time>
 	<?php edit_comment_link( esc_html__( '(Edit)', 'lsx' ), '', '' ); ?>
 
 	<?php if ( '0' == $comment->comment_approved ) : ?>
@@ -28,4 +28,9 @@ echo get_avatar( $comment, '64' );
 
 <?php
 comment_text();
-comment_reply_link( array( 'depth' => $depth, 'max_depth' => $max_depth ) );
+
+comment_reply_link( array(
+	'depth'     => $depth,
+	'max_depth' => $max_depth,
+	)
+);

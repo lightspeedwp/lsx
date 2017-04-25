@@ -22,7 +22,11 @@ if ( have_comments() ) : ?>
 		</h3>
 
 		<ol class="media-list">
-			<?php wp_list_comments( array( 'walker' => new LSX_Walker_Comment ) ); ?>
+			<?php
+				wp_list_comments( array(
+					'walker' => new LSX_Walker_Comment
+				) );
+			?>
 		</ol>
 
 		<?php
@@ -71,19 +75,19 @@ if ( have_comments() ) : ?>
 	$html_req  = ( $req ? " required='required'" : '' );
 
 	$comment_form_args = array(
-		'comment_field' => '<p class="comment-form-comment"><textarea placeholder="'. esc_html__( 'Comment', 'lsx' ) .'" id="comment" class="form-control" name="comment" cols="45" rows="8"'. $aria_req . $html_req .'></textarea></p>',
+		'comment_field' => '<p class="comment-form-comment"><textarea placeholder="' . esc_html__( 'Comment', 'lsx' ) . '" id="comment" class="form-control" name="comment" cols="45" rows="8"' . $aria_req . $html_req . '></textarea></p>',
 
 		'fields' => array(
-			'author' => '<p class="comment-form-author"><label for="author">'. esc_html__( 'Name', 'lsx' ) .'</label> ' .
+			'author' => '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'lsx' ) . '</label> ' .
 				( $req ? '<span class="required">*</span>' : '' ) .
-				'<input class="form-control" placeholder="'. esc_html__( 'Name', 'lsx' ) .'" id="author" name="author" type="text" value="'. esc_attr( $commenter['comment_author'] ) .'" size="30"'. $aria_req . $html_req .'></p>',
+				'<input class="form-control" placeholder="' . esc_html__( 'Name', 'lsx' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $html_req . '></p>',
 
-			'email' => '<p class="comment-form-email"><label for="email">'. esc_html__( 'Email', 'lsx' ) .'</label> ' .
+			'email' => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'lsx' ) . '</label> ' .
 				( $req ? '<span class="required">*</span>' : '' ) .
-				'<input class="form-control" placeholder="'. esc_html__( 'Email', 'lsx' ) .'" id="email" name="email" type="text" value="'. esc_attr(  $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . $html_req . '></p>',
+				'<input class="form-control" placeholder="' . esc_html__( 'Email', 'lsx' ) . '" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . $html_req . '></p>',
 
-			'url' => '<p class="comment-form-url"><label for="url">'. esc_html__( 'Website', 'lsx' ) .'</label>' .
-				'<input class="form-control" placeholder="'. esc_html__( 'Website', 'lsx' ) .'" id="url" name="url" type="text" value="'. esc_attr( $commenter['comment_author_url'] ) .'" size="30"></p>'
+			'url' => '<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', 'lsx' ) . '</label>' .
+				'<input class="form-control" placeholder="' . esc_html__( 'Website', 'lsx' ) . '" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30"></p>'
 		)
 	);
 

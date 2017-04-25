@@ -18,7 +18,7 @@ get_header(); ?>
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'lsx' ); ?></p>
 					<?php get_search_form(); ?>
 					<br>
-					<p><?php esc_html_e( 'Alternatively, you can check out the', 'lsx' ); ?> <a href="<?php echo site_url( '/sitemap/' ); ?>"><strong><?php esc_html_e( 'sitemap', 'lsx' ); ?></strong></a></p>
+					<p><?php esc_html_e( 'Alternatively, you can check out the', 'lsx' ); ?> <a href="<?php echo esc_url( site_url( '/sitemap/' ) ); ?>"><strong><?php esc_html_e( 'sitemap', 'lsx' ); ?></strong></a></p>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 

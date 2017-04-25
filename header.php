@@ -6,6 +6,7 @@
  *
  * @package lsx
  */
+
 global $lsx_options;
 
 ?><!DOCTYPE html>
@@ -23,7 +24,7 @@ global $lsx_options;
 		<?php lsx_body_top(); ?>
 		<?php lsx_header_before(); ?>
 
-	 	<header id="masthead" class="<?php lsx_header_classes(); ?>" role="banner">
+		<header id="masthead" class="<?php lsx_header_classes(); ?>" role="banner">
 			<?php lsx_header_top(); ?>
 
 			<div class="container">

@@ -6,6 +6,7 @@
  *
  * @package lsx
  */
+
 ?>
 
 			</div><!-- .content -->
@@ -19,7 +20,7 @@
 					<div class="col-sm-12">
 						<?php lsx_footer_top(); ?>
 
-				  		<p class="credit <?php if ( has_nav_menu( 'social' ) || has_nav_menu( 'footer' ) ) echo 'credit-float'; ?>"><?php printf( esc_html__( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), esc_html( date_i18n( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?></p>
+						<p class="credit <?php if ( has_nav_menu( 'social' ) || has_nav_menu( 'footer' ) ) echo 'credit-float'; ?>"><?php printf( esc_html__( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ), esc_html( date_i18n( 'Y' ) ), esc_html( get_bloginfo( 'name' ) ) ); ?></p>
 
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
 							<nav id="social-navigation" class="social-navigation">
@@ -43,9 +44,9 @@
 							</nav><!-- .footer-navigation -->
 						<?php endif; ?>
 
-				  		<?php lsx_footer_bottom(); ?>
+						<?php lsx_footer_bottom(); ?>
 					</div>
-			  	</div>
+				</div>
 			</div>
 		</footer>
 

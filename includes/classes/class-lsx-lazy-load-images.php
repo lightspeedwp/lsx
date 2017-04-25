@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'LSX_LazyLoadImages' ) ) :
+if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 
 	/*
 	 * LSX Lazy Load Images Class
@@ -32,7 +32,7 @@ if ( ! class_exists( 'LSX_LazyLoadImages' ) ) :
 	 * @package    lsx
 	 * @subpackage lazyload
 	 */
-	class LSX_LazyLoadImages {
+	class LSX_Lazy_Load_Images {
 
 		protected static $enabled     = true;
 		protected static $noscript_id = 0;
@@ -204,4 +204,4 @@ if ( ! class_exists( 'LSX_LazyLoadImages' ) ) :
 
 endif;
 
-add_action( 'init', array( 'LSX_LazyLoadImages', 'init' ) );
+add_action( 'init', array( 'LSX_Lazy_Load_Images', 'init' ) );

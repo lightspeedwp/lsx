@@ -27,12 +27,12 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 * Initialize the plugin by setting localization and loading public scripts and styles.
 		 */
 		public function __construct( $controls ) {
-			require get_template_directory() . '/includes/classes/google-font.php';
-			require get_template_directory() . '/includes/classes/google-font-collection.php';
-			require get_template_directory() . '/includes/classes/customizer-core.php';
-			require get_template_directory() . '/includes/classes/customizer-layout.php';
-			require get_template_directory() . '/includes/classes/customizer-font.php';
-			require get_template_directory() . '/includes/classes/customizer-header-layout.php';
+			require get_template_directory() . '/includes/classes/class-lsx-google-font.php';
+			require get_template_directory() . '/includes/classes/class-lsx-google-font-collection.php';
+			require get_template_directory() . '/includes/classes/class-lsx-customize-core-control.php';
+			require get_template_directory() . '/includes/classes/class-lsx-customize-layout-control.php';
+			require get_template_directory() . '/includes/classes/class-lsx-customize-font-control.php';
+			require get_template_directory() . '/includes/classes/class-lsx-customize-header-layout-control.php';
 
 			$this->controls = $controls;
 
