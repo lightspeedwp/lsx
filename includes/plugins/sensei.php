@@ -120,7 +120,7 @@ if ( ! function_exists( 'lsx_sensei_styles' ) ) :
 	 * @category   sensei
 	 */
 	function lsx_sensei_styles() {
-	    wp_enqueue_style( 'sensei', get_template_directory_uri() . '/assets/css/plugins/sensei.css', array( 'lsx_main' ), LSX_VERSION );
+		wp_enqueue_style( 'sensei', get_template_directory_uri() . '/assets/css/plugins/sensei.css', array( 'lsx_main' ), LSX_VERSION );
 	}
 
 endif;

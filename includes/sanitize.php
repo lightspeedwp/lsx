@@ -30,7 +30,7 @@ if ( ! function_exists( 'lsx_sanitize_choices' ) ) :
 		$choices = lsx_customizer_sanitize_get_choices( $setting );
 		$allowed_choices = array_keys( $choices );
 
-		if ( ! in_array( $value, $allowed_choices ) ) {
+		if ( ! in_array( $value, $allowed_choices, true ) ) {
 			$value = lsx_customizer_sanitize_get_default( $setting );
 		}
 
@@ -74,7 +74,7 @@ if ( ! function_exists( 'lsx_customizer_sanitize_get_default' ) ) :
 	 */
 	function lsx_customizer_sanitize_get_default( $id ) {
 		global $lsx_customizer;
-		$setting = $lsx_customizer->get_setting($id);
+		$setting = $lsx_customizer->get_setting( $id );
 
 		if ( isset( $setting['default'] ) ) {
 			return $setting['default'];

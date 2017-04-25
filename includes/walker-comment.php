@@ -45,7 +45,7 @@ if ( ! function_exists( 'lsx_comment_form_fields_filter' ) ) :
 	 * @subpackage comment-walker
 	 */
 	function lsx_comment_form_fields_filter( $fields ) {
-		foreach( $fields as &$field ) {
+		foreach ( $fields as &$field ) {
 			if ( stristr( 'class=', $field ) ) {
 				$field = str_replace( 'class="', 'class="form-control ', $field );
 			} else {

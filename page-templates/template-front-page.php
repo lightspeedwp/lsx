@@ -30,7 +30,13 @@ get_header(); ?>
 
 						<div class="entry-content">
 							<?php the_content(); ?>
-							<?php wp_link_pages( array( 'before' => '<nav class="page-nav"><p>' . esc_html__( 'Pages:', 'lsx' ), 'after' => '</p></nav>' ) ); ?>
+
+							<?php
+								wp_link_pages( array(
+									'before' => '<nav class="page-nav"><p>' . esc_html__( 'Pages:', 'lsx' ),
+									'after'  => '</p></nav>',
+								) );
+							?>
 						</div><!-- .entry-content -->
 
 						<?php lsx_entry_bottom(); ?>

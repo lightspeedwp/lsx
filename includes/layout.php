@@ -221,7 +221,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 				</h1>
 
 				<?php if ( get_the_author_meta( 'description' ) ) { ?>
-				    <p class="author-desc"><?php echo esc_html( get_the_author_meta( 'description' ) ) ?></p>
+					<p class="author-desc"><?php echo esc_html( get_the_author_meta( 'description' ) ) ?></p>
 				<?php } ?>
 			</header>
 			<?php

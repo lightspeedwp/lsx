@@ -13,7 +13,7 @@ if ( true !== $sidebar_enabled ) {
 
 $show_on_front = get_option( 'show_on_front' );
 
-if ( 'page' == $show_on_front && is_front_page() ) {
+if ( 'page' === $show_on_front && is_front_page() ) {
 	$layout  = '1c';
 	$sidebar = 'home';
 } else {
@@ -45,7 +45,11 @@ if ( '1c' !== $layout ) : ?>
 				<h1 class="widget-title"><?php esc_attr_e( 'Archives', 'lsx' ); ?></h1>
 
 				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+					<?php
+						wp_get_archives( array(
+							'type' => 'monthly',
+						) );
+					?>
 				</ul>
 			</aside>
 

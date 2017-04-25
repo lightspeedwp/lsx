@@ -69,15 +69,15 @@ if ( ! function_exists( 'lsx_sidebar_footer_params' ) ) :
 	 * @subpackage widgets
 	 */
 	function lsx_sidebar_footer_params( $params ) {
-	    $sidebar_id = $params[0]['id'];
+		$sidebar_id = $params[0]['id'];
 
-	    if ( 'sidebar-footer' === $sidebar_id ) {
-	        $total_widgets              = wp_get_sidebars_widgets();
-	        $sidebar_widgets            = count( $total_widgets[ $sidebar_id ] );
-	        $params[0]['before_widget'] = str_replace( 'class="styler', 'class="col-md-' . floor( 12 / $sidebar_widgets ), $params[0]['before_widget'] );
-	    }
+		if ( 'sidebar-footer' === $sidebar_id ) {
+			$total_widgets              = wp_get_sidebars_widgets();
+			$sidebar_widgets            = count( $total_widgets[ $sidebar_id ] );
+			$params[0]['before_widget'] = str_replace( 'class="styler', 'class="col-md-' . floor( 12 / $sidebar_widgets ), $params[0]['before_widget'] );
+		}
 
-	    return $params;
+		return $params;
 	}
 
 endif;

@@ -26,7 +26,13 @@ get_header(); ?>
 
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<nav class="page-nav"><p>' . esc_html__( 'Pages:', 'lsx' ), 'after' => '</p></nav>' ) ); ?>
+
+							<?php
+								wp_link_pages( array(
+									'before' => '<nav class="page-nav"><p>' . esc_html__( 'Pages:', 'lsx' ),
+									'after'  => '</p></nav>',
+								) );
+							?>
 					</div><!-- .entry-content -->
 
 				<?php endwhile; ?>
@@ -47,7 +53,7 @@ get_header(); ?>
 					'posts_per_page' => 99,
 				);
 
-				$project_query = new WP_Query ( $args );
+				$project_query = new WP_Query( $args );
 				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
 			?>
 

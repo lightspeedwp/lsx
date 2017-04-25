@@ -34,7 +34,11 @@ get_header(); ?>
 							<h2><?php esc_html_e( 'The Last 30 Posts', 'lsx' ); ?></h3>
 
 							<ul>
-								<?php $loop = new WP_Query( array( 'posts_per_page' => 30 ) ); ?>
+								<?php
+									$loop = new WP_Query( array(
+										'posts_per_page' => 30,
+									) );
+								?>
 
 								<?php if ( $loop->have_posts() ) : ?>
 

@@ -41,7 +41,7 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 
 		$font = get_theme_mod( 'lsx_font', 'raleway_open_sans' );
 
-		switch( $font ) {
+		switch ( $font ) {
 			case 'raleway_open_sans':
 				$header_font_location = 'Raleway';
 				$body_font_location   = 'Open+Sans';
@@ -91,7 +91,7 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/vendor/bootstrap.min.js', array( 'jquery' ), LSX_VERSION, true );
 		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-3.5.0.min.js', array(), LSX_VERSION, false );
 
-		wp_enqueue_script( 'imagesLoaded', get_template_directory_uri().'/assets/js/vendor/imagesloaded.pkgd.min.js', array( 'masonry' ), LSX_VERSION, true );
+		wp_enqueue_script( 'imagesLoaded', get_template_directory_uri() . '/assets/js/vendor/imagesloaded.pkgd.min.js', array( 'masonry' ), LSX_VERSION, true );
 		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/assets/js/vendor/jquery.sticky.min.js', array( 'jquery' ), LSX_VERSION, true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), LSX_VERSION, true );
 
@@ -128,7 +128,7 @@ if ( ! function_exists( 'lsx_scripts_defer_parsing' ) ) :
 	 */
 	function lsx_scripts_defer_parsing( $url ) {
 		if ( ! ( is_admin() ) ) {
-			if ( FALSE === strpos( $url, '.js' ) ) return $url;
+			if ( false === strpos( $url, '.js' ) ) return $url;
 			if ( strpos( $url, 'jquery.js' ) ) return $url;
 			if ( strpos( $url, ' defer ' ) ) return $url;
 			return "$url' defer onload='";

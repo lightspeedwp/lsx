@@ -27,7 +27,11 @@ if ( '1c' !== $layout ) : ?>
 		<h2><?php esc_attr_e( 'Categories', 'lsx' ); ?></h2>
 
 		<aside id="categories" class="widget widget_categories">
-			<?php echo wp_tag_cloud( array( 'taxonomy' => 'category' ) ); ?>
+			<?php
+				echo wp_tag_cloud( array(
+					'taxonomy' => 'category',
+				) );
+			?>
 		</aside>
 
 		<?php lsx_sitemap_taxonomy_clouds(); ?>
