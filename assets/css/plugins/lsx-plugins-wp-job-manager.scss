@@ -1,0 +1,397 @@
+/*
+	WP Job Manager Styles for LSX
+*/
+
+@import '../scss/global/variables';
+@import '../scss/global/mixins';
+
+body.jobs,
+body.single-job_listing,
+body.resumes,
+body.candidate-dashboard,
+body.listings-stats-dashboard,
+body.my-bookmarks {
+	&.page.top-menu-fixed,
+	&.single.top-menu-fixed {
+		.wrap {
+			#primary.col-sm-12 {
+				max-width: 100%;
+				float: left;
+			}
+		}
+	}
+}
+
+body.jobs,
+body.single-job_listing,
+body.post-a-job,
+body.resumes,
+body.single-resume,
+body.candidate-dashboard,
+body.job-dashboard,
+body.listings-stats-dashboard,
+body.submit-resume,
+body.my-bookmarks {
+	input[type="text"],
+	select,
+	textarea,
+	input#chart-date-range,
+	ul.chosen-choices {
+		// @TODO - Replace by form field mixin
+		//@include lsx-form-field;
+	}
+
+	ul.chosen-choices {
+		input[type="text"] {
+			padding: 0 !important;
+			margin: 0 !important;
+			color: #aaa !important;
+		}
+	}
+
+	input[type="button"],
+	input[type="submit"] {
+		// @TODO - Replace by button mixin
+		//@include lsx-button;
+		// @TODO - Replace by colour variables
+		//background: $primary;
+		line-height: 1.42857143;
+	    padding: 9.5px 26px;
+
+		&:hover,
+		&:focus,
+		&:active {
+			// @TODO - Replace by colour variables
+			//background: $primary-darker;
+		}
+	}
+
+	input[type="file"] {
+		line-height: 10px;
+	}
+}
+
+body.single-job_listing,
+body.single-resume {
+	article {
+		header.entry-header {
+			text-align: left;
+
+			.format-link,
+			.entry-meta {
+				display: none;
+			}
+
+			.thumbnail {
+				float: left;
+				margin-right: 30px !important;
+
+				img {
+					min-width: auto !important;
+					max-width: 150px !important;
+					margin: {
+						top: auto !important;
+						left: auto !important;
+						right: auto !important;
+					}
+				}
+			}
+		}
+
+		.company {
+			// @TODO - Replace by mixin
+			//@include lsx-clear-div;
+		}
+
+		.company_logo {
+			position: relative;
+			height: auto;
+			left: 0;
+		}
+	}
+}
+
+.job_listings,
+.resumes {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+
+	.job_filters,
+	.resume_filters {
+		// @TODO - Replace by colour variables
+		//background: $primary;
+		border-bottom: 1px solid #ddd;
+		border-radius-top: 5px;
+	}
+
+	.search_jobs {
+		ul.chosen-choices {
+		    margin-top: 5px;
+		}
+	}
+
+	ul.job_listings,
+	ul.resumes {
+		border: none;
+
+		li.job_listing,
+		li.resume {
+			border-bottom: 1px solid #ddd;
+
+			&:last-child {
+				border-bottom: none;
+				border-radius-bottom: 5px;
+			}
+
+			& > a {
+				&:hover,
+				&:active,
+				&:focus {
+					background-color: #f8f8f8;
+				}
+			}
+
+			.company_logo {
+				height: auto !important;
+			}
+
+			.location,
+			.candidate-location {
+				&:before {
+					content: '\e81d';
+					display: inline-block;
+				    float: left;
+				    font: {
+				    	family: job-manager;
+				    	size: 16px;
+				    }
+				    margin: {
+				    	top: 1px;
+				    	right: 6px;
+				    }
+				}
+			}
+		}
+	}
+}
+
+.single-resume-content {
+	.resume-manager-education,
+	.resume-manager-experience {
+		h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+
+		small.date {
+			&:before {
+				font-family: job-manager!important;
+			    font-style: normal;
+			    font-size: 11px;
+			    margin: 0 5px 0px 0;
+			    content: '\e80f';
+			}
+		}
+
+	}
+
+	.resume-manager-skills {
+		li {
+			padding: 0 !important;
+
+			&:before {
+				content: '\f00c';
+			    font-family: fontawesome;
+			    font-size: 12px;
+			    vertical-align: middle;
+			    margin-right: 5px;
+			}
+		}
+	}
+
+	.candidate-video {
+		clear: both;
+	}
+}
+
+.job_listing_packages_title {
+	// @TODO - Replace by mixin
+	//@include lsx-clear-div;
+
+	h2 {
+		font-size: 24px;
+		margin-top: 7px !important;
+	}
+
+	.button {
+		margin: {
+			top: 0 !important;
+			bottom: 0 !important;
+		}
+	}
+}
+
+.job-manager-form fieldset .wp-editor-container {
+	border: 3px solid #ddd;
+
+	button {
+		&:hover,
+		&:active,
+		&:focus {
+			// @TODO - Replace by colour variables
+			//background: $white;
+		}
+	}
+}
+
+#resume-manager-candidate-dashboard,
+#job-manager-bookmarks,
+#job-manager-job-dashboard {
+	table.resume-manager-resumes,
+	table.job-manager-bookmarks,
+	table.job-manager-jobs {
+		th,
+		td {
+		    padding: 8px 18px;
+		}
+
+		thead {
+			border-left: 1px solid #ddd;
+			border-top: 1px solid #ddd;
+
+			th {
+				border-right: 1px solid #ddd;
+				border-bottom: none;
+				// @TODO - Replace by colour variables
+				//background: $black;
+				//color: $white;
+			}
+		}
+
+		tbody {
+			border-bottom: 1px solid #ddd;
+			border-left: 1px solid #ddd;
+
+			td {
+				border-right: 1px solid #ddd;
+
+				&.job_title {
+					small {
+						// @TODO - Replace by colour variables
+						//background: $primary-darker;
+					    //color: $white;
+					    padding: 4px 9px;
+					    margin-left: 5px;
+					    border-radius: 3px;
+					}
+				}
+			}
+		}
+
+		tfoot {
+			td {
+				text-align: center;
+				border: none;
+
+				a {
+					display: inline-block;
+					// @TODO - Replace by button mixin
+					//@include lsx-button;
+					// @TODO - Replace by colour variables
+					//background: $primary;
+					font-size: 14px;
+					margin: 10px 0;
+				    padding: 7px 40px;
+
+
+					&:active,
+					&:focus,
+					&:hover {
+						// @TODO - Replace by colour variables
+						//background: $primary-darker;
+					}
+				}
+			}
+		}
+	}
+}
+
+#job-manager-job-dashboard {
+	table.job-manager-jobs {
+		thead {
+			th {
+				&:first-child {
+					width: 440px;
+				}
+			}
+		}
+	}
+}
+
+body.listings-stats-dashboard {
+	.wpjms-legend {
+		padding: 12px 20px 16px;
+	    border: 1px solid #ddd;
+	    margin-top: 20px;
+	    border-radius: 3px;
+
+	    ul {
+	    	padding: 0;
+	    	margin: 0;
+	    }
+	}
+}
+
+body.job-dashboard {
+	#job-manager-job-applications {
+		div.job-applications {
+			// @TODO - Replace by colour variables
+			//background: $black;
+			margin-top: 30px;
+
+			ul.job-applications {
+				li.job-application {
+					footer {
+						ul.meta {
+							li {
+								color: #555;
+							}
+						}
+
+						ul.actions {
+							margin: 0;
+
+							li {
+								a {
+									padding: 3em 1.45em 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.job-applications-download-csv {
+			// @TODO - Replace by button mixin
+			//@include lsx-button;
+			// @TODO - Replace by colour variables
+			//background: $primary;
+			line-height: 1.42857143;
+		    padding: 9.5px 26px;
+		    margin-bottom: 0;
+		    margin-top: -10px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				// @TODO - Replace by colour variables
+				//background: $primary-darker;
+			}
+		}
+	}
+}
+
+
+
+

@@ -42,7 +42,7 @@ if ( ! class_exists( 'LSX_Customize_Layout_Control' ) ) :
 		 * Enqueue scripts/styles for the color picker.
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'lsx-layout-control', get_template_directory_uri() . '/assets/js/lsx-admin-customizer-layout.js', array( 'jquery' ), LSX_VERSION, true );
+			wp_enqueue_script( 'lsx-layout-control', get_template_directory_uri() . '/assets/js/admin/lsx-admin-customizer-layout.js', array( 'jquery' ), LSX_VERSION, true );
 		}
 
 		/**
