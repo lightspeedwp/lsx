@@ -49,10 +49,10 @@ if ( ! class_exists( 'LSX_Nav_Walker' ) ) :
 				parent::start_el( $item_html, $item, $depth, $args );
 
 				if ( $item->is_dropdown && ( 0 === $depth ) ) {
-					$item_html = str_replace('<a', '<a class="dropdown-toggle" data-target="#"', $item_html);
-					$item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
+					$item_html = str_replace( '<a', '<a class="dropdown-toggle" data-target="#"', $item_html );
+					$item_html = str_replace( '</a>', ' <b class="caret"></b></a>', $item_html );
 				} elseif ( stristr( $item_html, 'li class="divider"' ) ) {
-					$item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', '', $item_html);
+					$item_html = preg_replace( '/<a[^>]*>.*?<\/a>/iU', '', $item_html );
 				} elseif ( stristr( $item_html, 'li class="dropdown-header"' ) ) {
 					$item_html = preg_replace( '/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html );
 				}
@@ -63,7 +63,7 @@ if ( ! class_exists( 'LSX_Nav_Walker' ) ) :
 		}
 
 		function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
-			$element->is_dropdown = ( ( ! empty( $children_elements[$element->ID] ) && ( ( $depth + 1 ) < $max_depth || ( 0 === $max_depth ) ) ) );
+			$element->is_dropdown = ( ( ! empty( $children_elements[ $element->ID ] ) && ( ( $depth + 1 ) < $max_depth || ( 0 === $max_depth ) ) ) );
 
 			if ( $element->is_dropdown ) {
 				if ( $depth > 0 ) {

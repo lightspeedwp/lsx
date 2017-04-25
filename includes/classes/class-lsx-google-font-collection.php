@@ -55,21 +55,21 @@ if ( ! class_exists( 'LSX_Google_Font_Collection' ) ) :
 		 * Returns the font title.
 		 */
 		public function get_title( $key ) {
-			return $this->fonts[$key]->__get( 'title' );
+			return $this->fonts[ $key ]->__get( 'title' );
 		}
 
 		/**
 		 * Returns the font location.
 		 */
 		public function get_location( $key ) {
-			return $this->fonts[$key]->__get( 'location' );
+			return $this->fonts[ $key ]->__get( 'location' );
 		}
 
 		/**
 		 * Returns the font css declaration.
 		 */
 		public function get_css_declaration( $key ) {
-			return $this->fonts[$key]->__get( 'cssDeclaration' );
+			return $this->fonts[ $key ]->__get( 'cssDeclaration' );
 		}
 
 		/**

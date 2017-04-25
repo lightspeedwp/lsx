@@ -23,7 +23,7 @@ if ( ! function_exists( 'lsx_allowed_related_post_types' ) ) :
 	function lsx_allowed_related_post_types( $allowed_post_types ) {
 		$allowed_post_types[] = 'jetpack-portfolio';
 
-		foreach( $allowed_post_types as $key => $value ) {
+		foreach ( $allowed_post_types as $key => $value ) {
 			if ( 'page' === $value ) {
 				unset( $allowed_post_types[ $key ] );
 			}
@@ -104,7 +104,7 @@ if ( ! function_exists( 'lsx_portfolio_infinite_scroll_disable' ) ) :
 	 * @category   jetpack
 	 */
 	function lsx_portfolio_infinite_scroll_disable( $supported ) {
-		if ( is_post_type_archive('jetpack-portfolio' ) ) {
+		if ( is_post_type_archive( 'jetpack-portfolio' ) ) {
 			$supported = false;
 		}
 
@@ -304,17 +304,15 @@ if ( ! function_exists( 'lsx_save_portfolio_post_meta' ) ) :
 		$meta_keys = array( 'lsx-website', 'lsx-client' );
 
 		foreach ( $meta_keys as $meta_key ) {
-			$new_meta_value = sanitize_text_field( wp_unslash( $_POST[$meta_key] ) );
+			$new_meta_value = sanitize_text_field( wp_unslash( $_POST[ $meta_key ] ) );
 			$new_meta_value = ! empty( $new_meta_value ) ? $new_meta_value : '';
 			$meta_value     = get_post_meta( $post_id, $meta_key, true );
 
-			if ( $new_meta_value && '' == $meta_value ) {
+			if ( $new_meta_value && empty( $meta_value ) ) {
 				add_post_meta( $post_id, $meta_key, $new_meta_value, true );
-			}
-			elseif ( $new_meta_value && $new_meta_value != $meta_value ) {
+			} elseif ( $new_meta_value && $new_meta_value !== $meta_value ) {
 				update_post_meta( $post_id, $meta_key, $new_meta_value );
-			}
-			elseif ( '' == $new_meta_value && $meta_value ) {
+			} elseif ( empty( $new_meta_value ) && $meta_value ) {
 				delete_post_meta( $post_id, $meta_key, $meta_value );
 			}
 		}
@@ -449,7 +447,7 @@ if ( ! function_exists( 'lsx_portfolio_naviagtion_labels' ) ) :
 		if ( is_post_type_archive( 'jetpack-portfolio' ) ) {
 			$labels = array(
 				'next'     => '<span class="meta-nav">&larr;</span> ' . esc_html__( 'Older', 'lsx' ),
-				'previous' => esc_html__( 'Newer', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
+				'previous' => esc_html__( 'Newer', 'lsx' ) . ' <span class="meta-nav">&rarr;</span>',
 				'title'    => esc_html__( 'Portfolio navigation', 'lsx' ),
 			);
 		}

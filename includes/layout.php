@@ -43,11 +43,11 @@ if ( ! function_exists( 'lsx_layout_selector' ) ) :
 				break;
 		}
 
-		if ( 'main' == $class ) {
+		if ( 'main' === $class ) {
 			return $main_class;
 		}
 
-		if ( 'sidebar' == $class ) {
+		if ( 'sidebar' === $class ) {
 			return $sidebar_class;
 		}
 	}
@@ -98,7 +98,7 @@ if ( ! function_exists( 'lsx_header_classes' ) ) :
 			$classes .= ' navbar-static-top';
 		}
 
-		if ( false != $additional ) {
+		if ( false !== $additional ) {
 			$classes .= ' ' . $additional;
 		}
 
@@ -123,7 +123,7 @@ if ( ! function_exists( 'lsx_top_menu_classes' ) ) :
 			$classes .= ' top-menu-fixed';
 		}
 
-		if ( false != $additional ) {
+		if ( false !== $additional ) {
 			$classes .= ' ' . $additional;
 		}
 
@@ -220,7 +220,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 					<?php printf( esc_html__( 'Author: %s', 'lsx' ), get_the_author() ); ?>
 				</h1>
 
-				<?php if (get_the_author_meta('description')) { ?>
+				<?php if ( get_the_author_meta( 'description' ) ) { ?>
 				    <p class="author-desc"><?php echo esc_html( get_the_author_meta( 'description' ) ) ?></p>
 				<?php } ?>
 			</header>
@@ -236,7 +236,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			?>
 			<header class="archive-header">
 				<h1 class="archive-title">
-					<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && !is_tax('post_format') ) { ?>
+					<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && ! is_tax( 'post_format' ) ) { ?>
 						Type: <?php the_archive_title(); ?>
 					<?php } else { ?>
 						<?php the_archive_title(); ?>
@@ -264,7 +264,7 @@ if ( ! function_exists( 'lsx_blog_header' ) ) :
 	function lsx_blog_header() {
 		$classes = get_body_class();
 
-		if ( in_array( 'blog', $classes ) ) {
+		if ( in_array( 'blog', $classes, true ) ) {
 			?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>

@@ -60,28 +60,28 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		public function customizer( $wp_customize ) {
 			// Start panels
 			if ( ! empty( $this->controls['panels'] ) ) {
-				foreach( $this->controls['panels'] as $panel_slug => $args ) {
+				foreach ( $this->controls['panels'] as $panel_slug => $args ) {
 					$this->add_panel( $panel_slug, $args, $wp_customize );
 				}
 			}
 
 			// Start sections
 			if ( ! empty( $this->controls['sections'] ) ) {
-				foreach( $this->controls['sections'] as $section_slug => $args ) {
+				foreach ( $this->controls['sections'] as $section_slug => $args ) {
 					$this->add_section( $section_slug, $args, $wp_customize );
 				}
 			}
 
 			// Start settings
 			if ( ! empty( $this->controls['settings'] ) ) {
-				foreach( $this->controls['settings'] as $settings_slug => $args ) {
+				foreach ( $this->controls['settings'] as $settings_slug => $args ) {
 					$this->add_setting( $settings_slug, $args, $wp_customize );
 				}
 			}
 
 			// Start fields
 			if ( ! empty( $this->controls['fields'] ) ) {
-				foreach( $this->controls['fields'] as $field_slug => $args ) {
+				foreach ( $this->controls['fields'] as $field_slug => $args ) {
 					$this->add_control( $field_slug, $args, $wp_customize );
 				}
 			}
@@ -96,8 +96,8 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 */
 		private function add_panel( $slug, $args, $wp_customize ) {
 			$default_args = array(
-				'title' 		=> null,
-				'description' 	=> null,
+				'title'       => null,
+				'description' => null,
 			);
 
 			$wp_customize->add_panel(
@@ -124,11 +124,11 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		private function add_setting( $slug, $args, $wp_customize ) {
 			$wp_customize->add_setting( $slug,
 				array_merge( array(
-					'default' 			=> null, // Default setting/value to save
-					'type' 				=> 'theme_mod', // Is this an 'option' or a 'theme_mod'?
-					'capability'		=> 'edit_theme_options', // Optional. Special permissions for accessing this setting.
-					'transport' 		=> 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-					'sanitize_callback'	=> 'lsx_sanitize_choices',
+					'default'           => null, // Default setting/value to save
+					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
+					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
+					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+					'sanitize_callback' => 'lsx_sanitize_choices',
 				), $args )
 			);
 		}
@@ -168,7 +168,7 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 * Returns a registered field.
 		 */
 		public function get_control( $id ) {
-			$field = $this->controls['fields'][$id];
+			$field = $this->controls['fields'][ $id ];
 			return $field;
 		}
 
@@ -176,7 +176,7 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 * Returns a registered setting.
 		 */
 		public function get_setting( $id ) {
-			$setting = $this->controls['fields'][$id];
+			$setting = $this->controls['fields'][ $id ];
 			return $setting;
 		}
 

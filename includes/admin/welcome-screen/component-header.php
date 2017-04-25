@@ -32,15 +32,15 @@
 			<div class="row">
 				<div class="col-md-6 news">
 					<h3><?php esc_html_e( 'Recent News', 'lsx' ); ?></h3>
-					
+
 					<ul>
 						<?php
 							$rss = fetch_feed( 'https://www.lsdev.biz/lsx/feed/' );
 							$rss_items = array();
 
 							if ( ! is_wp_error( $rss ) ) {
-								$maxitems 	= $rss->get_item_quantity( 3 );
-								$rss_items 	= $rss->get_items( 0, $maxitems );
+								$maxitems  = $rss->get_item_quantity( 3 );
+								$rss_items = $rss->get_items( 0, $maxitems );
 							}
 
 							foreach ( $rss_items as $item ) : ?>
@@ -58,7 +58,7 @@
 
 				<div class="col-md-6 docs">
 					<h3><?php esc_html_e( 'Documentation', 'lsx' ); ?></h3>
-					
+
 					<ul>
 						<li>
 							<a href="https://www.lsdev.biz/documentation/lsx/" target="_blank"><?php esc_html_e( 'Installation &amp; configuration', 'lsx' ); ?></a>

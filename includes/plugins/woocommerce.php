@@ -69,9 +69,9 @@ if ( ! function_exists( 'lsx_woocommerce_styles' ) ) :
 	 * @category   woocommerce
 	 */
 	function lsx_woocommerce_styles() {
-	    wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/assets/css/plugins/woocommerce-layout.css', array( 'lsx_main' ), LSX_VERSION, 'all' );
-	    wp_enqueue_style( 'woocommerce-smallscreen', get_template_directory_uri() . '/assets/css/plugins/woocommerce-smallscreen.css', array( 'lsx_main', 'woocommerce-layout' ), LSX_VERSION, 'only screen and (max-width: 767px)' );
-	    wp_enqueue_style( 'woocommerce-general', get_template_directory_uri() . '/assets/css/plugins/woocommerce.css', array( 'lsx_main' ), LSX_VERSION, 'all' );
+		wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri() . '/assets/css/plugins/woocommerce-layout.css', array( 'lsx_main' ), LSX_VERSION, 'all' );
+		wp_enqueue_style( 'woocommerce-smallscreen', get_template_directory_uri() . '/assets/css/plugins/woocommerce-smallscreen.css', array( 'lsx_main', 'woocommerce-layout' ), LSX_VERSION, 'only screen and (max-width: 767px)' );
+		wp_enqueue_style( 'woocommerce-general', get_template_directory_uri() . '/assets/css/plugins/woocommerce.css', array( 'lsx_main' ), LSX_VERSION, 'all' );
 	}
 
 endif;

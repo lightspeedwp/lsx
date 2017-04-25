@@ -15,8 +15,8 @@ if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
 	/**
 	 * Returns an array of the core panel.
 	 *
-	 * @package 	lsx
-	 * @subpackage	customizer
+	 * @package    lsx
+	 * @subpackage customizer
 	 *
 	 * @return		$lsx_controls array()
 	 */
@@ -24,7 +24,7 @@ if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
 		$lsx_controls['sections']['lsx-core'] = array(
 			'title'       => esc_html__( 'Core Settings', 'lsx' ),
 			'description' => esc_html__( 'Change the core settings.', 'lsx' ),
-			'priority'    => 21
+			'priority'    => 21,
 		);
 
 		$lsx_controls['settings']['lsx_lazyload_status'] = array(
@@ -63,7 +63,7 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 	/**
 	 * Returns an array of the layout panel.
 	 *
-	 * @package 	lsx
+	 * @package    lsx
 	 * @subpackage	customizer
 	 *
 	 * @return		$lsx_controls array()
@@ -76,7 +76,7 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 		);
 
 		$lsx_controls['fields']['lsx_header_layout'] = array(
-			'label'   => esc_html__('Header','lsx'),
+			'label'   => esc_html__( 'Header','lsx' ),
 			'section' => 'lsx-layout',
 			'control' => 'LSX_Customize_Header_Layout_Control',
 			'choices' => array(
@@ -145,7 +145,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 	/**
 	 * Returns an array of the font controls.
 	 *
-	 * @package 	lsx
+	 * @package    lsx
 	 * @subpackage	customizer
 	 *
 	 * @return		$lsx_controls array()
@@ -154,7 +154,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 		$lsx_controls['sections']['lsx-font'] = array(
 			'title'       => esc_html__( 'Font', 'lsx' ),
 			'description' => esc_html__( 'Change the fonts sitewide.', 'lsx' ),
-			'priority'    => 41
+			'priority'    => 41,
 		);
 
 		$lsx_controls['settings']['lsx_font']  = array(
@@ -180,7 +180,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 						'title'          => esc_html__( 'Open Sans', 'lsx' ),
 						'location'       => 'Open+Sans',
 						'cssDeclaration' => "'Open Sans', sans-serif",
-						'cssClass'       => 'openSans'
+						'cssClass'       => 'openSans',
 					),
 				),
 				'noto_serif_noto_sans' => array(
@@ -222,7 +222,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 						'title'          => esc_html__( 'Open Sans', 'lsx' ),
 						'location'       => 'Open+Sans',
 						'cssDeclaration' => "'Open Sans', sans-serif",
-						'cssClass'       => 'openSans'
+						'cssClass'       => 'openSans',
 					),
 				),
 			),
@@ -241,7 +241,7 @@ if ( ! function_exists( 'lsx_get_customizer_controls' ) ) :
 	/**
 	 * Returns an array of $controls for the customizer class to generate.
 	 *
-	 * @package 	lsx
+	 * @package    lsx
 	 * @subpackage	customizer
 	 *
 	 * @return		$lsx_controls array()

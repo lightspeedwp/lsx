@@ -78,8 +78,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => '',
-							'text' => wp_kses_post( '<div class="lsx-full-width"><div class="row"><div class="col-sm-6"><h3>Full Width Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn cta-btn">Lorem ipsum</a></p></div><div class="col-sm-6"><h3>Full Width Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p></div></div></div>' ),
-						)
+							'text'  => wp_kses_post( '<div class="lsx-full-width"><div class="row"><div class="col-sm-6"><h3>Full Width Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn cta-btn">Lorem ipsum</a></p></div><div class="col-sm-6"><h3>Full Width Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p></div></div></div>' ),
+						),
 					),
 
 					'custom_widget_2' => array(
@@ -87,8 +87,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => '',
-							'text' => wp_kses_post( '<div class="row"><div class="col-sm-6"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p></div><div class="col-sm-6"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque <a href="#">volutpat mattis eros</a>.</p></div></div>' ),
-						)
+							'text'  => wp_kses_post( '<div class="row"><div class="col-sm-6"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p></div><div class="col-sm-6"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque <a href="#">volutpat mattis eros</a>.</p></div></div>' ),
+						),
 					),
 
 					'custom_widget_3' => array(
@@ -96,8 +96,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => '',
-							'text' => wp_kses_post( '<div class="lsx-full-width-alt"><div class="row"><div class="col-sm-6"><h3>Full Width CTA Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn cta-btn">Lorem ipsum</a></p></div><div class="col-sm-6"><h3>Full Width CTA Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn">Lorem ipsum</a></p></div></div></div>' ),
-						)
+							'text'  => wp_kses_post( '<div class="lsx-full-width-alt"><div class="row"><div class="col-sm-6"><h3>Full Width CTA Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn cta-btn">Lorem ipsum</a></p></div><div class="col-sm-6"><h3>Full Width CTA Widget</h3><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p><p><a href="#" class="btn">Lorem ipsum</a></p></div></div></div>' ),
+						),
 					),
 
 					'custom_widget_4' => array(
@@ -105,8 +105,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => '',
-							'text' => wp_kses_post( '<div class="row"><div class="col-sm-12"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p></div></div>' ),
-						)
+							'text'  => wp_kses_post( '<div class="row"><div class="col-sm-12"><h3 style="margin-top:0">Text Widget</h3><p>Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p></div></div>' ),
+						),
 					),
 				),
 
@@ -116,8 +116,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => esc_html__( 'Footer Widget', 'lsx' ),
-							'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
-						)
+							'text'  => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
+						),
 					),
 
 					'custom_widget_2' => array(
@@ -125,8 +125,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => esc_html__( 'Footer Widget', 'lsx' ),
-							'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
-						)
+							'text'  => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
+						),
 					),
 
 					'custom_widget_3' => array(
@@ -134,8 +134,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => esc_html__( 'Footer Widget', 'lsx' ),
-							'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
-						)
+							'text'  => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum nec sapien consectetur convallis eu sit amet diam. Praesent dignissim vel arcu et gravida.', 'lsx' ),
+						),
 					),
 				),
 
@@ -145,8 +145,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => esc_html__( 'Footer Call to Action Widget', 'lsx' ),
-							'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.', 'lsx' ),
-						)
+							'text'  => esc_html__( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.', 'lsx' ),
+						),
 					),
 				),
 

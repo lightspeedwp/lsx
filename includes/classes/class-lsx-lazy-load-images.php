@@ -89,8 +89,8 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 
 			if ( is_feed()
 				|| is_preview()
-				|| intval( get_query_var( 'print' ) ) == 1
-				|| intval( get_query_var( 'printpage' ) ) == 1
+				|| 1 === intval( get_query_var( 'print' ) )
+				|| 1 === intval( get_query_var( 'printpage' ) )
 				|| strpos( $http_user_agent, 'Opera Mini' ) !== false
 			) {
 				return $content;
@@ -146,14 +146,14 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 			}
 
 			$content = str_replace( $search, $replace, $content );
-			$content = preg_replace_callback( '~' . chr(20) . '([0-9]+)' . chr(20) . '~', 'self::noscripts_restore', $content );
+			$content = preg_replace_callback( '~' . chr( 20 ) . '([0-9]+)' . chr( 20 ) . '~', 'self::noscripts_restore', $content );
 			return $content;
 		}
 
 		static function noscripts_remove( $match ) {
 			self::$noscript_id++;
 			self::$noscripts[ self::$noscript_id ] = $match[0];
-			return chr(20) . self::$noscript_id . chr(20);
+			return chr( 20 ) . self::$noscript_id . chr( 20 );
 		}
 
 		static function noscripts_restore( $match ) {
@@ -166,7 +166,7 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 			if ( preg_match( $pattern, $html_string, $matches ) ) {
 				$defined_classes = explode( ' ', $matches[1] );
 
-				if ( ! in_array( $new_class, $defined_classes ) ) {
+				if ( ! in_array( $new_class, $defined_classes, true ) ) {
 					$defined_classes[] = $new_class;
 
 					$html_string = str_replace(

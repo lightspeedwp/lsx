@@ -15,17 +15,17 @@ global $woothemes_sensei;
 
 // Switching the course filters and the headers around
 remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 10, 0 );
-remove_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_sorting' ) );
-remove_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_filters' ) );
+remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_sorting' ) );
+remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_filters' ) );
 add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 11, 0 );
-add_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_sorting' ),12 );
-add_action ( 'sensei_archive_before_course_loop' , array( 'Sensei_Course', 'course_archive_filters' ),12 );
+add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_sorting' ),12 );
+add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_filters' ),12 );
 
 // Moving course image up in DOM
 remove_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) ,10, 1 );
-remove_action( 'sensei_single_course_content_inside_before', array( Sensei()->course , 'course_image'), 20 );
+remove_action( 'sensei_single_course_content_inside_before', array( Sensei()->course, 'course_image' ), 20 );
 add_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) ,1, 1 );
-add_action( 'sensei_single_course_content_inside_before', array( Sensei()->course , 'course_image'), 12 );
+add_action( 'sensei_single_course_content_inside_before', array( Sensei()->course, 'course_image' ), 12 );
 
 if ( ! function_exists( 'lsx_sensei_wp_head' ) ) :
 
@@ -40,18 +40,18 @@ if ( ! function_exists( 'lsx_sensei_wp_head' ) ) :
 		$layout = get_theme_mod( 'lsx_layout', '2cr' );
 		$layout = apply_filters( 'lsx_layout', $layout );
 
-		if ( '1c' === $layout && is_post_type_archive( array( 'course','lesson' ) ) ) {
+		if ( '1c' === $layout && is_post_type_archive( array( 'course', 'lesson' ) ) ) {
 			add_action( 'sensei_archive_before_course_loop', 'lsx_breadcrumbs', 11 );
 		}
 
-		if ( '1c' === $layout && is_tax( array( 'module','course-category' ) ) ) {
+		if ( '1c' === $layout && is_tax( array( 'module', 'course-category' ) ) ) {
 			remove_action( 'lsx_content_top', 'lsx_breadcrumbs' );
 			add_action( 'sensei_loop_course_before', 'lsx_breadcrumbs', 80, 1 );
 
 			if ( is_tax( 'module' ) ) {
 				remove_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 20 );
 				add_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Lesson', 'the_lesson_meta' ), 40 );
-				remove_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Core_Modules', 'module_archive_description'), 11 );
+				remove_action( 'sensei_content_lesson_inside_before', array( 'Sensei_Core_Modules', 'module_archive_description' ), 11 );
 			}
 		}
 

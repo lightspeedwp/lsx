@@ -32,7 +32,7 @@ if ( ! class_exists( 'LSX_Customize_Layout_Control' ) ) :
 
 		public function __construct( $manager, $id, $args = array() ) {
 			parent::__construct( $manager, $id, $args );
-			if( !empty( $args['choices'] ) ){
+			if ( ! empty( $args['choices'] ) ) {
 				$this->layouts = $args['choices'];
 			}
 		}
@@ -61,12 +61,12 @@ if ( ! class_exists( 'LSX_Customize_Layout_Control' ) ) :
 				<?php } ?>
 				<div class="layouts-selector">
 					<?php
-						foreach( $this->layouts as $layout ){
+						foreach ( $this->layouts as $layout ) {
 							$sel = 'border: 1px solid transparent;';
-							if( $value == $layout ){
+							if ( $value === $layout ) {
 								$sel = 'border: 1px solid rgb(43, 166, 203);';
 							}
-							echo '<img class="layout-button" style="padding:2px;'. esc_attr( $sel ) .'" src="' . esc_attr( get_template_directory_uri() ) .'/img/' . esc_attr( $layout ) . '.png" data-option="' . esc_attr( $layout ) . '">';
+							echo '<img class="layout-button" style="padding:2px;' . esc_attr( $sel ) . '" src="' . esc_attr( get_template_directory_uri() ) . '/img/' . esc_attr( $layout ) . '.png" data-option="' . esc_attr( $layout ) . '">';
 						}
 					?>
 					<input <?php $this->link(); ?> class="selected-layout <?php echo esc_attr( $class ); ?>" id="<?php echo esc_attr( $post_id ); ?>" type="hidden" value="<?php echo esc_attr( $value ); ?>" <?php $this->input_attrs(); ?>>
