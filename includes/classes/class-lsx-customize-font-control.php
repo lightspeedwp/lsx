@@ -46,10 +46,10 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 
 			$fonts = array();
 
-			foreach( $this->choices as $slug=>$font ) {
+			foreach ( $this->choices as $slug => $font ) {
 				$fonts[] = $font['header'];
 				$fonts[] = $font['body'];
-				$this->choices[$slug] = $font;
+				$this->choices[ $slug ] = $font;
 			}
 
 			$this->fonts = new LSX_Google_Font_Collection( $fonts );
@@ -75,7 +75,7 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 						foreach ( $this->choices as $key => $font ) {
 							$class = null;
 
-							if( $key == $set_value ) {
+							if ( $key == $set_value ) {
 								$class = ' selected';
 							}
 
