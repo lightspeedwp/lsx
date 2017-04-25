@@ -1,0 +1,39 @@
+.content-info {
+	background-color: $footer-bar-color;
+	color: #FFF;
+	padding: 15px 0;
+
+	& > .container {
+
+		@include media('>=desktop') {
+			padding-left: 30px;
+			padding-right: 30px;
+			width: 100%;
+		}
+
+		& > .row {
+
+			@include media('>=desktop') {
+				margin-left: -30px;
+				margin-right: -30px;
+			}
+
+			& > div[class*='col-'] {
+				align-items: center;
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-end;
+
+				@include media('>=desktop') {
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+			}
+		}
+	}
+
+	.credit {
+		flex-grow: 1;
+		margin: 0;
+	}
+}

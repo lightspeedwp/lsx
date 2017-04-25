@@ -1,0 +1,8 @@
+.footer-navigation {
+	& > .menu {
+		@extend %list-unstyled;
+		@include list-inline(7.5px, false);
+
+		margin-bottom: 0;
+	}
+}
