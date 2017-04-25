@@ -1,25 +1,113 @@
-.social-navigation > .menu, .footer-navigation > .menu { list-style: none; padding-left: 0; }
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700");
+/** Variables This file contains all the project's variables. */
+/** LSX Variables This file contains the theme's variables declarations and some vendor's variables overriding. Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project. */
+.social-navigation > ul, .footer-navigation > ul { list-style: none; padding-left: 0; }
+
+/* Import the vendor's variables so we can use it in our own code */
+.btn { background-color: #F7AE00; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #CE9100; color: #FFF; font-size: 15px; font-weight: 600; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; text-transform: uppercase; transition: all 300ms ease-in-out; }
+
+.btn:hover { background-color: #EDA700; box-shadow: 0 0 0 1px #CE9100; color: #FFF; }
 
 .content-info { background-color: #2B3840; color: #FFF; padding: 15px 0; }
 
-@media (min-width: 1200px) { .content-info > .container { padding-left: 30px; padding-right: 30px; width: 100%; } }
+@media (min-width: 1200px) { .content-info > .container { padding-left: 50px; padding-right: 50px; width: 100%; } }
 
-@media (min-width: 1200px) { .content-info > .container > .row { margin-left: -30px; margin-right: -30px; } }
+@media (min-width: 1200px) { .content-info > .container > .row { margin-left: -50px; margin-right: -50px; } }
 
-.content-info > .container > .row > div[class*='col-'] { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+.content-info > .container > .row > div[class*='col-'] { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-@media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { padding-left: 30px; padding-right: 30px; } }
+@media (min-width: 992px) { .content-info > .container > .row > div[class*='col-'] { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; } }
 
-.content-info .credit { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; margin: 0; }
+@media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { padding-left: 50px; padding-right: 50px; } }
 
-.social-navigation { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; margin-left: 40px; }
+.content-info .credit { margin: 0; }
 
-.social-navigation > .menu { margin-bottom: 0; }
+@media (min-width: 992px) { .content-info .credit { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; } }
 
-.social-navigation > .menu > li { display: inline-block; padding-left: 7.5px; padding-right: 7.5px; }
+.social-navigation > ul, .footer-navigation > ul { margin-bottom: 0; }
 
-.footer-navigation > .menu { margin-bottom: 0; }
+.social-navigation { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; }
 
-.footer-navigation > .menu > li { display: inline-block; padding-left: 7.5px; padding-right: 7.5px; }
+@media (min-width: 992px) { .social-navigation { margin-left: 50px; } }
+
+.social-navigation > ul { line-height: 1; }
+
+.social-navigation > ul > li { display: inline-block; padding-left: 8px; padding-right: 8px; }
+
+@media (max-width: 991px) { .social-navigation > ul { text-align: center; } }
+
+@media (max-width: 991px) { .social-navigation > ul > li { padding-bottom: 8px; padding-top: 8px; } }
+
+.social-navigation > ul > li a[href$='/feed/'], .social-navigation > ul > li a[href*='codepen.io'], .social-navigation > ul > li a[href*='digg.com'], .social-navigation > ul > li a[href*='dribbble.com'], .social-navigation > ul > li a[href*='dropbox.com'], .social-navigation > ul > li a[href*='facebook.com'], .social-navigation > ul > li a[href*='flickr.com'], .social-navigation > ul > li a[href*='foursquare.com'], .social-navigation > ul > li a[href*='plus.google.com'], .social-navigation > ul > li a[href*='github.com'], .social-navigation > ul > li a[href*='instagram.com'], .social-navigation > ul > li a[href*='linkedin.com'], .social-navigation > ul > li a[href*='pinterest.com'], .social-navigation > ul > li a[href*='getpocket.com'], .social-navigation > ul > li a[href*='polldaddy.com'], .social-navigation > ul > li a[href*='reddit.com'], .social-navigation > ul > li a[href*='stumbleupon.com'], .social-navigation > ul > li a[href*='tumblr.com'], .social-navigation > ul > li a[href*='twitter.com'], .social-navigation > ul > li a[href*='vimeo.com'], .social-navigation > ul > li a[href*='wordpress.com'], .social-navigation > ul > li a[href*='wordpress.org'], .social-navigation > ul > li a[href*='youtube.com'], .social-navigation > ul > li a[href*='mailto:'], .social-navigation > ul > li a[href*='spotify.com'], .social-navigation > ul > li a[href*='twitch.tv'] { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+
+.social-navigation > ul > li a[href$='/feed/']:before, .social-navigation > ul > li a[href*='codepen.io']:before, .social-navigation > ul > li a[href*='digg.com']:before, .social-navigation > ul > li a[href*='dribbble.com']:before, .social-navigation > ul > li a[href*='dropbox.com']:before, .social-navigation > ul > li a[href*='facebook.com']:before, .social-navigation > ul > li a[href*='flickr.com']:before, .social-navigation > ul > li a[href*='foursquare.com']:before, .social-navigation > ul > li a[href*='plus.google.com']:before, .social-navigation > ul > li a[href*='github.com']:before, .social-navigation > ul > li a[href*='instagram.com']:before, .social-navigation > ul > li a[href*='linkedin.com']:before, .social-navigation > ul > li a[href*='pinterest.com']:before, .social-navigation > ul > li a[href*='getpocket.com']:before, .social-navigation > ul > li a[href*='polldaddy.com']:before, .social-navigation > ul > li a[href*='reddit.com']:before, .social-navigation > ul > li a[href*='stumbleupon.com']:before, .social-navigation > ul > li a[href*='tumblr.com']:before, .social-navigation > ul > li a[href*='twitter.com']:before, .social-navigation > ul > li a[href*='vimeo.com']:before, .social-navigation > ul > li a[href*='wordpress.com']:before, .social-navigation > ul > li a[href*='wordpress.org']:before, .social-navigation > ul > li a[href*='youtube.com']:before, .social-navigation > ul > li a[href*='mailto:']:before, .social-navigation > ul > li a[href*='spotify.com']:before, .social-navigation > ul > li a[href*='twitch.tv']:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; color: #F7AE00; font-size: 22px; transition: color 300ms ease-in-out; }
+
+.social-navigation > ul > li a[href$='/feed/']:hover:before, .social-navigation > ul > li a[href*='codepen.io']:hover:before, .social-navigation > ul > li a[href*='digg.com']:hover:before, .social-navigation > ul > li a[href*='dribbble.com']:hover:before, .social-navigation > ul > li a[href*='dropbox.com']:hover:before, .social-navigation > ul > li a[href*='facebook.com']:hover:before, .social-navigation > ul > li a[href*='flickr.com']:hover:before, .social-navigation > ul > li a[href*='foursquare.com']:hover:before, .social-navigation > ul > li a[href*='plus.google.com']:hover:before, .social-navigation > ul > li a[href*='github.com']:hover:before, .social-navigation > ul > li a[href*='instagram.com']:hover:before, .social-navigation > ul > li a[href*='linkedin.com']:hover:before, .social-navigation > ul > li a[href*='pinterest.com']:hover:before, .social-navigation > ul > li a[href*='getpocket.com']:hover:before, .social-navigation > ul > li a[href*='polldaddy.com']:hover:before, .social-navigation > ul > li a[href*='reddit.com']:hover:before, .social-navigation > ul > li a[href*='stumbleupon.com']:hover:before, .social-navigation > ul > li a[href*='tumblr.com']:hover:before, .social-navigation > ul > li a[href*='twitter.com']:hover:before, .social-navigation > ul > li a[href*='vimeo.com']:hover:before, .social-navigation > ul > li a[href*='wordpress.com']:hover:before, .social-navigation > ul > li a[href*='wordpress.org']:hover:before, .social-navigation > ul > li a[href*='youtube.com']:hover:before, .social-navigation > ul > li a[href*='mailto:']:hover:before, .social-navigation > ul > li a[href*='spotify.com']:hover:before, .social-navigation > ul > li a[href*='twitch.tv']:hover:before { color: #CE9100; }
+
+.social-navigation > ul > li a[href$='/feed/']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='codepen.io']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='digg.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='dribbble.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='dropbox.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='facebook.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='flickr.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='foursquare.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='plus.google.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='github.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='instagram.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='linkedin.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='pinterest.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='getpocket.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='polldaddy.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='reddit.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='stumbleupon.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='tumblr.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='twitter.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='vimeo.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='wordpress']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='youtube.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='mailto:']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='spotify.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='twitch.tv']:before { content: ""; }
+
+.footer-navigation > ul { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.footer-navigation > ul > li { display: inline-block; padding-left: 10px; padding-right: 10px; }
+
+@media (max-width: 991px) { .footer-navigation > ul { margin-top: 4px; padding-bottom: 8px; padding-top: 8px; } }
+
+.footer-navigation > ul > li { position: relative; }
+
+.footer-navigation > ul > li:not(:last-child):before { background-color: #FFF; content: ''; display: inline-block; height: 16px; right: -.5px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 1px; }
+
+.footer-navigation > ul > li > a { color: #F7AE00; transition: color 300ms ease-in-out; }
+
+.footer-navigation > ul > li > a:hover { color: #CE9100; }
 
 /*# sourceMappingURL=maps/lsx.css.map */

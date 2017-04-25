@@ -1,0 +1,20 @@
+.btn {
+	background-color: nth($orange, 1);
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 2px 2px 0 0 nth($orange, 2);
+	color: #FFF;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.6px;
+	line-height: 1.25;
+	padding: 15px 40px;
+	text-transform: uppercase;
+	transition: all 300ms ease-in-out;
+
+	&:hover {
+		background-color: nth($orange, 3);
+		box-shadow: 0 0 0 1px nth($orange, 2);
+		color: #FFF;
+	}
+}

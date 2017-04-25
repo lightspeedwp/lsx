@@ -1,4 +1,7 @@
+/* Import the vendor's variables so we can use it in our own code */
 @import '../../vendor/bootstrap/mixins';
+@import '../../vendor/font-awesome/mixins.scss';
+
 @import 'include-media';
 
 @mixin list-inline($gap, $stabilize: true) {

@@ -6,34 +6,176 @@
 	& > .container {
 
 		@include media('>=desktop') {
-			padding-left: 30px;
-			padding-right: 30px;
+			padding-left: 50px;
+			padding-right: 50px;
 			width: 100%;
 		}
 
 		& > .row {
 
 			@include media('>=desktop') {
-				margin-left: -30px;
-				margin-right: -30px;
+				margin-left: -50px;
+				margin-right: -50px;
 			}
 
 			& > div[class*='col-'] {
 				align-items: center;
 				display: flex;
-				flex-flow: row wrap;
-				justify-content: flex-end;
+				flex-direction: column;
+				flex-wrap: wrap;
+
+				@include media('>=tablet') {
+					flex-direction: row;
+					justify-content: flex-end;
+				}
 
 				@include media('>=desktop') {
-					padding-left: 30px;
-					padding-right: 30px;
+					padding-left: 50px;
+					padding-right: 50px;
 				}
 			}
 		}
 	}
 
 	.credit {
-		flex-grow: 1;
 		margin: 0;
+
+		@include media('>=tablet') { flex-grow: 1; }
+	}
+}
+
+.social-navigation,
+.footer-navigation {
+	& > ul {
+		@extend %list-unstyled;
+
+		margin-bottom: 0;
+	}
+}
+
+.social-navigation {
+	order: 1;
+
+	@include media('>=tablet') { margin-left: 50px; }
+
+	& > ul {
+		@include list-inline(8px, false);
+
+		line-height: 1;
+
+		@include media('<tablet') { text-align: center; }
+
+		& > li {
+			@include media('<tablet') {
+				padding-bottom: 8px;
+				padding-top: 8px;
+			}
+
+			a {
+				&[href$='/feed/'],
+				&[href*='codepen.io'],
+				&[href*='digg.com'],
+				&[href*='dribbble.com'],
+				&[href*='dropbox.com'],
+				&[href*='facebook.com'],
+				&[href*='flickr.com'],
+				&[href*='foursquare.com'],
+				&[href*='plus.google.com'],
+				&[href*='github.com'],
+				&[href*='instagram.com'],
+				&[href*='linkedin.com'],
+				&[href*='pinterest.com'],
+				&[href*='getpocket.com'],
+				&[href*='polldaddy.com'],
+				&[href*='reddit.com'],
+				&[href*='stumbleupon.com'],
+				&[href*='tumblr.com'],
+				&[href*='twitter.com'],
+				&[href*='vimeo.com'],
+				&[href*='wordpress.com'],
+				&[href*='wordpress.org'],
+				&[href*='youtube.com'],
+				&[href*='mailto:'],
+				&[href*='spotify.com'],
+				&[href*='twitch.tv'] {
+					@include hide-text();
+
+					&:before {
+						@include fa-icon();
+
+						color: nth($orange, 1);
+						font-size: 22px;
+						transition: color 300ms ease-in-out;
+					}
+
+					&:hover:before { color: nth($orange, 2); }
+				}
+
+				&[href$='/feed/']:before { content: $fa-var-rss; }
+				&[href*='codepen.io']:before { content: $fa-var-codepen; }
+				&[href*='digg.com']:before { content: $fa-var-digg; }
+				&[href*='dribbble.com']:before { content: $fa-var-dribbble; }
+				&[href*='dropbox.com']:before { content: $fa-var-dropbox; }
+				&[href*='facebook.com']:before { content: $fa-var-facebook; }
+				&[href*='flickr.com']:before { content: $fa-var-flickr; }
+				&[href*='foursquare.com']:before { content: $fa-var-foursquare; }
+				&[href*='plus.google.com']:before { content: $fa-var-google-plus; }
+				&[href*='github.com']:before { content: $fa-var-github; }
+				&[href*='instagram.com']:before { content: $fa-var-instagram; }
+				&[href*='linkedin.com']:before { content: $fa-var-linkedin; }
+				&[href*='pinterest.com']:before { content: $fa-var-pinterest; }
+				&[href*='getpocket.com']:before { content: $fa-var-get-pocket; }
+				&[href*='polldaddy.com']:before { content: $fa-var-question; }
+				&[href*='reddit.com']:before { content: $fa-var-reddit-alien; }
+				&[href*='stumbleupon.com']:before { content: $fa-var-stumbleupon; }
+				&[href*='tumblr.com']:before { content: $fa-var-tumblr; }
+				&[href*='twitter.com']:before { content: $fa-var-twitter; }
+				&[href*='vimeo.com']:before { content: $fa-var-vimeo; }
+				&[href*='wordpress']:before { content: $fa-var-wordpress; }
+				&[href*='youtube.com']:before { content: $fa-var-youtube; }
+				&[href*='mailto:']:before { content: $fa-var-envelope; }
+				&[href*='spotify.com']:before { content: $fa-var-spotify; }
+				&[href*='twitch.tv']:before { content: $fa-var-twitch; }
+			}
+		}
+	}
+}
+
+.footer-navigation {
+	& > ul {
+		@include list-inline(10px, false);
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@include media('<tablet') {
+			margin-top: 4px;
+			padding-bottom: 8px;
+			padding-top: 8px;
+		}
+
+		& > li {
+			position: relative;
+
+			&:not(:last-child):before {
+				background-color: #FFF;
+				content: '';
+				display: inline-block;
+				height: 16px;
+				right: -.5px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 1px;
+			}
+
+			& > a {
+				color: nth($orange, 1);
+				transition: color 300ms ease-in-out;
+
+				&:hover { color: nth($orange, 2); }
+			}
+		}
 	}
 }

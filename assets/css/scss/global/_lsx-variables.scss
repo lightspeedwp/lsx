@@ -1,0 +1,36 @@
+/**
+ * LSX Variables
+ *
+ * This file contains the theme's variables declarations and some vendor's variables overriding.
+ * Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project.
+ */
+
+$blue: (#418AD0, #374750);
+$dark-gray: #434343;
+$light-gray: #F6F6F6;
+$orange: (#F7AE00, #CE9100, #EDA700);
+$red-accent: #D84E2E;
+$footer-bar-color: #2B3840;
+
+$text-color: #4A4A4A;
+$link-color: nth($blue, 1);
+$link-hover-color: nth($orange, 1);
+$link-hover-decoration: none;
+
+$font-family-sans-serif: 'Noto Sans', sans-serif;
+$font-family-serif: 'Lora', serif;
+
+$font-size-base: 15px;
+
+$font-size-h1: 40px;
+$font-size-h2: 30px;
+$font-size-h3: 22px;
+$font-size-h4: 22px;
+$font-size-h5: 20px;
+$font-size-h6: $font-size-base;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 400;
+$headings-line-height: 1.25;
+
+$line-height-base: 1.6;
