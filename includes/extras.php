@@ -92,8 +92,8 @@ function lsx_wp_title( $title, $sep ) {
 	}
 
 	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'lsx' ), max( $paged, $page ) );
+	if ( intval( $paged ) >= 2 || intval( $page ) >= 2 ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', 'lsx' ), max( intval( $paged ), intval( $page ) ) );
 	}
 
 	return $title;
@@ -122,63 +122,6 @@ function lsx_remove_self_closing_tags($input) {
 add_filter('get_avatar',          'lsx_remove_self_closing_tags'); // <img />
 add_filter('comment_id_fields',   'lsx_remove_self_closing_tags'); // <input />
 add_filter('post_thumbnail_html', 'lsx_remove_self_closing_tags'); // <img />
-
-
-if (!function_exists('lsx_get_attachment_id')) {
-	/**
-	 * Get the Attachment ID for a given image URL.
-	 *
-	 * @link   http://wordpress.stackexchange.com/a/7094
-	 * @param  string $url
-	 * @return boolean|integer
-	 */
-	function lsx_get_attachment_id($url) {
-		$dir = wp_upload_dir();
-		// baseurl never has a trailing slash
-		if (false === strpos($url, $dir['baseurl'].'/')) {
-			// URL points to a place outside of upload directory
-			return false;
-		}
-		$file  = basename($url);
-		$query = array(
-				'post_type'  => 'attachment',
-				'fields'     => 'ids',
-				'meta_query' => array(
-						array(
-								'value'   => $file,
-								'compare' => 'LIKE',
-						),
-				)
-		);
-		$query['meta_query'][0]['key'] = '_wp_attached_file';
-		// query attachments
-		$ids = get_posts($query);
-		if (!empty($ids)) {
-			foreach ($ids as $id) {
-				// first entry of returned array is the URL
-				$temp_url = wp_get_attachment_image_src( $id, 'full' );
-				if ( array_shift( $temp_url ) === $url ) {
-					return $id;
-				}
-			}
-		}
-		$query['meta_query'][0]['key'] = '_wp_attachment_metadata';
-		// query attachments again
-		$ids = get_posts($query);
-		if (empty($ids)) {
-			return false;
-		}
-		foreach ($ids as $id) {
-			$meta = wp_get_attachment_metadata($id);
-			foreach ( $meta['sizes'] as $size => $values ) {
-				if ( $values['file'] === $file && array_shift( wp_get_attachment_image_src( $id, $size ) ) === $url ) {
-					return $id;
-				}
-			}
-		}
-		return false;
-	}
-}
 
 
 /**
@@ -235,9 +178,9 @@ function lsx_get_thumbnail($size,$image_src = false){
 		}
 	}
 	if ( $srcset ) {
-		$img = '<img alt="'.get_the_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
+		$img = '<img alt="'.the_title_attribute( 'echo=0' ).'" class="attachment-responsive wp-post-image lsx-responsive" srcset="'.$img.'" />';
 	} else {
-		$img = '<img alt="'.get_the_title(get_the_ID()).'" class="attachment-responsive wp-post-image lsx-responsive" src="'.$img.'" />';
+		$img = '<img alt="'.the_title_attribute( 'echo=0' ).'" class="attachment-responsive wp-post-image lsx-responsive" src="'.$img.'" />';
 	}
 	$img = apply_filters('lsx_lazyload_filter_images',$img);
 	return $img;
@@ -373,8 +316,6 @@ add_filter("gform_submit_button", "lsx_form_submit_button", 10, 2);
  * Replaces the excerpt "more" text by a link
  */
 function lsx_excerpt_more($more) {
-	global $post;
-	//return ' ... <a class="moretag" href="'. get_permalink($post->ID) . '">'.esc_html__('Continue reading','lsx').'</a>';
 	return '...';
 }
 add_filter( 'excerpt_more', 'lsx_excerpt_more' );

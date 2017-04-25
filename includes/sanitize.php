@@ -57,6 +57,8 @@ if ( ! function_exists( 'lsx_customizer_sanitize_get_choices' ) ) :
 		if ( isset( $field['choices'] ) ) {
 			return $field['choices'];
 		}
+
+		return false;
 	}
 
 endif;
@@ -79,6 +81,8 @@ if ( ! function_exists( 'lsx_customizer_sanitize_get_default' ) ) :
 		if ( isset( $setting['default'] ) ) {
 			return $setting['default'];
 		}
+
+		return false;
 	}
 
 endif;
