@@ -251,205 +251,243 @@ if ( ! function_exists( 'lsx_portfolio_taxonomy_template' ) ) :
 endif;
 add_filter( 'template_include', 'lsx_portfolio_taxonomy_template', 99 );
 
-if ( ! function_exists( 'lsx_portfolio_taxonomy_template' ) ) :
+if ( ! function_exists( 'lsx_save_portfolio_post_meta' ) ) :
 
-/**
- * Save the Portfolio Post Meta Options
- *
- * @package lsx
- * @subpackage jetpack
- * @category portfolio
- */
+	/**
+	 * Save the Portfolio Post Meta Options.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_save_portfolio_post_meta( $post_id, $post ) {
+		if ( 'jetpack-portfolio' !== $post->post_type ) {
+			return;
+		}
 
-function lsx_save_portfolio_post_meta( $post_id, $post ) {
-	if ( 'jetpack-portfolio' != $post->post_type ) {
-		return;
-	}
+		if ( ! isset( $_POST['lsx-website'] ) && ! isset( $_POST['lsx-client'] ) ) {
+			return;
+		}
 
-	if ( ! isset( $_POST['lsx-website'] ) && ! isset( $_POST['lsx-client'] ) ) {
-		return;
-	}
+		$post_type = get_post_type_object( $post->post_type );
 
-	$post_type = get_post_type_object( $post->post_type );
+		if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+			return;
+		}
 
-	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-		return;
-	}
+		check_admin_referer( 'lsx_save_portfolio', '_lsx_client_nonce' );
+		check_admin_referer( 'lsx_save_portfolio', '_lsx_website_nonce' );
 
-	check_admin_referer( 'lsx_save_portfolio', '_lsx_client_nonce' );
-	check_admin_referer( 'lsx_save_portfolio', '_lsx_website_nonce' );
+		$meta_keys = array( 'lsx-website', 'lsx-client' );
 
-	$meta_keys = array('lsx-website','lsx-client');
+		foreach ( $meta_keys as $meta_key ) {
+			$new_meta_value = sanitize_text_field( wp_unslash( $_POST[$meta_key] ) );
+			$new_meta_value = ! empty( $new_meta_value ) ? $new_meta_value : '';
+			$meta_value     = get_post_meta( $post_id, $meta_key, true );
 
-	foreach($meta_keys as $meta_key){
-		$new_meta_value = sanitize_text_field( wp_unslash( $_POST[$meta_key] ) );
-		$new_meta_value = ! empty( $new_meta_value ) ? $new_meta_value : '';
-
-		$meta_value = get_post_meta( $post_id, $meta_key, true );
-
-		if ( $new_meta_value && '' == $meta_value )
-			add_post_meta( $post_id, $meta_key, $new_meta_value, true );
-
-		elseif ( $new_meta_value && $new_meta_value != $meta_value )
-		update_post_meta( $post_id, $meta_key, $new_meta_value );
-
-		elseif ( '' == $new_meta_value && $meta_value )
-		delete_post_meta( $post_id, $meta_key, $meta_value );
-	}
-}
-add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
-add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
-
-function lsx_add_portfolio_post_meta_boxes() {
-
-	add_meta_box(
-	'lsx_client_meta_box',
-	esc_html__( 'Client', 'lsx' ),
-	'lsx_client_meta_box',
-	'jetpack-portfolio',
-	'side',
-	'default'
-			);
-
-	add_meta_box(
-	'lsx_website_meta_box',
-	esc_html__( 'Website', 'lsx' ),
-	'lsx_website_meta_box',
-	'jetpack-portfolio',
-	'side',
-	'default'
-			);
-}
-
-function lsx_client_meta_box( $object, $box ) { ?>
-
-  <?php wp_nonce_field( 'lsx_save_portfolio', '_lsx_client_nonce' ); ?>
-
-  <p>
-    <input class="widefat" type="text" name="lsx-client" id="lsx-client" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-client', true ) ); ?>" size="30" />
-    <br /><br />
-    <label for="lsx-client"><?php esc_html_e( 'Enter the name of the project client', 'lsx' ); ?></label>
-  </p>
-<?php }
-
-function lsx_website_meta_box( $object, $box ) { ?>
-
-  <?php wp_nonce_field( 'lsx_save_portfolio', '_lsx_website_nonce' ); ?>
-
-  <p>
-    <input class="widefat" type="text" name="lsx-website" id="lsx-website" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-website', true ) ); ?>" size="30" />
-    <br /><br />
-    <label for="lsx-website"><?php esc_html_e( 'Enter the URL of the project website', 'lsx' ); ?></label>
-  </p>
-<?php }
-
-
-/**
- * A project type filter for the portfolio template
- *
- * @package lsx
- * @subpackage jetpack
- * @category portfolio
- */
-
-function lsx_portfolio_sorter(){ ?>
-	<ul id="filterNav" class="clearfix">
-		<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php esc_html_e( 'All', 'lsx' ); ?></a></li>
-		<?php
-		$types = get_terms('jetpack-portfolio-type');
-
-		if(is_array($types)){
-			foreach ($types as $type) {
-				$content = '<li><a href="#" data-filter=".'.$type->slug.'">';
-		    	$content .= $type->name;
-				$content .= '</a></li>';
-				echo wp_kses_post( $content );
-				echo "\n";
+			if ( $new_meta_value && '' == $meta_value ) {
+				add_post_meta( $post_id, $meta_key, $new_meta_value, true );
 			}
-		}?>
-	</ul>
-<?php }
-
-/**
- * A project type filter for the portfolio template
- *
- * @package lsx
- * @subpackage jetpack
- * @category portfolio
- */
-
-function lsx_portfolio_naviagtion_labels($labels){
-
-	if(is_post_type_archive('jetpack-portfolio')){
-		$labels = array(
-				'next' 		=> '<span class="meta-nav">&larr;</span> '.esc_html__( 'Older', 'lsx' ),
-				'previous' 	=> esc_html__( 'Newer', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
-				'title' 	=> esc_html__( 'Portfolio navigation', 'lsx' )
-		);
-	}
-	return $labels;
-}
-add_filter('lsx_post_navigation_labels','lsx_portfolio_naviagtion_labels',1,10);
-
-
-/*
- * Related Posts
- */
-
-
-/*
- * Infinate Scroll
-*/
-/**
- * Adds the theme_support for Jetpacks Infinite Scroll
- *
- * @package lsx
- * @subpackage jetpack
- * @category infinite scroll
- */
-function lsx_jetpack_infinite_scroll_after_setup() {
-	$infinite_scroll_args = array(
-			'container' => 'main',
-			'type' => 'click',
-			'posts_per_page' => get_option('posts_per_page',10),
-			'render'    => 'lsx_infinite_scroll_render'
-	);
-
-	add_theme_support( 'infinite-scroll', $infinite_scroll_args );
-}
-add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
-
-/**
- * Set the code to be rendered on for calling posts,
- * hooked to template parts when possible.
- *
- * @package lsx
- * @subpackage jetpack
- * @category infinite scroll
- */
- function lsx_infinite_scroll_render() {
-	global $wp_query;
-
-	while(have_posts()){
-		the_post();
-
-		if('jetpack-portfolio' == get_post_type()){
-			get_template_part( 'partials/content', 'portfolio' );
-		}else{
-			get_template_part( 'partials/content', get_post_type() );
+			elseif ( $new_meta_value && $new_meta_value != $meta_value ) {
+				update_post_meta( $post_id, $meta_key, $new_meta_value );
+			}
+			elseif ( '' == $new_meta_value && $meta_value ) {
+				delete_post_meta( $post_id, $meta_key, $meta_value );
+			}
 		}
 	}
- }
 
-/**
- * Change the Related headline at the top of the Related Posts section
- *
- * @package lsx
- * @subpackage jetpack
- * @category related posts
- */
-function lsx_related_posts_headline( $headline ) {
-	$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html__( 'Related Posts', 'lsx' ) );
-	return $headline;
-}
+endif;
+add_action( 'save_post', 'lsx_save_portfolio_post_meta', 100, 2 );
+
+if ( ! function_exists( 'lsx_add_portfolio_post_meta_boxes' ) ) :
+
+	/**
+	 * Add the Portfolio Post Meta Options.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_add_portfolio_post_meta_boxes() {
+		add_meta_box(
+			'lsx_client_meta_box',
+			esc_html__( 'Client', 'lsx' ),
+			'lsx_client_meta_box',
+			'jetpack-portfolio',
+			'side',
+			'default'
+		);
+
+		add_meta_box(
+			'lsx_website_meta_box',
+			esc_html__( 'Website', 'lsx' ),
+			'lsx_website_meta_box',
+			'jetpack-portfolio',
+			'side',
+			'default'
+		);
+	}
+
+endif;
+add_action( 'add_meta_boxes', 'lsx_add_portfolio_post_meta_boxes' );
+
+if ( ! function_exists( 'lsx_client_meta_box' ) ) :
+
+	/**
+	 * Add the Portfolio Post Meta Options (Client).
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_client_meta_box( $object, $box ) {
+		wp_nonce_field( 'lsx_save_portfolio', '_lsx_client_nonce' );
+		?>
+		<p>
+			<input class="widefat" type="text" name="lsx-client" id="lsx-client" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-client', true ) ); ?>" size="30">
+			<br><br>
+			<label for="lsx-client"><?php esc_html_e( 'Enter the name of the project client', 'lsx' ); ?></label>
+		</p>
+		<?php
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_website_meta_box' ) ) :
+
+	/**
+	 * Add the Portfolio Post Meta Options (Website).
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_website_meta_box( $object, $box ) {
+		wp_nonce_field( 'lsx_save_portfolio', '_lsx_website_nonce' );
+		?>
+		<p>
+			<input class="widefat" type="text" name="lsx-website" id="lsx-website" value="<?php echo esc_attr( get_post_meta( $object->ID, 'lsx-website', true ) ); ?>" size="30">
+			<br><br>
+			<label for="lsx-website"><?php esc_html_e( 'Enter the URL of the project website', 'lsx' ); ?></label>
+		</p>
+		<?php
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_portfolio_sorter' ) ) :
+
+	/**
+	 * A project type filter for the portfolio template.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+
+	function lsx_portfolio_sorter() {
+		?>
+		<ul id="filterNav" class="clearfix">
+			<li class="allBtn"><a href="#" data-filter="*" class="selected"><?php esc_html_e( 'All', 'lsx' ); ?></a></li>
+
+			<?php
+				$types = get_terms( 'jetpack-portfolio-type' );
+
+				if ( is_array( $types ) ) {
+					foreach ( $types as $type ) {
+						$content = '<li><a href="#" data-filter=".' . $type->slug . '">';
+						$content .= $type->name;
+						$content .= '</a></li>';
+
+						echo wp_kses_post( $content );
+						echo "\n";
+					}
+				}
+			?>
+		</ul>
+		<?php
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_portfolio_naviagtion_labels' ) ) :
+
+	/**
+	 * A project type filter for the portfolio template.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_portfolio_naviagtion_labels( $labels ) {
+		if ( is_post_type_archive( 'jetpack-portfolio' ) ) {
+			$labels = array(
+				'next'     => '<span class="meta-nav">&larr;</span> ' . esc_html__( 'Older', 'lsx' ),
+				'previous' => esc_html__( 'Newer', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
+				'title'    => esc_html__( 'Portfolio navigation', 'lsx' ),
+			);
+		}
+
+		return $labels;
+	}
+
+endif;
+add_filter( 'lsx_post_navigation_labels', 'lsx_portfolio_naviagtion_labels', 1, 10 );
+
+if ( ! function_exists( 'lsx_jetpack_infinite_scroll_after_setup' ) ) :
+
+	/**
+	 * Adds the theme_support for Jetpacks Infinite Scroll.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_jetpack_infinite_scroll_after_setup() {
+		$infinite_scroll_args = array(
+			'container'      => 'main',
+			'type'           => 'click',
+			'posts_per_page' => get_option( 'posts_per_page', 10 ),
+			'render'         => 'lsx_infinite_scroll_render',
+		);
+
+		add_theme_support( 'infinite-scroll', $infinite_scroll_args );
+	}
+
+endif;
+add_action( 'after_setup_theme', 'lsx_jetpack_infinite_scroll_after_setup' );
+
+if ( ! function_exists( 'lsx_infinite_scroll_render' ) ) :
+
+	/**
+	 * Set the code to be rendered on for calling posts,
+	 * hooked to template parts when possible.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_infinite_scroll_render() {
+		global $wp_query;
+
+		while ( have_posts() ) {
+			the_post();
+
+			if ( 'jetpack-portfolio' === get_post_type() ) {
+				get_template_part( 'partials/content', 'portfolio' );
+			} else {
+				get_template_part( 'partials/content', get_post_type() );
+			}
+		}
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_related_posts_headline' ) ) :
+
+	/**
+	 * Change the Related headline at the top of the Related Posts section.
+	 *
+	 * @package    lsx
+	 * @subpackage plugins
+	 */
+	function lsx_related_posts_headline( $headline ) {
+		$headline = sprintf( '<h3 class="jp-relatedposts-headline"><em>%s</em></h3>', esc_html__( 'Related Posts', 'lsx' ) );
+		return $headline;
+	}
+
+endif;
 add_filter( 'jetpack_relatedposts_filter_headline', 'lsx_related_posts_headline' );
