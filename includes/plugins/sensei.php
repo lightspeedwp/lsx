@@ -129,26 +129,6 @@ endif;
 //add_filter( 'sensei_disable_styles', '__return_true' );
 //add_action( 'wp_enqueue_scripts', 'lsx_sensei_styles' );
 
-if ( ! function_exists( 'lsx_sensei_redirect_to_home' ) ) :
-
-	/**
-	 * Redirects Lessons Archive to Courses Overview.
-	 *
-	 * @package    lsx
-	 * @subpackage plugins
-	 * @category   sensei
-	 */
-	function lsx_sensei_redirect_to_home( $query ) {
-		if ( ! is_admin() && is_post_type_archive( 'lesson' ) && $query->is_main_query() ) {
-			wp_redirect( home_url() . '/courses-overview' );
-			exit;
-		}
-	}
-
-endif;
-
-add_action( 'parse_query', 'lsx_sensei_redirect_to_home' );
-
 if ( ! function_exists( 'lsx_sensei_category_title' ) ) :
 
 	/**
