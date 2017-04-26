@@ -76,7 +76,7 @@ if ( have_comments() ) : ?>
 
 <?php endif; ?>
 
-<?php if ( ! have_comments() && ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+<?php if ( ! have_comments() && ! comments_open() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
 	<section id="comments">
 		<div class="alert alert-warning">
@@ -90,9 +90,9 @@ if ( have_comments() ) : ?>
 
 <?php
 	$commenter = wp_get_current_commenter();
-	$req      = get_option( 'require_name_email' );
-	$aria_req = ( $req ? " aria-required='true'" : '' );
-	$html_req = ( $req ? " required='required'" : '' );
+	$req       = get_option( 'require_name_email' );
+	$aria_req  = ( $req ? " aria-required='true'" : '' );
+	$html_req  = ( $req ? " required='required'" : '' );
 
 	$comment_form_args = array(
 		'comment_field' => '<p class="comment-form-comment"><textarea placeholder="' . esc_html__( 'Comment', 'lsx' ) . '" id="comment" class="form-control" name="comment" cols="45" rows="8"' . $aria_req . $html_req . '></textarea></p>',

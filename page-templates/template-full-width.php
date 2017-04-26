@@ -33,9 +33,7 @@ get_header(); ?>
 			<?php lsx_content_bottom(); ?>
 
 			<?php
-				$comments_number = get_comments_number();
-
-				if ( comments_open() && ! empty( $comments_number ) ) {
+				if ( comments_open() ) {
 					comments_template();
 				}
 			?>

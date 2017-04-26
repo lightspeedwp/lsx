@@ -340,24 +340,3 @@ if ( ! function_exists( 'lsx_process_content_width' ) ) :
 endif;
 
 add_action( 'wp_head', 'lsx_process_content_width' );
-
-if ( ! function_exists( 'lsx_page_comments_off' ) ) :
-
-	/**
-	 * Disable the comments form by default for the page post type.
-	 *
-	 * @package    lsx
-	 * @subpackage config
-	 */
-	function lsx_page_comments_off( $data ) {
-		if ( 'page' === $data['post_type'] && 'auto-draft' === $data['post_status'] && esc_html__( 'Auto Draft', 'lsx' ) === $data['post_title'] ) {
-			$data['comment_status'] = 0;
-			$data['ping_status']    = 0;
-		}
-
-		return $data;
-	}
-
-endif;
-
-add_filter( 'wp_insert_post_data', 'lsx_page_comments_off' );

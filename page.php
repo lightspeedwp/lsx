@@ -21,13 +21,19 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'partials/content', get_post_type() ); ?>
+					<?php get_template_part( 'partials/content', 'page' ); ?>
 
 				<?php endwhile; ?>
 
 			<?php endif; ?>
 
 			<?php lsx_content_bottom(); ?>
+
+			<?php
+				if ( comments_open() ) {
+					comments_template();
+				}
+			?>
 
 		</main><!-- #main -->
 

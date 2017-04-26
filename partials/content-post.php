@@ -48,9 +48,8 @@
 		<?php endif ?>
 
 		<?php
-			$comments_number = get_comments_number();
-
-			if ( comments_open() && ! empty( $comments_number ) ) :
+			if ( comments_open() ) :
+				$comments_number = get_comments_number();
 				?>
 				<a class="comments-link post-meta-link" data-toggle="collapse" href="#comments-collapse"><strong><?php echo esc_html( $comments_number ); ?></strong> <?php esc_html_e( 'Comments', 'lsx' ); ?> <span class="fa fa-chevron-down"></span></a>
 
