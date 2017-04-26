@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying @TODO
+ * Template used to display post content on single pages.
  *
  * @package lsx
  */
@@ -12,51 +12,20 @@
 
 	<?php lsx_entry_top(); ?>
 
-	<?php
-		$format = get_post_format();
-
-		if ( false === $format ) {
-			$format = 'standard';
-		}
-
-		$format_link = get_post_format_link( $format );
-		$format = lsx_translate_format_to_fontawesome( $format );
-	?>
-
-	<?php if ( ! is_single() ) { ?>
-
-		<header class="entry-header">
-			<h1 class="entry-title">
-				<?php if ( has_post_thumbnail() ) { ?>
-					<a href="<?php echo esc_url( $format_link ) ?>" class="format-link has-thumb fa fa-<?php echo esc_attr( $format ) ?>"></a>
-				<?php } else { ?>
-					<a href="<?php echo esc_url( $format_link ) ?>" class="format-link fa fa-<?php echo esc_attr( $format ) ?>"></a>
-				<?php } ?>
-
-				<span><?php the_title(); ?></span>
-			</h1>
-		</header><!-- .entry-header -->
-
-	<?php } ?>
-
 	<div class="entry-meta">
 		<?php lsx_post_meta(); ?>
 	</div><!-- .footer-meta -->
 
 	<div class="entry-content">
 		<?php
-			if ( ! is_singular() ) {
-				the_excerpt();
-			} else {
-				the_content();
+			the_content();
 
-				wp_link_pages( array(
-					'before'      => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
-					'after'       => '</div></div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-				) );
-			}
+			wp_link_pages( array(
+				'before'      => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
+				'after'       => '</div></div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+			) );
 		?>
 	</div><!-- .entry-content -->
 

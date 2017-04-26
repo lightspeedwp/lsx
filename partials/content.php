@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying @TODO
+ * Template used to display post content.
  *
  * @package lsx
  */

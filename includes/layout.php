@@ -177,13 +177,6 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_global_header() {
-		/*if ( 'page' === get_option( 'show_on_front' ) && get_option( 'page_for_posts' ) == get_the_ID() ) :
-			?>
-			<header class="archive-header">
-				<h1 class="archive-title"><?php echo get_the_title( $blog_page ); ?></h1>
-			</header>
-			<?php
-		else*/
 		if ( is_singular( 'post' ) ) :
 			$format = get_post_format();
 
@@ -191,8 +184,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 				$format = 'standard';
 			}
 
-			$format_link = get_post_format_link( $format );
-			$format      = lsx_translate_format_to_fontawesome( $format );
+			$format = lsx_translate_format_to_fontawesome( $format );
 			?>
 			<header class="archive-header">
 				<h1 class="archive-title">

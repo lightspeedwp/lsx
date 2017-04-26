@@ -15,5 +15,8 @@
 		<!-- Fix on next LSX release (PHP Comments) -->
 		<exclude name="Generic.Commenting" />
 		<exclude name="Squiz.Commenting" />
+
+		<!-- Fix on next LSX release (we will resolve this with the new Google Font selector) -->
+		<exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" />
 	</rule>
 </ruleset>
