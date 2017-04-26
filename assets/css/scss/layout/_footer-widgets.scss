@@ -10,10 +10,14 @@
 		@include media('>=desktop') { flex-direction: row; }
 
 		div[class^='col-'] {
-			flex-shrink: 1;
 			float: none;
 			overflow: hidden;
 			width: auto;
+
+			@include media('>=desktop') {
+				flex-basis: 0;
+				flex-grow: 1;
+			}
 		}
 	}
 
