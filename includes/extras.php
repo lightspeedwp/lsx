@@ -291,9 +291,9 @@ if ( ! function_exists( 'lsx_page_banner' ) ) :
 							</div>
 						</div>
 					</div>
-	    		<?php
-	    	endif;
-	    endif;
+				<?php
+			endif;
+		endif;
 	}
 
 endif;
