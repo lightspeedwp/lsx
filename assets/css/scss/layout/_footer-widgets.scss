@@ -1,5 +1,5 @@
 #footer-widgets {
-	background-color: nth($blue, 2);
+	background-color: #333;
 	color: #FFF;
 	padding: 15px 0 45px;
 
@@ -24,7 +24,17 @@
 	.widget {
 		margin-top: 30px;
 
-		a { @include lsx-link($orange); }
+		a {
+			@include lsx-link($orange);
+			display: inline-block;
+		}
+
+		br + a { margin-top: 5px; }
+
+		.fa {
+			font-size: 22px;
+			margin-right: 5px;
+		}
 	}
 
 	.widget-title {
@@ -32,4 +42,6 @@
 		margin-bottom: 20px;
 		margin-top: 0;
 	}
+
+	.textwidget { letter-spacing: .5px;}
 }

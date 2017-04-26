@@ -38,6 +38,8 @@
 	}
 
 	.credit {
+		font-size: 14px;
+		list-style: 1.35;
 		margin: 0;
 
 		@include media('>=desktop') { flex-grow: 1; }
@@ -132,7 +134,7 @@
 				&[href*='twitter.com']:before { content: $fa-var-twitter; }
 				&[href*='vimeo.com']:before { content: $fa-var-vimeo; }
 				&[href*='wordpress']:before { content: $fa-var-wordpress; }
-				&[href*='youtube.com']:before { content: $fa-var-youtube; }
+				&[href*='youtube.com']:before { content: $fa-var-youtube-play; }
 				&[href*='mailto:']:before { content: $fa-var-envelope; }
 				&[href*='spotify.com']:before { content: $fa-var-spotify; }
 				&[href*='twitch.tv']:before { content: $fa-var-twitch; }
@@ -161,11 +163,11 @@
 		& > li {
 			position: relative;
 
-			&:not(:last-child):before {
-				background-color: #FFF;
+			&:not(:last-child):after {
+				background-color: nth($orange, 1);
 				content: '';
 				display: inline-block;
-				height: 16px;
+				height: 14px;
 				right: -.5px;
 				position: absolute;
 				top: 50%;
@@ -175,6 +177,8 @@
 
 			& > a {
 				color: nth($orange, 1);
+				font-size: 14px;
+				line-height: 1.35;
 				transition: color 300ms ease-in-out;
 
 				&:hover { color: nth($orange, 2); }
