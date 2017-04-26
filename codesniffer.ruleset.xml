@@ -2,19 +2,18 @@
 <ruleset name="WordPress-LSX-Theme">
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<rule ref="WordPress">
-		<exclude name="Generic.Commenting" />
+		<!-- We will not fix these -->
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
 
-		<exclude name="Squiz.Commenting" />
-
+		<!-- We will not fix these (WordPress VIP) -->
 		<exclude name="WordPress.VIP" />
 
-		<!-- <exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" /> -->
-		<!-- <exclude name="WordPress.WP.I18n.MissingSingularPlaceholder" /> -->
-		<!-- <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" /> -->
-
-		<!-- Fix on LSX 2.0.1 -->
+		<!-- Fix on next LSX release (not override global WordPress variables) -->
 		<exclude name="WordPress.Variables.GlobalVariables.OverrideProhibited" />
+
+		<!-- Fix on next LSX release (PHP Comments) -->
+		<exclude name="Generic.Commenting" />
+		<exclude name="Squiz.Commenting" />
 	</rule>
 </ruleset>

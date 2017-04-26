@@ -224,26 +224,15 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		elseif ( is_author() ) :
 			?>
 			<header class="archive-header">
-				<h1 class="archive-title">
-					<?php
-						printf(
-							/* Translators: %s: author name */
-							esc_html__( 'Author: %s', 'lsx' ),
-							get_the_author()
-						);
-					?>
-				</h1>
-
-				<?php if ( get_the_author_meta( 'description' ) ) { ?>
-					<p class="author-desc"><?php echo esc_html( get_the_author_meta( 'description' ) ) ?></p>
-				<?php } ?>
+				<h1 class="archive-title"><?php the_archive_title(); ?></h1>
+				<?php the_archive_description(); ?>
 			</header>
 			<?php
 		elseif ( is_archive() && class_exists( 'WooCommerce' ) && is_post_type_archive( 'product' ) ) :
 			?>
 			<header class="archive-header">
-				<h1 class="archive-title"><?php esc_html_e( 'Shop', 'lsx' ); ?></h1>
-				<?php echo term_description(); ?>
+				<h1 class="archive-title"><?php the_archive_title(); ?></h1>
+				<?php the_archive_description(); ?>
 			</header>
 			<?php
 		elseif ( is_archive() ) :
@@ -251,13 +240,13 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<header class="archive-header">
 				<h1 class="archive-title">
 					<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && ! is_tax( 'post_format' ) ) { ?>
-						Type: <?php the_archive_title(); ?>
+						<?php the_archive_title( esc_html__( 'Type:', 'lsx' ) ); ?>
 					<?php } else { ?>
 						<?php the_archive_title(); ?>
 					<?php } ?>
 				</h1>
 
-				<?php echo term_description(); ?>
+				<?php the_archive_description(); ?>
 			</header>
 			<?php
 		endif;
@@ -276,14 +265,16 @@ if ( ! function_exists( 'lsx_blog_header' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_blog_header() {
-		$classes = get_body_class();
+		if ( 'page' === get_option( 'show_on_front' ) ) {
+			$queried_object = get_queried_object();
 
-		if ( in_array( 'blog', $classes, true ) ) {
-			?>
-			<header class="archive-header">
-				<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>
-			</header>
-			<?php
+			if ( (int) get_option( 'page_for_posts' ) === $queried_object->ID ) :
+				?>
+				<header class="archive-header">
+					<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>
+				</header>
+				<?php
+			endif;
 		}
 	}
 

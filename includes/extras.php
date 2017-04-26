@@ -37,15 +37,14 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 	 * @subpackage extras
 	 */
 	function lsx_body_class( $classes ) {
-		/*
-		* Add the header layout class
-		*/
+		global $post;
+
 		$header_layout = get_theme_mod( 'lsx_header_layout', 'inline' );
 		$classes[]     = 'header-' . $header_layout;
 
 		// Add post/page slug
-		if ( is_single() || is_page() && ! is_front_page() ) {
-			$classes[] = basename( get_permalink() );
+		if ( isset( $post ) ) {
+			$classes[] = $post->post_name;
 		}
 
 		if ( ! class_exists( 'LSX_Banners' ) ) {
