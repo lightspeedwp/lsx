@@ -2,7 +2,8 @@
 @import '../../vendor/bootstrap/mixins';
 @import '../../vendor/font-awesome/mixins.scss';
 
-@import 'include-media';
+@import 'mixins/include-media';
+@import 'mixins/footer';
 
 @mixin list-inline ($gap, $stabilize: true) {
 
