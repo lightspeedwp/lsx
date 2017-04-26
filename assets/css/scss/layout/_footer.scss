@@ -66,67 +66,13 @@
 			}
 
 			a {
-				&[href$='/feed/'],
-				&[href*='codepen.io'],
-				&[href*='digg.com'],
-				&[href*='dribbble.com'],
-				&[href*='dropbox.com'],
-				&[href*='facebook.com'],
-				&[href*='flickr.com'],
-				&[href*='foursquare.com'],
-				&[href*='plus.google.com'],
-				&[href*='github.com'],
-				&[href*='instagram.com'],
-				&[href*='linkedin.com'],
-				&[href*='pinterest.com'],
-				&[href*='getpocket.com'],
-				&[href*='polldaddy.com'],
-				&[href*='reddit.com'],
-				&[href*='stumbleupon.com'],
-				&[href*='tumblr.com'],
-				&[href*='twitter.com'],
-				&[href*='vimeo.com'],
-				&[href*='wordpress.com'],
-				&[href*='wordpress.org'],
-				&[href*='youtube.com'],
-				&[href*='mailto:'],
-				&[href*='spotify.com'],
-				&[href*='twitch.tv'] {
-					@include hide-text();
+				@each $social, $icon in $social-icons {
+					&[href*="#{$social}"] {
+						@extend %social-icons-scaffolding;
 
-					&:before {
-						@include fa-icon();
-
-						font-size: 22px;
-						transition: color 300ms ease-in-out;
+						&:before { content: $icon; }
 					}
 				}
-
-				&[href$='/feed/']:before { content: $fa-var-rss; }
-				&[href*='codepen.io']:before { content: $fa-var-codepen; }
-				&[href*='digg.com']:before { content: $fa-var-digg; }
-				&[href*='dribbble.com']:before { content: $fa-var-dribbble; }
-				&[href*='dropbox.com']:before { content: $fa-var-dropbox; }
-				&[href*='facebook.com']:before { content: $fa-var-facebook; }
-				&[href*='flickr.com']:before { content: $fa-var-flickr; }
-				&[href*='foursquare.com']:before { content: $fa-var-foursquare; }
-				&[href*='plus.google.com']:before { content: $fa-var-google-plus; }
-				&[href*='github.com']:before { content: $fa-var-github; }
-				&[href*='instagram.com']:before { content: $fa-var-instagram; }
-				&[href*='linkedin.com']:before { content: $fa-var-linkedin; }
-				&[href*='pinterest.com']:before { content: $fa-var-pinterest; }
-				&[href*='getpocket.com']:before { content: $fa-var-get-pocket; }
-				&[href*='polldaddy.com']:before { content: $fa-var-question; }
-				&[href*='reddit.com']:before { content: $fa-var-reddit-alien; }
-				&[href*='stumbleupon.com']:before { content: $fa-var-stumbleupon; }
-				&[href*='tumblr.com']:before { content: $fa-var-tumblr; }
-				&[href*='twitter.com']:before { content: $fa-var-twitter; }
-				&[href*='vimeo.com']:before { content: $fa-var-vimeo; }
-				&[href*='wordpress']:before { content: $fa-var-wordpress; }
-				&[href*='youtube.com']:before { content: $fa-var-youtube-play; }
-				&[href*='mailto:']:before { content: $fa-var-envelope; }
-				&[href*='spotify.com']:before { content: $fa-var-spotify; }
-				&[href*='twitch.tv']:before { content: $fa-var-twitch; }
 			}
 		}
 	}

@@ -2,8 +2,7 @@
 @import '../../vendor/bootstrap/mixins';
 @import '../../vendor/font-awesome/mixins.scss';
 
-@import 'mixins/include-media';
-@import 'mixins/footer';
+
 
 @mixin list-inline ($gap, $stabilize: true) {
 
@@ -18,14 +17,20 @@
 	}
 }
 
+@mixin lsx-link ($color: nth($orange, 1), $hover: nth($orange, 2)) {
+	&,
+	&:active,
+	&:visited {
+		color: $color;
+	}
 
-@mixin lsx-link ($theme: $blue) {
-	@if type-of($theme) == 'list' {
-		color: nth($theme, 1);
-		transition: all 300ms ease-in-out;
-
-		&:hover { color: nth($theme, 2); }
-	} @else {
-		color: $theme;
+	&:hover,
+	&:hover:active,
+	&:focus {
+		color: $hover;
 	}
 }
+
+@import 'mixins/include-media';
+@import 'mixins/footer';
+@import 'mixins/footer-widgets';

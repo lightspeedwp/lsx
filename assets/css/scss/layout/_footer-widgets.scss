@@ -1,6 +1,4 @@
 #footer-widgets {
-	background-color: $footer-widgets-color;
-	color: #FFF;
 	padding: 15px 0 45px;
 
 	.row {
@@ -24,16 +22,14 @@
 	.widget {
 		margin-top: 30px;
 
-		a {
-			@include lsx-link($orange);
-			display: inline-block;
-		}
+		a { display: inline-block; }
 
 		br + a { margin-top: 5px; }
 
 		.fa {
 			font-size: 22px;
 			margin-right: 5px;
+			vertical-align: text-top;
 		}
 	}
 
@@ -45,3 +41,5 @@
 
 	.textwidget { letter-spacing: .5px;}
 }
+
+@include footer-widgets-colours();

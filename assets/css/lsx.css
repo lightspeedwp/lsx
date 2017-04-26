@@ -3,9 +3,13 @@
 @import url("//fonts.googleapis.com/css?family=Lora:400,700");
 /** Variables This file contains all the project's variables. */
 /** LSX Variables This file contains the theme's variables declarations and some vendor's variables overriding. Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project. */
+/* Import the vendor's variables so we can use it in our own code */
 .social-navigation > ul, .footer-navigation > ul { list-style: none; padding-left: 0; }
 
-/* Import the vendor's variables so we can use it in our own code */
+.social-navigation > ul > li a[href*="codepen"], .social-navigation > ul > li a[href*="digg"], .social-navigation > ul > li a[href*="dribbble"], .social-navigation > ul > li a[href*="dropbox"], .social-navigation > ul > li a[href*="facebook"], .social-navigation > ul > li a[href*="feed"], .social-navigation > ul > li a[href*="flickr"], .social-navigation > ul > li a[href*="foursquare"], .social-navigation > ul > li a[href*="getpocket"], .social-navigation > ul > li a[href*="github"], .social-navigation > ul > li a[href*="instagram"], .social-navigation > ul > li a[href*="linkedin"], .social-navigation > ul > li a[href*="mailto"], .social-navigation > ul > li a[href*="pinterest"], .social-navigation > ul > li a[href*="plus.google"], .social-navigation > ul > li a[href*="polldaddy"], .social-navigation > ul > li a[href*="reddit"], .social-navigation > ul > li a[href*="spotify"], .social-navigation > ul > li a[href*="stumbleupon"], .social-navigation > ul > li a[href*="tumblr"], .social-navigation > ul > li a[href*="twitch"], .social-navigation > ul > li a[href*="twitter"], .social-navigation > ul > li a[href*="vimeo"], .social-navigation > ul > li a[href*="wordpress"], .social-navigation > ul > li a[href*="youtube"] { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+
+.social-navigation > ul > li a[href*="codepen"]:before, .social-navigation > ul > li a[href*="digg"]:before, .social-navigation > ul > li a[href*="dribbble"]:before, .social-navigation > ul > li a[href*="dropbox"]:before, .social-navigation > ul > li a[href*="facebook"]:before, .social-navigation > ul > li a[href*="feed"]:before, .social-navigation > ul > li a[href*="flickr"]:before, .social-navigation > ul > li a[href*="foursquare"]:before, .social-navigation > ul > li a[href*="getpocket"]:before, .social-navigation > ul > li a[href*="github"]:before, .social-navigation > ul > li a[href*="instagram"]:before, .social-navigation > ul > li a[href*="linkedin"]:before, .social-navigation > ul > li a[href*="mailto"]:before, .social-navigation > ul > li a[href*="pinterest"]:before, .social-navigation > ul > li a[href*="plus.google"]:before, .social-navigation > ul > li a[href*="polldaddy"]:before, .social-navigation > ul > li a[href*="reddit"]:before, .social-navigation > ul > li a[href*="spotify"]:before, .social-navigation > ul > li a[href*="stumbleupon"]:before, .social-navigation > ul > li a[href*="tumblr"]:before, .social-navigation > ul > li a[href*="twitch"]:before, .social-navigation > ul > li a[href*="twitter"]:before, .social-navigation > ul > li a[href*="vimeo"]:before, .social-navigation > ul > li a[href*="wordpress"]:before, .social-navigation > ul > li a[href*="youtube"]:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 22px; transition: color 300ms ease-in-out; }
+
 body { direction: ltr; }
 
 .btn { background-color: #418AD0; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #27639D; color: #FFF; font-size: 15px; font-weight: 700; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease-in-out; }
@@ -30,7 +34,7 @@ body { direction: ltr; }
 
 #footer-cta .widget_caldera_forms_widget .caldera-newsletter-btn .btn { border-radius: 0 3px 3px 0; font-weight: 700; height: 46px; letter-spacing: .5px; margin-left: -15px; width: 100%; }
 
-#footer-widgets { background-color: #333; color: #FFF; padding: 15px 0 45px; }
+#footer-widgets { padding: 15px 0 45px; }
 
 #footer-widgets .row { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; }
 
@@ -42,17 +46,21 @@ body { direction: ltr; }
 
 #footer-widgets .widget { margin-top: 30px; }
 
-#footer-widgets .widget a { color: #F7AE00; transition: all 300ms ease-in-out; display: inline-block; }
-
-#footer-widgets .widget a:hover { color: #CE9100; }
+#footer-widgets .widget a { display: inline-block; }
 
 #footer-widgets .widget br + a { margin-top: 5px; }
 
-#footer-widgets .widget .fa { font-size: 22px; margin-right: 5px; }
+#footer-widgets .widget .fa { font-size: 22px; margin-right: 5px; vertical-align: text-top; }
 
 #footer-widgets .widget-title { font-weight: 700; margin-bottom: 20px; margin-top: 0; }
 
 #footer-widgets .textwidget { letter-spacing: .5px; }
+
+#footer-widgets { background-color: #333; color: #FFF; }
+
+#footer-widgets a:not(.btn):not(.button), #footer-widgets a:not(.btn):not(.button):active, #footer-widgets a:not(.btn):not(.button):visited { color: #F7AE00; }
+
+#footer-widgets a:not(.btn):not(.button):hover, #footer-widgets a:not(.btn):not(.button):hover:active, #footer-widgets a:not(.btn):not(.button):focus { color: #CE9100; }
 
 .content-info { padding: 15px 0; font-size: 14px; }
 
@@ -82,59 +90,55 @@ body { direction: ltr; }
 
 @media (max-width: 1199px) { .social-navigation > ul > li { padding-bottom: 8px; padding-top: 8px; } }
 
-.social-navigation > ul > li a[href$='/feed/'], .social-navigation > ul > li a[href*='codepen.io'], .social-navigation > ul > li a[href*='digg.com'], .social-navigation > ul > li a[href*='dribbble.com'], .social-navigation > ul > li a[href*='dropbox.com'], .social-navigation > ul > li a[href*='facebook.com'], .social-navigation > ul > li a[href*='flickr.com'], .social-navigation > ul > li a[href*='foursquare.com'], .social-navigation > ul > li a[href*='plus.google.com'], .social-navigation > ul > li a[href*='github.com'], .social-navigation > ul > li a[href*='instagram.com'], .social-navigation > ul > li a[href*='linkedin.com'], .social-navigation > ul > li a[href*='pinterest.com'], .social-navigation > ul > li a[href*='getpocket.com'], .social-navigation > ul > li a[href*='polldaddy.com'], .social-navigation > ul > li a[href*='reddit.com'], .social-navigation > ul > li a[href*='stumbleupon.com'], .social-navigation > ul > li a[href*='tumblr.com'], .social-navigation > ul > li a[href*='twitter.com'], .social-navigation > ul > li a[href*='vimeo.com'], .social-navigation > ul > li a[href*='wordpress.com'], .social-navigation > ul > li a[href*='wordpress.org'], .social-navigation > ul > li a[href*='youtube.com'], .social-navigation > ul > li a[href*='mailto:'], .social-navigation > ul > li a[href*='spotify.com'], .social-navigation > ul > li a[href*='twitch.tv'] { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+.social-navigation > ul > li a[href*="codepen"]:before { content: ""; }
 
-.social-navigation > ul > li a[href$='/feed/']:before, .social-navigation > ul > li a[href*='codepen.io']:before, .social-navigation > ul > li a[href*='digg.com']:before, .social-navigation > ul > li a[href*='dribbble.com']:before, .social-navigation > ul > li a[href*='dropbox.com']:before, .social-navigation > ul > li a[href*='facebook.com']:before, .social-navigation > ul > li a[href*='flickr.com']:before, .social-navigation > ul > li a[href*='foursquare.com']:before, .social-navigation > ul > li a[href*='plus.google.com']:before, .social-navigation > ul > li a[href*='github.com']:before, .social-navigation > ul > li a[href*='instagram.com']:before, .social-navigation > ul > li a[href*='linkedin.com']:before, .social-navigation > ul > li a[href*='pinterest.com']:before, .social-navigation > ul > li a[href*='getpocket.com']:before, .social-navigation > ul > li a[href*='polldaddy.com']:before, .social-navigation > ul > li a[href*='reddit.com']:before, .social-navigation > ul > li a[href*='stumbleupon.com']:before, .social-navigation > ul > li a[href*='tumblr.com']:before, .social-navigation > ul > li a[href*='twitter.com']:before, .social-navigation > ul > li a[href*='vimeo.com']:before, .social-navigation > ul > li a[href*='wordpress.com']:before, .social-navigation > ul > li a[href*='wordpress.org']:before, .social-navigation > ul > li a[href*='youtube.com']:before, .social-navigation > ul > li a[href*='mailto:']:before, .social-navigation > ul > li a[href*='spotify.com']:before, .social-navigation > ul > li a[href*='twitch.tv']:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 22px; transition: color 300ms ease-in-out; }
+.social-navigation > ul > li a[href*="digg"]:before { content: ""; }
 
-.social-navigation > ul > li a[href$='/feed/']:before { content: ""; }
+.social-navigation > ul > li a[href*="dribbble"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='codepen.io']:before { content: ""; }
+.social-navigation > ul > li a[href*="dropbox"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='digg.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="facebook"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='dribbble.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="feed"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='dropbox.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="flickr"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='facebook.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="foursquare"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='flickr.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="getpocket"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='foursquare.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="github"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='plus.google.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="instagram"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='github.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="linkedin"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='instagram.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="mailto"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='linkedin.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="pinterest"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='pinterest.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="plus.google"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='getpocket.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="polldaddy"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='polldaddy.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="reddit"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='reddit.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="spotify"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='stumbleupon.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="stumbleupon"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='tumblr.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="tumblr"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='twitter.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="twitch"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='vimeo.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="twitter"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='wordpress']:before { content: ""; }
+.social-navigation > ul > li a[href*="vimeo"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='youtube.com']:before { content: ""; }
+.social-navigation > ul > li a[href*="wordpress"]:before { content: ""; }
 
-.social-navigation > ul > li a[href*='mailto:']:before { content: ""; }
-
-.social-navigation > ul > li a[href*='spotify.com']:before { content: ""; }
-
-.social-navigation > ul > li a[href*='twitch.tv']:before { content: ""; }
+.social-navigation > ul > li a[href*="youtube"]:before { content: ""; }
 
 .footer-navigation > ul { margin-left: -10px; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-top: 4px; padding-bottom: 8px; padding-top: 8px; }
 

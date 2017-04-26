@@ -2,3 +2,14 @@
 	list-style: none;
 	padding-left: 0;
 }
+
+%social-icons-scaffolding {
+	@include hide-text();
+
+	&:before {
+		@include fa-icon();
+
+		font-size: 22px;
+		transition: color 300ms ease-in-out;
+	}
+}
