@@ -110,6 +110,7 @@ if ( ! function_exists( 'lsx_wp_title' ) ) :
 
 		// Add a page number if necessary:
 		if ( intval( $paged ) >= 2 || intval( $page ) >= 2 ) {
+			/* Translators: %s: page number */
 			$title .= " $sep " . sprintf( __( 'Page %s', 'lsx' ), max( intval( $paged ), intval( $page ) ) );
 		}
 

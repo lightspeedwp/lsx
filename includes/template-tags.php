@@ -135,8 +135,9 @@ if ( ! function_exists( 'lsx_post_meta_date' ) ) :
 			get_the_modified_date()
 		);
 
-		printf( '<span class="post-meta-time"><span>%1$s</span> <a href="%2$s" rel="bookmark">%3$s</a></span>',
-			esc_html_x( 'Posted on:', 'Used before publish date.', 'lsx' ),
+		printf(
+			'<span class="post-meta-time"><span>%1$s</span> <a href="%2$s" rel="bookmark">%3$s</a></span>',
+			esc_html__( 'Posted on:', 'lsx' ),
 			esc_url( get_permalink() ),
 			wp_kses_post( $time_string )
 		);
@@ -166,8 +167,9 @@ if ( ! function_exists( 'lsx_post_meta_author' ) ) :
 			$author_url = get_author_posts_url( $post->post_author );
 		}
 
-		printf( '<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
-			esc_html_x( 'Posted by:', 'Used before post author name.', 'lsx' ),
+		printf(
+			'<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
+			esc_html__( 'Posted by:', 'lsx' ),
 			esc_url( $author_url ),
 			esc_html( $author )
 		);
@@ -191,6 +193,7 @@ if ( ! function_exists( 'lsx_post_meta_category' ) ) :
 
 		foreach ( $post_categories as $c ) {
 			$cat = get_category( $c );
+			/* Translators: %s: category name */
 			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( esc_html__( 'View all posts in %s' , 'lsx' ), $cat->name ) . '">' . $cat->name . '</a>';
 		}
 

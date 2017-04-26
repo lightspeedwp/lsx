@@ -13,7 +13,18 @@
 	</div>
 
 	<div class="col-md-6">
-		<p class="review"><?php echo sprintf( esc_html__( '%1$sEnjoying LSX?%2$s Why not %3$sleave a review%4$s on WordPress.org? We\'re looking foward to all our users\' feedback!', 'lsx' ), '<strong>', '</strong>', '<a href="https://wordpress.org/themes/lsx" target="_blank">', '</a>' ); ?></p>
+		<p class="review">
+			<?php
+				printf(
+					/* Translators: 1: HTML open tag strong, 2: HTML close tag strong, 3: HTML open tag link, 4: HTML close tag link */
+					esc_html__( '%1$sEnjoying LSX?%2$s Why not %3$sleave a review%4$s on WordPress.org? We\'re looking foward to all our users\' feedback!', 'lsx' ),
+					'<strong>',
+					'</strong>',
+					'<a href="https://wordpress.org/themes/lsx" target="_blank">',
+					'</a>'
+				);
+			?>
+		</p>
 	</div>
 </div>
 

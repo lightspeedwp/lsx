@@ -16,8 +16,28 @@ if ( have_comments() ) : ?>
 	<section id="comments">
 		<h3>
 			<?php
-				$count = get_comments_number();
-				printf( esc_html( _n( 'One Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', $count, 'lsx' ) ), esc_html( number_format_i18n( $count ) ), get_the_title() );
+				$comments_number = get_comments_number();
+
+				if ( '1' === $comments_number ) {
+					printf(
+						/* Translators: %s: post title */
+						esc_html( _x( 'One Response to &ldquo;%s&rdquo;', 'lsx' ) ),
+						get_the_title()
+					);
+				} else {
+					printf(
+						/* Translators: 1: number of comments, 2: post title */
+						esc_html( _nx(
+							'%1$s Response to &ldquo;%2$s&rdquo;',
+							'%1$s Responses to &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments.php',
+							'lsx'
+						) ),
+						esc_html( number_format_i18n( $comments_number ) ),
+						get_the_title()
+					);
+				}
 			?>
 		</h3>
 

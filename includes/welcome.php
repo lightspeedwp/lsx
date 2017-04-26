@@ -41,7 +41,16 @@ if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 	function lsx_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Thanks for choosing LSX! You can read hints and tips on how get the most out of your new theme on the %1$swelcome screen%2$s.', 'lsx' ), '<a href="' . esc_url( admin_url( 'themes.php?page=lsx-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p>
+					<?php
+						printf(
+							/* Translators: 1: HTML open tag link, 2: HTML close tag link */
+							esc_html__( 'Thanks for choosing LSX! You can read hints and tips on how get the most out of your new theme on the %1$swelcome screen%2$s.', 'lsx' ),
+							'<a href="' . esc_url( admin_url( 'themes.php?page=lsx-welcome' ) ) . '">',
+							'</a>'
+						);
+					?>
+				</p>
 				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=lsx-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_attr_e( 'Get started with LSX', 'lsx' ); ?></a></p>
 			</div>
 		<?php

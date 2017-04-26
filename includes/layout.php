@@ -210,14 +210,28 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		elseif ( is_search() ) :
 			?>
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( esc_html__( 'Search Results for: %s', 'lsx' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="archive-title">
+					<?php
+						printf(
+							/* Translators: %s: search term/query */
+							esc_html__( 'Search Results for: %s', 'lsx' ),
+							'<span>' . get_search_query() . '</span>'
+						);
+					?>
+				</h1>
 			</header>
 			<?php
 		elseif ( is_author() ) :
 			?>
 			<header class="archive-header">
 				<h1 class="archive-title">
-					<?php printf( esc_html__( 'Author: %s', 'lsx' ), get_the_author() ); ?>
+					<?php
+						printf(
+							/* Translators: %s: author name */
+							esc_html__( 'Author: %s', 'lsx' ),
+							get_the_author()
+						);
+					?>
 				</h1>
 
 				<?php if ( get_the_author_meta( 'description' ) ) { ?>

@@ -75,7 +75,7 @@
 						<a href="<?php echo esc_url( $archive_link ) ?>" class="format-link fa fa-<?php echo esc_attr( $format ) ?>"></a>
 					<?php endif; ?>
 
-					<?php if ( has_post_format( array('link') ) ) : ?>
+					<?php if ( has_post_format( array( 'link' ) ) ) : ?>
 						<a href="<?php echo esc_url( lsx_get_my_url() ); ?>" rel="bookmark"><?php the_title(); ?> <span class="fa fa-external-link"></span></a>
 					<?php else : ?>
 						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -97,7 +97,7 @@
 					<?php the_excerpt(); ?>
 				</div><!-- .entry-summary -->
 
-			<?php elseif ( has_post_format( array('link') ) ) : ?>
+			<?php elseif ( has_post_format( array( 'link' ) ) ) : ?>
 
 			<?php elseif ( apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
 
@@ -112,10 +112,10 @@
 						the_content();
 
 						wp_link_pages( array(
-							'before' => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
-							'after' => '</div></div>',
+							'before'      => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
+							'after'       => '</div></div>',
 							'link_before' => '<span>',
-							'link_after' => '</span>'
+							'link_after'  => '</span>',
 						) );
 					?>
 				</div><!-- .entry-content -->
@@ -137,10 +137,21 @@
 							<div class="post-comments">
 								<a href="<?php the_permalink() ?>#comments">
 									<?php
-										printf(
-											esc_html( _n( 'One Comment', '%1$s Comments', $comments_number, 'lsx' ) ),
-											esc_html( number_format_i18n( $comments_number ) )
-										);
+										if ( '1' === $comments_number ) {
+											echo esc_html( _x( 'One Comment', 'lsx' ) );
+										} else {
+											printf(
+												/* Translators: %s: number of comments */
+												esc_html( _nx(
+													'%s Comment',
+													'%s Comments',
+													$comments_number,
+													'content.php',
+													'lsx'
+												) ),
+												esc_html( number_format_i18n( $comments_number ) )
+											);
+										}
 									?>
 								</a>
 							</div>
