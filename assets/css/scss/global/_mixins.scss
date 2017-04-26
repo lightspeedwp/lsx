@@ -4,7 +4,7 @@
 
 @import 'include-media';
 
-@mixin list-inline($gap, $stabilize: true) {
+@mixin list-inline ($gap, $stabilize: true) {
 
 	@if $stabilize {
 		margin-left: $gap * -1;
@@ -14,5 +14,17 @@
 		display: inline-block;
 		padding-left: $gap;
 		padding-right: $gap;
+	}
+}
+
+
+@mixin lsx-link ($theme: $blue) {
+	@if type-of($theme) == 'list' {
+		color: nth($theme, 1);
+		transition: all 300ms ease-in-out;
+
+		&:hover { color: nth($theme, 2); }
+	} @else {
+		color: $theme;
 	}
 }

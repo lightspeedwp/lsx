@@ -1,0 +1,31 @@
+#footer-widgets {
+	background-color: nth($blue, 2);
+	color: #FFF;
+	padding: 15px 0 45px;
+
+	.row {
+		display: flex;
+		flex-flow: column nowrap;
+
+		@include media('>=desktop') { flex-direction: row; }
+
+		div[class^='col-'] {
+			flex-shrink: 1;
+			float: none;
+			overflow: hidden;
+			width: auto;
+		}
+	}
+
+	.widget {
+		margin-top: 30px;
+
+		a { @include lsx-link($orange); }
+	}
+
+	.widget-title {
+		font-weight: 700;
+		margin-bottom: 20px;
+		margin-top: 0;
+	}
+}

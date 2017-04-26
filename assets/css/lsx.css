@@ -10,35 +10,51 @@
 
 .btn:hover { background-color: #EDA700; box-shadow: 0 0 0 1px #CE9100; color: #FFF; }
 
+#footer-widgets { background-color: #374750; color: #FFF; padding: 15px 0 45px; }
+
+#footer-widgets .row { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; }
+
+@media (min-width: 1200px) { #footer-widgets .row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; } }
+
+#footer-widgets .row div[class^='col-'] { -ms-flex-negative: 1; flex-shrink: 1; float: none; overflow: hidden; width: auto; }
+
+#footer-widgets .widget { margin-top: 30px; }
+
+#footer-widgets .widget a { color: #F7AE00; transition: all 300ms ease-in-out; }
+
+#footer-widgets .widget a:hover { color: #CE9100; }
+
+#footer-widgets .widget-title { font-weight: 700; margin-bottom: 20px; margin-top: 0; }
+
 .content-info { background-color: #2B3840; color: #FFF; padding: 15px 0; }
 
 @media (min-width: 1200px) { .content-info > .container { padding-left: 50px; padding-right: 50px; width: 100%; } }
 
 @media (min-width: 1200px) { .content-info > .container > .row { margin-left: -50px; margin-right: -50px; } }
 
-.content-info > .container > .row > div[class*='col-'] { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+.content-info > .container > .row > div[class*='col-'] { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-@media (min-width: 992px) { .content-info > .container > .row > div[class*='col-'] { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; } }
+@media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; } }
 
 @media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { padding-left: 50px; padding-right: 50px; } }
 
 .content-info .credit { margin: 0; }
 
-@media (min-width: 992px) { .content-info .credit { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; } }
+@media (min-width: 1200px) { .content-info .credit { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; } }
 
 .social-navigation > ul, .footer-navigation > ul { margin-bottom: 0; }
 
 .social-navigation { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; }
 
-@media (min-width: 992px) { .social-navigation { margin-left: 50px; } }
+@media (min-width: 1200px) { .social-navigation { margin-left: 50px; } }
 
-.social-navigation > ul { line-height: 1; }
+.social-navigation > ul { margin-left: -8px; line-height: 1; }
 
 .social-navigation > ul > li { display: inline-block; padding-left: 8px; padding-right: 8px; }
 
-@media (max-width: 991px) { .social-navigation > ul { text-align: center; } }
+@media (min-width: 1200px) { .social-navigation > ul { margin-left: 0; } }
 
-@media (max-width: 991px) { .social-navigation > ul > li { padding-bottom: 8px; padding-top: 8px; } }
+@media (max-width: 1199px) { .social-navigation > ul > li { padding-bottom: 8px; padding-top: 8px; } }
 
 .social-navigation > ul > li a[href$='/feed/'], .social-navigation > ul > li a[href*='codepen.io'], .social-navigation > ul > li a[href*='digg.com'], .social-navigation > ul > li a[href*='dribbble.com'], .social-navigation > ul > li a[href*='dropbox.com'], .social-navigation > ul > li a[href*='facebook.com'], .social-navigation > ul > li a[href*='flickr.com'], .social-navigation > ul > li a[href*='foursquare.com'], .social-navigation > ul > li a[href*='plus.google.com'], .social-navigation > ul > li a[href*='github.com'], .social-navigation > ul > li a[href*='instagram.com'], .social-navigation > ul > li a[href*='linkedin.com'], .social-navigation > ul > li a[href*='pinterest.com'], .social-navigation > ul > li a[href*='getpocket.com'], .social-navigation > ul > li a[href*='polldaddy.com'], .social-navigation > ul > li a[href*='reddit.com'], .social-navigation > ul > li a[href*='stumbleupon.com'], .social-navigation > ul > li a[href*='tumblr.com'], .social-navigation > ul > li a[href*='twitter.com'], .social-navigation > ul > li a[href*='vimeo.com'], .social-navigation > ul > li a[href*='wordpress.com'], .social-navigation > ul > li a[href*='wordpress.org'], .social-navigation > ul > li a[href*='youtube.com'], .social-navigation > ul > li a[href*='mailto:'], .social-navigation > ul > li a[href*='spotify.com'], .social-navigation > ul > li a[href*='twitch.tv'] { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
 
@@ -96,11 +112,11 @@
 
 .social-navigation > ul > li a[href*='twitch.tv']:before { content: ""; }
 
-.footer-navigation > ul { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+.footer-navigation > ul { margin-left: -10px; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-top: 4px; padding-bottom: 8px; padding-top: 8px; }
 
 .footer-navigation > ul > li { display: inline-block; padding-left: 10px; padding-right: 10px; }
 
-@media (max-width: 991px) { .footer-navigation > ul { margin-top: 4px; padding-bottom: 8px; padding-top: 8px; } }
+@media (min-width: 1200px) { .footer-navigation > ul { margin-left: 0; margin-top: 0; padding-bottom: 0; padding-top: 0; } }
 
 .footer-navigation > ul > li { position: relative; }
 
