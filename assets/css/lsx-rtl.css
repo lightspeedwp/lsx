@@ -1,0 +1,157 @@
+@charset "UTF-8";
+@import url("//fonts.googleapis.com/css?family=Noto+Sans:400,700");
+@import url("//fonts.googleapis.com/css?family=Lora:400,700");
+/** Variables This file contains all the project's variables. */
+/** LSX Variables This file contains the theme's variables declarations and some vendor's variables overriding. Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project. */
+.social-navigation > ul, .footer-navigation > ul { list-style: none; padding-right: 0; }
+
+/* Import the vendor's variables so we can use it in our own code */
+body { direction: rtl; }
+
+.btn { background-color: #418AD0; border: 0 none; border-radius: 3px; box-shadow: -2px 2px 0 0 #27639D; color: #FFF; font-size: 15px; font-weight: 700; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease-in-out; }
+
+.btn:hover { background-color: #3582cd; color: #FFF; }
+
+.btn.cta-btn { background-color: #F7AE00; box-shadow: -2px 2px 0 0 #CE9100; }
+
+.btn.cta-btn:hover { background-color: #EDA700; }
+
+.btn:active { right: 2px; top: 2px; box-shadow: none; }
+
+#footer-cta { background-color: #2B3840; color: #FFF; padding-top: 40px; }
+
+#footer-cta .widget { margin-bottom: 40px; }
+
+#footer-cta .widget-title { font-size: 30px; font-weight: 400; line-height: 1.2; margin-bottom: 15px; margin-top: 0; }
+
+#footer-cta .widget_caldera_forms_widget .caldera-newsletter-field { margin-bottom: 0; }
+
+#footer-cta .widget_caldera_forms_widget .caldera-newsletter-field .form-control { border: 2px solid #DDD; border-radius: 0 1px 1px 0; box-shadow: none; color: #9F9C9C; font-size: 18px; height: 48px; padding: 10px 30px; }
+
+#footer-cta .widget_caldera_forms_widget .caldera-newsletter-btn .btn { border-radius: 3px 0 0 3px; font-weight: 700; height: 46px; letter-spacing: .5px; margin-right: -15px; width: 100%; }
+
+#footer-widgets { background-color: #333; color: #FFF; padding: 15px 0 45px; }
+
+#footer-widgets .row { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; }
+
+@media (min-width: 1200px) { #footer-widgets .row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; } }
+
+#footer-widgets .row div[class^='col-'] { float: none; overflow: hidden; width: auto; }
+
+@media (min-width: 1200px) { #footer-widgets .row div[class^='col-'] { -ms-flex-preferred-size: 0; flex-basis: 0; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; } }
+
+#footer-widgets .widget { margin-top: 30px; }
+
+#footer-widgets .widget a { color: #F7AE00; transition: all 300ms ease-in-out; display: inline-block; }
+
+#footer-widgets .widget a:hover { color: #CE9100; }
+
+#footer-widgets .widget br + a { margin-top: 5px; }
+
+#footer-widgets .widget .fa { font-size: 22px; margin-left: 5px; }
+
+#footer-widgets .widget-title { font-weight: 700; margin-bottom: 20px; margin-top: 0; }
+
+#footer-widgets .textwidget { letter-spacing: .5px; }
+
+.content-info { padding: 15px 0; font-size: 14px; }
+
+@media (min-width: 1200px) { .content-info > .container { padding-right: 50px; padding-left: 50px; width: 100%; } }
+
+@media (min-width: 1200px) { .content-info > .container > .row { margin-right: -50px; margin-left: -50px; } }
+
+.content-info > .container > .row > div[class*='col-'] { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+@media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; padding-right: 50px; padding-left: 50px; } }
+
+.content-info .credit { margin: 0; }
+
+@media (min-width: 1200px) { .content-info .credit { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; } }
+
+.social-navigation > ul, .footer-navigation > ul { margin-bottom: 0; }
+
+.social-navigation { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; }
+
+@media (min-width: 1200px) { .social-navigation { margin-right: 50px; } }
+
+.social-navigation > ul { margin-right: -8px; line-height: 1; }
+
+.social-navigation > ul > li { display: inline-block; padding-right: 8px; padding-left: 8px; }
+
+@media (min-width: 1200px) { .social-navigation > ul { margin-right: 0; } }
+
+@media (max-width: 1199px) { .social-navigation > ul > li { padding-bottom: 8px; padding-top: 8px; } }
+
+.social-navigation > ul > li a[href$='/feed/'], .social-navigation > ul > li a[href*='codepen.io'], .social-navigation > ul > li a[href*='digg.com'], .social-navigation > ul > li a[href*='dribbble.com'], .social-navigation > ul > li a[href*='dropbox.com'], .social-navigation > ul > li a[href*='facebook.com'], .social-navigation > ul > li a[href*='flickr.com'], .social-navigation > ul > li a[href*='foursquare.com'], .social-navigation > ul > li a[href*='plus.google.com'], .social-navigation > ul > li a[href*='github.com'], .social-navigation > ul > li a[href*='instagram.com'], .social-navigation > ul > li a[href*='linkedin.com'], .social-navigation > ul > li a[href*='pinterest.com'], .social-navigation > ul > li a[href*='getpocket.com'], .social-navigation > ul > li a[href*='polldaddy.com'], .social-navigation > ul > li a[href*='reddit.com'], .social-navigation > ul > li a[href*='stumbleupon.com'], .social-navigation > ul > li a[href*='tumblr.com'], .social-navigation > ul > li a[href*='twitter.com'], .social-navigation > ul > li a[href*='vimeo.com'], .social-navigation > ul > li a[href*='wordpress.com'], .social-navigation > ul > li a[href*='wordpress.org'], .social-navigation > ul > li a[href*='youtube.com'], .social-navigation > ul > li a[href*='mailto:'], .social-navigation > ul > li a[href*='spotify.com'], .social-navigation > ul > li a[href*='twitch.tv'] { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+
+.social-navigation > ul > li a[href$='/feed/']:before, .social-navigation > ul > li a[href*='codepen.io']:before, .social-navigation > ul > li a[href*='digg.com']:before, .social-navigation > ul > li a[href*='dribbble.com']:before, .social-navigation > ul > li a[href*='dropbox.com']:before, .social-navigation > ul > li a[href*='facebook.com']:before, .social-navigation > ul > li a[href*='flickr.com']:before, .social-navigation > ul > li a[href*='foursquare.com']:before, .social-navigation > ul > li a[href*='plus.google.com']:before, .social-navigation > ul > li a[href*='github.com']:before, .social-navigation > ul > li a[href*='instagram.com']:before, .social-navigation > ul > li a[href*='linkedin.com']:before, .social-navigation > ul > li a[href*='pinterest.com']:before, .social-navigation > ul > li a[href*='getpocket.com']:before, .social-navigation > ul > li a[href*='polldaddy.com']:before, .social-navigation > ul > li a[href*='reddit.com']:before, .social-navigation > ul > li a[href*='stumbleupon.com']:before, .social-navigation > ul > li a[href*='tumblr.com']:before, .social-navigation > ul > li a[href*='twitter.com']:before, .social-navigation > ul > li a[href*='vimeo.com']:before, .social-navigation > ul > li a[href*='wordpress.com']:before, .social-navigation > ul > li a[href*='wordpress.org']:before, .social-navigation > ul > li a[href*='youtube.com']:before, .social-navigation > ul > li a[href*='mailto:']:before, .social-navigation > ul > li a[href*='spotify.com']:before, .social-navigation > ul > li a[href*='twitch.tv']:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 22px; transition: color 300ms ease-in-out; }
+
+.social-navigation > ul > li a[href$='/feed/']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='codepen.io']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='digg.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='dribbble.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='dropbox.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='facebook.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='flickr.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='foursquare.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='plus.google.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='github.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='instagram.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='linkedin.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='pinterest.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='getpocket.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='polldaddy.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='reddit.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='stumbleupon.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='tumblr.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='twitter.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='vimeo.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='wordpress']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='youtube.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='mailto:']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='spotify.com']:before { content: ""; }
+
+.social-navigation > ul > li a[href*='twitch.tv']:before { content: ""; }
+
+.footer-navigation > ul { margin-right: -10px; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-top: 4px; padding-bottom: 8px; padding-top: 8px; }
+
+.footer-navigation > ul > li { display: inline-block; padding-right: 10px; padding-left: 10px; }
+
+@media (min-width: 1200px) { .footer-navigation > ul { margin-right: 0; margin-top: 0; padding-bottom: 0; padding-top: 0; } }
+
+.footer-navigation > ul > li { position: relative; }
+
+.footer-navigation > ul > li:not(:last-child):after { content: ''; display: inline-block; height: 14px; left: -.5px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 1px; }
+
+.footer-navigation > ul > li > a { transition: color 300ms ease-in-out; }
+
+.content-info { background-color: #232222; color: #FFF; }
+
+.content-info a, .content-info a:before { color: #F7AE00; }
+
+.content-info a:hover, .content-info a:hover:before { color: #CE9100; }
+
+.content-info .footer-navigation > ul > li:not(:last-child):after { background-color: #F7AE00; }

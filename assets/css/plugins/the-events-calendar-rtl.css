@@ -1,0 +1,21 @@
+/* The Events Calendar Styles for LSX */
+/** Variables This file contains all the project's variables. */
+/** LSX Variables This file contains the theme's variables declarations and some vendor's variables overriding. Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project. */
+/* Import the vendor's variables so we can use it in our own code */
+#tribe-events .tribe-events-event-meta .tribe-event-schedule-details { margin-bottom: 10px; }
+
+#tribe-events .tribe-events-event-meta .tribe-events-venue-details { line-height: 1.6; }
+
+#tribe-events .tribe-events-schedule h2 { margin: 0; font-size: 20px; }
+
+#tribe-events .tribe-events-schedule .tribe-events-divider { display: none; }
+
+#tribe-events .tribe-events-page-title { margin-top: 0; }
+
+@media (min-width: 768px) { #tribe-events .tribe-events-event-image { float: right; margin: 0 0 40px 30px; } }
+
+#tribe-events .tribe-events-event-image img { max-width: 500px; }
+
+#tribe-events .tribe-events-list .tribe-events-event-cost span { border: none; border-radius: 3px; }
+
+#tribe-events .tribe-events-single-section { clear: both; }

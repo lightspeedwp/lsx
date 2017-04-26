@@ -21,7 +21,8 @@ if ( ! function_exists( 'lsx_the_events_calendar_styles' ) ) :
 	 * @category   the-events-calendar
 	 */
 	function lsx_the_events_calendar_styles() {
-		wp_enqueue_style( 'lsx_the_events_calendar', get_template_directory_uri() . '/assets/css/plugins/the-events-calendar.css', array( 'lsx_main' ), LSX_VERSION );
+		wp_enqueue_style( 'lsx-the-events-calendar', get_template_directory_uri() . '/assets/css/plugins/the-events-calendar.css', array( 'lsx_main' ), LSX_VERSION );
+		wp_style_add_data( 'lsx-the-events-calendar', 'rtl', 'replace' );
 	}
 
 endif;

@@ -21,7 +21,8 @@ if ( ! function_exists( 'lsx_wp_job_manager_styles' ) ) :
 	 * @category   wp-job-manager
 	 */
 	function lsx_wp_job_manager_styles() {
-		wp_enqueue_style( 'lsx_wp_job_manager', get_template_directory_uri() . '/assets/css/plugins/wp-job-manager.css', array( 'lsx_main' ), LSX_VERSION );
+		wp_enqueue_style( 'lsx-wp-job-manager', get_template_directory_uri() . '/assets/css/plugins/wp-job-manager.css', array( 'lsx_main' ), LSX_VERSION );
+		wp_style_add_data( 'lsx-wp-job-manager', 'rtl', 'replace' );
 	}
 
 endif;

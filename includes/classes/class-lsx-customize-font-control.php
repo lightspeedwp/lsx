@@ -33,6 +33,8 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 		 */
 		public function enqueue() {
 			wp_enqueue_style( 'lsx-font-picker-custom-control', get_template_directory_uri() . '/assets/css/admin/customizer-font.css', array(), LSX_VERSION );
+			wp_style_add_data( 'lsx-font-picker-custom-control', 'rtl', 'replace' );
+
 			wp_enqueue_script( 'lsx-font-picker-custom-control', get_template_directory_uri() . '/assets/js/admin/customizer-font.js', array(), LSX_VERSION );
 		}
 

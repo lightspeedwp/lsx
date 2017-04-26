@@ -1,4 +1,5 @@
 const gulp         = require('gulp');
+const rtlcss       = require('gulp-rtlcss');
 const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
 const jshint       = require('gulp-jshint');
@@ -64,6 +65,29 @@ gulp.task('styles', function () {
 		.pipe(gulp.dest('assets/css'))
 });
 
+gulp.task('styles-rtl', function () {
+	return gulp.src(['assets/css/scss/*.scss'])
+		.pipe(plumber({
+			errorHandler: function(err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
+		.pipe(sass({
+			outputStyle: 'compact',
+			includePaths: ['assets/css/scss']
+		}).on('error', gutil.log))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
+		.pipe(rtlcss())
+		.pipe(rename({
+			suffix: '-rtl'
+		}))
+		.pipe(gulp.dest('assets/css'))
+});
+
 gulp.task('vendor-styles', function () {
 	return gulp.src(['assets/css/vendor/*.scss'])
 		.pipe(plumber({
@@ -80,8 +104,29 @@ gulp.task('vendor-styles', function () {
 			browsers: browserlist,
 			casacade: true
 		}))
-		//.pipe(minify())
-		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest('assets/css/vendor'))
+});
+
+gulp.task('vendor-styles-rtl', function () {
+	return gulp.src(['assets/css/vendor/*.scss'])
+		.pipe(plumber({
+			errorHandler: function(err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
+		.pipe(sass({
+			outputStyle: 'compact',
+			includePaths: ['assets/css/vendor']
+		}).on('error', gutil.log))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
+		.pipe(rtlcss())
+		.pipe(rename({
+			suffix: '-rtl'
+		}))
 		.pipe(gulp.dest('assets/css/vendor'))
 });
 
@@ -106,6 +151,29 @@ gulp.task('admin-styles', function () {
 		.pipe(gulp.dest('assets/css/admin'))
 });
 
+gulp.task('admin-styles-rtl', function () {
+	return gulp.src(['assets/css/admin/*.scss'])
+		.pipe(plumber({
+			errorHandler: function(err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
+		.pipe(sass({
+			outputStyle: 'compact',
+			includePaths: ['assets/css/admin']
+		}).on('error', gutil.log))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
+		.pipe(rtlcss())
+		.pipe(rename({
+			suffix: '-rtl'
+		}))
+		.pipe(gulp.dest('assets/css/admin'))
+});
+
 gulp.task('plugins-styles', function () {
 	return gulp.src(['assets/css/plugins/*.scss'])
 		.pipe(plumber({
@@ -127,13 +195,38 @@ gulp.task('plugins-styles', function () {
 		.pipe(gulp.dest('assets/css/plugins'))
 });
 
+gulp.task('plugins-styles-rtl', function () {
+	return gulp.src(['assets/css/plugins/*.scss'])
+		.pipe(plumber({
+			errorHandler: function(err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
+		.pipe(sass({
+			outputStyle: 'compact',
+			includePaths: ['assets/css/plugins']
+		}).on('error', gutil.log))
+		.pipe(autoprefixer({
+			browsers: browserlist,
+			casacade: true
+		}))
+		.pipe(rtlcss())
+		.pipe(rename({
+			suffix: '-rtl'
+		}))
+		.pipe(gulp.dest('assets/css/plugins'))
+});
+
 /*
+@TODO
 gulp.task('sass-woocommerce', function() {
 	gulp.src(['sass/woocommerce/woocommerce-layout.scss', 'sass/woocommerce/woocommerce-smallscreen.scss', 'sass/woocommerce/woocommerce.scss'])
 		.pipe(sass().on('error', function(err) { console.log('Error!', err); }))
 		.pipe(gulp.dest('css/'));
 });
 
+@TODO
 gulp.task('sass-sensei', function() {
 	gulp.src('sass/sensei/frontend/sensei.scss')
 		.pipe(sass().on('error', function(err) { console.log('Error!', err); }))
@@ -141,7 +234,7 @@ gulp.task('sass-sensei', function() {
 });
 */
 
-gulp.task('compile-css', ['styles', 'vendor-styles', 'admin-styles', 'plugins-styles']);
+gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl', 'plugins-styles', 'plugins-styles-rtl']);
 
 gulp.task('js', function() {
 	gulp.src('assets/js/src/lsx.js')
@@ -149,7 +242,7 @@ gulp.task('js', function() {
 		.pipe(errorreporter)
 		.pipe(concat('lsx.min.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('assets/js'));
+		.pipe(gulp.dest('assets/js'))
 });
 
 gulp.task('compile-js', ['js']);
@@ -173,7 +266,7 @@ gulp.task('wordpress-pot', function() {
 			package: 'lsx',
 			team: 'LightSpeed <webmaster@lsdev.biz>'
 		}))
-		.pipe(gulp.dest('languages/lsx.pot'));
+		.pipe(gulp.dest('languages/lsx.pot'))
 });
 
 gulp.task('wordpress-po', function() {
@@ -184,13 +277,13 @@ gulp.task('wordpress-po', function() {
 			package: 'lsx',
 			team: 'LightSpeed <webmaster@lsdev.biz>'
 		}))
-		.pipe(gulp.dest('languages/en_EN.po'));
+		.pipe(gulp.dest('languages/en_EN.po'))
 });
 
 gulp.task('wordpress-po-mo', ['wordpress-po'], function() {
 	return gulp.src('languages/en_EN.po')
 		.pipe(gettext())
-		.pipe(gulp.dest('languages'));
+		.pipe(gulp.dest('languages'))
 });
 
 gulp.task('wordpress-lang', (['wordpress-pot', 'wordpress-po-mo']));
