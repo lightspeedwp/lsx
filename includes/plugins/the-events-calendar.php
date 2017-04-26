@@ -26,7 +26,7 @@ if ( ! function_exists( 'lsx_the_events_calendar_styles' ) ) :
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'lsx_events_calendar_styles' );
+add_action( 'wp_enqueue_scripts', 'lsx_the_events_calendar_styles' );
 
 if ( ! function_exists( 'lsx_the_events_calendar_breadcrumbs' ) ) :
 	/**
