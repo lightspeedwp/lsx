@@ -8,7 +8,7 @@
 /* Import the vendor's variables so we can use it in our own code */
 .btn { background-color: #418AD0; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #27639D; color: #FFF; font-size: 15px; font-weight: 700; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease-in-out; }
 
-.btn:hover { background-color: #27639D; color: #FFF; }
+.btn:hover { background-color: #3582cd; color: #FFF; }
 
 .btn.cta-btn { background-color: #F7AE00; box-shadow: 2px 2px 0 0 #CE9100; }
 
@@ -22,11 +22,11 @@
 
 #footer-cta .widget-title { font-size: 30px; font-weight: 400; line-height: 1.2; margin-bottom: 15px; margin-top: 0; }
 
-#footer-cta .caldera-newsletter-field { margin-bottom: 0; }
+#footer-cta .widget_caldera_forms_widget .caldera-newsletter-field { margin-bottom: 0; }
 
-#footer-cta .caldera-newsletter-field .form-control { border: 2px solid #DDD; border-radius: 1px 0 0 1px; box-shadow: none; color: #9F9C9C; font-size: 18px; height: 48px; padding: 10px 30px; }
+#footer-cta .widget_caldera_forms_widget .caldera-newsletter-field .form-control { border: 2px solid #DDD; border-radius: 1px 0 0 1px; box-shadow: none; color: #9F9C9C; font-size: 18px; height: 48px; padding: 10px 30px; }
 
-#footer-cta .caldera-newsletter-btn .btn { border-radius: 0 3px 3px 0; height: 46px; margin-left: -15px; width: 100%; }
+#footer-cta .widget_caldera_forms_widget .caldera-newsletter-btn .btn { border-radius: 0 3px 3px 0; font-weight: 700; height: 46px; letter-spacing: .5px; margin-left: -15px; width: 100%; }
 
 #footer-widgets { background-color: #333; color: #FFF; padding: 15px 0 45px; }
 
@@ -52,7 +52,7 @@
 
 #footer-widgets .textwidget { letter-spacing: .5px; }
 
-.content-info { background-color: #232222; color: #FFF; padding: 15px 0; }
+.content-info { padding: 15px 0; font-size: 14px; }
 
 @media (min-width: 1200px) { .content-info > .container { padding-left: 50px; padding-right: 50px; width: 100%; } }
 
@@ -60,11 +60,9 @@
 
 .content-info > .container > .row > div[class*='col-'] { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-@media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; } }
+@media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; padding-left: 50px; padding-right: 50px; } }
 
-@media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { padding-left: 50px; padding-right: 50px; } }
-
-.content-info .credit { font-size: 14px; list-style: 1.35; margin: 0; }
+.content-info .credit { margin: 0; }
 
 @media (min-width: 1200px) { .content-info .credit { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; } }
 
@@ -84,9 +82,7 @@
 
 .social-navigation > ul > li a[href$='/feed/'], .social-navigation > ul > li a[href*='codepen.io'], .social-navigation > ul > li a[href*='digg.com'], .social-navigation > ul > li a[href*='dribbble.com'], .social-navigation > ul > li a[href*='dropbox.com'], .social-navigation > ul > li a[href*='facebook.com'], .social-navigation > ul > li a[href*='flickr.com'], .social-navigation > ul > li a[href*='foursquare.com'], .social-navigation > ul > li a[href*='plus.google.com'], .social-navigation > ul > li a[href*='github.com'], .social-navigation > ul > li a[href*='instagram.com'], .social-navigation > ul > li a[href*='linkedin.com'], .social-navigation > ul > li a[href*='pinterest.com'], .social-navigation > ul > li a[href*='getpocket.com'], .social-navigation > ul > li a[href*='polldaddy.com'], .social-navigation > ul > li a[href*='reddit.com'], .social-navigation > ul > li a[href*='stumbleupon.com'], .social-navigation > ul > li a[href*='tumblr.com'], .social-navigation > ul > li a[href*='twitter.com'], .social-navigation > ul > li a[href*='vimeo.com'], .social-navigation > ul > li a[href*='wordpress.com'], .social-navigation > ul > li a[href*='wordpress.org'], .social-navigation > ul > li a[href*='youtube.com'], .social-navigation > ul > li a[href*='mailto:'], .social-navigation > ul > li a[href*='spotify.com'], .social-navigation > ul > li a[href*='twitch.tv'] { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
 
-.social-navigation > ul > li a[href$='/feed/']:before, .social-navigation > ul > li a[href*='codepen.io']:before, .social-navigation > ul > li a[href*='digg.com']:before, .social-navigation > ul > li a[href*='dribbble.com']:before, .social-navigation > ul > li a[href*='dropbox.com']:before, .social-navigation > ul > li a[href*='facebook.com']:before, .social-navigation > ul > li a[href*='flickr.com']:before, .social-navigation > ul > li a[href*='foursquare.com']:before, .social-navigation > ul > li a[href*='plus.google.com']:before, .social-navigation > ul > li a[href*='github.com']:before, .social-navigation > ul > li a[href*='instagram.com']:before, .social-navigation > ul > li a[href*='linkedin.com']:before, .social-navigation > ul > li a[href*='pinterest.com']:before, .social-navigation > ul > li a[href*='getpocket.com']:before, .social-navigation > ul > li a[href*='polldaddy.com']:before, .social-navigation > ul > li a[href*='reddit.com']:before, .social-navigation > ul > li a[href*='stumbleupon.com']:before, .social-navigation > ul > li a[href*='tumblr.com']:before, .social-navigation > ul > li a[href*='twitter.com']:before, .social-navigation > ul > li a[href*='vimeo.com']:before, .social-navigation > ul > li a[href*='wordpress.com']:before, .social-navigation > ul > li a[href*='wordpress.org']:before, .social-navigation > ul > li a[href*='youtube.com']:before, .social-navigation > ul > li a[href*='mailto:']:before, .social-navigation > ul > li a[href*='spotify.com']:before, .social-navigation > ul > li a[href*='twitch.tv']:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; color: #F7AE00; font-size: 22px; transition: color 300ms ease-in-out; }
-
-.social-navigation > ul > li a[href$='/feed/']:hover:before, .social-navigation > ul > li a[href*='codepen.io']:hover:before, .social-navigation > ul > li a[href*='digg.com']:hover:before, .social-navigation > ul > li a[href*='dribbble.com']:hover:before, .social-navigation > ul > li a[href*='dropbox.com']:hover:before, .social-navigation > ul > li a[href*='facebook.com']:hover:before, .social-navigation > ul > li a[href*='flickr.com']:hover:before, .social-navigation > ul > li a[href*='foursquare.com']:hover:before, .social-navigation > ul > li a[href*='plus.google.com']:hover:before, .social-navigation > ul > li a[href*='github.com']:hover:before, .social-navigation > ul > li a[href*='instagram.com']:hover:before, .social-navigation > ul > li a[href*='linkedin.com']:hover:before, .social-navigation > ul > li a[href*='pinterest.com']:hover:before, .social-navigation > ul > li a[href*='getpocket.com']:hover:before, .social-navigation > ul > li a[href*='polldaddy.com']:hover:before, .social-navigation > ul > li a[href*='reddit.com']:hover:before, .social-navigation > ul > li a[href*='stumbleupon.com']:hover:before, .social-navigation > ul > li a[href*='tumblr.com']:hover:before, .social-navigation > ul > li a[href*='twitter.com']:hover:before, .social-navigation > ul > li a[href*='vimeo.com']:hover:before, .social-navigation > ul > li a[href*='wordpress.com']:hover:before, .social-navigation > ul > li a[href*='wordpress.org']:hover:before, .social-navigation > ul > li a[href*='youtube.com']:hover:before, .social-navigation > ul > li a[href*='mailto:']:hover:before, .social-navigation > ul > li a[href*='spotify.com']:hover:before, .social-navigation > ul > li a[href*='twitch.tv']:hover:before { color: #CE9100; }
+.social-navigation > ul > li a[href$='/feed/']:before, .social-navigation > ul > li a[href*='codepen.io']:before, .social-navigation > ul > li a[href*='digg.com']:before, .social-navigation > ul > li a[href*='dribbble.com']:before, .social-navigation > ul > li a[href*='dropbox.com']:before, .social-navigation > ul > li a[href*='facebook.com']:before, .social-navigation > ul > li a[href*='flickr.com']:before, .social-navigation > ul > li a[href*='foursquare.com']:before, .social-navigation > ul > li a[href*='plus.google.com']:before, .social-navigation > ul > li a[href*='github.com']:before, .social-navigation > ul > li a[href*='instagram.com']:before, .social-navigation > ul > li a[href*='linkedin.com']:before, .social-navigation > ul > li a[href*='pinterest.com']:before, .social-navigation > ul > li a[href*='getpocket.com']:before, .social-navigation > ul > li a[href*='polldaddy.com']:before, .social-navigation > ul > li a[href*='reddit.com']:before, .social-navigation > ul > li a[href*='stumbleupon.com']:before, .social-navigation > ul > li a[href*='tumblr.com']:before, .social-navigation > ul > li a[href*='twitter.com']:before, .social-navigation > ul > li a[href*='vimeo.com']:before, .social-navigation > ul > li a[href*='wordpress.com']:before, .social-navigation > ul > li a[href*='wordpress.org']:before, .social-navigation > ul > li a[href*='youtube.com']:before, .social-navigation > ul > li a[href*='mailto:']:before, .social-navigation > ul > li a[href*='spotify.com']:before, .social-navigation > ul > li a[href*='twitch.tv']:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 22px; transition: color 300ms ease-in-out; }
 
 .social-navigation > ul > li a[href$='/feed/']:before { content: ""; }
 
@@ -146,10 +142,16 @@
 
 .footer-navigation > ul > li { position: relative; }
 
-.footer-navigation > ul > li:not(:last-child):after { background-color: #F7AE00; content: ''; display: inline-block; height: 14px; right: -.5px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 1px; }
+.footer-navigation > ul > li:not(:last-child):after { content: ''; display: inline-block; height: 14px; right: -.5px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 1px; }
 
-.footer-navigation > ul > li > a { color: #F7AE00; font-size: 14px; line-height: 1.35; transition: color 300ms ease-in-out; }
+.footer-navigation > ul > li > a { transition: color 300ms ease-in-out; }
 
-.footer-navigation > ul > li > a:hover { color: #CE9100; }
+.content-info { background-color: #232222; color: #FFF; }
+
+.content-info a, .content-info a:before { color: #F7AE00; }
+
+.content-info a:hover, .content-info a:hover:before { color: #CE9100; }
+
+.content-info .footer-navigation > ul > li:not(:last-child):after { background-color: #F7AE00; }
 
 /*# sourceMappingURL=maps/lsx.css.map */

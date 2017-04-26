@@ -1,10 +1,8 @@
 .content-info {
-	background-color: $footer-bar-color;
-	color: #FFF;
 	padding: 15px 0;
+	font-size: 14px;
 
 	& > .container {
-
 		@include media('>=desktop') {
 			padding-left: 50px;
 			padding-right: 50px;
@@ -12,7 +10,6 @@
 		}
 
 		& > .row {
-
 			@include media('>=desktop') {
 				margin-left: -50px;
 				margin-right: -50px;
@@ -27,9 +24,6 @@
 					align-items: center;
 					flex-direction: row;
 					justify-content: flex-end;
-				}
-
-				@include media('>=desktop') {
 					padding-left: 50px;
 					padding-right: 50px;
 				}
@@ -38,8 +32,6 @@
 	}
 
 	.credit {
-		font-size: 14px;
-		list-style: 1.35;
 		margin: 0;
 
 		@include media('>=desktop') { flex-grow: 1; }
@@ -105,12 +97,9 @@
 					&:before {
 						@include fa-icon();
 
-						color: nth($orange, 1);
 						font-size: 22px;
 						transition: color 300ms ease-in-out;
 					}
-
-					&:hover:before { color: nth($orange, 2); }
 				}
 
 				&[href$='/feed/']:before { content: $fa-var-rss; }
@@ -164,7 +153,6 @@
 			position: relative;
 
 			&:not(:last-child):after {
-				background-color: nth($orange, 1);
 				content: '';
 				display: inline-block;
 				height: 14px;
@@ -175,14 +163,32 @@
 				width: 1px;
 			}
 
-			& > a {
-				color: nth($orange, 1);
-				font-size: 14px;
-				line-height: 1.35;
-				transition: color 300ms ease-in-out;
+			& > a { transition: color 300ms ease-in-out; }
+		}
+	}
+}
 
-				&:hover { color: nth($orange, 2); }
+@mixin footer-color ($bg: map-get($footer, bg), $color: map-get($footer, color), $link: map-get($footer, link), $hover: map-get($footer, hover)) {
+	.content-info {
+		background-color: $bg;
+		color: $color;
+
+		a {
+			&, &:before { color: $link;	 }
+
+			&:hover {
+				&, &:before { color: $hover; }
+			}
+		}
+
+		.footer-navigation {
+			& > ul {
+				& > li {
+					&:not(:last-child):after { background-color: $link; }
+				}
 			}
 		}
 	}
 }
+
+@include footer-color();
