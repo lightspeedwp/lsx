@@ -4,16 +4,17 @@
 	<rule ref="WordPress">
 		<exclude name="Generic.Commenting" />
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<!-- <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" /> -->
 
 		<exclude name="Squiz.Commenting" />
 
-		<!--<exclude name="WordPress.Variables.GlobalVariables.OverrideProhibited" />-->
-
 		<exclude name="WordPress.VIP" />
 
-		<exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" />
-		<exclude name="WordPress.WP.I18n.MissingSingularPlaceholder" />
-		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+		<!-- <exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" /> -->
+		<!-- <exclude name="WordPress.WP.I18n.MissingSingularPlaceholder" /> -->
+		<!-- <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" /> -->
+
+		<!-- Fix on LSX 2.0.1 -->
+		<exclude name="WordPress.Variables.GlobalVariables.OverrideProhibited" />
 	</rule>
 </ruleset>

@@ -5,17 +5,17 @@
  * @package lsx
  */
 
+$type_class = 'filter-item column-3 ';
+$types      = get_the_terms( get_the_ID(), 'jetpack-portfolio-type' );
 
-$type_class = "filter-item column-3 ";
-$types = get_the_terms( get_the_ID(), 'jetpack-portfolio-type');
-if ($types) {
-	foreach ($types as $type) {
-		$type_class .= $type->slug . " ";
+if ( $types ) {
+	foreach ( $types as $type ) {
+		$type_class .= $type->slug . ' ';
 	}
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" data-column="<?php echo 3; ?>" <?php post_class($type_class); ?>>
+<article id="post-<?php the_ID(); ?>" data-column="3" <?php post_class( $type_class ); ?>>
 	<div class="portfolio-content-wrapper">
 		<div class="portfolio-thumbnail">
 			<?php if ( has_post_thumbnail() ) : ?>
@@ -24,7 +24,7 @@ if ($types) {
 				</a>
 			<?php endif; ?>
 		</div>
-		
+
 		<?php the_title( '<a class="portfolio-title" href="' . esc_url( get_permalink() ) . '" rel="bookmark"><span>', '</span></a>' ); ?>
 	</div>
 </article>

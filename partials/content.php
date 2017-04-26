@@ -1,5 +1,7 @@
 <?php
 /**
+ * The template used for displaying @TODO
+ *
  * @package lsx
  */
 ?>
@@ -7,7 +9,7 @@
 <?php lsx_entry_before(); ?>
 
 <?php
-	if ( has_post_thumbnail() ) { 
+	if ( has_post_thumbnail() ) {
 		$thumb_class = 'has-thumb';
 	} else {
 		$thumb_class = 'no-thumb';
@@ -19,7 +21,7 @@
 		$blog_layout = 'default';
 	}
 
-	if ( 'list' === $blog_layout ) { 
+	if ( 'list' === $blog_layout ) {
 		$image_class = 'hidden-sm hidden-md hidden-ls';
 	} else {
 		$image_class = '';
@@ -42,19 +44,19 @@
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="entry-image <?php echo esc_attr( $image_class ); ?>">
 						<a class="thumbnail" href="<?php the_permalink(); ?>">
-							 <?php lsx_thumbnail( 'lsx-single-thumbnail' ); ?>
+							<?php lsx_thumbnail( 'lsx-single-thumbnail' ); ?>
 						</a>
 					</div>
 				<?php endif; ?>
 
-				<?php 
+				<?php
 					$format = get_post_format();
 
 					if ( false === $format ) {
 						$format = 'standard';
 						$show_on_front = get_option( 'show_on_front', 'posts' );
-						
-						if ( 'page' == $show_on_front ) {
+
+						if ( 'page' === $show_on_front ) {
 							$archive_link = get_permalink( get_option( 'page_for_posts' ) );
 						} else {
 							$archive_link = home_url();
@@ -87,19 +89,24 @@
 				<div class="entry-meta">
 					<?php lsx_post_meta(); ?>
 				</div><!-- .entry-meta -->
-			</header><!-- .entry-header -->	
+			</header><!-- .entry-header -->
 
 			<?php if ( ! is_singular() && ! has_post_format( array( 'video', 'audio', 'quote', 'link' ) ) && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : // Only display Excerpts for Search and Archives ?>
-				<div class="entry-summary"> 
+
+				<div class="entry-summary">
 					<?php the_excerpt(); ?>
 				</div><!-- .entry-summary -->
+
 			<?php elseif ( has_post_format( array('link') ) ) : ?>
 
 			<?php elseif ( apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
+
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div><!-- .entry-content -->
+
 			<?php else : ?>
+
 				<div class="entry-content">
 					<?php
 						the_content();
@@ -112,19 +119,20 @@
 						) );
 					?>
 				</div><!-- .entry-content -->
+
 			<?php endif; ?>
-	
+
 			<div class="clearfix"></div>
-			
+
 			<?php
 				$comments_number = get_comments_number();
 
 				if ( has_tag() || ( comments_open() && ! empty( $comments_number ) ) ) :
 					?>
-					
+
 					<div class="post-tags-wrapper">
 						<?php lsx_content_post_tags(); ?>
-						
+
 						<?php if ( comments_open() && ! empty( $comments_number ) ) : ?>
 							<div class="post-comments">
 								<a href="<?php the_permalink() ?>#comments">
@@ -138,18 +146,20 @@
 							</div>
 						<?php endif ?>
 					</div>
-					
+
 					<?php
 				endif;
 			?>
 		</div>
-	
+
 		<?php if ( has_post_thumbnail() ) : ?>
+
 			<div class="entry-image hidden hidden-xs">
 				<a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo esc_url( $image_src ); ?>);">
 					<?php lsx_thumbnail( 'lsx-single-thumbnail' ); ?>
 				</a>
 			</div>
+
 		<?php endif; ?>
 	</div>
 

@@ -538,7 +538,7 @@ if ( ! function_exists( 'lsx_nav_menu' ) ) :
 		if ( has_nav_menu( 'primary' ) ) :
 			?>
 			<nav class="primary-navbar collapse navbar-collapse">
-		    	<?php
+				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'depth'          => 3,
@@ -547,9 +547,9 @@ if ( ! function_exists( 'lsx_nav_menu' ) ) :
 						'walker'         => new LSX_Bootstrap_Navwalker(),
 					) );
 				?>
-		   	</nav>
-	    	<?php
-	    endif;
+			</nav>
+			<?php
+		endif;
 	}
 
 endif;

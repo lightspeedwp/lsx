@@ -2,8 +2,6 @@
 /**
  * The template part for displaying a message that posts cannot be found.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package lsx
  */
 ?>
@@ -14,6 +12,7 @@
 	</header><!-- .page-header -->
 
 	<div class="page-content">
+
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p><?php esc_html_e( 'Ready to publish your first post?', 'lsx' ); ?> <a href="<?php echo esc_url( admin_url( 'post-new.php' ) ) ?>"><?php esc_html_e( 'Get started here', 'lsx' ); ?></a></p>
@@ -29,5 +28,6 @@
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
+
 	</div><!-- .page-content -->
 </section><!-- .no-results -->
