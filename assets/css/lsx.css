@@ -1,16 +1,22 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700");
-@import url("https://fonts.googleapis.com/css?family=Lora:400,700");
+@import url("//fonts.googleapis.com/css?family=Noto+Sans:400,700");
+@import url("//fonts.googleapis.com/css?family=Lora:400,700");
 /** Variables This file contains all the project's variables. */
 /** LSX Variables This file contains the theme's variables declarations and some vendor's variables overriding. Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project. */
 .social-navigation > ul, .footer-navigation > ul { list-style: none; padding-left: 0; }
 
 /* Import the vendor's variables so we can use it in our own code */
-.btn { background-color: #F7AE00; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #CE9100; color: #FFF; font-size: 15px; font-weight: 600; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; text-transform: uppercase; transition: all 300ms ease-in-out; }
+.btn { background-color: #418AD0; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #374750; color: #FFF; font-size: 15px; font-weight: 700; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease-in-out; }
 
-.btn:hover { background-color: #EDA700; box-shadow: 0 0 0 1px #CE9100; color: #FFF; }
+.btn:hover { background-color: #374750; color: #FFF; }
 
-#footer-widgets { background-color: #374750; color: #FFF; padding: 15px 0 45px; }
+.btn.cta-btn { background-color: #F7AE00; box-shadow: 2px 2px 0 0 #CE9100; }
+
+.btn.cta-btn:hover { background-color: #EDA700; }
+
+.btn:active { left: 2px; top: 2px; box-shadow: none; }
+
+#footer-widgets { background-color: #333; color: #FFF; padding: 15px 0 45px; }
 
 #footer-widgets .row { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; }
 
@@ -22,13 +28,19 @@
 
 #footer-widgets .widget { margin-top: 30px; }
 
-#footer-widgets .widget a { color: #F7AE00; transition: all 300ms ease-in-out; }
+#footer-widgets .widget a { color: #F7AE00; transition: all 300ms ease-in-out; display: inline-block; }
 
 #footer-widgets .widget a:hover { color: #CE9100; }
 
+#footer-widgets .widget br + a { margin-top: 5px; }
+
+#footer-widgets .widget .fa { font-size: 22px; margin-right: 5px; }
+
 #footer-widgets .widget-title { font-weight: 700; margin-bottom: 20px; margin-top: 0; }
 
-.content-info { background-color: #2B3840; color: #FFF; padding: 15px 0; }
+#footer-widgets .textwidget { letter-spacing: .5px; }
+
+.content-info { background-color: #232222; color: #FFF; padding: 15px 0; }
 
 @media (min-width: 1200px) { .content-info > .container { padding-left: 50px; padding-right: 50px; width: 100%; } }
 
@@ -40,7 +52,7 @@
 
 @media (min-width: 1200px) { .content-info > .container > .row > div[class*='col-'] { padding-left: 50px; padding-right: 50px; } }
 
-.content-info .credit { margin: 0; }
+.content-info .credit { font-size: 14px; list-style: 1.35; margin: 0; }
 
 @media (min-width: 1200px) { .content-info .credit { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; } }
 
@@ -106,7 +118,7 @@
 
 .social-navigation > ul > li a[href*='wordpress']:before { content: ""; }
 
-.social-navigation > ul > li a[href*='youtube.com']:before { content: ""; }
+.social-navigation > ul > li a[href*='youtube.com']:before { content: ""; }
 
 .social-navigation > ul > li a[href*='mailto:']:before { content: ""; }
 
@@ -122,9 +134,9 @@
 
 .footer-navigation > ul > li { position: relative; }
 
-.footer-navigation > ul > li:not(:last-child):before { background-color: #FFF; content: ''; display: inline-block; height: 16px; right: -.5px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 1px; }
+.footer-navigation > ul > li:not(:last-child):after { background-color: #F7AE00; content: ''; display: inline-block; height: 14px; right: -.5px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 1px; }
 
-.footer-navigation > ul > li > a { color: #F7AE00; transition: color 300ms ease-in-out; }
+.footer-navigation > ul > li > a { color: #F7AE00; font-size: 14px; line-height: 1.35; transition: color 300ms ease-in-out; }
 
 .footer-navigation > ul > li > a:hover { color: #CE9100; }
 
