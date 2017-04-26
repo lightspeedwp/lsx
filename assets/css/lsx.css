@@ -6,15 +6,27 @@
 .social-navigation > ul, .footer-navigation > ul { list-style: none; padding-left: 0; }
 
 /* Import the vendor's variables so we can use it in our own code */
-.btn { background-color: #418AD0; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #374750; color: #FFF; font-size: 15px; font-weight: 700; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease-in-out; }
+.btn { background-color: #418AD0; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #27639D; color: #FFF; font-size: 15px; font-weight: 700; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease-in-out; }
 
-.btn:hover { background-color: #374750; color: #FFF; }
+.btn:hover { background-color: #27639D; color: #FFF; }
 
 .btn.cta-btn { background-color: #F7AE00; box-shadow: 2px 2px 0 0 #CE9100; }
 
 .btn.cta-btn:hover { background-color: #EDA700; }
 
 .btn:active { left: 2px; top: 2px; box-shadow: none; }
+
+#footer-cta { background-color: #2B3840; color: #FFF; padding-top: 40px; }
+
+#footer-cta .widget { margin-bottom: 40px; }
+
+#footer-cta .widget-title { font-size: 30px; font-weight: 400; line-height: 1.2; margin-bottom: 15px; margin-top: 0; }
+
+#footer-cta .caldera-newsletter-field { margin-bottom: 0; }
+
+#footer-cta .caldera-newsletter-field .form-control { border: 2px solid #DDD; border-radius: 1px 0 0 1px; box-shadow: none; color: #9F9C9C; font-size: 18px; height: 48px; padding: 10px 30px; }
+
+#footer-cta .caldera-newsletter-btn .btn { border-radius: 0 3px 3px 0; height: 46px; margin-left: -15px; width: 100%; }
 
 #footer-widgets { background-color: #333; color: #FFF; padding: 15px 0 45px; }
 
