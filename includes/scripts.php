@@ -44,32 +44,49 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 
 		// Google Fonts
 
-		$font = get_theme_mod( 'lsx_font', 'raleway_open_sans' );
+		$font = get_theme_mod( 'lsx_font', 'lora_noto_sans' );
 
 		switch ( $font ) {
+			case 'lora_noto_sans':
+				$header_font_location    = 'Lora';
+				$body_font_location      = 'Noto+Sans';
+				$header_font_declaration = "'Lora', serif";
+				$body_font_declaration   = "'Noto Sans', sans-serif";
+				break;
+
 			case 'raleway_open_sans':
-				$header_font_location = 'Raleway';
-				$body_font_location   = 'Open+Sans';
+				$header_font_location    = 'Raleway';
+				$body_font_location      = 'Open+Sans';
+				$header_font_declaration = "'Raleway', sans-serif";
+				$body_font_declaration   = "'Open Sans', sans-serif";
 				break;
 
 			case 'noto_serif_noto_sans':
-				$header_font_location = 'Noto+Serif';
-				$body_font_location   = 'Noto+Sans';
+				$header_font_location    = 'Noto+Serif';
+				$body_font_location      = 'Noto+Sans';
+				$header_font_declaration = "'Noto Serif', serif";
+				$body_font_declaration   = "'Noto Sans', sans-serif";
 				break;
 
 			case 'noto_sans_noto_sans':
-				$header_font_location = 'Noto+Sans';
-				$body_font_location   = 'Noto+Sans';
+				$header_font_location    = 'Noto+Sans';
+				$body_font_location      = 'Noto+Sans';
+				$header_font_declaration = "'Noto Sans', sans-serif";
+				$body_font_declaration   = "'Noto Sans', sans-serif";
 				break;
 
 			case 'alegreya_open_sans':
-				$header_font_location = 'Alegreya';
-				$body_font_location   = 'Open+Sans';
+				$header_font_location    = 'Alegreya';
+				$body_font_location      = 'Open+Sans';
+				$header_font_declaration = "'Alegreya', serif";
+				$body_font_declaration   = "'Open Sans', sans-serif";
 				break;
 
 			default:
-				$header_font_location = 'Raleway';
-				$body_font_location   = 'Open+Sans';
+				$header_font_location    = 'Lora';
+				$body_font_location      = 'Noto+Sans';
+				$header_font_declaration = "'Lora', serif";
+				$body_font_declaration   = "'Noto Sans', sans-serif";
 				break;
 		}
 
@@ -81,7 +98,36 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 
 		wp_enqueue_style( 'lsx-header-font', esc_url( $http_var . '://fonts.googleapis.com/css?family=' . $header_font_location ) );
 		wp_enqueue_style( 'lsx-body-font', esc_url( $http_var . '://fonts.googleapis.com/css?family=' . $body_font_location ) );
-		wp_enqueue_style( 'lsx_font_scheme', esc_url( get_template_directory_uri() . '/assets//css/' . $font . '.css' ), array(), LSX_VERSION );
+
+		$font_styles = get_theme_mod( 'lsx_font_styles' );
+
+		if ( is_customize_preview() || false === $font_styles ) {
+			global $wp_filesystem;
+
+			$css_fonts_file = get_template_directory() . '/assets/css/lsx-fonts.css';
+
+			if ( ! empty( $header_font_declaration ) && ! empty( $body_font_declaration ) && file_exists( $css_fonts_file ) ) {
+				if ( empty( $wp_filesystem ) ) {
+					require_once( ABSPATH . '/wp-admin/includes/file.php' );
+					WP_Filesystem();
+				}
+
+				if ( $wp_filesystem ) {
+					$css_fonts = $wp_filesystem->get_contents( $css_fonts_file );
+
+					if ( ! empty( $css_fonts ) ) {
+						$css_fonts = str_replace( '[font-family-headings]', $header_font_declaration, $css_fonts );
+						$css_fonts = str_replace( '[font-family-body]', $body_font_declaration, $css_fonts );
+						$css_fonts = preg_replace( '/(\/\*# ).+( \*\/)/', '', $css_fonts );
+						$font_styles = $css_fonts;
+					}
+				}
+			}
+
+			set_theme_mod( 'lsx_font_styles', $font_styles );
+		}
+
+		wp_add_inline_style( 'lsx_main', $font_styles );
 
 		// Scripts
 

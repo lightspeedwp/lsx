@@ -158,7 +158,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 		);
 
 		$lsx_controls['settings']['lsx_font']  = array(
-			'default'   => 'raleway_open_sans',
+			'default'   => 'lora_noto_sans',
 			'type'      => 'theme_mod',
 			'transport' => 'refresh',
 		);
@@ -169,6 +169,20 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 			'settings' => 'lsx_font',
 			'control'  => 'LSX_Customize_Font_Control',
 			'choices'  => array(
+				'lora_noto_sans' => array(
+					'header' => array(
+						'title'          => esc_html__( 'Lora', 'lsx' ),
+						'location'       => 'Lora',
+						'cssDeclaration' => "'Lora', serif",
+						'cssClass'       => 'lora',
+					),
+					'body' => array(
+						'title'          => esc_html__( 'Noto Sans', 'lsx' ),
+						'location'       => 'Noto+Sans',
+						'cssDeclaration' => "'Noto Sans', sans-serif",
+						'cssClass'       => 'notoSans',
+					),
+				),
 				'raleway_open_sans' => array(
 					'header' => array(
 						'title'          => esc_html__( 'Raleway', 'lsx' ),

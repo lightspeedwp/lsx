@@ -29,6 +29,16 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 		public $fonts;
 
 		/**
+		 * Constructor.
+		 */
+		public function __construct( $manager, $id, $args ) {
+			parent::__construct( $manager, $id, $args );
+
+			add_action( 'after_switch_theme',   array( $this, 'set_theme_mod' ) );
+			add_action( 'customize_save_after', array( $this, 'set_theme_mod' ) );
+		}
+
+		/**
 		 * Enqueue the styles and scripts.
 		 */
 		public function enqueue() {
@@ -61,7 +71,7 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 			$this->fonts->print_theme_customizer_css_locations();
 			$this->fonts->print_theme_customizer_css_classes();
 
-			$set_value = $this->value();
+			$saved_value = $this->value();
 			?>
 			<div class="fontPickerCustomControl">
 				<select <?php $this->link(); ?>>
@@ -77,7 +87,7 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 						foreach ( $this->choices as $key => $font ) {
 							$class = null;
 
-							if ( $key == $set_value ) {
+							if ( $key === $saved_value ) {
 								$class = ' selected';
 							}
 
@@ -98,6 +108,52 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 				});
 			</script>
 			<?php
+		}
+
+		/**
+		 * Assign CSS to theme mod.
+		 */
+		public function set_theme_mod() {
+			$saved_value = $this->value();
+
+			foreach ( $this->choices as $key => $font ) {
+				if ( $key === $saved_value ) {
+					$font_styles = $this->get_css( $font['header']['cssDeclaration'], $font['body']['cssDeclaration'] );
+
+					if ( ! empty( $font_styles ) ) {
+						set_theme_mod( 'lsx_font_styles', $font_styles );
+					}
+				}
+			}
+		}
+
+		/**
+		 * Returns CSS.
+		 */
+		public function get_css( $font_header, $font_body ) {
+			global $wp_filesystem;
+
+			$css_fonts_file = get_template_directory() . '/assets/css/lsx-fonts.css';
+
+			if ( ! empty( $font_header ) && ! empty( $font_body ) && file_exists( $css_fonts_file ) ) {
+				if ( empty( $wp_filesystem ) ) {
+					require_once( ABSPATH . '/wp-admin/includes/file.php' );
+					WP_Filesystem();
+				}
+
+				if ( $wp_filesystem ) {
+					$css_fonts = $wp_filesystem->get_contents( $css_fonts_file );
+
+					if ( ! empty( $css_fonts ) ) {
+						$css_fonts = str_replace( '[font-family-headings]', $font_header, $css_fonts );
+						$css_fonts = str_replace( '[font-family-body]', $font_body, $css_fonts );
+						$css_fonts = preg_replace( '/(\/\*# ).+( \*\/)/', '', $css_fonts );
+						return $css_fonts;
+					}
+				}
+			}
+
+			return '';
 		}
 
 	}
