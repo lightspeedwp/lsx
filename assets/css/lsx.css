@@ -10,9 +10,13 @@
 
 .social-navigation > ul > li a[href*="codepen"]:before, .social-navigation > ul > li a[href*="digg"]:before, .social-navigation > ul > li a[href*="dribbble"]:before, .social-navigation > ul > li a[href*="dropbox"]:before, .social-navigation > ul > li a[href*="facebook"]:before, .social-navigation > ul > li a[href*="feed"]:before, .social-navigation > ul > li a[href*="flickr"]:before, .social-navigation > ul > li a[href*="foursquare"]:before, .social-navigation > ul > li a[href*="getpocket"]:before, .social-navigation > ul > li a[href*="github"]:before, .social-navigation > ul > li a[href*="instagram"]:before, .social-navigation > ul > li a[href*="linkedin"]:before, .social-navigation > ul > li a[href*="mailto"]:before, .social-navigation > ul > li a[href*="pinterest"]:before, .social-navigation > ul > li a[href*="plus.google"]:before, .social-navigation > ul > li a[href*="polldaddy"]:before, .social-navigation > ul > li a[href*="reddit"]:before, .social-navigation > ul > li a[href*="spotify"]:before, .social-navigation > ul > li a[href*="stumbleupon"]:before, .social-navigation > ul > li a[href*="tumblr"]:before, .social-navigation > ul > li a[href*="twitch"]:before, .social-navigation > ul > li a[href*="twitter"]:before, .social-navigation > ul > li a[href*="vimeo"]:before, .social-navigation > ul > li a[href*="wordpress"]:before, .social-navigation > ul > li a[href*="youtube"]:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 22px; transition: color 300ms ease-in-out; }
 
+.form-control { border-width: 2px; box-shadow: none; font-size: 18px; line-height: 1.33; padding: 10px 30px; transition: border-color 150ms ease-in-out; }
+
+*, *:focus, *:active:focus { outline: none !important; }
+
 body { direction: ltr; }
 
-.btn { background-color: #418AD0; border: 0 none; border-radius: 3px; box-shadow: 2px 2px 0 0 #27639D; color: #FFF; font-size: 15px; font-weight: 700; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease-in-out; }
+.btn { background-color: #418AD0; border: 0 none; box-shadow: 2px 2px 0 0 #27639D; color: #FFF; font-size: 15px; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 150ms ease-in-out; }
 
 .btn:hover { background-color: #3582cd; color: #FFF; }
 
@@ -22,17 +26,13 @@ body { direction: ltr; }
 
 .btn:active { left: 2px; top: 2px; box-shadow: none; }
 
-#footer-cta { background-color: #2B3840; color: #FFF; padding-top: 40px; }
+#footer-cta { background-color: #2B3840; color: #FFF; padding-bottom: 40px; padding-top: 40px; }
 
-#footer-cta .widget { margin-bottom: 40px; }
+#footer-cta .lsx-hero-unit { margin: 0 auto; text-align: center; }
 
-#footer-cta .widget-title { font-size: 30px; font-weight: 400; line-height: 1.2; margin-bottom: 15px; margin-top: 0; }
+#footer-cta .widget-title { font-size: 30px; font-weight: 400; line-height: 1.2; margin-bottom: 10px; margin-top: 0; }
 
-#footer-cta .widget_caldera_forms_widget .caldera-newsletter-field { margin-bottom: 0; }
-
-#footer-cta .widget_caldera_forms_widget .caldera-newsletter-field .form-control { border: 2px solid #DDD; border-radius: 1px 0 0 1px; box-shadow: none; color: #9F9C9C; font-size: 18px; height: 48px; padding: 10px 30px; }
-
-#footer-cta .widget_caldera_forms_widget .caldera-newsletter-btn .btn { border-radius: 0 3px 3px 0; font-weight: 700; height: 46px; letter-spacing: .5px; margin-left: -15px; width: 100%; }
+#footer-cta p, #footer-cta .textwidget { font-size: 22px; line-height: 1.35; margin-bottom: 30px; }
 
 #footer-widgets { padding: 15px 0 45px; }
 

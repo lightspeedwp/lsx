@@ -1,11 +1,9 @@
 .btn {
 	background-color: nth($blue, 1);
 	border: 0 none;
-	border-radius: 3px;
 	box-shadow: 2px 2px 0 0 nth($blue, 3);
 	color: #FFF;
 	font-size: 15px;
-	font-weight: 700;
 	left: 0;
 	letter-spacing: 0.6px;
 	line-height: 1.25;
@@ -13,7 +11,7 @@
 	position: relative;
 	text-transform: uppercase;
 	top: 0;
-	transition: all 100ms ease-in-out;
+	transition: all 150ms ease-in-out;
 
 	&:hover {
 		background-color: nth($blue, 4);

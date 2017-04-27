@@ -1,3 +1,11 @@
+*,
+*:focus,
+*:active:focus { outline: none !important; }
+
 body {
 	direction: ltr;
+}
+
+.form-control {
+	@extend %lsx-form-field;
 }

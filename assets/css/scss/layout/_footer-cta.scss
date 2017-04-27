@@ -1,42 +1,26 @@
 #footer-cta {
 	background-color: $footer-cta-color;
 	color: #FFF;
+	padding-bottom: 40px;
 	padding-top: 40px;
 
-	.widget { margin-bottom: 40px; }
+	.lsx-hero-unit {
+		margin: 0 auto;
+		text-align: center;
+	}
 
 	.widget-title {
 		font-size: 30px;
 		font-weight: 400;
 		line-height: 1.2;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 		margin-top: 0;
 	}
 
-	.widget_caldera_forms_widget {
-		.caldera-newsletter-field {
-			margin-bottom: 0;
-
-			.form-control {
-				border: 2px solid #DDD;
-				border-radius: 1px 0 0 1px;
-				box-shadow: none;
-				color: #9F9C9C;
-				font-size: 18px;
-				height: 48px;
-				padding: 10px 30px;
-			}
-		}
-
-		.caldera-newsletter-btn {
-			.btn {
-				border-radius: 0 3px 3px 0;
-				font-weight: 700;
-				height: 46px;
-				letter-spacing: .5px;
-				margin-left: -15px;
-				width: 100%;
-			}
-		}
+	p,
+	.textwidget {
+		font-size: 22px;
+		line-height: 1.35;
+		margin-bottom: 30px;
 	}
 }
