@@ -101,9 +101,10 @@ Social networks that aren't currently supported will be indicated by a generic s
 * Portfolio single gallery images are minimum 1140px wide
 
 ## Hooks / Actions
-`add_action('lsx_body_top','your_function_name');`
-`function your_function_name() { echo 'content'; }`
-
+```
+add_action('lsx_body_top','your_function_name');
+function your_function_name() { echo 'content'; }
+```
 
 Below is a layout of where the actions are located, so you can easily position you HTML.
 ```
