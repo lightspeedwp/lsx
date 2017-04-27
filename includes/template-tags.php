@@ -718,7 +718,7 @@ if ( ! function_exists( 'lsx_add_top_menu' ) ) :
 	 * @subpackage template-tags
 	 */
 	function lsx_add_top_menu() {
-		if ( has_nav_menu( 'top-menu' ) || has_nav_menu( ' top-menu-left' ) ) :
+		if ( has_nav_menu( 'top-menu' ) || has_nav_menu( 'top-menu-left' ) ) :
 			?>
 			<div id="top-menu" class="<?php lsx_top_menu_classes(); ?>">
 				<div class="container">
