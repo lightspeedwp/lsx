@@ -39,6 +39,7 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 
 		if ( is_child_theme() && file_exists( get_stylesheet_directory_uri() . '/custom.css' ) ) {
 			wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css', array( 'lsx_main' ), LSX_VERSION );
+			wp_style_add_data( 'child-css', 'rtl', 'replace' );
 		}
 
 		// Google Fonts
