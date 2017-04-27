@@ -175,17 +175,17 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 			'attachments' => array(
 				'image-banner-placeholder-01' => array(
 					'post_title' => esc_html_x( 'Banner Placeholder 01', 'Theme starter content', 'lsx' ),
-					'file' => 'img/banner-placeholder-01.jpg',
+					'file' => 'assets/images/admin/banner-placeholder-01.jpg',
 				),
 
 				'image-banner-placeholder-02' => array(
 					'post_title' => esc_html_x( 'Banner Placeholder 02', 'Theme starter content', 'lsx' ),
-					'file' => 'img/banner-placeholder-02.jpg',
+					'file' => 'assets/images/admin/banner-placeholder-02.jpg',
 				),
 
 				'image-banner-placeholder-03' => array(
 					'post_title' => esc_html_x( 'Banner Placeholder 03', 'Theme starter content', 'lsx' ),
-					'file' => 'img/banner-placeholder-03.jpg',
+					'file' => 'assets/images/admin/banner-placeholder-03.jpg',
 				),
 			),
 

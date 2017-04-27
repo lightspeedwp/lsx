@@ -2,7 +2,7 @@
  * Theme Customizer enhancements for a better user experience.
  * This is the JS that runs on the site in the preview window.
  */
-(function( $ ) {
+( function( $ ) {
 
 	// Update the site title in real time...
 	wp.customize( 'blogname', function( value ) {
@@ -33,9 +33,11 @@
 			if ( true == newval ) {
 				$( 'body header.navbar' ).addClass( 'navbar-static-top' );
 				$( 'body' ).addClass( 'top-menu-fixed');
+				lsx.set_main_menu_as_fixed();
 			} else {
 				$( 'body header.navbar' ).removeClass( 'navbar-static-top' );
 				$( 'body' ).removeClass( 'top-menu-fixed' );
+				$( 'body header.navbar' ).trigger( 'detach.ScrollToFixed' );
 			}
 		} );
 	} );
@@ -43,13 +45,12 @@
     //Update the fixed header in real time...
 	wp.customize( 'lsx_header_search', function( value ) {
 		value.bind( function( newval ) {
-
-			if(true == newval){
-				$('body #searchform').show();
-			}else{
-				$('body #searchform').hide();
+			if ( true == newval ) {
+				$( 'body #searchform' ).show();
+			} else {
+				$( 'body #searchform' ).hide();
 			}
 		} );
 	} );
 
-})( jQuery );
+} )( jQuery );
