@@ -135,7 +135,7 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 
 			$css_fonts_file = get_template_directory() . '/assets/css/lsx-fonts.css';
 
-			if ( ! empty( $font_header ) && ! empty( $font_body ) && file_exists( $css_fonts_file ) ) {
+			if ( file_exists( $css_fonts_file ) ) {
 				if ( empty( $wp_filesystem ) ) {
 					require_once( ABSPATH . '/wp-admin/includes/file.php' );
 					WP_Filesystem();

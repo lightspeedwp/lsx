@@ -151,6 +151,22 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 	 * @return		$lsx_controls array()
 	 */
 	function lsx_customizer_font_controls( $lsx_controls ) {
+		global $wp_filesystem;
+
+		$data_fonts_file = get_template_directory() . '/assets/jsons/lsx-fonts.json';
+
+		if ( file_exists( $data_fonts_file ) ) {
+			if ( empty( $wp_filesystem ) ) {
+				require_once( ABSPATH . 'wp-admin/includes/file.php' );
+				WP_Filesystem();
+			}
+
+			if ( $wp_filesystem ) {
+				$data_fonts = $wp_filesystem->get_contents( $data_fonts_file );
+				$data_fonts = json_decode( $data_fonts, true );
+			}
+		}
+
 		$lsx_controls['sections']['lsx-font'] = array(
 			'title'       => esc_html__( 'Font', 'lsx' ),
 			'description' => esc_html__( 'Change the fonts sitewide.', 'lsx' ),
@@ -168,78 +184,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 			'section'  => 'lsx-font',
 			'settings' => 'lsx_font',
 			'control'  => 'LSX_Customize_Font_Control',
-			'choices'  => array(
-				'lora_noto_sans' => array(
-					'header' => array(
-						'title'          => esc_html__( 'Lora', 'lsx' ),
-						'location'       => 'Lora',
-						'cssDeclaration' => "'Lora', serif",
-						'cssClass'       => 'lora',
-					),
-					'body' => array(
-						'title'          => esc_html__( 'Noto Sans', 'lsx' ),
-						'location'       => 'Noto+Sans',
-						'cssDeclaration' => "'Noto Sans', sans-serif",
-						'cssClass'       => 'notoSans',
-					),
-				),
-				'raleway_open_sans' => array(
-					'header' => array(
-						'title'          => esc_html__( 'Raleway', 'lsx' ),
-						'location'       => 'Raleway',
-						'cssDeclaration' => "'Raleway', sans-serif",
-						'cssClass'       => 'raleway',
-					),
-					'body' => array(
-						'title'          => esc_html__( 'Open Sans', 'lsx' ),
-						'location'       => 'Open+Sans',
-						'cssDeclaration' => "'Open Sans', sans-serif",
-						'cssClass'       => 'openSans',
-					),
-				),
-				'noto_serif_noto_sans' => array(
-					'header' => array(
-						'title'          => esc_html__( 'Noto Serif', 'lsx' ),
-						'location'       => 'Noto+Serif',
-						'cssDeclaration' => "'Noto Serif', serif",
-						'cssClass'       => 'notoSerif',
-					),
-					'body' => array(
-						'title'          => esc_html__( 'Noto Sans', 'lsx' ),
-						'location'       => 'Noto+Sans',
-						'cssDeclaration' => "'Noto Sans', sans-serif",
-						'cssClass'       => 'notoSans',
-					),
-				),
-				'noto_sans_noto_sans' => array(
-					'header' => array(
-						'title'          => esc_html__( 'Noto Sans', 'lsx' ),
-						'location'       => 'Noto+Sans',
-						'cssDeclaration' => "'Noto Sans', sans-serif",
-						'cssClass'       => 'notoSans',
-					),
-					'body' => array(
-						'title' => esc_html__( 'Noto Sans', 'lsx' ),
-						'location'       => 'Noto+Sans',
-						'cssDeclaration' => "'Noto Sans', sans-serif",
-						'cssClass'       => 'notoSans',
-					),
-				),
-				'alegreya_open_sans' => array(
-					'header' => array(
-						'title'          => esc_html__( 'Alegreya', 'lsx' ),
-						'location'       => 'Alegreya',
-						'cssDeclaration' => "'Alegreya', serif",
-						'cssClass'       => 'alegreya',
-					),
-					'body' => array(
-						'title'          => esc_html__( 'Open Sans', 'lsx' ),
-						'location'       => 'Open+Sans',
-						'cssDeclaration' => "'Open Sans', sans-serif",
-						'cssClass'       => 'openSans',
-					),
-				),
-			),
+			'choices'  => $data_fonts,
 			'priority' => 2,
 		);
 
