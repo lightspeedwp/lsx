@@ -751,7 +751,7 @@ if ( ! function_exists( 'lsx_add_top_menu' ) ) :
 
 endif;
 
-add_action( 'lsx_header_top', 'lsx_add_top_menu' );
+add_action( 'lsx_header_before', 'lsx_add_top_menu' );
 
 if ( ! function_exists( 'lsx_is_form_enabled' ) && class_exists( 'Caldera_Forms' ) ) :
 

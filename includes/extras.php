@@ -41,6 +41,8 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 
 		$header_layout = get_theme_mod( 'lsx_header_layout', 'inline' );
 		$classes[]     = 'header-' . $header_layout;
+		$fixed_header  = get_theme_mod( 'lsx_header_fixed', false );
+		$search_form   = get_theme_mod( 'lsx_header_search', false );
 
 		// Add post/page slug
 		if ( isset( $post ) ) {
@@ -58,6 +60,14 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 
 		if ( has_nav_menu( 'top-menu' ) || has_nav_menu( 'top-menu-left' ) ) {
 			$classes[] = 'has-top-menu';
+		}
+
+		if ( false !== $fixed_header ) {
+			$classes[] = 'top-menu-fixed';
+		}
+
+		if ( false !== $search_form ) {
+			$classes[] = 'has-header-search';
 		}
 
 		if ( '1' === get_theme_mod( 'lsx_preloader_content_status', '1' ) ) {

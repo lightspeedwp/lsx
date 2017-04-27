@@ -97,10 +97,10 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-3.5.0.min.js', array(), LSX_VERSION, false );
 
 		wp_enqueue_script( 'imagesLoaded', get_template_directory_uri() . '/assets/js/vendor/imagesloaded.pkgd.min.js', array( 'masonry' ), LSX_VERSION, true );
-		wp_enqueue_script( 'sticky', get_template_directory_uri() . '/assets/js/vendor/jquery.sticky.min.js', array( 'jquery' ), LSX_VERSION, true );
+		wp_enqueue_script( 'scrolltofixed', get_template_directory_uri() . '/assets/js/vendor/jquery-scrolltofixed-min.js', array( 'jquery' ), LSX_VERSION, true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), LSX_VERSION, true );
 
-		wp_enqueue_script( 'lsx_script', get_template_directory_uri() . '/assets/js/lsx' . $min . '.js', array( 'jquery', 'bootstrap', 'modernizr', 'masonry', 'imagesLoaded', 'sticky', 'picturefill' ), LSX_VERSION, true );
+		wp_enqueue_script( 'lsx_script', get_template_directory_uri() . '/assets/js/lsx' . $min . '.js', array( 'jquery', 'bootstrap', 'modernizr', 'masonry', 'imagesLoaded', 'scrolltofixed', 'picturefill' ), LSX_VERSION, true );
 
 		// Script parameters
 
