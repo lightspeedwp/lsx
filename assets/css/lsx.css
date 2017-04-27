@@ -1,6 +1,4 @@
 @charset "UTF-8";
-@import url("//fonts.googleapis.com/css?family=Noto+Sans:400,700");
-@import url("//fonts.googleapis.com/css?family=Lora:400,700");
 /** Variables This file contains all the project's variables. */
 /** LSX Variables This file contains the theme's variables declarations and some vendor's variables overriding. Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project. */
 /* Import the vendor's variables so we can use it in our own code */
@@ -16,27 +14,35 @@
 
 body { direction: ltr; }
 
-.btn { background-color: #418AD0; border: 0 none; box-shadow: 2px 2px 0 0 #2c70b2; color: #FFF; font-size: 15px; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
+.btn { background-color: #418AD0; border: 0 none; box-shadow: 2px 2px 0 0 #27639e; color: #FFF; font-size: 15px; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
 
 .btn:hover { background-color: #3582cd; color: #FFF; }
 
-.btn:active { box-shadow: 0 0 0 0 #2c70b2; }
+.btn:active { box-shadow: 0 0 0 0 #27639e; }
 
-.btn.cta-btn { background-color: #F7AE00; box-shadow: 2px 2px 0 0 #c48a00; }
+.btn.cta-btn { background-color: #F7AE00; box-shadow: 2px 2px 0 0 #ab7800; }
 
 .btn.cta-btn:hover { background-color: #EDA700; }
 
-.btn.cta-btn:active { box-shadow: 0 0 0 0 #c48a00; }
+.btn.cta-btn:active { box-shadow: 0 0 0 0 #ab7800; }
 
 .btn:active { left: 2px; top: 2px; }
 
-#footer-cta { background-color: #2B3840; color: #FFF; padding-bottom: 40px; padding-top: 40px; }
+#footer-cta { padding-bottom: 40px; padding-top: 40px; }
 
 #footer-cta .lsx-hero-unit { margin: 0 auto; min-width: 290px; text-align: center; }
 
 #footer-cta .widget-title { font-size: 30px; font-weight: 400; line-height: 1.2; margin-bottom: 10px; margin-top: 0; }
 
-#footer-cta p, #footer-cta .textwidget { font-size: 22px; line-height: 1.35; margin-bottom: 30px; }
+#footer-cta p, #footer-cta .textwidget { line-height: 1.35; margin-bottom: 30px; }
+
+@media (min-width: 1200px) { #footer-cta p, #footer-cta .textwidget { font-size: 22px; } }
+
+#footer-cta { background-color: #2B3840; color: #FFF; }
+
+#footer-cta a:not(.btn):not(.button), #footer-cta a:not(.btn):not(.button):active, #footer-cta a:not(.btn):not(.button):visited { color: #418AD0; }
+
+#footer-cta a:not(.btn):not(.button):hover, #footer-cta a:not(.btn):not(.button):hover:active, #footer-cta a:not(.btn):not(.button):focus { color: #27639D; }
 
 #footer-widgets { padding: 15px 0 45px; }
 

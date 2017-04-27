@@ -1,6 +1,4 @@
 #footer-cta {
-	background-color: $footer-cta-color;
-	color: #FFF;
 	padding-bottom: 40px;
 	padding-top: 40px;
 
@@ -20,8 +18,11 @@
 
 	p,
 	.textwidget {
-		font-size: 22px;
 		line-height: 1.35;
 		margin-bottom: 30px;
+
+		@include media('>=desktop') { font-size: 22px; }
 	}
 }
+
+@include footer-cta-colours();

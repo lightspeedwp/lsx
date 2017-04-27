@@ -10,7 +10,6 @@ $dark-gray: #434343;
 $light-gray: #F6F6F6;
 $orange: (#F7AE00, #CE9100, #EDA700);
 $red-accent: #D84E2E;
-$footer-cta-color: #2B3840;
 
 $footer: (
 	bg: #232222,
@@ -24,6 +23,13 @@ $footer-widgets: (
 	color: #FFF,
 	link: nth($orange, 1),
 	hover: nth($orange, 2)
+);
+
+$footer-cta: (
+	bg: #2B3840,
+	color: #FFF,
+	link: nth($blue, 1),
+	hover: nth($blue, 3)
 );
 
 $social-icons: (
