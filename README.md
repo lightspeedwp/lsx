@@ -224,23 +224,22 @@ Below is a layout of where the actions are located, so you can easily position y
 
 `lsx_allowed_post_type_banners` - receives 1 parameter, allow you 'enable' the banners on any custom post types you have registered. `$post_types = array('post','page');`
  
-'lsx_thumbnail_size' - receives 1 parameter, allows you to change the size of the thumbnail being called. Without having to edit the templates. `$size = 'lsx-thumbnail-wide' or array('width','height');`
+`lsx_thumbnail_size` - receives 1 parameter, allows you to change the size of the thumbnail being called. Without having to edit the templates. `$size = 'lsx-thumbnail-wide' or array('width','height');`
  
-'lsx_wp_nav_menu_item' - receives 1 parameter, allows you to change the HTML output of a nav item.
-`$item_html = <a href="#">Home</a>;
+`lsx_wp_nav_menu_item` - receives 1 parameter, allows you to change the HTML output of a nav item. `$item_html = <a href="#">Home</a>;
  
-'lsx_archive_column_number' - receives 1 parameter, allows you to change the number of columns on a masonry layout.
-`$column = 3;`
+`lsx_archive_column_number` - receives 1 parameter, allows you to change the number of columns on a masonry layout. `$column = 3;`
  
-'lsx_post_navigation_labels' - receives 1 parameter, allows you to change the posts navigation text.
-`$labels = array(
-		'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
-		'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
-		'title' 	=> __( 'Posts navigation', 'lsx' )
-	);`
+`lsx_post_navigation_labels` - receives 1 parameter, allows you to change the posts navigation text.
+```
+$labels = array(
+	'next' 		=> '<span class="meta-nav">&larr;</span> '.__( 'Older posts', 'lsx' ),
+	'previous' 	=> __( 'Newer posts', 'lsx' ).' <span class="meta-nav">&rarr;</span>',
+	'title' 	=> __( 'Posts navigation', 'lsx' )
+);
+```
 	
-'lsx_customizer_controls' - receives 1 parameter, allows you to add and remove Customizer options, You can see examples of different customizer field in 'functions.php line 32'. 
-`$lsx_controls = array();`
+`lsx_customizer_controls` - receives 1 parameter, allows you to add and remove Customizer options, You can see examples of different customizer field in 'functions.php line 32'. `$lsx_controls = array();`
 
 ## Setup
 
