@@ -237,7 +237,7 @@ gulp.task('sass-sensei', function() {
 gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl', 'plugins-styles', 'plugins-styles-rtl']);
 
 gulp.task('js', function() {
-	gulp.src('assets/js/src/lsx.js')
+	gulp.src('assets/js/src/**/*.js')
 		.pipe(jshint())
 		.pipe(errorreporter)
 		.pipe(concat('lsx.min.js'))
