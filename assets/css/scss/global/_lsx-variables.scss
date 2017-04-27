@@ -5,11 +5,24 @@
  * Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project.
  */
 
-$blue: (#418AD0, #374750, #27639D, darken(#418AD0, 3%));
+$blue: (#418AD0, #374750, #367DC0, darken(#418AD0, 3%));
 $dark-gray: #434343;
 $light-gray: #F6F6F6;
 $orange: (#F7AE00, #CE9100, #EDA700);
 $red-accent: #D84E2E;
+
+$top-menu: (
+	bg: #F2F2F2,
+	link: nth($blue, 1),
+	hover: nth($orange, 1),
+	icon: $dark-gray,
+	icon-hover: nth($orange, 1),
+	dropdown: nth($blue, 2),
+	dropdown-hover: #2B3840,
+	dropdown-link: #FFF,
+	dropdown-link-hover: nth($blue, 1),
+	line-height: 32px
+);
 
 $footer: (
 	bg: #232222,

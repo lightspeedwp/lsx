@@ -1,35 +1,8 @@
 .btn {
-	background-color: nth($blue, 1);
-	border: 0 none;
-	box-shadow: 2px 2px 0 0 darken(nth($blue, 1), 15%);
-	color: #FFF;
-	font-size: 15px;
-	left: 0;
-	letter-spacing: 0.6px;
-	line-height: 1.25;
-	padding: 15px 40px;
-	position: relative;
-	text-transform: uppercase;
-	top: 0;
-	transition: all 100ms ease;
+	@include lsx-button-scaffolding();
+	@include lsx-button();
+}
 
-	&:hover {
-		background-color: nth($blue, 4);
-		color: #FFF;
-	}
-
-	&:active { box-shadow: 0 0 0 0 darken(nth($blue, 1), 15%); }
-
-	&.cta-btn {
-		background-color: nth($orange, 1);
-		box-shadow: 2px 2px 0 0 darken(nth($orange, 1), 15%);
-
-		&:hover { background-color: nth($orange, 3); }
-		&:active { box-shadow: 0 0 0 0 darken(nth($orange, 1), 15%); }
-	}
-
-	&:active {
-		left: 2px;
-		top: 2px;
-	}
+.cta-btn {
+	@include lsx-button($bg: nth($orange, 1), $bg-hover: nth($orange, 3));
 }

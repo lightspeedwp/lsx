@@ -2,7 +2,7 @@
 /** Variables This file contains all the project's variables. */
 /** LSX Variables This file contains the theme's variables declarations and some vendor's variables overriding. Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project. */
 /* Import the vendor's variables so we can use it in our own code */
-.social-navigation > ul, .footer-navigation > ul { list-style: none; padding-right: 0; }
+#top-menu > .container > .top-menu > .menu, .social-navigation > ul, .footer-navigation > ul { list-style: none; padding-right: 0; }
 
 .social-navigation > ul > li a[href*="codepen"], .social-navigation > ul > li a[href*="digg"], .social-navigation > ul > li a[href*="dribbble"], .social-navigation > ul > li a[href*="dropbox"], .social-navigation > ul > li a[href*="facebook"], .social-navigation > ul > li a[href*="feed"], .social-navigation > ul > li a[href*="flickr"], .social-navigation > ul > li a[href*="foursquare"], .social-navigation > ul > li a[href*="getpocket"], .social-navigation > ul > li a[href*="github"], .social-navigation > ul > li a[href*="instagram"], .social-navigation > ul > li a[href*="linkedin"], .social-navigation > ul > li a[href*="mailto"], .social-navigation > ul > li a[href*="pinterest"], .social-navigation > ul > li a[href*="plus.google"], .social-navigation > ul > li a[href*="polldaddy"], .social-navigation > ul > li a[href*="reddit"], .social-navigation > ul > li a[href*="spotify"], .social-navigation > ul > li a[href*="stumbleupon"], .social-navigation > ul > li a[href*="tumblr"], .social-navigation > ul > li a[href*="twitch"], .social-navigation > ul > li a[href*="twitter"], .social-navigation > ul > li a[href*="vimeo"], .social-navigation > ul > li a[href*="wordpress"], .social-navigation > ul > li a[href*="youtube"] { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
 
@@ -14,19 +14,65 @@
 
 body { direction: rtl; }
 
-.btn { background-color: #418AD0; border: 0 none; box-shadow: -2px 2px 0 0 #27639e; color: #FFF; font-size: 15px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
+.btn { box-shadow: -2px 2px 0 0 #27639e; transition: all 100ms ease; }
 
-.btn:hover { background-color: #3582cd; color: #FFF; }
+.btn, .btn:active, .btn:visited { border: 0 none; display: inline-block; font-size: 15px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; }
 
-.btn:active { box-shadow: 0 0 0 0 #27639e; }
+.btn, .btn:active, .btn:visited { background-color: #418AD0; color: #FFF; }
 
-.btn.cta-btn { background-color: #F7AE00; box-shadow: -2px 2px 0 0 #ab7800; }
+.btn:hover, .btn:hover:active, .btn:focus { background-color: #367DC0; color: #FFF; }
 
-.btn.cta-btn:hover { background-color: #EDA700; }
+.btn:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
 
-.btn.cta-btn:active { box-shadow: 0 0 0 0 #ab7800; }
+.cta-btn { box-shadow: -2px 2px 0 0 #ab7800; transition: all 100ms ease; }
 
-.btn:active { right: 2px; top: 2px; }
+.cta-btn, .cta-btn:active, .cta-btn:visited { background-color: #F7AE00; color: #FFF; }
+
+.cta-btn:hover, .cta-btn:hover:active, .cta-btn:focus { background-color: #EDA700; color: #FFF; }
+
+.cta-btn:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #ab7800; }
+
+#top-menu { background-color: #F2F2F2; }
+
+#top-menu .menu-item > a { color: #418AD0; }
+
+#top-menu .menu-item > a:before { color: #434343; }
+
+#top-menu .menu-item > a:hover { color: #F7AE00; }
+
+#top-menu .menu-item > a:hover:before { color: #F7AE00; }
+
+#top-menu > .container { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; padding: 0; width: 100%; height: 32px; }
+
+#top-menu > .container > .top-menu:not(.pull-left) { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; }
+
+#top-menu > .container > .top-menu.pull-left { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; float: none !important; }
+
+#top-menu > .container > .top-menu > .menu { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: nowrap; flex-wrap: nowrap; margin-bottom: 0; }
+
+#top-menu .menu-item { margin: 0 15px; }
+
+#top-menu .menu-item > a { font-size: 13px; transition: color 300ms ease; }
+
+#top-menu .menu-item > a:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 15px; padding-left: 5px; transition: color 300ms ease; }
+
+#top-menu .menu-item.map > a:before { content: ""; }
+
+#top-menu .menu-item.tel > a:before { content: ""; }
+
+#top-menu .menu-item.email > a:before { content: ""; }
+
+#top-menu .menu-item.cta { margin-left: 0; }
+
+#top-menu .menu-item.cta > a { transition: all 300ms ease; }
+
+#top-menu .menu-item.cta > a, #top-menu .menu-item.cta > a:active, #top-menu .menu-item.cta > a:visited { border: 0 none; display: inline-block; font-size: 15px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; }
+
+#top-menu .menu-item.cta > a, #top-menu .menu-item.cta > a:active, #top-menu .menu-item.cta > a:visited { background-color: #F7AE00; color: #FFF; border-radius: 0; }
+
+#top-menu .menu-item.cta > a:hover, #top-menu .menu-item.cta > a:hover:active, #top-menu .menu-item.cta > a:focus { background-color: #EDA700; color: #FFF; }
+
+#top-menu .menu-item.cta > a, #top-menu .menu-item.cta > a:active, #top-menu .menu-item.cta > a:visited { font-size: 12px; line-height: 32px; padding-bottom: 0; padding-top: 0; }
 
 #footer-cta { padding-bottom: 40px; padding-top: 40px; }
 
@@ -42,7 +88,7 @@ body { direction: rtl; }
 
 #footer-cta a:not(.btn):not(.button), #footer-cta a:not(.btn):not(.button):active, #footer-cta a:not(.btn):not(.button):visited { color: #418AD0; }
 
-#footer-cta a:not(.btn):not(.button):hover, #footer-cta a:not(.btn):not(.button):hover:active, #footer-cta a:not(.btn):not(.button):focus { color: #27639D; }
+#footer-cta a:not(.btn):not(.button):hover, #footer-cta a:not(.btn):not(.button):hover:active, #footer-cta a:not(.btn):not(.button):focus { color: #367DC0; }
 
 #footer-widgets { padding: 15px 0 45px; }
 

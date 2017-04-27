@@ -1,0 +1,110 @@
+@mixin top-menu-colours (
+	$bg: map-get($top-menu, bg),
+	$link: map-get($top-menu, link),
+	$hover: map-get($top-menu, hover),
+	$icon: map-get($top-menu, icon),
+	$icon-hover: map-get($top-menu, icon-hover),
+	$dropdown: map-get($top-menu, dropdown),
+	$dropdown-hover: map-get($top-menu, dropdown-hover),
+	$dropdown-link: map-get($top-menu, dropdown-link),
+	$dropdown-link-hover: map-get($top-menu, dropdown-link-hover)
+) {
+	#top-menu {
+		background-color: $bg;
+
+		.menu-item {
+			& > a {
+				color: $link;
+
+				&:before { color: $icon; }
+
+				&:hover {
+					color: $hover;
+
+					&:before { color: $icon-hover; }
+				}
+			}
+		}
+	}
+}
+
+@include top-menu-colours();
+
+#top-menu {
+	& > .container {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-end;
+		padding: 0;
+		width: 100%;
+		height: map-get($top-menu, line-height);
+
+		& > .top-menu {
+			&:not(.pull-left) { order: 1; }
+
+			&.pull-left {
+				flex-grow: 1;
+				float: none !important;
+			}
+
+			& > .menu {
+				@extend %list-unstyled;
+
+				align-items: center;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.menu-item {
+		margin: 0 15px;
+
+		&.dropdown {}
+
+		& > a {
+			font-size: 13px;
+			transition: color 300ms ease;
+
+			&:before {
+				@include fa-icon();
+
+				font-size: 15px;
+				padding-right: 5px;
+				transition: color 300ms ease;
+			}
+		}
+
+		&.map > a:before { content: $fa-var-map-o; }
+		&.tel > a:before { content: $fa-var-phone; }
+		&.email > a:before { content: $fa-var-envelope-o; }
+
+		&.cta {
+			margin-right: 0;
+
+			& > a {
+				@include lsx-button-scaffolding();
+				@include lsx-button(#FFF, #FFF, nth($orange, 1), nth($orange, 3), false, 0);
+
+				&,
+				&:active,
+				&:visited {
+					font-size: 12px;
+					line-height: map-get($top-menu, line-height);
+					padding-bottom: 0;
+					padding-top: 0;
+				}
+			}
+		}
+	}
+
+	.dropdown-menu {
+		& > .menu-item {
+			& > a {}
+		}
+	}
+}
