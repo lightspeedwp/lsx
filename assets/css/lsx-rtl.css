@@ -16,15 +16,19 @@
 
 body { direction: rtl; }
 
-.btn { background-color: #418AD0; border: 0 none; box-shadow: -2px 2px 0 0 #27639D; color: #FFF; font-size: 15px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 150ms ease-in-out; }
+.btn { background-color: #418AD0; border: 0 none; box-shadow: -2px 2px 0 0 #2c70b2; color: #FFF; font-size: 15px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
 
 .btn:hover { background-color: #3582cd; color: #FFF; }
 
-.btn.cta-btn { background-color: #F7AE00; box-shadow: -2px 2px 0 0 #CE9100; }
+.btn:active { box-shadow: 0 0 0 0 #2c70b2; }
+
+.btn.cta-btn { background-color: #F7AE00; box-shadow: -2px 2px 0 0 #c48a00; }
 
 .btn.cta-btn:hover { background-color: #EDA700; }
 
-.btn:active { right: 2px; top: 2px; box-shadow: none; }
+.btn.cta-btn:active { box-shadow: 0 0 0 0 #c48a00; }
+
+.btn:active { right: 2px; top: 2px; }
 
 #footer-cta { background-color: #2B3840; color: #FFF; padding-bottom: 40px; padding-top: 40px; }
 
