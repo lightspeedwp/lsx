@@ -11,9 +11,9 @@
 * Theme Name: LSX
 * Theme URI: https://www.lsdev.biz/product/lsx-wordpress-theme/
 * Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-* Requires at least: 4.5
-* Tested up to: 4.5.2
-* Stable tag: 4.5.2
+* Requires at least: 4.7
+* Tested up to: 4.7.4
+* Stable tag: 4.7.4
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,15 +52,6 @@ You can find documentation for the theme and its various extensions below:
 For support please [contact us](https://www.lsdev.biz/contact-us/).
 
 ## Frequently Asked Questions
-
-### How do I change the color scheme?
-
-You can change the colors of your site really easily using LSX.
-
-1. In your admin panel, go to Appearance -> Customize.
-4. Now you will see the Customizer and a tab called 'Colors'. Click this tab.
-5. You can now change your color scheme by selecting one of the predefined ones. Choose a color scheme you want from Base Color Scheme dropdown. You can preview the change in the Customizer.
-6. Once you are happy with your color changes you can click save and your changes will be reflected on your live site.
 
 ### How do I add the social links to the sidebar?
 
@@ -110,8 +101,8 @@ Social networks that aren't currently supported will be indicated by a generic s
 * Portfolio single gallery images are minimum 1140px wide
 
 ## Hooks / Actions
-`add_action('lsx_body_top','your_function_name'); 
-`function your_function_name() { echo 'content'; }
+`add_action('lsx_body_top','your_function_name');`
+`function your_function_name() { echo 'content'; }`
 
 
 Below is a layout of where the actions are located, so you can easily position you HTML.
@@ -141,8 +132,6 @@ Below is a layout of where the actions are located, so you can easily position y
 			lsx_header_bottom();
 	
 		</header>
-		
-		lsx_banner_content();
 	
 	lsx_header_after();
 		
@@ -215,11 +204,27 @@ Below is a layout of where the actions are located, so you can easily position y
 
 ## Filters
 
-'lsx_allowed_post_type_banners' - receives 1 parameter, allow you 'enable' the banners on any custom post types you have registered.
-`$post_types = array('post','page');
+`lsx_layout`
+
+`lsx_lazyload_is_enabled`
+
+`lsx_lazyload_placeholder_image`
+
+`lsx_the_excerpt_filter_post_types`
+
+`lsx_sidebar_enable`
+
+`lsx_blog_force_content_on_list`
+
+`lsx_blog_layout`
+
+`lsx_breadcrumbs`
+
+`lsx_bootstrap_column_size`
+
+`lsx_allowed_post_type_banners` - receives 1 parameter, allow you 'enable' the banners on any custom post types you have registered. `$post_types = array('post','page');`
  
-'lsx_thumbnail_size' - receives 1 parameter, allows you to change the size of the thumbnail being called. Without having to edit the templates.
-`$size = 'lsx-thumbnail-wide' or array('width','height');`
+'lsx_thumbnail_size' - receives 1 parameter, allows you to change the size of the thumbnail being called. Without having to edit the templates. `$size = 'lsx-thumbnail-wide' or array('width','height');`
  
 'lsx_wp_nav_menu_item' - receives 1 parameter, allows you to change the HTML output of a nav item.
 `$item_html = <a href="#">Home</a>;
@@ -261,31 +266,6 @@ This you need to do while inside the themes directory.
 Wait for the terminal to finish and test by running
 `gulp`
 
-## Development Workflow
- 
-### Components Upgrade
-Please note,  you will only ever run this to upgrade the vendor packages we use.  Otherwise you dont need these as the minified version of these are included in the theme.
-
-CD to the themes directory, if you are not there already.  You will be working in here from now on.
- 
-#### Step 1
-This part we actualy use Gulp to move and concatenate the files we need. So run the command below,  to read the package.json and download the "node_modules".
-`npm install`
- 
-#### Step 2
-Here is finally where we use gulp,  there are a few tasks set up.
-`gulp upgrade-components`
- 
-This will do the following
-
- * Grab the Sass files from the components folder and move them into /sass/bootstrap/ so app.css can use the mixins
- * Concatenate and Minify all of the bootstraps js file and moves them into /js/ as scripts.min.js 
-
-#### Install a new component for Node
-Change bootstrap to the name of the component here - https://www.npmjs.com/
-Its important to have the parameter --save,  so it save the package and version of the componenet to the package.json file.
-`npm install bootstrap --save`
-
 ## Developer Help - Usefull Gists
 
 ### Banners
@@ -297,8 +277,13 @@ Its important to have the parameter --save,  so it save the package and version 
 
  * Redirect a user to a login form if they are logged out (with template) - https://gist.github.com/krugazul/e92749510d31d4a10906
 
-## Resources
-* WP-Bootstrap-Navwalker (https://github.com/twittem/wp-bootstrap-navwalker) licensed under the GNU General Public License, version 2 (http://www.gnu.org/licenses/gpl-2.0.html)
-* Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1 (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-* lazysizes (https://github.com/aFarkas/lazysizes) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+## Third-party resources
+
+* [WP-Bootstrap-Navwalker](https://github.com/twittem/wp-bootstrap-navwalker) is licensed under the terms of the GNU GPL, Version 3
+* [Bootstrap](http://getbootstrap.com/) is licensed under the terms of the MIT license
+* [Font Awesome](http://fontawesome.io/) icons are licensed under the terms of the SIL OFL 1.1, and code licensed under the terms of MIT License
+* [Modernizr](https://modernizr.com/) is licensed under the terms of the MIT license
+* [imagesLoaded](http://imagesloaded.desandro.com/) is licensed under the terms of the MIT license
+* [ScrollToFixed](https://github.com/bigspotteddog/ScrollToFixed) is licensed under the terms of the MIT license
+* [Picturefill](https://scottjehl.github.io/picturefill/) is licensed under the terms of the MIT license
+* [lazysizes](https://github.com/aFarkas/lazysizes) is licensed under MIT license
