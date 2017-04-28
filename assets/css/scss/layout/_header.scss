@@ -1,8 +1,6 @@
 #masthead {
-	background-color: #FC0;
 	border: 0 none;
 	border-radius: 0;
-	color: $dark-gray;
 	margin-bottom: 0;
 	min-height: 0;
 
@@ -10,8 +8,8 @@
 		align-items: center;
 		display: flex;
 		flex-flow: row nowrap;
-		height: 80px;
 		justify-content: flex-start;
+		min-height: 80px;
 		padding-left: 50px;
 		padding-right: 50px;
 		width: 100%;
@@ -21,6 +19,20 @@
 		& > .mobile-menu-title {
 			@include media('>=desktop') { display: none; }
 		}
+
+		.site-branding { padding: 15px 0; }
+
+		.site-title {
+			margin: 0;
+
+			& > a {
+				@include lsx-link($red-accent, nth($orange, 1));
+
+				transition: color 300ms ease;
+			}
+		}
+
+		.site-description { margin-bottom: 0; }
 	}
 
 	#searchform {
@@ -29,3 +41,5 @@
 		right: 50px;
 	}
 }
+
+@include header-colours();
