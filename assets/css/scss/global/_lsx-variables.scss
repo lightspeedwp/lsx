@@ -73,6 +73,9 @@ $social-icons: (
 	'youtube': '\f16a'
 );
 
+$grid-float-breakpoint: 1200px;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
 $text-color: #4A4A4A;
 $link-color: nth($blue, 1);
 $link-hover-color: nth($orange, 1);
@@ -99,7 +102,6 @@ $line-height-base: 1.6;
 $btn-default-color: #FFF;
 $btn-font-weight: 700;
 $btn-border-radius-base: 3px;
-
 
 $input-height-base: 50px;
 $input-border: #DDD;

@@ -62,11 +62,11 @@
 			@include media('<phone') {
 				@include hide-text();
 
-				padding: 0 10px;
+				padding: 0;
 
 				&:before {
 					font-size: 18px;
-					padding-right: 0;
+					padding: 0 5px;
 				}
 			}
 		}
