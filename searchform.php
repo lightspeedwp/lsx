@@ -26,7 +26,9 @@ if ( is_customize_preview() ) {
 		</span>
 	</div>
 
-	<style id="lsx-header-search-css">
-		<?php echo esc_attr( $style ); ?>
-	</style>
+	<?php if ( is_customize_preview() ) : ?>
+		<style id="lsx-header-search-css">
+			<?php echo esc_attr( $style ); ?>
+		</style>
+	<?php endif; ?>
 </form>
