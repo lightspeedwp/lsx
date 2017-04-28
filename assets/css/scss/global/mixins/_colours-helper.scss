@@ -1,0 +1,13 @@
+@mixin lsx-link-colour ($color: nth($orange, 1), $hover: nth($orange, 2)) {
+	&,
+	&:active,
+	&:visited {
+		color: $color;
+	}
+
+	&:hover,
+	&:hover:active,
+	&:focus {
+		color: $hover;
+	}
+}

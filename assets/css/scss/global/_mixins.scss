@@ -1,84 +1,17 @@
-// Import the vendor's variables so we can use it in our own code
+// import the vendor's variables so we can use it in our own code
 @import '../../vendor/bootstrap/mixins';
 @import '../../vendor/font-awesome/mixins.scss';
 
-@mixin list-inline ($gap, $stabilize: true) {
-
-	@if $stabilize {
-		margin-left: $gap * -1;
-	}
-
-	& > li {
-		display: inline-block;
-		padding-left: $gap;
-		padding-right: $gap;
-	}
-}
-
-@mixin lsx-link ($color: nth($orange, 1), $hover: nth($orange, 2)) {
-	&,
-	&:active,
-	&:visited {
-		color: $color;
-	}
-
-	&:hover,
-	&:hover:active,
-	&:focus {
-		color: $hover;
-	}
-}
-
-@mixin lsx-button-scaffolding {
-	&,
-	&:active,
-	&:visited {
-		border: 0 none;
-		display: inline-block;
-		font-size: 15px;
-		left: 0;
-		letter-spacing: 0.6px;
-		line-height: 1.25;
-		padding: 15px 40px;
-		position: relative;
-		text-transform: uppercase;
-		top: 0;
-	}
-}
-
-
-@mixin lsx-button ($color: #FFF, $color-hover: #FFF, $bg: nth($blue, 1), $bg-hover: nth($blue, 3), $effect: true, $border-radius: true) {
-	&,
-	&:active,
-	&:visited {
-		background-color: $bg;
-		color: $color;
-
-		@if type-of($border-radius) != 'bool' { border-radius: $border-radius; }
-	}
-
-	&:hover,
-	&:hover:active,
-	&:focus {
-		background-color: $bg-hover;
-		color: $color-hover;
-	}
-
-	@if $effect {
-		box-shadow: 2px 2px 0 0 darken($bg, 15%);
-		transition: all 100ms ease;
-
-		&:active {
-			left: 2px;
-			top: 2px;
-			box-shadow: 0 0 0 0 darken($bg, 15%);
-		}
-	} @else {
-		transition: all 300ms ease;
-	}
-}
-
 @import 'mixins/include-media';
+
+// elements mixins
+@import 'mixins/list';
+@import 'mixins/button';
+
+// helper mixins
+@import 'mixins/colours-helper';
+
+// customizer mixins
 @import 'mixins/top-menu';
 @import 'mixins/header';
 @import 'mixins/footer';

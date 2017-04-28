@@ -4,7 +4,7 @@
 
 		.navbar-header {
 			.site-title {
-				& > a { @include lsx-link($link, $hover);}
+				& > a { @include lsx-link-colour($link, $hover);}
 			}
 
 			.site-description { color: $description; }

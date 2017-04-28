@@ -1,0 +1,12 @@
+@mixin list-inline ($gap, $stabilize: true) {
+
+	@if $stabilize {
+		margin-left: $gap * -1;
+	}
+
+	& > li {
+		display: inline-block;
+		padding-left: $gap;
+		padding-right: $gap;
+	}
+}
