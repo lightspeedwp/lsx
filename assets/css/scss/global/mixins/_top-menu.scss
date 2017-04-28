@@ -20,6 +20,8 @@
 			background-color: $dropdown;
 
 			& > .menu-item {
+				color: $dropdown-link;
+
 				&:hover,
 				&:active:hover,
 				&:focus {
@@ -28,7 +30,7 @@
 				}
 
 				& > a {
-					color: $dropdown-link;
+					color: inherit;
 
 					&:hover,
 					&:active:hover,
