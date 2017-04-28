@@ -91,12 +91,7 @@ if ( ! function_exists( 'lsx_header_classes' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_header_classes( $additional = false ) {
-		$classes      = 'banner navbar navbar-default';
-		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
-
-		if ( false !== $fixed_header ) {
-			$classes .= ' navbar-static-top';
-		}
+		$classes = 'banner navbar navbar-default';
 
 		if ( false !== $additional ) {
 			$classes .= ' ' . $additional;
@@ -116,12 +111,7 @@ if ( ! function_exists( 'lsx_top_menu_classes' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_top_menu_classes( $additional = false ) {
-		$classes      = 'top-menu-default';
-		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
-
-		if ( false !== $fixed_header ) {
-			$classes .= ' top-menu-fixed';
-		}
+		$classes = 'top-menu-default';
 
 		if ( false !== $additional ) {
 			$classes .= ' ' . $additional;

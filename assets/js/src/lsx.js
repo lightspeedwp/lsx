@@ -160,7 +160,7 @@ var lsx = Object.create( null );
 	 */
 	lsx.set_main_menu_as_fixed = function() {
 		if ( $( 'body' ).hasClass( 'top-menu-fixed' ) ) {
-			$( 'header.navbar.navbar-static-top' ).scrollToFixed( {
+			$( 'header.navbar' ).scrollToFixed( {
 				marginTop: function() {
 					var wpadminbar = $( '#wpadminbar' );
 

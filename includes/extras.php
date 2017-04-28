@@ -42,10 +42,6 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 		$header_layout = get_theme_mod( 'lsx_header_layout', 'inline' );
 		$classes[]     = 'header-' . $header_layout;
 
-		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
-		$search_form = get_theme_mod( 'lsx_header_search', false );
-
-		// Add post/page slug
 		if ( isset( $post ) ) {
 			$classes[] = $post->post_name;
 		}
@@ -63,25 +59,23 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = 'has-top-menu';
 		}
 
+		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
+
 		if ( false !== $fixed_header ) {
 			$classes[] = 'top-menu-fixed';
 		}
 
-		if ( true === $search_form ) {
+		$search_form  = get_theme_mod( 'lsx_header_search', false );
+
+		if ( false !== $search_form ) {
 			$classes[] = 'has-header-search';
 		}
 
-		if ( '1' === get_theme_mod( 'lsx_preloader_content_status', '1' ) ) {
+		$preloader_content  = get_theme_mod( 'lsx_preloader_content_status', false );
+
+		if ( false !== $preloader_content ) {
 			$classes[] = 'preloader-content-enable';
 		}
-
-		// Remove unnecessary classes
-		$home_id_class = 'page-id-' . get_option( 'page_on_front' );
-		$remove_classes = array(
-			'page-template-default',
-			$home_id_class,
-		);
-		$classes = array_diff( $classes, $remove_classes );
 
 		return $classes;
 	}

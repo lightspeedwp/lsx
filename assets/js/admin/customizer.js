@@ -19,11 +19,9 @@
 	wp.customize( 'lsx_header_fixed', function( setting ) {
 		setting.bind( function( value ) {
 			if ( true == value ) {
-				$( 'body header.navbar' ).addClass( 'navbar-static-top' );
 				$( 'body' ).addClass( 'top-menu-fixed');
 				lsx.set_main_menu_as_fixed();
 			} else {
-				$( 'body header.navbar' ).removeClass( 'navbar-static-top' );
 				$( 'body' ).removeClass( 'top-menu-fixed' );
 				$( 'body header.navbar' ).trigger( 'detach.ScrollToFixed' );
 			}
