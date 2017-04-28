@@ -24,13 +24,19 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 		load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
 
-		add_theme_support( 'site-logo', array(
-			'header-text' => array(
-				'site-title',
-				'site-description',
-			),
-			'size' => 'medium',
+		add_image_size( 'lsx-thumbnail-wide',   350, 230, true );
+		add_image_size( 'lsx-thumbnail-single', 750, 350, true );
+
+		register_nav_menus( array(
+			'primary'       => esc_html__( 'Primary Menu', 'lsx' ),
+			'top-menu'      => esc_html__( 'Top Menu (right)' , 'lsx' ),
+			'top-menu-left' => esc_html__( 'Top Menu (left)' , 'lsx' ),
+			'social'        => esc_html__( 'Social Menu' , 'lsx' ),
+			'footer'        => esc_html__( 'Footer Menu' , 'lsx' ),
 		) );
+
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'custom-background' );
 
 		add_theme_support( 'custom-logo', array(
 			'height'      => 50,
@@ -39,10 +45,7 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		add_theme_support( 'custom-background' );
-		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'title-tag' );
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'html5', array( 'caption' ) );
 
 		add_theme_support( 'post-formats', array(
 			'image',
@@ -54,21 +57,22 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 			'aside',
 		) );
 
-		register_nav_menus( array(
-			'primary'       => esc_html__( 'Primary Menu', 'lsx' ),
-			'top-menu'      => esc_html__( 'Top Menu (right)' , 'lsx' ),
-			'top-menu-left' => esc_html__( 'Top Menu (left)' , 'lsx' ),
-			'social'        => esc_html__( 'Social Menu' , 'lsx' ),
-			'footer'        => esc_html__( 'Footer Menu' , 'lsx' ),
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'sensei' );
+
+		add_theme_support( 'site-logo', array(
+			'header-text' => array(
+				'site-title',
+				'site-description',
+			),
+			'size' => 'medium',
 		) );
+
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'woocommerce' );
 
 		/* @TODO - Check if is still necessary */
 		//add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
-
-		add_theme_support( 'html5', array( 'caption' ) );
-
-		add_theme_support( 'woocommerce' );
-		add_theme_support( 'sensei' );
 
 		add_theme_support( 'starter-content', array(
 			'widgets' => array(
@@ -266,9 +270,6 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 				'lsx_layout' => '1c',
 			),
 		) );
-
-		add_image_size( 'lsx-thumbnail-wide',   350, 230, true );
-		add_image_size( 'lsx-thumbnail-single', 750, 350, true );
 	}
 
 endif;

@@ -84,47 +84,6 @@ endif;
 
 add_filter( 'body_class', 'lsx_body_class' );
 
-if ( ! function_exists( 'lsx_wp_title' ) ) :
-
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @package    lsx
-	 * @subpackage extras
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function lsx_wp_title( $title, $sep ) {
-		global $page, $paged;
-
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		// Add the blog name
-		$title .= get_bloginfo( 'name' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary:
-		if ( intval( $paged ) >= 2 || intval( $page ) >= 2 ) {
-			/* Translators: %s: page number */
-			$title .= " $sep " . sprintf( __( 'Page %s', 'lsx' ), max( intval( $paged ), intval( $page ) ) );
-		}
-
-		return $title;
-	}
-
-endif;
-
-add_filter( 'wp_title', 'lsx_wp_title', 10, 2 );
-
 if ( ! function_exists( 'lsx_embed_wrap' ) ) :
 
 	/**
