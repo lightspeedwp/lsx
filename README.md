@@ -242,6 +242,8 @@ $labels = array(
 	
 `lsx_customizer_controls` - receives 1 parameter, allows you to add and remove Customizer options, You can see examples of different customizer field in 'functions.php line 32'. `$lsx_controls = array();`
 
+`lsx_credit_link`
+
 ## Setup
 
  * Open your terminal

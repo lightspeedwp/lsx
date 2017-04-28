@@ -24,10 +24,22 @@
 							<?php
 								printf(
 									/* Translators: 1: current year, 2: blog name */
-									esc_html__( '&#169; %1$s %2$s All Rights Reserved.', 'lsx' ),
+									esc_html__( '&#169; %1$s %2$s All Rights Reserved', 'lsx' ),
 									esc_html( date_i18n( 'Y' ) ),
 									esc_html( get_bloginfo( 'name' ) )
-								); ?>
+								);
+							?>
+
+							<?php if ( apply_filters( 'lsx_credit_link', true ) ) : ?>
+								<?php
+									printf(
+										/* Translators: 1: theme name, 2: author name and link */
+										esc_html__( ' | %1$s is a WordPress theme developed by %2$s.', 'lsx' ),
+										'LSX',
+										'<a href="https://www.lsdev.biz/" title="LightSpeed WordPress Development - Unlocking the full value of your business, online" rel="author">LightSpeed</a>'
+									);
+								?>
+							<?php endif; ?>
 						</p>
 
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
