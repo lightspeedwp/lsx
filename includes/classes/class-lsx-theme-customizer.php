@@ -38,9 +38,6 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 
 			add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ), 20 );
 			add_action( 'customize_register',     array( $this, 'customizer' ), 11 );
-
-			add_action( 'wp_ajax_customizer_site_title',        array( $this, 'ajax_site_title' ) );
-			add_action( 'wp_ajax_nopriv_customizer_site_title', array( $this, 'ajax_site_title' ) );
 		}
 
 		/**
@@ -86,9 +83,30 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 				}
 			}
 
-			$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-			$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+			// Start selective refresh
+			if ( ! empty( $this->controls['selective_refresh'] ) ) {
+				foreach ( $this->controls['selective_refresh'] as $field_slug => $args ) {
+					$this->add_selective_refresh( $field_slug, $args, $wp_customize );
+				}
+			}
+
+			$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+			$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 			$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+
+			$wp_customize->selective_refresh->add_partial( 'blogname', array(
+				'selector'          => 'h1.site-title a',
+				'render_callback'   => function() {
+					bloginfo( 'name' );
+				},
+			) );
+
+			$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+				'selector'          => '.site-description',
+				'render_callback'   => function() {
+					bloginfo( 'description' );
+				},
+			) );
 		}
 
 		/**
@@ -111,8 +129,8 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 */
 		private function add_section( $slug, $args, $wp_customize ) {
 			$default_args = array(
-				'capability'  => 'edit_theme_options', //Capability needed to tweak
-				'description' => null, //Descriptive tooltip
+				'capability'  => 'edit_theme_options',
+				'description' => null,
 			);
 
 			$wp_customize->add_section( $slug, array_merge( $default_args, $args ) );
@@ -158,10 +176,18 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		}
 
 		/**
-		 * Returns the site title via ajax.
+		 * Create a selective refresh.
 		 */
-		public function ajax_site_title() {
-			lsx_site_identity();
+		private function add_selective_refresh( $slug, $args, $wp_customize ) {
+			$default_args = array(
+				'selector'        => null,
+				'render_callback' => null,
+			);
+
+			$wp_customize->selective_refresh->add_partial(
+				$slug,
+				array_merge( $default_args, $args )
+			);
 		}
 
 		/**
@@ -176,7 +202,7 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 * Returns a registered setting.
 		 */
 		public function get_setting( $id ) {
-			$setting = $this->controls['fields'][ $id ];
+			$setting = $this->controls['settings'][ $id ];
 			return $setting;
 		}
 

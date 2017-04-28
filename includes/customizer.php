@@ -69,6 +69,12 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 	 * @return		$lsx_controls array()
 	 */
 	function lsx_customizer_layout_controls( $lsx_controls ) {
+		$lsx_controls['sections']['lsx-layout'] = array(
+			'title'       => esc_html__( 'Layout', 'lsx' ),
+			'description' => esc_html__( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
+			'priority'    => 22,
+		);
+
 		$lsx_controls['settings']['lsx_header_layout']  = array(
 			'default'   => 'inline',
 			'type'      => 'theme_mod',
@@ -86,16 +92,21 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 			),
 		);
 
-		$lsx_controls['sections']['lsx-layout'] = array(
-			'title'       => esc_html__( 'Layout', 'lsx' ),
-			'description' => esc_html__( 'Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it.', 'lsx' ),
-			'priority'    => 22,
-		);
-
 		$lsx_controls['settings']['lsx_layout'] = array(
 			'default'   => '2cr',
 			'type'      => 'theme_mod',
 			'transport' => 'refresh',
+		);
+
+		$lsx_controls['fields']['lsx_layout'] = array(
+			'label'   => esc_html__( 'Body', 'lsx' ),
+			'section' => 'lsx-layout',
+			'control' => 'LSX_Customize_Layout_Control',
+			'choices' => array(
+				'1c',
+				'2cr',
+				'2cl',
+			),
 		);
 
 		$lsx_controls['settings']['lsx_header_fixed'] = array(
@@ -122,15 +133,17 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 			'type'    => 'checkbox',
 		);
 
-		$lsx_controls['fields']['lsx_layout'] = array(
-			'label'   => esc_html__( 'Body', 'lsx' ),
-			'section' => 'lsx-layout',
-			'control' => 'LSX_Customize_Layout_Control',
-			'choices' => array(
-				'1c',
-				'2cr',
-				'2cl',
-			),
+		$lsx_controls['selective_refresh']['lsx_header_search'] = array(
+			'selector'          => '#lsx-header-search-css',
+			'render_callback'   => function() {
+				$search_form = get_theme_mod( 'lsx_header_search' );
+
+				if ( true === $search_form ) {
+					echo 'body #searchform { display: block; }';
+				} else {
+					echo 'body #searchform { display: none; }';
+				}
+			},
 		);
 
 		return $lsx_controls;

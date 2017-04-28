@@ -41,8 +41,9 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 
 		$header_layout = get_theme_mod( 'lsx_header_layout', 'inline' );
 		$classes[]     = 'header-' . $header_layout;
-		$fixed_header  = get_theme_mod( 'lsx_header_fixed', false );
-		$search_form   = get_theme_mod( 'lsx_header_search', false );
+
+		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
+		$search_form = get_theme_mod( 'lsx_header_search', false );
 
 		// Add post/page slug
 		if ( isset( $post ) ) {
@@ -66,7 +67,7 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = 'top-menu-fixed';
 		}
 
-		if ( false !== $search_form ) {
+		if ( true === $search_form ) {
 			$classes[] = 'has-header-search';
 		}
 

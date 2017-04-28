@@ -1,7 +1,7 @@
 /**
  * Theme Customizer layout control JS.
  */
-( function( $ ) {
+jQuery( function( $ ) {
 
 	// custom controls
 	$( document ).on( 'click', '.header-layout-button', function() {
@@ -16,4 +16,4 @@
 		currently_selected.val( clicked.attr( 'data-option' ) ).trigger( 'change' );
 	});
 
-} )( jQuery );
+} );

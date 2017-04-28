@@ -1,7 +1,7 @@
 /**
  * A small jquery plugin that does all of the hard work.
  */
-(function( $ ) {
+jQuery( function( $ ) {
 
 	$.fn.fontPickerCustomControl = function() {
 
@@ -39,4 +39,4 @@
 
 	};
 
-})( jQuery );
+} );

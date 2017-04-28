@@ -32,7 +32,7 @@ if ( ! function_exists( 'lsx_sanitize_choices' ) ) :
 		if ( ! is_wp_error( $choices ) && ! empty( $choices ) ) {
 			$allowed_choices = array_keys( $choices );
 
-			if ( ! in_array( $value, $allowed_choices, true ) ) {
+			if ( ! in_array( $value, $allowed_choices ) ) {
 				$value = lsx_customizer_sanitize_get_default( $setting );
 			}
 

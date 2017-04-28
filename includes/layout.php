@@ -301,9 +301,9 @@ if ( ! function_exists( 'lsx_header_search_form' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_header_search_form() {
-		$search_form = get_theme_mod( 'lsx_header_search', 0 );
+		$search_form = get_theme_mod( 'lsx_header_search', false );
 
-		if ( $search_form || is_customize_preview() ) {
+		if ( true === $search_form || is_customize_preview() ) {
 			get_search_form( true );
 		}
 	}

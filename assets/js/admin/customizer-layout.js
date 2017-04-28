@@ -1,7 +1,7 @@
 /**
  * Theme Customizer layout control JS.
  */
-( function( $ ) {
+jQuery( function( $ ) {
 
 	// custom controls
 	$( document ).on( 'click', '.layout-button', function() {
@@ -15,4 +15,4 @@
 		$( input ).val( clicked.data('option') ).trigger( 'change' );
 	});
 
-} )( jQuery );
+} );

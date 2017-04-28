@@ -166,7 +166,7 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 			if ( preg_match( $pattern, $html_string, $matches ) ) {
 				$defined_classes = explode( ' ', $matches[1] );
 
-				if ( ! in_array( $new_class, $defined_classes, true ) ) {
+				if ( ! in_array( $new_class, $defined_classes ) ) {
 					$defined_classes[] = $new_class;
 
 					$html_string = str_replace(
