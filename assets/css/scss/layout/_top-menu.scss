@@ -1,33 +1,3 @@
-@mixin top-menu-colours (
-	$bg: map-get($top-menu, bg),
-	$link: map-get($top-menu, link),
-	$hover: map-get($top-menu, hover),
-	$icon: map-get($top-menu, icon),
-	$icon-hover: map-get($top-menu, icon-hover),
-	$dropdown: map-get($top-menu, dropdown),
-	$dropdown-hover: map-get($top-menu, dropdown-hover),
-	$dropdown-link: map-get($top-menu, dropdown-link),
-	$dropdown-link-hover: map-get($top-menu, dropdown-link-hover)
-) {
-	#top-menu {
-		background-color: $bg;
-
-		.menu-item {
-			& > a {
-				color: $link;
-
-				&:before { color: $icon; }
-
-				&:hover {
-					color: $hover;
-
-					&:before { color: $icon-hover; }
-				}
-			}
-		}
-	}
-}
-
 @include top-menu-colours();
 
 #top-menu {
@@ -39,7 +9,7 @@
 		justify-content: flex-end;
 		padding: 0;
 		width: 100%;
-		height: map-get($top-menu, line-height);
+		height: map-get($top-menu, height);
 
 		& > .top-menu {
 			&:not(.pull-left) { order: 1; }
@@ -54,20 +24,25 @@
 
 				align-items: center;
 				display: flex;
-				flex-direction: row;
-				flex-wrap: nowrap;
+				flex-flow: row nowrap;
 				margin-bottom: 0;
 			}
 		}
 	}
 
 	.menu-item {
-		margin: 0 15px;
-
-		&.dropdown {}
+		&.dropdown {
+			@include media('>=desktop') {
+				&:hover {
+					& > .dropdown-menu { display: block; }
+				}
+			}
+		}
 
 		& > a {
 			font-size: 13px;
+			line-height: map-get($top-menu, height);
+			padding: 0 15px;
 			transition: color 300ms ease;
 
 			&:before {
@@ -79,12 +54,26 @@
 			}
 		}
 
+		&:not(.cta) > a {
+			@include media('<phone') {
+				@include hide-text();
+
+				padding: 0 10px;
+
+				&:before {
+					font-size: 18px;
+					padding-right: 0;
+				}
+			}
+		}
+
 		&.map > a:before { content: $fa-var-map-o; }
 		&.tel > a:before { content: $fa-var-phone; }
 		&.email > a:before { content: $fa-var-envelope-o; }
 
 		&.cta {
-			margin-right: 0;
+			margin-left: 15px;
+			padding-right: 0;
 
 			& > a {
 				@include lsx-button-scaffolding();
@@ -94,7 +83,7 @@
 				&:active,
 				&:visited {
 					font-size: 12px;
-					line-height: map-get($top-menu, line-height);
+					line-height: map-get($top-menu, height);
 					padding-bottom: 0;
 					padding-top: 0;
 				}
@@ -103,8 +92,40 @@
 	}
 
 	.dropdown-menu {
+		border: 0 none;
+		border-radius: 0;
+		box-shadow: none;
+		left: 15px;
+		margin: 0;
+		padding: 0;
+
 		& > .menu-item {
-			& > a {}
+			padding: 0;
+
+			&.dropdown {
+				& > a {
+					&:after {
+						@include fa-icon();
+
+						color: #FFF;
+						content: $fa-var-angle-right;
+						position: absolute;
+						right: 15px;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+				}
+			}
+
+			& > a {
+				line-height: 1.5;
+				padding: 10px;
+			}
+		}
+
+		.dropdown-menu {
+			top: 0;
+			left: 100%;
 		}
 	}
 }
