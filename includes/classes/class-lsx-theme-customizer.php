@@ -124,10 +124,10 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		private function add_setting( $slug, $args, $wp_customize ) {
 			$wp_customize->add_setting( $slug,
 				array_merge( array(
-					'default'           => null, // Default setting/value to save
-					'type'              => 'theme_mod', // Is this an 'option' or a 'theme_mod'?
-					'capability'        => 'edit_theme_options', // Optional. Special permissions for accessing this setting.
-					'transport'         => 'postMessage', // What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+					'default'           => null,
+					'type'              => 'theme_mod',
+					'capability'        => 'edit_theme_options',
+					'transport'         => 'postMessage',
 					'sanitize_callback' => 'lsx_sanitize_choices',
 				), $args )
 			);

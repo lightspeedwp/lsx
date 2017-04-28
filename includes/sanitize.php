@@ -28,13 +28,18 @@ if ( ! function_exists( 'lsx_sanitize_choices' ) ) :
 		}
 
 		$choices = lsx_customizer_sanitize_get_choices( $setting );
-		$allowed_choices = array_keys( $choices );
 
-		if ( ! in_array( $value, $allowed_choices, true ) ) {
-			$value = lsx_customizer_sanitize_get_default( $setting );
+		if ( ! is_wp_error( $choices ) && ! empty( $choices ) ) {
+			$allowed_choices = array_keys( $choices );
+
+			if ( ! in_array( $value, $allowed_choices, true ) ) {
+				$value = lsx_customizer_sanitize_get_default( $setting );
+			}
+
+			return $value;
+		} else {
+			return $choices;
 		}
-
-		return $value;
 	}
 
 endif;
@@ -52,13 +57,15 @@ if ( ! function_exists( 'lsx_customizer_sanitize_get_choices' ) ) :
 	 */
 	function lsx_customizer_sanitize_get_choices( $id ) {
 		global $lsx_customizer;
-		$field = $lsx_customizer->get_control( $id );
 
-		if ( isset( $field['choices'] ) ) {
-			return $field['choices'];
+		$can_validate = method_exists( 'WP_Customize_Setting', 'validate' );
+		$field        = $lsx_customizer->get_control( $id );
+
+		if ( ! isset( $field['choices'] ) ) {
+			return $can_validate ? new WP_Error( 'notexists', esc_html__( 'Choice doesn\'t exist', 'lsx' ) ) : false;
 		}
 
-		return false;
+		return $field['choices'];
 	}
 
 endif;
@@ -87,25 +94,6 @@ if ( ! function_exists( 'lsx_customizer_sanitize_get_default' ) ) :
 
 endif;
 
-if ( ! function_exists( 'lsx_sanitize_email' ) ) :
-
-	/**
-	 * Sanitizes an email input.
-	 *
-	 * @package    lsx
-	 * @subpackage sanitize
-	 *
-	 * @param string $email
-	 * @param obj $setting
-	 * @return string $default
-	 */
-	function lsx_sanitize_email( $email, $setting ) {
-		$email = sanitize_email( $email );
-		return ( ! is_null( $email ) ? $email : $setting->default );
-	}
-
-endif;
-
 if ( ! function_exists( 'lsx_sanitize_checkbox' ) ) :
 
 	/**
@@ -118,13 +106,13 @@ if ( ! function_exists( 'lsx_sanitize_checkbox' ) ) :
 	 * @return array $output
 	 */
 	function lsx_sanitize_checkbox( $input ) {
-		if ( $input ) {
-			$output = '1';
-		} else {
-			$output = false;
+		$can_validate = method_exists( 'WP_Customize_Setting', 'validate' );
+
+		if ( ! is_bool( $input ) ) {
+			return $can_validate ? new WP_Error( 'notboolean', esc_html__( 'Not a boolean', 'lsx' ) ) : false;
 		}
 
-		return $output;
+		return $input;
 	}
 
 endif;
