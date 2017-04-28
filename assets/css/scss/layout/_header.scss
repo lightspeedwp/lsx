@@ -1,0 +1,31 @@
+#masthead {
+	background-color: #FC0;
+	border: 0 none;
+	border-radius: 0;
+	color: $dark-gray;
+	margin-bottom: 0;
+	min-height: 0;
+
+	& > .container {
+		align-items: center;
+		display: flex;
+		flex-flow: row nowrap;
+		height: 80px;
+		justify-content: flex-start;
+		padding-left: 50px;
+		padding-right: 50px;
+		width: 100%;
+	}
+
+	.navbar-header {
+		& > .mobile-menu-title {
+			@include media('>=desktop') { display: none; }
+		}
+	}
+
+	#searchform {
+		order: 2;
+		position: absolute;
+		right: 50px;
+	}
+}
