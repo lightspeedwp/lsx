@@ -400,37 +400,31 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 	 * @subpackage template-tags
 	 */
 	function lsx_paging_nav() {
-		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		global $wp_query;
+
+		if ( $wp_query->max_num_pages < 2 ) {
 			return;
 		}
 
 		if ( current_theme_supports( 'infinite-scroll' ) && class_exists( 'The_Neverending_Home_Page' ) ) {
 			return true;
-		} elseif ( function_exists( 'wp_pagenavi' ) ) {
-			wp_pagenavi();
 		} else {
-			$labels = array(
-				'next'     => '<span class="meta-nav">&larr;</span> ' . esc_html__( 'Older posts', 'lsx' ),
-				'previous' => esc_html__( 'Newer posts', 'lsx' ) . ' <span class="meta-nav">&rarr;</span>',
-				'title'    => esc_html__( 'Posts navigation', 'lsx' ),
-			);
+			$html = '';
+			$html .= '<div class="lsx-pagination-wrapper">' . PHP_EOL;
+			$html .= '<div class="lsx-breaker"></div>' . PHP_EOL;
+			$html .= '<div class="lsx-pagination">' . PHP_EOL;
+			$html .= paginate_links( array(
+				'base'               => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+				'format'             => '?paged=%#%',
+				'total'              => $wp_query->max_num_pages,
+				'current'            => max( 1, intval( get_query_var( 'paged' ) ) ),
+				'prev_text'          => '<span class="meta-nav">&larr;</span> ' . esc_html__( 'Previous', 'lsx' ),
+				'next_text'          => esc_html__( 'Next', 'lsx' ) . ' <span class="meta-nav">&rarr;</span>',
+			) );
+			$html .= '</div>' . PHP_EOL;
+			$html .= '</div>' . PHP_EOL;
 
-			$labels = apply_filters( 'lsx_post_navigation_labels', $labels );
-			?>
-			<nav class="navigation paging-navigation" role="navigation">
-				<div class="lsx-breaker"></div>
-				<h1 class="screen-reader-text"><?php echo esc_html( $labels['title'] ); ?></h1>
-				<div class="nav-links">
-					<?php if ( get_next_posts_link() ) : ?>
-						<div class="nav-previous"><?php next_posts_link( $labels['next'] ); ?></div>
-					<?php endif; ?>
-					<?php if ( get_previous_posts_link() ) : ?>
-						<div class="nav-next"><?php previous_posts_link( $labels['previous'] ); ?></div>
-					<?php endif; ?>
-					<div class="clearfix"></div>
-				</div><!-- .nav-links -->
-			</nav><!-- .navigation -->
-			<?php
+			echo wp_kses_post( $html );
 		}
 	}
 

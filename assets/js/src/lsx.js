@@ -312,21 +312,6 @@ var lsx = Object.create( null );
 	};
 
 	/**
-	 * Adjust Pagenavi HTML (fix if empty; change if filled).
-	 *
-	 * @package    lsx
-	 * @subpackage scripts
-	 */
-	lsx.change_pagenavi_html = function() {
-		if ( 0 === $( '.wp-pagenavi' ).children().length ) {
-			$( '.wp-pagenavi' ).remove();
-		} else {
-			$( '.wp-pagenavi' ).wrap( '<div class="wp-pagenavi-wrapper"></div>' );
-			$( '<div class="lsx-breaker"></div>' ).prependTo( ".wp-pagenavi-wrapper" );
-		}
-	};
-
-	/**
 	 * On window resize.
 	 *
 	 * @package    lsx
@@ -353,8 +338,6 @@ var lsx = Object.create( null );
 		lsx.add_class_bootstrap_to_table();
 
 		lsx.set_main_menu_as_fixed();
-
-		lsx.change_pagenavi_html();
 
 	} );
 
