@@ -45,7 +45,7 @@ if ( ! function_exists( 'lsx_the_events_calendar_breadcrumbs' ) ) :
 				$closing_div = '</nav>';
 
 				if ( is_single() ) {
-					$output = str_replace( 'Page', '<a href="' . get_post_type_archive_link( 'tribe_events' ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>', $output );
+					$output = str_replace( 'Page', '<a href="' . esc_url( get_post_type_archive_link( 'tribe_events' ) ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>', $output );
 
 					if ( isset( $wp_query->query_vars['eventDisplay'] ) && 'all' === $wp_query->query_vars['eventDisplay'] ) {
 						$output = str_replace( $closing_div, get_the_title( $wp_query->query_vars['post_parent'] ) . $closing_div, $output );
@@ -55,7 +55,7 @@ if ( ! function_exists( 'lsx_the_events_calendar_breadcrumbs' ) ) :
 					}
 				} elseif ( is_tax() ) {
 					$tax_event = get_queried_object();
-					$output    = str_replace( 'Page', '<a href="' . get_post_type_archive_link( 'tribe_events' ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>', $output );
+					$output    = str_replace( 'Page', '<a href="' . esc_url( get_post_type_archive_link( 'tribe_events' ) ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>', $output );
 					$output    = str_replace( $closing_div, '&nbsp;/&nbsp;' . apply_filters( 'the_title', $tax_event->name ) . $closing_div, $output );
 				} else {
 					$output = str_replace( 'Page', esc_html__( 'Events', 'lsx' ), $output );
@@ -66,10 +66,10 @@ if ( ! function_exists( 'lsx_the_events_calendar_breadcrumbs' ) ) :
 
 				if ( is_single() ) {
 					$single_event = get_queried_object();
-					$output       = str_replace( $closing_div, '<a href="' . get_post_type_archive_link( 'tribe_events' ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>&nbsp;/&nbsp;' . apply_filters( 'the_title', $single_event->post_title ), $output );
+					$output       = str_replace( $closing_div, '<a href="' . esc_url( get_post_type_archive_link( 'tribe_events' ) ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>&nbsp;/&nbsp;' . apply_filters( 'the_title', $single_event->post_title ), $output );
 				} elseif ( is_tax() ) {
 					$tax_event = get_queried_object();
-					$output    = str_replace( $last_breadcrumb, '<a href="' . get_post_type_archive_link( 'tribe_events' ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>&nbsp;/&nbsp;' . apply_filters( 'the_title', $tax_event->name ), $output );
+					$output    = str_replace( $last_breadcrumb, '<a href="' . esc_url( get_post_type_archive_link( 'tribe_events' ) ) . '">' . esc_html__( 'Events', 'lsx' ) . '</a>&nbsp;/&nbsp;' . apply_filters( 'the_title', $tax_event->name ), $output );
 				} else {
 					$output = str_replace( 'Page', esc_html__( 'Events', 'lsx' ), $output );
 				}

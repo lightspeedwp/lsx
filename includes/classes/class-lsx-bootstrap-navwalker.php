@@ -232,7 +232,7 @@ if ( ! class_exists( 'LSX_Bootstrap_Navwalker' ) ) :
 				}
 
 				$fb_output .= '>';
-				$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">' . esc_html__( 'Add a menu', 'lsx' ) . '</a></li>';
+				$fb_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html__( 'Add a menu', 'lsx' ) . '</a></li>';
 				$fb_output .= '</ul>';
 
 				if ( $args['container'] ) {

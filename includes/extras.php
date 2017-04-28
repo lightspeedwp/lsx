@@ -222,9 +222,9 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 		}
 
 		if ( $srcset ) {
-			$img = '<img alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" srcset="' . $img . '" />';
+			$img = '<img alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" srcset="' . esc_attr( $img ) . '" />';
 		} else {
-			$img = '<img alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" src="' . $img . '" />';
+			$img = '<img alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" src="' . esc_url( $img ) . '" />';
 		}
 
 		$img = apply_filters( 'lsx_lazyload_filter_images', $img );
@@ -426,7 +426,7 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 				if ( ! empty( $pagination ) ) {
 					$excerpt .= $pagination;
 				} else {
-					$excerpt .= '<p><a class="moretag" href="' . get_permalink() . '">' . esc_html__( 'Continue reading', 'lsx' ) . '</a></p>';
+					$excerpt .= '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Continue reading', 'lsx' ) . '</a></p>';
 				}
 			}
 		}
@@ -484,7 +484,7 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 				$wpse_excerpt = trim( force_balance_tags( $excerpt_output ) );
 
 				if ( $has_more ) {
-					$excerpt_end = '<a class="moretag" href="' . get_permalink() . '">' . esc_html__( 'More', 'lsx' ) . '</a>';
+					$excerpt_end = '<a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'More', 'lsx' ) . '</a>';
 					$excerpt_end = apply_filters( 'excerpt_more', ' ' . $excerpt_end );
 
 					$pos = strrpos( $wpse_excerpt, '</' );

@@ -194,7 +194,7 @@ if ( ! function_exists( 'lsx_post_meta_category' ) ) :
 		foreach ( $post_categories as $c ) {
 			$cat = get_category( $c );
 			/* Translators: %s: category name */
-			$cats[] = '<a href="' . get_category_link( $cat->term_id ) . '" title="' . sprintf( esc_html__( 'View all posts in %s' , 'lsx' ), $cat->name ) . '">' . $cat->name . '</a>';
+			$cats[] = '<a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" title="' . sprintf( esc_html__( 'View all posts in %s' , 'lsx' ), $cat->name ) . '">' . $cat->name . '</a>';
 		}
 
 		if ( ! empty( $cats ) ) {
