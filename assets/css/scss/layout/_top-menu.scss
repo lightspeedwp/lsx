@@ -11,12 +11,16 @@
 		width: 100%;
 		height: map-get($top-menu, height);
 
+		.header-central & { justify-content: center; }
+
 		& > .top-menu {
 			&:not(.pull-left) { order: 1; }
 
 			&.pull-left {
 				flex-grow: 1;
 				float: none !important;
+
+				.header-central & { flex-grow: 0; }
 			}
 
 			& > .menu {
