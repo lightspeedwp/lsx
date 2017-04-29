@@ -6,6 +6,10 @@ body {
 	direction: ltr;
 }
 
+img {
+	@include img-responsive(inline-block);
+}
+
 .form-control {
 	@extend %lsx-form-field;
 }
