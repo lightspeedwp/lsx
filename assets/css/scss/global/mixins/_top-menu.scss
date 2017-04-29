@@ -2,16 +2,20 @@
 	#top-menu {
 		background-color: $bg;
 
-		.menu-item {
-			& > a {
-				color: $link;
+		.top-menu {
+			& > .menu {
+				& > .menu-item {
+					&:hover > a {
+						color: $hover;
 
-				&:before { color: $icon; }
+						&:before { color: $icon-hover; }
+					}
 
-				&:hover {
-					color: $hover;
+					& > a {
+						color: $link;
 
-					&:before { color: $icon-hover; }
+						&:before { color: $icon; }
+					}
 				}
 			}
 		}
@@ -29,13 +33,11 @@
 					color: $dropdown-link-hover;
 				}
 
-				& > a {
-					color: inherit;
+				.dropdown-menu {
+					.menu-item {
+						background-color: $dropdown-hover;
 
-					&:hover,
-					&:active:hover,
-					&:focus {
-						background-color: transparent;
+						& + .menu-item { border-top-color: $dropdown; }
 					}
 				}
 			}
