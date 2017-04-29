@@ -90,9 +90,9 @@ body { direction: ltr; }
 
 #top-menu .dropdown-menu { border: 0 none; border-radius: 0; box-shadow: none; left: 15px; margin: 0; padding: 0; z-index: 1001; }
 
-#top-menu .dropdown-menu > .menu-item { padding: 0; }
+#top-menu .dropdown-menu > .menu-item { transition: color 300ms ease; padding: 0; }
 
-#top-menu .dropdown-menu > .menu-item.dropdown > a:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; color: #FFF; content: ""; position: absolute; right: 15px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+#top-menu .dropdown-menu > .menu-item.dropdown:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: ""; position: absolute; right: 15px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 
 #top-menu .dropdown-menu > .menu-item > a { line-height: 1.5; padding: 10px; }
 
@@ -134,21 +134,25 @@ body { direction: ltr; }
 
 #masthead .primary-navbar > .nav > .menu-item { display: table; height: 100%; }
 
-#masthead .primary-navbar > .nav > .menu-item > a { display: table-cell; font-size: 14px; padding: 0 15px; vertical-align: middle; }
+#masthead .primary-navbar > .nav > .menu-item:hover > a { background-color: #374750; color: #418AD0; }
 
-#masthead .primary-navbar > .nav .menu-item-has-children:hover > .dropdown-menu { display: block; }
+#masthead .primary-navbar > .nav > .menu-item > a { color: #515151; display: table-cell; font-size: 14px; padding: 0 15px; vertical-align: middle; transition: all 300ms ease; }
 
-#masthead .primary-navbar > .nav .dropdown-menu { background-color: #374750; box-shadow: none; border: 0 none; border-radius: 0; margin: 0; padding: 0; }
+#masthead .primary-navbar > .nav .dropdown:hover > .dropdown-menu { opacity: 1; -webkit-transform: scale(1, 1); transform: scale(1, 1); }
 
-#masthead .primary-navbar > .nav .dropdown-menu > .menu-item { color: #FFF; }
+#masthead .primary-navbar > .nav .dropdown-menu { display: block; background-color: #374750; box-shadow: none; border: 0 none; border-radius: 0; margin: 0; opacity: 0; padding: 0; transition: all 300ms ease; -webkit-transform: scale(1, 0); transform: scale(1, 0); -webkit-transform-origin: top center; transform-origin: top center; }
+
+#masthead .primary-navbar > .nav .dropdown-menu > .menu-item { color: #FFF; transition: all 300ms ease; }
+
+#masthead .primary-navbar > .nav .dropdown-menu > .menu-item.dropdown:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: ""; position: absolute; right: 15px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 
 #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:active:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:focus { background-color: #2B3840; color: #418AD0; }
 
-#masthead .primary-navbar > .nav .dropdown-menu > .menu-item > a { color: inherit; font-size: 14px; padding: 12px 10px; }
+#masthead .primary-navbar > .nav .dropdown-menu > .menu-item > a { color: inherit; font-size: 14px; padding: 12px 40px 12px 15px; }
 
 #masthead .primary-navbar > .nav .dropdown-menu > .menu-item > a:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item > a:active:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item > a:focus { background-color: transparent; }
 
-#masthead .primary-navbar > .nav .dropdown-menu > .menu-item .dropdown-menu { top: 0; left: 100%; }
+#masthead .primary-navbar > .nav .dropdown-menu > .menu-item .dropdown-menu { left: 100%; top: 0; -webkit-transform-origin: 50% 50% 0; transform-origin: 50% 50% 0; }
 
 #masthead .primary-navbar > .nav .dropdown-menu > .menu-item .dropdown-menu .menu-item { background-color: #2B3840; }
 

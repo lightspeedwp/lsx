@@ -105,20 +105,18 @@
 		z-index: 1001;
 
 		& > .menu-item {
+			transition: color 300ms ease;
 			padding: 0;
 
 			&.dropdown {
-				& > a {
-					&:after {
-						@include fa-icon();
+				&:after {
+					@include fa-icon();
 
-						color: #FFF;
-						content: $fa-var-angle-right;
-						position: absolute;
-						right: 15px;
-						top: 50%;
-						transform: translateY(-50%);
-					}
+					content: $fa-var-angle-right;
+					position: absolute;
+					right: 15px;
+					top: 50%;
+					transform: translateY(-50%);
 				}
 			}
 
