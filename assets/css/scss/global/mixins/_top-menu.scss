@@ -1,10 +1,21 @@
-@mixin top-menu-colours ($bg: map-get($top-menu, bg),$link: map-get($top-menu, link), $hover: map-get($top-menu, hover), $icon: map-get($top-menu, icon), $icon-hover: map-get($top-menu, icon-hover), $dropdown: map-get($top-menu, dropdown), $dropdown-hover: map-get($top-menu, dropdown-hover), $dropdown-link: map-get($top-menu, dropdown-link), $dropdown-link-hover: map-get($top-menu, dropdown-link-hover)) {
+@mixin top-menu-colours (
+	$bg: map-get($top-menu, bg),
+	$link: map-get($top-menu, link),
+	$hover: map-get($top-menu, hover),
+	$icon: map-get($top-menu, icon),
+	$icon-hover: map-get($top-menu, icon-hover),
+	$dropdown: map-get($top-menu, dropdown),
+	$dropdown-hover: map-get($top-menu, dropdown-hover),
+	$dropdown-link: map-get($top-menu, dropdown-link),
+	$dropdown-link-hover: map-get($top-menu, dropdown-link-hover)) {
+
 	#top-menu {
 		background-color: $bg;
 
 		.top-menu {
 			& > .menu {
 				& > .menu-item {
+					&.open > a,
 					&:hover > a {
 						color: $hover;
 
@@ -26,19 +37,17 @@
 			& > .menu-item {
 				color: $dropdown-link;
 
+				&.open,
 				&:hover,
 				&:active:hover,
-				&:focus,
-				&.open {
+				&:focus {
 					background-color: $dropdown-hover;
 					color: $dropdown-link-hover;
 				}
 
 				.dropdown-menu {
-					.menu-item {
+					& > .menu-item {
 						background-color: $dropdown-hover;
-
-						& + .menu-item { border-top-color: $dropdown; }
 					}
 				}
 			}

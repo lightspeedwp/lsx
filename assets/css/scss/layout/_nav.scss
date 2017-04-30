@@ -40,6 +40,8 @@
 
 			.menu-item {
 				&.open,
+				&.open.active,
+				&.active:hover,
 				&:hover {
 					& > a {
 						background-color: map-get($top-menu, dropdown-hover);
@@ -47,6 +49,7 @@
 					}
 				}
 
+				&.active > a,
 				& > a {
 					background-color: map-get($top-menu, dropdown);
 					color: map-get($top-menu, dropdown-link);
@@ -94,14 +97,17 @@
 					display: table;
 					height: 100%;
 
-					&:hover {
+					&:hover,
+					&.active:hover {
 						& > a {
 							background-color: nth($blue, 2);
 							color: nth($blue, 1);
 						}
 					}
 
-					& > a {
+					& > a,
+					&.active > a {
+						background-color: #FFF;
 						color: #515151;
 						display: table-cell;
 						font-size: 14px;
@@ -157,6 +163,7 @@
 						}
 
 						& > a {
+							background-color: inherit;
 							color: inherit;
 							font-size: 14px;
 							padding: 12px 40px 12px 15px;
@@ -171,13 +178,8 @@
 						.dropdown-menu {
 							left: 100%;
 							top: 0;
-							transform-origin: 50% 50% 0;
 
-							.menu-item {
-								background-color: #2B3840;
-
-								& + .menu-item { border-top: 1px solid nth($blue, 2); }
-							}
+							.menu-item { background-color: #2B3840; }
 						}
 					}
 				}

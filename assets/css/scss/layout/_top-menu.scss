@@ -39,8 +39,9 @@
 					display: table-cell;
 					font-size: 13px;
 					padding: 0 15px;
-					transition: all 300ms ease;
 					vertical-align: middle;
+
+					@include media('>=phone') { transition: all 300ms ease; }
 
 					&:before {
 						@include fa-icon();
@@ -143,6 +144,7 @@
 			}
 
 			& > a {
+				background-color: inherit;
 				color: inherit;
 				font-size: 14px;
 				padding: 12px 40px 12px 15px;
@@ -157,14 +159,6 @@
 			.dropdown-menu {
 				left: 100%;
 				top: 0;
-				transform-origin: 50% 50% 0;
-
-				.menu-item {
-					& + .menu-item {
-						border-top-style: solid;
-						border-top-width: 1px;
-					}
-				}
 			}
 		}
 	}
