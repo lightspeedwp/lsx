@@ -94,10 +94,21 @@
 	}
 
 	.dropdown {
-		&:hover {
-			& > .dropdown-menu {
-				opacity: 1;
-				transform: scale(1, 1);
+		@include media('<desktop') {
+			&.open {
+				& > .dropdown-menu {
+					opacity: 1;
+					transform: scale(1, 1);
+				}
+			}
+		}
+
+		@include media('>=desktop') {
+			&:hover {
+				& > .dropdown-menu {
+					opacity: 1;
+					transform: scale(1, 1);
+				}
 			}
 		}
 	}

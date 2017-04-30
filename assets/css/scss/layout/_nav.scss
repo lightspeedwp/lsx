@@ -1,21 +1,89 @@
+#masthead {
+	.mobile-menu-title {
+		@include media('<desktop') {
+			order: 2;
+
+			color: map-get($top-menu, link);
+			flex-grow: 1;
+			font-size: 13px;
+			margin-right: 10px;
+			text-transform: uppercase;
+			text-align: right;
+		}
+
+		@include media('>=desktop') { display: none; }
+	}
+
+	.navbar-toggle {
+		border-color: map-get($top-menu, dropdown);
+		background-color: map-get($top-menu, bg);
+
+		& > .icon-bar { background-color: map-get($top-menu, link); }
+	}
+}
+
 @include media('<desktop') {
 	#masthead {
 		.primary-navbar {
-			background-color: #FC0;
+			background-color: map-get($top-menu, dropdown);
+			left: 30px;
 			order: 3;
 			position: absolute;
-			width: 100%;
+			width: calc(100% - 30px);
 			top: 100%;
-			z-index: 1000 ;
+			z-index: 1000;
+
+			& > .nav {
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+
+			.menu-item {
+				&.open,
+				&:hover {
+					& > a {
+						background-color: map-get($top-menu, dropdown-hover);
+						color: map-get($top-menu, dropdown-link-hover);
+					}
+				}
+
+				& > a {
+					background-color: map-get($top-menu, dropdown);
+					color: map-get($top-menu, dropdown-link);
+					padding: 10px 15px;
+
+					&.open { color: map-get($top-menu, dropdown-link-hover); }
+				}
+			}
+
+			.dropdown-menu {
+				background-color: map-get($top-menu, dropdown-hover);
+				padding: 0 20px;
+
+				& > .menu-item {
+					& > a {
+						background-color: map-get($top-menu, dropdown-hover);
+					}
+				}
+			}
 		}
 	}
+}
 
+@include media('<phone') {
+	#masthead {
+		.primary-navbar {
+			left: 15px;
+			width: 100%;
+		}
+	}
 }
 
 @include media('>=desktop') {
 	#masthead {
 		.primary-navbar {
 			align-self: stretch;
+			flex-grow: 1;
 			margin-left: 100px;
 			padding: 0;
 

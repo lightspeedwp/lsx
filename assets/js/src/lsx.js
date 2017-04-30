@@ -119,9 +119,13 @@ var lsx = Object.create( null );
 			} );
 		} else {
 			$( '.dropdown .dropdown > a' ).on( 'click', function( e ) {
-				if (!$( this ).hasClass( 'open' ) ) {
-					$( this ).addClass( 'open' );
-					$( this ).next( '.dropdown-menu' ).toggle();
+				var $this = $( this ),
+					$parent = $this.parent().parent();
+
+				if (!$this.hasClass( 'open' ) ) {
+					$parent.find( '.open' ).removeClass( 'open' ).next( '.dropdown-menu' ).dropdown( 'toggle' );
+					$this.addClass( 'open' );
+					$this.next( '.dropdown-menu' ).dropdown( 'toggle' );
 					e.stopPropagation();
 					e.preventDefault();
 				}

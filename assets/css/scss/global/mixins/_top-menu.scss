@@ -28,7 +28,8 @@
 
 				&:hover,
 				&:active:hover,
-				&:focus {
+				&:focus,
+				&.open {
 					background-color: $dropdown-hover;
 					color: $dropdown-link-hover;
 				}
