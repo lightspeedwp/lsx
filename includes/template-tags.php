@@ -497,13 +497,16 @@ if ( ! function_exists( 'lsx_navbar_header' ) ) :
 			<?php
 				if ( has_nav_menu( 'primary' ) ) :
 					?>
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
-						<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'lsx' ); ?></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<span class="mobile-menu-title"><?php esc_html_e( 'Menu', 'lsx' ); ?></span>
+					<div class="wrapper-toggle">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".primary-navbar">
+							<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'lsx' ); ?></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<span class="mobile-menu-title"><?php esc_html_e( 'Menu', 'lsx' ); ?></span>
+					</div>
 					<?php
 				endif;
 
