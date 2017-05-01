@@ -167,6 +167,9 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_global_header() {
+		$default_size = 'sm';
+		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+
 		if ( is_singular( 'post' ) ) :
 			$format = get_post_format();
 
@@ -176,7 +179,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 
 			$format = lsx_translate_format_to_fontawesome( $format );
 			?>
-			<header class="archive-header">
+			<header class="archive-header col-<?php echo esc_attr( $size ); ?>-12">
 				<h1 class="archive-title">
 					<i class="format-link fa fa-<?php echo esc_attr( $format ); ?>"></i>
 					<span><?php the_title(); ?></span>
@@ -185,13 +188,13 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<?php
 		elseif ( is_page() || is_single() ) :
 			?>
-			<header class="archive-header">
+			<header class="archive-header col-<?php echo esc_attr( $size ); ?>-12">
 				<h1 class="archive-title"><?php the_title(); ?></h1>
 			</header>
 			<?php
 		elseif ( is_search() ) :
 			?>
-			<header class="archive-header">
+			<header class="archive-header col-<?php echo esc_attr( $size ); ?>-12">
 				<h1 class="archive-title">
 					<?php
 						printf(
@@ -205,21 +208,21 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<?php
 		elseif ( is_author() ) :
 			?>
-			<header class="archive-header">
+			<header class="archive-header col-<?php echo esc_attr( $size ); ?>-12">
 				<h1 class="archive-title"><?php the_archive_title(); ?></h1>
 				<?php the_archive_description(); ?>
 			</header>
 			<?php
 		elseif ( is_archive() && class_exists( 'WooCommerce' ) && is_post_type_archive( 'product' ) ) :
 			?>
-			<header class="archive-header">
+			<header class="archive-header col-<?php echo esc_attr( $size ); ?>-12">
 				<h1 class="archive-title"><?php the_archive_title(); ?></h1>
 				<?php the_archive_description(); ?>
 			</header>
 			<?php
 		elseif ( is_archive() ) :
 			?>
-			<header class="archive-header">
+			<header class="archive-header col-<?php echo esc_attr( $size ); ?>-12">
 				<h1 class="archive-title">
 					<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && ! is_tax( 'post_format' ) ) { ?>
 						<?php the_archive_title( esc_html__( 'Type:', 'lsx' ) ); ?>
