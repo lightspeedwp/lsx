@@ -2,13 +2,11 @@
 *:focus,
 *:active:focus { outline: none !important; }
 
-body {
-	direction: ltr;
-}
+html { overflow-x: hidden; }
 
-img {
-	@include img-responsive(inline-block);
-}
+body { direction: ltr; }
+
+img { @include img-responsive(inline-block); }
 
 .form-control {
 	@extend %lsx-form-field;

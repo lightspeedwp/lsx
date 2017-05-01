@@ -1,0 +1,63 @@
+.widget {
+	.wrap & {
+		padding: 85px 0;
+
+		& + .widget { padding-top: 0; }
+
+		h3,
+		.widget-title {
+			font-size: 30px;
+			letter-spacing: 1px;
+			line-height: 1.2;
+			margin-bottom: 45px;
+			margin-top: 0;
+			text-align: center;
+
+			&:after {
+				background-color: #E2E1E1;
+				content: '';
+				display: block;
+				height: 2px;
+				margin: 20px auto 0;
+				width: 80px;
+			}
+
+			& > small {
+				color: inherit;
+				display: block;
+				letter-spacing: .7px;
+				line-height: inherit;
+				margin-top: 8px;
+			}
+		}
+
+		.textwidget, p { margin-bottom: 0; }
+
+		p {
+			color: inherit;
+
+			& + p {
+				margin-top: $line-height-computed;
+
+				& > .btn { margin-top: 45px - $line-height-computed; }
+			}
+		}
+
+		a:not(.btn) { transition: all 300ms ease; }
+
+		.btn { margin-top: 45px; }
+
+		.lsx-full-width,
+		.lsx-full-width-alt {
+			margin: 0 -9999px;
+			padding: 85px 9999px;
+
+			h3,
+			.widget-title {
+				&:after { display: none; }
+			}
+		}
+	}
+}
+
+@include aside-widgets-colours();

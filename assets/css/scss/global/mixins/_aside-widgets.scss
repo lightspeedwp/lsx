@@ -1,0 +1,48 @@
+@mixin aside-widgets-colours (
+	$bg: map-get($aside-widgets, bg),
+	$breaker: map-get($aside-widgets, breaker),
+	$header: map-get($aside-widgets, header),
+	$color: map-get($aside-widgets, color),
+	$link: map-get($aside-widgets, link),
+	$hover: map-get($aside-widgets, hover),
+	$full-bg: map-get($aside-widgets, full-bg),
+	$full-color: map-get($aside-widgets, full-color),
+	$full-link: map-get($aside-widgets, full-link),
+	$full-hover: map-get($aside-widgets, full-hover),
+	$full-cta-bg: map-get($aside-widgets, full-cta-bg),
+	$full-cta-color: map-get($aside-widgets, full-cta-color),
+	$full-cta-link: map-get($aside-widgets, full-cta-link),
+	$full-cta-hover: map-get($aside-widgets, full-cta-hover)) {
+
+	body { background-color: $bg; }
+
+	.lsx-breaker { border-bottom-color: $breaker; }
+
+	.widget {
+		.wrap & {
+			color: $color;
+
+			h3, .widget-title { color: $header; }
+
+			a:not(.btn) { @include lsx-link-colour($link, $hover); }
+
+			.lsx-full-width {
+				background-color: $full-bg;
+				color: $full-color;
+
+				h3, .widget-title { color: $full-color; }
+
+				a:not(.btn) { @include lsx-link-colour($full-link, $full-hover); }
+			}
+
+			.lsx-full-width-alt {
+				background-color: $full-cta-bg;
+				color: $full-cta-color;
+
+				h3, .widget-title { color: $full-cta-color; }
+
+				a:not(.btn) { @include lsx-link-colour($full-cta-link, $full-cta-hover); }
+			}
+		}
+	}
+}

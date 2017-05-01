@@ -9,6 +9,44 @@ $light-gray: #F6F6F6;
 $orange: (#F7AE00, #CE9100, #EDA700);
 $red-accent: #D84E2E;
 
+$grid-float-breakpoint: 1200px;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+$body-bg: #F6F6F6;
+$text-color: #4A4A4A;
+$link-color: nth($blue, 1);
+$link-hover-color: nth($orange, 1);
+$link-hover-decoration: none;
+
+$font-family-sans-serif: 'Noto Sans', sans-serif;
+$font-family-serif: 'Lora', serif;
+
+$font-size-base: 15px;
+
+$font-size-h1: 40px;
+$font-size-h2: 30px;
+$font-size-h3: 22px;
+$font-size-h4: 22px;
+$font-size-h5: 20px;
+$font-size-h6: $font-size-base;
+
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 400;
+$headings-line-height: 1.25;
+
+$line-height-base: 1.6;
+
+$btn-default-color: #FFF;
+$btn-font-weight: 700;
+$btn-border-radius-base: 3px;
+
+$input-height-base: 50px;
+$input-border: #DDD;
+$input-color: $text-color;
+$input-border-radius: 2px;
+$input-border-focus: nth($blue, 1);
+$input-color-placeholder: #9F9C9C;
+
 $top-menu: (
 	bg: #F2F2F2,
 	link: nth($blue, 1),
@@ -37,6 +75,23 @@ $header: (
 	link: $red-accent,
 	hover: nth($orange, 1),
 	description: $dark-gray
+);
+
+$aside-widgets: (
+	bg: $body-bg,
+	breaker: #E2E1E1,
+	header: $text-color,
+	color: $text-color,
+	link: nth($blue, 1),
+	hover: nth($orange, 1),
+	full-bg: #FFF,
+	full-color: $text-color,
+	full-link: nth($blue, 1),
+	full-hover: nth($orange, 1),
+	full-cta-bg: nth($blue, 1),
+	full-cta-color: #FFF,
+	full-cta-link: nth($blue, 2),
+	full-cta-hover: nth($orange, 1)
 );
 
 $footer: (
@@ -87,41 +142,3 @@ $social-icons: (
 	'wordpress': '\f19a',
 	'youtube': '\f16a'
 );
-
-$grid-float-breakpoint: 1200px;
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
-
-$body-bg: #F6F6F6;
-$text-color: #4A4A4A;
-$link-color: nth($blue, 1);
-$link-hover-color: nth($orange, 1);
-$link-hover-decoration: none;
-
-$font-family-sans-serif: 'Noto Sans', sans-serif;
-$font-family-serif: 'Lora', serif;
-
-$font-size-base: 15px;
-
-$font-size-h1: 40px;
-$font-size-h2: 30px;
-$font-size-h3: 22px;
-$font-size-h4: 22px;
-$font-size-h5: 20px;
-$font-size-h6: $font-size-base;
-
-$headings-font-family: $font-family-serif;
-$headings-font-weight: 400;
-$headings-line-height: 1.25;
-
-$line-height-base: 1.6;
-
-$btn-default-color: #FFF;
-$btn-font-weight: 700;
-$btn-border-radius-base: 3px;
-
-$input-height-base: 50px;
-$input-border: #DDD;
-$input-color: $text-color;
-$input-border-radius: 2px;
-$input-border-focus: nth($blue, 1);
-$input-color-placeholder: #9F9C9C;

@@ -9,6 +9,8 @@
 
 *, *:focus, *:active:focus { outline: none !important; }
 
+html { overflow-x: hidden; }
+
 body { direction: rtl; }
 
 img { display: inline-block; max-width: 100%; height: auto; }
@@ -30,6 +32,60 @@ img { display: inline-block; max-width: 100%; height: auto; }
 .cta-btn:hover, .cta-btn:hover:active, .cta-btn:focus { background-color: #EDA700; color: #FFF; }
 
 .cta-btn:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #ab7800; }
+
+.wrap .widget { padding: 85px 0; }
+
+.wrap .widget + .widget { padding-top: 0; }
+
+.wrap .widget h3, .wrap .widget .widget-title { font-size: 30px; letter-spacing: 1px; line-height: 1.2; margin-bottom: 45px; margin-top: 0; text-align: center; }
+
+.wrap .widget h3:after, .wrap .widget .widget-title:after { background-color: #E2E1E1; content: ''; display: block; height: 2px; margin: 20px auto 0; width: 80px; }
+
+.wrap .widget h3 > small, .wrap .widget .widget-title > small { color: inherit; display: block; letter-spacing: .7px; line-height: inherit; margin-top: 8px; }
+
+.wrap .widget .textwidget, .wrap .widget p { margin-bottom: 0; }
+
+.wrap .widget p { color: inherit; }
+
+.wrap .widget p + p { margin-top: 24px; }
+
+.wrap .widget p + p > .btn { margin-top: 21px; }
+
+.wrap .widget a:not(.btn) { transition: all 300ms ease; }
+
+.wrap .widget .btn { margin-top: 45px; }
+
+.wrap .widget .lsx-full-width, .wrap .widget .lsx-full-width-alt { margin: 0 -9999px; padding: 85px 9999px; }
+
+.wrap .widget .lsx-full-width h3:after, .wrap .widget .lsx-full-width .widget-title:after, .wrap .widget .lsx-full-width-alt h3:after, .wrap .widget .lsx-full-width-alt .widget-title:after { display: none; }
+
+body { background-color: #F6F6F6; }
+
+.lsx-breaker { border-bottom-color: #E2E1E1; }
+
+.wrap .widget { color: #4A4A4A; }
+
+.wrap .widget h3, .wrap .widget .widget-title { color: #4A4A4A; }
+
+.wrap .widget a:not(.btn), .wrap .widget a:not(.btn):active, .wrap .widget a:not(.btn):visited { color: #418AD0; }
+
+.wrap .widget a:not(.btn):hover, .wrap .widget a:not(.btn):hover:active, .wrap .widget a:not(.btn):focus { color: #F7AE00; }
+
+.wrap .widget .lsx-full-width { background-color: #FFF; color: #4A4A4A; }
+
+.wrap .widget .lsx-full-width h3, .wrap .widget .lsx-full-width .widget-title { color: #4A4A4A; }
+
+.wrap .widget .lsx-full-width a:not(.btn), .wrap .widget .lsx-full-width a:not(.btn):active, .wrap .widget .lsx-full-width a:not(.btn):visited { color: #418AD0; }
+
+.wrap .widget .lsx-full-width a:not(.btn):hover, .wrap .widget .lsx-full-width a:not(.btn):hover:active, .wrap .widget .lsx-full-width a:not(.btn):focus { color: #F7AE00; }
+
+.wrap .widget .lsx-full-width-alt { background-color: #418AD0; color: #FFF; }
+
+.wrap .widget .lsx-full-width-alt h3, .wrap .widget .lsx-full-width-alt .widget-title { color: #FFF; }
+
+.wrap .widget .lsx-full-width-alt a:not(.btn), .wrap .widget .lsx-full-width-alt a:not(.btn):active, .wrap .widget .lsx-full-width-alt a:not(.btn):visited { color: #374750; }
+
+.wrap .widget .lsx-full-width-alt a:not(.btn):hover, .wrap .widget .lsx-full-width-alt a:not(.btn):hover:active, .wrap .widget .lsx-full-width-alt a:not(.btn):focus { color: #F7AE00; }
 
 #top-menu > .container { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row nowrap; flex-flow: row nowrap; height: 32px; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; padding: 0; width: 100%; }
 
