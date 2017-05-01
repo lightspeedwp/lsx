@@ -3,6 +3,7 @@
 	&:active,
 	&:visited {
 		border: 0 none;
+		border-radius: 3px;
 		display: inline-block;
 		font-size: 15px;
 		left: 0;
@@ -12,37 +13,44 @@
 		position: relative;
 		text-transform: uppercase;
 		top: 0;
+		transition: all 100ms ease;
 	}
 }
 
+@mixin custom-buttons-colours ($color: map-get($buttons, color), $color-hover: map-get($buttons, color-hover), $bg: map-get($buttons, bg), $bg-hover: map-get($buttons, bg-hover)) {
+	.btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover); }
 
-@mixin lsx-button ($color: #FFF, $color-hover: #FFF, $bg: nth($blue, 1), $bg-hover: nth($blue, 3), $effect: true, $border-radius: true) {
-	&,
-	&:active,
-	&:visited {
-		background-color: $bg;
-		color: $color;
+	.border-btn {
+		@include lsx-button-colour($bg, #FFF, transparent, $bg);
 
-		@if type-of($border-radius) != 'bool' { border-radius: $border-radius; }
-	}
-
-	&:hover,
-	&:hover:active,
-	&:focus {
-		background-color: $bg-hover;
-		color: $color-hover;
-	}
-
-	@if $effect {
-		box-shadow: 2px 2px 0 0 darken($bg, 15%);
-		transition: all 100ms ease;
-
-		&:active {
-			left: 2px;
-			top: 2px;
-			box-shadow: 0 0 0 0 darken($bg, 15%);
+		&,
+		&:active,
+		&:visited {
+			border-color: $bg;
 		}
-	} @else {
-		transition: all 300ms ease;
+	}
+
+	.white-border-btn {
+		@include lsx-button-colour(#FFF, $bg, transparent, #FFF);
+
+		&,
+		&:active,
+		&:visited {
+			border-color: #FFF;
+		}
+	}
+}
+
+@mixin custom-cta-buttons-colours ($color: map-get($cta-buttons, color), $color-hover: map-get($cta-buttons, color-hover), $bg: map-get($cta-buttons, bg), $bg-hover: map-get($cta-buttons, bg-hover)) {
+	.cta-btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover); }
+
+	.cta-border-btn {
+		@include lsx-button-colour($bg, #FFF, transparent, $bg);
+
+		&,
+		&:active,
+		&:visited {
+			border-color: nth($bg, 1);
+		}
 	}
 }

@@ -75,7 +75,7 @@
 
 					& > a {
 						@include lsx-button-scaffolding();
-						@include lsx-button(#FFF, #FFF, nth($orange, 1), nth($orange, 2));
+						@include lsx-button-colour($bg: nth($orange, 1), $bg-hover: nth($orange, 3));
 
 						&,
 						&:active,

@@ -23,6 +23,8 @@
 
 		@include media('>=desktop') { font-size: 22px; }
 	}
+
+	input[type="submit"] { @include lsx-button-colour(); }
 }
 
 @include footer-cta-colours();
