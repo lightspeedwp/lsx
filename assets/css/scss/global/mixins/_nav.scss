@@ -1,0 +1,88 @@
+@mixin nav-colours (
+	$bg: map-get($nav, bg),
+	$link: map-get($nav, link),
+	$hover: map-get($nav, hover),
+	$dropdown: map-get($nav, dropdown),
+	$dropdown-hover: map-get($nav, dropdown-hover),
+	$dropdown-link: map-get($nav, dropdown-link),
+	$dropdown-link-hover: map-get($nav, dropdown-link-hover)) {
+
+	@media (max-width: 1199px) {
+		#masthead {
+			.primary-navbar {
+				background-color: $dropdown;
+
+				.menu-item {
+					&.open,
+					&.open.active,
+					&.active:hover,
+					&:hover {
+						& > a {
+							background-color: $dropdown-hover;
+							color: $dropdown-link-hover;
+						}
+					}
+
+					&.active > a,
+					& > a {
+						background-color: $dropdown;
+						color: $dropdown-link;
+
+						&.open { color: $dropdown-link-hover }
+					}
+				}
+
+				.dropdown-menu {
+					background-color: $dropdown-hover;
+
+					& > .menu-item {
+						& > a { background-color: $dropdown-hover; }
+					}
+				}
+			}
+		}
+	}
+
+	@media (min-width: 1200px) {
+		#masthead {
+			.primary-navbar {
+				& > .nav {
+					& > .menu-item {
+						&:hover,
+						&.active:hover {
+							& > a {
+								background-color: $dropdown;
+								color: $hover;
+							}
+						}
+
+						& > a,
+						&.active > a {
+							background-color: $bg;
+							color: $link;
+						}
+					}
+
+					.dropdown-menu {
+						background-color: $dropdown;
+
+						& > .menu-item {
+							color: $dropdown-link;
+
+							&:hover,
+							&:active:hover,
+							&:focus {
+								background-color: $dropdown-hover;
+								color: $dropdown-link-hover;
+							}
+						}
+
+						.dropdown-menu {
+							.menu-item { background-color: $dropdown-hover; }
+						}
+					}
+				}
+			}
+		}
+	}
+}

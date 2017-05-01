@@ -25,7 +25,6 @@
 @include media('<desktop') {
 	#masthead {
 		.primary-navbar {
-			background-color: map-get($top-menu, dropdown);
 			left: 30px;
 			order: 3;
 			position: absolute;
@@ -36,39 +35,33 @@
 			& > .nav {
 				margin-bottom: 0;
 				margin-top: 0;
+
+				.caret { display: none; }
 			}
 
 			.menu-item {
-				&.open,
-				&.open.active,
-				&.active:hover,
-				&:hover {
-					& > a {
-						background-color: map-get($top-menu, dropdown-hover);
-						color: map-get($top-menu, dropdown-link-hover);
-					}
-				}
 
 				&.active > a,
 				& > a {
-					background-color: map-get($top-menu, dropdown);
-					color: map-get($top-menu, dropdown-link);
 					padding: 10px 15px;
-
-					&.open { color: map-get($top-menu, dropdown-link-hover); }
 				}
-			}
 
-			.dropdown-menu {
-				background-color: map-get($top-menu, dropdown-hover);
-				padding: 0 20px;
+				&.dropdown > a {
+					position: relative;
 
-				& > .menu-item {
-					& > a {
-						background-color: map-get($top-menu, dropdown-hover);
+					&:after {
+						@include fa-icon();
+
+						content: $fa-var-angle-down;
+						margin-left: 10px;
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
 					}
 				}
 			}
+
+			.dropdown-menu { padding: 0 20px; }
 		}
 	}
 }
@@ -89,26 +82,18 @@
 			flex-grow: 1;
 			margin-left: 100px;
 			padding: 0;
+			position: relative;
 
 			& > .nav {
 				height: 100%;
+				position: absolute;
 
 				& > .menu-item {
 					display: table;
 					height: 100%;
 
-					&:hover,
-					&.active:hover {
-						& > a {
-							background-color: nth($blue, 2);
-							color: nth($blue, 1);
-						}
-					}
-
 					& > a,
 					&.active > a {
-						background-color: #FFF;
-						color: #515151;
 						display: table-cell;
 						font-size: 14px;
 						padding: 0 15px;
@@ -117,7 +102,7 @@
 					}
 				}
 
-				.dropdown {
+				.menu-item-has-children {
 					&:hover {
 						& > .dropdown-menu {
 							opacity: 1;
@@ -127,20 +112,18 @@
 				}
 
 				.dropdown-menu {
-					background-color: nth($blue, 2);
 					box-shadow: none;
 					border: 0 none;
 					border-radius: 0;
 					display: block;
 					margin: 0;
-					opacity: 0;
+					opacity: .3;
 					padding: 0;
 					transition: all 300ms ease;
 					transform: scale(1, 0);
 					transform-origin: top center;
 
 					& > .menu-item {
-						color: #FFF;
 						transition: all 300ms ease;
 
 						&.dropdown {
@@ -153,13 +136,6 @@
 								top: 50%;
 								transform: translateY(-50%);
 							}
-						}
-
-						&:hover,
-						&:active:hover,
-						&:focus {
-							background-color: #2B3840;
-							color: nth($blue, 1);
 						}
 
 						& > a {
@@ -178,8 +154,6 @@
 						.dropdown-menu {
 							left: 100%;
 							top: 0;
-
-							.menu-item { background-color: #2B3840; }
 						}
 					}
 				}
@@ -187,3 +161,5 @@
 		}
 	}
 }
+
+@include nav-colours();

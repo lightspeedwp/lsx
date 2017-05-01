@@ -22,6 +22,16 @@ $top-menu: (
 	height: 32px
 );
 
+$nav: (
+	bg: #FFF,
+	link: #515151,
+	hover: nth($blue, 1),
+	dropdown: nth($blue, 2),
+	dropdown-hover: #2B3840,
+	dropdown-link: #FFF,
+	dropdown-link-hover: nth($blue, 1)
+);
+
 $header: (
 	bg: #FFF,
 	link: $red-accent,
