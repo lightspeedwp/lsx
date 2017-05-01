@@ -1,39 +1,36 @@
 #masthead {
 	border: 0 none;
 	border-radius: 0;
-	margin-bottom: 0;
-	min-height: 0;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+	margin-bottom: 0;
+	min-height: none;
 
 	& > .container {
 		align-items: center;
 		display: flex;
-		flex-flow: row nowrap;
+		flex-flow: column nowrap;
 		justify-content: flex-start;
+
+		padding-left: 15px;
+		padding-right: 15px;
 		position: relative;
+		width: 100%;
 
 		@include media('>=desktop') {
+			flex-direction: row;
+			min-height: 80px;
 			padding-left: 50px;
 			padding-right: 50px;
-			width: 100%;
 		}
 	}
 
 	.navbar-header {
-		flex-grow: 1;
-
 		@include media('<desktop') {
-			align-items: center;
+			align-items: flex-start;
 			display: flex;
-			flex-flow: row nowrap;
-			justify-content: flex-end;
+			flex-flow: column nowrap;
 			margin: 0;
-		}
-
-		@include media('>=desktop') { flex-grow: 0; }
-
-		& > .navbar-toggle {
-			@include media('<desktop') { order: 3; }
+			width: 100%
 		}
 
 		.site-branding {

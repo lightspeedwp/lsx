@@ -3,9 +3,14 @@
 		display: inline-block;
 		line-height: 1;
 		order: 2;
+		position: absolute;
+		right: 15px;
+		top: calc(50% - 38px);
 		transition: all 300ms ease-in-out;
 
 		@include media('>=desktop') {
+			top: 22px;
+
 			&:hover,
 			&:active,
 			&:focus {

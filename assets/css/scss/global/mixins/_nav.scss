@@ -9,43 +9,34 @@
 
 	@media (max-width: 1199px) {
 		#masthead {
-			.mobile-menu-title { color: $link; }
+			.wrapper-toggle {
+				background-color: $dropdown;
 
-			.navbar-toggle {
-				background-color: $bg;
-				border-color: lighten($link, 10%);
+				.mobile-menu-title { color: $dropdown-link; }
 
-				& > .icon-bar { background-color: $link; }
+				.navbar-toggle {
+					background-color: $dropdown;
+
+					& > .icon-bar { background-color: $dropdown-link; }
+				}
 			}
 
 			.primary-navbar {
 				background-color: $dropdown;
 
 				.menu-item {
-					&.open,
-					&.open.active,
-					&.active:hover,
-					&:hover {
-						& > a {
-							background-color: $dropdown-hover;
-							color: $dropdown-link-hover;
-						}
-					}
-
 					&.active > a,
 					& > a {
 						background-color: $dropdown;
 						color: $dropdown-link;
-
-						&.open { color: $dropdown-link-hover }
 					}
 				}
 
 				.dropdown-menu {
-					background-color: $dropdown-hover;
+					& > .menu-item a { color: darken($dropdown-link, 25%); }
 
-					& > .menu-item {
-						& > a { background-color: $dropdown-hover; }
+					.dropdown-menu {
+						& > .menu-item a { color: darken($dropdown-link, 10%); }
 					}
 				}
 			}

@@ -1,39 +1,80 @@
 @include media('<desktop') {
 	#masthead {
-		.mobile-menu-title {
+		.wrapper-toggle {
+			align-items: center;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content:center;
+			margin-left: -15px;
+			margin-right: -15px;
 			order: 2;
-			flex-grow: 1;
-			font-size: 13px;
-			margin-right: 10px;
-			text-transform: uppercase;
-			text-align: right;
+			width: calc(100% + 30px);
+
+			&.open {
+				.mobile-menu-title {
+					&:after { content: $fa-var-times; }
+				}
+			}
+
+			.mobile-menu-title {
+				font-size: 14px;
+				font-weight: 700;
+				letter-spacing: .5px;
+				line-height: 1;
+				text-transform: uppercase;
+				text-align: right;
+
+				&:after {
+					@include fa-icon();
+
+					content: $fa-var-angle-down;
+					margin-left: 5px;
+					text-align: center;
+					width: 16px;
+				}
+			}
+
+			.navbar-toggle {
+				border: 0 none;
+				border-radius: 0;
+				margin: 0;
+				padding: 10px 15px;
+
+				& > .icon-bar {
+					border-radius: 0;
+					width: 30px;
+
+					& + .icon-bar { margin-top: 5px; }
+				}
+			}
 		}
 
 		.primary-navbar {
-			left: 30px;
+			border: 0 none;
+			box-shadow: none;
+			margin-left: -15px;
+			margin-right: -15px;
 			order: 3;
-			position: absolute;
-			width: calc(100% - 30px);
-			top: 100%;
+			width: calc(100% + 30px);
 			z-index: 1000;
 
 			& > .nav {
 				margin-bottom: 0;
 				margin-top: 0;
-				padding: 15px 30px 30px;
+				padding: 5px 20px 10px;
 
 				.caret { display: none; }
 
 				& > .menu-item + .menu-item {
 					& > a {
 						&:before {
-							content: '';
-							position: absolute;
-							top: 0;
-							left: 0;
-							right: 0;
-							height: 1px;
 							background-color: #979797;
+							content: '';
+							height: 1px;
+							left: 0;
+							position: absolute;
+							right: 0;
+							top: 0;
 						}
 					}
 				}
@@ -42,7 +83,8 @@
 			.menu-item {
 				&.active > a,
 				& > a {
-					padding: 10px 5px;
+					font-size: 16px;
+					padding: 10px 0;
 				}
 
 				&.dropdown > a {
@@ -60,16 +102,28 @@
 				}
 			}
 
-			.dropdown-menu { padding: 0 20px; }
-		}
-	}
-}
+			.dropdown-menu {
+				border-radius: 0;
+				padding: 0;
 
-@include media('<phone') {
-	#masthead {
-		.primary-navbar {
-			left: 15px;
-			width: 100%;
+				& > .menu-item a { padding-left: 15px; }
+
+				& > .menu-item.open > a {
+					&:before {
+						background-color: #979797;
+						bottom: 0;
+						content: '';
+						height: 1px;
+						left: 15px;
+						position: absolute;
+						right: 0;
+					}
+				}
+
+				.dropdown-menu {
+					& > .menu-item a { padding-left: 30px; }
+				}
+			}
 		}
 	}
 }

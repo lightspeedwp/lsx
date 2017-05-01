@@ -43,6 +43,21 @@ var lsx = Object.create( null );
 	};
 
 	/**
+	 * Add a class to identify when the mobile nav is open
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+
+	lsx.navbar_toggle_handler = function () {
+		$( '.navbar-toggle' ).on( 'click', function () {
+			var $parent = $( this ).parent();
+
+			$parent.toggleClass( 'open' );
+		});
+	};
+
+	/**
 	 * Fix Bootstrap menus (touchstart).
 	 *
 	 * @package    lsx
@@ -335,6 +350,8 @@ var lsx = Object.create( null );
 	 * @subpackage scripts
 	 */
 	$document.ready( function() {
+
+		lsx.navbar_toggle_handler();
 
 		lsx.fix_bootstrap_menus_touchstart();
 
