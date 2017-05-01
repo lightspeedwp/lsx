@@ -77,12 +77,12 @@ var lsx = Object.create( null );
 
 		$window.resize( function() {
 			if ( windowWidth > 1199 ) {
-				$( '.navbar-nav li.dropdown a' ).each( function() {
+				$( '.navbar-nav li.dropdown a, #top-menu li.dropdown a' ).each( function() {
 					$( this ).removeClass( 'dropdown-toggle' );
 					$( this ).removeAttr( 'data-toggle' );
 				} );
 			} else {
-				$( '.navbar-nav li.dropdown a' ).each( function() {
+				$( '.navbar-nav li.dropdown a, #top-menu li.dropdown a' ).each( function() {
 					$( this ).addClass( 'dropdown-toggle' );
 					$( this ).attr( 'data-toggle','dropdown' );
 				} );
@@ -119,8 +119,8 @@ var lsx = Object.create( null );
 			} );
 		} else {
 			$( '.dropdown .dropdown > a' ).on( 'click', function( e ) {
-				if (!$( this ).hasClass( 'open' ) ) {
-					$( this ).addClass( 'open' );
+				if ( ! $( this ).parent().hasClass( 'open' ) ) {
+					$( this ).parent().addClass( 'open' );
 					$( this ).next( '.dropdown-menu' ).dropdown('toggle');
 					e.stopPropagation();
 					e.preventDefault();
