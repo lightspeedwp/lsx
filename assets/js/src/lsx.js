@@ -61,19 +61,19 @@ var lsx = Object.create( null );
 	 * @subpackage scripts
 	 */
 	lsx.fix_bootstrap_menus_dropdown = function() {
-		if ( windowWidth > 1199 ) {
-			$( '.navbar-nav li.dropdown a, #top-menu li.dropdown a' ).each( function() {
-				$( this ).removeClass( 'dropdown-toggle' );
-				$( this ).removeAttr( 'data-toggle' );
-			} );
-		}
-
 		$( '.dropdown' ).on( 'show.bs.dropdown', function() {
 			if ( windowWidth < 1200 ) {
 				$( this ).siblings( '.open' ).removeClass( 'open' ).find( 'a.dropdown-toggle' ).attr( 'data-toggle', 'dropdown' );
 				$( this ).find( 'a.dropdown-toggle' ).removeAttr( 'data-toggle' );
 			}
 		} );
+
+		if ( windowWidth > 1199 ) {
+			$( '.navbar-nav li.dropdown a, #top-menu li.dropdown a' ).each( function() {
+				$( this ).removeClass( 'dropdown-toggle' );
+				$( this ).removeAttr( 'data-toggle' );
+			} );
+		}
 
 		$window.resize( function() {
 			if ( windowWidth > 1199 ) {
@@ -125,6 +125,10 @@ var lsx = Object.create( null );
 					e.stopPropagation();
 					e.preventDefault();
 				}
+			} );
+
+			$( '.dropdown .dropdown .dropdown-menu a' ).on( 'click', function( e ) {
+				document.location.href = this.href;
 			} );
 		}
 	};
