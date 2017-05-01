@@ -5,7 +5,7 @@
 		order: 2;
 		position: absolute;
 		right: 15px;
-		top: calc(50% - 38px);
+		top: calc((100% - 43px)/2 - 19px);
 		transition: all 300ms ease-in-out;
 
 		@include media('>=desktop') {
@@ -21,8 +21,8 @@
 				}
 
 				.search-submit {
+					color: $text-color;
 					cursor: pointer;
-					color: #000 !important;
 					font-weight: 700;
 					z-index: 9999;
 
@@ -40,8 +40,8 @@
 				}
 
 				.search-submit {
+					color: $text-color;
 					cursor: pointer;
-					color: #000 !important;
 					font-weight: 700;
 					z-index: 9999;
 
@@ -61,14 +61,14 @@
 		font-size: 14px;
 		height: auto;
 		opacity: 0;
+		padding: 7px 11px;
 		position: absolute;
-    	padding: 7px 11px;
-    	right: 0;
-    	transition: all 400ms ease-in-out;
-    	width: 10px;
+		right: 0;
+		transition: all 400ms ease-in-out;
+		width: 10px;
 
-    	@include media('>=desktop') {
-	    	&:hover,
+		@include media('>=desktop') {
+			&:hover,
 			&:active,
 			&:focus {
 				opacity: 1;
@@ -94,7 +94,7 @@
 		#masthead & {
 			padding: 10px 12px;
 			background: none !important;
-			color: #000 !important;
+			color: $text-color;
 			z-index: 999;
 
 			.fa {
@@ -112,7 +112,7 @@
 				&:hover,
 				&:active,
 				&:focus {
-					color: #000;
+					color: $text-color;
 
 					.fa { font-weight: bold; }
 				}
