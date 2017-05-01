@@ -10,17 +10,20 @@
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: flex-start;
-
-		padding-left: 15px;
-		padding-right: 15px;
 		position: relative;
-		width: 100%;
+
+		@include media('>=phone', '<desktop') {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include media('<desktop') { width: 100%; }
 
 		@include media('>=desktop') {
 			flex-direction: row;
 			min-height: 80px;
-			padding-left: 50px;
-			padding-right: 50px;
+			padding-left: 15px;
+			padding-right: 15px;
 		}
 	}
 

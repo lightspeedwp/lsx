@@ -5,8 +5,10 @@
 		order: 2;
 		position: absolute;
 		right: 15px;
-		top: calc((100% - 43px)/2 - 19px);
+		top: 11px;
 		transition: all 300ms ease-in-out;
+
+		@include media('>=phone') { top: 16px; }
 
 		@include media('>=desktop') {
 			top: 22px;
