@@ -35,15 +35,29 @@
 			& > .nav {
 				margin-bottom: 0;
 				margin-top: 0;
+				padding: 15px 30px 30px;
 
 				.caret { display: none; }
+
+				& > .menu-item + .menu-item {
+					& > a {
+						&:before {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							height: 1px;
+							background-color: #979797;
+						}
+					}
+				}
 			}
 
 			.menu-item {
-
 				&.active > a,
 				& > a {
-					padding: 10px 15px;
+					padding: 10px 5px;
 				}
 
 				&.dropdown > a {
@@ -86,7 +100,9 @@
 
 			& > .nav {
 				height: 100%;
+				left: 0;
 				position: absolute;
+				right: 0;
 
 				& > .menu-item {
 					display: table;

@@ -200,9 +200,10 @@ header.banner .search-submit:active { box-shadow: none; }
 #masthead .navbar-toggle > .icon-bar { background-color: #418AD0; }
 
 @media (max-width: 1199px) { #masthead .primary-navbar { right: 30px; -webkit-box-ordinal-group: 4; -ms-flex-order: 3; order: 3; position: absolute; width: calc(100% - 30px); top: 100%; z-index: 1000; }
-  #masthead .primary-navbar > .nav { margin-bottom: 0; margin-top: 0; }
+  #masthead .primary-navbar > .nav { margin-bottom: 0; margin-top: 0; padding: 15px 30px 30px; }
   #masthead .primary-navbar > .nav .caret { display: none; }
-  #masthead .primary-navbar .menu-item.active > a, #masthead .primary-navbar .menu-item > a { padding: 10px 15px; }
+  #masthead .primary-navbar > .nav > .menu-item + .menu-item > a:before { content: ''; position: absolute; top: 0; right: 0; left: 0; height: 1px; background-color: #979797; }
+  #masthead .primary-navbar .menu-item.active > a, #masthead .primary-navbar .menu-item > a { padding: 10px 5px; }
   #masthead .primary-navbar .menu-item.dropdown > a { position: relative; }
   #masthead .primary-navbar .menu-item.dropdown > a:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: ""; margin-right: 10px; position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
   #masthead .primary-navbar .dropdown-menu { padding: 0 20px; } }
@@ -210,7 +211,7 @@ header.banner .search-submit:active { box-shadow: none; }
 @media (max-width: 767px) { #masthead .primary-navbar { right: 15px; width: 100%; } }
 
 @media (min-width: 1200px) { #masthead .primary-navbar { -ms-flex-item-align: stretch; -ms-grid-row-align: stretch; align-self: stretch; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; margin-right: 100px; padding: 0; position: relative; }
-  #masthead .primary-navbar > .nav { height: 100%; position: absolute; }
+  #masthead .primary-navbar > .nav { height: 100%; right: 0; position: absolute; left: 0; }
   #masthead .primary-navbar > .nav > .menu-item { display: table; height: 100%; }
   #masthead .primary-navbar > .nav > .menu-item > a, #masthead .primary-navbar > .nav > .menu-item.active > a { display: table-cell; font-size: 14px; padding: 0 15px; vertical-align: middle; transition: all 300ms ease; }
   #masthead .primary-navbar > .nav .menu-item-has-children:hover > .dropdown-menu { opacity: 1; -webkit-transform: scale(1, 1); transform: scale(1, 1); }
