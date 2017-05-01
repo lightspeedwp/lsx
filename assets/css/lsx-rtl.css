@@ -194,7 +194,7 @@ img { display: inline-block; max-width: 100%; height: auto; }
   #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:active:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:focus { background-color: #2B3840; color: #418AD0; }
   #masthead .primary-navbar > .nav .dropdown-menu .dropdown-menu .menu-item { background-color: #2B3840; } }
 
-#masthead #searchform { display: inline-block; -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; transition: all 300ms ease-in-out; }
+#masthead #searchform { display: inline-block; line-height: 1; -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; transition: all 300ms ease-in-out; }
 
 @media (min-width: 1200px) { #masthead #searchform:hover .search-field, #masthead #searchform:active .search-field, #masthead #searchform:focus .search-field { opacity: 1; width: 290px; z-index: 999; }
   #masthead #searchform:hover .search-submit, #masthead #searchform:active .search-submit, #masthead #searchform:focus .search-submit { cursor: pointer; color: #000 !important; font-weight: 700; z-index: 9999; }
@@ -203,10 +203,6 @@ img { display: inline-block; max-width: 100%; height: auto; }
 @media (max-width: 1199px) { #masthead #searchform.hover .search-field { opacity: 1; width: 290px; z-index: 999; }
   #masthead #searchform.hover .search-submit { cursor: pointer; color: #000 !important; font-weight: 700; z-index: 9999; }
   #masthead #searchform.hover .search-submit .fa { font-weight: 700; } }
-
-@media (max-width: 991px) { #masthead #searchform { margin-top: 30px; } }
-
-@media (max-width: 767px) { #masthead #searchform { margin-top: 16px; margin-left: -15px; } }
 
 #masthead #searchform .input-group { display: inline-block; }
 
