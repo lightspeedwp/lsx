@@ -9,6 +9,15 @@
 
 	@media (max-width: 1199px) {
 		#masthead {
+			.mobile-menu-title { color: $link; }
+
+			.navbar-toggle {
+				background-color: $bg;
+				border-color: lighten($link, 10%);
+
+				& > .icon-bar { background-color: $link; }
+			}
+
 			.primary-navbar {
 				background-color: $dropdown;
 
