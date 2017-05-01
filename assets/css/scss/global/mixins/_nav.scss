@@ -33,10 +33,10 @@
 				}
 
 				.dropdown-menu {
-					& > .menu-item a { color: darken($dropdown-link, 25%); }
+					& > .menu-item a { color: $dropdown-link; }
 
 					.dropdown-menu {
-						& > .menu-item a { color: darken($dropdown-link, 10%); }
+						& > .menu-item a { color: $dropdown-link; }
 					}
 				}
 			}
