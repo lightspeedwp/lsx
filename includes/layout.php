@@ -167,8 +167,9 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_global_header() {
-		$default_size = 'sm';
-		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+		$show_on_front = get_option( 'show_on_front' );
+		$default_size  = 'sm';
+		$size          = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
 		if ( is_singular( 'post' ) ) :
 			$format = get_post_format();
@@ -186,7 +187,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 				</h1>
 			</header>
 			<?php
-		elseif ( is_page() || is_single() ) :
+		elseif ( ( is_page() || is_single() ) && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
 			?>
 			<header class="archive-header col-<?php echo esc_attr( $size ); ?>-12">
 				<h1 class="archive-title"><?php the_title(); ?></h1>
