@@ -17,40 +17,34 @@
 	}
 }
 
+@mixin lsx-bordered-button ($color: map-get($buttons, bg), $color-hover: map-get($buttons, color), $bg: transparent, $bg-hover: map-get($buttons, bg)) {
+	@include lsx-button-colour($color, $color-hover, $bg, $bg-hover);
+
+	&,
+	&:active,
+	&:visited {
+		border: 2px solid $color;
+		box-shadow: none;
+	}
+
+	&:active {
+		left: 0;
+		top: 0;
+	}
+
+	transition: all 300ms ease;
+}
+
 @mixin custom-buttons-colours ($color: map-get($buttons, color), $color-hover: map-get($buttons, color-hover), $bg: map-get($buttons, bg), $bg-hover: map-get($buttons, bg-hover)) {
 	.btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover); }
 
-	.border-btn {
-		@include lsx-button-colour($bg, #FFF, transparent, $bg);
+	.border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
 
-		&,
-		&:active,
-		&:visited {
-			border-color: $bg;
-		}
-	}
-
-	.white-border-btn {
-		@include lsx-button-colour(#FFF, $bg, transparent, #FFF);
-
-		&,
-		&:active,
-		&:visited {
-			border-color: #FFF;
-		}
-	}
+	.white-border-btn { @include lsx-bordered-button(#FFF, $bg, transparent, #FFF); }
 }
 
 @mixin custom-cta-buttons-colours ($color: map-get($cta-buttons, color), $color-hover: map-get($cta-buttons, color-hover), $bg: map-get($cta-buttons, bg), $bg-hover: map-get($cta-buttons, bg-hover)) {
 	.cta-btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover); }
 
-	.cta-border-btn {
-		@include lsx-button-colour($bg, #FFF, transparent, $bg);
-
-		&,
-		&:active,
-		&:visited {
-			border-color: nth($bg, 1);
-		}
-	}
+	.cta-border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
 }
