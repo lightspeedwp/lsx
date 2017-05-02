@@ -2,6 +2,13 @@
 	.wrap & {
 		padding: 85px 0;
 
+		&:last-child {
+			.lsx-full-width,
+			.lsx-full-width-alt {
+				margin-bottom: -85px;
+			}
+		}
+
 		& + .widget { padding-top: 0; }
 
 		h3,
@@ -43,6 +50,8 @@
 			}
 		}
 
+		img ~ p { margin-top: 25px; }
+
 		a:not(.btn) { transition: all 300ms ease; }
 
 		.btn { margin-top: 45px; }
@@ -50,10 +59,11 @@
 		.lsx-full-width,
 		.lsx-full-width-alt {
 			margin: 0 -9999px;
-			padding: 85px 9999px;
+			padding: 0 9999px 85px;
 
 			h3,
 			.widget-title {
+				margin-top: 85px;
 				&:after { display: none; }
 			}
 		}
