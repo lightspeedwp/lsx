@@ -694,7 +694,7 @@ if ( ! function_exists( 'lsx_footer_subscription_cta' ) ) :
 				<div class="row">
 					<div class="col-md-12">
 						<h2><?php esc_html_e( 'Subscribe to Our Newsletter', 'lsx' ); ?></h2>
-						<?php echo do_shortcode( '[caldera_form id="' . $subscribe_form_id . '"]' ); ?>
+						<?php echo Caldera_Forms::render_form( $subscribe_form_id ); ?>
 					</div>
 				</div>
 			</div>
