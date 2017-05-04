@@ -1,5 +1,11 @@
 ## Change log
 
+### 1.8.6
+* Fix - Fixed CSS enqueue (parent > child themes)
+* Fix - Removed remove_filter: the_excerpt/wpautop
+* Fix - Small Sass files change (wiyhout affect CSS)
+* Fix - Fixed duplicated breadcrumb for custom taxonomy archives
+
 ### 1.8.5
 * Fix - Footer widgets changed breakpoint
 * Fix - Keep default behaviour from sliders on mobile
@@ -8,9 +14,6 @@
 * Fix - Fixed post author when 'get_the_author' is not available
 * Fix - Fixed breadcrumb display position on archive.php, author.php and search.php
 * Fix - Small issue (style) with Pagenavi pagination
-* Fix - Fixed CSS enqueue (parent > child themes)
-* Fix - Removed remove_filter: the_excerpt/wpautop
-* Fix - Small Sass files change (wiyhout affect CSS)
 
 ### 1.8.4
 * Fix - Re-added the get_comments_number() fix
