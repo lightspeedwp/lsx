@@ -13045,12 +13045,15 @@ img.lazyloaded {
 .caldera-clarity-grid .checkbox {
   margin-top: 0px;
   margin-bottom: 7px; }
-
-.caldera-grid input[type="checkbox"],
-.caldera-grid input[type="radio"],
-.caldera-clarity-grid input[type="checkbox"],
-.caldera-clarity-grid input[type="radio"] {
-  margin: 11px 10px 0 -20px; }
+  .caldera-grid .radio input[type="checkbox"],
+  .caldera-grid .radio input[type="radio"],
+  .caldera-grid .checkbox input[type="checkbox"],
+  .caldera-grid .checkbox input[type="radio"],
+  .caldera-clarity-grid .radio input[type="checkbox"],
+  .caldera-clarity-grid .radio input[type="radio"],
+  .caldera-clarity-grid .checkbox input[type="checkbox"],
+  .caldera-clarity-grid .checkbox input[type="radio"] {
+    top: 8px; }
 
 .give-form .give-input {
   background: #fff !important;
