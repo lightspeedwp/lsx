@@ -274,8 +274,17 @@
 	.checkbox {
 		margin-top: 0px;
 		margin-bottom: 7px;
+	}
 
-		input[type="checkbox"],
+	.checkbox,
+	.checkbox-inline {
+		input[type="checkbox"] {
+			top: 8px;
+		}
+	}
+
+	.radio,
+	.radio-inline {
 		input[type="radio"] {
 			top: 8px;
 		}
