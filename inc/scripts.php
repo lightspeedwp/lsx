@@ -45,16 +45,9 @@ function lsx_scripts() {
 	$param_array['columns'] = apply_filters('lsx_archive_column_number',3);
 	wp_localize_script( 'lsx_script', 'lsx_params', $param_array );
 
-
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), LSX_VERSION );
 	
-	
-	if(is_child_theme() && file_exists(get_stylesheet_directory() . '/custom.css')) {
-		wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css', array( 'lsx_main' ), LSX_VERSION );
-	}
-
 	wp_enqueue_style('medium-break', get_template_directory_uri() . '/css/medium-nav-break.css', array(), LSX_VERSION);
-	
 	
 	$font = get_theme_mod('lsx_font','raleway_open_sans');
 	switch($font){
@@ -98,6 +91,20 @@ function lsx_scripts() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'lsx_scripts' );
+
+/**
+ * Enqueue scripts and styles (for child theme).
+ *
+ * @package 	lsx
+ * @subpackage	scripts
+ */
+function lsx_scripts_child_theme() {
+	global $content_width;
+	if(is_child_theme() && file_exists(get_stylesheet_directory() . '/custom.css')) {
+		wp_enqueue_style( 'child-css', get_stylesheet_directory_uri() . '/custom.css', array( 'lsx_main' ), LSX_VERSION );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'lsx_scripts_child_theme', 1999 );
 
 /**
  * Defer JavaScript
