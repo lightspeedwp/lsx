@@ -54,7 +54,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="footer-meta">
-		<?php if ( has_tag() || ( function_exists( 'sharing_display' ) || class_exists( 'Jetpack_Likes' ) ) ) : ?>
+		<?php if ( has_tag() || class_exists('LSX_Sharing') || ( function_exists( 'sharing_display' ) || class_exists( 'Jetpack_Likes' ) ) ) : ?>
 			<div class="post-tags-wrapper">
 				<?php lsx_content_post_tags(); ?>
 
