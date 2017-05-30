@@ -68,6 +68,10 @@
 						echo wp_kses_post( $custom_likes->post_likes( '' ) );
 					}
 				?>
+
+                <?php if(class_exists('LSX_Sharing')){
+					lsx_content_sharing();
+                }?>
 			</div>
 		<?php endif ?>
 
