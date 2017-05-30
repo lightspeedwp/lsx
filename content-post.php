@@ -54,24 +54,24 @@
 	</div><!-- .entry-content -->
 
 	<footer class="footer-meta">
-		<?php if ( has_tag() || class_exists('LSX_Sharing') || ( function_exists( 'sharing_display' ) || class_exists( 'Jetpack_Likes' ) ) ) : ?>
+		<?php if ( has_tag() || class_exists( 'LSX_Sharing' ) || ( function_exists( 'sharing_display' ) || class_exists( 'Jetpack_Likes' ) ) ) : ?>
             <div class="post-tags-wrapper">
 				<?php lsx_content_post_tags(); ?>
 
 				<?php
-				if ( function_exists( 'sharing_display' ) ) {
-					sharing_display( '', true );
-				}
+					if ( class_exists( 'LSX_Sharing' ) ) {
+						lsx_content_sharing();
+					} else {
+						if ( function_exists( 'sharing_display' ) ) {
+							sharing_display( '', true );
+						}
 
-				if ( class_exists( 'Jetpack_Likes' ) ) {
-					$custom_likes = new Jetpack_Likes;
-					echo wp_kses_post( $custom_likes->post_likes( '' ) );
-				}
+						if ( class_exists( 'Jetpack_Likes' ) ) {
+							$custom_likes = new Jetpack_Likes;
+							echo wp_kses_post( $custom_likes->post_likes( '' ) );
+						}
+					}
 				?>
-
-				<?php if(class_exists('LSX_Sharing')){
-					lsx_content_sharing();
-				}?>
             </div>
 		<?php endif ?>
 
