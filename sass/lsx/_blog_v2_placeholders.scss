@@ -245,6 +245,10 @@
 	.sharedaddy {
 		@extend %module-single-sharedaddy;
 	}
+
+	.lsx-sharing-content {
+		@extend %module-single-lsx-sharing;
+	}
 }
 
 %module-single-tags {
@@ -418,6 +422,43 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+%module-single-lsx-sharing {
+	margin: 0 0 7px 0;
+	float: right;
+	width: 50%;
+	clear: none;
+	line-height: 1;
+	text-align: right;
+
+	@media only screen and (max-width: 767px) {
+		width: 100%;
+		margin-top: 10px;
+		text-align: left;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.lsx-sharing-label {
+		font-size: 15px;
+		line-height: 26px;
+
+		&:before {
+			@extend %font-awesome;
+			content: '\f1e0';
+			border-top: none;
+			width: auto;
+			min-width: auto;
+			margin-bottom: 0;
+		}
+
+		@media only screen and (max-width: 767px) {
+			display: none;
 		}
 	}
 }
