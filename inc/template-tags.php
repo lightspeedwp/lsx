@@ -183,6 +183,17 @@ if ( ! function_exists( 'lsx_post_tags' ) ) {
 add_action( 'lsx_content_post_tags', 'lsx_post_tags', 10 );
 
 /**
+ * Sharing buttons.
+ */
+if ( ! function_exists( 'lsx_sharing_output' ) ) {
+	function lsx_sharing_output() {
+		global $lsx_sharing;
+		echo wp_kses_post( $lsx_sharing->sharing_buttons() );
+	}
+}
+add_action( 'lsx_content_sharing', 'lsx_sharing_output', 20 );
+
+/**
  * Add customisable post info: related posts
  */
 function lsx_related_posts() {
