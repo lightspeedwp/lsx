@@ -12144,6 +12144,32 @@ img.lazyloaded {
   transition: opacity 10ms ease-in-out;
   background: none; }
 
+.modal .modal-content {
+  padding: 20px;
+  border-radius: 0;
+  border: 6px solid #2a6496; }
+
+.modal .modal-body {
+  padding: 0;
+  overflow-x: hidden; }
+
+.modal .close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  opacity: 1;
+  color: #FFF;
+  width: 32px;
+  height: 32px;
+  background-color: #2a6496;
+  z-index: 2;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  box-shadow: 0 0 4px 0 #2a6496; }
+  .modal .close:hover {
+    background-color: #2a6496;
+    opacity: 1; }
+
 .lsx-blog-wrapper .lsx-blog .post {
   overflow: visible !important;
   margin-bottom: 40px;
