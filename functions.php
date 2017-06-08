@@ -6,7 +6,7 @@
  */
 if ( ! defined( 'ABSPATH' ) ) return; // Exit if accessed directly
 
-define('LSX_VERSION', '1.8.7');
+define('LSX_VERSION', '1.8.8');
 
 require get_template_directory() . '/inc/config.php';
 require get_template_directory() . '/inc/customizer.php';

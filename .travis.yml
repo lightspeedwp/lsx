@@ -1,34 +1,45 @@
+# Travis CI (MIT License) configuration file for the FoundationPress WordPress theme.
+# @link https://travis-ci.org/
+
+# For use with the FoundationPress WordPress theme.
+# @link https://github.com/olefredrik/foundationpress
+
 # Declare project language.
+# @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
-  - "7.0"  
- # - "5.6"  
- # - "5.5"
- # - "5.4"
- # - "5.3"
- # - "5.2"
+  # aliased to a recent 7.1.x version
+  - "7.1"
+  # aliased to a recent 7.0.x version
+  - "7.0"
+  # aliased to a recent 5.6.x version
+  - "5.6"
 
 # Declare which versions of WordPress to test against.
 # Also declare whether or not to test in Multisite.
 env:
+  # Trunk
+  # @link https://github.com/WordPress/WordPress
   - WP_VERSION=master WP_MULTISITE=0
   - WP_VERSION=master WP_MULTISITE=1
- # - WP_VERSION=4.5 WP_MULTISITE=0
- # - WP_VERSION=4.5 WP_MULTISITE=1
- # - WP_VERSION=4.4 WP_MULTISITE=0
- # - WP_VERSION=4.4 WP_MULTISITE=1
- # - WP_VERSION=4.3 WP_MULTISITE=0
- # - WP_VERSION=4.3 WP_MULTISITE=1  
+  # WordPress 4.3
+  # @link https://github.com/WordPress/WordPress/tree/4.3-branch
+  - WP_VERSION=4.3 WP_MULTISITE=0
+  - WP_VERSION=4.3 WP_MULTISITE=1
 
-# Declare 5.6 beta in test matrix.
+# Declare 7.1 beta in test matrix.
+# @link https://buddypress.trac.wordpress.org/ticket/5620
+# @link http://docs.travis-ci.com/user/build-configuration/
 matrix:
   include:
-    - php: 5.6
-      env: WP_VERSION=master
+    - php: nightly
+      env:
+        - WP_VERSION=master WP_MULTISITE=0
+        - WP_VERSION=master WP_MULTISITE=1
   allow_failures:
-    - php: 5.6
+    - php: nightly
   fast_finish: true
 
 # Use this to prepare the system to install prerequisites or dependencies.
@@ -61,9 +72,9 @@ before_script:
   # Create WordPress database.
   #- mysql -e 'CREATE DATABASE wordpress_test;' -uroot
   # Install CodeSniffer for WordPress Coding Standards checks.
-  - git clone https://github.com/squizlabs/PHP_CodeSniffer.git php-codesniffer
+  - git clone -b 2.9 --single-branch https://github.com/squizlabs/PHP_CodeSniffer.git php-codesniffer --depth=1
   # Install WordPress Coding Standards.
-  - git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wordpress-coding-standards
+  - git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wordpress-coding-standards --depth=1
   # Hop into CodeSniffer directory.
   - cd php-codesniffer
   # Set install path for WordPress Coding Standards.
@@ -90,3 +101,8 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php --ignore=*/vendor/*
+
+# Receive notifications for build results.
+# @link http://docs.travis-ci.com/user/notifications/#Email-notifications
+notifications:
+  email: false
