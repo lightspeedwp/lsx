@@ -11,9 +11,9 @@
 * Theme Name: LSX
 * Theme URI: https://www.lsdev.biz/product/lsx-wordpress-theme/
 * Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-* Requires at least: 4.5
-* Tested up to: 4.5.2
-* Stable tag: 4.5.2
+* Requires at least: 4.3
+* Tested up to: 4.8
+* Stable tag: 4.8
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
