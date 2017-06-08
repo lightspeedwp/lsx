@@ -42,7 +42,7 @@
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="entry-image <?php echo esc_attr( $image_class ); ?>">
 						<a class="thumbnail" href="<?php the_permalink(); ?>">
-							 <?php lsx_thumbnail( 'lsx-single-thumbnail' ); ?>
+							 <?php lsx_thumbnail( 'lsx-thumbnail-single' ); ?>
 						</a>
 					</div>
 				<?php endif; ?>
@@ -147,7 +147,7 @@
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="entry-image hidden hidden-xs">
 				<a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo esc_url( $image_src ); ?>);">
-					<?php lsx_thumbnail( 'lsx-single-thumbnail' ); ?>
+					<?php lsx_thumbnail( 'lsx-thumbnail-single' ); ?>
 				</a>
 			</div>
 		<?php endif; ?>
