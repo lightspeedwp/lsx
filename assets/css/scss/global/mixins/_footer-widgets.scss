@@ -1,0 +1,10 @@
+@mixin footer-widgets-colours ($bg: map-get($footer-widgets, bg), $color: map-get($footer-widgets, color), $link: map-get($footer-widgets, link), $hover: map-get($footer-widgets, hover)) {
+	#footer-widgets {
+		background-color: $bg;
+		color: $color;
+
+		a:not(.btn):not(button) {
+			@include lsx-link-colour($link, $hover);
+		}
+	}
+}

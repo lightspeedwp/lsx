@@ -1,0 +1,10 @@
+@mixin footer-cta-colours ($bg: map-get($footer-cta, bg), $color: map-get($footer-cta, color), $link: map-get($footer-cta, link), $hover: map-get($footer-cta, hover)) {
+	#footer-cta {
+		background-color: $bg;
+		color: $color;
+
+		a:not(.btn):not(button) {
+			@include lsx-link-colour($link, $hover);
+		}
+	}
+}

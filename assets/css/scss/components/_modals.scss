@@ -1,0 +1,93 @@
+.modal {
+	.modal-dialog {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: calc(100vh - 20px);
+		padding-right: 14px;
+		overflow: auto;
+
+		@include media('>=phone') {
+			min-height: calc(100vh - 60px);
+		}
+	}
+
+	.modal-content {
+		border-radius: 0;
+		border-style: solid;
+		border-width: 6px;
+		padding: 20px;
+	}
+
+	.modal-header {
+		border-bottom: 0;
+		overflow-x: hidden;
+		padding: 0 0 20px 0;
+	}
+
+	.modal-body {
+		overflow-x: hidden;
+		padding: 0;
+	}
+
+	.close {
+		border-radius: 50%;
+		border-style: solid;
+		border-width: 2px;
+		height: 32px;
+		opacity: 1;
+		position: absolute;
+		right: -14px;
+		top: -14px;
+		width: 32px;
+		z-index: 2;
+
+		&:hover { opacity: 1; }
+	}
+}
+
+// Caldera Forms
+
+.remodal-wrapper {
+	padding: 32px 10px 0 !important;
+
+	// .modal-dialog {
+	// }
+
+	.remodal {
+		border-radius: 0;
+		border-style: solid;
+		border-width: 6px;
+		padding: 20px;
+	}
+
+	// .modal-header {
+	// }
+
+	.caldera-modal-body {
+		overflow-x: hidden;
+		padding: 0;
+	}
+
+	.modal-title { margin: 0 0 20px 0; }
+
+	.remodal-close {
+		border-radius: 50%;
+		border-style: solid;
+		border-width: 2px;
+		height: 32px;
+		opacity: 1;
+		position: absolute;
+		right: -14px;
+		top: -14px;
+		width: 32px;
+		z-index: 2;
+
+		&:hover { opacity: 1; }
+
+		&:before {
+			line-height: 29px;
+			width: 29px;
+		}
+	}
+}

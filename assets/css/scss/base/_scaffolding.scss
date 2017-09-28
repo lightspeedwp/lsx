@@ -1,0 +1,39 @@
+* {
+	&,
+	&:focus,
+	&:active:focus {
+		outline: none !important;
+	}
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+html {
+	font-size: 5px;
+
+	@include media('>=phone') { font-size: 6.5px; }
+	@include media('>=tablet') { font-size: 8px; }
+	@include media('>=desktop') { font-size: 10px; }
+}
+
+body { direction: ltr; }
+
+img { @include img-responsive(inline-block); }
+
+figure { max-width: 100%; }
+
+p:empty { display: none; }
+
+.checkbox { line-height: 1.2; }
+
+.dropdown-menu:not(.cfdatepicker) { min-width: 100%; }
+
+.dropdown-menu-two-columns {
+	li {
+		float: left;
+		width: 50%;
+	}
+}

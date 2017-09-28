@@ -1,0 +1,126 @@
+.header-wrap {
+	html:not(.ie) .page-has-banner-full & {
+		@include media (">=tablet") {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+	}
+
+	html:not(.ie) .page-has-banner-full.admin-bar & {
+		@include media('>=tablet') { min-height: calc(100vh - 32px); }
+	}
+}
+
+.page-banner-wrap {
+	html:not(.ie) .page-has-banner-full & {
+		@include media (">=tablet") {
+			display: flex;
+			flex: 1;
+		}
+	}
+
+	html.ie .page-has-banner-full & {
+		@include media (">=tablet") {
+			width: 100%;
+		}
+	}
+
+	.page-banner {
+		align-items: center;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-end;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		.home & { min-height: 68vh; }
+
+		.single-post & { min-height: 46vh; }
+
+		@include media('>=tablet') {
+			height: auto;
+			min-height: 25rem;
+
+			.single-post & { min-height: 39rem; }
+
+			.home & { min-height: 58rem; }
+		}
+
+		html:not(.ie) .page-has-banner-full & {
+			@include media (">=tablet") {
+				flex: 1;
+				min-height: auto;
+			}
+		}
+
+		& > .page-banner-image {
+			bottom: 0;
+			background-color: $body-bg;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+
+			@include media('>=desktop') {
+				bottom: -40px;
+				top: -40px;
+			}
+
+			&:after {
+				background-color: rgba(nth($blue, 2), .33);
+				bottom: 0;
+				content: '';
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 2;
+			}
+		}
+
+		& > .container {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			justify-content: center;
+			margin-bottom: 50px;
+			margin-top: 50px;
+			position: relative;
+			z-index: 4;
+		}
+
+		.page-header {
+			border: 0 none;
+			margin: 0;
+			padding: 0;
+
+			& > .page-title {
+				margin: 0;
+				text-align: center;
+				word-wrap: break-word;
+
+				.lsx.single-post & { display: none; }
+			}
+		}
+
+		.banner-content {
+			margin-top: $lsx-gap;
+			text-align: center;
+
+			& p {
+				margin-bottom: $lsx-gap;
+
+				&:last-child { margin-bottom: 0; }
+			}
+		}
+	}
+}
+
+@include banner-colours ();

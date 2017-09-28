@@ -1,0 +1,28 @@
+@mixin banner-colours (
+	$bg: map-get($banner, bg),
+	$color: map-get($banner, color),
+	$color-image: map-get($banner, color-image),
+	$breadcrumb-bg: map-get($banner, breadcrumb-bg),
+	$breadcrumb-color: map-get($banner, breadcrumb-color),
+	$breadcrumb-current: map-get($banner, breadcrumb-current)) {
+
+	.archive-header {
+		.lsx:not(.single-post) & {
+			background-color: $bg;
+
+			.archive-title { color: $color; }
+		}
+	}
+
+	.page-banner-wrap {
+		.page-banner { color: $color-image; }
+	}
+
+	.breadcrumbs-container {
+		background-color: $breadcrumb-bg;
+		color: $breadcrumb-color;
+
+		&.breadcrumbs-yoast .breadcrumb_last,
+		&.breadcrumbs-woocommerce span:last-child { color: $breadcrumb-current; }
+	}
+}

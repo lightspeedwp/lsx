@@ -1,0 +1,30 @@
+@mixin footer-colours ($bg: map-get($footer, bg), $color: map-get($footer, color), $link: map-get($footer, link), $hover: map-get($footer, hover)) {
+	.content-info {
+		background-color: $bg;
+		color: $color;
+
+		a {
+			&,
+			&:before {
+				color: $link;
+			}
+
+			&:hover {
+				&,
+				&:before {
+					color: $hover;
+				}
+			}
+		}
+
+		.footer-navigation {
+			& > ul {
+				& > li {
+					&:not(:last-child):after {
+						background-color: $link;
+					}
+				}
+			}
+		}
+	}
+}

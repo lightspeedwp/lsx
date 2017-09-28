@@ -1,0 +1,118 @@
+@mixin lsx-button-scaffolding {
+	&,
+	&:active,
+	&:visited {
+		border: 0 none;
+		border-radius: 3px;
+		display: inline-block;
+		font-size: 14px;
+		font-weight: 700;
+		height: 48px;
+		left: 0;
+		letter-spacing: 0.6px;
+		line-height: 1.25;
+		padding: 15px 40px;
+		position: relative;
+		text-transform: uppercase;
+		top: 0;
+		transition: all 100ms ease;
+	}
+
+	& > .fa { margin-left: 10px; }
+}
+
+@mixin lsx-bordered-button ($color: map-get($buttons, bg), $color-hover: map-get($buttons, color), $bg: transparent, $bg-hover: map-get($buttons, bg)) {
+	@include lsx-button-colour($color, $color-hover, $bg, $bg-hover);
+
+	&,
+	&:active,
+	&:visited {
+		border: 2px solid $color;
+		box-shadow: none;
+		height: 50px;
+	}
+
+	&:active {
+		left: 0;
+		top: 0;
+	}
+
+	transition: all 300ms ease;
+}
+
+@mixin custom-buttons-colours ($color: map-get($buttons, color), $color-hover: map-get($buttons, color-hover), $bg: map-get($buttons, bg), $bg-hover: map-get($buttons, bg-hover), $shadow: map-get($buttons, shadow)) {
+	.btn {
+		@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+	}
+
+	#respond {
+		& > .comment-form {
+			input[type="submit"] {
+				@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+			}
+		}
+	}
+
+	.border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
+
+	.white-border-btn { @include lsx-bordered-button(#FFF, $bg, transparent, #FFF); }
+
+	#top-menu {
+		.top-menu {
+			& > .menu {
+				& > .menu-item {
+					&.cta {
+						& > a {
+							@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#footer-cta {
+		input[type="submit"] {
+			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+		}
+	}
+
+	// WooCommerce
+
+	#wc_am_lost_api_key_form {
+		input[type="submit"] {
+			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+		}
+	}
+
+	.lsx-wc-cart-menu-item {
+		.widget_shopping_cart {
+			.buttons {
+				.button {
+					@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+				}
+			}
+		}
+	}
+
+	.woocommerce-page #main {
+		#respond input#submit,
+		a.button,
+		button.button,
+		input.button {
+			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+		}
+	}
+}
+
+@mixin custom-cta-buttons-colours ($color: map-get($cta-buttons, color), $color-hover: map-get($cta-buttons, color-hover), $bg: map-get($cta-buttons, bg), $bg-hover: map-get($cta-buttons, bg-hover), $shadow: map-get($cta-buttons, shadow)) {
+	.cta-btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow); }
+
+	.cta-border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
+
+	// Caldera Form
+
+	.caldera-forms-modal {
+		@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+	}
+}

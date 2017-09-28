@@ -2,63 +2,50 @@
 /**
  * The template for displaying Archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package lsx
  */
 
 get_header(); ?>
 
-	<?php lsx_content_wrap_before(); ?>
+<?php lsx_content_wrap_before(); ?>
 
-	<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
+<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
 
-		<?php lsx_content_before(); ?>
+	<?php lsx_content_before(); ?>
 
-		<main id="main" class="site-main">
-			
-		<?php 
-			$layout = get_theme_mod('lsx_layout','2cr');
-			$layout = apply_filters( 'lsx_layout', $layout );
-			if('1c' === $layout && !is_post_type_archive('tribe_events')){
-				lsx_breadcrumbs();
-			}
-		?>
+	<main id="main" class="site-main" role="main">
 
 		<?php lsx_content_top(); ?>
 
-		<?php if ( have_posts() ) : ?>	
+		<?php if ( have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="post-wrapper">
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
-			
+					<?php get_template_part( 'partials/content', get_post_format() ); ?>
+
+				<?php endwhile; ?>
+
+			</div>
+
 			<?php lsx_paging_nav(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'partials/content', 'none' ); ?>
 
 		<?php endif; ?>
 
 		<?php lsx_content_bottom(); ?>
 
-		</main><!-- #main -->
+	</main><!-- #main -->
 
-		<?php lsx_content_after(); ?>
-		
-	</div><!-- #primary -->
+	<?php lsx_content_after(); ?>
 
-	<?php lsx_content_wrap_after(); ?>
+</div><!-- #primary -->
+
+<?php lsx_content_wrap_after(); ?>
 
 <?php get_sidebar(); ?>
 

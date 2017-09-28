@@ -1,0 +1,44 @@
+.archive-author-data {
+	display: block;
+	margin: $lsx-large-gap auto 0;
+	max-width: 585px;
+
+	& > .archive-author-avatar {
+		border: 2px solid #FFF;
+		border-radius: 50%;
+		display: block;
+		height: 20rem;
+		overflow: hidden;
+		margin: 0 auto ($lsx-large-gap / 2);
+		position: relative;
+		width: 20rem;
+	}
+
+	& > .archive-author-bio {
+		display: block;
+		margin-bottom: $lsx-large-gap / 2;
+	}
+
+	& > .archive-author-title {
+		margin: ($lsx-large-gap / 2) 0;
+	}
+
+	& > .archive-author-posts {
+		margin: ($lsx-large-gap / 2) 0 0;
+	}
+
+	.archive-author-social-links {
+		margin-bottom: $lsx-large-gap / 2;
+		text-align: center;
+
+		.archive-author-social-link {
+			display: inline-block;
+			padding: 0 8px;
+			transition: color 300ms ease;
+
+			.fa {
+				&:before { font-size: 22px; }
+			}
+		}
+	}
+}

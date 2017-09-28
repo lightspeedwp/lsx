@@ -1,0 +1,50 @@
+.lsx-pagination-wrapper {
+	display: block;
+	margin-top: $lsx-large-gap;
+	position: relative;
+	text-align: center;
+}
+
+.lsx-pagination {
+	& > .page-numbers {
+		&,
+		&.prev:before,
+		&.next:before {
+			border-radius: 3px;
+			border-style: solid;
+			border-width: 2px;
+			display: inline-block;
+			height: 40px;
+			line-height: 36px;
+			text-align: center;
+			vertical-align: top;
+			width: 40px;
+		}
+
+		&:not(.dots) + .page-numbers:not(.dots) { margin-left: 5px; }
+
+		& > .meta-nav { display: none; }
+	}
+
+	& > span.dots { width: 20px; }
+
+	& > .prev {
+		&:before { content: $fa-var-angle-double-left; }
+	}
+
+	& > .next {
+		&:before { content: $fa-var-angle-double-right; }
+	}
+
+	& > .prev,
+	& > .next {
+		@include hide-text();
+
+		&:before {
+			@include fa-icon();
+
+			font-size: $font-size-base;
+			transition: color 300ms ease;
+		}
+	}
+}

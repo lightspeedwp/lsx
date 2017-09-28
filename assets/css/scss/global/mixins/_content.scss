@@ -1,0 +1,484 @@
+@mixin content-colours (
+	$bg: map-get($content, bg),
+	$breaker: map-get($content, breaker),
+	$header: map-get($content, header),
+	$color: map-get($content, color),
+	$link: map-get($content, link),
+	$hover: map-get($content, hover),
+	$small: map-get($content, small),
+	$full-bg: map-get($content, full-bg),
+	$full-color: map-get($content, full-color),
+	$full-link: map-get($content, full-link),
+	$full-hover: map-get($content, full-hover),
+	$full-cta-bg: map-get($content, full-cta-bg),
+	$full-cta-color: map-get($content, full-cta-color),
+	$full-cta-link: map-get($content, full-cta-link),
+	$full-cta-hover: map-get($content, full-cta-hover)) {
+
+	body { background-color: $bg; }
+
+	.lsx-breaker,
+	.page-header {
+		border-bottom-color: $breaker;
+	}
+
+	.lsx-title {
+		color: $header;
+
+		&:after { background-color: $breaker; }
+	}
+
+	#masthead {
+		#searchform {
+			@media (min-width: 1200px) {
+				&:hover,
+				&:active,
+				&:active:hover,
+				&:focus {
+					.search-submit { color: $link; }
+				}
+			}
+
+			@media (max-width: 1199px) {
+				&.hover {
+					.search-submit { color: $color; }
+				}
+			}
+
+			.search-field {
+				background-color: $bg;
+				color: $link;
+			}
+
+			.search-submit { color: $color; }
+		}
+	}
+
+	.breadcrumbs-container {
+		a:not(.btn) { @include lsx-link-colour($link, $hover); }
+	}
+
+	.content-area,
+	.widget-area,
+	.modal-content,
+	// Caldera Forms
+	.remodal-wrapper {
+		color: $color;
+
+		a:not(.btn) { @include lsx-link-colour($link, $hover); }
+
+		h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $header; }
+
+		blockquote {
+			border-color: $breaker;
+
+			&:before { background-color: $bg; }
+
+			& cite { color: $small; }
+		}
+
+		pre {
+			border-color: $breaker;
+			color: $color;
+		}
+	}
+
+	#home-widgets {
+		h3, .widget-title, .lsx-title {
+			&:after { background-color: $breaker; }
+		}
+
+		h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $header; }
+	}
+
+	.lsx-full-width {
+		.content-area &,
+		#home-widgets & {
+			background-color: $full-bg;
+			color: $full-color;
+
+			h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $full-color; }
+
+			a:not(.btn) { @include lsx-link-colour($full-link, $full-hover); }
+		}
+	}
+
+	.lsx-full-width-alt {
+		.content-area &,
+		#home-widgets & {
+			background-color: $full-cta-bg;
+			color: $full-cta-color;
+
+			h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $full-cta-color; }
+
+			a:not(.btn) { @include lsx-link-colour($full-cta-link, $full-cta-hover); }
+		}
+	}
+
+	.content-area {
+		.lsx-pagination {
+			& > .page-numbers {
+				&,
+				&.prev:before,
+				&.next:before {
+					border-color: $link;
+					color: $link;
+				}
+
+				&.current,
+				&:hover,
+				&:active:hover,
+				&:focus {
+					background-color: $link;
+					color: #FFF;
+				}
+			}
+
+			& > span.dots {
+				border-color: transparent;
+				color: $color;
+
+				&:hover,
+				&:active:hover,
+				&:focus {
+					background-color: transparent;
+					color: inherit;
+				}
+			}
+
+			& > .prev,
+			& > .next {
+				&:hover:before { color: #FFF; }
+			}
+		}
+	}
+
+	.blog,
+	.archive,
+	.search-results,
+	.lsx-related-posts {
+		article.post,
+		article.page {
+			.entry-meta {
+				.post-meta {
+					color: $small;
+
+					a { @include lsx-link-colour($small, $hover); }
+				}
+
+				.post-meta-avatar {
+					background-color: $link;
+
+					&:hover { border-color: $orange; }
+				}
+			}
+
+			.entry-title {
+				.label-sticky { background-color: $link; }
+			}
+
+			.post-tags-wrapper {
+				.post-meta-categories,
+				.post-tags,
+				.post-comments {
+					color: $small;
+
+					& > a { @include lsx-link-colour($small, $hover); }
+				}
+			}
+		}
+	}
+
+	.single-post {
+		article.post {
+			.entry-meta {
+				.post-meta {
+					color: $small;
+
+					a { @include lsx-link-colour($small, $hover); }
+				}
+
+				.post-meta-avatar {
+					background-color: $link;
+
+					&:hover { border-color: $hover; }
+				}
+			}
+
+			.post-tags {
+				& > a { @include lsx-link-colour($small, $hover); }
+			}
+		}
+
+		.post-navigation {
+			.nav-links {
+				a {
+					& > p { color: $small; }
+				}
+			}
+		}
+	}
+
+	#respond {
+		.comment-reply-title { color: $hover; }
+	}
+
+	#comments {
+		.media-list {
+			.media {
+				&:not(.media-reply) { border-top-color: $breaker; }
+
+				.media-object {
+					background-color: $color;
+					border-color: $color;
+				}
+
+				&.bypostauthor > .media-object {
+					border-color: $hover;
+					background-color: $hover;
+				}
+
+				.media-body {
+					& > time {
+						color: $small;
+
+						& > a { @include lsx-link-colour($small, $hover); }
+					}
+				}
+			}
+		}
+	}
+
+	.modal {
+		.modal-content {
+			background-color: $bg;
+			border-color: $link;
+		}
+
+		.close {
+			background-color: $link;
+			border-color: #FFF;
+			box-shadow: 0 0 4px 0 $link;
+			color: #FFF;
+
+			&:hover { background-color: $link; }
+		}
+	}
+
+	.gallery {
+		.slick-dots {
+			& > li {
+				& > button { border-color: $color; }
+
+				&.slick-active > button { background-color: $color; }
+			}
+		}
+
+		.slick-arrow {
+			border-color: $color;
+			color: $color;
+
+			&:hover {
+				border-color: $hover;
+				color: $hover;
+			}
+
+			&.slick-disabled {
+				border-color: $breaker;
+				color: $breaker;
+			}
+		}
+	}
+
+	.slick-lightbox-inner {
+		.slick-arrow {
+			border-color: white;
+			color: white;
+
+			&:hover {
+				border-color: white;
+				color: white;
+			}
+
+			&.slick-disabled {
+				border-color: #ccc;
+				color: #ccc;
+			}
+		}
+	}
+
+	// Caldera Forms
+
+	.remodal-wrapper {
+		.remodal {
+			background-color: $bg;
+			border-color: $link;
+		}
+
+		.remodal-close {
+			background-color: $link;
+			border-color: #FFF;
+			box-shadow: 0 0 4px 0 $link;
+			color: #FFF;
+
+			&:hover {
+				background-color: $link;
+				color: #FFF;
+			}
+		}
+	}
+
+	.caldera-form-page { background-color: #FFF; }
+
+	.caldera-grid {
+		.breadcrumb {
+			& > li {
+				& > a {
+					background-color: #FFF;
+
+					&:hover { background-color: #FFF; }
+				}
+
+				&.active > a {
+					background-color: $link;
+					color: #FFF;
+
+					&:after { border-color: transparent transparent $bg transparent; }
+				}
+			}
+		}
+	}
+
+	// WooCommerce
+
+	.woocommerce-MyAccount-navigation {
+		background-color: #FFF;
+
+		ul {
+			// border-top: 1px solid $breaker;
+
+			li {
+				border-bottom: 1px solid $breaker;
+
+				&:last-child { border-bottom: none; }
+			}
+		}
+	}
+
+	.woocommerce {
+		.star-rating {
+			span:before { color: $link; }
+		}
+	}
+
+	.woocommerce-page #main {
+		#woochimp_checkout_groups {
+			.label { color: $color; }
+		}
+	}
+
+	.woocommerce {
+		div.product {
+			.woocommerce-tabs {
+				.nav-tabs {
+					& > li {
+						& > a {
+							background-color: #FFF;
+
+							&:hover { background-color: #FFF; }
+						}
+
+						&.active > a {
+							background-color: $link;
+							color: #FFF;
+
+							&:after { border-color: transparent transparent $bg transparent; }
+						}
+					}
+				}
+
+				.panel { background: #FFF; }
+			}
+
+			form.cart {
+				.variations {
+					td.label {
+						label { color: $color; }
+					}
+				}
+			}
+		}
+	}
+
+	#add_payment_method,
+	.woocommerce-cart,
+	.woocommerce-checkout {
+		#payment {
+			ul.payment_methods {
+				li:not(.woocommerce-notice) {
+					background-color: #FFF;
+
+					&:hover { background-color: $breaker; }
+				}
+			}
+
+			div.payment_box { background-color: $bg; }
+		}
+	}
+
+	.lsx-woocommerce-slot,
+	.lsx-woocommerce-review-slot {
+		.lsx-woocommerce-title > a:not(.btn) {
+			@include lsx-link-colour($color, $hover);
+		}
+	}
+
+	.lsx-woocommerce-slot {
+		background-color: #FFF;
+
+		.lsx-woocommerce-price { color: #77a464; }
+
+		.lsx-woocommerce-content {
+			a:not(.btn).moretag {
+				background-color: $link;
+				color: #FFF;
+
+				&:hover {
+					background-color: $hover;
+					color: #FFF;
+				}
+			}
+		}
+	}
+
+	.lsx-woocommerce-review-slot {
+		.lsx-woocommerce-review-box { background-color: #FFF; }
+
+		.lsx-woocommerce-content { border-top: 1px solid $breaker; }
+	}
+
+	.lsx-woocommerce-slider {
+		.slick-dots {
+			& > li {
+				& > button { border-color: $color; }
+
+				&.slick-active > button { background-color: $color; }
+			}
+		}
+
+		.slick-arrow {
+			border-color: $color;
+			color: $color;
+
+			&:hover {
+				border-color: $hover;
+				color: $hover;
+			}
+
+			&.slick-disabled {
+				border-color: $breaker;
+				color: $breaker;
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+@mixin header-colours ($bg: map-get($header, bg), $link: map-get($header, link), $hover: map-get($header, hover), $description: map-get($header, description)) {
+	#masthead {
+		background-color: $bg;
+
+		.navbar-header {
+			.site-title {
+				& > a { @include lsx-link-colour($link, $hover);}
+			}
+
+			.site-description { color: $description; }
+		}
+	}
+
+	.content-area,
+	.widget-area {
+		blockquote {
+			&:before { color: $link; }
+		}
+	}
+}

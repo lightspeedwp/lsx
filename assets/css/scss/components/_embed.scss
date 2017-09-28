@@ -1,0 +1,18 @@
+.entry-content-asset {
+	display: block;
+	height: 0;
+	margin-bottom: $lsx-gap;
+	overflow: hidden;
+	padding: 0 0 56.25%;
+	position: relative;
+
+	& > iframe {
+		border: 0;
+		bottom: 0;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}

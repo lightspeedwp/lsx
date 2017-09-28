@@ -1,0 +1,36 @@
+@mixin lsx-link-colour ($color: nth($orange, 1), $hover: nth($orange, 2)) {
+	&,
+	&:active,
+	&:visited {
+		color: $color;
+	}
+
+	&:hover,
+	&:hover:active,
+	&:focus {
+		color: $hover;
+	}
+}
+
+@mixin lsx-button-colour ($color: #FFF, $color-hover: #FFF, $bg: nth($blue, 1), $bg-hover: nth($blue, 3), $shadow: darken(nth($blue, 1), 15%)) {
+	&,
+	&:active,
+	&:visited {
+		background-color: $bg;
+		box-shadow: 2px 2px 0 0 $shadow;
+		color: $color;
+	}
+
+	&:hover,
+	&:hover:active,
+	&:focus {
+		background-color: $bg-hover;
+		color: $color-hover;
+	}
+
+	&:active {
+		left: 2px;
+		top: 2px;
+		box-shadow: 0 0 0 0 $shadow;
+	}
+}

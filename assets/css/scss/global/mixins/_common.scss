@@ -1,0 +1,21 @@
+@mixin list-inline ($gap, $stabilize: true) {
+
+	@if $stabilize {
+		margin-left: $gap * -1;
+	}
+
+	& > li {
+		display: inline-block;
+		padding-left: $gap;
+		padding-right: $gap;
+	}
+}
+
+@mixin default-vertical-gap ($direction: false, $type: padding) {
+	@if $direction {
+		#{$type}-#{$direction}: $lsx-large-gap;
+	} @else {
+		#{$type}-bottom: $lsx-large-gap;
+		#{$type}-top: $lsx-large-gap;
+	}
+}

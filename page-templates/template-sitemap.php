@@ -1,17 +1,26 @@
 <?php
-/* Template Name: Sitemap */
+/**
+ * Sitemap Template.
+ *
+ * Template Name: Sitemap
+ *
+ * @package    lsx
+ * @subpackage template
+ */
 
 get_header(); ?>
 
-	<?php lsx_content_wrap_before(); ?>
+<?php lsx_content_wrap_before(); ?>
 
-	<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
+<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
 
-		<?php lsx_content_before(); ?>
+	<?php lsx_content_before(); ?>
 
-		<main id="main" class="site-main">
+	<main id="main" class="site-main" role="main">
 
-			<?php lsx_content_top(); ?>
+		<?php lsx_content_top(); ?>
+
+		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -22,32 +31,32 @@ get_header(); ?>
 					<?php lsx_entry_top(); ?>
 
 					<div class="entry-content">
-
-                        <?php lsx_sitemap_pages(); ?>
-
-                        <?php lsx_sitemap_custom_post_type(); ?>
-                    	
+						<?php lsx_sitemap_pages(); ?>
+						<?php lsx_sitemap_custom_post_type(); ?>
 					</div><!-- .entry-content -->
+
 					<?php edit_post_link( __( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 
 					<?php lsx_entry_bottom(); ?>
-					
+
 				</article><!-- #post-## -->
 
 				<?php lsx_entry_after(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; ?>
 
-			<?php lsx_content_bottom(); ?>
+		<?php endif; ?>
 
-		</main><!-- #main -->
+		<?php lsx_content_bottom(); ?>
 
-		<?php lsx_content_after(); ?>
-		
-	</div><!-- #primary -->
+	</main><!-- #main -->
 
-	<?php lsx_content_wrap_after(); ?>
+	<?php lsx_content_after(); ?>
 
-<?php get_sidebar('sitemap'); ?>
+</div><!-- #primary -->
+
+<?php lsx_content_wrap_after(); ?>
+
+<?php get_sidebar( 'sitemap' ); ?>
 
 <?php get_footer();

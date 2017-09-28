@@ -1,0 +1,81 @@
+#masthead {
+	border: 0 none;
+	border-radius: 0;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+	margin-bottom: 0;
+	min-height: 0;
+
+	& > .container {
+		align-content: stretch;
+		align-items: center;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		position: relative;
+
+		@include media('>=phone', '<desktop') {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		@include media('<desktop') { width: 100%; }
+
+		@include media('>=desktop') {
+			flex-direction: row;
+			min-height: 80px;
+			padding-left: 15px;
+			padding-right: 15px;
+
+			.header-expanded &,
+			.header-central & {
+				flex-direction: column;
+			}
+
+			.header-expanded & { align-items: flex-start; }
+		}
+	}
+
+	.navbar-header {
+		@include media('<desktop') {
+			align-items: flex-start;
+			display: flex;
+			flex-flow: column nowrap;
+			margin: 0;
+			width: 100%
+		}
+
+		.site-branding {
+			padding: 15px 0;
+
+			@include media('<desktop') { flex-grow: 1; }
+		}
+
+		.site-title {
+			margin: 0;
+
+			& > a { transition: color 300ms ease; }
+		}
+
+		.site-description { margin-bottom: 0; }
+
+		.custom-logo-link {
+			& > img {
+				margin-bottom: 10px;
+				margin-top: 10px;
+				max-height: 50px;
+				max-width: 80%;
+				width: auto;
+				transition: all 300ms ease;
+
+				@include media('>=phone') { max-width: none; }
+
+				@include media('>=desktop') {
+					margin-bottom: 15px;
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}
+
+@include header-colours();

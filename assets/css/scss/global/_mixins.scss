@@ -1,0 +1,23 @@
+// import the vendor's variables so we can use it in our own code
+@import '../../vendor/bootstrap/mixins';
+@import '../../vendor/font-awesome/mixins.scss';
+
+// media queries mixin
+@import 'mixins/include-media';
+
+// elements mixins
+@import 'mixins/common';
+@import 'mixins/button';
+
+// helper mixins
+@import 'mixins/colours-helper';
+
+// customizer mixins
+@import 'mixins/top-menu';
+@import 'mixins/header';
+@import 'mixins/nav';
+@import 'mixins/banner';
+@import 'mixins/content';
+@import 'mixins/footer';
+@import 'mixins/footer-widgets';
+@import 'mixins/footer-cta';

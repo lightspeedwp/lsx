@@ -1,0 +1,122 @@
+.content-info {
+	padding: 15px 0;
+	font-size: 14px;
+
+	& > .container {
+		@include media('>=desktop') {
+			padding-left: 50px;
+			padding-right: 50px;
+			width: 100%;
+		}
+
+		& > .row {
+			@include media('>=desktop') {
+				margin-left: -50px;
+				margin-right: -50px;
+			}
+
+			& > div[class*='col-'] {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+
+				@include media('>=desktop') {
+					align-items: center;
+					flex-direction: row;
+					justify-content: flex-end;
+					padding-left: 50px;
+					padding-right: 50px;
+				}
+			}
+		}
+	}
+
+	.credit {
+		margin: 0;
+		text-align: center;
+
+		@include media('>=desktop') { flex-grow: 1; }
+
+		&.credit-float { text-align: left; }
+
+		& > a { transition: color 300ms ease; }
+	}
+}
+
+.social-navigation,
+.footer-navigation {
+	& > ul {
+		@extend %list-unstyled;
+
+		margin-bottom: 0;
+	}
+}
+
+.social-navigation {
+	order: 1;
+
+	@include media('>=desktop') { margin-left: 50px; }
+
+	& > ul {
+		@include list-inline(8px);
+
+		line-height: 1;
+
+		@include media('>=desktop') { margin-left: 0; }
+
+		& > li {
+			@include media('<desktop') {
+				padding-bottom: 8px;
+				padding-top: 8px;
+			}
+
+			a {
+				@each $social, $icon in $social-icons {
+					&[href*="#{$social}"] {
+						@extend %social-icons-scaffolding;
+
+						&:before { content: $icon; }
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-navigation {
+	& > ul {
+		@include list-inline(10px);
+
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 4px;
+		padding-bottom: 8px;
+		padding-top: 8px;
+
+		@include media('>=desktop') {
+			margin-left: 0;
+			margin-top: 0;
+			padding-bottom: 0;
+			padding-top: 0;
+		}
+
+		& > li {
+			position: relative;
+
+			&:not(:last-child):after {
+				content: '';
+				display: inline-block;
+				height: 14px;
+				right: -.5px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 1px;
+			}
+
+			& > a { transition: color 300ms ease-in-out; }
+		}
+	}
+}
+
+@include footer-colours();

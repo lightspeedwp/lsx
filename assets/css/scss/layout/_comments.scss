@@ -1,0 +1,173 @@
+#respond {
+	margin: $lsx-large-gap auto 0;
+	padding-left: 0;
+	padding-right: 0;
+	text-align: center;
+	width: 100%;
+
+	@include media ('>=phone') { width: 75%; }
+	@include media ('>=desktop') { width: 50%; }
+
+	.has-sidebar & {
+		width: 100%;
+
+		@include media ('>=tablet') { width: 75%; }
+	}
+
+	.comment-reply-title {
+		font-size: 20px;
+		margin-bottom: $lsx-gap / 2;
+
+		& > small {
+			display: block;
+			font-family: $font-family-base;
+			font-size: 13px;
+			margin-top: 5px;
+		}
+	}
+
+	& > .comment-form {
+		& > p {
+			margin-bottom: 0;
+
+			& + p { margin-top: 5px; }
+
+			label,
+			span {
+				display: none;
+			}
+
+			&.comment-notes,
+			&.logged-in-as {
+				margin-bottom: $lsx-gap;
+			}
+
+			&.form-submit { margin-top: $lsx-gap; }
+		}
+
+		input[type="submit"] {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+#comments {
+	margin-top: $lsx-large-gap;
+
+	& > h3 { display: none; }
+
+	.media-list {
+		margin-bottom: 0;
+		overflow: visible;
+		padding-left: 0;
+
+		.media {
+			&:not(.media-reply) {
+				border-top-style: solid;
+				border-top-width: 1px;
+				margin-top: 4rem;
+				padding-top: 4rem;
+			}
+
+			.media-object {
+				border-style: solid;
+				border-width: 1px;
+				border-radius: 50%;
+				height: 32px;
+				padding: 0;
+				margin-right: 20px;
+				width: 32px;
+
+				@include media('>=phone') {
+					border-width: 3px;
+					height: 50px;
+					margin-right: 40px;
+					width: 50px;
+				}
+
+				@include media('>=tablet') {
+					border-width: 5px;
+					height: 10rem;
+					margin-right: 8rem;
+					width: 10rem;
+				}
+			}
+
+			.media-body {
+				overflow: visible;
+
+				& > p {
+					margin-bottom: 0;
+					margin-top: $lsx-gap;
+				}
+
+				& > time { font-size: 13px; }
+			}
+
+			.media-heading {
+				font-family: $font-family-base;
+				font-size: 20px;
+				margin-bottom: 0;
+			}
+		}
+
+		& > .media:first-of-type {
+			border-top: 0 none;
+			margin-top: 0;
+			padding-top: 0;
+		}
+
+		.media-reply {
+			margin-left: -36px;
+			padding-left: 0;
+
+			@include media('>=phone') { margin-left: -65px; }
+			@include media('>=tablet') { margin-left: -13rem; }
+		}
+
+		.comment-edit-link { font-size: 13px; }
+
+		.comment-reply-link {
+			display: inline-block;
+			margin-top: 5px;
+
+			&:after {
+				@include fa-icon();
+				@include fa-icon-flip(-1, 1, 0);
+
+				content: $fa-var-mail-reply;
+				display: inline-block;
+				margin-left: 5px;
+			}
+		}
+	}
+
+	.has-sidebar & {
+		@include media ('>=phone') {
+
+			.media-list {
+				.media {
+					&:not(.media-reply) {
+						margin-top: 20px;
+						padding-top: 20px;
+					}
+
+					.media-object {
+						border-width: 3px;
+						height: 50px;
+						margin-right: 40px;
+						width: 50px;
+					}
+				}
+
+				& > .media:first-of-type {
+					margin-top: 0;
+					padding-top: 0;
+				}
+			}
+
+			.media-reply { margin-left: -65px; }
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "path": "/",
+      "folder_exclude_patterns": [".git", "node_modules"],
+      "file_exclude_patterns": []
+    }
+  ],
+  "build_systems": [
+    {
+      "name": "build",
+      "working_dir": "${project_path}",
+      "shell_cmd": "./bin/build.command"
+    }
+  ]
+}

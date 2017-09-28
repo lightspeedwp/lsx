@@ -1,0 +1,35 @@
+#footer-cta {
+	padding-bottom: $lsx-large-gap / 2;
+	padding-top: $lsx-large-gap / 2;
+
+	.lsx-hero-unit {
+		margin: 0 auto;
+		min-width: 290px;
+		text-align: center;
+	}
+
+	.widget-title {
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 1.2;
+		margin-bottom: 10px;
+		margin-top: 0;
+	}
+
+	p,
+	.textwidget {
+		line-height: 1.35;
+
+		@include media('>=desktop') { font-size: 22px; }
+	}
+
+	p {
+		& + p { margin-top: $lsx-gap; }
+	}
+
+	.widget + .widget { margin-top: 3rem; }
+
+	input[type="submit"] { @include lsx-button-colour(); }
+}
+
+@include footer-cta-colours();

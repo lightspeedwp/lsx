@@ -1,0 +1,49 @@
+#footer-widgets {
+	padding: 15px 0 $lsx-large-gap / 2;
+
+	.row {
+		display: flex;
+		flex-flow: column nowrap;
+
+		@include media('>=desktop') { flex-direction: row; }
+
+		div[class^='col-'] {
+			float: none;
+			overflow: hidden;
+			width: auto;
+
+			@include media('>=desktop') {
+				flex-basis: 0;
+				flex-grow: 1;
+			}
+		}
+	}
+
+	.widget {
+		margin-top: 3rem;
+
+		a {
+			display: inline-block;
+
+			&:not(.btn) { transition: color 300ms ease; }
+		}
+
+		br + a { margin-top: 5px; }
+
+		.fa {
+			font-size: 22px;
+			margin-right: 5px;
+			vertical-align: text-top;
+		}
+	}
+
+	.widget-title {
+		font-weight: 700;
+		margin-bottom: $lsx-gap;
+		margin-top: 0;
+	}
+
+	.textwidget { letter-spacing: .5px;}
+}
+
+@include footer-widgets-colours();

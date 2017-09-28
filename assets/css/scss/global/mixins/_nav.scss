@@ -1,0 +1,118 @@
+@mixin nav-colours (
+	$bg: map-get($nav, bg),
+	$link: map-get($nav, link),
+	$hover: map-get($nav, hover),
+	$dropdown: map-get($nav, dropdown),
+	$dropdown-hover: map-get($nav, dropdown-hover),
+	$dropdown-link: map-get($nav, dropdown-link),
+	$dropdown-link-hover: map-get($nav, dropdown-link-hover)) {
+
+	@media (max-width: 1199px) {
+		#masthead {
+			.wrapper-toggle {
+				background-color: $dropdown;
+
+				.mobile-menu-title { color: $dropdown-link; }
+
+				.navbar-toggle {
+					background-color: $dropdown;
+
+					& > .icon-bar { background-color: $dropdown-link; }
+				}
+			}
+
+			.primary-navbar {
+				background-color: $dropdown;
+
+				.menu-item {
+					&.active > a,
+					& > a {
+						background-color: $dropdown;
+						color: $dropdown-link;
+					}
+				}
+
+				.dropdown-menu {
+					& > .menu-item a { color: $dropdown-link; }
+
+					.dropdown-menu {
+						& > .menu-item a { color: $dropdown-link; }
+					}
+				}
+			}
+		}
+	}
+
+	@media (min-width: 1200px) {
+		#masthead {
+			.primary-navbar {
+				& > .nav {
+					& > .menu-item {
+						&:hover,
+						&.active:hover {
+							& > a {
+								background-color: $dropdown;
+								color: $hover;
+							}
+						}
+
+						& > a,
+						&.active > a {
+							background-color: $bg;
+							color: $link;
+						}
+					}
+
+					.dropdown-menu {
+						background-color: $dropdown;
+
+						& > .menu-item {
+							color: $dropdown-link;
+
+							&:hover,
+							&:active:hover,
+							&:focus {
+								background-color: $dropdown-hover;
+								color: $dropdown-link-hover;
+							}
+						}
+
+						.dropdown-menu {
+							.menu-item { background-color: $dropdown-hover; }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// WooCommerce
+
+	.lsx-wc-cart-dropdown {
+		color: $dropdown-link;
+
+		a:not(.button) {
+			&,
+			&:active,
+			&:visited {
+				color: $dropdown-link;
+			}
+
+			&:hover,
+			&:hover:active,
+			&:focus {
+				color: $hover;
+			}
+		}
+	}
+
+	.lsx-wc-cart-menu-item {
+		.widget_shopping_cart {
+			.product_list_widget {
+				li {
+					border-bottom: 1px solid $dropdown-link;
+				}
+			}
+		}
+	}
+}
