@@ -10,6 +10,7 @@ $orange: (#F7AE00, #CE9100, #EDA700);
 $red-accent: #D84E2E;
 $breaker: #DADDDF;
 $small: #919191;
+$gray: (#EAEAEA, #CCCCCC, #4A4A4A);
 
 $grid-float-breakpoint: 1200px;
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
@@ -69,6 +70,14 @@ $cta-buttons: (
 	bg: nth($orange, 1),
 	bg-hover: nth($orange, 3),
 	shadow: darken(nth($orange, 1), 15%)
+);
+
+$secondary-buttons: (
+	color: nth($gray, 3),
+	color-hover: nth($gray, 3),
+	bg: nth($gray, 1),
+	bg-hover: nth($gray, 2),
+	shadow: darken(nth($gray, 1), 15%)
 );
 
 $top-menu: (

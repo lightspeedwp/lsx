@@ -216,6 +216,24 @@ p:empty { display: none; }
 
 .caldera-forms-modal:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #ab7800; }
 
+.secondary-btn, .secondary-btn:active, .secondary-btn:visited { background-color: #EAEAEA; box-shadow: -2px 2px 0 0 #c4c4c4; color: #4A4A4A; }
+
+.secondary-btn:hover, .secondary-btn:hover:active, .secondary-btn:focus { background-color: #CCCCCC; color: #4A4A4A; }
+
+.secondary-btn:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #c4c4c4; }
+
+.secondary-border-btn { transition: all 300ms ease; }
+
+.secondary-border-btn, .secondary-border-btn:active, .secondary-border-btn:visited { background-color: transparent; box-shadow: -2px 2px 0 0 #27639e; color: #EAEAEA; }
+
+.secondary-border-btn:hover, .secondary-border-btn:hover:active, .secondary-border-btn:focus { background-color: #EAEAEA; color: #FFF; }
+
+.secondary-border-btn:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
+
+.secondary-border-btn, .secondary-border-btn:active, .secondary-border-btn:visited { border: 2px solid #EAEAEA; box-shadow: none; height: 50px; }
+
+.secondary-border-btn:active { right: 0; top: 0; }
+
 .caldera-form-page { padding: 2em; }
 
 .caldera-grid .breadcrumb { list-style: none; }
