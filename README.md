@@ -19,12 +19,9 @@
 
 ## Description
 
-LSX is a fully responsive theme that’s built with clarity in mind. Instead of flooding you with an overwhelming amount of theme
-options, LSX keeps it clear and help you make decisions. Its lightweight build ensures better load times, a bonus for both user
-experience and SEO.
+LSX is a light-weight, minimalistic and responsive WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. We've built it to be fully compatible with WooCommerce, making it an ideal choice for your next eCommerce build. Its lightweight build ensures better load times, a bonus for both user experience and SEO.
 
-LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color
-options, home page configuration, widget areas and much more.
+LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color options, home page configuration, widget areas and much more.
 
 ## Installation
 
