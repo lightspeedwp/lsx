@@ -22,9 +22,9 @@ if ( ! function_exists( 'lsx_wc_support' ) ) :
 		add_theme_support( 'woocommerce' );
 	}
 
-endif;
+	add_action( 'after_setup_theme', 'lsx_wc_support' );
 
-add_action( 'after_setup_theme', 'lsx_wc_support' );
+endif;
 
 if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 
@@ -47,9 +47,9 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 		wp_deregister_script( 'select2' );
 	}
 
-endif;
+	add_action( 'wp_enqueue_scripts', 'lsx_wc_scripts_add_styles' );
 
-add_action( 'wp_enqueue_scripts', 'lsx_wc_scripts_add_styles' );
+endif;
 
 if ( ! function_exists( 'lsx_wc_form_field_args' ) ) :
 
@@ -65,9 +65,9 @@ if ( ! function_exists( 'lsx_wc_form_field_args' ) ) :
 		return $args;
 	}
 
-endif;
+	add_action( 'woocommerce_form_field_args', 'lsx_wc_form_field_args', 10, 3 );
 
-add_action( 'woocommerce_form_field_args', 'lsx_wc_form_field_args', 10, 3 );
+endif;
 
 if ( ! function_exists( 'lsx_wc_theme_wrapper_start' ) ) :
 
@@ -82,11 +82,10 @@ if ( ! function_exists( 'lsx_wc_theme_wrapper_start' ) ) :
 		echo '<main id="main" class="site-main" role="main">';
 	}
 
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+	add_action( 'woocommerce_before_main_content', 'lsx_wc_theme_wrapper_start' );
+
 endif;
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-add_action( 'woocommerce_before_main_content', 'lsx_wc_theme_wrapper_start' );
-
 
 if ( ! function_exists( 'lsx_wc_theme_wrapper_end' ) ) :
 
@@ -101,10 +100,10 @@ if ( ! function_exists( 'lsx_wc_theme_wrapper_end' ) ) :
 		echo '</div>';
 	}
 
-endif;
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+	add_action( 'woocommerce_after_main_content', 'lsx_wc_theme_wrapper_end' );
 
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-add_action( 'woocommerce_after_main_content', 'lsx_wc_theme_wrapper_end' );
+endif;
 
 if ( ! function_exists( 'lsx_wc_disable_banner' ) ) :
 
@@ -122,9 +121,9 @@ if ( ! function_exists( 'lsx_wc_disable_banner' ) ) :
 		return $disabled;
 	}
 
-endif;
+	add_filter( 'lsx_banner_disable', 'lsx_wc_disable_lsx_banner' );
 
-add_filter( 'lsx_banner_disable', 'lsx_wc_disable_lsx_banner' );
+endif;
 
 if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 
@@ -168,9 +167,9 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 		return $items;
 	}
 
-endif;
+	add_filter( 'wp_nav_menu_items', 'lsx_wc_add_cart', 10, 2 );
 
-add_filter( 'wp_nav_menu_items', 'lsx_wc_add_cart', 10, 2 );
+endif;
 
 if ( ! function_exists( 'lsx_wc_products_widget_wrapper_before' ) ) :
 
@@ -185,9 +184,9 @@ if ( ! function_exists( 'lsx_wc_products_widget_wrapper_before' ) ) :
 		return $html;
 	}
 
-endif;
+	add_filter( 'woocommerce_before_widget_product_list', 'lsx_wc_products_widget_wrapper_before', 15 );
 
-add_filter( 'woocommerce_before_widget_product_list', 'lsx_wc_products_widget_wrapper_before', 15 );
+endif;
 
 if ( ! function_exists( 'lsx_wc_products_widget_wrapper_after' ) ) :
 
@@ -202,9 +201,9 @@ if ( ! function_exists( 'lsx_wc_products_widget_wrapper_after' ) ) :
 		return $html;
 	}
 
-endif;
+	add_filter( 'woocommerce_after_widget_product_list', 'lsx_wc_products_widget_wrapper_after', 15 );
 
-add_filter( 'woocommerce_after_widget_product_list', 'lsx_wc_products_widget_wrapper_after', 15 );
+endif;
 
 if ( ! function_exists( 'lsx_wc_reviews_widget_override' ) ) :
 
@@ -222,9 +221,9 @@ if ( ! function_exists( 'lsx_wc_reviews_widget_override' ) ) :
 		}
 	}
 
-endif;
+	add_action( 'widgets_init', 'lsx_wc_reviews_widget_override', 15 );
 
-add_action( 'widgets_init', 'lsx_wc_reviews_widget_override', 15 );
+endif;
 
 if ( ! function_exists( 'lsx_wc_change_price_html' ) ) :
 
@@ -251,9 +250,9 @@ if ( ! function_exists( 'lsx_wc_change_price_html' ) ) :
 		return $price;
 	}
 
-endif;
+	add_filter( 'woocommerce_get_price_html', 'lsx_wc_change_price_html', 15, 2 );
 
-add_filter( 'woocommerce_get_price_html', 'lsx_wc_change_price_html', 15, 2 );
+endif;
 
 if ( ! function_exists( 'lsx_wc_cart_link_fragment' ) ) :
 
@@ -296,6 +295,23 @@ if ( ! function_exists( 'lsx_wc_cart_link' ) ) :
 
 endif;
 
+if ( ! function_exists( 'lsx_wc_loop_shop_per_page' ) ) :
+
+	/**
+	 * Changes the number of products to display on shop.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_loop_shop_per_page( $items ) {
+		$items = 20;
+		return $items;
+	}
+
+	add_filter( 'loop_shop_per_page', 'lsx_wc_loop_shop_per_page', 20 );
+
+endif;
+
 if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
 	add_filter( 'woocommerce_add_to_cart_fragments', 'lsx_wc_cart_link_fragment' );
 } else {
@@ -319,7 +335,8 @@ add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 add_action( 'woocommerce_before_shop_loop', 'lsx_wc_woocommerce_pagination', 30 );
 add_action( 'woocommerce_before_shop_loop', 'lsx_wc_sorting_wrapper_close', 31 );
 
-if ( ! function_exists( 'lsx_wc_sorting_wrapper' ) ) {
+if ( ! function_exists( 'lsx_wc_sorting_wrapper' ) ) :
+
 	/**
 	 * Sorting wrapper.
 	 *
@@ -329,9 +346,11 @@ if ( ! function_exists( 'lsx_wc_sorting_wrapper' ) ) {
 	function lsx_wc_sorting_wrapper() {
 		echo '<div class="lsx-wc-sorting">';
 	}
-}
 
-if ( ! function_exists( 'lsx_wc_sorting_wrapper_close' ) ) {
+endif;
+
+if ( ! function_exists( 'lsx_wc_sorting_wrapper_close' ) ) :
+
 	/**
 	 * Sorting wrapper close.
 	 *
@@ -341,9 +360,11 @@ if ( ! function_exists( 'lsx_wc_sorting_wrapper_close' ) ) {
 	function lsx_wc_sorting_wrapper_close() {
 		echo '</div>';
 	}
-}
 
-if ( ! function_exists( 'lsx_wc_product_columns_wrapper_close' ) ) {
+endif;
+
+if ( ! function_exists( 'lsx_wc_product_columns_wrapper_close' ) ) :
+
 	/**
 	 * Product columns wrapper close.
 	 *
@@ -353,9 +374,11 @@ if ( ! function_exists( 'lsx_wc_product_columns_wrapper_close' ) ) {
 	function lsx_wc_product_columns_wrapper_close() {
 		echo '</div>';
 	}
-}
 
-if ( ! function_exists( 'lsx_wc_woocommerce_pagination' ) ) {
+endif;
+
+if ( ! function_exists( 'lsx_wc_woocommerce_pagination' ) ) :
+
 	/**
 	 * LSX WooCommerce Pagination
 	 * WooCommerce disables the product pagination inside the woocommerce_product_subcategories() function
@@ -370,4 +393,5 @@ if ( ! function_exists( 'lsx_wc_woocommerce_pagination' ) ) {
 			woocommerce_pagination();
 		}
 	}
-}
+
+endif;
