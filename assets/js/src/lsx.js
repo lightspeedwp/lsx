@@ -435,7 +435,10 @@ var lsx = Object.create( null );
 
 		lsx.set_main_menu_as_fixed();
 
+		lsx.search_form_prevent_empty_submissions();
 		lsx.remove_gallery_img_width_height();
+
+		lsx.init_wc_slider();
 
 	} );
 
@@ -452,9 +455,7 @@ var lsx = Object.create( null );
 		lsx.fix_lazyload_envira_gallery();
 
 		lsx.set_search_form_effect_mobile();
-		lsx.search_form_prevent_empty_submissions();
 
-		lsx.init_wc_slider();
 		lsx.build_slider_lightbox();
 
 		lsx.set_banner_effect_parallax();
