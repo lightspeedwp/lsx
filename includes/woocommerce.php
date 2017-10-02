@@ -78,8 +78,11 @@ if ( ! function_exists( 'lsx_wc_theme_wrapper_start' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_theme_wrapper_start() {
+		lsx_content_wrap_before();
 		echo '<div id="primary" class="content-area col-sm-12">';
+		lsx_content_before();
 		echo '<main id="main" class="site-main" role="main">';
+		lsx_content_top();
 	}
 
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
@@ -96,8 +99,11 @@ if ( ! function_exists( 'lsx_wc_theme_wrapper_end' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_theme_wrapper_end() {
+		lsx_content_bottom();
 		echo '</div>';
+		lsx_content_after();
 		echo '</div>';
+		lsx_content_wrap_after();
 	}
 
 	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
@@ -105,7 +111,27 @@ if ( ! function_exists( 'lsx_wc_theme_wrapper_end' ) ) :
 
 endif;
 
-if ( ! function_exists( 'lsx_wc_disable_banner' ) ) :
+if ( ! function_exists( 'lsx_wc_disable_lsx_banner_plugin' ) ) :
+
+	/**
+	 * Disable LSX Banners plugin in some WC pages.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_disable_lsx_banner_plugin( $disabled ) {
+		if ( is_cart() || is_checkout() || is_account_page() ) {
+			$disabled = true;
+		}
+
+		return $disabled;
+	}
+
+	add_filter( 'lsx_banner_plugin_disable', 'lsx_wc_disable_lsx_banner_plugin' );
+
+endif;
+
+if ( ! function_exists( 'lsx_wc_disable_lsx_banner' ) ) :
 
 	/**
 	 * Disable LSX Banners banner in some WC pages.
@@ -114,7 +140,7 @@ if ( ! function_exists( 'lsx_wc_disable_banner' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_disable_lsx_banner( $disabled ) {
-		if ( is_cart() || is_checkout() || is_account_page() ) {
+		if ( is_shop() || is_product_category() || is_product_tag() || is_product() ) {
 			$disabled = true;
 		}
 

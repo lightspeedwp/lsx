@@ -157,9 +157,9 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) :
 		<?php endif;
 	}
 
-endif;
+	add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 
-add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
+endif;
 
 if ( ! function_exists( 'lsx_global_header' ) ) :
 
@@ -170,12 +170,23 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_global_header() {
+		// if ( true === apply_filters( 'lsx_global_header_disable', false ) ) {
+		// 	return;
+		// }
+
 		$show_on_front  = get_option( 'show_on_front' );
 		$queried_object = get_queried_object();
 		$default_size   = 'sm';
 		$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
-		if ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
+		if ( true === apply_filters( 'lsx_global_header_disable', false ) ) :
+			// Display only the breadcrumbs
+			?>
+			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
+			</div>
+			<?php
+		elseif ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
 				<header class="archive-header">
@@ -265,12 +276,19 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
+		else :
+			// Display only the breadcrumbs
+			?>
+			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
+			</div>
+			<?php
 		endif;
 	}
 
-endif;
+	add_action( 'lsx_content_wrap_before', 'lsx_global_header' );
 
-add_action( 'lsx_content_wrap_before', 'lsx_global_header' );
+endif;
 
 if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 
@@ -343,9 +361,9 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 		endif;
 	}
 
-endif;
+	add_action( 'lsx_content_wrap_before', 'lsx_author_extra_info', 11 );
 
-add_action( 'lsx_content_wrap_before', 'lsx_author_extra_info', 11 );
+endif;
 
 if ( ! function_exists( 'lsx_post_header' ) ) :
 
@@ -380,9 +398,9 @@ if ( ! function_exists( 'lsx_post_header' ) ) :
 		endif;
 	}
 
-endif;
+	add_action( 'lsx_entry_top', 'lsx_post_header' );
 
-add_action( 'lsx_entry_top', 'lsx_post_header' );
+endif;
 
 if ( ! function_exists( 'lsx_add_viewport_meta_tag' ) ) :
 
@@ -398,9 +416,9 @@ if ( ! function_exists( 'lsx_add_viewport_meta_tag' ) ) :
 		<?php
 	}
 
-endif;
+	add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
 
-add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
+endif;
 
 if ( ! function_exists( 'lsx_header_search_form' ) ) :
 
@@ -418,6 +436,6 @@ if ( ! function_exists( 'lsx_header_search_form' ) ) :
 		}
 	}
 
-endif;
+	add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );
 
-add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );
+endif;
