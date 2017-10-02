@@ -296,6 +296,11 @@
 @media (min-width: 1280px) { .lsx-woocommerce-slider { margin-left: -15px; margin-right: -15px; width: calc(100% + 30px); }
   .lsx-woocommerce-slider.slick-has-arrows { width: calc(100% + 30px); } }
 
+.wc-tab .lsx-woocommerce-slider { margin-left: -15px; margin-right: -15px; }
+
+@media (min-width: 768px) { .wc-tab .lsx-woocommerce-slider { margin-left: auto; margin-right: auto; width: 100%; }
+  .wc-tab .lsx-woocommerce-slider.slick-has-arrows { width: calc(100% - 8rem); } }
+
 .lsx-woocommerce-slider .lsx-woocommerce-slot.slick-slide, .lsx-woocommerce-slider .lsx-woocommerce-review-slot.slick-slide { margin-left: 15px; margin-right: 15px; }
 
 .lsx-woocommerce-slider .slick-dots { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; height: auto; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; list-style: none; margin: 2rem 0 0; padding: 0; }

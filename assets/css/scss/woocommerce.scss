@@ -806,6 +806,19 @@ ul.lsx-wc-cart-sub-menu {}
 		&.slick-has-arrows { width: calc(100% + 30px); }
 	}
 
+	.wc-tab & {
+		margin-left: -15px;
+		margin-right: -15px;
+
+		@include media('>=phone') {
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+
+			&.slick-has-arrows { width: calc(100% - 8rem); }
+		}
+	}
+
 	.lsx-woocommerce-slot.slick-slide,
 	.lsx-woocommerce-review-slot.slick-slide {
 		margin-left: 15px;
