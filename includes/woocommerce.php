@@ -338,6 +338,23 @@ if ( ! function_exists( 'lsx_wc_loop_shop_per_page' ) ) :
 
 endif;
 
+if ( ! function_exists( 'lsx_wc_add_to_cart_message_html' ) ) :
+
+	/**
+	 * Changes the "added to cart" message HTML.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_add_to_cart_message_html( $message, $products ) {
+		$message = '<div class="woocommerce-message-added-to-cart">' . $message . '</div>';
+		return $message;
+	}
+
+	add_filter( 'wc_add_to_cart_message_html', 'lsx_wc_add_to_cart_message_html', 20, 2 );
+
+endif;
+
 if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
 	add_filter( 'woocommerce_add_to_cart_fragments', 'lsx_wc_cart_link_fragment' );
 } else {

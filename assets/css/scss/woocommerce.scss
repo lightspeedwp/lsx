@@ -516,6 +516,13 @@ p.no-comments,
 	@extend %bootstrap-message-success;
 }
 
+.woocommerce-message-added-to-cart {
+	@include media ('>=tablet') {
+		font-size: 17px;
+		line-height: 50px;
+	}
+}
+
 .woocommerce-error,
 .woocommerce_error,
 .stock.out-of-stock,
