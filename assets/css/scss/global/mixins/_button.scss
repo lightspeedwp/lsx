@@ -115,6 +115,16 @@
 	.caldera-forms-modal {
 		@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
 	}
+
+	// WooCommerce
+
+	.lsx-wc-cart-menu-item {
+		.widget_shopping_cart {
+			.buttons {
+				.button.checkout { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow); }
+			}
+		}
+	}
 }
 
 @mixin custom-secondary-buttons-colours ($color: map-get($secondary-buttons, color), $color-hover: map-get($secondary-buttons, color-hover), $bg: map-get($secondary-buttons, bg), $bg-hover: map-get($secondary-buttons, bg-hover), $shadow: map-get($secondary-buttons, shadow)) {

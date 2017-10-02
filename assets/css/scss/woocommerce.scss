@@ -379,6 +379,15 @@ article.page {
 		.buttons {
 			.button {
 				@include lsx-button-scaffolding();
+
+				&,
+				&:active,
+				&:visited {
+					font-size: 12px;
+					height: auto;
+					padding: 10px 20px;
+				}
+
 				@include lsx-button-colour();
 			}
 		}
