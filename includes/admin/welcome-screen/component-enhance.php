@@ -104,14 +104,14 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://lsdev.feedmybeta.com/product/lsx-extensions-bundle/" target="_blank"><?php esc_html_e( 'LSX Essentials', 'lsx' ); ?> - <span class="price">Price from $149.00</span></a>
+						<a href="https://www.lsdev.biz/product/lsx-essentials-bundle/" target="_blank"><?php esc_html_e( 'LSX Essentials', 'lsx' ); ?> - <span class="price">Price from $99.00</span></a>
 						<p><?php esc_html_e( 'A collection of essential LSX extensions giving you more functionality, additional content types and greater control over the styling of your theme.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://lsdev.feedmybeta.com/product/lsx-extensions-bundle/" target="_blank"><?php esc_html_e( 'LSX Complete', 'lsx' ); ?> - <span class="price">Price from $299.00</span></a>
+						<a href="https://www.lsdev.biz/product/lsx-complete-bundle/" target="_blank"><?php esc_html_e( 'LSX Complete', 'lsx' ); ?> - <span class="price">Price from $199.00</span></a>
 						<p><?php esc_html_e( 'A full set of LSX extensions giving you all the functionality, content types and customization tools you may need!', 'lsx' ); ?></p>
 					</div>
 				</div>
