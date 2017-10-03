@@ -132,3 +132,9 @@
 
 	.secondary-border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
 }
+
+@mixin custom-tertiary-buttons-colours ($color: map-get($tertiary-buttons, color), $color-hover: map-get($tertiary-buttons, color-hover), $bg: map-get($tertiary-buttons, bg), $bg-hover: map-get($tertiary-buttons, bg-hover), $shadow: map-get($tertiary-buttons, shadow)) {
+	.tertiary-btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow); }
+
+	.tertiary-border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
+}

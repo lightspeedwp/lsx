@@ -11,6 +11,7 @@ $red-accent: #D84E2E;
 $breaker: #DADDDF;
 $small: #919191;
 $gray: (#EAEAEA, #CCCCCC, #4A4A4A);
+$green: (#6BA913, #649E12);
 
 $grid-float-breakpoint: 1200px;
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
@@ -78,6 +79,14 @@ $secondary-buttons: (
 	bg: nth($gray, 1),
 	bg-hover: nth($gray, 2),
 	shadow: darken(nth($gray, 1), 15%)
+);
+
+$tertiary-buttons: (
+	color: #FFF,
+	color-hover: #FFF,
+	bg: nth($green, 1),
+	bg-hover: nth($green, 2),
+	shadow: darken(nth($green, 1), 15%)
 );
 
 $top-menu: (
