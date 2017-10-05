@@ -40,11 +40,13 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 
 		// Remove select2 added by WooCommerce
 
-		wp_dequeue_style( 'select2' );
-		wp_deregister_style( 'select2' );
+		if ( ! is_admin() ) {
+			wp_dequeue_style( 'select2' );
+			wp_deregister_style( 'select2' );
 
-		wp_dequeue_script( 'select2' );
-		wp_deregister_script( 'select2' );
+			wp_dequeue_script( 'select2' );
+			wp_deregister_script( 'select2' );
+		}
 	}
 
 	add_action( 'wp_enqueue_scripts', 'lsx_wc_scripts_add_styles' );
