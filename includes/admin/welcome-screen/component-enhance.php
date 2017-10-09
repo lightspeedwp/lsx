@@ -96,6 +96,13 @@
 						<p><?php esc_html_e( 'Show off your finest work with the LSX Projects Extension! It adds a "Project" post type, allowing you to categorize and display your Projects on your LSX website.', 'lsx' ); ?></p>
 					</div>
 				</div>
+
+				<div class="col-md-4">
+					<div class="box-clean">
+						<a href="https://www.lsdev.biz/product/lsx-sharing/" target="_blank"><?php esc_html_e( 'Sharing', 'lsx' ); ?> - <span class="price">Price from $29.00</span></a>
+						<p><?php esc_html_e( 'LSX Sharing adds buttons to your posts that your readers can use to share your content on Facebook, Twitter and Pinterest.', 'lsx' ); ?></p>
+					</div>
+				</div>
 			</div>
 
 			<h2><?php esc_html_e( 'LSX extensions bundles', 'lsx' ); ?></h2>
