@@ -147,6 +147,18 @@ article.page {
 		padding-left: 20px;
 		margin-bottom: 2.4rem;
 	}
+
+	table.woocommerce-MyAccount-downloads,
+	table.my_account_orders {
+		font-size: .9em;
+
+		td, th { padding: 9px 12px }
+
+		.button {
+			margin-right: 5px;
+			&:last-child { margin-right: 0; }
+		}
+	}
 }
 
 #add_payment_method,

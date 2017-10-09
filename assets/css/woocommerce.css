@@ -66,6 +66,14 @@
 
 .woocommerce #woochimp_checkout_groups, .woocommerce-page #woochimp_checkout_groups { padding-left: 20px; margin-bottom: 2.4rem; }
 
+.woocommerce table.woocommerce-MyAccount-downloads, .woocommerce table.my_account_orders, .woocommerce-page table.woocommerce-MyAccount-downloads, .woocommerce-page table.my_account_orders { font-size: .9em; }
+
+.woocommerce table.woocommerce-MyAccount-downloads td, .woocommerce table.woocommerce-MyAccount-downloads th, .woocommerce table.my_account_orders td, .woocommerce table.my_account_orders th, .woocommerce-page table.woocommerce-MyAccount-downloads td, .woocommerce-page table.woocommerce-MyAccount-downloads th, .woocommerce-page table.my_account_orders td, .woocommerce-page table.my_account_orders th { padding: 9px 12px; }
+
+.woocommerce table.woocommerce-MyAccount-downloads .button, .woocommerce table.my_account_orders .button, .woocommerce-page table.woocommerce-MyAccount-downloads .button, .woocommerce-page table.my_account_orders .button { margin-right: 5px; }
+
+.woocommerce table.woocommerce-MyAccount-downloads .button:last-child, .woocommerce table.my_account_orders .button:last-child, .woocommerce-page table.woocommerce-MyAccount-downloads .button:last-child, .woocommerce-page table.my_account_orders .button:last-child { margin-right: 0; }
+
 #add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment { background: transparent; }
 
 #add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods { border-bottom: none; margin-bottom: 2.4rem; padding: 0; }

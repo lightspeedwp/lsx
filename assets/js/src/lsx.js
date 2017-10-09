@@ -409,6 +409,24 @@ var lsx = Object.create( null );
 	};
 
 	/**
+	 * Fix WooCommerce API orders style/HTML.
+	 *
+	 * @package	lsx
+	 * @subpackage scripts
+	 */
+	lsx.fix_wc_tables = function( _$el ) {
+		jQuery( '.woocommerce-MyAccount-content .api-manager-changelog, .woocommerce-MyAccount-content .api-manager-download' ).each( function() {
+			var $this = jQuery( this );
+
+			$this.children( 'br:first-child' ).remove();
+			$this.children( 'hr:first-child' ).remove();
+
+			$this.children( 'hr:last-child' ).remove();
+			$this.children( 'br:last-child' ).remove();
+		} );
+	};
+
+	/**
 	 * On window resize.
 	 *
 	 * @package    lsx
@@ -443,6 +461,7 @@ var lsx = Object.create( null );
 		lsx.remove_gallery_img_width_height();
 
 		lsx.init_wc_slider();
+		lsx.fix_wc_tables();
 
 	} );
 
