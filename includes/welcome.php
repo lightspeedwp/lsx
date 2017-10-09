@@ -10,6 +10,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! function_exists( 'lsx_activation_admin_notice_dismiss' ) ) :
+
+	/**
+	 * Dismiss the admin notice (successful activation).
+	 *
+	 * @package    lsx
+	 * @subpackage welcome-page
+	 */
+	function lsx_activation_admin_notice_dismiss() {
+		update_option( 'lsx-notice-dismissed', '1' );
+		wp_die();
+	}
+
+endif;
+
+add_action( 'wp_ajax_lsx_dismiss_theme_notice', 'lsx_activation_admin_notice_dismiss' );
+
 if ( ! function_exists( 'lsx_activation_admin_notice' ) ) :
 
 	/**
@@ -19,16 +36,14 @@ if ( ! function_exists( 'lsx_activation_admin_notice' ) ) :
 	 * @subpackage welcome-page
 	 */
 	function lsx_activation_admin_notice() {
-		global $pagenow;
-
-		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
+		if ( empty( get_option( 'lsx-notice-dismissed' ) ) ) {
 			add_action( 'admin_notices', 'lsx_welcome_admin_notice', 99 );
 		}
 	}
 
 endif;
 
-add_action( 'load-themes.php', 'lsx_activation_admin_notice' );
+add_action( 'admin_notices', 'lsx_activation_admin_notice' );
 
 if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 
@@ -40,7 +55,7 @@ if ( ! function_exists( 'lsx_welcome_admin_notice' ) ) :
 	 */
 	function lsx_welcome_admin_notice() {
 		?>
-			<div class="updated notice is-dismissible">
+			<div class="lsx-theme-notice notice notice-success is-dismissible">
 				<p>
 					<?php
 						printf(

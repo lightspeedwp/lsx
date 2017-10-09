@@ -28,6 +28,22 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'lsx_scripts' );
 
+if ( ! function_exists( 'lsx_admin_scripts' ) ) :
+
+	/**
+	 * Enqueue scripts (admin).
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+	function lsx_admin_scripts() {
+		wp_enqueue_script( 'lsx-admin', get_template_directory_uri() . '/assets/js/admin/lsx-admin.js', array( 'jquery' ), LSX_VERSION, true );
+	}
+
+endif;
+
+add_action( 'admin_enqueue_scripts', 'lsx_admin_scripts' );
+
 if ( ! function_exists( 'lsx_scripts_add_styles' ) ) :
 
 	/**
