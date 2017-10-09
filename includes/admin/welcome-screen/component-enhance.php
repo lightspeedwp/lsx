@@ -23,14 +23,14 @@
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://www.lsdev.biz/product/lsx-currencies/" target="_blank"><?php esc_html_e( 'Currencies', 'lsx' ); ?> - <span class="price">Price from $59.00</span></a>
+						<a href="https://www.lsdev.biz/product/lsx-currencies/" target="_blank"><?php esc_html_e( 'Currencies', 'lsx' ); ?> - <span class="price">Price from $29.00</span></a>
 						<p><?php esc_html_e( 'The LSX Currencies extension adds currency selection functionality to sites, allowing users to view your products in whatever currencies you choose to sell in.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://www.lsdev.biz/product/lsx-blog-customizer/" target="_blank"><?php esc_html_e( 'Blog Customizer', 'lsx' ); ?> - <span class="price">Price from $49.00</span></a>
+						<a href="https://www.lsdev.biz/product/lsx-blog-customizer/" target="_blank"><?php esc_html_e( 'Blog Customizer', 'lsx' ); ?> - <span class="price">Price from $29.00</span></a>
 						<p><?php esc_html_e( 'It allows you it to customize various aspects of the the appearance of your blog, posts widgets, archive pages and single posts so they looks exactly how you want.', 'lsx' ); ?></p>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://www.lsdev.biz/product/lsx-login/" target="_blank"><?php esc_html_e( 'Login', 'lsx' ); ?> - <span class="price">Price from $59.00</span></a>
+						<a href="https://www.lsdev.biz/product/lsx-login/" target="_blank"><?php esc_html_e( 'Login', 'lsx' ); ?> - <span class="price">Price from $39.00</span></a>
 						<p><?php esc_html_e( 'The LSX Login extension allows users to log into a dashboard and then see configurable content based on which users can access which content.', 'lsx' ); ?></p>
 					</div>
 				</div>
