@@ -241,17 +241,6 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
 				<header class="archive-header">
-					<h1 class="archive-title"><?php the_archive_title(); ?></h1>
-					<?php the_archive_description(); ?>
-				</header>
-
-				<?php lsx_global_header_inner_bottom(); ?>
-			</div>
-			<?php
-		elseif ( is_archive() ) :
-			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
-				<header class="archive-header">
 					<h1 class="archive-title">
 						<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && ! is_tax( 'post_format' ) ) { ?>
 							<?php the_archive_title( esc_html__( 'Type:', 'lsx' ) ); ?>
@@ -276,7 +265,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
-		else :
+		elseif ( ! is_singular( 'post' ) ) :
 			// Display only the breadcrumbs
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
