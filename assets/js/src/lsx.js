@@ -427,6 +427,10 @@ var lsx = Object.create( null );
 		} );
 
 		$( '.woocommerce-form__label-for-checkbox.checkbox' ).removeClass( 'checkbox' );
+
+		$( document.body ).on( 'updated_checkout', function() {
+			$( '.woocommerce-form__label-for-checkbox.checkbox' ).removeClass( 'checkbox' );
+		} );
 	};
 
 	/**
