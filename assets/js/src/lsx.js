@@ -410,13 +410,14 @@ var lsx = Object.create( null );
 
 	/**
 	 * Fix WooCommerce API orders style/HTML.
+	 * Fix WooCommerce checkboxes style/HTML.
 	 *
 	 * @package	lsx
 	 * @subpackage scripts
 	 */
-	lsx.fix_wc_tables = function( _$el ) {
-		jQuery( '.woocommerce-MyAccount-content .api-manager-changelog, .woocommerce-MyAccount-content .api-manager-download' ).each( function() {
-			var $this = jQuery( this );
+	lsx.fix_wc_elements = function( _$el ) {
+		$( '.woocommerce-MyAccount-content .api-manager-changelog, .woocommerce-MyAccount-content .api-manager-download' ).each( function() {
+			var $this = $( this );
 
 			$this.children( 'br:first-child' ).remove();
 			$this.children( 'hr:first-child' ).remove();
@@ -424,6 +425,8 @@ var lsx = Object.create( null );
 			$this.children( 'hr:last-child' ).remove();
 			$this.children( 'br:last-child' ).remove();
 		} );
+
+		$( '.woocommerce-form__label-for-checkbox.checkbox' ).removeClass( 'checkbox' );
 	};
 
 	/**
@@ -461,7 +464,7 @@ var lsx = Object.create( null );
 		lsx.remove_gallery_img_width_height();
 
 		lsx.init_wc_slider();
-		lsx.fix_wc_tables();
+		lsx.fix_wc_elements();
 
 	} );
 
