@@ -434,6 +434,22 @@ var lsx = Object.create( null );
 	};
 
 	/**
+	 * Fix Caldera Forms modal title.
+	 *
+	 * @package	lsx
+	 * @subpackage scripts
+	 */
+	lsx.fix_caldera_form_modal_title = function() {
+		$( '[data-remodal-id]' ).each( function() {
+			var $form = $( this ),
+				$button = $( '[data-remodal-target="' + $form.attr( 'id' ) + '"]' ),
+				title = $button.text();
+
+			$form.find( '[role="field"]' ).first().before( '<div><h4>' + title + '</h4></div>' );
+		} );
+	};
+
+	/**
 	 * On window resize.
 	 *
 	 * @package    lsx
@@ -469,6 +485,7 @@ var lsx = Object.create( null );
 
 		lsx.init_wc_slider();
 		lsx.fix_wc_elements();
+		lsx.fix_caldera_form_modal_title();
 
 	} );
 
