@@ -25,7 +25,7 @@ global $comment, $_product, $rating; ?>
 			<p class="lsx-woocommerce-reviewer">
 				<?php
 					/* translators: %s: review author */
-					printf( esc_html__( 'by %s', 'woocommerce' ), get_comment_author() );
+					printf( esc_html__( 'by %s', 'lsx' ), get_comment_author() );
 				?>
 			</p>
 

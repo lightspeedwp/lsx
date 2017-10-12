@@ -136,7 +136,7 @@
 						<a href="<?php the_permalink(); ?>#comments">
 							<?php
 								if ( '1' === $comments_number ) {
-									echo esc_html_x( 'One Comment', 'lsx' );
+									echo esc_html_x( 'One Comment', 'content.php', 'lsx' );
 								} else {
 									printf(
 										/* Translators: %s: number of comments */

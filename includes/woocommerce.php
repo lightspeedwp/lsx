@@ -45,7 +45,7 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 			wp_deregister_style( 'select2' );
 
 			wp_dequeue_script( 'select2' );
-			wp_deregister_script( 'select2' );
+			//wp_deregister_script( 'select2' );
 		}
 	}
 
