@@ -98,6 +98,10 @@ article.post {
 				}
 			}
 		}
+
+		.sticky {
+			padding:5px;
+		}
 	}
 
 	.has-sidebar & {
@@ -161,4 +165,30 @@ article.post {
 
 		@include media ('>=desktop') { width: 66.66667%; }
 	}
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	border-radius: 3px;
+	clip: auto !important;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }

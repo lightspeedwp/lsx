@@ -45,7 +45,7 @@ if ( have_comments() ) : ?>
 				if ( '1' === $comments_number ) {
 					printf(
 						/* Translators: %s: post title */
-						esc_html( _x( 'One Response to &ldquo;%s&rdquo;', 'lsx' ) ),
+						esc_html_x( 'One Response to &ldquo;%s&rdquo;', 'lsx' ) ,
 						get_the_title()
 					);
 				} else {

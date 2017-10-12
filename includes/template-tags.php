@@ -418,10 +418,10 @@ if ( ! function_exists( 'lsx_post_nav' ) ) :
 			<div class="lsx-breaker"></div>
 			<div class="nav-links pager row">
 				<div class="previous <?php echo 'col-' . esc_attr( $size ) . '-6'; ?>">
-					<?php previous_post_link( '%link', '<p class="nav-links-description">' . _x( 'Previous Post', 'Previous post link', 'lsx' ) . '</p><h3>%title</h3>' ); ?>
+					<?php previous_post_link( '%link', '<p class="nav-links-description">' . esc_html_x( 'Previous Post', 'Previous post link', 'lsx' ) . '</p><h3>%title</h3>' ); ?>
 				</div>
 				<div class="next <?php echo 'col-' . esc_attr( $size ) . '-6'; ?>">
-					<?php next_post_link( '%link', '<p class="nav-links-description">' . _x( 'Next Post', 'Next post link', 'lsx' ) . '</p><h3>%title</h3>' ); ?>
+					<?php next_post_link( '%link', '<p class="nav-links-description">' . esc_html_x( 'Next Post', 'Next post link', 'lsx' ) . '</p><h3>%title</h3>' ); ?>
 				</div>
 			</div><!-- .nav-links -->
 		</nav><!-- .navigation -->
