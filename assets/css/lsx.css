@@ -92,9 +92,9 @@ p:empty { display: none; }
 
 .content-area h1, .content-area h2, .content-area h3, .content-area h4, .content-area h5, .content-area h6, .content-area .widget-title, .widget-area h1, .widget-area h2, .widget-area h3, .widget-area h4, .widget-area h5, .widget-area h6, .widget-area .widget-title { margin-top: 0; margin-bottom: 2.4rem; }
 
-.content-area ol, .content-area ul:not(.dropdown-menu), .widget-area ol, .widget-area ul:not(.dropdown-menu) { margin-bottom: 2.4rem; padding-left: 4rem; }
+.content-area ol, .content-area ul:not(.dropdown-menu):not(.slick-dots), .widget-area ol, .widget-area ul:not(.dropdown-menu):not(.slick-dots) { margin-bottom: 2.4rem; padding-left: 4rem; }
 
-.content-area ol ol, .content-area ol ul, .content-area ul:not(.dropdown-menu) ol, .content-area ul:not(.dropdown-menu) ul, .widget-area ol ol, .widget-area ol ul, .widget-area ul:not(.dropdown-menu) ol, .widget-area ul:not(.dropdown-menu) ul { margin-bottom: 0; }
+.content-area ol ol, .content-area ol ul, .content-area ul:not(.dropdown-menu):not(.slick-dots) ol, .content-area ul:not(.dropdown-menu):not(.slick-dots) ul, .widget-area ol ol, .widget-area ol ul, .widget-area ul:not(.dropdown-menu):not(.slick-dots) ol, .widget-area ul:not(.dropdown-menu):not(.slick-dots) ul { margin-bottom: 0; }
 
 .content-area p, .widget-area p { margin-bottom: 2.4rem; }
 

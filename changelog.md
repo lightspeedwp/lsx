@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.0.1
+* Fix - Fixed conflict from global style affecting slick dots
+
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
 * Dev - Restricting the #searchform so it does not submit empty searches
