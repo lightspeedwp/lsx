@@ -2,6 +2,7 @@
 
 ### 2.0.1
 * Fix - Fixed conflict from global style affecting slick dots
+* Fix - Removed the setting that turned LSX as LSX (itself) child theme
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
