@@ -371,7 +371,9 @@ if ( ! function_exists( 'lsx_paging_nav' ) ) :
 			return;
 		}
 
-		if ( current_theme_supports( 'infinite-scroll' ) && class_exists( 'The_Neverending_Home_Page' ) ) {
+		if ( true === apply_filters( 'lsx_paging_nav_disable', false ) ) {
+			return true;
+		} elseif ( current_theme_supports( 'infinite-scroll' ) && class_exists( 'The_Neverending_Home_Page' ) ) {
 			return true;
 		} else {
 			$html = '';
