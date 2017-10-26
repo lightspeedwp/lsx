@@ -166,3 +166,29 @@ article.lsx-slot {
 		}
 	}
 }
+
+.search-results {
+	article.lsx-slot {
+		&:not(.post),
+		&.post.format-quote {
+			.post-meta {
+				& > .post-meta-avatar,
+				& > .post-meta-author {
+					display: none;
+				}
+			}
+		}
+
+		&:not(.post) {
+			.entry-meta {
+				& > .post-meta.post-meta-top { margin-top: 22.5px; }
+			}
+		}
+
+		&.post.format-quote {
+			.entry-meta {
+				& > .post-meta.post-meta-top { margin-top: 0; }
+			}
+		}
+	}
+}
