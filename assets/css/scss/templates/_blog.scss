@@ -47,6 +47,8 @@ article.lsx-slot {
 			& > .attachment-responsive {
 				border: 0;
 				width: 100%;
+
+				&.lazyload, &.lazyloading { width: auto; }
 			}
 		}
 
