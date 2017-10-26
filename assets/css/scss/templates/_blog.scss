@@ -14,18 +14,23 @@
 }
 
 article.post,
-article.page {
+article.page,
+article.lsx-slot {
 	.blog &,
 	.archive &,
 	.search-results &,
 	.lsx-related-posts & {
-
 		& + article.post,
-		& + article.page { margin-top: $lsx-large-gap; }
+		& + article.page,
+		& + article.lsx-slot { margin-top: $lsx-large-gap; }
 
 		.entry-layout {
 			background-color: #FFF;
 			padding-bottom: 15px;
+
+			& > .entry-image {
+				@include media('>=phone') { display: none; }
+			}
 		}
 
 		.entry-header { position: relative; }

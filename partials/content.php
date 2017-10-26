@@ -30,7 +30,7 @@
 	}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $thumb_class ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'lsx-slot', $thumb_class ) ); ?>>
 	<?php lsx_entry_top(); ?>
 
 	<div class="entry-layout">

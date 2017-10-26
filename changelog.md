@@ -4,6 +4,8 @@
 * Fix - Fixed conflict from global style affecting slick dots
 * Fix - Removed the setting that turned LSX as LSX (itself) child theme
 * Dev - Added new filter to disable the global pagination: lsx_paging_nav_disable
+* Fix - Fixed blog/search results - Custom post type visual
+* Fix - Fixed blog/search results - Botttom image only used by LSX Blog Customizer
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
