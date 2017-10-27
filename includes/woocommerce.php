@@ -81,7 +81,7 @@ if ( ! function_exists( 'lsx_wc_theme_wrapper_start' ) ) :
 	 */
 	function lsx_wc_theme_wrapper_start() {
 		lsx_content_wrap_before();
-		echo '<div id="primary" class="content-area col-sm-12">';
+		echo '<div id="primary" class="content-area ' . esc_attr( lsx_main_class() ) . '">';
 		lsx_content_before();
 		echo '<main id="main" class="site-main" role="main">';
 		lsx_content_top();
