@@ -521,7 +521,10 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 					<li class="lsx-wc-footer-bar-item">
 						<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="lsx-wc-footer-bar-link">
 							<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-							<span class="lsx-wc-footer-bar-count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+							<?php $count = WC()->cart->get_cart_contents_count(); ?>
+							<?php if ( ! empty( $count ) ) : ?>
+								<span class="lsx-wc-footer-bar-count"><?php echo wp_kses_data( $count ); ?></span>
+							<?php endif; ?>
 							<span><?php esc_html_e( 'Cart', 'lsx' ); ?></span>
 						</a>
 					</li>
