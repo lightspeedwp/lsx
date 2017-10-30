@@ -11,6 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'LSX_VERSION', '2.0.1' );
 
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/includes/woocommerce.php';
+}
+
 require get_template_directory() . '/includes/config.php';
 require get_template_directory() . '/includes/classes/class-lsx-theme-customizer.php';
 require get_template_directory() . '/includes/customizer.php';
@@ -29,7 +33,3 @@ require get_template_directory() . '/includes/classes/class-lsx-lazy-load-images
 require get_template_directory() . '/includes/template-tags.php';
 require get_template_directory() . '/includes/extras.php';
 require get_template_directory() . '/includes/welcome.php';
-
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/includes/woocommerce.php';
-}

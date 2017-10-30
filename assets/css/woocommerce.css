@@ -337,4 +337,20 @@
 
 .lsx-woocommerce-slider .slick-arrow.slick-next:before { content: '\f105'; left: 1.5rem; }
 
+.lsx-wc-footer-bar { box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5); bottom: 0; left: 0; position: fixed; right: 0; z-index: 10; }
+
+@media (min-width: 768px) { .lsx-wc-footer-bar { display: none; } }
+
+.lsx-wc-footer-bar-list { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; margin-bottom: 0; padding-left: 0; }
+
+.lsx-wc-footer-bar-item { border-right-width: 2px; border-right-style: solid; width: 25%; }
+
+.lsx-wc-footer-bar-item:last-child { border-right: 0; }
+
+.lsx-wc-footer-bar-link { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; padding: 10px; text-align: center; }
+
+.lsx-wc-footer-bar-link .fa { font-size: 24px; margin-bottom: 4px; }
+
+.lsx-wc-footer-bar-form { display: none; padding: 10px; }
+
 /*# sourceMappingURL=maps/woocommerce.css.map */

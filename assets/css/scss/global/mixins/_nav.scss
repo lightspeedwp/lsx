@@ -115,4 +115,23 @@
 			}
 		}
 	}
+
+	.lsx-wc-footer-bar { background-color: $dropdown; }
+
+	.lsx-wc-footer-bar-item { border-right-color: $dropdown-link; }
+
+	.lsx-wc-footer-bar-link {
+		color: $dropdown-link;
+
+		&:hover,
+		&:active:hover,
+		&:focus {
+			color: $dropdown-link;
+		}
+	}
+
+	.lsx-wc-footer-bar-search-on {
+		.lsx-wc-footer-bar-form,
+		.lsx-wc-footer-bar-link-toogle { background-color: $dropdown-hover; }
+	}
 }

@@ -926,3 +926,48 @@ ul.lsx-wc-cart-sub-menu {}
 		}
 	}
 }
+
+// Footer bar
+
+.lsx-wc-footer-bar {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	z-index: 10;
+
+	@include media ('>=phone') { display: none; }
+}
+
+.lsx-wc-footer-bar-list {
+	display: flex;
+	list-style: none;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.lsx-wc-footer-bar-item {
+	border-right-width: 2px;
+	border-right-style: solid;
+	width: 25%;
+
+	&:last-child { border-right: 0; }
+}
+
+.lsx-wc-footer-bar-link {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	text-align: center;
+
+	.fa {
+		font-size: 24px;
+		margin-bottom: 4px;
+	}
+}
+
+.lsx-wc-footer-bar-form {
+	display: none;
+	padding: 10px;
+}

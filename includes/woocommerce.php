@@ -440,3 +440,97 @@ if ( ! function_exists( 'lsx_wc_woocommerce_pagination' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
+
+	/**
+	 * Returns an array of the core panel.
+	 *
+	 * @package    lsx
+	 * @subpackage customizer
+	 *
+	 * @return $lsx_controls array()
+	 */
+	function lsx_customizer_wc_controls( $lsx_controls ) {
+		$lsx_controls['sections']['lsx-wc'] = array(
+			'title'       => esc_html__( 'WooCommerce', 'lsx' ),
+			'description' => esc_html__( 'Change the WooCommerce settings.', 'lsx' ),
+			'priority'    => 23,
+		);
+
+		$lsx_controls['settings']['lsx_footer_bar_status'] = array(
+			'default'           => '1',
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_footer_bar_status'] = array(
+			'label'   => esc_html__( 'Footer Bar', 'lsx' ),
+			'section' => 'lsx-wc',
+			'type'    => 'checkbox',
+		);
+
+		return $lsx_controls;
+	}
+
+endif;
+
+add_filter( 'lsx_customizer_controls', 'lsx_customizer_wc_controls' );
+
+if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
+
+	/**
+	 * Display WC footer bar.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_footer_bar() {
+		if ( ! empty( get_theme_mod( 'lsx_footer_bar_status', '1' ) ) ) :
+			global $woocommerce;
+			?>
+			<div class="lsx-wc-footer-bar">
+				<form role="search" method="get" action="<?php echo esc_url( home_url() ); ?>" class="lsx-wc-footer-bar-form">
+					<fieldset>
+						<legend class="screen-reader-text"><?php esc_html_e( 'Search products', 'lsx' ); ?></legend>
+						<input type="search" name="s" placeholder="<?php esc_attr_e( 'Search products…', 'lsx' ); ?>" class="form-control">
+					</fieldset>
+				</form>
+
+				<ul class="lsx-wc-footer-bar-list">
+					<li class="lsx-wc-footer-bar-item">
+						<a href="<?php echo esc_url( home_url() ); ?>" class="lsx-wc-footer-bar-link">
+							<i class="fa fa-home" aria-hidden="true"></i>
+							<span><?php esc_html_e( 'Home', 'lsx' ); ?></span>
+						</a>
+					</li>
+
+					<li class="lsx-wc-footer-bar-item">
+						<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ); ?>" class="lsx-wc-footer-bar-link">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							<span><?php esc_html_e( 'Account', 'lsx' ); ?></span>
+						</a>
+					</li>
+
+					<li class="lsx-wc-footer-bar-item">
+						<a href="#" class="lsx-wc-footer-bar-link lsx-wc-footer-bar-link-toogle">
+							<i class="fa fa-search" aria-hidden="true"></i>
+							<span><?php esc_html_e( 'Search', 'lsx' ); ?></span>
+						</a>
+					</li>
+
+					<li class="lsx-wc-footer-bar-item">
+						<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="lsx-wc-footer-bar-link">
+							<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+							<span><?php esc_html_e( 'Cart', 'lsx' ); ?></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<?php
+		endif;
+	}
+
+	add_action( 'lsx_body_bottom', 'lsx_wc_footer_bar', 15 );
+
+endif;

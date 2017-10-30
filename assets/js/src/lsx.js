@@ -450,6 +450,21 @@ var lsx = Object.create( null );
 	};
 
 	/**
+	 * Open/close WC footer bar search.
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+
+	lsx.wc_footer_bar_toggle_handler = function () {
+		$( '.lsx-wc-footer-bar-link-toogle' ).on( 'click', function ( event ) {
+			event.preventDefault();
+			$( '.lsx-wc-footer-bar-form' ).slideToggle();
+			$( '.lsx-wc-footer-bar' ).toggleClass( 'lsx-wc-footer-bar-search-on' );
+		});
+	};
+
+	/**
 	 * On window resize.
 	 *
 	 * @package    lsx
@@ -486,6 +501,7 @@ var lsx = Object.create( null );
 		lsx.init_wc_slider();
 		lsx.fix_wc_elements();
 		lsx.fix_caldera_form_modal_title();
+		lsx.wc_footer_bar_toggle_handler();
 
 	} );
 
