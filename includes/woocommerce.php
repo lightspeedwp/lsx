@@ -487,7 +487,6 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 	 */
 	function lsx_wc_footer_bar() {
 		if ( ! empty( get_theme_mod( 'lsx_footer_bar_status', '1' ) ) ) :
-			global $woocommerce;
 			?>
 			<div class="lsx-wc-footer-bar">
 				<form role="search" method="get" action="<?php echo esc_url( home_url() ); ?>" class="lsx-wc-footer-bar-form">
@@ -520,8 +519,9 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 					</li>
 
 					<li class="lsx-wc-footer-bar-item">
-						<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="lsx-wc-footer-bar-link">
+						<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="lsx-wc-footer-bar-link">
 							<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+							<span class="lsx-wc-footer-bar-count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
 							<span><?php esc_html_e( 'Cart', 'lsx' ); ?></span>
 						</a>
 					</li>

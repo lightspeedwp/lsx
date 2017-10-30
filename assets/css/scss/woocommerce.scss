@@ -959,6 +959,7 @@ ul.lsx-wc-cart-sub-menu {}
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
+	position: relative;
 	text-align: center;
 
 	.fa {
@@ -970,4 +971,22 @@ ul.lsx-wc-cart-sub-menu {}
 .lsx-wc-footer-bar-form {
 	display: none;
 	padding: 10px;
+}
+
+.lsx-wc-footer-bar-count {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 50%;
+	box-sizing: content-box;
+	display: block;
+	font-size: 11px;
+	height: 20px;
+	left: 50%;
+	line-height: 20px;
+	position: absolute;
+	text-align: center;
+	top: 5px;
+	width: 20px;
+
+	&:empty { display: none; }
 }

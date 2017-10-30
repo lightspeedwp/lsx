@@ -347,10 +347,14 @@
 
 .lsx-wc-footer-bar-item:last-child { border-right: 0; }
 
-.lsx-wc-footer-bar-link { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; padding: 10px; text-align: center; }
+.lsx-wc-footer-bar-link { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; padding: 10px; position: relative; text-align: center; }
 
 .lsx-wc-footer-bar-link .fa { font-size: 24px; margin-bottom: 4px; }
 
 .lsx-wc-footer-bar-form { display: none; padding: 10px; }
+
+.lsx-wc-footer-bar-count { border-style: solid; border-width: 1px; border-radius: 50%; box-sizing: content-box; display: block; font-size: 11px; height: 20px; left: 50%; line-height: 20px; position: absolute; text-align: center; top: 5px; width: 20px; }
+
+.lsx-wc-footer-bar-count:empty { display: none; }
 
 /*# sourceMappingURL=maps/woocommerce.css.map */
