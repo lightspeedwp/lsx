@@ -8,6 +8,7 @@
 * Fix - Fixed blog/search results - Botttom image only used by LSX Blog Customizer
 * Fix - Added dynamic class to WooCommerce archive wrapper
 * Tweak - WooCommerce mobile footer bar
+* Fix - Fixed <main> close tag in WooCommerce archive
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
