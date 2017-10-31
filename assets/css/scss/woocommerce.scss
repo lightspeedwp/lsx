@@ -69,10 +69,6 @@ article.page {
 	.page-template-default:not(.has-sidebar).lost-api-key & {
 		width: 100% !important;
 	}
-
-	.page-template-default:not(.has-sidebar).woocommerce-page.lsx-wc-checkout-layout-stacked & {
-		@include media ('>=tablet') { width: 750px !important; }
-	}
 }
 
 .site-main {
