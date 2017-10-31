@@ -102,7 +102,7 @@ if ( ! function_exists( 'lsx_wc_theme_wrapper_end' ) ) :
 	 */
 	function lsx_wc_theme_wrapper_end() {
 		lsx_content_bottom();
-		echo '</div>';
+		echo '</main>';
 		lsx_content_after();
 		echo '</div>';
 		lsx_content_wrap_after();
