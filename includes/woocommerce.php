@@ -452,22 +452,68 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 	 * @return $lsx_controls array()
 	 */
 	function lsx_customizer_wc_controls( $lsx_controls ) {
-		$lsx_controls['sections']['lsx-wc'] = array(
+		$lsx_controls['panels']['lsx-wc'] = array(
 			'title'       => esc_html__( 'WooCommerce', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce settings.', 'lsx' ),
 			'priority'    => 23,
 		);
 
-		$lsx_controls['settings']['lsx_footer_bar_status'] = array(
+		$lsx_controls['sections']['lsx-wc-global'] = array(
+			'title'       => esc_html__( 'Global', 'lsx' ),
+			'description' => esc_html__( 'Change the WooCommerce global settings.', 'lsx' ),
+			'priority'    => 23,
+			'panel'       => 'lsx-wc',
+		);
+
+		$lsx_controls['sections']['lsx-wc-checkout'] = array(
+			'title'       => esc_html__( 'Checkout', 'lsx' ),
+			'description' => esc_html__( 'Change the WooCommerce checkout settings.', 'lsx' ),
+			'priority'    => 23,
+			'panel'       => 'lsx-wc',
+		);
+
+		$lsx_controls['settings']['lsx_wc_mobile_footer_bar_status'] = array(
 			'default'           => '1',
 			'sanitize_callback' => 'lsx_sanitize_checkbox',
 			'transport'         => 'postMessage',
 		);
 
-		$lsx_controls['fields']['lsx_footer_bar_status'] = array(
-			'label'   => esc_html__( 'Footer Bar', 'lsx' ),
-			'section' => 'lsx-wc',
-			'type'    => 'checkbox',
+		$lsx_controls['fields']['lsx_wc_mobile_footer_bar_status'] = array(
+			'label'       => esc_html__( 'Footer Bar', 'lsx' ),
+			'description' => esc_html__( 'Enable the mobile footer bar.', 'lsx' ),
+			'section'     => 'lsx-wc-global',
+			'type'        => 'checkbox',
+		);
+
+		$lsx_controls['settings']['lsx_wc_checkout_steps'] = array(
+			'default'           => '1',
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_wc_checkout_steps'] = array(
+			'label'       => esc_html__( 'Checkout Steps', 'lsx' ),
+			'description' => esc_html__( 'Enable the checkout steps header.', 'lsx' ),
+			'section'     => 'lsx-wc-checkout',
+			'type'        => 'checkbox',
+		);
+
+		$lsx_controls['settings']['lsx_wc_checkout_layout'] = array(
+			'default'           => 'default',
+			'sanitize_callback' => 'lsx_sanitize_choices',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_wc_checkout_layout'] = array(
+			'label'       => esc_html__( 'Checkout Layout', 'lsx' ),
+			'description' => esc_html__( 'Choose the checkout page layout.', 'lsx' ),
+			'section'     => 'lsx-wc-checkout',
+			'type'        => 'select',
+			'choices'     => array(
+				'default' => esc_html__( 'Default', 'lsx' ),
+				'stacked' => esc_html__( 'Stacked', 'lsx' ),
+				'columns' => esc_html__( 'Columns', 'lsx' ),
+			),
 		);
 
 		return $lsx_controls;
@@ -486,7 +532,7 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_footer_bar() {
-		if ( ! empty( get_theme_mod( 'lsx_footer_bar_status', '1' ) ) ) :
+		if ( ! empty( get_theme_mod( 'lsx_wc_mobile_footer_bar_status', '1' ) ) ) :
 			?>
 			<div class="lsx-wc-footer-bar">
 				<form role="search" method="get" action="<?php echo esc_url( home_url() ); ?>" class="lsx-wc-footer-bar-form">
@@ -496,7 +542,7 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 					</fieldset>
 				</form>
 
-				<ul class="lsx-wc-footer-bar-list">
+				<ul class="lsx-wc-footer-bar-items">
 					<li class="lsx-wc-footer-bar-item">
 						<a href="<?php echo esc_url( home_url() ); ?>" class="lsx-wc-footer-bar-link">
 							<i class="fa fa-home" aria-hidden="true"></i>
@@ -535,5 +581,113 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 	}
 
 	add_action( 'lsx_body_bottom', 'lsx_wc_footer_bar', 15 );
+
+endif;
+
+if ( ! function_exists( 'lsx_wc_body_class' ) ) :
+
+	/**
+	 * Add and remove body_class() classes.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_body_class( $classes ) {
+		if ( is_checkout() ) {
+			$layout = get_theme_mod( 'lsx_wc_checkout_layout', 'default' );
+
+			if ( 'stacked' === $layout ) {
+				$classes[] = 'lsx-wc-checkout-layout-stacked';
+			} elseif ( 'columns' === $layout ) {
+				$classes[] = 'lsx-wc-checkout-layout-two-column-addreses';
+			}
+		}
+
+		return $classes;
+	}
+
+	add_filter( 'body_class', 'lsx_wc_body_class' );
+
+endif;
+
+if ( ! function_exists( 'lsx_wc_checkout_steps' ) ) :
+
+	/**
+	 * Display WC checkout steps.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_checkout_steps() {
+		if ( is_checkout() && ! empty( get_theme_mod( 'lsx_wc_checkout_steps', '1' ) ) ) :
+			?>
+			<div class="lsx-wc-checkout-steps">
+				<ul class="lsx-wc-checkout-steps-items">
+
+					<?php if ( empty( $wp->query_vars['order-received'] ) ) : ?>
+
+						<li class="lsx-wc-checkout-steps-item">
+							<a href="<?php echo esc_url( get_permalink( woocommerce_get_page_id( 'shop' ) ) ); ?>" class="lsx-wc-checkout-steps-link">
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								<span><?php esc_html_e( 'Choose your product', 'lsx' ); ?></span>
+							</a>
+
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+
+						<li class="lsx-wc-checkout-steps-item">
+							<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="lsx-wc-checkout-steps-link">
+								<i class="fa fa-check-circle" aria-hidden="true"></i>
+								<span><?php esc_html_e( 'My Cart', 'lsx' ); ?></span>
+							</a>
+
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+
+						<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-current">
+							<i class="lsx-wc-checkout-steps-counter" aria-hidden="true"><?php esc_html_e( '3', 'lsx' ); ?></i>
+							<span><?php esc_html_e( 'Payment details', 'lsx' ); ?></span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+
+						<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-disabled">
+							<i class="lsx-wc-checkout-steps-counter" aria-hidden="true"><?php esc_html_e( '4', 'lsx' ); ?></i>
+							<span><?php esc_html_e( 'Thank you!', 'lsx' ); ?></span>
+						</li>
+
+					<?php else : ?>
+
+						<li class="lsx-wc-checkout-steps-item">
+							<i class="fa fa-check-circle" aria-hidden="true"></i>
+							<span><?php esc_html_e( 'Choose your product', 'lsx' ); ?></span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+
+						<li class="lsx-wc-checkout-steps-item">
+							<i class="fa fa-check-circle" aria-hidden="true"></i>
+							<span><?php esc_html_e( 'My Cart', 'lsx' ); ?></span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+
+						<li class="lsx-wc-checkout-steps-item">
+							<i class="fa fa-check-circle" aria-hidden="true"></i>
+							<span><?php esc_html_e( 'Payment details', 'lsx' ); ?></span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+
+						<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-current">
+							<i class="lsx-wc-checkout-steps-counter" aria-hidden="true"><?php esc_html_e( '4', 'lsx' ); ?></i>
+							<span><?php esc_html_e( 'Thank you!', 'lsx' ); ?></span>
+						</li>
+
+					<?php endif; ?>
+
+				</ul>
+			</div>
+			<?php
+		endif;
+	}
+
+	add_action( 'lsx_content_top', 'lsx_wc_checkout_steps', 15 );
 
 endif;
