@@ -1142,7 +1142,7 @@ body { background-color: #F6F6F6; }
 
 .content-area, .widget-area { margin-bottom: 8.5rem; margin-top: 8.5rem; }
 
-.home .content-area, .page.siteorigin-panels .content-area, .page-template-template-full-width-no-margins .content-area, .home .widget-area, .page.siteorigin-panels .widget-area, .page-template-template-full-width-no-margins .widget-area { margin-bottom: 0; margin-top: 0; }
+.home .content-area, .page.siteorigin-panels:not(.woocommerce-page) .content-area, .page-template-template-full-width-no-margins .content-area, .home .widget-area, .page.siteorigin-panels:not(.woocommerce-page) .widget-area, .page-template-template-full-width-no-margins .widget-area { margin-bottom: 0; margin-top: 0; }
 
 .content-area { z-index: 4; }
 
