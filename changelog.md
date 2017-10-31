@@ -9,8 +9,6 @@
 * Fix - Added dynamic class to WooCommerce archive wrapper
 * Tweak - WooCommerce mobile footer bar
 * Fix - Fixed <main> close tag in WooCommerce archive
-* Tweak - WooCommerce checkout layout
-* Tweak - WooCommerce checkout steps
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned

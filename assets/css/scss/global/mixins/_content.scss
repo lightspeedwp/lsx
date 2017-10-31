@@ -482,18 +482,4 @@
 			}
 		}
 	}
-
-	.lsx-wc-checkout-steps-item { color: $link; }
-
-	.lsx-wc-checkout-steps-item-current { color: $hover; }
-
-	.lsx-wc-checkout-steps-item-disabled { color: $breaker; }
-
-	.lsx-wc-checkout-steps-counter {
-		background-color: $link;
-		color: #FFF;
-
-		.lsx-wc-checkout-steps-item-current & { background-color: $hover; }
-		.lsx-wc-checkout-steps-item-disabled & { background-color: $breaker; }
-	}
 }
