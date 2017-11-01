@@ -403,6 +403,8 @@ article.page {
 				}
 
 				@include lsx-button-colour();
+
+				display: block !important;
 			}
 		}
 	}
@@ -666,8 +668,11 @@ p.no-comments,
 			li {
 				padding: 1em 1.41575em;
 
+				&:nth-of-type(1n+4) { display: none; }
+
 				a {
 					font-size: 1em !important;
+					font-weight: normal !important;
 					padding: 0 !important;
 				}
 
@@ -684,7 +689,7 @@ p.no-comments,
 
 		.buttons {
 			margin-bottom: 0;
-			padding: 0 1.41575em 1em;
+			padding: 0 1.41575em 1.41575em;
 			text-align: center;
 
 			.button {
@@ -696,7 +701,13 @@ p.no-comments,
 	}
 }
 
-ul.lsx-wc-cart-sub-menu {}
+ul.lsx-wc-cart-sub-menu {
+	@include media ('>=desktop') {
+		left: auto;
+		right: 0;
+		width: 235px;
+	}
+}
 
 .lsx-wc-cart-dropdown {}
 

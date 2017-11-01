@@ -9,6 +9,7 @@
 * Fix - Added dynamic class to WooCommerce archive wrapper
 * Tweak - WooCommerce mobile footer bar
 * Fix - Fixed <main> close tag in WooCommerce archive
+* Fix - Improve menu cart item visual
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned

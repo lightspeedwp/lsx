@@ -148,6 +148,8 @@
 
 @media (max-width: 767px) { #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text { width: 100%; } }
 
+.lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button { display: block !important; }
+
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button, .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:active, .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:visited { border: 0 none; border-radius: 3px; display: inline-block; font-size: 14px; font-weight: 700; height: 48px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button > .fa { margin-right: 10px; }
@@ -244,17 +246,21 @@
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .product_list_widget li { padding: 1em 1.41575em; }
 
-.lsx-wc-cart-menu-item .widget_shopping_cart .product_list_widget li a { font-size: 1em !important; padding: 0 !important; }
+.lsx-wc-cart-menu-item .widget_shopping_cart .product_list_widget li:nth-of-type(1n+4) { display: none; }
+
+.lsx-wc-cart-menu-item .widget_shopping_cart .product_list_widget li a { font-size: 1em !important; font-weight: normal !important; padding: 0 !important; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .product_list_widget li .remove { display: none; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .total { border-top: none; margin-bottom: 0; padding: 1em 1.41575em; text-align: center; }
 
-.lsx-wc-cart-menu-item .widget_shopping_cart .buttons { margin-bottom: 0; padding: 0 1.41575em 1em; text-align: center; }
+.lsx-wc-cart-menu-item .widget_shopping_cart .buttons { margin-bottom: 0; padding: 0 1.41575em 1.41575em; text-align: center; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button { margin-bottom: 1em; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:last-child { margin-bottom: 0; }
+
+@media (min-width: 1200px) { ul.lsx-wc-cart-sub-menu { right: auto; left: 0; width: 235px; } }
 
 .lsx-woocommerce-slot, .lsx-woocommerce-review-slot { margin: 4rem auto 0; overflow: hidden; }
 
