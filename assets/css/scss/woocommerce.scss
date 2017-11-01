@@ -86,7 +86,7 @@ article.page {
 
 .woocommerce,
 .woocommerce-page {
-	.entry-content { overflow: hidden; }
+	// .entry-content { overflow: hidden; }
 
 	&,
 	&[class*=columns-] {
@@ -460,7 +460,10 @@ article.page {
 		@extend %lsx-form-field;
 	}
 
-	.quantity .qty { width: 70px; }
+	.quantity .qty {
+		display: inline-block;
+		width: 70px;
+	}
 
 	// Button
 
@@ -470,6 +473,16 @@ article.page {
 	input.button {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
+	}
+
+	a.add_to_cart_button {
+		&,
+		&:active,
+		&:visited {
+			height: 40px;
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
 	}
 
 	.coupon input.button {

@@ -10,6 +10,7 @@
 * Tweak - WooCommerce mobile footer bar
 * Fix - Fixed <main> close tag in WooCommerce archive
 * Fix - Improve menu cart item visual
+* Fix - Improve WooCommerce visual experience
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned

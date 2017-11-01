@@ -48,8 +48,6 @@
 
 .woocommerce-LostPassword:last-child { margin-bottom: 0; }
 
-.woocommerce .entry-content, .woocommerce-page .entry-content { overflow: hidden; }
-
 @media (max-width: 767px) { .woocommerce ul.products li.product, .woocommerce[class*=columns-] ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product { width: 100%; } }
 
 .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3, .woocommerce[class*=columns-] ul.products li.product .woocommerce-loop-category__title, .woocommerce[class*=columns-] ul.products li.product .woocommerce-loop-product__title, .woocommerce[class*=columns-] ul.products li.product h3, .woocommerce-page ul.products li.product .woocommerce-loop-category__title, .woocommerce-page ul.products li.product .woocommerce-loop-product__title, .woocommerce-page ul.products li.product h3, .woocommerce-page[class*=columns-] ul.products li.product .woocommerce-loop-category__title, .woocommerce-page[class*=columns-] ul.products li.product .woocommerce-loop-product__title, .woocommerce-page[class*=columns-] ul.products li.product h3 { font-size: 22px; }
@@ -174,7 +172,7 @@
 
 .woocommerce-page #main #woochimp_checkout_groups label.checkbox { margin-top: 0; }
 
-.woocommerce-page #main .quantity .qty { width: 70px; }
+.woocommerce-page #main .quantity .qty { display: inline-block; width: 70px; }
 
 .woocommerce-page #main #respond input#submit, .woocommerce-page #main #respond input#submit:active, .woocommerce-page #main #respond input#submit:visited, .woocommerce-page #main a.button, .woocommerce-page #main a.button:active, .woocommerce-page #main a.button:visited, .woocommerce-page #main button.button, .woocommerce-page #main button.button:active, .woocommerce-page #main button.button:visited, .woocommerce-page #main input.button, .woocommerce-page #main input.button:active, .woocommerce-page #main input.button:visited { border: 0 none; border-radius: 3px; display: inline-block; font-size: 14px; font-weight: 700; height: 48px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
 
@@ -185,6 +183,8 @@
 .woocommerce-page #main #respond input#submit:hover, .woocommerce-page #main #respond input#submit:hover:active, .woocommerce-page #main #respond input#submit:focus, .woocommerce-page #main a.button:hover, .woocommerce-page #main a.button:hover:active, .woocommerce-page #main a.button:focus, .woocommerce-page #main button.button:hover, .woocommerce-page #main button.button:hover:active, .woocommerce-page #main button.button:focus, .woocommerce-page #main input.button:hover, .woocommerce-page #main input.button:hover:active, .woocommerce-page #main input.button:focus { background-color: #367DC0; color: #FFF; }
 
 .woocommerce-page #main #respond input#submit:active, .woocommerce-page #main a.button:active, .woocommerce-page #main button.button:active, .woocommerce-page #main input.button:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
+
+.woocommerce-page #main a.add_to_cart_button, .woocommerce-page #main a.add_to_cart_button:active, .woocommerce-page #main a.add_to_cart_button:visited { height: 40px; padding-bottom: 10px; padding-top: 10px; }
 
 @media (max-width: 767px) { .woocommerce-page #main .coupon input.button { float: right; margin-top: 7px; width: 100%; } }
 
