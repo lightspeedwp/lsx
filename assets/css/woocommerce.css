@@ -146,7 +146,7 @@
 
 @media (max-width: 767px) { #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text { width: 100%; } }
 
-.lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button { display: block !important; }
+.lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button { border-radius: 0 !important; box-shadow: none !important; display: block !important; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button, .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:active, .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:visited { border: 0 none; border-radius: 3px; display: inline-block; font-size: 14px; font-weight: 700; height: 48px; left: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
 
@@ -159,6 +159,8 @@
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:hover, .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:hover:active, .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:focus { background-color: #367DC0; color: #FFF; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
+
+.lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:active { left: 0 !important; top: 0 !important; }
 
 .product .lsx-sharing-content { margin-top: 2em; }
 

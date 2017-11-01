@@ -298,6 +298,14 @@ if ( ! function_exists( 'lsx_wc_cart_link_fragment' ) ) :
 		lsx_wc_cart_link();
 		$fragments['li.lsx-wc-cart-menu-item > a'] = ob_get_clean();
 
+		ob_start();
+		lsx_wc_items_counter();
+		$items_counter = ob_get_clean();
+
+		if ( ! empty( $items_counter ) ) {
+			$fragments['div.widget_shopping_cart_content'] = preg_replace( '/(.+)(<\/ul>)[\s\n]*(<p class="woocommerce-mini-cart__total)(.+)/', '$1' . $items_counter . '$2$3$4', $fragments['div.widget_shopping_cart_content'] );
+		}
+
 		return $fragments;
 	}
 
@@ -319,6 +327,40 @@ if ( ! function_exists( 'lsx_wc_cart_link' ) ) :
 				<span class="lsx-wc-cart-amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="lsx-wc-cart-count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) );?></span>
 			</a>
 		<?php
+	}
+
+endif;
+
+if ( ! function_exists( 'lsx_wc_items_counter' ) ) :
+
+	/**
+	 * Add car item hidden items counter.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_items_counter() {
+		$count = (int) WC()->cart->get_cart_contents_count();
+		$items_counter = '';
+
+		if ( ! empty( $count ) ) {
+			$count -= 3;
+
+			if ( 1 === $count ) {
+				$items_counter = esc_html__( '1 other item in cart', 'lsx' );
+			} elseif ( $count > 1 ) {
+				/* Translators: %s: items counter */
+				$items_counter = sprintf( esc_html__( '%s other items in cart', 'lsx' ), $count );
+			}
+		}
+
+		if ( ! empty( $items_counter ) ) :
+			?>
+				<li class="woocommerce-mini-cart-item mini_cart_item" style="display: block;">
+					<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>"><?php echo esc_html( $items_counter ); ?></a>
+				</li>
+			<?php
+		endif;
 	}
 
 endif;

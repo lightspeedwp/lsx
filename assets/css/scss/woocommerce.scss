@@ -404,7 +404,14 @@ article.page {
 
 				@include lsx-button-colour();
 
+				border-radius: 0 !important;
+				box-shadow: none !important;
 				display: block !important;
+
+				&:active {
+					left: 0 !important;
+					top: 0 !important;
+				}
 			}
 		}
 	}
