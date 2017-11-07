@@ -109,25 +109,48 @@ article.page {
 		}
 	}
 
-	.col2-set  {
-		@include media ('<phone') {
-			.col-1,
-			.col-2 {
-				float: none;
-				margin-bottom: 4.25rem;
-				width: 100%;
-			}
-		}
-
-		@include media ('>=phone') {
-			.col-1,
-			.col-2 {
+	&.woocommerce-checkout {
+		.col2-set {
+			@include media ('>=phone') {
 				float: left;
 				margin-right: 4.347826087%;
 				width: 47.8260869565%;
 			}
+		}
 
-			.col-2 { margin-right: 0; }
+		.col2-set {
+			.col-1,
+			.col-2 {
+				@include media ('>=phone') {
+					float: none;
+					margin-bottom: 4.25rem;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&.woocommerce-account {
+		.col2-set {
+			@include media ('<phone') {
+				.col-1,
+				.col-2 {
+					float: none;
+					margin-bottom: 4.25rem;
+					width: 100%;
+				}
+			}
+
+			@include media ('>=phone') {
+				.col-1,
+				.col-2 {
+					float: left;
+					margin-right: 4.347826087%;
+					width: 47.8260869565%;
+				}
+
+				.col-2 { margin-right: 0; }
+			}
 		}
 	}
 
