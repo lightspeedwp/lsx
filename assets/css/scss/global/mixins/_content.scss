@@ -354,7 +354,8 @@
 
 	#add_payment_method,
 	.woocommerce-cart,
-	.woocommerce-checkout {
+	.woocommerce-checkout,
+	.woocommerce-account {
 		table.cart {
 			thead {
 				tr { background-color: #E6E6E6; }
@@ -375,20 +376,31 @@
 			}
 		}
 
-		.woocommerce-checkout-review-order {
+		.woocommerce-checkout-review-order,
+		.woocommerce-order-details,
+		.woocommerce-order-downloads,
+		.woocommerce-MyAccount-content {
 			table.shop_table {
 				thead {
-					tr { background-color: #E6E6E6; }
+					th { background-color: #E6E6E6; }
 				}
 
 				tbody {
-					tr { background-color: #FFF; }
+					th, td { background-color: #FFF; }
 				}
 
 				tfoot {
 					th { background-color: #E6E6E6; }
 					td { background-color: #FFF; }
 				}
+			}
+		}
+	}
+
+	.woocommerce {
+		.woocommerce-customer-details {
+			address {
+				background-color: #FFF;
 			}
 		}
 	}

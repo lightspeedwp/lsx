@@ -156,7 +156,7 @@ article.page {
 
 	table.woocommerce-MyAccount-downloads,
 	table.my_account_orders {
-		font-size: .9em;
+		font-size: 1em;
 
 		td, th { padding: 9px 12px }
 
@@ -364,7 +364,8 @@ article.page {
 
 #add_payment_method,
 .woocommerce-cart,
-.woocommerce-checkout {
+.woocommerce-checkout,
+.woocommerce-account {
 	.cart_totals {
 		table.shop_table {
 			tbody {
@@ -381,21 +382,35 @@ article.page {
 		}
 	}
 
-	.woocommerce-checkout-review-order {
+	.woocommerce-checkout-review-order,
+	.woocommerce-order-details,
+	.woocommerce-order-downloads,
+	.woocommerce-MyAccount-content {
 		table.shop_table {
 			thead {
 				tr:first-child {
-					th:first-child { border-radius: 5px 0 0 0; }
-					th:last-child { border-radius: 0 5px 0 0; }
+					& > *:first-child { border-radius: 5px 0 0 0; }
+					& > *:last-child { border-radius: 0 5px 0 0; }
 				}
 			}
 
+			tbody:last-child,
 			tfoot {
 				tr:last-child {
-					th { border-radius: 0 0 0 5px; }
-					td { border-radius: 0 0 5px 0; }
+					& > *:first-child { border-radius: 0 0 0 5px; }
+					& > *:last-child { border-radius: 0 0 5px 0; }
 				}
 			}
+		}
+	}
+}
+
+.woocommerce {
+	.woocommerce-customer-details {
+		address {
+			border-bottom-width: 1px;
+			border-right-width: 1px;
+			padding: 9px 12px;
 		}
 	}
 }
