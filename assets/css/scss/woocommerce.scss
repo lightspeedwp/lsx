@@ -110,21 +110,24 @@ article.page {
 	}
 
 	.col2-set  {
-		@include media ('>=phone') {
-			float: left;
-			margin-right: 4.347826087%;
-			width: 47.8260869565%;
-		}
-	}
-
-	.col2-set {
-		.col-1,
-		.col-2 {
-			@include media ('>=phone') {
+		@include media ('<phone') {
+			.col-1,
+			.col-2 {
 				float: none;
 				margin-bottom: 4.25rem;
 				width: 100%;
 			}
+		}
+
+		@include media ('>=phone') {
+			.col-1,
+			.col-2 {
+				float: left;
+				margin-right: 4.347826087%;
+				width: 47.8260869565%;
+			}
+
+			.col-2 { margin-right: 0; }
 		}
 	}
 
@@ -474,6 +477,28 @@ article.page {
 			}
 		}
 	}
+}
+
+.wc-social-login {
+	&:before {
+		content: 'Social Login and Registration';
+		display: block;
+
+		// LSX Title
+		font-size: 30px;
+		line-height: 1.2;
+		margin-bottom: 1.2rem;
+		margin-top: 4.25rem;
+	}
+}
+
+.button-social-login,
+a.button-social-login,
+input.button-social-login,
+button.button-social-login,
+.widget-area .widget a.button-social-login {
+	font-size: 85% !important;
+	font-weight: normal !important;
 }
 
 // LSX Sharing

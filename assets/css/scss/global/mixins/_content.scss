@@ -399,10 +399,16 @@
 
 	.woocommerce {
 		.woocommerce-customer-details {
-			address {
-				background-color: #FFF;
-			}
+			address { background-color: #FFF; }
 		}
+	}
+
+	.button-social-login,
+	a.button-social-login,
+	input.button-social-login,
+	button.button-social-login,
+	.widget-area .widget a.button-social-login {
+		color: #FFF !important;
 	}
 
 	.woocommerce-MyAccount-navigation {
