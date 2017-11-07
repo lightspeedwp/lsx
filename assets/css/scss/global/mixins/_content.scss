@@ -352,6 +352,47 @@
 
 	// WooCommerce
 
+	#add_payment_method,
+	.woocommerce-cart,
+	.woocommerce-checkout {
+		table.cart {
+			thead {
+				tr { background-color: #E6E6E6; }
+			}
+
+			tbody {
+				tr { background-color: #FFF; }
+				tr:last-child { background-color: #E6E6E6; }
+			}
+		}
+
+		.cart_totals {
+			table.shop_table {
+				tbody {
+					th { background-color: #E6E6E6; }
+					td { background-color: #FFF; }
+				}
+			}
+		}
+
+		.woocommerce-checkout-review-order {
+			table.shop_table {
+				thead {
+					tr { background-color: #E6E6E6; }
+				}
+
+				tbody {
+					tr { background-color: #FFF; }
+				}
+
+				tfoot {
+					th { background-color: #E6E6E6; }
+					td { background-color: #FFF; }
+				}
+			}
+		}
+	}
+
 	.woocommerce-MyAccount-navigation {
 		background-color: #FFF;
 

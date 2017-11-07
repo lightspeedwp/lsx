@@ -48,6 +48,8 @@
 
 .woocommerce-LostPassword:last-child { margin-bottom: 0; }
 
+.woocommerce .entry-content:after, .woocommerce-page .entry-content:after { clear: both; content: ''; display: table; }
+
 @media (max-width: 767px) { .woocommerce ul.products li.product, .woocommerce[class*=columns-] ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product { width: 100%; } }
 
 .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3, .woocommerce[class*=columns-] ul.products li.product .woocommerce-loop-category__title, .woocommerce[class*=columns-] ul.products li.product .woocommerce-loop-product__title, .woocommerce[class*=columns-] ul.products li.product h3, .woocommerce-page ul.products li.product .woocommerce-loop-category__title, .woocommerce-page ul.products li.product .woocommerce-loop-product__title, .woocommerce-page ul.products li.product h3, .woocommerce-page[class*=columns-] ul.products li.product .woocommerce-loop-category__title, .woocommerce-page[class*=columns-] ul.products li.product .woocommerce-loop-product__title, .woocommerce-page[class*=columns-] ul.products li.product h3 { font-size: 22px; }
@@ -145,6 +147,22 @@
 #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text { width: 160px; }
 
 @media (max-width: 767px) { #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text { width: 100%; } }
+
+#add_payment_method .cart_totals table.shop_table tbody tr:first-child th, .woocommerce-cart .cart_totals table.shop_table tbody tr:first-child th, .woocommerce-checkout .cart_totals table.shop_table tbody tr:first-child th { border-radius: 0 5px 0 0; }
+
+#add_payment_method .cart_totals table.shop_table tbody tr:first-child td, .woocommerce-cart .cart_totals table.shop_table tbody tr:first-child td, .woocommerce-checkout .cart_totals table.shop_table tbody tr:first-child td { border-radius: 5px 0 0 0; }
+
+#add_payment_method .cart_totals table.shop_table tbody tr:last-child th, .woocommerce-cart .cart_totals table.shop_table tbody tr:last-child th, .woocommerce-checkout .cart_totals table.shop_table tbody tr:last-child th { border-radius: 0 0 5px 0; }
+
+#add_payment_method .cart_totals table.shop_table tbody tr:last-child td, .woocommerce-cart .cart_totals table.shop_table tbody tr:last-child td, .woocommerce-checkout .cart_totals table.shop_table tbody tr:last-child td { border-radius: 0 0 0 5px; }
+
+#add_payment_method .woocommerce-checkout-review-order table.shop_table thead tr:first-child th:first-child, .woocommerce-cart .woocommerce-checkout-review-order table.shop_table thead tr:first-child th:first-child, .woocommerce-checkout .woocommerce-checkout-review-order table.shop_table thead tr:first-child th:first-child { border-radius: 0 5px 0 0; }
+
+#add_payment_method .woocommerce-checkout-review-order table.shop_table thead tr:first-child th:last-child, .woocommerce-cart .woocommerce-checkout-review-order table.shop_table thead tr:first-child th:last-child, .woocommerce-checkout .woocommerce-checkout-review-order table.shop_table thead tr:first-child th:last-child { border-radius: 5px 0 0 0; }
+
+#add_payment_method .woocommerce-checkout-review-order table.shop_table tfoot tr:last-child th, .woocommerce-cart .woocommerce-checkout-review-order table.shop_table tfoot tr:last-child th, .woocommerce-checkout .woocommerce-checkout-review-order table.shop_table tfoot tr:last-child th { border-radius: 0 0 5px 0; }
+
+#add_payment_method .woocommerce-checkout-review-order table.shop_table tfoot tr:last-child td, .woocommerce-cart .woocommerce-checkout-review-order table.shop_table tfoot tr:last-child td, .woocommerce-checkout .woocommerce-checkout-review-order table.shop_table tfoot tr:last-child td { border-radius: 0 0 0 5px; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button { border-radius: 0 !important; box-shadow: none !important; display: block !important; }
 

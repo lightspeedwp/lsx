@@ -86,7 +86,13 @@ article.page {
 
 .woocommerce,
 .woocommerce-page {
-	// .entry-content { overflow: hidden; }
+	.entry-content {
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
+	}
 
 	&,
 	&[class*=columns-] {
@@ -350,6 +356,44 @@ article.page {
 					width: 160px;
 
 					@include media ('<phone') { width: 100%; }
+				}
+			}
+		}
+	}
+}
+
+#add_payment_method,
+.woocommerce-cart,
+.woocommerce-checkout {
+	.cart_totals {
+		table.shop_table {
+			tbody {
+				tr:first-child {
+					th { border-radius: 5px 0 0 0; }
+					td { border-radius: 0 5px 0 0; }
+				}
+
+				tr:last-child {
+					th { border-radius: 0 0 0 5px; }
+					td { border-radius: 0 0 5px 0; }
+				}
+			}
+		}
+	}
+
+	.woocommerce-checkout-review-order {
+		table.shop_table {
+			thead {
+				tr:first-child {
+					th:first-child { border-radius: 5px 0 0 0; }
+					th:last-child { border-radius: 0 5px 0 0; }
+				}
+			}
+
+			tfoot {
+				tr:last-child {
+					th { border-radius: 0 0 0 5px; }
+					td { border-radius: 0 0 5px 0; }
 				}
 			}
 		}
