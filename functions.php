@@ -33,3 +33,4 @@ require get_template_directory() . '/includes/classes/class-lsx-lazy-load-images
 require get_template_directory() . '/includes/template-tags.php';
 require get_template_directory() . '/includes/extras.php';
 require get_template_directory() . '/includes/welcome.php';
+require get_template_directory() . '/includes/404-widget.php';

@@ -23,4 +23,14 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+	<div id="secondary" class="col-sm-12 sidebar-container" role="complementary">
+		<div class="widget-area">
+			<?php dynamic_sidebar( 'sidebar-404' ); ?>
+		</div><!-- .widget-area -->
+	</div><!-- #secondary -->
+
+<script type="text/javascript">
+	jQuery('.search-field').attr('placeholder', 'lsdev.biz')
+</script>
+
 <?php get_footer();
