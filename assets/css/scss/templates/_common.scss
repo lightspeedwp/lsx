@@ -13,8 +13,10 @@
 			flex-flow: column wrap;
 			justify-content: center;
 			margin: 0 -9999rem;
-			padding: 50px 9999rem;
+			padding: 10px 9999rem;
 			text-align: center;
+
+			@include media('>=phone') { padding: 50px 9999rem; }
 
 			& > p {
 				color: #FFF;

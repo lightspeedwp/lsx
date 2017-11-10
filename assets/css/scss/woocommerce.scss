@@ -432,6 +432,16 @@ article.page {
 }
 
 .woocommerce {
+	table.shop_table {
+		td {
+			&:not(:first-child) {
+				@include media ('<phone') { border-top: 0; }
+			}
+		}
+	}
+}
+
+.woocommerce {
 	.woocommerce-customer-details {
 		address {
 			border-bottom-width: 1px;
