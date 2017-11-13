@@ -162,7 +162,9 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 	 * @subpackage template-tags
 	 */
 	function lsx_wc_add_cart( $items, $args ) {
-		if ( 'primary' === $args->theme_location ) {
+		$cart_menu_item_position = apply_filters( 'lsx_wc_cart_menu_item_position', 'primary' );
+
+		if ( $cart_menu_item_position === $args->theme_location ) {
 			$customizer_option  = get_theme_mod( 'lsx_header_wc_cart', false );
 
 			if ( ! empty( $customizer_option ) ) {
@@ -176,7 +178,7 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 					$class = '';
 				}
 
-				$item = '<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown lsx-wc-cart-menu-item ' . $class . '">' .
+				$item = '<li class="' . apply_filters( 'lsx_wc_cart_menu_item_class', 'menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown lsx-wc-cart-menu-item ' . $class ) . '">' .
 							'<a title="' . esc_attr__( 'View your shopping cart', 'lsx' ) . '" href="' . esc_url( wc_get_cart_url() ) . '" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">' .
 								/* Translators: %s: items quantity */
 								'<span class="lsx-wc-cart-amount">' . wp_kses_data( WC()->cart->get_cart_subtotal() ) . '</span> <span class="lsx-wc-cart-count">' . wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) ) . '</span>' .
@@ -188,7 +190,11 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 							'</ul>' .
 						'</li>';
 
-				$items .= $item;
+				if ( 'top-menu' === $args->theme_location ) {
+					$items = $item . $items;
+				} else {
+					$items = $items . $item;
+				}
 			}
 		}
 
@@ -504,6 +510,7 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 			'title'       => esc_html__( 'Global', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce global settings.', 'lsx' ),
 			'panel'       => 'lsx-wc',
+			'priority'    => 1,
 		);
 
 		$lsx_controls['settings']['lsx_wc_mobile_footer_bar_status'] = array(
@@ -516,6 +523,7 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 			'description' => esc_html__( 'Enable the mobile footer bar.', 'lsx' ),
 			'section'     => 'lsx-wc-global',
 			'type'        => 'checkbox',
+			'priority'    => 1,
 		);
 
 		return $lsx_controls;

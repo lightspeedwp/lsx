@@ -19,13 +19,13 @@
 					&:hover > a {
 						color: $hover;
 
-						&:before { color: $icon-hover; }
+						&:before, &:after { color: $icon-hover; }
 					}
 
 					& > a {
 						color: $link;
 
-						&:before { color: $icon; }
+						&:before, &:after { color: $icon; }
 					}
 				}
 			}

@@ -189,6 +189,8 @@
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button:active { left: 0 !important; top: 0 !important; }
 
+@media (min-width: 1200px) { .lsx-wc-cart-menu-item.lsx-wc-cart-menu-item-right-aligned { margin-left: auto; } }
+
 .wc-social-login:before { content: 'Social Login and Registration'; display: block; font-size: 30px; line-height: 1.2; margin-bottom: 1.2rem; margin-top: 4.25rem; }
 
 .button-social-login, a.button-social-login, input.button-social-login, button.button-social-login, .widget-area .widget a.button-social-login { font-size: 85% !important; font-weight: normal !important; }
@@ -269,7 +271,11 @@
 
 .lsx-wc-cart-menu-item > a:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; float: right; content: '\f291'; margin-left: 2rem; }
 
+#top-menu .lsx-wc-cart-menu-item > a:after { margin-left: 1.2rem; }
+
 .lsx-wc-cart-menu-item .lsx-wc-cart-amount { margin-right: 2rem; }
+
+#top-menu .lsx-wc-cart-menu-item .lsx-wc-cart-amount { margin-right: 0.5rem; }
 
 .lsx-wc-cart-menu-item .lsx-wc-cart-count { font-size: .875em; font-weight: 300; opacity: .75; }
 

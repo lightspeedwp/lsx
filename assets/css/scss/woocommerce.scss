@@ -510,6 +510,10 @@ article.page {
 			}
 		}
 	}
+
+	&.lsx-wc-cart-menu-item-right-aligned {
+		@include media ('>=desktop') { margin-left: auto; }
+	}
 }
 
 .wc-social-login {
@@ -785,10 +789,16 @@ p.no-comments,
 			float: right;
 			content: '\f291';
 			margin-left: 2rem;
+
+			#top-menu & { margin-left: 1.2rem; }
 		}
 	}
 
-	.lsx-wc-cart-amount { margin-right: 2rem; }
+	.lsx-wc-cart-amount {
+		margin-right: 2rem;
+
+		#top-menu & { margin-right: 0.5rem; }
+	}
 
 	.lsx-wc-cart-count {
 		font-size: .875em;
