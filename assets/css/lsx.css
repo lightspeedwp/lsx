@@ -376,21 +376,27 @@ p:empty { display: none; }
 
 #top-menu .top-menu > .menu > .menu-item.cta > a > .fa, #top-menu .top-menu > .menu > .menu-item.cta-red > a > .fa { margin-left: 10px; }
 
-#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited, #top-menu .top-menu > .menu > .menu-item.cta-red > a, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:visited { background-color: #418AD0; box-shadow: 2px 2px 0 0 #27639e; color: #FFF; }
-
-#top-menu .top-menu > .menu > .menu-item.cta > a:hover, #top-menu .top-menu > .menu > .menu-item.cta > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta > a:focus, #top-menu .top-menu > .menu > .menu-item.cta-red > a:hover, #top-menu .top-menu > .menu > .menu-item.cta-red > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:focus { background-color: #367DC0; color: #FFF; }
-
-#top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
-
 #top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited, #top-menu .top-menu > .menu > .menu-item.cta-red > a, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:visited { border-radius: 0; box-shadow: none; display: table-cell; font-size: 12px; height: auto; padding-bottom: 0; padding-top: 0; transition: all 300ms ease; }
 
-@media (max-width: 767px) { #top-menu .top-menu.pull-left > .menu > .menu-item:not(.cta) > a { padding: 0 5px; }
-  #top-menu .top-menu.pull-left > .menu > .menu-item:not(.cta):first-child { margin-left: 5px; }
+#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited { background-color: #418AD0; box-shadow: 2px 2px 0 0 #27639e; color: #FFF; }
+
+#top-menu .top-menu > .menu > .menu-item.cta > a:hover, #top-menu .top-menu > .menu > .menu-item.cta > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta > a:focus { background-color: #367DC0; color: #FFF; }
+
+#top-menu .top-menu > .menu > .menu-item.cta > a:active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
+
+#top-menu .top-menu > .menu > .menu-item.cta-red > a, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:visited { background-color: #D93A3A; box-shadow: 2px 2px 0 0 #9F2020; color: #FFFFFF; }
+
+#top-menu .top-menu > .menu > .menu-item.cta-red > a:hover, #top-menu .top-menu > .menu > .menu-item.cta-red > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:focus { background-color: #9F2020; color: #FFFFFF; }
+
+#top-menu .top-menu > .menu > .menu-item.cta-red > a:active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #9F2020; }
+
+@media (max-width: 767px) { #top-menu .top-menu.pull-left > .menu > .menu-item:not(.cta):not(.cta-red) > a { padding: 0 5px; }
+  #top-menu .top-menu.pull-left > .menu > .menu-item:not(.cta):not(.cta-red):first-child { margin-left: 5px; }
   #top-menu .top-menu.pull-left > .menu > .menu-item .caret { display: none; }
   #top-menu .top-menu.pull-left > .menu > .menu-item.wpml-ls-menu-item > a > .wpml-ls-flag + span { display: none; } }
 
-@media (max-width: 767px) { #top-menu .top-menu:not(.pull-left) > .menu > .menu-item:not(.cta) > a { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; padding: 0; }
-  #top-menu .top-menu:not(.pull-left) > .menu > .menu-item:not(.cta) > a:before { font-size: 18px; padding: 0 5px; } }
+@media (max-width: 767px) { #top-menu .top-menu:not(.pull-left) > .menu > .menu-item:not(.cta):not(.cta-red) > a { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; padding: 0; }
+  #top-menu .top-menu:not(.pull-left) > .menu > .menu-item:not(.cta):not(.cta-red) > a:before { font-size: 18px; padding: 0 5px; } }
 
 @media (max-width: 1199px) { #top-menu .dropdown.open > .dropdown-menu { opacity: 1; -webkit-transform: scale(1, 1); transform: scale(1, 1); } }
 

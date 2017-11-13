@@ -63,7 +63,6 @@
 
 					& > a {
 						@include lsx-button-scaffolding();
-						@include lsx-button-colour();
 
 						&,
 						&:active,
@@ -79,6 +78,18 @@
 						}
 					}
 				}
+
+				&.cta {
+					& > a {
+						@include lsx-button-colour();
+					}
+				}
+
+				&.cta-red {
+					& > a {
+						@include lsx-button-colour(#FFFFFF, #FFFFFF, #D93A3A, #9F2020, #9F2020);
+					}
+				}
 			}
 		}
 
@@ -86,7 +97,7 @@
 			& > .menu {
 				& > .menu-item {
 					@include media('<phone') {
-						&:not(.cta) {
+						&:not(.cta):not(.cta-red) {
 							& > a { padding: 0 5px; }
 
 							&:first-child { margin-left: 5px; }
@@ -108,7 +119,7 @@
 			& > .menu {
 				& > .menu-item {
 					@include media('<phone') {
-						&:not(.cta) > a {
+						&:not(.cta):not(.cta-red) > a {
 							@include hide-text();
 
 							padding: 0;
