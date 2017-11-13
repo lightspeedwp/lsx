@@ -13,6 +13,7 @@
 * Fix - Improve WooCommerce visual experience
 * Tweak - New button class (red colours) for top menu: cta-red
 * Tweak - New hooks to allow LSX Customizer to change WooCommerce cart menu item position
+* Tweak - New hooks to allow LSX Customizer to change WooCommerce cart menu item style
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
