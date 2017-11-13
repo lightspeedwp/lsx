@@ -66,6 +66,12 @@
 							@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
 						}
 					}
+
+					&.cta-red {
+						& > a {
+							@include lsx-button-colour(#FFFFFF, #FFFFFF, #D93A3A, #9F2020, #9F2020);
+						}
+					}
 				}
 			}
 		}

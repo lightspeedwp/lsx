@@ -168,6 +168,12 @@ p:empty { display: none; }
 
 #top-menu .top-menu > .menu > .menu-item.cta > a:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
 
+#top-menu .top-menu > .menu > .menu-item.cta-red > a, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:visited { background-color: #D93A3A; box-shadow: -2px 2px 0 0 #9F2020; color: #FFFFFF; }
+
+#top-menu .top-menu > .menu > .menu-item.cta-red > a:hover, #top-menu .top-menu > .menu > .menu-item.cta-red > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:focus { background-color: #9F2020; color: #FFFFFF; }
+
+#top-menu .top-menu > .menu > .menu-item.cta-red > a:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #9F2020; }
+
 #footer-cta input[type="submit"], #footer-cta input[type="submit"]:active, #footer-cta input[type="submit"]:visited { background-color: #418AD0; box-shadow: -2px 2px 0 0 #27639e; color: #FFF; }
 
 #footer-cta input[type="submit"]:hover, #footer-cta input[type="submit"]:hover:active, #footer-cta input[type="submit"]:focus { background-color: #367DC0; color: #FFF; }
@@ -364,19 +370,19 @@ p:empty { display: none; }
 
 #top-menu .top-menu > .menu > .menu-item.email > a:before { content: ""; }
 
-#top-menu .top-menu > .menu > .menu-item.cta { margin-right: 5px; padding-left: 0; }
+#top-menu .top-menu > .menu > .menu-item.cta, #top-menu .top-menu > .menu > .menu-item.cta-red { margin-right: 5px; padding-left: 0; }
 
-#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited { border: 0 none; border-radius: 3px; display: inline-block; font-size: 14px; font-weight: 700; height: 48px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
+#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited, #top-menu .top-menu > .menu > .menu-item.cta-red > a, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:visited { border: 0 none; border-radius: 3px; display: inline-block; font-size: 14px; font-weight: 700; height: 48px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
 
-#top-menu .top-menu > .menu > .menu-item.cta > a > .fa { margin-right: 10px; }
+#top-menu .top-menu > .menu > .menu-item.cta > a > .fa, #top-menu .top-menu > .menu > .menu-item.cta-red > a > .fa { margin-right: 10px; }
 
-#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited { background-color: #418AD0; box-shadow: -2px 2px 0 0 #27639e; color: #FFF; }
+#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited, #top-menu .top-menu > .menu > .menu-item.cta-red > a, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:visited { background-color: #418AD0; box-shadow: -2px 2px 0 0 #27639e; color: #FFF; }
 
-#top-menu .top-menu > .menu > .menu-item.cta > a:hover, #top-menu .top-menu > .menu > .menu-item.cta > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta > a:focus { background-color: #367DC0; color: #FFF; }
+#top-menu .top-menu > .menu > .menu-item.cta > a:hover, #top-menu .top-menu > .menu > .menu-item.cta > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta > a:focus, #top-menu .top-menu > .menu > .menu-item.cta-red > a:hover, #top-menu .top-menu > .menu > .menu-item.cta-red > a:hover:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:focus { background-color: #367DC0; color: #FFF; }
 
-#top-menu .top-menu > .menu > .menu-item.cta > a:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
+#top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active { right: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
 
-#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited { border-radius: 0; box-shadow: none; display: table-cell; font-size: 12px; height: auto; padding-bottom: 0; padding-top: 0; transition: all 300ms ease; }
+#top-menu .top-menu > .menu > .menu-item.cta > a, #top-menu .top-menu > .menu > .menu-item.cta > a:active, #top-menu .top-menu > .menu > .menu-item.cta > a:visited, #top-menu .top-menu > .menu > .menu-item.cta-red > a, #top-menu .top-menu > .menu > .menu-item.cta-red > a:active, #top-menu .top-menu > .menu > .menu-item.cta-red > a:visited { border-radius: 0; box-shadow: none; display: table-cell; font-size: 12px; height: auto; padding-bottom: 0; padding-top: 0; transition: all 300ms ease; }
 
 @media (max-width: 767px) { #top-menu .top-menu.pull-left > .menu > .menu-item:not(.cta) > a { padding: 0 5px; }
   #top-menu .top-menu.pull-left > .menu > .menu-item:not(.cta):first-child { margin-right: 5px; }
