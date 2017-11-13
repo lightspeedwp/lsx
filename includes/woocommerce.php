@@ -517,6 +517,10 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 			'priority'    => 23,
 		);
 
+		/**
+		 * Global.
+		 */
+
 		$lsx_controls['sections']['lsx-wc-global'] = array(
 			'title'       => esc_html__( 'Global', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce global settings.', 'lsx' ),
@@ -533,6 +537,30 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 			'label'       => esc_html__( 'Footer Bar', 'lsx' ),
 			'description' => esc_html__( 'Enable the mobile footer bar.', 'lsx' ),
 			'section'     => 'lsx-wc-global',
+			'type'        => 'checkbox',
+			'priority'    => 1,
+		);
+
+		/**
+		 * Cart.
+		 */
+
+		$lsx_controls['sections']['lsx-wc-cart'] = array(
+			'title'       => esc_html__( 'Cart', 'lsx' ),
+			'description' => esc_html__( 'Change the WooCommerce cart settings.', 'lsx' ),
+			'panel'       => 'lsx-wc',
+			'priority'    => 2,
+		);
+
+		$lsx_controls['settings']['lsx_header_wc_cart'] = array(
+			'default'           => false,
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+		);
+
+		$lsx_controls['fields']['lsx_header_wc_cart'] = array(
+			'label'       => esc_html__( 'Menu Item', 'lsx' ),
+			'description' => esc_html__( 'Enable the cart menu item.', 'lsx' ),
+			'section'     => 'lsx-wc-cart',
 			'type'        => 'checkbox',
 			'priority'    => 1,
 		);

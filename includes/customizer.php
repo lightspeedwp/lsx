@@ -146,20 +146,6 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 			},
 		);
 
-		if ( class_exists( 'WooCommerce' ) ) {
-			$lsx_controls['settings']['lsx_header_wc_cart'] = array(
-				'default'           => false,
-				'sanitize_callback' => 'lsx_sanitize_checkbox',
-				'transport'         => 'postMessage',
-			);
-
-			$lsx_controls['fields']['lsx_header_wc_cart'] = array(
-				'label'   => esc_html__( 'WooCommerce Cart in Header', 'lsx' ),
-				'section' => 'lsx-layout',
-				'type'    => 'checkbox',
-			);
-		}
-
 		return $lsx_controls;
 	}
 
