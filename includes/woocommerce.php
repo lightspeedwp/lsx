@@ -183,8 +183,10 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 
 				$item = '<li class="' . $item_class . '">' .
 							'<a title="' . esc_attr__( 'View your shopping cart', 'lsx' ) . '" href="' . esc_url( wc_get_cart_url() ) . '" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">' .
+								'<span class="lsx-wc-cart-amount">' . wp_kses_data( WC()->cart->get_cart_subtotal() ) . '</span>' .
 								/* Translators: %s: items quantity */
-								'<span class="lsx-wc-cart-amount">' . wp_kses_data( WC()->cart->get_cart_subtotal() ) . '</span> <span class="lsx-wc-cart-count">' . wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) ) . '</span> <span class="lsx-wc-cart-count-badge">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>' .
+								'<span class="lsx-wc-cart-count">' . wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) ) . '</span>' .
+								( ! empty( WC()->cart->get_cart_contents_count() ) ? '<span class="lsx-wc-cart-count-badge">' . wp_kses_data( WC()->cart->get_cart_contents_count() ) . '</span>' : '' ) .
 							'</a>' .
 							'<ul role="menu" class=" dropdown-menu lsx-wc-cart-sub-menu">' .
 								'<li>' .
@@ -332,8 +334,14 @@ if ( ! function_exists( 'lsx_wc_cart_link' ) ) :
 	function lsx_wc_cart_link() {
 		?>
 			<a title="<?php esc_attr_e( 'View your shopping cart', 'lsx' ); ?>" href="<?php echo esc_url( wc_get_cart_url() ); ?>" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">
+				<span class="lsx-wc-cart-amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
+
 				<?php /* Translators: %s: items quantity */ ?>
-				<span class="lsx-wc-cart-amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="lsx-wc-cart-count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) );?></span> <span class="lsx-wc-cart-count-badge"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+				<span class="lsx-wc-cart-count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) );?></span>
+
+				<?php if ( ! empty( WC()->cart->get_cart_contents_count() ) ) : ?>
+					<span class="lsx-wc-cart-count-badge"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+				<?php endif; ?>
 			</a>
 		<?php
 	}
