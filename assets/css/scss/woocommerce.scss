@@ -794,16 +794,47 @@ p.no-comments,
 		}
 	}
 
+	&.lsx-wc-cart-menu-item-simple {
+		& > a {
+			&:before {
+				@include fa-icon();
+				float: right;
+				content: '\f07a';
+				margin-right: 0.5rem;
+
+				#top-menu & {
+					float: none;
+					margin-right: 0;
+				}
+			}
+
+			&:after { display: none; }
+		}
+	}
+
 	.lsx-wc-cart-amount {
 		margin-right: 2rem;
 
 		#top-menu & { margin-right: 0.5rem; }
 	}
 
-	.lsx-wc-cart-count {
+	&.lsx-wc-cart-menu-item-simple {
+		.lsx-wc-cart-amount { display: none; }
+	}
+
+	.lsx-wc-cart-count,
+	.lsx-wc-cart-count-badge {
 		font-size: .875em;
 		font-weight: 300;
 		opacity: .75;
+	}
+
+	&.lsx-wc-cart-menu-item-simple {
+		.lsx-wc-cart-count { display: none; }
+	}
+
+	&:not(.lsx-wc-cart-menu-item-simple) {
+		.lsx-wc-cart-count-badge { display: none; }
 	}
 
 	.widget_shopping_cart {
@@ -854,6 +885,8 @@ ul.lsx-wc-cart-sub-menu {
 		right: 0;
 		width: 235px;
 	}
+
+	.lsx-wc-cart-menu-item-simple & { display: none !important; }
 }
 
 .lsx-wc-cart-dropdown {}
