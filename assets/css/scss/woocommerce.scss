@@ -510,32 +510,6 @@ article.page {
 			}
 		}
 	}
-
-	&.lsx-wc-cart-menu-item-right-aligned {
-		@include media ('>=desktop') { margin-left: auto; }
-	}
-}
-
-.wc-social-login {
-	&:before {
-		content: 'Social Login and Registration';
-		display: block;
-
-		// LSX Title
-		font-size: 30px;
-		line-height: 1.2;
-		margin-bottom: 1.2rem;
-		margin-top: 4.25rem;
-	}
-}
-
-.button-social-login,
-a.button-social-login,
-input.button-social-login,
-button.button-social-login,
-.widget-area .widget a.button-social-login {
-	font-size: 85% !important;
-	font-weight: normal !important;
 }
 
 // LSX Sharing
@@ -837,6 +811,10 @@ p.no-comments,
 		.lsx-wc-cart-count-badge { display: none; }
 	}
 
+	&.lsx-wc-cart-menu-item-right-aligned {
+		@include media ('>=desktop') { margin-left: auto; }
+	}
+
 	.widget_shopping_cart {
 		font-size: .875em;
 
@@ -888,8 +866,6 @@ ul.lsx-wc-cart-sub-menu {
 
 	.lsx-wc-cart-menu-item-simple & { display: none !important; }
 }
-
-.lsx-wc-cart-dropdown {}
 
 // Homepage widgets
 
@@ -1181,3 +1157,7 @@ ul.lsx-wc-cart-sub-menu {
 
 	&:empty { display: none; }
 }
+
+// WooCommerce Extensions
+
+@import 'woocommerce-extensions/social-login';

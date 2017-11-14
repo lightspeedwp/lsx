@@ -1,0 +1,21 @@
+.wc-social-login {
+	&:before {
+		content: 'Social Login and Registration';
+		display: block;
+
+		// LSX Title
+		font-size: 30px;
+		line-height: 1.2;
+		margin-bottom: 1.2rem;
+		margin-top: 4.25rem;
+	}
+}
+
+.button-social-login,
+a.button-social-login,
+input.button-social-login,
+button.button-social-login,
+.widget-area .widget a.button-social-login {
+	font-size: 85% !important;
+	font-weight: normal !important;
+}
