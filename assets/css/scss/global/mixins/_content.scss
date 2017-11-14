@@ -397,6 +397,19 @@
 		}
 	}
 
+	#wl-wrapper{
+		table.shop_table {
+			thead {
+				tr { background-color: #E6E6E6; }
+			}
+
+			tbody {
+				tr { background-color: #FFF; }
+				tr:last-child:not(:only-child) { background-color: #E6E6E6; }
+			}
+		}
+	}
+
 	.woocommerce {
 		.woocommerce-customer-details {
 			address { background-color: #FFF; }
@@ -465,6 +478,25 @@
 					td.label {
 						label { color: $color; }
 					}
+				}
+			}
+		}
+	}
+
+	.wl-tab-wrap {
+		.wl-tabs {
+			> li {
+				> a {
+					background-color: #FFF !important;
+
+					&:hover { background-color: #FFF !important; }
+				}
+
+				&.active > a {
+					background-color: $link !important;
+					color: #FFF !important;
+
+					&:after { border-color: transparent transparent $bg transparent; }
 				}
 			}
 		}

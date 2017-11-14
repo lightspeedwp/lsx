@@ -122,7 +122,13 @@ if ( ! function_exists( 'lsx_wc_disable_lsx_banner_plugin' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_disable_lsx_banner_plugin( $disabled ) {
+		global $post;
+
 		if ( is_cart() || is_checkout() || is_account_page() ) {
+			$disabled = true;
+		}
+
+		if ( $post && class_exists( 'WC_Wishlists_Pages' ) && WC_Wishlists_Pages::is_wishlist_page( $post->post_name ) ) {
 			$disabled = true;
 		}
 
@@ -630,5 +636,27 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 	}
 
 	add_action( 'lsx_body_bottom', 'lsx_wc_footer_bar', 15 );
+
+endif;
+
+if ( ! function_exists( 'lsx_wc_body_class' ) ) :
+
+	/**
+	 * Changes body class.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_body_class( $classes ) {
+		global $post;
+
+		if ( $post && class_exists( 'WC_Wishlists_Pages' ) && WC_Wishlists_Pages::is_wishlist_page( $post->post_name ) ) {
+			$classes[] = 'woocommerce-page woocommerce-wishlist';
+		}
+
+		return $classes;
+	}
+
+	add_filter( 'body_class', 'lsx_wc_body_class', 2999 );
 
 endif;

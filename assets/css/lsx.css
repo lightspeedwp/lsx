@@ -849,6 +849,12 @@ body { background-color: #F6F6F6; }
 
 #add_payment_method .woocommerce-checkout-review-order table.shop_table tfoot td, #add_payment_method .woocommerce-order-details table.shop_table tfoot td, #add_payment_method .woocommerce-order-downloads table.shop_table tfoot td, #add_payment_method .woocommerce-MyAccount-content table.shop_table tfoot td, .woocommerce-cart .woocommerce-checkout-review-order table.shop_table tfoot td, .woocommerce-cart .woocommerce-order-details table.shop_table tfoot td, .woocommerce-cart .woocommerce-order-downloads table.shop_table tfoot td, .woocommerce-cart .woocommerce-MyAccount-content table.shop_table tfoot td, .woocommerce-checkout .woocommerce-checkout-review-order table.shop_table tfoot td, .woocommerce-checkout .woocommerce-order-details table.shop_table tfoot td, .woocommerce-checkout .woocommerce-order-downloads table.shop_table tfoot td, .woocommerce-checkout .woocommerce-MyAccount-content table.shop_table tfoot td, .woocommerce-account .woocommerce-checkout-review-order table.shop_table tfoot td, .woocommerce-account .woocommerce-order-details table.shop_table tfoot td, .woocommerce-account .woocommerce-order-downloads table.shop_table tfoot td, .woocommerce-account .woocommerce-MyAccount-content table.shop_table tfoot td { background-color: #FFF; }
 
+#wl-wrapper table.shop_table thead tr { background-color: #E6E6E6; }
+
+#wl-wrapper table.shop_table tbody tr { background-color: #FFF; }
+
+#wl-wrapper table.shop_table tbody tr:last-child:not(:only-child) { background-color: #E6E6E6; }
+
 .woocommerce .woocommerce-customer-details address { background-color: #FFF; }
 
 .button-social-login, a.button-social-login, input.button-social-login, button.button-social-login, .widget-area .widget a.button-social-login { color: #FFF !important; }
@@ -874,6 +880,14 @@ body { background-color: #F6F6F6; }
 .woocommerce div.product .woocommerce-tabs .panel { background: #FFF; }
 
 .woocommerce div.product form.cart .variations td.label label { color: #4A4A4A; }
+
+.wl-tab-wrap .wl-tabs > li > a { background-color: #FFF !important; }
+
+.wl-tab-wrap .wl-tabs > li > a:hover { background-color: #FFF !important; }
+
+.wl-tab-wrap .wl-tabs > li.active > a { background-color: #418AD0 !important; color: #FFF !important; }
+
+.wl-tab-wrap .wl-tabs > li.active > a:after { border-color: transparent transparent #F6F6F6 transparent; }
 
 #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice), .woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice), .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice) { background-color: #FFF; }
 
