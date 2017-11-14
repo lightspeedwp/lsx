@@ -16,6 +16,7 @@
 * Tweak - Small changes to allow LSX Customizer to change WooCommerce cart menu item style
 * Tweak - Small changes to allow LSX Customizer to change WooCommerce My Account menu item
 * Tweak - Add WooCommerce Wishlist compatibility
+* Tweak - Add WooCommerce Smart Coupon compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned

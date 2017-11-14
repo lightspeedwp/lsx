@@ -412,6 +412,20 @@
 
 .lsx-wc-footer-bar-count:empty { display: none; }
 
+.woocommerce .coupon-container, .woocommerce-page .coupon-container { box-shadow: -1px 1px 3px 0 rgba(0, 0, 0, 0.2); margin: 0; }
+
+.woocommerce .coupon-container.medium, .woocommerce-page .coupon-container.medium { line-height: inherit; padding: 0.6180469716em; }
+
+.woocommerce .generated_coupon_summary, .woocommerce-page .generated_coupon_summary { margin: 0; }
+
+.woocommerce .coupon-content.small, .woocommerce-page .coupon-content.small { padding: 0.6180469716em 1.41575em; }
+
+.woocommerce .coupon-content .coupon-expire, .woocommerce .coupon-content .discount-info, .woocommerce-page .coupon-content .coupon-expire, .woocommerce-page .coupon-content .discount-info { font-family: inherit; }
+
+.woocommerce #coupons_list, .woocommerce-page #coupons_list { background-color: #e6e6e6; border: 1px solid #dddddd; border-radius: 3px; margin-bottom: 2.4rem; padding: 1.2rem; }
+
+.woocommerce #coupons_list h3, .woocommerce-page #coupons_list h3 { margin-bottom: 1.2rem; }
+
 .wc-social-login:before { content: 'Social Login and Registration'; display: block; font-size: 30px; line-height: 1.2; margin-bottom: 1.2rem; margin-top: 4.25rem; }
 
 .button-social-login, a.button-social-login, input.button-social-login, button.button-social-login, .widget-area .widget a.button-social-login { font-size: 85% !important; font-weight: normal !important; }
