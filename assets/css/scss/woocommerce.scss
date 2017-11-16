@@ -726,10 +726,14 @@ p.no-comments,
 					padding: .875em 0;
 				}
 
-				// Icons
-
 				&.is-active {
-					a:before { opacity: 1; }
+					a {
+						margin: 0 -15px;
+						padding-left: 15px;
+						padding-right: 15px;
+
+						&:before { opacity: 1; }
+					}
 				}
 
 				a {

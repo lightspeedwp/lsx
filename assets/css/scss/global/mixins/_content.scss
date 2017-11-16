@@ -434,6 +434,13 @@
 				border-bottom: 1px solid $breaker;
 
 				&:last-child { border-bottom: none; }
+
+				&.is-active {
+					a {
+						background-color: $link;
+						color: #FFF !important;
+					}
+				}
 			}
 		}
 	}
