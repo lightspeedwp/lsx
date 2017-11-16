@@ -663,3 +663,23 @@ if ( ! function_exists( 'lsx_wc_body_class' ) ) :
 	add_filter( 'body_class', 'lsx_wc_body_class', 2999 );
 
 endif;
+
+if ( ! function_exists( 'lsx_wc_downloadable_products' ) ) :
+
+	/**
+	 * Changes downloads "download" button text.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_downloadable_products( $downloads ) {
+		foreach ( $downloads as $i => $download ) {
+			$downloads[ $i ]['download_name'] = esc_html__( 'Download', 'lsx' );
+		}
+
+		return $downloads;
+	}
+
+	add_filter( 'woocommerce_customer_get_downloadable_products', 'lsx_wc_downloadable_products', 2999 );
+
+endif;

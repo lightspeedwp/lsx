@@ -512,6 +512,14 @@ article.page {
 	}
 }
 
+.woocommerce-MyAccount-downloads-file {
+	&:after {
+		@include fa-icon();
+		content: '\f019';
+		margin-left: 10px;
+	}
+}
+
 // LSX Sharing
 
 .lsx-sharing-content {
