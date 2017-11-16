@@ -40,6 +40,8 @@
 
 .woocommerce-info, .woocommerce_info, .woocommerce-password-strength.info { background-color: #d9edf7; border-color: #bce8f1; color: #31708f; }
 
+#wc_am_lost_api_key_form input[type="text"], #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text, .woocommerce select, .woocommerce form .form-row input.input-text, .woocommerce form.comment-form input[type="text"], .woocommerce form.comment-form input[type="email"], .woocommerce div.product form.cart .variations select, .woocommerce-page #main .woocommerce-ordering select, .woocommerce-page #main .quantity .qty, .woocommerce-page #main .woocommerce-Input { height: 42px; padding: 10px 12px; }
+
 .page-template-default:not(.has-sidebar).woocommerce-page article.page, .page-template-default:not(.has-sidebar).lost-api-key article.page { width: 100% !important; }
 
 .archive:not(.has-sidebar).woocommerce-page .site-main { width: 100% !important; }
@@ -149,6 +151,8 @@
 
 #wc_am_lost_api_key_form input[type="submit"]:active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
 
+#wc_am_lost_api_key_form input[type="submit"], #wc_am_lost_api_key_form input[type="submit"]:active, #wc_am_lost_api_key_form input[type="submit"]:visited { height: 40px; line-height: 20px; padding: 10px 30px; }
+
 #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text { width: 160px; }
 
 @media (max-width: 767px) { #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text { width: 100%; } }
@@ -172,6 +176,10 @@
 @media (max-width: 767px) { .woocommerce table.shop_table td:not(:first-child) { border-top: 0; } }
 
 .woocommerce .woocommerce-customer-details address { border-bottom-width: 1px; border-right-width: 1px; padding: 9px 12px; }
+
+.woocommerce form .form-row textarea { height: 80px; }
+
+.woocommerce form.comment-form textarea { height: 80px; }
 
 .lsx-wc-cart-menu-item .widget_shopping_cart .buttons .button { border-radius: 0 !important; box-shadow: none !important; display: block !important; }
 
@@ -215,7 +223,7 @@
 
 .woocommerce-page #main #respond input#submit:active, .woocommerce-page #main a.button:active, .woocommerce-page #main button.button:active, .woocommerce-page #main input.button:active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
 
-.woocommerce-page #main a.add_to_cart_button, .woocommerce-page #main a.add_to_cart_button:active, .woocommerce-page #main a.add_to_cart_button:visited { height: 40px; padding-bottom: 10px; padding-top: 10px; }
+.woocommerce-page #main #respond input#submit, .woocommerce-page #main #respond input#submit:active, .woocommerce-page #main #respond input#submit:visited, .woocommerce-page #main a.button, .woocommerce-page #main a.button:active, .woocommerce-page #main a.button:visited, .woocommerce-page #main button.button, .woocommerce-page #main button.button:active, .woocommerce-page #main button.button:visited, .woocommerce-page #main input.button, .woocommerce-page #main input.button:active, .woocommerce-page #main input.button:visited { height: 40px; line-height: 20px; padding: 10px 30px; }
 
 @media (max-width: 767px) { .woocommerce-page #main .coupon input.button { float: left; margin-top: 7px; width: 100%; } }
 
