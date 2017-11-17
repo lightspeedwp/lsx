@@ -1,4 +1,10 @@
+body.modal-open {
+	div.modal-backdrop { z-index: 2049 !important; }
+}
+
 .modal {
+	z-index: 2050;
+
 	.modal-dialog {
 		display: flex;
 		flex-direction: column;

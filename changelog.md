@@ -18,6 +18,7 @@
 * Tweak - Add WooCommerce Wishlist compatibility
 * Tweak - Add WooCommerce Smart Coupon compatibility
 * Tweak - Add WooCommerce image lightbox effect compatibility
+* Fix - Bootstrap modal z-index
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned

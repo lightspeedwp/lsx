@@ -272,6 +272,10 @@ p:empty { display: none; }
 
 .entry-content-asset > iframe { border: 0; bottom: 0; height: 100%; right: 0; position: absolute; top: 0; width: 100%; }
 
+body.modal-open div.modal-backdrop { z-index: 2049 !important; }
+
+.modal { z-index: 2050; }
+
 .modal .modal-dialog { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; min-height: calc(100vh - 20px); padding-left: 14px; overflow: auto; }
 
 @media (min-width: 768px) { .modal .modal-dialog { min-height: calc(100vh - 60px); } }
