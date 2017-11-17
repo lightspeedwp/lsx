@@ -1,0 +1,35 @@
+.post-type-archive-product,
+.tax-product_cat {
+	.pp_content {
+		overflow: inherit !important;
+
+		div.product {
+			div.images {
+				@include media ('>=phone') { margin-bottom: 2px; }
+			}
+		}
+
+		.quantity .qty {
+			@extend %lsx-form-field;
+			@extend %small-form-field;
+		}
+
+		button.button {
+			@include lsx-button-scaffolding();
+			@include lsx-button-colour();
+			@include small-button();
+		}
+	}
+}
+
+.quick-view-button {
+	span { display: none !important; }
+}
+
+div.quick-view div.quick-view-image a.button {
+	@include lsx-button-scaffolding();
+	@include lsx-button-colour();
+	@include small-button();
+	line-height: 14px !important;
+}
+

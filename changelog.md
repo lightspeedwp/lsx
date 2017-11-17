@@ -21,6 +21,7 @@
 * Fix - Bootstrap modal z-index
 * Tweak - Add WooCommerce image slider effect compatibility
 * Tweak - Add WooCommerce Advanced Product Labels compatibility
+* Tweak - Add WooCommerce Quick View compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
