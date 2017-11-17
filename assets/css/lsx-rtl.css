@@ -859,6 +859,16 @@ body { background-color: #F6F6F6; }
 
 #wl-wrapper table.shop_table tbody tr:last-child:not(:only-child) { background-color: #E6E6E6; }
 
+#wl-wrapper .wl-already-in { background-color: #FFF; }
+
+#wl-wrapper a.button.wl-add-but { color: #4A4A4A !important; }
+
+#wl-wrapper a.button.wl-add-but:before { border: 1px solid #4A4A4A; color: #4A4A4A; }
+
+#wl-wrapper a.button.wl-add-but:hover, #wl-wrapper a.button.wl-add-but:active, #wl-wrapper a.button.wl-add-but:active:hover, #wl-wrapper a.button.wl-add-but:focus { color: #F7AE00 !important; }
+
+#wl-wrapper a.button.wl-add-but:hover:before, #wl-wrapper a.button.wl-add-but:active:before, #wl-wrapper a.button.wl-add-but:active:hover:before, #wl-wrapper a.button.wl-add-but:focus:before { border: 1px solid #F7AE00; color: #F7AE00; }
+
 .woocommerce .woocommerce-customer-details address { background-color: #FFF; }
 
 .button-social-login, a.button-social-login, input.button-social-login, button.button-social-login, .widget-area .widget a.button-social-login { color: #FFF !important; }

@@ -408,6 +408,29 @@
 				tr:last-child:not(:only-child) { background-color: #E6E6E6; }
 			}
 		}
+
+		.wl-already-in { background-color: #FFF; }
+
+		a.button.wl-add-but {
+			color: $color !important;
+
+			&:before {
+				border: 1px solid $color;
+				color: $color;
+			}
+
+			&:hover,
+			&:active,
+			&:active:hover,
+			&:focus {
+				color: $hover !important;
+
+				&:before {
+					border: 1px solid $hover;
+					color: $hover;
+				}
+			}
+		}
 	}
 
 	.woocommerce {

@@ -1,4 +1,52 @@
 #wl-wrapper {
+	&.wl-button-wrap {
+		padding: 2em 0 0 0;
+
+		&:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: '';
+			clear: both;
+			height: 0;
+		}
+	}
+
+	.wl-already-in {
+		border-radius: 3px;
+		margin: 0 0 1em 0;
+		padding: 1em;
+
+		ul {
+			list-style: none;
+			margin-bottom: 0;
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+
+	a.button.wl-add-but {
+		background-color: transparent !important;
+		box-shadow: none !important;
+		font-weight: normal !important;
+		font-size: 20px !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-transform: inherit !important;
+		transition: all 100ms ease !important;
+
+		&:before {
+			@include fa-icon();
+			border: 1px solid #333;
+			border-radius: 50%;
+			content: '\f08a';
+			font-size: 80%;
+			margin-right: 5px;
+			padding: 6px;
+			transition: all 100ms ease;
+		}
+	}
+
 	input[type="radio"],
 	input[type="checkbox"] {
 		margin: 0 10px 0 0;

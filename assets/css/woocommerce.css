@@ -444,6 +444,18 @@
 
 .button-social-login, a.button-social-login, input.button-social-login, button.button-social-login, .widget-area .widget a.button-social-login { font-size: 85% !important; font-weight: normal !important; }
 
+#wl-wrapper.wl-button-wrap { padding: 2em 0 0 0; }
+
+#wl-wrapper.wl-button-wrap:after { visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+#wl-wrapper .wl-already-in { border-radius: 3px; margin: 0 0 1em 0; padding: 1em; }
+
+#wl-wrapper .wl-already-in ul { list-style: none; margin-bottom: 0; margin-left: 0; padding-left: 0; }
+
+#wl-wrapper a.button.wl-add-but { background-color: transparent !important; box-shadow: none !important; font-weight: normal !important; font-size: 20px !important; padding-left: 0 !important; padding-right: 0 !important; text-transform: inherit !important; transition: all 100ms ease !important; }
+
+#wl-wrapper a.button.wl-add-but:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; border: 1px solid #333; border-radius: 50%; content: '\f08a'; font-size: 80%; margin-right: 5px; padding: 6px; transition: all 100ms ease; }
+
 #wl-wrapper input[type="radio"], #wl-wrapper input[type="checkbox"] { margin: 0 10px 0 0; }
 
 #wl-wrapper .wl-row:after { visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
