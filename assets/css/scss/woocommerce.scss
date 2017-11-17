@@ -1195,6 +1195,10 @@ ul.lsx-wc-cart-sub-menu {
 	&:empty { display: none; }
 }
 
+// Image slider
+
+.woocommerce-product-gallery__wrapper { max-width: none; }
+
 // WooCommerce Extensions
 
 @import 'woocommerce-extensions/smart-coupons';

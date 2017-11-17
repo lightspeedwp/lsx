@@ -19,6 +19,7 @@
 * Tweak - Add WooCommerce Smart Coupon compatibility
 * Tweak - Add WooCommerce image lightbox effect compatibility
 * Fix - Bootstrap modal z-index
+* Tweak - Add WooCommerce image slider effect compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
