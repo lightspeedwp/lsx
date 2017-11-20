@@ -9,10 +9,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LSX_VERSION', '2.0.1' );
+define( 'LSX_VERSION', '2.1.0' );
 
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/includes/woocommerce.php';
+	require get_template_directory() . '/includes/plugins/woocommerce.php';
+}
+
+if ( class_exists( 'Tribe__Events__Main' ) ) {
+	require get_template_directory() . '/includes/plugins/the-events-calendar.php';
+}
+
+if ( class_exists( 'Sensei_WC' ) ) {
+	require get_template_directory() . '/includes/plugins/sensei.php';
 }
 
 require get_template_directory() . '/includes/config.php';

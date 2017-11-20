@@ -109,6 +109,25 @@
 			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
 		}
 	}
+
+	// Sensei
+
+	.course-container,
+	.course,
+	.lesson,
+	.quiz {
+		a.button,
+		a.comment-reply-link,
+		#commentform #submit,
+		.submit,
+		input[type=submit],
+		input.button,
+		button.button {
+			&:not(.btn) {
+				@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+			}
+		}
+	}
 }
 
 @mixin custom-cta-buttons-colours ($color: map-get($cta-buttons, color), $color-hover: map-get($cta-buttons, color-hover), $bg: map-get($cta-buttons, bg), $bg-hover: map-get($cta-buttons, bg-hover), $shadow: map-get($cta-buttons, shadow)) {

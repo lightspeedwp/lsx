@@ -3,7 +3,7 @@
  * LSX functions and definitions - WooCommerce.
  *
  * @package    lsx
- * @subpackage layout
+ * @subpackage woocommerce
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -577,9 +577,9 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 		return $lsx_controls;
 	}
 
-endif;
+	add_filter( 'lsx_customizer_controls', 'lsx_customizer_wc_controls' );
 
-add_filter( 'lsx_customizer_controls', 'lsx_customizer_wc_controls' );
+endif;
 
 if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 

@@ -1,6 +1,6 @@
 ## LSX Changelog
 
-### 2.0.1
+### 2.1.0
 * Fix - Fixed conflict from global style affecting slick dots
 * Fix - Removed the setting that turned LSX as LSX (itself) child theme
 * Dev - Added new filter to disable the global pagination: lsx_paging_nav_disable
@@ -22,6 +22,8 @@
 * Tweak - Add WooCommerce image slider effect compatibility
 * Tweak - Add WooCommerce Advanced Product Labels compatibility
 * Tweak - Add WooCommerce Quick View compatibility
+* Tweak - Add Sensei compatibility
+* Tweak - Add The Events Calendar compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
