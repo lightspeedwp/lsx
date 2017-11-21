@@ -465,6 +465,39 @@ var lsx = Object.create( null );
 	};
 
 	/**
+	 * Fix WC messages/notices visual.
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+
+	lsx.wc_fix_messages_visual = function () {
+		$(
+			'.woocommerce-message,' +
+			'.woocommerce-info,' +
+			'.woocommerce-error,' +
+			'.woocommerce-noreviews,' +
+			'.woocommerce_message,' +
+			'.woocommerce_info,' +
+			'.woocommerce_error,' +
+			'.woocommerce_noreviews,' +
+			'p.no-comments,' +
+			'.stock,' +
+			'.woocommerce-password-strength' ).each( function() {
+				var _$this = $( this );
+
+				if ( 0 === _$this.find( '.button' ).length ) {
+					return;
+				}
+
+				_$this.wrapInner( '<div class="lsx-woocommerce-message-text"></div>' );
+				_$this.addClass( 'lsx-woocommerce-message-wrap' );
+				_$this.find( '.button' ).appendTo( _$this );
+			}
+		);
+	};
+
+	/**
 	 * On window resize.
 	 *
 	 * @package    lsx
@@ -502,6 +535,7 @@ var lsx = Object.create( null );
 		lsx.fix_wc_elements();
 		lsx.fix_caldera_form_modal_title();
 		lsx.wc_footer_bar_toggle_handler();
+		lsx.wc_fix_messages_visual();
 
 	} );
 

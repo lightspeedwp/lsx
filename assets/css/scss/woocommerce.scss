@@ -669,6 +669,14 @@ p.no-comments,
 .stock,
 .woocommerce-password-strength {
 	@extend %bootstrap-message;
+
+	&.lsx-woocommerce-message-wrap {
+		display: flex;
+		align-items: center;
+
+		.lsx-woocommerce-message-text { flex: 1 1 auto; }
+		.button { margin-left: 15px; }
+	}
 }
 
 .woocommerce-message,
