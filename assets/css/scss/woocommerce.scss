@@ -1199,6 +1199,18 @@ ul.lsx-wc-cart-sub-menu {
 
 .woocommerce-product-gallery__wrapper { max-width: none; }
 
+.woocommerce {
+	div.product {
+		div.images {
+			.flex-control-thumbs {
+				margin: 0 -5px;
+
+				li { padding: 10px 5px 0; }
+			}
+		}
+	}
+}
+
 // Onsale badge
 
 .woocommerce {

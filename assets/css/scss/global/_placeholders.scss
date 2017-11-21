@@ -36,7 +36,7 @@
 	flex-flow: column wrap;
 	justify-content: flex-start;
 	border-bottom: 0 none;
-	margin: 0 0 4.25rem 0;
+	margin: 0 0 10px 0;
 	padding-left: 0;
 
 	@include media('>=phone') { flex-flow: row nowrap; }
@@ -52,7 +52,7 @@
 		}
 
 		& + li {
-			@include media('>=phone') { margin-left: 5px; }
+			@include media('>=phone') { margin-left: 10px; }
 		}
 
 		& > a {
