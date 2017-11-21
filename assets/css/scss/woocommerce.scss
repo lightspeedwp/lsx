@@ -1199,6 +1199,20 @@ ul.lsx-wc-cart-sub-menu {
 
 .woocommerce-product-gallery__wrapper { max-width: none; }
 
+// Onsale badge
+
+.woocommerce {
+	span.onsale {
+		font-size: 1em;
+		height: 3.706325903em;
+		left: -13px;
+		line-height: 3.206325903em;
+		text-transform: uppercase;
+		top: -13px;
+		width: 3.706325903em;
+	}
+}
+
 // WooCommerce Extensions
 
 @import 'woocommerce-extensions/advanced-product-labels';
