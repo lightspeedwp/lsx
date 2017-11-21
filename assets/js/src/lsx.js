@@ -64,11 +64,11 @@ var lsx = Object.create( null );
 	 * @subpackage scripts
 	 */
 
-	lsx.navbar_toggle_handler = function () {
-		$( '.navbar-toggle' ).parent().on( 'click', function () {
+	lsx.navbar_toggle_handler = function() {
+		$( '.navbar-toggle' ).parent().on( 'click', function() {
 			var $parent = $( this );
 			$parent.toggleClass( 'open' );
-		});
+		} );
 	};
 
 	/**
@@ -217,10 +217,10 @@ var lsx = Object.create( null );
 						top       = base + scrolled,
 						bottom    = base - scrolled;
 
-					$bannerImage.css({
+					$bannerImage.css( {
 						'top': top + 'px',
 						'bottom': bottom + 'px'
-					});
+					} );
 				}
 			};
 
@@ -312,7 +312,7 @@ var lsx = Object.create( null );
 	 * @package	lsx
 	 * @subpackage scripts
 	 */
-	lsx.init_wc_slider = function () {
+	lsx.init_wc_slider = function() {
 		var $wcSlider = $( '.lsx-woocommerce-slider' );
 
 		$wcSlider.each( function( index, el ) {
@@ -335,7 +335,7 @@ var lsx = Object.create( null );
 				if ( slick.options.arrows && slick.slideCount > slick.options.slidesToShow ) {
 					$self.addClass( 'slick-has-arrows' );
 				}
-			});
+			} );
 
 			$self.on( 'setPosition', function( event, slick ) {
 				if ( ! slick.options.arrows ) {
@@ -343,7 +343,7 @@ var lsx = Object.create( null );
 				} else if ( slick.slideCount > slick.options.slidesToShow ) {
 					$self.addClass('slick-has-arrows');
 				}
-			});
+			} );
 
 			$self.slick( {
 				draggable: false,
@@ -382,7 +382,7 @@ var lsx = Object.create( null );
 	 * @package	lsx
 	 * @subpackage scripts
 	 */
-	lsx.remove_gallery_img_width_height = function () {
+	lsx.remove_gallery_img_width_height = function() {
 		$( '.gallery-size-full img' ).each( function() {
 			var $self = $( this );
 
@@ -456,12 +456,12 @@ var lsx = Object.create( null );
 	 * @subpackage scripts
 	 */
 
-	lsx.wc_footer_bar_toggle_handler = function () {
-		$( '.lsx-wc-footer-bar-link-toogle' ).on( 'click', function ( event ) {
+	lsx.wc_footer_bar_toggle_handler = function() {
+		$( '.lsx-wc-footer-bar-link-toogle' ).on( 'click', function( event ) {
 			event.preventDefault();
 			$( '.lsx-wc-footer-bar-form' ).slideToggle();
 			$( '.lsx-wc-footer-bar' ).toggleClass( 'lsx-wc-footer-bar-search-on' );
-		});
+		} );
 	};
 
 	/**
@@ -471,7 +471,7 @@ var lsx = Object.create( null );
 	 * @subpackage scripts
 	 */
 
-	lsx.wc_fix_messages_visual = function () {
+	lsx.wc_fix_messages_visual = function() {
 		$(
 			'.woocommerce-message,' +
 			'.woocommerce-info,' +
@@ -495,6 +495,25 @@ var lsx = Object.create( null );
 				_$this.find( '.button' ).appendTo( _$this );
 			}
 		);
+	};
+
+	/**
+	 * Add to the WC Quick View modal the close button.
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+
+	lsx.wc_add_quick_view_close_button = function() {
+		$( 'body' ).on( 'quick-view-displayed', function( event ) {
+			if ( 0 === $( '.pp_content_container' ).children( '.close' ).length ) {
+				$( '.pp_content_container' ).prepend( '<button type="button" class="close">&times;</button>' );
+			}
+		} );
+
+		$document.on( 'click', '.pp_content_container .close', function( e ) {
+			$.prettyPhoto.close();
+		} );
 	};
 
 	/**
@@ -536,6 +555,7 @@ var lsx = Object.create( null );
 		lsx.fix_caldera_form_modal_title();
 		lsx.wc_footer_bar_toggle_handler();
 		lsx.wc_fix_messages_visual();
+		lsx.wc_add_quick_view_close_button();
 
 	} );
 

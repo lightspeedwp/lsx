@@ -227,10 +227,6 @@
 
 @media (max-width: 767px) { .woocommerce-page #main .coupon input.button { float: left; margin-top: 7px; width: 100%; } }
 
-.woocommerce-page #main a.button.quick-view-button { background-color: transparent; display: block; font-weight: normal; padding-left: 0; padding-right: 0; }
-
-.woocommerce-page #main a.button.quick-view-button:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: '\f06e'; margin-right: 5px; }
-
 .woocommerce-page #main .woocommerce-Address-title a { display: block; width: 1em; height: 1em; text-indent: -9999px; position: relative; padding: 10px; }
 
 .woocommerce-page #main .woocommerce-Address-title a:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: "\f044"; line-height: 1.618; position: absolute; top: 2px; left: 0; height: 100%; width: 100%; text-align: center; text-indent: 0; }
@@ -470,7 +466,11 @@
 
 .post-type-archive-product .pp_content button.button, .post-type-archive-product .pp_content button.button:active, .post-type-archive-product .pp_content button.button:visited, .tax-product_cat .pp_content button.button, .tax-product_cat .pp_content button.button:active, .tax-product_cat .pp_content button.button:visited { height: 40px; line-height: 20px; padding: 10px 30px; }
 
-.quick-view-button span { display: none !important; }
+a.quick-view-button { background-color: transparent !important; display: block !important; font-weight: normal !important; line-height: 1.2 !important; padding: 0 !important; }
+
+a.quick-view-button:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: '\f06e'; margin-right: 5px; }
+
+a.quick-view-button span { display: none !important; }
 
 div.quick-view div.quick-view-image a.button { line-height: 14px !important; }
 
@@ -485,6 +485,12 @@ div.quick-view div.quick-view-image a.button:hover, div.quick-view div.quick-vie
 div.quick-view div.quick-view-image a.button:active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
 
 div.quick-view div.quick-view-image a.button, div.quick-view div.quick-view-image a.button:active, div.quick-view div.quick-view-image a.button:visited { height: 40px; line-height: 20px; padding: 10px 30px; }
+
+div.pp_woocommerce .pp_content_container { border-radius: 0 !important; border-style: solid; border-width: 6px; padding: 20px 0 !important; }
+
+div.pp_woocommerce .close { border-radius: 50%; border-style: solid; border-width: 2px; height: 32px; opacity: 1; position: absolute; right: -14px; top: -14px; width: 32px; z-index: 2; }
+
+div.pp_woocommerce .close:hover { opacity: 1; }
 
 .woocommerce .coupon-container, .woocommerce-page .coupon-container { box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2); margin: 0; }
 

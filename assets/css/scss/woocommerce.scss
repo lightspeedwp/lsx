@@ -628,20 +628,6 @@ article.page {
 		}
 	}
 
-	a.button.quick-view-button {
-		background-color: transparent;
-		display: block;
-		font-weight: normal;
-		line-height: 1.2;
-		padding: 0;
-
-		&:before {
-			@include fa-icon();
-			content: '\f06e';
-			margin-right: 5px;
-		}
-	}
-
 	// Edit address link
 
 	.woocommerce-Address-title {

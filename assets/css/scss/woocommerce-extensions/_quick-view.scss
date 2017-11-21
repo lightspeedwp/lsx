@@ -22,14 +22,53 @@
 	}
 }
 
-.quick-view-button {
+a.quick-view-button {
+	background-color: transparent !important;
+	display: block !important;
+	font-weight: normal !important;
+	line-height: 1.2 !important;
+	padding: 0 !important;
+
+	&:before {
+		@include fa-icon();
+		content: '\f06e';
+		margin-right: 5px;
+	}
+
 	span { display: none !important; }
 }
 
-div.quick-view div.quick-view-image a.button {
-	@include lsx-button-scaffolding();
-	@include lsx-button-colour();
-	@include small-button();
-	line-height: 14px !important;
+div.quick-view {
+	div.quick-view-image {
+		a.button {
+			@include lsx-button-scaffolding();
+			@include lsx-button-colour();
+			@include small-button();
+			line-height: 14px !important;
+		}
+	}
 }
 
+div.pp_woocommerce {
+	.pp_content_container {
+		border-radius: 0 !important;
+		border-style: solid;
+		border-width: 6px;
+		padding: 20px 0 !important;
+	}
+
+	.close {
+		border-radius: 50%;
+		border-style: solid;
+		border-width: 2px;
+		height: 32px;
+		opacity: 1;
+		position: absolute;
+		right: -14px;
+		top: -14px;
+		width: 32px;
+		z-index: 2;
+
+		&:hover { opacity: 1; }
+	}
+}

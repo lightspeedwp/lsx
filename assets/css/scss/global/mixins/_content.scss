@@ -612,4 +612,19 @@
 		}
 	}
 
+	div.pp_woocommerce {
+		.pp_content_container {
+			background-color: $bg;
+			border-color: $link;
+		}
+
+		.close {
+			background-color: $link;
+			border-color: #FFF;
+			box-shadow: 0 0 4px 0 $link;
+			color: #FFF;
+
+			&:hover { background-color: $link; }
+		}
+	}
 }
