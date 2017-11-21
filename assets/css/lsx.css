@@ -204,6 +204,18 @@ p:empty { display: none; }
 
 .course-container a.button:not(.btn):active, .course-container a.comment-reply-link:not(.btn):active, .course-container #commentform #submit:not(.btn):active, .course-container .submit:not(.btn):active, .course-container input[type=submit]:not(.btn):active, .course-container input.button:not(.btn):active, .course-container button.button:not(.btn):active, .course a.button:not(.btn):active, .course a.comment-reply-link:not(.btn):active, .course #commentform #submit:not(.btn):active, .course .submit:not(.btn):active, .course input[type=submit]:not(.btn):active, .course input.button:not(.btn):active, .course button.button:not(.btn):active, .lesson a.button:not(.btn):active, .lesson a.comment-reply-link:not(.btn):active, .lesson #commentform #submit:not(.btn):active, .lesson .submit:not(.btn):active, .lesson input[type=submit]:not(.btn):active, .lesson input.button:not(.btn):active, .lesson button.button:not(.btn):active, .quiz a.button:not(.btn):active, .quiz a.comment-reply-link:not(.btn):active, .quiz #commentform #submit:not(.btn):active, .quiz .submit:not(.btn):active, .quiz input[type=submit]:not(.btn):active, .quiz input.button:not(.btn):active, .quiz button.button:not(.btn):active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #27639e; }
 
+.quiz input[type=submit].complete:not(.btn), .quiz input[type=submit].complete:not(.btn):active, .quiz input[type=submit].complete:not(.btn):visited { background-color: #63A95F; box-shadow: 2px 2px 0 0 #457A42; color: #FFF; }
+
+.quiz input[type=submit].complete:not(.btn):hover, .quiz input[type=submit].complete:not(.btn):hover:active, .quiz input[type=submit].complete:not(.btn):focus { background-color: #4E8B4A; color: #FFF; }
+
+.quiz input[type=submit].complete:not(.btn):active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #457A42; }
+
+.quiz input[type=submit].reset:not(.btn), .quiz input[type=submit].reset:not(.btn):active, .quiz input[type=submit].reset:not(.btn):visited { background-color: #ED6C6E; box-shadow: 2px 2px 0 0 #E5282B; color: #FFF; }
+
+.quiz input[type=submit].reset:not(.btn):hover, .quiz input[type=submit].reset:not(.btn):hover:active, .quiz input[type=submit].reset:not(.btn):focus { background-color: #E73F41; color: #FFF; }
+
+.quiz input[type=submit].reset:not(.btn):active { left: 2px; top: 2px; box-shadow: 0 0 0 0 #E5282B; }
+
 .cta-btn, .cta-btn:active, .cta-btn:visited { background-color: #F7AE00; box-shadow: 2px 2px 0 0 #ab7800; color: #FFF; }
 
 .cta-btn:hover, .cta-btn:hover:active, .cta-btn:focus { background-color: #EDA700; color: #FFF; }

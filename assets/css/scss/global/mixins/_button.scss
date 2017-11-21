@@ -128,6 +128,18 @@
 			}
 		}
 	}
+
+	.quiz {
+		input[type=submit] {
+			&.complete:not(.btn) {
+				@include lsx-button-colour($color, $color-hover, #63A95F, #4E8B4A, #457A42);
+			}
+
+			&.reset:not(.btn) {
+				@include lsx-button-colour($color, $color-hover, #ED6C6E, #E73F41, #E5282B);
+			}
+		}
+	}
 }
 
 @mixin custom-cta-buttons-colours ($color: map-get($cta-buttons, color), $color-hover: map-get($cta-buttons, color-hover), $bg: map-get($cta-buttons, bg), $bg-hover: map-get($cta-buttons, bg-hover), $shadow: map-get($cta-buttons, shadow)) {
