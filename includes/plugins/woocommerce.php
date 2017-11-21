@@ -657,6 +657,10 @@ if ( ! function_exists( 'lsx_wc_body_class' ) ) :
 			$classes[] = 'woocommerce-page woocommerce-wishlist';
 		}
 
+		if ( ! empty( get_theme_mod( 'lsx_wc_mobile_footer_bar_status', '1' ) ) ) {
+			$classes[] = 'lsx-wc-has-footer-bar';
+		}
+
 		return $classes;
 	}
 

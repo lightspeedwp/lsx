@@ -1141,6 +1141,10 @@ ul.lsx-wc-cart-sub-menu {
 
 // Footer bar
 
+.lsx-wc-has-footer-bar {
+	@include media ('<phone') { margin-bottom: 72px; }
+}
+
 .lsx-wc-footer-bar {
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
 	bottom: 0;

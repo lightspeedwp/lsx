@@ -410,6 +410,8 @@
 
 .lsx-woocommerce-slider .slick-arrow.slick-next:before { content: '\f105'; left: 1.5rem; }
 
+@media (max-width: 767px) { .lsx-wc-has-footer-bar { margin-bottom: 72px; } }
+
 .lsx-wc-footer-bar { box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5); bottom: 0; left: 0; position: fixed; right: 0; z-index: 10; }
 
 @media (min-width: 768px) { .lsx-wc-footer-bar { display: none; } }
