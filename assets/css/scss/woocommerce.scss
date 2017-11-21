@@ -612,7 +612,7 @@ article.page {
 	// Button
 
 	#respond input#submit,
-	a.button,
+	a.button:not(.quick-view-button),
 	button.button,
 	input.button {
 		@include lsx-button-scaffolding();
@@ -625,6 +625,20 @@ article.page {
 			float: left;
 			margin-top: 7px;
 			width: 100%;
+		}
+	}
+
+	a.button.quick-view-button {
+		background-color: transparent;
+		display: block;
+		font-weight: normal;
+		line-height: 1.2;
+		padding: 0;
+
+		&:before {
+			@include fa-icon();
+			content: '\f06e';
+			margin-right: 5px;
 		}
 	}
 

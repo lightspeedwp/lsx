@@ -103,7 +103,7 @@
 
 	.woocommerce-page #main {
 		#respond input#submit,
-		a.button,
+		a.button:not(.quick-view-button),
 		button.button,
 		input.button {
 			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
