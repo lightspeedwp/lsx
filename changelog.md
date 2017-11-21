@@ -24,6 +24,7 @@
 * Tweak - Add WooCommerce Quick View compatibility
 * Tweak - Add Sensei compatibility
 * Tweak - Add The Events Calendar compatibility
+* Tweak - Default colours scheme updated (top menu colors)
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
