@@ -671,11 +671,22 @@ p.no-comments,
 	@extend %bootstrap-message;
 
 	&.lsx-woocommerce-message-wrap {
-		display: flex;
-		align-items: center;
+		.button {
+			float: none;
+			margin-top: 15px;
+		}
 
-		.lsx-woocommerce-message-text { flex: 1 1 auto; }
-		.button { margin-left: 15px; }
+		@include media ('>=phone') {
+			display: flex;
+			align-items: center;
+
+			.lsx-woocommerce-message-text { flex: 1 1 auto; }
+
+			.button {
+				margin-left: 15px;
+				margin-top: 0;
+			}
+		}
 	}
 }
 
