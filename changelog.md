@@ -25,6 +25,7 @@
 * Tweak - Add Sensei compatibility
 * Tweak - Add The Events Calendar compatibility
 * Tweak - Default colours scheme updated (top menu colors)
+* Tweak - Change WooCommerce Bundle product visual on single
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned

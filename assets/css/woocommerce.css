@@ -468,6 +468,8 @@
 
 .wapl-label { margin-bottom: 0.875em; }
 
+.woocommerce div.product .bundled_product, .woocommerce div.product .bundle_price { display: none !important; }
+
 .post-type-archive-product .pp_content, .tax-product_cat .pp_content { overflow: inherit !important; }
 
 @media (min-width: 768px) { .post-type-archive-product .pp_content div.product div.images, .tax-product_cat .pp_content div.product div.images { margin-bottom: 2px; } }

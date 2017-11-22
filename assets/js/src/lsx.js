@@ -381,6 +381,12 @@ var lsx = Object.create( null );
 				}]
 			} );
 		} );
+
+		if ( $( 'a[href="#tab-bundled_products"]' ).length > 0 ) {
+			$documen.on( 'click', 'a[href="#tab-bundled_products"]', function( e ) {
+				$( '#tab-bundled_products .lsx-woocommerce-slider' ).slick( 'setPosition' );
+			});
+		}
 	}
 
 	/**
