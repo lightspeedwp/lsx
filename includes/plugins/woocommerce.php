@@ -687,3 +687,75 @@ if ( ! function_exists( 'lsx_wc_downloadable_products' ) ) :
 	add_filter( 'woocommerce_customer_get_downloadable_products', 'lsx_wc_downloadable_products', 2999 );
 
 endif;
+
+if ( ! function_exists( 'lsx_wc_move_bundle_products' ) ) :
+
+	/**
+	 * WooCommerce - Move the bundle products to a tab.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_move_bundle_products( $tabs ) {
+		global $product, $post;
+
+		if ( method_exists( $product , 'get_bundled_items' ) ) {
+			$bundled_items = $product->get_bundled_items();
+
+			if ( ! empty( $bundled_items ) ) {
+				$tabs['bundled_products'] = array(
+					'title'    => __( 'Included Products', 'lsx' ),
+					'priority' => 10,
+					'callback' => 'lsx_wc_bundle_products',
+				);
+			}
+		}
+
+		$tabs['description']['priority'] = 5;		// Description second
+		$tabs['reviews']['priority'] = 15;			// Reviews first
+		$tabs['product_enquiry']['priority'] = 20;
+
+		return $tabs;
+	}
+
+	add_action( 'woocommerce_product_tabs', 'lsx_wc_move_bundle_products', 50 );
+
+endif;
+
+if ( ! function_exists( 'lsx_wc_bundle_products' ) ) :
+
+	function lsx_wc_bundle_products() {
+		global $product, $post;
+
+		if ( method_exists( $product , 'get_bundled_items' ) ) {
+			$bundled_items = $product->get_bundled_items();
+
+			// do_action( 'woocommerce_before_bundled_items', $product );
+
+			// foreach ( $bundled_items as $bundled_item ) {
+			// 	do_action( 'woocommerce_bundled_item_details', $bundled_item, $product );
+			// }
+
+			// do_action( 'woocommerce_after_bundled_items', $product );
+
+			$product_original = $product;
+
+			// $this->widget_start( $args, $instance );
+
+			// @codingStandardsIgnoreLine
+			echo apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' );
+
+			foreach ( $bundled_items as $bundled_item ) {
+				$product = wc_get_product( $bundled_item->item_data['product_id'] );
+				wc_get_template( 'content-widget-product.php' );
+				$product = $product_original;
+			}
+
+			// @codingStandardsIgnoreLine
+			echo apply_filters( 'woocommerce_after_widget_product_list', '</ul>' );
+		}
+
+		// $this->widget_end( $args );
+	}
+
+endif;
