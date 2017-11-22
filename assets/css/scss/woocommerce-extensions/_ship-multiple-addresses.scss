@@ -1,0 +1,99 @@
+.woocommerce-page {
+	#shipping_addresses {
+		padding-top: ms(3);
+	}
+
+	.ship_address,
+	.no_shipping_address {
+		background-color: rgba(#000, .025);
+		border: 0;
+		border-radius: 0;
+		font-size: 0.875em;
+		float: none;
+		line-height: inherit;
+		margin: 0.809em 0;
+		padding: 1em;
+		width: auto;
+
+		dl {
+			margin-top: 0;
+
+			dd { margin-bottom: 1em; }
+		}
+
+		address { margin: 0; }
+
+		.modify-address-button {
+			@include lsx-button-scaffolding();
+			@include lsx-button-colour();
+			@include small-button();
+			margin-top: 2.4rem;
+		}
+
+		select.shipping_methods.shipping_method + p { margin-bottom: 0; }
+	}
+
+	.address-block {
+		float: left;
+		margin: 0 0 1.618em;
+		margin-right: 5.8823529412%;
+		width: 47.0588235294%;
+
+		&:nth-child(2),
+		&:nth-child(4),
+		&:nth-child(6) {
+			margin-right: 0 !important;
+		}
+
+		.buttons {
+			text-align: inherit;
+			position: static;
+
+			.button { width: auto; }
+		}
+	}
+}
+
+#address_form {
+	a.h2-link {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		@include small-button();
+		margin-bottom: 24px;
+	}
+
+	select.address-select {
+		@extend %bootstrap-form-control;
+		@extend %lsx-form-field;
+		@extend %small-form-field;
+
+		#primary.col-sm-8 &,
+		#primary.col-md-8 & {
+			max-width: 300px;
+		}
+
+		#primary.col-sm-12 &,
+		#primary.col-md-12 & {
+			max-width: 500px;
+		}
+	}
+}
+
+input.ms_shipping_date,
+textarea.ms_shipping_note {
+	@extend %bootstrap-form-control;
+	@extend %lsx-form-field;
+	@extend %small-form-field;
+}
+
+input.ms_shipping_date { @extend %small-form-field; }
+
+textarea.ms_shipping_note { height: 75px; }
+
+select#ms_addresses,
+select.shipping_methods.shipping_method {
+	@extend %bootstrap-form-control;
+	@extend %lsx-form-field;
+	@extend %small-form-field;
+	font-weight: normal !important;
+}
