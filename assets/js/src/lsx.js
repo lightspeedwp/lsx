@@ -331,6 +331,13 @@ var lsx = Object.create( null );
 				_slidesToScroll_992 = 2;
 			}
 
+			if ( $self.closest( '#secondary' ).length > 0 ) {
+				_slidesToShow = 1;
+				_slidesToScroll = 1;
+				_slidesToShow_992 = 1;
+				_slidesToScroll_992 = 1;
+			}
+
 			$self.on( 'init', function( event, slick ) {
 				if ( slick.options.arrows && slick.slideCount > slick.options.slidesToShow ) {
 					$self.addClass( 'slick-has-arrows' );

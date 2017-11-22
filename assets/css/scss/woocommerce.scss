@@ -373,6 +373,25 @@ article.page {
 
 // Buttons and fields
 
+.woocommerce-product-search {
+	.search-field {
+		@extend %bootstrap-form-control;
+		@extend %lsx-form-field;
+		border-radius: 2px 0 0 2px;
+		position: relative;
+		z-index: 1;
+	}
+
+	input[type="submit"] {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		box-shadow: none;
+		margin-left: -2px;
+		position: relative;
+		z-index: 2;
+	}
+}
+
 #wc_am_lost_api_key_form {
 	input[type="text"] {
 		@extend %bootstrap-form-control;
@@ -1002,6 +1021,8 @@ ul.lsx-wc-cart-sub-menu {
 .lsx-woocommerce-review-slot {
 	.lsx-woocommerce-review-flex {
 		@include media ('>=phone') { display: flex; }
+
+		#secondary & > a { display: none; }
 	}
 
 	.lsx-woocommerce-review-box {
@@ -1041,7 +1062,8 @@ ul.lsx-wc-cart-sub-menu {
 		&.slick-has-arrows { width: calc(100% + 30px); }
 	}
 
-	.wc-tab & {
+	.wc-tab &,
+	#secondary & {
 		margin-left: -15px;
 		margin-right: -15px;
 
