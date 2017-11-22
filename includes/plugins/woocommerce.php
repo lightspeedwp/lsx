@@ -50,6 +50,9 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 			wp_dequeue_script( 'select2' );
 			//wp_deregister_script( 'select2' );
 		}
+
+		// Remove WC Shipping Multiple Addresses specific script causing issues on checkout
+		wp_dequeue_script( 'wcms-country-select' );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'lsx_wc_scripts_add_styles' );
