@@ -711,9 +711,17 @@ if ( ! function_exists( 'lsx_wc_move_bundle_products' ) ) :
 			}
 		}
 
-		$tabs['description']['priority'] = 5;		// Description second
-		$tabs['reviews']['priority'] = 15;			// Reviews first
-		$tabs['product_enquiry']['priority'] = 20;
+		if ( isset( $tabs['description'] ) ) {
+			$tabs['description']['priority'] = 5;
+		}
+
+		if ( isset( $tabs['reviews'] ) ) {
+			$tabs['reviews']['priority'] = 15;
+		}
+
+		if ( isset( $tabs['product_enquiry'] ) ) {
+			$tabs['product_enquiry']['priority'] = 20;
+		}
 
 		return $tabs;
 	}
