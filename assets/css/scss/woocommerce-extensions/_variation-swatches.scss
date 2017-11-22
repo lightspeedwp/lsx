@@ -1,0 +1,19 @@
+.woocommerce {
+	div.product {
+		form.cart {
+			.variations {
+				td.label {
+					padding: 10px 10px 10px 0;
+
+					label { font-weight: bold; }
+				}
+
+				td.value {
+					padding: 10px;
+
+					.swatch-label:empty { display: none; }
+				}
+			}
+		}
+	}
+}

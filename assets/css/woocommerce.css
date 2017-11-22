@@ -530,6 +530,14 @@ div.pp_woocommerce .close:hover { opacity: 1; }
 
 .button-social-login, a.button-social-login, input.button-social-login, button.button-social-login, .widget-area .widget a.button-social-login { font-size: 85% !important; font-weight: normal !important; }
 
+.woocommerce div.product form.cart .variations td.label { padding: 10px 10px 10px 0; }
+
+.woocommerce div.product form.cart .variations td.label label { font-weight: bold; }
+
+.woocommerce div.product form.cart .variations td.value { padding: 10px; }
+
+.woocommerce div.product form.cart .variations td.value .swatch-label:empty { display: none; }
+
 #wl-wrapper.wl-button-wrap { padding: 1em 0 0 0; }
 
 #wl-wrapper.wl-button-wrap:after { visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
