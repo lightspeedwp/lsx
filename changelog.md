@@ -29,6 +29,7 @@
 * Tweak - Change WooCommerce Variation Swatches visual on single
 * Tweak - Change WooCommerce Ship Multiple Addresses visual on single
 * Fix - Remove WC Shipping Multiple Addresses specific script causing issues on checkout
+* Tweak - Change WooCommerce Products Addon visual on single
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned

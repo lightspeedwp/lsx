@@ -507,6 +507,24 @@ article.page {
 			input.input-text { @extend %small-form-field; }
 
 			textarea { height: 80px; }
+
+			select {
+				@extend %bootstrap-form-control;
+				@extend %lsx-form-field;
+				@extend %small-form-select;
+			}
+
+			input[type="file"] {
+				font-size: 12px;
+				font-weight: normal;
+				height: auto;
+				line-height: normal;
+			}
+
+			input[type="radio"],
+			input[type="checkbox"] {
+				margin-right: 10px;
+			}
 		}
 
 		&.comment-form {
@@ -1290,6 +1308,7 @@ ul.lsx-wc-cart-sub-menu {
 @import 'woocommerce-extensions/advanced-product-labels';
 @import 'woocommerce-extensions/bundle-products';
 @import 'woocommerce-extensions/quick-view';
+@import 'woocommerce-extensions/product-addons';
 @import 'woocommerce-extensions/ship-multiple-addresses';
 @import 'woocommerce-extensions/smart-coupons';
 @import 'woocommerce-extensions/social-login';
