@@ -40,6 +40,11 @@
 	padding: 10px 12px;
 }
 
+%small-form-select {
+	height: 42px;
+	padding: 0 12px;
+}
+
 %sensei-clearfix {
 	clear: both;
 	content: '';
@@ -109,7 +114,7 @@ article.page {
 	select {
 		@extend %bootstrap-form-control;
 		@extend %lsx-form-field;
-		@extend %small-form-field;
+		@extend %small-form-select;
 	}
 }
 

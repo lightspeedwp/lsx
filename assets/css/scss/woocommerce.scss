@@ -67,6 +67,11 @@
 	padding: 10px 12px;
 }
 
+%small-form-select {
+	height: 42px;
+	padding: 0 12px;
+}
+
 @mixin small-button() {
 	&,
 	&:active,
@@ -489,7 +494,7 @@ article.page {
 }
 
 .woocommerce {
-	select { @extend %small-form-field; }
+	select { @extend %small-form-select; }
 
 	form {
 		.form-row {
@@ -527,7 +532,7 @@ article.page {
 				select {
 					@extend %bootstrap-form-control;
 					@extend %lsx-form-field;
-					@extend %small-form-field;
+					@extend %small-form-select;
 				}
 			}
 		}
@@ -610,17 +615,25 @@ article.page {
 
 	// Fields
 
-	.woocommerce-ordering select,
 	.quantity .qty {
 		@extend %bootstrap-form-control;
 		@extend %small-form-field;
 	}
 
+	.woocommerce-ordering select {
+		@extend %bootstrap-form-control;
+		@extend %small-form-select;
+	}
+
 	.woocommerce-Input,
-	.woocommerce-ordering select,
 	.quantity .qty {
 		@extend %lsx-form-field;
 		@extend %small-form-field;
+	}
+
+	.woocommerce-ordering select {
+		@extend %lsx-form-field;
+		@extend %small-form-select;
 	}
 
 	.quantity .qty {
