@@ -866,8 +866,9 @@ p.no-comments,
 	& > a {
 		&:after {
 			@include fa-icon();
-			float: right;
 			content: '\f291';
+			float: right;
+			font-size: 20px;
 			margin-left: 2rem;
 
 			#top-menu & { margin-left: 1.2rem; }
@@ -878,8 +879,9 @@ p.no-comments,
 		& > a {
 			&:before {
 				@include fa-icon();
-				float: right;
 				content: '\f07a';
+				float: right;
+				font-size: 20px;
 				margin-right: 0.5rem;
 
 				#top-menu & {
