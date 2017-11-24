@@ -511,6 +511,17 @@ var lsx = Object.create( null );
 	};
 
 	/**
+	 * Fix WC subscrive to replies checkbox visual.
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+
+	lsx.wc_fix_subscribe_to_replies_checkbox = function() {
+		$( 'input[name="subscribe_to_replies"' ).removeClass( 'form-control' );
+	};
+
+	/**
 	 * Add to the WC Quick View modal the close button.
 	 *
 	 * @package    lsx
@@ -568,6 +579,7 @@ var lsx = Object.create( null );
 		lsx.fix_caldera_form_modal_title();
 		lsx.wc_footer_bar_toggle_handler();
 		lsx.wc_fix_messages_visual();
+		lsx.wc_fix_subscribe_to_replies_checkbox();
 		lsx.wc_add_quick_view_close_button();
 
 	} );

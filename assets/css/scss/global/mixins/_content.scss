@@ -628,13 +628,41 @@
 		}
 	}
 
-	#wc-bookings-booking-form {
-		.wc-bookings-date-picker {
-			legend {
-				.label {  }
+	.woocommerce-page {
+		#reviews {
+			.product-rating {
+				.product-rating-details {
+					table {
+						td {
+							&.rating-graph {
+								.bar { background-color: $breaker; }
+							}
+						}
+					}
+				}
+			}
+
+			.contribution-flag-form { background-color: $breaker; }
+		}
+
+		.contribution-type-selector {
+			> a {
+				border-bottom: 0.202em solid $breaker;
+
+				&.active { border-bottom-color: $link; }
 			}
 		}
 	}
+
+	#tiptip_content,
+	.chart-tooltip {
+		background-color: $color;
+	}
+
+	#tiptip_holder.tip_bottom {
+		#tiptip_arrow_inner { border-bottom-color: $color; }
+	}
+
 
 	// Sensei
 

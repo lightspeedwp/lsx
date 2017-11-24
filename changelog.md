@@ -31,6 +31,7 @@
 * Fix - Remove WC Shipping Multiple Addresses specific script causing issues on checkout
 * Tweak - Change WooCommerce Products Addon visual on single
 * Tweak - Add WooCommerce Bookings compatibility
+* Tweak - Add WooCommerce Product Reviews compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
