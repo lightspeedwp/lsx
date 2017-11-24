@@ -57,7 +57,7 @@
 	&:visited {
 		height: 40px;
 		line-height: 20px;
-		padding: 10px 30px;
+		padding: 10px 18px;
 	}
 }
 
@@ -98,6 +98,17 @@ article.page {
 .sensei-share-your-grade {
 	&.message { margin-top: 4.25rem; }
 	&.buttons { padding-left: 0; }
+}
+
+#main {
+	.course,
+	.course-container {
+		&:last-child {
+			border-bottom: 0;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
 }
 
 // Buttons and fields
@@ -170,10 +181,6 @@ article.page {
 			border: 0;
 			font-size: 18px;
 			padding: 12px 22px;
-
-			&.active {
-
-			}
 		}
 	}
 }
@@ -188,9 +195,7 @@ article.page {
 		font-weight: normal;
 		padding: 12px 22px;
 
-		&.active {
-			border-bottom: none;
-		}
+		&.active { border-bottom: none; }
 	}
 }
 
@@ -198,4 +203,33 @@ article.page {
 
 .fb_iframe_widget {
 	span { vertical-align: top !important; }
+}
+
+// Login screen
+
+#my-courses {
+	background: none;
+	border: 0;
+	color: inherit;
+	font-size: inherit;
+	padding: 0;
+
+	form#loginform {
+		input[type="text"],
+		input[type="password"] {
+			@extend %bootstrap-form-control;
+			@extend %lsx-form-field;
+			@extend %small-form-field;
+		}
+
+		input[type="submit"] {
+			@include lsx-button-scaffolding();
+			@include lsx-button-colour();
+			@include small-button();
+
+			& + a { margin-left: 15px; }
+		}
+
+		input[type="checkbox"] { margin-right: 10px; }
+	}
 }
