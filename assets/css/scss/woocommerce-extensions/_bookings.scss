@@ -1,0 +1,111 @@
+#wc-bookings-booking-form {
+	border: 0;
+	padding: 0;
+
+	.wc-bookings-booking-cost {
+		margin: 0;
+		border: 0;
+	}
+
+	.wc-bookings-date-picker-date-fields {
+		input { margin-bottom: 0; }
+		label { width: 20%; }
+	}
+
+	.ui-widget { font-family: inherit; }
+
+	.wc-bookings-date-picker {
+		legend {
+			border-bottom: 0;
+			font-size: 15px;
+			margin-bottom: 5px;
+
+			.label {
+				color: initial;
+				font-size: 100%;
+				padding: 0;
+			}
+		}
+
+		.ui-datepicker-header {
+			border: 0;
+			background-image: none;
+		}
+
+		.ui-widget-content {
+			background: none;
+			box-shadow: none;
+		}
+
+		.ui-datepicker {
+			table { font-size: 1em; }
+
+			th { border: 0; }
+
+			td {
+				border: 0;
+
+				&.bookable {
+					a { text-shadow: none; }
+				}
+
+				&.ui-datepicker-today {
+					a,
+					span {
+						box-shadow: inset 0 0 0 3px rgba(#000,.2);
+					}
+				}
+
+				&.fully_booked {
+					a,
+					span {
+						cursor: not-allowed;
+						text-decoration: line-through;
+					}
+				}
+			}
+		}
+	}
+
+	.block-picker {
+		text-align: left;
+
+		li {
+			a {
+				border: 0 !important;
+				padding: 0.236em 0.5407911001em;
+				display: inline-block;
+				text-align: center;
+
+				&:hover {
+					text-decoration: none;
+					border: 0;
+				}
+			}
+		}
+	}
+}
+
+.wc-bookings-booking-form {
+	.form-field {
+		input[type="text"],
+		input[type="number"] {
+			@extend %bootstrap-form-control;
+			@extend %lsx-form-field;
+			@extend %small-form-field;
+		}
+
+		input[type="number"] { width: 70px; }
+	}
+}
+
+.product-type-booking {
+	form.cart {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	table.my_account_bookings { font-size: 0.875em; }
+}
