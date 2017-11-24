@@ -560,59 +560,59 @@ div.pp_woocommerce .close { border-radius: 50%; border-style: solid; border-widt
 
 div.pp_woocommerce .close:hover { opacity: 1; }
 
-.woocommerce-page #reviews #subscribe_to_replies { position: relative; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #subscribe_to_replies { position: relative; }
 
-.woocommerce-page #reviews .product-rating .product-rating-summary, .woocommerce-page #reviews .product-rating .product-rating-details { display: block; width: 100%; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .product-rating .product-rating-summary, .woocommerce-page #reviews:not(.woocommerce-Reviews) .product-rating .product-rating-details { display: block; width: 100%; }
 
-.woocommerce-page #reviews .product-rating .product-rating-summary { text-align: left; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .product-rating .product-rating-summary { text-align: left; }
 
-.woocommerce-page #reviews .product-rating .product-rating-details table td { padding: 0.202em 0.5407911001em; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .product-rating .product-rating-details table td { padding: 0.202em 0.5407911001em; }
 
-.woocommerce-page #reviews .product-rating .product-rating-details table td.rating-count a { text-decoration: none; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .product-rating .product-rating-details table td.rating-count a { text-decoration: none; }
 
-.woocommerce-page #reviews .form-contribution { border: none; padding: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .form-contribution { border: none; padding: 0; }
 
-.woocommerce-page #reviews .form-contribution #review_rating_field fieldset { float: left; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .form-contribution #review_rating_field fieldset { float: left; }
 
-.woocommerce-page #reviews .form-contribution #review_rating_field fieldset label { display: inline-block; float: right; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .form-contribution #review_rating_field fieldset label { display: inline-block; float: right; }
 
-.woocommerce-page #reviews .form-contribution #review_rating_field fieldset label.checkbox:before { font-size: 0.875em; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .form-contribution #review_rating_field fieldset label.checkbox:before { font-size: 0.875em; }
 
-.woocommerce-page #reviews .form-contribution #review_rating_field .star-label { float: none; line-height: 42px; margin-left: 0.6180469716em; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .form-contribution #review_rating_field .star-label { float: none; line-height: 42px; margin-left: 0.6180469716em; }
 
-.woocommerce-page #reviews .form-contribution .form-row { clear: both; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .form-contribution .form-row { clear: both; }
 
-.woocommerce-page #reviews .contribution-karma { margin-left: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .contribution-karma { margin-left: 0; }
 
-.woocommerce-page #reviews #comments { margin-top: 4.25rem; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments { margin-top: 4.25rem; }
 
-.woocommerce-page #reviews #comments ol.commentlist { padding-left: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist { padding-left: 0; }
 
-.woocommerce-page #reviews #comments ol.commentlist li { padding-top: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li { padding-top: 0; }
 
-.woocommerce-page #reviews #comments ol.commentlist li img.avatar { width: 2.617924em; height: auto; margin: 0; float: right !important; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li img.avatar { width: 2.617924em; height: auto; margin: 0; float: right !important; }
 
-.woocommerce-page #reviews #comments ol.commentlist li .description { padding-bottom: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li .description { padding-bottom: 0; }
 
-.woocommerce-page #reviews #comments ol.commentlist li .comment-text { border-radius: 0; margin-left: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li .comment-text { border-radius: 0; margin-left: 0; }
 
-.woocommerce-page #reviews #comments ol.commentlist li .comment-text img, .woocommerce-page #reviews #comments ol.commentlist li .comment-text iframe { margin-bottom: 1.618em; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li .comment-text img, .woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li .comment-text iframe { margin-bottom: 1.618em; }
 
-.woocommerce-page #reviews #comments ol.commentlist li h3.contribution-title { margin: 0; font-size: 1em; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li h3.contribution-title { margin: 0; font-size: 1em; }
 
-.woocommerce-page #reviews #comments ol.commentlist li .contribution-actions a.done { opacity: 0.5; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li .contribution-actions a.done { opacity: 0.5; }
 
-.woocommerce-page #reviews #comments ol.commentlist li ul.children li { margin-bottom: 1.618em; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ol.commentlist li ul.children li { margin-bottom: 1.618em; }
 
-.woocommerce-page #reviews #comments ul.children + .form-contribution_comment { border-top: 0; padding-top: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) #comments ul.children + .form-contribution_comment { border-top: 0; padding-top: 0; }
 
-.woocommerce-page #reviews .contribution-flag-form { border-radius: 0; padding: 1.618em; margin-bottom: 1.618em; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .contribution-flag-form { border-radius: 0; padding: 1.618em; margin-bottom: 1.618em; }
 
-@media (max-width: 767px) { .woocommerce-page #reviews .contributions-filter { float: none; } }
+@media (max-width: 767px) { .woocommerce-page #reviews:not(.woocommerce-Reviews) .contributions-filter { float: none; } }
 
-.woocommerce-page #reviews .contributions-filter p#comments_filter_field select { margin-left: 0; }
+.woocommerce-page #reviews:not(.woocommerce-Reviews) .contributions-filter p#comments_filter_field select { margin-left: 0; }
 
-@media (max-width: 767px) { .woocommerce-page #reviews .contributions-filter p#comments_filter_field select { width: 100%; } }
+@media (max-width: 767px) { .woocommerce-page #reviews:not(.woocommerce-Reviews) .contributions-filter p#comments_filter_field select { width: 100%; } }
 
 .woocommerce-page .form-photo #photo_attachment_file { color: inherit; margin: 1em 0; }
 
