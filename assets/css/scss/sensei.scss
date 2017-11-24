@@ -75,18 +75,12 @@ article.page {
 
 .sensei {
 	.fix {
-		&:after {
-			@extend %sensei-clearfix;
-		}
+		&:after { @extend %sensei-clearfix; }
 	}
 
-	article.post + article.post {
-		margin-top: 4.25rem;
-	}
+	article.post + article.post { margin-top: 4.25rem; }
 
-	.post-entries {
-		margin-top: 4.25rem;
-	}
+	.post-entries { margin-top: 4.25rem; }
 
 	.thumbnail {
 		border: 0;
@@ -97,9 +91,7 @@ article.page {
 
 .lesson-content {
 	.entry {
-		&:after {
-			@extend %sensei-clearfix;
-		}
+		&:after { @extend %sensei-clearfix; }
 	}
 }
 
@@ -170,10 +162,40 @@ article.page {
 	}
 }
 
+.sensei-course-filters {
+	margin-bottom: 2em;
+
+	li {
+		a {
+			border: 0;
+			font-size: 18px;
+			padding: 12px 22px;
+
+			&.active {
+
+			}
+		}
+	}
+}
+
+#user-course-status-toggle {
+	border-bottom: 0;
+	margin-bottom: 2em;
+
+	a {
+		border: none;
+		font-size: 18px;
+		font-weight: normal;
+		padding: 12px 22px;
+
+		&.active {
+			border-bottom: none;
+		}
+	}
+}
+
 // Share
 
 .fb_iframe_widget {
-	span {
-		vertical-align: top !important;
-	}
+	span { vertical-align: top !important; }
 }

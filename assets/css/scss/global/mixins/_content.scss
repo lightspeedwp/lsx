@@ -627,4 +627,38 @@
 			&:hover { background-color: $link; }
 		}
 	}
+
+	// Sensei
+
+	.sensei-course-filters {
+		li {
+			a:not(.btn) {
+				background-color: #FFF;
+				color: $link;
+
+				&.active,
+				&:hover,
+				&:hover:active,
+				&:focus {
+					background-color: $link;
+					color: #FFF;
+				}
+			}
+		}
+	}
+
+	#user-course-status-toggle {
+		a:not(.btn) {
+			background-color: #FFF;
+			color: $link;
+
+			&.active,
+			&:hover,
+			&:hover:active,
+			&:focus {
+				background-color: $link;
+				color: #FFF;
+			}
+		}
+	}
 }
