@@ -27,49 +27,79 @@ if ( ! function_exists( 'lsx_tec_scripts_add_styles' ) ) :
 
 endif;
 
-/**
- * Adds theme stylesheet
- * @package 	lsx
- * @subpackage 	tribe-events
- * @category 	styles
- */
-// function lsx_tribe_breadcrumbs($output) {
-// 	global $wp_query;
-// 	if( (isset($wp_query->tribe_is_event) && true === $wp_query->tribe_is_event) || (isset($wp_query->query_vars['post_type']) && !is_array($wp_query->query_vars['post_type']) && 'tribe_venue' === $wp_query->query_vars['post_type'])){
-// 		if(function_exists('woocommerce_breadcrumb')){
-// 		 	$closing_div = '</nav>';
+if ( ! function_exists( 'lsx_tec_theme_wrapper_start' ) ) :
 
-// 		 	if( is_single()) {
-// 		 		$output = str_replace('Page','<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.esc_html__('Events','lsx').'</a>',$output);
-// 		 		if(isset($wp_query->query_vars['eventDisplay']) && 'all' === $wp_query->query_vars['eventDisplay']){
-// 		 			$output = str_replace($closing_div,get_the_title($wp_query->query_vars['post_parent']).$closing_div,$output);
-// 		 		}else{
-// 		 			$single_event = get_queried_object();
-// 		 			$output = str_replace($closing_div,apply_filters('the_title',$single_event->post_title).$closing_div,$output);
-// 		 		}
-// 		 	}elseif( is_tax()) {
-// 		 		$tax_event = get_queried_object();
-// 		 		$output = str_replace('Page','<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.esc_html__('Events','lsx').'</a>',$output);
-// 		 		$output = str_replace($closing_div,'&nbsp;/&nbsp;'.apply_filters('the_title',$tax_event->name).$closing_div,$output);
-// 		 	}else{
-// 		 		$output = str_replace('Page',esc_html__('Events','lsx'),$output);
-// 		 	}
-// 		 }elseif(function_exists('yoast_breadcrumb')){
-// 		 	$closing_div = '</div>';
-// 		 	$last_breadcrumb = '<span class="breadcrumb_last">'.esc_html__('Events','lsx').'</span>';
+	/**
+	 * The Events Calendar wrapper start.
+	 *
+	 * @package    lsx
+	 * @subpackage the-events-calendar
+	 */
+	function lsx_tec_theme_wrapper_start() {
+		lsx_content_wrap_before();
+		echo '<div id="primary" class="content-area ' . esc_attr( lsx_main_class() ) . '">';
+		lsx_content_before();
+		echo '<main id="main" class="site-main" role="main">';
+		lsx_content_top();
+	}
 
-// 		 	if( is_single()) {
-// 		 		$single_event = get_queried_object();
-// 		 		$output = str_replace($closing_div,'<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.esc_html__('Events','lsx').'</a>&nbsp;/&nbsp;'.apply_filters('the_title',$single_event->post_title),$output);
-// 		 	}elseif( is_tax()) {
-// 		 		$tax_event = get_queried_object();
-// 		 		$output = str_replace($last_breadcrumb,'<a href="'.get_post_type_archive_link( 'tribe_events' ).'">'.esc_html__('Events','lsx').'</a>&nbsp;/&nbsp;'.apply_filters('the_title',$tax_event->name),$output);
+	add_action( 'tribe_events_before_html', 'lsx_tec_theme_wrapper_start', 9 );
 
-// 		 	}else{
-// 		 		$output = str_replace('Page',esc_html__('Events','lsx'),$output);
-// 		 	}
-// 		 }
-// 	}
-// 	return $output;
-// }
-// add_filter( 'lsx_breadcrumbs', 'lsx_tribe_breadcrumbs',1,10 );
+endif;
+
+if ( ! function_exists( 'lsx_tec_theme_wrapper_end' ) ) :
+
+	/**
+	 * The Events Calendar wrapper end.
+	 *
+	 * @package    lsx
+	 * @subpackage the-events-calendar
+	 */
+	function lsx_tec_theme_wrapper_end() {
+		lsx_content_bottom();
+		echo '</main>';
+		lsx_content_after();
+		echo '</div>';
+		lsx_content_wrap_after();
+	}
+
+	add_action( 'tribe_events_after_html', 'lsx_tec_theme_wrapper_end', 11 );
+
+endif;
+
+if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
+
+	/**
+	 * Disable LSX Banners in some pages.
+	 *
+	 * @package    lsx
+	 * @subpackage the-events-calendar
+	 */
+	function lsx_tec_disable_lsx_banner( $disabled ) {
+		global $current_screen;
+
+		$post_types = apply_filters( 'tribe_is_post_type_screen_post_types', Tribe__Main::get_post_types() );
+
+		if ( ! in_array( $current_screen->post_type, $post_types ) ) {
+			$disabled = true;
+		}
+
+		if ( is_null( $id ) && false !== strpos( $current_screen->id, 'tribe' ) ) {
+			$disabled = true;
+		}
+
+		if ( is_single() && tribe_is_event() ) {
+			$disabled = true;
+		}
+
+		return $disabled;
+	}
+
+	// LSX
+	add_filter( 'lsx_global_header_disable', 'lsx_tec_disable_lsx_banner' );
+	// LSX Banners - Plugin, Placeholders
+	add_filter( 'lsx_banner_plugin_disable', 'lsx_tec_disable_lsx_banner' );
+	// LSX Banners - Banner
+	add_filter( 'lsx_banner_disable', 'lsx_tec_disable_lsx_banner' );
+
+endif;

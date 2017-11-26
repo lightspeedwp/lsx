@@ -33,6 +33,7 @@
 * Tweak - Add WooCommerce Bookings compatibility
 * Tweak - Add WooCommerce Product Reviews compatibility
 * Tweak - Add WooCommerce thank you page template
+* Tweak - Add The Events Calendar compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
