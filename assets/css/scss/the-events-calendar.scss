@@ -289,9 +289,7 @@ a.tribe-events-read-more {
 		}
 
 		.tribe-events-event-content {
-			@include media ('>=phone') {
-				flex: 1 0 auto;
-			}
+			@include media ('>=phone') { flex: 1 1 auto; }
 		}
 	}
 }
