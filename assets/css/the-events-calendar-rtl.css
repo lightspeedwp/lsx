@@ -4,6 +4,14 @@
 
 .tribe-events-notices { background-color: #d9edf7; border-color: #bce8f1; color: #31708f; }
 
+.tribe-events-related-events-title { font-size: 30px !important; line-height: 1.2; margin-bottom: 4.25rem; margin-top: 0; text-align: center; }
+
+.tribe-events-related-events-title:after { content: ''; display: block; height: 2px; margin: 2.4rem auto 0; width: 80px; }
+
+.tribe-events-related-events-title > small { color: inherit; display: block; line-height: inherit; margin-top: 8px; }
+
+.tribe-events-related-events-title > small.long-text { margin-top: 16px; }
+
 #tribe-events-pg-template { margin: 0 !important; max-width: none !important; padding: 0 !important; }
 
 .page-template-default:not(.has-sidebar).tribe-theme-lsx article.page { width: 100% !important; }
@@ -74,7 +82,11 @@
 
 #tribe-events-content .tribe-events-tooltip .tribe-events-event-body { overflow: hidden; padding: 10px 12px 0; }
 
+#tribe-events-content .tribe-events-tooltip .tribe-events-event-body .tribe-event-duration { font-weight: bold; }
+
 #tribe-events-content .tribe-events-tooltip .tribe-events-event-body .tribe-event-duration .tribe-events-abbr { margin-bottom: 12px; }
+
+#tribe-events-content .tribe-events-tooltip .tribe-events-event-body .tribe-event-description { padding: 12px 0 0 0; }
 
 #tribe-events-content .tribe-events-tooltip .tribe-events-event-body .tribe-event-description p { margin-bottom: 12px; }
 
@@ -82,15 +94,33 @@
 
 .tribe-events-user-recurrence-toggle input[type="radio"], .tribe-events-user-recurrence-toggle input[type="checkbox"] { margin-left: 8px; }
 
-.tribe-events-list-separator-month { font-size: 18px; padding: 8px 12px; }
+.tribe-events-list-separator-month { font-size: 18px; padding: 8px 12px; text-align: center; }
 
 .tribe-events-list .tribe-events-list-event-title { font-size: 30px; margin-bottom: 12px; }
 
-.tribe-events-loop .tribe-events-event-meta { font-weight: normal; }
+.tribe-events-list .tribe-events-loop .tribe-event-featured { margin-top: 2.25em; padding: 25px; }
+
+.tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-list-event-title { margin-top: 0; }
+
+.tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-list-event-title a { vertical-align: middle; }
+
+.tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-list-event-title .label { font-size: 60%; margin-right: 10px; padding: 3px 12px; text-transform: uppercase; vertical-align: middle; }
+
+@media (max-width: 767px) { .tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-list-event-title .label { display: none; } }
+
+.tribe-events-list .tribe-events-loop .tribe-events-event-meta { font-weight: normal; }
+
+@media (min-width: 768px) { .tribe-events-list .tribe-events-loop .type-tribe_events { display: -webkit-box; display: -ms-flexbox; display: flex; } }
 
 .tribe-events-list .tribe-events-loop .type-tribe_events .tribe-events-event-meta { margin-bottom: 12px; }
 
-.tribe-events-day .tribe-events-day-time-slot h5 { font-size: 18px; margin-top: 35px; padding: 8px 12px; }
+.tribe-events-list .tribe-events-loop .tribe-events-event-image, .tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-event-image { float: none; margin: 0 0 0 35px; text-align: right; width: 350px; }
+
+@media (max-width: 767px) { .tribe-events-list .tribe-events-loop .tribe-events-event-image, .tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-event-image { margin: 0 0 15px 0; width: 100%; } }
+
+@media (min-width: 768px) { .tribe-events-list .tribe-events-loop .tribe-events-event-content { -webkit-box-flex: 1; -ms-flex: 1 0 auto; flex: 1 0 auto; } }
+
+.tribe-events-day .tribe-events-day-time-slot h5 { font-size: 18px; margin-top: 35px; padding: 8px 12px; text-align: center; }
 
 .tribe-events-day .tribe-events-day-time-slot .type-tribe_events { margin-right: 0; }
 
@@ -114,7 +144,17 @@ h2.tribe-events-page-title { font-size: 30px; margin-bottom: 35px; }
 
 .single-tribe_events .tribe-events-event-meta .tribe-events-meta-group .tribe-events-single-section-title { font-size: 22px; font-weight: normal; margin: 20px 0; }
 
-.tribe-events-related-events-title { font-size: 30px; margin-bottom: 15px; text-align: center; }
-
 @media (min-width: 768px) { .tribe-events-single ul.tribe-related-events li { margin-left: 2%; width: 32%; }
   .tribe-events-single ul.tribe-related-events li:last-child { margin-left: 0; } }
+
+.tribe-events-single ul.tribe-related-events li .tribe-related-event-info { padding: 2rem; text-align: center; }
+
+.tribe-events-single ul.tribe-related-events li .tribe-related-event-info .tribe-related-events-title { font-size: 20px; }
+
+.tribe-events-single ul.tribe-related-events li .tribe-related-event-info .moretag { display: block; margin: 2rem -2rem -2rem; padding: 1rem 0; text-align: center; transition: background 300ms ease; }
+
+.tribe-events-single ul.tribe-related-events li .tribe-related-event-info .moretag:after { color: inherit; content: '\f178'; display: inline-block; font-family: 'FontAwesome'; font-size: inherit; margin-right: 5px; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.tribe-events-event-cost { font-weight: bold; }
+
+.tribe-events-event-cost .ticket-cost { margin-right: 10px; }

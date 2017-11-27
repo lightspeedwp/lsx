@@ -736,24 +736,38 @@
 				&, & a { color: #999 !important; }
 			}
 		}
+	}
 
-		#tribe-events-content {
-			.tribe-events-tooltip {
-				h4 { background-color: #384750; }
-			}
+	#tribe-events-content {
+		.tribe-events-tooltip {
+			h4 { background-color: #384750; }
 		}
 	}
 
+	.tribe-events-tooltip {
+		&.tribe-events-tooltip-flipdown {
+			&:before { border-bottom-color: #384750; }
+		}
+
+		.tribe-events-calendar &,
+		.tribe-events-shortcode.view-week &,
+		.tribe-events-week & {
+			border-color: #384750;
+		}
+	}
+
+	.recurring-info-tooltip { border-color: #384750; }
+
 	.tribe-events-list-separator-month {
-		background-color: #DDD;
-		color: #999;
+		background-color: #E6E6E6;
+		color: #4A4A4A;
 	}
 
 	.tribe-events-day {
 		.tribe-events-day-time-slot {
 			h5 {
-				background-color: #DDD;
-				color: #999;
+				background-color: #E6E6E6;
+				color: #4A4A4A;
 			}
 		}
 	}
@@ -761,6 +775,76 @@
 	.single-tribe_events {
 		.tribe-events-schedule {
 			.tribe-events-cost { border: 1px solid #ddd; }
+		}
+	}
+
+	.tribe-events-event-cost {
+		.ticket-cost { background-color: #FFF; }
+	}
+
+	.tribe-events-list {
+		.tribe-events-loop {
+			.tribe-event-featured {
+				background-color: #FFF;
+
+				a:not(.tribe-events-read-more) {
+					color: $link !important;
+
+					&:hover,
+					&:active,
+					&:active:hover,
+					&:focus { color: $hover !important; }
+				}
+
+				.tribe-events-list-event-title {
+					.label { background-color: #d1021b; }
+				}
+
+				.tribe-events-event-meta,
+				.tribe-events-content { color: $color; }
+
+				.tribe-events-event-cost {
+					color: $color;
+
+					.ticket-cost {
+						border: 1px solid $breaker;
+						color: $color;
+					}
+				}
+			}
+		}
+	}
+
+	.tribe-events-related-events-title {
+		color: $header;
+
+		&:after { background-color: $breaker; }
+	}
+
+	.tribe-events-single {
+		ul.tribe-related-events {
+			li {
+				.tribe-related-event-info {
+					.tribe-related-events-title > a {
+						color: $color;
+
+						&:hover,
+						&:active,
+						&:active:hover,
+						&:focus { color: $hover; }
+					}
+
+					.moretag {
+						background-color: $link;
+						color: #FFF;
+
+						&:hover {
+							background-color: $hover;
+							color: #FFF;
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -72,6 +72,31 @@
 	padding: 0 12px;
 }
 
+%lsx-title {
+	font-size: 30px !important;
+	line-height: 1.2;
+	margin-bottom: 4.25rem;
+	margin-top: 0;
+	text-align: center;
+
+	&:after {
+		content: '';
+		display: block;
+		height: 2px;
+		margin: 2.4rem auto 0;
+		width: 80px;
+	}
+
+	& > small {
+		color: inherit;
+		display: block;
+		line-height: inherit;
+		margin-top: 8px;
+
+		&.long-text { margin-top: 16px; }
+	}
+}
+
 @mixin small-button() {
 	&,
 	&:active,
@@ -183,10 +208,14 @@ a.tribe-events-read-more {
 			padding: 10px 12px 0;
 
 			.tribe-event-duration {
+				font-weight: bold;
+
 				.tribe-events-abbr { margin-bottom: 12px; }
 			}
 
 			.tribe-event-description {
+				padding: 12px 0 0 0;
+
 				p { margin-bottom: 12px; }
 			}
 		}
@@ -205,6 +234,7 @@ a.tribe-events-read-more {
 .tribe-events-list-separator-month {
 	font-size: 18px;
 	padding: 8px 12px;
+	text-align: center;
 }
 
 .tribe-events-list {
@@ -212,16 +242,56 @@ a.tribe-events-read-more {
 		font-size: 30px;
 		margin-bottom: 12px;
 	}
-}
 
-.tribe-events-loop {
-	.tribe-events-event-meta { font-weight: normal; }
-}
-
-.tribe-events-list {
 	.tribe-events-loop {
+		.tribe-event-featured {
+			margin-top: 2.25em;
+			padding: 25px;
+
+			.tribe-events-list-event-title {
+				margin-top: 0;
+
+				a { vertical-align: middle; }
+
+				.label {
+					font-size: 60%;
+					margin-left: 10px;
+					padding: 3px 12px;
+					text-transform: uppercase;
+					vertical-align: middle;
+
+					@include media ('<phone') { display: none; }
+				}
+			}
+		}
+
+		.tribe-events-event-meta { font-weight: normal; }
+
 		.type-tribe_events {
+			@include media ('>=phone') {
+				display: flex;
+			}
+
 			.tribe-events-event-meta { margin-bottom: 12px; }
+		}
+
+		.tribe-events-event-image,
+		.tribe-event-featured .tribe-events-event-image {
+			float: none;
+			margin: 0 35px 0 0;
+			text-align: left;
+			width: 350px;
+
+			@include media ('<phone') {
+				margin: 0 0 15px 0;
+				width: 100%;
+			}
+		}
+
+		.tribe-events-event-content {
+			@include media ('>=phone') {
+				flex: 1 0 auto;
+			}
 		}
 	}
 }
@@ -232,6 +302,7 @@ a.tribe-events-read-more {
 			font-size: 18px;
 			margin-top: 35px;
 			padding: 8px 12px;
+			text-align: center;
 		}
 
 		.type-tribe_events { margin-left: 0; }
@@ -283,11 +354,7 @@ h2.tribe-events-page-title {
 	}
 }
 
-.tribe-events-related-events-title {
-	font-size: 30px;
-	margin-bottom: 15px;
-	text-align: center;
-}
+.tribe-events-related-events-title { @extend %lsx-title; }
 
 .tribe-events-single {
 	ul.tribe-related-events {
@@ -297,6 +364,39 @@ h2.tribe-events-page-title {
 				width: 32%;
 				&:last-child { margin-right: 0; }
 			}
+
+			.tribe-related-event-info {
+				padding: 2rem;
+				text-align: center;
+
+				.tribe-related-events-title { font-size: 20px; }
+
+				.moretag {
+					display: block;
+					margin: 2rem -2rem -2rem;
+					padding: 1rem 0;
+					text-align: center;
+					transition: background 300ms ease;
+
+					&:after {
+						color: inherit;
+						content: '\f178';
+						display: inline-block;
+						font-family: 'FontAwesome';
+						font-size: inherit;
+						margin-left: 5px;
+						text-rendering: auto;
+
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+					}
+				}
+			}
 		}
 	}
+}
+
+.tribe-events-event-cost {
+	font-weight: bold;
+	.ticket-cost { margin-left: 10px; }
 }
