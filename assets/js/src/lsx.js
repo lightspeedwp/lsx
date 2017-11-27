@@ -518,7 +518,7 @@ var lsx = Object.create( null );
 	 */
 
 	lsx.wc_fix_subscribe_to_replies_checkbox = function() {
-		$( 'input[name="subscribe_to_replies"' ).removeClass( 'form-control' );
+		$( 'input[name="subscribe_to_replies"]' ).removeClass( 'form-control' );
 	};
 
 	/**
@@ -538,6 +538,19 @@ var lsx = Object.create( null );
 		$document.on( 'click', '.pp_content_container .close', function( e ) {
 			$.prettyPhoto.close();
 		} );
+	};
+
+	/**
+	 * Fix WC subscriptions empty message.
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+
+	lsx.wc_fix_subscriptions_empty_message = function() {
+		if ( '' === $( '.first-payment-date' ).text() ) {
+			$( '.first-payment-date' ).remove();
+		}
 	};
 
 	/**
@@ -581,6 +594,7 @@ var lsx = Object.create( null );
 		lsx.wc_fix_messages_visual();
 		lsx.wc_fix_subscribe_to_replies_checkbox();
 		lsx.wc_add_quick_view_close_button();
+		lsx.wc_fix_subscriptions_empty_message();
 
 	} );
 
