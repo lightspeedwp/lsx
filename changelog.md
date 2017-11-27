@@ -35,6 +35,7 @@
 * Tweak - Add WooCommerce thank you page template
 * Tweak - Add The Events Calendar compatibility
 * Fix - Make the menu background image full-width (infinite) when it is a 100% column
+* Tweak - Add WooCommerce Subscriptions compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
