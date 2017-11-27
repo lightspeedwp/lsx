@@ -124,7 +124,10 @@ article.page {
 }
 
 #tribe-bar-form {
-	#tribe-bar-views { padding: 0; }
+	#tribe-bar-views {
+		padding: 0;
+		.tribe-bar-views-list { padding: 0; }
+	}
 
 	.tribe-bar-submit {
 		input[type=submit] {
