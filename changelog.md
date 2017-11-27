@@ -36,6 +36,7 @@
 * Tweak - Add The Events Calendar compatibility
 * Fix - Make the menu background image full-width (infinite) when it is a 100% column
 * Tweak - Add WooCommerce Subscriptions compatibility
+* Tweak - Add WooCommerce Product Retailers compatibility
 
 ### 2.0.0
 * New totally awesome version! The visual was fully redesigned
