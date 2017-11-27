@@ -177,6 +177,13 @@ a.tribe-events-read-more {
 	.tribe-events-sub-nav { display: none; }
 }
 
+#tribe-events-footer {
+	#comments + &,
+	#respond + & {
+		margin-top: 8.5rem;
+	}
+}
+
 .tribe-theme-lsx {
 	.datepicker { min-width: 160px; }
 }
