@@ -3,8 +3,10 @@
 	padding: 0;
 
 	.wc-bookings-booking-cost {
-		margin: 0;
-		border: 0;
+		@extend %bootstrap-message;
+		@extend %bootstrap-message-success;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.wc-bookings-date-picker-date-fields {
@@ -30,6 +32,8 @@
 		.ui-datepicker-header {
 			border: 0;
 			background-image: none;
+
+			.ui-datepicker-title { font-weight: bold; }
 		}
 
 		.ui-widget-content {
@@ -40,7 +44,10 @@
 		.ui-datepicker {
 			table { font-size: 1em; }
 
-			th { border: 0; }
+			th {
+				border: 0;
+				font-weight: bold;
+			}
 
 			td {
 				border: 0;

@@ -30,11 +30,11 @@
 
 .woocommerce-product-search .search-field:focus, #wc_am_lost_api_key_form input[type="text"]:focus, #add_payment_method table.cart td.actions .coupon .input-text:focus, .woocommerce-cart table.cart td.actions .coupon .input-text:focus, .woocommerce-checkout table.cart td.actions .coupon .input-text:focus, .woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row textarea:focus, .woocommerce form .form-row select:focus, .woocommerce form.comment-form input[type="text"]:focus, .woocommerce form.comment-form input[type="email"]:focus, .woocommerce form.comment-form textarea:focus, .woocommerce div.product form.cart .variations select:focus, .woocommerce-page #main .quantity .qty:focus, .woocommerce-page #main .woocommerce-ordering select:focus, .wc-bookings-booking-form .form-field input[type="text"]:focus, .wc-bookings-booking-form .form-field input[type="number"]:focus, #address_form select.address-select:focus, input.ms_shipping_date:focus, textarea.ms_shipping_note:focus, select#ms_addresses:focus, select.shipping_methods.shipping_method:focus, #wl-wrapper .wl-search-form input.find-input:focus, .wl-sel:focus, .wl-priv-sel:focus { border-color: #418AD0; }
 
-.woocommerce-message, .woocommerce-info, .woocommerce-error, .woocommerce-noreviews, .woocommerce_message, .woocommerce_info, .woocommerce_error, .woocommerce_noreviews, p.no-comments, .stock, .woocommerce-password-strength, .first-payment-date { border-radius: 4px; border: 1px solid transparent; margin-bottom: 20px; padding: 15px !important; }
+.woocommerce-message, .woocommerce-info, .woocommerce-error, .woocommerce-noreviews, .woocommerce_message, .woocommerce_info, .woocommerce_error, .woocommerce_noreviews, p.no-comments, .stock, .woocommerce-password-strength, #wc-bookings-booking-form .wc-bookings-booking-cost, .first-payment-date { border-radius: 4px; border: 1px solid transparent; margin-bottom: 20px; padding: 15px !important; }
 
-.woocommerce-message:before, .woocommerce-info:before, .woocommerce-error:before, .woocommerce-noreviews:before, .woocommerce_message:before, .woocommerce_info:before, .woocommerce_error:before, .woocommerce_noreviews:before, p.no-comments:before, .stock:before, .woocommerce-password-strength:before, .first-payment-date:before { display: none; }
+.woocommerce-message:before, .woocommerce-info:before, .woocommerce-error:before, .woocommerce-noreviews:before, .woocommerce_message:before, .woocommerce_info:before, .woocommerce_error:before, .woocommerce_noreviews:before, p.no-comments:before, .stock:before, .woocommerce-password-strength:before, #wc-bookings-booking-form .wc-bookings-booking-cost:before, .first-payment-date:before { display: none; }
 
-.woocommerce-message, .woocommerce_message, .stock.in-stock, .woocommerce-password-strength.strong { background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; }
+.woocommerce-message, .woocommerce_message, .stock.in-stock, .woocommerce-password-strength.strong, #wc-bookings-booking-form .wc-bookings-booking-cost { background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; }
 
 .woocommerce-error, .woocommerce_error, .stock.out-of-stock, .woocommerce-password-strength.short, .woocommerce-password-strength.bad { background-color: #f2dede; border-color: #ebccd1; color: #a94442; }
 
@@ -476,7 +476,7 @@
 
 #wc-bookings-booking-form { border: 0; padding: 0; }
 
-#wc-bookings-booking-form .wc-bookings-booking-cost { margin: 0; border: 0; }
+#wc-bookings-booking-form .wc-bookings-booking-cost { margin-left: 0; margin-right: 0; }
 
 #wc-bookings-booking-form .wc-bookings-date-picker-date-fields input { margin-bottom: 0; }
 
@@ -490,11 +490,13 @@
 
 #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-header { border: 0; background-image: none; }
 
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker-header .ui-datepicker-title { font-weight: bold; }
+
 #wc-bookings-booking-form .wc-bookings-date-picker .ui-widget-content { background: none; box-shadow: none; }
 
 #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker table { font-size: 1em; }
 
-#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker th { border: 0; }
+#wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker th { border: 0; font-weight: bold; }
 
 #wc-bookings-booking-form .wc-bookings-date-picker .ui-datepicker td { border: 0; }
 
