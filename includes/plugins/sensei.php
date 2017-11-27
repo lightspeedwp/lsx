@@ -138,3 +138,50 @@ remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'cou
 add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 11, 0 );
 add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_sorting' ),12 );
 add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_filters' ),12 );
+
+if ( ! function_exists( 'lsx_sensei_add_buttons' ) ) :
+
+	/**
+	 * Add extra buttons to the single view on lists.
+	 *
+	 * @package    lsx
+	 * @subpackage sensei
+	 */
+	function lsx_sensei_add_buttons( $course_id ) {
+		global $post, $current_user;
+		$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
+		?>
+			<section class="entry-actions">
+				<a class="button" href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php esc_html_e( 'View course', 'lsx' ); ?></a>
+
+				<?php
+					if ( is_user_logged_in() && ! $is_user_taking_course ) {
+						Sensei_WC::the_add_to_cart_button_html( $post->ID );
+					}
+				?>
+			</section>
+		<?php
+	}
+
+	add_action( 'sensei_course_content_inside_after', 'lsx_sensei_add_buttons', 9 );
+
+endif;
+
+if ( ! function_exists( 'lsx_sensei_add_to_cart_text' ) ) :
+
+	/**
+	 * Change add to cart button text.
+	 *
+	 * @package    lsx
+	 * @subpackage sensei
+	 */
+	function lsx_sensei_add_to_cart_text( $text ) {
+		$text = esc_html__( 'Add to cart', 'lsx' );
+		return $text;
+	}
+
+	add_filter( 'sensei_wc_single_add_to_cart_button_text', 'lsx_sensei_add_to_cart_text' );
+
+endif;
+
+

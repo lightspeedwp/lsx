@@ -199,6 +199,26 @@ article.page {
 	}
 }
 
+.entry-actions {
+	margin-bottom: 2.4rem;
+
+	& > form {
+		display: inline;
+		margin-left: 1em;
+		&:first-child { margin-left: 0; }
+	}
+}
+
+.sensei-results-links {
+	display: inline;
+	overflow: hidden;
+
+	.entry-actions & {
+		margin-bottom: 0;
+		a.view-results { float: none; }
+	}
+}
+
 // Share
 
 .fb_iframe_widget {
