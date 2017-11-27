@@ -522,6 +522,7 @@ body.modal-open div.modal-backdrop { z-index: 2049 !important; }
   #masthead .primary-navbar { -ms-flex-item-align: stretch; align-self: stretch; display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-positive: 1; flex-grow: 1; margin-right: 100px; margin-left: 45px; padding: 0; }
   .header-expanded #masthead .primary-navbar, .header-central #masthead .primary-navbar { margin-right: 0; margin-left: 0; min-height: 60px; }
   #masthead .primary-navbar > .nav { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; height: 100%; }
+  .header-expanded #masthead .primary-navbar > .nav, .header-central #masthead .primary-navbar > .nav { margin: 0 -9999px; padding: 0 9999px; }
   .header-central #masthead .primary-navbar > .nav { -ms-flex-line-pack: center; align-content: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row nowrap; flex-flow: row nowrap; float: none; height: 60px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; right: auto; position: static; left: auto; }
   #masthead .primary-navbar > .nav > .menu-item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row nowrap; flex-flow: row nowrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
   #masthead .primary-navbar > .nav > .menu-item > a, #masthead .primary-navbar > .nav > .menu-item.active > a { -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; font-size: 14px; line-height: 14px; padding: 0 15px; transition: all 300ms ease; }
@@ -543,8 +544,9 @@ body.modal-open div.modal-backdrop { z-index: 2049 !important; }
   #masthead .primary-navbar .dropdown-menu > .menu-item a { color: #FFF; }
   #masthead .primary-navbar .dropdown-menu .dropdown-menu > .menu-item a { color: #FFF; } }
 
-@media (min-width: 1200px) { #masthead .primary-navbar > .nav > .menu-item:hover > a, #masthead .primary-navbar > .nav > .menu-item.active:hover > a { background-color: #374750; color: #418AD0; }
-  #masthead .primary-navbar > .nav > .menu-item > a, #masthead .primary-navbar > .nav > .menu-item.active > a { background-color: #FFF; color: #515151; }
+@media (min-width: 1200px) { #masthead .primary-navbar > .nav { background-color: #FFF; }
+  #masthead .primary-navbar > .nav > .menu-item:hover > a, #masthead .primary-navbar > .nav > .menu-item.active:hover > a { background-color: #374750; color: #418AD0; }
+  #masthead .primary-navbar > .nav > .menu-item > a, #masthead .primary-navbar > .nav > .menu-item.active > a { background-color: transparent; color: #515151; }
   #masthead .primary-navbar > .nav .dropdown-menu { background-color: #374750; }
   #masthead .primary-navbar > .nav .dropdown-menu > .menu-item { color: #FFF; }
   #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:active:hover, #masthead .primary-navbar > .nav .dropdown-menu > .menu-item:focus { background-color: #2B3840; color: #418AD0; }

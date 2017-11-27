@@ -167,6 +167,12 @@
 				flex: 1;
 				height: 100%;
 
+				.header-expanded &,
+				.header-central & {
+					margin: 0 -9999px;
+					padding: 0 9999px;
+				}
+
 				.header-central & {
 					align-content: center;
 					display: flex;

@@ -47,6 +47,8 @@
 		#masthead {
 			.primary-navbar {
 				& > .nav {
+					background-color: $bg;
+
 					& > .menu-item {
 						&:hover,
 						&.active:hover {
@@ -58,7 +60,7 @@
 
 						& > a,
 						&.active > a {
-							background-color: $bg;
+							background-color: transparent;
 							color: $link;
 						}
 					}
