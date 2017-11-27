@@ -71,7 +71,7 @@ echo tribe_event_featured_image( null, 'medium' );
 	<!-- Event Cost -->
 	<?php if ( tribe_get_cost() ) : ?>
 		<div class="tribe-events-event-cost">
-			<?php esc_html_e( 'Price:', 'the-events-calendar' ) ?>
+			<?php esc_html_e( 'Price:', 'lsx' ) ?>
 			<span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>
 			<?php
 			/**
