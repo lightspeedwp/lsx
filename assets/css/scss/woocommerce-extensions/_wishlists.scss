@@ -128,11 +128,13 @@
 
 	.panel {
 		border: none;
-		border-radius: none;
+		border-radius: 0;
 		box-shadow: none;
 		padding: 2em;
 
 		& > *:last-child { margin-bottom: 0; }
+
+		.wl-form { overflow-x: scroll; }
 	}
 }
 
