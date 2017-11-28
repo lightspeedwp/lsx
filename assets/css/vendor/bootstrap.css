@@ -1503,11 +1503,11 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active { border-color: #418AD0
 
 .alert-warning .alert-link { color: #66512c; }
 
-.alert-danger { background-color: #f2dede; border-color: #ebccd1; color: #a94442; }
+.alert-danger, .alert-error { background-color: #f2dede; border-color: #ebccd1; color: #a94442; }
 
-.alert-danger hr { border-top-color: #e4b9c0; }
+.alert-danger hr, .alert-error hr { border-top-color: #e4b9c0; }
 
-.alert-danger .alert-link { color: #843534; }
+.alert-danger .alert-link, .alert-error .alert-link { color: #843534; }
 
 .media { margin-top: 15px; }
 

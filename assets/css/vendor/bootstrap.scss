@@ -55,3 +55,6 @@
 // Utility classes
 @import 'bootstrap/utilities';
 @import 'bootstrap/responsive-utilities';
+
+// LSX extending
+.alert-error { @extend .alert-danger; }
