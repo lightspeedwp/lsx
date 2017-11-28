@@ -185,9 +185,9 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 				$widget = ob_get_clean();
 
 				if ( is_cart() ) {
-					$item_class = 'current-menu-item';
+					$class = 'current-menu-item';
 				} else {
-					$item_class = '';
+					$class = '';
 				}
 
 				$item_class = 'menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown lsx-wc-cart-menu-item ' . $class;
