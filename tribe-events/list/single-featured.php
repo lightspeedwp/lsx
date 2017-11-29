@@ -33,7 +33,7 @@ echo tribe_event_featured_image( null, 'large' );
 			<?php the_title() ?>
 		</a>
 
-		<span class="label label-default"><?php esc_html_e( 'Featured', 'the-events-calendar' ) ?></span>
+		<span class="label label-default"><?php esc_html_e( 'Featured', 'lsx' ) ?></span>
 	</h2>
 	<?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
@@ -79,7 +79,7 @@ echo tribe_event_featured_image( null, 'large' );
 	<?php do_action( 'tribe_events_before_the_content' ) ?>
 	<div class="tribe-events-list-event-description tribe-events-content">
 		<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
-		<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?></a>
+		<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'lsx' ) ?></a>
 	</div><!-- .tribe-events-list-event-description -->
 
 	<?php do_action( 'tribe_events_after_the_content' ); ?>

@@ -599,7 +599,7 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 				<form role="search" method="get" action="<?php echo esc_url( home_url() ); ?>" class="lsx-wc-footer-bar-form">
 					<fieldset>
 						<legend class="screen-reader-text"><?php esc_html_e( 'Search products', 'lsx' ); ?></legend>
-						<input type="search" name="s" placeholder="<?php esc_attr_e( 'Search products…', 'lsx' ); ?>" class="form-control">
+						<input type="search" name="s" placeholder="<?php esc_attr_e( 'Search products...', 'lsx' ); ?>" class="form-control">
 					</fieldset>
 				</form>
 
