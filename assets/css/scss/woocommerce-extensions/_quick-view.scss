@@ -15,6 +15,7 @@
 			@extend %small-form-field;
 		}
 
+		a.button,
 		button.button {
 			@include lsx-button-scaffolding();
 			@include lsx-button-colour();
@@ -48,6 +49,8 @@ div.quick-view {
 			line-height: 14px !important;
 		}
 	}
+
+	div.quick-view-content { overflow: visible !important; }
 }
 
 div.pp_woocommerce {
