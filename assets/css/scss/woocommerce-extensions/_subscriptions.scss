@@ -1,6 +1,10 @@
-.first-payment-date {
+.first-payment-date,
+.limited-subscription-notice {
 	@extend %bootstrap-message;
 	@extend %bootstrap-message-info;
+}
+
+.first-payment-date {
 	font-weight: bold;
 	small { font-size: 100%; }
 }
