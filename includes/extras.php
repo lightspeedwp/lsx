@@ -332,7 +332,19 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 	 * @subpackage extras
 	 */
 	function lsx_the_excerpt_filter( $excerpt ) {
-		$show_full_content = has_post_format( apply_filters( 'lsx_the_excerpt_filter_post_types', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' ) ) );
+
+		$post_formats = array(
+			'aside' => 'aside',
+			'gallery' => 'gallery',
+			'link' => 'link',
+			'image' => 'image',
+			'quote' => 'quote',
+			'status' => 'status',
+			'video' => 'video',
+			'audio' => 'audio'
+		);
+
+		$show_full_content = has_post_format( apply_filters( 'lsx_the_excerpt_filter_post_types', $post_formats ) );
 
 		if ( ! $show_full_content ) {
 			if ( '' !== $excerpt && ! stristr( $excerpt, 'moretag' ) ) {
