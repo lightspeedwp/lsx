@@ -522,3 +522,15 @@ if ( ! function_exists( 'lsx_full_width_widget_output' ) ) :
 endif;
 
 add_filter( 'lsx_widget_output', 'lsx_full_width_widget_output', 10, 3 );
+
+/**
+ * Check if the content has a restricted post format that needs to show a full excerpt.
+ */
+function lsx_post_format_force_content_on_list() {
+	$post_formats = apply_filters( 'lsx_post_format_force_content_on_list', array('video' => 'video', 'audio' => 'audio', 'quote' => 'quote', 'link' => 'link') );
+	$return = false;
+	if ( ! has_post_format( $post_formats ) ) {
+		$return = true;
+	}
+	return $return;
+}

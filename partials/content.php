@@ -88,7 +88,7 @@
 
 			<?php if ( has_post_format( array( 'quote' ) ) || apply_filters( 'lsx_blog_display_text_on_list', true ) ) : ?>
 
-				<?php if ( ! has_post_format( array( 'video', 'audio', 'quote', 'link' ) ) && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
+				<?php if ( lsx_post_format_force_content_on_list() && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
 
 					<div class="entry-summary">
 						<?php the_excerpt(); ?>

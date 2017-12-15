@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.1.1
+* Dev - Added in a filter to handle which post formats are forced to show the full content.
+
 ### 2.1.0
 * Fix - Fixed conflict from global style affecting slick dots
 * Fix - Removed the setting that turned LSX as LSX (itself) child theme
