@@ -374,7 +374,19 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 
 		if ( empty( $wpse_excerpt ) ) {
 			$wpse_excerpt      = get_the_content( '' );
-			$show_full_content = has_post_format( array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' ) );
+
+			$post_formats = array(
+				'aside' => 'aside',
+				'gallery' => 'gallery',
+				'link' => 'link',
+				'image' => 'image',
+				'quote' => 'quote',
+				'status' => 'status',
+				'video' => 'video',
+				'audio' => 'audio'
+			);
+
+			$show_full_content = has_post_format( apply_filters( 'lsx_excerpt_read_more_post_formats', $post_formats )  );
 
 			if ( ! $show_full_content ) {
 				$wpse_excerpt = strip_shortcodes( $wpse_excerpt );
