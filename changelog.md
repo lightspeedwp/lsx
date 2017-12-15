@@ -2,6 +2,7 @@
 
 ### 2.1.1
 * Dev - Added in a filter to handle which post formats are forced to show the full content.
+* Dev - Added in a filter to allow which post formats show a thumbnail
 
 ### 2.1.0
 * Fix - Fixed conflict from global style affecting slick dots
