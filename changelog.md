@@ -1,5 +1,9 @@
 ## LSX Changelog
 
+### 2.1.1
+* Fix - Added the Sass files for child theme development
+* Fix - Fixed styling issues with the WooCommerce layouts
+
 ### 2.1.0
 * Fix - Fixed conflict from global style affecting slick dots
 * Fix - Removed the setting that turned LSX as LSX (itself) child theme
