@@ -9,7 +9,15 @@
 <?php lsx_entry_before(); ?>
 
 <?php
-	$no_thumb_post_formats = array( 'audio', 'gallery', 'image', 'link', 'quote', 'video' );
+	$no_thumb_post_types = array(
+			'audio' => 'audio',
+			'gallery' => 'gallery',
+			'image' => 'image',
+			'link' => 'link',
+			'quote' => 'quote',
+			'video' => 'video' );
+	$no_thumb_post_formats = apply_filters ( 'lsx_no_thumb_post_formats', $no_thumb_post_types  );
+
 	$has_thumb = has_post_thumbnail() && ! has_post_format( $no_thumb_post_formats );
 
 	if ( $has_thumb ) {
@@ -88,7 +96,7 @@
 
 			<?php if ( has_post_format( array( 'quote' ) ) || apply_filters( 'lsx_blog_display_text_on_list', true ) ) : ?>
 
-				<?php if ( ! has_post_format( array( 'video', 'audio', 'quote', 'link' ) ) && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
+				<?php if ( lsx_post_format_force_content_on_list() && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
 
 					<div class="entry-summary">
 						<?php the_excerpt(); ?>

@@ -176,7 +176,9 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 	function lsx_wc_add_cart( $items, $args ) {
 		$cart_menu_item_position = apply_filters( 'lsx_wc_cart_menu_item_position', 'primary' );
 
-		if ( $cart_menu_item_position === $args->theme_location ) {
+		$cart_logged_out_position = $cart_menu_item_position . '_logged_out';
+
+		if ( $cart_menu_item_position === $args->theme_location || $cart_logged_out_position === $args->theme_location ) {
 			$customizer_option  = get_theme_mod( 'lsx_header_wc_cart', false );
 
 			if ( ! empty( $customizer_option ) ) {
@@ -283,6 +285,10 @@ if ( ! function_exists( 'lsx_wc_change_price_html' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage woocommerce
+	 *
+	 * @param $price string
+	 * @param $product WC_Product
+	 * @return string
 	 */
 	function lsx_wc_change_price_html( $price, $product ) {
 		if ( empty( $product->get_price() ) ) {

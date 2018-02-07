@@ -25,6 +25,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
+					WC()->payment_gateways()->payment_gateways;
 					$order_key = isset( $_GET['key'] ) ? wc_clean( $_GET['key'] ) : '';
 					$order_id  = absint( $wp->query_vars['order-received'] );
 					$order = wc_get_order( $order_id );
@@ -225,6 +226,11 @@ get_header(); ?>
 									?>
 								</tfoot>
 							</table>
+
+							<?php if ( 'bacs' === $order->get_payment_method() ) { ?>
+								<h2><?php esc_html_e( 'Bank Details', 'lsx' ); ?></h2>
+								<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+							<?php } ?>
 						</div>
 					</div>
 

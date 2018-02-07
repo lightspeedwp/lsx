@@ -2,7 +2,10 @@
 
 ### 2.1.1
 * Fix - Added the Sass files for child theme development
-* Fix - Fixed styling issues with the WooCommerce layouts
+* Dev - Added in a filter to handle which post formats are forced to show the full content.
+* Dev - Added in a filter to allow which post formats show a thumbnail
+* Dev - Added in the Bacs Bank details on the WC "Thank You" page
+* Dev - Allowing the cart to show on the Logged out menu as well.  (LSX Login and WooCommerce integration)
 
 ### 2.1.0
 * Fix - Fixed conflict from global style affecting slick dots
