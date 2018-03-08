@@ -31,7 +31,7 @@ global $product; ?>
 	</a>
 
 	<h5 class="lsx-woocommerce-title">
-		<a href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo $product->get_name(); ?></a>
+		<a href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo wp_kses_post( $product->get_name() ); ?></a>
 	</h5>
 
 	<?php if ( ! empty( $show_rating ) ) : ?>
@@ -40,7 +40,9 @@ global $product; ?>
 		</div>
 	<?php endif; ?>
 
-	<?php if ( $price_html = $product->get_price_html() ) : ?>
+	<?php
+		$price_html = $product->get_price_html();
+		if ( $price_html ) : ?>
 		<div class="lsx-woocommerce-price">
 			<?php echo wp_kses_post( $price_html ); ?>
 		</div>
