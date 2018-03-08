@@ -90,7 +90,7 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 						array(
 							'title' => '',
-							'text'  => wp_kses_post( '<div class="lsx-full-width-alt"><div class="row"><div class="col-xs-12"><h3>A big CTA title</h3><p class="text-center"><a class="btn cta-btn" href="http://www.lsdeb.biz/" target="_blank">Hire Us</a><p></div></div></div>' ),
+							'text'  => wp_kses_post( '<div class="lsx-full-width-alt"><div class="row"><div class="col-xs-12"><h3>A big CTA title</h3><p class="text-center"><a class="btn cta-btn" href="http://www.lsdeb.biz/" target="_blank" rel=”noreferrer noopener”>Hire Us</a><p></div></div></div>' ),
 						),
 					),
 

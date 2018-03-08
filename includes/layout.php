@@ -309,7 +309,7 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 					<?php if ( ! empty( $author_url ) || ! empty( $author_email ) || ! empty( $author_facebook ) || ! empty( $author_twitter ) || ! empty( $author_googleplus ) ) : ?>
 						<div class="archive-author-social-links">
 							<?php if ( ! empty( $author_url ) ) : ?>
-								<a href="<?php echo esc_url( $author_url ); ?>" target="_blank" rel="nofollow" class="archive-author-social-link archive-author-social-link-url"><i class="fa fa-link" aria-hidden="true"></i></a>
+								<a href="<?php echo esc_url( $author_url ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-url"><i class="fa fa-link" aria-hidden="true"></i></a>
 							<?php endif; ?>
 
 							<?php if ( ! empty( $author_email ) ) : ?>
@@ -317,15 +317,15 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 							<?php endif; ?>
 
 							<?php if ( ! empty( $author_facebook ) ) : ?>
-								<a href="<?php echo esc_url( $author_facebook ); ?>" target="_blank" rel="nofollow" class="archive-author-social-link archive-author-social-link-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+								<a href="<?php echo esc_url( $author_facebook ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 							<?php endif; ?>
 
 							<?php if ( ! empty( $author_twitter ) ) : ?>
-								<a href="https://twitter.com/<?php echo esc_attr( $author_twitter ); ?>" target="_blank" rel="nofollow" class="archive-author-social-link archive-author-social-link-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+								<a href="https://twitter.com/<?php echo esc_attr( $author_twitter ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 							<?php endif; ?>
 
 							<?php if ( ! empty( $author_googleplus ) ) : ?>
-								<a href="<?php echo esc_url( $author_googleplus ); ?>" target="_blank" rel="nofollow" class="archive-author-social-link archive-author-social-link-googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+								<a href="<?php echo esc_url( $author_googleplus ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
 							<?php endif; ?>
 						</div>
 					<?php endif; ?>
