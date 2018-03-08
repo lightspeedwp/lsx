@@ -808,3 +808,14 @@ if ( ! function_exists( 'lsx_wc_product_searchform' ) ) :
 	}
 endif;
 add_filter( 'get_product_search_form' , 'lsx_wc_product_searchform', 10, 1 );
+
+/**
+ * Output the product tabs.
+ */
+function woocommerce_output_product_data_tabs() {
+	$html = wc_get_template_html( 'single-product/tabs/tabs.php' );
+
+	//$html = str_replace( 'woocommerce-wc-tabs nav nav-tabs-wrapper', 'woocommerce-tabs wc-tabs-wrapper', $html );
+	$html = str_replace( '"tabs wc-tabs', '"nav nav-tabs wc-tabs', $html );
+	echo wp_kses_post( $html );
+}

@@ -5,6 +5,7 @@
 * Dev - Added in a .vcard schema for the author post meta
 * Dev - Added in the .updated class for the hentry schema
 * Dev - Removed the WooCommerce product form template and customized it via the `get_product_search_form` filter
+* Dev - Removed the tabs.php file conflicting with WP updates.
 
 ### 2.1.1
 * Fix - Added the Sass files for child theme development
