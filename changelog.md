@@ -1,5 +1,11 @@
 ## LSX Changelog
 
+### 2.1.2
+* Dev - Removed the .hentry class from the `post_class` output
+* Dev - Added in a .vcard schema for the author post meta
+* Dev - Added in the .updated class for the hentry schema
+* Dev - Removed the WooCommerce product form template and customized it via the `get_product_search_form` filter
+
 ### 2.1.1
 * Fix - Added the Sass files for child theme development
 * Dev - Added in a filter to handle which post formats are forced to show the full content.

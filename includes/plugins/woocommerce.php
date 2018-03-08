@@ -776,3 +776,35 @@ if ( ! function_exists( 'lsx_wc_bundle_products' ) ) :
 	}
 
 endif;
+
+
+if ( ! function_exists( 'lsx_wc_product_searchform' ) ) :
+	/**
+	 * woo_custom_product_searchform
+	 *
+	 * @access      public
+	 * @since       1.0
+	 * @return      void
+	 */
+	function lsx_wc_product_searchform( $form ) {
+
+		$form = '
+			<form role="search" method="get" class="search-form form-inline" id="searchform" action="<?php echo esc_url( home_url( \'/\' ) ); ?>">
+				<div class="input-group">
+					<input type="search" value="<?php if ( is_search() ) { echo get_search_query(); } ?>" name="s" class="search-field form-control" placeholder="<?php esc_attr_e( \'Search\', \'lsx\' ); ?> <?php echo esc_attr( get_bloginfo( \'name\' ) ); ?>">
+					<label class="hide"><?php esc_attr_e( \'Search for:\', \'lsx\' ); ?></label>
+			
+					<span class="input-group-btn">
+						<button type="submit" class="search-submit btn btn-default"><span class="fa fa-search"></span></button>
+					</span>
+				</div>
+			
+				<input type="hidden" name="post_type" value="product" />
+			</form>		
+		';
+
+		return $form;
+
+	}
+endif;
+add_filter( 'get_product_search_form' , 'lsx_wc_product_searchform', 10, 1 );
