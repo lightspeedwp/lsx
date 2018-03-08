@@ -810,7 +810,7 @@ endif;
 add_filter( 'get_product_search_form' , 'lsx_wc_product_searchform', 10, 1 );
 
 /**
- * Output the product tabs.
+ * Add in nav classes for the Product Tabs
  */
 function woocommerce_output_product_data_tabs() {
 	$html = wc_get_template_html( 'single-product/tabs/tabs.php' );
@@ -819,3 +819,42 @@ function woocommerce_output_product_data_tabs() {
 	$html = str_replace( '"tabs wc-tabs', '"nav nav-tabs wc-tabs', $html );
 	echo wp_kses_post( $html );
 }
+
+/**
+ * Output the pagination.
+ */
+function woocommerce_pagination() {
+	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
+		return;
+	}
+	$args = array(
+		'total'   => wc_get_loop_prop( 'total_pages' ),
+		'current' => wc_get_loop_prop( 'current_page' ),
+	);
+
+	if ( wc_get_loop_prop( 'is_shortcode' ) ) {
+		$args['base']   = esc_url_raw( add_query_arg( 'product-page', '%#%', false ) );
+		$args['format'] = '?product-page = %#%';
+	} else {
+		$args['base']   = esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
+		$args['format'] = '';
+	}
+
+	echo wp_kses_post( '<div class="lsx-pagination-wrapper">');
+	$template = wc_get_template_html( 'loop/pagination.php', $args );
+	$template = str_replace( 'woocommerce-pagination', 'lsx-pagination', $template );
+	echo wp_kses_post( $template );
+	echo wp_kses_post( '</div>');
+}
+
+function lsx_wc_pagination_args( $args ) {
+	$args['prev_text'] = '<span class="meta-nav">&larr;</span> ' . esc_html__( 'Previous', 'lsx' );
+	$args['next_text'] = esc_html__( 'Next', 'lsx' ) . ' <span class="meta-nav">&rarr;</span>';
+	$args['type']	   = 'plain';
+	return $args;
+}
+add_filter( 'woocommerce_pagination_args', 'lsx_wc_pagination_args',10 ,1 );
+
+/*
+
+*/
