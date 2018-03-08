@@ -26,7 +26,7 @@ global $product; ?>
 <div class="lsx-woocommerce-slot">
 	<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
 		<figure class="lsx-woocommerce-avatar">
-			<?php echo $product->get_image( 'lsx-thumbnail-square' ); ?>
+			<?php echo wp_kses_post( $product->get_image( 'lsx-thumbnail-square' ) ); ?>
 		</figure>
 	</a>
 
@@ -36,13 +36,13 @@ global $product; ?>
 
 	<?php if ( ! empty( $show_rating ) ) : ?>
 		<div class="lsx-woocommerce-rating">
-			<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+			<?php echo wp_kses_post( wc_get_rating_html( $product->get_average_rating() ) ); ?>
 		</div>
 	<?php endif; ?>
 
 	<?php if ( $price_html = $product->get_price_html() ) : ?>
 		<div class="lsx-woocommerce-price">
-			<?php echo $price_html; ?>
+			<?php echo wp_kses_post( $price_html ); ?>
 		</div>
 	<?php endif; ?>
 
