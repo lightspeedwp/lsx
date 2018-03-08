@@ -211,7 +211,7 @@ if ( ! function_exists( 'lsx_post_meta_date' ) ) :
 		);
 
 		printf(
-			'<span class="post-meta-time"><a href="%1$s" rel="bookmark">%2$s</a></span>',
+			'<span class="post-meta-time updated"><a href="%1$s" rel="bookmark">%2$s</a></span>',
 			esc_url( get_permalink() ),
 			wp_kses_post( $time_string )
 		);
@@ -240,7 +240,7 @@ if ( ! function_exists( 'lsx_post_meta_author' ) ) :
 		}
 
 		printf(
-			'<span class="post-meta-author"><span>%1$s</span> <a href="%2$s">%3$s</a></span>',
+			'<span class="vcard post-meta-author"><span>%1$s</span> <span class="fn"><a href="%2$s">%3$s</a></span></span>',
 			esc_html__( 'by', 'lsx' ),
 			esc_url( $author_url ),
 			esc_html( $author )

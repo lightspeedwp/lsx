@@ -563,7 +563,9 @@ function lsx_post_format_force_content_on_list() {
  * Remove the Hentry Class Every
  */
 function remove_hentry( $classes ) {
- $classes = array_diff( $classes, array( 'hentry' ) );
- return $classes;
+	if ( 'post' !== get_post_type() ) {
+		$classes = array_diff( $classes, array( 'hentry' ) );
+	}
+	return $classes;
 }
 add_filter( 'post_class','remove_hentry' );
