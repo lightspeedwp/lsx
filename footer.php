@@ -36,7 +36,7 @@
 										/* Translators: 1: theme name, 2: author name and link */
 										esc_html__( ' | %1$s is a WordPress theme developed by %2$s.', 'lsx' ),
 										'LSX',
-										'<a href="https://www.lsdev.biz/" title="LightSpeed WordPress Development - Unlocking the full value of your business, online" rel="author">LightSpeed</a>'
+										'<a href="https://www.lsdev.biz/" rel="noopener noreferrer" title="LightSpeed WordPress Development - Unlocking the full value of your business, online" rel="author nofollow noopener noreferrer" >LightSpeed</a>'
 									);
 								?>
 							<?php endif; ?>

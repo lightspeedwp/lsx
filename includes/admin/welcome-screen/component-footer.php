@@ -49,7 +49,7 @@
 					printf(
 						/* Translators: 1: HTML open tag link, 2: HTML close tag link */
 						esc_html__( 'Why not %1$sleave a review%2$s on WordPress.org? We\'re looking foward to all our users\' feedback!', 'lsx' ),
-						'<a href="https://wordpress.org/themes/lsx" target="_blank">',
+						'<a href="https://wordpress.org/themes/lsx" target="_blank rel="noopener noreferrer">',
 						'</a>'
 					);
 				?>
