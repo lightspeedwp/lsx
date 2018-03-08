@@ -840,11 +840,11 @@ function woocommerce_pagination() {
 		$args['format'] = '';
 	}
 
-	echo wp_kses_post( '<div class="lsx-pagination-wrapper">');
+	echo wp_kses_post( '<div class="lsx-pagination-wrapper">' );
 	$template = wc_get_template_html( 'loop/pagination.php', $args );
 	$template = str_replace( 'woocommerce-pagination', 'lsx-pagination', $template );
 	echo wp_kses_post( $template );
-	echo wp_kses_post( '</div>');
+	echo wp_kses_post( '</div>' );
 }
 
 function lsx_wc_pagination_args( $args ) {

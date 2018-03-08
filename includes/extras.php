@@ -341,7 +341,7 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 			'quote' => 'quote',
 			'status' => 'status',
 			'video' => 'video',
-			'audio' => 'audio'
+			'audio' => 'audio',
 		);
 
 		$show_full_content = has_post_format( apply_filters( 'lsx_the_excerpt_filter_post_types', $post_formats ) );
@@ -395,10 +395,10 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 				'quote' => 'quote',
 				'status' => 'status',
 				'video' => 'video',
-				'audio' => 'audio'
+				'audio' => 'audio',
 			);
 
-			$show_full_content = has_post_format( apply_filters( 'lsx_excerpt_read_more_post_formats', $post_formats )  );
+			$show_full_content = has_post_format( apply_filters( 'lsx_excerpt_read_more_post_formats', $post_formats ) );
 
 			if ( ! $show_full_content ) {
 				$wpse_excerpt = strip_shortcodes( $wpse_excerpt );
@@ -551,7 +551,14 @@ add_filter( 'lsx_widget_output', 'lsx_full_width_widget_output', 10, 3 );
  * Check if the content has a restricted post format that needs to show a full excerpt.
  */
 function lsx_post_format_force_content_on_list() {
-	$post_formats = apply_filters( 'lsx_post_format_force_content_on_list', array('video' => 'video', 'audio' => 'audio', 'quote' => 'quote', 'link' => 'link') );
+	$post_formats = apply_filters( 'lsx_post_format_force_content_on_list',
+		array(
+				'video' => 'video',
+				'audio' => 'audio',
+				'quote' => 'quote',
+				'link' => 'link',
+			)
+	);
 	$return = false;
 	if ( ! has_post_format( $post_formats ) ) {
 		$return = true;

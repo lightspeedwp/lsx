@@ -15,8 +15,9 @@
 			'image' => 'image',
 			'link' => 'link',
 			'quote' => 'quote',
-			'video' => 'video' );
-	$no_thumb_post_formats = apply_filters ( 'lsx_no_thumb_post_formats', $no_thumb_post_types  );
+			'video' => 'video',
+		);
+	$no_thumb_post_formats = apply_filters( 'lsx_no_thumb_post_formats', $no_thumb_post_types );
 
 	$has_thumb = has_post_thumbnail() && ! has_post_format( $no_thumb_post_formats );
 
