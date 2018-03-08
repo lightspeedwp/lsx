@@ -855,6 +855,30 @@ function lsx_wc_pagination_args( $args ) {
 }
 add_filter( 'woocommerce_pagination_args', 'lsx_wc_pagination_args',10 ,1 );
 
+
+/**
+ * Returns the location of our product widget
+ * @param $located
+ * @param $template_name
+ *
+ * @return array
+ */
+function lsx_wc_product_widget_template( $located, $template_name ) {
+	if ( 'content-widget-product.php' === $template_name || 'content-widget-review.php' === $template_name ) {
+
+		$new_location = get_stylesheet_directory() .'/partials/' . $template_name;
+		if ( file_exists( $new_location ) ) {
+			$located = $new_location;
+		} else {
+			$new_location = get_parent_theme_file_path() .'/partials/' . $template_name;
+			if ( file_exists( $new_location ) ) {
+				$located = $new_location;
+			}
+		}
+	}
+	return $located;
+}
+add_filter( 'wc_get_template', 'lsx_wc_product_widget_template',90 ,2 );
 /*
 
 */

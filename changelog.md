@@ -7,6 +7,7 @@
 * Dev - Removed the WooCommerce product form template and customized it via the `get_product_search_form` filter
 * Dev - Removed the tabs.php file conflicting with WP updates.
 * Dev - Changed the way the woocommerce pagination is styled.
+* Dev - Removed the overwritten templates for the WC products and WC reviews widgets.
 
 ### 2.1.1
 * Fix - Added the Sass files for child theme development
