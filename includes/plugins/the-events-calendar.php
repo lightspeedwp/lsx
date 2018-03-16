@@ -80,11 +80,7 @@ if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
 
 		$post_types = apply_filters( 'tribe_is_post_type_screen_post_types', Tribe__Main::get_post_types() );
 
-		if ( ! in_array( $current_screen->post_type, $post_types ) ) {
-			$disabled = true;
-		}
-
-		if ( is_null( $id ) && false !== strpos( $current_screen->id, 'tribe' ) ) {
+		if ( is_archive() && tribe_is_event() ) {
 			$disabled = true;
 		}
 
@@ -95,10 +91,6 @@ if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
 		return $disabled;
 	}
 
-	// LSX
-	add_filter( 'lsx_global_header_disable', 'lsx_tec_disable_lsx_banner' );
-	// LSX Banners - Plugin, Placeholders
-	add_filter( 'lsx_banner_plugin_disable', 'lsx_tec_disable_lsx_banner' );
 	// LSX Banners - Banner
 	add_filter( 'lsx_banner_disable', 'lsx_tec_disable_lsx_banner' );
 
