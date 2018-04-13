@@ -101,7 +101,6 @@
 
 					<div class="entry-summary">
 						<?php the_excerpt(); ?>
-						<?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<p class="edit-link">', '</p>' ); ?>
 					</div><!-- .entry-summary -->
 
 				<?php elseif ( has_post_format( array( 'link' ) ) ) : ?>

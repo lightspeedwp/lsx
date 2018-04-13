@@ -25,8 +25,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php edit_post_link( esc_html__( 'Edit', 'lsx' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-
 	<?php lsx_entry_bottom(); ?>
 
 </article><!-- #post-## -->
