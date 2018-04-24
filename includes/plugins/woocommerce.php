@@ -51,6 +51,12 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 			//wp_deregister_script( 'select2' );
 		}
 
+		// Adds select2 if on Cart or Checkout Page
+
+		if (!is_woocommerce() && !is_cart() && !is_checkout()) {
+		   wp_enqueue_script( 'select2' );
+		}
+
 		// Remove WC Shipping Multiple Addresses specific script causing issues on checkout
 		wp_dequeue_script( 'wcms-country-select' );
 	}
