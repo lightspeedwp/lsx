@@ -29,8 +29,4 @@ get_header(); ?>
 		</div><!-- .widget-area -->
 	</div><!-- #secondary -->
 
-<script type="text/javascript">
-	jQuery('.search-field').attr('placeholder', 'lsdev.biz')
-</script>
-
 <?php get_footer();
