@@ -181,7 +181,13 @@ h2.tribe-events-page-title { font-size: 30px; margin-bottom: 35px; }
 
 .tribe-events-tickets td { padding: 10px 0 !important; }
 
+.tribe-events-tickets td input:focus { border-color: #418AD0; outline: 0; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6); }
+
+.tribe-events-tickets td select:focus { border-color: #418AD0; outline: 0; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6); }
+
 .tribe-button.tribe-button--rsvp { margin: 0; }
+
+.tribe-button.tribe-button--rsvp:hover { background-color: #eda700 !important; }
 
 .tribe-tickets-meta-row { display: table-row; }
 
