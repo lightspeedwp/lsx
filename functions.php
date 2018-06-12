@@ -23,6 +23,10 @@ if ( class_exists( 'Sensei_WC' ) ) {
 	require get_template_directory() . '/includes/plugins/sensei.php';
 }
 
+if ( class_exists( 'bbPress' ) ) {
+	require get_template_directory() . '/includes/plugins/bbpress.php';
+}
+
 require get_template_directory() . '/includes/config.php';
 require get_template_directory() . '/includes/classes/class-lsx-theme-customizer.php';
 require get_template_directory() . '/includes/customizer.php';
