@@ -6,7 +6,6 @@ const jshint       = require('gulp-jshint');
 const concat       = require('gulp-concat');
 const uglify       = require('gulp-uglify');
 const sort         = require('gulp-sort');
-const wppot        = require('gulp-wp-pot');
 const gettext      = require('gulp-gettext');
 const plumber      = require('gulp-plumber');
 const autoprefixer = require('gulp-autoprefixer');
@@ -217,33 +216,3 @@ gulp.task('watch-js', function () {
 });
 
 gulp.task('watch', ['watch-css', 'watch-js']);
-
-gulp.task('wordpress-pot', function() {
-	return gulp.src('**/*.php')
-		.pipe(sort())
-		.pipe(wppot({
-			domain: 'lsx',
-			package: 'lsx',
-			team: 'LightSpeed <webmaster@lsdev.biz>'
-		}))
-		.pipe(gulp.dest('languages/lsx.pot'))
-});
-
-gulp.task('wordpress-po', function() {
-	return gulp.src('**/*.php')
-		.pipe(sort())
-		.pipe(wppot({
-			domain: 'lsx',
-			package: 'lsx',
-			team: 'LightSpeed <webmaster@lsdev.biz>'
-		}))
-		.pipe(gulp.dest('languages/en_EN.po'))
-});
-
-gulp.task('wordpress-po-mo', ['wordpress-po'], function() {
-	return gulp.src('languages/en_EN.po')
-		.pipe(gettext())
-		.pipe(gulp.dest('languages'))
-});
-
-gulp.task('wordpress-lang', (['wordpress-pot', 'wordpress-po-mo']));

@@ -310,6 +310,12 @@ article.page {
 		margin: 2.4rem 0 4.25rem 0;
 		border-radius: 0;
 	}
+
+	#billing_country_field, #shipping_country_field, #billing_state_field, #shipping_state_field {
+		.select2.select2-container {
+			display:none;
+		}
+	}
 }
 
 .product_meta {
