@@ -43,11 +43,11 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 
 		// Remove select2 added by WooCommerce.
 		if ( ! is_admin() ) {
-			//wp_dequeue_style( 'select2' );
-			//wp_deregister_style( 'select2' );
+			wp_dequeue_style( 'select2' );
+			wp_deregister_style( 'select2' );
 
-			//wp_dequeue_script( 'select2' );
-			//wp_deregister_script( 'select2' );
+			wp_dequeue_script( 'select2' );
+			wp_deregister_script( 'select2' );
 		}
 
 		// Adds select2 if on Cart or Checkout Page.

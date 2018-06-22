@@ -105,8 +105,6 @@
 
 #add_payment_method #payment div.payment_box:before, .woocommerce-cart #payment div.payment_box:before, .woocommerce-checkout #payment div.payment_box:before { display: none; }
 
-.woocommerce { /*#billing_country_field, #shipping_country_field, #billing_state_field, #shipping_state_field { .select2.select2-container { display:none; } }*/ }
-
 .woocommerce div.product .woocommerce-tabs .panel { border: none; border-radius: 0; box-shadow: none; padding: 2em; }
 
 .woocommerce div.product .woocommerce-tabs .panel > *:last-child { margin-bottom: 0; }
@@ -118,6 +116,8 @@
 .woocommerce div.product form.cart .variations td.label label { font-weight: 400; }
 
 .woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register { border: none; padding: 0; margin: 2.4rem 0 4.25rem 0; border-radius: 0; }
+
+.woocommerce #billing_country_field .select2.select2-container, .woocommerce #shipping_country_field .select2.select2-container, .woocommerce #billing_state_field .select2.select2-container, .woocommerce #shipping_state_field .select2.select2-container { display: none; }
 
 .product .product_meta > span { display: block; padding: 5px 0; }
 
