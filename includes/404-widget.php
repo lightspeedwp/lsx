@@ -24,7 +24,7 @@ add_action( 'widgets_init', 'lsx_widget_area_404_init' );
 
 if ( ! function_exists( 'my_search_placeholder' ) ) :
 	function my_search_placeholder() {
-		return __( 'lsdev.biz', 'Total' );
+		return __( 'lsdev.biz', 'lsx' );
 	}
 
 endif;
