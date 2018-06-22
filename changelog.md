@@ -1,5 +1,11 @@
 ## LSX Changelog
 
+### 2.1.4
+* Fix - Removed the WC Select2 from the Checkout page as a temporary fix.
+* Dev - Removed the edit links from the logged in view.
+* Dev - Added in integration with the WP Forms Plugin 
+* Dev - Event Calendar Ticket Styling
+
 ### 2.1.2
 * Dev - Removed the .hentry class from the `post_class` output
 * Dev - Added in a .vcard schema for the author post meta
