@@ -5,9 +5,9 @@
 
 .social-navigation > ul > li a[href*="codepen"]:before, .social-navigation > ul > li a[href*="digg"]:before, .social-navigation > ul > li a[href*="dribbble"]:before, .social-navigation > ul > li a[href*="dropbox"]:before, .social-navigation > ul > li a[href*="facebook"]:before, .social-navigation > ul > li a[href*="feed"]:before, .social-navigation > ul > li a[href*="flickr"]:before, .social-navigation > ul > li a[href*="foursquare"]:before, .social-navigation > ul > li a[href*="getpocket"]:before, .social-navigation > ul > li a[href*="github"]:before, .social-navigation > ul > li a[href*="instagram"]:before, .social-navigation > ul > li a[href*="linkedin"]:before, .social-navigation > ul > li a[href*="mailto"]:before, .social-navigation > ul > li a[href*="pinterest"]:before, .social-navigation > ul > li a[href*="plus.google"]:before, .social-navigation > ul > li a[href*="polldaddy"]:before, .social-navigation > ul > li a[href*="reddit"]:before, .social-navigation > ul > li a[href*="spotify"]:before, .social-navigation > ul > li a[href*="stumbleupon"]:before, .social-navigation > ul > li a[href*="tumblr"]:before, .social-navigation > ul > li a[href*="twitch"]:before, .social-navigation > ul > li a[href*="twitter"]:before, .social-navigation > ul > li a[href*="vimeo"]:before, .social-navigation > ul > li a[href*="wordpress"]:before, .social-navigation > ul > li a[href*="youtube"]:before { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 22px; transition: color 300ms ease-in-out; }
 
-.form-control { border-width: 2px; box-shadow: none; font-size: 18px; line-height: 1.33; padding: 10px 20px; transition: all 150ms ease; }
+.form-control, .wpforms-field-container input, .wpforms-field-container button, .wpforms-field-container select, .wpforms-field-container textarea { border-width: 2px; box-shadow: none; font-size: 18px; line-height: 1.33; padding: 10px 20px; transition: all 150ms ease; }
 
-.form-control:focus { box-shadow: none; }
+.form-control:focus, .wpforms-field-container input:focus, .wpforms-field-container button:focus, .wpforms-field-container select:focus, .wpforms-field-container textarea:focus { box-shadow: none; }
 
 .caldera-grid .breadcrumb { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column wrap; flex-flow: column wrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; border-bottom: 0 none; margin: 0 0 15px 0; padding-right: 0; }
 
@@ -281,6 +281,46 @@ p:empty { display: none; }
 .tertiary-border-btn, .tertiary-border-btn:active, .tertiary-border-btn:visited { border: 2px solid #6BA913; box-shadow: none; height: 50px; }
 
 .tertiary-border-btn:active { right: 0; top: 0; }
+
+.wpforms-field input, .wpforms-field-container select, .wpforms-field-container textarea { display: block; width: 100%; height: 50px; color: #4A4A4A; background-color: #fff; background-image: none; border: 2px solid #DDD; border-radius: 2px; }
+
+.wpforms-field input:focus, .wpforms-field-container select:focus, .wpforms-field-container textarea:focus { border-color: #418AD0; outline: 0; }
+
+.wpforms-field-container .wpforms-field { margin-bottom: 15px; }
+
+.wpforms-field-container input.wpforms-error { border-color: #a94442 !important; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+
+.wpforms-field-container label.wpforms-error { display: block; margin-top: 5px; margin-bottom: 10px; color: #a94442; font-weight: initial; }
+
+.wpforms-field-container button { background-color: #428bca; box-shadow: -2px 2px 0 0 #27639e; color: #fff; width: initial; border: 0 none; border-radius: 3px; display: inline-block; font-size: 14px; font-weight: 700; height: 48px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
+
+.wpforms-field-container ul { padding: 0 !important; margin: 0 !important; }
+
+.wpforms-field-container ul li { list-style-type: none; }
+
+.wpforms-field-container ul li label.wpforms-field-label-inline { font-weight: initial; }
+
+.wpforms-field-container input[type='checkbox'], .wpforms-field-container input[type='radio'] { display: initial; float: right; width: initial; height: inherit; margin-left: 0.5em; }
+
+.wpforms-field-container .wpforms-field-textarea textarea { height: initial; }
+
+.wpforms-field-container .wpforms-one-half { width: 50%; float: right; padding-left: 1em; margin-bottom: 15px; }
+
+.wpforms-field-container .wpforms-one-half:last-child { padding-left: 0; }
+
+.wpforms-field-container .wpforms-field-file-upload input { width: initial; height: inherit; border: none; background: none; padding: 0; margin-bottom: 1em; }
+
+.wpforms-field-container .wpforms-field-credit-card select { display: inline; width: initial; }
+
+.wpforms-field-container .wpforms-field-address { display: inline-block; width: 100%; }
+
+.wpforms-field-container .wpforms-field-rating-items label { display: block; }
+
+.wpforms-field-container .wpforms-field-rating-items label span { position: relative; bottom: 10px; margin-left: 5px; }
+
+.wpforms-submit-container { margin-top: 1em; }
+
+.wpforms-submit-container button { background-color: #428bca; box-shadow: -2px 2px 0 0 #27639e; color: #fff; width: initial; border: 0 none; border-radius: 3px; display: inline-block; font-size: 14px; font-weight: 700; height: 48px; right: 0; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; position: relative; text-transform: uppercase; top: 0; transition: all 100ms ease; }
 
 .caldera-form-page { padding: 2em; }
 
@@ -616,6 +656,8 @@ body.modal-open div.modal-backdrop { z-index: 2049 !important; }
 .archive-header-wrapper .breadcrumbs-container { margin-right: -15px; margin-left: -15px; width: calc(100% + 30px); }
 
 @media (min-width: 768px) { .breadcrumbs-container, .archive-header-wrapper .breadcrumbs-container { margin-right: -9999px; margin-left: -9999px; padding-right: 9999px; padding-left: 9999px; width: auto; } }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .breadcrumbs-container.breadcrumbs-yoast { margin-top: 54px; } }
 
 @media (min-width: 992px) { html:not(.ie) .page-has-banner-full .header-wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; min-height: 100vh; } }
 
@@ -1369,6 +1411,8 @@ article.page .entry-content .sticky, article.post .entry-content .sticky, articl
 @media (min-width: 992px) { .page-template-template-no-sidebar article.page, .page-template-default:not(.has-sidebar) article.page { margin: 0 auto; width: 83.33333%; } }
 
 @media (min-width: 1200px) { .page-template-template-no-sidebar article.page, .page-template-default:not(.has-sidebar) article.page { width: 66.66667%; } }
+
+.edit-link { display: none !important; }
 
 .single-post article.post { margin: 0 auto; max-width: 585px; }
 

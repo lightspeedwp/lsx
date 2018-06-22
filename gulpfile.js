@@ -173,7 +173,9 @@ gulp.task('admin-styles-rtl', function () {
 		.pipe(gulp.dest('assets/css/admin'))
 });
 
-gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
+//gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
+
+gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles']);
 
 gulp.task('js', function() {
 	return gulp.src('assets/js/src/**/*.js')

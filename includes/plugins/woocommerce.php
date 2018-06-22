@@ -43,16 +43,17 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 
 		// Remove select2 added by WooCommerce.
 		if ( ! is_admin() ) {
-			wp_dequeue_style( 'select2' );
-			wp_deregister_style( 'select2' );
+			//wp_dequeue_style( 'select2' );
+			//wp_deregister_style( 'select2' );
 
-			wp_dequeue_script( 'select2' );
-			// wp_deregister_script( 'select2' );.
+			//wp_dequeue_script( 'select2' );
+			//wp_deregister_script( 'select2' );
 		}
 
 		// Adds select2 if on Cart or Checkout Page.
 		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
 			wp_enqueue_script( 'select2' );
+			wp_enqueue_style( 'select2' );
 		}
 
 		// Remove WC Shipping Multiple Addresses specific script causing issues on checkout.
