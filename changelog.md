@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.1.5
+* Fix - Fixed the compatability issue with the WooCommerce select2 fields.
+
 ### 2.1.4
 * Fix - Removed the WC Select2 from the Checkout page as a temporary fix.
 * Dev - Removed the edit links from the logged in view.

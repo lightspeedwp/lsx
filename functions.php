@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LSX_VERSION', '2.1.4' );
+define( 'LSX_VERSION', '2.1.5' );
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/includes/plugins/woocommerce.php';
