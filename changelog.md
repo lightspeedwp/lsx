@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.1.6
+* Dev - Added core Styling Support for the bbPress Forum Software.
+
 ### 2.1.5
 * Fix - Fixed the compatability issue with the WooCommerce select2 fields.
 
