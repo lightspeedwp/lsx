@@ -20,9 +20,18 @@
 
 // Structure
 
+.forum-archive.archive:not(.has-sidebar)  {
+	.site-main {
+		width: 100%;
+	}
+}
+
 #bbpress-forums {
 	 -webkit-font-smoothing: antialiased;
 	 -moz-osx-font-smoothing: grayscale;
+	.bbp-breadcrumb {
+		display: none;
+	}
 	div.bbp-search-form {
 		margin-bottom: 2.4rem;
 		#bbp_search {
@@ -138,6 +147,15 @@
 		input[type=checkbox] {
 			+ label {
 				font-weight: normal;
+			}
+		}
+	}
+	#bbp-single-user-details {
+		#bbp-user-navigation { 
+			li.current {
+				a {
+					background: none;
+				}
 			}
 		}
 	}

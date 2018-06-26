@@ -2,7 +2,11 @@
 
 #bbpress-forums div.bbp-search-form #bbp_search_submit:hover, #bbpress-forums button.button:hover { background-color: #367dc0; }
 
+.forum-archive.archive:not(.has-sidebar) .site-main { width: 100%; }
+
 #bbpress-forums { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+#bbpress-forums .bbp-breadcrumb { display: none; }
 
 #bbpress-forums div.bbp-search-form { margin-bottom: 2.4rem; }
 
@@ -63,3 +67,5 @@
 #bbpress-forums fieldset.bbp-form div.bbp-submit-wrapper { float: initial; margin-bottom: 4.25rem; }
 
 #bbpress-forums fieldset.bbp-form input[type=checkbox] + label { font-weight: normal; }
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a { background: none; }

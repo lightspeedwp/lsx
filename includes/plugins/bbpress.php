@@ -28,3 +28,12 @@ if ( ! function_exists( 'lsx_bbpress_scripts_add_styles' ) ) :
 	add_action( 'wp_enqueue_scripts', 'lsx_bbpress_scripts_add_styles' );
 
 endif;
+
+/**** Remove "Archives:"  from the forums archive title. ******/
+
+add_filter( 'get_the_archive_title', 'modify_archive_title', 10, 1 );
+ 
+function modify_archive_title( $title ) {
+    $title = "Forums";
+    return $title;
+}
