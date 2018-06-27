@@ -18,6 +18,32 @@ get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
 
+		<div class="lsx-wc-checkout-steps">
+			<ul class="lsx-wc-checkout-steps-items">
+					<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-done">
+						<i class="fa fa-check-circle" aria-hidden="true"></i>
+						<span><span><?php esc_html_e( 'Choose your product', 'lsx-customizer' ); ?></span></span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</li>
+
+					<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-done lsx-wc-checkout-steps-item-cart">
+						<i class="fa fa-check-circle" aria-hidden="true"></i>
+						<span><span><?php esc_html_e( 'My Cart', 'lsx-customizer' ); ?></span></span>
+					</li>
+
+					<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-done lsx-wc-checkout-steps-item-payment">
+					<i class="fa fa-check-circle" aria-hidden="true"></i>
+						<span><span><?php esc_html_e( 'Payment details', 'lsx-customizer' ); ?></span></span>
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</li>
+
+					<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-current lsx-wc-checkout-steps-item-thankyou">
+						<i class="lsx-wc-checkout-steps-counter" aria-hidden="true"><?php esc_html_e( '4', 'lsx-customizer' ); ?></i>
+						<span><span><?php esc_html_e( 'Thank you!', 'lsx-customizer' ); ?></span></span>
+					</li>
+			</ul>
+		</div>
+
 		<?php lsx_content_top(); ?>
 
 		<?php if ( have_posts() ) : ?>

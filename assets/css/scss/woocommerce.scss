@@ -211,6 +211,12 @@ article.page {
 			&:last-child { margin-right: 0; }
 		}
 	}
+	@include media('<=tablet') { 
+		.cart-collaterals {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	 }
 }
 
 #add_payment_method,

@@ -32,8 +32,8 @@ endif;
 /**** Remove "Archives:"  from the forums archive title. ******/
 
 add_filter( 'get_the_archive_title', 'modify_archive_title', 10, 1 );
- 
+
 function modify_archive_title( $title ) {
-    $title = "Forums";
-    return $title;
+	$title = __( 'Forums', 'lsx' );
+	return $title;
 }
