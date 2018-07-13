@@ -30,6 +30,12 @@ if ( ! function_exists( 'lsx_kses_allowed_html' ) ) :
 	function lsx_kses_allowed_html( $allowedtags, $context ) {
 		$allowedtags['img']['srcset'] = true;
 		$allowedtags['img']['sizes']  = true;
+
+		$allowedtags['input']['name'] = true;
+		$allowedtags['input']['type'] = true;
+		$allowedtags['input']['value'] = true;
+		$allowedtags['input']['class'] = true;
+		$allowedtags['input']['id'] = true;
 		return $allowedtags;
 	}
 

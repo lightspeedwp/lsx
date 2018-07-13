@@ -279,6 +279,8 @@ if ( ! function_exists( 'lsx_init' ) ) :
 		if ( class_exists( 'WooCommerce' ) ) {
 			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 		}
+
+		remove_action( 'comment_form', 'wp_comment_form_unfiltered_html_nonce' );
 	}
 
 endif;

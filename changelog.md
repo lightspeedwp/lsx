@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+###
+* Fix - Added inputs to the wp_kses_post filter to fix the WooCommerce Product reviews button
+
 ### 2.1.6
 * Dev - Added core Styling Support for the bbPress Forum Software.
 
