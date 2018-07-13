@@ -53,7 +53,7 @@ gulp.task('styles', function () {
 		}))
 		.pipe(sourcemaps.init())
 		.pipe(sass({
-			outputStyle: 'compact',
+			outputStyle: 'compressed',
 			includePaths: ['assets/css/scss']
 		}).on('error', gutil.log))
 		.pipe(autoprefixer({
@@ -73,7 +73,7 @@ gulp.task('styles-rtl', function () {
 			}
 		}))
 		.pipe(sass({
-			outputStyle: 'compact',
+			outputStyle: 'compressed',
 			includePaths: ['assets/css/scss']
 		}).on('error', gutil.log))
 		.pipe(autoprefixer({
@@ -96,7 +96,7 @@ gulp.task('vendor-styles', function () {
 			}
 		}))
 		.pipe(sass({
-			outputStyle: 'compact',
+			outputStyle: 'compressed',
 			includePaths: ['assets/css/vendor']
 		}).on('error', gutil.log))
 		.pipe(autoprefixer({
@@ -115,7 +115,7 @@ gulp.task('vendor-styles-rtl', function () {
 			}
 		}))
 		.pipe(sass({
-			outputStyle: 'compact',
+			outputStyle: 'compressed',
 			includePaths: ['assets/css/vendor']
 		}).on('error', gutil.log))
 		.pipe(autoprefixer({
@@ -159,7 +159,7 @@ gulp.task('admin-styles-rtl', function () {
 			}
 		}))
 		.pipe(sass({
-			outputStyle: 'compact',
+			outputStyle: 'compressed',
 			includePaths: ['assets/css/admin']
 		}).on('error', gutil.log))
 		.pipe(autoprefixer({
