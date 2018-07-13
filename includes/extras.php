@@ -36,6 +36,7 @@ if ( ! function_exists( 'lsx_kses_allowed_html' ) ) :
 		$allowedtags['input']['value'] = true;
 		$allowedtags['input']['class'] = true;
 		$allowedtags['input']['id'] = true;
+		$allowedtags['script']['type'] = true;
 		return $allowedtags;
 	}
 
