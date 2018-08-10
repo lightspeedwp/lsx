@@ -120,6 +120,18 @@ var lsx = Object.create( null );
 	};
 
 	/**
+	 * Remove tabs classnames of WC and adding custom lsx classnames
+	 *
+	 * @package	lsx
+	 * @subpackage scripts
+	 */
+
+	lsx.replace_wc_classnames = function() {
+	$('.wc-tabs').removeClass('wc-tabs').addClass('nav-tabs');
+$('.tabs').removeClass('tabs').addClass('nav wc-tabs');
+	};
+
+	/**
 	 * Fix Bootstrap menus (dropdown inside dropdown - click).
 	 *
 	 * @package    lsx
@@ -586,7 +598,7 @@ var lsx = Object.create( null );
 
 		lsx.search_form_prevent_empty_submissions();
 		lsx.remove_gallery_img_width_height();
-
+		lsx.replace_wc_classnames();
 		lsx.init_wc_slider();
 		lsx.fix_wc_elements();
 		lsx.fix_caldera_form_modal_title();

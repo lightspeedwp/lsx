@@ -799,20 +799,9 @@ if ( ! function_exists( 'lsx_wc_product_searchform' ) ) :
 endif;
 add_filter( 'get_product_search_form' , 'lsx_wc_product_searchform', 10, 1 );
 
-/**
- * Add in nav classes for the Product Tabs
- */
-function woocommerce_output_product_data_tabs() {
-	$html = wc_get_template_html( 'single-product/tabs/tabs.php' );
-
-	//$html = str_replace( 'woocommerce-wc-tabs nav nav-tabs-wrapper', 'woocommerce-tabs wc-tabs-wrapper', $html );
-	$html = str_replace( '"tabs wc-tabs', '"nav nav-tabs wc-tabs', $html );
-	echo wp_kses_post( $html );
-}
-
-/**
- * Output the pagination.
- */
+	/**
+	 * Output the pagination.
+ 	*/
 function woocommerce_pagination() {
 	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
 		return;
@@ -869,6 +858,3 @@ function lsx_wc_product_widget_template( $located, $template_name ) {
 	return $located;
 }
 add_filter( 'wc_get_template', 'lsx_wc_product_widget_template',90 ,2 );
-/*
-
-*/
