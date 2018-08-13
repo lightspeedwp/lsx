@@ -590,10 +590,10 @@ add_filter( 'post_class','lsx_remove_hentry' );
  */
 function lsx_strip_excerpt( $content ) {
 	if ( is_search() || is_archive() || ( is_blog_installed() && ! is_single() && ! is_page() ) ) {
-		$content = strip_shortcodes($content);
-	    $content = str_replace(']]>', ']]&gt;', $content);
-	    $content = strip_tags($content);
+		$content = strip_shortcodes( $content );
+		$content = str_replace( ']]>', ']]&gt;', $content );
+		$content = strip_tags( $content );
 	}
 	return $content;
 }
-add_filter( 'the_content', 'lsx_strip_excerpt');
+add_filter( 'the_content', 'lsx_strip_excerpt' );
