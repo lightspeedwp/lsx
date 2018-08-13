@@ -7,7 +7,7 @@
 		"uuidString": "2EFD6156-28D5-4F6D-A81D-6D644416E325"
 		}
 	],
-"creatorBuild": "26680",
+"creatorBuild": "26148",
 "files": {
 	"\/.editorconfig": {
 		"cB": 0,
@@ -124,6 +124,26 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/assets\/css\/bb-press-rtl.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/assets\/css\/bb-press-rtl-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/assets\/css\/bb-press.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/assets\/css\/bb-press-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/assets\/css\/lsx-fonts-placeholder-rtl.css": {
 		"aP": 1,
 		"bl": 0,
@@ -184,6 +204,13 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/assets\/css\/maps\/bb-press.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/assets\/css\/maps\/bb-press.css.map",
+		"oF": 0
+		},
 	"\/assets\/css\/maps\/lsx-fonts-placeholder.css.map": {
 		"cB": 0,
 		"ft": 8192,
@@ -235,6 +262,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/build\/assets\/css\/scss\/base\/_scaffolding.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/css\/scss\/bb-press.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/assets\/css\/scss\/bb-press.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -819,9 +859,9 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/build\/assets\/css\/scss\/the-events-calendar.css",
-		"oF": 0,
-		"oS": 0,
+		"oAP": "\/assets\/css\/the-events-calendar.css",
+		"oF": 2,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/assets\/css\/scss\/woocommerce-extensions\/_advanced-product-labels.scss": {
@@ -2747,7 +2787,6 @@
 	"\/assets\/images\/admin\/banner-example-01.jpg": {
 		"ft": 16384,
 		"iS": 526636,
-		"jF": 0,
 		"oA": 0,
 		"oAP": "\/build\/assets\/images\/admin\/banner-example-01.jpg",
 		"oF": 0,
@@ -2758,7 +2797,6 @@
 	"\/assets\/images\/admin\/banner-example-02.jpg": {
 		"ft": 16384,
 		"iS": 423171,
-		"jF": 0,
 		"oA": 0,
 		"oAP": "\/build\/assets\/images\/admin\/banner-example-02.jpg",
 		"oF": 0,
@@ -2769,7 +2807,6 @@
 	"\/assets\/images\/admin\/banner-example-03.jpg": {
 		"ft": 16384,
 		"iS": 904543,
-		"jF": 0,
 		"oA": 0,
 		"oAP": "\/build\/assets\/images\/admin\/banner-example-03.jpg",
 		"oF": 0,
@@ -3119,6 +3156,13 @@
 		"oAP": "\/build\/includes\/nav-navwalker.php",
 		"oF": 0
 		},
+	"\/includes\/plugins\/bbpress.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/includes\/plugins\/bbpress.php",
+		"oF": 0
+		},
 	"\/includes\/plugins\/sensei.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -3366,7 +3410,6 @@
 	"\/screenshot.jpg": {
 		"ft": 16384,
 		"iS": 66944,
-		"jF": 0,
 		"oA": 0,
 		"oAP": "\/build\/screenshot.jpg",
 		"oF": 0,
@@ -3461,10 +3504,9 @@
 	},
 "projectAttributes": {
 	"creationDate": 527118075,
-	"displayValue": "lsx",
+	"displayValue": "lsx-master",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "meme-obama",
-	"iconImageWasSetByUser": 0
+	"iconImageName": "meme-obama"
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -3472,7 +3514,6 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
-	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -4036,10 +4077,6 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
-			},
-		"implicit-arrow-linebreak": {
-			"active": 0,
-			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
@@ -5267,7 +5304,6 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {

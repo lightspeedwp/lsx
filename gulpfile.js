@@ -64,6 +64,27 @@ gulp.task('styles', function () {
 		.pipe(gulp.dest('assets/css'))
 });
 
+gulp.task('events-styles', function () {
+    return gulp.src('assets/css/scss/the-events-calendar.scss')
+        .pipe(plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ['assets/css/scss']
+        }).on('error', gutil.log))
+        .pipe(autoprefixer({
+            browsers: browserlist,
+            casacade: true
+        }))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('assets/css'))
+});
+
 gulp.task('styles-rtl', function () {
 	return gulp.src('assets/css/scss/*.scss')
 		.pipe(plumber({
