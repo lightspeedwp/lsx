@@ -801,7 +801,7 @@ add_filter( 'get_product_search_form' , 'lsx_wc_product_searchform', 10, 1 );
 
 	/**
 	 * Output the pagination.
- 	*/
+	*/
 function woocommerce_pagination() {
 	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
 		return;
