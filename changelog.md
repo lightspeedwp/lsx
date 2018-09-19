@@ -1,10 +1,10 @@
 ## LSX Changelog
 
-###
-* Fix - Added inputs to the wp_kses_post filter to fix the WooCommerce Product reviews button
-
 ### 2.1.6
 * Dev - Added core Styling Support for the bbPress Forum Software.
+* Fix - Added inputs to the wp_kses_post filter to fix the WooCommerce Product reviews button
+* Dev - Changed the css to output as compressed when processed
+* Dev - Updating packages tough-cookie ~> 2.3.3 and hoek ~> 4.2.1
 
 ### 2.1.5
 * Fix - Fixed the compatability issue with the WooCommerce select2 fields.
