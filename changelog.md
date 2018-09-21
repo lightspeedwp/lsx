@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.1.7
+* Dev - Added in Bootstrap Styling for the Gravity Forms plugin
+
 ### 2.1.6
 * Dev - Added core Styling Support for the bbPress Forum Software.
 * Fix - Added inputs to the wp_kses_post filter to fix the WooCommerce Product reviews button
