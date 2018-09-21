@@ -178,11 +178,22 @@
 .gform_wrapper select,
 .gform_wrapper textarea {
 	@extend .form-control;
+	box-shadow: none !important;
+	transition: all 150ms ease !important;
+
+	&:focus {
+		@extend %lsx-form-field;
+	}
+
 }
 
-.gform_wrapper .button {
+.gform_wrapper .button, .gform_wrapper button {
 	@extend .btn;
 	@extend .btn-primary;
+
+	span {
+		color: #ffffff;
+	}
 }
 
 .gform_wrapper .gfield_error {
