@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 
+* Fix - Fixed the "title" attribute not being used in the Nav Walker class.
+
 ### 2.1.7
 * Dev - Added in Bootstrap Styling for the Gravity Forms plugin
 
