@@ -2,6 +2,7 @@
 
 ### 
 * Fix - Fixed the "title" attribute not being used in the Nav Walker class.
+* Fix - Fixed the Fontawesome select icons for the Stripe payment gateway in WooCommerce
 
 ### 2.1.7
 * Dev - Added in Bootstrap Styling for the Gravity Forms plugin

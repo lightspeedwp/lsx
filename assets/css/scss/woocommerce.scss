@@ -231,7 +231,8 @@ article.page {
 			padding: 0;
 
 			li.wc_payment_method {
-				& > label:before {
+
+				.wc-saved-payment-methods label:before, > label:before  {
 					@include fa-icon();
 					content: "\f10c";
 					margin-right: 0.5407911001em;
