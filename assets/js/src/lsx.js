@@ -24,8 +24,16 @@ var lsx = Object.create( null );
 	 */
 	lsx.add_class_browser_to_html = function() {
 		if ( 'undefined' !== typeof platform ) {
-			var platform_name = platform.name.toLowerCase(),
-				platform_version = platform.version.toLowerCase().replace(/\..*$/g, '');
+
+            var platform_name = 'chrome';
+			if ( null !== platform.name ) {
+                platform_name = platform.name.toLowerCase();
+			}
+
+            var platform_version = '69';
+            if ( null !== platform.version ) {
+                platform_version = platform.version.toLowerCase();
+            }
 
 			$( 'html' ).addClass( platform_name ).addClass( platform_version );
 		}
