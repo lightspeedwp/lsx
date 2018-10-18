@@ -5,6 +5,7 @@
 * Fix - Fixed the Fontawesome select icons for the Stripe payment gateway in WooCommerce
 * Dev - Moved the platform.js to the footer.
 * Dev - Added in error handling for the "add_class_browser_to_html" function 
+* Fix - Fixed the lsx-full-width-base class in core of theme
 
 ### 2.1.7
 * Dev - Added in Bootstrap Styling for the Gravity Forms plugin

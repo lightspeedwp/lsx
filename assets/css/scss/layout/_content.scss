@@ -89,7 +89,29 @@
 
 	& > .page-title { margin-bottom: 0; }
 }
-
-
+// Style to pass google mobile friendly test
+@media (max-width: 400px) {
+	.home {
+		#home-widgets {
+			.widget {
+				.row {
+					margin: 0;
+				}
+			}
+		}
+	}
+    #footer-widgets a:not(.btn):not(button) {
+        word-break: break-all;
+    }
+	#primary {
+		padding: 0;
+	}
+	.widget {
+		.lsx-full-width-base {
+			padding: 2rem;
+			margin: 0;
+		}
+	}
+}
 
 @include content-colours();
