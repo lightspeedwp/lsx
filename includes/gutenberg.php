@@ -1,9 +1,9 @@
 <?php
 /**
- * LSX functions and definitions - Integrations - Extras
+ * LSX functions to make theme Gutenberg compatible
  *
  * @package    lsx
- * @subpackage extras
+ * @subpackage Gutenberg
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 // Gutenberg Compatibility
 
-require_once( __DIR__ . '/lib/theme-support.php' );
+require_once( get_template_directory() . '/lib/theme-support.php' );
 
-add_filter( 'body_class', __NAMESPACE__ . '\add_gutenberg_compatible_body_class' );
+//add_filter( 'body_class', __NAMESPACE__ . '\add_gutenberg_compatible_body_class' );
 /**
  * Add custom class for Gutenberg Compatible template
  */
