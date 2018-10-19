@@ -1,0 +1,80 @@
+/*--------------------------------------------------------------
+1.0 Apply 100% Width to Necessary Elements
+--------------------------------------------------------------*/
+
+.gutenberg-compatible-template.using-gutenberg {
+	.entry-content {
+		max-width: 100%;
+		width: 100%;
+		float: none;
+		padding-left: 0;
+		padding-right: 0;
+	  }
+}
+
+/*--------------------------------------------------------------
+2.0 Apply Wide, Full and Default Align Styles
+--------------------------------------------------------------*/
+
+.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
+	.wrap.container, article.post {
+		max-width: 100%;
+		width: 100%;
+		float: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.row.lsx-related-posts, .navigation.post-navigation {
+		margin: 0 auto;
+		width: 1170px;
+	}
+	#respond {
+		margin: 0 auto;
+		width: 40%;
+		max-width: 570px;
+	}
+	.alignwide {
+		max-width: 75%;
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.alignfull {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.gutenberg-compatible-template.using-gutenberg {
+	.entry-content > *, .entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
+		max-width: 50%;
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.gutenberg-compatible-template.using-gutenberg .post-thumbnail img,
+.gutenberg-compatible-template.using-gutenberg .alignwide img,
+.gutenberg-compatible-template.using-gutenberg .alignfull img {
+	width: 100%;
+}
+
+/** COLUMNS BLOCK **/
+// .wp-block-columns {
+
+// }
+
+.wp-block-column {
+    margin: 0 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .wp-block-columns {
+        display: block;
+    }
+
+    .wp-block-column {
+        margin: 10px 0;
+    }
+}
