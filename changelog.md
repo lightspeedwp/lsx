@@ -6,6 +6,7 @@
 * Dev - Moved the platform.js to the footer.
 * Dev - Added in error handling for the "add_class_browser_to_html" function 
 * Fix - Fixed the lsx-full-width-base class in core of theme
+* Fix - Added style for product buttons on woocommerce featured products widget
 
 ### 2.1.7
 * Dev - Added in Bootstrap Styling for the Gravity Forms plugin
