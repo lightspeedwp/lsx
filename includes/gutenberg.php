@@ -22,11 +22,15 @@ require_once( get_template_directory() . '/lib/theme-support.php' );
 /**
  * Add custom class for Gutenberg Compatible template
  */
+
 function add_gutenberg_compatible_body_class( $classes ) {
-	if ( is_page() || is_page_template() || is_single() )
-		$classes[] = 'gutenberg-compatible-template';
-	return $classes;
+	if ( ! is_home() && ! is_front_page() )
+		if ( is_page() || is_page_template() || is_single() )
+			$classes[] = 'gutenberg-compatible-template';
+		return $classes;
+
 }
+
 add_filter( 'body_class', __NAMESPACE__ . '\add_gutenberg_compatible_body_class' );
 
 // Add custom class for templates that are using the Gutengerg editor
