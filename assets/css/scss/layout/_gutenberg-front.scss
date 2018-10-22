@@ -27,7 +27,8 @@
 --------------------------------------------------------------*/
 
 @media only screen and (min-width: 768px) {
-	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
+	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post, .gutenberg-compatible-template.using-gutenberg.page-template-default,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar {
 		.wrap.container, article.post {
 			max-width: 100%;
 			width: 100%;
@@ -63,6 +64,20 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		&.page-template-template-full-width, &.page-template-template-full-width-no-margins {
+			.entry-content > *:not(.alignfull):not(.alignwide), .entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
+				max-width: 80%;
+				width: 80%;
+			}
+			.alignwide {
+				max-width: 90%;
+				width: 90%;
+			}
+			.alignfull {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
 	}
 
 	.gutenberg-compatible-template.using-gutenberg .post-thumbnail img,
@@ -70,7 +85,13 @@
 	.gutenberg-compatible-template.using-gutenberg .alignfull img {
 		width: 100%;
 	}
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar article.page, .gutenberg-compatible-template.using-gutenberg.page-template-default:not(.has-sidebar) article.page,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins {
+		width: 100%;
+	}
 }
+
 @media only screen and (max-width: 767px) {
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
