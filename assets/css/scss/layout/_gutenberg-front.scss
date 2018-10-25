@@ -124,8 +124,8 @@
 .gutenberg-compatible-template.using-gutenberg {
 	// New Lsx Class (Keep it at the bottom)
 	.lsx-full-width-gutenberg {
-		width: 100%;
-		max-width: 100%;
+		width: 100% !important;
+		max-width: 100% !important;
 		background: white;
 		padding-top: 8.4rem;
 		padding-bottom: 8.4rem;
@@ -137,6 +137,9 @@
 				margin: 0 auto;
 				padding: 0;
 			}
+		}
+		&.first {
+			margin-top: -2.4rem !important;
 		}
 	}
 	.wp-block-columns.has-1-columns {
