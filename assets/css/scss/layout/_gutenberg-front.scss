@@ -58,20 +58,56 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg {
-		.entry-content > *, .entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
+		.entry-content {
+			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > blockquote, > pre, > figure,
+			> strong, > span, > table {
+				max-width: 50%;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		@media only screen and (min-width: 1168px) {
+			.entry-content > *, .entry-summary > * {
+				max-width: calc(6 * (100vw / 12));
+			}
+		}
+
+		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
 			max-width: 50%;
 			width: 50%;
 			margin-left: auto;
 			margin-right: auto;
 		}
 		&.page-template-template-full-width, &.page-template-template-full-width-no-margins {
-			.entry-content > *:not(.alignfull):not(.alignwide), .entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
+			.entry-content {
+				> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > blockquote, > pre, > figure,
+				> strong, > span, > table {
+					max-width: 80%;
+					width: 80%;
+				}
+				.row {
+					max-width: 1200px;;
+				}
+				> .alignwide {
+					max-width: 90%;
+					width: 90%;
+				}
+				> .alignfull {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+			.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
 				max-width: 80%;
 				width: 80%;
 			}
 			.alignwide {
 				max-width: 90%;
 				width: 90%;
+				.row {
+					max-width: 1200px;;
+				}
 			}
 			.alignfull {
 				width: 100%;
@@ -124,8 +160,8 @@
 .gutenberg-compatible-template.using-gutenberg {
 	// New Lsx Class (Keep it at the bottom)
 	.lsx-full-width-gutenberg {
-		width: 100% !important;
-		max-width: 100% !important;
+		width: 100%;
+		max-width: 100%;
 		background: white;
 		padding-top: 8.4rem;
 		padding-bottom: 8.4rem;

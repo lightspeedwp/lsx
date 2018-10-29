@@ -1,4 +1,5 @@
 .gutenberg-compatible-template.using-gutenberg {
+	//Blockquote
 	blockquote.wp-block-quote:not(.is-large):not(.is-style-large) {
 		border-left-width: 1px;
 		padding-left: 4rem;
@@ -15,5 +16,29 @@
 			@include lsx-button-scaffolding();
 			@include lsx-button-colour();
 		}
+	}
+	//Buttons
+	.wp-block-button__link {
+		border: 0 none;
+		border-radius: 3px;
+		display: inline-block;
+		font-size: 14px;
+		font-weight: 700;
+		height: 48px;
+		left: 0;
+		letter-spacing: 0.6px;
+		line-height: 1.25;
+		padding: 15px 40px;
+		position: relative;
+		text-transform: uppercase;
+		top: 0;
+		transition: all 100ms ease;
+	}
+	// Separator
+	.wp-block-separator {
+		margin-top: 24px;
+		margin-bottom: 24px;
+		border: 0;
+		border-top: 1px solid #eeeeee;
 	}
 }
