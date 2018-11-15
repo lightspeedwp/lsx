@@ -20,6 +20,14 @@
 
 	& > .fa { margin-left: 10px; }
 }
+.button-holder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
 
 @mixin lsx-bordered-button ($color: map-get($buttons, bg), $color-hover: map-get($buttons, color), $bg: transparent, $bg-hover: map-get($buttons, bg)) {
 	@include lsx-button-colour($color, $color-hover, $bg, $bg-hover);
@@ -107,6 +115,8 @@
 		button.button,
 		input.button {
 			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+			min-height: 40px;
+    		height: 100% !important;
 		}
 	}
 

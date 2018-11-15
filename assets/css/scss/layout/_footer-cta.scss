@@ -6,6 +6,16 @@
 		margin: 0 auto;
 		min-width: 290px;
 		text-align: center;
+		.wpforms-widget, .widget_caldera_forms_widget {
+			@include media('>=desktop') {
+				width: 50%;
+			}
+			margin: 0 auto;
+			.wpforms-field, .wpforms-submit-container {
+				padding: 0;
+				margin: 0;
+			}
+		}
 	}
 
 	.widget-title {

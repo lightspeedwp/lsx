@@ -78,6 +78,10 @@ function lsx_banner_content() {
 	do_action( 'lsx_banner_content' );
 }
 
+function lsx_banner_inner_top() {
+	do_action( 'lsx_banner_inner_top' );
+}
+
 function lsx_banner_inner_bottom() {
 	do_action( 'lsx_banner_inner_bottom' );
 }
