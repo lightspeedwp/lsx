@@ -38,7 +38,17 @@
 		}
 		.row.lsx-related-posts, .navigation.post-navigation {
 			margin: 0 auto;
-			width: 1170px;
+			width: 100%;
+			max-width: 1170px;
+			padding-left: 15px;
+			padding-right: 15px;
+			@media (max-width: 992px) {
+				max-width: 750px;
+			}
+			.entry-header {
+				width: 100%;
+				max-width: 100%;
+			}
 		}
 		#respond {
 			margin: 0 auto;
@@ -58,13 +68,18 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg {
-		.entry-content {
+		.entry-content  {
 			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > blockquote, > pre, > figure,
 			> strong, > span, > table {
 				max-width: 50%;
 				width: 50%;
 				margin-left: auto;
 				margin-right: auto;
+			}
+			.has-drop-cap {
+				&:first-letter {
+					margin-bottom: 5px;
+				}
 			}
 		}
 		@media only screen and (min-width: 1168px) {
@@ -73,7 +88,7 @@
 			}
 		}
 
-		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
+		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta {
 			max-width: 50%;
 			width: 50%;
 			margin-left: auto;
@@ -138,24 +153,6 @@
 		}
 	}
 }
-/** COLUMNS BLOCK **/
-// .wp-block-columns {
-
-// }
-
-.wp-block-column {
-    margin: 0 20px;
-}
-
-@media screen and (max-width: 600px) {
-    .wp-block-columns {
-        display: block;
-    }
-
-    .wp-block-column {
-        margin: 10px 0;
-    }
-}
 
 .gutenberg-compatible-template.using-gutenberg {
 	// New Lsx Class (Keep it at the bottom)
@@ -178,9 +175,9 @@
 			margin-top: -2.4rem !important;
 		}
 	}
-	.wp-block-columns.has-1-columns {
-		&:last-child {
-			margin-bottom: -8.4rem;
-		}
-	}
+	// .wp-block-columns.has-1-columns {
+	// 	&:last-child {
+	// 		margin-bottom: -8.4rem;
+	// 	}
+	// }
 }
