@@ -181,3 +181,32 @@
 	// 	}
 	// }
 }
+
+@media (min-width: 1500px) {
+	.gutenberg-compatible-template.using-gutenberg {
+		.wp-block-columns  {
+			&.has-4-columns, &.has-2-columns, &.has-1-columns {
+				display: flex;
+				justify-content: center;
+			}
+			&.has-1-columns {
+				width: 100%;
+				min-width: 100%;
+				.wp-block-column {
+					flex-basis: initial;
+					max-width: 1150px;
+				}
+			}
+			&.has-4-columns {
+				.wp-block-column {
+					max-width: 250px;
+				}
+			}
+			&.has-2-columns {
+				.wp-block-column {
+					max-width: 600px;
+				}
+			}
+		}
+	}
+}
