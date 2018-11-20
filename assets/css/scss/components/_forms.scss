@@ -12,9 +12,11 @@
     	outline: 0;
     }
 }
-.wpforms-field-container {
-	.wpforms-field {
-	    margin-bottom: 15px;
+.wpforms-field-container, .gform_fields {
+	.wpforms-field, .gfield {
+		margin-bottom: 15px;
+		padding: 10px 0;
+    	position: relative;
 	}
 	input.wpforms-error {
 		border-color: #a94442 !important;
@@ -52,7 +54,7 @@
     	margin: 0 !important;
     	li {
 			list-style-type: none;
-			label.wpforms-field-label-inline {
+			label.wpforms-field-label-inline, label {
 				font-weight: initial;
 			}
 		}
@@ -184,7 +186,10 @@
 	&:focus {
 		@extend %lsx-form-field;
 	}
-
+	&::placeholder {
+		color: #ddd;
+		font-weight: 600;
+	}
 }
 
 .gform_wrapper .button, .gform_wrapper button {
@@ -199,12 +204,14 @@
 .gform_wrapper .gfield_error {
 	.gfield_label {
 		@extend .alert-danger;
+		background-color: transparent;
 	}
 
 	input,
 	select,
 	textarea {
 		@extend .alert-danger;
+		border-color: #cc0000;
 	}
 }
 
