@@ -26,7 +26,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    vertical-align: middle;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
 }
 
 @mixin lsx-bordered-button ($color: map-get($buttons, bg), $color-hover: map-get($buttons, color), $bg: transparent, $bg-hover: map-get($buttons, bg)) {

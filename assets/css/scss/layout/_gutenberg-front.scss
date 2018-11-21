@@ -64,15 +64,19 @@
 		.alignfull {
 			width: 100%;
 			max-width: 100%;
+			.slick-slider, #lsx-team-slider {
+				width: 100%;
+				max-width: 100%;
+			}
 		}
 	}
 
 	.gutenberg-compatible-template.using-gutenberg {
 		.entry-content  {
-			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > blockquote, > pre, > figure,
+			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
 			> strong, > span, > table {
-				max-width: 50%;
-				width: 50%;
+				max-width: 60%;
+				width: 60%;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -89,8 +93,8 @@
 		}
 
 		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta {
-			max-width: 50%;
-			width: 50%;
+			max-width: 60%;
+			width: 60%;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -146,10 +150,14 @@
 @media only screen and (max-width: 767px) {
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
-			margin-left: -5.4rem;
-			margin-right: -5.4rem;
+			// margin-left: -5.4rem;
+			// margin-right: -5.4rem;
 			width: auto;
 			max-width: none;
+		}
+		.wp-block-media-text {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }
@@ -162,8 +170,8 @@
 		background: white;
 		padding-top: 8.4rem;
 		padding-bottom: 8.4rem;
-		margin-top: 8.4rem;
-    	margin-bottom: 8.4rem;
+		// margin-top: 8.4rem;
+    	// margin-bottom: 8.4rem;
 		&.has-1-columns {
 			.wp-block-column {
 				max-width: 50%;
@@ -175,17 +183,21 @@
 			margin-top: -2.4rem !important;
 		}
 	}
-	// .wp-block-columns.has-1-columns {
-	// 	&:last-child {
-	// 		margin-bottom: -8.4rem;
-	// 	}
-	// }
 }
 
-@media (min-width: 1500px) {
+// This is to make sure contents respect the max width
+@media (min-width: 1200px) {
 	.gutenberg-compatible-template.using-gutenberg {
+		.entry-content {
+			figure.wp-block-embed, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
+			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image, ol, table, .wp-block-button, .slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
+				max-width: 1150px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
 		.wp-block-columns  {
-			&.has-4-columns, &.has-2-columns, &.has-1-columns {
+			&.has-6-columns, &.has-5-columns, &.has-4-columns, &.has-3-columns, &.has-2-columns, &.has-1-columns {
 				display: flex;
 				justify-content: center;
 			}
@@ -197,16 +209,36 @@
 					max-width: 1150px;
 				}
 			}
+			&.has-2-columns {
+				.wp-block-column {
+					max-width: 550px;
+				}
+			}
+			&.has-3-columns {
+				.wp-block-column {
+					max-width: 366px;
+				}
+			}
 			&.has-4-columns {
 				.wp-block-column {
 					max-width: 250px;
 				}
 			}
-			&.has-2-columns {
+			&.has-5-columns {
 				.wp-block-column {
-					max-width: 600px;
+					max-width: 220px;
+				}
+			}
+			&.has-6-columns {
+				.wp-block-column {
+					max-width: 183px;
 				}
 			}
 		}
+		// .wp-block-media-text.alignfull {
+		// 	.wp-block-media-text__content {
+		// 		max-width: 550px;
+		// 	}
+		// }
 	}
 }
