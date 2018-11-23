@@ -145,6 +145,13 @@
 }
 
 /** Gravity Forms */
+
+.wpforms-field-container .wpforms-field, .wpforms-field-container .gfield, .gform_fields .wpforms-field, .gform_fields .gfield {
+    margin-bottom: 0px;
+    padding: 5px 0;
+    position: relative;
+}
+
 .gform_wrapper form {
 	margin-bottom: 0;
 }
@@ -233,4 +240,9 @@
 
 .validation_message {
 	display: none;
+}
+
+@media screen and (max-width: 768px)
+.gform_wrapper button {
+    width: 100%;
 }
