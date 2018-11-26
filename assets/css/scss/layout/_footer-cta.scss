@@ -39,19 +39,25 @@
 				width: 100%;
 			}
 			.gform_body {
-				width: 70%;
+
 				padding: 0;
 				margin: 0;
-				float: left;
+				@include media('>=desktop') {
+					float: left;
+					width: 70%;
+				}
 				label {
 					display: none;
 				}
 			}
 			.gform_footer {
-				width: 30%;
+
 				padding: 0;
 				margin: 0;
-				float: right;
+				@include media('>=desktop') {
+					float: right;
+					width: 30%;
+				}
 				button {
 					width: 100%;
 				}
