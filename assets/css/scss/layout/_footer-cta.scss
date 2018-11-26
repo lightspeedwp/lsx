@@ -6,14 +6,53 @@
 		margin: 0 auto;
 		min-width: 290px;
 		text-align: center;
-		.wpforms-widget, .widget_caldera_forms_widget {
+		.wpforms-widget, .widget_caldera_forms_widget, .gform_wrapper {
 			@include media('>=desktop') {
 				width: 50%;
 			}
 			margin: 0 auto;
-			.wpforms-field, .wpforms-submit-container {
+			.wpforms-field, .wpforms-submit-container, .gfield {
 				padding: 0;
 				margin: 0;
+			}
+			input {
+				border-radius: 3px 0 0 3px;
+				&::placeholder {
+					color: #ddd;
+					text-transform: capitalize;
+				}
+			}
+			button.btn {
+				border-radius: 0 3px 3px 0px;
+				box-shadow: 0px 2px 0 0 #27639e;
+			}
+		}
+		.form-icon {
+			button:after {
+				content: '\f1d9';
+				font: normal normal normal 14px/1 FontAwesome;
+				margin-left: 5px;
+			}
+		}
+		.gform_wrapper {
+			form {
+				display: flex;
+			}
+			.gform_body {
+				width: 70%;
+				padding: 0;
+				margin: 0;
+				label {
+					display: none;
+				}
+			}
+			.gform_footer {
+				width: 30%;
+				padding: 0;
+				margin: 0;
+				button {
+					width: 100%;
+				}
 			}
 		}
 	}
