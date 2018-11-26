@@ -35,13 +35,14 @@
 			}
 		}
 		.gform_wrapper {
-			form {
-				display: flex;
+			.gform_heading {
+				width: 100%;
 			}
 			.gform_body {
 				width: 70%;
 				padding: 0;
 				margin: 0;
+				float: left;
 				label {
 					display: none;
 				}
@@ -50,6 +51,7 @@
 				width: 30%;
 				padding: 0;
 				margin: 0;
+				float: right;
 				button {
 					width: 100%;
 				}
