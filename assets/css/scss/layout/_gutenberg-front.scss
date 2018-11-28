@@ -147,11 +147,22 @@
 	}
 }
 
+/*--------------------------------------------------------------
+3.0 Mobile Only
+--------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
 			// margin-left: -5.4rem;
 			// margin-right: -5.4rem;
+			//width: auto;
+			//max-width: none;
+			margin-left: -50px;
+			margin-right: -50px;
+			width: calc( 100% + 50px * 2);
+			max-width: calc( 100% + 50px * 2);
+		}
+		.lsx-full-width-gutenberg.alignfull {
 			width: auto;
 			max-width: none;
 		}
@@ -162,8 +173,11 @@
 	}
 }
 
+/*--------------------------------------------------------------
+4.0 New Lsx Class 'lsx-full-width-gutenberg' (Keep it at the bottom)
+--------------------------------------------------------------*/
+
 .gutenberg-compatible-template.using-gutenberg {
-	// New Lsx Class (Keep it at the bottom)
 	.lsx-full-width-gutenberg {
 		width: 100%;
 		max-width: 100%;
@@ -185,12 +199,15 @@
 	}
 }
 
-// This is to make sure contents respect the max width
+/*--------------------------------------------------------------
+5.0 This is to make sure contents respect the max width
+--------------------------------------------------------------*/
+
 @media (min-width: 1200px) {
 	.gutenberg-compatible-template.using-gutenberg {
 		.entry-content {
 			figure.wp-block-embed, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
-			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image, ol, table, .wp-block-button, .slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
+			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
 				max-width: 1150px;
 				margin-left: auto;
 				margin-right: auto;
@@ -241,4 +258,42 @@
 		// 	}
 		// }
 	}
+}
+
+/*--------------------------------------------------------------
+6.0 Colors for the customizer colo options
+--------------------------------------------------------------*/
+
+// Brand Colors
+// -- normal / darker / lighter
+$strong-blue: #27639e;
+$lighter-blue: #428bca;
+$light-yellow: #FFBC49;
+$dark-yellow: #ab7800;
+
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+.has-strong-blue-color {
+	color: $strong-blue;
+}
+.has-lighter-blue-color {
+	color: $lighter-blue;
+}
+.has-light-yellow-color {
+	color: $light-yellow;
+}
+.has-dark-yellow-color {
+	color: $dark-yellow;
+}
+.has-strong-blue-background-color {
+	background-color: $strong-blue;
+}
+.has-lighter-blue-background-color {
+	background-color: $lighter-blue;
+}
+.has-light-yellow-background-color {
+	background-color: $light-yellow;
+}
+.has-dark-yellow-background-color {
+	background-color: $dark-yellow;
 }
