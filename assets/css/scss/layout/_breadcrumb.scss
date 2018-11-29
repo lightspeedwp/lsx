@@ -46,8 +46,9 @@
 	}
 }
 
+ /** IE 11 Fix for Breadcrumbs **/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	.breadcrumbs-container.breadcrumbs-yoast {
-		margin-top: 54px;
+		margin-top: 0;
 	}
 }
