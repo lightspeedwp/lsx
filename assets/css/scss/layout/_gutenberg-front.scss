@@ -204,7 +204,10 @@
 --------------------------------------------------------------*/
 
 @media (min-width: 1200px) {
-	.gutenberg-compatible-template.using-gutenberg {
+	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
+	.gutenberg-compatible-template.using-gutenberg.page-template-default {
 		.entry-content {
 			figure.wp-block-embed, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
 			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
