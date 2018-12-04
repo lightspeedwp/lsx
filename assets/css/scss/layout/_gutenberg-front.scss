@@ -72,7 +72,7 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg {
-		.entry-content  {
+		.entry-content {
 			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
 			> strong, > span, > table {
 				max-width: 60%;
@@ -92,7 +92,7 @@
 			}
 		}
 
-		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta {
+		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta, .archive-header-wrapper  {
 			max-width: 60%;
 			width: 60%;
 			margin-left: auto;
