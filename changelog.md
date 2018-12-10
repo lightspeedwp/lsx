@@ -1,5 +1,11 @@
 ## LSX Changelog
 
+### 2.2
+* Dev - Prepared the theme for Wordpress 5.0
+* Dev - Added Gutenberg compatibility
+* Dev - The breadcrums are now at the top of the banner
+* Fix - General bug fixes
+
 ### 
 * Fix - Fixed the "title" attribute not being used in the Nav Walker class.
 * Fix - Fixed the Fontawesome select icons for the Stripe payment gateway in WooCommerce
