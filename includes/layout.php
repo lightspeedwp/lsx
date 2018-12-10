@@ -337,11 +337,10 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 
 					<h2 class="archive-author-posts text-center">
 						<?php
-							printf(
-								/* Translators: %s: author name */
-								esc_html__( 'All posts by %s', 'lsx' ),
-								esc_html( $author )
-							);
+						if ( '' !== $author ) {
+							esc_html_e( 'All posts by ', 'lsx' );
+							esc_html( $author );
+						}
 						?>
 					</h2>
 				</div>

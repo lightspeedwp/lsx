@@ -273,7 +273,7 @@ if ( ! function_exists( 'lsx_page_banner' ) ) :
 				?>
 					<div class="page-banner-wrap">
 						<div class="page-banner">
-						<?php lsx_banner_inner_top(); ?>
+							<?php lsx_banner_inner_top(); ?>
 
 							<div class="page-banner-image" style="background-image:url(<?php echo esc_attr( $bg_image ); ?>);"></div>
 
