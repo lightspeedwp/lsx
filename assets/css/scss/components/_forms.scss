@@ -1,4 +1,4 @@
-.wpforms-field input, .wpforms-field-container select, .wpforms-field-container textarea {
+.wpforms-field input, .wpforms-field-container select, .wpforms-field-container textarea, .form-control, .gform_wrapper input[type="email"], .gform_wrapper input[type="date"], .gform_wrapper input[type="datetime"], .gform_wrapper input[type="datetime-local"], .gform_wrapper input[type="month"], .gform_wrapper input[type="number"], .gform_wrapper input[type="password"], .gform_wrapper input[type="search"], .gform_wrapper input[type="tel"], .gform_wrapper input[type="text"], .gform_wrapper input[type="time"], .gform_wrapper input[type="week"], .gform_wrapper input[type="url"], .gform_wrapper select, .gform_wrapper textarea {
 	display: block;
     width: 100%;
     height: 50px;
@@ -12,9 +12,11 @@
     	outline: 0;
     }
 }
-.wpforms-field-container {
-	.wpforms-field {
-	    margin-bottom: 15px;
+.wpforms-field-container, .gform_fields {
+	.wpforms-field, .gfield {
+		margin-bottom: 15px;
+		padding: 10px 0;
+    	position: relative;
 	}
 	input.wpforms-error {
 		border-color: #a94442 !important;
@@ -52,7 +54,7 @@
     	margin: 0 !important;
     	li {
 			list-style-type: none;
-			label.wpforms-field-label-inline {
+			label.wpforms-field-label-inline, label {
 				font-weight: initial;
 			}
 		}
@@ -145,6 +147,13 @@
 }
 
 /** Gravity Forms */
+
+.wpforms-field-container .wpforms-field, .wpforms-field-container .gfield, .gform_fields .wpforms-field, .gform_fields .gfield {
+    margin-bottom: 0px;
+    padding: 5px 0;
+    position: relative;
+}
+
 .gform_wrapper form {
 	margin-bottom: 0;
 }
@@ -186,7 +195,10 @@
 		border-width: 1px;
     	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(65,138,208,0.6) !important;
 	}
-
+	&::placeholder {
+		color: #ddd;
+		font-weight: 600;
+	}
 }
 
 .gform_wrapper .button, .gform_wrapper button {
@@ -201,6 +213,7 @@
 .gform_wrapper .gfield_error {
 	.gfield_label {
 		@extend .alert-danger;
+		background-color: transparent;
 	}
 	.ginput_container {
 		input,
@@ -223,6 +236,7 @@
 	select,
 	textarea {
 		@extend .alert-danger;
+		border-color: #cc0000;
 	}
 }
 
@@ -233,4 +247,10 @@
 
 .validation_message {
 	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.gform_wrapper button, .wpforms-submit-container button {
+		width: 100%;
+	}
 }

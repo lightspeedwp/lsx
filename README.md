@@ -23,6 +23,8 @@ LSX is a light-weight, minimalistic and responsive WordPress theme that allows u
 
 LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color options, home page configuration, widget areas and much more.
 
+LSX is now a Gutenberg-ready theme.
+
 ## Installation
 
 * In your admin panel, go to Appearance -> Themes and click the Add New button.

@@ -1,0 +1,307 @@
+/*--------------------------------------------------------------
+1.0 Apply 100% Width to Necessary Elements
+--------------------------------------------------------------*/
+
+.gutenberg-compatible-template.using-gutenberg {
+	.entry-content {
+		padding: 2.4rem;
+		@media only screen and (min-width: 768px) {
+			max-width: 100%;
+			width: 100%;
+			float: none;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	.navigation, #respond, .footer-meta {
+		padding: 2.4rem;
+		@media only screen and (min-width: 768px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+2.0 Apply Wide, Full and Default Align Styles
+--------------------------------------------------------------*/
+
+@media only screen and (min-width: 768px) {
+	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post, .gutenberg-compatible-template.using-gutenberg.page-template-default,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar {
+		.wrap.container, article.post {
+			max-width: 100%;
+			width: 100%;
+			float: none;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.row.lsx-related-posts, .navigation.post-navigation {
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1170px;
+			padding-left: 15px;
+			padding-right: 15px;
+			@media (max-width: 992px) {
+				max-width: 750px;
+			}
+			.entry-header {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+		#respond {
+			margin: 0 auto;
+			width: 40%;
+			max-width: 570px;
+		}
+		.alignwide {
+			max-width: 75%;
+			width: 75%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.alignfull {
+			width: 100%;
+			max-width: 100%;
+			.slick-slider, #lsx-team-slider {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+
+	.gutenberg-compatible-template.using-gutenberg {
+		.entry-content {
+			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
+			> strong, > span, > table {
+				max-width: 60%;
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.has-drop-cap {
+				&:first-letter {
+					margin-bottom: 5px;
+				}
+			}
+		}
+		@media only screen and (min-width: 1168px) {
+			.entry-content > *, .entry-summary > * {
+				max-width: calc(6 * (100vw / 12));
+			}
+		}
+
+		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta, .archive-header-wrapper  {
+			max-width: 60%;
+			width: 60%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&.page-template-template-full-width, &.page-template-template-full-width-no-margins {
+			.entry-content {
+				> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > blockquote, > pre, > figure,
+				> strong, > span, > table {
+					max-width: 80%;
+					width: 80%;
+				}
+				.row {
+					max-width: 1200px;;
+				}
+				> .alignwide {
+					max-width: 90%;
+					width: 90%;
+				}
+				> .alignfull {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+			.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
+				max-width: 80%;
+				width: 80%;
+			}
+			.alignwide {
+				max-width: 90%;
+				width: 90%;
+				.row {
+					max-width: 1200px;;
+				}
+			}
+			.alignfull {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+
+	.gutenberg-compatible-template.using-gutenberg .post-thumbnail img,
+	.gutenberg-compatible-template.using-gutenberg .alignwide img,
+	.gutenberg-compatible-template.using-gutenberg .alignfull img {
+		width: 100%;
+	}
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar article.page, .gutenberg-compatible-template.using-gutenberg.page-template-default:not(.has-sidebar) article.page,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins {
+		width: 100%;
+	}
+}
+
+/*--------------------------------------------------------------
+3.0 Mobile Only
+--------------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
+		.alignfull {
+			// margin-left: -5.4rem;
+			// margin-right: -5.4rem;
+			//width: auto;
+			//max-width: none;
+			margin-left: -50px;
+			margin-right: -50px;
+			width: calc( 100% + 50px * 2);
+			max-width: calc( 100% + 50px * 2);
+		}
+		.lsx-full-width-gutenberg.alignfull {
+			width: auto;
+			max-width: none;
+		}
+		.wp-block-media-text {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+4.0 New Lsx Class 'lsx-full-width-gutenberg' (Keep it at the bottom)
+--------------------------------------------------------------*/
+
+.gutenberg-compatible-template.using-gutenberg {
+	.lsx-full-width-gutenberg {
+		width: 100%;
+		max-width: 100%;
+		background: white;
+		padding-top: 8.4rem;
+		padding-bottom: 8.4rem;
+		// margin-top: 8.4rem;
+    	// margin-bottom: 8.4rem;
+		&.has-1-columns {
+			.wp-block-column {
+				max-width: 50%;
+				margin: 0 auto;
+				padding: 0;
+			}
+		}
+		&.first {
+			margin-top: -2.4rem !important;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+5.0 This is to make sure contents respect the max width
+--------------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
+	.gutenberg-compatible-template.using-gutenberg.page-template-default {
+		.entry-content {
+			figure.wp-block-embed, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
+			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
+				max-width: 1150px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		.entry-meta, .footer-meta, .comment-respond, #comments {
+			max-width: 1150px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.wp-block-columns  {
+			&.has-6-columns, &.has-5-columns, &.has-4-columns, &.has-3-columns, &.has-2-columns, &.has-1-columns {
+				display: flex;
+				justify-content: center;
+			}
+			&.has-1-columns {
+				width: 100%;
+				min-width: 100%;
+				.wp-block-column {
+					flex-basis: initial;
+					max-width: 1150px;
+				}
+			}
+			&.has-2-columns {
+				.wp-block-column {
+					max-width: 550px;
+				}
+			}
+			&.has-3-columns {
+				.wp-block-column {
+					max-width: 366px;
+				}
+			}
+			&.has-4-columns {
+				.wp-block-column {
+					max-width: 250px;
+				}
+			}
+			&.has-5-columns {
+				.wp-block-column {
+					max-width: 220px;
+				}
+			}
+			&.has-6-columns {
+				.wp-block-column {
+					max-width: 183px;
+				}
+			}
+		}
+		// .wp-block-media-text.alignfull {
+		// 	.wp-block-media-text__content {
+		// 		max-width: 550px;
+		// 	}
+		// }
+	}
+}
+
+/*--------------------------------------------------------------
+6.0 Colors for the customizer colo options
+--------------------------------------------------------------*/
+
+// Brand Colors
+// -- normal / darker / lighter
+$strong-blue: #27639e;
+$lighter-blue: #428bca;
+$light-yellow: #FFBC49;
+$dark-yellow: #ab7800;
+
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+.has-strong-blue-color {
+	color: $strong-blue;
+}
+.has-lighter-blue-color {
+	color: $lighter-blue;
+}
+.has-light-yellow-color {
+	color: $light-yellow;
+}
+.has-dark-yellow-color {
+	color: $dark-yellow;
+}
+.has-strong-blue-background-color {
+	background-color: $strong-blue;
+}
+.has-lighter-blue-background-color {
+	background-color: $lighter-blue;
+}
+.has-light-yellow-background-color {
+	background-color: $light-yellow;
+}
+.has-dark-yellow-background-color {
+	background-color: $dark-yellow;
+}

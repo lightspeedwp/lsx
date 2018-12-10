@@ -1,0 +1,47 @@
+.gutenberg-compatible-template.using-gutenberg {
+	//Blockquote
+	blockquote.wp-block-quote:not(.is-large):not(.is-style-large) {
+		border-left-width: 1px;
+		padding-left: 4rem;
+		border-left-color: $breaker;
+	}
+	.wp-block-pullquote {
+		border: none;
+	}
+	.wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper:before {
+		padding-top: 2.4rem;
+	}
+
+	//Buttons
+	.wp-block-button__link, .button {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		min-height: 48px;
+		height: 100% !important;
+		text-align: center;
+	}
+	// Separator
+	.wp-block-separator {
+		margin-top: 24px;
+		margin-bottom: 24px;
+		border: 0;
+		border-top: 1px solid #eeeeee;
+	}
+	// Columns
+	.wp-block-columns {
+		@media screen and (max-width: 600px) {
+			display: block;
+		}
+		.wp-block-column{
+			@media (min-width: 782px) {
+				padding-right: 2rem;
+			}
+			margin: 0;
+		}
+	}
+	// Testiminial Widegt
+	#lsx-testimonials-slider {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

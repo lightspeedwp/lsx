@@ -599,3 +599,16 @@ function lsx_strip_excerpt( $content ) {
 	return $content;
 }
 add_filter( 'the_content', 'lsx_strip_excerpt' );
+
+/**
+ * Disable Gutenberg for LSX Custom Post Tpes.
+ *
+ */
+function lsx_disable_gutenberg_product_type( $is_enabled, $post_type ) {
+	if ( 'testimonial' === $post_type || 'team' === $post_type || 'project' === $post_type ) {
+		return false;
+	}
+
+	return $is_enabled;
+}
+add_filter( 'gutenberg_add_edit_link_for_post_type', 'lsx_disable_gutenberg_product_type', 10, 2 );
