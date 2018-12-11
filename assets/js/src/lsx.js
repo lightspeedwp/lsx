@@ -220,49 +220,6 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 	};
 
 	/**
-	 * Banner effect (parallax).
-	 *
-	 * @package    lsx
-	 * @subpackage scripts
-	 */
-	lsx.set_banner_effect_parallax = function() {
-		var $banner,
-			$bannerImage,
-			bannerEndPosition,
-			base = -40,
-
-			bannerParallax = function() {
-				if ( $window.scrollTop() <= bannerEndPosition ) {
-					var scrolled  = $window.scrollTop() / bannerEndPosition * 100,
-						top       = base + scrolled,
-						bottom    = base - scrolled;
-
-					$bannerImage.css( {
-						'top': top + 'px',
-						'bottom': bottom + 'px'
-					} );
-				}
-			};
-
-		if ( windowWidth > 1199 ) {
-			$banner = $( '.page-banner:not(.gmap-banner)' );
-
-			if ( $banner.length > 0 ) {
-				bannerEndPosition = $banner.height() + $banner.offset().top;
-				$bannerImage = $banner.children( '.page-banner-image' );
-
-				if ( $bannerImage.length > 0 ) {
-					bannerParallax();
-
-					$window.scroll( function() {
-						bannerParallax();
-					} );
-				}
-			}
-		}
-	};
-
-	/**
 	 * Search form effect (on mobile).
 	 *
 	 * @package    lsx
