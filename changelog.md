@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.2.1
+* Fix - Fixed the white screen error when not using the Gutenburg editor.
+
 ### 2.2
 * Dev - Prepared the theme for Wordpress 5.0
 * Dev - Added Gutenberg compatibility
