@@ -586,12 +586,8 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 		lsx.fix_bootstrap_menus_dropdown();
 		lsx.fix_bootstrap_menus_dropdown_click();
 		lsx.fix_lazyload_envira_gallery();
-
 		lsx.set_search_form_effect_mobile();
-
 		lsx.build_slider_lightbox();
-
-		lsx.set_banner_effect_parallax();
 
 		/* LAST CODE TO EXECUTE */
 		$( 'body.preloader-content-enable' ).addClass( 'html-loaded' );
