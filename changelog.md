@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.2.2
+* Fix - Recomplied Minified JS
+
 ### 2.2.1
 * Fix - Fixed the white screen error when not using the Gutenburg editor.
 
