@@ -308,7 +308,7 @@ if ( ! function_exists( 'lsx_disable_banner_for_blocks' ) ) :
 	 * @return boolean
 	 */
 	function lsx_disable_banner_for_blocks( $disable ) {
-		if ( has_blocks() ) {
+		if ( function_exists( 'has_blocks' ) && has_blocks() ) {
 			$disable = true;
 		}
 		return $disable;
