@@ -20,7 +20,7 @@ get_header(); ?>
 
 		<?php lsx_content_top(); ?>
 
-		<?php if ( have_posts() && ! class_exists( 'LSX_Banners' ) ) : ?>
+		<?php if ( have_posts() && ( ! class_exists( 'LSX_Banners' ) || has_blocks() ) ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -47,7 +47,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		<?php if ( is_active_sidebar( 'sidebar-home' ) ) : ?>
+		<?php if ( is_active_sidebar( 'sidebar-home' ) && ! has_blocks() ) : ?>
 
 			<div id="home-widgets">
 

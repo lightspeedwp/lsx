@@ -294,6 +294,28 @@ if ( ! function_exists( 'lsx_page_banner' ) ) :
 
 endif;
 
+add_filter( 'lsx_banner_disable', 'lsx_disable_banner_for_blocks' );
+
+if ( ! function_exists( 'lsx_disable_banner_for_blocks' ) ) :
+
+	/**
+	 * Disable the Banner if the page is using Blocks
+	 *
+	 * @package    lsx
+	 * @subpackage extras
+	 *
+	 * @param  $disable boolean
+	 * @return boolean
+	 */
+	function lsx_disable_banner_for_blocks( $disable ) {
+		if ( has_blocks() ) {
+			$disable = true;
+		}
+		return $disable;
+	}
+
+endif;
+
 add_action( 'lsx_header_after', 'lsx_page_banner' );
 
 if ( ! function_exists( 'lsx_form_submit_button' ) ) :

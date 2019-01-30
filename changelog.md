@@ -2,6 +2,7 @@
 
 ### 2.2.2
 * Fix - Recomplied Minified JS
+* Dev - Added in a filter to disable the LSX Banners if the page is using Blocks
 
 ### 2.2.1
 * Fix - Fixed the white screen error when not using the Gutenburg editor.
