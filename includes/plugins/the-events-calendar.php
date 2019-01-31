@@ -95,3 +95,24 @@ if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
 	add_filter( 'lsx_banner_disable', 'lsx_tec_disable_lsx_banner' );
 
 endif;
+
+if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
+	/**
+	 * Fixes the community events breadcrumb
+	 *
+	 * @package    lsx
+	 * @subpackage the-events-calendar
+	 */
+	function lsx_tec_breadcrumb_filter( $crumbs ) {
+		if ( tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
+
+			foreach ( $crumbs as $crumb_index => $crumb ){
+				if ( isset( $crumb['ptarchive'] ) ) {
+					$crumbs[ $crumb_index ]['ptarchive'] = 'tribe_events';
+				}
+			}
+		}
+		return $crumbs;
+	}
+	add_filter( 'wpseo_breadcrumb_links', 'lsx_tec_breadcrumb_filter', 10, 1 );
+endif;
