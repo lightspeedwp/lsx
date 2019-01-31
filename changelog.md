@@ -1,7 +1,7 @@
 ## LSX Changelog
 
 ### 2.2.2
-* Fix - Recomplied Minified JS
+* Fix - Recompiled Minified JS
 * Dev - Added in a filter to disable the LSX Banners if the page is using Blocks
 * Fix - Making sure the Theme is pre 5.0 compatible
 * Fix - Fixing the breadcrumb for The Events Calendar Community Event when using Yoast SEO Breadcrumbs 
@@ -12,16 +12,16 @@
 ### 2.2
 * Dev - Prepared the theme for Wordpress 5.0
 * Dev - Added Gutenberg compatibility
-* Dev - The breadcrums are now at the top of the banner
+* Dev - The breadcrumbs are now at the top of the banner
 * Fix - General bug fixes
 
 ### 
 * Fix - Fixed the "title" attribute not being used in the Nav Walker class.
-* Fix - Fixed the Fontawesome select icons for the Stripe payment gateway in WooCommerce
+* Fix - Fixed the FontAwesome select icons for the Stripe payment gateway in WooCommerce
 * Dev - Moved the platform.js to the footer.
 * Dev - Added in error handling for the "add_class_browser_to_html" function 
 * Fix - Fixed the lsx-full-width-base class in core of theme
-* Fix - Added style for product buttons on woocommerce featured products widget
+* Fix - Added style for product buttons on WooCommerce featured products widget
 * Dev - Fixed the translation of the Author Page
 
 ### 2.1.7
@@ -34,7 +34,7 @@
 * Dev - Updating packages tough-cookie ~> 2.3.3 and hoek ~> 4.2.1
 
 ### 2.1.5
-* Fix - Fixed the compatability issue with the WooCommerce select2 fields.
+* Fix - Fixed the compatibility issue with the WooCommerce select2 fields.
 
 ### 2.1.4
 * Fix - Removed the WC Select2 from the Checkout page as a temporary fix.
