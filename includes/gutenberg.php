@@ -24,7 +24,7 @@ require_once( get_template_directory() . '/lib/theme-support.php' );
  */
 
 function add_gutenberg_compatible_body_class( $classes ) {
-	if ( ! is_home() && ! is_front_page() )
+	//if ( ! is_home() && ! is_front_page() )
 		if ( is_page() || is_page_template() || is_single() )
 			$classes[] = 'gutenberg-compatible-template';
 		return $classes;
