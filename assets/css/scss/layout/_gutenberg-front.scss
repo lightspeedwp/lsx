@@ -20,6 +20,22 @@
 			padding-right: 0;
 		}
 	}
+	&.page-template-default, &.page-template-template-full-width, &.page-template-template-full-width-no-margins {
+		div#primary {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		div.entry-content {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+}
+.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins {
+	.entry-content {
+		padding: 0;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -92,7 +108,7 @@
 			}
 		}
 
-		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta, .archive-header-wrapper  {
+		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta  {
 			max-width: 60%;
 			width: 60%;
 			margin-left: auto;
@@ -212,7 +228,7 @@
 	.gutenberg-compatible-template.using-gutenberg.page-template-default {
 		.entry-content {
 			figure.wp-block-embed, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
-			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
+			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-projects-slider.slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
 				max-width: 1150px;
 				margin-left: auto;
 				margin-right: auto;
