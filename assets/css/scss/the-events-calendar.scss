@@ -520,13 +520,70 @@ h2.tribe-events-page-title {
 	border: none;
 
 	.my-events-header {
+		background-color: #fff;
+		padding: 16px;
+		border-left: 1px solid #e0e0e0;
+		border-right: 1px solid #e0e0e0;
+		border-top: 1px solid #e0e0e0;
+		border-bottom: 1px solid #c0c0c0;
+		margin: 0;
+
 		h2.my-events {
 			flex-grow: 10;
 		}
 
 		.tribe-button {
 			flex-grow: 1;
+			width: auto;
 		}
+	}
+
+	.tribe-section, .events-community-post-content, .events-community-post-title {
+		background: #fff;
+		border-radius: 3px;
+		font-size: 13px;
+	}
+
+	.tribe-section {
+		margin: 24px 0;
+		padding-bottom: 32px;
+		border: 1px solid #e0e0e0;
+	}
+
+	.events-community-post-title, .events-community-post-content {
+		padding: 16px;
+		font-weight: normal;
+		border-top: 0;
+		border-radius: 0;
+		border-left: 1px solid #e0e0e0;
+		border-right: 1px solid #e0e0e0;
+
+		label {
+			display: block;
+			font-weight: normal;
+			margin: 0;
+		}
+	}
+
+	.events-community-post-title {
+		border-bottom: 0px;
+		border-left: 1px solid #e0e0e0;
+		border-right: 1px solid #e0e0e0;
+		display: block;
+		margin: 0;
+		padding-bottom: 0px;
+
+		#post-title {
+			margin-bottom: 0;
+			width: 100%;
+			display: block;
+		}
+	}
+
+	.events-community-post-content {
+		border-bottom: 1px solid #e0e0e0;
+		padding-top: 0px;
+		padding-bottom: 25px;
 	}
 }
 
@@ -535,7 +592,7 @@ h2.tribe-events-page-title {
  */
 @media (min-width: 992px) {
 
-	.tribe-community-events.form {
+	/*.tribe-community-events.form {
 		.my-events-header {
 			h2.my-events {
 				flex-grow: 10;
@@ -545,16 +602,7 @@ h2.tribe-events-page-title {
 				flex-grow: 1;
 			}
 		}
-
-		.tribe-section, .events-community-post-content, .events-community-post-title {
-			background: #fff;
-			border-radius: 3px;
-			border: 1px solid #e0e0e0;
-			font-size: 13px;
-			margin: 24px 0;
-			padding-bottom: 32px;
-		}
-	}
+	}*/
 
 }
 
