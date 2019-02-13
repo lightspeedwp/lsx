@@ -105,6 +105,33 @@
 	}
 }
 
+/**
+ * Tribe General Structure
+ */
+
+.tribe-button {
+	background-color: #F7AE00 !important;
+	color: #ffffff !important;
+	border: none;
+	-webkit-font-smoothing: antialiased;
+	box-shadow: 2px 2px 0 0 #CE9100;
+	padding: 0.5em;
+	margin: 0em 0 1em 0;
+
+	br {
+		display:none;
+	}
+}
+.tribe-events-button {
+	box-shadow: 2px 2px 0 0 #7A030A;
+	&, #tribe-events & {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		@include small-button();
+	}
+}
+
+
 // Structure
 
 #tribe-events-pg-template {
@@ -136,14 +163,7 @@ article.page {
 	}
 }
 
-.tribe-events-button {
-	box-shadow: 2px 2px 0 0 #7A030A;
-	&, #tribe-events & {
-		@include lsx-button-scaffolding();
-		@include lsx-button-colour();
-		@include small-button();
-	}
-}
+
 .tribe-events-read-more {
 	background-color: #a4050f !important;
 	color: #ffffff !important;
@@ -431,20 +451,7 @@ h2.tribe-events-page-title {
 		padding: 0 2em 0 0;
 	}
 }
-.tribe-button, .button.alt {
-    background-color: #F7AE00 !important;
-    color: #ffffff !important;
-    border: none;
-    width: 100%;
-    -webkit-font-smoothing: antialiased;
-    box-shadow: 2px 2px 0 0 #CE9100;
-	padding: 0.5em;
-    margin: 0em 0 1em 0;
 
-	br {
-		display:none;
-	}
-}
 .tribe-events-tickets {
 	background: #ffffff !important;
 	td {
@@ -465,6 +472,7 @@ h2.tribe-events-page-title {
 	    }
 	}
 }
+
 .tribe-button.tribe-button--rsvp {
 	margin: 0;
 	&:hover {
@@ -506,18 +514,46 @@ h2.tribe-events-page-title {
 	    width: 40%;
 	}
 	.tribe_events-template-default.single .tribe-events-single-event-description {
-		    float: left;
+		float: left;
 	    width: 60%;
 	}
 }
 
 /**
- * Tribe Community Events
+ * Tribe Community Event List
+ */
+
+.tribe-community-events-content {
+
+}
+
+/**
+ * Tribe Community Events Add new
  */
 .tribe-community-events.form {
 	padding: 0;
 	background: transparent;
 	border: none;
+
+	.tribe-button {
+		width: auto;
+	}
+
+	input, .tribe-field-start_date, .tribe-field-end_date, .tribe-field-start_time, .tribe-field-end_time {
+		height: auto;
+		color: #4A4A4A;
+		background-color: #fff;
+		background-image: none;
+		border: 2px solid #DDD;
+		border-radius: 2px;
+		padding: 4px 10px;
+		width: auto;
+
+		&:focus {
+			border-color: #418AD0;
+			outline: 0;
+		}
+	}
 
 	.my-events-header {
 		background-color: #fff;
@@ -534,7 +570,6 @@ h2.tribe-events-page-title {
 
 		.tribe-button {
 			flex-grow: 1;
-			width: auto;
 		}
 	}
 
