@@ -14,14 +14,12 @@
 	color: #4a4a4a;
 	background-color: #fff;
 	background-image: none;
-	border: 1px solid #DDD;
+	border: 2px solid #DDD;
 	border-radius: 2px;
 	// box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 	// transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 
 	// lsx-form-control
-
-	border-width: 2px;
 	box-shadow: none;
 	font-size: 18px;
 	line-height: 1.33;
@@ -513,4 +511,50 @@ h2.tribe-events-page-title {
 	}
 }
 
+/**
+ * Tribe Community Events
+ */
+.tribe-community-events.form {
+	padding: 0;
+	background: transparent;
+	border: none;
+
+	.my-events-header {
+		h2.my-events {
+			flex-grow: 10;
+		}
+
+		.tribe-button {
+			flex-grow: 1;
+		}
+	}
+}
+
+/**
+ * Tribe Community Events Mobile
+ */
+@media (min-width: 992px) {
+
+	.tribe-community-events.form {
+		.my-events-header {
+			h2.my-events {
+				flex-grow: 10;
+			}
+
+			.tribe-button {
+				flex-grow: 1;
+			}
+		}
+
+		.tribe-section, .events-community-post-content, .events-community-post-title {
+			background: #fff;
+			border-radius: 3px;
+			border: 1px solid #e0e0e0;
+			font-size: 13px;
+			margin: 24px 0;
+			padding-bottom: 32px;
+		}
+	}
+
+}
 
