@@ -24,7 +24,7 @@
 					printf(
 						/* Translators: 1: HTML open tag link, 2: HTML close tag link */
 						esc_html__( 'Use LSX with our %1$sTour Operator Plugin%2$s to create the ultimate tour operators website!', 'lsx' ),
-						'<a href="https://www.lsdev.biz/product/tour-operator-plugin/" target="_blank" rel="noreferrer noopener">',
+						'<a href="https://wordpress.org/plugins/tour-operator/ target="_blank" rel="noreferrer noopener">',
 						'</a>'
 					);
 				?>
