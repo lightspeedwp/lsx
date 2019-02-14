@@ -85,8 +85,8 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-services/" target="_blank"><?php esc_html_e( 'Services', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'Adds the "Service" post type to your LSX website which allows you to display and categorize the services your business provides.', 'lsx' ); ?></p>
+						<a href="https://wordpress.org/plugins/lsx-videos/" target="_blank"><?php esc_html_e( 'Videos', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'Adds the "Videos" post type to your LSX website which allows you to display and categorize videos.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
