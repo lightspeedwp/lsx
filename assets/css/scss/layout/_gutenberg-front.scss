@@ -4,7 +4,7 @@
 
 .gutenberg-compatible-template.using-gutenberg {
 	.entry-content {
-		padding: 2.4rem;
+		padding: 2.4rem 0;
 		@media only screen and (min-width: 768px) {
 			max-width: 100%;
 			width: 100%;
@@ -175,8 +175,8 @@
 			//max-width: none;
 			margin-left: -50px;
 			margin-right: -50px;
-			padding-left: 50px;
-    		padding-right: 50px;
+			// padding-left: 50px;
+    		// padding-right: 50px;
 			width: calc( 100% + 50px * 2);
 			max-width: calc( 100% + 50px * 2);
 		}
