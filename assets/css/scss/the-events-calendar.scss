@@ -112,11 +112,15 @@
 .tribe-button {
 	background-color: #F7AE00 !important;
 	color: #ffffff !important;
-	border: none;
+	border: 2px solid #F7AE00 !important;
 	-webkit-font-smoothing: antialiased;
 	box-shadow: 2px 2px 0 0 #CE9100;
-	padding: 0.5em;
+	padding: 15px 40px;
 	margin: 0em 0 1em 0;
+	&:hover {
+		background-color: #ce9100 !important;
+		border: 2px solid #ce9100 !important;
+	}
 
 	br {
 		display:none;
