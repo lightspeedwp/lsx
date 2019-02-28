@@ -6,6 +6,7 @@
 * Fix - Making sure the Theme is pre 5.0 compatible
 * Fix - Fixing the breadcrumb for The Events Calendar Community Event when using Yoast SEO Breadcrumbs
 * Fix - Adding in a style fix for the WP Forms submit button when in a modal
+* Fix - Fixing the homepage conditional statements
 
 ### 2.2.1
 * Fix - Fixed the white screen error when not using the Gutenburg editor.
