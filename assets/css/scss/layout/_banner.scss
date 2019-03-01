@@ -66,6 +66,9 @@
 			right: 0;
 			top: 0;
 			z-index: 1;
+			@include media ("<=custom") {
+				top: 50px;
+			}
 
 			@include media('>=desktop') {
 				bottom: -40px;
