@@ -101,6 +101,7 @@
 	&:visited {
 		font-weight: 400;
 		height: initial;
+		padding: 10px 30px !important;
 	}
 }
 
@@ -533,7 +534,7 @@ h2.tribe-events-page-title {
 				font-weight: 400;
 				text-transform: uppercase;
 			}
-			input {
+			input:not([type='checkbox']) {
 				font-size: 1.2em;
 				height: 1.7em;
 				line-height: 100%;
@@ -546,6 +547,9 @@ h2.tribe-events-page-title {
 				color: #32373c;
 				outline: none;
 				transition: border-color .05s ease-in-out;
+			}
+			input[type='checkbox'] {
+				margin: 5px 0 20px;
 			}
 		}
 	}
