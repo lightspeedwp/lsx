@@ -99,9 +99,8 @@
 	&,
 	&:active,
 	&:visited {
-		height: 40px;
-		line-height: 20px;
-		padding: 10px 18px;
+		font-weight: 400;
+		height: initial;
 	}
 }
 
@@ -109,18 +108,11 @@
  * Tribe General Structure
  */
 
-.tribe-button {
-	background-color: #F7AE00 !important;
-	color: #ffffff !important;
-	border: 2px solid #F7AE00 !important;
-	-webkit-font-smoothing: antialiased;
-	box-shadow: 2px 2px 0 0 #CE9100;
-	padding: 15px 40px;
-	margin: 0em 0 1em 0;
-	&:hover {
-		background-color: #ce9100 !important;
-		border: 2px solid #ce9100 !important;
-	}
+ .tribe_community_edit #tribe-add-exclusion, .tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary, .tribe-community-events-content .tribe-nav .my-events-display-options a {
+	@include lsx-button-scaffolding();
+	@include lsx-button-colour();
+	@include small-button();
+
 
 	br {
 		display:none;
