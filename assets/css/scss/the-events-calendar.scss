@@ -643,7 +643,7 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 
 }
 
-.logged-out.tribe-js {
+.logged-out.tribe-js, .tribe-js:not(.logged-in)  {
 	#primary {
 		#tribe-events, .woocommerce {
 			max-width: 650px;
