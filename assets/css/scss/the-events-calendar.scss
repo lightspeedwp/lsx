@@ -643,3 +643,18 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 
 }
 
+.logged-out.tribe-js {
+	#primary {
+		#tribe-events, .woocommerce {
+			max-width: 650px;
+			margin: auto;
+			#loginform, .woocommerce-form {
+				button, .woocommerce button.button, #wp-submit {
+					@include lsx-button-scaffolding();
+					@include lsx-button-colour();
+					@include small-button();
+				}
+			}
+		}
+	}
+}
