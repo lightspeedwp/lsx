@@ -231,6 +231,9 @@ a.tribe-events-read-more {
 	// }
 	.tribe-events-tooltip {
 		padding: 1em 0.5em;
+		h3.entry-title.summary {
+			padding: 0.5em 0.5em 0 0.5em;
+		}
 		h4 {
 			font-weight: bold;
 			padding: 8px 12px;
@@ -825,4 +828,9 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 			}
 		}
 	//}
+}
+
+#loginform {
+	max-width: 650px;
+	margin: auto;
 }
