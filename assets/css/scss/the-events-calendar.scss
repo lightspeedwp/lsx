@@ -737,8 +737,7 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		font-weight: normal;
 		border-top: 0;
 		border-radius: 0;
-		border-left: 1px solid #e0e0e0;
-		border-right: 1px solid #e0e0e0;
+		border: 1px solid #e0e0e0;
 
 		label {
 			display: block;
@@ -810,8 +809,8 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 
 }
 
-.logged-out.tribe-js, .tribe-js:not(.logged-in), .loginform  {
-	#primary {
+#loginform, .loginform, .content-login  {
+	//#primary {
 		#tribe-events, .woocommerce {
 			max-width: 650px;
 			margin: auto;
@@ -823,5 +822,5 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 				}
 			}
 		}
-	}
+	//}
 }
