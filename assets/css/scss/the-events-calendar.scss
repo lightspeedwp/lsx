@@ -538,7 +538,7 @@ h2.tribe-events-page-title {
 				font-weight: 400;
 				text-transform: uppercase;
 			}
-			input:not([type='checkbox']), textarea {
+			input:not([type='checkbox']):not(.button), textarea {
 				display: block;
 				width: 100%;
 				height: $input-height-base;
@@ -814,23 +814,14 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 
 }
 
-#loginform, .loginform, .content-login  {
-	//#primary {
-		#tribe-events, .woocommerce {
-			max-width: 650px;
-			margin: auto;
-			#loginform, .woocommerce-form {
-				button, .woocommerce button.button, #wp-submit {
-					@include lsx-button-scaffolding();
-					@include lsx-button-colour();
-					@include small-button();
-				}
-			}
-		}
-	//}
+#loginform, .loginform, .woocommerce form.login, .logged-out .woocommerce {
+	max-width: 650px;
+	margin-left: auto;
+    margin-right: auto;
+	button, button.button, #wp-submit {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		@include small-button();
+	}
 }
 
-#loginform {
-	max-width: 650px;
-	margin: auto;
-}
