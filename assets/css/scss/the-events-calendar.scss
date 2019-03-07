@@ -109,7 +109,7 @@
  * Tribe General Structure
  */
 
- .tribe_community_edit #tribe-add-exclusion, .tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary, .tribe-community-events-content .tribe-nav .my-events-display-options a, .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit {
+ .tribe_community_edit #tribe-add-exclusion, .tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary, .tribe-community-events-content .tribe-nav .my-events-display-options a, .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit, #post.tribe-button.submit.events-community-submit {
 	@include lsx-button-scaffolding();
 	@include lsx-button-colour();
 	@include small-button();
@@ -591,6 +591,9 @@ h2.tribe-events-page-title {
 				width: 100%;
 			}
 		}
+		.select2-container.tribe-dropdown:not(.select2-container-multi) {
+			width: 90%;
+		}
 		.select2-container a {
 			border: 2px solid $input-border;
 			border-radius: $input-border-radius;
@@ -708,7 +711,7 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		border-left: 1px solid #e0e0e0;
 		border-right: 1px solid #e0e0e0;
 		border-top: 1px solid #e0e0e0;
-		border-bottom: 1px solid #c0c0c0;
+		border-bottom: none;
 		margin: 0;
 
 		h2.my-events {
@@ -748,8 +751,7 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 
 	.events-community-post-title {
 		border-bottom: 0px;
-		border-left: 1px solid #e0e0e0;
-		border-right: 1px solid #e0e0e0;
+		border: 1px solid #e0e0e0;
 		display: block;
 		margin: 0;
 		//padding-bottom: 0px;
