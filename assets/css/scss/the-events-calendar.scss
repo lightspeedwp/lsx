@@ -129,6 +129,10 @@
 	}
 }
 
+.tribe-events-filter-view.tribe-filters-closed #tribe_events_filters_wrapper .tribe_events_filters_toggle {
+	font-size: 15px;
+}
+
 input#EventImage {
 	position: absolute;
 }
@@ -652,7 +656,7 @@ h2.tribe-events-page-title {
 			font-weight: 400;
 			text-transform: uppercase;
 		}
-		input:not([type='checkbox']), textarea {
+		input:not([type='checkbox']):not([type='submit']), textarea {
 			display: block;
 			width: 100%;
 			height: $input-height-base;
