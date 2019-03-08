@@ -105,11 +105,12 @@
 	}
 }
 
+
 /**
  * Tribe General Structure
  */
 
- .tribe_community_edit #tribe-add-exclusion, .tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary, .tribe-community-events-content .tribe-nav .my-events-display-options a, .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit, #post.tribe-button.submit.events-community-submit {
+ .tribe_community_edit #tribe-add-exclusion, .tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion.button, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary, .tribe-community-events-content .tribe-nav .my-events-display-options a, .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit, #post.tribe-button.submit.events-community-submit, .tribe-community-events.form .tribe-button, #tribe-community-events.form .tribe-button, .tribe-community-events-content .tribe-nav .my-events-display-options a.tribe-button-tertiary, .tribe-community-events-content .tribe-nav .table-menu-wrapper a.tribe-button-tertiary {
 	@include lsx-button-scaffolding();
 	@include lsx-button-colour();
 	@include small-button();
@@ -126,6 +127,10 @@
 		@include lsx-button-colour();
 		@include small-button();
 	}
+}
+
+input#EventImage {
+	position: absolute;
 }
 
 
@@ -195,6 +200,26 @@ a.tribe-events-read-more {
 	}
 }
 
+#tribe-events .tribe-community-events-content .tribe-nav .tribe-pagination .current {
+	background: #418AD0;
+}
+
+.tribe-community-events-content .tribe-nav .my-events-display-options a.tribe-button-tertiary  {
+	color: #fff !important;
+}
+
+.tribe-nav {
+	.table-menu {
+		ul {
+			padding-left: 0;
+		}
+	}
+}
+
+.tribe-community-events .tribe-community-notice.tribe-community-notice-error {
+    margin-top: 1em;
+}
+
 #tribe-events-header {
 	margin-bottom: 0;
 	.tribe-events-sub-nav { display: none; }
@@ -232,7 +257,8 @@ a.tribe-events-read-more {
 	.tribe-events-tooltip {
 		padding: 1em 0.5em;
 		h3.entry-title.summary {
-			padding: 0.5em 0.5em 0 0.5em;
+			padding: 0 0.5em;
+			margin-bottom: 0;
 		}
 		h4 {
 			font-weight: bold;
@@ -241,7 +267,7 @@ a.tribe-events-read-more {
 
 		.tribe-events-event-body {
 			overflow: hidden;
-			padding: 10px 12px 0;
+			padding: 5px 12px 0;
 
 			.tribe-event-duration {
 				font-weight: bold;
@@ -361,10 +387,9 @@ h2.tribe-events-page-title {
 	.tribe-events-event-image { text-align: left; }
 
 	.tribe-events-schedule {
-		h2 { display: block; }
 
 		.tribe-events-cost {
-			display: inline-block;
+			display: table;
 			font-size: 15px;
 			font-style: normal;
 			font-weight: 700;
@@ -714,9 +739,9 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		border-left: 1px solid #e0e0e0;
 		border-right: 1px solid #e0e0e0;
 		border-top: 1px solid #e0e0e0;
-		border-bottom: none;
+		border-bottom: 1px solid #e0e0e0;
 		margin: 0;
-
+		margin-bottom: 1.5em;
 		h2.my-events {
 			flex-grow: 10;
 		}
