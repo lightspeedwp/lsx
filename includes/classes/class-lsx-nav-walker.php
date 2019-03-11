@@ -58,7 +58,7 @@ if ( ! class_exists( 'LSX_Nav_Walker' ) ) :
 				}
 
 				$item_html = apply_filters( 'lsx_wp_nav_menu_item', $item_html );
-				$output .= $item_html;
+				$output   .= $item_html;
 			}
 		}
 

@@ -75,14 +75,14 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 			'priority'    => 22,
 		);
 
-		$lsx_controls['settings']['lsx_header_layout']  = array(
+		$lsx_controls['settings']['lsx_header_layout'] = array(
 			'default'   => 'inline',
 			'type'      => 'theme_mod',
 			'transport' => 'postMessage',
 		);
 
 		$lsx_controls['fields']['lsx_header_layout'] = array(
-			'label'   => esc_html__( 'Header','lsx' ),
+			'label'   => esc_html__( 'Header', 'lsx' ),
 			'section' => 'lsx-layout',
 			'control' => 'LSX_Customize_Header_Layout_Control',
 			'choices' => array(
@@ -134,8 +134,8 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 		);
 
 		$lsx_controls['selective_refresh']['lsx_header_search'] = array(
-			'selector'          => '#lsx-header-search-css',
-			'render_callback'   => function() {
+			'selector'        => '#lsx-header-search-css',
+			'render_callback' => function() {
 				$search_form = get_theme_mod( 'lsx_header_search' );
 
 				if ( false !== $search_form ) {
@@ -165,8 +165,8 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 	 */
 	function lsx_customizer_font_controls( $lsx_controls ) {
 		$data_fonts_file = get_template_directory() . '/assets/jsons/lsx-fonts.json';
-		$data_fonts = lsx_file_get_contents( $data_fonts_file );
-		$data_fonts = apply_filters( 'lsx_fonts_json', $data_fonts );
+		$data_fonts      = lsx_file_get_contents( $data_fonts_file );
+		$data_fonts      = apply_filters( 'lsx_fonts_json', $data_fonts );
 
 		$data_fonts = '{' . $data_fonts . '}';
 		$data_fonts = json_decode( $data_fonts, true );
@@ -177,7 +177,7 @@ if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
 			'priority'    => 41,
 		);
 
-		$lsx_controls['settings']['lsx_font']  = array(
+		$lsx_controls['settings']['lsx_font'] = array(
 			'default'   => 'lora_noto_sans',
 			'type'      => 'theme_mod',
 			'transport' => 'refresh',

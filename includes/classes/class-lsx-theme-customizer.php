@@ -35,7 +35,7 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 			$this->controls = $controls;
 
 			add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ), 20 );
-			add_action( 'customize_register',     array( $this, 'customizer' ), 11 );
+			add_action( 'customize_register', array( $this, 'customizer' ), 11 );
 		}
 
 		/**
@@ -53,35 +53,35 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 * Create customiser controls.
 		 */
 		public function customizer( $wp_customize ) {
-			// Start panels
+			// Start panels.
 			if ( ! empty( $this->controls['panels'] ) ) {
 				foreach ( $this->controls['panels'] as $panel_slug => $args ) {
 					$this->add_panel( $panel_slug, $args, $wp_customize );
 				}
 			}
 
-			// Start sections
+			// Start sections.
 			if ( ! empty( $this->controls['sections'] ) ) {
 				foreach ( $this->controls['sections'] as $section_slug => $args ) {
 					$this->add_section( $section_slug, $args, $wp_customize );
 				}
 			}
 
-			// Start settings
+			// Start settings.
 			if ( ! empty( $this->controls['settings'] ) ) {
 				foreach ( $this->controls['settings'] as $settings_slug => $args ) {
 					$this->add_setting( $settings_slug, $args, $wp_customize );
 				}
 			}
 
-			// Start fields
+			// Start fields.
 			if ( ! empty( $this->controls['fields'] ) ) {
 				foreach ( $this->controls['fields'] as $field_slug => $args ) {
 					$this->add_control( $field_slug, $args, $wp_customize );
 				}
 			}
 
-			// Start selective refresh
+			// Start selective refresh.
 			if ( ! empty( $this->controls['selective_refresh'] ) ) {
 				foreach ( $this->controls['selective_refresh'] as $field_slug => $args ) {
 					$this->add_selective_refresh( $field_slug, $args, $wp_customize );
@@ -93,15 +93,15 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 			$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 
 			$wp_customize->selective_refresh->add_partial( 'blogname', array(
-				'selector'          => 'h1.site-title a',
-				'render_callback'   => function() {
+				'selector'        => 'h1.site-title a',
+				'render_callback' => function() {
 					bloginfo( 'name' );
 				},
 			) );
 
 			$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-				'selector'          => '.site-description',
-				'render_callback'   => function() {
+				'selector'        => '.site-description',
+				'render_callback' => function() {
 					bloginfo( 'description' );
 				},
 			) );

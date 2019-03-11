@@ -27,6 +27,7 @@ if ( ! class_exists( 'LSX_Bootstrap_Navwalker' ) ) :
 	class LSX_Bootstrap_Navwalker extends Walker_Nav_Menu {
 
 		/**
+		 * Used to append additional content.
 		 * @see Walker::start_lvl()
 		 * @since 3.0.0
 		 *
@@ -34,12 +35,13 @@ if ( ! class_exists( 'LSX_Bootstrap_Navwalker' ) ) :
 		 * @param int $depth Depth of page. Used for padding.
 		 */
 		public function start_lvl( &$output, $depth = 0, $args = array() ) {
-			$indent = str_repeat( "\t", $depth );
+			$indent  = str_repeat( "\t", $depth );
 			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
 		}
 
 		/**
-		 * @param string $item Passed by reference. Used to append additional content.
+		 * Used to append additional content.
+		 * @param string $item Passed by reference.
 		 */
 		public function filter_default_pages( &$item ) {
 			return $item;

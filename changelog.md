@@ -1,5 +1,20 @@
 ## LSX Changelog
 
+### 2.3
+* Fix - Fixes and updates for WordPress coding standards
+* Fix - Fixing width for event calendar image
+* Fix - Block columns spacing fix
+* Fix - Fixing the breadcrumbs issue for gutenberg pages
+* Fix - Fixing the Button Styling for the Tribe My Events List Page 
+* Fix - Removing full width Images padding for Mobile
+* Fix - Removing the max width for the Gutenberg Posts
+* Dev - Removing Top and Bottom Margins for Gutenberg Compatible Templates
+* Dev - Styling the Events Community Add New Event Page
+* Dev - Updating the LSX Landing Page for the Admin
+* Dev - Changing the Services Link for Videos on the LSX Admin Page
+* Dev - Community Events Styling
+* Dev - Adding the ‘gutenberg compatible’ class to home page
+
 ### 2.2.2
 * Fix - Recompiled Minified JS
 * Dev - Added in a filter to disable the LSX Banners if the page is using Blocks

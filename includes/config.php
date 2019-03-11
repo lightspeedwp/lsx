@@ -24,17 +24,17 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 		load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
 
-		add_image_size( 'lsx-thumbnail-wide',   350, 230, true );
+		add_image_size( 'lsx-thumbnail-wide', 350, 230, true );
 		add_image_size( 'lsx-thumbnail-square', 350, 350, true );
 		add_image_size( 'lsx-thumbnail-single', 750, 350, true );
 		add_image_size( 'lsx-banner', 1920, 600, true );
 
 		register_nav_menus( array(
 			'primary'       => esc_html__( 'Primary Menu', 'lsx' ),
-			'top-menu'      => esc_html__( 'Top Menu (right)' , 'lsx' ),
-			'top-menu-left' => esc_html__( 'Top Menu (left)' , 'lsx' ),
-			'social'        => esc_html__( 'Social Menu' , 'lsx' ),
-			'footer'        => esc_html__( 'Footer Menu' , 'lsx' ),
+			'top-menu'      => esc_html__( 'Top Menu (right)', 'lsx' ),
+			'top-menu-left' => esc_html__( 'Top Menu (left)', 'lsx' ),
+			'social'        => esc_html__( 'Social Menu', 'lsx' ),
+			'footer'        => esc_html__( 'Footer Menu', 'lsx' ),
 		) );
 
 		add_theme_support( 'automatic-feed-links' );
@@ -65,7 +65,7 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 				'site-title',
 				'site-description',
 			),
-			'size' => 'medium',
+			'size'        => 'medium',
 		) );
 
 		add_theme_support( 'title-tag' );

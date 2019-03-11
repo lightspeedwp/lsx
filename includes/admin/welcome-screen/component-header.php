@@ -27,7 +27,7 @@
 						'<a href="https://wordpress.org/plugins/tour-operator/ target="_blank" rel="noreferrer noopener">',
 						'</a>'
 					);
-				?>
+					?>
 			</p>
 		</div>
 	</div>
@@ -46,7 +46,7 @@
 						'<a href="https://www.lsdev.biz/contact-us/" target="_blank" rel="noreferrer noopener">',
 						'</a>'
 					);
-				?>
+					?>
 			</p>
 
 			<div class="more-button">
