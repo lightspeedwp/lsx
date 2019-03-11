@@ -110,7 +110,7 @@
  * Tribe General Structure
  */
 
- .tribe_community_edit #tribe-add-exclusion, .tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion.button, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary, .tribe-community-events-content .tribe-nav .my-events-display-options a, .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit, #post.tribe-button.submit.events-community-submit, .tribe-community-events.form .tribe-button, #tribe-community-events.form .tribe-button, .tribe-community-events-content .tribe-nav .my-events-display-options a.tribe-button-tertiary, .tribe-community-events-content .tribe-nav .table-menu-wrapper a.tribe-button-tertiary {
+ .tribe-button.tribe-button-small.tribe-upcoming.tribe-button-secondary, .tribe-community-events-content .tribe-nav .my-events-display-options a.tribe-upcoming,.tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion.button, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary,  .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit, #post.tribe-button.submit.events-community-submit, .tribe-community-events.form .tribe-button, #tribe-community-events.form .tribe-button, .tribe-community-events-content .tribe-nav .table-menu-wrapper a.tribe-button-tertiary {
 	@include lsx-button-scaffolding();
 	@include lsx-button-colour();
 	@include small-button();
@@ -208,8 +208,17 @@ a.tribe-events-read-more {
 	background: #418AD0;
 }
 
-.tribe-community-events-content .tribe-nav .my-events-display-options a.tribe-button-tertiary  {
+a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu-btn.button.tribe-button.tribe-button-tertiary.tribe-button-activate, button#tribe-add-exclusion, .tribe-button.tribe-button-small.tribe-upcoming.tribe-button-tertiary,
+.tribe-button.tribe-button-small.tribe-past.tribe-button-secondary {
+	@include lsx-button-scaffolding();
+	@include small-button();
+	background: var(--shuttle-gray);
 	color: #fff !important;
+	border: none;
+	box-shadow: 2px 2px 0 0 var(--button-secondary-hover);
+	&:hover {
+		background: var(--button-secondary-hover);
+	}
 }
 
 .tribe-nav {
@@ -557,7 +566,7 @@ h2.tribe-events-page-title {
 	form {
 		.tribe-events-community-details {
 			background-color: #fff;
-			padding: 1em 2em;
+			//padding: 1em 2em;
 		}
 		div.venue, .events-community-post-title, .events-community-post-content {
 			display: flex;
@@ -609,6 +618,7 @@ h2.tribe-events-page-title {
 		.tribe-section-content, .tribe-section-content-field {
 			ul {
 				border: none;
+				box-shadow: none;
 			}
 			li, input:not(.select2-input):not([type='checkbox']):not(.tribe-datepicker):not(.tribe-timepicker) {
 				border: 2px solid $input-border;
@@ -624,9 +634,9 @@ h2.tribe-events-page-title {
 			}
 		}
 		.select2-container.tribe-dropdown:not(.select2-container-multi) {
-			width: 90%;
+			width: 100%;
 		}
-		.select2-container a {
+		.select2-choice {
 			border: 2px solid $input-border;
 			border-radius: $input-border-radius;
 			@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
@@ -639,8 +649,26 @@ h2.tribe-events-page-title {
 		}
 	}
 }
-.tribe-community-events-content {
 
+
+.tribe-dropdown .select2-choice .select2-arrow, .tribe-ea-dropdown .select2-choice .select2-arrow {
+	top: 10px;
+}
+
+.select2-container .select2-choice abbr {
+    top: 17px;
+}
+
+.tribe-dropdown.select2-container-multi .select2-choices .select2-search-choice div, .tribe-ea-dropdown.select2-container-multi .select2-choices .select2-search-choice div {
+	padding-left: 10px;
+}
+
+.select2-search-choice {
+	margin: 5px 0 !important;
+}
+
+.select2-container.select2-container-multi.tribe-dropdown.tribe-dropdown-created.select2-dropdown-open {
+	border: none;
 }
 
 .tribe-events-venue-meta {
@@ -649,52 +677,84 @@ h2.tribe-events-page-title {
 	}
 }
 
-#tribe-events {
-	#loginform {
-		label {
-			font-size: 16px;
-			font-weight: 400;
+:not(.logged-in) {
+	#tribe-events.tribe-js {
+		max-width: 650px;
+		margin-left: auto;
+		margin-right: auto;
+		background: #fff;
+		border: 1px solid #DDDDDD;
+		> p {
+			border-bottom: 1px solid #DDDDDD;
+			padding: 1em 29px;
 			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 20px;
 		}
-		input:not([type='checkbox']):not([type='submit']), textarea {
-			display: block;
-			width: 100%;
-			height: $input-height-base;
-			padding: $padding-base-vertical $padding-base-horizontal;
-			font-size: $font-size-base;
-			line-height: $line-height-base;
-			color: $input-color;
-			background-color: $input-bg;
-			background-image: none;
-			border: 2px solid $input-border;
-			border-radius: $input-border-radius;
-			@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-			@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-			@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
-			@include form-control-focus;
-			@include placeholder;
-			&::-ms-expand {
-				border: 0;
-				background-color: transparent;
+		#loginform {
+			padding: 1em 2em;
+			label {
+				font-size: 16px;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+			input:not([type='checkbox']):not([type='submit']), textarea {
+				display: block;
+				width: 100%;
+				height: $input-height-base;
+				padding: $padding-base-vertical $padding-base-horizontal;
+				font-size: $font-size-base;
+				line-height: $line-height-base;
+				color: $input-color;
+				background-color: $input-bg;
+				background-image: none;
+				border: 2px solid $input-border;
+				border-radius: $input-border-radius;
+				@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
+				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+				@include form-control-focus;
+				@include placeholder;
+				&::-ms-expand {
+					border: 0;
+					background-color: transparent;
+					}
+				&[disabled],
+				&[readonly],
+				fieldset[disabled] & {
+					background-color: $input-bg-disabled;
+					opacity: 1;
 				}
-			&[disabled],
-			&[readonly],
-			fieldset[disabled] & {
-				background-color: $input-bg-disabled;
-				opacity: 1;
+				&[disabled],
+				fieldset[disabled] & {
+				cursor: $cursor-disabled;
+				}
 			}
-			&[disabled],
-			fieldset[disabled] & {
-			cursor: $cursor-disabled;
+			input[type='checkbox'] {
+				margin: 5px 0 20px;
 			}
+			textarea {
+				height: auto;
+			}
+			@media (max-width:600px) {
+				input#wp-submit {
+					width: 100%;
+				}
+			}
+
 		}
-		input[type='checkbox'] {
-			margin: 5px 0 20px;
-		}
-		textarea {
-			height: auto;
+		> a {
+			display: block;
+			padding: 1em 2em;
 		}
 	}
+}
+
+.tribe-buttonset .tribe-button-field.tribe-active {
+	@include lsx-button-colour();
+	height: inherit;
+    box-shadow: none !important;
+    border: 1px solid #ddd;
 }
 
 #tribe-community-events .my-events-header a.tribe-button.tribe-button-secondary {
@@ -801,25 +861,45 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		padding-bottom: 25px;
 	}
 }
-
+.tribe-community-event-info {
+	width: inherit;
+}
 .tribe-community-event-info {
 	.organizer {
 		display: flex;
 		flex-direction: column;
 		//width: 50%;
+
 		input {
-			font-size: 1.2em;
-			height: 1.7em;
-			line-height: 100%;
-			margin: 5px 0 20px;
-			padding: 2px 5px;
-			width: 100%;
-			background-color: #fff;
-			border: 1px solid #ddd;
-			box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
-			color: #32373c;
-			outline: none;
-			transition: border-color .05s ease-in-out;
+			display: block;
+			height: $input-height-base;
+			padding: $padding-base-vertical $padding-base-horizontal;
+			font-size: $font-size-base;
+			line-height: $line-height-base;
+			color: $input-color;
+			background-color: $input-bg;
+			background-image: none;
+			border: 2px solid $input-border;
+			border-radius: $input-border-radius;
+			@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
+			@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+			@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+			@include form-control-focus;
+			@include placeholder;
+			&::-ms-expand {
+				border: 0;
+				background-color: transparent;
+				}
+			&[disabled],
+			&[readonly],
+			fieldset[disabled] & {
+				background-color: $input-bg-disabled;
+				opacity: 1;
+			}
+			&[disabled],
+			fieldset[disabled] & {
+			cursor: $cursor-disabled;
+			}
 		}
 	}
 }

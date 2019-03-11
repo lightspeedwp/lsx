@@ -189,26 +189,27 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		elseif ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php the_title(); ?></h1>
 				</header>
 
-				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( is_single() && ! is_singular( 'post' ) ) :
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php the_title(); ?></h1>
 				</header>
 
-				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( is_search() ) :
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title">
 						<?php
@@ -221,7 +222,6 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 					</h1>
 				</header>
 
-				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( is_author() ) :
@@ -230,16 +230,17 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			$author_bio = get_the_archive_description();
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php the_archive_title(); ?></h1>
 				</header>
 
-				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( is_archive() ) :
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title">
 						<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && ! is_tax( 'post_format' ) ) { ?>
@@ -251,18 +252,16 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 
 					<?php the_archive_description(); ?>
 				</header>
-
-				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( 'page' === $show_on_front && (int) get_option( 'page_for_posts' ) === $queried_object->ID ) :
 			?>
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>
 				</header>
 
-				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( ! is_singular( 'post' ) ) :
