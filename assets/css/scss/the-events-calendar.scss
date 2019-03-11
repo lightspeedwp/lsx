@@ -677,14 +677,14 @@ h2.tribe-events-page-title {
 	}
 }
 
-:not(.logged-in) {
+body:not(.logged-in) {
 	#tribe-events.tribe-js {
 		max-width: 650px;
 		margin-left: auto;
 		margin-right: auto;
 		background: #fff;
 		border: 1px solid #DDDDDD;
-		> p {
+		> p, .tribe-community-events-content > p {
 			border-bottom: 1px solid #DDDDDD;
 			padding: 1em 29px;
 			text-transform: uppercase;
@@ -743,7 +743,7 @@ h2.tribe-events-page-title {
 			}
 
 		}
-		> a {
+		> a, .tribe-community-events-content > a {
 			display: block;
 			padding: 1em 2em;
 		}
