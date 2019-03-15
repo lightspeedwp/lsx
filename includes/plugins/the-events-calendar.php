@@ -76,9 +76,16 @@ if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_disable_lsx_banner( $disabled ) {
-		global $current_screen;
+		//Check if the banners have been enabled
+		$options = get_option( '_lsx_settings', false );
 
-		$post_types = apply_filters( 'tribe_is_post_type_screen_post_types', Tribe__Main::get_post_types() );
+		if ( false === $options ) {
+			$options = get_option( '_lsx_lsx-settings', false );
+		}
+
+		if ( isset( $options['tribe_events'] ) && isset( $options['tribe_events']['banners_enabled'] ) && 'on' === $options['tribe_events']['banners_enabled'] ) {
+			return false;
+		}
 
 		if ( is_archive() && tribe_is_event() ) {
 			$disabled = true;
