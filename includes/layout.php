@@ -170,10 +170,6 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_global_header() {
-		// if ( true === apply_filters( 'lsx_global_header_disable', false ) ) {
-		// 	return;
-		// }
-
 		$show_on_front  = get_option( 'show_on_front' );
 		$queried_object = get_queried_object();
 		$default_size   = 'sm';

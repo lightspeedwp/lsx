@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.3.1
+* Fix - Added in a conditional statement that disables the page header if WordPress Blocks are being used on the page.
+
 ### 2.3
 * Fix - Fixes and updates for WordPress coding standards
 * Fix - Fixing width for event calendar image

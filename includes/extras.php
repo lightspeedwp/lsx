@@ -295,6 +295,8 @@ if ( ! function_exists( 'lsx_page_banner' ) ) :
 endif;
 
 add_filter( 'lsx_banner_disable', 'lsx_disable_banner_for_blocks' );
+add_filter( 'lsx_global_header_disable', 'lsx_disable_banner_for_blocks' );
+
 
 if ( ! function_exists( 'lsx_disable_banner_for_blocks' ) ) :
 
