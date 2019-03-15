@@ -93,6 +93,7 @@ if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
 
 	// LSX Banners - Banner
 	add_filter( 'lsx_banner_disable', 'lsx_tec_disable_lsx_banner' );
+	add_filter( 'lsx_global_header_disable', 'lsx_tec_disable_lsx_banner' );
 
 endif;
 
