@@ -67,40 +67,37 @@ if ( ! function_exists( 'lsx_tec_theme_wrapper_end' ) ) :
 
 endif;
 
-if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
+if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 
 	/**
-	 * Disable LSX Banners in some pages.
+	 * Move the events title into the global header
 	 *
 	 * @package    lsx
 	 * @subpackage the-events-calendar
 	 */
-	function lsx_tec_disable_lsx_banner( $disabled ) {
-		//Check if the banners have been enabled
-		$options = get_option( '_lsx_settings', false );
-
-		if ( false === $options ) {
-			$options = get_option( '_lsx_lsx-settings', false );
-		}
-
-		if ( isset( $options['tribe_events'] ) && isset( $options['tribe_events']['banners_enabled'] ) && 'on' === $options['tribe_events']['banners_enabled'] ) {
-			return false;
-		}
-
-		if ( is_archive() && tribe_is_event() ) {
-			$disabled = true;
-		}
-
-		if ( is_single() && tribe_is_event() ) {
-			$disabled = true;
-		}
-
-		return $disabled;
+	function lsx_tec_global_header_title( $title ) {
+		$title = tribe_get_events_title();
+		//Only disable the title after we have retrieved it
+		add_filter( 'tribe_get_events_title', 'lsx_text_disable_body_title', 200, 1 );
+		return $title;
 	}
+	add_filter( 'lsx_global_header_title', 'lsx_tec_global_header_title', 200, 1 );
 
-	// LSX Banners - Banner
-	add_filter( 'lsx_banner_disable', 'lsx_tec_disable_lsx_banner' );
-	add_filter( 'lsx_global_header_disable', 'lsx_tec_disable_lsx_banner' );
+endif;
+
+if ( ! function_exists( 'lsx_text_disable_body_title' ) ) :
+	/**
+	 * Disable the events title for the post archive if the dynamic setting is active.
+	 * @param $title
+	 *
+	 * @return string
+	 */
+	function lsx_text_disable_body_title ( $title ) {
+		if ( ! class_exists( 'LSX_Banners' ) ) {
+			$title = '';
+		}
+		return $title;
+	}
 
 endif;
 

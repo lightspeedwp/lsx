@@ -3,6 +3,7 @@
 ### 2.3.1
 * Fix - Added in a conditional statement that disables the page header if WordPress Blocks are being used on the page.
 * Dev - Removing the filter that disables the banner for events
+* Dev - Added in a function to disable The Event Calendar body title and move it into the Global Header
 
 ### 2.3
 * Fix - Fixes and updates for WordPress coding standards

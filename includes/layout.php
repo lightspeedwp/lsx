@@ -242,7 +242,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 						<?php if ( has_post_format() && ! is_category() && ! is_tag() && ! is_date() && ! is_tax( 'post_format' ) ) { ?>
 							<?php the_archive_title( esc_html__( 'Type:', 'lsx' ) ); ?>
 						<?php } else { ?>
-							<?php the_archive_title(); ?>
+							<?php echo wp_kses_post( apply_filters( 'lsx_global_header_title', get_the_archive_title() ) ); ?>
 						<?php } ?>
 					</h1>
 
