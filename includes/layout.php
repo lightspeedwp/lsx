@@ -197,7 +197,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
-					<h1 class="archive-title"><?php the_title(); ?></h1>
+					<h1 class="archive-title"><?php echo wp_kses_post( apply_filters( 'lsx_global_header_title', get_the_title() ) ); ?></h1>
 				</header>
 
 			</div>

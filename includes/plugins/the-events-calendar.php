@@ -79,6 +79,9 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 		$title = tribe_get_events_title();
 		//Only disable the title after we have retrieved it
 		add_filter( 'tribe_get_events_title', 'lsx_text_disable_body_title', 200, 1 );
+		if ( is_singular( 'tribe_events' ) ) {
+			add_filter( 'the_title', 'lsx_text_disable_body_title', 200, 1 );
+		}
 		return $title;
 	}
 	add_filter( 'lsx_global_header_title', 'lsx_tec_global_header_title', 200, 1 );
