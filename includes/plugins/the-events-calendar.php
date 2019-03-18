@@ -112,7 +112,7 @@ if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_breadcrumb_filter( $crumbs ) {
-		if ( tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
+		if ( tribe_is_venue() || tribe_is_organizer() || tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
 
 			foreach ( $crumbs as $crumb_index => $crumb ){
 				if ( isset( $crumb['ptarchive'] ) ) {
