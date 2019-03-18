@@ -112,7 +112,28 @@ if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_breadcrumb_filter( $crumbs ) {
-		if ( tribe_is_venue() || tribe_is_organizer() || tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
+
+		if ( tribe_is_venue() || tribe_is_organizer() ) {
+			$new_crumbs = array();
+			$new_crumbs[0] = $crumbs[0];
+
+			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+				$new_crumbs[1] = array(
+					'text'	=> 'Events',
+					'url'	=> get_post_type_archive_link( 'tribe_events' ),
+				);
+			} else {
+				$new_crumbs[1] = array(
+					0	=> 'Events',
+					1	=> get_post_type_archive_link( 'tribe_events' ),
+				);
+			}
+
+			$new_crumbs[2] = $crumbs[1];
+			$crumbs = $new_crumbs;
+		}
+
+		if ( tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
 
 			foreach ( $crumbs as $crumb_index => $crumb ){
 				if ( isset( $crumb['ptarchive'] ) ) {
@@ -122,5 +143,7 @@ if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
 		}
 		return $crumbs;
 	}
-	add_filter( 'wpseo_breadcrumb_links', 'lsx_tec_breadcrumb_filter', 10, 1 );
+	add_filter( 'wpseo_breadcrumb_links', 'lsx_tec_breadcrumb_filter', 30, 1 );
+	add_filter( 'woocommerce_get_breadcrumb', 'lsx_tec_breadcrumb_filter', 30, 1 );
+
 endif;

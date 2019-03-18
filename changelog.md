@@ -4,7 +4,7 @@
 * Fix - Added in a conditional statement that disables the page header if WordPress Blocks are being used on the page.
 * Dev - Removing the filter that disables the banner for events
 * Dev - Added in a function to disable The Event Calendar body post archive and single title and move it into the Global Header
-* Fix - Added in a Post Type archive link for The Events Calendar Venue and Organizer pages
+* Fix - Added in a post type archive Breadcrumb for The Events Calendar Venue and Organizer pages.  Yoast and Woocommerce Breadcrumbs
 
 ### 2.3
 * Fix - Fixes and updates for WordPress coding standards
