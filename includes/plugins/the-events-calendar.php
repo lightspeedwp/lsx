@@ -76,7 +76,34 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_global_header_title( $title ) {
-		$title = tribe_get_events_title();
+
+		if ( tribe_is_community_edit_event_page() ) {
+
+			$is_route = get_query_var( 'WP_Route' );
+			switch ( $is_route ) {
+				case 'ce-edit-route':
+					$title = apply_filters( 'tribe_ce_edit_event_page_title', __( 'Edit an Event', 'lsx' ) );
+					break;
+
+				case 'ce-edit-organizer-route':
+					$title = __( 'Edit an Organizer', 'lsx' );
+					break;
+
+				case 'ce-edit-venue-route':
+					$title = __( 'Edit a Venue', 'lsx' );
+					break;
+
+				default:
+					$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'Submit an Event', 'lsx' ) );
+					break;
+			}
+
+		} else if ( tribe_is_community_my_events_page() ) {
+			$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) );
+		} else {
+			$title = tribe_get_events_title();
+		}
+
 		//Only disable the title after we have retrieved it
 		add_filter( 'tribe_get_events_title', 'lsx_text_disable_body_title', 200, 1 );
 		if ( is_singular( 'tribe_events' ) ) {
@@ -128,7 +155,27 @@ if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
 					'url'	=> get_post_type_archive_link( 'tribe_events' ),
 				);
 			}
-			$new_crumbs[2] = $crumbs[1];
+
+			if ( tribe_is_community_my_events_page() ) {
+				$new_crumbs[2] = $crumbs[2];
+			} else if ( tribe_is_community_edit_event_page() ) {
+
+				if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+					$new_crumbs[2] = array(
+						0	=> apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
+						1	=> tribe_community_events_list_events_link( ),
+					);
+				} else {
+					$new_crumbs[2] = array(
+						'text'	=> apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
+						'url'	=> tribe_community_events_list_events_link( ),
+					);
+				}
+
+				$new_crumbs[3] = $crumbs[2];
+			} else {
+				$new_crumbs[2] = $crumbs[1];
+			}
 			$crumbs = $new_crumbs;
 		}
 		return $crumbs;
