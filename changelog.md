@@ -6,6 +6,8 @@
 * Dev - Added in a function to disable The Event Calendar body post archive and single title and move it into the Global Header
 * Fix - Added in a post type archive Breadcrumb for The Events Calendar Venue and Organizer pages.  Yoast and Woocommerce Breadcrumbs
 * Fix - Fixed the missing archive header on the Blog Archives
+* Dev - Added in the correct titles for The Events Calendar Community Events
+* Dev - Extended the breadcrumb filter to include handling for The Events Calendar Community Events
 
 ### 2.3
 * Fix - Fixes and updates for WordPress coding standards
