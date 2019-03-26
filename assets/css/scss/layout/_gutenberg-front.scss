@@ -152,8 +152,8 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg .post-thumbnail img,
-	.gutenberg-compatible-template.using-gutenberg .alignwide img,
-	.gutenberg-compatible-template.using-gutenberg .alignfull img {
+	.gutenberg-compatible-template.using-gutenberg .alignwide figure:not(.is-resized) img,
+	.gutenberg-compatible-template.using-gutenberg .alignfull figure:not(.is-resized) img {
 		width: 100%;
 	}
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar article.page, .gutenberg-compatible-template.using-gutenberg.page-template-default:not(.has-sidebar) article.page,
