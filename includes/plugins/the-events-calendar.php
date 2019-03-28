@@ -100,7 +100,7 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 
 		} else if ( tribe_is_community_my_events_page() ) {
 			$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) );
-		} else {
+		} else if ( tribe_is_event() ) {
 			$title = tribe_get_events_title();
 		}
 
