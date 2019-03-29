@@ -32,11 +32,35 @@
 		@media screen and (max-width: 600px) {
 			display: block;
 		}
-		.wp-block-column {
-			@media (min-width: 782px) {
-				padding-left: 1rem;
-				padding-right: 1rem;
+		&.alignwide {
+			max-width: 100%;
+    		width: 100%;
+		}
+		&.has-2-columns {
+			.wp-block-column {
+				@media (min-width: 782px) {
+					&:first-child {
+						padding-right: 1rem;
+					}
+					&:last-child {
+						padding-left: 1rem;
+					}
+				}
 			}
+		}
+
+		&.has-3-columns, &.has-4-columns, &.has-5-columns, &.has-6-columns {
+			.wp-block-column {
+				@media (min-width: 782px) {
+					padding-right: 1rem;
+					&:last-child {
+						padding-right: 0;
+						padding-left: 0;
+					}
+				}
+			}
+		}
+		.wp-block-column {
 			margin: 0;
 		}
 	}
