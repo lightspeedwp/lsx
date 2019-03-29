@@ -69,4 +69,11 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.lsx-button {
+		&:active {
+			left: 2px;
+			top: 2px;
+			position: relative;
+		}
+	}
 }
