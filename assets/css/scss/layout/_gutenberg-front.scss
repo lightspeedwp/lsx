@@ -191,6 +191,22 @@
 	}
 }
 
+@media (min-width: 768px) {
+	.gutenberg-compatible-template {
+		article.post {
+			.entry-content {
+				img.alignnone, article.post .entry-content p img[class*="wp-image-"].alignnone, figure.alignnone {
+					text-align: left;
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
 /*--------------------------------------------------------------
 4.0 New Lsx Class 'lsx-full-width-gutenberg' (Keep it at the bottom)
 --------------------------------------------------------------*/
