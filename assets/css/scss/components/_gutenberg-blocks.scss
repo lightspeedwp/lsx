@@ -40,10 +40,10 @@
 			.wp-block-column {
 				@media (min-width: 782px) {
 					&:first-child {
-						padding-right: 1rem;
+						margin-right: 15px;
 					}
 					&:last-child {
-						padding-left: 1rem;
+						margin-left: 15px;
 					}
 				}
 			}
@@ -52,10 +52,13 @@
 		&.has-3-columns, &.has-4-columns, &.has-5-columns, &.has-6-columns {
 			.wp-block-column {
 				@media (min-width: 782px) {
-					padding-right: 1rem;
+					margin-left: 15px;
+					margin-right: 15px;
+					&:first-child {
+						margin-left: 0;
+					}
 					&:last-child {
-						padding-right: 0;
-						padding-left: 0;
+						margin-right: 0;
 					}
 				}
 			}
