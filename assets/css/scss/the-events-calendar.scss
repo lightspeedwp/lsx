@@ -396,7 +396,7 @@ h2.tribe-events-page-title {
 
 .single-tribe_events {
 	.tribe-events-back { display: none; }
-	.tribe-events-single-event-title { font-size: 40px; }
+	.tribe-events-single-event-title { font-size: 40px; display: none; }
 	.tribe-events-event-image { text-align: left; }
 
 	.tribe-events-schedule {
@@ -675,7 +675,17 @@ h2.tribe-events-page-title {
 	.tribe-events-event-image {
 		clear: both;
 	}
+	.tribe-venue-name {
+		display: none;
+	}
 }
+
+.tribe-events-organizer-meta {
+	.tribe-organizer-name {
+		display: none;
+	}
+}
+
 
 body:not(.logged-in) {
 	#tribe-events.tribe-js {
