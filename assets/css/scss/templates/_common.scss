@@ -170,6 +170,20 @@ article.lsx-slot {
 	}
 }
 
+.search-form {
+	.submit-button {
+		.search-submit {
+			font-size: 0;
+			&:before {
+				content: "\f002";
+				font-family: FontAwesome;
+				font-size: 14px;
+				text-align: center;
+			}
+		}
+	}
+}
+
 #facetwp-top, .facetwp-sidebar {
 	background-color: #ffffff;
 	border: 1px solid #E4E4E4;
@@ -177,6 +191,17 @@ article.lsx-slot {
 #facetwp-top {
 	padding: 5px;
 }
+
+.facetwp-per-page:after, .facetwp-sort:after {
+    content: '\f0d7';
+    color: #919191;
+    position: relative;
+    right: 20px;
+    font-family: FontAwesome;
+    font-size: 20px;
+    top: 3px;
+}
+
 .facetwp-sidebar {
 	padding: 15px;
 	.facetwp-type-search .facetwp-search-wrap .facetwp-search {

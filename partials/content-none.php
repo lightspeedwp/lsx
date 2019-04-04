@@ -19,7 +19,8 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'lsx' ); ?></p>
+			<p><?php esc_html_e( 'Your search for "', 'lsx' ); ?><?php echo get_search_query(); ?><?php esc_html_e( '" didn’t return any results… ', 'lsx' ); ?><br><?php esc_html_e( 'Please try another keyword', 'lsx' ); ?></p>
+
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
