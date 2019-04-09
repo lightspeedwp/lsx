@@ -169,16 +169,17 @@
 @media only screen and (max-width: 767px) {
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
-			// margin-left: -5.4rem;
-			// margin-right: -5.4rem;
-			//width: auto;
-			//max-width: none;
-			margin-left: -50px;
-			margin-right: -50px;
-			// padding-left: 50px;
-    		// padding-right: 50px;
-			width: calc( 100% + 50px * 2);
-			max-width: calc( 100% + 50px * 2);
+			&figure, &.lsx-block-container, &.lsx-block-banner,
+			&.lsx-block-cta, &.wp-block-cover {
+				margin-left: -50px;
+				margin-right: -50px;
+				width: calc( 100% + 50px * 2);
+				max-width: calc( 100% + 50px * 2);
+			}
+			// margin-left: -50px;
+			// margin-right: -50px;
+			// width: calc( 100% + 50px * 2);
+			// max-width: calc( 100% + 50px * 2);
 		}
 		.lsx-full-width-gutenberg.alignfull {
 			width: auto;
