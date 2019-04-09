@@ -124,9 +124,7 @@ if ( ! function_exists( 'lsx_text_disable_body_title' ) ) :
 	 * @return string
 	 */
 	function lsx_text_disable_body_title ( $title ) {
-		if ( ! class_exists( 'LSX_Banners' ) ) {
-			$title = '';
-		}
+		$title = '';
 		return $title;
 	}
 
