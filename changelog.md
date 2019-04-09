@@ -8,6 +8,7 @@
 * Fix - Fixed the missing archive header on the Blog Archives
 * Dev - Added in the correct titles for The Events Calendar Community Events
 * Dev - Extended the breadcrumb filter to include handling for The Events Calendar Community Events
+* Dev - Added in the posts page archive to the breadcrumbs (Yoast and WooCommerce) when viewing the Category and Tag archives.
 
 ### 2.3
 * Fix - Fixes and updates for WordPress coding standards

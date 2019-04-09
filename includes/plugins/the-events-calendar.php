@@ -106,6 +106,7 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 
 		//Only disable the title after we have retrieved it
 		add_filter( 'tribe_get_events_title', 'lsx_text_disable_body_title', 200, 1 );
+
 		if ( is_singular( 'tribe_events' ) ) {
 			add_filter( 'the_title', 'lsx_text_disable_body_title', 200, 1 );
 		}
@@ -146,12 +147,12 @@ if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
 
 			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
 				$new_crumbs[1] = array(
-					0	=> 'Events',
+					0	=> __( 'Events', 'lsx' ),
 					1	=> get_post_type_archive_link( 'tribe_events' ),
 				);
 			} else {
 				$new_crumbs[1] = array(
-					'text'	=> 'Events',
+					'text'	=> __( 'Events', 'lsx' ),
 					'url'	=> get_post_type_archive_link( 'tribe_events' ),
 				);
 			}
