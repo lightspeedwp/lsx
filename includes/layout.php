@@ -20,7 +20,7 @@ if ( ! function_exists( 'lsx_layout_selector' ) ) :
 	 */
 	function lsx_layout_selector( $class, $area = 'site' ) {
 		$return_class = '';
-		$layout       = get_theme_mod( 'lsx_layout', '2cr' );
+		$layout       = get_theme_mod( 'lsx_layout', '1c' );
 		$layout       = apply_filters( 'lsx_layout', $layout );
 		$default_size = 'sm';
 		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );

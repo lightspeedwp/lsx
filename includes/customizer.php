@@ -93,7 +93,7 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 		);
 
 		$lsx_controls['settings']['lsx_layout'] = array(
-			'default'   => '2cr',
+			'default'   => '1c',
 			'type'      => 'theme_mod',
 			'transport' => 'refresh',
 		);
