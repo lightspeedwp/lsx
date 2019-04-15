@@ -310,6 +310,13 @@ if ( ! function_exists( 'lsx_disable_banner_for_blocks' ) ) :
 	 * @return boolean
 	 */
 	function lsx_disable_banner_for_blocks( $disable ) {
+		$queried_object = get_queried_object();
+		$show_on_front  = get_option( 'show_on_front' );
+
+		if ( 'page' === $show_on_front && (int) get_option( 'page_for_posts' ) === $queried_object->ID ) {
+			return $disable;
+		}
+
 		if ( function_exists( 'has_blocks' ) && has_blocks() ) {
 			$disable = true;
 		}
@@ -367,14 +374,14 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 	function lsx_the_excerpt_filter( $excerpt ) {
 
 		$post_formats = array(
-			'aside' => 'aside',
+			'aside'   => 'aside',
 			'gallery' => 'gallery',
-			'link' => 'link',
-			'image' => 'image',
-			'quote' => 'quote',
-			'status' => 'status',
-			'video' => 'video',
-			'audio' => 'audio',
+			'link'    => 'link',
+			'image'   => 'image',
+			'quote'   => 'quote',
+			'status'  => 'status',
+			'video'   => 'video',
+			'audio'   => 'audio',
 		);
 
 		$show_full_content = has_post_format( apply_filters( 'lsx_the_excerpt_filter_post_types', $post_formats ) );
@@ -636,3 +643,41 @@ function lsx_disable_gutenberg_product_type( $is_enabled, $post_type ) {
 	return $is_enabled;
 }
 add_filter( 'gutenberg_add_edit_link_for_post_type', 'lsx_disable_gutenberg_product_type', 10, 2 );
+
+/**
+ * Add the "Blog" link to the breadcrumbs
+ * @param $crumbs
+ * @return array
+ */
+function lsx_breadcrumbs_blog_link( $crumbs ) {
+
+	$show_on_front = get_option( 'show_on_front' );
+
+	if ( 'page' === $show_on_front && ( is_category() || is_tag() ) ) {
+
+		$blog_page = get_option( 'page_for_posts' );
+		if ( false !== $blog_page && '' !== $blog_page ) {
+
+			$new_crumbs = array();
+			$new_crumbs[0] = $crumbs[0];
+
+			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+				$new_crumbs[1] = array(
+					0	=> get_the_title( $blog_page ),
+					1	=> get_permalink( $blog_page ),
+				);
+			} else {
+				$new_crumbs[1] = array(
+					'text'	=> get_the_title( $blog_page ),
+					'url'	=> get_permalink( $blog_page ),
+				);
+			}
+			$new_crumbs[2] = $crumbs[1];
+			$crumbs = $new_crumbs;
+
+		}
+	}
+	return $crumbs;
+}
+add_filter( 'wpseo_breadcrumb_links', 'lsx_breadcrumbs_blog_link', 30, 1 );
+add_filter( 'woocommerce_get_breadcrumb', 'lsx_breadcrumbs_blog_link', 30, 1 );
