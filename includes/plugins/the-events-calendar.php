@@ -97,7 +97,6 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 					$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'Submit an Event', 'lsx' ) );
 					break;
 			}
-
 		} else if ( tribe_is_community_my_events_page() ) {
 			$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) );
 		} else if ( tribe_is_event() ) {
@@ -123,7 +122,7 @@ if ( ! function_exists( 'lsx_text_disable_body_title' ) ) :
 	 *
 	 * @return string
 	 */
-	function lsx_text_disable_body_title ( $title ) {
+	function lsx_text_disable_body_title( $title ) {
 		$title = '';
 		return $title;
 	}
