@@ -31,11 +31,11 @@ if ( ! function_exists( 'lsx_kses_allowed_html' ) ) :
 		$allowedtags['img']['srcset'] = true;
 		$allowedtags['img']['sizes']  = true;
 
-		$allowedtags['input']['name']  = true;
-		$allowedtags['input']['type']  = true;
+		$allowedtags['input']['name'] = true;
+		$allowedtags['input']['type'] = true;
 		$allowedtags['input']['value'] = true;
 		$allowedtags['input']['class'] = true;
-		$allowedtags['input']['id']    = true;
+		$allowedtags['input']['id'] = true;
 		$allowedtags['script']['type'] = true;
 		return $allowedtags;
 	}
@@ -81,13 +81,13 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = 'top-menu-fixed';
 		}
 
-		$search_form = get_theme_mod( 'lsx_header_search', false );
+		$search_form  = get_theme_mod( 'lsx_header_search', false );
 
 		if ( false !== $search_form ) {
 			$classes[] = 'has-header-search';
 		}
 
-		$preloader_content = get_theme_mod( 'lsx_preloader_content_status', false );
+		$preloader_content  = get_theme_mod( 'lsx_preloader_content_status', false );
 
 		if ( false !== $preloader_content ) {
 			$classes[] = 'preloader-content-enable';
@@ -137,8 +137,8 @@ if ( ! function_exists( 'lsx_remove_self_closing_tags' ) ) :
 
 endif;
 
-add_filter( 'get_avatar', 'lsx_remove_self_closing_tags' ); // <img />
-add_filter( 'comment_id_fields', 'lsx_remove_self_closing_tags' ); // <input />
+add_filter( 'get_avatar',          'lsx_remove_self_closing_tags' ); // <img />
+add_filter( 'comment_id_fields',   'lsx_remove_self_closing_tags' ); // <input />
 add_filter( 'post_thumbnail_html', 'lsx_remove_self_closing_tags' ); // <img />
 
 if ( ! function_exists( 'lsx_is_element_empty' ) ) :
@@ -177,7 +177,7 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 		}
 
 		$size = apply_filters( 'lsx_thumbnail_size', $size );
-		$img  = false;
+		$img = false;
 
 		if ( 'lsx-thumbnail-single' === $size || 'lsx-thumbnail-wide' === $size || 'lsx-thumbnail-square' === $size || 'thumbnail' === $size ) {
 			$srcset = false;
@@ -185,12 +185,12 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 			$img    = $img[0];
 		} else {
 			$srcset = true;
-			$img    = wp_get_attachment_image_srcset( $post_thumbnail_id, $size );
+			$img = wp_get_attachment_image_srcset( $post_thumbnail_id, $size );
 
 			if ( empty( $img ) ) {
 				$srcset = false;
-				$img    = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-				$img    = $img[0];
+				$img = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+				$img = $img[0];
 			}
 		}
 
@@ -400,7 +400,7 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 					$excerpt .= $pagination;
 				} else {
 					$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Continue reading', 'lsx' ) . '</a></p>';
-					$excerpt     .= apply_filters( 'excerpt_more_p', $excerpt_more );
+					$excerpt .= apply_filters( 'excerpt_more_p', $excerpt_more );
 				}
 			}
 		}
@@ -410,7 +410,7 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 
 endif;
 
-add_filter( 'the_excerpt', 'lsx_the_excerpt_filter', 1, 20 );
+add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
 
 if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 
@@ -425,17 +425,17 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 		$raw_excerpt = $wpse_excerpt;
 
 		if ( empty( $wpse_excerpt ) ) {
-			$wpse_excerpt = get_the_content( '' );
+			$wpse_excerpt      = get_the_content( '' );
 
 			$post_formats = array(
-				'aside'   => 'aside',
+				'aside' => 'aside',
 				'gallery' => 'gallery',
-				'link'    => 'link',
-				'image'   => 'image',
-				'quote'   => 'quote',
-				'status'  => 'status',
-				'video'   => 'video',
-				'audio'   => 'audio',
+				'link' => 'link',
+				'image' => 'image',
+				'quote' => 'quote',
+				'status' => 'status',
+				'video' => 'video',
+				'audio' => 'audio',
 			);
 
 			$show_full_content = has_post_format( apply_filters( 'lsx_excerpt_read_more_post_formats', $post_formats ) );
@@ -459,7 +459,7 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 				foreach ( $tokens[0] as $token ) {
 					if ( $count >= $excerpt_word_count ) {
 						$excerpt_output .= trim( $token );
-						$has_more        = true;
+						$has_more = true;
 						break;
 					}
 
@@ -476,10 +476,10 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 					$pos = strrpos( $wpse_excerpt, '</' );
 
 					if ( false !== $pos ) {
-						// Inside last HTML tag.
+						// Inside last HTML tag
 						$wpse_excerpt = substr_replace( $wpse_excerpt, $excerpt_end, $pos, 0 ); /* Add read more next to last word */
 					} else {
-						// After the content.
+						// After the content
 						$wpse_excerpt .= $excerpt_end; /*Add read more in new paragraph */
 					}
 				}
@@ -593,11 +593,11 @@ add_filter( 'lsx_widget_output', 'lsx_full_width_widget_output', 10, 3 );
 function lsx_post_format_force_content_on_list() {
 	$post_formats = apply_filters( 'lsx_post_format_force_content_on_list',
 		array(
-			'video' => 'video',
-			'audio' => 'audio',
-			'quote' => 'quote',
-			'link'  => 'link',
-		)
+				'video' => 'video',
+				'audio' => 'audio',
+				'quote' => 'quote',
+				'link' => 'link',
+			)
 	);
 	$return = false;
 	if ( ! has_post_format( $post_formats ) ) {

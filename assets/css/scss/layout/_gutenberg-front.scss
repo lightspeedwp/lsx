@@ -38,6 +38,18 @@
 	}
 }
 
+.gutenberg-compatible-template.using-gutenberg {
+	.content-area {
+		.entry-content {
+			.tab-content {
+				h3 {
+					margin-top: 2.4rem;
+				}
+			}
+		}
+	}
+}
+
 /*--------------------------------------------------------------
 2.0 Apply Wide, Full and Default Align Styles
 --------------------------------------------------------------*/
@@ -244,7 +256,7 @@
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
 	.gutenberg-compatible-template.using-gutenberg.page-template-default {
 		.entry-content {
-			figure.wp-block-embed, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
+			figure.wp-block-embed, .navbar, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
 			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-projects-slider.slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
 				max-width: 1150px;
 				margin-left: auto;
