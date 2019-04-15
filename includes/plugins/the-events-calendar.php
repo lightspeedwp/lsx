@@ -67,32 +67,66 @@ if ( ! function_exists( 'lsx_tec_theme_wrapper_end' ) ) :
 
 endif;
 
-if ( ! function_exists( 'lsx_tec_disable_lsx_banner' ) ) :
+if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 
 	/**
-	 * Disable LSX Banners in some pages.
+	 * Move the events title into the global header
 	 *
 	 * @package    lsx
 	 * @subpackage the-events-calendar
 	 */
-	function lsx_tec_disable_lsx_banner( $disabled ) {
-		global $current_screen;
+	function lsx_tec_global_header_title( $title ) {
 
-		$post_types = apply_filters( 'tribe_is_post_type_screen_post_types', Tribe__Main::get_post_types() );
+		if ( tribe_is_community_edit_event_page() ) {
 
-		if ( is_archive() && tribe_is_event() ) {
-			$disabled = true;
+			$is_route = get_query_var( 'WP_Route' );
+			switch ( $is_route ) {
+				case 'ce-edit-route':
+					$title = apply_filters( 'tribe_ce_edit_event_page_title', __( 'Edit an Event', 'lsx' ) );
+					break;
+
+				case 'ce-edit-organizer-route':
+					$title = __( 'Edit an Organizer', 'lsx' );
+					break;
+
+				case 'ce-edit-venue-route':
+					$title = __( 'Edit a Venue', 'lsx' );
+					break;
+
+				default:
+					$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'Submit an Event', 'lsx' ) );
+					break;
+			}
+
+		} else if ( tribe_is_community_my_events_page() ) {
+			$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) );
+		} else if ( tribe_is_event() ) {
+			$title = tribe_get_events_title();
 		}
 
-		if ( is_single() && tribe_is_event() ) {
-			$disabled = true;
-		}
+		//Only disable the title after we have retrieved it
+		add_filter( 'tribe_get_events_title', 'lsx_text_disable_body_title', 200, 1 );
 
-		return $disabled;
+		if ( is_singular( 'tribe_events' ) ) {
+			add_filter( 'the_title', 'lsx_text_disable_body_title', 200, 1 );
+		}
+		return $title;
 	}
+	add_filter( 'lsx_global_header_title', 'lsx_tec_global_header_title', 200, 1 );
 
-	// LSX Banners - Banner
-	add_filter( 'lsx_banner_disable', 'lsx_tec_disable_lsx_banner' );
+endif;
+
+if ( ! function_exists( 'lsx_text_disable_body_title' ) ) :
+	/**
+	 * Disable the events title for the post archive if the dynamic setting is active.
+	 * @param $title
+	 *
+	 * @return string
+	 */
+	function lsx_text_disable_body_title ( $title ) {
+		$title = '';
+		return $title;
+	}
 
 endif;
 
@@ -104,15 +138,48 @@ if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_breadcrumb_filter( $crumbs ) {
-		if ( tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
 
-			foreach ( $crumbs as $crumb_index => $crumb ){
-				if ( isset( $crumb['ptarchive'] ) ) {
-					$crumbs[ $crumb_index ]['ptarchive'] = 'tribe_events';
-				}
+		if ( tribe_is_venue() || tribe_is_organizer() || tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
+			$new_crumbs = array();
+			$new_crumbs[0] = $crumbs[0];
+
+			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+				$new_crumbs[1] = array(
+					0	=> __( 'Events', 'lsx' ),
+					1	=> get_post_type_archive_link( 'tribe_events' ),
+				);
+			} else {
+				$new_crumbs[1] = array(
+					'text'	=> __( 'Events', 'lsx' ),
+					'url'	=> get_post_type_archive_link( 'tribe_events' ),
+				);
 			}
+
+			if ( tribe_is_community_my_events_page() ) {
+				$new_crumbs[2] = $crumbs[2];
+			} else if ( tribe_is_community_edit_event_page() ) {
+
+				if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+					$new_crumbs[2] = array(
+						0	=> apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
+						1	=> tribe_community_events_list_events_link( ),
+					);
+				} else {
+					$new_crumbs[2] = array(
+						'text'	=> apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
+						'url'	=> tribe_community_events_list_events_link( ),
+					);
+				}
+
+				$new_crumbs[3] = $crumbs[2];
+			} else {
+				$new_crumbs[2] = $crumbs[1];
+			}
+			$crumbs = $new_crumbs;
 		}
 		return $crumbs;
 	}
-	add_filter( 'wpseo_breadcrumb_links', 'lsx_tec_breadcrumb_filter', 10, 1 );
+	add_filter( 'wpseo_breadcrumb_links', 'lsx_tec_breadcrumb_filter', 30, 1 );
+	add_filter( 'woocommerce_get_breadcrumb', 'lsx_tec_breadcrumb_filter', 30, 1 );
+
 endif;

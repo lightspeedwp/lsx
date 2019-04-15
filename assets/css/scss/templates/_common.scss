@@ -170,6 +170,45 @@ article.lsx-slot {
 	}
 }
 
+.search-form {
+	.submit-button {
+		.search-submit {
+			font-size: 0;
+			&:before {
+				content: "\f002";
+				font-family: FontAwesome;
+				font-size: 14px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+#facetwp-top, .facetwp-sidebar {
+	background-color: #ffffff;
+	border: 1px solid #E4E4E4;
+}
+#facetwp-top {
+	padding: 5px;
+}
+
+.facetwp-per-page:after, .facetwp-sort:after {
+    content: '\f0d7';
+    color: #919191;
+    position: relative;
+    right: 20px;
+    font-family: FontAwesome;
+    font-size: 20px;
+    top: 3px;
+}
+
+.facetwp-sidebar {
+	padding: 15px;
+	.facetwp-type-search .facetwp-search-wrap .facetwp-search {
+		width: 160px;
+	}
+}
+
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -194,4 +233,8 @@ article.lsx-slot {
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+
+.lsx-shadow {
+	box-shadow: 1px 1px 5px rgba(155,155,155,0.7);
 }

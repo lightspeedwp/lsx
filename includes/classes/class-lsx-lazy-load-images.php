@@ -59,23 +59,23 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 		}
 
 		static function setup_filters() {
-			// WordPress
+			// WordPress.
 			add_filter( 'the_content', array( __CLASS__, 'filter_images' ), 200 );
 			add_filter( 'widget_text', array( __CLASS__, 'filter_images' ), 200 );
 			add_filter( 'post_thumbnail_html', array( __CLASS__, 'filter_images' ), 200 );
 			add_filter( 'get_avatar', array( __CLASS__, 'filter_images' ), 200 );
 
-			// LSX
+			// LSX.
 			add_filter( 'lsx_lazyload_filter_images', array( __CLASS__, 'filter_images' ), 200 );
 
-			// Envira Gallery
+			// Envira Gallery.
 			add_filter( 'envira_gallery_output_image', array( __CLASS__, 'filter_images' ), 200 );
 		}
 
 		static function add_scripts() {
 			wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/assets/js/vendor/lazysizes.min.js', array( 'jquery' ), LSX_VERSION, true );
 			// Plugin that enables use lazysizes in brackground images
-			//wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/assets/js/vendor/ls.unveilhooks.min.js', array( 'jquery', 'lazysizes' ), LSX_VERSION, true );
+			// wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/assets/js/vendor/ls.unveilhooks.min.js', array( 'jquery', 'lazysizes' ), LSX_VERSION, true );
 		}
 
 		static function filter_images( $content ) {
@@ -99,7 +99,7 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 			$placeholder_image = apply_filters( 'lsx_lazyload_placeholder_image', get_template_directory_uri() . '/assets/images/empty.gif' );
 
 			$matches = array();
-			$search = array();
+			$search  = array();
 			$replace = array();
 
 			$content = preg_replace_callback( '~<noscript.+?</noscript>~s', 'self::noscripts_remove', $content );
@@ -135,7 +135,7 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 					}
 
 					if ( $add_class ) {
-						$replace_html = self::add_class( $replace_html, 'lazyload' );
+						$replace_html  = self::add_class( $replace_html, 'lazyload' );
 						$replace_html .= '<noscript>' . $img_html . '</noscript>';
 
 						array_push( $search, $img_html );
@@ -188,9 +188,9 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 		static function kses_allowed_html( $allowedtags, $context ) {
 			$allowedtags['noscript'] = array();
 
-			$allowedtags['img']['data-src'] = true;
+			$allowedtags['img']['data-src']    = true;
 			$allowedtags['img']['data-srcset'] = true;
-			$allowedtags['img']['data-sizes'] = true;
+			$allowedtags['img']['data-sizes']  = true;
 
 			return $allowedtags;
 		}

@@ -28,7 +28,7 @@
 									esc_html( date_i18n( 'Y' ) ),
 									esc_html( get_bloginfo( 'name' ) )
 								);
-							?>
+								?>
 
 							<?php if ( apply_filters( 'lsx_credit_link', true ) ) : ?>
 								<?php
@@ -45,10 +45,12 @@
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
 							<nav id="social-navigation" class="social-navigation">
 								<?php
-									wp_nav_menu( array(
+									wp_nav_menu(
+										array(
 										'theme_location' => 'social',
 										'depth'          => 1,
-									) );
+										)
+									);
 								?>
 							</nav><!-- .social-navigation -->
 						<?php endif; ?>
@@ -56,10 +58,12 @@
 						<?php if ( has_nav_menu( 'footer' ) ) : ?>
 							<nav id="footer-navigation" class="footer-navigation">
 								<?php
-									wp_nav_menu( array(
+									wp_nav_menu(
+										array(
 										'theme_location' => 'footer',
 										'depth'          => 1,
-									) );
+										)
+									);
 								?>
 							</nav><!-- .footer-navigation -->
 						<?php endif; ?>

@@ -27,7 +27,7 @@ echo get_avatar( $comment, '128' );
 					get_comment_date(),
 					get_comment_time()
 				);
-			?>
+				?>
 		</a>
 	</time>
 
@@ -42,7 +42,9 @@ echo get_avatar( $comment, '128' );
 <?php
 comment_text();
 
-comment_reply_link( array(
-	'depth'     => $depth,
-	'max_depth' => $max_depth,
-) );
+comment_reply_link(
+	array(
+		'depth'     => $depth,
+		'max_depth' => $max_depth,
+	)
+);

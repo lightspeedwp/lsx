@@ -1,12 +1,36 @@
 ## LSX Changelog
 
+### 2.3.1
+* Fix - Added in a conditional statement that disables the page header if WordPress Blocks are being used on the page.
+* Dev - Removing the filter that disables the banner for events
+* Dev - Added in a function to disable The Event Calendar body post archive and single title and move it into the Global Header
+* Fix - Added in a post type archive Breadcrumb for The Events Calendar Venue and Organizer pages.  Yoast and Woocommerce Breadcrumbs
+* Fix - Fixed the missing archive header on the Blog Archives
+* Dev - Added in the correct titles for The Events Calendar Community Events
+* Dev - Extended the breadcrumb filter to include handling for The Events Calendar Community Events
+* Dev - Added in the posts page archive to the breadcrumbs (Yoast and WooCommerce) when viewing the Category and Tag archives.
+
+### 2.3
+* Fix - Fixes and updates for WordPress coding standards
+* Fix - Fixing width for event calendar image
+* Fix - Block columns spacing fix
+* Fix - Fixing the breadcrumbs issue for gutenberg pages
+* Fix - Fixing the Button Styling for the Tribe My Events List Page 
+* Fix - Removing full width Images padding for Mobile
+* Fix - Removing the max width for the Gutenberg Posts
+* Dev - Removing Top and Bottom Margins for Gutenberg Compatible Templates
+* Dev - Styling the Events Community Add New Event Page
+* Dev - Updating the LSX Landing Page for the Admin
+* Dev - Changing the Services Link for Videos on the LSX Admin Page
+* Dev - Community Events Styling
+* Dev - Adding the ‘gutenberg compatible’ class to home page
+
 ### 2.2.2
 * Fix - Recompiled Minified JS
 * Dev - Added in a filter to disable the LSX Banners if the page is using Blocks
 * Fix - Making sure the Theme is pre 5.0 compatible
 * Fix - Fixing the breadcrumb for The Events Calendar Community Event when using Yoast SEO Breadcrumbs
-* Fix - Adding in a style fix for the WP Forms submit button when in a modal
-* Fix - Fixing the homepage conditional statements
+* Fix - Fixing the Front Page Template conditional statements. 
 
 ### 2.2.1
 * Fix - Fixed the white screen error when not using the Gutenburg editor.

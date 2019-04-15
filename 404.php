@@ -29,4 +29,5 @@ get_header(); ?>
 		</div><!-- .widget-area -->
 	</div><!-- #secondary -->
 
-<?php get_footer();
+<?php
+get_footer();

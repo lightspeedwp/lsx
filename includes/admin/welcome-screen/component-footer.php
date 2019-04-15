@@ -52,7 +52,7 @@
 						'<a href="https://wordpress.org/themes/lsx" target="_blank rel="noopener noreferrer">',
 						'</a>'
 					);
-				?>
+					?>
 			</p>
 
 			<div class="more-button">

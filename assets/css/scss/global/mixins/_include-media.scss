@@ -32,9 +32,10 @@
 ///  $breakpoints: ('phone': 320px);
 ///
 $breakpoints: (
-  'phone': $screen-sm-min,
-  'tablet': $screen-md-min,
-  'desktop': $screen-lg-min
+  'phone': 320px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'custom': 678px
 ) !default;
 
 
@@ -468,6 +469,36 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
   @return $value * map-get($units, $unit);
 }
 
+@mixin media-context($tweakpoints: (), $tweak-media-expressions: ()) {
+	// Save global configuration
+	$global-breakpoints: $breakpoints;
+	$global-media-expressions: $media-expressions;
+
+	// Update global configuration
+	$breakpoints: map-merge($breakpoints, $tweakpoints) !global;
+	$media-expressions: map-merge($media-expressions, $tweak-media-expressions) !global;
+
+	@content;
+
+	// Restore global configuration
+	$breakpoints: $global-breakpoints !global;
+	$media-expressions: $tweak-media-expressions !global;
+   }
+
+   @mixin media($conditions...) {
+	@if ($im-media-support and length($conditions) == 0) or
+		(not $im-media-support and im-intercepts-static-breakpoint($conditions...)) {
+	  @content;
+	} @else if ($im-media-support and length($conditions) > 0) {
+	  @media #{unquote(parse-expression(nth($conditions, 1)))} {
+		// Recursive call
+		@include media(slice($conditions, 2)...) {
+		  @content;
+		}
+	  }
+	}
+   }
+
 ///
 /// This mixin aims at redefining the configuration just for the scope of
 /// the call. It is helpful when having a component needing an extended
@@ -480,13 +511,14 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;
 /// @param {Map} $tweak-media-expressions [()] - Map of tweaked media expressions to be merged with `$media-expression`
 ///
 /// @example scss - Extend the global breakpoints with a tweakpoint
-///  @include media-context(('custom': 678px)) {
-///    .foo {
-///      @include media('>phone', '<=custom') {
-///       // ...
-///      }
-///    }
-///  }
+///
+@include media-context(('custom': 678px)) {
+	.foo {
+	  @include media('>phone', '<=custom') {
+	   // ...
+	  }
+	}
+  }
 ///
 /// @example scss - Extend the global media expressions with a custom one
 ///  @include media-context($tweak-media-expressions: ('all': 'all')) {

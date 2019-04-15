@@ -50,7 +50,7 @@ class LSX_WC_Widget_Recent_Reviews extends WC_Widget {
 	 * @param array $args
 	 * @param array $instance
 	 */
-	 public function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		global $comments, $comment;
 
 		if ( $this->get_cached_widget( $args ) ) {
@@ -59,14 +59,14 @@ class LSX_WC_Widget_Recent_Reviews extends WC_Widget {
 
 		ob_start();
 
-		$number   = ! empty( $instance['number'] ) ? absint( $instance['number'] ) : $this->settings['number']['std'];
+		$number = ! empty( $instance['number'] ) ? absint( $instance['number'] ) : $this->settings['number']['std'];
 
 		$comments = get_comments( array(
-			'number' => $number,
-			'status' => 'approve',
+			'number'      => $number,
+			'status'      => 'approve',
 			'post_status' => 'publish',
-			'post_type' => 'product',
-			'parent' => 0,
+			'post_type'   => 'product',
+			'parent'      => 0,
 		) );
 
 		if ( $comments ) {

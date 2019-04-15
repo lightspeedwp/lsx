@@ -34,7 +34,7 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 		public function __construct( $manager, $id, $args ) {
 			parent::__construct( $manager, $id, $args );
 
-			add_action( 'after_switch_theme',   array( $this, 'set_theme_mod' ) );
+			add_action( 'after_switch_theme', array( $this, 'set_theme_mod' ) );
 			add_action( 'customize_save_after', array( $this, 'set_theme_mod' ) );
 		}
 
@@ -69,9 +69,9 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 			<div class="fontPickerCustomControl">
 				<select <?php $this->link(); ?>>
 					<?php
-						foreach ( $this->choices as $value => $conf ) {
-							echo '<option value="' . esc_attr( $value ) . '">' . esc_html( $value ) . '</option>';
-						}
+					foreach ( $this->choices as $value => $conf ) {
+						echo '<option value="' . esc_attr( $value ) . '">' . esc_html( $value ) . '</option>';
+					}
 					?>
 				</select>
 				<div class="fancyDisplay">
@@ -125,8 +125,8 @@ if ( ! class_exists( 'LSX_Customize_Font_Control' ) ) :
 		 */
 		public function get_css( $font_header, $font_body ) {
 			$css_fonts_file = get_template_directory() . '/assets/css/lsx-fonts.css';
-			$css_fonts = lsx_file_get_contents( $css_fonts_file );
-			$css_fonts = apply_filters( 'lsx_fonts_css', $css_fonts );
+			$css_fonts      = lsx_file_get_contents( $css_fonts_file );
+			$css_fonts      = apply_filters( 'lsx_fonts_css', $css_fonts );
 
 			if ( ! empty( $css_fonts ) ) {
 				$css_fonts = str_replace( '[font-family-headings]', $font_header, $css_fonts );

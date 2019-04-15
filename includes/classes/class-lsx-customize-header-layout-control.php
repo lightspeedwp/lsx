@@ -26,9 +26,9 @@ if ( ! class_exists( 'LSX_Customize_Header_Layout_Control' ) ) :
 	 */
 	class LSX_Customize_Header_Layout_Control extends WP_Customize_Control {
 
-		public $type     = 'layout';
+		public $type = 'layout';
 		public $statuses;
-		public $layouts  = array();
+		public $layouts = array();
 
 		public function __construct( $manager, $id, $args = array() ) {
 			parent::__construct( $manager, $id, $args );
@@ -62,13 +62,13 @@ if ( ! class_exists( 'LSX_Customize_Header_Layout_Control' ) ) :
 				<?php } ?>
 				<div class="header-layouts-selector">
 					<?php
-						foreach ( $this->layouts as $layout ) {
-							$sel = 'border: 1px solid transparent;';
-							if ( $value === $layout ) {
-								$sel = 'border: 1px solid rgb(43, 166, 203);';
-							}
-							echo '<img class="header-layout-button" style="padding:2px;' . esc_attr( $sel ) . '" src="' . esc_attr( get_template_directory_uri() ) . '/assets/images/admin/header-' . esc_attr( $layout ) . '.png" data-option="' . esc_attr( $layout ) . '">';
+					foreach ( $this->layouts as $layout ) {
+						$sel = 'border: 1px solid transparent;';
+						if ( $value === $layout ) {
+							$sel = 'border: 1px solid rgb(43, 166, 203);';
 						}
+						echo '<img class="header-layout-button" style="padding:2px;' . esc_attr( $sel ) . '" src="' . esc_attr( get_template_directory_uri() ) . '/assets/images/admin/header-' . esc_attr( $layout ) . '.png" data-option="' . esc_attr( $layout ) . '">';
+					}
 					?>
 					<input <?php $this->link(); ?> class="selected-header-layout <?php echo esc_attr( $class ); ?>" id="<?php echo esc_attr( $post_id ); ?>" type="hidden" value="<?php echo esc_attr( $value ); ?>" <?php $this->input_attrs(); ?>>
 				</div>

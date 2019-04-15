@@ -47,7 +47,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		<?php if ( is_active_sidebar( 'sidebar-home' ) || ( function_exists( 'has_blocks' ) && ! has_blocks() ) ) : ?>
+		<?php if ( is_active_sidebar( 'sidebar-home' ) ) : ?>
 
 			<div id="home-widgets">
 

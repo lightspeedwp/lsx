@@ -164,8 +164,8 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg .post-thumbnail img,
-	.gutenberg-compatible-template.using-gutenberg .alignwide img,
-	.gutenberg-compatible-template.using-gutenberg .alignfull img {
+	.gutenberg-compatible-template.using-gutenberg .alignwide figure:not(.is-resized) img,
+	.gutenberg-compatible-template.using-gutenberg .alignfull figure:not(.is-resized) img {
 		width: 100%;
 	}
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar article.page, .gutenberg-compatible-template.using-gutenberg.page-template-default:not(.has-sidebar) article.page,
@@ -181,16 +181,17 @@
 @media only screen and (max-width: 767px) {
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
-			// margin-left: -5.4rem;
-			// margin-right: -5.4rem;
-			//width: auto;
-			//max-width: none;
-			margin-left: -50px;
-			margin-right: -50px;
-			// padding-left: 50px;
-    		// padding-right: 50px;
-			width: calc( 100% + 50px * 2);
-			max-width: calc( 100% + 50px * 2);
+			&figure, &.lsx-block-container, &.lsx-block-banner,
+			&.lsx-block-cta, &.wp-block-cover {
+				margin-left: -50px;
+				margin-right: -50px;
+				width: calc( 100% + 50px * 2);
+				max-width: calc( 100% + 50px * 2);
+			}
+			// margin-left: -50px;
+			// margin-right: -50px;
+			// width: calc( 100% + 50px * 2);
+			// max-width: calc( 100% + 50px * 2);
 		}
 		.lsx-full-width-gutenberg.alignfull {
 			width: auto;
@@ -199,6 +200,22 @@
 		.wp-block-media-text {
 			display: flex;
 			flex-direction: column;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.gutenberg-compatible-template {
+		article.post {
+			.entry-content {
+				img.alignnone, article.post .entry-content p img[class*="wp-image-"].alignnone, figure.alignnone {
+					text-align: left;
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					max-width: 100%;
+				}
+			}
 		}
 	}
 }
@@ -335,3 +352,53 @@ $dark-yellow: #ab7800;
 .has-dark-yellow-background-color {
 	background-color: $dark-yellow;
 }
+
+
+/*--------------------------------------------------------------
+7.0 Utilities
+--------------------------------------------------------------*/
+
+#primary {
+	// Full width button
+	.lsx-block-button.btn-full {
+		a {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+	// Icon below banner
+	.lsx-icon-banner {
+		position: relative;
+		top: -7em;
+		margin-bottom: -7em;
+	}
+}
+
+// Row Helpers
+@media (min-width: 768px) {
+	.has-2-columns {
+		&.one-third-left {
+			> .wp-block-column {
+				&:first-child {
+					flex-basis: 30%;
+				}
+				&:nth-child(2) {
+					flex-basis: 70%;
+					max-width: 700px !important;
+				}
+			}
+		}
+		&.one-third-right {
+			>  .wp-block-column {
+				&:first-child {
+					flex-basis: 70%;
+					max-width: 700px !important;
+				}
+				&:nth-child(2) {
+					flex-basis: 30%;
+				}
+			}
+		}
+	}
+}
+
