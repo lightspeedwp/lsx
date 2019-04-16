@@ -463,7 +463,7 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 						break;
 					}
 
-					$count++;
+					++$count;
 					$excerpt_output .= $token;
 				}
 
