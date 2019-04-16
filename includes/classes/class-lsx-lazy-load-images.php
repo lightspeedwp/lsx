@@ -53,23 +53,23 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 				return;
 			}
 
-			add_action( 'wp_enqueue_scripts', array( __CLASS__, 'add_scripts' ) );
-			add_action( 'wp_head', array( __CLASS__, 'setup_filters' ), 9999 );
-			add_filter( 'wp_kses_allowed_html', array( __CLASS__, 'kses_allowed_html' ), 10, 2 );
+			add_action( 'wp_enqueue_scripts', array( self::class, 'add_scripts' ) );
+			add_action( 'wp_head', array( self::class, 'setup_filters' ), 9999 );
+			add_filter( 'wp_kses_allowed_html', array( self::class, 'kses_allowed_html' ), 10, 2 );
 		}
 
 		static function setup_filters() {
 			// WordPress.
-			add_filter( 'the_content', array( __CLASS__, 'filter_images' ), 200 );
-			add_filter( 'widget_text', array( __CLASS__, 'filter_images' ), 200 );
-			add_filter( 'post_thumbnail_html', array( __CLASS__, 'filter_images' ), 200 );
-			add_filter( 'get_avatar', array( __CLASS__, 'filter_images' ), 200 );
+			add_filter( 'the_content', array( self::class, 'filter_images' ), 200 );
+			add_filter( 'widget_text', array( self::class, 'filter_images' ), 200 );
+			add_filter( 'post_thumbnail_html', array( self::class, 'filter_images' ), 200 );
+			add_filter( 'get_avatar', array( self::class, 'filter_images' ), 200 );
 
 			// LSX.
-			add_filter( 'lsx_lazyload_filter_images', array( __CLASS__, 'filter_images' ), 200 );
+			add_filter( 'lsx_lazyload_filter_images', array( self::class, 'filter_images' ), 200 );
 
 			// Envira Gallery.
-			add_filter( 'envira_gallery_output_image', array( __CLASS__, 'filter_images' ), 200 );
+			add_filter( 'envira_gallery_output_image', array( self::class, 'filter_images' ), 200 );
 		}
 
 		static function add_scripts() {
