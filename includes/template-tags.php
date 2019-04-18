@@ -141,15 +141,17 @@ if ( ! function_exists( 'lsx_post_meta_single_top' ) ) :
 	function lsx_post_meta_single_top() {
 		?>
 		<div class="post-meta post-meta-top">
-			<?php lsx_post_meta_avatar(); ?>
-			<?php lsx_post_meta_date(); ?>
-			<?php lsx_post_meta_author(); ?>
+			<?php lsx_post_meta_top(); ?>
 			<div class="clearfix"></div>
 		</div>
 		<?php
 	}
 
 endif;
+
+add_action( 'lsx_post_meta_top', 'lsx_post_meta_avatar' );
+add_action( 'lsx_post_meta_top', 'lsx_post_meta_date' );
+add_action( 'lsx_post_meta_top', 'lsx_post_meta_author' );
 
 if ( ! function_exists( 'lsx_post_meta_single_bottom' ) ) :
 

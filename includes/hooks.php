@@ -157,6 +157,14 @@ function lsx_entry_bottom() {
 }
 
 /**
+ * Semantic <entry> hooks
+ */
+
+function lsx_post_meta_top() {
+	do_action( 'lsx_post_meta_top' );
+}
+
+/**
  * Widget Semantic <entry> hooks
  *
  * $lsx_supports[] = 'entry';
