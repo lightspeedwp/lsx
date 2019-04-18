@@ -422,3 +422,19 @@ if ( ! function_exists( 'lsx_header_search_form' ) ) :
 	add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );
 
 endif;
+
+
+// Add entry meta to single post if active
+
+if ( ! function_exists( 'lsx_add_entry_meta' ) ) :
+	function lsx_add_entry_meta() {
+		if ( is_single() && is_singular( 'post' ) ) {
+			?>
+			<div class="entry-meta">
+				<?php lsx_post_meta_single_top(); ?>
+			</div><!-- .entry-meta -->
+			<?php
+		}
+	}
+	add_action( 'lsx_entry_top', 'lsx_add_entry_meta', 0 );
+endif;
