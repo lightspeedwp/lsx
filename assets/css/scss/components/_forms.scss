@@ -269,3 +269,31 @@
 		margin-right: 3em;
 	}
 }
+
+.wpforms-field.wpforms-field-file-upload {
+	label {
+		border-radius: 3px;
+		color: #4A4A4A;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: 700;
+		padding-left: 20px;
+		padding-right: 20px;
+		transition: background-color 0.3s;
+		background-color: #EAEAEA;
+		box-shadow: 2px 2px 0 0 #CCCCCC;
+		&:hover {
+			background-color: #cccccc;
+		}
+	}
+	input[type="file"] {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+}
