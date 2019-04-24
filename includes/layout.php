@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'lsx_layout_selector' ) ) :
-
 	/**
 	 * Layout selector.
 	 *
@@ -54,11 +53,9 @@ if ( ! function_exists( 'lsx_layout_selector' ) ) :
 
 		return $return_class;
 	}
-
 endif;
 
 if ( ! function_exists( 'lsx_main_class' ) ) :
-
 	/**
 	 * .main classes.
 	 *
@@ -68,11 +65,9 @@ if ( ! function_exists( 'lsx_main_class' ) ) :
 	function lsx_main_class() {
 		return lsx_layout_selector( 'main' );
 	}
-
 endif;
 
 if ( ! function_exists( 'lsx_sidebar_class' ) ) :
-
 	/**
 	 * .sidebar classes.
 	 *
@@ -82,11 +77,9 @@ if ( ! function_exists( 'lsx_sidebar_class' ) ) :
 	function lsx_sidebar_class() {
 		return lsx_layout_selector( 'sidebar' );
 	}
-
 endif;
 
 if ( ! function_exists( 'lsx_header_classes' ) ) :
-
 	/**
 	 * Output the classes for the header.
 	 *
@@ -102,11 +95,9 @@ if ( ! function_exists( 'lsx_header_classes' ) ) :
 
 		echo esc_attr( $classes );
 	}
-
 endif;
 
 if ( ! function_exists( 'lsx_top_menu_classes' ) ) :
-
 	/**
 	 * Output the classes for the top-menu.
 	 *
@@ -122,11 +113,9 @@ if ( ! function_exists( 'lsx_top_menu_classes' ) ) :
 
 		echo esc_attr( $classes );
 	}
-
 endif;
 
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) :
-
 	/**
 	 * Output the Footer CTA and/pr Footer Widgets.
 	 *
@@ -156,13 +145,10 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) :
 			</div>
 		<?php endif;
 	}
-
 	add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
-
 endif;
 
 if ( ! function_exists( 'lsx_global_header' ) ) :
-
 	/**
 	 * Displays the global header.
 	 *
@@ -269,13 +255,10 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<?php
 		endif;
 	}
-
 	add_action( 'lsx_content_wrap_before', 'lsx_global_header' );
-
 endif;
 
 if ( ! function_exists( 'lsx_author_extra_info' ) ) :
-
 	/**
 	 * Displays the author extra info.
 	 *
@@ -343,13 +326,10 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 			<?php
 		endif;
 	}
-
 	add_action( 'lsx_content_wrap_before', 'lsx_author_extra_info', 11 );
-
 endif;
 
 if ( ! function_exists( 'lsx_post_header' ) ) :
-
 	/**
 	 * Displays the post header.
 	 *
@@ -380,13 +360,10 @@ if ( ! function_exists( 'lsx_post_header' ) ) :
 			<?php
 		endif;
 	}
-
 	add_action( 'lsx_entry_top', 'lsx_post_header' );
-
 endif;
 
 if ( ! function_exists( 'lsx_add_viewport_meta_tag' ) ) :
-
 	/**
 	 * Add Viewport Meta Tag to head.
 	 *
@@ -398,13 +375,10 @@ if ( ! function_exists( 'lsx_add_viewport_meta_tag' ) ) :
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
 		<?php
 	}
-
 	add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
-
 endif;
 
 if ( ! function_exists( 'lsx_header_search_form' ) ) :
-
 	/**
 	 * Add a search form to just above the nav menu.
 	 *
@@ -418,14 +392,10 @@ if ( ! function_exists( 'lsx_header_search_form' ) ) :
 			get_search_form( true );
 		}
 	}
-
 	add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );
-
 endif;
 
-
 // Add entry meta to single post if active
-
 if ( ! function_exists( 'lsx_add_entry_meta' ) ) :
 	function lsx_add_entry_meta() {
 		if ( is_single() && is_singular( 'post' ) ) {
