@@ -73,12 +73,13 @@
 		margin-right: auto;
 	}
 	.lsx-button {
+		transition: all 100ms ease;
+
 		&:active {
 			left: 2px;
 			top: 2px;
 			position: relative;
 			box-shadow: 0 0 0 0 !important;
-			transition: all 100ms ease;
 		}
 	}
 }
