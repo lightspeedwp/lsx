@@ -21,12 +21,12 @@
 
 			<p><?php esc_html_e( 'Your search for "', 'lsx' ); ?><?php echo get_search_query(); ?><?php esc_html_e( '" didn’t return any results… ', 'lsx' ); ?><br><?php esc_html_e( 'Please try another keyword', 'lsx' ); ?></p>
 
-			<?php get_search_form(); ?>
+			<?php echo wp_kses_post( apply_filters( 'lsx_404_search_form', get_search_form() ) ); ?>
 
 		<?php else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'lsx' ); ?></p>
-			<?php get_search_form(); ?>
+			<?php echo wp_kses_post( apply_filters( 'lsx_404_search_form', get_search_form() ) ); ?>
 
 		<?php endif; ?>
 
