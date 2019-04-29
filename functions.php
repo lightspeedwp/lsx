@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'LSX_VERSION', '2.2.1' );
 
+require get_template_directory() . '/includes/plugins/general.php';
+
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/includes/plugins/woocommerce.php';
 }
