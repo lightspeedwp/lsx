@@ -26,7 +26,7 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'lsx_scripts' );
+add_action( 'wp_enqueue_scripts', 'lsx_scripts', 5 );
 
 if ( ! function_exists( 'lsx_admin_scripts' ) ) :
 
