@@ -340,6 +340,12 @@ article.page {
 	}*/
 }
 
+body:not(.logged-in).woocommerce-account.my-account .woocommerce {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .product_meta {
 	.product & {
 		& > span {
