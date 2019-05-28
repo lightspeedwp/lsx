@@ -1,12 +1,12 @@
 <p align="center"><a href="https://lsx-demo.lsdev.biz/"><img src="https://lsx-demo.lsdev.biz/wp-content/uploads/2017/08/LSX-logo-white-background.svg" alt="WooCommerce"></a></p>
-
+<p align="center">
 [![built with gulp.js](https://img.shields.io/badge/built%20with-gulp.js-green.svg)](http://gulpjs.com/)
 [![build status](https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master)](https://travis-ci.org/lightspeeddevelopment/lsx)
 [![Code Climate](https://codeclimate.com/github/lightspeeddevelopment/lsx/badges/gpa.svg)](https://codeclimate.com/github/lightspeeddevelopment/lsx)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/lightspeeddevelopment/lsx/badge.svg?branch=master)](https://coveralls.io/github/lightspeeddevelopment/lsx?branch=master)
+</p>
 
-# LSX
 * Contributors: the LightSpeed team
 * Author: LightSpeed
 * Author URI: https://www.lsdev.biz/
