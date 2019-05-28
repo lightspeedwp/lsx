@@ -161,6 +161,11 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		$default_size   = 'sm';
 		$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
+		//Pages have their own banner function 'lsx_page_banner()'
+		if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_checkout() || is_cart() || is_account_page() ) ) {
+			return;
+		}
+
 		if ( true === apply_filters( 'lsx_global_header_disable', false ) ) :
 			// Display only the breadcrumbs
 			?>

@@ -114,6 +114,8 @@ article.page {
 		}
 	}
 
+	&.page-has-banner.lsx .archive-header-wrapper { display: inherit !important; }
+
 	&,
 	&[class*=columns-] {
 		ul.products {
@@ -336,6 +338,12 @@ article.page {
 			display:none;
 		}
 	}*/
+}
+
+body:not(.logged-in).woocommerce-account.my-account .woocommerce {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product_meta {

@@ -30,24 +30,8 @@
 	    font-weight: initial;
     }
 	button {
-		background-color: #428bca;
-	    box-shadow: 2px 2px 0 0 #27639e;
-	    color: #fff;
-	    width: initial;
-	    border: 0 none;
-	    border-radius: 3px;
-	    display: inline-block;
-	    font-size: 14px;
-	    font-weight: 700;
-	    height: 48px;
-	    left: 0;
-	    letter-spacing: 0.6px;
-	    line-height: 1.25;
-	    padding: 15px 40px;
-	    position: relative;
-	    text-transform: uppercase;
-	    top: 0;
-	    transition: all 100ms ease;
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
 	}
 	ul {
 		padding: 0 !important;
@@ -112,24 +96,8 @@
 .wpforms-submit-container {
 	margin-top: 1em;
 	button {
-		background-color: #428bca;
-	    box-shadow: 2px 2px 0 0 #27639e;
-	    color: #fff;
-	    width: initial;
-	    border: 0 none;
-	    border-radius: 3px;
-	    display: inline-block;
-	    font-size: 14px;
-	    font-weight: 700;
-	    height: 48px;
-	    left: 0;
-	    letter-spacing: 0.6px;
-	    line-height: 1.25;
-	    padding: 15px 40px;
-	    position: relative;
-	    text-transform: uppercase;
-	    top: 0;
-	    transition: all 100ms ease;
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
 	}
 }
 
