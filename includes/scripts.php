@@ -78,127 +78,83 @@ if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
 	 * @subpackage scripts
 	 */
 	function lsx_scripts_add_fonts() {
-		// Font data (full JSON)
+		$font = array(
+			'lora_noto_sans' => array(
+				'header' => array(
+					'title'          => 'Lora',
+					'location'       => 'Lora:400,400i,700,700i',
+					'cssDeclaration' => "'Lora', serif",
+					'cssClass'       => 'wp-customizer-lora',
+				),
+				'body' => array(
+					'title'          => 'Noto Sans',
+					'location'       => 'Noto+Sans:400,400i,700,700i',
+					'cssDeclaration' => "'Noto Sans', sans-serif",
+					'cssClass'       => 'wp-customizer-noto-sans',
+				),
+			),
+		);
 
-		$data_fonts = get_transient( 'lsx_font_data' );
-
-		if ( is_customize_preview() || false === $data_fonts ) {
-			$data_fonts_file = get_template_directory() . '/assets/jsons/lsx-fonts.json';
-			$data_fonts = lsx_file_get_contents( $data_fonts_file );
-			$data_fonts = apply_filters( 'lsx_fonts_json', $data_fonts );
-		}
-
-		if ( ! empty( $data_fonts ) ) {
-			set_transient( 'lsx_font_data', $data_fonts, ( 5 * 60 ) );
-		}
-
-		$data_fonts = '{' . $data_fonts . '}';
-		$data_fonts = json_decode( $data_fonts, true );
-
-		// Font data (saved)
-
-		$font_saved = get_theme_mod( 'lsx_font', 'lora_noto_sans' );
-
-		if ( isset( $data_fonts[ $font_saved ] ) ) {
-			$font = $data_fonts[ $font_saved ];
-		} else {
-			$font = $data_fonts['lora_noto_sans'];
-		}
-
-		// Font declarations
-
-		$font_declarations = get_transient( 'lsx_font_declarations' );
-
-		if ( is_customize_preview() || false === $font_declarations ) {
-			$font_declarations = array(
-				'header' => '',
-				'body' => '',
-			);
-
-			$fonts_to_load = array(
-				'header' => $font['header'],
-				'body' => $font['body'],
-			);
-
-			$font_declaration_placeholder_file = get_template_directory() . '/assets/css/lsx-fonts-placeholder.css';
-			$font_declaration_placeholder = lsx_file_get_contents( $font_declaration_placeholder_file );
-
-			foreach ( $fonts_to_load as $font_to_load_key => $font_to_load ) {
-				$font_title = $font_to_load['title'];
-				$font_title_sanitize = sanitize_title( $font_title );
-
-				$font_data = explode( ':', $font_to_load['location'] );
-				$font_weights = explode( ',', $font_data[1] );
-
-				foreach ( $font_weights as $font_weight_key => $font_weight ) {
-					$font_style = 'normal';
-
-					if ( preg_match( '/^[0-9]+i$/', $font_weight ) ) {
-						$font_style = 'italic';
-						$font_weight = preg_replace( '/^([0-9]+)(i)$/', '$1', $font_weight );
-					}
-
-					$font_src = get_template_directory() . '/assets/fonts/' . $font_title_sanitize . '-' . $font_weight . '-' . $font_style;
-					$font_src = apply_filters( 'lsx_fonts_src', $font_src, $font_title_sanitize, $font_weight, $font_style );
-
-					$font_src_uri = get_template_directory_uri() . '/assets/fonts/' . $font_title_sanitize . '-' . $font_weight . '-' . $font_style;
-					$font_src_uri = apply_filters( 'lsx_fonts_src_uri', $font_src_uri, $font_title_sanitize, $font_weight, $font_style );
-
-					if ( file_exists( $font_src . '.ttf' ) && file_exists( $font_src . '.woff' ) ) {
-						$font_declaration = $font_declaration_placeholder;
-						$font_declaration = str_replace( '[font-family]', '\'' . $font_title . '\'', $font_declaration );
-						$font_declaration = str_replace( '[font-style]', $font_style, $font_declaration );
-						$font_declaration = str_replace( '[font-weight]', $font_weight, $font_declaration );
-						$font_declaration = str_replace( '[font-src]', $font_src_uri, $font_declaration );
-						$font_declaration = preg_replace( '/(\/\*# ).+( \*\/)/', '', $font_declaration );
-
-						$font_declarations[ $font_to_load_key ] .= $font_declaration;
-					}
-				}
+		// Font styles.
+		$font_styles = '
+			@font-face {
+				font-family: \'Lora\';
+				font-style: normal;
+				font-weight: 400;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Regular.ttf" ) format("truetype");
+			}
+			@font-face {
+				font-family: \'Lora\';
+				font-style: italic;
+				font-weight: 400i;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Italic.ttf" ) format("truetype");
+			}
+			@font-face {
+				font-family: \'Lora\';
+				font-style: normal;
+				font-weight: 700;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Bold.ttf" ) format("truetype");
+			}
+			@font-face {
+				font-family: \'Lora\';
+				font-style: italic;
+				font-weight: 700i;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-BoldItalic.ttf" ) format("truetype");
+			}
+			@font-face {
+				font-family: \'Noto Sans\';
+				font-style: normal;
+				font-weight: 400;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Regular.ttf" ) format("truetype");
+			}
+			@font-face {
+				font-family: \'Noto Sans\';
+				font-style: italic;
+				font-weight: 400i;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Italic.ttf" ) format("truetype");
+			}
+			@font-face {
+				font-family: \'Noto Sans\';
+				font-style: normal;
+				font-weight: 700;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Bold.ttf" ) format("truetype");
+			}
+			@font-face {
+				font-family: \'Noto Sans\';
+				font-style: italic;
+				font-weight: 700i;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-BoldItalic.ttf" ) format("truetype");
 			}
 
-			set_transient( 'lsx_font_declarations', $font_declarations, ( 24 * 60 * 60 ) );
-		}
-
-		$http_var = 'http';
-
-		if ( is_ssl() ) {
-			$http_var .= 's';
-		}
-
-		if ( ! empty( $font_declarations ) && is_array( $font_declarations ) ) {
-			foreach ( $font_declarations as $font_declaration_key => $font_declaration ) {
-				if ( ! empty( $font_declaration ) ) {
-					wp_add_inline_style( 'lsx_main', $font_declaration );
-				} else {
-					wp_enqueue_style( 'lsx-' . $font_declaration_key . '-font', esc_url( $http_var . '://fonts.googleapis.com/css?family=' . $font[ $font_declaration_key ]['location'] ) );
-				}
-			}
-		} else {
-			wp_enqueue_style( 'lsx-header-font', esc_url( $http_var . '://fonts.googleapis.com/css?family=' . $font['header']['location'] ) );
-			wp_enqueue_style( 'lsx-body-font', esc_url( $http_var . '://fonts.googleapis.com/css?family=' . $font['body']['location'] ) );
-		}
-
-		// Font styles
-
-		$font_styles = get_transient( 'lsx_font_styles' );
-
-		if ( is_customize_preview() || false === $font_styles ) {
-			$font_styles = '';
-
-			$css_fonts_file = get_template_directory() . '/assets/css/lsx-fonts.css';
-			$css_fonts = lsx_file_get_contents( $css_fonts_file );
-			$css_fonts = apply_filters( 'lsx_fonts_css', $css_fonts );
-
-			if ( ! empty( $css_fonts ) ) {
-				$font_styles = $css_fonts;
-				$font_styles = str_replace( '[font-family-headings]', $font['header']['cssDeclaration'], $font_styles );
-				$font_styles = str_replace( '[font-family-body]', $font['body']['cssDeclaration'], $font_styles );
-				$font_styles = preg_replace( '/(\/\*# ).+( \*\/)/', '', $font_styles );
-			}
-
-			set_transient( 'lsx_font_styles', $font_styles, ( 24 * 60 * 60 ) );
-		}
+			body{font-family:\'Noto Sans\',sans-serif}
+			h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:\'Lora\',serif}
+			.content-area blockquote:before,.widget-area blockquote:before{font-family:\'Lora\',serif}
+			.wc-social-login:before{font-family:\'Lora\',serif}
+			.blog article.post .entry-title .label-sticky,.blog article.page .entry-title .label-sticky,.blog article.lsx-slot .entry-title .label-sticky,.archive article.post .entry-title .label-sticky,.archive article.page .entry-title .label-sticky,.archive article.lsx-slot .entry-title .label-sticky,.search-results article.post .entry-title .label-sticky,.search-results article.page .entry-title .label-sticky,.search-results article.lsx-slot .entry-title .label-sticky{font-family:\'Noto Sans\',sans-serif}
+			#respond .comment-reply-title>small{font-family:\'Noto Sans\',sans-serif}
+			#comments .media-list .media .media-heading{font-family:\'Noto Sans\',sans-serif}
+			.single-testimonial .entry-content:before{font-family:\'Lora\',serif}			
+		';
 
 		if ( ! empty( $font_styles ) ) {
 			wp_add_inline_style( 'lsx_main', $font_styles );
