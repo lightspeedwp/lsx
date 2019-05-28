@@ -51,6 +51,18 @@ if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
 			'type'    => 'checkbox',
 		);
 
+		$lsx_controls['settings']['lsx_disable_fonts'] = array(
+			'default'           => 0,
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_disable_fonts'] = array(
+			'label'   => esc_html__( 'Disable Fonts', 'lsx' ),
+			'section' => 'lsx-core',
+			'type'    => 'checkbox',
+		);
+
 		return $lsx_controls;
 	}
 
@@ -152,52 +164,6 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 endif;
 
 add_filter( 'lsx_customizer_controls', 'lsx_customizer_layout_controls' );
-
-if ( ! function_exists( 'lsx_customizer_font_controls' ) ) :
-
-	/**
-	 * Returns an array of the font controls.
-	 *
-	 * @package    lsx
-	 * @subpackage customizer
-	 *
-	 * @return $lsx_controls array()
-	 */
-	function lsx_customizer_font_controls( $lsx_controls ) {
-		$data_fonts_file = get_template_directory() . '/assets/jsons/lsx-fonts.json';
-		$data_fonts      = lsx_file_get_contents( $data_fonts_file );
-		$data_fonts      = apply_filters( 'lsx_fonts_json', $data_fonts );
-
-		$data_fonts = '{' . $data_fonts . '}';
-		$data_fonts = json_decode( $data_fonts, true );
-
-		$lsx_controls['sections']['lsx-font'] = array(
-			'title'       => esc_html__( 'Font', 'lsx' ),
-			'description' => esc_html__( 'Change the fonts sitewide.', 'lsx' ),
-			'priority'    => 41,
-		);
-
-		$lsx_controls['settings']['lsx_font'] = array(
-			'default'   => 'lora_noto_sans',
-			'type'      => 'theme_mod',
-			'transport' => 'refresh',
-		);
-
-		$lsx_controls['fields']['lsx_font'] = array(
-			'label'    => '',
-			'section'  => 'lsx-font',
-			'settings' => 'lsx_font',
-			'control'  => 'LSX_Customize_Font_Control',
-			'choices'  => $data_fonts,
-			'priority' => 2,
-		);
-
-		return $lsx_controls;
-	}
-
-endif;
-
-add_filter( 'lsx_customizer_controls', 'lsx_customizer_font_controls' );
 
 if ( ! function_exists( 'lsx_get_customizer_controls' ) ) :
 

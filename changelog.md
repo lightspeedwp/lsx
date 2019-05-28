@@ -10,7 +10,8 @@
 * Dev - Extended the breadcrumb filter to include handling for The Events Calendar Community Events
 * Dev - Added in the posts page archive to the breadcrumbs (Yoast and WooCommerce) when viewing the Category and Tag archives.
 * Dev - Added in a 'lsx_404_search_form' filter to allow the 404 content to be changed by third party plugins.
-* Added in a function to move the Optinmonster JS registration to the footer.
+* Dev - Added in a function to move the Optinmonster JS registration to the footer.
+* Dev - Removed the font options and replaced it with a disable font checkbox.
 
 ### 2.3
 * Fix - Fixes and updates for WordPress coding standards

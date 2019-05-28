@@ -78,22 +78,11 @@ if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
 	 * @subpackage scripts
 	 */
 	function lsx_scripts_add_fonts() {
-		$font = array(
-			'lora_noto_sans' => array(
-				'header' => array(
-					'title'          => 'Lora',
-					'location'       => 'Lora:400,400i,700,700i',
-					'cssDeclaration' => "'Lora', serif",
-					'cssClass'       => 'wp-customizer-lora',
-				),
-				'body' => array(
-					'title'          => 'Noto Sans',
-					'location'       => 'Noto+Sans:400,400i,700,700i',
-					'cssDeclaration' => "'Noto Sans', sans-serif",
-					'cssClass'       => 'wp-customizer-noto-sans',
-				),
-			),
-		);
+
+		$disable_fonts = get_theme_mod( 'lsx_disable_fonts', false );
+		if ( false !== $disable_fonts ) {
+			return;
+		}
 
 		// Font styles.
 		$font_styles = '

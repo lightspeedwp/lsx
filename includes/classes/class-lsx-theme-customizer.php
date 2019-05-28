@@ -29,7 +29,6 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		public function __construct( $controls ) {
 			require get_template_directory() . '/includes/classes/class-lsx-customize-core-control.php';
 			require get_template_directory() . '/includes/classes/class-lsx-customize-layout-control.php';
-			require get_template_directory() . '/includes/classes/class-lsx-customize-font-control.php';
 			require get_template_directory() . '/includes/classes/class-lsx-customize-header-layout-control.php';
 
 			$this->controls = $controls;
