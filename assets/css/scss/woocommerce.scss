@@ -133,7 +133,7 @@ article.page {
 
 	&.woocommerce-checkout {
 		.col2-set {
-			@include media ('>=phone') {
+			@include media ('>=tablet') {
 				float: left;
 				margin-right: 4.347826087%;
 				width: 47.8260869565%;
@@ -180,7 +180,7 @@ article.page {
 	#order_review_heading,
 	.woochimp_checkout_checkbox,
 	#woochimp_checkout_groups {
-		@include media ('>=phone') {
+		@include media ('>=tablet') {
 			float: right;
 			margin-right: 0;
 			width: 47.8260869565%;
