@@ -323,6 +323,10 @@ article.page {
 			}
 		}
 	}
+	.woocommerce-button.button.woocommerce-form-login__submit {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+	}
 
 	form.checkout_coupon,
 	form.login,
