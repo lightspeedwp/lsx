@@ -1,11 +1,11 @@
 <p align="center"><a target="_blank" href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/04/lsx-theme-logo.png" alt="WooCommerce"></a></p>
 
 <p align="center">
-  <a href="http://gulpjs.com/" target="_blank"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
-  <a href="https://travis-ci.org/lightspeeddevelopment/lsx" target="_blank"><img src="https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master" alt="Build Status"></a>
- <a href="https://codeclimate.com/github/lightspeeddevelopment/lsx" target="_blank"><img src="https://codeclimate.com/github/lightspeeddevelopment/lsx/badges/gpa.svg" alt="Code Climate"></a>
- <a href="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/?branch=master" target="_blank"><img src="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/badges/quality-score.png?b=master" alt="Scrutinizer"></a>
-<a href="https://coveralls.io/github/lightspeeddevelopment/lsx?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/lightspeeddevelopment/lsx/badge.svg?branch=master" alt="Coverals"></a>
+  <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
+  <a href="https://travis-ci.org/lightspeeddevelopment/lsx"><img src="https://travis-ci.org/lightspeeddevelopment/lsx.svg?branch=master" alt="Build Status"></a>
+ <a href="https://codeclimate.com/github/lightspeeddevelopment/lsx"><img src="https://codeclimate.com/github/lightspeeddevelopment/lsx/badges/gpa.svg" alt="Code Climate"></a>
+ <a href="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/?branch=master"><img src="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/badges/quality-score.png?b=master" alt="Scrutinizer"></a>
+<a href="https://coveralls.io/github/lightspeeddevelopment/lsx?branch=master"><img src="https://coveralls.io/repos/github/lightspeeddevelopment/lsx/badge.svg?branch=master" alt="Coverals"></a>
 </p>
 
 The [LSX Theme](https://lsx.lsdev.biz/) is a fully Gutenberg ready, light-weight & responsive WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. We've built it to be fully compatible with WooCommerce, making it an ideal choice for your next eCommerce build. Its lightweight build ensures better load times, a bonus for both user experience and SEO.
@@ -40,13 +40,13 @@ If you are experiencing issues with the LSX Theme, please log any bug issues you
 
 If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX theme on Github](https://github.com/lightspeeddevelopment/lsx) and submit a Pull Request with your updates.
 
-## Third-party resources
+## Third Party Resources
 
-* [WP-Bootstrap-Navwalker](https://github.com/twittem/wp-bootstrap-navwalker) is licensed under the terms of the GNU GPL, Version 3
-* [Bootstrap](http://getbootstrap.com/) is licensed under the terms of the MIT license
-* [Font Awesome](http://fontawesome.io/) icons are licensed under the terms of the SIL OFL 1.1, and code licensed under the terms of MIT License
-* [Modernizr](https://modernizr.com/) is licensed under the terms of the MIT license
-* [imagesLoaded](http://imagesloaded.desandro.com/) is licensed under the terms of the MIT license
-* [ScrollToFixed](https://github.com/bigspotteddog/ScrollToFixed) is licensed under the terms of the MIT license
-* [Picturefill](https://scottjehl.github.io/picturefill/) is licensed under the terms of the MIT license
-* [lazysizes](https://github.com/aFarkas/lazysizes) is licensed under MIT license
+* [WP-Bootstrap-Navwalker](https://github.com/twittem/wp-bootstrap-navwalker) is licensed under the terms of the GNU GPL, Version 3.
+* [Bootstrap](http://getbootstrap.com/) is licensed under the terms of the MIT license.
+* [Font Awesome](http://fontawesome.io/) icons are licensed under the terms of the SIL OFL 1.1, and code licensed under the terms of MIT License.
+* [Modernizr](https://modernizr.com/) is licensed under the terms of the MIT license.
+* [imagesLoaded](http://imagesloaded.desandro.com/) is licensed under the terms of the MIT license.
+* [ScrollToFixed](https://github.com/bigspotteddog/ScrollToFixed) is licensed under the terms of the MIT license.
+* [Picturefill](https://scottjehl.github.io/picturefill/) is licensed under the terms of the MIT license.
+* [lazysizes](https://github.com/aFarkas/lazysizes) is licensed under MIT license.
