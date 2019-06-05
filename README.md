@@ -10,9 +10,13 @@
 
 The [LSX Theme](https://lsx.lsdev.biz/) is a fully Gutenberg ready, light-weight & responsive WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. We've built it to be fully compatible with WooCommerce, making it an ideal choice for your next eCommerce build. Its lightweight build ensures better load times, a bonus for both user experience and SEO.
 
-LSX has been redeveloped for the new WordPress Gutenberg update. This means you can now drag and drop page elements with no code requried. 
-
 LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color options, home page configuration, widget areas and much more. 
+
+## Gutenberg Compatiblity 
+
+The LSX theme has been redeveloped for the WordPress Gutenberg update. This means you can now make use of the drag-and-drop page builder when creating new pages and posts. 
+
+Our LSX Blocks Plugin comes with a range of custom Gutenberg blocks. These blocks are designed to display perfectly with the LSX theme.
 
 ## LSX Extensions
 
