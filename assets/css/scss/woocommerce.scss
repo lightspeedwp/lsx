@@ -296,17 +296,52 @@ article.page {
 .woocommerce {
 	div.product {
 		.woocommerce-tabs {
-			.nav-tabs { @extend %lsx-tabs; }
-
+			overflow:hidden;
 			.panel {
-				width: 64%;
+				width: 70%;
 				float: right;
-				margin-right: 0;
-				margin-top: 0;
+				padding: 15px;
 				background:#F5F5F5;
 
-				& > *:last-child { margin-bottom: 0; }
+				& > *:last-child { margin-bottom: 0;clear:both }
 			}
+			.nav-tabs>li {
+				float:none;
+				margin-bottom:0;
+
+				&:hover {
+					background-color:#f5f5f5;
+					border:none;
+				}
+			}
+			.nav-tabs>li>a {
+				border-radius:0;
+				border-bottom: 1px solid #ddd;
+				border-right: 1px solid #ddd;
+				border-left: 0;
+				color:#000;
+
+				.nav-tabs>li>a.active {
+					border-right:3px solid #000
+				}
+
+				&:hover {
+					background-color: #f5f5f5;
+				}
+			}
+			.nav-tabs {
+				width: 28%;
+				float: left;
+				border-bottom:none;
+			}
+			@media (max-width:768px) {
+				.panel {width:100%;float:none;}
+				.nav-tabs {
+					width:100%;
+					float:none;
+					margin-bottom:20px;
+				}
+			}			
 
 			#comments { margin-top: 0; }
 		}
