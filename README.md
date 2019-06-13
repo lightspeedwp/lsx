@@ -1,4 +1,4 @@
-<p align="center"><a target="_blank" href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/04/lsx-theme-logo.png" alt="WooCommerce"></a></p>
+<h1 align="center"><a target="_blank" href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/04/lsx-theme-logo.png" alt="LSX Theme"></a></h1>
 
 <p align="center">
   <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
@@ -6,6 +6,7 @@
  <a href="https://codeclimate.com/github/lightspeeddevelopment/lsx"><img src="https://codeclimate.com/github/lightspeeddevelopment/lsx/badges/gpa.svg" alt="Code Climate"></a>
  <a href="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/?branch=master"><img src="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx/badges/quality-score.png?b=master" alt="Scrutinizer"></a>
 <a href="https://coveralls.io/github/lightspeeddevelopment/lsx?branch=master"><img src="https://coveralls.io/repos/github/lightspeeddevelopment/lsx/badge.svg?branch=master" alt="Coverals"></a>
+<a href="https://woocommerce.com/?aff=2873/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/06/687474703a2f2f696d672e736869656c64732e696f2f62616467652f44657369676e6564253230666f722d576f6f436f6d6d657263652d6134363439372e737667-1.png" alt="Made for Woocommerce"></a>
 </p>
 
 The [LSX Theme](https://lsx.lsdev.biz/) is a fully Gutenberg ready, light-weight & responsive WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. We've built it to be fully compatible with WooCommerce, making it an ideal choice for your next eCommerce build. Its lightweight build ensures better load times, a bonus for both user experience and SEO.
