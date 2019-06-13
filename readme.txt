@@ -1,16 +1,17 @@
 === LSX Theme ===
 Contributors: feedmymedia
-Donate link: https://www.donate.lsdev.biz/
+Donate link: https://donate.lsdev.biz/
 Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme 
 Requires at least: 5.1.1
 Tested up to: 5.2.1
 Requires PHP: 7.0
-Stable tag: 1.0.1
+Stable tag: 2.3.1
 License: GPLv3
+Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 The new Gutenberg editor is here, and with it comes the new block editor.
 
-We have built the theme so you can simply drag and drop them into your editor, configure to your wishes and you are done!
+We have built the theme so you can simply select a block and place it wherever you wish in your editor, style to your taste and you are done!
 
 == Fully Gutenberg Compatible ==
 
