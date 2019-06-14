@@ -4,7 +4,7 @@
 * Dev - Hiding WooCommerce styles on excerpts.
 * Fix - Updated LSX Banners to show on all pages.
 * Dev - Update of the Node NPM dependancies to secure versions.
-* Dev - Added lax styles to restricted content login button.
+* Dev - Added lsx styles to restricted content login button.
 * Fix - Fixed mobile column widths viewport.
 
 ### 2.3.1
