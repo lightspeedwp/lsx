@@ -5,7 +5,7 @@ Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme
 Requires at least: 5.1.1
 Tested up to: 5.2.1
 Requires PHP: 7.0
-Stable tag: 2.3.1
+Stable tag: 2.3.2
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
