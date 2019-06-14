@@ -54,7 +54,7 @@ endif;
 
 function lsx_breadcrumbs_placements() {
 	global $wpdb;
-	if ( class_exists( 'LSX_Banners' ) || is_singular( 'post' ) ) {
+	if ( is_singular( 'post' ) ) {
 		add_action( 'lsx_banner_inner_top', 'lsx_breadcrumbs', 100 );
 	} else {
 		add_action( 'lsx_header_after', 'lsx_breadcrumbs', 100 );
