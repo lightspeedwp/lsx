@@ -53,11 +53,10 @@ if ( ! function_exists( 'lsx_breadcrumbs' ) ) :
 endif;
 
 function lsx_breadcrumbs_placements() {
-	global $wpdb;
 	if ( is_singular( 'post' ) ) {
 		add_action( 'lsx_banner_inner_top', 'lsx_breadcrumbs', 100 );
 	} else {
-		add_action( 'lsx_header_after', 'lsx_breadcrumbs', 100 );
+		add_action( 'lsx_header_after', 'lsx_breadcrumbs', 1 );
 	}
 }
 add_action( 'wp', 'lsx_breadcrumbs_placements' );
