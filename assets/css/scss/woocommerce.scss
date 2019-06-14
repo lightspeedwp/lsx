@@ -342,6 +342,28 @@ article.page {
 			display:none;
 		}
 	}*/
+	.woocommerce-form-login {
+		p.form-row:not(.woocommerce-form-row) {
+			display: flex;
+			align-items: center;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			.woocommerce-form-login__rememberme {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.woocommerce-LostPassword.lost_password {
+		a {
+			color: nth($orange, 1);
+			&:hover {
+				color: nth($orange, 2);
+			}
+		}
+	}
+	.wc-memberships-restriction-message {
+		margin: 1em 0!important;
+	}
 }
 
 body:not(.logged-in).woocommerce-account.my-account .woocommerce {
