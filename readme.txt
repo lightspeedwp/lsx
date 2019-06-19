@@ -49,6 +49,13 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 
 = 2.3.3 =
 * Fix - Various Breadcrumb fixes.
+* Dev - Code Standards Updates
+* Fix - Github Issues Fixed
+*     - #204 - Updating Class Operators
+*     - #206 - Anchoring Regex Expressions
+*     - 
+*     - 
+*     - 
 
 = 2.3.2 =
 * Dev - Hiding WooCommerce styles on excerpts.
