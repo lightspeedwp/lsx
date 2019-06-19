@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.3.3 
+* Fix - Various Breadcrumb fixes.
+
 ### 2.3.2
 * Dev - Hiding WooCommerce styles on excerpts.
 * Fix - Updated LSX Banners to show on all pages.
