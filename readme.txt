@@ -5,7 +5,7 @@ Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme
 Requires at least: 5.1.1
 Tested up to: 5.2.1
 Requires PHP: 7.0
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -46,6 +46,9 @@ If you are experiencing issues with the LSX Theme, please log any bug issues you
 If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX theme on Github](https://github.com/lightspeeddevelopment/lsx) and submit a Pull Request with your updates.
 
 == Changelog ==
+
+= 2.3.3 =
+* Fix - Various Breadcrumb fixes.
 
 = 2.3.2 =
 * Dev - Hiding WooCommerce styles on excerpts.
