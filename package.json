@@ -1,6 +1,6 @@
 {
   "name": "lsx",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "description": "LSX is a light-weight, minimalistic and responsive WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. We've built it to be fully compatible with WooCommerce, making it an ideal choice for your next eCommerce build. Its lightweight build ensures better load times, a bonus for both user experience and SEO.",
   "main": "gulpfile.js",
   "repository": {
@@ -16,8 +16,11 @@
     "url": "https://github.com/lightspeeddevelopment/lsx/issues"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "clean-css": "^4.1.11",
     "cryptiles": "^4.1.2",
     "eslint": "^5.9.0",
+    "fstream": "^1.0.12",
     "global": "^4.3.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -36,11 +39,13 @@
     "gulp-wp-pot": "^2.3.2",
     "hoek": "^4.2.1",
     "include-media": "^1.4.9",
+    "js-yaml": "^3.13.1",
     "jshint": "^2.9.5",
     "lodash": "^4.17.5",
     "map-stream": "0.0.7",
     "minimatch": "^3.0.2",
     "randomatic": "^3.0.0",
-    "tough-cookie": "^2.3.3"
+    "tough-cookie": "^2.3.3",
+    "webpack": "^4.32.0"
   }
 }

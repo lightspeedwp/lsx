@@ -1,16 +1,63 @@
-## LSX Changelog
+=== LSX Theme ===
+Contributors: feedmymedia
+Donate link: https://donate.lsdev.biz/
+Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme 
+Requires at least: 5.1.1
+Tested up to: 5.2.1
+Requires PHP: 7.0
+Stable tag: 2.3.3
+License: GPLv3
+Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-### 2.3.3 
+The new Gutenberg editor is here, and with it comes the new block editor.
+
+We have built the theme so you can simply select a block and place it wherever you wish in your editor, style to your taste and you are done!
+
+== Fully Gutenberg Compatible ==
+
+The LSX theme has been redeveloped for the WordPress Gutenberg update. This means you can now make use of the drag-and-drop page builder when creating new pages and posts. 
+
+Our LSX Blocks Plugin comes with a range of custom Gutenberg blocks. These blocks are designed to display perfectly with the LSX theme.
+
+== LSX Extensions ==
+
+Our range of powerful [LSX extensions](https://lsx.lsdev.biz/extensions/) gives you freedom to add team members, client reviews, your portfolio and so much more to your website. Each extension is designed fluidly with the LSX theme. So theres no code hassles involved. 
+
+== LSX Documentation ==
+
+We have extensive documentation on all our themes functionality. This allows you to take control of your website setup and design to your needs: 
+
+* [Getting Starting with LSX](https://lsx.lsdev.biz/documentation/getting-started/)
+* [Theme Options](https://lsx.lsdev.biz/documentation/theme-options/)
+* [Customizer](https://lsx.lsdev.biz/documentation/lsx-customizer/)
+* [Page Tempates](https://lsx.lsdev.biz/documentation/page-templates/)
+* [Banners](https://lsx.lsdev.biz/documentation/banners/)
+* [Menus](https://lsx.lsdev.biz/documentation/menus/)
+* [Third Party Plugins](https://lsx.lsdev.biz/documentation/third-party-plugins/)
+
+ == LSX Help & Support ==
+
+Take a look at all our [Frequently Asked Questions](https://lsx.lsdev.biz/documentation/frequently-asked-questions/), we are sure you'll find what you're looking for. 
+
+If you are experiencing issues with the LSX Theme, please log any bug issues you are having on the [LSX Github Issues](https://github.com/lightspeeddevelopment/lsx/issues) page.
+
+== Contributing to the LSX theme ==
+
+If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX theme on Github](https://github.com/lightspeeddevelopment/lsx) and submit a Pull Request with your updates.
+
+== Changelog ==
+
+= 2.3.3 =
 * Fix - Various Breadcrumb fixes.
 
-### 2.3.2
+= 2.3.2 =
 * Dev - Hiding WooCommerce styles on excerpts.
 * Fix - Updated LSX Banners to show on all pages.
 * Dev - Update of the Node NPM dependancies to secure versions.
 * Dev - Added lsx styles to restricted content login button.
 * Fix - Fixed mobile column widths viewport.
 
-### 2.3.1
+= 2.3.1 =
 * Fix - Added in a conditional statement that disables the page header if WordPress Blocks are being used on the page.
 * Dev - Removing the filter that disables the banner for events.
 * Dev - Added in a function to disable The Event Calendar body post archive and single title and move it into the Global Header.
@@ -23,7 +70,7 @@
 * Dev - Added in a function to move the Optinmonster JS registration to the footer.
 * Dev - Removed the font options and replaced it with a disable font checkbox.
 
-### 2.3
+= 2.3 =
 * Fix - Fixes and updates for WordPress coding standards.
 * Fix - Fixing width for event calendar image.
 * Fix - Block columns spacing fix.
@@ -38,23 +85,23 @@
 * Dev - Community Events Styling.
 * Dev - Adding the ‘gutenberg compatible’ class to home page.
 
-### 2.2.2
+= 2.2.2 =
 * Fix - Recompiled Minified JS.
 * Dev - Added in a filter to disable the LSX Banners if the page is using Blocks.
 * Fix - Making sure the Theme is pre 5.0 compatible.
 * Fix - Fixing the breadcrumb for The Events Calendar Community Event when using Yoast SEO Breadcrumbs.
 * Fix - Fixing the Front Page Template conditional statements.
 
-### 2.2.1
+= 2.2.1 =
 * Fix - Fixed the white screen error when not using the Gutenburg editor.
 
-### 2.2
+= 2.2 =
 * Dev - Prepared the theme for Wordpress 5.0.
 * Dev - Added Gutenberg compatibility.
 * Dev - The breadcrumbs are now at the top of the banner.
 * Fix - General bug fixes.
 
-### 
+= 2.1.8 =
 * Fix - Fixed the "title" attribute not being used in the Nav Walker class.
 * Fix - Fixed the FontAwesome select icons for the Stripe payment gateway in WooCommerce.
 * Dev - Moved the platform.js to the footer.
@@ -63,25 +110,25 @@
 * Fix - Added style for product buttons on WooCommerce featured products widget.
 * Dev - Fixed the translation of the Author Page.
 
-### 2.1.7
+= 2.1.7 =
 * Dev - Added in Bootstrap Styling for the Gravity Forms plugin.
 
-### 2.1.6
+= 2.1.6 =
 * Dev - Added core Styling Support for the bbPress Forum Software.
 * Fix - Added inputs to the wp_kses_post filter to fix the WooCommerce Product reviews button.
 * Dev - Changed the css to output as compressed when processed.
 * Dev - Updating packages tough-cookie ~> 2.3.3 and hoek ~> 4.2.1.
 
-### 2.1.5
+= 2.1.5 =
 * Fix - Fixed the compatibility issue with the WooCommerce select2 fields.
 
-### 2.1.4
+= 2.1.4 =
 * Fix - Removed the WC Select2 from the Checkout page as a temporary fix.
 * Dev - Removed the edit links from the logged in view.
 * Dev - Added in integration with the WP Forms Plugin.
 * Dev - Event Calendar Ticket Styling.
 
-### 2.1.2
+= 2.1.2 =
 * Dev - Removed the hentry class from the `post_class` output.
 * Dev - Added in a vcard schema for the author post meta.
 * Dev - Added in the updated class for the hentry schema.
@@ -90,14 +137,14 @@
 * Dev - Changed the way the woocommerce pagination is styled.
 * Dev - Removed the overwritten templates for the WC products and WC reviews widgets.
 
-### 2.1.1
+= 2.1.1 =
 * Fix - Added the Sass files for child theme development.
 * Dev - Added in a filter to handle which post formats are forced to show the full content.
 * Dev - Added in a filter to allow which post formats show a thumbnail.
 * Dev - Added in the Bacs Bank details on the WC "Thank You" page.
 * Dev - Allowing the cart to show on the Logged out menu as well.  (LSX Login and WooCommerce integration).
 
-### 2.1.0
+= 2.1.0 =
 * Fix - Fixed conflict from global style affecting slick dots.
 * Fix - Removed the setting that turned LSX as LSX (itself) child theme.
 * Dev - Added new filter to disable the global pagination: lsx_paging_nav_disable.
@@ -136,7 +183,7 @@
 * Tweak - Add WooCommerce Product Retailers compatibility.
 * Dev - Extended alert-danger Bootstrap class to alert-error class.
 
-### 2.0.0
+= 2.0.0 =
 * New totally awesome version! The visual was fully redesigned.
 * Dev - Restricting the #searchform so it does not submit empty searches.
 * Dev - Changed WordPress versions: Requires at least: 4.3, Tested up to: 4.8, Stable tag: 4.8.
@@ -172,7 +219,7 @@
 * Tweak - Fonts optimization (try first load theme fonts; only after - if necessary - load google fonts).
 * Tweak - Enabled shortcode for text widget.
 
-### 1.8.5
+= 1.8.5 =
 * Fix - Footer widgets changed breakpoint.
 * Fix - Keep default behaviour from sliders on mobile.
 * Fix - Adjusted content.php to be more flexible for styles (LSX Blog Customizer requirement).
@@ -184,15 +231,15 @@
 * Fix - Removed remove_filter: the_excerpt/wpautop.
 * Fix - Small Sass files change (wiyhout affect CSS).
 
-### 1.8.4
+= 1.8.4 =
 * Fix - Re-added the get_comments_number() fix.
 
-### 1.8.3
+= 1.8.3 =
 * Fix - Removed custom image classes from avatar in admin bar.
 * Fix - Top menu dropdown in large screens (first level link didn’t works).
 * Fix - Moved the get_comments_number() out of the empty() statement, causing a Fatal PHP Error.
 
-### 1.8.2
+= 1.8.2 =
 * Fix - Enabled compatibility between LSX Banners (Soliloquy) and LSX Theme.
 * Fix - Enabled compatibility between LSX Blog Customiser (categories BS carousel) and LSX Theme.
 * Fix - Enabled compatibility between LSX Blog Customiser (display full content on blog pages) and LSX Theme.
@@ -201,13 +248,13 @@
 * Fix - Adjusted the next/previous post navigation (wider columns).
 * Fix - Adjusted comment author thumbnail display.
 
-### 1.8.1
+= 1.8.1 =
 * Fix - Avoided use a return function inside the PHP function "empty" (compatibility with PHP 5.5 and lower).
 * Fix - Compatibility with WPML 3.6.
 * Fix - Fixed Sensei redirect for lessons archive.
 * Feature - Starter content (new feature available in WordPress 4.7).
 
-### 1.8.0
+= 1.8.0 =
 * Made LSX compatible (visual) with Ninja Forms.
 * Made LSX compatible with LSX Blog Customizer (plugin).
 * Made LSX compatible (visual) with LSX Banners new feature: background videos.
@@ -249,14 +296,14 @@
 * Created a welcome page.
 * Added a new menu option: top menu (left).
 
-### 1.7.3
+= 1.7.3 =
 * Removed blue banner (with title) from the homepage (always).
 * Added a wrap in banner to fix IE10/11 vertical alignment.
 * Small fix: removed height:auto from default images.
 * Small fixes in customizer colours: improved selectors.
 * Fixed customizer colours: live changes were not working.
 
-### 1.7.2
+= 1.7.2 =
 * Envira Gallery: added "Lazy Load Images" to Envira Gallery.
 * Default pagination: fixed wrap spacing.
 * Bootstrap: removed "!important" from some general classes.
@@ -267,7 +314,7 @@
 * Added option to use LSX Mega Menus in Top Menu.
 * General small fixes.
 
-### 1.7.1
+= 1.7.1 =
 * Customizer colour swatch: printing the custom styles in footer.
 * Customizer colour swatch: fixed the box-shadow color from articles in blog pages.
 * Lazy Loading Images: added a class to bypass a image.
@@ -280,7 +327,7 @@
 * Fixed: sometimes the image banner show up without an image set.
 * Titles for pages and posts standardised.
 
-### 1.7.0
+= 1.7.0 =
 * Added a colour swatch to customizer.
 * Added in a conditional statement so the footer widgets container does not show unless there are widgets active.
 * Removed the deprecated tags (readme, style).
@@ -294,7 +341,7 @@
 * Speed Optimization: minified all script and style files.
 * Removed unnecessary Google font file.
 
-### 1.6.2
+= 1.6.2 =
 * Added a conditional statement so the footer widgets container does not show unless there are widgets active.
 * Page 404: fixed big gap below the banner when the main menu is not fixed.
 * Fixed comment reply.
@@ -310,7 +357,7 @@
 * Fixed the email sharing (modal) on mobile.
 * Improved vertical alignment in homepage banner	.
 
-### 1.6.1
+= 1.6.1 =
 * Fixed Bootstrap modal in small devices (< 768px).
 * Changed the meta viewport to recommended solution for mobile.
 * Cleared out unused image files in /img folder.
@@ -318,7 +365,7 @@
 * Fixed title display in homepage.
 * Fixed lateral paddings in all pages.
 
-### 1.6
+= 1.6 =
 * New global loading.
 * New top banner (code refactored, parallax).
 * Restoring compatibility with WPML.
@@ -341,7 +388,7 @@
 * Nav menu: always require the CSS for nav menu (small screens devices).
 * Nav menu: use the correct window.width information.
 
-### 1.5.2
+= 1.5.2 =
 * Updated the readme.txt.
 * Fixed Bootstrap HTML structure.
 * Fixed Bootstrap mediaqueries.
@@ -354,7 +401,7 @@
 * Fixed third level main menu dropdowns.
 * Added RDFA markup for breadcrumbs.
 
-### 1.5.1
+= 1.5.1 =
 * Updated the readme.txt file with the Workflow Changes.
 * Fixed the missing breadcrumbs on post type archives by removing the is_archive() conditional call.
 * Removed help.txt and install.txt, they have been included in the readme files.
@@ -362,7 +409,7 @@
 * Fixed the display of the single breadcrumbs and the styling of the archives breadcrumbs.
 * Fixed the support of the WordPress Custom Logo.
 
-### 1.5
+= 1.5 =
 * Added in support for the following plugins, with their own stylesheets.
  * Jetpack.
  * Soliloquy Slider.
@@ -379,18 +426,18 @@
 * Removed the Footer Widget title - https://github.com/lightspeeddevelopment/lsx/issues/37.
 * Added in support for third level dropdowns - https://github.com/lightspeeddevelopment/lsx/issues/16.
 
-### 1.4.2
+= 1.4.2 =
 * Added in three missing text encapsulations.
 * Fixed the background image size on single Jetpack Portfolio pages.
 * Fixed the active state highlighting for 2nd tier menu items.
 * Removed the unused 'Footer Widgets' title and CSS.
 
-### 1.4.1
+= 1.4.1 =
 * Fixed the Fatal error with the Caldera forms class.
 * Fixed the output of the lsx-thumbnail-single and lsx-thumbnail-wide size.
 * Fixed the styling of the WPML Language switcher dropdown.
 
-### 1.4
+= 1.4 =
 * Added in a "Continue Reading" link for excerpts.
 * Added in the singular.php template.
 * Added support for the WordPress Responsive images.
@@ -407,7 +454,7 @@
 * Renamed the Color Scheme CSS files with a "color-scheme-prefix".
 
 
-### 1.3
+= 1.3 =
 * Added in support for 'post formats'.
 * Improved Blog Template Styling; Single, Archive and Author pages.
 * Updated Responsive CSS for all templates.
@@ -420,19 +467,19 @@
 * Added in translation encapsulation for missing strings.
 * Added in support for BuddyPress Pages (forced to 1 column).
 
-### 1.2.4
+= 1.2.4 =
 * Removed the unused readme.txt in the languages directory.
 * Fixed responsive header CSS and JS.
 * Added more styles to the Colour Scheme CSS files.
 
-### 1.2.3
+= 1.2.3 =
 * Removed the Genericons example.html file for Security Reasons.
 
-### 1.2.2
+= 1.2.2 =
 * Responsive Layouts.
 * The portfolio column layout for masonry on tablet and mobile.
 
-### 1.2.1
+= 1.2.1 =
 * Updated the ScreenShot.
 * The including of the genericons from the parent theme (for child themes).
 * Removed extra class code from the lsx_avatar function.
@@ -440,7 +487,7 @@
 * Added in an info box for the naviagation panel.
 * Added in the sidebar for the sitemap template, and changed the amount of items called through on each section.
 
-### 1.2
+= 1.2 =
 * Fixed the mixed content warning for the Google Fonts API calls.
 * Fixed the banner responsive JS on single posts.
 * Fixed the Isotope filtering using the Packery Library.
@@ -457,10 +504,10 @@
 * Added in a filter 'lsx_allowed_post_type_banners' so child themes can add banner support for additional post types.
 * Added in a filter 'lsx_post_navigation_labels' which allows you to edit the labels outputted on the post type archive.
 
-### 0.1
+= 0.1 =
 * First Version.
 
-## Upgrade Notice
+== Upgrade Notice ==
 
-### 1.2.4
+= 1.2.4
 * Upgrade to remove the security related bug with the Genericons Example.html file.

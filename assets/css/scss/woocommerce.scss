@@ -133,7 +133,7 @@ article.page {
 
 	&.woocommerce-checkout {
 		.col2-set {
-			@include media ('>=phone') {
+			@include media ('>=tablet') {
 				float: left;
 				margin-right: 4.347826087%;
 				width: 47.8260869565%;
@@ -180,7 +180,7 @@ article.page {
 	#order_review_heading,
 	.woochimp_checkout_checkbox,
 	#woochimp_checkout_groups {
-		@include media ('>=phone') {
+		@include media ('>=tablet') {
 			float: right;
 			margin-right: 0;
 			width: 47.8260869565%;
@@ -323,6 +323,10 @@ article.page {
 			}
 		}
 	}
+	.woocommerce-button.button.woocommerce-form-login__submit {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+	}
 
 	form.checkout_coupon,
 	form.login,
@@ -338,6 +342,34 @@ article.page {
 			display:none;
 		}
 	}*/
+	.woocommerce-form-login {
+		p.form-row:not(.woocommerce-form-row) {
+			display: flex;
+			align-items: center;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			.woocommerce-form-login__rememberme {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.woocommerce-LostPassword.lost_password {
+		a {
+			color: nth($orange, 1);
+			&:hover {
+				color: nth($orange, 2);
+			}
+		}
+	}
+	.wc-memberships-restriction-message {
+		margin: 0 0 1em !important;
+	}
+}
+
+body:not(.logged-in).woocommerce-account.my-account .woocommerce {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product_meta {

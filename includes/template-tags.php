@@ -52,9 +52,17 @@ if ( ! function_exists( 'lsx_breadcrumbs' ) ) :
 
 endif;
 
-add_action( 'lsx_banner_inner_top', 'lsx_breadcrumbs', 100 );
+function lsx_breadcrumbs_placements() {
+	if ( is_singular( 'post' ) ) {
+		add_action( 'lsx_banner_inner_top', 'lsx_breadcrumbs', 100 );
+	} else {
+		add_action( 'lsx_header_after', 'lsx_breadcrumbs', 1 );
+	}
+}
+add_action( 'wp', 'lsx_breadcrumbs_placements' );
+
 //add_action( 'lsx_banner_inner_bottom', 'lsx_breadcrumbs', 100 );
-add_action( 'lsx_global_header_inner_bottom', 'lsx_breadcrumbs', 100 );
+//add_action( 'lsx_global_header_inner_bottom', 'lsx_breadcrumbs', 100 );
 
 if ( ! function_exists( 'lsx_breadcrumbs_wpseo_seperator_filter' ) ) :
 

@@ -7,7 +7,6 @@
  * @package    lsx
  * @subpackage template
  */
-
 get_header(); ?>
 
 <?php lsx_content_wrap_before(); ?>
