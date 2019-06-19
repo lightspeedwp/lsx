@@ -197,7 +197,7 @@ get_header(); ?>
 															}
 
 															foreach ( $download_files as $download_id => $file ) {
-																$i++;
+																++$i;
 
 																if ( $i > 1 ) {
 																	echo '<br>';

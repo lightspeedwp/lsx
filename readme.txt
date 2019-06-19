@@ -53,7 +53,7 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 * Fix - Github Issues Fixed
 *     - #204 - Updating Class Operators
 *     - #206 - Anchoring Regex Expressions
-*     - 
+*     - #207 - Pre Increment
 *     - 
 *     - 
 

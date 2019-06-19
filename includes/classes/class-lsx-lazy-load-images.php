@@ -150,7 +150,7 @@ if ( ! class_exists( 'LSX_Lazy_Load_Images' ) ) :
 		}
 
 		static function noscripts_remove( $match ) {
-			self::$noscript_id++;
+			++self::$noscript_id;
 			self::$noscripts[ self::$noscript_id ] = $match[0];
 			return chr( 20 ) . self::$noscript_id . chr( 20 );
 		}

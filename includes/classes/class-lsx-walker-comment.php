@@ -38,7 +38,7 @@ if ( ! class_exists( 'LSX_Walker_Comment' ) ) :
 		}
 
 		function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
-			$depth++;
+			++$depth;
 			$GLOBALS['comment_depth'] = $depth;
 			$GLOBALS['comment']       = $comment;
 
