@@ -454,7 +454,7 @@ if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
 				$has_more       = false;
 				$count          = 0;
 
-				preg_match_all( '/(<[^>]+>|[^<>\s]+)\s*/u', $wpse_excerpt, $tokens );
+				preg_match_all( '/^(<[^>]+>|[^<>\s]+)\s*$/u', $wpse_excerpt, $tokens );
 
 				foreach ( $tokens[0] as $token ) {
 					if ( $count >= $excerpt_word_count ) {

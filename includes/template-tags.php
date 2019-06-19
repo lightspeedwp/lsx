@@ -689,7 +689,7 @@ if ( ! function_exists( 'lsx_get_my_url' ) ) :
 	 * @subpackage template-tags
 	 */
 	function lsx_get_my_url() {
-		if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) ) {
+		if ( ! preg_match( '/^<a\s[^>]*?href=[\'"](.+?)[\'"]$/is', get_the_content(), $matches ) ) {
 			return false;
 		}
 

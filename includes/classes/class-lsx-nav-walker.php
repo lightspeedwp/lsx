@@ -35,7 +35,7 @@ if ( ! class_exists( 'LSX_Nav_Walker' ) ) :
 	class LSX_Nav_Walker extends Walker_Nav_Menu {
 
 		function check_current( $classes ) {
-			return preg_match( '/(current[-_])|active|dropdown/', $classes );
+			return preg_match( '/^(current[-_])|active|dropdown$/', $classes );
 		}
 
 		function start_lvl( &$output, $depth = 0, $args = array() ) {
