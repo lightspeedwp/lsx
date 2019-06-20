@@ -120,10 +120,6 @@ if ( ! function_exists( 'lsx_wc_disable_lsx_banner_plugin' ) ) :
 	function lsx_wc_disable_lsx_banner_plugin( $disabled ) {
 		global $post;
 
-		if ( is_cart() || is_checkout() || is_account_page() ) {
-			$disabled = true;
-		}
-
 		if ( $post && class_exists( 'WC_Wishlists_Pages' ) && WC_Wishlists_Pages::is_wishlist_page( $post->post_name ) ) {
 			$disabled = true;
 		}

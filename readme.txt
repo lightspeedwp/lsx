@@ -56,8 +56,8 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 *     - #205 - Variable Declerations
 *     - #206 - Anchoring Regex Expressions
 *     - #207 - Pre Increment
+*     - #210 - Removed the restrictions on the WooCommerce pages for the LSX Banners integration
 *     - #211 - Fixing the menu breakpoints
-*     - 
 
 = 2.3.2 =
 * Dev - Hiding WooCommerce styles on excerpts.
