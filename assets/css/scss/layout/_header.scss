@@ -13,14 +13,14 @@
 		justify-content: flex-start;
 		position: relative;
 
-		@include media('>=phone', '<desktop') {
+		@include media('>=phone', '<desktop-wide') {
 			padding-left: 30px;
 			padding-right: 30px;
 		}
 
-		@include media('<desktop') { width: 100%; }
+		@include media('<desktop-wide') { width: 100%; }
 
-		@include media('>=desktop') {
+		@include media('>=desktop-wide') {
 			flex-direction: row;
 			min-height: 80px;
 			padding-left: 15px;
@@ -36,7 +36,7 @@
 	}
 
 	.navbar-header {
-		@include media('<desktop') {
+		@include media('<desktop-wide') {
 			align-items: flex-start;
 			display: flex;
 			flex-flow: column nowrap;
@@ -47,7 +47,7 @@
 		.site-branding {
 			padding: 15px 0;
 
-			@include media('<desktop') { flex-grow: 1; }
+			@include media('<desktop-wide') { flex-grow: 1; }
 		}
 
 		.site-title {
@@ -69,7 +69,7 @@
 
 				@include media('>=phone') { max-width: none; }
 
-				@include media('>=desktop') {
+				@include media('>=desktop-wide') {
 					margin-bottom: 15px;
 					margin-top: 15px;
 				}

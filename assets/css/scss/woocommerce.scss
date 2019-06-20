@@ -293,7 +293,7 @@ article.page {
 	}
 }
 
-.woocommerce {
+body.woocommerce {
 	div.product {
 		.woocommerce-tabs {
 			overflow:hidden;
@@ -302,7 +302,7 @@ article.page {
 				width: 70%;
 				float: right;
 				padding: 15px;
-				background:#F5F5F5;
+				background:#FFFFFF;
 
 				& > *:last-child { margin-bottom: 0;clear:both }
 			}
@@ -321,6 +321,7 @@ article.page {
 				border-right: 1px solid #ddd;
 				border-left: 0;
 				color:#000;
+				background-color:transparent;
 
 				.nav-tabs>li>a.active {
 					border-right:3px solid #000;
@@ -335,10 +336,15 @@ article.page {
 				float: left;
 				border-bottom:none;
 
+				& li:first-child > a, & li.active:first-child > a {
+					border-top: 1px solid #ddd;
+				}
+
 				& > li.active > a {
 					background-color:transparent;
 					color:#418ad0;
 					font-weight:bold;
+					border-top: 0px;
 					border-right:3px solid #418ad0;
 				}				
 

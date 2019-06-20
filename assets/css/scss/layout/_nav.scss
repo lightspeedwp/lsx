@@ -1,4 +1,4 @@
-@include media('<desktop') {
+@include media('<desktop-wide') {
 	#masthead {
 		.wrapper-toggle {
 			align-items: center;
@@ -128,7 +128,7 @@
 	}
 }
 
-@include media('>=phone', '<desktop') {
+@include media('>=phone', '<desktop-wide') {
 	#masthead {
 		.wrapper-toggle,
 		.primary-navbar {
@@ -139,7 +139,7 @@
 	}
 }
 
-@include media('>=desktop') {
+@include media('>=desktop-wide') {
 	#masthead {
 		backface-visibility: hidden;
 

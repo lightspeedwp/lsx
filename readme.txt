@@ -50,12 +50,13 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 = 2.3.3 =
 * Fix - Various Breadcrumb fixes.
 * Dev - Code Standards Updates
+* Dev - Updated the WooCommerce Product Tabs styling.
 * Fix - Github Issues Fixed
 *     - #204 - Updating Class Operators
 *     - #205 - Variable Declerations
 *     - #206 - Anchoring Regex Expressions
 *     - #207 - Pre Increment
-*     - 
+*     - #211 - Fixing the menu breakpoints
 *     - 
 
 = 2.3.2 =
