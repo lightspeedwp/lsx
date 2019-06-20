@@ -2,14 +2,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
 global $comment, $stored_comment, $_product, $rating;
 $the_comment = $comment;
 if ( null !== $stored_comment ) {
 	$the_comment = $stored_comment;
 }
 ?>
-
 <div class="lsx-woocommerce-review-slot">
 	<div class="lsx-woocommerce-review-flex">
 		<a href="<?php echo esc_url( get_comment_link( $the_comment->comment_ID ) ); ?>">
