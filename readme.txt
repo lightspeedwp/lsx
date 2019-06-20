@@ -53,6 +53,7 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 * Dev - Updated the WooCommerce Product Tabs styling.
 * Fix - Github Issues Fixed
 *     - #144 - Fixed the overriding of the global variables
+*     - #152 - Removed the wpse_custom_wp_trim_excerpt
 *     - #204 - Updating Class Operators
 *     - #205 - Variable Declerations
 *     - #206 - Anchoring Regex Expressions

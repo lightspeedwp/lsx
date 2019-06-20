@@ -417,95 +417,6 @@ endif;
 
 add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
 
-if ( ! function_exists( 'lsx_custom_wp_trim_excerpt' ) ) :
-
-	/**
-	 * Allow HTML tags in excerpt.
-	 *
-	 * @package    lsx
-	 * @subpackage extras
-	 */
-	function lsx_custom_wp_trim_excerpt( $wpse_excerpt ) {
-		global $post;
-		$raw_excerpt = $wpse_excerpt;
-
-		if ( empty( $wpse_excerpt ) ) {
-			$wpse_excerpt      = get_the_content( '' );
-
-			$post_formats = array(
-				'aside' => 'aside',
-				'gallery' => 'gallery',
-				'link' => 'link',
-				'image' => 'image',
-				'quote' => 'quote',
-				'status' => 'status',
-				'video' => 'video',
-				'audio' => 'audio',
-			);
-
-			$show_full_content = has_post_format( apply_filters( 'lsx_excerpt_read_more_post_formats', $post_formats ) );
-
-			if ( ! $show_full_content ) {
-				$wpse_excerpt = strip_shortcodes( $wpse_excerpt );
-				$wpse_excerpt = apply_filters( 'the_content', $wpse_excerpt );
-				$wpse_excerpt = str_replace( ']]>', ']]>', $wpse_excerpt );
-				$wpse_excerpt = strip_tags( $wpse_excerpt, apply_filters( 'excerpt_strip_tags', '<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<a>,<button>,<blockquote>,<p>,<br>,<b>,<strong>,<i>,<u>,<ul>,<ol>,<li>,<span>,<div>' ) );
-
-				$excerpt_word_count = 50;
-				$excerpt_word_count = apply_filters( 'excerpt_length', $excerpt_word_count );
-
-				$tokens         = array();
-				$excerpt_output = '';
-				$has_more       = false;
-				$count          = 0;
-
-				preg_match_all( '/^(<[^>]+>|[^<>\s]+)\s*$/u', $wpse_excerpt, $tokens );
-
-				foreach ( $tokens[0] as $token ) {
-					if ( $count >= $excerpt_word_count ) {
-						$excerpt_output .= trim( $token );
-						$has_more = true;
-						break;
-					}
-
-					++$count;
-					$excerpt_output .= $token;
-				}
-
-				$wpse_excerpt = trim( force_balance_tags( $excerpt_output ) );
-
-				if ( $has_more ) {
-					$excerpt_end = '<a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'More', 'lsx' ) . '</a>';
-					$excerpt_end = apply_filters( 'excerpt_more', ' ' . $excerpt_end );
-
-					$pos = strrpos( $wpse_excerpt, '</' );
-
-					if ( false !== $pos ) {
-						// Inside last HTML tag
-						$wpse_excerpt = substr_replace( $wpse_excerpt, $excerpt_end, $pos, 0 ); /* Add read more next to last word */
-					} else {
-						// After the content
-						$wpse_excerpt .= $excerpt_end; /*Add read more in new paragraph */
-					}
-				}
-			} else {
-				$wpse_excerpt = apply_filters( 'the_content', $wpse_excerpt );
-				$wpse_excerpt = str_replace( ']]>', ']]>', $wpse_excerpt );
-				//$wpse_excerpt = strip_tags( $wpse_excerpt, '<blockquote>,<p>' );
-				$wpse_excerpt = trim( force_balance_tags( $wpse_excerpt ) );
-			}
-
-			return $wpse_excerpt;
-		}
-
-		return apply_filters( 'lsx_custom_wp_trim_excerpt', $wpse_excerpt, $raw_excerpt );
-	}
-
-endif;
-
-remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
-add_filter( 'get_the_excerpt', 'lsx_custom_wp_trim_excerpt' );
-
 if ( ! function_exists( 'lsx_full_width_widget_classes' ) ) :
 
 	/**
@@ -544,7 +455,7 @@ if ( ! function_exists( 'lsx_full_width_widget_custom_callback' ) ) :
 	 * @package    lsx
 	 * @subpackage extras
 	 */
-	function lsx_full_width_widget_custom_callback() {
+	function full_width_widget_custom_callback() {
 		global $wp_registered_widgets;
 
 		$original_callback_params = func_get_args();
