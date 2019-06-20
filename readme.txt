@@ -52,6 +52,7 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 * Dev - Code Standards Updates
 * Dev - Updated the WooCommerce Product Tabs styling.
 * Fix - Github Issues Fixed
+*     - #114 - Fixed the overriding of the global variables
 *     - #204 - Updating Class Operators
 *     - #205 - Variable Declerations
 *     - #206 - Anchoring Regex Expressions

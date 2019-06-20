@@ -3,11 +3,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-global $comment, $_product, $rating; ?>
+global $comment, $stored_comment, $_product, $rating;
+$the_comment = $comment;
+if ( null !== $stored_comment ) {
+	$the_comment = $stored_comment;
+}
+?>
 
 <div class="lsx-woocommerce-review-slot">
 	<div class="lsx-woocommerce-review-flex">
-		<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+		<a href="<?php echo esc_url( get_comment_link( $the_comment->comment_ID ) ); ?>">
 			<figure class="lsx-woocommerce-avatar">
 				<?php echo wp_kses_post( $_product->get_image( 'lsx-thumbnail-square' ) ); ?>
 			</figure>
@@ -19,19 +24,19 @@ global $comment, $_product, $rating; ?>
 			</div>
 
 			<h5 class="lsx-woocommerce-title">
-				<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php echo wp_kses_post( $_product->get_name() ); ?></a>
+				<a href="<?php echo esc_url( get_comment_link( $the_comment->comment_ID ) ); ?>"><?php echo wp_kses_post( $_product->get_name() ); ?></a>
 			</h5>
 
 			<p class="lsx-woocommerce-reviewer">
 				<?php
 					/* translators: %s: review author */
-					echo wp_kses_post( esc_html__( 'by ', 'lsx' ) . get_comment_author() );
+					echo wp_kses_post( esc_html__( 'by ', 'lsx' ) . get_comment_author( $the_comment->comment_ID ) );
 				?>
 			</p>
 
 			<div class="lsx-woocommerce-content">
-				<p><?php echo wp_kses_post( $comment->comment_content ); ?></p>
-				<p><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="moretag"><?php esc_attr_e( 'View more', 'lsx' ); ?></a></p>
+				<p><?php echo wp_kses_post( $the_comment->comment_content ); ?></p>
+				<p><a href="<?php echo esc_url( get_comment_link( $the_comment->comment_ID ) ); ?>" class="moretag"><?php esc_attr_e( 'View more', 'lsx' ); ?></a></p>
 			</div>
 		</div>
 	</div>
