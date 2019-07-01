@@ -2,6 +2,7 @@
 
 ### 2.3.3 
 * Fix - Various Breadcrumb fixes.
+* Dev - Adding the button scroll banner styles
 
 ### 2.3.2
 * Dev - Hiding WooCommerce styles on excerpts.

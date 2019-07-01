@@ -127,3 +127,32 @@
 }
 
 @include banner-colours ();
+
+@mixin banner-colours-btn-scroll (
+	$color: map-get($cta-buttons, bg) ) {
+
+	.lsx-banner-content-wrap {
+		.btn-scroll-to {
+			border: 2px solid transparent;
+			border-radius: 50%;
+			display: inline-block;
+			font-size: 37px;
+			line-height: 1;
+			padding: 5px 0;
+			margin-top: 2rem;
+			width: 54px;
+			border-color: $color;
+			color: $color !important;
+			&:focus { outline: 0; }
+
+			@include media('>=desktop') {
+			animation: bounce 2s 4s infinite;
+				&:hover {
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+}
+
+@include banner-colours-btn-scroll ();
