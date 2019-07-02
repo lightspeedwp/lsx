@@ -152,6 +152,43 @@
 				}
 			}
 		}
+		.search-form {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			.input-group {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				@include media('<custom') {
+					flex-direction: column;
+				}
+				.field {
+					.search-field {
+						float: none;
+						padding: 8px 14px 10px;
+						width: 100%;
+						@include media('>=tablet') {
+							min-width: 400px;
+							border-radius: 2px 0 0 2px;
+						}
+					}
+					&.submit-button, &.combination-dropdown {
+						@include media('>=tablet') {
+							margin-left: 10px;
+						}
+						.btn {
+							margin-left: -3px;
+							@include media('<custom') {
+								width: 100%;
+								margin-left: 0;
+								margin-top: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
