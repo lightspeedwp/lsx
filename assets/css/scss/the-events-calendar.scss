@@ -928,10 +928,12 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 
 }
 
-#loginform, .loginform, .woocommerce form.login, .logged-out .woocommerce {
+#loginform, .loginform, .woocommerce form.login,
+.woocommerce form.register, .logged-out .woocommerce {
 	max-width: 650px;
 	margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
+	border: none;
 	button, button.button, #wp-submit {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
