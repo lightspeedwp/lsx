@@ -346,7 +346,7 @@ body.woocommerce {
 					font-weight:bold;
 					border-top: 0px;
 					border-right:3px solid #418ad0;
-				}				
+				}
 
 			}
 			@media (max-width:768px) {
@@ -356,7 +356,7 @@ body.woocommerce {
 					float:none;
 					margin-bottom:20px;
 				}
-			}			
+			}
 
 			#comments { margin-top: 0; }
 		}
@@ -1422,6 +1422,13 @@ ul.lsx-wc-cart-sub-menu {
 	}
 }
 
+#loginform, .loginform, .woocommerce form.login,
+.woocommerce form.register, .logged-out .woocommerce {
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+}
 
 // WooCommerce Extensions
 
