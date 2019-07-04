@@ -102,6 +102,17 @@ article.page {
 
 .woocommerce-LostPassword {
 	&:last-child { margin-bottom: 0; }
+	a {
+		color: nth($orange, 1);
+	}
+}
+
+.woocommerce {
+	.woocommerce-ResetPassword {
+		.woocommerce-form-row {
+			width: 100%;
+		}
+	}
 }
 
 .woocommerce,
@@ -418,7 +429,7 @@ body.woocommerce {
 }
 
 body:not(.logged-in).woocommerce-account.my-account .woocommerce {
-    max-width: 600px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1424,10 +1435,16 @@ ul.lsx-wc-cart-sub-menu {
 
 #loginform, .loginform, .woocommerce form.login,
 .woocommerce form.register, .logged-out .woocommerce {
-	max-width: 650px;
+	max-width: 550px;
 	margin-left: auto;
 	margin-right: auto;
 	border: none;
+	padding: 0;
+	.woocommerce-LostPassword {
+		a {
+			color: nth($orange, 1);
+		}
+	}
 }
 
 // WooCommerce Extensions
