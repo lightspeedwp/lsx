@@ -129,7 +129,7 @@ if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
 				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Bold.ttf" ) format("truetype");
 			}
 			@font-face {
-				font-family: \'Noto Sans\';
+				font-family: \'Noto Sans Bold\';
 				font-style: italic;
 				font-weight: 700i;
 				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-BoldItalic.ttf" ) format("truetype");
@@ -142,7 +142,7 @@ if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
 			.blog article.post .entry-title .label-sticky,.blog article.page .entry-title .label-sticky,.blog article.lsx-slot .entry-title .label-sticky,.archive article.post .entry-title .label-sticky,.archive article.page .entry-title .label-sticky,.archive article.lsx-slot .entry-title .label-sticky,.search-results article.post .entry-title .label-sticky,.search-results article.page .entry-title .label-sticky,.search-results article.lsx-slot .entry-title .label-sticky{font-family:\'Noto Sans\',sans-serif}
 			#respond .comment-reply-title>small{font-family:\'Noto Sans\',sans-serif}
 			#comments .media-list .media .media-heading{font-family:\'Noto Sans\',sans-serif}
-			.single-testimonial .entry-content:before{font-family:\'Lora\',serif}			
+			.single-testimonial .entry-content:before{font-family:\'Lora\',serif}
 		';
 
 		if ( ! empty( $font_styles ) ) {
