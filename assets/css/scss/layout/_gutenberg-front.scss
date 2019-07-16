@@ -29,8 +29,22 @@
 			padding-top: 0;
 			padding-bottom: 0;
 		}
+		&:not(.has-block-banner) {
+			.entry-content {
+				padding-top: 70px;
+			}
+			&.lsx-disabled-hidden-title {
+				.entry-content {
+					padding-top: 25px;
+				}
+				&:not(.page-has-banner) {
+					.entry-content {
+						padding-top: 70px;
+					}
+				}
+			}
+		}
 	}
-
 }
 .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins {
 	.entry-content {

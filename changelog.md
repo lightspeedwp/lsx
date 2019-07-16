@@ -5,7 +5,10 @@
 
 ### 2.3.3 
 * Fix - Various Breadcrumb fixes.
-* Dev - Adding the button scroll banner styles
+* Dev - Adding the button scroll banner styles.
+* Fix - Fixing error 'Undefined property: WP_Post_Type::$ID'.
+* Dev - Adding styles for search field on banner block.
+* Fix - Fixings spaces after breadcrumb.
 
 ### 2.3.2
 * Dev - Hiding WooCommerce styles on excerpts.

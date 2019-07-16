@@ -315,10 +315,10 @@ if ( ! function_exists( 'lsx_disable_banner_for_blocks' ) ) :
 	 * @return boolean
 	 */
 	function lsx_disable_banner_for_blocks( $disable ) {
-		$queried_object = get_queried_object();
+		$queried_object = get_queried_object_id();
 		$show_on_front  = get_option( 'show_on_front' );
 
-		if ( 'page' === $show_on_front && (int) get_option( 'page_for_posts' ) === $queried_object->ID ) {
+		if ( 'page' === $show_on_front && (int) get_option( 'page_for_posts' ) === $queried_object ) {
 			return $disable;
 		}
 

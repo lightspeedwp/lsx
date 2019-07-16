@@ -102,6 +102,17 @@ article.page {
 
 .woocommerce-LostPassword {
 	&:last-child { margin-bottom: 0; }
+	a {
+		color: nth($orange, 1);
+	}
+}
+
+.woocommerce {
+	.woocommerce-ResetPassword {
+		.woocommerce-form-row {
+			width: 100%;
+		}
+	}
 }
 
 .woocommerce,
@@ -346,7 +357,7 @@ body.woocommerce {
 					font-weight:bold;
 					border-top: 0px;
 					border-right:3px solid #418ad0;
-				}				
+				}
 
 			}
 			@media (max-width:768px) {
@@ -356,7 +367,7 @@ body.woocommerce {
 					float:none;
 					margin-bottom:20px;
 				}
-			}			
+			}
 
 			#comments { margin-top: 0; }
 		}
@@ -418,7 +429,7 @@ body.woocommerce {
 }
 
 body:not(.logged-in).woocommerce-account.my-account .woocommerce {
-    max-width: 600px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1422,6 +1433,19 @@ ul.lsx-wc-cart-sub-menu {
 	}
 }
 
+#loginform, .loginform, .woocommerce form.login,
+.woocommerce form.register, .logged-out .woocommerce {
+	max-width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	padding: 0;
+	.woocommerce-LostPassword {
+		a {
+			color: nth($orange, 1);
+		}
+	}
+}
 
 // WooCommerce Extensions
 

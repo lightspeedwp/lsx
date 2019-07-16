@@ -3,7 +3,7 @@ const rtlcss       = require('gulp-rtlcss');
 const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
 const jshint       = require('gulp-jshint');
-const concat       = require('gulp-concat');
+//const concat       = require('gulp-concat');
 const uglify       = require('gulp-uglify');
 const sort         = require('gulp-sort');
 const gettext      = require('gulp-gettext');
@@ -11,7 +11,7 @@ const plumber      = require('gulp-plumber');
 const autoprefixer = require('gulp-autoprefixer');
 const gutil        = require('gulp-util');
 const rename       = require('gulp-rename');
-const minify       = require('gulp-minify-css');
+//const minify       = require('gulp-minify-css');
 const map          = require('map-stream');
 const browserlist  = ['last 2 version', '> 1%'];
 
@@ -208,7 +208,7 @@ gulp.task('js', function() {
 		}))
 		.pipe(jshint())
 		//.pipe(errorreporter)
-		.pipe(concat('lsx.min.js'))
+		//.pipe(concat('lsx.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js'))
 });
@@ -223,7 +223,7 @@ gulp.task('vendor-bootstrap-js', function() {
 		}))
 		.pipe(jshint())
 		//.pipe(errorreporter)
-		.pipe(concat('bootstrap.min.js'))
+		//.pipe(concat('bootstrap.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js/vendor'))
 });
