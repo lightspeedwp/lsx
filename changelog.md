@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.3.4
+* Fix - Removing the post meta, as it is being added via an action
+
 ### 2.3.3 
 * Fix - Various Breadcrumb fixes.
 * Dev - Adding the button scroll banner styles

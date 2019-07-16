@@ -12,10 +12,6 @@
 
 	<?php lsx_entry_top(); ?>
 
-	<div class="entry-meta">
-		<?php lsx_post_meta_single_bottom(); ?>
-	</div><!-- .entry-meta -->
-
 	<div class="entry-content">
 		<?php
 			the_content();
