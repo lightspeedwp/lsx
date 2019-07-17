@@ -24,7 +24,7 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 		load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
 
-		add_image_size( 'lsx-thumbnail-wide', 350, 230, true );
+		add_image_size( 'lsx-thumbnail-wide', 360, 168, true );
 		add_image_size( 'lsx-thumbnail-square', 350, 350, true );
 		add_image_size( 'lsx-thumbnail-single', 750, 350, true );
 		add_image_size( 'lsx-banner', 1920, 600, true );
