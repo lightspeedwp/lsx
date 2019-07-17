@@ -1,7 +1,15 @@
+.author {
+	&.archive {
+		.content {
+			#primary {
+				margin-top: 4.25rem;
+			}
+		}
+	}
+}
 .archive-author-data {
 	display: block;
-	margin: $lsx-large-gap auto 0;
-	max-width: 585px;
+	margin-top: $lsx-large-gap;
 
 	& > .archive-author-avatar {
 		border: 2px solid #FFF;
@@ -14,13 +22,13 @@
 		width: 20rem;
 	}
 
-	& > .archive-author-bio {
+	.archive-author-bio {
 		display: block;
 		margin-bottom: $lsx-large-gap / 2;
 	}
 
-	& > .archive-author-title {
-		margin: ($lsx-large-gap / 2) 0;
+	.archive-author-title {
+		margin: 5px 0 25px;
 	}
 
 	& > .archive-author-posts {
@@ -29,7 +37,6 @@
 
 	.archive-author-social-links {
 		margin-bottom: $lsx-large-gap / 2;
-		text-align: center;
 
 		.archive-author-social-link {
 			display: inline-block;
@@ -40,5 +47,20 @@
 				&:before { font-size: 22px; }
 			}
 		}
+	}
+}
+
+a.back-to-blog {
+	text-transform: uppercase;
+	&:before {
+		content: '\f177';
+		display: inline-block;
+		font-family: 'FontAwesome';
+		font-size: inherit;
+		margin-right: 5px;
+		text-rendering: auto;
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 }

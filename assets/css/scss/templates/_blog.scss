@@ -22,7 +22,7 @@ article.lsx-slot {
 	.lsx-related-posts & {
 		& + article.post,
 		& + article.page,
-		& + article.lsx-slot { margin-top: $lsx-large-gap; }
+		& + article.lsx-slot { margin-top: 30px; }
 
 		.entry-layout {
 			background-color: #FFF;
@@ -111,6 +111,7 @@ article.lsx-slot {
 
 		.entry-summary {
 			padding: 0 10rem;
+			word-break: break-word;
 			p {
 				margin-bottom: 15px;
 			}

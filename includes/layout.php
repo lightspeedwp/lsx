@@ -277,56 +277,70 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 		if ( is_author() ) :
 			$author_id         = get_the_author_meta( 'ID' );
 			$author            = get_the_author();
-			$author_avatar     = get_avatar( $author_id, 256 );
+			$author_avatar     = get_avatar( $author_id, 400 );
 			$author_bio        = get_the_archive_description();
 			$author_url        = get_the_author_meta( 'url', $author_id );
 			$author_email      = get_the_author_meta( 'email', $author_id );
 			$author_facebook   = get_the_author_meta( 'facebook', $author_id );
+			$author_linkedin   = get_the_author_meta( 'linkedin', $author_id );
 			$author_twitter    = get_the_author_meta( 'twitter', $author_id );
 			$author_googleplus = get_the_author_meta( 'googleplus', $author_id );
 			?>
 			<div class="col-<?php echo esc_attr( $size ); ?>-12">
 				<div class="archive-author-data">
-					<figure class="archive-author-avatar"><?php echo wp_kses_post( $author_avatar ); ?></figure>
+					<a class="back-to-blog" href="<?php echo ( esc_url( get_post_type_archive_link( 'post' ) ) ); ?>"><?php echo esc_html__( 'Back To Blog', 'lsx' ); ?></a>
+					<div class="row">
+						<div class="col-md-8">
+							<!-- Name -->
+							<h2 class="archive-author-title">
+								<?php
+								if ( '' !== $author ) {
+									echo esc_html( $author );
+								}
+								?>
+							</h2>
+							<!-- Social -->
+							<?php if ( ! empty( $author_url ) || ! empty( $author_email ) || ! empty( $author_facebook ) || ! empty( $author_twitter ) || ! empty( $author_googleplus ) ) : ?>
+								<div class="archive-author-social-links">
+									<?php if ( ! empty( $author_url ) ) : ?>
+										<a href="<?php echo esc_url( $author_url ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-url"><i class="fa fa-link" aria-hidden="true"></i></a>
+									<?php endif; ?>
 
-					<?php if ( ! empty( $author_url ) || ! empty( $author_email ) || ! empty( $author_facebook ) || ! empty( $author_twitter ) || ! empty( $author_googleplus ) ) : ?>
-						<div class="archive-author-social-links">
-							<?php if ( ! empty( $author_url ) ) : ?>
-								<a href="<?php echo esc_url( $author_url ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-url"><i class="fa fa-link" aria-hidden="true"></i></a>
+									<?php if ( ! empty( $author_email ) ) : ?>
+										<a href="mailto:<?php echo esc_attr( $author_email ); ?>" class="archive-author-social-link archive-author-social-link-email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+									<?php endif; ?>
+
+									<?php if ( ! empty( $author_facebook ) ) : ?>
+										<a href="<?php echo esc_url( $author_facebook ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+									<?php endif; ?>
+
+									<?php if ( ! empty( $author_twitter ) ) : ?>
+										<a href="https://twitter.com/<?php echo esc_attr( $author_twitter ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+									<?php endif; ?>
+
+									<?php if ( ! empty( $author_linkedin ) ) : ?>
+										<a href="<?php echo esc_url( $author_linkedin ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+									<?php endif; ?>
+
+									<?php if ( ! empty( $author_googleplus ) ) : ?>
+										<a href="<?php echo esc_url( $author_googleplus ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+									<?php endif; ?>
+								</div>
 							<?php endif; ?>
 
-							<?php if ( ! empty( $author_email ) ) : ?>
-								<a href="mailto:<?php echo esc_attr( $author_email ); ?>" class="archive-author-social-link archive-author-social-link-email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-							<?php endif; ?>
-
-							<?php if ( ! empty( $author_facebook ) ) : ?>
-								<a href="<?php echo esc_url( $author_facebook ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-							<?php endif; ?>
-
-							<?php if ( ! empty( $author_twitter ) ) : ?>
-								<a href="https://twitter.com/<?php echo esc_attr( $author_twitter ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							<?php endif; ?>
-
-							<?php if ( ! empty( $author_googleplus ) ) : ?>
-								<a href="<?php echo esc_url( $author_googleplus ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+							<!-- Bio -->
+							<?php if ( ! empty( $author_bio ) ) : ?>
+								<p class="archive-author-bio"><?php echo wp_kses_post( $author_bio ); ?></p>
 							<?php endif; ?>
 						</div>
-					<?php endif; ?>
-
-					<?php if ( ! empty( $author_bio ) ) : ?>
-						<h2 class="archive-author-title text-center"><?php esc_html_e( 'About the author', 'lsx' ); ?></h2>
-						<p class="archive-author-bio"><?php echo wp_kses_post( $author_bio ); ?></p>
-					<?php endif; ?>
-
-					<h2 class="archive-author-posts text-center">
-						<?php
-						if ( '' !== $author ) {
-							esc_html_e( 'All posts by ', 'lsx' );
-							esc_html( $author );
-						}
-						?>
-					</h2>
+						<div class="col-md-4">
+							<?php if ( ! empty( $author_avatar ) ) : ?>
+								<figure class="archive-author-avatar"><?php echo wp_kses_post( $author_avatar ); ?></figure>
+							<?php endif; ?>
+						</div>
+					</div>
 				</div>
+				<h2><?php echo esc_html__( 'Posts', 'lsx' ); ?></h2>
 			</div>
 			<?php
 		endif;
