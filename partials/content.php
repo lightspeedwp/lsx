@@ -103,7 +103,18 @@
 				<?php if ( lsx_post_format_force_content_on_list() && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
 
 					<div class="entry-summary">
-						<?php the_excerpt(); ?>
+						<?php
+						if ( ! has_excerpt() ) {
+
+							$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'lsx' ) . '</a></p>';
+							$content      = wp_trim_words( get_the_content(), 50 );
+							$content      = '<p>' . $content . '</p>' . $excerpt_more;
+							echo wp_kses_post( $content );
+						} else {
+							the_excerpt();
+						}
+						?>
+
 					</div><!-- .entry-summary -->
 
 				<?php elseif ( has_post_format( array( 'link' ) ) ) : ?>
