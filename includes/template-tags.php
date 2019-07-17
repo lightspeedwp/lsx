@@ -149,9 +149,10 @@ if ( ! function_exists( 'lsx_post_meta_single_top' ) ) :
 
 endif;
 
-add_action( 'lsx_post_meta_top', 'lsx_post_meta_avatar' );
-add_action( 'lsx_post_meta_top', 'lsx_post_meta_date' );
+//add_action( 'lsx_post_meta_top', 'lsx_post_meta_avatar' );
 add_action( 'lsx_post_meta_top', 'lsx_post_meta_author' );
+add_action( 'lsx_post_meta_top', 'lsx_post_meta_date' );
+add_action( 'lsx_post_meta_top', 'lsx_post_meta_category' );
 
 if ( ! function_exists( 'lsx_post_meta_single_bottom' ) ) :
 
@@ -243,8 +244,8 @@ if ( ! function_exists( 'lsx_post_meta_author' ) ) :
 		}
 
 		printf(
-			'<span class="vcard post-meta-author"><span>%1$s</span> <span class="fn"><a href="%2$s">%3$s</a>,</span></span>',
-			esc_html__( 'By', 'lsx' ),
+			'<span class="vcard post-meta-author"><span>%1$s</span> <span class="fn"><a href="%2$s">%3$s</a>, </span></span>',
+			esc_html__( 'By ', 'lsx' ),
 			esc_url( $author_url ),
 			esc_html( $author )
 		);

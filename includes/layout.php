@@ -425,5 +425,5 @@ if ( ! function_exists( 'lsx_add_entry_meta' ) ) :
 			<?php
 		}
 	}
-	add_action( 'lsx_entry_top', 'lsx_add_entry_meta', 0 );
+	add_action( 'lsx_entry_top', 'lsx_add_entry_meta', 999 );
 endif;
