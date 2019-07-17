@@ -53,10 +53,6 @@
 					</div>
 				<?php endif; ?>
 
-				<div class="entry-meta">
-					<?php lsx_post_meta_list_top(); ?>
-				</div><!-- .entry-meta -->
-
 				<?php
 					$format = get_post_format();
 
@@ -93,6 +89,13 @@
 						<span class="label label-default label-sticky"><?php esc_html_e( 'Featured', 'lsx' ); ?></span>
 					<?php endif; ?>
 				</h1>
+
+				<div class="entry-meta">
+					<?php lsx_post_meta_list_top(); ?>
+				</div><!-- .entry-meta -->
+
+				<?php lsx_post_meta_category(); ?>
+
 			</header><!-- .entry-header -->
 
 			<?php if ( has_post_format( array( 'quote' ) ) || apply_filters( 'lsx_blog_display_text_on_list', true ) ) : ?>
@@ -134,35 +137,36 @@
 
 			<?php $comments_number = get_comments_number(); ?>
 
-			<div class="post-tags-wrapper">
-				<?php lsx_post_meta_category(); ?>
+			<?php if ( has_tag() || ! empty( $comments_number ) ) { ?>
+				<div class="post-tags-wrapper">
 
-				<?php lsx_content_post_tags(); ?>
+					<?php lsx_content_post_tags(); ?>
 
-				<?php if ( comments_open() && ! empty( $comments_number ) ) : ?>
-					<div class="post-comments">
-						<a href="<?php the_permalink(); ?>#comments">
-							<?php
-								if ( '1' === $comments_number ) {
-									echo esc_html_x( 'One Comment', 'content.php', 'lsx' );
-								} else {
-									printf(
-										/* Translators: %s: number of comments */
-										esc_html( _nx(
-											'%s Comment',
-											'%s Comments',
-											$comments_number,
-											'content.php',
-											'lsx'
-										) ),
-										esc_html( number_format_i18n( $comments_number ) )
-									);
-								}
-							?>
-						</a>
-					</div>
-				<?php endif ?>
-			</div>
+					<?php if ( comments_open() && ! empty( $comments_number ) ) : ?>
+						<div class="post-comments">
+							<a href="<?php the_permalink(); ?>#comments">
+								<?php
+									if ( '1' === $comments_number ) {
+										echo esc_html_x( 'One Comment', 'content.php', 'lsx' );
+									} else {
+										printf(
+											/* Translators: %s: number of comments */
+											esc_html( _nx(
+												'%s Comment',
+												'%s Comments',
+												$comments_number,
+												'content.php',
+												'lsx'
+											) ),
+											esc_html( number_format_i18n( $comments_number ) )
+										);
+									}
+								?>
+							</a>
+						</div>
+					<?php endif ?>
+				</div>
+			<?php } ?>
 		</div>
 
 		<?php if ( has_post_thumbnail() ) : ?>

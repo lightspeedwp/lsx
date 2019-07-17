@@ -120,9 +120,9 @@ if ( ! function_exists( 'lsx_post_meta_list_top' ) ) :
 	function lsx_post_meta_list_top() {
 		?>
 		<div class="post-meta post-meta-top">
-			<?php lsx_post_meta_avatar(); ?>
-			<?php lsx_post_meta_date(); ?>
+			<?php //lsx_post_meta_avatar(); ?>
 			<?php lsx_post_meta_author(); ?>
+			<?php lsx_post_meta_date(); ?>
 			<div class="clearfix"></div>
 		</div>
 		<?php
@@ -243,8 +243,8 @@ if ( ! function_exists( 'lsx_post_meta_author' ) ) :
 		}
 
 		printf(
-			'<span class="vcard post-meta-author"><span>%1$s</span> <span class="fn"><a href="%2$s">%3$s</a></span></span>',
-			esc_html__( 'by', 'lsx' ),
+			'<span class="vcard post-meta-author"><span>%1$s</span> <span class="fn"><a href="%2$s">%3$s</a>,</span></span>',
+			esc_html__( 'By', 'lsx' ),
 			esc_url( $author_url ),
 			esc_html( $author )
 		);
@@ -272,7 +272,7 @@ if ( ! function_exists( 'lsx_post_meta_category' ) ) :
 
 		if ( ! empty( $cats ) ) {
 			?>
-			<span class="post-meta-categories"><span><?php esc_html_e( 'Posted in', 'lsx' ); ?></span> <?php echo wp_kses_post( implode( ', ', $cats ) ); ?></span>
+			<span class="post-meta-categories"><span><?php esc_html_e( 'Posted in: ', 'lsx' ); ?></span> <?php echo wp_kses_post( implode( ', ', $cats ) ); ?></span>
 			<?php
 		}
 	}
@@ -291,7 +291,7 @@ if ( ! function_exists( 'lsx_post_tags' ) ) :
 		if ( has_tag() ) :
 			?>
 			<div class="post-tags">
-				<?php echo wp_kses_post( get_the_tag_list( '' ) ); ?>
+				<span><?php echo esc_html__( 'Tags: ', 'lsx' ); ?></span><?php echo wp_kses_post( get_the_tag_list( '' ) ); ?>
 			</div>
 			<?php
 		endif;

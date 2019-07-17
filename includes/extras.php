@@ -404,7 +404,7 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 				if ( ! empty( $pagination ) ) {
 					$excerpt .= $pagination;
 				} else {
-					$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Continue reading', 'lsx' ) . '</a></p>';
+					$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'lsx' ) . '</a></p>';
 					$excerpt .= apply_filters( 'excerpt_more_p', $excerpt_more );
 				}
 			}
