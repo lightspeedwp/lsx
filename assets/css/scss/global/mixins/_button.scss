@@ -120,6 +120,32 @@
 			min-height: 40px;
     		height: 100% !important;
 		}
+		.woocommerce {
+			.woocommerce-cart-form {
+				.shop_table {
+					.button {
+						&[name="update_cart"] {
+							background-color: nth($green, 1);
+							box-shadow: 2px 2px 0 0 nth($green, 2);
+							&:hover {
+								background-color: nth($green, 2);
+							}
+						}
+					}
+				}
+			}
+			.cart_totals {
+				.wc-proceed-to-checkout {
+					.checkout-button {
+						background-color: nth($orange, 1);
+						box-shadow: 2px 2px 0 0 nth($orange, 2);
+						&:hover {
+							background-color: nth($orange, 2);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	// Sensei

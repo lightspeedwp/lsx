@@ -778,7 +778,10 @@ body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 
 	.quantity .qty {
 		display: inline-block;
-		width: 70px;
+		width: 65px;
+		@include media('>=desktop') {
+			height: 55px;
+		}
 	}
 
 	// Button
