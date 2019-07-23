@@ -104,18 +104,25 @@
 #secondary {
 	#searchform {
 		text-align: center;
-
+		padding: 10px;
 		.search-field {
+			z-index: 2;
+			margin-left: 0px;
+			height: 60px;
 			border-radius: 2px 0 0 2px;
-			z-index: 1;
+			float: none;
+			padding: 8px 14px 10px;
+			@include media('>=tablet') {
+				min-width: 400px;
+			}
 		}
 
 		.search-submit {
-			box-shadow: none;
-			margin-left: -2px;
-			padding-bottom: 16px;
-			padding-top: 16px;
-			border: none;
+			z-index: 1;
+			padding-left: 20px;
+			padding-right: 25px;
+			height: 59px;
+			margin-left: -3px;
 			&:active {
 				left: 0;
 				top: 0;
