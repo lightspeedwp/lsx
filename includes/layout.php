@@ -288,9 +288,14 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 			?>
 			<div class="col-<?php echo esc_attr( $size ); ?>-12">
 				<div class="archive-author-data">
-					<a class="back-to-blog" href="<?php echo ( esc_url( get_post_type_archive_link( 'post' ) ) ); ?>"><?php echo esc_html__( 'Back To Blog', 'lsx' ); ?></a>
 					<div class="row">
-						<div class="col-md-8">
+						<?php if ( ! empty( $author_avatar ) ) : ?>
+							<div class="col-xs-12 col-sm-4 col-md-3">
+							<figure class="archive-author-avatar"><?php echo wp_kses_post( $author_avatar ); ?></figure>
+							</div>
+						<?php endif; ?>
+						<div class="col-xs-12 col-sm-8 col-md-9">
+							<a class="back-to-blog" href="<?php echo ( esc_url( get_post_type_archive_link( 'post' ) ) ); ?>"><?php echo esc_html__( 'Back To Blog', 'lsx' ); ?></a>
 							<!-- Name -->
 							<h2 class="archive-author-title">
 								<?php
@@ -331,11 +336,6 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 							<!-- Bio -->
 							<?php if ( ! empty( $author_bio ) ) : ?>
 								<p class="archive-author-bio"><?php echo wp_kses_post( $author_bio ); ?></p>
-							<?php endif; ?>
-						</div>
-						<div class="col-md-4">
-							<?php if ( ! empty( $author_avatar ) ) : ?>
-								<figure class="archive-author-avatar"><?php echo wp_kses_post( $author_avatar ); ?></figure>
 							<?php endif; ?>
 						</div>
 					</div>
