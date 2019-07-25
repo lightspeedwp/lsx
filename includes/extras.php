@@ -322,7 +322,7 @@ if ( ! function_exists( 'lsx_disable_banner_for_blocks' ) ) :
 			return $disable;
 		}
 
-		if ( function_exists( 'has_blocks' ) && has_blocks() ) {
+		if ( function_exists( 'has_blocks' ) && has_blocks() && ( ! is_archive() ) ) {
 			$disable = true;
 		}
 		return $disable;

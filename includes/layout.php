@@ -169,13 +169,13 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		if ( true === apply_filters( 'lsx_global_header_disable', false ) ) :
 			// Display only the breadcrumbs
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-global col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-page col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php the_title(); ?></h1>
@@ -185,7 +185,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<?php
 		elseif ( is_single() && ! is_singular( 'post' ) ) :
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-single col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php echo wp_kses_post( apply_filters( 'lsx_global_header_title', get_the_title() ) ); ?></h1>
@@ -195,7 +195,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<?php
 		elseif ( is_search() ) :
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-search col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title">
@@ -226,7 +226,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<?php
 		elseif ( is_archive() ) :
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-archive col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title">
@@ -243,7 +243,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			<?php
 		elseif ( 'page' === $show_on_front && (int) get_option( 'page_for_posts' ) === $queried_object->ID ) :
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-page col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php esc_html_e( 'Blog', 'lsx' ); ?></h1>
@@ -254,7 +254,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		elseif ( ! is_singular( 'post' ) ) :
 			// Display only the breadcrumbs
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-singular col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
