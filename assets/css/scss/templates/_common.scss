@@ -17,6 +17,7 @@
 			text-align: center;
 
 			@include media('>=phone') { padding: 100px 9999rem 50px; }
+			@include media('<=tablet') { padding: 50px 9999rem 50px;     margin-top: 50px; }
 
 			& > p {
 				color: #FFF;
