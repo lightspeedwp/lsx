@@ -53,10 +53,6 @@
 					</div>
 				<?php endif; ?>
 
-				<div class="entry-meta">
-					<?php lsx_post_meta_list_top(); ?>
-				</div><!-- .entry-meta -->
-
 				<?php
 					$format = get_post_format();
 
@@ -93,6 +89,12 @@
 						<span class="label label-default label-sticky"><?php esc_html_e( 'Featured', 'lsx' ); ?></span>
 					<?php endif; ?>
 				</h2>
+				<div class="entry-meta">
+					<?php lsx_post_meta_list_top(); ?>
+				</div><!-- .entry-meta -->
+
+				<?php lsx_post_meta_category(); ?>
+
 			</header><!-- .entry-header -->
 
 			<?php if ( has_post_format( array( 'quote' ) ) || apply_filters( 'lsx_blog_display_text_on_list', true ) ) : ?>
@@ -100,7 +102,17 @@
 				<?php if ( lsx_post_format_force_content_on_list() && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
 
 					<div class="entry-summary">
-						<?php the_excerpt(); ?>
+					<?php
+					if ( ! has_excerpt() ) {
+
+						$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'lsx' ) . '</a></p>';
+						$content      = wp_trim_words( get_the_content(), 50 );
+						$content      = '<p>' . $content . '</p>' . $excerpt_more;
+						echo wp_kses_post( $content );
+					} else {
+						the_excerpt();
+					}
+					?>
 					</div><!-- .entry-summary -->
 
 				<?php elseif ( has_post_format( array( 'link' ) ) ) : ?>
@@ -135,7 +147,6 @@
 			<?php $comments_number = get_comments_number(); ?>
 
 			<div class="post-tags-wrapper">
-				<?php lsx_post_meta_category(); ?>
 
 				<?php lsx_content_post_tags(); ?>
 
