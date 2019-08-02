@@ -22,7 +22,7 @@ article.lsx-slot {
 	.lsx-related-posts & {
 		& + article.post,
 		& + article.page,
-		& + article.lsx-slot { margin-top: $lsx-large-gap; }
+		& + article.lsx-slot { margin-top: 30px; }
 
 		.entry-layout {
 			background-color: #FFF;
@@ -53,13 +53,16 @@ article.lsx-slot {
 		}
 
 		.entry-meta {
-			padding: 42.5px 10rem 15px;
+			padding: 0 10px;
+			@include media ('>=desktop') {
+				padding: 42.5px 10rem 10px;
+			}
 
 			.post-meta {
 				display: block;
 				font-size: 13px;
 				position: relative;
-				text-align: center;
+				text-align: left;
 			}
 
 			.post-meta-avatar {
@@ -75,11 +78,26 @@ article.lsx-slot {
 				width: 75px;
 			}
 		}
+		.post-meta-categories {
+			display: block;
+			padding: 0 10px 18px;
+			font-size: 13px;
+			color: $small;
+			@include media('>=desktop') {
+				padding: 0 15px 18px;
+			}
+			a {
+				color: $small;
+			}
+		}
 
 		.entry-title {
 			font-size: 30px;
-			padding: 0 10rem;
-			text-align: center;
+			text-align: left;
+			padding: 0 10px;
+			@include media('>=desktop') {
+				padding: 0 10rem;
+			}
 
 			& .fa { display: none; }
 
@@ -97,22 +115,54 @@ article.lsx-slot {
 			}
 		}
 
-		.entry-summary { padding: 0 10rem; }
+		.entry-summary {
+			word-break: break-word;
+			padding: 0 10px;
+			@include media('>=desktop') {
+				padding: 0 10rem;
+			}
+			p {
+				margin-bottom: 15px;
+			}
+		}
 
-		.entry-content { padding: 0 10rem; }
+		.entry-content { padding: 0 10rem;
+			p {
+				margin-bottom: 15px;
+			}
+		}
 
 		.post-tags-wrapper {
-			padding: 0 10rem;
+			margin: 0 10px;
+			border-top: 2px solid #d8d8d8;
+			font-style: italic;
+			padding-top: 10px;
+			@include media('>=desktop') {
+				margin: 0 15px;
+			}
+			& > * {
+				&:after {
+					@include fa-icon();
 
+					content: "|";
+					display: inline-block;
+					font-size: 20px;
+					margin: 0 5px;
+					vertical-align: middle;
+				}
+				&:last-child {
+					&:after {
+						content: "";
+					}
+				}
+			}
 			& > * + * {
 				&:before {
 					@include fa-icon();
-
-					content: $fa-var-circle;
+					content: '\f0e5';
 					display: inline-block;
-					font-size: 5px;
-					margin: 0 10px;
-					vertical-align: middle;
+					font-size: 15px;
+					margin: 0;
 				}
 			}
 
@@ -143,7 +193,7 @@ article.lsx-slot {
 
 		.moretag {
 			line-height: 1.33;
-
+			text-transform: uppercase;
 			&:after {
 				@include fa-icon();
 
@@ -156,8 +206,10 @@ article.lsx-slot {
 		&.has-thumb {
 			.entry-meta {
 				padding-top: 0;
-
-				.post-meta-top { margin-top: 42.5px; }
+			}
+			.entry-title {
+				margin-top: 2.4rem;
+				margin-bottom: 10px;
 			}
 		}
 
@@ -173,7 +225,8 @@ article.lsx-slot {
 		&.post.format-quote {
 			.post-meta {
 				& > .post-meta-avatar,
-				& > .post-meta-author {
+				& > .post-meta-author,
+				& > .post-meta-time {
 					display: none;
 				}
 			}

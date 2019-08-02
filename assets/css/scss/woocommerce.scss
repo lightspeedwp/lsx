@@ -302,6 +302,11 @@ article.page {
 			&:before { display: none; }
 		}
 	}
+	#main .quantity .qty {
+		@include media('>=desktop') {
+			height: 55px;
+		}
+	}
 }
 
 body.woocommerce {
@@ -778,7 +783,7 @@ body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 
 	.quantity .qty {
 		display: inline-block;
-		width: 70px;
+		width: 65px;
 	}
 
 	// Button
