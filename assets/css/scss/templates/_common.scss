@@ -37,13 +37,21 @@
 .content-area,
 .widget-area {
 	margin-bottom: $lsx-large-gap;
-	margin-top: $lsx-large-gap;
-
+	margin-top: $lsx-large-gap * 2;
+	@include media('>=tablet') {
+		margin-top: $lsx-large-gap;
+	}
 	.home &,
 	.page.siteorigin-panels:not(.woocommerce-page) &,
 	.page-template-template-full-width-no-margins & {
 		margin-bottom: 0;
 		margin-top: 0;
+	}
+}
+.single-post:not(.using-gutenberg), .archive {
+	.content-area,
+	.widget-area {
+		margin-top: $lsx-medium-gap;
 	}
 }
 
