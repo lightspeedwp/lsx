@@ -1,6 +1,6 @@
 <?php
 /**
- * Template used to display post content.
+ * Template used to display related post content.
  *
  * @package lsx
  */
@@ -32,7 +32,7 @@
 	$image_class = '';
 
 	$thumbnail_id = get_post_thumbnail_id( get_the_ID() );
-	$image_arr    = wp_get_attachment_image_src( $thumbnail_id, 'lsx-thumbnail-wide' );
+	$image_arr    = wp_get_attachment_image_src( $thumbnail_id, 'lsx-thumbnail-single' );
 
 	if ( is_array( $image_arr ) ) {
 		$image_src = $image_arr[0];
@@ -48,10 +48,14 @@
 				<?php if ( $has_thumb ) : ?>
 					<div class="entry-image <?php echo esc_attr( $image_class ); ?>">
 						<a class="thumbnail" href="<?php the_permalink(); ?>">
-							<?php lsx_thumbnail( 'lsx-thumbnail-wide' ); ?>
+							<?php lsx_thumbnail( 'lsx-thumbnail-single' ); ?>
 						</a>
 					</div>
 				<?php endif; ?>
+
+				<div class="entry-meta">
+					<?php lsx_post_meta_list_top(); ?>
+				</div><!-- .entry-meta -->
 
 				<?php
 					$format = get_post_format();
@@ -72,7 +76,7 @@
 					$format = lsx_translate_format_to_fontawesome( $format );
 				?>
 
-				<h1 class="entry-title">
+				<h2 class="entry-title">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a href="<?php echo esc_url( $archive_link ); ?>" class="format-link has-thumb fa fa-<?php echo esc_attr( $format ); ?>"></a>
 					<?php else : ?>
@@ -88,14 +92,7 @@
 					<?php if ( is_sticky() ) : ?>
 						<span class="label label-default label-sticky"><?php esc_html_e( 'Featured', 'lsx' ); ?></span>
 					<?php endif; ?>
-				</h1>
-
-				<div class="entry-meta">
-					<?php lsx_post_meta_list_top(); ?>
-				</div><!-- .entry-meta -->
-
-				<?php lsx_post_meta_category(); ?>
-
+				</h2>
 			</header><!-- .entry-header -->
 
 			<?php if ( has_post_format( array( 'quote' ) ) || apply_filters( 'lsx_blog_display_text_on_list', true ) ) : ?>
@@ -103,18 +100,7 @@
 				<?php if ( lsx_post_format_force_content_on_list() && ! apply_filters( 'lsx_blog_force_content_on_list', false ) ) : ?>
 
 					<div class="entry-summary">
-						<?php
-						if ( ! has_excerpt() ) {
-
-							$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'lsx' ) . '</a></p>';
-							$content      = wp_trim_words( get_the_content(), 50 );
-							$content      = '<p>' . $content . '</p>' . $excerpt_more;
-							echo wp_kses_post( $content );
-						} else {
-							the_excerpt();
-						}
-						?>
-
+						<?php the_excerpt(); ?>
 					</div><!-- .entry-summary -->
 
 				<?php elseif ( has_post_format( array( 'link' ) ) ) : ?>
@@ -148,43 +134,42 @@
 
 			<?php $comments_number = get_comments_number(); ?>
 
-			<?php if ( has_tag() || ! empty( $comments_number ) ) { ?>
-				<div class="post-tags-wrapper">
+			<div class="post-tags-wrapper">
+				<?php lsx_post_meta_category(); ?>
 
-					<?php lsx_content_post_tags(); ?>
+				<?php lsx_content_post_tags(); ?>
 
-					<?php if ( comments_open() && ! empty( $comments_number ) ) : ?>
-						<div class="post-comments">
-							<a href="<?php the_permalink(); ?>#comments">
-								<?php
-									if ( '1' === $comments_number ) {
-										echo esc_html_x( 'One Comment', 'content.php', 'lsx' );
-									} else {
-										printf(
-											/* Translators: %s: number of comments */
-											esc_html( _nx(
-												'%s Comment',
-												'%s Comments',
-												$comments_number,
-												'content.php',
-												'lsx'
-											) ),
-											esc_html( number_format_i18n( $comments_number ) )
-										);
-									}
-								?>
-							</a>
-						</div>
-					<?php endif ?>
-				</div>
-			<?php } ?>
+				<?php if ( comments_open() && ! empty( $comments_number ) ) : ?>
+					<div class="post-comments">
+						<a href="<?php the_permalink(); ?>#comments">
+							<?php
+								if ( '1' === $comments_number ) {
+									echo esc_html_x( 'One Comment', 'content.php', 'lsx' );
+								} else {
+									printf(
+										/* Translators: %s: number of comments */
+										esc_html( _nx(
+											'%s Comment',
+											'%s Comments',
+											$comments_number,
+											'content.php',
+											'lsx'
+										) ),
+										esc_html( number_format_i18n( $comments_number ) )
+									);
+								}
+							?>
+						</a>
+					</div>
+				<?php endif ?>
+			</div>
 		</div>
 
 		<?php if ( has_post_thumbnail() ) : ?>
 
 			<div class="entry-image hidden-xs">
 				<a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image:url(<?php echo esc_url( $image_src ); ?>);">
-					<?php lsx_thumbnail( 'lsx-thumbnail-wide' ); ?>
+					<?php lsx_thumbnail( 'lsx-thumbnail-single' ); ?>
 				</a>
 			</div>
 

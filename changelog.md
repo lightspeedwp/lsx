@@ -2,6 +2,9 @@
 
 ### 2.3.4
 * Fix - Removing the post meta, as it is being added via an action
+* Dev - Separating the content.php and the related content.php
+* Dev - Changing the lsx-thumbnail-wide image size to 360x168
+* Fix - Fixed the issue where Nav menu widgets are missing titles on single events pages.
 
 ### 2.3.3 
 * Fix - Various Breadcrumb fixes.

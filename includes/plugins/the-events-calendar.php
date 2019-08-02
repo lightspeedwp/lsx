@@ -124,6 +124,7 @@ if ( ! function_exists( 'lsx_text_disable_body_title' ) ) :
 	 */
 	function lsx_text_disable_body_title( $title ) {
 		$title = '';
+		remove_filter( 'the_title', 'lsx_text_disable_body_title', 200, 1 );
 		return $title;
 	}
 
