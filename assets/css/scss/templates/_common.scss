@@ -37,9 +37,9 @@
 .content-area,
 .widget-area {
 	margin-bottom: $lsx-large-gap;
-	margin-top: $lsx-large-gap * 2;
-	@include media('>=tablet') {
-		margin-top: $lsx-large-gap;
+	margin-top: $lsx-large-gap;
+	@include media('<=tablet') {
+		margin-top: $lsx-large-gap * 2;
 	}
 	.home &,
 	.page.siteorigin-panels:not(.woocommerce-page) &,
