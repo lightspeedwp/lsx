@@ -1,10 +1,15 @@
 ## LSX Changelog
 
-### 2.3.4
-* Fix - Removing the post meta, as it is being added via an action
-* Dev - Separating the content.php and the related content.php
-* Dev - Changing the lsx-thumbnail-wide image size to 360x168
+### 2.4.0
+* Fix - Removing the post meta, as it is being added via an action.
+* Dev - Separating the content.php and the related content.php.
+* Dev - Changing the lsx-thumbnail-wide image size to 360x168.
 * Fix - Fixed the issue where Nav menu widgets are missing titles on single events pages.
+* Dev - Updates y styles and structures to match the new LSX BLOG Customizer.
+* Fix - Fix core php issue.
+* Dev - Adding more styling for banners, single, archive pages and search pages.
+* Div - Improving search form styles.
+* Fix - Adding function to show trimmed content if there is no excerpt.
 
 ### 2.3.3 
 * Fix - Various Breadcrumb fixes.
