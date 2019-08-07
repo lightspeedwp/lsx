@@ -1,5 +1,9 @@
 ## LSX Changelog
 
+### 2.4.1
+* Fix - Adding the class 'using-gutenberg' only to pages or posts.
+* Fix - The filter 'lsx_global_header_disable' will not affect search pages.
+
 ### 2.4.0
 * Fix - Removing the post meta, as it is being added via an action.
 * Dev - Separating the content.php and the related content.php.

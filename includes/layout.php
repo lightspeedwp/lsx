@@ -166,7 +166,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			return;
 		}
 
-		if ( true === apply_filters( 'lsx_global_header_disable', false ) ) :
+		if ( ( true === apply_filters( 'lsx_global_header_disable', false ) ) && ( ! is_search() ) ) :
 			// Display only the breadcrumbs
 			?>
 			<div class="archive-header-wrapper banner-global col-<?php echo esc_attr( $size ); ?>-12">
