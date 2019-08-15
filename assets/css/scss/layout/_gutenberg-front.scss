@@ -266,7 +266,7 @@
 
 // For single posts
 @media (min-width: 1200px) {
-	.gutenberg-compatible-template.using-gutenberg.single {
+	.gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
 		.entry-content {
 			figure.wp-block-embed, .navbar, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
 			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-projects-slider.slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
@@ -275,7 +275,7 @@
 				margin-right: auto;
 			}
 		}
-		.entry-meta, .footer-meta, .comment-respond, #comments {
+		.entry-meta, .footer-meta, .comment-respond, #comments, .archive-title {
 			max-width: 850px;
 			margin-left: auto;
 			margin-right: auto;
@@ -335,7 +335,7 @@
 				margin-right: auto;
 			}
 		}
-		.entry-meta, .footer-meta, .comment-respond, #comments {
+		.entry-meta, .footer-meta, .comment-respond, #comments, .archive-header {
 			max-width: 1150px;
 			margin-left: auto;
 			margin-right: auto;
