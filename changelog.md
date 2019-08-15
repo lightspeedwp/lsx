@@ -3,6 +3,7 @@
 ### 2.4.1
 * Fix - Adding the class 'using-gutenberg' only to pages or posts.
 * Fix - The filter 'lsx_global_header_disable' will not affect search pages.
+* Fix - Fixed the width of GB and non GB posts to be the same.
 
 ### 2.4.0
 * Fix - Removing the post meta, as it is being added via an action.
