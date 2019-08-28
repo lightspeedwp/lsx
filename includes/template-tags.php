@@ -493,7 +493,6 @@ endif;
 add_action( 'lsx_nav_before', 'lsx_navbar_header' );
 
 if ( ! function_exists( 'lsx_nav_menu' ) ) :
-
 	/**
 	 * Outputs the Nav Menu.
 	 *
@@ -517,8 +516,68 @@ if ( ! function_exists( 'lsx_nav_menu' ) ) :
 			<?php
 		endif;
 	}
-
 endif;
+
+if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
+	/**
+	 * Outputs the loops on the sitemap
+	 *
+	 * @package    lsx
+	 * @subpackage template-tags
+	 */
+	function lsx_sitemap_loops() {
+		$sitemap_loops  = array(
+			'page'     => array(
+				'type'  => 'post_type',
+				'label' => __( 'Pages', 'lsx' ),
+			),
+			'post'     => array(
+				'type'  => 'post_type',
+				'label' => __( 'Posts', 'lsx' ),
+			),
+			'category' => array(
+				'type'  => 'taxonomy',
+				'label' => __( 'Categories', 'lsx' ),
+			),
+		);
+		$post_type_args = array(
+			'public'   => true,
+			'_builtin' => false,
+			'show_ui'  => true,
+		);
+		$post_types     = get_post_types( $post_type_args, 'objects' );
+		if ( ! empty( $post_types ) ) {
+			foreach ( $post_types as $post_type_key => $post_type_obj ) {
+				$sitemap_loops[ $post_type_key ] = array(
+					'type'  => 'post_type',
+					'label' => $post_type_obj->label,
+				);
+			}
+		}
+		$taxonomy_args  = array(
+			'public'   => true,
+			'_builtin' => false,
+			'show_ui'  => true,
+		);
+		$taxonomies     = get_taxonomies( $taxonomy_args, 'objects' );
+		if ( ! empty( $taxonomies ) ) {
+			foreach ( $taxonomies as $tax_key => $tax_obj ) {
+				$sitemap_loops[ $tax_key ] = array(
+					'type'  => 'taxonomy',
+					'label' => $tax_obj->label,
+				);
+			}
+		}
+		$sitemap_loops = apply_filters( 'lsx_sitemap_loops_list', $sitemap_loops );
+		foreach ( $sitemap_loops as $sitemap_key => $sitemap_values ) {
+			if ( 'post_type' === $sitemap_values['type'] ) {
+				lsx_sitemap_custom_post_type( $sitemap_key, $sitemap_values['label'] );
+			} else {
+				lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'] );
+			}
+		}
+	}
+}
 
 if ( ! function_exists( 'lsx_sitemap_pages' ) ) :
 
@@ -562,13 +621,16 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 	 * @package    lsx
 	 * @subpackage template-tags
 	 */
-	function lsx_sitemap_custom_post_type() {
-		$args = array(
-			'public'   => true,
-			'_builtin' => false,
-		);
-
-		$post_types = get_post_types( $args , 'names' );
+	function lsx_sitemap_custom_post_type( $forced_type = '', $label = '' ) {
+		if ( '' !== $forced_type ) {
+			$post_types = array( $forced_type );
+		} else {
+			$args = array(
+				'public'   => true,
+				'_builtin' => false,
+			);
+			$post_types = get_post_types( $args, 'names' );
+		}
 
 		foreach ( $post_types as $post_type ) {
 			$post_type_args = array(
@@ -581,7 +643,9 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 			$post_type_items  = new WP_Query( $post_type_args );
 			$post_type_object = get_post_type_object( $post_type );
 
-			if ( ! empty( $post_type_object ) ) {
+			if ( '' !== $label ) {
+				$title = $label;
+			} elseif ( ! empty( $post_type_object ) ) {
 				$title = $post_type_object->labels->name;
 			} else {
 				$title = ucwords( $post_type );
@@ -603,6 +667,36 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 	}
 
 endif;
+
+/**
+ * Sitemap Travel Style
+ *
+ * @return void
+ */
+function lsx_sitemap_taxonomy( $taxonomy = '', $label = '' ) {
+	if ( '' !== $taxonomy ) {
+		$terms = get_terms( $taxonomy );
+		if ( ! empty( $terms ) ) {
+
+			if ( '' !== $label ) {
+				$title = $label;
+			} else {
+				$title = ucwords( $taxonomy );
+			}
+
+			echo '<div class="sitemap-rows">';
+			echo '<h2>' . $title . '</h2>';
+			echo '<ul>';
+			foreach ( $terms as $term ) {
+				$name = $term->name;
+				$permalink = get_term_link( $term->term_id );
+				echo '<li><a href="' . esc_attr( $permalink ) . '">' . esc_attr( $name ) . '</a></li>';
+			}
+			echo '</ul>';
+			echo '</div>';
+		}
+	}
+}
 
 if ( ! function_exists( 'lsx_sitemap_taxonomy_clouds' ) ) :
 

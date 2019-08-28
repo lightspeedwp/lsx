@@ -1,5 +1,9 @@
 ## LSX Changelog
 
+### 2.4.2
+* Dev - Added in a filter to order the sitemap loops.
+* Dev - Added in a taxonomy loops for the sitemap template.
+
 ### 2.4.1
 * Fix - Adding the class 'using-gutenberg' only to pages or posts.
 * Fix - The filter 'lsx_global_header_disable' will not affect search pages.

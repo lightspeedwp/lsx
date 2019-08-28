@@ -31,8 +31,7 @@ get_header(); ?>
 					<?php lsx_entry_top(); ?>
 
 					<div class="entry-content">
-						<?php lsx_sitemap_pages(); ?>
-						<?php lsx_sitemap_custom_post_type(); ?>
+						<?php lsx_sitemap_loops(); ?>
 					</div><!-- .entry-content -->
 
 					<?php lsx_entry_bottom(); ?>
