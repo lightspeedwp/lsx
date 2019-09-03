@@ -1,3 +1,8 @@
+.lsx:not(.page-has-banner):not(.lsx-banners) {
+	.archive-header-wrapper {
+		display: none;
+	}
+}
 .archive-header-wrapper {
 	.lsx.page-has-banner:not(.single-post) & { display: none; }
 

@@ -215,6 +215,25 @@
 			right: 0;
 		}
 	}
+
+	@include media('<tablet') {
+		#menu-top-menu {
+			display: flex;
+			width: 100%;
+			justify-content: flex-end;
+			padding: 0;
+			margin: 0;
+			.menu-item {
+				height: 100%;
+				float: initial;
+				text-align: center;
+				a {
+					font-size: 12px;
+					padding: 0 7px;
+				}
+			}
+		}
+	}
 }
 
 @include top-menu-colours();
