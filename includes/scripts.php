@@ -88,51 +88,67 @@ if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
 		$font_styles = '
 			@font-face {
 				font-family: \'Lora\';
-				font-style: normal;
-				font-weight: 400;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Regular.ttf" ) format("truetype");
-			}
-			@font-face {
-				font-family: \'Lora\';
-				font-style: italic;
-				font-weight: 400i;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Italic.ttf" ) format("truetype");
-			}
-			@font-face {
-				font-family: \'Lora\';
+				font-display: swap;
 				font-style: normal;
 				font-weight: 700;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Bold.ttf" ) format("truetype");
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Bold.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Bold.woff") format("woff");
 			}
 			@font-face {
 				font-family: \'Lora\';
+				font-display: swap;
 				font-style: italic;
-				font-weight: 700i;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-BoldItalic.ttf" ) format("truetype");
+				font-weight: 700;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-BoldItalic.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-BoldItalic.woff") format("woff");
 			}
 			@font-face {
-				font-family: \'Noto Sans\';
+				font-family: \'Lora\';
+				font-display: swap;
+				font-style: italic;
+				font-weight: 400;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Italic.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Italic.woff") format("woff");
+			}
+			@font-face {
+				font-family: \'Lora\';
+				font-display: swap;
 				font-style: normal;
 				font-weight: 400;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Regular.ttf" ) format("truetype");
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Regular.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/lora/Lora-Regular.woff") format("woff");
 			}
-			@font-face {
+            @font-face {
 				font-family: \'Noto Sans\';
-				font-style: italic;
-				font-weight: 400i;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Italic.ttf" ) format("truetype");
-			}
-			@font-face {
-				font-family: \'Noto Sans\';
+				font-display: swap;
 				font-style: normal;
 				font-weight: 700;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Bold.ttf" ) format("truetype");
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Bold.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Bold.woff") format("woff");
+			}
+			@font-face {
+				font-family: \'Noto Sans\';
+				font-display: swap;
+				font-style: italic;
+				font-weight: 700;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-BoldItalic.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-BoldItalic.woff") format("woff");
 			}
 			@font-face {
 				font-family: \'Noto Sans Bold\';
+				font-display: swap;
 				font-style: italic;
-				font-weight: 700i;
-				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-BoldItalic.ttf" ) format("truetype");
+				font-weight: 400;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Italic.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Italic.woff") format("woff");
+			}
+			@font-face {
+				font-family: \'Noto Sans\';
+				font-display: swap;
+				font-style: normal;
+				font-weight: 400;
+				src: url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Regular.woff2") format("woff2"),
+					 url( "' . get_stylesheet_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Regular.woff") format("woff");
 			}
 
 			body{font-family:\'Noto Sans\',sans-serif}
