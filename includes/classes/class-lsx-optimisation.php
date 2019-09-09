@@ -49,7 +49,7 @@ class LSX_Optimization {
 	 * @return string
 	 */
 	public function defer_parsing_of_js( $url ) {
-		if ( false === strpos( $url, '.js' ) ) {
+		if ( is_admin() || false === strpos( $url, '.js' ) ) {
 			return $url;
 		}
 		return "$url' defer ";
