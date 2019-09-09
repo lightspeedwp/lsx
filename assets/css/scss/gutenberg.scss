@@ -13,3 +13,32 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, c
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+@import 'global/variables';
+@import 'global/mixins';
+@import 'global/placeholders';
+
+// Gutenberg Styles
+@import 'layout/gutenberg-front';
+@import 'components/gutenberg-blocks';
+
+@import 'layout/top-menu';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/search-form';
+
+@import 'layout/breadcrumb';
+@import 'layout/banner';
+@import 'layout/content';
+@import 'layout/pagination';
+@import 'layout/comments';
+
+@import 'layout/footer-cta';
+@import 'layout/footer-widgets';
+@import 'layout/footer';
+
+@import 'templates/common';
+@import 'templates/page';
+@import 'templates/single';
+@import 'templates/blog';
+@import 'templates/archive';
