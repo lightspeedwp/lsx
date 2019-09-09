@@ -61,8 +61,7 @@ if ( ! function_exists( 'lsx_scripts_add_styles' ) ) :
 
 		wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/vendor/slick.css', array(), LSX_VERSION, null );
 
-		wp_enqueue_style( 'lsx_main_style', get_template_directory_uri() . '/style.css', array(), LSX_VERSION );
-		wp_enqueue_style( 'lsx_main', get_template_directory_uri() . '/assets/css/lsx.css', array( 'lsx_main_style', 'fontawesome', 'bootstrap', 'slick' ), LSX_VERSION );
+		wp_enqueue_style( 'lsx_main', get_template_directory_uri() . '/assets/css/lsx.css', array( 'fontawesome', 'bootstrap', 'slick' ), LSX_VERSION );
 		wp_enqueue_style( 'lsx_gutenberg', get_template_directory_uri() . '/assets/css/gutenberg.css', array( 'lsx_main' ), LSX_VERSION );
 
 		wp_style_add_data( 'lsx_main', 'rtl', 'replace' );
