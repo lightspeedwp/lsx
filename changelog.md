@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.4.3
+* Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
+
 ### 2.4.2
 * Dev - Added in a filter to order the sitemap loops.
 * Dev - Added in a taxonomy loops for the sitemap template.
