@@ -1,7 +1,8 @@
 ## LSX Changelog
 
-### 2.4.3
+### 2.4.3 (in development)
 * Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
+* Dev - Added in a filter to allow plugins to lazy load the sliders
 
 ### 2.4.2
 * Dev - Added in a filter to order the sitemap loops.
