@@ -166,14 +166,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			return;
 		}
 
-		if ( ( true === apply_filters( 'lsx_global_header_disable', false ) ) && ( ! is_search() ) ) :
-			// Display only the breadcrumbs
-			?>
-			<div class="archive-header-wrapper banner-global col-<?php echo esc_attr( $size ); ?>-12">
-				<?php lsx_global_header_inner_bottom(); ?>
-			</div>
-			<?php
-		elseif ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
+		if ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
 			?>
 			<div class="archive-header-wrapper banner-page col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
@@ -255,6 +248,13 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			// Display only the breadcrumbs
 			?>
 			<div class="archive-header-wrapper banner-singular col-<?php echo esc_attr( $size ); ?>-12">
+				<?php lsx_global_header_inner_bottom(); ?>
+			</div>
+			<?php
+		elseif ( ( true === apply_filters( 'lsx_global_header_disable', false ) ) && ( ! is_search() ) ) :
+			// Display only the breadcrumbs
+			?>
+			<div class="archive-header-wrapper banner-global col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
