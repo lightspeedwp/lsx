@@ -685,7 +685,7 @@ function lsx_sitemap_taxonomy( $taxonomy = '', $label = '' ) {
 			}
 
 			echo '<div class="sitemap-rows">';
-			echo '<h2>' . $title . '</h2>';
+			echo '<h2>' . esc_html( $title ) . '</h2>';
 			echo '<ul>';
 			foreach ( $terms as $term ) {
 				$name = $term->name;
