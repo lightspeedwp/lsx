@@ -9,7 +9,7 @@
  *
  * @since 10.2
  */
-class LSX_TO_Schema_Graph_Piece implements WPSEO_Graph_Piece {
+class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 	/**
 	 * A value object with context variables.
 	 *
@@ -222,29 +222,6 @@ class LSX_TO_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 		$value = get_post_meta( $this->context->id, $meta_key, $single );
 		if ( '' !== $value && false !== $value ) {
 			$data[ $data_key ] = $value;
-		}
-		return $data;
-	}
-	/**
-	 * Adds the address and the lat and long coordinates
-	 *
-	 * @param  array $data
-	 * @param  string $data_key
-	 * @return array
-	 */
-	public function add_location( $data, $data_key = 'geo' ) {
-		$value = get_post_meta( $this->context->id, 'location', true );
-		if ( false !== $value && '' !== $value && ! empty( $value ) ) {
-			if ( isset( $value['address'] ) && '' !== $value['address'] ) {
-				$data['address'] = $value['address'];
-			}
-			if ( isset( $value['lat'] ) && isset( $value['long'] ) ) {
-				$data[ $data_key ] = array(
-					'@type'     => 'GeoCoordinates',
-					'latitude'  => $value['lat'],
-					'longitude' => $value['long'],
-				);
-			}
 		}
 		return $data;
 	}
