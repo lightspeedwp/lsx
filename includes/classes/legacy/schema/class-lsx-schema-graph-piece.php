@@ -33,12 +33,6 @@ class LSX_TO_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 	 *
 	 * @var array()
 	 */
-	public $itinerary_fields;
-	/**
-	 * This holds array of Places that have been generated
-	 *
-	 * @var array()
-	 */
 	public $place_ids;
 	/**
 	 * This holds an object or the current trip post.
@@ -173,26 +167,26 @@ class LSX_TO_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 		return $data;
 	}
 	/**
-	 * Adds the Places attached to the destination
+	 * Adds the Project and Testimonials attached to the Team Member
 	 *
-	 * @param array $data Country / State data.
+	 * @param array $data
 	 *
-	 * @return array $data Country / State data.
+	 * @return array $data
 	 */
-	public function add_places( $data ) {
-		$places_array = array();
+	public function add_connections( $data ) {
+		$connections_array = array();
 		if ( $this->is_top_level ) {
-			$places_array = $this->add_regions( $places_array );
-			$places_array = $this->add_accommodation( $places_array );
-			if ( ! empty( $places_array ) ) {
-				$data['containsPlace'] = $places_array;
+			$connections_array = $this->add_regions( $connections_array );
+			$connections_array = $this->add_accommodation( $connections_array );
+			if ( ! empty( $connections_array ) ) {
+				$data['containsPlace'] = $connections_array;
 			}
 		} else {
-			$places_array             = $this->add_countries( $places_array );
-			$data['containedInPlace'] = $places_array;
-			$places_array          = array();
-			$places_array          = $this->add_accommodation( $places_array );
-			$data['containsPlace'] = $places_array;
+			$connections_array             = $this->add_countries( $connections_array );
+			$data['containedInPlace'] = $connections_array;
+			$connections_array          = array();
+			$connections_array          = $this->add_accommodation( $connections_array );
+			$data['containsPlace'] = $connections_array;
 		}
 		return $data;
 
