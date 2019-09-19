@@ -73,7 +73,7 @@ class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 		if ( false === $this->context->site_represents ) {
 			return false;
 		}
-		return \lsx\legacy\Schema_Utils::is_type( get_post_type(), $this->post_type );
+		return LSX_Schema_Utils::is_type( get_post_type(), $this->post_type );
 	}
 	/**
 	 * Returns Review data.
@@ -113,7 +113,7 @@ class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 						'ratingValue' => $rating,
 					);
 				}
-				$reviews_array = \lsx\legacy\Schema_Utils::add_review( $reviews_array, $review_id, $this->context, $review_args );
+				$reviews_array = LSX_Schema_Utils::add_review( $reviews_array, $review_id, $this->context, $review_args );
 				$review_count++;
 			}
 			if ( ! empty( $reviews_array ) ) {
@@ -158,7 +158,7 @@ class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 				if ( false !== $image_url ) {
 					$post_args['image'] = $image_url;
 				}
-				$posts_array = \lsx\legacy\Schema_Utils::add_article( $posts_array, $post_id, $this->context, $post_args );
+				$posts_array = LSX_Schema_Utils::add_article( $posts_array, $post_id, $this->context, $post_args );
 			}
 			if ( ! empty( $posts_array ) ) {
 				$data[ $data_key ] = $posts_array;
@@ -206,7 +206,7 @@ class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 		 * @api string $taxonomy The chosen taxonomy.
 		 */
 		$taxonomy = apply_filters( 'lsx_to_schema_' . $this->post_type . '_' . $data_key . '_taxonomy', $taxonomy );
-		return \lsx\legacy\Schema_Utils::add_terms( $data, $this->context->id, $data_key, $taxonomy );
+		return LSX_Schema_Utils::add_terms( $data, $this->context->id, $data_key, $taxonomy );
 	}
 	/**
 	 * Adds the custom field value for the supplied key
