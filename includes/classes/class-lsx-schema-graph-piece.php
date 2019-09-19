@@ -189,7 +189,7 @@ class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 			$data['containsPlace'] = $connections_array;
 		}
 		return $data;
-
+	}
 	/**
 	 * Adds the terms for the taxonomy
 	 *
@@ -201,11 +201,11 @@ class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
 	 */
 	public function add_taxonomy_terms( $data, $data_key, $taxonomy ) {
 		/**
-		 * Filter: 'lsx_to_schema_' . $this->post_type . '_' . $data_key . '_taxonomy' - Allow changing the taxonomy used to assign keywords to a post type Review data.
+		 * Filter: 'lsx_schema_' . $this->post_type . '_' . $data_key . '_taxonomy' - Allow changing the taxonomy used to assign keywords to a post type Review data.
 		 *
 		 * @api string $taxonomy The chosen taxonomy.
 		 */
-		$taxonomy = apply_filters( 'lsx_to_schema_' . $this->post_type . '_' . $data_key . '_taxonomy', $taxonomy );
+		$taxonomy = apply_filters( 'lsx_schema_' . $this->post_type . '_' . $data_key . '_taxonomy', $taxonomy );
 		return LSX_Schema_Utils::add_terms( $data, $this->context->id, $data_key, $taxonomy );
 	}
 	/**
