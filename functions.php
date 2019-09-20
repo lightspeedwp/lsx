@@ -30,6 +30,7 @@ if ( class_exists( 'bbPress' ) ) {
 }
 
 require get_template_directory() . '/includes/config.php';
+require get_template_directory() . '/includes/deprecated.php';
 require get_template_directory() . '/includes/classes/class-lsx-theme-customizer.php';
 require get_template_directory() . '/includes/customizer.php';
 require get_template_directory() . '/includes/sanitize.php';
@@ -43,7 +44,6 @@ require get_template_directory() . '/includes/classes/class-lsx-bootstrap-navwal
 require get_template_directory() . '/includes/nav-bootstrap-navwalker.php';
 require get_template_directory() . '/includes/classes/class-lsx-walker-comment.php';
 require get_template_directory() . '/includes/walker-comment.php';
-require get_template_directory() . '/includes/classes/class-lsx-lazy-load-images.php';
 require get_template_directory() . '/includes/template-tags.php';
 require get_template_directory() . '/includes/extras.php';
 require get_template_directory() . '/includes/welcome.php';
@@ -51,3 +51,4 @@ require get_template_directory() . '/includes/404-widget.php';
 require get_template_directory() . '/includes/gutenberg.php';
 require get_template_directory() . '/includes/classes/class-lsx-schema-utils.php';
 require get_template_directory() . '/includes/classes/class-lsx-schema-graph-piece.php';
+require get_template_directory() . '/includes/classes/class-lsx-optimisation.php';
