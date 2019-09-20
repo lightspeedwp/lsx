@@ -49,3 +49,5 @@ require get_template_directory() . '/includes/extras.php';
 require get_template_directory() . '/includes/welcome.php';
 require get_template_directory() . '/includes/404-widget.php';
 require get_template_directory() . '/includes/gutenberg.php';
+require get_template_directory() . '/includes/classes/class-lsx-schema-utils.php';
+require get_template_directory() . '/includes/classes/class-lsx-schema-graph-piece.php';
