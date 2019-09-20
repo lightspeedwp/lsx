@@ -26,7 +26,8 @@ class LSX_Optimization {
 	 * Constructor.
 	 */
 	public function __construct() {
-		add_filter( 'clean_url', array( $this, 'defer_parsing_of_js' ), 11, 1 );
+		add_filter( 'style_loader_tag', array( $this, 'preload_css' ), 100, 4 );
+		add_filter( 'script_loader_tag', array( $this, 'defer_parsing_of_js' ), 100, 3 );
 	}
 	/**
 	 * Return an instance of this class.
@@ -48,11 +49,24 @@ class LSX_Optimization {
 	 * @param  string $url The url to check and defer.
 	 * @return string
 	 */
-	public function defer_parsing_of_js( $url ) {
-		if ( is_admin() || false === strpos( $url, '.js' ) ) {
-			return $url;
+	public function preload_css( $tag, $handle, $href, $media ) {
+		if ( 'lsx_fonts' === $handle || 'fontawesome' === $handle ) {
+			$tag = str_replace( 'href', ' preload href', $tag );
 		}
-		return "$url' defer ";
+		return $tag;
+	}
+
+	/**
+	 * Defers the JS loading till Last
+	 *
+	 * @param  string $url The url to check and defer.
+	 * @return string
+	 */
+	public function defer_parsing_of_js( $tag, $handle, $href ) {
+		if ( 'jquery-core' === $handle ) {
+			$tag = str_replace( 'src', ' defer src', $tag );
+		}
+		return $tag;
 	}
 }
 LSX_Optimization::get_instance();

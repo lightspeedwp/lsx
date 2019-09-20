@@ -53,15 +53,15 @@ if ( ! function_exists( 'lsx_scripts_add_styles' ) ) :
 	 * @subpackage scripts
 	 */
 	function lsx_scripts_add_styles() {
+		wp_enqueue_style( 'lsx_fonts', get_template_directory_uri() . '/assets/css/lsx-fonts.css', array(), LSX_VERSION );
+
 		wp_register_style( 'fontawesome', get_template_directory_uri() . '/assets/css/vendor/font-awesome.css', array(), LSX_VERSION );
 		wp_style_add_data( 'fontawesome', 'rtl', 'replace' );
 
 		wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/vendor/bootstrap.css', array(), LSX_VERSION );
 		wp_style_add_data( 'bootstrap', 'rtl', 'replace' );
 
-		//wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/vendor/slick.css', array(), LSX_VERSION, null );
-
-	wp_enqueue_style( 'lsx_main', get_template_directory_uri() . '/assets/css/lsx.css', array( 'fontawesome', 'bootstrap'/*, 'slick'*/ ), LSX_VERSION );
+		wp_enqueue_style( 'lsx_main', get_template_directory_uri() . '/assets/css/lsx.css', array( 'lsx_fonts', 'fontawesome', 'bootstrap'/*, 'slick'*/ ), LSX_VERSION );
 		wp_enqueue_style( 'lsx_gutenberg', get_template_directory_uri() . '/assets/css/gutenberg.css', array( 'lsx_main' ), LSX_VERSION );
 
 		wp_style_add_data( 'lsx_main', 'rtl', 'replace' );
@@ -70,7 +70,6 @@ if ( ! function_exists( 'lsx_scripts_add_styles' ) ) :
 endif;
 
 if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
-
 	/**
 	 * Enqueue fonts.
 	 *
@@ -78,94 +77,11 @@ if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
 	 * @subpackage scripts
 	 */
 	function lsx_scripts_add_fonts() {
-
 		$disable_fonts = get_theme_mod( 'lsx_disable_fonts', false );
 		if ( false !== $disable_fonts ) {
 			return;
 		}
-
-		// Font styles.
-		$font_styles = '
-			@font-face {
-				font-family: \'Lora\';
-				font-display: swap;
-				font-style: normal;
-				font-weight: 700;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-Bold.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-Bold.woff") format("woff");
-			}
-			@font-face {
-				font-family: \'Lora\';
-				font-display: swap;
-				font-style: italic;
-				font-weight: 700;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-BoldItalic.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-BoldItalic.woff") format("woff");
-			}
-			@font-face {
-				font-family: \'Lora\';
-				font-display: swap;
-				font-style: italic;
-				font-weight: 400;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-Italic.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-Italic.woff") format("woff");
-			}
-			@font-face {
-				font-family: \'Lora\';
-				font-display: swap;
-				font-style: normal;
-				font-weight: 400;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-Regular.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/lora/Lora-Regular.woff") format("woff");
-			}
-            @font-face {
-				font-family: \'Noto Sans\';
-				font-display: swap;
-				font-style: normal;
-				font-weight: 700;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Bold.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Bold.woff") format("woff");
-			}
-			@font-face {
-				font-family: \'Noto Sans\';
-				font-display: swap;
-				font-style: italic;
-				font-weight: 700;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-BoldItalic.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-BoldItalic.woff") format("woff");
-			}
-			@font-face {
-				font-family: \'Noto Sans Bold\';
-				font-display: swap;
-				font-style: italic;
-				font-weight: 400;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Italic.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Italic.woff") format("woff");
-			}
-			@font-face {
-				font-family: \'Noto Sans\';
-				font-display: swap;
-				font-style: normal;
-				font-weight: 400;
-				src: url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Regular.woff2") format("woff2"),
-					 url( "' . get_template_directory_uri() . '/assets/fonts/noto_sans/NotoSans-Regular.woff") format("woff");
-			}
-
-			body{font-family:\'Noto Sans\',sans-serif}
-			h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{font-family:\'Lora\',serif}
-			.content-area blockquote:before,.widget-area blockquote:before{font-family:\'Lora\',serif}
-			.wc-social-login:before{font-family:\'Lora\',serif}
-			.blog article.post .entry-title .label-sticky,.blog article.page .entry-title .label-sticky,.blog article.lsx-slot .entry-title .label-sticky,.archive article.post .entry-title .label-sticky,.archive article.page .entry-title .label-sticky,.archive article.lsx-slot .entry-title .label-sticky,.search-results article.post .entry-title .label-sticky,.search-results article.page .entry-title .label-sticky,.search-results article.lsx-slot .entry-title .label-sticky{font-family:\'Noto Sans\',sans-serif}
-			#respond .comment-reply-title>small{font-family:\'Noto Sans\',sans-serif}
-			#comments .media-list .media .media-heading{font-family:\'Noto Sans\',sans-serif}
-			.single-testimonial .entry-content:before{font-family:\'Lora\',serif}
-		';
-
-		if ( ! empty( $font_styles ) ) {
-			wp_add_inline_style( 'lsx_main', $font_styles );
-		}
 	}
-
 endif;
 
 if ( ! function_exists( 'lsx_scripts_add_scripts' ) ) :

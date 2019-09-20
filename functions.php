@@ -30,6 +30,7 @@ if ( class_exists( 'bbPress' ) ) {
 }
 
 require get_template_directory() . '/includes/config.php';
+require get_template_directory() . '/includes/deprecated.php';
 require get_template_directory() . '/includes/classes/class-lsx-theme-customizer.php';
 require get_template_directory() . '/includes/customizer.php';
 require get_template_directory() . '/includes/sanitize.php';
