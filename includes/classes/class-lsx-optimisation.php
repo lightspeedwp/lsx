@@ -63,8 +63,8 @@ class LSX_Optimisation {
 	 * @return string
 	 */
 	public function defer_parsing_of_js( $tag, $handle, $href ) {
-		if ( 'jquery-core' === $handle ) {
-			$tag = str_replace( 'src', ' defer src', $tag );
+		if ( false !== stripos( $href, '.js' ) ) {
+			$tag = str_replace( 'src=', ' defer src=', $tag );
 		}
 		return $tag;
 	}

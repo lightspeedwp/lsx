@@ -27,18 +27,6 @@ if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
 			'priority'    => 21,
 		);
 
-		$lsx_controls['settings']['lsx_lazyload_status'] = array(
-			'default'           => '1',
-			'sanitize_callback' => 'lsx_sanitize_checkbox',
-			'transport'         => 'postMessage',
-		);
-
-		$lsx_controls['fields']['lsx_lazyload_status'] = array(
-			'label'   => esc_html__( 'Lazy Loading Images', 'lsx' ),
-			'section' => 'lsx-core',
-			'type'    => 'checkbox',
-		);
-
 		$lsx_controls['settings']['lsx_preloader_content_status'] = array(
 			'default'           => '1',
 			'sanitize_callback' => 'lsx_sanitize_checkbox',
