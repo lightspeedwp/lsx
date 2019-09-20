@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @author   LightSpeed
  * @category Widgets
  * @package  LSX
- * @return   LSX_Optimization
+ * @return   LSX_Optimisation
  */
-class LSX_Optimization {
+class LSX_Optimisation {
 
 	/**
 	 * Holds class instance
@@ -69,4 +69,4 @@ class LSX_Optimization {
 		return $tag;
 	}
 }
-LSX_Optimization::get_instance();
+LSX_Optimisation::get_instance();
