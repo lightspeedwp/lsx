@@ -4,8 +4,13 @@
 * Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
 * Dev - Added in a filter to allow plugins to lazy load the sliders
 * Dev - Added in a function to remove the Popup Maker plugin admin bar tools.
+* Dev - Added in a function to defer all JS files enqueued except jquery.js
+* Dev - Preloaded all font declaration files
+* Dev - Removed the Block styles into a its own CSS file.
+* Dev - Added in a schema class which creates the Article Schema using the Yoast API
 * Fix - Fixing the pagination pointers.
 * Fix - Reducing the excerpt to 30 words.
+* Fix - Fixed minor CSS bugs with the post and page Block layouts.
 
 ### 2.4.2
 * Dev - Added in a filter to order the sitemap loops.
