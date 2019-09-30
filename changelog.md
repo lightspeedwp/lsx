@@ -1,8 +1,9 @@
 ## LSX Changelog
 
-### 2.4.3 (in development)
+### 2.5.0
 * Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
 * Dev - Added in a filter to allow plugins to lazy load the sliders
+* Dev - Added in a function to remove the Popup Maker plugin admin bar tools.
 
 ### 2.4.2
 * Dev - Added in a filter to order the sitemap loops.

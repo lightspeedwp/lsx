@@ -28,6 +28,7 @@ class LSX_Optimisation {
 	public function __construct() {
 		add_filter( 'style_loader_tag', array( $this, 'preload_css' ), 100, 4 );
 		add_filter( 'script_loader_tag', array( $this, 'defer_parsing_of_js' ), 100, 3 );
+		add_action( 'init', array( $this, 'pum_remove_admin_bar_tools' ), 100 );
 	}
 	/**
 	 * Return an instance of this class.
@@ -63,10 +64,16 @@ class LSX_Optimisation {
 	 * @return string
 	 */
 	public function defer_parsing_of_js( $tag, $handle, $href ) {
-		if ( false !== stripos( $href, '.js' ) ) {
+		if ( ! is_admin() && false !== stripos( $href, '.js' ) ) {
 			$tag = str_replace( 'src=', ' defer src=', $tag );
 		}
 		return $tag;
+	}
+
+	public function pum_remove_admin_bar_tools() {
+		remove_action( 'admin_bar_menu', array( 'PUM_Modules_Admin_Bar', 'toolbar_links' ), 999 );
+		remove_action( 'wp_footer', array( 'PUM_Modules_Admin_Bar', 'admin_bar_styles' ), 999 );
+		remove_action( 'init', array( 'PUM_Modules_Admin_Bar', 'show_debug_bar' ) );
 	}
 }
 LSX_Optimisation::get_instance();
