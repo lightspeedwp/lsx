@@ -64,7 +64,7 @@ class LSX_Optimisation {
 	 * @return string
 	 */
 	public function defer_parsing_of_js( $tag, $handle, $href ) {
-		if ( ! is_admin() && false !== stripos( $href, '.js' ) ) {
+		if ( ! is_admin() && false !== stripos( $href, '.js' ) && false === stripos( $href, 'jquery.js' ) ) {
 			$tag = str_replace( 'src=', ' defer src=', $tag );
 		}
 		return $tag;
