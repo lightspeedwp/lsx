@@ -4,6 +4,8 @@
 * Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
 * Dev - Added in a filter to allow plugins to lazy load the sliders
 * Dev - Added in a function to remove the Popup Maker plugin admin bar tools.
+* Fix - Fixing the pagination pointers.
+* Fix - Reducing the excerpt to 30 words.
 
 ### 2.4.2
 * Dev - Added in a filter to order the sitemap loops.
