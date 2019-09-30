@@ -27,7 +27,7 @@ class LSX_Optimisation {
 	 */
 	public function __construct() {
 		add_filter( 'style_loader_tag', array( $this, 'preload_css' ), 100, 4 );
-		add_filter( 'script_loader_tag', array( $this, 'defer_parsing_of_js' ), 100, 3 );
+		//add_filter( 'script_loader_tag', array( $this, 'defer_parsing_of_js' ), 100, 3 );
 	}
 	/**
 	 * Return an instance of this class.
