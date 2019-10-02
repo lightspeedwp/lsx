@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.5.1
+* Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
+
 ### 2.5.0
 * Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
 * Dev - Added in a filter to allow plugins to lazy load the sliders

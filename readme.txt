@@ -5,7 +5,7 @@ Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme
 Requires at least: 5.1.1
 Tested up to: 5.2.1
 Requires PHP: 7.0
-Stable tag: 2.4.0
+Stable tag: 2.5.1
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -46,6 +46,21 @@ If you are experiencing issues with the LSX Theme, please log any bug issues you
 If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX theme on Github](https://github.com/lightspeeddevelopment/lsx) and submit a Pull Request with your updates.
 
 == Changelog ==
+
+= 2.5.1 =
+* Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
+
+= 2.5.0 =
+* Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
+* Dev - Added in a filter to allow plugins to lazy load the sliders
+* Dev - Added in a function to remove the Popup Maker plugin admin bar tools.
+* Dev - Added in a function to defer all JS files enqueued except jquery.js
+* Dev - Preloaded all font declaration files
+* Dev - Removed the Block styles into a its own CSS file.
+* Dev - Added in a schema class which creates the Article Schema using the Yoast API
+* Fix - Fixing the pagination pointers.
+* Fix - Reducing the excerpt to 30 words.
+* Fix - Fixed minor CSS bugs with the post and page Block layouts.
 
 = 2.4.0 =
 * Fix - Removing the post meta, as it is being added via an action.
