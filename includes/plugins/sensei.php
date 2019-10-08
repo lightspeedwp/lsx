@@ -71,6 +71,22 @@ if ( ! function_exists( 'lsx_sensei_theme_wrapper_end' ) ) :
 
 endif;
 
+if ( ! function_exists( 'lsx_sensei_modify_archive_title' ) ) :
+
+	/**
+	 * Remove "Archives:"  from the courses archive title.
+	 *
+	 * @param [type] $title
+	 * @return void
+	 */
+	function lsx_sensei_modify_archive_title( $title ) {
+		$title = __( 'Courses', 'lsx' );
+		return $title;
+	}
+	add_filter( 'get_the_archive_title', 'lsx_sensei_modify_archive_title', 10, 1 );
+
+endif;
+
 if ( ! function_exists( 'lsx_sensei_disable_lsx_banner' ) ) :
 
 	/**
@@ -138,6 +154,12 @@ remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'cou
 add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 11, 0 );
 add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_sorting' ),12 );
 add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_filters' ),12 );
+
+// removes the course image above the content
+remove_action( 'sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
+// add the course image to the left of the content
+add_action( 'lsx_sensei_course_content_inside_before', array( 'Sensei_Course', 'course_image' ), 30, 1 );
+
 
 if ( ! function_exists( 'lsx_sensei_add_buttons' ) ) :
 
