@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.5.2 - In development
+* Dev - Sensei improvements
+
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
 
