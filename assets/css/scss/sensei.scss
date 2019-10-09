@@ -185,6 +185,45 @@ article.page {
 	}
 }
 
+.single-course {
+	#primary {
+		#main {
+			.course {
+				.modules-title {
+					margin-bottom: $lsx-gap;
+				}
+				.module {
+					header {
+						background-color: white;
+					}
+					.module-description {
+						background: #E7E6E6;
+						font-style: initial;
+					}
+					.module-lessons {
+						header {
+							background: #F2F2F2;
+							* {
+								font-family: $font-family-sans-serif;
+							}
+						}
+						ul {
+							li {
+								a {
+									background: #ECE9E9;
+									&:hover {
+										background: white;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 // Buttons and fields
 
 .sensei-ordering {
