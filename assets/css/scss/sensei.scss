@@ -175,7 +175,7 @@ article.page {
 		}
 	}
 	.course {
-		.meter.green {
+		.meter {
 			+ a {
 				img {
 					display: none;
@@ -195,6 +195,9 @@ article.page {
 				.module {
 					header {
 						background-color: white;
+						* {
+							color: #337ab7;
+						}
 					}
 					.module-description {
 						background: #E7E6E6;
