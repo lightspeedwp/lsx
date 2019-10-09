@@ -22,7 +22,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 }
 
 if ( class_exists( 'Sensei_Main' ) ) {
-	require get_template_directory() . '/includes/plugins/sensei.php';
+	require get_template_directory() . '/includes/sensei/class-lsx-sensei.php';
 }
 
 if ( class_exists( 'bbPress' ) ) {
