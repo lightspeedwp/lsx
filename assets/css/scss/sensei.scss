@@ -130,7 +130,46 @@ article.page {
 				border: 1px solid #E9E9E9;
 				padding: 10px;
 				.entry {
-					display: flex;
+					@include media('>tablet') {
+						display: flex;
+					}
+					.course-thumbnail {
+						@include media('>tablet') {
+							margin-right: $lsx-gap;
+						}
+						min-width: 30%;
+						flex-grow: 1;
+						a {
+							img {
+								width: 100%;
+							}
+						}
+					}
+					.course-body {
+						min-width: 65%;
+						flex-grow: 2;
+						.course-title {
+							display: block;
+							font-family: $font-family-sans-serif;
+						}
+						.sensei-course-meta,
+						.course-author {
+							margin: 0 5px 0 0;
+							a {
+								color: black;
+							}
+						}
+						.course-price {
+							color: #77A464;
+							font-size: 22px;
+							display: block;
+							font-style: initial;
+							font-weight: 700;
+						}
+						.entry-actions {
+							margin-bottom: 0;
+						}
+					}
 				}
 			}
 		}
@@ -147,6 +186,7 @@ article.page {
 		font-size: 15px;
 		height: 52px;
 		min-width: 180px;
+		border: 2px solid #DADDDF;
 	}
 }
 
