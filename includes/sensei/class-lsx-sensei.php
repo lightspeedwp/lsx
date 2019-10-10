@@ -17,7 +17,12 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 	 */
 	class LSX_Sensei {
 
-		var $lsx_sensei_course = false;
+		/**
+		 * Holds the LSX_Sensei_Course() variable.
+		 *
+		 * @var LSX_Sensei_Course()
+		 */
+		public $lsx_sensei_course = false;
 
 		/**
 		 * Setup class.
