@@ -200,16 +200,27 @@ article.page {
 							}
 							.entry-actions {
 								order: 2;
-								width: 50%;
-								&:nth-of-type(1) {
-									width: 25%;
-								}
 								&:nth-of-type(2) {
-									width: 49%;
-									margin-left: 23%;
-									position: relative;
-									top: -4rem;
-									margin-bottom: -4rem;
+									margin-top: 2.4rem;
+									display: flex;
+									.button.view-results {
+										margin-left: 0;
+									}
+								}
+								@include media('>desktop-wide') {
+									width: 50%;
+									&:nth-of-type(1) {
+										width: 25%;
+									}
+									&:nth-of-type(2) {
+										margin-top: 0;
+										display: initial;
+										width: 49%;
+										margin-left: 23%;
+										position: relative;
+										top: -4rem;
+										margin-bottom: -4rem;
+									}
 								}
 							}
 							.meter {
@@ -253,8 +264,15 @@ article.page {
 		#main {
 			.course {
 				>p:first-child {
-					width: 20%;
-					float: right;
+					@include media('>desktop') {
+						width: 20%;
+						float: right;
+					}
+					@include media('<tablet') {
+						.button {
+							width: 100%;
+						}
+					}
 					display: flex;
 					justify-content: flex-end;
 					.button.send-message-button {
@@ -321,10 +339,23 @@ article.page {
 					.course-meta {
 						.sensei-results-links {
 							.view-results {
-								@extend %button;
+								@include lsx-button-scaffolding();
+								@include lsx-button-colour();
+								@include small-button();
 								margin-left: 2.4rem;
 								&:hover {
 									@extend %button-hover;
+								}
+							}
+							@include media('<tablet') {
+								display: flex;
+								width: 100%;
+								padding-top: 2.4rem;
+								justify-content: space-between;
+								a {
+									width: 48%;
+									margin-left: 0 !important;
+									text-align: center;
 								}
 							}
 						}
@@ -418,10 +449,12 @@ article.page {
 
 #sensei-user-courses {
 	.my-messages-link-container {
-		width: 20%;
-		float: right;
-		display: flex;
-		justify-content: flex-end;
+		@include media('>desktop') {
+			width: 20%;
+			float: right;
+			display: flex;
+			justify-content: flex-end;
+		}
 		.my-messages-link {
 			border: 2px solid #418AD0;
 			border-radius: 3px;
