@@ -17,6 +17,8 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 	 */
 	class LSX_Sensei {
 
+		var $lsx_sensei_course = false;
+
 		/**
 		 * Setup class.
 		 *
@@ -25,6 +27,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function __construct() {
 
 			require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-messages.php';
+			$this->lsx_sensei_course = require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-course.php';
 
 			global $woothemes_sensei;
 
