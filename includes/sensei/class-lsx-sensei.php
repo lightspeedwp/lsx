@@ -25,14 +25,21 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public $lsx_sensei_course = false;
 
 		/**
+		 * Holds the LSX_Sensei_Messages() variable.
+		 *
+		 * @var LSX_Sensei_Messages()
+		 */
+		public $lsx_sensei_messages = false;
+
+		/**
 		 * Setup class.
 		 *
 		 * @since 1.0
 		 */
 		public function __construct() {
 
-			require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-messages.php';
-			$this->lsx_sensei_course = require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-course.php';
+			$this->lsx_sensei_messages = require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-messages.php';
+			$this->lsx_sensei_course   = require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-course.php';
 
 			global $woothemes_sensei;
 

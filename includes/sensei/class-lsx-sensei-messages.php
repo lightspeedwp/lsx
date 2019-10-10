@@ -4,10 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Sensei Messages Class
- *
- * All functionality pertaining to the Messages post type in Sensei.
- *
+ * LSX Sensei Messages Class
  */
 class LSX_Sensei_Messages {
 
@@ -42,6 +39,9 @@ class LSX_Sensei_Messages {
 	 */
 	public function init() {
 
+		$sensei_messages = new Sensei_Messages();
+		remove_action( 'sensei_single_course_content_inside_before', array( $sensei_messages, 'send_message_link' ), 35 );
+		add_action( 'sensei_single_course_content_inside_before', array( $sensei_messages, 'send_message_link' ), 1 );
 	}
 
 } // End Class
