@@ -1,6 +1,6 @@
-@import 'global/variables';
-@import 'global/mixins';
-@import 'global/placeholders';
+@import '../scss/global/variables';
+@import '../scss/global/mixins';
+@import '../scss/global/placeholders';
 
 // Placeholders and Mixins
 
@@ -136,8 +136,12 @@ article.page {
 					.course-thumbnail {
 						@include media('>tablet') {
 							margin-right: $lsx-gap;
+							width: 30%;
+							min-width: 225px;
 						}
-						min-width: 30%;
+						@include media('>desktop') {
+							min-width: 378px;
+						}
 						flex-grow: 1;
 						a {
 							img {
@@ -176,6 +180,11 @@ article.page {
 	}
 	.course {
 		.meter {
+			&.orange {
+				>span {
+					background: #ed6c6c;
+				}
+			}
 			+ a {
 				img {
 					display: none;
@@ -345,7 +354,7 @@ article.page {
 	span { vertical-align: top !important; }
 }
 
-// Login screen
+// Login screen test
 
 #my-courses {
 	background: none;

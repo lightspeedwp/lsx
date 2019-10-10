@@ -60,19 +60,6 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_action( 'sensei_course_content_inside_after', array( $this, 'lsx_sensei_add_buttons' ), 9 );
 
-			//Switching the course filters and the headers around
-			remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 10, 0 );
-			remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_sorting' ) );
-			remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_filters' ) );
-			add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 11, 0 );
-			add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_sorting' ),12 );
-			add_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_filters' ),12 );
-
-			// removes the course image above the content
-			remove_action( 'sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
-			// add the course image to the left of the content
-			add_action( 'lsx_sensei_course_content_inside_before', array( 'Sensei_Course', 'course_image' ), 30, 1 );
-
 			add_filter( 'sensei_wc_single_add_to_cart_button_text', array( $this, 'lsx_sensei_add_to_cart_text' ) );
 
 		}
@@ -84,7 +71,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @subpackage sensei
 		 */
 		public function lsx_sensei_scripts_add_styles() {
-			wp_enqueue_style( 'sensei-lsx', get_template_directory_uri() . '/assets/css/sensei.css', array( 'lsx_main' ), LSX_VERSION );
+			wp_enqueue_style( 'sensei-lsx', get_template_directory_uri() . '/assets/css/sensei/sensei.css', array( 'lsx_main' ), LSX_VERSION );
 			wp_style_add_data( 'sensei-lsx', 'rtl', 'replace' );
 		}
 

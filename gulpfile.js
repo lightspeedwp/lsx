@@ -85,6 +85,27 @@ gulp.task('events-styles', function () {
         .pipe(gulp.dest('assets/css'))
 });
 
+gulp.task('sensei-styles', function () {
+    return gulp.src('assets/css/sensei/sensei.scss')
+        .pipe(plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ['assets/css/sensei']
+        }).on('error', gutil.log))
+        .pipe(autoprefixer({
+            browsers: browserlist,
+            casacade: true
+        }))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('assets/css/sensei'))
+});
+
 gulp.task('styles-rtl', function () {
 	return gulp.src('assets/css/scss/*.scss')
 		.pipe(plumber({
@@ -196,7 +217,7 @@ gulp.task('admin-styles-rtl', function () {
 
 //gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
 
-gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles']);
+gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'sensei-styles']);
 
 gulp.task('js', function() {
 	return gulp.src('assets/js/src/**/*.js')
