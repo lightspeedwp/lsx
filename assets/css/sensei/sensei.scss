@@ -446,6 +446,14 @@ article.page {
 							margin-bottom: -4.25rem;
 						}
 					}
+					&.tick {
+						border: 1px solid #85AD74 !important;
+						background: #DFF0D8;
+						color: #3C763D;
+						&:before {
+							color: #3C763D;
+						}
+					}
 				}
 				.video {
 					text-align: center;
@@ -468,6 +476,117 @@ article.page {
 				.sensei-share-your-grade {
 					order: 3;
 				}
+			}
+		}
+	}
+}
+
+// Single Quiz
+.single-quiz {
+	#primary {
+		margin-top: 4.25rem;
+		#main {
+			.quiz {
+				header {
+					display: none;
+				}
+				.sensei-message {
+					margin-top: 0;
+					border-radius: 0;
+					&.tick {
+						border: 1px solid #85AD74 !important;
+						background: #DFF0D8;
+						color: #3C763D;
+						&:before {
+							color: #3C763D;
+						}
+					}
+				}
+				.quiz-questions {
+					form {
+						display: flex;
+						flex-direction: column;
+						* {
+							order: 1;
+						}
+						> p {
+							@include media('>desktop') {
+								align-self: flex-end;
+								margin-bottom: -4.25rem;
+							}
+						}
+						#sensei-quiz-list {
+							padding: 0 0 0 1.6rem;
+							order: -1;
+							.answers {
+								padding: 0;
+								label {
+									font-weight: 300;
+								}
+							}
+							.question_media_display {
+								dl>dt {
+									font-weight: 300;
+								}
+							}
+							li {
+								.answer_message {
+									&.user_wrong {
+										background: #F2DEDE;
+										span {
+											font-size: 15px;
+											padding: 10px;
+											color: #A94442;
+										}
+									}
+									&.user_right {
+										background: #DFF0D8;
+										span {
+											font-size: 15px;
+											padding: 10px;
+											color: #3C763D;
+										}
+									}
+								}
+							}
+						}
+						> span {
+							margin-bottom: 2.4rem;
+							@include media('>desktop') {
+								&:nth-of-type(1) {
+									margin-bottom: -4rem;
+									max-width: 150px;
+								}
+								&:nth-of-type(2) {
+									margin-left: 180px;
+									max-width: 180px;
+									margin-bottom: -4rem;
+								}
+								&:nth-of-type(3) {
+									margin-left: 320px;
+									max-width: 320px;
+									margin-bottom: 0;
+								}
+							}
+							.quiz-submit {
+								&.reset {
+									@include lsx-button-scaffolding();
+									@include lsx-button-colour();
+									@include small-button();
+								}
+							}
+						}
+					}
+				}
+				.sensei-share-your-grade {
+					order: 3;
+					&.message {
+						margin-top: 8.4rem;
+					}
+				}
+			}
+			.post-entries {
+				margin-top: 8.25rem;
 			}
 		}
 	}
@@ -556,6 +675,15 @@ article.page {
 			@include lsx-button-scaffolding();
 			@include lsx-button-colour();
 			@include small-button();
+		}
+	}
+	.sensei-message {
+		&.alert {
+			border: 1px solid #a94442 !important;
+			background: #F2DEDE !important;
+			&:before {
+				color: #A94442 !important;
+			}
 		}
 	}
 }
