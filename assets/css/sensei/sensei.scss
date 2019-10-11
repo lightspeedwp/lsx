@@ -277,10 +277,10 @@ article.page {
 	#primary {
 		#main {
 			.course {
-				@include media('<tablet') {
+				//@include media('<tablet') {
 					display: flex;
 					flex-direction: column;
-				}
+				//}
 				>p:first-child {
 					@include media('>desktop') {
 						width: 20%;
@@ -294,14 +294,7 @@ article.page {
 					display: flex;
 					justify-content: flex-end;
 					.button.send-message-button {
-						border: 2px solid #418AD0;
-						background: none;
-						color: #418AD0;
-						box-shadow: none;
-						&:hover {
-							background: #418AD0;
-							color: white;
-						}
+
 					}
 				}
 
@@ -311,24 +304,28 @@ article.page {
 				.progress.course-completion-rate {
 					font-size: 30px;
 					font-family: $font-family-serif;
-					@include media('<tablet') {
+					@include media('<desktop') {
 						order: -1;
 					}
 				}
 				.sensei-course-participants {
-					@include media('<tablet') {
+					@include media('<desktop') {
 						order: -1;
 					}
 				}
 				.meter {
 					margin-bottom: 2.4rem;
-					@include media('<tablet') {
+					@include media('<desktop') {
 						order: -1;
 					}
 				}
 				.course-meta {
 					+ p {
-						display: none;
+						order: -1;
+						@include media('>desktop') {
+							align-self: flex-end;
+							margin-bottom: -4.24rem;
+						}
 					}
 				}
 				.modules-title {
@@ -409,6 +406,47 @@ article.page {
 	}
 }
 
+.single-lesson {
+	#primary {
+		#main {
+			.lesson {
+				display: flex;
+				flex-direction: column;
+				* {
+					order: 1;
+				}
+				.lesson-title {
+					display: none;
+				}
+				.sensei-message {
+					+ p {
+						order: 2;
+						align-self: flex-end;
+						margin-bottom: -4.25rem;
+					}
+				}
+				footer {
+					order: 2;
+					width: 35%;
+					display: flex;
+					justify-content: space-between;
+					.quiz-submit.complete {
+						background: nth($green, 1);
+						box-shadow: 2px 2px 0 0 #446B0C;
+						margin-top: 0;
+						&:hover {
+							background: #446B0C;
+						}
+					}
+				}
+				.sensei-share-your-grade {
+					order: 3;
+				}
+			}
+		}
+	}
+}
+
 // Buttons and fields
 
 .sensei-ordering {
@@ -454,6 +492,13 @@ article.page {
 		@include lsx-button-colour();
 		@include small-button();
 	}
+	p {
+		.button.send-message-button:not(.btn) {
+			@include lsx-bordered-button();
+			@include small-button();
+		}
+	}
+
 }
 
 .sensei
