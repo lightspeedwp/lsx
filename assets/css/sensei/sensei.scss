@@ -80,9 +80,44 @@
 // Archive page
 .post-type-archive-course {
 	#primary {
+		margin-bottom: 2.4rem;
 		#main {
 			> h1 {
 				display: none;
+			}
+		}
+	}
+}
+
+// Message Archive page
+.post-type-archive-sensei_message {
+	#primary {
+		margin-bottom: 2.4rem;
+		#main {
+			.archive-header {
+				display: none;
+			}
+			#main-sensei_message {
+				.message-container {
+					.sensei_message {
+						background: white;
+						padding: 12px;
+						.message-content {
+							h2 {
+								font-size: 22px;
+								color: nth( $blue, 1 );
+								font-family: $font-family-sans-serif;
+							}
+							h2,
+							.message-meta {
+								margin-bottom: 0;
+							}
+							.entry {
+								display: none;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

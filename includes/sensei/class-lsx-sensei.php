@@ -112,6 +112,9 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			if ( is_archive() && is_post_type_archive( 'course' ) ) {
 				$title = __( 'Courses', 'lsx' );
 			}
+			if ( is_archive() && is_post_type_archive( 'sensei_message' ) ) {
+				$title = __( 'Messages', 'lsx' );
+			}
 			if ( is_archive() && is_tax() ) {
 				$title = single_term_title( '', false );
 			}
