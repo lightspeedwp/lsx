@@ -161,7 +161,9 @@ article.page {
 						flex-grow: 1;
 						a {
 							img {
-								width: 100%;
+								width: auto;
+								height: 100%;
+								object-fit: cover;
 							}
 						}
 					}
@@ -184,7 +186,8 @@ article.page {
 							}
 						}
 						.sensei-course-meta {
-							+ .sensei-course-participants {
+							+ .sensei-course-participants,
+							+ .course-details-info {
 								margin-top: 10px;
 							}
 						}
@@ -390,6 +393,17 @@ article.page {
 			}
 			#post-entries {
 				display: none;
+			}
+		}
+	}
+	&:not(.logged-in) {
+		#primary {
+			#main {
+				.course {
+					.modules-title {
+						display: none;
+					}
+				}
 			}
 		}
 	}
