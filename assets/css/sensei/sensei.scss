@@ -592,6 +592,25 @@ article.page {
 	}
 }
 
+// Messages
+.single-sensei_message {
+	#primary {
+		margin-top: 4.25rem;
+		#main {
+			.sensei_message {
+				h1 {
+					color: $text-color;
+					font-size: 30px;
+					margin-bottom: 0;
+					a {
+						color: $text-color;
+					}
+				}
+			}
+		}
+	}
+}
+
 // Modules
 .tax-module {
 	#primary {
