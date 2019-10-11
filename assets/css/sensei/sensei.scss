@@ -177,9 +177,15 @@ article.page {
 						}
 						.sensei-course-meta,
 						.course-author {
-							margin: 0 5px 0 0;
+							margin: 10px 0px 0px 0;
+							display: block;
 							a {
 								color: black;
+							}
+						}
+						.sensei-course-meta {
+							+ .sensei-course-participants {
+								margin-top: 10px;
 							}
 						}
 						.course-price {
@@ -188,6 +194,7 @@ article.page {
 							display: block;
 							font-style: initial;
 							font-weight: 700;
+							margin: 5px 0;
 						}
 						.entry-actions {
 							margin-bottom: 0;
@@ -238,8 +245,12 @@ article.page {
 				background: #B7B6B6;
 			}
 		}
+		.sensei-course-participants {
+			margin-bottom: 10px;
+		}
 		.course-excerpt {
 			margin-bottom: 10px;
+			margin-top: 0;
 		}
 		.meter {
 			border: 1px solid #DDDDDD;
@@ -263,6 +274,10 @@ article.page {
 	#primary {
 		#main {
 			.course {
+				@include media('<tablet') {
+					display: flex;
+					flex-direction: column;
+				}
 				>p:first-child {
 					@include media('>desktop') {
 						width: 20%;
@@ -293,9 +308,20 @@ article.page {
 				.progress.course-completion-rate {
 					font-size: 30px;
 					font-family: $font-family-serif;
+					@include media('<tablet') {
+						order: -1;
+					}
+				}
+				.sensei-course-participants {
+					@include media('<tablet') {
+						order: -1;
+					}
 				}
 				.meter {
 					margin-bottom: 2.4rem;
+					@include media('<tablet') {
+						order: -1;
+					}
 				}
 				.course-meta {
 					+ p {
@@ -527,13 +553,32 @@ article.page {
 	color: inherit;
 	font-size: inherit;
 	padding: 0;
+	#customer_login {
+		max-width: 550px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-	form#loginform {
+	form#loginform, form.register {
 		input[type="text"],
-		input[type="password"] {
-			@extend %bootstrap-form-control;
-			@extend %lsx-form-field;
-			@extend %small-form-field;
+		input[type="password"],
+		input[type="email"] {
+			display: block;
+				width: 100%;
+				height: $input-height-base;
+				padding: $padding-base-vertical $padding-base-horizontal;
+				font-size: $font-size-base;
+				line-height: $line-height-base;
+				color: $input-color;
+				background-color: $input-bg;
+				background-image: none;
+				border: 2px solid $input-border;
+				border-radius: $input-border-radius;
+				@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
+				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+				@include form-control-focus;
+				@include placeholder;
 		}
 
 		input[type="submit"] {
