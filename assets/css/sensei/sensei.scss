@@ -406,8 +406,13 @@ article.page {
 	}
 }
 
+.sensei-breadcrumb {
+	background: #EBEAEA;
+}
+
 .single-lesson {
 	#primary {
+		margin-top: 4.25rem;
 		#main {
 			.lesson {
 				display: flex;
@@ -416,24 +421,39 @@ article.page {
 					order: 1;
 				}
 				.lesson-title {
-					display: none;
+					h1 {
+						font-size: 30px;
+						margin-bottom: 1rem;
+					}
+					+ img {
+						order: -1;
+					}
 				}
 				.sensei-message {
+					margin-top: 0;
+					border-radius: 0;
+					order: -1;
 					+ p {
 						order: 2;
-						align-self: flex-end;
-						margin-bottom: -4.25rem;
+						@include media('>desktop') {
+							align-self: flex-end;
+							margin-bottom: -4.25rem;
+						}
 					}
+				}
+				.video {
+					text-align: center;
+					margin-bottom: 2.4rem;
 				}
 				footer {
 					order: 2;
-					width: 35%;
+					width: 50%;
 					display: flex;
-					justify-content: space-between;
-					.quiz-submit.complete {
+					.quiz-submit {
 						background: nth($green, 1);
 						box-shadow: 2px 2px 0 0 #446B0C;
 						margin-top: 0;
+						margin-left: 15px;
 						&:hover {
 							background: #446B0C;
 						}
