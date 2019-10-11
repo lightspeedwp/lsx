@@ -127,6 +127,7 @@ article.page {
 	&.buttons { padding-left: 0; }
 }
 
+// All
 #main {
 	.course,
 	.course-container {
@@ -273,6 +274,7 @@ article.page {
 	}
 }
 
+// Single courses
 .single-course {
 	#primary {
 		#main {
@@ -410,6 +412,7 @@ article.page {
 	background: #EBEAEA;
 }
 
+// Single Lessons
 .single-lesson {
 	#primary {
 		margin-top: 4.25rem;
@@ -423,6 +426,9 @@ article.page {
 				.lesson-title {
 					h1 {
 						font-size: 30px;
+						margin-bottom: 1rem;
+					}
+					.preview-label {
 						margin-bottom: 1rem;
 					}
 					+ img {
@@ -461,6 +467,20 @@ article.page {
 				}
 				.sensei-share-your-grade {
 					order: 3;
+				}
+			}
+		}
+	}
+}
+
+// Modules
+.tax-module {
+	#primary {
+		margin-bottom: 2.4rem;
+		#main {
+			.module-container {
+				h1 {
+					display: none;
 				}
 			}
 		}

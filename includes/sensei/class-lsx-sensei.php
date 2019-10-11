@@ -109,7 +109,12 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @return void
 		 */
 		public function lsx_sensei_modify_archive_title( $title ) {
-			$title = __( 'Courses', 'lsx' );
+			if ( is_archive() && is_post_type_archive( 'course' ) ) {
+				$title = __( 'Courses', 'lsx' );
+			}
+			if ( is_archive() && is_tax() ) {
+				$title = single_term_title( '', false );
+			}
 			return $title;
 		}
 
