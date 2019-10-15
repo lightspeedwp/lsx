@@ -61,6 +61,8 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_filter( 'sensei_wc_single_add_to_cart_button_text', array( $this, 'lsx_sensei_add_to_cart_text' ) );
 
+			add_action( 'lsx_content_wrap_before', array( $this, 'lsx_sensei_results_header' ) );
+
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_lesson_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_lesson_breadcrumb_filter' ), 40, 1 );
 
@@ -191,6 +193,35 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function lsx_sensei_add_to_cart_text( $text ) {
 			$text = esc_html__( 'Add to cart', 'lsx' );
 			return $text;
+		}
+
+		/**
+		 * Displays the Results header.
+		 *
+		 * @package    lsx
+		 * @subpackage layout
+		 */
+		public function lsx_sensei_results_header() {
+
+			$default_size   = 'sm';
+			$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+			global $wp_query;
+			$is_results = $wp_query->query_vars['course_results'];
+
+			if ( is_sticky() && $is_results ) :
+				$course_for_results = get_page_by_path( $is_results, OBJECT, 'course' );
+
+					$course_title = esc_html( $course_for_results->post_title );
+				?>
+				<div class="archive-header-wrapper banner-single col-<?php echo esc_attr( $size ); ?>-12">
+					<?php lsx_global_header_inner_bottom(); ?>
+					<header class="archive-header">
+						<h1 class="archive-title"><?php echo wp_kses_post( $course_title ); ?></h1>
+					</header>
+
+				</div>
+				<?php
+			endif;
 		}
 
 		/**

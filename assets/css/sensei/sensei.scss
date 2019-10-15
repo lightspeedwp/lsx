@@ -7,15 +7,15 @@
 
 %button {
 	background-color: #418ad0;
-    box-shadow: 2px 2px 0 0 #27639e;
-    color: #fff;
-    border: 0 none;
-    border-radius: 3px;
-    padding: 12px 20px;
-    font-size: 14px;
-    letter-spacing: 0.6px;
-    line-height: 1.25;
-    text-transform: uppercase;
+	box-shadow: 2px 2px 0 0 #27639e;
+	color: #fff;
+	border: 0 none;
+	border-radius: 3px;
+	padding: 12px 20px;
+	font-size: 14px;
+	letter-spacing: 0.6px;
+	line-height: 1.25;
+	text-transform: uppercase;
 }
 %button-hover {
 	background-color: #367dc0;
@@ -160,7 +160,7 @@ article.page {
 
 	article.post + article.post { margin-top: 4.25rem; }
 
-	.post-entries { margin-top: 4.25rem; }
+	.post-entries { margin-top: 2.4rem; }
 
 	.thumbnail {
 		border: 0;
@@ -337,7 +337,8 @@ article.page {
 }
 
 // Single courses
-.single-course {
+.single-course,
+.course-results {
 	#primary {
 		margin-bottom: 2.4rem;
 		margin-top: 4.25rem;
@@ -479,6 +480,50 @@ article.page {
 
 .sensei-breadcrumb {
 	background: #EBEAEA;
+}
+
+// Just Course Results
+.course-results {
+	#primary {
+		#main {
+			.course {
+				.entry.fix {
+					> a,
+					> header {
+						display: none;
+					}
+					.course-results-lessons {
+						h3 {
+							background: white;
+							padding: 10px 20px;
+							color: #337ab7;
+							font-size: 18px;
+							margin: 0;
+						}
+						h2 {
+							background: #ECE9E9;
+							margin: 0;
+							padding: 10px 20px;
+							display: flex;
+							justify-content: space-between;
+							border-bottom: 1px solid rgba(0,0,0,.05);
+							a {
+								color: rgba(0,0,0,.4);
+							}
+							a, .lesson-grade {
+								font-size: 16px;
+								text-decoration: none;
+								font-family: $font-family-sans-serif;
+							}
+							.lesson-grade {
+								font-weight: bold;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 // Single Lessons
