@@ -289,10 +289,10 @@ article.page {
 										margin-top: 0;
 										display: initial;
 										width: 49%;
-										margin-left: 23%;
+										margin-left: 30%;
 										position: relative;
-										top: -4rem;
-										margin-bottom: -4rem;
+										top: -4.8rem;
+										margin-bottom: -4.8rem;
 									}
 								}
 							}
@@ -433,7 +433,7 @@ article.page {
 							.view-results {
 								@include lsx-button-scaffolding();
 								@include lsx-button-colour();
-								@include small-button();
+								//@include small-button();
 								margin-left: 2.4rem;
 								&:hover {
 									@extend %button-hover;
@@ -511,7 +511,7 @@ article.page {
 						order: 2;
 						@include media('>desktop') {
 							align-self: flex-end;
-							margin-bottom: -4rem;
+							margin-bottom: -5rem;
 						}
 					}
 				}
@@ -564,7 +564,7 @@ article.page {
 						> p {
 							@include media('>desktop') {
 								align-self: flex-end;
-								margin-bottom: -4.25rem;
+								margin-bottom: 5rem;
 							}
 						}
 						#sensei-quiz-list {
@@ -624,7 +624,7 @@ article.page {
 								&.reset {
 									@include lsx-button-scaffolding();
 									@include lsx-button-colour();
-									@include small-button();
+									//@include small-button();
 								}
 							}
 						}
@@ -736,7 +736,7 @@ article.page {
 	button.button {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
-		@include small-button();
+		//@include small-button();
 		@include media('<tablet') {
 			width: 100%;
 			min-width: 100%;
@@ -746,10 +746,10 @@ article.page {
 		.button.send-message-button:not(.btn) {
 			@include lsx-button-scaffolding();
 			@include lsx-bordered-button();
-			@include small-button();
-			min-height: 48px;
-			line-height: 24px !important;
-			height: 48px;
+			//@include small-button();
+			// min-height: 48px;
+			// line-height: 24px !important;
+			// height: 48px;
 			@include media('<tablet') {
 				width: 100%;
 				min-width: 100%;
@@ -773,7 +773,7 @@ article.page {
 		a.next-lesson {
 			@include lsx-button-scaffolding();
 			@include lsx-button-colour();
-			@include small-button();
+			//@include small-button();
 		}
 	}
 	h3#private_message {
@@ -936,7 +936,7 @@ article.page {
 		input[type="submit"] {
 			@include lsx-button-scaffolding();
 			@include lsx-button-colour();
-			@include small-button();
+			//@include small-button();
 
 			& + a { margin-left: 15px; }
 		}
