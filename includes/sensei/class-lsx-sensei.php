@@ -61,6 +61,9 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_filter( 'sensei_wc_single_add_to_cart_button_text', array( $this, 'lsx_sensei_add_to_cart_text' ) );
 
+			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_lesson_breadcrumb_filter' ), 40, 1 );
+			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_lesson_breadcrumb_filter' ), 40, 1 );
+
 		}
 
 		/**
@@ -188,6 +191,83 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function lsx_sensei_add_to_cart_text( $text ) {
 			$text = esc_html__( 'Add to cart', 'lsx' );
 			return $text;
+		}
+
+		/**
+		 * Add the Parent Course link to the lessons and quizzes breadcrumbs
+		 * @param $crumbs
+		 * @return array
+		 */
+		public function lsx_sensei_lesson_breadcrumb_filter( $crumbs, $id = 0 ) {
+
+			if ( ( is_single() && ( is_singular( 'lesson' ) || is_singular( 'quiz' ) ) ) || is_sticky() ) {
+				global $course, $wp_query;
+				$is_results = $wp_query->query_vars['course_results'];
+
+				if ( empty( $id ) ) {
+					$id = get_the_ID();
+				}
+
+				if ( is_singular( 'lesson' ) && 0 < intval( $id ) ) {
+					$course       = intval( get_post_meta( $id, '_lesson_course', true ) );
+					$course_id    = esc_url( get_permalink( $course ) );
+					$course_title = esc_html( get_the_title( $course ) );
+					if ( ! $course ) {
+						return;
+					}
+				}
+
+				if ( is_singular( 'quiz' ) && 0 < intval( $id ) ) {
+					$course = intval( get_post_meta( $id, '_quiz_lesson', true ) );
+					$course_id = esc_url( get_permalink( $course ) );
+					$course_title = esc_html( get_the_title( $course ) );
+					if ( ! $course ) {
+						return;
+					}
+				}
+
+				if ( is_sticky() && isset( $is_results ) ) {
+					$course_for_results = get_page_by_path( $is_results, OBJECT, 'course' );
+
+					$course_id = esc_url( get_permalink( $course_for_results ) );
+					$course_title = esc_html( $course_for_results->post_title );
+
+				}
+
+				if ( $course_id ) {
+
+					$new_crumbs    = array();
+					$new_crumbs[0] = $crumbs[0];
+
+					if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+						$new_crumbs[1] = array(
+							0 => $course_title,
+							1 => $course_id,
+						);
+					} else {
+						$new_crumbs[1] = array(
+							'text' => $course_title,
+							'url'  => $course_id,
+						);
+					}
+
+					$new_crumbs[2] = $crumbs[1];
+
+					if ( is_sticky() && $is_results ) {
+						if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+							$new_crumbs[2] = array(
+								0 => __( 'Results', 'lsx' ),
+							);
+						} else {
+							$new_crumbs[2] = array(
+								'text' => __( 'Results', 'lsx' ),
+							);
+						}
+					}
+					$crumbs        = $new_crumbs;
+				}
+			}
+			return $crumbs;
 		}
 
 	}

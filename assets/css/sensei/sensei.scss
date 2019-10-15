@@ -387,14 +387,14 @@ article.page {
 						order: -1;
 						@include media('>desktop') {
 							align-self: flex-end;
-							margin-bottom: -4.24rem;
+							margin-bottom: -5.5rem;
 						}
 					}
 				}
 				.modules-title {
 					margin-bottom: $lsx-gap;
 				}
-				.module {
+				.module, .entry+header+.course-lessons {
 					header {
 						background-color: white;
 						h2 {
@@ -523,11 +523,18 @@ article.page {
 					order: 2;
 					width: 50%;
 					display: flex;
+					@include media('<tablet') {
+						flex-direction: column;
+						width: 100%;
+					}
 					.quiz-submit {
 						background: nth($green, 1);
 						box-shadow: 2px 2px 0 0 #446B0C;
 						margin-top: 0;
 						margin-left: 15px;
+						@include media('<tablet') {
+							margin-left: 0;
+						}
 						&:hover {
 							background: #446B0C;
 						}
@@ -536,6 +543,9 @@ article.page {
 				.sensei-share-your-grade {
 					order: 3;
 				}
+			}
+			#comments, #respond {
+				display: none;
 			}
 		}
 	}
@@ -638,7 +648,7 @@ article.page {
 				}
 			}
 			.post-entries {
-				margin-top: 8.25rem;
+				margin-top: 2.4rem;
 			}
 		}
 	}
