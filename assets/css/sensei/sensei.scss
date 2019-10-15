@@ -1,6 +1,7 @@
 @import '../scss/global/variables';
 @import '../scss/global/mixins';
 @import '../scss/global/placeholders';
+@import '../vendor/bootstrap/alerts';
 
 // Placeholders and Mixins
 
@@ -24,13 +25,13 @@
 	display: block;
 	width: 100%;
 	height: 50px;
-	// padding: 6px 12px;
-	// font-size: 15px;
-	// line-height: 1.6;
-	color: #4a4a4a;
-	background-color: #fff;
+	padding: 6px 12px;
+	font-size: 15px !important;
+	line-height: 1.6;
+	color: $text-color;
+	background-color: white;
 	background-image: none;
-	//border: 1px solid #DDD;
+	border: 1px solid #DDD;
 	border-radius: 2px;
 	// box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 	// transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -84,6 +85,23 @@
 		#main {
 			> h1 {
 				display: none;
+			}
+		}
+	}
+}
+
+.post-type-archive-lesson {
+	#primary {
+		margin-bottom: 2.4rem;
+		#main {
+			.lesson {
+				.entry-layout {
+					.entry-header {
+						.entry-image {
+							display: none;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -160,6 +178,13 @@ article.page {
 .sensei-share-your-grade {
 	&.message { margin-top: 4.25rem; }
 	&.buttons { padding-left: 0; }
+	li {
+		height: 20px;
+		&:last-child {
+			position: relative;
+			top: -4px;
+		}
+	}
 }
 
 // All
@@ -213,13 +238,15 @@ article.page {
 							display: block;
 							font-family: $font-family-sans-serif;
 						}
-						.sensei-course-meta,
-						.course-author {
+						.sensei-course-meta {
 							margin: 10px 0px 0px 0;
 							display: block;
 							a {
 								color: black;
 							}
+						}
+						.course-author {
+							display: none;
 						}
 						.sensei-course-meta {
 							+ .sensei-course-participants,
@@ -312,6 +339,8 @@ article.page {
 // Single courses
 .single-course {
 	#primary {
+		margin-bottom: 2.4rem;
+		margin-top: 4.25rem;
 		#main {
 			.course {
 				//@include media('<tablet') {
@@ -330,9 +359,6 @@ article.page {
 					}
 					display: flex;
 					justify-content: flex-end;
-					.button.send-message-button {
-
-					}
 				}
 
 				> header:nth-of-type(1) {
@@ -397,6 +423,9 @@ article.page {
 							}
 						}
 					}
+					+ header h2 {
+						display: none;
+					}
 				}
 				&.user-status-completed {
 					.course-meta {
@@ -422,6 +451,11 @@ article.page {
 								}
 							}
 						}
+					}
+				}
+				.course-lessons {
+					.lesson-meta {
+						display: none;
 					}
 				}
 			}
@@ -451,6 +485,7 @@ article.page {
 .single-lesson {
 	#primary {
 		margin-top: 4.25rem;
+		margin-bottom: 2.4rem;
 		#main {
 			.lesson {
 				display: flex;
@@ -467,26 +502,16 @@ article.page {
 						margin-bottom: 1rem;
 					}
 					+ img {
-						order: -1;
+						display: none;
 					}
 				}
 				.sensei-message {
-					margin-top: 0;
-					border-radius: 0;
 					order: -1;
 					+ p {
 						order: 2;
 						@include media('>desktop') {
 							align-self: flex-end;
-							margin-bottom: -4.25rem;
-						}
-					}
-					&.tick {
-						border: 1px solid #85AD74 !important;
-						background: #DFF0D8;
-						color: #3C763D;
-						&:before {
-							color: #3C763D;
+							margin-bottom: -4rem;
 						}
 					}
 				}
@@ -520,6 +545,7 @@ article.page {
 .single-quiz {
 	#primary {
 		margin-top: 4.25rem;
+		margin-bottom: 2.4rem;
 		#main {
 			.quiz {
 				header {
@@ -527,15 +553,6 @@ article.page {
 				}
 				.sensei-message {
 					margin-top: 0;
-					border-radius: 0;
-					&.tick {
-						border: 1px solid #85AD74 !important;
-						background: #DFF0D8;
-						color: #3C763D;
-						&:before {
-							color: #3C763D;
-						}
-					}
 				}
 				.quiz-questions {
 					form {
@@ -631,6 +648,7 @@ article.page {
 .single-sensei_message {
 	#primary {
 		margin-top: 4.25rem;
+		margin-bottom: 2.4rem;
 		#main {
 			.sensei_message {
 				h1 {
@@ -650,6 +668,7 @@ article.page {
 .tax-module {
 	#primary {
 		margin-bottom: 2.4rem;
+		margin-bottom: 2.4rem;
 		#main {
 			.module-container {
 				h1 {
@@ -660,8 +679,19 @@ article.page {
 	}
 }
 
-// Buttons and fields
+// Course Results
+.course-results {
+	#primary {
+		margin-bottom: 2.4rem;
+		#main {
+			.sensei-pagination {
+				display: none;
+			}
+		}
+	}
+}
 
+// Buttons and fields
 .sensei-ordering {
 	select {
 		@extend %bootstrap-form-control;
@@ -675,7 +705,7 @@ article.page {
 }
 
 .sensei {
-	form {
+	form, form.contact-teacher {
 		.form-row {
 			input.input-text,
 			textarea {
@@ -687,6 +717,9 @@ article.page {
 
 			textarea { height: 80px; }
 		}
+	}
+	form.contact-teacher {
+		margin-bottom: 2.4rem;
 	}
 }
 
@@ -704,11 +737,23 @@ article.page {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		@include small-button();
+		@include media('<tablet') {
+			width: 100%;
+			min-width: 100%;
+		}
 	}
 	p {
 		.button.send-message-button:not(.btn) {
+			@include lsx-button-scaffolding();
 			@include lsx-bordered-button();
 			@include small-button();
+			min-height: 48px;
+			line-height: 24px !important;
+			height: 48px;
+			@include media('<tablet') {
+				width: 100%;
+				min-width: 100%;
+			}
 		}
 	}
 
@@ -731,14 +776,40 @@ article.page {
 			@include small-button();
 		}
 	}
-	.sensei-message {
-		&.alert {
-			border: 1px solid #a94442 !important;
-			background: #F2DEDE !important;
+	h3#private_message {
+		font-family: $font-family-sans-serif;
+		color: $text-color;
+		margin-bottom: 20px;
+	}
+	div.sensei-message {
+		line-height: 24px;
+		margin-top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&.tick,
+		&.alert,
+		&.info {
+			border: 1px solid transparent !important;
+			@extend .alert;
 			&:before {
-				color: #A94442 !important;
+				content: none;
 			}
 		}
+		&.alert {
+			@extend .alert-danger;
+			border-color: #f5c6cb !important;
+		}
+		&.info {
+			background-color: #e2e3e5;
+			color: #383d41;
+			border-color: #d6d8db !important;
+		}
+		&.tick {
+			@extend .alert-success;
+			border-color: #d6e9c6 !important;
+		}
+
 	}
 }
 
