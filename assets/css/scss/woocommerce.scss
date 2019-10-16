@@ -1439,7 +1439,7 @@ ul.lsx-wc-cart-sub-menu {
 }
 
 #loginform, .loginform, .woocommerce form.login,
-.woocommerce form.register, .logged-out .woocommerce {
+.woocommerce form.register, .logged-out .woocommerce:not(.widget) {
 	max-width: 550px;
 	margin-left: auto;
 	margin-right: auto;
