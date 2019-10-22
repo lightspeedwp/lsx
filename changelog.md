@@ -2,6 +2,7 @@
 
 ### 2.5.2 - In development
 * Dev - Sensei improvements
+* Dev - Changing the parent class for tribe event styling.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
