@@ -161,8 +161,76 @@
 	}
 }
 
-// Structure
+// Message Archive page
+.page.sensei.my-courses {
+	#primary {
+		margin-top: 4.25rem;
+		margin-bottom: 4.24rem;
+	}
+}
 
+// Message Archive page
+.post-type-archive-lesson {
+	#primary {
+		margin-bottom: 2.4rem;
+		#main {
+			.archive-header {
+				display: none;
+			}
+			.post-wrapper {
+				.lsx-slot {
+					margin-bottom: 30px;
+					margin-top: 0;
+					.entry-layout {
+						padding: 0 12px;
+						.entry-layout-content {
+							padding: 0;
+							.entry-header {
+								padding: 0;
+								.entry-title {
+									padding: 0;
+									a {
+										font-size: 22px;
+										color: nth( $blue, 1 );
+										font-family: $font-family-sans-serif;
+									}
+								}
+								h1,
+								.entry-meta{
+									padding: 0;
+									margin: 0;
+									.post-meta {
+										font-style: italic;
+										color: #333333;
+										a {
+											color: #333333;
+										}
+									}
+								}
+							}
+							.entry-summary,
+							.entry-summary p {
+								padding: 0;
+								//margin: 0;
+								margin: 10px 0;
+								line-height: 20px;
+								.moretag {
+									margin-bottom: 10px;
+									display: block;
+								}
+							}
+						}
+						.entry-image {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Structure
 article.page {
 	.page-template-default:not(.has-sidebar).sensei & {
 		width: 100% !important;
@@ -267,6 +335,9 @@ article.page {
 							display: block;
 							a {
 								color: black;
+								&:hover {
+									color: nth($blue, 1);
+								}
 							}
 						}
 						.course-author {
@@ -440,6 +511,7 @@ article.page {
 				}
 				.modules-title {
 					margin-bottom: $lsx-gap;
+					display: none;
 				}
 				.module, .entry+header+.course-lessons {
 					header {
@@ -588,6 +660,7 @@ article.page {
 					h1 {
 						font-size: 30px;
 						margin-bottom: 1rem;
+						display: none;
 					}
 					.preview-label {
 						margin-bottom: 1rem;
@@ -665,7 +738,7 @@ article.page {
 						> p {
 							@include media('>desktop') {
 								align-self: flex-end;
-								margin-bottom: 5rem;
+								margin-bottom: -5rem;
 							}
 						}
 						#sensei-quiz-list {
@@ -707,16 +780,16 @@ article.page {
 							margin-bottom: 2.4rem;
 							@include media('>desktop') {
 								&:nth-of-type(1) {
-									margin-bottom: -4rem;
+									margin-bottom: -4.8rem;
 									max-width: 150px;
 								}
 								&:nth-of-type(2) {
-									margin-left: 180px;
+									margin-left: 220px;
 									max-width: 180px;
-									margin-bottom: -4rem;
+									margin-bottom: -4.8rem;
 								}
 								&:nth-of-type(3) {
-									margin-left: 320px;
+									margin-left: 400px;
 									max-width: 320px;
 									margin-bottom: 0;
 								}

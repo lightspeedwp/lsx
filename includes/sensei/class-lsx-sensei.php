@@ -69,6 +69,9 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_quiz_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_quiz_breadcrumb_filter' ), 40, 1 );
 
+			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_messages_breadcrumb_filter' ), 40, 1 );
+			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_messages_breadcrumb_filter' ), 40, 1 );
+
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
 
@@ -125,6 +128,9 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			}
 			if ( is_archive() && is_post_type_archive( 'sensei_message' ) ) {
 				$title = __( 'Messages', 'lsx' );
+			}
+			if ( is_archive() && is_post_type_archive( 'lesson' ) ) {
+				$title = __( 'Lessons', 'lsx' );
 			}
 			if ( is_archive() && is_tax() ) {
 				$title = single_term_title( '', false );
@@ -292,12 +298,54 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		}
 
 		/**
+		 * Add the Parent Course link to the messages breadcrumbs
+		 * @param $crumbs
+		 * @return array
+		 */
+		public function lsx_sensei_messages_breadcrumb_filter( $crumbs, $id = 0 ) {
+			if ( is_archive() && ( is_post_type_archive( 'sensei_message' ) ) ) {
+
+				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
+				$course_page_url = get_permalink( $course_page_url );
+
+				if ( empty( $id ) ) {
+					$id = get_the_ID();
+				}
+
+				if ( $id ) {
+
+					$new_crumbs    = array();
+					$new_crumbs[0] = $crumbs[0];
+
+					if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+						$new_crumbs[1] = array(
+							0 => __( 'Courses', 'lsx' ),
+							1 => $course_page_url,
+						);
+						$new_crumbs[2] = array(
+							0 => __( 'Messages', 'lsx' ),
+						);
+					} else {
+						$new_crumbs[1] = array(
+							'text' => __( 'Courses', 'lsx' ),
+							'url'  => $course_page_url,
+						);
+						$new_crumbs[2] = array(
+							'text' => __( 'Messages', 'lsx' ),
+						);
+					}
+					$crumbs = $new_crumbs;
+				}
+			}
+			return $crumbs;
+		}
+
+		/**
 		 * Add the Parent Course link to the quiz breadcrumbs
 		 * @param $crumbs
 		 * @return array
 		 */
 		public function lsx_sensei_quiz_breadcrumb_filter( $crumbs, $id = 0 ) {
-
 			if ( ( is_single() && ( is_singular( 'quiz' ) ) ) ) {
 				global $course;
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
