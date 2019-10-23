@@ -2,6 +2,7 @@
 @import '../scss/global/mixins';
 @import '../scss/global/placeholders';
 @import '../vendor/bootstrap/alerts';
+@import '../scss/layout/pagination';
 
 // Placeholders and Mixins
 
@@ -85,6 +86,24 @@
 		#main {
 			> h1 {
 				display: none;
+			}
+			.course-container {
+				border-bottom: none;
+				margin-bottom: 30px;
+				padding-bottom: 0;
+				.course {
+					section.course-content {
+						.entry {
+							.course-body {
+								.course-details-info {
+									.entry-actions:nth-of-type(1) {
+									    width: 100%;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -189,6 +208,9 @@ article.page {
 
 // All
 #main {
+	.course {
+		border: none;
+	}
 	.course,
 	.course-container {
 		&:last-child {
@@ -205,7 +227,7 @@ article.page {
 			section.course-content {
 				background: white;
 				border: 1px solid #E9E9E9;
-				padding: 10px;
+				padding: 10px 10px 15px;
 				.entry {
 					@include media('>tablet') {
 						display: flex;
@@ -222,7 +244,7 @@ article.page {
 						flex-grow: 1;
 						a {
 							img {
-								width: auto;
+								width: 100%;
 								height: 100%;
 								object-fit: cover;
 							}
@@ -728,6 +750,53 @@ article.page {
 			.module-container {
 				h1 {
 					display: none;
+				}
+			}
+		}
+	}
+}
+
+.sensei-pagination {
+	display: flex;
+    justify-content: flex-end;
+	ul.page-numbers {
+		padding: 0;
+		li {
+			.page-numbers {
+				border-color:  nth( $blue, 1 );;
+				color:  nth( $blue, 1 );;
+				border-radius: 3px;
+				border-style: solid;
+				border-width: 2px;
+				display: inline-block;
+				height: 40px;
+				line-height: 36px;
+				text-align: center;
+				vertical-align: top;
+				width: 40px;
+				cursor: pointer;
+				&.current,
+				&:hover,
+				&:active:hover,
+				&:focus {
+					background-color:  nth( $blue, 1 );;
+					color: white;
+				}
+				&.next {
+					font-size: 0;
+					&:after {
+						content: $fa-var-angle-double-right;
+						font-family: 'FontAwesome';
+						font-size: 15px;
+					}
+				}
+				&.prev {
+					font-size: 0;
+					&:after {
+						content: $fa-var-angle-double-left;
+						font-family: 'FontAwesome';
+						font-size: 15px;
+					}
 				}
 			}
 		}
