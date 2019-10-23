@@ -97,7 +97,8 @@
 							.course-body {
 								.course-details-info {
 									.entry-actions:nth-of-type(1) {
-									    width: 100%;
+										width: 100%;
+										min-width: 100%;
 									}
 								}
 							}
@@ -235,11 +236,11 @@ article.page {
 					.course-thumbnail {
 						@include media('>tablet') {
 							margin-right: $lsx-gap;
-							width: 30%;
-							min-width: 225px;
+							// width: 30%;
+							// min-width: 225px;
 						}
 						@include media('>desktop-wide') {
-							min-width: 378px;
+							//min-width: 378px;
 						}
 						flex-grow: 1;
 						a {
@@ -252,6 +253,7 @@ article.page {
 					}
 					.course-body {
 						min-width: 65%;
+						width: 100%;
 						flex-grow: 2;
 						@include media('>desktop') {
 							padding-right: 2.4em;
@@ -268,7 +270,7 @@ article.page {
 							}
 						}
 						.course-author {
-							display: none;
+							//display: none;
 						}
 						.sensei-course-meta {
 							+ .sensei-course-participants,
@@ -300,21 +302,43 @@ article.page {
 									display: flex;
 									.button.view-results {
 										margin-left: 0;
+										margin-bottom: 2.4rem;
+									}
+									form {
+										width: 100%;
 									}
 								}
 								@include media('>desktop-wide') {
 									width: 50%;
 									&:nth-of-type(1) {
-										width: 25%;
+										//width: 25%;
+										max-width: 200px;
 									}
 									&:nth-of-type(2) {
 										margin-top: 0;
 										display: initial;
-										width: 49%;
-										margin-left: 30%;
+										width: 80%;
+										//margin-left: 25%;
+
 										position: relative;
 										top: -4.8rem;
 										margin-bottom: -4.8rem;
+										.button.view-results {
+											margin-left: 200px;
+											margin-bottom: 0;
+										}
+										.sensei-results-links {
+											.button:first-child {
+												&.sensei-certificate-link {
+													left: -190px;
+												}
+											}
+											.button:nth-child(2) {
+												&.sensei-certificate-link {
+													left: -10px;
+												}
+											}
+										}
 									}
 								}
 							}
@@ -351,7 +375,7 @@ article.page {
 			}
 			+ a {
 				img {
-					display: none;
+					//display: none;
 				}
 			}
 		}
@@ -569,7 +593,7 @@ article.page {
 						margin-bottom: 1rem;
 					}
 					+ img {
-						display: none;
+						//display: none;
 					}
 				}
 				.sensei-message {
@@ -612,7 +636,7 @@ article.page {
 				}
 			}
 			#comments, #respond {
-				display: none;
+				//display: none;
 			}
 		}
 	}
@@ -756,7 +780,8 @@ article.page {
 	}
 }
 
-.sensei-pagination {
+.sensei-pagination,
+.woo-pagination {
 	display: flex;
     justify-content: flex-end;
 	ul.page-numbers {
@@ -937,6 +962,18 @@ article.page {
 	}
 }
 
+// Not logged
+body:not(.logged-in) {
+	#primary {
+		#main {
+			.sensei-message {
+				display: block;
+			}
+		}
+	}
+}
+
+
 .sensei-course-filters {
 	margin-bottom: 2em;
 
@@ -975,7 +1012,7 @@ article.page {
 	.course-container {
 		.course-content {
 			.course-author {
-				display: none;
+				//display: none;
 			}
 		}
 	}
