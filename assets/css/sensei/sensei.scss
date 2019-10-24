@@ -172,7 +172,7 @@
 }
 
 // Message Archive page
-.page.sensei.my-courses {
+.page.sensei {
 	#primary {
 		margin-top: 4.25rem;
 		margin-bottom: 4.24rem;
@@ -1095,7 +1095,8 @@ article.page {
 .course-container,
 .course,
 .lesson,
-.quiz {
+.quiz,
+.learner-profile {
 	a.button,
 	a.comment-reply-link,
 	#commentform #submit,
@@ -1133,7 +1134,8 @@ article.page {
 .course,
 .lesson,
 .quiz,
-.learner-info {
+.learner-info,
+.learner-profile {
 	p.sensei-message,
 	div.sensei-message {
 		line-height: 36px;
@@ -1193,18 +1195,27 @@ body:not(.logged-in) {
 	}
 }
 
+.sensei-course-filters,
+	.learner-profile #my-courses .ui-tabs-nav {
+		margin-bottom: 2em;
 
-.sensei-course-filters {
-	margin-bottom: 2em;
-
-	li {
-		a {
-			border: 0;
-			font-size: 18px;
-			padding: 12px 22px;
+		li {
+			a {
+				border: 0;
+				font-size: 18px;
+				padding: 12px 22px;
+				font-weight: 300;
+			}
+			&.ui-state-active {
+				a {
+					border-radius: 0;
+					//background-color: $link;
+					color: white;
+				}
+			}
 		}
 	}
-}
+
 
 #sensei-user-courses {
 	.my-messages-link-container {
