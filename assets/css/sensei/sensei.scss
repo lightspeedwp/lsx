@@ -177,6 +177,9 @@
 		margin-top: 4.25rem;
 		margin-bottom: 4.24rem;
 	}
+	.archive-header-wrapper.banner-page {
+		display: none !important;
+	}
 }
 
 // Message Archive page
@@ -343,6 +346,8 @@ article.page {
 						min-width: 65%;
 						width: 100%;
 						flex-grow: 2;
+						display: flex;
+						flex-direction: column;
 						@include media('>desktop') {
 							padding-right: 2.4em;
 						}
@@ -370,6 +375,20 @@ article.page {
 								margin-top: 10px;
 							}
 						}
+						.course-title,
+						.course-author,
+						.sensei-course-meta,
+						.course-price,
+						.course-products {
+							order: 1;
+						}
+						.sensei-course-participants {
+							order: 2;
+						}
+						.course-details-info {
+							order: 3;
+							margin-top: 5px;
+						}
 						.course-price {
 							color: #77A464;
 							font-size: 22px;
@@ -377,6 +396,20 @@ article.page {
 							font-style: initial;
 							font-weight: 700;
 							margin: 5px 0;
+						}
+						.course-products {
+							font-size: 0;
+							.course-product-title {
+								display: none;
+							}
+							.course-product-price {
+								color: #77A464;
+								font-size: 22px;
+								display: block;
+								font-style: initial;
+								font-weight: 700;
+								margin: 10px 0;
+							}
 						}
 						.entry-actions {
 							margin-bottom: 0;
@@ -1258,7 +1291,6 @@ body:not(.logged-in) {
 		margin-left: auto;
 		margin-right: auto;
 	}
-
 	form#loginform, form.register {
 		input[type="text"],
 		input[type="password"],
