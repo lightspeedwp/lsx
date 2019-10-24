@@ -215,12 +215,13 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @package    lsx
 		 * @subpackage layout
 		 */
-		public function lsx_sensei_results_header() {
+		public function lsx_sensei_results_header( $user ) {
 
 			$default_size = 'sm';
 			$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 			global $wp_query;
 			$is_results = $wp_query->query_vars['course_results'];
+			$is_profile = $wp_query->query_vars['learner_profile'];
 
 			if ( is_sticky() && $is_results ) :
 				$course_for_results = get_page_by_path( $is_results, OBJECT, 'course' );
@@ -231,6 +232,21 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 					<?php lsx_global_header_inner_bottom(); ?>
 					<header class="archive-header">
 						<h1 class="archive-title"><?php echo wp_kses_post( $course_title ); ?></h1>
+					</header>
+
+				</div>
+				<?php
+			endif;
+
+			if ( is_sticky() && $is_profile ) :
+				$query_var    = $wp_query->query_vars['learner_profile'];
+				$learner_user = Sensei_Learner::find_by_query_var( $query_var );
+				$learner_name = $learner_user->display_name;
+				?>
+				<div class="archive-header-wrapper banner-single col-<?php echo esc_attr( $size ); ?>-12">
+					<?php lsx_global_header_inner_bottom(); ?>
+					<header class="archive-header">
+						<h1 class="archive-title"><?php echo esc_html( $learner_name ); ?></h1>
 					</header>
 
 				</div>

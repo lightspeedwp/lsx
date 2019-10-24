@@ -80,7 +80,8 @@
 }
 
 // Archive page
-.post-type-archive-course {
+.post-type-archive-course,
+.tax-course-category {
 	#primary {
 		margin-bottom: 2.4rem;
 		#main {
@@ -307,7 +308,8 @@ article.page {
 			padding-bottom: 0;
 		}
 	}
-	.course-container {
+	.course-container,
+	#active-courses {
 		.course {
 			padding: 0;
 			margin: 0;
@@ -385,6 +387,7 @@ article.page {
 						}
 						.sensei-course-participants {
 							order: 2;
+							font-size: 14px;
 						}
 						.course-details-info {
 							order: 3;
@@ -1001,6 +1004,28 @@ article.page {
 	}
 }
 
+.tax-course-category {
+	#primary {
+		margin-bottom: 2.4rem;
+		margin-bottom: 2.4rem;
+		#main {
+			.sensei-category-title {
+				display: none;
+			}
+			.entry {
+				.course-body {
+					.course-author, .course-author a {
+						color: black;
+					}
+				}
+				.sensei-course-meta {
+					margin: 5px 0 0;
+				}
+			}
+		}
+	}
+}
+
 .sensei-pagination,
 .woo-pagination {
 	display: flex;
@@ -1158,7 +1183,7 @@ article.page {
 		margin-top: 0;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		//justify-content: space-between;
 		&.tick,
 		&.alert,
 		&.info {
@@ -1196,6 +1221,42 @@ body:not(.logged-in) {
 	}
 }
 
+.learner-profile {
+	#primary {
+		#main {
+			.learner-info {
+				> h2 {
+					&:first-of-type {
+						display: none;
+					}
+				}
+				#learner-info {
+					display: flex;
+					.learner-avatar {
+						width: 20%;
+						margin-right: 30px;
+						img {
+							width: 100%;
+							max-width: 200px;
+							border-radius: 50%;
+							&:not(:first-of-type) {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			#active-courses {
+				.course {
+					background: white;
+					border: 1px solid #E9E9E9;
+					padding: 10px 10px 15px;
+				}
+			}
+		}
+	}
+}
+
 .sensei-course-filters,
 	.learner-profile #my-courses .ui-tabs-nav {
 		margin-bottom: 2em;
@@ -1204,13 +1265,13 @@ body:not(.logged-in) {
 			a {
 				border: 0;
 				font-size: 18px;
-				padding: 12px 22px;
+				padding: 18px 22px;
 				font-weight: 300;
 			}
-			&.ui-state-active {
+			&.ui-state-active, &:hover {
 				a {
 					border-radius: 0;
-					//background-color: $link;
+					background-color: #337ab7;
 					color: white;
 				}
 			}
