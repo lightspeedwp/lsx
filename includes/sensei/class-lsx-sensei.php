@@ -183,12 +183,14 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function lsx_sensei_add_buttons( $course_id ) {
 			global $post, $current_user;
 			$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
+			$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
+
 			?>
 				<section class="entry-actions">
 					<a class="button" href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php esc_html_e( 'View course', 'lsx' ); ?></a>
 
 					<?php
-					if ( is_user_logged_in() && ! $is_user_taking_course ) {
+					if ( ( ! $is_user_taking_course ) && $course_purchasable ) {
 						Sensei_WC::the_add_to_cart_button_html( $post->ID );
 					}
 					?>
