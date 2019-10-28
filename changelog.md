@@ -4,6 +4,7 @@
 * Dev - Added in a 'lsx_defer_parsing_of_js' filter to allow plugins to skip their files.
 * Dev - Added an additional thumbnail image size for post carousel blocks 'lsx-thumbnail-carousel'.
 * Dev - Changing the parent class for tribe event styling.
+* Dev - When LSX Banners is active, the single events will not show a featured image on the body.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
