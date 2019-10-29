@@ -1,6 +1,7 @@
-.page.using-gutenberg:not(.page-has-banner) {
+.page.using-gutenberg:not(.page-has-banner),
+.lsx.page-has-banner:not(.single-post) {
 	.archive-header-wrapper {
-		display: none;
+		display: none !important;
 	}
 }
 .archive-header-wrapper {
