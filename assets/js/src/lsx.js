@@ -194,27 +194,29 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 	lsx.set_main_menu_as_fixed = function() {
 		if ( windowWidth > 1199 ) {
 			if ( $( 'body' ).hasClass( 'top-menu-fixed' ) ) {
-				$( lsx_params.stickyMenuSelector ).scrollToFixed( {
-					marginTop: function() {
-						var wpadminbar = $( '#wpadminbar' );
-
-						if ( wpadminbar.length > 0 ) {
-							return wpadminbar.outerHeight();
+				$document.on( 'scroll', function( e ) {
+					$( lsx_params.stickyMenuSelector ).scrollToFixed( {
+						marginTop: function() {
+							var wpadminbar = $( '#wpadminbar' );
+	
+							if ( wpadminbar.length > 0 ) {
+								return wpadminbar.outerHeight();
+							}
+	
+							return 0;
+						},
+	
+						minWidth: 768,
+	
+						preFixed: function() {
+							$( this ).addClass( 'scrolled' );
+						},
+	
+						preUnfixed: function() {
+							$( this ).removeClass( 'scrolled' );
 						}
-
-						return 0;
-					},
-
-					minWidth: 768,
-
-					preFixed: function() {
-						$( this ).addClass( 'scrolled' );
-					},
-
-					preUnfixed: function() {
-						$( this ).removeClass( 'scrolled' );
-					}
-				} );
+					} );
+				});
 			}
 		}
 	};
