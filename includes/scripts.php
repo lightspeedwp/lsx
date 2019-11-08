@@ -116,7 +116,8 @@ if ( ! function_exists( 'lsx_scripts_add_scripts' ) ) :
 		wp_enqueue_script( 'lsx_script', get_template_directory_uri() . '/assets/js/' . $prefix . 'lsx' . $suffix . '.js', array( 'jquery', 'platform', 'bootstrap', 'masonry', 'imagesLoaded', 'scrolltofixed', 'slick', 'slick-lightbox', 'picturefill' ), LSX_VERSION, true );
 
 		$param_array = array(
-			'columns' => apply_filters( 'lsx_archive_column_number', 3 ),
+			'columns'            => apply_filters( 'lsx_archive_column_number', 3 ),
+			'stickyMenuSelector' => apply_filters( 'lsx_sticky_menu_selector', 'header.navbar' ),
 		);
 
 		wp_localize_script( 'lsx_script', 'lsx_params', $param_array );

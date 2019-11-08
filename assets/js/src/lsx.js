@@ -194,7 +194,7 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 	lsx.set_main_menu_as_fixed = function() {
 		if ( windowWidth > 1199 ) {
 			if ( $( 'body' ).hasClass( 'top-menu-fixed' ) ) {
-				$( 'header.navbar' ).scrollToFixed( {
+				$( lsx_params.stickyMenuSelector ).scrollToFixed( {
 					marginTop: function() {
 						var wpadminbar = $( '#wpadminbar' );
 
