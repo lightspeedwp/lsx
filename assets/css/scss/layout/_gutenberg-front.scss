@@ -189,6 +189,20 @@
 	}
 }
 
+@media screen and (max-width:768px) {
+	.gutenberg-compatible-template.using-gutenberg {
+		.entry-content {
+			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
+			> strong, > span, > table {
+				max-width: 80%;
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}	
+}
+}
+
 /*--------------------------------------------------------------
 3.0 Mobile Only
 --------------------------------------------------------------*/
