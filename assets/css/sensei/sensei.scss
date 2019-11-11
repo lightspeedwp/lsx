@@ -148,6 +148,7 @@
 				display: none;
 			}
 			#main-sensei_message {
+				margin-bottom: 4.25rem;
 				.message-container {
 					.sensei_message {
 						background: white;
@@ -718,8 +719,12 @@ article.page {
 								width: 100%;
 								padding-top: 2.4rem;
 								justify-content: space-between;
+								padding-bottom: 10px;
+								padding-right: 2px;
 								a {
-									width: 48%;
+									width: 49%;
+									max-width: 49%;
+									min-width: 49%;
 									margin-left: 0 !important;
 									text-align: center;
 								}
@@ -1223,7 +1228,15 @@ article.page {
 			}
 		}
 	}
-
+	.status.register {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		text-align: center;
+		@include media('<tablet') {
+			width: 100%;
+			min-width: 100%;
+		}
+	}
 }
 
 .sensei
@@ -1320,6 +1333,11 @@ body:not(.logged-in) {
 				#certificates_user_settings {
 					display: flex;
 					flex-direction: row-reverse;
+					@include media('<tablet') {
+						.certificates_user_meta {
+							width: 100%;
+						}
+					}
 				}
 				> h2 {
 					&:first-of-type {
@@ -1402,7 +1420,7 @@ body:not(.logged-in) {
 			a {
 				border: 0;
 				font-size: 18px;
-				padding: 18px 22px;
+				padding: 10px 22px;
 				font-weight: 300;
 			}
 			&.ui-state-active, &:hover {

@@ -101,7 +101,9 @@
 	&:visited {
 		font-weight: 400;
 		height: initial;
+		@include media('>tablet') {
 		padding: 10px 30px !important;
+		}
 	}
 }
 
