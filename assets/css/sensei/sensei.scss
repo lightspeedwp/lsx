@@ -17,6 +17,7 @@
 	letter-spacing: 0.6px;
 	line-height: 1.25;
 	text-transform: uppercase;
+	text-align: center;
 }
 %button-hover {
 	background-color: #367dc0;
@@ -152,6 +153,8 @@
 						background: white;
 						padding: 12px;
 						.message-content {
+							display: flex;
+							flex-direction: column;
 							h2 {
 								font-size: 22px;
 								color: nth( $blue, 1 );
@@ -163,6 +166,15 @@
 							}
 							.entry {
 								display: none;
+							}
+							.btn.view-msg-btn {
+								align-self: flex-end;
+								@include media('>tablet') {
+									margin-top: -5.4rem;
+								}
+								@include media('<tablet') {
+									width: 100%;
+								}
 							}
 						}
 					}
@@ -516,6 +528,11 @@ article.page {
 					background: #ED3833;
 				}
 			}
+			&.green {
+				>span {
+					background: #6BA913;
+				}
+			}
 			+ a {
 				img {
 					//display: none;
@@ -845,6 +862,14 @@ article.page {
 				}
 				.sensei-message {
 					order: -1;
+					@include media('<tablet') {
+						flex-direction: column;
+						a {
+							width: 100%;
+							margin-top: 2.4rem;
+							text-align: center;
+						}
+					}
 					+ p {
 						order: 2;
 						@include media('>desktop') {
@@ -1021,6 +1046,11 @@ article.page {
 						color: $text-color;
 					}
 				}
+				.message-meta {
+					* {
+						font-size: 15px;
+					}
+				}
 			}
 		}
 	}
@@ -1186,10 +1216,7 @@ article.page {
 		a.my-messages-link {
 			@include lsx-button-scaffolding();
 			@include lsx-bordered-button();
-			//@include small-button();
-			// min-height: 48px;
-			// line-height: 24px !important;
-			// height: 48px;
+			text-align: center;
 			@include media('<tablet') {
 				width: 100%;
 				min-width: 100%;
@@ -1228,6 +1255,17 @@ article.page {
 		display: flex;
 		align-items: center;
 		//justify-content: space-between;
+		&.tick {
+			justify-content: space-between;
+			@include media('<tablet') {
+				flex-direction: column;
+				a {
+					width: 100%;
+					margin-top: 2.4rem;
+					text-align: center;
+				}
+			}
+		}
 		a {
 			margin-left: 4px;
 			margin-right: 4px;
@@ -1244,11 +1282,17 @@ article.page {
 		&.alert {
 			@extend .alert-danger;
 			border-color: #f5c6cb !important;
+			@include media('<tablet') {
+				display: block;
+			}
 		}
 		&.info {
 			background-color: #e2e3e5;
 			color: #383d41;
 			border-color: #d6d8db !important;
+			@include media('<tablet') {
+				display: block;
+			}
 		}
 		&.tick {
 			@extend .alert-success;
@@ -1285,9 +1329,16 @@ body:not(.logged-in) {
 				#learner-info {
 					display: flex;
 					margin-bottom: 2.4rem;
+					@include media('<tablet') {
+						flex-direction: column;
+					}
 					.learner-avatar {
-						width: 20%;
-						margin-right: 30px;
+						margin-left: auto;
+						margin-right: auto;
+						@include media('>tablet') {
+							width: 20%;
+							margin-right: 30px;
+						}
 						img {
 							width: 100%;
 							max-width: 200px;
@@ -1295,6 +1346,11 @@ body:not(.logged-in) {
 							&:not(:first-of-type) {
 								display: none;
 							}
+						}
+					}
+					.learner-content {
+						@include media('<tablet') {
+							width: 100%;
 						}
 					}
 				}

@@ -43,7 +43,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			remove_action( 'sensei_after_main_content', array( $woothemes_sensei->frontend, 'sensei_output_content_wrapper_end' ), 10 );
 			add_action( 'sensei_after_main_content', array( $this, 'lsx_sensei_theme_wrapper_end' ) );
 
-			add_filter( 'get_the_archive_title', array( $this, 'lsx_sensei_modify_archive_title' ), 10, 1 );
+			add_filter( 'get_the_archive_title', array( $this, 'lsx_sensei_modify_archive_title' ), 99, 1 );
 
 			// LSX
 			add_filter( 'lsx_global_header_disable', array( $this, 'lsx_sensei_disable_lsx_banner' ) );
@@ -74,6 +74,8 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
+
+			add_action( 'sensei_content_message_after', array( $this, 'lsx_sensei_view_message_button' ) );
 
 		}
 
@@ -487,6 +489,17 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 				}
 			}
 			return $crumbs;
+		}
+
+		/**
+		 * Show the 'View Message' button on messages.
+		 *
+		 * @param [type] $message_post_id
+		 * @return void
+		 */
+		public function lsx_sensei_view_message_button( $message_post_id ) {
+			$message_link = get_the_permalink( $message_post_id );
+			echo '<a href="' . esc_url_raw( $message_link ) . '" class="btn view-msg-btn">' . wp_kses_post( 'View Message', 'lsx' ) . '</a>';
 		}
 
 	}

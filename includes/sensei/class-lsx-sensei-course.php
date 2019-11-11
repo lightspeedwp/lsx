@@ -134,13 +134,17 @@ class LSX_Sensei_Course {
 	 * @return void
 	 */
 	public function display_course_amount(){
-		global $post;
+		global $post, $current_user;
+		$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
 		$wc_post_id = absint( get_post_meta( $post->ID, '_course_woocommerce_product', true ) );
+		$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
 		$currency   = get_woocommerce_currency_symbol();
 		$product    = new WC_Product( $wc_post_id );
 
-		if ( ! empty( $product->price ) ) {
+		if ( ( ! empty( $product->price ) ) && ( ! $is_user_taking_course ) ) {
 			echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . '</span>' . sprintf( '%0.2f', esc_html( $product->price ) ) . '</span>';
+		} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable ) {
+			echo '<span class="course-product-price price">' . wp_kses_post( 'Free', 'lsx' ) . '</span>';
 		}
 	}
 
