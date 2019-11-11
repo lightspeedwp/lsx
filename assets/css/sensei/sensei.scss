@@ -1330,6 +1330,8 @@ body:not(.logged-in) {
 
 .learner-profile {
 	#primary {
+		margin-bottom: 2.4rem;
+		margin-top: 4.25rem;
 		#main {
 			.learner-info {
 				#certificates_user_settings {
@@ -1410,6 +1412,9 @@ body:not(.logged-in) {
 					}
 				}
 			}
+			.sensei-pagination {
+				display: none;
+			}
 		}
 	}
 }
@@ -1417,19 +1422,18 @@ body:not(.logged-in) {
 .sensei-course-filters,
 	.learner-profile #my-courses .ui-tabs-nav {
 		margin-bottom: 2em;
-
 		li {
 			a {
 				border: 0;
 				font-size: 18px;
-				padding: 10px 22px;
+				padding: 15px 22px;
 				font-weight: 300;
 			}
 			&.ui-state-active, &:hover {
 				a {
 					border-radius: 0;
-					background-color: #337ab7;
-					color: white;
+					background-color: #337ab7 !important;
+					color: white !important;
 				}
 			}
 		}
