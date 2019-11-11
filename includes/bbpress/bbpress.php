@@ -21,7 +21,7 @@ if ( ! function_exists( 'lsx_bbpress_scripts_add_styles' ) ) :
 	 * @subpackage bbpress
 	 */
 	function lsx_bbpress_scripts_add_styles() {
-		wp_enqueue_style( 'bbpress-lsx', get_template_directory_uri() . '/assets/css/bb-press.css', array( 'lsx_main' ), LSX_VERSION );
+		wp_enqueue_style( 'bbpress-lsx', get_template_directory_uri() . '/assets/css/bb-press/bb-press.css', array( 'lsx_main' ), LSX_VERSION );
 		wp_style_add_data( 'bbpress-lsx', 'rtl', 'replace' );
 	}
 

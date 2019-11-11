@@ -2,6 +2,7 @@
 
 ### 2.5.2 - In development
 * Dev - Sensei improvements
+* Dev - Folder restructuring for all non LSX plugins supported.
 * Dev - Changing the parent class for tribe event styling.
 
 ### 2.5.1

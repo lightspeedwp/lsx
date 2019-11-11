@@ -220,8 +220,12 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			$default_size = 'sm';
 			$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 			global $wp_query;
-			$is_results = $wp_query->query_vars['course_results'];
-			$is_profile = $wp_query->query_vars['learner_profile'];
+			if ( isset( $wp_query->query_vars['course_results'] ) ) {
+				$is_results = $wp_query->query_vars['course_results'];
+			}
+			if ( isset( $wp_query->query_vars['learner_profile'] ) ) {
+				$is_profile = $wp_query->query_vars['learner_profile'];
+			}
 
 			if ( is_sticky() && $is_results ) :
 				$course_for_results = get_page_by_path( $is_results, OBJECT, 'course' );
