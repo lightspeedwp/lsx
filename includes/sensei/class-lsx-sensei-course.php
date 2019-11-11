@@ -60,6 +60,8 @@ class LSX_Sensei_Course {
 		add_action( 'sensei_course_content_inside_before', array( $this, 'course_body_div_results_open' ), 20 );
 		add_action( 'sensei_course_content_inside_after', array( $this, 'course_body_div_results_close' ), 49 );
 
+		add_action( 'sensei_single_course_content_inside_before', array( $this, 'display_course_amount'), 20 );
+
 		// removes the course image above the content
 		remove_action( 'sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
 		// add the course image to the left of the content
@@ -124,6 +126,22 @@ class LSX_Sensei_Course {
 		?>
 		</div>
 		<?php
+	}
+
+	/**
+	 * Display the course price on a single course.
+	 *
+	 * @return void
+	 */
+	public function display_course_amount(){
+		global $post;
+		$wc_post_id = absint( get_post_meta( $post->ID, '_course_woocommerce_product', true ) );
+		$currency   = get_woocommerce_currency_symbol();
+		$product    = new WC_Product( $wc_post_id );
+
+		if ( ! empty( $product->price ) ) {
+			echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . '</span>' . sprintf( '%0.2f', esc_html( $product->price ) ) . '</span>';
+		}
 	}
 
 } // End Class

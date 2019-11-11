@@ -65,7 +65,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('events-styles', function () {
-    return gulp.src('assets/css/scss/the-events-calendar.scss')
+    return gulp.src('assets/css/the-events-calendar/the-events-calendar.scss')
         .pipe(plumber({
             errorHandler: function(err) {
                 console.log(err);
@@ -75,14 +75,14 @@ gulp.task('events-styles', function () {
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed',
-            includePaths: ['assets/css/scss']
+            includePaths: ['assets/css/the-events-calendar']
         }).on('error', gutil.log))
         .pipe(autoprefixer({
             browsers: browserlist,
             casacade: true
         }))
         .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('assets/css/the-events-calendar'))
 });
 
 gulp.task('sensei-styles', function () {
@@ -104,6 +104,48 @@ gulp.task('sensei-styles', function () {
         }))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('assets/css/sensei'))
+});
+
+gulp.task('bbpress-styles', function () {
+    return gulp.src('assets/css/bb-press/bb-press.scss')
+        .pipe(plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ['assets/css/bb-press']
+        }).on('error', gutil.log))
+        .pipe(autoprefixer({
+            browsers: browserlist,
+            casacade: true
+        }))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('assets/css/bb-press'))
+});
+
+gulp.task('woocommerce-styles', function () {
+    return gulp.src('assets/css/woocommerce/*.scss')
+        .pipe(plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ['assets/css/woocommerce']
+        }).on('error', gutil.log))
+        .pipe(autoprefixer({
+            browsers: browserlist,
+            casacade: true
+        }))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('assets/css/woocommerce'))
 });
 
 gulp.task('styles-rtl', function () {
@@ -217,7 +259,7 @@ gulp.task('admin-styles-rtl', function () {
 
 //gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
 
-gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'sensei-styles']);
+gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'sensei-styles', 'bbpress-styles', 'woocommerce-styles']);
 
 gulp.task('js', function() {
 	return gulp.src('assets/js/src/**/*.js')

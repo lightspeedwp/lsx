@@ -1,6 +1,6 @@
-@import 'global/variables';
-@import 'global/mixins';
-@import 'global/placeholders';
+@import '../scss/global/variables';
+@import '../scss/global/mixins';
+@import '../scss/global/placeholders';
 
 // Placeholders and Mixins
 
@@ -8,9 +8,6 @@
 	display: block;
 	width: 100%;
 	height: 50px;
-	// padding: 6px 12px;
-	// font-size: 15px;
-	// line-height: 1.6;
 	color: #4a4a4a;
 	background-color: #fff;
 	background-image: none;
@@ -1445,8 +1442,10 @@ ul.lsx-wc-cart-sub-menu {
 	}
 }
 
-#loginform, .loginform, .woocommerce form.login,
-.woocommerce form.register, .logged-out .woocommerce {
+#loginform, .loginform,
+.woocommerce form.login,
+.woocommerce form.register,
+.logged-out .woocommerce {
 	max-width: 550px;
 	margin-left: auto;
 	margin-right: auto;

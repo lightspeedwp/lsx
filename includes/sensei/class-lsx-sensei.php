@@ -222,9 +222,13 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			global $wp_query;
 			if ( isset( $wp_query->query_vars['course_results'] ) ) {
 				$is_results = $wp_query->query_vars['course_results'];
+			} else {
+				$is_results = false;
 			}
 			if ( isset( $wp_query->query_vars['learner_profile'] ) ) {
 				$is_profile = $wp_query->query_vars['learner_profile'];
+			} else {
+				$is_profile = false;
 			}
 
 			if ( is_sticky() && $is_results ) :
@@ -433,7 +437,10 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function lsx_sensei_results_breadcrumb_filter( $crumbs, $id = 0 ) {
 			if ( is_sticky() ) {
 				global $wp_query;
-				$is_results      = $wp_query->query_vars['course_results'];
+				$course_id = '';
+				if ( isset( $wp_query->query_vars['course_results'] ) ) {
+					$is_results = $wp_query->query_vars['course_results'];
+				}
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
 				$course_page_url = get_permalink( $course_page_url );
 
