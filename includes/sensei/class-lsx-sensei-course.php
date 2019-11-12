@@ -90,8 +90,14 @@ class LSX_Sensei_Course {
 	 * @return void
 	 */
 	public function course_body_div_open() {
+		global $post, $current_user;
+		$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
+		$user_taking_course_class = '';
+		if ( ! empty( $is_user_taking_course ) ) {
+			$user_taking_course_class = 'currently-in-course';
+		}
 		?>
-		<div class="course-body">
+		<div class="course-body <?php echo esc_html( $user_taking_course_class ); ?>">
 		<?php
 	}
 
@@ -140,7 +146,6 @@ class LSX_Sensei_Course {
 		$course_purchasable    = Sensei_WC::is_course_purchasable( $post->ID );
 		$currency              = get_woocommerce_currency_symbol();
 		$product               = new WC_Product( $wc_post_id );
-
 		if ( ( ! empty( $product->price ) ) && ( ! $is_user_taking_course ) ) {
 			echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . ' </span>' . sprintf( '%0.2f', esc_html( $product->price ) ) . '</span>';
 		} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable ) {
