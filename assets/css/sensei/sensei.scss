@@ -147,7 +147,14 @@
 			.archive-header {
 				display: none;
 			}
+			.my-courses-btn {
+				margin-bottom: 2.4rem;
+				@include media('<tablet') {
+					width: 100%;
+				}
+			}
 			#main-sensei_message {
+				clear: both;
 				margin-bottom: 4.25rem;
 				.message-container {
 					.sensei_message {
@@ -310,6 +317,14 @@ article.page {
 
 // All
 #main {
+	.button.wc-forward {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		@include small-button();
+		&:hover {
+			@extend %button-hover;
+		}
+	}
 	.course {
 		border: none;
 	}
@@ -374,6 +389,8 @@ article.page {
 							}
 							.course-lesson-progress {
 								color: nth($blue, 1);
+								margin-left: 0;
+								display: block;
 								&:hover {
 									color: nth($blue, 3);
 								}
@@ -583,6 +600,7 @@ article.page {
 					}
 				}
 				.sensei-course-participants {
+					margin-bottom: 10px;
 					@include media('<desktop') {
 						order: -1;
 					}
@@ -788,6 +806,27 @@ article.page {
 							justify-content: space-between;
 							a {
 								color: rgba(0,0,0,.4);
+								margin-left: 5rem;
+								&:before {
+									display: inline-block;
+									font-size: 150%;
+									margin-right: .618em;
+									width: 1em;
+									position: absolute;
+									left: 20px;
+									content: '\f138';
+									color: rgba(0,0,0,.1);
+									font-family: FontAwesomeSensei,FontAwesome;
+									font-weight: 400;
+									line-height: 1em;
+								}
+							}
+							&:hover {
+								a {
+									&:before {
+										color: #63a95f;
+									}
+								}
 							}
 							a, .lesson-grade {
 								font-size: 16px;
@@ -907,9 +946,6 @@ article.page {
 				.sensei-share-your-grade {
 					order: 3;
 				}
-			}
-			#comments, #respond {
-				//display: none;
 			}
 		}
 	}
@@ -1238,7 +1274,8 @@ article.page {
 .lesson,
 .quiz,
 .learner-info,
-.learner-profile {
+.learner-profile,
+.single-sensei_message {
 	p.sensei-message,
 	div.sensei-message {
 		line-height: 36px;
@@ -1305,6 +1342,11 @@ article.page {
 			border-color: #d6e9c6 !important;
 		}
 
+	}
+	#comments, #respond {
+		.alert.alert-warning {
+			display: none;
+		}
 	}
 }
 
@@ -1433,6 +1475,8 @@ body:not(.logged-in) {
 					}
 					.course-lesson-progress {
 						color: nth($blue, 1);
+						margin-left: 0;
+						display: block;
 						&:hover {
 							color: nth($blue, 3);
 						}

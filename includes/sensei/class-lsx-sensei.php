@@ -63,8 +63,17 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_action( 'lsx_content_wrap_before', array( $this, 'lsx_sensei_results_header' ) );
 
+			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_course_breadcrumb_filter' ), 40, 1 );
+			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_course_breadcrumb_filter' ), 40, 1 );
+
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_lesson_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_lesson_breadcrumb_filter' ), 40, 1 );
+
+			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_module_breadcrumb_filter' ), 40, 1 );
+			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_module_breadcrumb_filter' ), 40, 1 );
+
+			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_learner_breadcrumb_filter' ), 40, 1 );
+			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_learner_breadcrumb_filter' ), 40, 1 );
 
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_quiz_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_quiz_breadcrumb_filter' ), 40, 1 );
@@ -75,6 +84,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
 
+			add_action( 'sensei_archive_before_message_loop', array( $this, 'lsx_sensei_back_message_button' ) );
 			add_action( 'sensei_content_message_after', array( $this, 'lsx_sensei_view_message_button' ) );
 
 		}
@@ -265,6 +275,46 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		}
 
 		/**
+		 * Add the Parent Course link to the course breadcrumbs
+		 * @param $crumbs
+		 * @return array
+		 */
+		public function lsx_sensei_course_breadcrumb_filter( $crumbs, $id = 0 ) {
+			if ( is_single() && ( is_singular( 'course' ) ) ) {
+				global $course;
+				$lesson          = get_the_title();
+				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
+				$course_page_url = get_permalink( $course_page_url );
+
+				if ( $lesson ) {
+
+					$new_crumbs    = array();
+					$new_crumbs[0] = $crumbs[0];
+
+					if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+						$new_crumbs[1] = array(
+							0 => __( 'All Courses', 'lsx' ),
+							1 => $course_page_url,
+						);
+						$new_crumbs[2] = array(
+							0 => $lesson,
+						);
+					} else {
+						$new_crumbs[1] = array(
+							'text' => __( 'All Courses', 'lsx' ),
+							'url'  => $course_page_url,
+						);
+						$new_crumbs[2] = array(
+							'text' => $lesson,
+						);
+					}
+					$crumbs = $new_crumbs;
+				}
+			}
+			return $crumbs;
+		}
+
+		/**
 		 * Add the Parent Course link to the lessons breadcrumbs
 		 * @param $crumbs
 		 * @return array
@@ -321,6 +371,96 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 					}
 					$crumbs = $new_crumbs;
 				}
+			}
+			return $crumbs;
+		}
+
+		/**
+		 * Add the Parent Course link to the module breadcrumbs
+		 * @param $crumbs
+		 * @return array
+		 */
+		public function lsx_sensei_module_breadcrumb_filter( $crumbs, $id = 0 ) {
+			$title = apply_filters( 'sensei_module_archive_title', get_queried_object()->name );
+
+			if ( is_tax() && is_archive() && ( ! empty( $title ) ) ) {
+
+				$lesson          = get_the_archive_title();
+				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
+				$course_page_url = get_permalink( $course_page_url );
+
+				if ( empty( $id ) ) {
+					$id = get_the_ID();
+				}
+
+				$new_crumbs    = array();
+				$new_crumbs[0] = $crumbs[0];
+
+				if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+					$new_crumbs[1] = array(
+						0 => __( 'Courses', 'lsx' ),
+						1 => $course_page_url,
+					);
+					$new_crumbs[2] = array(
+						0 => $lesson,
+					);
+				} else {
+					$new_crumbs[1] = array(
+						'text' => __( 'Courses', 'lsx' ),
+						'url'  => $course_page_url,
+					);
+					$new_crumbs[2] = array(
+						'text' => $lesson,
+					);
+				}
+				$crumbs = $new_crumbs;
+			}
+			return $crumbs;
+		}
+
+		/**
+		 * Add the Parent Course link to the Learner breadcrumbs
+		 * @param $crumbs
+		 * @return array
+		 */
+		public function lsx_sensei_learner_breadcrumb_filter( $crumbs, $id = 0 ) {
+			global $wp_query;
+
+			if ( isset( $wp_query->query_vars['learner_profile'] ) ) {
+				$is_profile = $wp_query->query_vars['learner_profile'];
+			} else {
+				$is_profile = false;
+			}
+
+			if ( is_sticky() && $is_profile ) {
+
+				if ( empty( $id ) ) {
+					$id = get_the_ID();
+				}
+
+				$query_var    = $wp_query->query_vars['learner_profile'];
+				$learner_user = Sensei_Learner::find_by_query_var( $query_var );
+				$learner_name = $learner_user->display_name;
+
+				$new_crumbs    = array();
+				$new_crumbs[0] = $crumbs[0];
+
+				if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+					$new_crumbs[1] = array(
+						0 => __( 'Learners', 'lsx' ),
+					);
+					$new_crumbs[2] = array(
+						0 => $learner_name,
+					);
+				} else {
+					$new_crumbs[1] = array(
+						'text' => __( 'Learners', 'lsx' ),
+					);
+					$new_crumbs[2] = array(
+						'text' => $learner_name,
+					);
+				}
+				$crumbs = $new_crumbs;
 			}
 			return $crumbs;
 		}
@@ -502,6 +642,16 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			echo '<a href="' . esc_url_raw( $message_link ) . '" class="btn view-msg-btn">' . wp_kses_post( 'View Message', 'lsx' ) . '</a>';
 		}
 
+		/**
+		 * Show the 'Back to My Courses' button on messages.
+		 *
+		 * @param [type] $message_post_id
+		 * @return void
+		 */
+		public function lsx_sensei_back_message_button( $courses_link ) {
+			$courses_link = '/my-courses/';
+			echo '<a href="' . esc_url_raw( $courses_link ) . '" class="btn border-btn my-courses-btn">' . wp_kses_post( 'My Courses', 'lsx' ) . '</a>';
+		}
 	}
 
 endif;
