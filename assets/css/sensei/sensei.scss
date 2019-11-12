@@ -337,31 +337,17 @@ article.page {
 						flex-direction: column;
 					}
 					.course-thumbnail {
+						width: 100%;
 						@include media('>tablet') {
 							a {
 								margin-right: $lsx-gap;
 								display: block;
-							}
-							//margin-right: $lsx-gap;
-							// width: 30%;
-							// min-width: 225px;
-						}
-						@include media('>desktop-wide') {
-							//min-width: 378px;
-						}
-						flex-grow: 1;
-						a {
-							img {
-								// width: 100%;
-								// height: 100%;
-								// object-fit: cover;
 							}
 						}
 					}
 					.course-body {
 						min-width: 65%;
 						width: 100%;
-						flex-grow: 2;
 						display: flex;
 						flex-direction: column;
 						@include media('>desktop') {
