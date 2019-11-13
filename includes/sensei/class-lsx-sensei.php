@@ -18,6 +18,14 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 	class LSX_Sensei {
 
 		/**
+		 * Holds class instance
+		 *
+		 * @since 1.0.0
+		 * @var      object
+		 */
+		protected static $instance = null;
+
+		/**
 		 * Holds the LSX_Sensei_Course() variable.
 		 *
 		 * @var LSX_Sensei_Course()
@@ -87,6 +95,20 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			add_action( 'sensei_archive_before_message_loop', array( $this, 'lsx_sensei_back_message_button' ) );
 			add_action( 'sensei_content_message_after', array( $this, 'lsx_sensei_view_message_button' ) );
 
+		}
+
+		/**
+		 * Return an instance of this class.
+		 *
+		 * @since 1.0.0
+		 * @return    object    A single instance of this class.
+		 */
+		public static function get_instance() {
+			// If the single instance hasn't been set, set it now.
+			if ( null === self::$instance ) {
+				self::$instance = new self;
+			}
+			return self::$instance;
 		}
 
 		/**
@@ -656,4 +678,4 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 endif;
 
-return new LSX_Sensei();
+LSX_Sensei::get_instance();
