@@ -1,3 +1,5 @@
+@import '../scss/global/variables';
+
 /*--------------------------------------------------------------
 1.0 Apply 100% Width to Necessary Elements
 --------------------------------------------------------------*/
@@ -45,10 +47,10 @@
 			}
 		}
 	}
-}
-.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins {
-	.entry-content {
-		padding: 0;
+	&.page-template-template-full-width-no-margins {
+		.entry-content {
+			padding: 0;
+		}
 	}
 }
 
@@ -68,8 +70,9 @@
 2.0 Apply Wide, Full and Default Align Styles
 --------------------------------------------------------------*/
 
-@media only screen and (min-width: 768px) {
-	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post, .gutenberg-compatible-template.using-gutenberg.page-template-default,
+@include media ('>=tablet') {
+	.gutenberg-compatible-template.using-gutenberg,
+	.gutenberg-compatible-template.using-gutenberg.single-post, .gutenberg-compatible-template.using-gutenberg.page-template-default,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar {
 		.wrap.container, article.post {
 			max-width: 100%;
@@ -106,7 +109,8 @@
 		.alignfull {
 			width: 100%;
 			max-width: 100%;
-			.slick-slider, #lsx-team-slider {
+			.slick-slider, #lsx-team-slider,
+			.blocks-gallery-grid {
 				width: 100%;
 				max-width: 100%;
 			}
@@ -189,7 +193,7 @@
 	}
 }
 
-@media screen and (max-width:768px) {
+@include media ('<tablet') {
 	.gutenberg-compatible-template.using-gutenberg {
 		.entry-content {
 			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
@@ -199,14 +203,14 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
-		}	
+		}
 }
 }
 
 /*--------------------------------------------------------------
 3.0 Mobile Only
 --------------------------------------------------------------*/
-@media only screen and (max-width: 767px) {
+@include media ('<tablet') {
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
 			&figure, &.lsx-block-container, &.lsx-block-banner,
@@ -216,10 +220,6 @@
 				width: calc( 100% + 50px * 2);
 				max-width: calc( 100% + 50px * 2);
 			}
-			// margin-left: -50px;
-			// margin-right: -50px;
-			// width: calc( 100% + 50px * 2);
-			// max-width: calc( 100% + 50px * 2);
 		}
 		.lsx-full-width-gutenberg.alignfull {
 			width: auto;
@@ -231,8 +231,15 @@
 		}
 	}
 }
+@include media ('<custom') {
+	.wp-block-button {
+		a {
+			width: 100%;
+		}
+	}
+}
 
-@media (min-width: 768px) {
+@include media ('>=tablet') {
 	.gutenberg-compatible-template {
 		article.post {
 			.entry-content {
@@ -249,37 +256,21 @@
 }
 
 /*--------------------------------------------------------------
-4.0 New Lsx Class 'lsx-full-width-gutenberg' (Keep it at the bottom)
+4.0 This is to make sure contents respect the max width
 --------------------------------------------------------------*/
 
-.gutenberg-compatible-template.using-gutenberg {
-	.lsx-full-width-gutenberg {
-		width: 100%;
-		max-width: 100%;
-		background: white;
-		padding-top: 8.4rem;
-		padding-bottom: 8.4rem;
-		// margin-top: 8.4rem;
-    	// margin-bottom: 8.4rem;
-		&.has-1-columns {
-			.wp-block-column {
-				max-width: 50%;
-				margin: 0 auto;
-				padding: 0;
-			}
-		}
-		&.first {
-			margin-top: -2.4rem !important;
+.gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
+	.wp-block-button{
+		margin-bottom: 1em;
+		&.alignright,
+		&.alignleft {
+			float: initial;
 		}
 	}
 }
 
-/*--------------------------------------------------------------
-5.0 This is to make sure contents respect the max width
---------------------------------------------------------------*/
-
 // For single posts
-@media (min-width: 1200px) {
+@include media ('>=desktop-wide') {
 	.gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
 		.entry-content {
 			figure.wp-block-embed, .navbar, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
@@ -336,7 +327,7 @@
 	}
 }
 
-@media (min-width: 1200px) {
+@include media ('>=desktop-wide') {
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
@@ -397,15 +388,15 @@
 }
 
 /*--------------------------------------------------------------
-6.0 Colors for the customizer colo options
+5.0 Colors for the customizer colo options
 --------------------------------------------------------------*/
 
 // Brand Colors
 // -- normal / darker / lighter
-$strong-blue: #27639e;
-$lighter-blue: #428bca;
-$light-yellow: #FFBC49;
-$dark-yellow: #ab7800;
+$strong-blue: nth( $blue, 3 );
+$lighter-blue: nth( $blue, 1 );
+$light-yellow: nth( $orange, 1 );;
+$dark-yellow: nth( $orange, 2 );
 
 // Gutenberg color options
 // -- see editor-color-palette in functions.php
@@ -436,7 +427,7 @@ $dark-yellow: #ab7800;
 
 
 /*--------------------------------------------------------------
-7.0 Utilities
+6.0 Utilities
 --------------------------------------------------------------*/
 
 #primary {
@@ -456,7 +447,7 @@ $dark-yellow: #ab7800;
 }
 
 // Row Helpers
-@media (min-width: 768px) {
+@include media ('>=tablet') {
 	.has-2-columns {
 		&.one-third-left {
 			> .wp-block-column {
@@ -483,3 +474,61 @@ $dark-yellow: #ab7800;
 	}
 }
 
+/*--------------------------------------------------------------
+7.0 New Lsx Class 'lsx-full-width-gutenberg' (Keep it at the bottom)
+--------------------------------------------------------------*/
+//All
+.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
+.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
+.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
+.gutenberg-compatible-template.using-gutenberg.page-template-default,
+.gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
+	.lsx-full-width-gutenberg {
+		width: 100%;
+		max-width: 100%;
+		background: white;
+		padding-top: 8.4rem;
+		padding-bottom: 8.4rem;
+		// margin-top: 8.4rem;
+    	// margin-bottom: 8.4rem;
+		&.has-1-columns {
+			.wp-block-column {
+				max-width: 50%;
+				margin: 0 auto;
+				padding: 0;
+			}
+		}
+		&.first {
+			margin-top: -2.4rem !important;
+		}
+	}
+	//Videos
+	.wp-block-video {
+		video {
+			width: 100%;
+		}
+	}
+	//Quotes
+	blockquote.is-style-large {
+		&:before {
+			content: none;
+		}
+	}
+	.wp-block-pullquote {
+		padding: 0;
+	}
+	// WP Galleries
+	.alignwide {
+		.blocks-gallery-grid {
+			max-width: 75%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.alignfull {
+		.blocks-gallery-grid {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}

@@ -10,6 +10,7 @@
 * Dev - Folder restructuring for all non LSX plugins supported.
 * Dev - Changing the parent class for tribe event styling.
 * Fix - Fixing the `WC_Cart::get_cart_url is deprecated since version 2.5! Use wc_get_cart_url instead.` error.
+* Dev - Improving gutenberg compatibility styles.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema

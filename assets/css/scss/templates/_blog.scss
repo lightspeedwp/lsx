@@ -134,11 +134,15 @@ article.lsx-slot {
 
 		.post-tags-wrapper {
 			margin: 0 10px;
-			border-top: 2px solid #d8d8d8;
 			font-style: italic;
-			padding-top: 10px;
 			@include media('>=desktop') {
 				margin: 0 15px;
+			}
+			.post-tags {
+				border-top: 2px solid #d8d8d8;
+				display: block;
+				font-size: 13px;
+				padding-top: 10px;
 			}
 			& > * {
 				&:after {
@@ -167,7 +171,6 @@ article.lsx-slot {
 			}
 
 			.post-meta-categories,
-			.post-tags,
 			.post-comments {
 				display: inline;
 				font-size: 13px;

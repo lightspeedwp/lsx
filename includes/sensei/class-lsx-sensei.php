@@ -381,7 +381,9 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @return array
 		 */
 		public function lsx_sensei_module_breadcrumb_filter( $crumbs, $id = 0 ) {
-			$title = apply_filters( 'sensei_module_archive_title', get_queried_object()->name );
+			if ( ! empty( get_queried_object()->name ) ) {
+				$title = apply_filters( 'sensei_module_archive_title', get_queried_object()->name );
+			}
 
 			if ( is_tax() && is_archive() && ( ! empty( $title ) ) ) {
 

@@ -116,8 +116,10 @@
 	}
 
 	.content-area {
-		.lsx-pagination, .envira-pagination {
-			& > .page-numbers {
+		.lsx-pagination, .envira-pagination,
+		.lsx-postnav {
+			& > .page-numbers,
+			& > .post-page-numbers {
 				&,
 				&.prev:before,
 				&.next:before {
