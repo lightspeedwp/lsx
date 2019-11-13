@@ -19,7 +19,7 @@ if ( ! function_exists( 'lsx_tec_scripts_add_styles' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_scripts_add_styles() {
-		wp_enqueue_style( 'the-events-calendar-lsx', get_template_directory_uri() . '/assets/css/the-events-calendar.css', array( 'lsx_main' ), LSX_VERSION );
+		wp_enqueue_style( 'the-events-calendar-lsx', get_template_directory_uri() . '/assets/css/the-events-calendar/the-events-calendar.css', array( 'lsx_main' ), LSX_VERSION );
 		wp_style_add_data( 'the-events-calendar-lsx', 'rtl', 'replace' );
 	}
 

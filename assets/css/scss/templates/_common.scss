@@ -44,9 +44,9 @@
 .widget-area {
 	margin-bottom: $lsx-large-gap;
 	margin-top: $lsx-large-gap;
-	@include media('<=tablet') {
-		margin-top: $lsx-large-gap * 2;
-	}
+	// @include media('<=tablet') {
+	// 	margin-top: $lsx-large-gap * 2;
+	// }
 	.home &,
 	.page.siteorigin-panels:not(.woocommerce-page) &,
 	.page-template-template-full-width-no-margins & {
@@ -54,6 +54,21 @@
 		margin-top: 0;
 	}
 }
+.banner-global {
+	+ .content-area {
+		@include media('<=tablet') {
+			margin-top: $lsx-large-gap * 2;
+		}
+	}
+}
+.single-product {
+	.content >.content-area {
+		@include media('<=tablet') {
+			margin-top: $lsx-large-gap * 2;
+		}
+	}
+}
+
 .single-post:not(.using-gutenberg), .archive {
 	.content-area,
 	.widget-area {

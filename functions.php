@@ -14,19 +14,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'LSX_VERSION', '2.5.0' );
 
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/includes/plugins/woocommerce.php';
+	require get_template_directory() . '/includes/woocommerce/woocommerce.php';
 }
 
 if ( class_exists( 'Tribe__Events__Main' ) ) {
-	require get_template_directory() . '/includes/plugins/the-events-calendar.php';
+	require get_template_directory() . '/includes/the-events-calendar/the-events-calendar.php';
 }
 
-if ( class_exists( 'Sensei_WC' ) ) {
-	require get_template_directory() . '/includes/plugins/sensei.php';
+if ( class_exists( 'Sensei_Main' ) || class_exists( 'Sensei_WC' ) ) {
+	require get_template_directory() . '/includes/sensei/class-lsx-sensei.php';
 }
 
 if ( class_exists( 'bbPress' ) ) {
-	require get_template_directory() . '/includes/plugins/bbpress.php';
+	require get_template_directory() . '/includes/bbpress/bbpress.php';
 }
 
 require get_template_directory() . '/includes/config.php';

@@ -93,6 +93,11 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = 'preloader-content-enable';
 		}
 
+		$register_enabled = get_option( 'users_can_register', false );
+		if ( ( $register_enabled ) && is_page( 'my-account' ) && is_singular() ) {
+			$classes[] = 'register-enabled';
+		}
+
 		return $classes;
 	}
 

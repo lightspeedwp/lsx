@@ -124,7 +124,6 @@
 					border-color: $link;
 					color: $link;
 				}
-
 				&.current,
 				&:hover,
 				&:active:hover,
@@ -157,7 +156,7 @@
 	.archive,
 	.search-results,
 	.lsx-related-posts {
-		margin-bottom: 2.4rem;
+		margin-bottom: 0;
 		article.post,
 		article.page,
 		article.lsx-slot {
@@ -468,6 +467,9 @@
 						color: #FFF !important;
 					}
 				}
+				a {
+					font-weight: 600;
+				}
 			}
 		}
 	}
@@ -684,7 +686,8 @@
 
 	// Sensei
 
-	.sensei-course-filters {
+	.sensei-course-filters,
+	.learner-profile #my-courses .ui-tabs-nav {
 		li {
 			a:not(.btn) {
 				background-color: #FFF;

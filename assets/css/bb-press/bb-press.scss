@@ -1,18 +1,18 @@
-@import 'global/variables';
-@import 'global/mixins';
-@import 'global/placeholders';
+@import '../scss/global/variables';
+@import '../scss/global/mixins';
+@import '../scss/global/placeholders';
 
 %button {
 	background-color: #418ad0;
-    box-shadow: 2px 2px 0 0 #27639e;
-    color: #fff;
-    border: 0 none;
-    border-radius: 3px;
-    padding: 15px 40px;
-    font-size: 14px;
-    letter-spacing: 0.6px;
-    line-height: 1.25;
-    text-transform: uppercase;
+	box-shadow: 2px 2px 0 0 #27639e;
+	color: #fff;
+	border: 0 none;
+	border-radius: 3px;
+	padding: 15px 40px;
+	font-size: 14px;
+	letter-spacing: 0.6px;
+	line-height: 1.25;
+	text-transform: uppercase;
 }
 %button-hover {
 	background-color: #367dc0;
@@ -151,7 +151,7 @@
 		}
 	}
 	#bbp-single-user-details {
-		#bbp-user-navigation { 
+		#bbp-user-navigation {
 			li.current {
 				a {
 					background: none;

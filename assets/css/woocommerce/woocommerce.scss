@@ -1,6 +1,6 @@
-@import 'global/variables';
-@import 'global/mixins';
-@import 'global/placeholders';
+@import '../scss/global/variables';
+@import '../scss/global/mixins';
+@import '../scss/global/placeholders';
 
 // Placeholders and Mixins
 
@@ -8,9 +8,6 @@
 	display: block;
 	width: 100%;
 	height: 50px;
-	// padding: 6px 12px;
-	// font-size: 15px;
-	// line-height: 1.6;
 	color: #4a4a4a;
 	background-color: #fff;
 	background-image: none;
@@ -195,6 +192,13 @@ article.page {
 			float: right;
 			margin-right: 0;
 			width: 47.8260869565%;
+		}
+	}
+
+	#customer_login {
+		.col-1,
+		.col-2 {
+			width: 100%;
 		}
 	}
 
@@ -436,7 +440,14 @@ body.woocommerce {
 body:not(.logged-in).woocommerce-account.my-account .woocommerce {
     max-width: 550px;
     margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
+	.u-columns.col2-set {
+		@include media('>desktop') {
+			// min-width: 800px;
+			// width: 800px;
+			// margin: 0 auto 0 -100px;
+		}
+	}
 }
 
 .product_meta {
@@ -909,7 +920,7 @@ p.no-comments,
 		}
 
 		@include media ('>=phone') {
-			width: 76.4705882353%;
+			width: 77.4705882353%;
 
 			.form-row-first {
 				float: left;
@@ -930,7 +941,7 @@ p.no-comments,
 		padding: 0 15px;
 
 		@include media ('>=phone') {
-			margin-right: 5.8823529412%;
+			margin-right: 55px;
 			width: 17.6470588235%;
 		}
 
@@ -1438,8 +1449,10 @@ ul.lsx-wc-cart-sub-menu {
 	}
 }
 
-#loginform, .loginform, .woocommerce form.login,
-.woocommerce form.register, .logged-out .woocommerce:not(.widget) {
+#loginform, .loginform,
+.woocommerce form.login,
+.woocommerce form.register,
+.logged-out .woocommerce {
 	max-width: 550px;
 	margin-left: auto;
 	margin-right: auto;
