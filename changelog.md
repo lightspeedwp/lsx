@@ -5,7 +5,8 @@
 * Dev - Added an additional thumbnail image size for post carousel blocks 'lsx-thumbnail-carousel'.
 * Dev - Changing the parent class for tribe event styling.
 * Dev - When LSX Banners is active, the single events will not show a featured image on the body.
-* Dev - Added in a filter `lsx_sticky_menu_selector` to sllow 3rd party plugins to change the sticky menu element.
+* Dev - Added in a filter `lsx_sticky_menu_selector` to slow 3rd party plugins to change the sticky menu element.
+* Fix - Fixing the `WC_Cart::get_cart_url is deprecated since version 2.5! Use wc_get_cart_url instead.` error.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema

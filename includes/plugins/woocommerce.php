@@ -374,11 +374,11 @@ if ( ! function_exists( 'lsx_wc_items_counter' ) ) :
 				$items_counter = sprintf( esc_html__( '%s other items in cart', 'lsx' ), $count );
 			}
 		}
-
+		$cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
 		if ( ! empty( $items_counter ) ) :
 			?>
 				<li class="woocommerce-mini-cart-item mini_cart_item" style="display: block;">
-					<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>"><?php echo esc_html( $items_counter ); ?></a>
+					<a href="<?php echo esc_url( $cart_url ); ?>"><?php echo esc_html( $items_counter ); ?></a>
 				</li>
 			<?php
 		endif;
@@ -585,6 +585,7 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_footer_bar() {
+		$cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
 		if ( ! empty( get_theme_mod( 'lsx_wc_mobile_footer_bar_status', '1' ) ) ) :
 			?>
 			<div class="lsx-wc-footer-bar">
@@ -618,7 +619,7 @@ if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 					</li>
 
 					<li class="lsx-wc-footer-bar-item">
-						<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="lsx-wc-footer-bar-link">
+						<a href="<?php echo esc_url( $cart_url ); ?>" class="lsx-wc-footer-bar-link">
 							<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 							<?php $count = WC()->cart->get_cart_contents_count(); ?>
 							<?php if ( ! empty( $count ) ) : ?>
@@ -779,14 +780,14 @@ if ( ! function_exists( 'lsx_wc_product_searchform' ) ) :
 				<div class="input-group">
 					<input type="search" value="<?php if ( is_search() ) { echo get_search_query(); } ?>" name="s" class="search-field form-control" placeholder="<?php esc_attr_e( \'Search\', \'lsx\' ); ?> <?php echo esc_attr( get_bloginfo( \'name\' ) ); ?>">
 					<label class="hide"><?php esc_attr_e( \'Search for:\', \'lsx\' ); ?></label>
-			
+
 					<span class="input-group-btn">
 						<button type="submit" class="search-submit btn btn-default"><span class="fa fa-search"></span></button>
 					</span>
 				</div>
-			
+
 				<input type="hidden" name="post_type" value="product" />
-			</form>		
+			</form>
 		';
 
 		return $form;
