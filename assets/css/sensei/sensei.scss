@@ -1649,3 +1649,53 @@ body:not(.logged-in) {
 		input[type="checkbox"] { margin-right: 10px; }
 	}
 }
+
+//Sidebar
+.single-lesson,
+.single-quiz {
+	&.lsx-sensei-sidebar-active {
+		#primary {
+			#main {
+				@include media('<tablet') {
+					display: flex;
+					flex-direction: column;
+				}
+				article.quiz {
+					@include media('>=tablet') {
+						display: flex;
+						flex-direction: column;
+					}
+					.quiz-questions {
+						form {
+							>p {
+								@include media('>desktop') {
+									margin-bottom: 2.4rem;
+									align-self: end;
+								}
+							}
+						}
+					}
+				}
+				.widget-area.lsx-sensei-sidebar {
+					order: 1;
+					@include media('>=tablet') {
+						margin-top: 0;
+						width: 25%;
+						float: right;
+						margin-left: 2.4rem;
+					}
+					.widget_sensei_course_participants {
+						background: white;
+						padding: 10px;
+					}
+					.widget_sensei_course_progress {
+						.course-progress-navigation,
+						.course-progress-lessons {
+							padding: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

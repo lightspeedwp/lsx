@@ -33,6 +33,13 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public $lsx_sensei_course = false;
 
 		/**
+		 * Holds the LSX_Sensei_Lesson() variable.
+		 *
+		 * @var LSX_Sensei_Lesson()
+		 */
+		public $lsx_sensei_lesson = false;
+
+		/**
 		 * Setup class.
 		 *
 		 * @since 1.0
@@ -40,6 +47,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function __construct() {
 
 			$this->lsx_sensei_course = require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-course.php';
+			$this->lsx_sensei_lesson = require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-lesson.php';
 
 			global $woothemes_sensei;
 
