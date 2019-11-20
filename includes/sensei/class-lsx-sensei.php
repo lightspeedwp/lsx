@@ -229,7 +229,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			?>
 				<section class="entry-actions">
-					<a class="button" href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php esc_html_e( 'View course', 'lsx' ); ?></a>
+					<a class="button" href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'View course', 'lsx' ); ?></a>
 
 					<?php
 					if ( ( ! $is_user_taking_course ) && $course_purchasable ) {
