@@ -39,7 +39,8 @@
 				.entry-content {
 					padding-top: 25px;
 				}
-				&:not(.page-has-banner) {
+				&:not(.page-has-banner),
+				&.to-active {
 					.entry-content {
 						padding-top: 70px;
 					}

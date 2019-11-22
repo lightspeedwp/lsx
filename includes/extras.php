@@ -71,6 +71,12 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			}
 		}
 
+		if ( function_exists( 'tour_operator' ) ) {
+			$post_types = array( 'page', 'post' );
+
+			$classes[] = 'to-active';
+		}
+
 		if ( has_nav_menu( 'top-menu' ) || has_nav_menu( 'top-menu-left' ) ) {
 			$classes[] = 'has-top-menu';
 		}
