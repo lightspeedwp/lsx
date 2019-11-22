@@ -7,7 +7,23 @@
 	}
 	.wp-block-pullquote {
 		border: none;
+		&.alignleft,
+		&.alignright {
+			padding: 0 $lsx-medium-gap;
+		}
 	}
+	.wp-block-quote{
+		&.is-large {
+			padding-top: $lsx-medium-gap;
+		}
+	}
+
+	//Categories
+	.wp-block-categories {
+		text-align: left;
+	}
+
+	//Embeds
 	.wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper:before, .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper:before {
 		padding-top: 2.4rem;
 	}
@@ -20,12 +36,20 @@
 		height: 100% !important;
 		text-align: center;
 	}
+	.wp-block-button {
+		&.alignleft,
+		&.alignright {
+			float: initial;
+		}
+	}
 	// Separator
 	.wp-block-separator {
 		margin-top: 24px;
 		margin-bottom: 24px;
 		border: 0;
-		border-top: 1px solid #eeeeee;
+		&:not(.is-style-dots) {
+			border-top: 1px solid nth($gray, 2);
+		}
 	}
 	// Columns
 	.wp-block-columns {
@@ -68,7 +92,16 @@
 			margin: 0;
 		}
 	}
-	// Testiminial Widegt
+
+	//Post List
+	.wp-block-latest-posts {
+		&.wp-block-latest-posts__list {
+			&:not(.is-grid) {
+				list-style: initial;
+			}
+		}
+	}
+	// Testimonial Widget
 	#lsx-testimonials-slider {
 		margin-left: auto;
 		margin-right: auto;
@@ -85,13 +118,20 @@
 	}
 }
 
-	// Greyed Background on Widget Cards for class grey-cards 
+// Greyed Background on Widget Cards for class grey-cards
 
-	.grey-cards {
-		.lsx-block-post-grid-image {
-			background: #f1f1f1 !important;
-		}
-		.lsx-block-post-grid-text {
-			background: #f1f1f1 !important;
-		}
+.grey-cards {
+	.lsx-block-post-grid-image {
+		background: #f1f1f1 !important;
 	}
+	.lsx-block-post-grid-text {
+		background: #f1f1f1 !important;
+	}
+}
+
+//Wp Default Blocks
+.gutenberg-compatible-template.using-gutenberg {
+	.wp-block-audio {
+		padding: 0 $lsx-gap;
+	}
+}
