@@ -5,18 +5,19 @@
 * Dev - Added an additional thumbnail image size for post carousel blocks 'lsx-thumbnail-carousel'.
 * Dev - Changing the parent class for tribe event styling.
 * Dev - When LSX Banners is active, the single events will not show a featured image on the body.
-* Dev - Added in a filter `lsx_sticky_menu_selector` to sllow 3rd party plugins to change the sticky menu element.
+* Dev - Added in a filter `lsx_sticky_menu_selector` to allow 3rd party plugins to change the sticky menu element.
 * Dev - Sensei improvements
 * Dev - Folder restructuring for all non LSX plugins supported.
 * Dev - Changing the parent class for tribe event styling.
 * Fix - Fixing the `WC_Cart::get_cart_url is deprecated since version 2.5! Use wc_get_cart_url instead.` error.
 * Dev - Improving gutenberg compatibility styles.
+* Dev - Added in font-display: swap; to all of the font-face declarations to help with optimization.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
 
 ### 2.5.0
-* Dev - Removed the unsed Bootstrap SCSS and Glyphicon files.
+* Dev - Removed the unused Bootstrap SCSS and Glyphicon files.
 * Dev - Added in a filter to allow plugins to lazy load the sliders
 * Dev - Added in a function to remove the Popup Maker plugin admin bar tools.
 * Dev - Added in a function to defer all JS files enqueued except jquery.js
