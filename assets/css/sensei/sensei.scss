@@ -84,7 +84,7 @@
 .post-type-archive-course,
 .tax-course-category {
 	#primary {
-		margin-bottom: 2.4rem;
+		margin-bottom: $lsx-medium-gap;
 		#main {
 			> h1 {
 				display: none;
@@ -196,8 +196,8 @@
 // Message Archive page
 .page.sensei {
 	#primary {
-		margin-top: 4.25rem;
-		margin-bottom: 4.24rem;
+		margin-top: $lsx-medium-gap;
+		margin-bottom: $lsx-large-gap;
 	}
 	&.page-has-banner {
 		.archive-header-wrapper.banner-page,
@@ -344,6 +344,9 @@ article.page {
 			padding: 0;
 			margin: 0;
 			margin-bottom: 30px;
+			&:last-child {
+				margin-bottom: 0;
+			}
 			section.course-content {
 				background: white;
 				border: 1px solid #dddddd;
@@ -397,10 +400,14 @@ article.page {
 								}
 							}
 							.course-lesson-progress {
-								color: nth($blue, 1);
+								color: black;
 								margin-left: 5px;
-								&:hover {
-									color: nth($blue, 3);
+								font-style: normal;
+								font-weight: 600;
+								&:before {
+									content: '|';
+									margin: 0 5px;
+									color: $small;
 								}
 							}
 						}
@@ -490,6 +497,9 @@ article.page {
 										padding-bottom: 5px;
 										a {
 											margin-right: 5px;
+										}
+										.sensei-certificate-link {
+											margin-left: 10px;
 										}
 									}
 								}
@@ -842,17 +852,10 @@ article.page {
 									background: white;
 									cursor: pointer;
 								}
-								//margin: 5px 0;
-								// a {
-								// 	color: nth( $blue, 1 );
-								// }
 							}
 						}
 						h2.total-grade {
-							//background: #6BA913;
-							// color: white;
 							text-decoration: none;
-							//font-family: $font-family-sans-serif;
 							.lesson-grade {
 								font-size: 28px;
 							}
@@ -1470,10 +1473,14 @@ body:not(.logged-in) {
 						}
 					}
 					.course-lesson-progress {
-						color: nth($blue, 1);
+						color: black;
 						margin-left: 5px;
-						&:hover {
-							color: nth($blue, 3);
+						font-style: normal;
+						font-weight: 600;
+						&:before {
+							content: '|';
+							margin: 0 5px;
+							color: $small;
 						}
 					}
 					.sensei-results-links {
@@ -1535,14 +1542,20 @@ body:not(.logged-in) {
 			justify-content: flex-end;
 		}
 		.my-messages-link {
-			border: 2px solid #418AD0;
-			border-radius: 3px;
-			padding: 10px 18px;
+			border: 1px solid #dddddd;
+			background: white;
+			border-radius: 0;
+			padding: 13px 23px;
 			text-transform: uppercase;
-			font-weight: 600;
+			color: nth($blue, 1 );
+			&:before {
+				@include fa-icon();
+				content: '\f075';
+			}
 			&:hover {
 				color: white;
-				background: #418AD0;
+				background: nth($blue, 1 );
+				border-color: nth($blue, 1 );
 			}
 		}
 	}
