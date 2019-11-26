@@ -159,6 +159,15 @@
 	.search-results,
 	.lsx-related-posts {
 		margin-bottom: 0;
+		.wrap.container {
+			.content.role {
+				> div:first-child {
+					&#primary {
+						margin-top: 8.4rem;
+					}
+				}
+			}
+		}
 		article.post,
 		article.page,
 		article.lsx-slot {

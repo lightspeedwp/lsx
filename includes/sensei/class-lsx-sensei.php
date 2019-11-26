@@ -322,7 +322,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @return array
 		 */
 		public function lsx_sensei_lesson_breadcrumb_filter( $crumbs, $id = 0 ) {
-			if ( is_single() && ( is_singular( 'lesson' ) ) ) {
+			if ( is_sensei() && is_single() && ( is_singular( 'lesson' ) ) ) {
 				global $course;
 				$lesson          = get_the_title();
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
@@ -387,7 +387,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 				$title = apply_filters( 'sensei_module_archive_title', get_queried_object()->name );
 			}
 
-			if ( is_tax() && is_archive() && ( ! empty( $title ) ) ) {
+			if ( is_sensei() && is_tax() && is_archive() && ( ! empty( $title ) ) ) {
 
 				$lesson          = get_the_archive_title();
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );

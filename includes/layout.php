@@ -209,7 +209,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			$author_avatar = get_avatar( get_the_author_meta( 'ID' ), 256 );
 			$author_bio = get_the_archive_description();
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-archive-author col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
 					<h1 class="archive-title"><?php the_archive_title(); ?></h1>
@@ -368,7 +368,7 @@ if ( ! function_exists( 'lsx_post_header' ) ) :
 
 			$format = lsx_translate_format_to_fontawesome( $format );
 			?>
-			<div class="archive-header-wrapper col-<?php echo esc_attr( $size ); ?>-12">
+			<div class="archive-header-wrapper banner-post-header col-<?php echo esc_attr( $size ); ?>-12">
 				<header class="archive-header">
 					<h1 class="archive-title">
 						<i class="format-link fa fa-<?php echo esc_attr( $format ); ?>"></i>
