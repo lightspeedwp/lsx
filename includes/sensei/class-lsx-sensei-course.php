@@ -38,7 +38,7 @@ class LSX_Sensei_Course {
 	 * Run our changes.
 	 */
 	public function init() {
-
+		global $sensei;
 		global $woothemes_sensei;
 
 		//Switching the course filters and the headers around
@@ -65,7 +65,7 @@ class LSX_Sensei_Course {
 		// removes the course image above the content
 		remove_action( 'sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
 		// add the course image to the left of the content
-		add_action( 'lsx_sensei_course_content_inside_before', array( 'Sensei_Course', 'course_image' ), 30, 1 );
+		add_action( 'lsx_sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
 
 		add_filter( 'attach_shortcode_hooks', 'lsx_attach_shortcode_hooks', 10, 1 );
 
