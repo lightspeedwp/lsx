@@ -62,7 +62,7 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = $post->post_name;
 		}
 
-		if ( ! class_exists( 'LSX_Banners' ) || ! empty( apply_filters( 'lsx_banner_plugin_disable', false ) ) ) {
+		if ( class_exists( 'LSX_Banners' ) || empty( apply_filters( 'lsx_banner_plugin_disable', false ) ) ) {
 			$post_types = array( 'page', 'post' );
 			$post_types = apply_filters( 'lsx_allowed_post_type_banners', $post_types );
 
