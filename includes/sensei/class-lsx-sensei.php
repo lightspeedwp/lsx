@@ -225,12 +225,12 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function lsx_sensei_add_buttons( $course_id ) {
 			global $post, $current_user;
 			$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
-			$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
+			if ( class_exists( 'Sensei_WC' ) ) {
+				$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
+			}
 
 			?>
 				<section class="entry-actions">
-					<a class="button" href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'View course', 'lsx' ); ?></a>
-
 					<?php
 					if ( ( ! $is_user_taking_course ) && $course_purchasable ) {
 						Sensei_WC::the_add_to_cart_button_html( $post->ID );
@@ -350,7 +350,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @return array
 		 */
 		public function lsx_sensei_lesson_breadcrumb_filter( $crumbs, $id = 0 ) {
-			if ( is_single() && ( is_singular( 'lesson' ) ) ) {
+			if ( is_sensei() && is_single() && ( is_singular( 'lesson' ) ) ) {
 				global $course;
 				$lesson          = get_the_title();
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
@@ -411,9 +411,11 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @return array
 		 */
 		public function lsx_sensei_module_breadcrumb_filter( $crumbs, $id = 0 ) {
-			$title = apply_filters( 'sensei_module_archive_title', get_queried_object()->name );
+			if ( ! empty( get_queried_object()->name ) ) {
+				$title = apply_filters( 'sensei_module_archive_title', get_queried_object()->name );
+			}
 
-			if ( is_tax() && is_archive() && ( ! empty( $title ) ) ) {
+			if ( is_sensei() && is_tax() && is_archive() && ( ! empty( $title ) ) ) {
 
 				$lesson          = get_the_archive_title();
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );

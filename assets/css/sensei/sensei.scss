@@ -98,9 +98,10 @@
 						.entry {
 							.course-body {
 								.course-details-info {
-									.entry-actions:nth-of-type(1) {
+									.entry-actions {
 										width: 100%;
 										min-width: 100%;
+										margin-top: 10px;
 										@include media('<tablet') {
 											form {
 											margin-left: 0;
@@ -198,9 +199,11 @@
 		margin-top: 4.25rem;
 		margin-bottom: 4.24rem;
 	}
-	.archive-header-wrapper.banner-page,
-	.archive-header-wrapper.banner-single {
-		display: none !important;
+	&.page-has-banner {
+		.archive-header-wrapper.banner-page,
+		.archive-header-wrapper.banner-single {
+			display: none;
+		}
 	}
 }
 
@@ -318,7 +321,6 @@ article.page {
 // All
 #main {
 	.button.wc-forward {
-		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		@include small-button();
 		&:hover {
@@ -344,15 +346,16 @@ article.page {
 			margin-bottom: 30px;
 			section.course-content {
 				background: white;
-				border: 1px solid #E9E9E9;
-				padding: 10px 10px 15px;
+				border: 1px solid #dddddd;
+				padding: $lsx-gap;
+				box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 				.entry {
 					display: flex;
 					@include media('<tablet') {
 						flex-direction: column;
 					}
 					.course-thumbnail {
-						width: 100%;
+						//width: 100%;
 						@include media('>tablet') {
 							a {
 								margin-right: $lsx-gap;
@@ -366,7 +369,7 @@ article.page {
 						display: flex;
 						flex-direction: column;
 						@include media('>desktop') {
-							padding-right: 2.4em;
+							padding-right: 10px;
 						}
 						&.currently-in-course {
 							.course-products {
@@ -375,22 +378,27 @@ article.page {
 						}
 						.course-title {
 							display: block;
-							font-family: $font-family-sans-serif;
-						}
-						.sensei-course-meta {
-							margin: 10px 0px 0px 0;
-							display: block;
-							color: #797979;
-							.course-category a {
-								color: black;
+							font-size: 28px;
+							a {
+								color: nth($gray, 3);
 								&:hover {
 									color: nth($blue, 1);
 								}
 							}
+						}
+						.sensei-course-meta {
+							margin: 10px 0px 0px 0;
+							display: block;
+							color: $small;
+							.course-category a {
+								color: nth($blue, 1);
+								&:hover {
+									color: nth($orange, 1);
+								}
+							}
 							.course-lesson-progress {
 								color: nth($blue, 1);
-								margin-left: 0;
-								display: block;
+								margin-left: 5px;
 								&:hover {
 									color: nth($blue, 3);
 								}
@@ -403,7 +411,7 @@ article.page {
 						.sensei-course-meta {
 							+ .sensei-course-participants,
 							+ .course-details-info {
-								margin-top: 10px;
+								margin-top: 5px;
 							}
 						}
 						.course-title,
@@ -419,7 +427,6 @@ article.page {
 						}
 						.course-details-info {
 							order: 3;
-							margin-top: 5px;
 						}
 						.course-price {
 							color: #77A464;
@@ -450,19 +457,40 @@ article.page {
 							display: flex;
 							flex-direction: column;
 							.course-excerpt {
+								order: 2;
+								margin-top: 10px;
+							}
+							.sensei-free-lessons {
+								margin-bottom: 5px;
+								margin-top: 10px;
+								color: $small;
 								order: 1;
+								a {
+									border-radius: 3px;
+									border: 2px solid nth( $green, 1);
+									color: nth( $green, 1);
+									padding: 3px 5px;
+									margin-right: 5px;
+									&:hover {
+										background: nth( $green, 1);
+										color: white;
+									}
+								}
 							}
 							.entry-actions {
-								order: 2;
-								&:nth-of-type(2) {
-									margin-top: 2.4rem;
-									display: flex;
-									.button.view-results {
-										margin-left: 0;
-										margin-bottom: 2.4rem;
-									}
-									form {
-										width: 100%;
+								order: 3;
+								.button.view-results {
+									margin-left: 0;
+								}
+								form {
+									width: 100%;
+									.sensei-results-links {
+										display: flex;
+										justify-content: flex-end;
+										padding-bottom: 5px;
+										a {
+											margin-right: 5px;
+										}
 									}
 								}
 								button.single_add_to_cart_button {
@@ -472,42 +500,11 @@ article.page {
 										background-color: nth($orange, 2);
 									}
 								}
-								@include media('>desktop-wide') {
-									width: 50%;
-									&:nth-of-type(1) {
-										//width: 25%;
-										max-width: 200px;
-									}
-									&:nth-of-type(2) {
-										margin-top: 0;
-										display: initial;
-										width: 90%;
-										//margin-left: 25%;
-
-										position: relative;
-										top: -4.8rem;
-										margin-bottom: -4.8rem;
-										.button.view-results {
-											margin-left: 200px;
-											margin-bottom: 0;
-										}
-										.sensei-results-links {
-											.button:first-child {
-												&.sensei-certificate-link {
-													left: -190px;
-												}
-											}
-											.button:nth-child(2) {
-												&.sensei-certificate-link {
-													left: -10px;
-												}
-											}
-										}
-									}
-								}
 							}
 							.meter {
 								order: 3;
+								margin-top: 15px;
+								margin-bottom: 15px;
 							}
 						}
 					}
@@ -715,9 +712,8 @@ article.page {
 					.course-meta {
 						.sensei-results-links {
 							.view-results {
-								@include lsx-button-scaffolding();
+								@include small-button();
 								@include lsx-button-colour();
-								//@include small-button();
 								margin-left: 2.4rem;
 								&:hover {
 									@extend %button-hover;
@@ -1038,7 +1034,7 @@ article.page {
 							}
 							.quiz-submit {
 								&.reset {
-									@include lsx-button-scaffolding();
+									@include small-button();
 									@include lsx-button-colour();
 									//@include small-button();
 								}
@@ -1237,7 +1233,7 @@ article.page {
 	input[type=submit],
 	input.button,
 	button.button {
-		@include lsx-button-scaffolding();
+		@include small-button();
 		@include lsx-button-colour();
 		//@include small-button();
 		@include media('<tablet') {
@@ -1248,7 +1244,7 @@ article.page {
 	p {
 		.button.send-message-button:not(.btn),
 		a.my-messages-link {
-			@include lsx-button-scaffolding();
+			@include small-button();
 			@include lsx-bordered-button();
 			text-align: center;
 			@include media('<tablet') {
@@ -1258,7 +1254,7 @@ article.page {
 		}
 	}
 	.status.register {
-		@include lsx-button-scaffolding();
+		@include small-button();
 		@include lsx-button-colour();
 		text-align: center;
 		@include media('<tablet') {
@@ -1282,9 +1278,8 @@ article.page {
 		overflow: hidden;
 
 		a.next-lesson {
-			@include lsx-button-scaffolding();
+			@include small-button();
 			@include lsx-button-colour();
-			//@include small-button();
 		}
 	}
 	h3#private_message {
@@ -1427,8 +1422,9 @@ body:not(.logged-in) {
 			#completed-courses {
 				.course {
 					background: white;
-					border: 1px solid #E9E9E9;
-					padding: 10px 10px 15px;
+					border: 1px solid #dddddd;
+					box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+					padding: $lsx-gap;
 					@include media('>tablet') {
 						display: flex;
 						flex-direction: column;
@@ -1464,19 +1460,18 @@ body:not(.logged-in) {
 						margin-top: 10px;
 					}
 					.sensei-course-meta {
-						color: #797979;
+						color: $small;
 						margin-bottom: 0;
 						a {
-							color: black;
+							color: nth($blue, 1);
 							&:hover {
-								color: nth($blue, 1);
+								color: nth($orange, 1);
 							}
 						}
 					}
 					.course-lesson-progress {
 						color: nth($blue, 1);
-						margin-left: 0;
-						display: block;
+						margin-left: 5px;
 						&:hover {
 							color: nth($blue, 3);
 						}
@@ -1523,8 +1518,8 @@ body:not(.logged-in) {
 			&.ui-state-active, &:hover {
 				a {
 					border-radius: 0;
-					background-color: #337ab7 !important;
-					color: white !important;
+					// background-color: #337ab7 !important;
+					// color: white !important;
 				}
 			}
 		}
@@ -1639,9 +1634,8 @@ body:not(.logged-in) {
 		}
 
 		input[type="submit"] {
-			@include lsx-button-scaffolding();
+			@include small-button();
 			@include lsx-button-colour();
-			//@include small-button();
 
 			& + a { margin-left: 15px; }
 		}

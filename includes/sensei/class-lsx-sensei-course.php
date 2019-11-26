@@ -65,7 +65,7 @@ class LSX_Sensei_Course {
 		// removes the course image above the content
 		remove_action( 'sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
 		// add the course image to the left of the content
-		add_action( 'lsx_sensei_course_content_inside_before', array( 'Sensei_Course', 'course_image' ), 30, 1 );
+		add_action( 'lsx_sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
 
 		add_filter( 'attach_shortcode_hooks', 'lsx_attach_shortcode_hooks', 10, 1 );
 
@@ -143,13 +143,15 @@ class LSX_Sensei_Course {
 		global $post, $current_user;
 		$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
 		$wc_post_id            = absint( get_post_meta( $post->ID, '_course_woocommerce_product', true ) );
-		$course_purchasable    = Sensei_WC::is_course_purchasable( $post->ID );
-		$currency              = get_woocommerce_currency_symbol();
-		$product               = new WC_Product( $wc_post_id );
-		if ( ( ! empty( $product->price ) ) && ( ! $is_user_taking_course ) ) {
-			echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . ' </span>' . sprintf( '%0.2f', esc_html( $product->price ) ) . '</span>';
-		} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable ) {
-			echo '<span class="course-product-price price">' . wp_kses_post( 'Free!', 'lsx' ) . '</span>';
+		if ( class_exists( 'Sensei_WC' ) ) {
+			$course_purchasable    = Sensei_WC::is_course_purchasable( $post->ID );
+			$currency              = get_woocommerce_currency_symbol();
+			$product               = new WC_Product( $wc_post_id );
+			if ( ( ! empty( $product->price ) ) && ( ! $is_user_taking_course ) ) {
+				echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . ' </span>' . sprintf( '%0.2f', esc_html( $product->price ) ) . '</span>';
+			} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable ) {
+				echo '<span class="course-product-price price">' . wp_kses_post( 'Free!', 'lsx' ) . '</span>';
+			}
 		}
 	}
 
