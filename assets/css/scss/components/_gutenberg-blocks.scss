@@ -10,6 +10,21 @@
 		&.alignleft,
 		&.alignright {
 			padding: 0 $lsx-medium-gap;
+			max-width: 50%;
+		}
+		&.alignleft {
+			padding-left: 10%;
+		}
+		&.alignright {
+			padding-right: 10%;
+		}
+		@include media ('<tablet') {
+			&.alignleft,
+			&.alignright {
+				max-width: 80%;
+				width: 80%;
+				padding: 0;
+			}
 		}
 	}
 	.wp-block-quote{
