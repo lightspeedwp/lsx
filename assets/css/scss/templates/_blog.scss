@@ -56,7 +56,7 @@ article.lsx-slot {
 		.entry-meta {
 			padding: 15px 10px;
 			@include media ('>=desktop') {
-				padding: 42.5px 10rem 10px;
+				padding: 1rem 10rem 10px;
 			}
 
 			.post-meta {
@@ -95,10 +95,7 @@ article.lsx-slot {
 		.entry-title {
 			font-size: 30px;
 			text-align: left;
-			padding: 0 10px;
-			@include media('>=desktop') {
-				padding: 0 10rem;
-			}
+			padding: $lsx-gap 10px 0;
 
 			& .fa { display: none; }
 
@@ -206,13 +203,14 @@ article.lsx-slot {
 				margin-left: 5px;
 			}
 		}
-
+		.entry-title {
+			margin-bottom: 0;
+		}
 		&.has-thumb {
 			.entry-meta {
 				padding-top: 0;
 			}
 			.entry-title {
-				margin-top: 2.4rem;
 				margin-bottom: 10px;
 			}
 		}
