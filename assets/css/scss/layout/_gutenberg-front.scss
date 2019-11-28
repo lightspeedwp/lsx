@@ -284,6 +284,11 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
+			.wp-block-preformatted,
+			.wp-block-verse,
+			.wp-block-code {
+				max-width: 585px;
+			}
 		}
 		.entry-meta, .footer-meta, .comment-respond, #comments, .archive-title {
 			max-width: 850px;
@@ -345,7 +350,8 @@
 				margin-right: auto;
 			}
 			.wp-block-preformatted,
-			.wp-block-verse {
+			.wp-block-verse,
+			.wp-block-code {
 				max-width: 585px;
 			}
 		}
@@ -526,6 +532,7 @@ $dark-yellow: nth( $orange, 2 );
 	.wp-block-pullquote {
 		padding: 0;
 		max-width: 585px;
+		margin-bottom: $lsx-medium-gap;
 		&.alignwide {
 			max-width: 75%;
 		}

@@ -28,10 +28,11 @@
 			}
 		}
 	}
-	.wp-block-quote{
+	.wp-block-quote {
+		border: 1px solid $breaker;
+		margin-bottom: $lsx-medium-gap;
 		&.is-large {
 			padding: $lsx-medium-gap;
-			border: 1px solid $breaker;
 		}
 	}
 
