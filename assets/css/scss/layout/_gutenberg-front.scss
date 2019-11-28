@@ -344,6 +344,10 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
+			.wp-block-preformatted,
+			.wp-block-verse {
+				max-width: 585px;
+			}
 		}
 		.entry-meta, .footer-meta, .comment-respond, #comments, .archive-header {
 			max-width: 1150px;
@@ -521,6 +525,13 @@ $dark-yellow: nth( $orange, 2 );
 	}
 	.wp-block-pullquote {
 		padding: 0;
+		max-width: 585px;
+		&.alignwide {
+			max-width: 75%;
+		}
+		&.alignfull {
+			max-width: 100%;
+		}
 	}
 	// WP Galleries
 	.alignfull {
