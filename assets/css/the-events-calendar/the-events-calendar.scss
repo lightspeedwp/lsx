@@ -114,8 +114,17 @@
 			.wrap.container {
 				#primary {
 					.entry-content {
+						width: 100%;
+						padding: 0;
 						> .archive-header-wrapper {
 							display: none;
+						}
+						#tribe-events {
+							.type-tribe_events {
+								.entry-summary {
+									padding: 0;
+								}
+							}
 						}
 					}
 				}

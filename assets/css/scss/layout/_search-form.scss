@@ -5,17 +5,17 @@
 		order: 2;
 		position: absolute;
 		right: 15px;
-		top: 11px;
+		//top: 11px;
 		transition: all 300ms ease-in-out;
 
 		@include media('>=phone') {
 			right: 30px;
-			top: 16px;
+			//top: 16px;
 		}
 
 		@include media('>=desktop') {
 			right: 15px;
-			top: 21px;
+			//top: 21px;
 
 			&:hover,
 			&:active,
@@ -34,7 +34,11 @@
 				}
 			}
 		}
-
+		@include media('<desktop-wide') {
+			height: calc( 100% - 43px );
+			display: flex;
+			align-items: center;
+		}
 		@include media('<desktop') {
 			&.hover {
 				.search-field {
