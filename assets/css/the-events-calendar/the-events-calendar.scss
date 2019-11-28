@@ -107,6 +107,35 @@
 	}
 }
 
+/** Page Template Default **/
+.page-template-page-php.tribe-js {
+	&:not(.tribe-events-page-template) {
+		&.post-type-archive-tribe_events {
+			.wrap.container {
+				#primary {
+					.entry-content {
+						> .archive-header-wrapper {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		&.single {
+			.wrap.container {
+				.content.row {
+					> .archive-header-wrapper {
+						display: none;
+					}
+					> #primary {
+						margin-top: 0;
+						z-index: 0;
+					}
+				}
+			}
+		}
+	}
+}
 
 /**
  * Tribe General Structure
