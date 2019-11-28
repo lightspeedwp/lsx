@@ -136,6 +136,14 @@
 					margin-bottom: 5px;
 				}
 			}
+			.wp-block-cover {
+				&.alignleft {
+					margin-right: $lsx-gap;
+				}
+				&.alignright {
+					margin-left: $lsx-gap;
+				}
+			}
 		}
 		@media only screen and (min-width: 1168px) {
 			.entry-content > *, .entry-summary > * {
