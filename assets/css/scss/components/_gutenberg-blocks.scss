@@ -66,6 +66,21 @@
 			border-top: 1px solid nth($gray, 2);
 		}
 	}
+	// Download File Block
+	.wp-block-file {
+		.wp-block-file__button {
+			@include lsx-button-scaffolding();
+			@include lsx-button-colour();
+		}
+	}
+	// Text Columns
+	.wp-block-text-columns {
+		&.alignfull {
+			@include media('>tablet') {
+			padding: 0 $lsx-gap;
+			}
+		}
+	}
 	// Columns
 	.wp-block-columns {
 		margin-bottom: 0px;
@@ -107,7 +122,6 @@
 			margin: 0;
 		}
 	}
-
 	//Post List
 	.wp-block-latest-posts {
 		&.wp-block-latest-posts__list {

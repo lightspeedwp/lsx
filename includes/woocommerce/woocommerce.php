@@ -160,7 +160,7 @@ if ( ! function_exists( 'lsx_wc_categories_breadcrumb_filter' ) ) :
 	 */
 	function lsx_wc_categories_breadcrumb_filter( $crumbs ) {
 
-		$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
+		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
 
 		if ( is_product_category() || is_product_tag() ) {
 			$new_crumbs = array();
