@@ -101,6 +101,7 @@
 	}
 	// Download File Block
 	.wp-block-file {
+		padding: 0 $lsx-gap;
 		.wp-block-file__button {
 			@include lsx-button-scaffolding();
 			@include lsx-button-colour();
