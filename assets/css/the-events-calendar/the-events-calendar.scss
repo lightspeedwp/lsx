@@ -287,6 +287,27 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 
 .tribe-js {
 	.datepicker { min-width: 160px; }
+	// Organizer
+	&.single-tribe_organizer {
+		#primary {
+			#main {
+				.tribe-events-organizer {
+					.tribe-events-organizer-meta {
+						display: flex;
+						flex-direction: column;
+						border-bottom: none;
+						margin-bottom: 2.4rem;
+ 						padding-bottom: 0;
+						.tribe-events-event-image {
+							margin-top: 2.4rem;
+							order: -1;
+							align-self: baseline;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 #tribe-bar-collapse-toggle { line-height: 31px; }

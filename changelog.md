@@ -13,6 +13,7 @@
 * Dev - Improving gutenberg compatibility styles.
 * Dev - Adding better breadcrumbs for woocommerce categories and taxonomies.
 * Dev - Adding simple title banner to WC pages (not product pages).
+* Dev - Updating Event Calendar Organizer styles.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
