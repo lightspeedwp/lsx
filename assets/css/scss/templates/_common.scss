@@ -69,6 +69,7 @@
 }
 .single-product {
 	.content >.content-area {
+		margin-top: $lsx-large-gap + $lsx-gap;
 		@include media('<=tablet') {
 			margin-top: $lsx-large-gap * 2;
 		}
@@ -76,6 +77,15 @@
 }
 
 .single-post:not(.using-gutenberg), .archive {
+	.content-area,
+	.widget-area {
+		margin-top: $lsx-medium-gap;
+	}
+}
+
+.woocommerce-cart,
+.woocommerce-checkout,
+.woocommerce-account {
 	.content-area,
 	.widget-area {
 		margin-top: $lsx-medium-gap;

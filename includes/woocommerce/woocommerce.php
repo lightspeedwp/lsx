@@ -614,6 +614,28 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 
 endif;
 
+if ( ! function_exists( 'lsx_wc_global_header_title' ) ) :
+
+	/**
+	 * Move the shop title into the global header
+	 *
+	 * @package    lsx
+	 * @subpackage the-events-calendar
+	 */
+	function lsx_wc_global_header_title( $title ) {
+
+		if ( is_woocommerce() && is_shop() ) {
+
+			$title = __( 'Shop', 'lsx' );
+		}
+
+		return $title;
+	}
+	add_filter( 'lsx_global_header_title', 'lsx_wc_global_header_title', 200, 1 );
+
+endif;
+
+
 if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 
 	/**
