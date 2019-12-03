@@ -541,9 +541,9 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 			),
 		);
 		$post_type_args = array(
-			'public'   => true,
-			'_builtin' => false,
-			'show_ui'  => true,
+			'public'       => true,
+			'_builtin'     => false,
+			'show_ui'      => true,
 		);
 		$post_types     = get_post_types( $post_type_args, 'objects' );
 		if ( ! empty( $post_types ) ) {
@@ -555,9 +555,9 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 			}
 		}
 		$taxonomy_args  = array(
-			'public'   => true,
-			'_builtin' => false,
-			'show_ui'  => true,
+			'public'       => true,
+			'_builtin'     => false,
+			'show_ui'      => true,
 		);
 		$taxonomies     = get_taxonomies( $taxonomy_args, 'objects' );
 		if ( ! empty( $taxonomies ) ) {
@@ -638,6 +638,7 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 				'posts_per_page' => 99,
 				'post_status'    => 'publish',
 				'post_type'      => $post_type,
+				'order'          => 'ASC',
 			);
 
 			$post_type_items  = new WP_Query( $post_type_args );
@@ -652,12 +653,20 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 			}
 
 			if ( $post_type_items->have_posts() ) {
+
 				echo '<h2>' . esc_html( $title ) . '</h2>';
-				echo '<ul>';
+				echo '<ul class="sitemap-wrapper sitemap-' . esc_html( strtolower( $title ) ) . '">';
 
 				while ( $post_type_items->have_posts() ) {
 					$post_type_items->the_post();
-					echo '<li class="' . esc_attr( get_post_type() ) . '_item ' . esc_attr( get_post_type() ) . '-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
+					$id = get_the_ID();
+					$parent = wp_get_post_parent_id( $id );
+					if ( ( 0 === $parent ) || ( $id === $parent ) ) {
+						$parent_class = 'sitemap-parent';
+					} else {
+						$parent_class = 'sitemap-child';
+					}
+					echo '<li class="' . $parent_class . ' ' . esc_attr( get_post_type() ) . '_item ' . esc_attr( get_post_type() ) . '-item-' . esc_attr( $id ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
 				}
 
 				echo '</ul>';
@@ -686,7 +695,7 @@ function lsx_sitemap_taxonomy( $taxonomy = '', $label = '' ) {
 
 			echo '<div class="sitemap-rows">';
 			echo '<h2>' . wp_kses_post( $title ) . '</h2>';
-			echo '<ul>';
+			echo '<ul class="sitemap-wrapper sitemap-' . esc_html( strtolower( $title ) ) . '">';
 			foreach ( $terms as $term ) {
 				$name = $term->name;
 				$permalink = get_term_link( $term->term_id );
