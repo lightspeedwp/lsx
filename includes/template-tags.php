@@ -638,6 +638,7 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 				'posts_per_page' => 99,
 				'post_status'    => 'publish',
 				'post_type'      => $post_type,
+				'orderby'        => 'ID',
 				'order'          => 'ASC',
 			);
 
