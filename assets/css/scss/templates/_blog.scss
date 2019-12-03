@@ -90,11 +90,11 @@ article.lsx-slot {
 		}
 		.post-meta-categories {
 			display: block;
-			padding: 0 10px 18px;
+			padding: 0 10px 20px;
 			font-size: 13px;
 			color: $small;
 			@include media('>=desktop') {
-				padding: 0 15px 18px;
+				padding: 0 15px 20px;
 			}
 			a {
 				color: $small;
@@ -104,7 +104,7 @@ article.lsx-slot {
 		.entry-title {
 			font-size: 30px;
 			text-align: left;
-			padding: $lsx-gap 10px 0;
+			padding: 30px 10px 0;
 
 			& .fa { display: none; }
 
@@ -130,6 +130,9 @@ article.lsx-slot {
 			}
 			p {
 				margin-bottom: 15px;
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
 
@@ -144,15 +147,17 @@ article.lsx-slot {
 			font-style: italic;
 			border-top: 2px solid #d8d8d8;
 			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
-			padding-top: 5px;
+			padding-top: 14px;
+			margin-top: 14px;
 			@include media('>=desktop') {
-				margin: 0 15px;
+				margin: 14px 15px 0;
 			}
 			.post-tags {
 				display: block;
 				font-size: 13px;
-				padding-top: 4px;
+				//padding-top: 4px;
 			}
 			& > * {
 				&:after {
@@ -184,7 +189,7 @@ article.lsx-slot {
 			.post-comments {
 				display: inline;
 				font-size: 13px;
-				padding-top: 4px;
+				//padding-top: 4px;
 			}
 		}
 
@@ -217,7 +222,7 @@ article.lsx-slot {
 			}
 		}
 		.entry-title {
-			margin-bottom: 0;
+			margin-bottom: 10px;
 		}
 		&.has-thumb {
 			.entry-meta {

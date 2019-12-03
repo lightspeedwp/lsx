@@ -116,6 +116,24 @@
 		}
 	}
 	// Columns
+	.wp-block-text-columns {
+		&.columns-2 {
+			.wp-block-column {
+				@media (min-width: $lsx-large-gap) {
+					p {
+						&:first-child {
+							margin-right: 0;
+						}
+					}
+					p {
+						&:last-child {
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
 	.wp-block-columns {
 		margin-bottom: 0px;
 		@media screen and (max-width: 600px) {

@@ -290,6 +290,10 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 	// Organizer
 	&.single-tribe_organizer {
 		#primary {
+			&.content-area {
+				margin-bottom: $lsx-medium-gap;
+				margin-top: $lsx-medium-gap;
+			}
 			#main {
 				.tribe-events-organizer {
 					.tribe-events-organizer-meta {

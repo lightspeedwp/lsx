@@ -506,10 +506,9 @@ body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 	.lsx-pagination-wrapper {
 		margin-top: 0;
 		text-align: left;
-
 		@include media ('>=phone') {
+			margin-top: 0;
 			float: right;
-			margin-top: 5px;
 		}
 	}
 }
@@ -779,6 +778,7 @@ body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 	.woocommerce-ordering select {
 		@extend %bootstrap-form-control;
 		@extend %small-form-select;
+		height: 40px;
 	}
 
 	.woocommerce-Input,
