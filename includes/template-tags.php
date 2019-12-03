@@ -638,7 +638,7 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 				'posts_per_page' => 99,
 				'post_status'    => 'publish',
 				'post_type'      => $post_type,
-				'orderby'        => 'ID',
+				'orderby'        => array('menu_order' => 'ASC', 'date' => 'ASC'),
 				'order'          => 'ASC',
 			);
 
@@ -700,7 +700,15 @@ function lsx_sitemap_taxonomy( $taxonomy = '', $label = '' ) {
 			foreach ( $terms as $term ) {
 				$name = $term->name;
 				$permalink = get_term_link( $term->term_id );
-				echo '<li><a href="' . esc_attr( $permalink ) . '">' . esc_attr( $name ) . '</a></li>';
+				$id = $term->term_id;
+				$parent = $term->parent;
+				
+				if ( ( 0 === $parent ) || ( $id === $parent ) ) {
+					$parent_class = 'sitemap-parent';
+				} else {
+					$parent_class = 'sitemap-child';
+				}
+				echo '<li class="' . $parent_class . '"><a  class="id-' . $id . '" href="' . esc_attr( $permalink ) . '">' . esc_attr( $name ) . '</a></li>';
 			}
 			echo '</ul>';
 			echo '</div>';
