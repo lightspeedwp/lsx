@@ -12,6 +12,7 @@
 * Fix - Fixing the `WC_Cart::get_cart_url is deprecated since version 2.5! Use wc_get_cart_url instead.` error.
 * Dev - Improving gutenberg compatibility styles.
 * Dev - Added in font-display: swap; to all of the font-face declarations to help with optimization.
+* Fix - Sensei classes will be called from the parent LSX not child themes.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
