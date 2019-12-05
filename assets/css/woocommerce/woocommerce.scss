@@ -919,7 +919,7 @@ p.no-comments,
 			margin-bottom: 1.41575em;
 		}
 
-		@include media ('>=phone') {
+		@include media ('>=custom') {
 			width: 77.4705882353%;
 
 			.form-row-first {
@@ -940,7 +940,7 @@ p.no-comments,
 	.woocommerce-MyAccount-navigation {
 		padding: 0 15px;
 
-		@include media ('>=phone') {
+		@include media ('>=custom') {
 			margin-right: 55px;
 			width: 17.6470588235%;
 		}
