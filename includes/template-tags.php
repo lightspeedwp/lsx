@@ -537,8 +537,9 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 				'label' => __( 'Posts', 'lsx' ),
 			),
 			'category' => array(
-				'type'  => 'taxonomy',
-				'label' => __( 'Categories', 'lsx' ),
+				'type'      => 'taxonomy',
+				'label'     => __( 'Categories', 'lsx' ),
+				'heirarchy' => true,
 			),
 		);
 		$post_type_args = array(
@@ -578,7 +579,11 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 					lsx_sitemap_custom_post_type( $sitemap_key, $sitemap_values['label'] );
 				}
 			} else {
-				lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'] );
+				if ( isset( $sitemap_values['heirarchy'] ) && true === $sitemap_values['heirarchy'] ) {
+					lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'], true );
+				} else {
+					lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'], false );
+				}
 			}
 		}
 	}
@@ -598,8 +603,7 @@ if ( ! function_exists( 'lsx_sitemap_pages' ) ) :
 			'title_li'     => '',
 			'echo'         => 1,
 			'sort_column'  => 'menu_order, post_title',
-			//'link_before'  => '',
-			//'link_after'   => '',
+			'post_type'    => $forced_type,
 			'item_spacing' => 'preserve',
 		);
 		echo '<h2>' . esc_html( $label ) . '</h2>';
@@ -670,25 +674,28 @@ endif;
  *
  * @return void
  */
-function lsx_sitemap_taxonomy( $taxonomy = '', $label = '' ) {
+function lsx_sitemap_taxonomy( $taxonomy = '', $label = '', $hierarchical = false ) {
 	if ( '' !== $taxonomy ) {
-		$terms = get_terms( $taxonomy );
-		if ( ! empty( $terms ) ) {
 
-			if ( '' !== $label ) {
-				$title = $label;
-			} else {
-				$title = ucwords( $taxonomy );
-			}
-
+		$tax_args = array(
+			'echo'               => 0,
+			'depth'               => 0,
+			'hide_empty'          => 1,
+			'hide_title_if_empty' => false,
+			'hierarchical'        => $hierarchical,
+			'separator'           => '<br />',
+			'show_count'          => 0,
+			'show_option_none'    => __( 'None', 'lsx' ),
+			'style'               => 'list',
+			'taxonomy'            => $taxonomy,
+			'title_li'            => '',
+		);
+		$categories = wp_list_categories( $tax_args );
+		if ( ! empty( $categories ) ) {
 			echo '<div class="sitemap-rows">';
-			echo '<h2>' . wp_kses_post( $title ) . '</h2>';
+			echo '<h2>' . wp_kses_post( $label ) . '</h2>';
 			echo '<ul>';
-			foreach ( $terms as $term ) {
-				$name = $term->name;
-				$permalink = get_term_link( $term->term_id );
-				echo '<li><a href="' . esc_attr( $permalink ) . '">' . esc_attr( $name ) . '</a></li>';
-			}
+			echo wp_kses_post( $categories );
 			echo '</ul>';
 			echo '</div>';
 		}
