@@ -949,3 +949,10 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 	}
 }
 
+body:not(.logged-in) {
+	&.tribe-js {
+		.tribe-community-events-content {
+			max-width: 550px;
+		}
+	}
+}
