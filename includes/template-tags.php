@@ -528,8 +528,9 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 	function lsx_sitemap_loops() {
 		$sitemap_loops  = array(
 			'page'     => array(
-				'type'  => 'post_type',
-				'label' => __( 'Pages', 'lsx' ),
+				'type'      => 'post_type',
+				'label'     => __( 'Pages', 'lsx' ),
+				'heirarchy' => true,
 			),
 			'post'     => array(
 				'type'  => 'post_type',
@@ -571,7 +572,11 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 		$sitemap_loops = apply_filters( 'lsx_sitemap_loops_list', $sitemap_loops );
 		foreach ( $sitemap_loops as $sitemap_key => $sitemap_values ) {
 			if ( 'post_type' === $sitemap_values['type'] ) {
-				lsx_sitemap_custom_post_type( $sitemap_key, $sitemap_values['label'] );
+				if ( isset( $sitemap_values['heirarchy'] ) && true === $sitemap_values['heirarchy'] ) {
+					lsx_sitemap_pages( $sitemap_key, $sitemap_values['label'] );
+				} else {
+					lsx_sitemap_custom_post_type( $sitemap_key, $sitemap_values['label'] );
+				}
 			} else {
 				lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'] );
 			}
@@ -587,28 +592,20 @@ if ( ! function_exists( 'lsx_sitemap_pages' ) ) :
 	 * @package    lsx
 	 * @subpackage template-tags
 	 */
-	function lsx_sitemap_pages() {
+	function lsx_sitemap_pages( $forced_type = '', $label = '' ) {
 		$page_args = array(
-			'post_type'      => 'page',
-			'posts_per_page' => 99,
-			'post_status'    => 'publish',
-			'post_type'      => 'page',
+			'depth'        => 3,
+			'title_li'     => '',
+			'echo'         => 1,
+			'sort_column'  => 'menu_order, post_title',
+			//'link_before'  => '',
+			//'link_after'   => '',
+			'item_spacing' => 'preserve',
 		);
-
-		$pages = new WP_Query( $page_args );
-
-		if ( $pages->have_posts() ) {
-			echo '<h2>' . esc_html__( 'Pages', 'lsx' ) . '</h2>';
-			echo '<ul>';
-
-			while ( $pages->have_posts() ) {
-				$pages->the_post();
-				echo '<li class="page_item page-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
-			}
-
-			echo '</ul>';
-			wp_reset_postdata();
-		}
+		echo '<h2>' . esc_html( $label ) . '</h2>';
+		echo '<ul>';
+		wp_list_pages( $page_args );
+		echo '</ul>';
 	}
 
 endif;
