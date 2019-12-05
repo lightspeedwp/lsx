@@ -1,6 +1,7 @@
 #primary {
 	.wc-block-grid {
 		.wc-block-grid__products {
+			justify-content: space-between;
 			.wc-block-grid__product {
 				text-align: left;
 				display: flex;
@@ -88,6 +89,36 @@
 					@include media ('>=desktop-wide') {
 						margin-left: 0;
 						margin-right: 0;
+					}
+				}
+			}
+		}
+		&.alignfull {
+			&.has-2-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 540px;
+					}
+				}
+			}
+			&.has-3-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 350px;
+					}
+				}
+			}
+			&.has-4-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 250px;
+					}
+				}
+			}
+			&.has-5-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 190px;
 					}
 				}
 			}
