@@ -9,11 +9,13 @@
 				margin-bottom: $lsx-medium-gap;
 				.wc-block-grid__product-link {
 					order: -1;
+					width: 100%;
 					.wc-block-grid__product-image {
 						margin-bottom: 0;
 						img {
 							margin: 0 0 1em;
 							box-shadow: none;
+							width: 100%;
 						}
 					}
 					.wc-block-grid__product-title {
@@ -39,7 +41,7 @@
 					font-weight: 700;
 					position: absolute;
 					text-align: center;
-					top: -1.5em;
+					top: -1.5rem;
 					right: -1.5rem;
 					border-radius: 100%;
 					background-color: #77a464;
