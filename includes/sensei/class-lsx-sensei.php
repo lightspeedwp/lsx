@@ -31,7 +31,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 */
 		public function __construct() {
 
-			$this->lsx_sensei_course = require_once get_stylesheet_directory() . '/includes/sensei/class-lsx-sensei-course.php';
+			$this->lsx_sensei_course = require_once get_template_directory() . '/includes/sensei/class-lsx-sensei-course.php';
 
 			global $woothemes_sensei;
 
