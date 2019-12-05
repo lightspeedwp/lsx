@@ -528,22 +528,24 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 	function lsx_sitemap_loops() {
 		$sitemap_loops  = array(
 			'page'     => array(
-				'type'  => 'post_type',
-				'label' => __( 'Pages', 'lsx' ),
+				'type'      => 'post_type',
+				'label'     => __( 'Pages', 'lsx' ),
+				'heirarchy' => true,
 			),
 			'post'     => array(
 				'type'  => 'post_type',
 				'label' => __( 'Posts', 'lsx' ),
 			),
 			'category' => array(
-				'type'  => 'taxonomy',
-				'label' => __( 'Categories', 'lsx' ),
+				'type'      => 'taxonomy',
+				'label'     => __( 'Categories', 'lsx' ),
+				'heirarchy' => true,
 			),
 		);
 		$post_type_args = array(
-			'public'       => true,
-			'_builtin'     => false,
-			'show_ui'      => true,
+			'public'   => true,
+			'_builtin' => false,
+			'show_ui'  => true,
 		);
 		$post_types     = get_post_types( $post_type_args, 'objects' );
 		if ( ! empty( $post_types ) ) {
@@ -555,9 +557,9 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 			}
 		}
 		$taxonomy_args  = array(
-			'public'       => true,
-			'_builtin'     => false,
-			'show_ui'      => true,
+			'public'   => true,
+			'_builtin' => false,
+			'show_ui'  => true,
 		);
 		$taxonomies     = get_taxonomies( $taxonomy_args, 'objects' );
 		if ( ! empty( $taxonomies ) ) {
@@ -571,9 +573,17 @@ if ( ! function_exists( 'lsx_sitemap_loops' ) ) {
 		$sitemap_loops = apply_filters( 'lsx_sitemap_loops_list', $sitemap_loops );
 		foreach ( $sitemap_loops as $sitemap_key => $sitemap_values ) {
 			if ( 'post_type' === $sitemap_values['type'] ) {
-				lsx_sitemap_custom_post_type( $sitemap_key, $sitemap_values['label'] );
+				if ( isset( $sitemap_values['heirarchy'] ) && true === $sitemap_values['heirarchy'] ) {
+					lsx_sitemap_pages( $sitemap_key, $sitemap_values['label'] );
+				} else {
+					lsx_sitemap_custom_post_type( $sitemap_key, $sitemap_values['label'] );
+				}
 			} else {
-				lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'] );
+				if ( isset( $sitemap_values['heirarchy'] ) && true === $sitemap_values['heirarchy'] ) {
+					lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'], true );
+				} else {
+					lsx_sitemap_taxonomy( $sitemap_key, $sitemap_values['label'], false );
+				}
 			}
 		}
 	}
@@ -587,28 +597,19 @@ if ( ! function_exists( 'lsx_sitemap_pages' ) ) :
 	 * @package    lsx
 	 * @subpackage template-tags
 	 */
-	function lsx_sitemap_pages() {
+	function lsx_sitemap_pages( $forced_type = '', $label = '' ) {
 		$page_args = array(
-			'post_type'      => 'page',
-			'posts_per_page' => 99,
-			'post_status'    => 'publish',
-			'post_type'      => 'page',
+			'depth'        => 3,
+			'title_li'     => '',
+			'echo'         => 1,
+			'sort_column'  => 'menu_order, post_title',
+			'post_type'    => $forced_type,
+			'item_spacing' => 'preserve',
 		);
-
-		$pages = new WP_Query( $page_args );
-
-		if ( $pages->have_posts() ) {
-			echo '<h2>' . esc_html__( 'Pages', 'lsx' ) . '</h2>';
-			echo '<ul>';
-
-			while ( $pages->have_posts() ) {
-				$pages->the_post();
-				echo '<li class="page_item page-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
-			}
-
-			echo '</ul>';
-			wp_reset_postdata();
-		}
+		echo '<h2>' . esc_html( $label ) . '</h2>';
+		echo '<ul>';
+		wp_list_pages( $page_args );
+		echo '</ul>';
 	}
 
 endif;
@@ -638,8 +639,6 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 				'posts_per_page' => 99,
 				'post_status'    => 'publish',
 				'post_type'      => $post_type,
-				'orderby'        => array('menu_order' => 'ASC', 'date' => 'ASC'),
-				'order'          => 'ASC',
 			);
 
 			$post_type_items  = new WP_Query( $post_type_args );
@@ -654,20 +653,12 @@ if ( ! function_exists( 'lsx_sitemap_custom_post_type' ) ) :
 			}
 
 			if ( $post_type_items->have_posts() ) {
-
 				echo '<h2>' . esc_html( $title ) . '</h2>';
-				echo '<ul class="sitemap-wrapper sitemap-' . esc_html( strtolower( $title ) ) . '">';
+				echo '<ul>';
 
 				while ( $post_type_items->have_posts() ) {
 					$post_type_items->the_post();
-					$id = get_the_ID();
-					$parent = wp_get_post_parent_id( $id );
-					if ( ( 0 === $parent ) || ( $id === $parent ) ) {
-						$parent_class = 'sitemap-parent';
-					} else {
-						$parent_class = 'sitemap-child';
-					}
-					echo '<li class="' . $parent_class . ' ' . esc_attr( get_post_type() ) . '_item ' . esc_attr( get_post_type() ) . '-item-' . esc_attr( $id ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
+					echo '<li class="' . esc_attr( get_post_type() ) . '_item ' . esc_attr( get_post_type() ) . '-item-' . esc_attr( get_the_ID() ) . '"><a href="' . esc_url( get_permalink() ) . '" title="">' . get_the_title() . '</a></li>';
 				}
 
 				echo '</ul>';
@@ -683,33 +674,28 @@ endif;
  *
  * @return void
  */
-function lsx_sitemap_taxonomy( $taxonomy = '', $label = '' ) {
+function lsx_sitemap_taxonomy( $taxonomy = '', $label = '', $hierarchical = false ) {
 	if ( '' !== $taxonomy ) {
-		$terms = get_terms( $taxonomy );
-		if ( ! empty( $terms ) ) {
 
-			if ( '' !== $label ) {
-				$title = $label;
-			} else {
-				$title = ucwords( $taxonomy );
-			}
-
+		$tax_args = array(
+			'echo'               => 0,
+			'depth'               => 0,
+			'hide_empty'          => 1,
+			'hide_title_if_empty' => false,
+			'hierarchical'        => $hierarchical,
+			'separator'           => '<br />',
+			'show_count'          => 0,
+			'show_option_none'    => __( 'None', 'lsx' ),
+			'style'               => 'list',
+			'taxonomy'            => $taxonomy,
+			'title_li'            => '',
+		);
+		$categories = wp_list_categories( $tax_args );
+		if ( ! empty( $categories ) ) {
 			echo '<div class="sitemap-rows">';
-			echo '<h2>' . wp_kses_post( $title ) . '</h2>';
-			echo '<ul class="sitemap-wrapper sitemap-' . esc_html( strtolower( $title ) ) . '">';
-			foreach ( $terms as $term ) {
-				$name = $term->name;
-				$permalink = get_term_link( $term->term_id );
-				$id = $term->term_id;
-				$parent = $term->parent;
-				
-				if ( ( 0 === $parent ) || ( $id === $parent ) ) {
-					$parent_class = 'sitemap-parent';
-				} else {
-					$parent_class = 'sitemap-child';
-				}
-				echo '<li class="' . $parent_class . '"><a  class="id-' . $id . '" href="' . esc_attr( $permalink ) . '">' . esc_attr( $name ) . '</a></li>';
-			}
+			echo '<h2>' . wp_kses_post( $label ) . '</h2>';
+			echo '<ul>';
+			echo wp_kses_post( $categories );
 			echo '</ul>';
 			echo '</div>';
 		}
