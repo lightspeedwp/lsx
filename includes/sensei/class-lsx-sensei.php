@@ -18,6 +18,14 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 	class LSX_Sensei {
 
 		/**
+		 * Holds class instance
+		 *
+		 * @since 1.0.0
+		 * @var      object
+		 */
+		protected static $instance = null;
+
+		/**
 		 * Holds the LSX_Sensei_Course() variable.
 		 *
 		 * @var LSX_Sensei_Course()
@@ -25,13 +33,20 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public $lsx_sensei_course = false;
 
 		/**
+		 * Holds the LSX_Sensei_Lesson() variable.
+		 *
+		 * @var LSX_Sensei_Lesson()
+		 */
+		public $lsx_sensei_lesson = false;
+
+		/**
 		 * Setup class.
 		 *
 		 * @since 1.0
 		 */
 		public function __construct() {
-
 			$this->lsx_sensei_course = require_once get_template_directory() . '/includes/sensei/class-lsx-sensei-course.php';
+			$this->lsx_sensei_lesson = require_once get_template_directory() . '/includes/sensei/class-lsx-sensei-lesson.php';
 
 			global $woothemes_sensei;
 
@@ -87,6 +102,20 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			add_action( 'sensei_archive_before_message_loop', array( $this, 'lsx_sensei_back_message_button' ) );
 			add_action( 'sensei_content_message_after', array( $this, 'lsx_sensei_view_message_button' ) );
 
+		}
+
+		/**
+		 * Return an instance of this class.
+		 *
+		 * @since 1.0.0
+		 * @return    object    A single instance of this class.
+		 */
+		public static function get_instance() {
+			// If the single instance hasn't been set, set it now.
+			if ( null === self::$instance ) {
+				self::$instance = new self;
+			}
+			return self::$instance;
 		}
 
 		/**
@@ -195,12 +224,12 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function lsx_sensei_add_buttons( $course_id ) {
 			global $post, $current_user;
 			$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
-			$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
+			if ( class_exists( 'Sensei_WC' ) ) {
+				$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
+			}
 
 			?>
 				<section class="entry-actions">
-					<a class="button" href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php esc_html_e( 'View course', 'lsx' ); ?></a>
-
 					<?php
 					if ( ( ! $is_user_taking_course ) && $course_purchasable ) {
 						Sensei_WC::the_add_to_cart_button_html( $post->ID );
@@ -320,7 +349,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @return array
 		 */
 		public function lsx_sensei_lesson_breadcrumb_filter( $crumbs, $id = 0 ) {
-			if ( is_single() && ( is_singular( 'lesson' ) ) ) {
+			if ( is_sensei() && is_single() && ( is_singular( 'lesson' ) ) ) {
 				global $course;
 				$lesson          = get_the_title();
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
@@ -385,7 +414,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 				$title = apply_filters( 'sensei_module_archive_title', get_queried_object()->name );
 			}
 
-			if ( is_tax() && is_archive() && ( ! empty( $title ) ) ) {
+			if ( is_sensei() && is_tax() && is_archive() && ( ! empty( $title ) ) ) {
 
 				$lesson          = get_the_archive_title();
 				$course_page_url = intval( Sensei()->settings->settings['course_page'] );
@@ -658,4 +687,4 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 endif;
 
-return new LSX_Sensei();
+LSX_Sensei::get_instance();

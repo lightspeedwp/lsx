@@ -7,6 +7,7 @@
 * Dev - When LSX Banners is active, the single events will not show a featured image on the body.
 * Dev - Added in a filter `lsx_sticky_menu_selector` to allow 3rd party plugins to change the sticky menu element.
 * Dev - Sensei improvements
+* Dev - Registering Sensei sidebars for Sensei Participants or Sensei Progress plugins on single lessons and quiz.
 * Dev - Folder restructuring for all non LSX plugins supported.
 * Dev - Changing the parent class for tribe event styling.
 * Fix - Fixing the `WC_Cart::get_cart_url is deprecated since version 2.5! Use wc_get_cart_url instead.` error.
