@@ -75,7 +75,7 @@
 						display: block;
 						font-weight: 400;
 						margin-bottom: .5em;
-						font-size: .857em;
+						font-size: 12px;
 					}
 					.woocommerce-Price-amount {
 						margin-right: 5px;
@@ -93,31 +93,33 @@
 				}
 			}
 		}
-		&.has-2-columns {
-			.wc-block-grid__products {
-				.wc-block-grid__product {
-					max-width: 540px;
+		@include media ('>=desktop') {
+			&.has-2-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 540px;
+					}
 				}
 			}
-		}
-		&.has-3-columns {
-			.wc-block-grid__products {
-				.wc-block-grid__product {
-					max-width: 350px;
+			&.has-3-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 350px;
+					}
 				}
 			}
-		}
-		&.has-4-columns {
-			.wc-block-grid__products {
-				.wc-block-grid__product {
-					max-width: 250px;
+			&.has-4-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 250px;
+					}
 				}
 			}
-		}
-		&.has-5-columns {
-			.wc-block-grid__products {
-				.wc-block-grid__product {
-					max-width: 190px;
+			&.has-5-columns {
+				.wc-block-grid__products {
+					.wc-block-grid__product {
+						max-width: 190px;
+					}
 				}
 			}
 		}
