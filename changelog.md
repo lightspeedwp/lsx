@@ -15,6 +15,7 @@
 * Dev - Added in font-display: swap; to all of the font-face declarations to help with optimization.
 * Fix - Sensei classes will be called from the parent LSX not child themes.
 * Dev - Allowing the sitemap loops to show items to a depth of 3.
+* Fix - Fix for 'Content wider than screen' Google Console issue.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
