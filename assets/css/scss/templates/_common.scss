@@ -5,9 +5,13 @@
 	}
 }
 .page.page-template-template-sitemap {
+	&.home {
+		.entry-content {
+			padding-top: $lsx-medium-gap;
+			padding-bottom: $lsx-medium-gap;
+		}
+	}
 	.entry-content {
-		padding-top: $lsx-medium-gap;
-		padding-bottom: $lsx-medium-gap;
 		.sitemap-wrapper {
 			.sitemap-child {
 				position: relative;
