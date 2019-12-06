@@ -1,6 +1,6 @@
 ## LSX Changelog
 
-### 2.5.2 (in development)
+### 2.6 (in development)
 * Dev - Added in a 'lsx_defer_parsing_of_js' filter to allow plugins to skip their files.
 * Dev - Added an additional thumbnail image size for post carousel blocks 'lsx-thumbnail-carousel'.
 * Dev - Changing the parent class for tribe event styling.
@@ -20,6 +20,7 @@
 * Dev - Adding simple title banner to WC pages (not product pages).
 * Dev - Updating Event Calendar Organizer styles.
 * Dev - Adding hierarchy for the sitemap.
+* Fix - Fixed the archive pages, to make them 100% width but leaving the option fo narrow or full width for the blog archive.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
