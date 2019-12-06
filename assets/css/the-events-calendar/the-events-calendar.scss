@@ -761,7 +761,7 @@ h2.tribe-events-page-title {
 body:not(.logged-in) {
 	#tribe-events.tribe-js {
 		> p, .tribe-community-events-content > p {
-			border-bottom: 1px solid #DDDDDD;
+			border-bottom: 1px solid $table-border-color;
 			padding: 1em 29px;
 			text-transform: uppercase;
 			font-weight: 600;
@@ -1012,3 +1012,10 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 	}
 }
 
+body:not(.logged-in) {
+	&.tribe-js {
+		.tribe-community-events-content {
+			max-width: 550px;
+		}
+	}
+}
