@@ -1,4 +1,18 @@
+@mixin small-button() {
+	&,
+	&:active,
+	&:visited {
+		height: 40px;
+		line-height: 20px;
+		padding: 10px 18px;
+	}
+}
 #primary {
+	[class^="wc-block-featured"] {
+		.wp-block-button__link {
+			@include small-button();
+		}
+	}
 	.wc-block-grid {
 		.wc-block-grid__products {
 			justify-content: space-between;
@@ -75,7 +89,7 @@
 						display: block;
 						font-weight: 400;
 						margin-bottom: .5em;
-						font-size: 13px;
+						font-size: 20px;
 					}
 					.woocommerce-Price-amount {
 						margin-right: 5px;
@@ -91,6 +105,9 @@
 						margin-right: 0;
 					}
 				}
+				.wp-block-button__link {
+					@include small-button();
+				}
 			}
 		}
 		@include media ('>=desktop') {
@@ -104,14 +121,14 @@
 			&.has-3-columns {
 				.wc-block-grid__products {
 					.wc-block-grid__product {
-						max-width: 350px;
+						max-width: 351px;
 					}
 				}
 			}
 			&.has-4-columns {
 				.wc-block-grid__products {
 					.wc-block-grid__product {
-						max-width: 250px;
+						max-width: 266px;
 					}
 				}
 			}
