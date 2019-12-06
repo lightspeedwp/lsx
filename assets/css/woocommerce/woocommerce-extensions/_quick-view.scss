@@ -24,6 +24,26 @@
 	}
 }
 
+.post-type-archive-product,
+.tax-product_cat,
+.tax-product_tag {
+	.archive-header-wrapper {
+		.archive-header {
+			p {
+				display: none;
+			}
+		}
+	}
+	#primary {
+		#main {
+			> .woocommerce-products-header,
+			> .woocommerce-products-header__title {
+				display: none;
+			}
+		}
+	}
+}
+
 a.quick-view-button {
 	background-color: transparent !important;
 	display: block !important;

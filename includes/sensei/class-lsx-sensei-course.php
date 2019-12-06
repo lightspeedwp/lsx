@@ -38,7 +38,7 @@ class LSX_Sensei_Course {
 	 * Run our changes.
 	 */
 	public function init() {
-
+		global $sensei;
 		global $woothemes_sensei;
 
 		//Switching the course filters and the headers around

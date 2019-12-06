@@ -1,5 +1,6 @@
 .blog,
 .archive,
+.archive.category,
 .search-results {
 	&:not(.has-sidebar) {
 		.site-main {
@@ -8,7 +9,16 @@
 				width: 83.33333%;
 			}
 
-			@include media ('>=desktop') { width: 66.66667%; }
+			@include media ('>=desktop') { width: 100%; }
+		}
+		&.blog,
+		&.archive.category,
+		&.archive.tag {
+			&:not(.lsx-body-full-width) {
+				.site-main {
+					@include media ('>=desktop') { width: 66.66667%; }
+				}
+			}
 		}
 	}
 }
@@ -55,7 +65,7 @@ article.lsx-slot {
 		.entry-meta {
 			padding: 15px 10px;
 			@include media ('>=desktop') {
-				padding: 42.5px 10rem 10px;
+				padding: 1rem 10rem 10px;
 			}
 
 			.post-meta {
@@ -80,11 +90,11 @@ article.lsx-slot {
 		}
 		.post-meta-categories {
 			display: block;
-			padding: 0 10px 18px;
+			padding: 0 10px 20px;
 			font-size: 13px;
 			color: $small;
 			@include media('>=desktop') {
-				padding: 0 15px 18px;
+				padding: 0 15px 20px;
 			}
 			a {
 				color: $small;
@@ -94,10 +104,7 @@ article.lsx-slot {
 		.entry-title {
 			font-size: 30px;
 			text-align: left;
-			padding: 0 10px;
-			@include media('>=desktop') {
-				padding: 0 10rem;
-			}
+			padding: 30px 10px 0;
 
 			& .fa { display: none; }
 
@@ -123,6 +130,9 @@ article.lsx-slot {
 			}
 			p {
 				margin-bottom: 15px;
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
 
@@ -135,14 +145,19 @@ article.lsx-slot {
 		.post-tags-wrapper {
 			margin: 0 10px;
 			font-style: italic;
+			border-top: 2px solid #d8d8d8;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			padding-top: 14px;
+			margin-top: 14px;
 			@include media('>=desktop') {
-				margin: 0 15px;
+				margin: 14px 15px 0;
 			}
 			.post-tags {
-				border-top: 2px solid #d8d8d8;
 				display: block;
 				font-size: 13px;
-				padding-top: 10px;
+				//padding-top: 4px;
 			}
 			& > * {
 				&:after {
@@ -160,7 +175,7 @@ article.lsx-slot {
 					}
 				}
 			}
-			& > * + * {
+			& > .post-comments {
 				&:before {
 					@include fa-icon();
 					content: '\f0e5';
@@ -174,6 +189,7 @@ article.lsx-slot {
 			.post-comments {
 				display: inline;
 				font-size: 13px;
+				//padding-top: 4px;
 			}
 		}
 
@@ -205,13 +221,14 @@ article.lsx-slot {
 				margin-left: 5px;
 			}
 		}
-
+		.entry-title {
+			margin-bottom: 10px;
+		}
 		&.has-thumb {
 			.entry-meta {
 				padding-top: 0;
 			}
 			.entry-title {
-				margin-top: 2.4rem;
 				margin-bottom: 10px;
 			}
 		}

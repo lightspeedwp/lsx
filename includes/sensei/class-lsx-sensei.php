@@ -74,7 +74,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_action( 'sensei_course_content_inside_after', array( $this, 'lsx_sensei_add_buttons' ), 9 );
 
-			add_filter( 'sensei_wc_single_add_to_cart_button_text', array( $this, 'lsx_sensei_add_to_cart_text' ) );
+			add_filter( 'sensei_wc_paid_courses_add_to_cart_button_text', array( $this, 'lsx_sensei_add_to_cart_text' ) );
 
 			add_action( 'lsx_content_wrap_before', array( $this, 'lsx_sensei_results_header' ) );
 

@@ -151,6 +151,44 @@ if ( ! function_exists( 'lsx_wc_disable_lsx_banner' ) ) :
 
 endif;
 
+if ( ! function_exists( 'lsx_wc_categories_breadcrumb_filter' ) ) :
+	/**
+	 * Improves the category and taxonomy breadcrumbs for woocommerce.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_categories_breadcrumb_filter( $crumbs ) {
+
+		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
+
+		if ( is_product_category() || is_product_tag() ) {
+			$new_crumbs = array();
+			$new_crumbs[0] = $crumbs[0];
+
+			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+				$new_crumbs[1] = array(
+					0 => __( 'Shop', 'lsx' ),
+					1 => $shop_page_url,
+				);
+			} else {
+				$new_crumbs[1] = array(
+					'text' => __( 'Shop', 'lsx' ),
+					'url'  => $shop_page_url,
+				);
+			}
+
+			$new_crumbs[2] = $crumbs[1];
+
+			$crumbs = $new_crumbs;
+		}
+		return $crumbs;
+	}
+	add_filter( 'wpseo_breadcrumb_links', 'lsx_wc_categories_breadcrumb_filter', 30, 1 );
+	add_filter( 'woocommerce_get_breadcrumb', 'lsx_wc_categories_breadcrumb_filter', 30, 1 );
+
+endif;
+
 if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 
 	/**
@@ -575,6 +613,28 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 	add_filter( 'lsx_customizer_controls', 'lsx_customizer_wc_controls' );
 
 endif;
+
+if ( ! function_exists( 'lsx_wc_global_header_title' ) ) :
+
+	/**
+	 * Move the shop title into the global header
+	 *
+	 * @package    lsx
+	 * @subpackage the-events-calendar
+	 */
+	function lsx_wc_global_header_title( $title ) {
+
+		if ( is_woocommerce() && is_shop() ) {
+
+			$title = __( 'Shop', 'lsx' );
+		}
+
+		return $title;
+	}
+	add_filter( 'lsx_global_header_title', 'lsx_wc_global_header_title', 200, 1 );
+
+endif;
+
 
 if ( ! function_exists( 'lsx_wc_footer_bar' ) ) :
 

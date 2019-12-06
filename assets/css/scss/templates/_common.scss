@@ -4,6 +4,18 @@
 		display: none !important;
 	}
 }
+.page.page-template-template-sitemap {
+	.entry-content {
+		padding-top: $lsx-medium-gap;
+		padding-bottom: $lsx-medium-gap;
+		.sitemap-wrapper {
+			.sitemap-child {
+				position: relative;
+				left: $lsx-gap;
+			}
+		}
+	}
+}
 .archive-header-wrapper {
 	.lsx.page-has-banner:not(.single-post) & { display: none; }
 
@@ -63,6 +75,7 @@
 }
 .single-product {
 	.content >.content-area {
+		margin-top: $lsx-large-gap + $lsx-gap;
 		@include media('<=tablet') {
 			margin-top: $lsx-large-gap * 2;
 		}
@@ -70,6 +83,15 @@
 }
 
 .single-post:not(.using-gutenberg), .archive {
+	.content-area,
+	.widget-area {
+		margin-top: $lsx-medium-gap;
+	}
+}
+
+.woocommerce-cart,
+.woocommerce-checkout,
+.woocommerce-account {
 	.content-area,
 	.widget-area {
 		margin-top: $lsx-medium-gap;

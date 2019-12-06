@@ -107,6 +107,44 @@
 	}
 }
 
+/** Page Template Default **/
+.page-template-page-php.tribe-js {
+	&:not(.tribe-events-page-template) {
+		&.post-type-archive-tribe_events {
+			.wrap.container {
+				#primary {
+					.entry-content {
+						width: 100%;
+						padding: 0;
+						> .archive-header-wrapper {
+							display: none;
+						}
+						#tribe-events {
+							.type-tribe_events {
+								.entry-summary {
+									padding: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.single {
+			.wrap.container {
+				.content.row {
+					> .archive-header-wrapper {
+						display: none;
+					}
+					> #primary {
+						margin-top: 0;
+						z-index: 0;
+					}
+				}
+			}
+		}
+	}
+}
 
 /**
  * Tribe General Structure
@@ -153,7 +191,7 @@ article.page {
 }
 
 .site-main {
-	.archive:not(.has-sidebar).tribe-js & { width: 100% !important; }
+	.post-type-archive-tribe_events:not(.has-sidebar).tribe-js & { width: 100%; }
 }
 
 #tribe-bar-form {
@@ -249,6 +287,31 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 
 .tribe-js {
 	.datepicker { min-width: 160px; }
+	// Organizer
+	&.single-tribe_organizer {
+		#primary {
+			&.content-area {
+				margin-bottom: $lsx-medium-gap;
+				margin-top: $lsx-medium-gap;
+			}
+			#main {
+				.tribe-events-organizer {
+					.tribe-events-organizer-meta {
+						display: flex;
+						flex-direction: column;
+						border-bottom: none;
+						margin-bottom: 2.4rem;
+ 						padding-bottom: 0;
+						.tribe-events-event-image {
+							margin-top: 2.4rem;
+							order: -1;
+							align-self: baseline;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 #tribe-bar-collapse-toggle { line-height: 31px; }
