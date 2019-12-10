@@ -16,12 +16,15 @@
 	.wc-block-grid {
 		.wc-block-grid__products {
 			justify-content: space-between;
+			@media (max-width: 480px) {
+				display: block;
+			}
 			.wc-block-grid__product {
 				text-align: left;
+				margin-bottom: $lsx-medium-gap;
 				display: flex;
 				flex-direction: column;
 				align-items: end;
-				margin-bottom: $lsx-medium-gap;
 				.wc-block-grid__product-link {
 					order: -1;
 					width: 100%;
