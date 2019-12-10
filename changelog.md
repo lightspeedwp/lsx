@@ -1,6 +1,6 @@
 ## LSX Changelog
 
-### 2.6 (in development)
+### 2.6
 * Dev - Added in a 'lsx_defer_parsing_of_js' filter to allow plugins to skip their files.
 * Dev - Added an additional thumbnail image size for post carousel blocks 'lsx-thumbnail-carousel'.
 * Dev - Changing the parent class for tribe event styling.
