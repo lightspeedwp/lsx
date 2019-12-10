@@ -25,6 +25,13 @@
 				display: flex;
 				flex-direction: column;
 				align-items: end;
+				@media (max-width: 480px) {
+					margin-left: auto;
+					margin-right: auto;
+					flex: 1 0 100%;
+					max-width: 100%;
+					padding: 0;
+				}
 				.wc-block-grid__product-link {
 					order: -1;
 					width: 100%;
@@ -52,6 +59,10 @@
 					display: flex;
 					align-items: end;
 					order: -1;
+					.star-rating {
+						margin-left: 0;
+						margin-right: 0;
+					}
 				}
 				.wc-block-grid__product-onsale {
 					min-height: 55px;
@@ -69,6 +80,7 @@
 					display: flex;
 					align-items: center;
 					font-size: 15px;
+					left: initial;
 				}
 				.wc-block-grid__product-price {
 					display: flex;
