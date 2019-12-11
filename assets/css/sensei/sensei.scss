@@ -193,6 +193,9 @@
 	#primary {
 		margin-top: $lsx-medium-gap;
 		margin-bottom: $lsx-large-gap;
+		.banner-single {
+			display: none;
+		}
 	}
 	&.page-has-banner {
 		.archive-header-wrapper.banner-page,
@@ -1049,6 +1052,9 @@ article.page {
 										}
 									}
 								}
+								.answer-feedback {
+									margin-top: 20px;
+								}
 							}
 						}
 						> span {
@@ -1458,6 +1464,7 @@ body:not(.logged-in) {
 					.learner-avatar {
 						margin-left: auto;
 						margin-right: auto;
+						margin-bottom: 15px;
 						@include media('>tablet') {
 							width: 20%;
 							margin-right: 30px;
