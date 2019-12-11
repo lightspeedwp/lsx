@@ -361,10 +361,21 @@ article.page {
 					}
 					.course-thumbnail {
 						//width: 100%;
-						@include media('>tablet') {
-							a {
-								margin-right: $lsx-gap;
-								display: block;
+						&:not(.course-thumbnail-empty) {
+							@include media('>tablet') {
+								flex: 1.5 1 0;
+								a {
+									margin-right: $lsx-gap;
+									display: block;
+									img {
+										width: 100%;
+									}
+								}
+							}
+							+ .course-body {
+								@include media('>tablet') {
+									flex: 2.5 1 0;
+								}
 							}
 						}
 					}
