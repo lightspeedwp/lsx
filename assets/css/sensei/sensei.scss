@@ -1649,24 +1649,25 @@ body:not(.logged-in) {
 		input[type="password"],
 		input[type="email"] {
 			display: block;
-				width: 100%;
-				height: $input-height-base;
-				padding: $padding-base-vertical $padding-base-horizontal;
-				font-size: $font-size-base;
-				line-height: $line-height-base;
-				color: $input-color;
-				background-color: $input-bg;
-				background-image: none;
-				border: 2px solid $input-border;
-				border-radius: $input-border-radius;
-				@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
-				@include form-control-focus;
-				@include placeholder;
+			width: 100%;
+			height: $input-height-base;
+			padding: $padding-base-vertical $padding-base-horizontal;
+			font-size: $font-size-base;
+			line-height: $line-height-base;
+			color: $input-color;
+			background-color: $input-bg;
+			background-image: none;
+			border: 2px solid $input-border;
+			border-radius: $input-border-radius;
+			@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
+			@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+			@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+			@include form-control-focus;
+			@include placeholder;
 		}
 
 		input[type="submit"] {
+			@include lsx-button-scaffolding();
 			@include small-button();
 			@include lsx-button-colour();
 
