@@ -974,6 +974,9 @@ p.no-comments,
 
 		@include media ('>=custom') {
 			margin-right: 55px;
+			width: 25%;
+		}
+		@include media ('>=desktop') {
 			width: 17.6470588235%;
 		}
 
