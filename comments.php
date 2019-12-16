@@ -50,14 +50,16 @@ if ( have_comments() ) : ?>
 				);
 			} else {
 				printf(
-					/* Translators: 1: number of comments, 2: post title */
-					esc_html( _nx(
-						'%1$s Response to &ldquo;%2$s&rdquo;',
-						'%1$s Responses to &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments.php',
-						'lsx'
-					) ),
+					esc_html(
+						/* Translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s Response to &ldquo;%2$s&rdquo;',
+							'%1$s Responses to &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments.php',
+							'lsx'
+						)
+					),
 					esc_html( number_format_i18n( $comments_number ) ),
 					get_the_title()
 				);
@@ -69,15 +71,16 @@ if ( have_comments() ) : ?>
 			<?php
 				wp_list_comments(
 					array(
-					'walker' => new LSX_Walker_Comment,
+						'walker' => new LSX_Walker_Comment(),
 					)
 				);
 			?>
 		</ol>
 
 		<?php
-			$comment_pages_count = get_comment_pages_count();
-			if ( $comment_pages_count > 1 && get_option( 'page_comments' ) ) : ?>
+		$comment_pages_count = get_comment_pages_count();
+		if ( $comment_pages_count > 1 && get_option( 'page_comments' ) ) :
+		?>
 			<nav>
 				<ul class="pager">
 					<?php if ( get_previous_comments_link() ) : ?>

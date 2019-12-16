@@ -34,10 +34,13 @@ if ( ! class_exists( 'LSX_Customize_Core_Control' ) ) :
 		public function render_content() {
 			?>
 			<label>
-				<?php if ( ! empty( $this->label ) ) { ?>
+				<?php
+				if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<?php }
-				if ( ! empty( $this->description ) ) { ?>
+				<?php
+				}
+				if ( ! empty( $this->description ) ) {
+					?>
 					<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<input <?php $this->link(); ?> type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->input_attrs(); ?>>
