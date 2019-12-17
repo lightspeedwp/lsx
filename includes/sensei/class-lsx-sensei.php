@@ -96,6 +96,9 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_messages_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_messages_breadcrumb_filter' ), 40, 1 );
 
+			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_single_message_breadcrumb_filter' ), 40, 1 );
+			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_single_message_breadcrumb_filter' ), 40, 1 );
+
 			add_filter( 'wpseo_breadcrumb_links', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
 			add_filter( 'woocommerce_get_breadcrumb', array( $this, 'lsx_sensei_results_breadcrumb_filter' ), 40, 1 );
 
@@ -531,6 +534,48 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 						);
 						$new_crumbs[2] = array(
 							'text' => __( 'Messages', 'lsx' ),
+						);
+					}
+					$crumbs = $new_crumbs;
+				}
+			}
+			return $crumbs;
+		}
+
+		/**
+		 * Add the Parent Course link to the single messages breadcrumbs
+		 * @param $crumbs
+		 * @return array
+		 */
+		public function lsx_sensei_single_message_breadcrumb_filter( $crumbs, $id = 0 ) {
+			if ( is_single() && ( is_singular( 'sensei_message' ) ) ) {
+
+				$messages_page_url = '/messages/';
+
+				if ( empty( $id ) ) {
+					$id = get_the_ID();
+				}
+
+				if ( $id ) {
+
+					$new_crumbs    = array();
+					$new_crumbs[0] = $crumbs[0];
+
+					if ( function_exists( 'woocommerce_breadcrumb' ) ) {
+						$new_crumbs[1] = array(
+							0 => __( 'Messages', 'lsx' ),
+							1 => $messages_page_url,
+						);
+						$new_crumbs[2] = array(
+							0 => __( 'Message', 'lsx' ),
+						);
+					} else {
+						$new_crumbs[1] = array(
+							'text' => __( 'Messages', 'lsx' ),
+							'url'  => $messages_page_url,
+						);
+						$new_crumbs[2] = array(
+							'text' => __( 'Message', 'lsx' ),
 						);
 					}
 					$crumbs = $new_crumbs;

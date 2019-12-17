@@ -200,20 +200,20 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 						$( lsx_params.stickyMenuSelector ).scrollToFixed( {
 							marginTop: function() {
 								var wpadminbar = $( '#wpadminbar' );
-		
+
 								if ( wpadminbar.length > 0 ) {
 									return wpadminbar.outerHeight();
 								}
-		
+
 								return 0;
 							},
-		
+
 							minWidth: 768,
-		
+
 							preFixed: function() {
 								$( this ).addClass( 'scrolled' );
 							},
-		
+
 							preUnfixed: function() {
 								$( this ).removeClass( 'scrolled' );
 							}
@@ -537,6 +537,20 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 	};
 
 	/**
+	 * Check if a courses thumbnail is empty on the archive page.
+	 *
+	 * @package    lsx
+	 * @subpackage scripts
+	 */
+	lsx.sensei_courses_empty_thumbnail = function() {
+		$( '.course-thumbnail' ).each(function() {
+			if ( !$.trim( $(this).html() ).length ) {
+				$(this).addClass('course-thumbnail-empty');
+			}
+		});
+	};
+
+	/**
 	 * On window resize.
 	 *
 	 * @package    lsx
@@ -578,6 +592,7 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 		lsx.wc_fix_subscribe_to_replies_checkbox();
 		lsx.wc_add_quick_view_close_button();
 		lsx.wc_fix_subscriptions_empty_message();
+		lsx.sensei_courses_empty_thumbnail();
 
 	} );
 
