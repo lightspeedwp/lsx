@@ -194,10 +194,7 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 
 		if ( 'lsx-thumbnail-single' === $size || 'lsx-thumbnail-wide' === $size || 'lsx-thumbnail-square' === $size || 'thumbnail' === $size ) {
 			$srcset = false;
-			$temp_img    = wp_get_attachment_image_src( $post_thumbnail_id, $size );
-			if ( ! empty( $temp_img ) ) {
-				$img    = $temp_img[0];
-			}
+			$img    = get_the_post_thumbnail_url( get_the_ID(), 'lsx-thumbnail-wide' );
 		} else {
 			$srcset = true;
 			$img = wp_get_attachment_image_srcset( $post_thumbnail_id, $size );
