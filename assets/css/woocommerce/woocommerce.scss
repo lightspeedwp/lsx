@@ -100,7 +100,7 @@ article.page {
 .woocommerce-LostPassword {
 	&:last-child { margin-bottom: 0; }
 	a {
-		color: nth($orange, 1);
+		color: nth($blue, 1);
 	}
 }
 
@@ -216,6 +216,15 @@ article.page {
 		.col-1,
 		.col-2 {
 			width: 100%;
+		}
+		.woocommerce-form-register {
+			.woocommerce-form-register__submit {
+				background-color: nth($blue, 2);
+				box-shadow: 2px 2px 0 0 black;
+				&:hover {
+					background-color: black;
+				}
+			}
 		}
 	}
 
@@ -397,7 +406,9 @@ body.woocommerce {
 
 			#comments { margin-top: 0; }
 		}
-
+		.related {
+			clear: both;
+		}
 		form.cart {
 			.variations {
 				td.label {
@@ -443,9 +454,9 @@ body.woocommerce {
 	}
 	.woocommerce-LostPassword.lost_password {
 		a {
-			color: nth($orange, 1);
+			color: nth($blue, 1);
 			&:hover {
-				color: nth($orange, 2);
+				color: nth($blue, 2);
 			}
 		}
 	}
@@ -965,6 +976,9 @@ p.no-comments,
 
 		@include media ('>=custom') {
 			margin-right: 55px;
+			width: 25%;
+		}
+		@include media ('>=desktop') {
 			width: 17.6470588235%;
 		}
 
@@ -1483,7 +1497,7 @@ ul.lsx-wc-cart-sub-menu {
 	padding: 0;
 	.woocommerce-LostPassword {
 		a {
-			color: nth($orange, 1);
+			color: nth($blue, 1);
 		}
 	}
 }

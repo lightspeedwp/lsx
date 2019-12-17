@@ -463,7 +463,10 @@
 
 	.woocommerce-MyAccount-navigation {
 		background-color: #FFF;
-
+		height: 100%;
+		@include media('<tablet') {
+			margin-bottom: $lsx-medium-gap;
+		}
 		ul {
 			// border-top: 1px solid $breaker;
 
