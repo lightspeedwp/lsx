@@ -194,7 +194,14 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 
 		if ( 'lsx-thumbnail-single' === $size || 'lsx-thumbnail-wide' === $size || 'lsx-thumbnail-square' === $size || 'thumbnail' === $size ) {
 			$srcset = false;
-			$img    = get_the_post_thumbnail_url( get_the_ID(), 'lsx-thumbnail-wide' );
+			if ( ( ( 'team' === get_post_type() ) || ( 'testimonial' === get_post_type() ) ) && is_search() ) {
+				$img = get_the_post_thumbnail_url( get_the_ID(), 'lsx-thumbnail-wide' );
+			} else {
+				$temp_img = wp_get_attachment_image_src( $post_thumbnail_id, $size );
+				if ( ! empty( $temp_img ) ) {
+					$img    = $temp_img[0];
+				}
+			}
 		} else {
 			$srcset = true;
 			$img = wp_get_attachment_image_srcset( $post_thumbnail_id, $size );
