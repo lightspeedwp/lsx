@@ -544,6 +544,11 @@ article.page {
 		.sensei-course-participants {
 			margin-bottom: 0;
 		}
+		> header + .sensei-course-participants {
+			@include media('>desktop') {
+				margin-top: 4rem;
+			}
+		}
 		.course-excerpt {
 			margin-bottom: 10px;
 			margin-top: 0;
@@ -1018,7 +1023,7 @@ article.page {
 						> p {
 							@include media('>desktop') {
 								align-self: flex-end;
-								margin-bottom: -4rem;
+								//margin-bottom: -4rem;
 							}
 						}
 						> p.form-row {
@@ -1070,6 +1075,11 @@ article.page {
 						}
 						> span {
 							margin-bottom: $lsx-gap;
+							&:nth-of-type(1) {
+								@include media('>desktop') {
+									margin-top: -6.3rem;
+								}
+							}
 							.quiz-submit {
 								border-radius: 3px;
 								font-size: 14px;
