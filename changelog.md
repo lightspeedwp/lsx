@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.6.1
+* Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.
+
 ### 2.6
 * Dev - Added in a `lsx_defer_parsing_of_js` filter to allow plugins to skip their files.
 * Dev - Added an additional thumbnail image size for post carousel blocks `lsx-thumbnail-carousel`.

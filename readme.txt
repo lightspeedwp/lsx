@@ -5,7 +5,7 @@ Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme
 Requires at least: 5.1.1
 Tested up to: 5.3.2
 Requires PHP: 7.0
-Stable tag: 2.6
+Stable tag: 2.6.1
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -46,6 +46,10 @@ If you are experiencing issues with the LSX Theme, please log any bug issues you
 If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX theme on Github](https://github.com/lightspeeddevelopment/lsx) and submit a Pull Request with your updates.
 
 == Changelog ==
+
+= 2.6.1 =
+
+* Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.
 
 = 2.6 =
 
