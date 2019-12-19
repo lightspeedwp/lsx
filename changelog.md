@@ -1,12 +1,13 @@
 ## LSX Changelog
 
 ### 2.6
-* Dev - Added in a 'lsx_defer_parsing_of_js' filter to allow plugins to skip their files.
-* Dev - Added an additional thumbnail image size for post carousel blocks 'lsx-thumbnail-carousel'.
-* Dev - Changing the parent class for tribe event styling.
+* Dev - Added in a `lsx_defer_parsing_of_js` filter to allow plugins to skip their files.
+* Dev - Added an additional thumbnail image size for post carousel blocks `lsx-thumbnail-carousel`.
+* Dev - Better support for Tribe Events templates and styling.
+* Fix - The width for the login form (logged out) will not affect widgets anymore.
 * Dev - When LSX Banners is active, the single events will not show a featured image on the body.
 * Dev - Added in a filter `lsx_sticky_menu_selector` to allow 3rd party plugins to change the sticky menu element.
-* Dev - Sensei improvements
+* Dev - Sensei plugin compatibility (styles for Sensei templates, new layout and compatibility with Woocommerce Sensei courses).
 * Dev - Registering Sensei sidebars for Sensei Participants or Sensei Progress plugins on single lessons and quiz.
 * Dev - Folder restructuring for all non LSX plugins supported.
 * Dev - Changing the parent class for tribe event styling.

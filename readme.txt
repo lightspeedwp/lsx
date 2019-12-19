@@ -3,7 +3,7 @@ Contributors: feedmymedia
 Donate link: https://donate.lsdev.biz/
 Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme 
 Requires at least: 5.1.1
-Tested up to: 5.3
+Tested up to: 5.3.2
 Requires PHP: 7.0
 Stable tag: 2.6
 License: GPLv3
@@ -52,7 +52,7 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 * Dev - Added in a lsx_defer_parsing_of_js filter to allow plugins to skip their files.
 * Dev - Added an additional thumbnail image size for post carousel blocks 'lsx-thumbnail-carousel'.
 * Dev - Better support for Tribe Events templates and styling.
-* Fix - the width for the login form (logged out) will not affect widgets anymore.
+* Fix - The width for the login form (logged out) will not affect widgets anymore.
 * Dev - When LSX Banners is active, the single events will not show a featured image on the body.
 * Fix - Improving js loading for better functioning of features like the Sticky menu.
 * Dev - Folder restructuring for all non LSX plugins supported.
