@@ -30,44 +30,52 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 		add_image_size( 'lsx-thumbnail-single', 750, 350, true );
 		add_image_size( 'lsx-banner', 1920, 600, true );
 
-		register_nav_menus( array(
-			'primary'       => esc_html__( 'Primary Menu', 'lsx' ),
-			'top-menu'      => esc_html__( 'Top Menu (right)', 'lsx' ),
-			'top-menu-left' => esc_html__( 'Top Menu (left)', 'lsx' ),
-			'social'        => esc_html__( 'Social Menu', 'lsx' ),
-			'footer'        => esc_html__( 'Footer Menu', 'lsx' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary'       => esc_html__( 'Primary Menu', 'lsx' ),
+				'top-menu'      => esc_html__( 'Top Menu (right)', 'lsx' ),
+				'top-menu-left' => esc_html__( 'Top Menu (left)', 'lsx' ),
+				'social'        => esc_html__( 'Social Menu', 'lsx' ),
+				'footer'        => esc_html__( 'Footer Menu', 'lsx' ),
+			)
+		);
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'custom-background' );
 
-		add_theme_support( 'custom-logo', array(
-			'height'      => 50,
-			'width'       => 160,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		add_theme_support( 'custom-logo',
+			array(
+				'height'      => 50,
+				'width'       => 160,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
 		add_theme_support( 'html5', array( 'caption' ) );
 
-		add_theme_support( 'post-formats', array(
-			'image',
-			'video',
-			'gallery',
-			'audio',
-			'quote',
-		) );
+		add_theme_support( 'post-formats',
+			array(
+				'image',
+				'video',
+				'gallery',
+				'audio',
+				'quote',
+			)
+		);
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'sensei' );
 
-		add_theme_support( 'site-logo', array(
-			'header-text' => array(
-				'site-title',
-				'site-description',
-			),
-			'size'        => 'medium',
-		) );
+		add_theme_support( 'site-logo',
+			array(
+				'header-text' => array(
+					'site-title',
+					'site-description',
+				),
+				'size'        => 'medium',
+			)
+		);
 
 		add_theme_support( 'title-tag' );
 

@@ -91,19 +91,23 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 			$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 			$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 
-			$wp_customize->selective_refresh->add_partial( 'blogname', array(
-				'selector'        => 'h1.site-title a',
-				'render_callback' => function() {
-					bloginfo( 'name' );
-				},
-			) );
+			$wp_customize->selective_refresh->add_partial( 'blogname',
+				array(
+					'selector'        => 'h1.site-title a',
+					'render_callback' => function() {
+						bloginfo( 'name' );
+					},
+				)
+			);
 
-			$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-				'selector'        => '.site-description',
-				'render_callback' => function() {
-					bloginfo( 'description' );
-				},
-			) );
+			$wp_customize->selective_refresh->add_partial( 'blogdescription',
+				array(
+					'selector'        => '.site-description',
+					'render_callback' => function() {
+						bloginfo( 'description' );
+					},
+				)
+			);
 		}
 
 		/**
@@ -138,13 +142,15 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 		 */
 		private function add_setting( $slug, $args, $wp_customize ) {
 			$wp_customize->add_setting( $slug,
-				array_merge( array(
-					'default'           => null,
-					'type'              => 'theme_mod',
-					'capability'        => 'edit_theme_options',
-					'transport'         => 'postMessage',
-					'sanitize_callback' => 'lsx_sanitize_choices',
-				), $args )
+				array_merge(
+					array(
+						'default'           => null,
+						'type'              => 'theme_mod',
+						'capability'        => 'edit_theme_options',
+						'transport'         => 'postMessage',
+						'sanitize_callback' => 'lsx_sanitize_choices',
+					),
+				$args )
 			);
 		}
 

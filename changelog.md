@@ -28,6 +28,7 @@
 * Dev - Updating Event Calendar Organizer styles.
 * Dev - Adding hierarchy for the sitemap.
 * Fix - Fixed the archive pages, to make them 100% width but leaving the option fo narrow or full width for the blog archive.
+* Dev - Improvements on the code to follow WordPress core coding standards.
 
 ### 2.5.1
 * Fix - Adding in a conditional to check if an interface exists before trying to include the Yoast Schema
