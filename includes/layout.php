@@ -143,7 +143,8 @@ if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) :
 					</div>
 				</div>
 			</div>
-		<?php endif;
+			<?php
+		endif;
 	}
 	add_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
 endif;
@@ -161,11 +162,11 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		$default_size   = 'sm';
 		$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
-		//Pages have their own banner function 'lsx_page_banner()'
+		// Pages have their own banner function 'lsx_page_banner()'
 		// if ( function_exists( 'is_woocommerce' ) && ( is_woocommerce() || is_checkout() || is_cart() || is_account_page() ) ) {
-		// 	return;
+		// return;
 		// }
-		//Product pages have their own banner function 'lsx_page_banner()'
+		// Product pages have their own banner function 'lsx_page_banner()'.
 		if ( function_exists( 'is_woocommerce' ) && ( is_product() ) ) {
 			return;
 		}
@@ -209,9 +210,9 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			</div>
 			<?php
 		elseif ( is_author() ) :
-			$author = get_the_author();
+			$author        = get_the_author();
 			$author_avatar = get_avatar( get_the_author_meta( 'ID' ), 256 );
-			$author_bio = get_the_archive_description();
+			$author_bio    = get_the_archive_description();
 			?>
 			<div class="archive-header-wrapper banner-archive-author col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
@@ -249,14 +250,14 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			</div>
 			<?php
 		elseif ( ! is_singular( 'post' ) ) :
-			// Display only the breadcrumbs
+			// Display only the breadcrumbs.
 			?>
 			<div class="archive-header-wrapper banner-singular col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 			</div>
 			<?php
 		elseif ( ( true === apply_filters( 'lsx_global_header_disable', false ) ) && ( ! is_search() ) ) :
-			// Display only the breadcrumbs
+			// Display only the breadcrumbs.
 			?>
 			<div class="archive-header-wrapper banner-global col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
@@ -275,8 +276,8 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_author_extra_info() {
-		$default_size   = 'sm';
-		$size           = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+		$default_size = 'sm';
+		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
 		if ( is_author() ) :
 			$author_id         = get_the_author_meta( 'ID' );
@@ -360,8 +361,8 @@ if ( ! function_exists( 'lsx_post_header' ) ) :
 	 * @subpackage layout
 	 */
 	function lsx_post_header() {
-		$default_size  = 'sm';
-		$size          = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+		$default_size = 'sm';
+		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
 		if ( is_singular( 'post' ) ) :
 			$format = get_post_format();
@@ -418,7 +419,7 @@ if ( ! function_exists( 'lsx_header_search_form' ) ) :
 	add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );
 endif;
 
-// Add entry meta to single post if active
+// Add entry meta to single post if active.
 if ( ! function_exists( 'lsx_add_entry_meta' ) ) :
 	function lsx_add_entry_meta() {
 		if ( is_single() && is_singular( 'post' ) ) {

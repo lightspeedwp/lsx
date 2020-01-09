@@ -31,11 +31,11 @@ if ( ! function_exists( 'lsx_kses_allowed_html' ) ) :
 		$allowedtags['img']['srcset'] = true;
 		$allowedtags['img']['sizes']  = true;
 
-		$allowedtags['input']['name'] = true;
-		$allowedtags['input']['type'] = true;
+		$allowedtags['input']['name']  = true;
+		$allowedtags['input']['type']  = true;
 		$allowedtags['input']['value'] = true;
 		$allowedtags['input']['class'] = true;
-		$allowedtags['input']['id'] = true;
+		$allowedtags['input']['id']    = true;
 		$allowedtags['script']['type'] = true;
 		return $allowedtags;
 	}
@@ -87,13 +87,13 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = 'top-menu-fixed';
 		}
 
-		$search_form  = get_theme_mod( 'lsx_header_search', false );
+		$search_form = get_theme_mod( 'lsx_header_search', false );
 
 		if ( false !== $search_form ) {
 			$classes[] = 'has-header-search';
 		}
 
-		$preloader_content  = get_theme_mod( 'lsx_preloader_content_status', false );
+		$preloader_content = get_theme_mod( 'lsx_preloader_content_status', false );
 
 		if ( false !== $preloader_content ) {
 			$classes[] = 'preloader-content-enable';
@@ -148,8 +148,8 @@ if ( ! function_exists( 'lsx_remove_self_closing_tags' ) ) :
 
 endif;
 
-add_filter( 'get_avatar',          'lsx_remove_self_closing_tags' ); // <img />
-add_filter( 'comment_id_fields',   'lsx_remove_self_closing_tags' ); // <input />
+add_filter( 'get_avatar', 'lsx_remove_self_closing_tags' ); // <img />
+add_filter( 'comment_id_fields', 'lsx_remove_self_closing_tags' ); // <input />
 add_filter( 'post_thumbnail_html', 'lsx_remove_self_closing_tags' ); // <img />
 
 if ( ! function_exists( 'lsx_is_element_empty' ) ) :
@@ -187,7 +187,7 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 			}
 		}
 
-		$size = apply_filters( 'lsx_thumbnail_size', $size );
+		$size      = apply_filters( 'lsx_thumbnail_size', $size );
 		$img       = '';
 		$lazy_img  = '';
 		$image_url = '';
@@ -199,12 +199,12 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 			} else {
 				$temp_img = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 				if ( ! empty( $temp_img ) ) {
-					$img    = $temp_img[0];
+					$img = $temp_img[0];
 				}
 			}
 		} else {
 			$srcset = true;
-			$img = wp_get_attachment_image_srcset( $post_thumbnail_id, $size );
+			$img    = wp_get_attachment_image_srcset( $post_thumbnail_id, $size );
 
 			$temp_lazy = wp_get_attachment_image_src( $post_thumbnail_id, $size );
 			if ( ! empty( $temp_lazy ) ) {
@@ -221,7 +221,7 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 
 		if ( '' !== $img ) {
 			$image_url = $img;
-			$img = '<img alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" ';
+			$img       = '<img alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" ';
 			if ( $srcset ) {
 				$img .= 'srcset="' . esc_attr( $image_url ) . '" ';
 			} else {
@@ -419,13 +419,15 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 
 		if ( ! $show_full_content ) {
 			if ( '' !== $excerpt && ! stristr( $excerpt, 'moretag' ) ) {
-				$pagination = wp_link_pages( array(
-					'before'      => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
-					'after'       => '</div></div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-					'echo'        => 0,
-				) );
+				$pagination = wp_link_pages(
+					array(
+						'before'      => '<div class="lsx-postnav-wrapper"><div class="lsx-postnav">',
+						'after'       => '</div></div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+						'echo'        => 0,
+					)
+				);
 
 				if ( ! empty( $pagination ) ) {
 					$excerpt .= $pagination;
@@ -441,7 +443,7 @@ if ( ! function_exists( 'lsx_the_excerpt_filter' ) ) :
 
 endif;
 
-add_filter( 'the_excerpt', 'lsx_the_excerpt_filter' , 1 , 20 );
+add_filter( 'the_excerpt', 'lsx_the_excerpt_filter', 1, 20 );
 
 if ( ! function_exists( 'lsx_full_width_widget_classes' ) ) :
 
@@ -463,7 +465,7 @@ if ( ! function_exists( 'lsx_full_width_widget_classes' ) ) :
 
 		if ( 'Text' === $widget_name ) {
 			$wp_registered_widgets[ $widget_id ]['original_callback'] = $wp_registered_widgets[ $widget_id ]['callback'];
-			$wp_registered_widgets[ $widget_id ]['callback'] = 'lsx_full_width_widget_custom_callback';
+			$wp_registered_widgets[ $widget_id ]['callback']          = 'lsx_full_width_widget_custom_callback';
 		}
 
 		return $params;
@@ -485,9 +487,9 @@ if ( ! function_exists( 'lsx_full_width_widget_custom_callback' ) ) :
 		global $wp_registered_widgets;
 
 		$original_callback_params = func_get_args();
-		$widget_id = $original_callback_params[0]['widget_id'];
+		$widget_id                = $original_callback_params[0]['widget_id'];
 
-		$original_callback = $wp_registered_widgets[ $widget_id ]['original_callback'];
+		$original_callback                               = $wp_registered_widgets[ $widget_id ]['original_callback'];
 		$wp_registered_widgets[ $widget_id ]['callback'] = $original_callback;
 
 		$widget_id_base = $wp_registered_widgets[ $widget_id ]['callback'][0]->id_base;
@@ -535,13 +537,13 @@ add_filter( 'lsx_widget_output', 'lsx_full_width_widget_output', 10, 3 );
 function lsx_post_format_force_content_on_list() {
 	$post_formats = apply_filters( 'lsx_post_format_force_content_on_list',
 		array(
-				'video' => 'video',
-				'audio' => 'audio',
-				'quote' => 'quote',
-				'link' => 'link',
-			)
+			'video' => 'video',
+			'audio' => 'audio',
+			'quote' => 'quote',
+			'link'  => 'link',
+		)
 	);
-	$return = false;
+	$return       = false;
 	if ( ! has_post_format( $post_formats ) ) {
 		$return = true;
 	}
@@ -557,11 +559,10 @@ function lsx_remove_hentry( $classes ) {
 	}
 	return $classes;
 }
-add_filter( 'post_class','lsx_remove_hentry' );
+add_filter( 'post_class', 'lsx_remove_hentry' );
 
 /**
  * Strip Excerpts.
- *
  */
 function lsx_strip_excerpt( $content ) {
 	if ( is_search() || is_archive() || ( is_blog_installed() && ! is_single() && ! is_page() ) ) {
@@ -574,8 +575,7 @@ function lsx_strip_excerpt( $content ) {
 add_filter( 'the_content', 'lsx_strip_excerpt' );
 
 /**
- * Disable Gutenberg for LSX Custom Post Tpes.
- *
+ * Disable Gutenberg for LSX Custom Post Types.
  */
 function lsx_disable_gutenberg_product_type( $is_enabled, $post_type ) {
 	if ( 'testimonial' === $post_type || 'team' === $post_type || 'project' === $post_type ) {
@@ -588,6 +588,7 @@ add_filter( 'gutenberg_add_edit_link_for_post_type', 'lsx_disable_gutenberg_prod
 
 /**
  * Add the "Blog" link to the breadcrumbs
+ *
  * @param $crumbs
  * @return array
  */
@@ -600,22 +601,22 @@ function lsx_breadcrumbs_blog_link( $crumbs ) {
 		$blog_page = get_option( 'page_for_posts' );
 		if ( false !== $blog_page && '' !== $blog_page ) {
 
-			$new_crumbs = array();
+			$new_crumbs    = array();
 			$new_crumbs[0] = $crumbs[0];
 
 			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
 				$new_crumbs[1] = array(
-					0	=> get_the_title( $blog_page ),
-					1	=> get_permalink( $blog_page ),
+					0 => get_the_title( $blog_page ),
+					1 => get_permalink( $blog_page ),
 				);
 			} else {
 				$new_crumbs[1] = array(
-					'text'	=> get_the_title( $blog_page ),
-					'url'	=> get_permalink( $blog_page ),
+					'text' => get_the_title( $blog_page ),
+					'url'  => get_permalink( $blog_page ),
 				);
 			}
 			$new_crumbs[2] = $crumbs[1];
-			$crumbs = $new_crumbs;
+			$crumbs        = $new_crumbs;
 
 		}
 	}

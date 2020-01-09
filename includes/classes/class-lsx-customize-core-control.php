@@ -35,9 +35,10 @@ if ( ! class_exists( 'LSX_Customize_Core_Control' ) ) :
 			?>
 			<label>
 				<?php
-				if ( ! empty( $this->label ) ) { ?>
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<?php
+				if ( ! empty( $this->label ) ) {
+					?>
+						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<?php
 				}
 				if ( ! empty( $this->description ) ) {
 					?>
