@@ -1,5 +1,8 @@
 ## LSX Changelog
 
+### 2.6.2 ( In progress )
+* Fix - Fixed the top bar menu icon on smaller screens.
+
 ### 2.6.1
 * Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.
 

@@ -119,10 +119,8 @@
 		&:not(.pull-left) {
 			& > .menu {
 				& > .menu-item {
-					@include media('<phone') {
+					@media (max-width: 500px) {
 						&:not(.cta):not(.cta-red) > a {
-							@include hide-text();
-
 							padding: 0;
 
 							&:before {
@@ -230,6 +228,23 @@
 				a {
 					font-size: 12px;
 					padding: 0 7px;
+				}
+			}
+		}
+	}
+	@media (max-width: 500px) {
+		#menu-top-menu {
+			.menu-item {
+				&.map,
+				&.tel,
+				&.email {
+					max-width: 35px;
+					> a {
+						@include hide-text();
+						&:before {
+							padding: 0;
+						}
+					}
 				}
 			}
 		}
