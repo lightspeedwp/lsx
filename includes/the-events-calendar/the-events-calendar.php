@@ -97,13 +97,13 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 					$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'Submit an Event', 'lsx' ) );
 					break;
 			}
-		} else if ( tribe_is_community_my_events_page() ) {
+		} elseif ( tribe_is_community_my_events_page() ) {
 			$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) );
-		} else if ( tribe_is_event() ) {
+		} elseif ( tribe_is_event() ) {
 			$title = tribe_get_events_title();
 		}
 
-		//Only disable the title after we have retrieved it
+		// Only disable the title after we have retrieved it.
 		add_filter( 'tribe_get_events_title', 'lsx_text_disable_body_title', 200, 1 );
 
 		if ( is_singular( 'tribe_events' ) ) {
@@ -118,8 +118,8 @@ endif;
 if ( ! function_exists( 'lsx_text_disable_body_title' ) ) :
 	/**
 	 * Disable the events title for the post archive if the dynamic setting is active.
-	 * @param $title
 	 *
+	 * @param $title
 	 * @return string
 	 */
 	function lsx_text_disable_body_title( $title ) {
@@ -140,34 +140,34 @@ if ( ! function_exists( 'lsx_tec_breadcrumb_filter' ) ) :
 	function lsx_tec_breadcrumb_filter( $crumbs ) {
 
 		if ( tribe_is_venue() || tribe_is_organizer() || tribe_is_community_edit_event_page() || tribe_is_community_my_events_page() ) {
-			$new_crumbs = array();
+			$new_crumbs    = array();
 			$new_crumbs[0] = $crumbs[0];
 
 			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
 				$new_crumbs[1] = array(
-					0	=> __( 'Events', 'lsx' ),
-					1	=> get_post_type_archive_link( 'tribe_events' ),
+					0 => __( 'Events', 'lsx' ),
+					1 => get_post_type_archive_link( 'tribe_events' ),
 				);
 			} else {
 				$new_crumbs[1] = array(
-					'text'	=> __( 'Events', 'lsx' ),
-					'url'	=> get_post_type_archive_link( 'tribe_events' ),
+					'text' => __( 'Events', 'lsx' ),
+					'url'  => get_post_type_archive_link( 'tribe_events' ),
 				);
 			}
 
 			if ( tribe_is_community_my_events_page() ) {
 				$new_crumbs[2] = $crumbs[2];
-			} else if ( tribe_is_community_edit_event_page() ) {
+			} elseif ( tribe_is_community_edit_event_page() ) {
 
 				if ( function_exists( 'woocommerce_breadcrumb' ) ) {
 					$new_crumbs[2] = array(
-						0	=> apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
-						1	=> tribe_community_events_list_events_link( ),
+						0 => apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
+						1 => tribe_community_events_list_events_link(),
 					);
 				} else {
 					$new_crumbs[2] = array(
-						'text'	=> apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
-						'url'	=> tribe_community_events_list_events_link( ),
+						'text' => apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) ),
+						'url'  => tribe_community_events_list_events_link(),
 					);
 				}
 
