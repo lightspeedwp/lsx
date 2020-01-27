@@ -104,6 +104,11 @@
 	.wpforms-submit-container {
 		margin: 0;
 	}
+	.wpforms-container.inline-fields {
+		.wpforms-submit {
+			width: 99%;
+		}
+	}
 }
 .pum-container {
 	border: 6px solid nth( $blue, 1 );
