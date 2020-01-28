@@ -40,6 +40,9 @@
 			background-color: white;
 			box-shadow: none;
 			border-radius: 0;
+			@include media('<tablet') {
+				max-width: 80% !important;
+			}
 		}
 		.pum-content {
 			color: nth($gray, 3);
