@@ -73,6 +73,18 @@
 		.wp-block-columns {
 			margin-bottom: 0;
 		}
+		img {
+			width: 100%;
+		}
+		.wp-block-lsx-blocks-lsx-container {
+			.lsx-container-inside {
+				.lsx-container-content {
+					@include media('<tablet') {
+						padding: 0em;
+					}
+				}
+			}
+		}
 	}
 	form,
 	.pum-form--style-default,
