@@ -54,10 +54,24 @@
 		font-style: italic;
 		font-size: 15px;
 	}
-	video {
+	video,
+	.wp-block-embed__wrapper,
+	audio {
 		+ figcaption {
 			position: relative;
 			top: -5px;
+		}
+	}
+	.wp-block-embed__wrapper {
+		.entry-content-asset {
+			margin-bottom: 0;
+		}
+	}
+	.wp-block-embed-twitter,
+	.wp-block-embed-instagram,
+	.wp-block-embed-facebook {
+		figcaption {
+			background-color: transparent;
 		}
 	}
 	#main {
