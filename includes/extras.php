@@ -221,7 +221,7 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 
 		if ( '' !== $img ) {
 			$image_url = $img;
-			$img = '<img alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" ';
+			$img = '<img title="' . the_title_attribute( 'echo=0' ) . '" alt="' . the_title_attribute( 'echo=0' ) . '" class="attachment-responsive wp-post-image lsx-responsive" ';
 			if ( $srcset ) {
 				$img .= 'srcset="' . esc_attr( $image_url ) . '" ';
 			} else {
