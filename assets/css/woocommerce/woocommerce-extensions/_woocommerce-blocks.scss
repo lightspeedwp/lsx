@@ -138,6 +138,16 @@
 						margin-right: 0;
 					}
 				}
+				.wp-block-button,
+				.wp-block-button__link {
+					@media (max-width: 600px) {
+						width: 100%;
+						button {
+							align-items: center;
+							text-align: center;
+						}
+					}
+				}
 				.wp-block-button__link {
 					@include small-button();
 					word-break: break-all;
