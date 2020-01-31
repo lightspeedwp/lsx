@@ -57,7 +57,7 @@ if ( ! class_exists( 'LSX_Customize_Layout_Control' ) ) :
 				if ( ! empty( $this->label ) ) {
 					?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<?php
+					<?php
 				}
 				if ( ! empty( $this->description ) ) {
 					?>

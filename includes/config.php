@@ -85,8 +85,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 		/*
 		 * @TODO - Necessary to test it
 		 */
-		// add_theme_support( 'woocommerce' );
 
+		// add_theme_support( 'woocommerce' );.
 		add_theme_support( 'starter-content', array(
 			'widgets'     => array(
 				'sidebar-home'       => array(
@@ -337,7 +337,7 @@ if ( ! function_exists( 'lsx_file_get_contents' ) ) :
 			global $wp_filesystem;
 
 			if ( empty( $wp_filesystem ) ) {
-				require_once( ABSPATH . 'wp-admin/includes/file.php' );
+				require_once ABSPATH . 'wp-admin/includes/file.php';
 				WP_Filesystem();
 			}
 
