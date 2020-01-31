@@ -22,7 +22,10 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+			?>
 
 				<?php get_template_part( 'partials/content', 'page' ); ?>
 
@@ -33,9 +36,9 @@ get_header(); ?>
 		<?php lsx_content_bottom(); ?>
 
 		<?php
-			if ( comments_open() ) {
-				comments_template();
-			}
+		if ( comments_open() ) {
+			comments_template();
+		}
 		?>
 
 	</main><!-- #main -->
@@ -46,4 +49,5 @@ get_header(); ?>
 
 <?php lsx_content_wrap_after(); ?>
 
-<?php get_footer();
+<?php
+get_footer();

@@ -47,8 +47,8 @@
 								<?php
 									wp_nav_menu(
 										array(
-										'theme_location' => 'social',
-										'depth'          => 1,
+											'theme_location' => 'social',
+											'depth' => 1,
 										)
 									);
 								?>
@@ -60,8 +60,8 @@
 								<?php
 									wp_nav_menu(
 										array(
-										'theme_location' => 'footer',
-										'depth'          => 1,
+											'theme_location' => 'footer',
+											'depth' => 1,
 										)
 									);
 								?>

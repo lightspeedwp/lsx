@@ -43,7 +43,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'custom-background' );
 
-		add_theme_support( 'custom-logo',
+		add_theme_support(
+			'custom-logo',
 			array(
 				'height'      => 50,
 				'width'       => 160,
@@ -54,7 +55,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 		add_theme_support( 'html5', array( 'caption' ) );
 
-		add_theme_support( 'post-formats',
+		add_theme_support(
+			'post-formats',
 			array(
 				'image',
 				'video',
@@ -67,7 +69,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'sensei' );
 
-		add_theme_support( 'site-logo',
+		add_theme_support(
+			'site-logo',
 			array(
 				'header-text' => array(
 					'site-title',
@@ -79,12 +82,14 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 
 		add_theme_support( 'title-tag' );
 
-		/* @TODO - Necessary to test it */
+		/*
+		 * @TODO - Necessary to test it
+		 */
 		// add_theme_support( 'woocommerce' );
 
 		add_theme_support( 'starter-content', array(
-			'widgets' => array(
-				'sidebar-home' => array(
+			'widgets'     => array(
+				'sidebar-home'       => array(
 					'custom_widget_1' => array(
 						'text',
 
@@ -113,7 +118,7 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 					),
 				),
 
-				'sidebar-footer' => array(
+				'sidebar-footer'     => array(
 					'custom_widget_1' => array(
 						'text',
 
@@ -154,15 +159,15 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 				),
 			),
 
-			'posts' => array(
-				'home' => array(
-					'template' => 'page-templates/template-front-page.php',
-					'thumbnail' => '{{image-banner-example-01}}',
-					'post_title' => esc_html__( 'LSX is a free WordPress theme', 'lsx' ),
+			'posts'       => array(
+				'home'    => array(
+					'template'     => 'page-templates/template-front-page.php',
+					'thumbnail'    => '{{image-banner-example-01}}',
+					'post_title'   => esc_html__( 'LSX is a free WordPress theme', 'lsx' ),
 					'post_content' => '',
 				),
 
-				'about' => array(
+				'about'   => array(
 					'thumbnail' => '{{image-banner-example-02}}',
 				),
 
@@ -176,30 +181,30 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 			'attachments' => array(
 				'image-banner-example-01' => array(
 					'post_title' => esc_html_x( 'Banner Example 01', 'Theme starter content', 'lsx' ),
-					'file' => 'assets/images/admin/banner-example-01.jpg',
+					'file'       => 'assets/images/admin/banner-example-01.jpg',
 				),
 
 				'image-banner-example-02' => array(
 					'post_title' => esc_html_x( 'Banner Example 02', 'Theme starter content', 'lsx' ),
-					'file' => 'assets/images/admin/banner-example-02.jpg',
+					'file'       => 'assets/images/admin/banner-example-02.jpg',
 				),
 
 				'image-banner-example-03' => array(
 					'post_title' => esc_html_x( 'Banner Example 03', 'Theme starter content', 'lsx' ),
-					'file' => 'assets/images/admin/banner-example-03.jpg',
+					'file'       => 'assets/images/admin/banner-example-03.jpg',
 				),
 			),
 
-			'options' => array(
-				'show_on_front' => 'page',
-				'page_on_front' => '{{home}}',
-				'page_for_posts' => '{{blog}}',
+			'options'     => array(
+				'show_on_front'   => 'page',
+				'page_on_front'   => '{{home}}',
+				'page_for_posts'  => '{{blog}}',
 				'blogdescription' => esc_html__( 'LSX starter content example', 'lsx' ),
 			),
 
-			'nav_menus' => array(
-				'primary' => array(
-					'name' => esc_html__( 'Primary Menu', 'lsx' ),
+			'nav_menus'   => array(
+				'primary'  => array(
+					'name'  => esc_html__( 'Primary Menu', 'lsx' ),
 
 					'items' => array(
 						'page_home',
@@ -210,35 +215,35 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 				),
 
 				'top-menu' => array(
-					'name' => esc_html__( 'Top Menu', 'lsx' ),
+					'name'  => esc_html__( 'Top Menu', 'lsx' ),
 
 					'items' => array(
 						'custom_link_1' => array(
-							'title' => 'View Map',
-							'url' => 'https://www.google.com/maps/place/LightSpeed+WordPress+Development/@-33.92945,18.45345,17z/data=!3m1!4b1!4m2!3m1!1s0x1dcc5da1b2446d25:0xc8ecdb1cc8afd170',
+							'title'   => 'View Map',
+							'url'     => 'https://www.google.com/maps/place/LightSpeed+WordPress+Development/@-33.92945,18.45345,17z/data=!3m1!4b1!4m2!3m1!1s0x1dcc5da1b2446d25:0xc8ecdb1cc8afd170',
 							'classes' => 'map',
 						),
 
 						'custom_link_2' => array(
-							'title' => '+27 21 448 9843',
-							'url' => 'tel:+27214489843',
+							'title'   => '+27 21 448 9843',
+							'url'     => 'tel:+27214489843',
 							'classes' => 'tel',
 						),
 
 						'custom_link_3' => array(
-							'title' => 'info@lsdev.biz',
-							'url' => 'mailto:info@lsdev.biz',
+							'title'   => 'info@lsdev.biz',
+							'url'     => 'mailto:info@lsdev.biz',
 							'classes' => 'email',
 						),
 
-						'page_contact' => array(
+						'page_contact'  => array(
 							'classes' => 'cta',
 						),
 					),
 				),
 
-				'social' => array(
-					'name' => esc_html__( 'Social Menu', 'lsx' ),
+				'social'   => array(
+					'name'  => esc_html__( 'Social Menu', 'lsx' ),
 
 					'items' => array(
 						'link_facebook',
@@ -252,8 +257,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 					),
 				),
 
-				'footer' => array(
-					'name' => esc_html__( 'Footer Menu', 'lsx' ),
+				'footer'   => array(
+					'name'  => esc_html__( 'Footer Menu', 'lsx' ),
 
 					'items' => array(
 						'page_about',
@@ -262,10 +267,10 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 				),
 			),
 
-			'theme_mods' => array(
-				'lsx_header_fixed' => true,
+			'theme_mods'  => array(
+				'lsx_header_fixed'  => true,
 				'lsx_header_search' => false,
-				'lsx_layout' => '1c',
+				'lsx_layout'        => '1c',
 			),
 		) );
 	}
@@ -289,7 +294,7 @@ if ( ! function_exists( 'lsx_init' ) ) :
 			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 		}
 
-		remove_action( 'comment_form', 'wp_comment_form_unfiltered_html_nonce',10 );
+		remove_action( 'comment_form', 'wp_comment_form_unfiltered_html_nonce', 10 );
 	}
 
 endif;

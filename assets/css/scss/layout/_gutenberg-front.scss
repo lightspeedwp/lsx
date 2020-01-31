@@ -420,6 +420,7 @@ $strong-blue: nth( $blue, 3 );
 $lighter-blue: nth( $blue, 1 );
 $light-yellow: nth( $orange, 1 );;
 $dark-yellow: nth( $orange, 2 );
+$dark-green: nth( $green, 2 );
 
 // Gutenberg color options
 // -- see editor-color-palette in functions.php
@@ -435,6 +436,18 @@ $dark-yellow: nth( $orange, 2 );
 .has-dark-yellow-color {
 	color: $dark-yellow;
 }
+.has-light-green-color {
+	color: nth( $green, 1 );
+}
+.has-dark-green-color {
+	color: $dark-green;
+}
+.has-white-color {
+	color: white;
+}
+.has-black-color {
+	color: black;
+}
 .has-strong-blue-background-color {
 	background-color: $strong-blue;
 }
@@ -446,6 +459,18 @@ $dark-yellow: nth( $orange, 2 );
 }
 .has-dark-yellow-background-color {
 	background-color: $dark-yellow;
+}
+.has-light-green-background-color {
+	background-color: nth( $green, 1 );
+}
+.has-dark-green-background-color {
+	background-color: $dark-green;
+}
+.has-white-background-color {
+	background-color: white;
+}
+.has-black-background-color {
+	background-color: black;
 }
 
 

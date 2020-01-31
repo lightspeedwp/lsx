@@ -1,6 +1,13 @@
 <?php
+/**
+ * LSX Sensei Lesson Class
+ *
+ * @package    lsx
+ * @subpackage sensei
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 /**
@@ -62,6 +69,12 @@ class LSX_Sensei_Lesson {
 		}
 	}
 
+	/**
+	 * Widget Area for sensei.
+	 *
+	 * @param [type] $classes
+	 * @return classes
+	 */
 	public function lsx_widget_area_sensei_is_active( $classes ) {
 
 		if ( class_exists( 'Sensei_Lesson' ) && is_active_sidebar( 'lsx-sensei-sidebar' ) ) {
