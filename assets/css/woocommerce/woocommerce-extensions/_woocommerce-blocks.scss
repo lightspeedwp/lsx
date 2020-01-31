@@ -312,6 +312,10 @@
 				display: flex;
 				justify-content: flex-end;
 				align-items: center;
+				margin-bottom: $lsx-gap;
+				@media (max-width:600px) {
+					margin-top: $lsx-medium-gap;
+				}
 				&:after {
 					content: $fa-var-chevron-down;
 					color: #999999;
@@ -372,3 +376,54 @@
 	}
 }
 
+//LSX Custom class for filters inside columns (goes on a container block)
+.lsx-wc-filter-block {
+	.wp-block-columns {
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		justify-content: center;
+		.wp-block-column {
+			.wp-block-woocommerce-all-products {
+				.wc-block-grid {
+					.wc-block-grid__products {
+						.wc-block-grid__product {
+							@media (min-width:601px) {
+								border-left: 15px solid transparent;
+								border-right: 15px solid transparent;
+							}
+						}
+					}
+				}
+			}
+			@include media('>=desktop') {
+				&:first-child {
+					max-width: 280px;
+					width: 100%;
+					flex-basis: auto !important;
+					margin-right: 20px;
+				}
+				&:last-child {
+					max-width: 848px;
+					width: 100%;
+					flex-basis: auto !important;
+				}
+			}
+			@media (min-width:601px) and (max-width:1023px) {
+				&:first-child {
+					padding-right: 20px;
+				}
+				.wp-block-woocommerce-all-products {
+					.wc-block-grid {
+						.wc-block-grid__products {
+							.wc-block-grid__product {
+								flex: 1 0 50%;
+								max-width: 50%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
