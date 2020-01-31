@@ -19,7 +19,10 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+			?>
 
 				<?php get_template_part( 'partials/content', 'page' ); ?>
 
@@ -34,9 +37,9 @@ get_header(); ?>
 	<?php lsx_content_after(); ?>
 
 	<?php
-		if ( comments_open() ) {
-			comments_template();
-		}
+	if ( comments_open() ) {
+		comments_template();
+	}
 	?>
 
 </div><!-- #primary -->
@@ -45,4 +48,5 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 
-<?php get_footer();
+<?php
+get_footer();

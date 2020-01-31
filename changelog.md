@@ -2,9 +2,12 @@
 
 ### 2.6.2 ( In progress )
 * Fix - Fixed the top bar menu icon on smaller screens.
+* Dev - Code standardization following theme sniffer results.
 * Dev - Added in a `lsx_display_global_header_description` filter to allow the code disabling of the `is_archive()` description.
 * Add - Adding `title` tag to `lsx_get_thumbnail` function.
 * Dev- Adding compatibility for the WC Blocks (filters and all proguts grid).
+* Dev - Adding Popup Maker plugin compatibility.
+* Add - Adding `title` tag to `lsx_get_thumbnail` fuction.
 
 ### 2.6.1
 * Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.

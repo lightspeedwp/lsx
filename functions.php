@@ -25,6 +25,10 @@ if ( class_exists( 'Sensei_Main' ) || class_exists( 'Sensei_WC' ) ) {
 	require get_template_directory() . '/includes/sensei/class-lsx-sensei.php';
 }
 
+if ( class_exists( 'Popup_Maker' ) ) {
+	require get_template_directory() . '/includes/popup-maker/class-lsx-popup-maker.php';
+}
+
 if ( class_exists( 'bbPress' ) ) {
 	require get_template_directory() . '/includes/bbpress/bbpress.php';
 }

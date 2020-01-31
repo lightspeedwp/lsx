@@ -1,6 +1,13 @@
 <?php
+/**
+ * LSX Sensei Course Class
+ *
+ * @package    lsx
+ * @subpackage sensei
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
 /**
@@ -41,7 +48,7 @@ class LSX_Sensei_Course {
 		global $sensei;
 		global $woothemes_sensei;
 
-		//Switching the course filters and the headers around
+		// Switching the course filters and the headers around.
 		remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'archive_header' ), 10, 0 );
 		remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_sorting' ) );
 		remove_action( 'sensei_archive_before_course_loop', array( 'Sensei_Course', 'course_archive_filters' ) );
@@ -62,9 +69,9 @@ class LSX_Sensei_Course {
 
 		add_action( 'sensei_single_course_content_inside_before', array( $this, 'display_course_amount' ), 20 );
 
-		// removes the course image above the content
+		// removes the course image above the content.
 		remove_action( 'sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
-		// add the course image to the left of the content
+		// add the course image to the left of the content.
 		add_action( 'lsx_sensei_course_content_inside_before', array( $woothemes_sensei->course, 'course_image' ), 30, 1 );
 
 		add_filter( 'attach_shortcode_hooks', 'lsx_attach_shortcode_hooks', 10, 1 );
@@ -91,7 +98,7 @@ class LSX_Sensei_Course {
 	 */
 	public function course_body_div_open() {
 		global $post, $current_user;
-		$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
+		$is_user_taking_course    = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
 		$user_taking_course_class = '';
 		if ( ! empty( $is_user_taking_course ) ) {
 			$user_taking_course_class = 'currently-in-course';
@@ -144,9 +151,9 @@ class LSX_Sensei_Course {
 		$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
 		$wc_post_id            = absint( get_post_meta( $post->ID, '_course_woocommerce_product', true ) );
 		if ( class_exists( 'Sensei_WC' ) ) {
-			$course_purchasable    = Sensei_WC::is_course_purchasable( $post->ID );
-			$currency              = get_woocommerce_currency_symbol();
-			$product               = new WC_Product( $wc_post_id );
+			$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
+			$currency           = get_woocommerce_currency_symbol();
+			$product            = new WC_Product( $wc_post_id );
 			if ( ( ! empty( $product->price ) ) && ( ! $is_user_taking_course ) ) {
 				echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . ' </span>' . sprintf( '%0.2f', esc_html( $product->price ) ) . '</span>';
 			} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable ) {
