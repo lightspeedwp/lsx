@@ -435,7 +435,7 @@ if ( ! function_exists( 'lsx_wc_loop_shop_per_page' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_loop_shop_per_page( $items ) {
-		$items = 20;
+		$items = 12;
 		return $items;
 	}
 
