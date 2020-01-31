@@ -7,6 +7,7 @@
  * @package    lsx
  * @subpackage template
  */
+
 get_header(); ?>
 
 <?php lsx_content_wrap_before(); ?>
@@ -47,7 +48,10 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+			?>
 
 				<?php
 					WC()->payment_gateways()->payment_gateways;
@@ -281,4 +285,5 @@ get_header(); ?>
 
 <?php lsx_content_wrap_after(); ?>
 
-<?php get_footer();
+<?php
+get_footer();

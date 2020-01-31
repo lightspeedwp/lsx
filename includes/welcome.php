@@ -120,9 +120,9 @@ if ( ! function_exists( 'lsx_welcome_screen' ) ) :
 	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_screen() {
-		require_once( ABSPATH . 'wp-load.php' );
-		require_once( ABSPATH . 'wp-admin/admin.php' );
-		require_once( ABSPATH . 'wp-admin/admin-header.php' );
+		require_once ABSPATH . 'wp-load.php';
+		require_once ABSPATH . 'wp-admin/admin.php';
+		require_once ABSPATH . 'wp-admin/admin-header.php';
 		?>
 		<div class="wrap about-wrap">
 			<?php
@@ -133,7 +133,8 @@ if ( ! function_exists( 'lsx_welcome_screen' ) ) :
 			 * @hooked lsx_welcome_enhance - 20
 			 * @hooked lsx_welcome_footer  - 30
 			 */
-			do_action( 'lsx_welcome' ); ?>
+			do_action( 'lsx_welcome' );
+			?>
 		</div>
 		<?php
 	}
@@ -149,7 +150,7 @@ if ( ! function_exists( 'lsx_welcome_header' ) ) :
 	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_header() {
-		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-header.php' );
+		require_once get_template_directory() . '/includes/admin/welcome-screen/component-header.php';
 	}
 
 endif;
@@ -165,7 +166,7 @@ if ( ! function_exists( 'lsx_welcome_enhance' ) ) :
 	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_enhance() {
-		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-enhance.php' );
+		require_once get_template_directory() . '/includes/admin/welcome-screen/component-enhance.php';
 	}
 
 endif;
@@ -181,7 +182,7 @@ if ( ! function_exists( 'lsx_welcome_footer' ) ) :
 	 * @subpackage welcome-page
 	 */
 	function lsx_welcome_footer() {
-		require_once( get_template_directory() . '/includes/admin/welcome-screen/component-footer.php' );
+		require_once get_template_directory() . '/includes/admin/welcome-screen/component-footer.php';
 	}
 
 endif;

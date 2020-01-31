@@ -80,7 +80,7 @@ if ( have_comments() ) : ?>
 		<?php
 		$comment_pages_count = get_comment_pages_count();
 		if ( $comment_pages_count > 1 && get_option( 'page_comments' ) ) :
-		?>
+			?>
 			<nav>
 				<ul class="pager">
 					<?php if ( get_previous_comments_link() ) : ?>
@@ -115,5 +115,6 @@ if ( have_comments() ) : ?>
 
 	<?php lsx_comments_after(); ?>
 
-<?php
-endif; ?>
+	<?php
+	endif;
+?>

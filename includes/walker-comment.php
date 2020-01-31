@@ -33,7 +33,7 @@ add_action( 'admin_bar_menu', function() {
 }, 0 );
 
 add_action( 'wp_after_admin_bar_render', function() {
-	add_filter( 'get_avatar','lsx_get_avatar' );
+	add_filter( 'get_avatar', 'lsx_get_avatar' );
 } );
 
 if ( ! function_exists( 'lsx_comment_form_fields_filter' ) ) :

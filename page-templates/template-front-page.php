@@ -22,7 +22,10 @@ get_header(); ?>
 
 		<?php if ( ( have_posts() && ! class_exists( 'LSX_Banners' ) || ( function_exists( 'has_blocks' ) && has_blocks() ) ) ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+			?>
 
 				<?php lsx_entry_before(); ?>
 
@@ -67,4 +70,5 @@ get_header(); ?>
 
 <?php lsx_content_wrap_after(); ?>
 
-<?php get_footer();
+<?php
+get_footer();

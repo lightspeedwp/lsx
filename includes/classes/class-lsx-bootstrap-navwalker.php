@@ -28,11 +28,12 @@ if ( ! class_exists( 'LSX_Bootstrap_Navwalker' ) ) :
 
 		/**
 		 * Used to append additional content.
+		 *
 		 * @see Walker::start_lvl()
 		 * @since 3.0.0
 		 *
 		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param int $depth Depth of page. Used for padding.
+		 * @param int    $depth Depth of page. Used for padding.
 		 */
 		public function start_lvl( &$output, $depth = 0, $args = array() ) {
 			$indent  = str_repeat( "\t", $depth );

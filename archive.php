@@ -21,7 +21,10 @@ get_header(); ?>
 
 			<div class="post-wrapper">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
 
 					<?php get_template_part( 'partials/content', get_post_format() ); ?>
 

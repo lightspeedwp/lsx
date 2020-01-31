@@ -163,7 +163,7 @@ if ( ! function_exists( 'lsx_wc_categories_breadcrumb_filter' ) ) :
 		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
 
 		if ( is_product_category() || is_product_tag() ) {
-			$new_crumbs = array();
+			$new_crumbs    = array();
 			$new_crumbs[0] = $crumbs[0];
 
 			if ( function_exists( 'woocommerce_breadcrumb' ) ) {
@@ -203,7 +203,7 @@ if ( ! function_exists( 'lsx_wc_add_cart' ) ) :
 		$cart_logged_out_position = $cart_menu_item_position . '_logged_out';
 
 		if ( $cart_menu_item_position === $args->theme_location || $cart_logged_out_position === $args->theme_location ) {
-			$customizer_option  = get_theme_mod( 'lsx_header_wc_cart', false );
+			$customizer_option = get_theme_mod( 'lsx_header_wc_cart', false );
 
 			if ( ! empty( $customizer_option ) ) {
 				ob_start();
@@ -317,10 +317,12 @@ if ( ! function_exists( 'lsx_wc_change_price_html' ) ) :
 	function lsx_wc_change_price_html( $price, $product ) {
 		if ( empty( $product->get_price() ) ) {
 			if ( $product->is_on_sale() && $product->get_regular_price() ) {
-				$regular_price = wc_get_price_to_display( $product, array(
-					'qty' => 1,
-					'price' => $product->get_regular_price(),
-				) );
+				$regular_price = wc_get_price_to_display( $product,
+					array(
+						'qty'   => 1,
+						'price' => $product->get_regular_price(),
+					)
+				);
 
 				$price = wc_format_price_range( $regular_price, esc_html__( 'Free!', 'lsx' ) );
 			} else {
@@ -379,10 +381,10 @@ if ( ! function_exists( 'lsx_wc_cart_link' ) ) :
 				<span class="lsx-wc-cart-amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
 
 				<?php /* Translators: %s: items quantity */ ?>
-				<span class="lsx-wc-cart-count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) );?></span>
+				<span class="lsx-wc-cart-count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'lsx' ), WC()->cart->get_cart_contents_count() ) ); ?></span>
 
 				<?php if ( ! empty( WC()->cart->get_cart_contents_count() ) ) : ?>
-					<span class="lsx-wc-cart-count-badge"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
+					<span class="lsx-wc-cart-count-badge"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() ); ?></span>
 				<?php endif; ?>
 			</a>
 		<?php
@@ -399,7 +401,7 @@ if ( ! function_exists( 'lsx_wc_items_counter' ) ) :
 	 * @subpackage woocommerce
 	 */
 	function lsx_wc_items_counter() {
-		$count = (int) WC()->cart->get_cart_contents_count();
+		$count         = (int) WC()->cart->get_cart_contents_count();
 		$items_counter = '';
 
 		if ( ! empty( $count ) ) {
@@ -755,7 +757,7 @@ if ( ! function_exists( 'lsx_wc_move_bundle_products' ) ) :
 	function lsx_wc_move_bundle_products( $tabs ) {
 		global $product, $post;
 
-		if ( method_exists( $product , 'get_bundled_items' ) ) {
+		if ( method_exists( $product, 'get_bundled_items' ) ) {
 			$bundled_items = $product->get_bundled_items();
 
 			if ( ! empty( $bundled_items ) ) {
@@ -791,7 +793,7 @@ if ( ! function_exists( 'lsx_wc_bundle_products' ) ) :
 	function lsx_wc_bundle_products() {
 		global $product, $post;
 
-		if ( method_exists( $product , 'get_bundled_items' ) ) {
+		if ( method_exists( $product, 'get_bundled_items' ) ) {
 			$bundled_items = $product->get_bundled_items();
 
 			// do_action( 'woocommerce_before_bundled_items', $product );
@@ -854,11 +856,11 @@ if ( ! function_exists( 'lsx_wc_product_searchform' ) ) :
 
 	}
 endif;
-add_filter( 'get_product_search_form' , 'lsx_wc_product_searchform', 10, 1 );
+add_filter( 'get_product_search_form', 'lsx_wc_product_searchform', 10, 1 );
 
 	/**
 	 * Output the pagination.
-	*/
+	 */
 function woocommerce_pagination() {
 	if ( ! wc_get_loop_prop( 'is_paginated' ) || ! woocommerce_products_will_display() ) {
 		return;
@@ -886,14 +888,15 @@ function woocommerce_pagination() {
 function lsx_wc_pagination_args( $args ) {
 	$args['prev_text'] = '<span class="meta-nav">&larr;</span> ' . esc_html__( 'Previous', 'lsx' );
 	$args['next_text'] = esc_html__( 'Next', 'lsx' ) . ' <span class="meta-nav">&rarr;</span>';
-	$args['type']	   = 'plain';
+	$args['type']      = 'plain';
 	return $args;
 }
-add_filter( 'woocommerce_pagination_args', 'lsx_wc_pagination_args',10 ,1 );
+add_filter( 'woocommerce_pagination_args', 'lsx_wc_pagination_args', 10, 1 );
 
 
 /**
  * Returns the location of our product widget
+ *
  * @param $located
  * @param $template_name
  *
@@ -914,4 +917,4 @@ function lsx_wc_product_widget_template( $located, $template_name ) {
 	}
 	return $located;
 }
-add_filter( 'wc_get_template', 'lsx_wc_product_widget_template',90 ,2 );
+add_filter( 'wc_get_template', 'lsx_wc_product_widget_template', 90, 2 );
