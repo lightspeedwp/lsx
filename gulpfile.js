@@ -106,6 +106,27 @@ gulp.task('sensei-styles', function () {
         .pipe(gulp.dest('assets/css/sensei'))
 });
 
+gulp.task('popup-maker-styles', function () {
+    return gulp.src('assets/css/popup-maker/popup-maker.scss')
+        .pipe(plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ['assets/css/popup-maker']
+        }).on('error', gutil.log))
+        .pipe(autoprefixer({
+            browsers: browserlist,
+            casacade: true
+        }))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('assets/css/popup-maker'))
+});
+
 gulp.task('bbpress-styles', function () {
     return gulp.src('assets/css/bb-press/bb-press.scss')
         .pipe(plumber({
@@ -259,7 +280,7 @@ gulp.task('admin-styles-rtl', function () {
 
 //gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
 
-gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'sensei-styles', 'bbpress-styles', 'woocommerce-styles']);
+gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'sensei-styles', 'popup-maker-styles', 'bbpress-styles', 'woocommerce-styles']);
 
 gulp.task('js', function() {
 	return gulp.src('assets/js/src/**/*.js')

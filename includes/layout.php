@@ -235,7 +235,11 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 						<?php } ?>
 					</h1>
 
-					<?php the_archive_description(); ?>
+					<?php
+					if ( false === apply_filters( 'lsx_display_global_header_description', false ) ) {
+						the_archive_description();
+					}
+					?>
 				</header>
 			</div>
 			<?php
