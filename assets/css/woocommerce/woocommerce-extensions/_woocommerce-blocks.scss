@@ -325,6 +325,7 @@
 		margin-bottom: $lsx-gap;
 		@media (max-width:600px) {
 			margin-top: $lsx-medium-gap;
+			margin-bottom: $lsx-medium-gap;
 		}
 		&:after {
 			content: $fa-var-chevron-down;
@@ -334,6 +335,9 @@
 			font-family: FontAwesome;
 			font-size: 10px;
 			top: 0px;
+		}
+		.wc-block-sort-select__label {
+			color: $small;
 		}
 		.wc-block-sort-select__select {
 			-webkit-appearance: none;
@@ -385,15 +389,33 @@
 
 	//Review Block
 	.wc-block-review-list {
+		padding-left: 0;
 		.wc-block-review-list-item__item {
 			.wc-block-review-list-item__info {
 				.wc-block-review-list-item__meta {
-					.wc-block-review-list-item__author {
+					.wc-block-review-list-item__product {
 						color: nth($blue,1);
+					}
+					.wc-block-review-list-item__author,
+					.wc-block-review-list-item__published-date {
+						color: $small;
+					}
+					.wc-block-review-list-item__rating {
+						+ .wc-block-review-list-item__author {
+							color: nth($blue,1);
+						}
 					}
 				}
 			}
+			.wc-block-review-list-item__text {
+				* {
+					color: $text-color;
+				}
+			}
 		}
+	}
+	.wc-block-load-more {
+		margin-bottom: $lsx-medium-gap;
 	}
 }
 
