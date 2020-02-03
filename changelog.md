@@ -8,7 +8,8 @@
 * Add - Adding `title` tag to `lsx_get_thumbnail` function.
 * Dev- Adding compatibility for the WC Blocks (filters and all proguts grid).
 * Dev - Adding Popup Maker plugin compatibility.
-* Add - Adding `title` tag to `lsx_get_thumbnail` fuction.
+* Add - Adding `title` tag to `lsx_get_thumbnail` function.
+* Dev - Adding WC Blocks (Review block) compatibility.
 
 ### 2.6.1
 * Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.
