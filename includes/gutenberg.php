@@ -26,10 +26,19 @@ require_once( get_template_directory() . '/lib/theme-support.php' );
  */
 function add_gutenberg_compatible_body_class( $classes ) {
 	// if ( ! is_home() && ! is_front_page() ).
-		if ( is_page() || is_page_template() || is_single() )
-			$classes[] = 'gutenberg-compatible-template';
-		return $classes;
+	if ( is_page() || is_page_template() || is_single() )
+		$classes[] = 'gutenberg-compatible-template';
 
+	// Add a class if the page is using the Content and Media block.
+	$post = get_post();
+	if ( function_exists( 'has_blocks' ) && isset( $post->post_content ) && has_blocks( $post->post_content ) && ( ! is_search() ) && ( ! is_archive() ) ) {
+		$blocks = parse_blocks( $post->post_content );
+
+		if ( 'core/media-text' === $blocks[0]['blockName'] ) {
+			$classes[] = 'has-block-media-text';
+		}
+	}
+	return $classes;
 }
 
 add_filter( 'body_class', __NAMESPACE__ . '\add_gutenberg_compatible_body_class' );

@@ -31,7 +31,7 @@
 			padding-top: 0;
 			padding-bottom: 0;
 		}
-		&:not(.has-block-banner) {
+		&:not(.has-block-banner):not(.has-block-media-text) {
 			.entry-content {
 				padding-top: 8.4rem;
 			}
@@ -227,11 +227,15 @@
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
 			&figure, &.lsx-block-container, &.lsx-block-banner,
-			&.lsx-block-cta, &.wp-block-cover {
+			&.lsx-block-cta, &.wp-block-cover, &.wp-block-media-text {
 				margin-left: -50px;
 				margin-right: -50px;
 				width: calc( 100% + 50px * 2);
 				max-width: calc( 100% + 50px * 2);
+			}
+			&.wp-block-media-text {
+				padding-left: 15px;
+				padding-right: 15px;
 			}
 		}
 		.lsx-full-width-gutenberg.alignfull {
