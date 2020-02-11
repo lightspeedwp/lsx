@@ -85,6 +85,27 @@ gulp.task('events-styles', function () {
         .pipe(gulp.dest('assets/css/the-events-calendar'))
 });
 
+gulp.task('events-styles-5', function () {
+    return gulp.src('assets/css/the-events-calendar/the-events-calendar-5.scss')
+        .pipe(plumber({
+            errorHandler: function(err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ['assets/css/the-events-calendar/the-events-calendar-5.scss']
+        }).on('error', gutil.log))
+        .pipe(autoprefixer({
+            browsers: browserlist,
+            casacade: true
+        }))
+        .pipe(sourcemaps.write('maps'))
+        .pipe(gulp.dest('assets/css/the-events-calendar'))
+});
+
 gulp.task('sensei-styles', function () {
     return gulp.src('assets/css/sensei/sensei.scss')
         .pipe(plumber({
@@ -280,7 +301,7 @@ gulp.task('admin-styles-rtl', function () {
 
 //gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
 
-gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'sensei-styles', 'popup-maker-styles', 'bbpress-styles', 'woocommerce-styles']);
+gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'events-styles-5', 'sensei-styles', 'popup-maker-styles', 'bbpress-styles', 'woocommerce-styles']);
 
 gulp.task('js', function() {
 	return gulp.src('assets/js/src/**/*.js')
