@@ -1,5 +1,21 @@
 //Events Calendar 5.0
 
+@import '../scss/global/variables';
+@import '../scss/global/mixins';
+@import '../scss/global/placeholders';
+
+@mixin small-button() {
+	&,
+	&:active,
+	&:visited {
+		font-weight: 700;
+		height: initial;
+		@include media('>tablet') {
+		padding: 10px 30px !important;
+		}
+	}
+}
+
 @mixin event-colours (
 	$link: map-get($content, link),
 	$hover: map-get($header, hover) ) {
@@ -8,6 +24,35 @@
 		.archive.tribe-js & {
 			#primary {
 				margin: $lsx-gap;
+			}
+		}
+		> .tribe-events:first-child {
+			margin-top: $lsx-medium-gap;
+		}
+		#tribe_events_filters_wrapper {
+			background: #E8E5E5 !important;
+			padding: 16px !important;
+			.tribe-events-filters-content {
+				background: transparent;
+				border: none;
+				.tribe-events-filters-label {
+					font-weight: normal;
+				}
+			}
+			.tribe_events_filter_control {
+				button {
+					font-weight: normal;
+					&.tribe_events_filters_show_filters {
+						font-size: 15px;
+					}
+				}
+			}
+			#tribe_events_filters_form {
+				.tribe_events_filter_item {
+					.tribe-events-filters-group-heading {
+						font-weight: normal;
+					}
+				}
 			}
 		}
 		.tribe-events,
@@ -32,6 +77,8 @@
 				@include lsx-button-scaffolding();
 				@include lsx-button-colour();
 				@include small-button();
+				font-family: $font-family-sans-serif;
+				font-weight: 600;
 			}
 			.tribe-common-svgicon--featured {
 				display: none;
@@ -69,3 +116,4 @@
 		}
 	}
 }
+@include event-colours();

@@ -96,7 +96,7 @@ gulp.task('events-styles-5', function () {
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed',
-            includePaths: ['assets/css/the-events-calendar/the-events-calendar-5.scss']
+            includePaths: ['assets/css/the-events-calendar']
         }).on('error', gutil.log))
         .pipe(autoprefixer({
             browsers: browserlist,

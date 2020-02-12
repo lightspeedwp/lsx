@@ -25,9 +25,11 @@ if ( ! function_exists( 'lsx_tec_scripts_add_styles' ) ) :
 		$data    = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
 		$version = $data['Version'];
 
-		if ( substr( $version, 0, 3 ) === '5.0' ) {
-			wp_enqueue_style( 'the-events-calendar-lsx', get_template_directory_uri() . '/assets/css/the-events-calendar/the-events-calendar.css', array( 'lsx_main' ), LSX_VERSION );
+		if ( substr( $version, 0, 1 ) >= '5' ) {
+			// New Version 5.0 and up.
+			wp_enqueue_style( 'the-events-calendar-lsx', get_template_directory_uri() . '/assets/css/the-events-calendar/the-events-calendar-5.css', array( 'lsx_main' ), LSX_VERSION );
 		} else {
+			// Old Version.
 			wp_enqueue_style( 'the-events-calendar-lsx', get_template_directory_uri() . '/assets/css/the-events-calendar/the-events-calendar.css', array( 'lsx_main' ), LSX_VERSION );
 		}
 
