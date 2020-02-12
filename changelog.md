@@ -11,6 +11,7 @@
 * Add - Adding `title` tag to `lsx_get_thumbnail` function.
 * Dev - Adding WC Blocks (Review block) compatibility.
 * Add - Adding compatibility for the Media & Content block.
+* Fix - Improving styles for WP Forms compatibility.
 
 ### 2.6.1
 * Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.
