@@ -8,6 +8,11 @@
 	}
 }
 #primary {
+	&.content-area {
+		.wp-block-button__link {
+			color: inherit;
+		}
+	}
 	[class^="wc-block-featured"] {
 		.wp-block-button__link {
 			@include small-button();
@@ -185,6 +190,14 @@
 					}
 				}
 			}
+		}
+	}
+
+	[class^="wc-block"] {
+		.wp-block-button__link, .button {
+			@include lsx-button-scaffolding();
+			@include lsx-button-colour();
+			text-align: center;
 		}
 	}
 

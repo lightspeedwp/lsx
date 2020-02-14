@@ -428,55 +428,59 @@ $dark-green: nth( $green, 2 );
 
 // Gutenberg color options
 // -- see editor-color-palette in functions.php
-.has-strong-blue-color {
-	color: $strong-blue;
-}
-.has-lighter-blue-color {
-	color: $lighter-blue;
-}
-.has-light-yellow-color {
-	color: $light-yellow;
-}
-.has-dark-yellow-color {
-	color: $dark-yellow;
-}
-.has-light-green-color {
-	color: nth( $green, 1 );
-}
-.has-dark-green-color {
-	color: $dark-green;
-}
-.has-white-color {
-	color: white;
-}
-.has-black-color {
-	color: black;
-}
-.has-strong-blue-background-color {
-	background-color: $strong-blue;
-}
-.has-lighter-blue-background-color {
-	background-color: $lighter-blue;
-}
-.has-light-yellow-background-color {
-	background-color: $light-yellow;
-}
-.has-dark-yellow-background-color {
-	background-color: $dark-yellow;
-}
-.has-light-green-background-color {
-	background-color: nth( $green, 1 );
-}
-.has-dark-green-background-color {
-	background-color: $dark-green;
-}
-.has-white-background-color {
-	background-color: white;
-}
-.has-black-background-color {
-	background-color: black;
-}
 
+.container {
+	#primary.content-area {
+		.has-strong-blue-color {
+			color: $strong-blue;
+		}
+		.has-lighter-blue-color {
+			color: $lighter-blue;
+		}
+		.has-light-yellow-color {
+			color: $light-yellow;
+		}
+		.has-dark-yellow-color {
+			color: $dark-yellow;
+		}
+		.has-light-green-color {
+			color: nth( $green, 1 );
+		}
+		.has-dark-green-color {
+			color: $dark-green;
+		}
+		.has-white-color {
+			color: white;
+		}
+		.has-black-color {
+			color: black;
+		}
+		.has-strong-blue-background-color {
+			background-color: $strong-blue;
+		}
+		.has-lighter-blue-background-color {
+			background-color: $lighter-blue;
+		}
+		.has-light-yellow-background-color {
+			background-color: $light-yellow;
+		}
+		.has-dark-yellow-background-color {
+			background-color: $dark-yellow;
+		}
+		.has-light-green-background-color {
+			background-color: nth( $green, 1 );
+		}
+		.has-dark-green-background-color {
+			background-color: $dark-green;
+		}
+		.has-white-background-color {
+			background-color: white;
+		}
+		.has-black-background-color {
+			background-color: black;
+		}
+	}
+}
 
 /*--------------------------------------------------------------
 6.0 Utilities
