@@ -126,11 +126,11 @@
 	}
 
 	//Buttons
-	// .wp-block-button__link, .button {
-	// 	@include lsx-button-scaffolding();
-	// 	@include lsx-button-colour();
-	// 	text-align: center;
-	// }
+	.button {
+		@include lsx-button-scaffolding();
+		@include lsx-button-colour();
+		text-align: center;
+	}
 	.wp-block-button {
 		&.alignleft,
 		&.alignright {
