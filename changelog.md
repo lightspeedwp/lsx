@@ -12,6 +12,7 @@
 * Dev - Adding WC Blocks (Review block) compatibility.
 * Add - Adding compatibility for the Media & Content block.
 * Fix - Improving styles for WP Forms compatibility.
+* Fix - Removing extra margin bottoms from heading blocks.
 
 ### 2.6.1
 * Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.
