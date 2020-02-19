@@ -470,7 +470,7 @@ if ( ! function_exists( 'lsx_navbar_header' ) ) :
 	 */
 	function lsx_navbar_header() {
 		$mobile_header_layout = get_theme_mod( 'lsx_header_mobile_layout', 'navigation-bar' );
-		if ( $mobile_header_layout === 'hamburger' ) {
+		if ( 'hamburger' === $mobile_header_layout ) {
 			?>
 			<div class="navbar-header" itemscope itemtype="http://schema.org/WebPage">
 				<?php
