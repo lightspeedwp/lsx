@@ -420,6 +420,7 @@ if ( ! function_exists( 'lsx_header_search_form' ) ) :
 			get_search_form( true );
 		}
 	}
+	$mobile_header_layout = get_theme_mod( 'lsx_header_mobile_layout', 'navigation-bar' );
 	add_action( 'lsx_nav_before', 'lsx_header_search_form', 0 );
 endif;
 

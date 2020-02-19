@@ -469,28 +469,52 @@ if ( ! function_exists( 'lsx_navbar_header' ) ) :
 	 * @subpackage template-tags
 	 */
 	function lsx_navbar_header() {
-		?>
-		<div class="navbar-header" itemscope itemtype="http://schema.org/WebPage">
-			<?php
-			if ( has_nav_menu( 'primary' ) ) :
-				?>
-				<div class="wrapper-toggle" data-toggle="collapse" data-target=".primary-navbar">
-					<button type="button" class="navbar-toggle">
-						<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'lsx' ); ?></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<span class="mobile-menu-title"><?php esc_html_e( 'Menu', 'lsx' ); ?></span>
-				</div>
-				<?php
-			endif;
-
-			lsx_site_identity();
+		$mobile_header_layout = get_theme_mod( 'lsx_header_mobile_layout', 'navigation-bar' );
+		if ( $mobile_header_layout === 'hamburger' ) {
 			?>
-		</div>
-		<?php
+			<div class="navbar-header" itemscope itemtype="http://schema.org/WebPage">
+				<?php
+				lsx_header_search_form();
+				lsx_site_identity();
+				if ( has_nav_menu( 'primary' ) ) :
+					?>
+					<div class="wrapper-toggle" data-toggle="collapse" data-target=".primary-navbar">
+						<button type="button" class="navbar-toggle">
+							<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'lsx' ); ?></span>
+							<span class="icon-bar icon-bar-1"></span>
+							<span class="icon-bar icon-bar-2"></span>
+							<span class="icon-bar icon-bar-3"></span>
+						</button>
+					</div>
+					<?php
+				endif;
+				?>
+			</div>
+			<?php
+		} else {
+			?>
+			<div class="navbar-header" itemscope itemtype="http://schema.org/WebPage">
+				<?php
+				if ( has_nav_menu( 'primary' ) ) :
+					?>
+					<div class="wrapper-toggle" data-toggle="collapse" data-target=".primary-navbar">
+						<button type="button" class="navbar-toggle">
+							<span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'lsx' ); ?></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<span class="mobile-menu-title"><?php esc_html_e( 'Menu', 'lsx' ); ?></span>
+					</div>
+					<?php
+				endif;
+
+				lsx_site_identity();
+				?>
+			</div>
+			<?php
+		}
 	}
 
 endif;
