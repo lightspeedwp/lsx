@@ -1,7 +1,8 @@
 .gutenberg-compatible-template.using-gutenberg {
 	//Media & Content Block
 	@media (min-width:1024px) {
-		&.has-block-media-text {
+		&.has-block-media-text,
+		&.has-block-cover {
 			.breadcrumbs-container {
 				position: absolute;
 				margin-bottom: -50px;

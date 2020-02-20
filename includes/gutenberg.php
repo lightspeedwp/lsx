@@ -37,6 +37,9 @@ function add_gutenberg_compatible_body_class( $classes ) {
 		if ( 'core/media-text' === $blocks[0]['blockName'] ) {
 			$classes[] = 'has-block-media-text';
 		}
+		if ( 'core/cover' === $blocks[0]['blockName'] ) {
+			$classes[] = 'has-block-cover';
+		}
 	}
 	return $classes;
 }

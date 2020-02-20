@@ -11,6 +11,7 @@
 * Add - Adding `title` tag to `lsx_get_thumbnail` function.
 * Dev - Adding WC Blocks (Review block) compatibility.
 * Add - Adding compatibility for the Media & Content block.
+* Add - Adding compatibility for the Cover block.
 * Fix - Improving styles for WP Forms compatibility.
 
 ### 2.6.1
