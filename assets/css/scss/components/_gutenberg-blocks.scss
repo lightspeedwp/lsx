@@ -17,42 +17,6 @@
 			}
 		}
 	}
-	//Blockquote
-	blockquote.wp-block-quote:not(.is-large):not(.is-style-large) {
-		border-left-width: 1px;
-		padding-left: 4rem;
-		border-left-color: $breaker;
-		max-width: 585px;
-	}
-	.wp-block-pullquote {
-		border: none;
-		&.alignleft,
-		&.alignright {
-			padding: 0 $lsx-medium-gap;
-			max-width: 50%;
-		}
-		&.alignleft {
-			padding-left: 10%;
-		}
-		&.alignright {
-			padding-right: 10%;
-		}
-		@include media ('<tablet') {
-			&.alignleft,
-			&.alignright {
-				max-width: 80%;
-				width: 80%;
-				padding: 0;
-			}
-		}
-	}
-	.wp-block-quote {
-		border: 1px solid $breaker;
-		margin-bottom: $lsx-medium-gap;
-		&.is-large {
-			padding: $lsx-medium-gap;
-		}
-	}
 
 	//Categories
 	.wp-block-categories {

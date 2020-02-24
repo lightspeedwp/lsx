@@ -566,20 +566,8 @@ $dark-green: nth( $green, 2 );
 	}
 	//Quotes
 	blockquote.is-style-large {
-		&:before {
-			content: none;
-		}
-	}
-	.wp-block-pullquote {
-		padding: 0;
-		max-width: 585px;
-		margin-bottom: $lsx-medium-gap;
-		&.alignwide {
-			max-width: 75%;
-		}
-		&.alignfull {
-			max-width: 100%;
-		}
+		border: 1px solid $breaker;
+		padding: 4rem 4rem 2.4rem;
 	}
 	// WP Galleries
 	.alignfull {
