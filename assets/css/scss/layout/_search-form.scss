@@ -102,6 +102,31 @@
 			}
 		}
 	}
+	.mobile-header-hamburger & {
+		#searchform {
+			@include media('<desktop-wide') {
+				display: none;
+			}
+		}
+		.navbar-header {
+			#searchform {
+				display: flex;
+				right: initial;
+				position: relative;
+				order: 1;
+				flex-basis: 25%;
+				@include media('>=desktop-wide') {
+					display: none;
+				}
+				.search-field {
+					right: initial;
+					left: 10px;
+					padding-left: 40px;
+					bottom: -7px;
+				}
+			}
+		}
+	}
 }
 
 #primary,

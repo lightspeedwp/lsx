@@ -15,6 +15,15 @@
 		} );
 	});
 
+	// Update the headers layout.css
+	wp.customize( 'lsx_header_mobile_layout', function( setting ) {
+		setting.bind( function( value ) {
+			$( 'body' ).removeClass( 'mobile-header-navigation-bar' );
+			$( 'body' ).removeClass( 'mobile-header-hamburger' );
+			$( 'body' ).addClass( 'mobile-header-' + value );
+		} );
+	});
+
 	// Update the fixed header in real time...
 	wp.customize( 'lsx_header_fixed', function( setting ) {
 		setting.bind( function( value ) {

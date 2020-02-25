@@ -58,6 +58,9 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 		$header_layout = get_theme_mod( 'lsx_header_layout', 'inline' );
 		$classes[]     = 'header-' . $header_layout;
 
+		$mobile_header_layout = get_theme_mod( 'lsx_header_mobile_layout', 'navigation-bar' );
+		$classes[]            = 'mobile-header-' . $mobile_header_layout;
+
 		if ( isset( $post ) ) {
 			$classes[] = $post->post_name;
 		}
