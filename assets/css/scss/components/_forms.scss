@@ -1,14 +1,16 @@
+@import '../scss/global/variables';
+
 .wpforms-field input, .wpforms-field-container select, .wpforms-field-container textarea, .form-control, .gform_wrapper input[type="email"], .gform_wrapper input[type="date"], .gform_wrapper input[type="datetime"], .gform_wrapper input[type="datetime-local"], .gform_wrapper input[type="month"], .gform_wrapper input[type="number"], .gform_wrapper input[type="password"], .gform_wrapper input[type="search"], .gform_wrapper input[type="tel"], .gform_wrapper input[type="text"], .gform_wrapper input[type="time"], .gform_wrapper input[type="week"], .gform_wrapper input[type="url"], .gform_wrapper select, .gform_wrapper textarea {
 	display: block;
     width: 100%;
     min-height: 50px;
-    color: #4A4A4A;
-    background-color: #fff;
+    color: $text-color;
+    background-color: white;
     background-image: none;
-    border: 2px solid #DDD;
+    border: 2px solid $breaker;
     border-radius: 2px;
     &:focus {
-    	border-color: #418AD0;
+    	border-color: nth($blue,1);
     	outline: 0;
     }
 }
@@ -167,7 +169,7 @@
     	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(65,138,208,0.6) !important;
 	}
 	&::placeholder {
-		color: #ddd;
+		color: $breaker;
 		font-weight: 600;
 	}
 }
@@ -177,7 +179,7 @@
 	@extend .btn-primary;
 
 	span {
-		color: #ffffff;
+		color: white;
 	}
 }
 
@@ -192,7 +194,7 @@
 		textarea {
 			border-color: #a94442;
 			box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-			background-color: #fff;
+			background-color: white;
 			&:active, &:focus {
 				border-color: #a94442;
 				box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #ce8483 !important;
@@ -226,8 +228,18 @@
 	}
 }
 
-.wpforms-container .wpforms-field-description {
-    color: #2597da;
+#primary {
+	.wpforms-container {
+		.wpforms-field-description {
+			color: nth($blue,1);
+		}
+		input[type=checkbox],
+		input[type=radio] {
+			width: auto;
+			float: initial;
+			min-height: auto;
+		}
+	}
 }
 
 .wpforms-field-pagebreak {
@@ -240,17 +252,17 @@
 .wpforms-field.wpforms-field-file-upload {
 	label {
 		border-radius: 3px;
-		color: #4A4A4A;
+		color: $text-color;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 700;
 		padding-left: 20px;
 		padding-right: 20px;
 		transition: background-color 0.3s;
-		background-color: #EAEAEA;
-		box-shadow: 2px 2px 0 0 #CCCCCC;
+		background-color: nth($gray,1);
+		box-shadow: 2px 2px 0 0 nth($gray,2);
 		&:hover {
-			background-color: #cccccc;
+			background-color: nth($gray,2);
 		}
 	}
 	input[type="file"] {

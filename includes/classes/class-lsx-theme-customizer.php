@@ -30,6 +30,7 @@ if ( ! class_exists( 'LSX_Theme_Customizer' ) ) :
 			require get_template_directory() . '/includes/classes/class-lsx-customize-core-control.php';
 			require get_template_directory() . '/includes/classes/class-lsx-customize-layout-control.php';
 			require get_template_directory() . '/includes/classes/class-lsx-customize-header-layout-control.php';
+			require get_template_directory() . '/includes/classes/class-lsx-customize-mobile-header-layout-control.php';
 
 			$this->controls = $controls;
 
