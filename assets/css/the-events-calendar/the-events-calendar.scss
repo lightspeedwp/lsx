@@ -99,7 +99,7 @@
 	&,
 	&:active,
 	&:visited {
-		font-weight: 400;
+		font-weight: 700;
 		height: initial;
 		@include media('>tablet') {
 		padding: 10px 30px !important;
@@ -154,7 +154,8 @@
 	@include lsx-button-scaffolding();
 	@include lsx-button-colour();
 	@include small-button();
-
+	font-family: $font-family-sans-serif;
+	font-weight: 600;
 
 	br {
 		display:none;
@@ -166,6 +167,8 @@
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		@include small-button();
+		font-family: $font-family-sans-serif;
+		font-weight: 600;
 	}
 }
 
@@ -220,6 +223,8 @@ a.tribe-events-read-more {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		@include small-button();
+		font-family: $font-family-sans-serif;
+		font-weight: 600;
 	}
 }
 
@@ -837,6 +842,8 @@ body:not(.logged-in) {
     @include lsx-button-scaffolding();
 	@include lsx-button-colour();
 	@include small-button();
+	font-family: $font-family-sans-serif;
+	font-weight: 600;
 }
 
 /* Tribe Community Events buttons aligned left */
@@ -1009,6 +1016,8 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		@include small-button();
+		font-family: $font-family-sans-serif;
+		font-weight: 600;
 	}
 }
 
