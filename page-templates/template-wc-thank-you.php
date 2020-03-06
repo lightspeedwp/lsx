@@ -51,13 +51,13 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();
-			?>
+				?>
 
 				<?php
 					WC()->payment_gateways()->payment_gateways;
 					$order_key = isset( $_GET['key'] ) ? wc_clean( $_GET['key'] ) : '';
 					$order_id  = absint( $wp->query_vars['order-received'] );
-					$order = wc_get_order( $order_id );
+					$order     = wc_get_order( $order_id );
 				?>
 
 				<?php if ( $order && $order->get_id() === $order_id && $order->get_order_key() === $order_key ) : ?>

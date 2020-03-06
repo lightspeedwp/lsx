@@ -25,7 +25,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();
-			?>
+				?>
 
 				<?php lsx_entry_before(); ?>
 
@@ -38,9 +38,11 @@ get_header(); ?>
 
 						<ul>
 							<?php
-								$loop = new WP_Query( array(
-									'posts_per_page' => 30,
-								) );
+								$loop = new WP_Query(
+									array(
+										'posts_per_page' => 30,
+									)
+								);
 							?>
 
 							<?php if ( $loop->have_posts() ) : ?>

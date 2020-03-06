@@ -25,7 +25,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();
-			?>
+				?>
 
 				<?php lsx_entry_before(); ?>
 
@@ -35,10 +35,12 @@ get_header(); ?>
 						<?php the_content(); ?>
 
 						<?php
-							wp_link_pages( array(
-								'before' => '<nav class="page-nav"><p>' . esc_html__( 'Pages:', 'lsx' ),
-								'after'  => '</p></nav>',
-							) );
+							wp_link_pages(
+								array(
+									'before' => '<nav class="page-nav"><p>' . esc_html__( 'Pages:', 'lsx' ),
+									'after'  => '</p></nav>',
+								)
+							);
 						?>
 					</div><!-- .entry-content -->
 

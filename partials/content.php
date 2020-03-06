@@ -4,19 +4,20 @@
  *
  * @package lsx
  */
+
 ?>
 
 <?php lsx_entry_before(); ?>
 
 <?php
-	$no_thumb_post_types = array(
-			'audio' => 'audio',
-			'gallery' => 'gallery',
-			'image' => 'image',
-			'link' => 'link',
-			'quote' => 'quote',
-			'video' => 'video',
-		);
+	$no_thumb_post_types   = array(
+		'audio'   => 'audio',
+		'gallery' => 'gallery',
+		'image'   => 'image',
+		'link'    => 'link',
+		'quote'   => 'quote',
+		'video'   => 'video',
+	);
 	$no_thumb_post_formats = apply_filters( 'lsx_no_thumb_post_formats', $no_thumb_post_types );
 
 	$has_thumb = has_post_thumbnail() && ! has_post_format( $no_thumb_post_formats );
@@ -54,22 +55,22 @@
 				<?php endif; ?>
 
 				<?php
-					$format = get_post_format();
+				$format = get_post_format();
 
-					if ( false === $format ) {
-						$format = 'standard';
-						$show_on_front = get_option( 'show_on_front', 'posts' );
+				if ( false === $format ) {
+					$format        = 'standard';
+					$show_on_front = get_option( 'show_on_front', 'posts' );
 
-						if ( 'page' === $show_on_front ) {
-							$archive_link = get_permalink( get_option( 'page_for_posts' ) );
-						} else {
-							$archive_link = home_url();
-						}
+					if ( 'page' === $show_on_front ) {
+						$archive_link = get_permalink( get_option( 'page_for_posts' ) );
 					} else {
-						$archive_link = get_post_format_link( $format );
+						$archive_link = home_url();
 					}
+				} else {
+					$archive_link = get_post_format_link( $format );
+				}
 
-					$format = lsx_translate_format_to_fontawesome( $format );
+				$format = lsx_translate_format_to_fontawesome( $format );
 				?>
 
 				<h1 class="entry-title">
@@ -157,21 +158,21 @@
 						<div class="post-comments">
 							<a href="<?php the_permalink(); ?>#comments">
 								<?php
-									if ( '1' === $comments_number ) {
-										echo esc_html_x( 'One Comment', 'content.php', 'lsx' );
-									} else {
-										printf(
-											/* Translators: %s: number of comments */
-											esc_html( _nx(
-												'%s Comment',
-												'%s Comments',
-												$comments_number,
-												'content.php',
-												'lsx'
-											) ),
-											esc_html( number_format_i18n( $comments_number ) )
-										);
-									}
+								if ( '1' === $comments_number ) {
+									echo esc_html_x( 'One Comment', 'content.php', 'lsx' );
+								} else {
+									printf(
+										/* Translators: %s: number of comments */
+										esc_html( _nx(
+											'%s Comment',
+											'%s Comments',
+											$comments_number,
+											'content.php',
+											'lsx'
+										) ),
+										esc_html( number_format_i18n( $comments_number ) )
+									);
+								}
 								?>
 							</a>
 						</div>
@@ -198,4 +199,5 @@
 	<div class="lsx-breaker"></div>
 </article>
 
-<?php lsx_entry_after();
+<?php
+lsx_entry_after();
