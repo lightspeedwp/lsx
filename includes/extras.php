@@ -65,11 +65,13 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = $post->post_name;
 		}
 
-		if ( class_exists( 'LSX_Banners' ) || empty( apply_filters( 'lsx_banner_plugin_disable', false ) ) ) {
+		if ( class_exists( 'LSX_Banners' ) && empty( apply_filters( 'lsx_banner_plugin_disable', false ) ) ) {
 			$post_types = array( 'page', 'post' );
 			$post_types = apply_filters( 'lsx_allowed_post_type_banners', $post_types );
 
-			if ( is_singular( $post_types ) && has_post_thumbnail() ) {
+			$img_group = get_post_meta( $post->ID, 'image_group', true );
+
+			if ( is_singular( $post_types ) && ! empty( $img_group ) && is_array( $img_group ) && ! empty( $img_group['banner_image'] ) ) {
 				$classes[] = 'page-has-banner';
 			}
 		}
