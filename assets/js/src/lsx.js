@@ -563,6 +563,11 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 				}
 			});
 			$( '.sensei-view-all-participants a' ).on( 'click', function() {
+				if ( $(this).hasClass('clicked') ) {
+					$(this).removeClass('clicked');
+				} else {
+					$(this).addClass('clicked');
+				}
 				$('.sensei-course-participant.sensei-hide').each(function() {
 					if ( $(this).hasClass('sensei-clicked') ) {
 						$(this).removeClass('sensei-clicked');
