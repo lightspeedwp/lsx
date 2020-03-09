@@ -1831,11 +1831,40 @@ body:not(.logged-in) {
 						.sensei-course-participants-list {
 							border: 1px solid $table-border-color;
 							padding: 15px;
+							margin-bottom: 0;
 							&.list {
 								.sensei-course-participant {
 									display: flex !important;
 									flex-direction: row;
 									align-items: center;
+								}
+							}
+							.sensei-hide.sensei-course-participant {
+								display: none !important;
+								&.sensei-clicked {
+									display: list-item !important;
+								}
+							}
+							&.list {
+								.sensei-hide.sensei-course-participant {
+									&.sensei-clicked {
+										display: flex !important;
+									}
+								}
+							}
+						}
+						.sensei-view-all-participants {
+							border: 1px solid $table-border-color;
+							border-top: none;
+							padding: 5px;
+							a {
+								transition: none;
+								&:not(.clicked) {
+									font-size: 0;
+									&::before {
+										content: 'View All';
+										font-size: 15px;
+									}
 								}
 							}
 						}

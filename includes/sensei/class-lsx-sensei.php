@@ -290,7 +290,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 				<?php
 			endif;
 
-			if ( is_sticky() && $is_profile ) :
+			if ( $is_profile ) :
 				$query_var    = $wp_query->query_vars['learner_profile'];
 				$learner_user = Sensei_Learner::find_by_query_var( $query_var );
 				$learner_name = $learner_user->display_name;
@@ -466,7 +466,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 				$is_profile = false;
 			}
 
-			if ( is_sticky() && $is_profile ) {
+			if ( $is_profile ) {
 
 				if ( empty( $id ) ) {
 					$id = get_the_ID();
