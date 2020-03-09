@@ -466,7 +466,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 				$is_profile = false;
 			}
 
-			if ( is_sticky() && $is_profile ) {
+			if ( $is_profile ) {
 
 				if ( empty( $id ) ) {
 					$id = get_the_ID();
