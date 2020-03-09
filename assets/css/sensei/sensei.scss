@@ -1839,10 +1839,17 @@ body:not(.logged-in) {
 									align-items: center;
 								}
 							}
-							.sensei-hide {
-								display: none;
+							.sensei-hide.sensei-course-participant {
+								display: none !important;
 								&.sensei-clicked {
-									display: list-item;
+									display: list-item !important;
+								}
+							}
+							&.list {
+								.sensei-hide.sensei-course-participant {
+									&.sensei-clicked {
+										display: flex !important;
+									}
 								}
 							}
 						}
