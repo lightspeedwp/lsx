@@ -1838,6 +1838,12 @@ body:not(.logged-in) {
 									align-items: center;
 								}
 							}
+							.sensei-hide {
+								display: none;
+								&.sensei-clicked {
+									display: list-item;
+								}
+							}
 						}
 					}
 					.widget_sensei_course_progress {

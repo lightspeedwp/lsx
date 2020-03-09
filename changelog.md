@@ -15,6 +15,7 @@
 * Add - Adding compatibility for the Cover block.
 * Fix - Improving styles for WP Forms compatibility.
 * Add - New mobile menu theme option.
+* Fix - Improving Sensei Course Participants widget behavior.
 
 ### 2.6.1
 * Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.

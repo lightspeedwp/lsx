@@ -550,6 +550,30 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 		});
 	};
 
+	lsx.sensei_course_participants_widget_more = function() {
+		if ( $('body').hasClass('sensei') ) {
+			$('.sensei-course-participant').each(function() {
+				if ( $(this).hasClass('show') ) {
+					$(this).addClass('sensei-show');
+					$(this).removeClass('show');
+				}
+				if ( $(this).hasClass('hide') ) {
+					$(this).addClass('sensei-hide');
+					$(this).removeClass('hide');
+				}
+			});
+			$( '.sensei-view-all-participants a' ).on( 'click', function() {
+				$('.sensei-course-participant.sensei-hide').each(function() {
+					if ( $(this).hasClass('sensei-clicked') ) {
+						$(this).removeClass('sensei-clicked');
+					} else {
+						$(this).addClass('sensei-clicked');
+					}
+				});
+			} );
+		}
+	};
+
 	/**
 	 * On window resize.
 	 *
@@ -593,6 +617,7 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 		lsx.wc_add_quick_view_close_button();
 		lsx.wc_fix_subscriptions_empty_message();
 		lsx.sensei_courses_empty_thumbnail();
+		lsx.sensei_course_participants_widget_more();
 
 	} );
 
