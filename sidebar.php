@@ -28,9 +28,7 @@ if ( 'page' === $show_on_front && is_front_page() ) {
 }
 
 if ( '1c' !== $layout ) : ?>
-
 	<?php lsx_sidebars_before(); ?>
-
 	<div id="secondary" class="widget-area <?php echo esc_attr( lsx_sidebar_class() ); ?>" role="complementary">
 
 		<?php lsx_sidebar_top(); ?>
@@ -71,4 +69,5 @@ if ( '1c' !== $layout ) : ?>
 
 	<?php lsx_sidebars_after(); ?>
 
-<?php endif;
+<?php
+endif;

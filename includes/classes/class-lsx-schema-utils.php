@@ -197,7 +197,7 @@ class LSX_Schema_Utils {
 	 * Adds a term or multiple terms, comma separated, to a field.
 	 *
 	 * @param array  $data     Review data.
-	 * @param string $post_id  The ID of the item to fetch terms
+	 * @param string $post_id  The ID of the item to fetch terms.
 	 * @param string $key      The key in data to save the terms in.
 	 * @param string $taxonomy The taxonomy to retrieve the terms from.
 	 *
@@ -210,7 +210,7 @@ class LSX_Schema_Utils {
 			foreach ( $terms as $term ) {
 				// We are checking against the WordPress internal translation.
 				// @codingStandardsIgnoreLine
-				if ( $term->name !== __( 'Uncategorized' ) ) {
+				if ( __( 'Uncategorized', 'lsx' ) !== $term->name ) {
 					$keywords[] = $term->name;
 				}
 			}

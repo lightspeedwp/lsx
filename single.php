@@ -19,14 +19,17 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+			?>
 
 				<?php
-					if ( is_singular( 'post' ) ) {
-						get_template_part( 'partials/content', 'post' );
-					} else {
-						get_template_part( 'partials/content', 'custom' );
-					}
+				if ( is_singular( 'post' ) ) {
+					get_template_part( 'partials/content', 'post' );
+				} else {
+					get_template_part( 'partials/content', 'custom' );
+				}
 				?>
 
 			<?php endwhile; ?>
@@ -40,15 +43,15 @@ get_header(); ?>
 	<?php lsx_content_after(); ?>
 
 	<?php
-		if ( is_singular( 'post' ) ) {
-			lsx_post_nav();
-		}
+	if ( is_singular( 'post' ) ) {
+		lsx_post_nav();
+	}
 	?>
 
 	<?php
-		if ( comments_open() ) {
-			comments_template();
-		}
+	if ( comments_open() ) {
+		comments_template();
+	}
 	?>
 
 </div><!-- #primary -->
@@ -57,4 +60,5 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 
-<?php get_footer();
+<?php
+get_footer();

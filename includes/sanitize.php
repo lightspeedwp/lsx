@@ -18,10 +18,10 @@ if ( ! function_exists( 'lsx_sanitize_choices' ) ) :
 	 * @package    lsx
 	 * @subpackage sanitize
 	 *
-	 * @param  mixed    $value      The value to sanitize.
-	 * @param  mixed    $setting    The setting for which the sanitizing is occurring.
+	 * @param mixed $value      The value to sanitize.
+	 * @param mixed $setting    The setting for which the sanitizing is occurring.
 	 * @return mixed                The sanitized value.
-	*/
+	 */
 	function lsx_sanitize_choices( $value, $setting ) {
 		if ( is_object( $setting ) ) {
 			$setting = $setting->id;

@@ -9,6 +9,7 @@
 * Dev- Adding compatibility for the WC Blocks (filters and all proguts grid).
 * Dev - Adding Popup Maker plugin compatibility.
 * Add - Adding `title` tag to `lsx_get_thumbnail` function.
+* Fix - Fixing warnings and format issues following code sniffer rules to follow wordpress standards.
 * Dev - Adding WC Blocks (Review block) compatibility.
 * Dev - Adding Event Calendar 5.0 compatibility.
 * Add - Adding compatibility for the Media & Content block.

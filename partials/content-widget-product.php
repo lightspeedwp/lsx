@@ -14,7 +14,7 @@
  * @version 3.5.5
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -43,8 +43,8 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 	<?php endif; ?>
 
 	<?php
-		$price_html = $product->get_price_html();
-		if ( $price_html ) : ?>
+	$price_html = $product->get_price_html();
+	if ( $price_html ) : ?>
 		<div class="lsx-woocommerce-price">
 			<?php echo wp_kses_post( $price_html ); ?>
 		</div>

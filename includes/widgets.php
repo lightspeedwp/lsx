@@ -75,6 +75,7 @@ if ( ! function_exists( 'lsx_sidebar_footer_params' ) ) :
 	 *
 	 * @package    lsx
 	 * @subpackage widgets
+	 * @return $params
 	 */
 	function lsx_sidebar_footer_params( $params ) {
 		$sidebar_id = $params[0]['id'];

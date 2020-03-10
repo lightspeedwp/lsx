@@ -60,11 +60,11 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_filter( 'get_the_archive_title', array( $this, 'lsx_sensei_modify_archive_title' ), 99, 1 );
 
-			// LSX
+			// LSX.
 			add_filter( 'lsx_global_header_disable', array( $this, 'lsx_sensei_disable_lsx_banner' ) );
-			// LSX Banners - Plugin, Placeholders
+			// LSX Banners - Plugin, Placeholders.
 			add_filter( 'lsx_banner_plugin_disable', array( $this, 'lsx_sensei_disable_lsx_banner' ) );
-			// LSX Banners - Banner
+			// LSX Banners - Banner.
 			add_filter( 'lsx_banner_disable', array( $this, 'lsx_sensei_disable_lsx_banner' ) );
 
 			add_filter( 'course_archive_title', array( $this, 'lsx_sensei_archive_title' ), 10, 1 );
@@ -116,7 +116,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public static function get_instance() {
 			// If the single instance hasn't been set, set it now.
 			if ( null === self::$instance ) {
-				self::$instance = new self;
+				self::$instance = new self();
 			}
 			return self::$instance;
 		}
@@ -164,7 +164,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * Remove "Archives:"  from the courses archive title.
 		 *
 		 * @param [type] $title
-		 * @return void
+		 * @return @title
 		 */
 		public function lsx_sensei_modify_archive_title( $title ) {
 			if ( is_archive() && is_post_type_archive( 'course' ) ) {

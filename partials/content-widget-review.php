@@ -1,4 +1,10 @@
 <?php
+/**
+ * Template used to display widget review.
+ *
+ * @package lsx
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
