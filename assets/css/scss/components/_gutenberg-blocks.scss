@@ -1,38 +1,20 @@
 .gutenberg-compatible-template.using-gutenberg {
-	//Blockquote
-	blockquote.wp-block-quote:not(.is-large):not(.is-style-large) {
-		border-left-width: 1px;
-		padding-left: 4rem;
-		border-left-color: $breaker;
-		max-width: 585px;
-	}
-	.wp-block-pullquote {
-		border: none;
-		&.alignleft,
-		&.alignright {
-			padding: 0 $lsx-medium-gap;
-			max-width: 50%;
-		}
-		&.alignleft {
-			padding-left: 10%;
-		}
-		&.alignright {
-			padding-right: 10%;
-		}
-		@include media ('<tablet') {
-			&.alignleft,
-			&.alignright {
-				max-width: 80%;
-				width: 80%;
-				padding: 0;
+	//Media & Content Block
+	@media (min-width:1024px) {
+		&.has-block-media-text,
+		&.has-block-cover {
+			.breadcrumbs-container {
+				position: absolute;
+				margin-bottom: -50px;
+				z-index: 99;
 			}
 		}
 	}
-	.wp-block-quote {
-		border: 1px solid $breaker;
-		margin-bottom: $lsx-medium-gap;
-		&.is-large {
-			padding: $lsx-medium-gap;
+	.wp-block-media-text {
+		.wp-block-media-text__media {
+			@media (max-width:767px) {
+				width: 100%;
+			}
 		}
 	}
 
@@ -109,7 +91,7 @@
 	}
 
 	//Buttons
-	.wp-block-button__link, .button {
+	.button {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		text-align: center;

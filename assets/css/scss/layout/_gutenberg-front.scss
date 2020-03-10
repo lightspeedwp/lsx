@@ -31,7 +31,7 @@
 			padding-top: 0;
 			padding-bottom: 0;
 		}
-		&:not(.has-block-banner) {
+		&:not(.has-block-banner):not(.has-block-media-text):not(.has-block-cover) {
 			.entry-content {
 				padding-top: 8.4rem;
 			}
@@ -227,11 +227,15 @@
 	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
 			&figure, &.lsx-block-container, &.lsx-block-banner,
-			&.lsx-block-cta, &.wp-block-cover {
+			&.lsx-block-cta, &.wp-block-cover, &.wp-block-media-text {
 				margin-left: -50px;
 				margin-right: -50px;
 				width: calc( 100% + 50px * 2);
 				max-width: calc( 100% + 50px * 2);
+			}
+			&.wp-block-media-text {
+				padding-left: 15px;
+				padding-right: 15px;
 			}
 		}
 		.lsx-full-width-gutenberg.alignfull {
@@ -424,55 +428,59 @@ $dark-green: nth( $green, 2 );
 
 // Gutenberg color options
 // -- see editor-color-palette in functions.php
-.has-strong-blue-color {
-	color: $strong-blue;
-}
-.has-lighter-blue-color {
-	color: $lighter-blue;
-}
-.has-light-yellow-color {
-	color: $light-yellow;
-}
-.has-dark-yellow-color {
-	color: $dark-yellow;
-}
-.has-light-green-color {
-	color: nth( $green, 1 );
-}
-.has-dark-green-color {
-	color: $dark-green;
-}
-.has-white-color {
-	color: white;
-}
-.has-black-color {
-	color: black;
-}
-.has-strong-blue-background-color {
-	background-color: $strong-blue;
-}
-.has-lighter-blue-background-color {
-	background-color: $lighter-blue;
-}
-.has-light-yellow-background-color {
-	background-color: $light-yellow;
-}
-.has-dark-yellow-background-color {
-	background-color: $dark-yellow;
-}
-.has-light-green-background-color {
-	background-color: nth( $green, 1 );
-}
-.has-dark-green-background-color {
-	background-color: $dark-green;
-}
-.has-white-background-color {
-	background-color: white;
-}
-.has-black-background-color {
-	background-color: black;
-}
 
+.container {
+	#primary.content-area {
+		.has-strong-blue-color {
+			color: $strong-blue;
+		}
+		.has-lighter-blue-color {
+			color: $lighter-blue;
+		}
+		.has-light-yellow-color {
+			color: $light-yellow;
+		}
+		.has-dark-yellow-color {
+			color: $dark-yellow;
+		}
+		.has-light-green-color {
+			color: nth( $green, 1 );
+		}
+		.has-dark-green-color {
+			color: $dark-green;
+		}
+		.has-white-color {
+			color: white;
+		}
+		.has-black-color {
+			color: black;
+		}
+		.has-strong-blue-background-color {
+			background-color: $strong-blue;
+		}
+		.has-lighter-blue-background-color {
+			background-color: $lighter-blue;
+		}
+		.has-light-yellow-background-color {
+			background-color: $light-yellow;
+		}
+		.has-dark-yellow-background-color {
+			background-color: $dark-yellow;
+		}
+		.has-light-green-background-color {
+			background-color: nth( $green, 1 );
+		}
+		.has-dark-green-background-color {
+			background-color: $dark-green;
+		}
+		.has-white-background-color {
+			background-color: white;
+		}
+		.has-black-background-color {
+			background-color: black;
+		}
+	}
+}
 
 /*--------------------------------------------------------------
 6.0 Utilities
@@ -558,20 +566,8 @@ $dark-green: nth( $green, 2 );
 	}
 	//Quotes
 	blockquote.is-style-large {
-		&:before {
-			content: none;
-		}
-	}
-	.wp-block-pullquote {
-		padding: 0;
-		max-width: 585px;
-		margin-bottom: $lsx-medium-gap;
-		&.alignwide {
-			max-width: 75%;
-		}
-		&.alignfull {
-			max-width: 100%;
-		}
+		border: 1px solid $breaker;
+		padding: 4rem 4rem 2.4rem;
 	}
 	// WP Galleries
 	.alignfull {

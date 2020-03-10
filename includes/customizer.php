@@ -92,6 +92,22 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 			),
 		);
 
+		$lsx_controls['settings']['lsx_header_mobile_layout'] = array(
+			'default'   => 'navigation-bar',
+			'type'      => 'theme_mod',
+			'transport' => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_header_mobile_layout'] = array(
+			'label'   => esc_html__( 'Mobile Header', 'lsx' ),
+			'section' => 'lsx-layout',
+			'control' => 'LSX_Customize_Mobile_Header_Layout_Control',
+			'choices' => array(
+				'navigation-bar',
+				'hamburger',
+			),
+		);
+
 		$lsx_controls['settings']['lsx_layout'] = array(
 			'default'   => '1c',
 			'type'      => 'theme_mod',

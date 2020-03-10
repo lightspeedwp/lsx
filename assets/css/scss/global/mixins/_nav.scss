@@ -20,6 +20,43 @@
 					& > .icon-bar { background-color: $dropdown-link; }
 				}
 			}
+			.mobile-header-hamburger & {
+				.wrapper-toggle {
+					background-color: $bg;
+					width: auto;
+					margin: 0;
+					flex-basis: 25%;
+					justify-content: flex-end;
+					.navbar-toggle {
+						background-color: $bg;
+						& > .icon-bar {
+							background-color: $dropdown;
+							transform: rotate(0deg);
+							transition: .2s ease-in-out;
+							cursor: pointer;
+						}
+					}
+					&.open {
+						.navbar-toggle {
+							& > .icon-bar {
+								&.icon-bar-1 {
+									top: 18px;
+									width: 0%;
+									left: 50%;
+								}
+								&.icon-bar-2 {
+									transform: rotate(45deg);
+								}
+								&.icon-bar-3 {
+									transform: rotate(-45deg);
+									position: absolute;
+									bottom: 10px;
+								}
+							}
+						}
+					}
+				}
+			}
 
 			.primary-navbar {
 				background-color: $dropdown;
