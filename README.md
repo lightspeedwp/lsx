@@ -55,3 +55,7 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 * [ScrollToFixed](https://github.com/bigspotteddog/ScrollToFixed) is licensed under the terms of the MIT license.
 * [Picturefill](https://scottjehl.github.io/picturefill/) is licensed under the terms of the MIT license.
 * [lazysizes](https://github.com/aFarkas/lazysizes) is licensed under MIT license.
+
+## Like what you see?
+
+<a href="https://www.lsdev.biz/contact/"><img src="https://www.lsdev.biz/wp-content/uploads/2020/02/work-with-lightspeed.png" width="850" alt="Work with us at LightSpeed"></a>
