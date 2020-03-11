@@ -39,7 +39,6 @@
 				border-radius: 0;
 				margin: 0;
 				padding: 10px 15px;
-
 				& > .icon-bar {
 					border-radius: 0;
 					width: 30px;
@@ -122,6 +121,16 @@
 
 				.dropdown-menu {
 					& > .menu-item a { padding-left: 30px; }
+				}
+			}
+		}
+	}
+	.mobile-header-hamburger {
+		#masthead {
+			.wrapper-toggle {
+				.navbar-toggle {
+					padding-right: 0;
+					margin-right: -5px;
 				}
 			}
 		}
