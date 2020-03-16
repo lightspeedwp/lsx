@@ -833,3 +833,24 @@ if ( ! function_exists( 'lsx_get_my_url' ) ) :
 	}
 
 endif;
+
+if ( ! function_exists( 'lsx_get_template_part' ) ) :
+
+	/**
+	 * Gets a custom template part if the filters is populated,  or does the normal WP get_content_part()
+	 *
+	 * @package    lsx
+	 * @subpackage template-tags
+	 */
+	function lsx_get_template_part() {
+		$custom_template = apply_filters( 'lsx_get_template_part', '' );
+		if ( '' !== $custom_template && file_exists( $custom_template ) ) {
+			include $custom_template;
+		} else {
+			get_template_part( 'partials/content', get_post_format() );
+		}
+	}
+
+endif;
+
+

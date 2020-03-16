@@ -19,17 +19,13 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<div class="post-wrapper">
-
+			<div class="post-wrapper <?php echo esc_attr( lsx_post_wrapper_class() ); ?>">
 				<?php
 				while ( have_posts() ) :
 					the_post();
+					lsx_get_template_part();
+				endwhile;
 				?>
-
-					<?php get_template_part( 'partials/content', get_post_format() ); ?>
-
-				<?php endwhile; ?>
-
 			</div>
 
 			<?php lsx_paging_nav(); ?>
