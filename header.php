@@ -23,10 +23,8 @@
 
 		<div class="header-wrap">
 			<?php lsx_header_before(); ?>
-
 			<header id="masthead" class="<?php lsx_header_classes(); ?>" role="banner">
 				<?php lsx_header_top(); ?>
-
 				<div class="container">
 					<?php lsx_nav_before(); ?>
 					<?php lsx_nav_menu(); ?>
@@ -34,9 +32,10 @@
 					<?php lsx_header_bottom(); ?>
 				</div>
 			</header>
-
 			<?php lsx_header_after(); ?>
 		</div>
+
+		<?php lsx_header_wrap_after(); ?>
 
 		<div class="wrap container" role="document" tabindex="-1">
 			<div class="content role row">

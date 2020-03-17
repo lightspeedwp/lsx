@@ -115,6 +115,20 @@ if ( ! function_exists( 'lsx_top_menu_classes' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'lsx_post_wrapper_class' ) ) :
+	/**
+	 * Output the classes for the top-menu.
+	 *
+	 * @package    lsx
+	 * @subpackage layout
+	 */
+	function lsx_post_wrapper_class() {
+		return apply_filters( 'lsx_post_wrapper_class', '' );
+	}
+endif;
+
+
+
 if ( ! function_exists( 'lsx_add_footer_sidebar_area' ) ) :
 	/**
 	 * Output the Footer CTA and/pr Footer Widgets.

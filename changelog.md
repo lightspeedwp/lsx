@@ -19,6 +19,8 @@
 * Fix - Improving Sensei Course Participants widget behavior.
 * Add - Adding compatibility for `btn-scroll-to` and `search-form` for the cover block.
 * Add - Adding compatibility for WordPress 5.4.
+* Added - `lsx_header_wrap_after` to allow actions above the .wrap.container
+* Added - `lsx_get_template_part()` allowing 3rd part plugin to overwrite the index.php content template.
 
 ### 2.6.1
 * Fix - Removing `lsx_defer_parsing_of_js` and `preload_css` because they have conflicts with cache plugins.

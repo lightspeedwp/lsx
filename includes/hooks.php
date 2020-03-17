@@ -11,12 +11,89 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * HTML <body> hooks
+ * This is the 1st action in the theme that fires after <head>.
+ */
+function lsx_head_top() {
+	do_action( 'lsx_head_top' );
+}
+
+/**
+ * This is the 2nd action that fires before wp_head() and </head>.
  *
- * $lsx_supports[] = 'body';
+ * @return void
+ */
+function lsx_head_bottom() {
+	do_action( 'lsx_head_bottom' );
+}
+
+/**
+ * The 3rd action thta fires after <body>
  */
 function lsx_body_top() {
 	do_action( 'lsx_body_top' );
+}
+
+/**
+ * The 4th action that fires after <div class="header-wrap">.
+ *
+ * $lsx_supports[] = 'header';
+ */
+function lsx_header_before() {
+	do_action( 'lsx_header_before' );
+}
+
+/**
+ * The 5th action that fires after <header>
+ *
+ * @return void
+ */
+function lsx_header_top() {
+	do_action( 'lsx_header_top' );
+}
+
+/**
+ * The 6th action fires before lsx_nav_menu().
+ *
+ * @return void
+ */
+function lsx_nav_before() {
+	do_action( 'lsx_nav_before' );
+}
+
+/**
+ * The 7th action fires after  lsx_nav_menu().
+ *
+ * @return void
+ */
+function lsx_nav_after() {
+	do_action( 'lsx_nav_after' );
+}
+
+/**
+ * The 8th action that fires directly after lsx_nav_after().
+ *
+ * @return void
+ */
+function lsx_header_bottom() {
+	do_action( 'lsx_header_bottom' );
+}
+
+/**
+ * The 9th action that fires directly after </header>.
+ *
+ * @return void
+ */
+function lsx_header_after() {
+	do_action( 'lsx_header_after' );
+}
+
+/**
+ * The 10th action which fires before the <div class="wrap container" role="document" tabindex="-1">.
+ *
+ * @return void
+ */
+function lsx_header_wrap_after() {
+	do_action( 'lsx_header_wrap_after' );
 }
 
 /**
@@ -26,78 +103,6 @@ function lsx_body_top() {
  */
 function lsx_body_bottom() {
 	do_action( 'lsx_body_bottom' );
-}
-
-/**
- * HTML <head> hooks
- *
- * $lsx_supports[] = 'head';
- */
-function lsx_head_top() {
-	do_action( 'lsx_head_top' );
-}
-
-/**
- * Head Bottom
- *
- * @return void
- */
-function lsx_head_bottom() {
-	do_action( 'lsx_head_bottom' );
-}
-
-/**
- * Semantic <header> hooks
- *
- * $lsx_supports[] = 'header';
- */
-function lsx_header_before() {
-	do_action( 'lsx_header_before' );
-}
-
-/**
- * Header After
- *
- * @return void
- */
-function lsx_header_after() {
-	do_action( 'lsx_header_after' );
-}
-
-/**
- * Header Top
- *
- * @return void
- */
-function lsx_header_top() {
-	do_action( 'lsx_header_top' );
-}
-
-/**
- * Header Bottom
- *
- * @return void
- */
-function lsx_header_bottom() {
-	do_action( 'lsx_header_bottom' );
-}
-
-/**
- * Nav Before
- *
- * @return void
- */
-function lsx_nav_before() {
-	do_action( 'lsx_nav_before' );
-}
-
-/**
- * Nav After
- *
- * @return void
- */
-function lsx_nav_after() {
-	do_action( 'lsx_nav_after' );
 }
 
 /**
