@@ -134,7 +134,8 @@
 @mixin banner-colours-btn-scroll (
 	$color: map-get($cta-buttons, bg) ) {
 
-	.lsx-banner-content-wrap {
+	.lsx-banner-content-wrap,
+	.wp-block-cover {
 		.btn-scroll-to {
 			border: 2px solid transparent;
 			border-radius: 50%;

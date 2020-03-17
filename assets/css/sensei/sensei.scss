@@ -1650,6 +1650,9 @@ body:not(.logged-in) {
 				padding: 15px 22px;
 				font-weight: 300;
 				background: white;
+				&.active {
+					color: white !important;
+				}
 			}
 			&.ui-state-active, &:hover {
 				a {
