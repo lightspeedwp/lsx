@@ -125,6 +125,10 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 		}
 
 		if ( class_exists( 'LSX_Banners' ) ) {
+			$options = get_option( '_lsx_settings', false );
+			if ( is_array( $options ) && isset( $options['tribe_events'] ) && isset( $options['tribe_events']['title'] ) && '' !== $options['tribe_events']['title'] ) {
+				$title = $options['tribe_events']['title'];
+			}
 			$title = '<h1 class="page-title">' . $title . '</h1>';
 		}
 		return $title;
