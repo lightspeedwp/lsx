@@ -579,6 +579,32 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 		}
 	};
 
+	//Toggle for woocommerce block filters.
+	lsx.woocommerce_filters_mobile = function() {
+		if ( $('body').hasClass('woocommerce-js') ) {
+			$( '.lsx-wc-filter-toggle' ).on( 'click', function() {
+				$(this).toggleClass( 'lsx-wc-filter-toggle-open' );
+
+				if ( $(this).hasClass( 'lsx-wc-filter-toggle-open' ) ) {
+					$('.lsx-wc-filter-block div[class^="wp-block-woocommerce-"][class$="-filter"]').each(function() {
+						$(this).attr('id','lsx-wc-filter-child-open');
+					} );
+					$('.lsx-wc-filter-block .wp-block-woocommerce-product-search').each(function() {
+						$(this).attr('id','lsx-wc-filter-child-open');
+					} );
+				} else {
+					$('.lsx-wc-filter-block div[class^="wp-block-woocommerce-"][class$="-filter"]').each(function() {
+						$(this).attr('id','lsx-wc-filter-child-close');
+					} );
+					$('.lsx-wc-filter-block .wp-block-woocommerce-product-search').each(function() {
+						$(this).attr('id','lsx-wc-filter-child-close');
+					} );
+				}
+			} );
+		}
+	};
+
+
 	/**
 	 * On window resize.
 	 *
@@ -623,6 +649,7 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 		lsx.wc_fix_subscriptions_empty_message();
 		lsx.sensei_courses_empty_thumbnail();
 		lsx.sensei_course_participants_widget_more();
+		lsx.woocommerce_filters_mobile();
 
 	} );
 

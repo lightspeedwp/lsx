@@ -18,6 +18,7 @@
 - Adding compatibility for WordPress 5.4.
 - Adding `lsx_header_wrap_after` to allow actions above the .wrap.container.
 - Adding `lsx_get_template_part()` allowing 3rd part plugin to overwrite the index.php content template.
+- Adding class `lsx-wc-filter-block` that will create mobile styles for the WooCommerce filter blocks.
 
 ### Fixed
 - Fixed the top bar menu icon on smaller screens.
