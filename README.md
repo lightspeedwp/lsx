@@ -14,7 +14,7 @@ The [LSX Theme](https://lsx.lsdev.biz/) is a fully Gutenberg ready, light-weight
 
 LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color options, home page configuration, widget areas and much more. 
 
-## Gutenberg Compatiblity 
+## Gutenberg Compatibility 
 
 The LSX theme has been redeveloped for the WordPress Gutenberg update. This means you can now make use of the drag-and-drop page builder when creating new pages and posts. 
 
