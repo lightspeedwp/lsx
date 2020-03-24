@@ -988,6 +988,11 @@ article.page {
 							background: #446B0C;
 						}
 					}
+					p {
+						.button {
+							color: white;
+						}
+					}
 				}
 				.sensei-share-your-grade {
 					order: 3;
@@ -1650,6 +1655,9 @@ body:not(.logged-in) {
 				padding: 15px 22px;
 				font-weight: 300;
 				background: white;
+				&.active {
+					color: white !important;
+				}
 			}
 			&.ui-state-active, &:hover {
 				a {

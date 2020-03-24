@@ -3,6 +3,7 @@
 @import '../scss/global/variables';
 @import '../scss/global/mixins';
 @import '../scss/global/placeholders';
+@import 'the-events-calendar.scss';
 
 %lsx-title {
 	font-size: 30px !important;
@@ -64,7 +65,7 @@
 				}
 			}
 		}
-		.archive.tribe-js &,
+		.archive.post-type-archive-tribe_events &,
 		.single.single-tribe_events &,
 		.single.single-tribe_venue &,
 		.single.single-tribe_organizer & {
@@ -291,8 +292,7 @@
 		.single.single-tribe_events &  {
 			#primary {
 				#tribe-events-content {
-					.tribe-events-schedule,
-					.tribe-events-nav-pagination {
+					.tribe-events-schedule {
 						display: none;
 					}
 					.tribe-events-related-events-title {

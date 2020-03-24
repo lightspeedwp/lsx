@@ -123,8 +123,17 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 		if ( is_singular( 'tribe_events' ) ) {
 			add_filter( 'the_title', 'lsx_text_disable_body_title', 200, 1 );
 		}
+
+		if ( class_exists( 'LSX_Banners' ) ) {
+			$options = get_option( '_lsx_settings', false );
+			if ( is_array( $options ) && isset( $options['tribe_events'] ) && isset( $options['tribe_events']['title'] ) && '' !== $options['tribe_events']['title'] ) {
+				$title = $options['tribe_events']['title'];
+			}
+			$title = '<h1 class="page-title">' . $title . '</h1>';
+		}
 		return $title;
 	}
+	add_filter( 'lsx_banner_title', 'lsx_tec_global_header_title', 200, 1 );
 	add_filter( 'lsx_global_header_title', 'lsx_tec_global_header_title', 200, 1 );
 
 endif;

@@ -227,6 +227,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		public function lsx_sensei_add_buttons( $course_id ) {
 			global $post, $current_user;
 			$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
+			$course_purchasable    = '';
 			if ( class_exists( 'Sensei_WC' ) ) {
 				$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
 			}
