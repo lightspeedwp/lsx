@@ -1,7 +1,7 @@
 # LSX Change log
 
 
-## [Unreleased] - Major version 2.7.0
+## [[2.7.0]] - (https://github.com/lightspeeddevelopment/lsx/releases/tag/2.7.0) - 2020-03-30
 
 ### Added
 - Adding styling for captions on  WP core image and video blocks.
