@@ -1,5 +1,10 @@
 # LSX Change log
 
+# [[2.7.1]] - In Development
+
+### Fixed
+- Fixed issue #346 'If LSX banners is not enabled there is a simple banner showing on each page.'.
+
 
 ## [[2.7.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.7.0) - 2020-03-30
 
