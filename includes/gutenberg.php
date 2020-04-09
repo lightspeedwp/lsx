@@ -52,3 +52,15 @@ add_action('body_class', function( $classes ) {
 		$classes[] = 'using-gutenberg';
 	return $classes;
 });
+
+/**
+ * Removes the default LSX banner if there is a page that is using blocks. (Only works if LSX banners is not turned on)
+ *
+ * @return void
+ */
+function remove_lsx_page_banner_when_using_blocks() {
+	if ( function_exists( 'has_blocks' ) && ( ! class_exists( 'LSX_Banners' ) ) ) {
+		add_filter( 'lsx_page_banner_disable', '__return_true' );
+	}
+}
+add_filter( 'init', 'remove_lsx_page_banner_when_using_blocks' );
