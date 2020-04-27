@@ -668,9 +668,9 @@ body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 			border: 1px solid #E6E6E6;
 			border-bottom: 8px solid #E6E6E6;
 			tbody {
-				th { background-color: white; }
+				th { background-color: white !important; }
 				tr:first-child {
-					th { border-radius: 5px 0 0 0; background-color: #E6E6E6; }
+					th { border-radius: 5px 0 0 0; background-color: #E6E6E6 !important; }
 					td { border-radius: 0 5px 0 0; background-color: #E6E6E6;}
 				}
 
@@ -696,9 +696,10 @@ body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 
 			tbody:last-child,
 			tfoot {
-				th { background-color: white; }
+				th { background-color: white !important; }
 				tr:last-child {
-					& > *:first-child { border-radius: 0 0 0 5px; }
+					td, th { border-top: none; }
+					& > *:first-child { border-radius: 0 0 0 5px; background-color: #e6e6e6 !important; }
 					& > *:last-child { border-radius: 0 0 5px 0; background-color: #e6e6e6; }
 				}
 			}
