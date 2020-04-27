@@ -49,6 +49,51 @@ if ( ! function_exists( 'lsx_wc_scripts_add_styles' ) ) :
 
 endif;
 
+if ( ! function_exists( 'lsx_wc_checkout_cart_title' ) ) :
+
+	/**
+	 * Add title to Woocommerce Cart page anc Checkout page.
+	 *
+	 * @package    lsx
+	 * @subpackage woocommerce
+	 */
+	function lsx_wc_checkout_cart_title() {
+		$default_size = 'sm';
+		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+		if ( function_exists( 'is_woocommerce' ) && ( is_checkout() || is_cart() ) ) {
+			?>
+			<div class="checkout-header-wrapper cart-checkout-page col-<?php echo esc_attr( $size ); ?>-12">
+				<h1 class="archive-title"><?php the_title(); ?></h1>
+			</div>
+			<?php
+		}
+	}
+
+	add_action( 'lsx_entry_inside_top', 'lsx_wc_checkout_cart_title' );
+
+endif;
+
+if ( ! function_exists( 'lsx_simple_checkout' ) ) :
+
+	/**
+	 * Remove footer widgets to make Checkout and Cart simpler.
+	 *
+	 * @package    lsx
+	 * @subpackage config
+	 */
+	function lsx_simple_checkout() {
+
+		if ( class_exists( 'WooCommerce' ) ) {
+			if ( is_checkout() || is_cart() ) {
+				remove_action( 'lsx_footer_before', 'lsx_add_footer_sidebar_area' );
+			}
+		}
+	}
+
+	add_action( 'wp_head', 'lsx_simple_checkout' );
+
+endif;
+
 if ( ! function_exists( 'lsx_wc_form_field_args' ) ) :
 
 	/**

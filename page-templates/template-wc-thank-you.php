@@ -22,7 +22,7 @@ get_header(); ?>
 			<ul class="lsx-wc-checkout-steps-items">
 					<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-done">
 						<i class="fa fa-check-circle" aria-hidden="true"></i>
-						<span><span><?php esc_html_e( 'Choose your product', 'lsx' ); ?></span></span>
+						<span><span><?php esc_html_e( 'Shop', 'lsx' ); ?></span></span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</li>
 
@@ -33,13 +33,13 @@ get_header(); ?>
 
 					<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-done lsx-wc-checkout-steps-item-payment">
 					<i class="fa fa-check-circle" aria-hidden="true"></i>
-						<span><span><?php esc_html_e( 'Payment details', 'lsx' ); ?></span></span>
+						<span><span><?php esc_html_e( 'Billing details', 'lsx' ); ?></span></span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</li>
 
 					<li class="lsx-wc-checkout-steps-item lsx-wc-checkout-steps-item-current lsx-wc-checkout-steps-item-thankyou">
 						<i class="lsx-wc-checkout-steps-counter" aria-hidden="true"><?php esc_html_e( '4', 'lsx' ); ?></i>
-						<span><span><?php esc_html_e( 'Thank you!', 'lsx' ); ?></span></span>
+						<span><span><?php esc_html_e( 'Payment', 'lsx' ); ?></span></span>
 					</li>
 			</ul>
 		</div>

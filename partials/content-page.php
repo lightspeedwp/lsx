@@ -14,6 +14,9 @@
 	<?php lsx_entry_top(); ?>
 
 	<div class="entry-content">
+
+		<?php lsx_entry_inside_top(); ?>
+
 		<?php
 			the_content();
 

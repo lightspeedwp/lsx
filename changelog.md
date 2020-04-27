@@ -2,6 +2,13 @@
 
 # [[2.7.1]] - In Development
 
+### Added
+- One new hooks/actions added in layouts: `lsx_entry_inside_top` to hook into a page content.
+
+### Changed
+- Woocommerce checkout and cart styling improved.
+- Layout changed on Checkout and cart woocommerce pages.
+
 ### Fixed
 - Fixed issue #346 'If LSX banners is not enabled there is a simple banner showing on each page.'.
 
