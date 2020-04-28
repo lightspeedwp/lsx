@@ -150,7 +150,12 @@ article.page {
 				width: 47.8260869565%;
 			}
 		}
-
+		h3 {
+			font-size: 30px;
+			span {
+				font-size: 22px;
+			}
+		}
 		.col2-set {
 			.col-1,
 			.col-2 {
@@ -259,7 +264,19 @@ article.page {
 			display: flex;
 			flex-direction: column-reverse;
 		}
-	 }
+	}
+	.checkout-cta-bottom {
+		display: flex;
+		flex-direction: column;
+		background: white;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		.img-payments {
+			filter: grayscale(100%);
+			margin-top: 4rem;
+			margin-bottom: 4rem;
+		}
+	}
 }
 .widget {
 	.woocommerce {

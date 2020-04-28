@@ -617,6 +617,19 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 			'priority'    => 1,
 		);
 
+		$lsx_controls['settings']['lsx_wc_trust_footer_bar_status'] = array(
+			'default'           => '1',
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+		);
+
+		$lsx_controls['fields']['lsx_wc_trust_footer_bar_status'] = array(
+			'label'       => esc_html__( 'Footer Trust Factors Section', 'lsx' ),
+			'description' => esc_html__( 'Enable the footer trust factors section.', 'lsx' ),
+			'section'     => 'lsx-wc-global',
+			'type'        => 'checkbox',
+			'priority'    => 1,
+		);
+
 		$lsx_controls['settings']['lsx_wc_mobile_footer_bar_status'] = array(
 			'default'           => '1',
 			'sanitize_callback' => 'lsx_sanitize_checkbox',
@@ -963,3 +976,40 @@ function lsx_wc_product_widget_template( $located, $template_name ) {
 	return $located;
 }
 add_filter( 'wc_get_template', 'lsx_wc_product_widget_template', 90, 2 );
+
+if ( ! function_exists( 'lsx_payment_gateway_logos' ) ) {
+	/**
+	 * Add Lets Encrypt and PayFast logos to cart.
+	 **/
+	function lsx_payment_gateway_logos() {
+		$encript_image        = get_template_directory_uri() . '/assets/images/lets-encript.svg';
+		$payfast_image        = get_template_directory_uri() . '/assets/images/payfast-footer-logo.svg';
+		$payment_logos        = get_template_directory_uri() . '/assets/images/payment-logos.svg';
+		$payment_logos_mobile = get_template_directory_uri() . '/assets/images/payment-logos-mobile.svg';
+		if ( ( is_checkout() || is_cart() ) && ( ! empty( get_theme_mod( 'lsx_wc_trust_footer_bar_status', '1' ) ) ) ) {
+		?>
+		<div class="row text-center vertical-align lsx-full-width-base-small checkout-cta-bottom">
+			<div class="col-md-12 img-payfast">
+				<img src="<?php echo esc_url( $payfast_image ); ?>" alt="payfast"/>
+			</div>
+			<div class="col-md-12 img-payments hidden-xs">
+				<img src="<?php echo esc_url( $payment_logos ); ?>" alt="payments"/>
+			</div>
+			<div class="col-md-12 img-payments hidden-sm hidden-md hidden-lg">
+				<img src="<?php echo esc_url( $payment_logos_mobile ); ?>" alt="payments"/>
+			</div>
+			<div class="col-md-12 img-encrypt">
+				<img src="<?php echo esc_url( $encript_image ); ?>" alt="lets_encrypt"/>
+			</div>
+		</div>
+
+		<?php
+		}
+	}
+	include_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+	// check for plugin using plugin name.
+	if ( ! is_plugin_active( 'lsx-health-plan/lsx-health-plan.php' ) ) {
+		add_action( 'lsx_footer_before', 'lsx_payment_gateway_logos' );
+	}
+}
