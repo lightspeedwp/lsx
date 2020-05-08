@@ -241,6 +241,15 @@ function lsx_entry_top() {
 }
 
 /**
+ * Entry Inside Top
+ *
+ * @return void
+ */
+function lsx_entry_inside_top() {
+	do_action( 'lsx_entry_inside_top' );
+}
+
+/**
  * Entry Bottom
  *
  * @return void

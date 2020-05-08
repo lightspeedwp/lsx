@@ -2,6 +2,15 @@
 
 # [[2.7.1]] - In Development
 
+### Added
+- One new hooks/actions added in layouts: `lsx_entry_inside_top` to hook into a page content.
+- WooCommerce 4.1 compatibility.
+- Adding Yoast 14.0.+ compatibility.
+
+### Changed
+- Woocommerce Cart, Checkout, Thank You and Restricted styling improved.
+- Layout changed on Cart, Checkout, Thank You and Restricted woocommerce pages.
+
 ### Fixed
 - Fixed issue #346 'If LSX banners is not enabled there is a simple banner showing on each page.'.
 
