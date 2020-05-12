@@ -13,6 +13,7 @@
 
 ### Fixed
 - Fixed issue #346 'If LSX banners is not enabled there is a simple banner showing on each page.'.
+- Body class `using-gutenberg` affecting other custom post type single pages was removed from any custom post type single page.
 
 
 ## [[2.7.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.7.0) - 2020-03-30
