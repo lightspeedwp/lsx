@@ -125,7 +125,7 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 		}
 
 		if ( class_exists( 'LSX_Banners' ) ) {
-			if ( ! is_singular() ) {
+			if ( is_archive() && is_post_type_archive( 'tribe_events' ) ) {
 				$options = get_option( '_lsx_settings', false );
 				if ( is_array( $options ) && isset( $options['tribe_events'] ) && isset( $options['tribe_events']['title'] ) && '' !== $options['tribe_events']['title'] ) {
 					$title = $options['tribe_events']['title'];

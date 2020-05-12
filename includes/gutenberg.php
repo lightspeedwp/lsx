@@ -48,7 +48,7 @@ add_filter( 'body_class', __NAMESPACE__ . '\add_gutenberg_compatible_body_class'
 
 // Add custom class for templates that are using the Gutenberg editor.
 add_action('body_class', function( $classes ) {
-	if ( function_exists( 'has_blocks' ) && has_blocks( get_the_ID() ) && ( ! is_search() ) && ( ! is_archive() ) && ( ! is_singular( 'project' ) ) )
+	if ( function_exists( 'has_blocks' ) && has_blocks( get_the_ID() ) && ( ( is_singular( 'post' ) || is_page() ) ) )
 		$classes[] = 'using-gutenberg';
 	return $classes;
 });
