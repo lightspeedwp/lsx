@@ -388,7 +388,8 @@ article.page {
 							padding-right: 10px;
 						}
 						&.currently-in-course {
-							.course-products {
+							.course-products,
+							.single_add_to_cart_button {
 								display: none;
 							}
 						}
@@ -588,6 +589,12 @@ article.page {
 			margin-right: auto;
 			.course {
 				margin-bottom: 0;
+				&.user-status-active,
+				&.user-status-completed {
+					.single_add_to_cart_button {
+						display: none;
+					}
+				}
 				//@include media('<tablet') {
 					display: flex;
 					flex-direction: column;

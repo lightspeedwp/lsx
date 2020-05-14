@@ -6,14 +6,17 @@
 - One new hooks/actions added in layouts: `lsx_entry_inside_top` to hook into a page content.
 - WooCommerce 4.1 compatibility.
 - Adding Yoast 14.0.+ compatibility.
+- Added compatibility for LSX Banners for Sensei single lessons.
 
 ### Changed
 - Woocommerce Cart, Checkout, Thank You and Restricted styling improved.
 - Layout changed on Cart, Checkout, Thank You and Restricted woocommerce pages.
+- Updated Sensei related functions to replace deprecated functions.
 
 ### Fixed
 - Fixed issue #346 'If LSX banners is not enabled there is a simple banner showing on each page.'.
 - Body class `using-gutenberg` affecting other custom post type single pages was removed from any custom post type single page.
+- Fixed a few styling issues related to Sensei templates.
 
 
 ## [[2.7.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.7.0) - 2020-03-30

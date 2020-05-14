@@ -98,7 +98,7 @@ class LSX_Sensei_Course {
 	 */
 	public function course_body_div_open() {
 		global $post, $current_user;
-		$is_user_taking_course    = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
+		$is_user_taking_course    = Sensei_Utils::has_started_course( $post->ID, $current_user->ID );
 		$user_taking_course_class = '';
 		if ( ! empty( $is_user_taking_course ) ) {
 			$user_taking_course_class = 'currently-in-course';
@@ -148,14 +148,15 @@ class LSX_Sensei_Course {
 	 */
 	public function display_course_amount() {
 		global $post, $current_user;
-		$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
-		$wc_post_id            = absint( get_post_meta( $post->ID, '_course_woocommerce_product', true ) );
+		$is_user_taking_course   = Sensei_Course::is_user_enrolled( $post->ID, $current_user->ID );
+		$is_user_starting_course = Sensei_Utils::has_started_course( $post->ID, $current_user->ID );
+		$wc_post_id              = absint( get_post_meta( $post->ID, '_course_woocommerce_product', true ) );
 		$course_purchasable    = '';
 		if ( class_exists( 'Sensei_WC' ) ) {
 			$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
 			$currency           = get_woocommerce_currency_symbol();
 			$product            = new WC_Product( $wc_post_id );
-			if ( ( ! empty( $product->get_price() ) ) && ( ! $is_user_taking_course ) ) {
+			if ( ( ! empty( $product->get_price() ) ) && ( ( ! $is_user_taking_course ) || ( ! $is_user_starting_course ) ) ) {
 				echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . ' </span>' . sprintf( '%0.2f', esc_html( $product->get_price() ) ) . '</span>';
 			} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable ) {
 				echo '<span class="course-product-price price">' . wp_kses_post( 'Free!', 'lsx' ) . '</span>';

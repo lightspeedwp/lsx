@@ -60,6 +60,8 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 
 			add_filter( 'get_the_archive_title', array( $this, 'lsx_sensei_modify_archive_title' ), 99, 1 );
 
+			add_filter( 'lsx_banner_allowed_post_types', array( $this, 'lsx_banner_allowed_post_types_sensei' ) );
+
 			// LSX.
 			add_filter( 'lsx_global_header_disable', array( $this, 'lsx_sensei_disable_lsx_banner' ) );
 			// LSX Banners - Plugin, Placeholders.
@@ -189,11 +191,19 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @subpackage sensei
 		 */
 		public function lsx_sensei_disable_lsx_banner( $disabled ) {
-			if ( is_sensei() ) {
+			if ( is_sensei() && ( ! is_singular( 'lesson' ) ) ) {
 				$disabled = true;
 			}
 
 			return $disabled;
+		}
+
+		/**
+		 * Enable project custom post type on LSX Banners.
+		 */
+		public function lsx_banner_allowed_post_types_sensei( $post_types ) {
+			$post_types[] = 'lesson';
+			return $post_types;
 		}
 
 		/**
@@ -226,7 +236,7 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 */
 		public function lsx_sensei_add_buttons( $course_id ) {
 			global $post, $current_user;
-			$is_user_taking_course = Sensei_Utils::user_started_course( $post->ID, $current_user->ID );
+			$is_user_taking_course = Sensei_Course::is_user_enrolled( $post->ID, $current_user->ID );
 			$course_purchasable    = '';
 			if ( class_exists( 'Sensei_WC' ) ) {
 				$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
@@ -250,7 +260,18 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 		 * @subpackage sensei
 		 */
 		public function lsx_sensei_add_to_cart_text( $text ) {
+			global $post, $current_user;
+			$is_user_taking_course = Sensei_Utils::has_started_course( $post->ID, $current_user->ID );
+			$is_course_on_cart     = Sensei_WC::is_course_in_cart( $post->ID, $current_user->ID );
+
 			$text = esc_html__( 'Add to cart', 'lsx' );
+
+			if ( ( $is_user_taking_course ) ) {
+				return;
+			}
+			if ( ( $is_course_on_cart ) ) {
+				$text = esc_html__( 'Course added to cart', 'lsx' );
+			}
 			return $text;
 		}
 

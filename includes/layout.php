@@ -187,7 +187,10 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		}
 
 		if ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
-			?>
+			if ( class_exists( 'LSX_Banners' ) && empty( apply_filters( 'lsx_banner_plugin_disable', false ) && ( ! has_post_thumbnail() ) ) ) {
+				return;
+			}
+				?>
 			<div class="archive-header-wrapper banner-page col-<?php echo esc_attr( $size ); ?>-12">
 				<?php lsx_global_header_inner_bottom(); ?>
 				<header class="archive-header">
@@ -196,6 +199,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 
 			</div>
 			<?php
+
 		elseif ( is_single() && ! is_singular( 'post' ) ) :
 			?>
 			<div class="archive-header-wrapper banner-single col-<?php echo esc_attr( $size ); ?>-12">
