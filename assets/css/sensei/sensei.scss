@@ -502,6 +502,13 @@ article.page {
 								order: 3;
 								.button.view-results {
 									margin-left: 0;
+									@include lsx-button-scaffolding();
+									@include small-button();
+									@include lsx-button-colour();
+									margin-left: $lsx-gap;
+									&:hover {
+										@extend %button-hover;
+									}
 								}
 								form {
 									width: 100%;
