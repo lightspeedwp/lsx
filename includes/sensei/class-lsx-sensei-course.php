@@ -151,14 +151,14 @@ class LSX_Sensei_Course {
 		$is_user_taking_course   = Sensei_Course::is_user_enrolled( $post->ID, $current_user->ID );
 		$is_user_starting_course = Sensei_Utils::has_started_course( $post->ID, $current_user->ID );
 		$wc_post_id              = absint( get_post_meta( $post->ID, '_course_woocommerce_product', true ) );
-		$course_purchasable    = '';
+		$course_purchasable      = '';
 		if ( class_exists( 'Sensei_WC' ) ) {
 			$course_purchasable = Sensei_WC::is_course_purchasable( $post->ID );
 			$currency           = get_woocommerce_currency_symbol();
 			$product            = new WC_Product( $wc_post_id );
 			if ( ( ! empty( $product->get_price() ) ) && ( ( ! $is_user_taking_course ) || ( ! $is_user_starting_course ) ) ) {
 				echo '<span class="course-product-price price"><span>' . esc_html( $currency ) . ' </span>' . sprintf( '%0.2f', esc_html( $product->get_price() ) ) . '</span>';
-			} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable ) {
+			} elseif ( ( '' === $product->get_price() || 0 == $product->get_price() ) && $course_purchasable && ( ( ! $is_user_taking_course ) || ( ! $is_user_starting_course ) ) ) {
 				echo '<span class="course-product-price price">' . wp_kses_post( 'Free!', 'lsx' ) . '</span>';
 			}
 		}
