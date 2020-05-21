@@ -388,7 +388,8 @@ article.page {
 							padding-right: 10px;
 						}
 						&.currently-in-course {
-							.course-products {
+							.course-products,
+							.single_add_to_cart_button {
 								display: none;
 							}
 						}
@@ -501,6 +502,13 @@ article.page {
 								order: 3;
 								.button.view-results {
 									margin-left: 0;
+									@include lsx-button-scaffolding();
+									@include small-button();
+									@include lsx-button-colour();
+									margin-left: $lsx-gap;
+									&:hover {
+										@extend %button-hover;
+									}
 								}
 								form {
 									width: 100%;
@@ -588,6 +596,12 @@ article.page {
 			margin-right: auto;
 			.course {
 				margin-bottom: 0;
+				&.user-status-active,
+				&.user-status-completed {
+					.single_add_to_cart_button {
+						display: none;
+					}
+				}
 				//@include media('<tablet') {
 					display: flex;
 					flex-direction: column;
