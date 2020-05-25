@@ -8,18 +8,11 @@
 	display: block;
 	width: 100%;
 	height: 50px;
-	// padding: 6px 12px;
-	// font-size: 15px;
-	// line-height: 1.6;
-	color: #4a4a4a;
-	background-color: #fff;
+	color: $text-color;
+	background-color: white;
 	background-image: none;
-	border: 2px solid #DDD;
+	border: 2px solid $breaker;
 	border-radius: 2px;
-	// box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-	// transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-
-	// lsx-form-control
 	box-shadow: none;
 	font-size: 18px;
 	line-height: 1.33;
@@ -27,9 +20,7 @@
 	transition: all 150ms ease;
 
 	&:focus {
-		border-color: #418AD0;
-		// outline: 0;
-		// box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6);
+		border-color: nth($blue,1);
 	}
 }
 
@@ -149,7 +140,6 @@
 /**
  * Tribe General Structure
  */
-
  .tribe-button.tribe-button-small.tribe-upcoming.tribe-button-secondary, .tribe-community-events-content .tribe-nav .my-events-display-options a.tribe-upcoming,.tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion.button, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary,  .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit, #post.tribe-button.submit.events-community-submit, .tribe-community-events.form .tribe-button, #tribe-community-events.form .tribe-button, .tribe-community-events-content .tribe-nav .table-menu-wrapper a.tribe-button-tertiary {
 	@include lsx-button-scaffolding();
 	@include lsx-button-colour();
@@ -161,6 +151,20 @@
 		display:none;
 	}
 }
+.content-area {
+	#main {
+		.tribe-button {
+			&.tribe-button-primary {
+				@include lsx-button-scaffolding();
+				@include lsx-button-colour();
+				@include small-button();
+				font-family: $font-family-sans-serif;
+				font-weight: 600;
+			}
+		}
+	}
+}
+
 .tribe-events-button {
 	box-shadow: 2px 2px 0 0 #7A030A;
 	&, #tribe-events & {
@@ -212,12 +216,6 @@ article.page {
 	}
 }
 
-
-// .tribe-events-read-more {
-// 	background-color: #a4050f !important;
-// 	color: #ffffff !important;
-// 	box-shadow: 2px 2px 0 0 #7C040C !important;
-// }
 a.tribe-events-read-more {
 	.content-area &:not(.btn) {
 		@include lsx-button-scaffolding();
@@ -249,8 +247,32 @@ a.tribe-events-read-more {
 	}
 }
 
-#tribe-events .tribe-community-events-content .tribe-nav .tribe-pagination .current {
-	background: #418AD0;
+#main {
+	.tribe-community-events-content {
+		.tribe-nav {
+			.tribe-pagination {
+				.current,
+				.inactive {
+					border-radius: 3px;
+					border: 2px solid nth($blue,1);
+					display: inline-block;
+					height: 40px;
+					line-height: 36px;
+					text-align: center;
+					vertical-align: top;
+					width: 40px;
+					cursor: pointer;
+					&:hover {
+						background: nth($blue,1);
+						color: white;
+					}
+				}
+				.current {
+					background: nth($blue,1);
+				}
+			}
+		}
+	}
 }
 
 a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu-btn.button.tribe-button.tribe-button-tertiary.tribe-button-activate, button#tribe-add-exclusion, .tribe-button.tribe-button-small.tribe-upcoming.tribe-button-tertiary,
@@ -258,7 +280,7 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 	@include lsx-button-scaffolding();
 	@include small-button();
 	background: var(--shuttle-gray);
-	color: #fff !important;
+	color: white;
 	border: none;
 	box-shadow: 2px 2px 0 0 var(--button-secondary-hover);
 	&:hover {
@@ -334,9 +356,6 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 #tribe-events-content {
 	margin-bottom: 0;
 	padding: 0;
-	// a {
-	//     color: #A4050F;
-	// }
 	.tribe-events-tooltip {
 		padding: 1em 0.5em;
 		h3.entry-title.summary {
@@ -412,9 +431,6 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 
 		.tribe-events-event-meta {
 			font-weight: normal;
-			// a {
-			//     color: #A4050F;
-			// }
 		}
 
 		.type-tribe_events {
@@ -557,7 +573,7 @@ h2.tribe-events-page-title {
 .tribe_events {
 	.cart {
 		border: 1px solid #E1E1E1;
-	    background-color: #FFFFFF;
+	    background-color: white;
 	    padding: 1em 2em;
 	    margin-bottom: 2em;
 	}
@@ -569,19 +585,19 @@ h2.tribe-events-page-title {
 }
 
 .tribe-events-tickets {
-	background: #ffffff !important;
+	background: white !important;
 	td {
 	    padding: 10px 0 !important;
 	    input {
 	    	&:focus {
-		    	border-color: #418AD0;
+		    	border-color: nth($blue,1);
 			    outline: 0;
 			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6)
 		    }
 	    }
 	    select {
 	    	&:focus {
-		    	border-color: #418AD0;
+		    	border-color: nth($blue,1);
 			    outline: 0;
 			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6)
 		    }
@@ -592,7 +608,7 @@ h2.tribe-events-page-title {
 .tribe-button.tribe-button--rsvp {
 	margin: 0;
 	&:hover {
-		background-color: #eda700 !important;
+		background-color: nth($orange, 3) !important;
 	}
 }
 .tribe-tickets-meta-row {
@@ -608,8 +624,8 @@ h2.tribe-events-page-title {
     display: block;
     width: 100%;
     height: 50px;
-    color: #4A4A4A;
-    border: 1px solid #DDD;
+    color: $text-color;
+    border: 1px solid $breaker;
     border-radius: 2px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
@@ -639,11 +655,10 @@ h2.tribe-events-page-title {
  * Tribe Community Event List
  */
 
-#tribe-community-events, #tribe-events {
+#tribe-events {
 	form {
 		.tribe-events-community-details {
-			background-color: #fff;
-			//padding: 1em 2em;
+			background-color: white;
 		}
 		div.venue, .events-community-post-title, .events-community-post-content {
 			display: flex;
@@ -723,6 +738,60 @@ h2.tribe-events-page-title {
 			height: 50px;
 			padding: 5px 10px;
 			line-height: 35px;
+		}
+	}
+}
+#tribe-community-events {
+	form {
+		.tribe-events-community-details {
+			background-color: white;
+		}
+		.events-community-post-title, .events-community-post-content {
+			display: flex;
+			flex-direction: column;
+			label {
+				font-size: 16px;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+			input:not([type='checkbox']):not(.button), textarea {
+				display: block;
+				width: 100%;
+				height: $input-height-base;
+				padding: $padding-base-vertical $padding-base-horizontal;
+				font-size: $font-size-base;
+				line-height: $line-height-base;
+				color: $input-color;
+				background-color: $input-bg;
+				background-image: none;
+				border: 2px solid $input-border;
+				border-radius: $input-border-radius;
+				@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
+				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+				@include form-control-focus;
+				@include placeholder;
+				&::-ms-expand {
+					border: 0;
+					background-color: transparent;
+				  }
+				&[disabled],
+				&[readonly],
+				fieldset[disabled] & {
+					background-color: $input-bg-disabled;
+					opacity: 1;
+				}
+				&[disabled],
+				fieldset[disabled] & {
+				cursor: $cursor-disabled;
+				}
+			}
+			input[type='checkbox'] {
+				margin: 5px 0 20px;
+			}
+			textarea {
+				height: auto;
+			}
 		}
 	}
 }
@@ -835,7 +904,7 @@ body:not(.logged-in) {
 	@include lsx-button-colour();
 	height: inherit;
     box-shadow: none !important;
-    border: 1px solid #ddd;
+    border: 1px solid $breaker;
 }
 
 #tribe-community-events .my-events-header a.tribe-button.tribe-button-secondary {
@@ -866,22 +935,22 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 
 	.tribe-field-start_date, .tribe-field-end_date, .tribe-field-start_time, .tribe-field-end_time {
 		height: auto;
-		color: #4A4A4A;
-		background-color: #fff;
+		color: $text-color;
+		background-color: white;
 		background-image: none;
-		border: 2px solid #DDD;
+		border: 2px solid $breaker;
 		border-radius: 2px;
 		padding: 4px 10px;
 		width: auto;
 
 		&:focus {
-			border-color: #418AD0;
+			border-color: nth($blue,1);
 			outline: 0;
 		}
 	}
 
 	.my-events-header {
-		background-color: #fff;
+		background-color: white;
 		padding: 16px;
 		border-left: 1px solid #e0e0e0;
 		border-right: 1px solid #e0e0e0;
@@ -899,7 +968,7 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 	}
 
 	.tribe-section, .events-community-post-content, .events-community-post-title {
-		background: #fff;
+		background: white;
 		border-radius: 3px;
 		font-size: 13px;
 	}
@@ -990,21 +1059,6 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 /**
  * Tribe Community Events Mobile
  */
-@media (min-width: 992px) {
-
-	/*.tribe-community-events.form {
-		.my-events-header {
-			h2.my-events {
-				flex-grow: 10;
-			}
-
-			.tribe-button {
-				flex-grow: 1;
-			}
-		}
-	}*/
-
-}
 
 #loginform, .loginform, .woocommerce form.login,
 .woocommerce form.register, .logged-out .woocommerce {

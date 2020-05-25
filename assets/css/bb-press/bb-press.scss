@@ -3,8 +3,8 @@
 @import '../scss/global/placeholders';
 
 %button {
-	background-color: #418ad0;
-	box-shadow: 2px 2px 0 0 #27639e;
+	background-color: nth($blue,1);
+	box-shadow: 2px 2px 0 0 nth($blue,3);
 	color: #fff;
 	border: 0 none;
 	border-radius: 3px;
@@ -15,7 +15,7 @@
 	text-transform: uppercase;
 }
 %button-hover {
-	background-color: #367dc0;
+	background-color: nth($blue,3);
 }
 
 // Structure
