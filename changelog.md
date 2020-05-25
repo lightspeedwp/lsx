@@ -1,5 +1,11 @@
 # LSX Change log
 
+# [[2.8.1]] - In Development
+
+### Added
+- Improved styling for the Tribe Events Community Events forms.
+
+
 # [[2.8.0]] - 2020-05-21
 
 ### Added
