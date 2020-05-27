@@ -1,6 +1,6 @@
 # Upcoming Projects & Roadmap
 
-_Complementary to [Version 2.9 Scope & Requirements](https://github.com/WordPress/gutenberg/issues/13113)._
+_Complementary to [Version 2.9 Scope & Requirements](https://github.com/lightspeeddevelopment/lsx/issues/359)._
 
 This document outlines some of the features currently in development or being considered for the project. 
 
