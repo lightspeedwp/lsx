@@ -2,9 +2,7 @@
 
 _Complementary to [Version 2.9 Scope & Requirements](https://github.com/WordPress/gutenberg/issues/13113)._
 
-This document outlines some of the features currently in development or being considered for the project. It should not be confused with the product roadmap for WordPress itself, even if some areas naturally overlap. The main purpose of it is to give visibility to some of the key problems remaining to be solved and as an invitation for those wanting to collaborate on some of the more complex issues to learn about what needs help.
-
-Gutenberg is already in use by millions of sites through WordPress, so in order to make substantial changes to the design or updating specifications it is advisable to consider a discussion process ("Request for Comments") showing both an understanding of the impact, both positives and negatives, trade offs and opportunities.
+This document outlines some of the features currently in development or being considered for the project. 
 
 ## Projects
 
@@ -23,7 +21,7 @@ Gutenberg is already in use by millions of sites through WordPress, so in order 
 
 ## Timeline
 
-The projects outlined above indicate areas of interest but not necessarily development priorities. Sometimes, a product need will accelerate a resolution (as is the case of the block registry), other times community interest might be the driving force.
+The projects outlined above indicate areas of interest but not necessarily development priorities. 
 
 - 2020 Q1: Version 2.7 of LSX released
 - 2020 Q2: Version 2.8 of LSX released
