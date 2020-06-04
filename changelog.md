@@ -5,6 +5,9 @@
 ### Added
 - Improved styling for the Tribe Events Community Events forms.
 
+### Fixed
+- Fixed the compatibility with the LSX Blocks "disable title" functionality.
+
 
 # [[2.8.0]] - 2020-05-21
 

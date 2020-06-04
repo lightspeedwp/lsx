@@ -387,6 +387,11 @@ if ( ! function_exists( 'lsx_post_header' ) ) :
 		$default_size = 'sm';
 		$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
 
+		$disable_title = get_post_meta( get_the_ID(), 'lsx_disable_title', true );
+		if ( 'yes' === $disable_title && is_singular( 'post' ) ) {
+			return;
+		}
+
 		if ( is_singular( 'post' ) ) :
 			$format = get_post_format();
 
@@ -446,6 +451,10 @@ endif;
 // Add entry meta to single post if active.
 if ( ! function_exists( 'lsx_add_entry_meta' ) ) :
 	function lsx_add_entry_meta() {
+		$disable_title = get_post_meta( get_the_ID(), 'lsx_disable_title', true );
+		if ( 'yes' === $disable_title && is_singular( 'post' ) ) {
+			return;
+		}
 		if ( is_single() && is_singular( 'post' ) ) {
 			?>
 			<div class="entry-meta">
