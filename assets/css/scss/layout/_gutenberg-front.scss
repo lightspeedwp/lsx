@@ -55,7 +55,7 @@
 	&.page-template-template-full-width-no-margins.lsx-page-title {
 		div#primary {
 			margin-bottom: 8.5rem;
-			margin-top: 50px;
+			margin-top: 49px;
 		}
 	}
 	&.page-template-template-full-width-no-margins {
@@ -133,6 +133,16 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg {
+
+		&.lsx-page-title {
+			.lsx-title-block.aligncontent {
+				max-width: 60%;
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		
 		.entry-content {
 			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
 			> strong, > span, > table {
