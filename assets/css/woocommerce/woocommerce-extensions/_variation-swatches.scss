@@ -17,3 +17,40 @@
 		}
 	}
 }
+
+.mnm_form.layout_grid {
+	ul.products {
+		li.product {
+			flex-direction: row;
+			flex-wrap: wrap;
+			max-width: 300px;
+			margin: 0 auto 4rem;
+			.product-thumbnail {
+				min-width: 100%;
+				width: 100%;
+				img {
+					width: 100%;
+				}
+			}
+			.product-details {
+				flex-grow: 4;
+				margin: 0;
+				align-self: center;
+				.variation {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin: 0;
+					font-weight: bold;
+					dd {
+						margin-left: 8px;
+					}
+				}
+			}
+			.product-quantity {
+				margin: 0;
+				align-self: center;
+			}
+		}
+	}
+}
