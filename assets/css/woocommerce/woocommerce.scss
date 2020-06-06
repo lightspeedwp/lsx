@@ -292,6 +292,28 @@ article.page {
 		}
 	}
 }
+.pp_content_container {
+	.quick-view {
+		.product {
+			@include media('>tablet') {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				.woocommerce-product-gallery {
+					grid-column-start: 1;
+					grid-column-end: 2;
+					grid-row-start: 1;
+					grid-row-end: 3;
+					width: 90%;
+				}
+				.summary {
+					grid-column-start: 2;
+					width: 100%;
+				}
+			}
+
+		}
+	}
+}
 .widget {
 	.woocommerce {
 		.products {
