@@ -310,7 +310,11 @@ article.page {
 					width: 100%;
 				}
 			}
-
+			@include media('<tablet') {
+				.woocommerce-product-gallery {
+					margin-bottom: 4.25rem !important;
+				}
+			}
 		}
 	}
 }
