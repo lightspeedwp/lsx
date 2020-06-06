@@ -120,6 +120,20 @@ article.page {
 			content: '';
 			display: table;
 		}
+		.woocommerce-cart-notice {
+			.button {
+				min-width: 140px;
+				text-align: center;
+			}
+			@include media('<tablet') {
+				display: flex;
+				flex-direction: column;
+				.button {
+					width: 100%;
+					margin: 2rem auto 0;
+				}
+			}
+		}
 	}
 
 	&.page-has-banner.lsx .archive-header-wrapper { display: inherit; }
@@ -1094,7 +1108,7 @@ p.no-comments,
 		padding: 0 15px;
 
 		@include media ('>=custom') {
-			margin-right: 55px;
+			margin-right: 25px;
 			width: 25%;
 		}
 		@include media ('>=desktop') {
