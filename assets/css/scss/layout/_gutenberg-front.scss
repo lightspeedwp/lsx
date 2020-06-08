@@ -57,6 +57,13 @@
 		div#primary {
 			margin-bottom: 8.5rem;
 			margin-top: 49px;
+
+			article {
+				& > .entry-content {
+					margin-top: 0px;
+					padding-top: 0px;
+				}
+			}
 		}
 	}
 	&.page-template-template-full-width-no-margins {
