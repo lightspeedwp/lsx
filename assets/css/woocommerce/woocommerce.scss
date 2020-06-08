@@ -308,6 +308,12 @@ article.page {
 				.summary {
 					grid-column-start: 2;
 					width: 100%;
+					.cart {
+						.quantity,
+						.single_add_to_cart_button {
+							display: none;
+						}
+					}
 				}
 			}
 			@include media('<tablet') {
