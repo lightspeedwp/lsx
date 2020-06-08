@@ -53,16 +53,28 @@
 	&.page-template-default.lsx-page-title,
 	&.page-template-template-full-width.lsx-page-title,
 	&.page-template-template-full-width-no-margins.lsx-page-title {
+
 		div#primary {
 			margin-bottom: 8.5rem;
 			margin-top: 49px;
 		}
+
+		// LSX Blocks "Hero Banner".
+		&.lsx-hero-banner-init {
+			div#primary {
+				margin-top: 0;
+			}
+		}
+
+
 	}
 	&.page-template-template-full-width-no-margins {
 		.entry-content {
 			padding: 0;
 		}
 	}
+
+
 }
 
 .gutenberg-compatible-template.using-gutenberg {
