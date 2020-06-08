@@ -58,15 +58,6 @@
 			margin-bottom: 8.5rem;
 			margin-top: 49px;
 		}
-
-		// LSX Blocks "Hero Banner".
-		&.lsx-hero-banner-init {
-			div#primary {
-				margin-top: 0;
-			}
-		}
-
-
 	}
 	&.page-template-template-full-width-no-margins {
 		.entry-content {
@@ -74,6 +65,15 @@
 		}
 	}
 
+	/** LSX Hero Block Fixes */
+	.lsx-hero-banner-block {
+		& > .wp-block-cover {
+			min-height: auto;
+			.wp-block-cover__inner-container {
+				margin: 35px auto;
+			}
+		}
+	}
 
 }
 
@@ -86,6 +86,14 @@
 				}
 			}
 		}
+	}
+}
+
+/** LSX Hero Banner Block Styles. */
+.lsx-hero-banner-init {
+	.lsx-hero-banner-block {
+		margin: 0;
+		padding: 0;
 	}
 }
 
