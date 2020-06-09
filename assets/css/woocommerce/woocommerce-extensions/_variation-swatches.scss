@@ -5,13 +5,17 @@
 				td.label {
 					padding: 10px 10px 10px 0;
 
-					label { font-weight: bold; }
+					label {
+						font-weight: bold;
+					}
 				}
 
 				td.value {
 					padding: 10px;
 
-					.swatch-label:empty { display: none; }
+					.swatch-label:empty {
+						display: none;
+					}
 				}
 			}
 		}
@@ -36,12 +40,20 @@
 				flex-grow: 4;
 				margin: 0;
 				align-self: center;
+				text-align: left;
+				@include media("<tablet") {
+					text-align: center;
+				}
 				.variation {
 					display: flex;
 					align-items: center;
-					justify-content: center;
+					justify-content: left;
 					margin: 0;
 					font-weight: bold;
+					text-align: left;
+					@include media("<tablet") {
+						justify-content: center;
+					}
 					dd {
 						margin-left: 8px;
 					}
