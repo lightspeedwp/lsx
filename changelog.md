@@ -1,9 +1,12 @@
 # LSX Change log
 
-# [[2.8.1]] - In Development
+# [[2.9.0]] - In Development
 
 ### Added
 - Improved styling for the Tribe Events Community Events forms.
+- Added support for the Mix and Match Woocommerce plugin.
+- Improved suport for Woocommerce Whishlist plugin.
+- Improved suport for Woocommerce Quick View plugin.
 
 ### Fixed
 - Fixed the compatibility with the LSX Blocks "disable title" functionality.

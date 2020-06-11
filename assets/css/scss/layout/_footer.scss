@@ -119,13 +119,4 @@
 	}
 }
 
-//Footer without cta footers
-.page {
-	.wrap.container {
-		+ #colophon {
-			margin-top: $lsx-medium-gap;
-		}
-	}
-}
-
 @include footer-colours();
