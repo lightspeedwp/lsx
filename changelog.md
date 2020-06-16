@@ -13,6 +13,7 @@
 ### Fixed
 
 - Fixed the compatibility with the LSX Blocks "disable title" functionality.
+- Fixed the mobile widths.
 
 # [[2.8.0]] - 2020-05-21
 
