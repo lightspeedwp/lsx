@@ -8,10 +8,12 @@
 - Added support for the Mix and Match Woocommerce plugin.
 - Improved suport for Woocommerce Whishlist plugin.
 - Improved suport for Woocommerce Quick View plugin.
+- Block Theme Support updates.
 
 ### Fixed
 
 - Fixed the compatibility with the LSX Blocks "disable title" functionality.
+- Fixed the mobile widths.
 - Archive blog spacing fixes.
 
 # [[2.8.0]] - 2020-05-21
