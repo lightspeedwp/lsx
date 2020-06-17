@@ -4,19 +4,23 @@
 .search-results {
 	&:not(.has-sidebar) {
 		.site-main {
-			@include media ('>=tablet') {
+			@include media(">=tablet") {
 				margin: 0 auto;
 				width: 83.33333%;
 			}
 
-			@include media ('>=desktop') { width: 100%; }
+			@include media(">=desktop") {
+				width: 100%;
+			}
 		}
 		&.blog,
 		&.archive.category,
 		&.archive.tag {
 			&:not(.lsx-body-full-width) {
 				.site-main {
-					@include media ('>=desktop') { width: 66.66667%; }
+					@include media(">=desktop") {
+						width: 66.66667%;
+					}
 				}
 			}
 		}
@@ -32,18 +36,24 @@ article.lsx-slot {
 	.lsx-related-posts & {
 		& + article.post,
 		& + article.page,
-		& + article.lsx-slot { margin-top: 30px; }
+		& + article.lsx-slot {
+			margin-top: 30px;
+		}
 
 		.entry-layout {
-			background-color: #FFF;
+			background-color: #fff;
 			padding-bottom: 15px;
 
 			& > .entry-image {
-				@include media('>=phone') { display: none; }
+				@include media(">=phone") {
+					display: none;
+				}
 			}
 		}
 
-		.entry-header { position: relative; }
+		.entry-header {
+			position: relative;
+		}
 
 		.thumbnail {
 			border: 0 none;
@@ -58,14 +68,17 @@ article.lsx-slot {
 				border: 0;
 				width: 100%;
 
-				&.lazyload, &.lazyloading { width: auto; }
+				&.lazyload,
+				&.lazyloading {
+					width: auto;
+				}
 			}
 		}
 
 		.entry-meta {
 			padding: 15px 10px;
-			@include media ('>=desktop') {
-				padding: 1rem 10rem 10px;
+			@include media(">=desktop") {
+				padding: 3rem 3rem 1rem;
 			}
 
 			.post-meta {
@@ -76,7 +89,7 @@ article.lsx-slot {
 			}
 
 			.post-meta-avatar {
-				border: 2px solid #FFF;
+				border: 2px solid #fff;
 				border-radius: 50%;
 				height: 75px;
 				left: 50%;
@@ -93,8 +106,8 @@ article.lsx-slot {
 			padding: 0 10px 20px;
 			font-size: 13px;
 			color: $small;
-			@include media('>=desktop') {
-				padding: 0 15px 20px;
+			@include media(">=desktop") {
+				padding: 0rem 3rem 2rem;
 			}
 			a {
 				color: $small;
@@ -102,15 +115,19 @@ article.lsx-slot {
 		}
 
 		.entry-title {
-			font-size: 30px;
+			font-size: 22px;
 			text-align: left;
 			padding: 30px 10px 0;
-
-			& .fa { display: none; }
+			@include media(">=desktop") {
+				padding: 3rem 3rem 0;
+			}
+			& .fa {
+				display: none;
+			}
 
 			& .label-sticky {
 				border-radius: 0;
-				color: #FFF;
+				color: #fff;
 				font-family: $font-family-base;
 				font-size: $font-size-base;
 				font-weight: 400;
@@ -118,25 +135,29 @@ article.lsx-slot {
 				position: absolute;
 				right: 1rem;
 				top: 1rem;
-				box-shadow: 0 10px 6px -6px rgba(0, 0, 0, .15);
+				box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.15);
 			}
 		}
 
 		.entry-summary {
 			word-break: break-word;
 			padding: 0 10px;
-			@include media('>=desktop') {
-				padding: 0 10rem;
+			@include media(">=desktop") {
+				padding: 0 3rem;
 			}
 			p {
 				margin-bottom: 15px;
+				.moretag {
+					text-transform: uppercase;
+				}
 				&:last-child {
 					margin-bottom: 0;
 				}
 			}
 		}
 
-		.entry-content { padding: 0 10rem;
+		.entry-content {
+			padding: 0 10rem;
 			p {
 				margin-bottom: 15px;
 			}
@@ -151,8 +172,10 @@ article.lsx-slot {
 			align-items: center;
 			padding-top: 14px;
 			margin-top: 14px;
-			@include media('>=desktop') {
-				margin: 14px 15px 0;
+			padding-bottom: 2rem;
+			margin-top: 0;
+			@include media(">=desktop") {
+				margin: 0 3rem;
 			}
 			.post-tags {
 				display: block;
@@ -178,7 +201,7 @@ article.lsx-slot {
 			& > .post-comments {
 				&:before {
 					@include fa-icon();
-					content: '\f0e5';
+					content: "\f0e5";
 					display: inline-block;
 					font-size: 15px;
 					margin: 0;
@@ -199,7 +222,7 @@ article.lsx-slot {
 				margin-right: 5px;
 
 				&:before {
-					content: '#';
+					content: "#";
 					display: inline-block;
 				}
 
@@ -234,7 +257,9 @@ article.lsx-slot {
 		}
 
 		&.format-quote {
-			.entry-title { display: none; }
+			.entry-title {
+				display: none;
+			}
 		}
 	}
 }
@@ -254,13 +279,17 @@ article.lsx-slot {
 
 		&:not(.post) {
 			.entry-meta {
-				& > .post-meta.post-meta-top { margin-top: 22.5px; }
+				& > .post-meta.post-meta-top {
+					margin-top: 22.5px;
+				}
 			}
 		}
 
 		&.post.format-quote {
 			.entry-meta {
-				& > .post-meta.post-meta-top { margin-top: 0; }
+				& > .post-meta.post-meta-top {
+					margin-top: 0;
+				}
 			}
 		}
 	}
