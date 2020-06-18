@@ -72,19 +72,9 @@
 		}
 	}
 
-	/** LSX Hero Block Fixes */
-	.lsx-hero-banner-block {
-		&.wp-block-cover {
-			min-height: auto;
-			max-width: 60%;
-			width: 60%;
-			margin-left: auto;
-			margin-right: auto;
+	&.page-template-template-full-width.lsx-page-title,
+	&.page-template-template-full-width-no-margins.lsx-page-title {
 
-			.wp-block-cover__inner-container {
-				margin: 35px auto;
-			}
-		}
 	}
 }
 
@@ -102,9 +92,29 @@
 
 /** LSX Hero Banner Block Styles. */
 .lsx-hero-banner-init {
+	// Fix the breadcrumb colour
+	.breadcrumbs-container {
+		opacity: 1;
+	}
 	.lsx-hero-banner-block {
 		margin: 0;
 		padding: 0;
+
+		&.wp-block-cover {
+			min-height: 150px;
+			height: auto;
+			margin-left: auto;
+			margin-right: auto;
+
+			.wp-block-cover__inner-container {
+				margin: 35px auto;
+			}
+		}
+	}
+
+	// This is for a blog post not using blocks.
+	&.single-post:not(.using-gutenberg) .content-area {
+		margin-top: 50px;
 	}
 }
 
