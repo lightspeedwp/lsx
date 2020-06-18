@@ -92,6 +92,7 @@
 
 /** LSX Hero Banner Block Styles. */
 .lsx-hero-banner-init {
+
 	// Fix the breadcrumb colour
 	.breadcrumbs-container {
 		opacity: 1;
@@ -112,9 +113,19 @@
 		}
 	}
 
-	// This is for a blog post not using blocks.
-	&.single-post:not(.using-gutenberg) .content-area {
-		margin-top: 50px;
+	// This is for a blog post / page template not using blocks.
+	&.page-template.using-gutenberg {
+		div #primary {
+			margin-top: 50px;
+
+			.lsx-hero-banner-block {
+				&.wp-block-cover {
+					.wp-block-cover__inner-container {
+						margin-top: 50px;
+					}
+				}
+			}
+		}
 	}
 }
 
