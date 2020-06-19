@@ -56,7 +56,7 @@
 
 		div#primary {
 			margin-bottom: 8.5rem;
-			margin-top: 49px;
+			margin-top: 50px;
 
 			article {
 				& > .entry-content {
@@ -107,11 +107,29 @@
 			margin-left: auto;
 			margin-right: auto;
 
+			&.has-background-img {
+				min-height: 430px;
+			}
+
 			.wp-block-cover__inner-container {
 				margin: 35px auto;
 
 				.lsx-title-block {
 					padding: 0;
+				}
+			}
+
+			&.aligncontent {
+				max-width: 60%;
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+
+				.lsx-title-block.aligncontent,
+				.lsx-title-block.alignfull,
+				.lsx-title-block.alignwide {
+					width: 100%;
+					max-width: 100%;
 				}
 			}
 		}
