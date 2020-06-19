@@ -28,8 +28,8 @@
 	&.page-template-template-full-width,
 	&.page-template-template-full-width-no-margins {
 		div#primary {
-			margin-top: 0;
 			margin-bottom: 0;
+			margin-top: 0;
 		}
 		div.entry-content {
 			padding-top: 0;
@@ -52,10 +52,33 @@
 			}
 		}
 	}
+	// LSX Blocks "Page Title" enhancements.
+	&.lsx-page-title,
+	&.page-template-default.lsx-page-title,
+	&.page-template-template-full-width.lsx-page-title,
+	&.page-template-template-full-width-no-margins.lsx-page-title {
+
+		div#primary {
+			margin-bottom: 8.5rem;
+			margin-top: 50px;
+
+			article {
+				& > .entry-content {
+					margin-top: 0px;
+					padding-top: 0px;
+				}
+			}
+		}
+	}
 	&.page-template-template-full-width-no-margins {
 		.entry-content {
 			padding: 0;
 		}
+	}
+
+	&.page-template-template-full-width.lsx-page-title,
+	&.page-template-template-full-width-no-margins.lsx-page-title {
+
 	}
 }
 
@@ -65,6 +88,66 @@
 			.tab-content {
 				h3 {
 					margin-top: 2.4rem;
+				}
+			}
+		}
+	}
+}
+
+/** LSX Hero Banner Block Styles. */
+.lsx-hero-banner-init {
+
+	// Fix the breadcrumb colour
+	.breadcrumbs-container {
+		opacity: 1;
+	}
+	.lsx-hero-banner-block {
+		margin: 0;
+		padding: 0;
+
+		&.wp-block-cover {
+			min-height: 150px;
+			height: auto;
+			margin-left: auto;
+			margin-right: auto;
+
+			&.has-background-img {
+				min-height: 430px;
+			}
+
+			.wp-block-cover__inner-container {
+				margin: 35px auto;
+
+				.lsx-title-block {
+					padding: 0;
+				}
+			}
+
+			&.aligncontent {
+				max-width: 60%;
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+
+				.lsx-title-block.aligncontent,
+				.lsx-title-block.alignfull,
+				.lsx-title-block.alignwide {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	// This is for a blog post / page template not using blocks.
+	&.page-template.using-gutenberg {
+		div #primary {
+			margin-top: 50px;
+
+			.lsx-hero-banner-block {
+				&.wp-block-cover {
+					.wp-block-cover__inner-container {
+					}
 				}
 			}
 		}
@@ -131,6 +214,16 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg {
+
+		&.lsx-page-title {
+			.lsx-title-block.aligncontent {
+				max-width: 60%;
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		
 		.entry-content {
 			> div,
 			> p,
