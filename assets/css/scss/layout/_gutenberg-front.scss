@@ -1,4 +1,4 @@
-@import '../scss/global/variables';
+@import "../scss/global/variables";
 
 /*--------------------------------------------------------------
 1.0 Apply 100% Width to Necessary Elements
@@ -15,14 +15,18 @@
 			padding-right: 0;
 		}
 	}
-	.navigation, #respond, .footer-meta {
+	.navigation,
+	#respond,
+	.footer-meta {
 		padding: 2.4rem;
 		@media only screen and (min-width: 768px) {
 			padding-left: 0;
 			padding-right: 0;
 		}
 	}
-	&.page-template-default, &.page-template-template-full-width, &.page-template-template-full-width-no-margins {
+	&.page-template-default,
+	&.page-template-template-full-width,
+	&.page-template-template-full-width-no-margins {
 		div#primary {
 			margin-bottom: 0;
 			margin-top: 0;
@@ -154,18 +158,21 @@
 2.0 Apply Wide, Full and Default Align Styles
 --------------------------------------------------------------*/
 
-@include media ('>=tablet') {
+@include media(">=tablet") {
 	.gutenberg-compatible-template.using-gutenberg,
-	.gutenberg-compatible-template.using-gutenberg.single-post, .gutenberg-compatible-template.using-gutenberg.page-template-default,
+	.gutenberg-compatible-template.using-gutenberg.single-post,
+	.gutenberg-compatible-template.using-gutenberg.page-template-default,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar {
-		.wrap.container, article.post {
+		.wrap.container,
+		article.post {
 			max-width: 100%;
 			width: 100%;
 			float: none;
 			padding-left: 0;
 			padding-right: 0;
 		}
-		.row.lsx-related-posts, .navigation.post-navigation {
+		.row.lsx-related-posts,
+		.navigation.post-navigation {
 			margin: 0 auto;
 			width: 100%;
 			max-width: 1170px;
@@ -197,7 +204,8 @@
 		.alignfull {
 			width: 100%;
 			max-width: 100%;
-			.slick-slider, #lsx-team-slider,
+			.slick-slider,
+			#lsx-team-slider,
 			.blocks-gallery-grid {
 				width: 100%;
 				max-width: 100%;
@@ -217,8 +225,22 @@
 		}
 		
 		.entry-content {
-			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
-			> strong, > span, > table {
+			> div,
+			> p,
+			> h1,
+			> h2,
+			> h3,
+			> h4,
+			> h5,
+			> h6,
+			> ul,
+			> ol,
+			> blockquote,
+			> pre,
+			> figure,
+			> strong,
+			> span,
+			> table {
 				max-width: 60%;
 				width: 60%;
 				margin-left: auto;
@@ -239,26 +261,46 @@
 			}
 		}
 		@media only screen and (min-width: 1168px) {
-			.entry-content > *, .entry-summary > * {
+			.entry-content > *,
+			.entry-summary > * {
 				max-width: calc(6 * (100vw / 12));
 			}
 		}
 
-		.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider, .footer-meta  {
+		.entry-header,
+		.page-header,
+		.post-thumbnail,
+		#comments,
+		#lsx-team-slider,
+		.footer-meta {
 			max-width: 60%;
 			width: 60%;
 			margin-left: auto;
 			margin-right: auto;
 		}
-		&.page-template-template-full-width, &.page-template-template-full-width-no-margins {
+		&.page-template-template-full-width,
+		&.page-template-template-full-width-no-margins {
 			.entry-content {
-				> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > blockquote, > pre, > figure,
-				> strong, > span, > table {
+				> div,
+				> p,
+				> h1,
+				> h2,
+				> h3,
+				> h4,
+				> h5,
+				> h6,
+				> ul,
+				> blockquote,
+				> pre,
+				> figure,
+				> strong,
+				> span,
+				> table {
 					max-width: 80%;
 					width: 80%;
 				}
 				.row {
-					max-width: 1200px;;
+					max-width: 1200px;
 				}
 				> .alignwide {
 					max-width: 90%;
@@ -269,7 +311,11 @@
 					max-width: 100%;
 				}
 			}
-			.entry-header, .page-header, .post-thumbnail, #comments, #lsx-team-slider {
+			.entry-header,
+			.page-header,
+			.post-thumbnail,
+			#comments,
+			#lsx-team-slider {
 				max-width: 80%;
 				width: 80%;
 			}
@@ -277,7 +323,7 @@
 				max-width: 90%;
 				width: 90%;
 				.row {
-					max-width: 1200px;;
+					max-width: 1200px;
 				}
 			}
 			.alignfull {
@@ -288,43 +334,71 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg .post-thumbnail img,
-	.gutenberg-compatible-template.using-gutenberg .alignwide figure:not(.is-resized) img,
-	.gutenberg-compatible-template.using-gutenberg .alignfull figure:not(.is-resized) img {
+	.gutenberg-compatible-template.using-gutenberg
+		.alignwide
+		figure:not(.is-resized)
+		img,
+	.gutenberg-compatible-template.using-gutenberg
+		.alignfull
+		figure:not(.is-resized)
+		img {
 		width: 100%;
 	}
-	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar article.page, .gutenberg-compatible-template.using-gutenberg.page-template-default:not(.has-sidebar) article.page,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar
+		article.page,
+	.gutenberg-compatible-template.using-gutenberg.page-template-default:not(.has-sidebar)
+		article.page,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins {
 		width: 100%;
 	}
 }
 
-@include media ('<tablet') {
-	.gutenberg-compatible-template.using-gutenberg {
-		.entry-content {
-			> div, > p, > h1, > h2, > h3, > h4, > h5, > h6, > ul, > ol, > blockquote, > pre, > figure,
-			> strong, > span, > table {
-				max-width: 80%;
-				width: 80%;
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
-}
-}
+// @include media("<tablet") {
+// 	.gutenberg-compatible-template.using-gutenberg {
+// 		.entry-content {
+// 			> div,
+// 			> p,
+// 			> h1,
+// 			> h2,
+// 			> h3,
+// 			> h4,
+// 			> h5,
+// 			> h6,
+// 			> ul,
+// 			> ol,
+// 			> blockquote,
+// 			> pre,
+// 			> figure,
+// 			> strong,
+// 			> span,
+// 			> table {
+// 				max-width: 80%;
+// 				width: 80%;
+// 				margin-left: auto;
+// 				margin-right: auto;
+// 			}
+// 		}
+// 	}
+// }
 
 /*--------------------------------------------------------------
 3.0 Mobile Only
 --------------------------------------------------------------*/
-@include media ('<tablet') {
-	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.single-post {
+@include media("<tablet") {
+	.gutenberg-compatible-template.using-gutenberg,
+	.gutenberg-compatible-template.using-gutenberg.single-post {
 		.alignfull {
-			&figure, &.lsx-block-container, &.lsx-block-banner,
-			&.lsx-block-cta, &.wp-block-cover, &.wp-block-media-text {
+			&figure,
+			&.lsx-block-container,
+			&.lsx-block-banner,
+			&.lsx-block-cta,
+			&.wp-block-cover,
+			&.wp-block-media-text {
 				margin-left: -50px;
 				margin-right: -50px;
-				width: calc( 100% + 50px * 2);
-				max-width: calc( 100% + 50px * 2);
+				width: calc(100% + 50px * 2);
+				max-width: calc(100% + 50px * 2);
 			}
 			&.wp-block-media-text {
 				padding-left: 15px;
@@ -341,7 +415,7 @@
 		}
 	}
 }
-@include media ('<custom') {
+@include media("<custom") {
 	.wp-block-button {
 		a {
 			width: 100%;
@@ -349,11 +423,13 @@
 	}
 }
 
-@include media ('>=tablet') {
+@include media(">=tablet") {
 	.gutenberg-compatible-template {
 		article.post {
 			.entry-content {
-				img.alignnone, article.post .entry-content p img[class*="wp-image-"].alignnone, figure.alignnone {
+				img.alignnone,
+				article.post .entry-content p img[class*="wp-image-"].alignnone,
+				figure.alignnone {
 					text-align: left;
 					margin-left: auto;
 					margin-right: auto;
@@ -370,7 +446,7 @@
 --------------------------------------------------------------*/
 
 .gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
-	.wp-block-button{
+	.wp-block-button {
 		margin-bottom: 1em;
 		&.alignright,
 		&.alignleft {
@@ -380,11 +456,32 @@
 }
 
 // For single posts
-@include media ('>=desktop-wide') {
+@include media(">=desktop-wide") {
 	.gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
 		.entry-content {
-			figure.wp-block-embed, .navbar, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
-			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-projects-slider.slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
+			figure.wp-block-embed,
+			.navbar,
+			p,
+			.envira-gallery-wrap,
+			form,
+			.woocommerce,
+			blockquote,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			ul,
+			pre,
+			.wp-block-image:not(.alignfull),
+			ol,
+			table,
+			.wp-block-button,
+			.slick-slider,
+			#lsx-projects-slider.slick-slider,
+			#lsx-team-slider,
+			#lsx-testimonials-slider {
 				max-width: 850px;
 				margin-left: auto;
 				margin-right: auto;
@@ -395,13 +492,22 @@
 				max-width: 585px;
 			}
 		}
-		.entry-meta, .footer-meta, .comment-respond, #comments, .archive-title {
+		.entry-meta,
+		.footer-meta,
+		.comment-respond,
+		#comments,
+		.archive-title {
 			max-width: 850px;
 			margin-left: auto;
 			margin-right: auto;
 		}
-		.wp-block-columns  {
-			&.has-6-columns, &.has-5-columns, &.has-4-columns, &.has-3-columns, &.has-2-columns, &.has-1-columns {
+		.wp-block-columns {
+			&.has-6-columns,
+			&.has-5-columns,
+			&.has-4-columns,
+			&.has-3-columns,
+			&.has-2-columns,
+			&.has-1-columns {
 				display: flex;
 				justify-content: center;
 			}
@@ -442,14 +548,36 @@
 	}
 }
 
-@include media ('>=desktop-wide') {
-	.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
+@include media(">=desktop-wide") {
+	.gutenberg-compatible-template.using-gutenberg,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
 	.gutenberg-compatible-template.using-gutenberg.page-template-default {
 		.entry-content {
-			figure.wp-block-embed, .navbar, p, .envira-gallery-wrap, form, .woocommerce, blockquote,
-			h1, h2, h3, h4, h5, h6, ul, pre, .wp-block-image:not(.alignfull), ol, table, .wp-block-button, .slick-slider, #lsx-projects-slider.slick-slider, #lsx-team-slider, #lsx-testimonials-slider {
+			figure.wp-block-embed,
+			.navbar,
+			p,
+			.envira-gallery-wrap,
+			form,
+			.woocommerce,
+			blockquote,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			ul,
+			pre,
+			.wp-block-image:not(.alignfull),
+			ol,
+			table,
+			.wp-block-button,
+			.slick-slider,
+			#lsx-projects-slider.slick-slider,
+			#lsx-team-slider,
+			#lsx-testimonials-slider {
 				max-width: 1150px;
 				margin-left: auto;
 				margin-right: auto;
@@ -460,13 +588,22 @@
 				max-width: 585px;
 			}
 		}
-		.entry-meta, .footer-meta, .comment-respond, #comments, .archive-header {
+		.entry-meta,
+		.footer-meta,
+		.comment-respond,
+		#comments,
+		.archive-header {
 			max-width: 1150px;
 			margin-left: auto;
 			margin-right: auto;
 		}
-		.wp-block-columns  {
-			&.has-6-columns, &.has-5-columns, &.has-4-columns, &.has-3-columns, &.has-2-columns, &.has-1-columns {
+		.wp-block-columns {
+			&.has-6-columns,
+			&.has-5-columns,
+			&.has-4-columns,
+			&.has-3-columns,
+			&.has-2-columns,
+			&.has-1-columns {
 				display: flex;
 				justify-content: center;
 			}
@@ -513,11 +650,11 @@
 
 // Brand Colors
 // -- normal / darker / lighter
-$strong-blue: nth( $blue, 3 );
-$lighter-blue: nth( $blue, 1 );
-$light-yellow: nth( $orange, 1 );;
-$dark-yellow: nth( $orange, 2 );
-$dark-green: nth( $green, 2 );
+$strong-blue: nth($blue, 3);
+$lighter-blue: nth($blue, 1);
+$light-yellow: nth($orange, 1);
+$dark-yellow: nth($orange, 2);
+$dark-green: nth($green, 2);
 
 // Gutenberg color options
 // -- see editor-color-palette in functions.php
@@ -537,7 +674,7 @@ $dark-green: nth( $green, 2 );
 			color: $dark-yellow;
 		}
 		.has-light-green-color {
-			color: nth( $green, 1 );
+			color: nth($green, 1);
 		}
 		.has-dark-green-color {
 			color: $dark-green;
@@ -561,7 +698,7 @@ $dark-green: nth( $green, 2 );
 			background-color: $dark-yellow;
 		}
 		.has-light-green-background-color {
-			background-color: nth( $green, 1 );
+			background-color: nth($green, 1);
 		}
 		.has-dark-green-background-color {
 			background-color: $dark-green;
@@ -596,7 +733,7 @@ $dark-green: nth( $green, 2 );
 }
 
 // Row Helpers
-@include media ('>=tablet') {
+@include media(">=tablet") {
 	.has-2-columns {
 		&.one-third-left {
 			> .wp-block-column {
@@ -610,7 +747,7 @@ $dark-green: nth( $green, 2 );
 			}
 		}
 		&.one-third-right {
-			>  .wp-block-column {
+			> .wp-block-column {
 				&:first-child {
 					flex-basis: 70%;
 					max-width: 700px !important;
@@ -627,7 +764,8 @@ $dark-green: nth( $green, 2 );
 7.0 New Lsx Class 'lsx-full-width-gutenberg' (Keep it at the bottom)
 --------------------------------------------------------------*/
 //All
-.gutenberg-compatible-template.using-gutenberg, .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
+.gutenberg-compatible-template.using-gutenberg,
+.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
 .gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
 .gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
 .gutenberg-compatible-template.using-gutenberg.page-template-default,
@@ -639,7 +777,7 @@ $dark-green: nth( $green, 2 );
 		padding-top: 8.4rem;
 		padding-bottom: 8.4rem;
 		// margin-top: 8.4rem;
-    	// margin-bottom: 8.4rem;
+		// margin-bottom: 8.4rem;
 		&.has-1-columns {
 			.wp-block-column {
 				max-width: 50%;
