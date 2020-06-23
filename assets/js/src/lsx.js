@@ -470,11 +470,11 @@ $('.tabs').removeClass('tabs').addClass('nav wc-tabs');
 	lsx.wc_fix_messages_visual = function() {
 		$(
 			'.woocommerce-message,' +
-			'.woocommerce-info,' +
+			'.woocommerce-info:not(.wc_points_redeem_earn_points, .wc_points_rewards_earn_points),' +
 			'.woocommerce-error,' +
 			'.woocommerce-noreviews,' +
 			'.woocommerce_message,' +
-			'.woocommerce_info,' +
+			'.woocommerce_info:not(.wc_points_redeem_earn_points, .wc_points_rewards_earn_points),' +
 			'.woocommerce_error,' +
 			'.woocommerce_noreviews,' +
 			'p.no-comments,' +
