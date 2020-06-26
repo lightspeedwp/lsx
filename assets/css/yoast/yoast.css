@@ -1,5 +1,17 @@
+.schema-how-to .schema-how-to-total-time {
+	font-weight: bold;
+}
+
+.schema-how-to .schema-how-to-steps {
+	padding-left: 2.4rem;
+}
+
+.schema-how-to-steps .schema-how-to-step-name {
+	font-size: 18px;
+}
+
 .schema-faq-section {
-	margin-bottom: 2em;
+	margin-bottom: 2.4rem;
 	background: #f6f6f6;
 	border: 2px solid #e0e0e0;
 	border-radius: 3px;
@@ -20,6 +32,14 @@
 	content: "+";
 	margin-right: 5px;
 	vertical-align: top;
+	color: #418ad0;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+.schema-faq-question:hover {
+	background-color: #e0e0e0;
 }
 
 .schema-faq-question.collapse {
@@ -41,6 +61,8 @@
 }
 .schema-faq-answer.collapse {
 	padding: 10px 15px;
+	background-color: white;
+	margin-bottom: 0;
 }
 .schema-faq-answer.default {
 	display: block;
