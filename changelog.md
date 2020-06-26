@@ -15,6 +15,8 @@
 - Fixed the compatibility with the LSX Blocks "disable title" functionality.
 - Fixed the mobile widths.
 - Archive blog spacing fixes.
+- Improvements on the container block.
+- Improvements on the image block.
 
 # [[2.8.0]] - 2020-05-21
 

@@ -57,7 +57,6 @@
 	&.page-template-default.lsx-page-title,
 	&.page-template-template-full-width.lsx-page-title,
 	&.page-template-template-full-width-no-margins.lsx-page-title {
-
 		div#primary {
 			margin-bottom: 8.5rem;
 			margin-top: 50px;
@@ -78,7 +77,6 @@
 
 	&.page-template-template-full-width.lsx-page-title,
 	&.page-template-template-full-width-no-margins.lsx-page-title {
-
 	}
 }
 
@@ -90,13 +88,31 @@
 					margin-top: 2.4rem;
 				}
 			}
+			.wp-block-cover {
+				.wp-block-cover__inner-container {
+					.wp-block-columns,
+					.wp-block-jetpack-layout-grid {
+						@include media(">=desktop") {
+							max-width: 1150px;
+							margin-left: auto;
+							margin-right: auto;
+						}
+					}
+					.wp-block-media-text {
+						.wp-block-media-text__content {
+							@include media("<=tablet") {
+								padding: 0 10% 0 10%;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
 
 /** LSX Hero Banner Block Styles. */
 .lsx-hero-banner-init {
-
 	// Fix the breadcrumb colour
 	.breadcrumbs-container {
 		opacity: 1;
@@ -214,7 +230,6 @@
 	}
 
 	.gutenberg-compatible-template.using-gutenberg {
-
 		&.lsx-page-title {
 			.lsx-title-block.aligncontent {
 				max-width: 60%;
@@ -223,7 +238,7 @@
 				margin-right: auto;
 			}
 		}
-		
+
 		.entry-content {
 			> div,
 			> p,
@@ -409,7 +424,7 @@
 			width: auto;
 			max-width: none;
 		}
-		.wp-block-media-text {
+		.wp-block-media-text.is-stacked-on-mobile {
 			display: flex;
 			flex-direction: column;
 		}

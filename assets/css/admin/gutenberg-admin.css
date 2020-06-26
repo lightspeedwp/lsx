@@ -7,4 +7,10 @@ body.block-editor-page h1, body.block-editor-page h2, body.block-editor-page h3,
 
 .wp-admin.gutenberg-editor-page .wp-block-button .wp-block-button__link { border: 0 none; border-radius: 3px; font-size: 14px; font-weight: 700; height: 48px; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; text-transform: uppercase; }
 
+#editor .wp-block-cover .wp-block-cover__inner-container .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] { margin: 0; }
+
+#editor .wp-block-cover .block-editor-block-list__block { color: #444444; }
+
+#editor .edit-post-visual-editor .block-editor-block-list__block[data-type="core/image"] { max-width: -webkit-fit-content; max-width: -moz-fit-content; max-width: fit-content; }
+
 /*# sourceMappingURL=maps/gutenberg-admin.css.map */
