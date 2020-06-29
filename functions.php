@@ -13,6 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'LSX_VERSION', '2.8' );
 
+if ( in_array( 'wordpress-seo/wp-seo.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	require get_template_directory() . '/includes/yoast/class-lsx-yoast.php';
+}
+
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/includes/woocommerce/woocommerce.php';
 }
