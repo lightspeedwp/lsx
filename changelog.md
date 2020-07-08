@@ -18,6 +18,7 @@
 - Archive blog spacing fixes.
 - Improvements on the container block.
 - Improvements on the image block.
+- Fixed the search bar spacing issues.
 
 # [[2.8.0]] - 2020-05-21
 
