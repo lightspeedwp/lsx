@@ -93,6 +93,35 @@
 	}
 }
 
+.single-post:not(.using-gutenberg) {
+	&.page-has-no-banner {
+		.content-area,
+		.widget-area {
+			margin-top: $lsx-medium-gap;
+		}
+	}
+	&:not(.page-has-banner) {
+		.content-area,
+		.widget-area {
+			margin-top: $lsx-large-gap;
+		}
+	}
+	&.page-has-banner {
+		&:not(.page-has-no-banner) {
+			.content-area,
+			.widget-area {
+				margin-top: $lsx-medium-gap;
+			}
+		}
+		&.page-has-no-banner {
+			.content-area,
+			.widget-area {
+				margin-top: $lsx-large-gap;
+			}
+		}
+	}
+}
+
 .woocommerce-cart,
 .woocommerce-checkout,
 .woocommerce-account {

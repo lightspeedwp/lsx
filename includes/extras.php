@@ -74,6 +74,10 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			if ( is_singular( $post_types ) && ! empty( $img_group ) && is_array( $img_group ) && ! empty( $img_group['banner_image'] ) ) {
 				$classes[] = 'page-has-banner';
 			}
+
+			if ( is_singular( $post_types ) && empty( $img_group['banner_image'] ) && ( ! has_post_thumbnail( $post->ID ) ) ) {
+				$classes[] = 'page-has-no-banner';
+			}
 		}
 
 		if ( function_exists( 'tour_operator' ) ) {
