@@ -1746,7 +1746,7 @@ ul.lsx-wc-cart-sub-menu {
 // Footer bar
 
 .lsx-wc-has-footer-bar {
-	@include media("<phone") {
+	@include media("<custom") {
 		margin-bottom: 72px;
 	}
 }
@@ -1759,7 +1759,7 @@ ul.lsx-wc-cart-sub-menu {
 	right: 0;
 	z-index: 10;
 
-	@include media(">=phone") {
+	@include media(">=custom") {
 		display: none;
 	}
 }

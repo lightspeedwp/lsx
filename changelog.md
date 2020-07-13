@@ -11,6 +11,11 @@
 - Block Theme Support updates.
 - Added support for the How to and Faq yoast blocks.
 
+### Changed
+
+- Merged two WooCommerce panels within the customizer sidebar.
+- The WooCommerce bar will be showed if active and the screen is less than 678px.
+
 ### Fixed
 
 - Fixed the compatibility with the LSX Blocks "disable title" functionality.

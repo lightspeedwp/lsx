@@ -600,7 +600,7 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 	 * @return $lsx_controls array()
 	 */
 	function lsx_customizer_wc_controls( $lsx_controls ) {
-		$lsx_controls['panels']['lsx-wc'] = array(
+		$lsx_controls['panels']['woocommerce'] = array(
 			'title'       => esc_html__( 'WooCommerce', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce settings.', 'lsx' ),
 			'priority'    => 23,
@@ -611,9 +611,9 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 		 */
 
 		$lsx_controls['sections']['lsx-wc-global'] = array(
-			'title'       => esc_html__( 'Global', 'lsx' ),
+			'title'       => esc_html__( 'LSX Global', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce global settings.', 'lsx' ),
-			'panel'       => 'lsx-wc',
+			'panel'       => 'woocommerce',
 			'priority'    => 1,
 		);
 
@@ -648,9 +648,9 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 		 */
 
 		$lsx_controls['sections']['lsx-wc-cart'] = array(
-			'title'       => esc_html__( 'Cart', 'lsx' ),
+			'title'       => esc_html__( 'LSX Cart', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce cart settings.', 'lsx' ),
-			'panel'       => 'lsx-wc',
+			'panel'       => 'woocommerce',
 			'priority'    => 2,
 		);
 
