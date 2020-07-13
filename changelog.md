@@ -11,6 +11,10 @@
 - Block Theme Support updates.
 - Added support for the How to and Faq yoast blocks.
 
+### Updated
+
+- Updated a few functions to meet WordPress standards based on Theme Checkers results.
+
 ### Fixed
 
 - Fixed the compatibility with the LSX Blocks "disable title" functionality.
