@@ -33,7 +33,7 @@
 					<div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_e50b2c5c82f4b42ea978af479_92c36218e5" tabindex="-1" value=""></div>
 				</div>
 				<div class="more-button">
-					<input type="submit" value="<?php esc_html_e( 'Subscribe', 'lsx' ); ?>" name="subscribe" class="button button-primary">
+					<input type="submit" value="<?php esc_attr_e( 'Subscribe', 'lsx' ); ?>" name="subscribe" class="button button-primary">
 				</div>
 			</form>
 			<!--End mc_embed_signup-->
