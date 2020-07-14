@@ -25,6 +25,7 @@
 		}
 	}
 	&.page-template-default,
+	&.page-template-template-cover,
 	&.page-template-template-full-width,
 	&.page-template-template-full-width-no-margins {
 		div#primary {
@@ -55,6 +56,7 @@
 	// LSX Blocks "Page Title" enhancements.
 	&.lsx-page-title,
 	&.page-template-default.lsx-page-title,
+	&.page-template-template-cover.lsx-page-title,
 	&.page-template-template-full-width.lsx-page-title,
 	&.page-template-template-full-width-no-margins.lsx-page-title {
 		div#primary {
@@ -178,6 +180,7 @@
 	.gutenberg-compatible-template.using-gutenberg,
 	.gutenberg-compatible-template.using-gutenberg.single-post,
 	.gutenberg-compatible-template.using-gutenberg.page-template-default,
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-cover,
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar {
 		.wrap.container,
 		article.post {
@@ -294,6 +297,7 @@
 			margin-right: auto;
 		}
 		&.page-template-template-full-width,
+		&.page-template-template-cover,
 		&.page-template-template-full-width-no-margins {
 			.entry-content {
 				> div,

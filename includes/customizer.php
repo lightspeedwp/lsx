@@ -169,6 +169,88 @@ endif;
 
 add_filter( 'lsx_customizer_controls', 'lsx_customizer_layout_controls' );
 
+if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
+
+	/**
+	 * Returns an array of the Cover Template panel.
+	 *
+	 * @package    lsx
+	 * @subpackage customizer
+	 *
+	 * @return $lsx_controls array()
+	 */
+	function lsx_customizer_template_cover_controls( $lsx_controls ) {
+		$lsx_controls['sections']['lsx-cover-template'] = array(
+			'title'       => esc_html__( 'Cover Template Settings', 'lsx' ),
+			'description' => esc_html__( 'Change the cover template settings.', 'lsx' ),
+			'priority'    => 23,
+		);
+
+		$lsx_controls['settings']['lsx_cover_template_fixed_background'] = array(
+			'default'           => '1',
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_fixed_background'] = array(
+			'label'   => esc_html__( 'Fixed Background Image', 'lsx' ),
+			'section' => 'lsx-cover-template',
+			'type'    => 'checkbox',
+		);
+
+		$lsx_controls['settings']['lsx_cover_template_overlay_background_color'] = array(
+			'default'           => '#000000',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'type'              => 'theme_mod',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_overlay_background_color'] = (
+			array(
+				'label'       => __( 'Overlay Background Color', 'lsx' ),
+				'description' => __( 'The color used for the overlay. Defaults to black.', 'lsx' ),
+				'section'     => 'lsx-cover-template',
+			)
+		);
+
+		$lsx_controls['settings']['lsx_cover_template_overlay_text_color'] = array(
+			'default'           => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'type'              => 'theme_mod',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_overlay_text_color'] = (
+			array(
+				'label'       => __( 'Overlay Text Color', 'lsx' ),
+				'description' => __( 'The color used for the text in the overlay.', 'lsx' ),
+				'section'     => 'lsx-cover-template',
+			)
+		);
+
+		$lsx_controls['settings']['lsx_cover_template_overlay_opacity'] = array(
+			'default'           => '8',
+			'type'              => 'theme_mod',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_overlay_opacity'] = (
+			array(
+				'label'       => __( 'Overlay Opacity', 'lsx' ),
+				'description' => __( 'Make sure that the contrast is high enough so that the text is readable.', 'lsx' ),
+				'section'     => 'lsx-cover-template',
+				'type'        => 'text',
+			)
+		);
+
+		return $lsx_controls;
+	}
+
+endif;
+
+add_filter( 'lsx_customizer_controls', 'lsx_customizer_template_cover_controls' );
+
+
 if ( ! function_exists( 'lsx_get_customizer_controls' ) ) :
 
 	/**
