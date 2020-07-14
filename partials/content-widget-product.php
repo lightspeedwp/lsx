@@ -51,6 +51,6 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 	<?php endif; ?>
 
 	<div class="lsx-woocommerce-content">
-		<a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="moretag"><?php esc_attr_e( 'View more', 'lsx' ); ?></a>
+		<a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="moretag"><?php esc_html_e( 'View more', 'lsx' ); ?></a>
 	</div>
 </div>

@@ -19,6 +19,7 @@
 	</head>
 
 	<body <?php body_class( 'lsx' ); ?>>
+		<?php wp_body_open(); ?>
 		<?php lsx_body_top(); ?>
 
 		<div class="header-wrap">

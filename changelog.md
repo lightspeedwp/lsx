@@ -12,6 +12,10 @@
 - Added support for the How to and Faq yoast blocks.
 - Reducing the left and right Padding on LSX Buttons from 40px to 15px.
 
+### Updated
+
+- Updated a few functions to meet WordPress standards based on Theme Checkers results.
+
 ### Fixed
 
 - Fixed the compatibility with the LSX Blocks "disable title" functionality.

@@ -24,7 +24,7 @@ if ( '1c' !== $layout ) : ?>
 
 		<?php lsx_sidebar_top(); ?>
 
-		<h2><?php esc_attr_e( 'Categories', 'lsx' ); ?></h2>
+		<h2><?php esc_html_e( 'Categories', 'lsx' ); ?></h2>
 
 		<aside id="categories" class="widget widget_categories">
 			<?php
