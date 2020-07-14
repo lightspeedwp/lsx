@@ -1,4 +1,4 @@
-@import "../scss/global/variables";
+@import "../scss/global/_variables";
 
 /*--------------------------------------------------------------
 1.0 Apply 100% Width to Necessary Elements
@@ -159,13 +159,6 @@
 	&.page-template.using-gutenberg {
 		div #primary {
 			margin-top: 50px;
-
-			.lsx-hero-banner-block {
-				&.wp-block-cover {
-					.wp-block-cover__inner-container {
-					}
-				}
-			}
 		}
 	}
 }

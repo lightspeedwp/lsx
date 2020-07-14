@@ -319,6 +319,40 @@
 		}
 	}
 
+	.lsx-subheading {
+		h2 {
+			font-size:48px;
+			color:#333;
+			line-height:50px;
+		}
+		 p {
+			font-size:26px;
+			color:#777;
+			line-height:30px;
+		 }
+	
+	}
+	.lsx-subheading {
+		.lsx-title {
+			color:#777;
+		}
+	}
+	
+	//Mobile Styling for .lsx-subheading
+	@media (max-width: 600px) {
+		.lsx-subheading {
+			h2 {
+				font-size:30px;
+				line-height:30px;
+			}
+			 p {
+				font-size:22px;
+				line-height:24px;
+			 }
+		
+		}	
+	}	
+
 	// Caldera Forms
 
 	.remodal-wrapper {
