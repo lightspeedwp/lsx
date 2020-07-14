@@ -11,27 +11,34 @@
 		left: 0;
 		letter-spacing: 0.6px;
 		line-height: 1.25;
-		padding: 15px 40px;
+		padding: 15px;
 		position: relative;
 		text-transform: uppercase;
 		top: 0;
 		transition: all 100ms ease;
 	}
 
-	& > .fa { margin-left: 10px; }
+	& > .fa {
+		margin-left: 10px;
+	}
 }
 .button-holder {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 	vertical-align: middle;
 	margin: 0;
 	padding: 0;
 }
 
-@mixin lsx-bordered-button ($color: map-get($buttons, bg), $color-hover: map-get($buttons, color), $bg: transparent, $bg-hover: map-get($buttons, bg)) {
+@mixin lsx-bordered-button(
+	$color: map-get($buttons, bg),
+	$color-hover: map-get($buttons, color),
+	$bg: transparent,
+	$bg-hover: map-get($buttons, bg)
+) {
 	@include lsx-button-colour($color, $color-hover, $bg, $bg-hover);
 
 	&,
@@ -50,22 +57,44 @@
 	transition: all 300ms ease;
 }
 
-@mixin custom-buttons-colours ($color: map-get($buttons, color), $color-hover: map-get($buttons, color-hover), $bg: map-get($buttons, bg), $bg-hover: map-get($buttons, bg-hover), $shadow: map-get($buttons, shadow)) {
+@mixin custom-buttons-colours(
+	$color: map-get($buttons, color),
+	$color-hover: map-get($buttons, color-hover),
+	$bg: map-get($buttons, bg),
+	$bg-hover: map-get($buttons, bg-hover),
+	$shadow: map-get($buttons, shadow)
+) {
 	.btn {
-		@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+		@include lsx-button-colour(
+			$color,
+			$color-hover,
+			$bg,
+			$bg-hover,
+			$shadow
+		);
 	}
 
 	#respond {
 		& > .comment-form {
 			input[type="submit"] {
-				@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+				@include lsx-button-colour(
+					$color,
+					$color-hover,
+					$bg,
+					$bg-hover,
+					$shadow
+				);
 			}
 		}
 	}
 
-	.border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
+	.border-btn {
+		@include lsx-bordered-button($bg, #fff, transparent, $bg);
+	}
 
-	.white-border-btn { @include lsx-bordered-button(#FFF, $bg, transparent, #FFF); }
+	.white-border-btn {
+		@include lsx-bordered-button(#fff, $bg, transparent, #fff);
+	}
 
 	#top-menu {
 		.top-menu {
@@ -73,13 +102,25 @@
 				& > .menu-item {
 					&.cta {
 						& > a {
-							@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+							@include lsx-button-colour(
+								$color,
+								$color-hover,
+								$bg,
+								$bg-hover,
+								$shadow
+							);
 						}
 					}
 
 					&.cta-red {
 						& > a {
-							@include lsx-button-colour(#FFFFFF, #FFFFFF, #D93A3A, #9F2020, #9F2020);
+							@include lsx-button-colour(
+								#ffffff,
+								#ffffff,
+								#d93a3a,
+								#9f2020,
+								#9f2020
+							);
 						}
 					}
 				}
@@ -89,7 +130,13 @@
 
 	#footer-cta {
 		input[type="submit"] {
-			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+			@include lsx-button-colour(
+				$color,
+				$color-hover,
+				$bg,
+				$bg-hover,
+				$shadow
+			);
 		}
 	}
 
@@ -97,7 +144,13 @@
 
 	#wc_am_lost_api_key_form {
 		input[type="submit"] {
-			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+			@include lsx-button-colour(
+				$color,
+				$color-hover,
+				$bg,
+				$bg-hover,
+				$shadow
+			);
 		}
 	}
 
@@ -105,7 +158,13 @@
 		.widget_shopping_cart {
 			.buttons {
 				.button {
-					@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+					@include lsx-button-colour(
+						$color,
+						$color-hover,
+						$bg,
+						$bg-hover,
+						$shadow
+					);
 				}
 			}
 		}
@@ -116,7 +175,13 @@
 		a.button:not(.quick-view-button),
 		button.button,
 		input.button {
-			@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+			@include lsx-button-colour(
+				$color,
+				$color-hover,
+				$bg,
+				$bg-hover,
+				$shadow
+			);
 			min-height: 40px;
 			height: 100% !important;
 		}
@@ -158,37 +223,77 @@
 		a.comment-reply-link,
 		#commentform #submit,
 		.submit,
-		input[type=submit],
+		input[type="submit"],
 		input.button,
 		button.button {
 			&:not(.btn) {
-				@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+				@include lsx-button-colour(
+					$color,
+					$color-hover,
+					$bg,
+					$bg-hover,
+					$shadow
+				);
 			}
 		}
 	}
 
 	.quiz {
-		input[type=submit] {
+		input[type="submit"] {
 			&.complete:not(.btn) {
-				@include lsx-button-colour($color, $color-hover, #63A95F, #4E8B4A, #457A42);
+				@include lsx-button-colour(
+					$color,
+					$color-hover,
+					#63a95f,
+					#4e8b4a,
+					#457a42
+				);
 			}
 
 			&.reset:not(.btn) {
-				@include lsx-button-colour($color, $color-hover, #ED6C6E, #E73F41, #E5282B);
+				@include lsx-button-colour(
+					$color,
+					$color-hover,
+					#ed6c6e,
+					#e73f41,
+					#e5282b
+				);
 			}
 		}
 	}
 }
 
-@mixin custom-cta-buttons-colours ($color: map-get($cta-buttons, color), $color-hover: map-get($cta-buttons, color-hover), $bg: map-get($cta-buttons, bg), $bg-hover: map-get($cta-buttons, bg-hover), $shadow: map-get($cta-buttons, shadow)) {
-	.cta-btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow); }
+@mixin custom-cta-buttons-colours(
+	$color: map-get($cta-buttons, color),
+	$color-hover: map-get($cta-buttons, color-hover),
+	$bg: map-get($cta-buttons, bg),
+	$bg-hover: map-get($cta-buttons, bg-hover),
+	$shadow: map-get($cta-buttons, shadow)
+) {
+	.cta-btn {
+		@include lsx-button-colour(
+			$color,
+			$color-hover,
+			$bg,
+			$bg-hover,
+			$shadow
+		);
+	}
 
-	.cta-border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
+	.cta-border-btn {
+		@include lsx-bordered-button($bg, #fff, transparent, $bg);
+	}
 
 	// Caldera Form
 
 	.caldera-forms-modal {
-		@include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow);
+		@include lsx-button-colour(
+			$color,
+			$color-hover,
+			$bg,
+			$bg-hover,
+			$shadow
+		);
 	}
 
 	// WooCommerce
@@ -196,20 +301,60 @@
 	.lsx-wc-cart-menu-item {
 		.widget_shopping_cart {
 			.buttons {
-				.button.checkout { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow); }
+				.button.checkout {
+					@include lsx-button-colour(
+						$color,
+						$color-hover,
+						$bg,
+						$bg-hover,
+						$shadow
+					);
+				}
 			}
 		}
 	}
 }
 
-@mixin custom-secondary-buttons-colours ($color: map-get($secondary-buttons, color), $color-hover: map-get($secondary-buttons, color-hover), $bg: map-get($secondary-buttons, bg), $bg-hover: map-get($secondary-buttons, bg-hover), $shadow: map-get($secondary-buttons, shadow)) {
-	.secondary-btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow); }
+@mixin custom-secondary-buttons-colours(
+	$color: map-get($secondary-buttons, color),
+	$color-hover: map-get($secondary-buttons, color-hover),
+	$bg: map-get($secondary-buttons, bg),
+	$bg-hover: map-get($secondary-buttons, bg-hover),
+	$shadow: map-get($secondary-buttons, shadow)
+) {
+	.secondary-btn {
+		@include lsx-button-colour(
+			$color,
+			$color-hover,
+			$bg,
+			$bg-hover,
+			$shadow
+		);
+	}
 
-	.secondary-border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
+	.secondary-border-btn {
+		@include lsx-bordered-button($bg, #fff, transparent, $bg);
+	}
 }
 
-@mixin custom-tertiary-buttons-colours ($color: map-get($tertiary-buttons, color), $color-hover: map-get($tertiary-buttons, color-hover), $bg: map-get($tertiary-buttons, bg), $bg-hover: map-get($tertiary-buttons, bg-hover), $shadow: map-get($tertiary-buttons, shadow)) {
-	.tertiary-btn { @include lsx-button-colour($color, $color-hover, $bg, $bg-hover, $shadow); }
+@mixin custom-tertiary-buttons-colours(
+	$color: map-get($tertiary-buttons, color),
+	$color-hover: map-get($tertiary-buttons, color-hover),
+	$bg: map-get($tertiary-buttons, bg),
+	$bg-hover: map-get($tertiary-buttons, bg-hover),
+	$shadow: map-get($tertiary-buttons, shadow)
+) {
+	.tertiary-btn {
+		@include lsx-button-colour(
+			$color,
+			$color-hover,
+			$bg,
+			$bg-hover,
+			$shadow
+		);
+	}
 
-	.tertiary-border-btn { @include lsx-bordered-button($bg, #FFF, transparent, $bg); }
+	.tertiary-border-btn {
+		@include lsx-bordered-button($bg, #fff, transparent, $bg);
+	}
 }

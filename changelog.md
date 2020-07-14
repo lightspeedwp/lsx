@@ -10,6 +10,11 @@
 - Improved suport for Woocommerce Quick View plugin.
 - Block Theme Support updates.
 - Added support for the How to and Faq yoast blocks.
+- Reducing the left and right Padding on LSX Buttons from 40px to 15px.
+
+### Updated
+
+- Updated a few functions to meet WordPress standards based on Theme Checkers results.
 
 ### Changed
 
