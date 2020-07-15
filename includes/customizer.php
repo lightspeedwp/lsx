@@ -205,12 +205,11 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 			'transport'         => 'postMessage',
 		);
 
-		$lsx_controls['fields']['lsx_cover_template_overlay_background_color'] = (
-			array(
-				'label'       => __( 'Overlay Background Color', 'lsx' ),
-				'description' => __( 'The color used for the overlay. Defaults to black.', 'lsx' ),
-				'section'     => 'lsx-cover-template',
-			)
+		$lsx_controls['fields']['lsx_cover_template_overlay_background_color'] = array(
+			'label'       => esc_html__( 'Overlay Background Color', 'lsx' ),
+			'description' => __( 'The color used for the overlay. Defaults to black.', 'lsx' ),
+			'section'     => 'lsx-cover-template',
+			'control'     => 'WP_Customize_Color_Control',
 		);
 
 		$lsx_controls['settings']['lsx_cover_template_overlay_text_color'] = array(
