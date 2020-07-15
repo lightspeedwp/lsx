@@ -50,6 +50,9 @@ if ( ! function_exists( 'lsx_tec_theme_wrapper_start' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_theme_wrapper_start() {
+		if ( function_exists( 'lsx_is_rest_api_request' ) && lsx_is_rest_api_request() ) {
+			return;
+		}
 		lsx_content_wrap_before();
 		echo '<div id="primary" class="content-area ' . esc_attr( lsx_main_class() ) . '">';
 		lsx_content_before();
@@ -70,6 +73,9 @@ if ( ! function_exists( 'lsx_tec_theme_wrapper_end' ) ) :
 	 * @subpackage the-events-calendar
 	 */
 	function lsx_tec_theme_wrapper_end() {
+		if ( function_exists( 'lsx_is_rest_api_request' ) && lsx_is_rest_api_request() ) {
+			return;
+		}
 		lsx_content_bottom();
 		echo '</main>';
 		lsx_content_after();
