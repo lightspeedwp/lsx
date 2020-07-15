@@ -191,6 +191,10 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			return;
 		}
 
+		if ( function_exists( 'lsx_is_rest_api_request' ) && lsx_is_rest_api_request() ) {
+			return;
+		}
+
 		if ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
 			if ( class_exists( 'LSX_Banners' ) && empty( apply_filters( 'lsx_banner_plugin_disable', false ) && ( ! has_post_thumbnail() ) ) ) {
 				return;
