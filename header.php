@@ -40,3 +40,5 @@
 
 		<div class="wrap container" role="document" tabindex="-1">
 			<div class="content role row">
+
+			<?php lsx_header_wrap_container_top(); ?>

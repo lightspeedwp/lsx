@@ -638,3 +638,13 @@ function lsx_breadcrumbs_blog_link( $crumbs ) {
 }
 add_filter( 'wpseo_breadcrumb_links', 'lsx_breadcrumbs_blog_link', 30, 1 );
 add_filter( 'woocommerce_get_breadcrumb', 'lsx_breadcrumbs_blog_link', 30, 1 );
+
+/**
+ * Determines if the request is an REST API request.
+ *
+ * @return bool True if it's a REST API request, false otherwise.
+ */
+function lsx_is_rest_api_request() {
+	$rest_helper = LSX_Rest_Helper::get_instance();
+	return $rest_helper->is_rest_api_request();
+}

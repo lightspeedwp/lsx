@@ -60,3 +60,4 @@ require get_template_directory() . '/includes/gutenberg.php';
 require get_template_directory() . '/includes/classes/class-lsx-schema-utils.php';
 require get_template_directory() . '/includes/classes/class-lsx-schema-graph-piece.php';
 require get_template_directory() . '/includes/classes/class-lsx-optimisation.php';
+require get_template_directory() . '/includes/classes/class-lsx-rest-helper.php';
