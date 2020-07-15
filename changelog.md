@@ -1,6 +1,6 @@
 # LSX Change log
 
-# [[2.9.0]] - In Development
+# [[2.9.0]]
 
 ### Added
 
