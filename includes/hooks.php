@@ -97,6 +97,15 @@ function lsx_header_wrap_after() {
 }
 
 /**
+ * The 10th action which fires before the <div class="wrap container" role="document" tabindex="-1">.
+ *
+ * @return void
+ */
+function lsx_header_wrap_container_top() {
+	do_action( 'lsx_header_wrap_container_top' );
+}
+
+/**
  * Body Bottom
  *
  * @return void
