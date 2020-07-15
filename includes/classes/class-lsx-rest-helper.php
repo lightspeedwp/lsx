@@ -58,6 +58,7 @@ class LSX_Rest_Helper {
 	 */
 	public function check_event_request( $params, $request ) {
 		$this->is_rest_request = true;
+		return $params;
 	}
 
 	/**
