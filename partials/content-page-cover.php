@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php lsx_entry_top(); ?>
+	<?php //lsx_entry_top(); ?>
 
 	<?php
 	// On the cover page template, output the cover header.
