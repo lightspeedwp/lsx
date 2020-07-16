@@ -40,7 +40,7 @@ if ( null !== $stored_comment ) {
 
 			<div class="lsx-woocommerce-content">
 				<p><?php echo wp_kses_post( $the_comment->comment_content ); ?></p>
-				<p><a href="<?php echo esc_url( get_comment_link( $the_comment->comment_ID ) ); ?>" class="moretag"><?php esc_attr_e( 'View more', 'lsx' ); ?></a></p>
+				<p><a href="<?php echo esc_url( get_comment_link( $the_comment->comment_ID ) ); ?>" class="moretag"><?php esc_html_e( 'View more', 'lsx' ); ?></a></p>
 			</div>
 		</div>
 	</div>
