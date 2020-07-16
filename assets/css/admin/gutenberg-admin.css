@@ -1,52 +1,36 @@
 /*! Body Typography */
-body.block-editor-page {
-  font-family: "Noto Sans", sans-serif;
-  font-weight: normal;
-  /*! Headings - <h1> through </h6> */
-}
+body.block-editor-page { font-family: "Noto Sans", sans-serif; font-weight: normal; /*! Headings - <h1> through </h6> */ }
 
-body.block-editor-page .editor-styles-wrapper,
-body.block-editor-page input,
-body.block-editor-page select,
-body.block-editor-page textarea,
-body.block-editor-page button {
-  font-family: "Noto Sans", sans-serif;
-  font-weight: normal;
-}
+body.block-editor-page .editor-styles-wrapper, body.block-editor-page input, body.block-editor-page select, body.block-editor-page textarea, body.block-editor-page button { font-family: "Noto Sans", sans-serif; font-weight: normal; }
 
-body.block-editor-page h1,
-body.block-editor-page h2,
-body.block-editor-page h3,
-body.block-editor-page h4,
-body.block-editor-page h5,
-body.block-editor-page h6 {
-  font-family: "Lora", serif;
-  font-weight: normal;
-}
+body.block-editor-page h1, body.block-editor-page h2, body.block-editor-page h3, body.block-editor-page h4, body.block-editor-page h5, body.block-editor-page h6 { font-family: "Lora", serif; font-weight: normal; }
 
-.wp-admin.gutenberg-editor-page .wp-block-button .wp-block-button__link {
-  border: 0 none;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: 700;
-  height: 48px;
-  letter-spacing: 0.6px;
-  line-height: 1.25;
-  padding: 15px 40px;
-  text-transform: uppercase;
-}
+.wp-admin.gutenberg-editor-page .wp-block-button .wp-block-button__link { border: 0 none; border-radius: 3px; font-size: 14px; font-weight: 700; height: 48px; letter-spacing: 0.6px; line-height: 1.25; padding: 15px 40px; text-transform: uppercase; }
 
-#editor .wp-block-cover .wp-block-cover__inner-container .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] {
-  margin: 0;
-}
+#editor .wp-block-cover .wp-block-cover__inner-container .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] { margin: 0; }
 
-#editor .wp-block-cover .block-editor-block-list__block {
-  color: #444444;
-}
+#editor .wp-block-cover .block-editor-block-list__block { color: #444444; }
 
-#editor .edit-post-visual-editor .block-editor-block-list__block[data-type="core/image"] {
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-}
-/*# sourceMappingURL=gutenberg-admin.css.map */
+#editor .edit-post-visual-editor .block-editor-block-list__block[data-type="core/image"] { max-width: -webkit-fit-content; max-width: -moz-fit-content; max-width: fit-content; }
+
+#editor .lsx-title:after { content: ""; display: block; height: 2px; margin: 2.4rem auto 0; width: 80px; background-color: #777; }
+
+#editor .lsx-title > small { color: inherit; display: block; line-height: inherit; margin-top: 8px; }
+
+#editor .lsx-subheading h2 { font-size: 48px; color: #333; line-height: 50px; }
+
+#editor .lsx-subheading p.lsx-title { font-size: 26px; color: #777; line-height: 30px; text-align: inherit; }
+
+#editor .lsx-subheading p.lsx-title:not(.has-text-align-center) { text-align: initial; }
+
+#editor .lsx-subheading p.lsx-title:not(.has-text-align-center):after { margin-left: 0; }
+
+#editor .lsx-subheading p.lsx-title.has-text-align-center { text-align: center; }
+
+#editor .lsx-subheading p.lsx-title.has-text-align-left:after { margin-left: 0; }
+
+#editor .lsx-subheading p.lsx-title.has-text-align-right { text-align: right; }
+
+#editor .lsx-subheading p.lsx-title.has-text-align-right:after { margin-right: 0; margin-left: auto; }
+
+/*# sourceMappingURL=maps/gutenberg-admin.css.map */

@@ -1,4 +1,4 @@
-@mixin content-colours (
+@mixin content-colours(
 	$bg: map-get($content, bg),
 	$breaker: map-get($content, breaker),
 	$header: map-get($content, header),
@@ -13,9 +13,11 @@
 	$full-cta-bg: map-get($content, full-cta-bg),
 	$full-cta-color: map-get($content, full-cta-color),
 	$full-cta-link: map-get($content, full-cta-link),
-	$full-cta-hover: map-get($content, full-cta-hover)) {
-
-	body { background-color: $bg; }
+	$full-cta-hover: map-get($content, full-cta-hover)
+) {
+	body {
+		background-color: $bg;
+	}
 
 	.lsx-breaker,
 	.page-header {
@@ -25,7 +27,9 @@
 	.lsx-title {
 		color: $header;
 
-		&:after { background-color: $breaker; }
+		&:after {
+			background-color: $breaker;
+		}
 	}
 
 	#masthead {
@@ -35,13 +39,17 @@
 				&:active,
 				&:active:hover,
 				&:focus {
-					.search-submit { color: $link; }
+					.search-submit {
+						color: $link;
+					}
 				}
 			}
 
 			@media (max-width: 1199px) {
 				&.hover {
-					.search-submit { color: $color; }
+					.search-submit {
+						color: $color;
+					}
 				}
 			}
 
@@ -50,12 +58,17 @@
 				color: $link;
 			}
 
-			.search-submit { color: $color; border: none; }
+			.search-submit {
+				color: $color;
+				border: none;
+			}
 		}
 	}
 
 	.breadcrumbs-container {
-		a:not(.btn) { @include lsx-link-colour($link, $hover); }
+		a:not(.btn) {
+			@include lsx-link-colour($link, $hover);
+		}
 	}
 
 	.content-area,
@@ -65,16 +78,31 @@
 	.remodal-wrapper {
 		color: $color;
 
-		a:not(.btn):not(.wp-block-button__link) { @include lsx-link-colour($link, $hover); }
+		a:not(.btn):not(.wp-block-button__link) {
+			@include lsx-link-colour($link, $hover);
+		}
 
-		h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $header; }
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		.widget-title,
+		.lsx-title {
+			color: $header;
+		}
 
 		blockquote {
 			border-color: $breaker;
 
-			&:before { background-color: $bg; }
+			&:before {
+				background-color: $bg;
+			}
 
-			& cite { color: $small; }
+			& cite {
+				color: $small;
+			}
 		}
 
 		pre {
@@ -84,11 +112,24 @@
 	}
 
 	#home-widgets {
-		h3, .widget-title, .lsx-title {
-			&:after { background-color: $breaker; }
+		h3,
+		.widget-title,
+		.lsx-title {
+			&:after {
+				background-color: $breaker;
+			}
 		}
 
-		h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $header; }
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		.widget-title,
+		.lsx-title {
+			color: $header;
+		}
 	}
 
 	.lsx-full-width {
@@ -97,9 +138,20 @@
 			background-color: $full-bg;
 			color: $full-color;
 
-			h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $full-color; }
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			.widget-title,
+			.lsx-title {
+				color: $full-color;
+			}
 
-			a:not(.btn) { @include lsx-link-colour($full-link, $full-hover); }
+			a:not(.btn) {
+				@include lsx-link-colour($full-link, $full-hover);
+			}
 		}
 	}
 
@@ -109,14 +161,26 @@
 			background-color: $full-cta-bg;
 			color: $full-cta-color;
 
-			h1, h2, h3, h4, h5, h6, .widget-title, .lsx-title { color: $full-cta-color; }
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			.widget-title,
+			.lsx-title {
+				color: $full-cta-color;
+			}
 
-			a:not(.btn) { @include lsx-link-colour($full-cta-link, $full-cta-hover); }
+			a:not(.btn) {
+				@include lsx-link-colour($full-cta-link, $full-cta-hover);
+			}
 		}
 	}
 
 	.content-area {
-		.lsx-pagination, .envira-pagination,
+		.lsx-pagination,
+		.envira-pagination,
 		.lsx-postnav {
 			& > .page-numbers,
 			& > .post-page-numbers {
@@ -131,7 +195,7 @@
 				&:active:hover,
 				&:focus {
 					background-color: $link;
-					color: #FFF;
+					color: #fff;
 				}
 			}
 
@@ -149,7 +213,9 @@
 
 			& > .prev,
 			& > .next {
-				&:hover:before { color: #FFF; }
+				&:hover:before {
+					color: #fff;
+				}
 			}
 		}
 	}
@@ -175,18 +241,24 @@
 				.post-meta {
 					color: $small;
 
-					a { @include lsx-link-colour($small, $hover); }
+					a {
+						@include lsx-link-colour($small, $hover);
+					}
 				}
 
 				.post-meta-avatar {
 					background-color: $link;
 
-					&:hover { border-color: $orange; }
+					&:hover {
+						border-color: $orange;
+					}
 				}
 			}
 
 			.entry-title {
-				.label-sticky { background-color: $link; }
+				.label-sticky {
+					background-color: $link;
+				}
 			}
 
 			.post-tags-wrapper {
@@ -195,7 +267,9 @@
 				.post-comments {
 					color: $small;
 
-					& > a { @include lsx-link-colour($small, $hover); }
+					& > a {
+						@include lsx-link-colour($small, $hover);
+					}
 				}
 			}
 		}
@@ -207,38 +281,50 @@
 				.post-meta {
 					color: $small;
 
-					a { @include lsx-link-colour($small, $hover); }
+					a {
+						@include lsx-link-colour($small, $hover);
+					}
 				}
 
 				.post-meta-avatar {
 					background-color: $link;
 
-					&:hover { border-color: $hover; }
+					&:hover {
+						border-color: $hover;
+					}
 				}
 			}
 
 			.post-tags {
-				& > a { @include lsx-link-colour($small, $hover); }
+				& > a {
+					@include lsx-link-colour($small, $hover);
+				}
 			}
 		}
 
 		.post-navigation {
 			.nav-links {
 				a {
-					& > p { color: $small; }
+					& > p {
+						color: $small;
+					}
 				}
 			}
 		}
 	}
 
 	#respond {
-		.comment-reply-title { color: $hover; }
+		.comment-reply-title {
+			color: $hover;
+		}
 	}
 
 	#comments {
 		.media-list {
 			.media {
-				&:not(.media-reply) { border-top-color: $breaker; }
+				&:not(.media-reply) {
+					border-top-color: $breaker;
+				}
 
 				.media-object {
 					background-color: $color;
@@ -254,7 +340,9 @@
 					& > time {
 						color: $small;
 
-						& > a { @include lsx-link-colour($small, $hover); }
+						& > a {
+							@include lsx-link-colour($small, $hover);
+						}
 					}
 				}
 			}
@@ -269,20 +357,26 @@
 
 		.close {
 			background-color: $link;
-			border-color: #FFF;
+			border-color: #fff;
 			box-shadow: 0 0 4px 0 $link;
-			color: #FFF;
+			color: #fff;
 
-			&:hover { background-color: $link; }
+			&:hover {
+				background-color: $link;
+			}
 		}
 	}
 
 	.gallery {
 		.slick-dots {
 			& > li {
-				& > button { border-color: $color; }
+				& > button {
+					border-color: $color;
+				}
 
-				&.slick-active > button { background-color: $color; }
+				&.slick-active > button {
+					background-color: $color;
+				}
 			}
 		}
 
@@ -319,40 +413,6 @@
 		}
 	}
 
-	.lsx-subheading {
-		h2 {
-			font-size:48px;
-			color:#333;
-			line-height:50px;
-		}
-		 p {
-			font-size:26px;
-			color:#777;
-			line-height:30px;
-		 }
-	
-	}
-	.lsx-subheading {
-		.lsx-title {
-			color:#777;
-		}
-	}
-	
-	//Mobile Styling for .lsx-subheading
-	@media (max-width: 600px) {
-		.lsx-subheading {
-			h2 {
-				font-size:30px;
-				line-height:30px;
-			}
-			 p {
-				font-size:22px;
-				line-height:24px;
-			 }
-		
-		}	
-	}	
-
 	// Caldera Forms
 
 	.remodal-wrapper {
@@ -363,33 +423,39 @@
 
 		.remodal-close {
 			background-color: $link;
-			border-color: #FFF;
+			border-color: #fff;
 			box-shadow: 0 0 4px 0 $link;
-			color: #FFF;
+			color: #fff;
 
 			&:hover {
 				background-color: $link;
-				color: #FFF;
+				color: #fff;
 			}
 		}
 	}
 
-	.caldera-form-page { background-color: #FFF; }
+	.caldera-form-page {
+		background-color: #fff;
+	}
 
 	.caldera-grid {
 		.breadcrumb {
 			& > li {
 				& > a {
-					background-color: #FFF;
+					background-color: #fff;
 
-					&:hover { background-color: #FFF; }
+					&:hover {
+						background-color: #fff;
+					}
 				}
 
 				&.active > a {
 					background-color: $link;
-					color: #FFF;
+					color: #fff;
 
-					&:after { border-color: transparent transparent $bg transparent; }
+					&:after {
+						border-color: transparent transparent $bg transparent;
+					}
 				}
 			}
 		}
@@ -403,12 +469,18 @@
 	.woocommerce-account {
 		table.cart {
 			thead {
-				tr { background-color: #E6E6E6; }
+				tr {
+					background-color: #e6e6e6;
+				}
 			}
 
 			tbody {
-				tr { background-color: #FFF; }
-				tr:last-child { background-color: #E6E6E6; }
+				tr {
+					background-color: #fff;
+				}
+				tr:last-child {
+					background-color: #e6e6e6;
+				}
 				img {
 					width: 100px;
 				}
@@ -418,8 +490,12 @@
 		.cart_totals {
 			table.shop_table {
 				tbody {
-					th { background-color: #E6E6E6; }
-					td { background-color: #FFF; }
+					th {
+						background-color: #e6e6e6;
+					}
+					td {
+						background-color: #fff;
+					}
 				}
 			}
 		}
@@ -430,34 +506,51 @@
 		.woocommerce-MyAccount-content {
 			table.shop_table {
 				thead {
-					th { background-color: #E6E6E6; }
+					th {
+						background-color: #e6e6e6;
+					}
 				}
 
 				tbody {
-					th, td { background-color: #FFF; }
+					th,
+					td {
+						background-color: #fff;
+					}
 				}
 
 				tfoot {
-					th { background-color: #E6E6E6; }
-					td { background-color: #FFF; }
+					th {
+						background-color: #e6e6e6;
+					}
+					td {
+						background-color: #fff;
+					}
 				}
 			}
 		}
 	}
 
-	#wl-wrapper{
+	#wl-wrapper {
 		table.shop_table {
 			thead {
-				tr { background-color: #E6E6E6; }
+				tr {
+					background-color: #e6e6e6;
+				}
 			}
 
 			tbody {
-				tr { background-color: #FFF; }
-				tr:last-child:not(:only-child) { background-color: #E6E6E6; }
+				tr {
+					background-color: #fff;
+				}
+				tr:last-child:not(:only-child) {
+					background-color: #e6e6e6;
+				}
 			}
 		}
 
-		.wl-already-in { background-color: #FFF; }
+		.wl-already-in {
+			background-color: #fff;
+		}
 
 		a.button.wl-add-but {
 			color: $color !important;
@@ -483,7 +576,9 @@
 
 	.woocommerce {
 		.woocommerce-customer-details {
-			address { background-color: #FFF; }
+			address {
+				background-color: #fff;
+			}
 		}
 	}
 
@@ -492,13 +587,13 @@
 	input.button-social-login,
 	button.button-social-login,
 	.widget-area .widget a.button-social-login {
-		color: #FFF !important;
+		color: #fff !important;
 	}
 
 	.woocommerce-MyAccount-navigation {
-		background-color: #FFF;
+		background-color: #fff;
 		height: 100%;
-		@include media('<tablet') {
+		@include media("<tablet") {
 			margin-bottom: $lsx-medium-gap;
 		}
 		ul {
@@ -507,12 +602,14 @@
 			li {
 				border-bottom: 1px solid $breaker;
 
-				&:last-child { border-bottom: none; }
+				&:last-child {
+					border-bottom: none;
+				}
 
 				&.is-active {
 					a {
 						background-color: $link;
-						color: #FFF !important;
+						color: #fff !important;
 					}
 				}
 				a {
@@ -524,13 +621,17 @@
 
 	.woocommerce {
 		.star-rating {
-			span:before { color: $link; }
+			span:before {
+				color: $link;
+			}
 		}
 	}
 
 	.woocommerce-page #main {
 		#woochimp_checkout_groups {
-			.label { color: $color; }
+			.label {
+				color: $color;
+			}
 		}
 	}
 
@@ -540,27 +641,36 @@
 				.nav-tabs {
 					& > li {
 						& > a {
-							background-color: #FFF;
+							background-color: #fff;
 
-							&:hover { background-color: #FFF; }
+							&:hover {
+								background-color: #fff;
+							}
 						}
 
 						&.active > a {
 							background-color: $link;
-							color: #FFF;
+							color: #fff;
 
-							&:after { border-color: transparent transparent $bg transparent; }
+							&:after {
+								border-color: transparent transparent $bg
+									transparent;
+							}
 						}
 					}
 				}
 
-				.panel { background: #FFF; }
+				.panel {
+					background: #fff;
+				}
 			}
 
 			form.cart {
 				.variations {
 					td.label {
-						label { color: $color; }
+						label {
+							color: $color;
+						}
 					}
 				}
 			}
@@ -571,16 +681,20 @@
 		.wl-tabs {
 			> li {
 				> a {
-					background-color: #FFF !important;
+					background-color: #fff !important;
 
-					&:hover { background-color: #FFF !important; }
+					&:hover {
+						background-color: #fff !important;
+					}
 				}
 
 				&.active > a {
 					background-color: $link !important;
-					color: #FFF !important;
+					color: #fff !important;
 
-					&:after { border-color: transparent transparent $bg transparent; }
+					&:after {
+						border-color: transparent transparent $bg transparent;
+					}
 				}
 			}
 		}
@@ -592,13 +706,17 @@
 		#payment {
 			ul.payment_methods {
 				li:not(.woocommerce-notice) {
-					background-color: #FFF;
+					background-color: #fff;
 
-					&:hover { background-color: $breaker; }
+					&:hover {
+						background-color: $breaker;
+					}
 				}
 			}
 
-			div.payment_box { background-color: $bg; }
+			div.payment_box {
+				background-color: $bg;
+			}
 		}
 	}
 
@@ -610,35 +728,45 @@
 	}
 
 	.lsx-woocommerce-slot {
-		background-color: #FFF;
+		background-color: #fff;
 
-		.lsx-woocommerce-price { color: #77a464; }
+		.lsx-woocommerce-price {
+			color: #77a464;
+		}
 
 		.lsx-woocommerce-content {
 			a:not(.btn).moretag {
 				background-color: $link;
-				color: #FFF;
+				color: #fff;
 
 				&:hover {
 					background-color: $hover;
-					color: #FFF;
+					color: #fff;
 				}
 			}
 		}
 	}
 
 	.lsx-woocommerce-review-slot {
-		.lsx-woocommerce-review-box { background-color: #FFF; }
+		.lsx-woocommerce-review-box {
+			background-color: #fff;
+		}
 
-		.lsx-woocommerce-content { border-top: 1px solid $breaker; }
+		.lsx-woocommerce-content {
+			border-top: 1px solid $breaker;
+		}
 	}
 
 	.lsx-woocommerce-slider {
 		.slick-dots {
 			& > li {
-				& > button { border-color: $color; }
+				& > button {
+					border-color: $color;
+				}
 
-				&.slick-active > button { background-color: $color; }
+				&.slick-active > button {
+					background-color: $color;
+				}
 			}
 		}
 
@@ -674,11 +802,13 @@
 
 		.close {
 			background-color: $link;
-			border-color: #FFF;
+			border-color: #fff;
 			box-shadow: 0 0 4px 0 $link;
-			color: #FFF;
+			color: #fff;
 
-			&:hover { background-color: $link; }
+			&:hover {
+				background-color: $link;
+			}
 		}
 	}
 
@@ -689,21 +819,27 @@
 					table {
 						td {
 							&.rating-graph {
-								.bar { background-color: $breaker; }
+								.bar {
+									background-color: $breaker;
+								}
 							}
 						}
 					}
 				}
 			}
 
-			.contribution-flag-form { background-color: $breaker; }
+			.contribution-flag-form {
+				background-color: $breaker;
+			}
 		}
 
 		.contribution-type-selector {
 			> a {
 				border-bottom: 0.202em solid $breaker;
 
-				&.active { border-bottom-color: $link; }
+				&.active {
+					border-bottom-color: $link;
+				}
 			}
 		}
 	}
@@ -712,12 +848,16 @@
 		.wc-bookings-date-picker {
 			.ui-datepicker {
 				table {
-					background-color: #FFF;
+					background-color: #fff;
 					border: 1px solid #999;
 
-					th { background-color: #F6F6F6; }
+					th {
+						background-color: #f6f6f6;
+					}
 
-					thead tr { border: 1px solid #999; }
+					thead tr {
+						border: 1px solid #999;
+					}
 				}
 			}
 		}
@@ -729,7 +869,9 @@
 	}
 
 	#tiptip_holder.tip_bottom {
-		#tiptip_arrow_inner { border-bottom-color: $color; }
+		#tiptip_arrow_inner {
+			border-bottom-color: $color;
+		}
 	}
 
 	// Sensei
@@ -738,7 +880,7 @@
 	.learner-profile #my-courses .ui-tabs-nav {
 		li {
 			a:not(.btn) {
-				background-color: #FFF;
+				background-color: #fff;
 				color: $link;
 
 				&.active,
@@ -746,7 +888,7 @@
 				&:hover:active,
 				&:focus {
 					background-color: $link;
-					color: #FFF;
+					color: #fff;
 				}
 			}
 		}
@@ -754,7 +896,7 @@
 
 	#user-course-status-toggle {
 		a:not(.btn) {
-			background-color: #FFF;
+			background-color: #fff;
 			color: $link;
 
 			&.active,
@@ -762,7 +904,7 @@
 			&:hover:active,
 			&:focus {
 				background-color: $link;
-				color: #FFF;
+				color: #fff;
 			}
 		}
 	}
@@ -770,53 +912,73 @@
 	// The Events Calendar
 
 	#tribe-bar-form {
-		.tribe-bar-filters { background-color: #FFF; }
+		.tribe-bar-filters {
+			background-color: #fff;
+		}
 	}
 
-	#tribe-bar-collapse-toggle { background-color: #FFF; }
+	#tribe-bar-collapse-toggle {
+		background-color: #fff;
+	}
 
 	.tribe-events-calendar {
 		th {
 			background-color: #384750;
-			color: #FFF;
+			color: #fff;
 		}
 
-		div[id*=tribe-events-daynum-] {
-			&, & a { background-color: transparent !important; }
+		div[id*="tribe-events-daynum-"] {
+			&,
+			& a {
+				background-color: transparent !important;
+			}
 		}
 
 		td.tribe-events-othermonth.tribe-events-past,
 		td.tribe-events-othermonth.tribe-events-future {
-			div[id*=tribe-events-daynum-] {
-				background-color: #DDD !important;
-				&, & a { color: #999 !important; }
+			div[id*="tribe-events-daynum-"] {
+				background-color: #ddd !important;
+				&,
+				& a {
+					color: #999 !important;
+				}
 			}
 		}
 
 		td.tribe-events-thismonth {
-			div[id*=tribe-events-daynum-] {
-				background-color: #DDD !important;
-				&, & a { color: #999 !important; }
+			div[id*="tribe-events-daynum-"] {
+				background-color: #ddd !important;
+				&,
+				& a {
+					color: #999 !important;
+				}
 			}
 		}
 
 		td.tribe-events-present {
-			div[id*=tribe-events-daynum-] {
-				background-color: #CCC !important;
-				&, & a { color: #999 !important; }
+			div[id*="tribe-events-daynum-"] {
+				background-color: #ccc !important;
+				&,
+				& a {
+					color: #999 !important;
+				}
 			}
 		}
 	}
 
 	#tribe-events-content {
 		.tribe-events-tooltip {
-			h4 { background-color: #384750; }
+			h4 {
+				background-color: #384750;
+			}
 		}
 	}
 
 	.tribe-events-tooltip {
 		&.tribe-events-tooltip-flipdown {
-			&:before { border-bottom-color: #384750; }
+			&:before {
+				border-bottom-color: #384750;
+			}
 		}
 
 		.tribe-events-calendar &,
@@ -826,18 +988,20 @@
 		}
 	}
 
-	.recurring-info-tooltip { border-color: #384750; }
+	.recurring-info-tooltip {
+		border-color: #384750;
+	}
 
 	.tribe-events-list-separator-month {
-		background-color: #E6E6E6;
-		color: #4A4A4A;
+		background-color: #e6e6e6;
+		color: #4a4a4a;
 	}
 
 	.tribe-events-day {
 		.tribe-events-day-time-slot {
 			h5 {
-				background-color: #E6E6E6;
-				color: #4A4A4A;
+				background-color: #e6e6e6;
+				color: #4a4a4a;
 			}
 		}
 	}
@@ -845,22 +1009,26 @@
 	.single-tribe_events {
 		.tribe-events-schedule {
 			.tribe-events-cost {
-				background-color: #FFF;
+				background-color: #fff;
 				border: 1px solid #ddd;
 			}
 		}
 
-		.tribe-events-event-meta { background-color: #FFF; }
+		.tribe-events-event-meta {
+			background-color: #fff;
+		}
 	}
 
 	.tribe-events-event-cost {
-		.ticket-cost { background-color: #FFF; }
+		.ticket-cost {
+			background-color: #fff;
+		}
 	}
 
 	.tribe-events-list {
 		.tribe-events-loop {
 			.tribe-event-featured {
-				background-color: #FFF;
+				background-color: #fff;
 
 				a:not(.tribe-events-read-more) {
 					color: $link !important;
@@ -868,15 +1036,21 @@
 					&:hover,
 					&:active,
 					&:active:hover,
-					&:focus { color: $hover !important; }
+					&:focus {
+						color: $hover !important;
+					}
 				}
 
 				.tribe-events-list-event-title {
-					.label { background-color: #d1021b; }
+					.label {
+						background-color: #d1021b;
+					}
 				}
 
 				.tribe-events-event-meta,
-				.tribe-events-content { color: $color; }
+				.tribe-events-content {
+					color: $color;
+				}
 
 				.tribe-events-event-cost {
 					color: $color;
@@ -893,7 +1067,9 @@
 	.tribe-events-related-events-title {
 		color: $header;
 
-		&:after { background-color: $breaker; }
+		&:after {
+			background-color: $breaker;
+		}
 	}
 
 	.tribe-events-single {
@@ -906,16 +1082,18 @@
 						&:hover,
 						&:active,
 						&:active:hover,
-						&:focus { color: $hover; }
+						&:focus {
+							color: $hover;
+						}
 					}
 
 					.moretag {
 						background-color: $link;
-						color: #FFF;
+						color: #fff;
 
 						&:hover {
 							background-color: $hover;
-							color: #FFF;
+							color: #fff;
 						}
 					}
 				}

@@ -55,4 +55,56 @@ body.block-editor-page {
 			max-width: fit-content;
 		}
 	}
+
+	.lsx-title {
+		&:after {
+			content: "";
+			display: block;
+			height: 2px;
+			margin: 2.4rem auto 0;
+			width: 80px;
+			background-color: #777;
+		}
+
+		& > small {
+			color: inherit;
+			display: block;
+			line-height: inherit;
+			margin-top: 8px;
+		}
+	}
+	.lsx-subheading {
+		h2 {
+			font-size: 48px;
+			color: #333;
+			line-height: 50px;
+		}
+		p.lsx-title {
+			font-size: 26px;
+			color: #777;
+			line-height: 30px;
+			text-align: inherit;
+			&:not(.has-text-align-center) {
+				text-align: initial;
+				&:after {
+					margin-left: 0;
+				}
+			}
+			&.has-text-align-center {
+				text-align: center;
+			}
+			&.has-text-align-left {
+				&:after {
+					margin-left: 0;
+				}
+			}
+			&.has-text-align-right {
+				text-align: right;
+				&:after {
+					margin-right: 0;
+					margin-left: auto;
+				}
+			}
+		}
+	}
 }

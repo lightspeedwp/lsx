@@ -10,6 +10,7 @@
 - Improved suport for Woocommerce Quick View plugin.
 - Block Theme Support updates.
 - Added support for the How to and Faq yoast blocks.
+- Added the `lsx-subheading` class for group blocks.
 
 ### Fixed
 
