@@ -653,7 +653,7 @@ function lsx_cover_template_custom_enqueue() {
 	$color_overlay_opacity  = $color_overlay_opacity / 100;
 	$color_overlay_classes .= $color_overlay_opacity;
 
-	$custom_css       = ".page-template-template-cover .entry-header .entry-title, .post-template-template-cover .entry-header .entry-title{color: {$cover_text_color};} .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before {opacity: {$color_overlay_opacity};}";
+	$custom_css       = ".page-template-template-cover .entry-header .entry-title, .post-template-template-cover .entry-header .entry-title, .post-template-template-cover #primary .entry-categories-inner a, .page-template-template-cover #primary .entry-header *, .post-template-template-cover #primary .entry-header * {color: {$cover_text_color};} .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before {opacity: {$color_overlay_opacity};}";
 	wp_add_inline_style( 'lsx_main', $custom_css );
 
 }
