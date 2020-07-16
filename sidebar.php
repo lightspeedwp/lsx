@@ -40,7 +40,7 @@ if ( '1c' !== $layout ) : ?>
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php esc_attr_e( 'Archives', 'lsx' ); ?></h1>
+				<h1 class="widget-title"><?php esc_html_e( 'Archives', 'lsx' ); ?></h1>
 
 				<ul>
 					<?php
@@ -52,7 +52,7 @@ if ( '1c' !== $layout ) : ?>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php esc_attr_e( 'Meta', 'lsx' ); ?></h1>
+				<h1 class="widget-title"><?php esc_html_e( 'Meta', 'lsx' ); ?></h1>
 
 				<ul>
 					<?php wp_register(); ?>

@@ -186,6 +186,15 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			return;
 		}
 
+		// Cart and Checkout won't have banners of any kind.
+		if ( function_exists( 'tribe_is_event' ) && tribe_is_event() ) {
+			return;
+		}
+
+		if ( function_exists( 'lsx_is_rest_api_request' ) && lsx_is_rest_api_request() ) {
+			return;
+		}
+
 		if ( is_page() && ( 'page' !== $show_on_front || ! is_front_page() ) ) :
 			if ( class_exists( 'LSX_Banners' ) && empty( apply_filters( 'lsx_banner_plugin_disable', false ) && ( ! has_post_thumbnail() ) ) ) {
 				return;

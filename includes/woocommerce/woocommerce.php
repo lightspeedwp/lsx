@@ -600,7 +600,7 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 	 * @return $lsx_controls array()
 	 */
 	function lsx_customizer_wc_controls( $lsx_controls ) {
-		$lsx_controls['panels']['lsx-wc'] = array(
+		$lsx_controls['panels']['woocommerce'] = array(
 			'title'       => esc_html__( 'WooCommerce', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce settings.', 'lsx' ),
 			'priority'    => 23,
@@ -611,9 +611,9 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 		 */
 
 		$lsx_controls['sections']['lsx-wc-global'] = array(
-			'title'       => esc_html__( 'Global', 'lsx' ),
+			'title'       => esc_html__( 'LSX Global', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce global settings.', 'lsx' ),
-			'panel'       => 'lsx-wc',
+			'panel'       => 'woocommerce',
 			'priority'    => 1,
 		);
 
@@ -648,9 +648,9 @@ if ( ! function_exists( 'lsx_customizer_wc_controls' ) ) :
 		 */
 
 		$lsx_controls['sections']['lsx-wc-cart'] = array(
-			'title'       => esc_html__( 'Cart', 'lsx' ),
+			'title'       => esc_html__( 'LSX Cart', 'lsx' ),
 			'description' => esc_html__( 'Change the WooCommerce cart settings.', 'lsx' ),
-			'panel'       => 'lsx-wc',
+			'panel'       => 'woocommerce',
 			'priority'    => 2,
 		);
 
@@ -899,7 +899,7 @@ if ( ! function_exists( 'lsx_wc_product_searchform' ) ) :
 			<form role="search" method="get" class="search-form form-inline" id="searchform" action="<?php echo esc_url( home_url( \'/\' ) ); ?>">
 				<div class="input-group">
 					<input type="search" value="<?php if ( is_search() ) { echo get_search_query(); } ?>" name="s" class="search-field form-control" placeholder="<?php esc_attr_e( \'Search\', \'lsx\' ); ?> <?php echo esc_attr( get_bloginfo( \'name\' ) ); ?>">
-					<label class="hide"><?php esc_attr_e( \'Search for:\', \'lsx\' ); ?></label>
+					<label class="hide"><?php esc_html_e( \'Search for:\', \'lsx\' ); ?></label>
 
 					<span class="input-group-btn">
 						<button type="submit" class="search-submit btn btn-default"><span class="fa fa-search"></span></button>

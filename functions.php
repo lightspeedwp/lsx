@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LSX_VERSION', '2.8' );
+define( 'LSX_VERSION', '2.9' );
 
 if ( in_array( 'wordpress-seo/wp-seo.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 	require get_template_directory() . '/includes/yoast/class-lsx-yoast.php';
@@ -60,3 +60,4 @@ require get_template_directory() . '/includes/gutenberg.php';
 require get_template_directory() . '/includes/classes/class-lsx-schema-utils.php';
 require get_template_directory() . '/includes/classes/class-lsx-schema-graph-piece.php';
 require get_template_directory() . '/includes/classes/class-lsx-optimisation.php';
+require get_template_directory() . '/includes/classes/class-lsx-rest-helper.php';

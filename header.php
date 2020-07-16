@@ -19,6 +19,7 @@
 	</head>
 
 	<body <?php body_class( 'lsx' ); ?>>
+		<?php wp_body_open(); ?>
 		<?php lsx_body_top(); ?>
 
 		<div class="header-wrap">
@@ -39,3 +40,5 @@
 
 		<div class="wrap container" role="document" tabindex="-1">
 			<div class="content role row">
+
+			<?php lsx_header_wrap_container_top(); ?>

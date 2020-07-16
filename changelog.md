@@ -1,6 +1,6 @@
 # LSX Change log
 
-# [[2.9.0]] - In Development
+# [[2.9.0]]
 
 ### Added
 
@@ -12,6 +12,15 @@
 - Added support for the How to and Faq yoast blocks.
 - Reducing the left and right Padding on LSX Buttons from 40px to 15px.
 - Adding the page template "Cover Template" and admin options for it.
+
+### Updated
+
+- Updated a few functions to meet WordPress standards based on Theme Checkers results.
+
+### Changed
+
+- Merged two WooCommerce panels within the customizer sidebar.
+- The WooCommerce bar will be showed if active and the screen is less than 678px.
 
 ### Fixed
 
