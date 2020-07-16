@@ -88,7 +88,7 @@
 								if ( has_excerpt() ) {
 									?>
 
-									<div class="intro-text section-inner?>">
+									<div class="intro-text section-inner">
 										<?php the_excerpt(); ?>
 									</div>
 

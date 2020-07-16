@@ -224,12 +224,13 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 				'label'       => __( 'Overlay Text Color', 'lsx' ),
 				'description' => __( 'The color used for the text in the overlay.', 'lsx' ),
 				'section'     => 'lsx-cover-template',
+				'control'     => 'WP_Customize_Color_Control',
 			)
 		);
 
 		$lsx_controls['settings']['lsx_cover_template_overlay_opacity'] = array(
-			'default'           => '8',
-			'type'              => 'theme_mod',
+			'default'           => 80,
+			'sanitize_callback' => 'absint',
 			'transport'         => 'postMessage',
 		);
 
@@ -238,7 +239,7 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 				'label'       => __( 'Overlay Opacity', 'lsx' ),
 				'description' => __( 'Make sure that the contrast is high enough so that the text is readable.', 'lsx' ),
 				'section'     => 'lsx-cover-template',
-				'type'        => 'text',
+				'type'        => 'range',
 			)
 		);
 
