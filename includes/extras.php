@@ -646,6 +646,10 @@ add_filter( 'woocommerce_get_breadcrumb', 'lsx_breadcrumbs_blog_link', 30, 1 );
  */
 function lsx_cover_template_custom_enqueue() {
 
+	if ( ! is_page_template( 'page-templates/template-cover.php' ) ) {
+		return;
+	}
+
 	$cover_text_color = get_theme_mod( 'lsx_cover_template_overlay_text_color' );
 
 	$color_overlay_opacity  = get_theme_mod( 'lsx_cover_template_overlay_opacity' );
