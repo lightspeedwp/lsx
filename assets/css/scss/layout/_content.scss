@@ -6,7 +6,7 @@
 	text-align: center;
 
 	&:after {
-		content: '';
+		content: "";
 		display: block;
 		height: 2px;
 		margin: $lsx-gap auto 0;
@@ -19,10 +19,11 @@
 		line-height: inherit;
 		margin-top: 8px;
 
-		&.long-text { margin-top: 16px; }
+		&.long-text {
+			margin-top: 16px;
+		}
 	}
 }
-
 
 #home-widgets {
 	margin-top: $lsx-large-gap;
@@ -32,12 +33,14 @@
 
 		&.widget_lsx_full_width_alt,
 		&.widget_lsx_full_width {
-			&:last-child { margin-bottom: 0; }
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 
 		&.widget_text {
 			[class*="col-"] + [class*="col-"] {
-				@include media('<phone') {
+				@include media("<phone") {
 					margin-top: $lsx-large-gap / 2;
 				}
 			}
@@ -49,18 +52,28 @@
 		@extend .lsx-title;
 	}
 
-	.textwidget, p { margin-bottom: 0; }
-
+	.textwidget,
 	p {
-		& + p { margin-top: $lsx-gap; }
-
-
-		& .btn { margin-top: 0; }
+		margin-bottom: 0;
 	}
 
-	img ~ p { margin-top: $lsx-gap; }
+	p {
+		& + p {
+			margin-top: $lsx-gap;
+		}
 
-	.btn { margin-top: $lsx-large-gap / 2; }
+		& .btn {
+			margin-top: 0;
+		}
+	}
+
+	img ~ p {
+		margin-top: $lsx-gap;
+	}
+
+	.btn {
+		margin-top: $lsx-large-gap / 2;
+	}
 }
 
 .content-area {
@@ -71,8 +84,16 @@
 		margin: 0 -9999rem;
 		padding: $lsx-large-gap 9999rem;
 
-		h1, h2, h3, h4, h5, h6, .widget-title {
-			&:after { display: none; }
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		.widget-title {
+			&:after {
+				display: none;
+			}
 		}
 	}
 
@@ -87,8 +108,56 @@
 	margin: 0 0 $lsx-gap;
 	padding: 0;
 
-	& > .page-title { margin-bottom: 0; }
+	& > .page-title {
+		margin-bottom: 0;
+	}
 }
+
+// lsx-subheading styles
+.content-area {
+	.lsx-subheading {
+		h2 {
+			font-size: 48px;
+			color: #333;
+			line-height: 50px;
+		}
+		p.lsx-title {
+			font-size: 26px;
+			color: #777;
+			line-height: 30px;
+			&:not(.has-text-align-center) {
+				text-align: initial;
+				&:after {
+					margin-left: 0;
+				}
+			}
+			&.has-text-align-left {
+				&:after {
+					margin-left: 0;
+				}
+			}
+			&.has-text-align-right {
+				text-align: right;
+				&:after {
+					margin-right: 0;
+					margin-left: auto;
+				}
+			}
+		}
+		//Mobile Styling for .lsx-subheading
+		@include media("<custom") {
+			h2 {
+				font-size: 30px;
+				line-height: 30px;
+			}
+			p {
+				font-size: 22px;
+				line-height: 24px;
+			}
+		}
+	}
+}
+
 // Style to pass google mobile friendly test
 @media (max-width: 400px) {
 	.home {
@@ -100,9 +169,9 @@
 			}
 		}
 	}
-    #footer-widgets a:not(.btn):not(button) {
-        word-break: break-all;
-    }
+	#footer-widgets a:not(.btn):not(button) {
+		word-break: break-all;
+	}
 	// #primary {
 	// 	padding: 0;
 	// }

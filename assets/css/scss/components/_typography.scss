@@ -1,16 +1,16 @@
 //Italic Font
 @font-face {
-	font-family: 'Noto Sans Italic';
-	src:
-	local('Noto Sans Italic'),
-	url("../fonts/noto_sans/NotoSans-Italic.woff") format("woff"),
-	url('../fonts/noto_sans/NotoSans-Italic.woff2') format("woff");
+	font-family: "Noto Sans Italic";
+	src: local("Noto Sans Italic"),
+		url("../fonts/noto_sans/NotoSans-Italic.woff") format("woff"),
+		url("../fonts/noto_sans/NotoSans-Italic.woff2") format("woff");
 }
 
 .content-area,
 .widget-area {
-
-	address { margin-bottom: $lsx-gap; }
+	address {
+		margin-bottom: $lsx-gap;
+	}
 
 	a {
 		&:not(.btn) {
@@ -19,14 +19,16 @@
 		}
 	}
 
-	big { font-size: 120%; }
+	big {
+		font-size: 120%;
+	}
 
 	em {
-		font-family: 'Noto Sans Italic', sans-serif;
+		font-family: "Noto Sans Italic", sans-serif;
 	}
 
 	blockquote {
-		font-family: 'Noto Sans Italic', sans-serif;
+		font-family: "Noto Sans Italic", sans-serif;
 		border-radius: 10px;
 		border-style: solid;
 		border-width: 1px;
@@ -39,7 +41,7 @@
 		p {
 			font-weight: 400;
 		}
-		@include media('>=tablet') {
+		@include media(">=tablet") {
 			margin-left: auto;
 			margin-right: auto;
 			margin-top: calc(30px + 1.2rem);
@@ -53,7 +55,7 @@
 
 		&:before {
 			border-radius: 50%;
-			content: '”';
+			content: "”";
 			font-family: $headings-font-family;
 			font-size: 60px;
 			font-style: normal;
@@ -66,7 +68,7 @@
 			transform: translateX(-50%);
 			width: 50px;
 
-			@include media('>=tablet') {
+			@include media(">=tablet") {
 				font-size: 72px;
 				height: 60px;
 				top: -30px;
@@ -82,7 +84,7 @@
 			text-align: left;
 
 			&:before {
-				content: '\2014';
+				content: "\2014";
 				display: inline-block;
 				margin-right: 5px;
 			}
@@ -98,30 +100,68 @@
 	dl {
 		margin-bottom: $lsx-gap;
 
-		& > dt { font-weight: 700; }
+		& > dt {
+			font-weight: 700;
+		}
 
 		& > dd {
 			font-style: italic;
 
-			& + dt { margin-top: $lsx-gap; }
+			& + dt {
+				margin-top: $lsx-gap;
+			}
 		}
 	}
 
-	em { font-style: italic; }
+	em {
+		font-style: italic;
+	}
 
-	h1, h2, h3, h4, h5, h6, .widget-title {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.widget-title {
 		margin-top: 0;
 		margin-bottom: $lsx-gap;
 	}
 
-	ol, ul:not([class]) {
+	h3,
+	.h3 {
+		font-size: 22px;
+	}
+
+	h4,
+	.h4 {
+		font-size: 20px;
+	}
+
+	h5,
+	.h5 {
+		font-size: 18px;
+	}
+
+	h6,
+	.h6 {
+		font-size: 16px;
+	}
+
+	ol,
+	ul:not([class]) {
 		margin-bottom: $lsx-gap;
 		padding-left: 4rem;
 
-		ol, ul { margin-bottom: 0; }
+		ol,
+		ul {
+			margin-bottom: 0;
+		}
 	}
 
-	p { margin-bottom: $lsx-gap; }
+	p {
+		margin-bottom: $lsx-gap;
+	}
 
 	pre {
 		border-radius: 5px;
@@ -132,11 +172,18 @@
 		padding: 2rem;
 	}
 
-	small { font-size: 80%; }
+	small {
+		font-size: 80%;
+	}
 
-	strong { font-weight: 700; }
+	strong {
+		font-weight: 700;
+	}
 
-	table, .table { margin-bottom: $lsx-gap; }
+	table,
+	.table {
+		margin-bottom: $lsx-gap;
+	}
 
 	.white {
 		color: #ffffff;
