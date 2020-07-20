@@ -33,6 +33,9 @@
 	$image_class = '';
 
 	$thumbnail_id = get_post_thumbnail_id( get_the_ID() );
+	if ( empty( $thumbnail_id ) ) {
+		$thumbnail_id = apply_filters( 'lsx_get_thumbnail_post_placeholder_id', $thumbnail_id, get_the_ID() );
+	}
 	$image_arr    = wp_get_attachment_image_src( $thumbnail_id, 'lsx-thumbnail-single' );
 	$image_src    = '';
 
