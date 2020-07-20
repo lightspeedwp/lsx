@@ -188,11 +188,17 @@ if ( ! function_exists( 'lsx_get_thumbnail' ) ) :
 		if ( false === $image_src ) {
 			$post_id           = get_the_ID();
 			$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+			if ( empty( $post_thumbnail_id ) ) {
+				$post_thumbnail_id = apply_filters( 'lsx_get_thumbnail_post_placeholder_id', $post_thumbnail_id, $post_id );
+			}
 		} elseif ( false !== $image_src ) {
 			if ( is_numeric( $image_src ) ) {
 				$post_thumbnail_id = $image_src;
 			} else {
 				$post_thumbnail_id = lsx_get_attachment_id_from_src( $image_src );
+				if ( empty( $post_thumbnail_id ) ) {
+					$post_thumbnail_id = apply_filters( 'lsx_get_thumbnail_post_placeholder_id', $post_thumbnail_id, $post_id );
+				}
 			}
 		}
 
