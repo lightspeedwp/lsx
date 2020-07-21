@@ -16,6 +16,7 @@
 ### Updated
 
 - Updated a few functions to meet WordPress standards based on Theme Checkers results.
+- Updated the Woocommerce Checkout and Cart styles.
 
 ### Changed
 

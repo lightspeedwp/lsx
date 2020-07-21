@@ -3,27 +3,27 @@
 // This file contains the theme's variables declarations and some vendor's variables overriding.
 // Also, it was created separately so we can import it in the vendor's files. In this way, our variables are available to the entire project.
 
-$blue: (#418AD0, #374750, #367DC0, #2B3840);
+$blue: (#418ad0, #374750, #367dc0, #2b3840);
 $dark-gray: #434343;
-$light-gray: #F6F6F6;
-$orange: (#F7AE00, #CE9100, #EDA700);
-$red-accent: #D84E2E;
-$breaker: #DADDDF;
+$light-gray: #f6f6f6;
+$orange: (#f7ae00, #ce9100, #eda700);
+$red-accent: #d84e2e;
+$breaker: #dadddf;
 $small: #919191;
-$gray: (#EAEAEA, #CCCCCC, #4A4A4A);
-$green: (#6BA913, #649E12);
+$gray: (#eaeaea, #cccccc, #4a4a4a, #e6e6e6);
+$green: (#6ba913, #649e12);
 
 $grid-float-breakpoint: 1200px;
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
 
-$body-bg: #F6F6F6;
-$text-color: #4A4A4A;
+$body-bg: #f6f6f6;
+$text-color: #4a4a4a;
 $link-color: nth($blue, 1);
 $link-hover-color: nth($orange, 1);
 $link-hover-decoration: none;
 
-$font-family-sans-serif: 'Noto Sans', sans-serif;
-$font-family-serif: 'Lora', serif;
+$font-family-sans-serif: "Noto Sans", sans-serif;
+$font-family-serif: "Lora", serif;
 
 $font-size-base: 15px;
 
@@ -40,16 +40,16 @@ $headings-line-height: 1.25;
 
 $line-height-base: 1.6;
 
-$btn-default-color: #FFF;
+$btn-default-color: #fff;
 $btn-font-weight: 700;
 $btn-border-radius-base: 3px;
 
 $input-height-base: 50px;
-$input-border: #DDD;
+$input-border: #ddd;
 $input-color: $text-color;
 $input-border-radius: 2px;
 $input-border-focus: nth($blue, 1);
-$input-color-placeholder: #9F9C9C;
+$input-color-placeholder: #9f9c9c;
 
 $table-border-color: $breaker;
 $page-header-border-color: $breaker;
@@ -59,16 +59,16 @@ $lsx-medium-gap: 4.25rem;
 $lsx-large-gap: 8.5rem;
 
 $buttons: (
-	color: #FFF,
-	color-hover: #FFF,
+	color: #fff,
+	color-hover: #fff,
 	bg: nth($blue, 1),
 	bg-hover: nth($blue, 3),
 	shadow: darken(nth($blue, 1), 15%)
 );
 
 $cta-buttons: (
-	color: #FFF,
-	color-hover: #FFF,
+	color: #fff,
+	color-hover: #fff,
 	bg: nth($orange, 1),
 	bg-hover: nth($orange, 3),
 	shadow: darken(nth($orange, 1), 15%)
@@ -83,8 +83,8 @@ $secondary-buttons: (
 );
 
 $tertiary-buttons: (
-	color: #FFF,
-	color-hover: #FFF,
+	color: #fff,
+	color-hover: #fff,
 	bg: nth($green, 1),
 	bg-hover: nth($green, 2),
 	shadow: darken(nth($green, 1), 15%)
@@ -92,29 +92,29 @@ $tertiary-buttons: (
 
 $top-menu: (
 	bg: #333,
-	link: #FFF,
-	hover: #D93A3A,
-	icon: #D93A3A,
-	icon-hover: #D93A3A,
+	link: #fff,
+	hover: #d93a3a,
+	icon: #d93a3a,
+	icon-hover: #d93a3a,
 	dropdown: #333,
 	dropdown-hover: #333,
-	dropdown-link: #FFF,
-	dropdown-link-hover: #D93A3A,
+	dropdown-link: #fff,
+	dropdown-link-hover: #d93a3a,
 	height: 32px
 );
 
 $nav: (
-	bg: #FFF,
+	bg: #fff,
 	link: #515151,
 	hover: nth($blue, 1),
 	dropdown: nth($blue, 2),
 	dropdown-hover: nth($blue, 4),
-	dropdown-link: #FFF,
+	dropdown-link: #fff,
 	dropdown-link-hover: nth($blue, 1)
 );
 
 $header: (
-	bg: #FFF,
+	bg: #fff,
 	link: $red-accent,
 	hover: nth($orange, 1),
 	description: $dark-gray
@@ -122,11 +122,11 @@ $header: (
 
 $banner: (
 	bg: nth($blue, 4),
-	color: #FFF,
-	color-image: #FFF,
+	color: #fff,
+	color-image: #fff,
 	breadcrumb-bg: nth($blue, 2),
 	breadcrumb-color: $small,
-	breadcrumb-current: #FFF
+	breadcrumb-current: #fff
 );
 
 $content: (
@@ -137,61 +137,61 @@ $content: (
 	link: nth($blue, 1),
 	hover: nth($orange, 1),
 	small: $small,
-	full-bg: #FFF,
+	full-bg: #fff,
 	full-color: $text-color,
 	full-link: nth($blue, 1),
 	full-hover: nth($orange, 1),
 	full-cta-bg: nth($blue, 1),
-	full-cta-color: #FFF,
+	full-cta-color: #fff,
 	full-cta-link: nth($blue, 2),
 	full-cta-hover: nth($orange, 1)
 );
 
 $footer: (
 	bg: nth($blue, 4),
-	color: #FFF,
+	color: #fff,
 	link: nth($orange, 1),
 	hover: nth($orange, 2)
 );
 
 $footer-widgets: (
 	bg: nth($blue, 2),
-	color: #FFF,
-	link: #FFF,
+	color: #fff,
+	link: #fff,
 	hover: nth($orange, 1)
 );
 
 $footer-cta: (
 	bg: nth($blue, 4),
-	color: #FFF,
+	color: #fff,
 	link: nth($blue, 1),
 	hover: nth($blue, 3)
 );
 
 $social-icons: (
-	'codepen': '\f1cb',
-	'digg': '\f1a6',
-	'dribbble': '\f17d',
-	'dropbox': '\f16b',
-	'facebook': '\f09a',
-	'feed': '\f09e',
-	'flickr': '\f16e',
-	'foursquare': '\f180',
-	'getpocket': '\f265',
-	'github': '\f09b',
-	'instagram': '\f16d',
-	'linkedin': '\f0e1',
-	'mailto': '\f0e0',
-	'pinterest': '\f0d2',
-	'plus.google': '\f0d5',
-	'polldaddy': '\f128',
-	'reddit': '\f281',
-	'spotify': '\f1bc',
-	'stumbleupon': '\f1a4',
-	'tumblr': '\f173',
-	'twitch': '\f1e8',
-	'twitter': '\f099',
-	'vimeo': '\f27d',
-	'wordpress': '\f19a',
-	'youtube': '\f16a'
+	"codepen": "\f1cb",
+	"digg": "\f1a6",
+	"dribbble": "\f17d",
+	"dropbox": "\f16b",
+	"facebook": "\f09a",
+	"feed": "\f09e",
+	"flickr": "\f16e",
+	"foursquare": "\f180",
+	"getpocket": "\f265",
+	"github": "\f09b",
+	"instagram": "\f16d",
+	"linkedin": "\f0e1",
+	"mailto": "\f0e0",
+	"pinterest": "\f0d2",
+	"plus.google": "\f0d5",
+	"polldaddy": "\f128",
+	"reddit": "\f281",
+	"spotify": "\f1bc",
+	"stumbleupon": "\f1a4",
+	"tumblr": "\f173",
+	"twitch": "\f1e8",
+	"twitter": "\f099",
+	"vimeo": "\f27d",
+	"wordpress": "\f19a",
+	"youtube": "\f16a"
 );
