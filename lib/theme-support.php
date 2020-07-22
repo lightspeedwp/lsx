@@ -11,6 +11,9 @@ function editor_styles() {
 	add_editor_style(
 		'/assets/css/admin/gutenberg-admin.css'
 	);
+	add_editor_style(
+		'/assets/css/yoast/yoast.css'
+	);
 
 }
 add_action( 'admin_init', 'editor_styles' );
