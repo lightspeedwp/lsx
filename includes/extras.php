@@ -646,6 +646,30 @@ add_filter( 'wpseo_breadcrumb_links', 'lsx_breadcrumbs_blog_link', 30, 1 );
 add_filter( 'woocommerce_get_breadcrumb', 'lsx_breadcrumbs_blog_link', 30, 1 );
 
 /**
+ * Cover template custom styles
+ *
+ * @return void
+ */
+function lsx_cover_template_custom_enqueue() {
+
+	if ( ! is_page_template( 'page-templates/template-cover.php' ) ) {
+		return;
+	}
+
+	$cover_text_color = get_theme_mod( 'lsx_cover_template_overlay_text_color' );
+
+	$color_overlay_opacity  = get_theme_mod( 'lsx_cover_template_overlay_opacity' );
+	$color_overlay_opacity  = ( false === $color_overlay_opacity ) ? 80 : $color_overlay_opacity;
+	$color_overlay_opacity  = $color_overlay_opacity / 100;
+	$color_overlay_classes .= $color_overlay_opacity;
+
+	$custom_css       = ".page-template-template-cover .entry-header .entry-title, .post-template-template-cover .entry-header .entry-title, .post-template-template-cover #primary .entry-categories-inner a, .page-template-template-cover #primary .entry-header *, .post-template-template-cover #primary .entry-header * {color: {$cover_text_color};} .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before {opacity: {$color_overlay_opacity};}";
+	wp_add_inline_style( 'lsx_main', $custom_css );
+
+}
+add_action( 'wp_enqueue_scripts', 'lsx_cover_template_custom_enqueue' );
+ 
+/**
  * Determines if the request is an REST API request.
  *
  * @return bool True if it's a REST API request, false otherwise.
