@@ -32,6 +32,7 @@
 - Improvements on the image block.
 - Fixed the search bar spacing issues.
 - Fixed the margin issue when some titles are too long.
+- Fixed minor issues on Sensei single lesson images and messages.
 
 # [[2.8.0]] - 2020-05-21
 
