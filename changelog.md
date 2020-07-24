@@ -12,6 +12,7 @@
 - Added support for the How to and Faq yoast blocks.
 - Added the `lsx-subheading` class for group blocks.
 - Reducing the left and right Padding on LSX Buttons from 40px to 15px.
+- Adding styles to make LSX compatible with Yoast SEO's internal linking blocks.
 - Adding the page template "Cover Template" and admin options for it.
 
 ### Updated
