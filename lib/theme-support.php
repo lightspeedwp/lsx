@@ -39,6 +39,10 @@ if ( ! function_exists( 'theme_support' ) ) :
 		add_theme_support( 'wp-block-styles' );
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+		// Add support for Custom Line Heights.
+		add_theme_support( 'custom-line-height' );
+		// Add support for Custom Units.
+		add_theme_support( 'custom-units' );
 		// Add custom editor font sizes.
 		add_theme_support(
 			'editor-font-sizes',
