@@ -18,6 +18,7 @@
 ### Updated
 
 - Updated a few functions to meet WordPress standards based on Theme Checkers results.
+- Updated the Welcome screen.
 
 ### Changed
 

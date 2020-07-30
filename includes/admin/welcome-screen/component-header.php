@@ -18,17 +18,6 @@
 		<div class="box enrich">
 			<h2><?php esc_html_e( 'Built to enrich your WordPress experience', 'lsx' ); ?></h2>
 			<p><?php esc_html_e( 'Whether you\'re using LSX for your personal blog, as the platform for a powerful WooCommerce store or as the foundation for your own child-theme, you\'ll find it\'s the perfect fit for WordPress.', 'lsx' ); ?></p>
-
-			<p>
-				<?php
-					printf(
-						/* Translators: 1: HTML open tag link, 2: HTML close tag link */
-						esc_html__( 'Use LSX with our %1$sTour Operator Plugin%2$s to create the ultimate tour operators website!', 'lsx' ),
-						'<a href="https://wordpress.org/plugins/tour-operator/ target="_blank" rel="noreferrer noopener">',
-						'</a>'
-					);
-					?>
-			</p>
 		</div>
 	</div>
 
