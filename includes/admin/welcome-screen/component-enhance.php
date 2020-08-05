@@ -10,27 +10,54 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="box enhance">
-			<h2><?php esc_html_e( 'Enhance LSX', 'lsx' ); ?></h2>
-			<p><?php esc_html_e( 'Take a look at our range of extensions that add to the already rich functionality of the LSX WordPress theme.', 'lsx' ); ?></p>
+			<h2><?php esc_html_e( 'Featured Extensions', 'lsx' ); ?></h2>
+			<p><?php esc_html_e( 'Take a look at our featured extensions that extend the functionality of the LSX WordPress theme.', 'lsx' ); ?></p>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="box-clean">
+						<a href="https://wordpress.org/plugins/lsx-business-directory/" target="_blank"><?php esc_html_e( 'LSX Business Directory', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'The LSX Business Directory adds a business directory listings to your WordPress website using the LSX Theme and extensions..', 'lsx' ); ?></p>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="box-clean">
+						<a href="https://wordpress.org/plugins/lsx-health-plan/" target="_blank"><?php esc_html_e( 'LSX Health Plan', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'LSX Health Plan plugin adds the ability to include a structured exercise and nutrition programme to your WordPress website using the LSX Theme and extensions.', 'lsx' ); ?></p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="box enhance">
+			<h2><?php esc_html_e( 'Core Extensions', 'lsx' ); ?></h2>
+			<p><?php esc_html_e( 'Expand the LSX theme with LSX Extensions, which add functionality and display options to your WordPress website.', 'lsx' ); ?></p>
 
 			<div class="row">
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-banners/" target="_blank"><?php esc_html_e( 'Banners', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'The LSX Banners extension adds advanced banner configuration options to your WordPress site running LSX theme.', 'lsx' ); ?></p>
+						<a href="https://wordpress.org/plugins/lsx-search/" target="_blank"><?php esc_html_e( 'LSX Search ', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'The LSX Search Extension integrates with the FacetWP plugin to allow for superbly filtered search results for your users. Allow your users to break down their search results using available filters (a.k.a “Facets”). These are created by the FacetWP plugin.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-currencies/" target="_blank"><?php esc_html_e( 'Currencies', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'The LSX Currencies extension adds currency selection functionality to sites, allowing users to view your products in whatever currencies you choose to sell in.', 'lsx' ); ?></p>
+						<a href="https://wordpress.org/plugins/lsx-customizer/" target="_blank"><?php esc_html_e( 'LSX Customizer', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'You\'ve installed LSX, so now why not make it all yours? Whether it\'s a small CSS tweak or changing the entire layout of pages, posts or archives, please make use of the Theme Customizer plugin.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-blog-customizer/" target="_blank"><?php esc_html_e( 'Blog Customizer', 'lsx' ); ?></a>
+						<a href="https://wordpress.org/plugins/lsx-blog-customizer/" target="_blank"><?php esc_html_e( 'LSX Blog Customizer', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'It allows you it to customize various aspects of the the appearance of your blog, posts widgets, archive pages and single posts so they looks exactly how you want.', 'lsx' ); ?></p>
 					</div>
 				</div>
@@ -39,70 +66,111 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-customizer/" target="_blank"><?php esc_html_e( 'Customizer', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'You\'ve installed LSX, so now why not make it all yours? Whether it\'s a small CSS tweak or changing the entire layout of pages, posts or archives, please make use of the Theme Customizer plugin.', 'lsx' ); ?></p>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-login/" target="_blank"><?php esc_html_e( 'Login', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'The LSX Login extension allows users to log into a dashboard and then see configurable content based on which users can access which content.', 'lsx' ); ?></p>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-mega-menus/" target="_blank"><?php esc_html_e( 'Mega Menus', 'lsx' ); ?></a>
+						<a href="https://wordpress.org/plugins/lsx-mega-menus/" target="_blank"><?php esc_html_e( 'LSX Mega Menus', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'Create custom, full-width dropdown menus that contain images, widgets and more that seamlessly tie into your LSX WordPress site.', 'lsx' ); ?></p>
 					</div>
 				</div>
-			</div>
 
-			<div class="row">
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-team/" target="_blank"><?php esc_html_e( 'Team', 'lsx' ); ?></a>
+						<a href="https://wordpress.org/plugins/lsx-sharing/" target="_blank"><?php esc_html_e( 'LSX Sharing', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'LSX Sharing adds buttons to your posts that your readers can use to share your content on Facebook, Twitter and Pinterest.', 'lsx' ); ?></p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="box-clean">
+						<a href="https://wordpress.org/plugins/lsx-blocks/" target="_blank"><?php esc_html_e( 'LSX Blocks', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'The new block editor is here, and with it comes the new block-based page builder. We have built these content blocks so you can simply drag and drop them into your editor, configure to your wishes and you are done!', 'lsx' ); ?></p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="box enhance">
+			<h2><?php esc_html_e( 'Post Type Extensions', 'lsx' ); ?></h2>
+			<p><?php esc_html_e( 'These extensions will add a post type with options for displaying different information to your visitors.', 'lsx' ); ?></p>
+
+			<div class="row">
+
+				<div class="col-md-4">
+					<div class="box-clean">
+						<a href="https://wordpress.org/plugins/lsx-team/" target="_blank"><?php esc_html_e( 'LSX Team', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'The LSX Team Extension provides a custom post type that allows you to easily show off the people that make up your business.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-testimonials/" target="_blank"><?php esc_html_e( 'Testimonials', 'lsx' ); ?></a>
+						<a href="https://wordpress.org/plugins/lsx-testimonials/" target="_blank"><?php esc_html_e( 'LSX Testimonials', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'The LSX Testimonials extension adds the "Testimonials" post type, which you can display front-and-centre on your site.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-geo-content/" target="_blank"><?php esc_html_e( 'Geo Content', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'LSX Geo Content allows you to serve different content to users based on their automatically-detected IP address.', 'lsx' ); ?></p>
+						<a href="https://wordpress.org/plugins/lsx-videos/" target="_blank"><?php esc_html_e( 'LSX Videos', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'Adds the "Videos" post type to your LSX website which allows you to display and categorize videos.', 'lsx' ); ?></p>
 					</div>
 				</div>
+
 			</div>
 
 			<div class="row">
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-videos/" target="_blank"><?php esc_html_e( 'Videos', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'Adds the "Videos" post type to your LSX website which allows you to display and categorize videos.', 'lsx' ); ?></p>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-projects/" target="_blank"><?php esc_html_e( 'Projects', 'lsx' ); ?></a>
+						<a href="https://wordpress.org/plugins/lsx-projects/" target="_blank"><?php esc_html_e( 'LSX Projects', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'Show off your finest work with the LSX Projects Extension! It adds a "Project" post type, allowing you to categorize and display your Projects on your LSX website.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-sharing/" target="_blank"><?php esc_html_e( 'Sharing', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'LSX Sharing adds buttons to your posts that your readers can use to share your content on Facebook, Twitter and Pinterest.', 'lsx' ); ?></p>
+						<a href="https://lsx.lsdev.biz/" target="_blank"><?php esc_html_e( 'More coming soon…', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'We need to find some way of linking to social media if we are going to invite people to follow us.', 'lsx' ); ?></p>
 					</div>
 				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="box enhance">
+			<h2><?php esc_html_e( 'API Integration Extensions', 'lsx' ); ?></h2>
+			<p><?php esc_html_e( 'LightSpeed has integrated plugins with reputable software partners.', 'lsx' ); ?></p>
+
+			<div class="row">
+
+				<div class="col-md-4">
+					<div class="box-clean">
+						<a href="https://wordpress.org/plugins/lsx-give-payfast-gateway/" target="_blank"><?php esc_html_e( 'LSX Give Payfast Gateway', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'Use the PayFast payment gateway with the GiveWP plugin for collecting donations.', 'lsx' ); ?></p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="box-clean">
+						<a href="https://wordpress.org/plugins/lsx-importer-for-wetu/" target="_blank"><?php esc_html_e( 'LSX Wetu Importer', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'Integrate your LSX Tour Operator website with Wetu, to easily import accommodations, destinations and tours from you Wetu account.', 'lsx' ); ?></p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="box-clean">
+						<a href="https://wordpress.org/plugins/lsx-zoho-crm-addon-for-caldera-forms/" target="_blank"><?php esc_html_e( 'LSX Caldera Forms Zoho Integration', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'Maintaining your customer relationship management system is easy when you integrate with your website contact forms..', 'lsx' ); ?></p>
+					</div>
+				</div>
+
 			</div>
 
 		</div>

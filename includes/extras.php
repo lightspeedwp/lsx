@@ -668,7 +668,7 @@ function lsx_cover_template_custom_enqueue() {
 
 }
 add_action( 'wp_enqueue_scripts', 'lsx_cover_template_custom_enqueue' );
- 
+
 /**
  * Determines if the request is an REST API request.
  *

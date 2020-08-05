@@ -12,11 +12,13 @@
 - Added support for the How to and Faq yoast blocks.
 - Added the `lsx-subheading` class for group blocks.
 - Reducing the left and right Padding on LSX Buttons from 40px to 15px.
+- Adding styles to make LSX compatible with Yoast SEO's internal linking blocks.
 - Adding the page template "Cover Template" and admin options for it.
 
 ### Updated
 
 - Updated a few functions to meet WordPress standards based on Theme Checkers results.
+- Updated the Welcome screen.
 
 ### Changed
 
@@ -32,6 +34,7 @@
 - Improvements on the image block.
 - Fixed the search bar spacing issues.
 - Fixed the margin issue when some titles are too long.
+- Fixed minor issues on Sensei single lesson images and messages.
 
 # [[2.8.0]] - 2020-05-21
 
