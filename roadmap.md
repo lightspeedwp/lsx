@@ -25,6 +25,6 @@ The projects outlined above indicate areas of interest but not necessarily devel
 
 - 2020 Q1: Version 2.7 of LSX released
 - 2020 Q2: Version 2.8 of LSX released
-- 2020 Q3: To be defined.
+- 2020 Q3: Version 2.9 of LSX released
 - 2020 Q4: To be defined.
 
