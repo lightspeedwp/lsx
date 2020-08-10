@@ -2008,3 +2008,30 @@ body:not(.logged-in) {
 		}
 	}
 }
+
+//Gutenberg
+.sensei {
+	&.gutenberg-compatible-template.using-gutenberg {
+		.entry-content {
+			#sensei-user-courses,
+			.course-container,
+			.message-container {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 1140px;
+				width: 100%;
+				@include media(">=tablet") {
+					padding: 0 2rem;
+				}
+				@include media(">desktop-wide") {
+					padding: 0;
+				}
+			}
+			#sensei-user-courses {
+				.course-container {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
