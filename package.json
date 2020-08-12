@@ -48,6 +48,12 @@
     "sass-lint": "^1.13.1",
     "shelljs": "^0.8.4",
     "tough-cookie": "^4.0.0",
-    "webpack": "^4.44.1"
-  }
+    "webpack": "^4.44.1",
+    "snyk": "^1.373.1"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
