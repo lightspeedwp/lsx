@@ -1,28 +1,33 @@
 .breadcrumbs-container {
 	font-size: 13px;
 	line-height: 20px;
-	opacity: .86;
-    margin-bottom: -50px;
+	opacity: 0.86;
+	margin-bottom: -50px;
 	padding: {
 		bottom: 15px;
 		top: 15px;
 	}
 	position: absolute;
 	left: 0;
-    right: 0;
+	right: 0;
 	width: 100%;
-	z-index: 100000;
+	z-index: 10;
 
-	a, span {
+	a,
+	span {
 		display: inline-block;
 	}
 
 	&.breadcrumbs-woocommerce {
-		.fa { margin: 0 5px; }
+		.fa {
+			margin: 0 5px;
+		}
 	}
 
 	&.breadcrumbs-yoast {
-		.fa { margin: 0 2px; }
+		.fa {
+			margin: 0 2px;
+		}
 	}
 
 	.archive-header-wrapper & {
@@ -35,7 +40,7 @@
 
 	&,
 	.archive-header-wrapper & {
-		@include media('>=phone') {
+		@include media(">=phone") {
 			margin: {
 				left: -9999px;
 				right: -9999px;
@@ -49,7 +54,7 @@
 	}
 }
 
- /** IE 11 Fix for Breadcrumbs **/
+/** IE 11 Fix for Breadcrumbs **/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	.breadcrumbs-container.breadcrumbs-yoast {
 		margin-top: 0;
