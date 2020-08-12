@@ -15,11 +15,13 @@
 - Adding styles to make LSX compatible with Yoast SEO's internal linking blocks.
 - Adding the page template "Cover Template" and admin options for it.
 - Adding support for New Block Tools on WordPress 5.5.
+- Added support for native Lazy-loading images on WordPress 5.5 version.
 
 ### Updated
 
 - Updated a few functions to meet WordPress standards based on Theme Checkers results.
 - Updated the Welcome screen.
+- Updated style to support sensei shortcodes on block pages.
 
 ### Changed
 
@@ -36,6 +38,12 @@
 - Fixed the search bar spacing issues.
 - Fixed the margin issue when some titles are too long.
 - Fixed minor issues on Sensei single lesson images and messages.
+
+### Removed
+
+- Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
+- Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
+- Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
 
 # [[2.8.0]] - 2020-05-21
 
