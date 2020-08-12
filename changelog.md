@@ -19,6 +19,7 @@
 
 - Updated a few functions to meet WordPress standards based on Theme Checkers results.
 - Updated the Welcome screen.
+- Updated style to support sensei shortcodes on block pages.
 
 ### Changed
 
