@@ -36,6 +36,12 @@
 - Fixed the margin issue when some titles are too long.
 - Fixed minor issues on Sensei single lesson images and messages.
 
+### Removed
+
+- Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
+- Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
+- Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
+
 # [[2.8.0]] - 2020-05-21
 
 ### Added
