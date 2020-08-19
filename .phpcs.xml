@@ -19,6 +19,9 @@
 
 		<!-- We will not fix these (WordPress VIP) -->
 		<exclude name="WordPress.VIP" />
+		
+		<!-- Fix on next LSX release (not override global WordPress variables) -->	
+		<exclude name="WordPress.Variables.GlobalVariables.OverrideProhibited" />
 
 		<!-- Fix on next LSX release (PHP Comments) -->
 		<exclude name="Generic.Commenting" />
