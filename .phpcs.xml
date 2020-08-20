@@ -1,33 +1,45 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress-LSX-Theme">
-	
+<ruleset name="WordPress-LSX">
+	<!-- Check all PHP files in directory tree by default. -->
+	<arg name="extensions" value="php"/>
 	<file>.</file>
 
-	<!-- Exclude paths -->
-	<exclude-pattern>*/vendor/*</exclude-pattern>
-	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern>*/tests/*</exclude-pattern>
+	<!-- Exclude directories. -->
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>*.min.js</exclude-pattern>
+	<exclude-pattern>tests/*</exclude-pattern>
+	<exclude-pattern>*/woocommerce/*</exclude-pattern>
+	<exclude-pattern>*/tribe-events/*</exclude-pattern>
 		
-	<!-- Configs -->
 	<config name="minimum_supported_wp_version" value="5.2" />
 	<config name="testVersion" value="7.0-" />
 	
+	<rule ref="Generic.PHP.Syntax"/>
+
 	<rule ref="WordPress">
-		<!-- We will not fix these -->
+		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing" />
+		<exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-
-		<!-- We will not fix these (WordPress VIP) -->
-		<exclude name="WordPress.VIP" />
-		
-		<!-- Fix on next LSX release (not override global WordPress variables) -->	
 		<exclude name="WordPress.Variables.GlobalVariables.OverrideProhibited" />
-
-		<!-- Fix on next LSX release (PHP Comments) -->
+		<exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
+		<exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
+		<exclude name="WordPress.Security.ValidatedSanitizedInput.InputNotSanitized" />
+		<exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
+		<exclude name="WordPress.DB.PreparedSQLPlaceholders.QuotedSimplePlaceholder" />
+		<exclude name="WordPress.Classes.ClassInstantiation.MissingParenthesis" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="Generic.Commenting" />
+		<exclude name="PEAR.NamingConventions.ValidClassName.Invalid" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
 		<exclude name="Squiz.Commenting" />
-
-		<!-- Fix on next release -->
-		<exclude name="WordPress.Functions.DontExtract.extract_extract" />
+		<exclude name="Squiz.Scope.MethodScope.Missing" />
+		<exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
+		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
+		<exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
+		<exclude name="WordPress.Functions.DontExtract.extract_extract" />	
 	</rule>
 </ruleset>
