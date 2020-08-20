@@ -25,12 +25,20 @@ filter:
     excluded_paths: [tests/*, bin/*, assets/*, languages/*, includes/classes/legacy/*]
 build:
   nodes:
+    my-tests:
+      environment:
+        php:
+          version: 7.4
+      services:
+        mariadb: 10
     analysis:
       project_setup:
         override: true
       tests:
         override:
           - php-scrutinizer-run --enable-security-analysis
+          - js-scrutinizer-run
+          - command: phpcs-run --standard=./.phpcs.xml --extensions=php
       dependencies:
         before:
           - composer require --dev johnpbloch/wordpress
