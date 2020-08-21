@@ -1,5 +1,4 @@
-@include media('<tablet') {
-
+@include media("<tablet") {
 	.lsx:not(.single-post):not(.page-has-banner) {
 		.wrap {
 			.archive-header-wrapper {
@@ -26,7 +25,6 @@
 		& > .wrap.container {
 			padding-left: 15px;
 			padding-right: 15px;
-
 		}
 	}
 
@@ -51,18 +49,18 @@
 			}
 		}
 		.wrap.container {
-			padding-left:0px;
-			padding-right:0px;
+			padding-left: 0px;
+			padding-right: 0px;
 
 			.content.role.row {
-				margin-left:0;
-				margin-right:0;
+				margin-left: 0;
+				margin-right: 0;
 				padding-left: 15px;
 				padding-right: 15px;
 				padding-bottom: $lsx-gap;
 
 				#primary {
-					padding:0;
+					padding: 0;
 				}
 			}
 		}
