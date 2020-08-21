@@ -22,7 +22,7 @@ checks:
 filter:
     dependency_paths:
         - wordpress/
-    excluded_paths: [tests/*, bin/*, assets/*, languages/*, includes/classes/legacy/*]
+    excluded_paths: [tests/*, bin/*, assets/*, languages/*, includes/classes/legacy/*, vendor/*]
 build:
   nodes:
     my-tests:

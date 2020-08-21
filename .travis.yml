@@ -96,3 +96,7 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/phpcs/bin/phpcs --colors -p -s -v -n --standard=./.phpcs.xml
+  - vendor/bin/phpunit --coverage-clover coverage.xml
+ 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
