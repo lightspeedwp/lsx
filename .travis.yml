@@ -71,10 +71,11 @@ before_script:
   - git clone https://github.com/squizlabs/PHP_CodeSniffer.git phpcs
   # Install WordPress Coding Standards.
   - git clone -b master https://github.com/WordPress/WordPress-Coding-Standards.git wpcs
+  
   # Hop into CodeSniffer directory.
   - cd phpcs
-  # Set install path for WordPress Coding Standards.
-  - ./bin/phpcs --config-set installed_paths ../wpcs
+  # Set install paths for Coding Standards.
+  - ./bin/phpcs --config-set installed_paths "/tmp/wordpress/wpcs"
   # Hop into themes directory.
   - cd $theme_dir
   # After CodeSniffer install you should refresh your path.

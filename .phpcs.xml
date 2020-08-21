@@ -1,45 +1,57 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress-LSX">
+<ruleset name="WordPress-LSX"
+         namespace="WordPressCS\WordPress"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+    <description>Coding standards</description>
 	<!-- Check all PHP files in directory tree by default. -->
-	<arg name="extensions" value="php"/>
 	<file>.</file>
 
 	<!-- Exclude directories. -->
-	<exclude-pattern>/vendor/*</exclude-pattern>
-	<exclude-pattern>/node_modules/*</exclude-pattern>
-	<exclude-pattern>*.min.js</exclude-pattern>
-	<exclude-pattern>tests/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
 	<exclude-pattern>*/woocommerce/*</exclude-pattern>
 	<exclude-pattern>*/tribe-events/*</exclude-pattern>
+	<exclude-pattern>*/.github/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+    <exclude-pattern>gulpfile\.js</exclude-pattern>
+	
+	<!-- Check up to 8 files simultaneously. -->
+	<arg name="parallel" value="8" />
 		
 	<config name="minimum_supported_wp_version" value="5.2" />
 	<config name="testVersion" value="7.0-" />
-	
-	<rule ref="Generic.PHP.Syntax"/>
 
 	<rule ref="WordPress">
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing" />
-		<exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
-		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
-		<exclude name="WordPress.Variables.GlobalVariables.OverrideProhibited" />
-		<exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
-		<exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
-		<exclude name="WordPress.Security.ValidatedSanitizedInput.InputNotSanitized" />
-		<exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
-		<exclude name="WordPress.DB.PreparedSQLPlaceholders.QuotedSimplePlaceholder" />
-		<exclude name="WordPress.Classes.ClassInstantiation.MissingParenthesis" />
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-		<exclude name="Generic.Commenting" />
-		<exclude name="PEAR.NamingConventions.ValidClassName.Invalid" />
-		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
-		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
-		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
+		<!-- @TODO remove this exclusion: -->
 		<exclude name="Squiz.Commenting" />
+		<exclude name="Generic.Commenting" />
+		<exclude name="Generic.WhiteSpace" />
+		<exclude name="Squiz.WhiteSpace" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
-		<exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
-		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
-		<exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
-		<exclude name="WordPress.Functions.DontExtract.extract_extract" />	
+		
+		<!-- Not interested in whitespace issues at the moment -->
+		<exclude name="PEAR.Functions.FunctionCallSignature" />
+		<exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
+		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
 	</rule>
+
+		<!-- Not interested in whitespace issues in JS and CSS files at the moment -->
+	<rule ref="Squiz.WhiteSpace">
+		<exclude-pattern>*\.css</exclude-pattern>
+		<exclude-pattern>*\.js</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.WhiteSpace">
+		<exclude-pattern>*\.css</exclude-pattern>
+		<exclude-pattern>*\.js</exclude-pattern>
+	</rule>	
+	
+    <rule ref="Generic.PHP.Syntax"/>
+	
+    <rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+		<property name="minimum_supported_version" value="5.2" />
+	    </properties>
+    </rule>
 </ruleset>
