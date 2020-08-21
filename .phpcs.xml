@@ -15,7 +15,8 @@
 	<exclude-pattern>*/tribe-events/*</exclude-pattern>
 	<exclude-pattern>*/.github/*</exclude-pattern>
 	<exclude-pattern>*/build/*</exclude-pattern>
-    <exclude-pattern>gulpfile\.js</exclude-pattern>
+	<exclude-pattern>gulpfile\.js</exclude-pattern>
+	<exclude-pattern>*/wp-content/*</exclude-pattern>
 	
 	<!-- Check up to 8 files simultaneously. -->
 	<arg name="parallel" value="8" />
