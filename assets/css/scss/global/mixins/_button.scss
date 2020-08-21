@@ -204,8 +204,15 @@
 					.checkout-button {
 						background-color: nth($orange, 1);
 						box-shadow: 2px 2px 0 0 nth($orange, 2);
+						width: 100%;
+						font-size: 18px;
 						&:hover {
 							background-color: nth($orange, 2);
+						}
+						&:after {
+							content: "\f178";
+							font: normal normal normal 18px/1 FontAwesome;
+							margin-left: 1rem;
 						}
 					}
 				}
