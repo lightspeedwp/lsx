@@ -1,8 +1,9 @@
 <?php
 /**
- * No Sidebar Template.
+ * Cover Template.
  *
- * Template Name: No Sidebar
+ * Template Name: Cover Template
+ * Template Post Type: post, page
  *
  * @package    lsx
  * @subpackage template
@@ -10,7 +11,7 @@
 
 get_header(); ?>
 
-<?php lsx_content_wrap_before(); ?>
+<?php //lsx_content_wrap_before(); ?>
 
 <div id="primary" class="content-area col-sm-12">
 
@@ -27,7 +28,7 @@ get_header(); ?>
 				the_post();
 				?>
 
-				<?php get_template_part( 'partials/content', 'page' ); ?>
+				<?php get_template_part( 'partials/content', 'page-cover' ); ?>
 
 			<?php endwhile; ?>
 

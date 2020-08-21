@@ -1,17 +1,29 @@
-# Set default behaviour, in case users don't have core.autocrlf set.
+# Set the default behavior, in case people don't have core.autocrlf set.
 * text=auto
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.c text
+*.h text
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
 
 # Files to exclude when creating archive.
-.wordpress-org export-ignore
-.github export-ignore
-.editor* export-ignore
-.eslint* export-ignore
-.git* export-ignore
-.mergify.yml export-ignore
-.scrutinizer.yml export-ignore
-.travis.yml export-ignore
-*.md export-ignore
-*.json export-ignore
-*sublime-project export-ignore
+/.* export-ignore
+bin export-ignore
+CODE_OF_CONDUCT.md export-ignore
+CHANGELOG.txt export-ignore
 codesniffer.ruleset.xml export-ignore
+composer.* export-ignore
 gulpfile.js export-ignore
+Gruntfile.js export-ignore
+package.json export-ignore
+package-lock.json export-ignore
+phpcs.xml export-ignore
+phpunit.* export-ignore
+README.md export-ignore
+tests export-ignore
+renovate.json export-ignore
+sublime-project export-ignore

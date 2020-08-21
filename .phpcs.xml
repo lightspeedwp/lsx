@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress-LSX"
+         namespace="WordPressCS\WordPress"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+    <description>Coding standards</description>
+	<!-- Check all PHP files in directory tree by default. -->
+	<file>.</file>
+
+	<!-- Exclude directories. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+	<exclude-pattern>*/woocommerce/*</exclude-pattern>
+	<exclude-pattern>*/tribe-events/*</exclude-pattern>
+	<exclude-pattern>*/.github/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>gulpfile\.js</exclude-pattern>
+	<exclude-pattern>*/wp-content/*</exclude-pattern>
+	
+	<!-- Check up to 8 files simultaneously. -->
+	<arg name="parallel" value="8" />
+		
+	<config name="minimum_supported_wp_version" value="5.2" />
+	<config name="testVersion" value="7.0-" />
+
+	<rule ref="WordPress">
+		<!-- @TODO remove this exclusion: -->
+		<exclude name="Squiz.Commenting" />
+		<exclude name="Generic.Commenting" />
+		<exclude name="Generic.WhiteSpace" />
+		<exclude name="Squiz.WhiteSpace" />
+		<exclude name="Squiz.Scope.MethodScope.Missing" />
+		
+		<!-- Not interested in whitespace issues at the moment -->
+		<exclude name="PEAR.Functions.FunctionCallSignature" />
+		<exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
+		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
+	</rule>
+
+		<!-- Not interested in whitespace issues in JS and CSS files at the moment -->
+	<rule ref="Squiz.WhiteSpace">
+		<exclude-pattern>*\.css</exclude-pattern>
+		<exclude-pattern>*\.js</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.WhiteSpace">
+		<exclude-pattern>*\.css</exclude-pattern>
+		<exclude-pattern>*\.js</exclude-pattern>
+	</rule>	
+	
+    <rule ref="Generic.PHP.Syntax"/>
+	
+    <rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+		<property name="minimum_supported_version" value="5.2" />
+	    </properties>
+    </rule>
+</ruleset>

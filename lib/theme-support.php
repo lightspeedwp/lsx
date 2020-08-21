@@ -11,6 +11,9 @@ function editor_styles() {
 	add_editor_style(
 		'/assets/css/admin/gutenberg-admin.css'
 	);
+	add_editor_style(
+		'/assets/css/yoast/yoast.css'
+	);
 
 }
 add_action( 'admin_init', 'editor_styles' );
@@ -36,6 +39,10 @@ if ( ! function_exists( 'theme_support' ) ) :
 		add_theme_support( 'wp-block-styles' );
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+		// Add support for Custom Line Heights.
+		add_theme_support( 'custom-line-height' );
+		// Add support for Custom Units.
+		add_theme_support( 'custom-units' );
 		// Add custom editor font sizes.
 		add_theme_support(
 			'editor-font-sizes',

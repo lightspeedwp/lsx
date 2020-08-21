@@ -1,4 +1,4 @@
-@mixin lsx-link-colour ($color: nth($orange, 1), $hover: nth($orange, 2)) {
+@mixin lsx-link-colour($color: nth($orange, 1), $hover: nth($orange, 2)) {
 	&,
 	&:active,
 	&:visited {
@@ -12,7 +12,13 @@
 	}
 }
 
-@mixin lsx-button-colour ($color: #FFF, $color-hover: #FFF, $bg: nth($blue, 1), $bg-hover: nth($blue, 3), $shadow: darken(nth($blue, 1), 15%)) {
+@mixin lsx-button-colour(
+	$color: #fff,
+	$color-hover: #fff,
+	$bg: nth($blue, 1),
+	$bg-hover: nth($blue, 3),
+	$shadow: darken(nth($blue, 1), 15%)
+) {
 	&,
 	&:active,
 	&:visited {

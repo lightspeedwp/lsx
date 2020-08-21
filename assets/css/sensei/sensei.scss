@@ -1,14 +1,14 @@
-@import '../scss/global/variables';
-@import '../scss/global/mixins';
-@import '../scss/global/placeholders';
-@import '../vendor/bootstrap/alerts';
-@import '../scss/layout/pagination';
+@import "../scss/global/variables";
+@import "../scss/global/mixins";
+@import "../scss/global/placeholders";
+@import "../vendor/bootstrap/alerts";
+@import "../scss/layout/pagination";
 
 // Placeholders and Mixins
 
 %button {
-	background-color: nth( $blue, 1 );
-	box-shadow: 2px 2px 0 0  nth( $blue, 3 );
+	background-color: nth($blue, 1);
+	box-shadow: 2px 2px 0 0 nth($blue, 3);
 	color: #fff;
 	border: 0 none;
 	border-radius: 3px;
@@ -20,7 +20,7 @@
 	text-align: center;
 }
 %button-hover {
-	background-color: nth( $blue, 3 );
+	background-color: nth($blue, 3);
 }
 
 %bootstrap-form-control {
@@ -43,7 +43,7 @@
 	transition: all 150ms ease;
 
 	&:focus {
-		border-color: nth( $blue, 1 );
+		border-color: nth($blue, 1);
 		// outline: 0;
 		// box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6);
 	}
@@ -61,7 +61,7 @@
 
 %sensei-clearfix {
 	clear: both;
-	content: '';
+	content: "";
 	display: table;
 }
 
@@ -97,11 +97,11 @@
 										width: 100%;
 										min-width: 100%;
 										margin-top: 10px;
-										@include media('<tablet') {
+										@include media("<tablet") {
 											form {
-											margin-left: 0;
-											margin-top: $lsx-gap;
-											display: block;
+												margin-left: 0;
+												margin-top: $lsx-gap;
+												display: block;
 											}
 										}
 									}
@@ -145,7 +145,7 @@
 			}
 			.my-courses-btn {
 				margin-bottom: $lsx-gap;
-				@include media('<tablet') {
+				@include media("<tablet") {
 					width: 100%;
 				}
 			}
@@ -161,7 +161,7 @@
 							flex-direction: column;
 							h2 {
 								font-size: 22px;
-								color: nth( $blue, 1 );
+								color: nth($blue, 1);
 								font-family: $font-family-sans-serif;
 							}
 							h2,
@@ -173,10 +173,10 @@
 							}
 							.btn.view-msg-btn {
 								align-self: flex-end;
-								@include media('>tablet') {
+								@include media(">tablet") {
 									margin-top: -5.4rem;
 								}
-								@include media('<tablet') {
+								@include media("<tablet") {
 									width: 100%;
 								}
 							}
@@ -227,12 +227,12 @@
 									padding: 0;
 									a {
 										font-size: 22px;
-										color: nth( $blue, 1 );
+										color: nth($blue, 1);
 										font-family: $font-family-sans-serif;
 									}
 								}
 								h1,
-								.entry-meta{
+								.entry-meta {
 									padding: 0;
 									margin: 0;
 									.post-meta {
@@ -279,23 +279,31 @@ article.page {
 }
 
 .site-main {
-	.archive:not(.has-sidebar).sensei & { width: 100%; }
+	.archive:not(.has-sidebar).sensei & {
+		width: 100%;
+	}
 }
 
 .sensei {
 	.fix {
-		&:after { @extend %sensei-clearfix; }
+		&:after {
+			@extend %sensei-clearfix;
+		}
 	}
 
-	article.post + article.post { margin-top: 4.25rem; }
+	article.post + article.post {
+		margin-top: 4.25rem;
+	}
 
-	.post-entries { margin-top: $lsx-gap; }
+	.post-entries {
+		margin-top: $lsx-gap;
+	}
 
 	.thumbnail {
 		border: 0;
 		border-radius: 0;
 		padding: 0;
-		@include media('<tablet') {
+		@include media("<tablet") {
 			margin-right: 0;
 			width: 100%;
 		}
@@ -304,13 +312,19 @@ article.page {
 
 .lesson-content {
 	.entry {
-		&:after { @extend %sensei-clearfix; }
+		&:after {
+			@extend %sensei-clearfix;
+		}
 	}
 }
 
 .sensei-share-your-grade {
-	&.message { margin-top: 4.25rem; }
-	&.buttons { padding-left: 0; }
+	&.message {
+		margin-top: 4.25rem;
+	}
+	&.buttons {
+		padding-left: 0;
+	}
 	li {
 		height: 20px;
 		&:last-child {
@@ -356,13 +370,13 @@ article.page {
 				box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 				.entry {
 					display: flex;
-					@include media('<tablet') {
+					@include media("<tablet") {
 						flex-direction: column;
 					}
 					.course-thumbnail {
 						//width: 100%;
 						&:not(.course-thumbnail-empty) {
-							@include media('>tablet') {
+							@include media(">tablet") {
 								flex: 1.5 1 0;
 								a {
 									margin-right: $lsx-gap;
@@ -373,7 +387,7 @@ article.page {
 								}
 							}
 							+ .course-body {
-								@include media('>tablet') {
+								@include media(">tablet") {
 									flex: 2.5 1 0;
 								}
 							}
@@ -384,7 +398,7 @@ article.page {
 						//width: 100%;
 						display: flex;
 						flex-direction: column;
-						@include media('>desktop') {
+						@include media(">desktop") {
 							padding-right: 10px;
 						}
 						&.currently-in-course {
@@ -419,7 +433,7 @@ article.page {
 								font-style: normal;
 								font-weight: 600;
 								&:before {
-									content: '|';
+									content: "|";
 									margin: 0 5px;
 									color: $small;
 								}
@@ -450,7 +464,7 @@ article.page {
 							order: 3;
 						}
 						.course-price {
-							color: #77A464;
+							color: #77a464;
 							font-size: 22px;
 							display: block;
 							font-style: initial;
@@ -463,7 +477,7 @@ article.page {
 								display: none;
 							}
 							.course-product-price {
-								color: #77A464;
+								color: #77a464;
 								font-size: 22px;
 								display: block;
 								font-style: initial;
@@ -488,12 +502,12 @@ article.page {
 								order: 1;
 								a {
 									border-radius: 3px;
-									border: 2px solid nth( $green, 1);
-									color: nth( $green, 1);
+									border: 2px solid nth($green, 1);
+									color: nth($green, 1);
 									padding: 3px 5px;
 									margin-right: 5px;
 									&:hover {
-										background: nth( $green, 1);
+										background: nth($green, 1);
 										color: white;
 									}
 								}
@@ -546,14 +560,14 @@ article.page {
 	.course {
 		.status {
 			&.in-progress {
-				background: #B7B6B6;
+				background: #b7b6b6;
 			}
 		}
 		.sensei-course-participants {
 			margin-bottom: 0;
 		}
 		> header + .sensei-course-participants {
-			@include media('>desktop') {
+			@include media(">desktop") {
 				margin-top: 4rem;
 			}
 		}
@@ -565,14 +579,15 @@ article.page {
 			border: 1px solid $table-border-color;
 			background: white;
 			margin-bottom: 0;
-			&.orange, &.red {
-				>span {
-					background: #ED3833;
+			&.orange,
+			&.red {
+				> span {
+					background: #ed3833;
 				}
 			}
 			&.green {
-				>span {
-					background: #6BA913;
+				> span {
+					background: #6ba913;
 				}
 			}
 			+ a {
@@ -603,13 +618,13 @@ article.page {
 					}
 				}
 				//@include media('<tablet') {
-					display: flex;
-					flex-direction: column;
+				display: flex;
+				flex-direction: column;
 				//}
 				.module {
 					margin-bottom: 0;
 					header {
-						@include media('<tablet') {
+						@include media("<tablet") {
 							flex-direction: column;
 							align-items: end;
 							h2 {
@@ -621,12 +636,12 @@ article.page {
 						}
 					}
 				}
-				>p:first-child {
-					@include media('>desktop') {
+				> p:first-child {
+					@include media(">desktop") {
 						width: 20%;
 						float: right;
 					}
-					@include media('<tablet') {
+					@include media("<tablet") {
 						.button {
 							width: 100%;
 						}
@@ -642,7 +657,7 @@ article.page {
 					font-size: 30px;
 					font-family: $font-family-serif;
 					order: -1;
-					@include media('<desktop') {
+					@include media("<desktop") {
 						order: -1;
 					}
 				}
@@ -654,25 +669,25 @@ article.page {
 					order: -1;
 				}
 				.course-completion-rate {
-					@include media('>desktop') {
+					@include media(">desktop") {
 						//margin-top: -5.5rem;
 					}
 				}
 				.sensei-course-participants {
 					margin-bottom: 0;
-					@include media('<desktop') {
+					@include media("<desktop") {
 						order: -1;
 					}
 				}
 				.meter {
 					margin-bottom: 16px;
 					margin-top: 16px;
-					@include media('<desktop') {
+					@include media("<desktop") {
 						order: -1;
 					}
 				}
 				.course-product-price {
-					color: #77A464;
+					color: #77a464;
 					font-size: 22px;
 					display: block;
 					font-style: initial;
@@ -682,7 +697,7 @@ article.page {
 				.course-meta {
 					+ p {
 						order: -2;
-						@include media('>desktop') {
+						@include media(">desktop") {
 							align-self: flex-end;
 							margin-bottom: 0;
 							margin-bottom: -4.5rem;
@@ -709,7 +724,7 @@ article.page {
 					margin-top: $lsx-gap;
 					h2 {
 						padding: 15px 20px;
-						color:  nth( $blue, 1 );
+						color: nth($blue, 1);
 						margin: 0;
 					}
 					ul {
@@ -717,7 +732,7 @@ article.page {
 						margin: 0;
 						list-style: none;
 						li {
-							background: #ECE9E9;
+							background: #ece9e9;
 							padding: 10px 20px;
 						}
 					}
@@ -735,7 +750,8 @@ article.page {
 						}
 					}
 				}
-				.module, .entry+header+.course-lessons {
+				.module,
+				.entry + header + .course-lessons {
 					header {
 						background-color: white;
 						h2 {
@@ -743,12 +759,12 @@ article.page {
 						}
 					}
 					.module-description {
-						background: #E7E6E6;
+						background: #e7e6e6;
 						font-style: initial;
 					}
 					.module-lessons {
 						header {
-							background: #F2F2F2;
+							background: #f2f2f2;
 							* {
 								font-family: $font-family-sans-serif;
 							}
@@ -757,7 +773,7 @@ article.page {
 							li {
 								a {
 									border: none;
-									background: #ECE9E9;
+									background: #ece9e9;
 									&:hover {
 										background: white;
 									}
@@ -765,7 +781,7 @@ article.page {
 							}
 						}
 						.preview-label {
-							@include media('<tablet') {
+							@include media("<tablet") {
 								display: none;
 							}
 						}
@@ -789,7 +805,7 @@ article.page {
 									@extend %button-hover;
 								}
 							}
-							@include media('<tablet') {
+							@include media("<tablet") {
 								display: flex;
 								width: 100%;
 								padding-top: $lsx-gap;
@@ -832,7 +848,7 @@ article.page {
 }
 
 .sensei-breadcrumb {
-	background: #EBEAEA;
+	background: #ebeaea;
 }
 
 // Just Course Results
@@ -850,11 +866,11 @@ article.page {
 					}
 					.sensei-certificate-link {
 						color: white;
-						 text-decoration: none;
+						text-decoration: none;
 					}
 					.course-results-lessons {
 						> header {
-							background: #ECE9E9;
+							background: #ece9e9;
 							padding: 10px 20px;
 						}
 						h3 {
@@ -871,18 +887,18 @@ article.page {
 							display: flex;
 							justify-content: space-between;
 							a {
-								color: rgba(0,0,0,.4);
+								color: rgba(0, 0, 0, 0.4);
 								margin-left: 5rem;
 								&:before {
 									display: inline-block;
 									font-size: 150%;
-									margin-right: .618em;
+									margin-right: 0.618em;
 									width: 1em;
 									position: absolute;
 									left: 20px;
-									content: '\f138';
-									color: rgba(0,0,0,.1);
-									font-family: FontAwesomeSensei,FontAwesome;
+									content: "\f138";
+									color: rgba(0, 0, 0, 0.1);
+									font-family: FontAwesomeSensei, FontAwesome;
 									font-weight: 400;
 									line-height: 1em;
 								}
@@ -894,7 +910,8 @@ article.page {
 									}
 								}
 							}
-							a, .lesson-grade {
+							a,
+							.lesson-grade {
 								font-size: 16px;
 								text-decoration: none;
 								font-family: $font-family-sans-serif;
@@ -905,7 +922,7 @@ article.page {
 						}
 						.course {
 							h2 {
-								background: #ECE9E9;
+								background: #ece9e9;
 								padding: 10px 20px;
 								transition: all 300ms ease;
 								&:hover {
@@ -942,6 +959,9 @@ article.page {
 				* {
 					order: 1;
 				}
+				img[src*="placehold.it"] {
+					display: none;
+				}
 				.lesson-title {
 					h1 {
 						font-size: 30px;
@@ -958,7 +978,7 @@ article.page {
 				}
 				.sensei-message {
 					order: -1;
-					@include media('<tablet') {
+					@include media("<tablet") {
 						flex-direction: column;
 						a {
 							width: 100%;
@@ -968,9 +988,14 @@ article.page {
 					}
 					+ p {
 						order: 2;
-						@include media('>desktop') {
+						@include media(">desktop") {
 							align-self: flex-end;
 							margin-bottom: -4rem;
+						}
+					}
+					&.info {
+						> * {
+							order: initial;
 						}
 					}
 				}
@@ -986,20 +1011,20 @@ article.page {
 					width: 50%;
 					display: flex;
 					flex-direction: column;
-					@include media('<tablet') {
+					@include media("<tablet") {
 						flex-direction: column;
 						width: 100%;
 					}
 					.quiz-submit {
 						background: nth($green, 1);
-						box-shadow: 2px 2px 0 0 #446B0C;
+						box-shadow: 2px 2px 0 0 #446b0c;
 						margin-top: 0;
 						border-radius: 3px;
-						@include media('<tablet') {
+						@include media("<tablet") {
 							margin-left: 0;
 						}
 						&:hover {
-							background: #446B0C;
+							background: #446b0c;
 						}
 					}
 					p {
@@ -1040,7 +1065,7 @@ article.page {
 							order: 1;
 						}
 						> p {
-							@include media('>desktop') {
+							@include media(">desktop") {
 								align-self: flex-end;
 								//margin-bottom: -4rem;
 							}
@@ -1064,26 +1089,26 @@ article.page {
 								}
 							}
 							.question_media_display {
-								dl>dt {
+								dl > dt {
 									font-weight: 300;
 								}
 							}
 							li {
 								.answer_message {
 									&.user_wrong {
-										background: #F2DEDE;
+										background: #f2dede;
 										span {
 											font-size: 15px;
 											padding: 10px;
-											color: #A94442;
+											color: #a94442;
 										}
 									}
 									&.user_right {
-										background: #DFF0D8;
+										background: #dff0d8;
 										span {
 											font-size: 15px;
 											padding: 10px;
-											color: #3C763D;
+											color: #3c763d;
 										}
 									}
 								}
@@ -1095,7 +1120,7 @@ article.page {
 						> span {
 							margin-bottom: $lsx-gap;
 							&:nth-of-type(1) {
-								@include media('>desktop') {
+								@include media(">desktop") {
 									margin-top: -6.3rem;
 								}
 							}
@@ -1203,7 +1228,8 @@ article.page {
 			}
 			.entry {
 				.course-body {
-					.course-author, .course-author a {
+					.course-author,
+					.course-author a {
 						color: black;
 						&:hover {
 							color: nth($blue, 1);
@@ -1221,13 +1247,13 @@ article.page {
 .sensei-pagination,
 .woo-pagination {
 	display: flex;
-    justify-content: flex-end;
+	justify-content: flex-end;
 	ul.page-numbers {
 		padding: 0;
 		li {
 			.page-numbers {
-				border-color:  nth( $blue, 1 );
-				color:  nth( $blue, 1 );
+				border-color: nth($blue, 1);
+				color: nth($blue, 1);
 				border-radius: 3px;
 				border-style: solid;
 				border-width: 2px;
@@ -1242,14 +1268,14 @@ article.page {
 				&:hover,
 				&:active:hover,
 				&:focus {
-					background-color:  nth( $blue, 1 );;
+					background-color: nth($blue, 1);
 					color: white;
 				}
 				&.next {
 					font-size: 0;
 					&:after {
 						content: $fa-var-angle-double-right;
-						font-family: 'FontAwesome';
+						font-family: "FontAwesome";
 						font-size: 15px;
 					}
 				}
@@ -1257,7 +1283,7 @@ article.page {
 					font-size: 0;
 					&:after {
 						content: $fa-var-angle-double-left;
-						font-family: 'FontAwesome';
+						font-family: "FontAwesome";
 						font-size: 15px;
 					}
 				}
@@ -1287,12 +1313,13 @@ article.page {
 		font-size: 15px;
 		height: 52px;
 		min-width: 180px;
-		border: 2px solid #DADDDF;
+		border: 2px solid #dadddf;
 	}
 }
 
 .sensei {
-	form, form.contact-teacher {
+	form,
+	form.contact-teacher {
 		.form-row {
 			input.input-text,
 			textarea {
@@ -1304,9 +1331,13 @@ article.page {
 				@include small-button();
 				@include lsx-button-colour();
 			}
-			input.input-text { @extend %small-form-field; }
+			input.input-text {
+				@extend %small-form-field;
+			}
 
-			textarea { height: 80px; }
+			textarea {
+				height: 80px;
+			}
 		}
 	}
 	form.contact-teacher {
@@ -1323,13 +1354,13 @@ article.page {
 	a.comment-reply-link,
 	#commentform #submit,
 	.submit,
-	input[type=submit],
+	input[type="submit"],
 	input.button,
 	button.button {
 		@include lsx-button-scaffolding();
 		@include small-button();
 		@include lsx-button-colour();
-		@include media('<tablet') {
+		@include media("<tablet") {
 			width: 100%;
 			min-width: 100%;
 		}
@@ -1341,7 +1372,7 @@ article.page {
 			@include small-button();
 			text-align: center;
 			line-height: 15px !important;
-			@include media('<tablet') {
+			@include media("<tablet") {
 				width: 100%;
 				min-width: 100%;
 			}
@@ -1351,15 +1382,14 @@ article.page {
 		@include small-button();
 		@include lsx-button-colour();
 		text-align: center;
-		@include media('<tablet') {
+		@include media("<tablet") {
 			width: 100%;
 			min-width: 100%;
 		}
 	}
 }
 
-.sensei
-.course-container,
+.sensei .course-container,
 .course,
 .lesson,
 .quiz,
@@ -1390,7 +1420,7 @@ article.page {
 		//justify-content: space-between;
 		&.tick {
 			justify-content: space-between;
-			@include media('<tablet') {
+			@include media("<tablet") {
 				flex-direction: column;
 				a {
 					width: 100%;
@@ -1415,7 +1445,7 @@ article.page {
 		&.alert {
 			@extend .alert-danger;
 			border-color: #f5c6cb !important;
-			@include media('<tablet') {
+			@include media("<tablet") {
 				display: block;
 			}
 		}
@@ -1423,7 +1453,7 @@ article.page {
 			background-color: #e2e3e5;
 			color: #383d41;
 			border-color: #d6d8db !important;
-			@include media('<tablet') {
+			@include media("<tablet") {
 				display: block;
 			}
 		}
@@ -1431,9 +1461,9 @@ article.page {
 			@extend .alert-success;
 			border-color: #d6e9c6 !important;
 		}
-
 	}
-	#comments, #respond {
+	#comments,
+	#respond {
 		.alert.alert-warning {
 			display: none;
 		}
@@ -1466,7 +1496,7 @@ body:not(.logged-in) {
 					.certificates-submit {
 						width: 100%;
 						max-width: 196px;
-						@include media('<tablet') {
+						@include media("<tablet") {
 							width: 100%;
 						}
 						p {
@@ -1483,7 +1513,7 @@ body:not(.logged-in) {
 						&:hover {
 							background-color: nth($orange, 2);
 						}
-						@include media('<tablet') {
+						@include media("<tablet") {
 							width: 100%;
 							min-width: 100%;
 						}
@@ -1498,14 +1528,14 @@ body:not(.logged-in) {
 					display: flex;
 					margin-bottom: 0;
 					order: -1;
-					@include media('<tablet') {
+					@include media("<tablet") {
 						flex-direction: column;
 					}
 					.learner-avatar {
 						margin-left: auto;
 						margin-right: auto;
 						margin-bottom: 15px;
-						@include media('>tablet') {
+						@include media(">tablet") {
 							width: 20%;
 							margin-right: 30px;
 						}
@@ -1522,13 +1552,13 @@ body:not(.logged-in) {
 						h2 {
 							display: none;
 						}
-						@include media('<tablet') {
+						@include media("<tablet") {
 							width: 100%;
 						}
 					}
 				}
 				.my-messages-link-container {
-					@include media('>tablet') {
+					@include media(">tablet") {
 						align-self: flex-end;
 						margin-bottom: -5.5rem;
 					}
@@ -1541,7 +1571,7 @@ body:not(.logged-in) {
 							margin-right: 5px;
 						}
 					}
-					@include media('<tablet') {
+					@include media("<tablet") {
 						flex-direction: column;
 						li {
 							width: 100%;
@@ -1564,7 +1594,7 @@ body:not(.logged-in) {
 					border: 1px solid $table-border-color;
 					box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
 					padding: $lsx-gap;
-					@include media('>tablet') {
+					@include media(">tablet") {
 						position: relative;
 						> a {
 							padding-right: 28px;
@@ -1591,7 +1621,7 @@ body:not(.logged-in) {
 						border: none;
 						border-radius: 0;
 						padding: 0;
-						@include media('<tablet') {
+						@include media("<tablet") {
 							margin-right: 0;
 							width: 100%;
 						}
@@ -1616,14 +1646,14 @@ body:not(.logged-in) {
 						font-style: normal;
 						font-weight: 600;
 						&:before {
-							content: '|';
+							content: "|";
 							margin: 0 5px;
 							color: $small;
 						}
 					}
 					.sensei-results-links {
 						margin-bottom: 0;
-						@include media('<tablet') {
+						@include media("<tablet") {
 							margin-top: 10px;
 							display: block;
 							.button {
@@ -1647,46 +1677,46 @@ body:not(.logged-in) {
 }
 
 .sensei-course-filters,
-	.learner-profile #my-courses .ui-tabs-nav,
-	#my-courses {
-		margin-bottom: 2em;
-		ul {
-			list-style: none;
-			padding: 0;
-			display: flex;
-			margin: 5rem 0 6rem;
-			@include media('>tablet') {
-				min-height: 50px;
-				align-items: center;
-				margin: $lsx-gap 0;
+.learner-profile #my-courses .ui-tabs-nav,
+#my-courses {
+	margin-bottom: 2em;
+	ul {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		margin: 5rem 0 6rem;
+		@include media(">tablet") {
+			min-height: 50px;
+			align-items: center;
+			margin: $lsx-gap 0;
+		}
+	}
+	li {
+		color: white;
+		a {
+			border: 0;
+			font-size: 18px;
+			padding: 15px 22px;
+			font-weight: 300;
+			background: white;
+			&.active {
+				color: white !important;
 			}
 		}
-		li {
-			color: white;
+		&.ui-state-active,
+		&:hover {
 			a {
-				border: 0;
-				font-size: 18px;
-				padding: 15px 22px;
-				font-weight: 300;
-				background: white;
-				&.active {
-					color: white !important;
-				}
-			}
-			&.ui-state-active, &:hover {
-				a {
-					border-radius: 0;
-					// background-color: #337ab7 !important;
-					// color: white !important;
-				}
+				border-radius: 0;
+				// background-color: #337ab7 !important;
+				// color: white !important;
 			}
 		}
 	}
-
+}
 
 #sensei-user-courses {
 	.my-messages-link-container {
-		@include media('>desktop') {
+		@include media(">desktop") {
 			width: 20%;
 			float: right;
 			display: flex;
@@ -1698,20 +1728,20 @@ body:not(.logged-in) {
 			border-radius: 0;
 			padding: 13px 23px;
 			text-transform: uppercase;
-			color: nth($blue, 1 );
+			color: nth($blue, 1);
 			&:before {
 				@include fa-icon();
-				content: '\f075';
+				content: "\f075";
 			}
 			&:hover {
 				color: white;
-				background: nth($blue, 1 );
-				border-color: nth($blue, 1 );
+				background: nth($blue, 1);
+				border-color: nth($blue, 1);
 			}
 		}
 	}
 	#user-course-status-toggle {
-		@include media('>tablet') {
+		@include media(">tablet") {
 			width: 80%;
 		}
 	}
@@ -1734,7 +1764,9 @@ body:not(.logged-in) {
 		font-weight: normal;
 		padding: 12px 22px;
 
-		&.active { border-bottom: none; }
+		&.active {
+			border-bottom: none;
+		}
 	}
 }
 
@@ -1744,7 +1776,9 @@ body:not(.logged-in) {
 	& > form {
 		display: inline;
 		margin-left: 1em;
-		&:first-child { margin-left: 0; }
+		&:first-child {
+			margin-left: 0;
+		}
 	}
 }
 
@@ -1754,14 +1788,18 @@ body:not(.logged-in) {
 
 	.entry-actions & {
 		margin-bottom: 0;
-		a.view-results { float: none; }
+		a.view-results {
+			float: none;
+		}
 	}
 }
 
 // Share
 
 .fb_iframe_widget {
-	span { vertical-align: top !important; }
+	span {
+		vertical-align: top !important;
+	}
 }
 
 // Login screen test
@@ -1777,7 +1815,8 @@ body:not(.logged-in) {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	form#loginform, form.register {
+	form#loginform,
+	form.register {
 		input[type="text"],
 		input[type="password"],
 		input[type="email"] {
@@ -1792,9 +1831,20 @@ body:not(.logged-in) {
 			background-image: none;
 			border: 2px solid $input-border;
 			border-radius: $input-border-radius;
-			@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-			@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-			@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+			@include input-size(
+				".input-lg",
+				$input-height-large,
+				$padding-large-vertical,
+				$padding-large-horizontal,
+				$font-size-large,
+				$line-height-large,
+				$input-border-radius-large
+			);
+			@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+			@include transition(
+				border-color ease-in-out 0.15s,
+				box-shadow ease-in-out 0.15s
+			);
 			@include form-control-focus;
 			@include placeholder;
 		}
@@ -1804,10 +1854,14 @@ body:not(.logged-in) {
 			@include small-button();
 			@include lsx-button-colour();
 
-			& + a { margin-left: 15px; }
+			& + a {
+				margin-left: 15px;
+			}
 		}
 
-		input[type="checkbox"] { margin-right: 10px; }
+		input[type="checkbox"] {
+			margin-right: 10px;
+		}
 	}
 }
 
@@ -1818,19 +1872,19 @@ body:not(.logged-in) {
 		#primary {
 			#main {
 				max-width: 1200px;
-				@include media('<tablet') {
+				@include media("<tablet") {
 					display: flex;
 					flex-direction: column;
 				}
 				article.quiz {
-					@include media('>=tablet') {
+					@include media(">=tablet") {
 						display: flex;
 						flex-direction: column;
 					}
 				}
 				.widget-area.lsx-sensei-sidebar {
 					order: 1;
-					@include media('>=tablet') {
+					@include media(">=tablet") {
 						margin-top: 0;
 						width: 25%;
 						float: right;
@@ -1884,7 +1938,7 @@ body:not(.logged-in) {
 								&:not(.clicked) {
 									font-size: 0;
 									&::before {
-										content: 'View All';
+										content: "View All";
 										font-size: 15px;
 									}
 								}
@@ -1903,7 +1957,8 @@ body:not(.logged-in) {
 						background: $table-bg-accent;
 						padding: 15px;
 						border-bottom: none;
-						h2, h3 {
+						h2,
+						h3 {
 							margin: 0;
 							text-align: left;
 						}
@@ -1916,11 +1971,13 @@ body:not(.logged-in) {
 						height: 55px;
 						margin-bottom: 0;
 						border-bottom: 0;
-						.prev, .next {
+						.prev,
+						.next {
 							border-bottom: 0;
 							a {
-								color: nth( $blue, 1);
-								&:before, &:after {
+								color: nth($blue, 1);
+								&:before,
+								&:after {
 									font-weight: 200;
 								}
 							}
@@ -1940,11 +1997,39 @@ body:not(.logged-in) {
 							&.completed {
 								background: $input-border;
 							}
-							&.not-completed, &.current {
+							&.not-completed,
+							&.current {
 								background: white;
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+//Gutenberg
+.sensei {
+	&.gutenberg-compatible-template.using-gutenberg {
+		.entry-content {
+			#sensei-user-courses,
+			.course-container,
+			.message-container {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 1140px;
+				width: 100%;
+				@include media(">=tablet") {
+					padding: 0 2rem;
+				}
+				@include media(">desktop-wide") {
+					padding: 0;
+				}
+			}
+			#sensei-user-courses {
+				.course-container {
+					padding: 0;
 				}
 			}
 		}
