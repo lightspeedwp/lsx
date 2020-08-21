@@ -15,6 +15,9 @@ cache:
 
 php:
   - 7.4
+  
+install:
+  - composer install --prefer-dist --no-interaction
 
 env:
   - WP_VERSION=latest
