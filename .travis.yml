@@ -71,9 +71,6 @@ before_script:
   - git clone https://github.com/squizlabs/PHP_CodeSniffer.git phpcs
   # Install WordPress Coding Standards.
   - git clone -b master https://github.com/WordPress/WordPress-Coding-Standards.git wpcs
-  # Install PHPUnit.
-  - wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
-  - chmod +x phpunit
   
   # Hop into CodeSniffer directory.
   - cd phpcs
@@ -89,7 +86,6 @@ before_script:
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
-  - $WP_DEVELOP_DIR/phpunit --coverage-clover coverage.xml
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
   # @link http://pear.php.net/package/PHP_CodeSniffer/
@@ -100,6 +96,3 @@ script:
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
   - $WP_DEVELOP_DIR/phpcs/bin/phpcs --colors -p -s -v -n --standard=./.phpcs.xml
- 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
