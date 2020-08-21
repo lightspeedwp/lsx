@@ -47,8 +47,6 @@ before_install:
 # e.g. copy database configurations, environment variables, etc.
 # Failures in this section will result in build status 'errored'.
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --no-interaction --prefer-source --dev
   # Set up WordPress installation.
   - export WP_DEVELOP_DIR=/tmp/wordpress/
   - mkdir -p $WP_DEVELOP_DIR
@@ -73,6 +71,9 @@ before_script:
   - git clone https://github.com/squizlabs/PHP_CodeSniffer.git phpcs
   # Install WordPress Coding Standards.
   - git clone -b master https://github.com/WordPress/WordPress-Coding-Standards.git wpcs
+  # Install PHPUnit.
+  - wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
+  - chmod +x phpunit
   
   # Hop into CodeSniffer directory.
   - cd phpcs
@@ -88,7 +89,7 @@ before_script:
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
-  - vendor/bin/phpunit --coverage-clover coverage.xml
+  - $WP_DEVELOP_DIR/phpunit --coverage-clover coverage.xml
   # WordPress Coding Standards
   # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
   # @link http://pear.php.net/package/PHP_CodeSniffer/
