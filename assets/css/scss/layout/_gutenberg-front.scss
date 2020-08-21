@@ -471,11 +471,12 @@
 @include media(">=desktop-wide") {
 	.gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
 		.entry-content {
-			.wp-block-embed,
+			figure.wp-block-embed,
 			.navbar,
 			p,
 			.envira-gallery-wrap,
 			form,
+			.,
 			blockquote,
 			h1,
 			h2,
@@ -566,11 +567,12 @@
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
 	.gutenberg-compatible-template.using-gutenberg.page-template-default {
 		.entry-content {
-			.wp-block-embed,
+			figure.wp-block-embed,
 			.navbar,
 			p,
 			.envira-gallery-wrap,
 			form,
+			.,
 			blockquote,
 			h1,
 			h2,
@@ -599,13 +601,6 @@
 			}
 			.woocommerce {
 				width: 100%;
-			}
-		}
-		&.woocommerce-checkout {
-			.entry-content {
-				.woocommerce {
-					min-width: 100%;
-				}
 			}
 		}
 		.entry-meta,

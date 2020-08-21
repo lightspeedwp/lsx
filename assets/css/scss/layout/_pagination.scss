@@ -6,10 +6,8 @@
 	text-align: center;
 }
 
-.lsx-pagination,
-.envira-pagination,
-.woo-pagination,
-.lsx-postnav {
+.lsx-pagination, .envira-pagination,
+.woo-pagination, .lsx-postnav {
 	& > .page-numbers,
 	& > .post-page-numbers {
 		&,
@@ -27,29 +25,19 @@
 			cursor: pointer;
 		}
 
-		&:not(.dots) + .page-numbers:not(.dots) {
-			margin-left: 5px;
-		}
+		&:not(.dots) + .page-numbers:not(.dots) { margin-left: 5px; }
 
-		& > .meta-nav {
-			display: none;
-		}
+		& > .meta-nav { display: none; }
 	}
 
-	& > span.dots {
-		width: 20px;
-	}
+	& > span.dots { width: 20px; }
 
 	& > .prev {
-		&:before {
-			content: $fa-var-angle-double-left;
-		}
+		&:before { content: $fa-var-angle-double-left; }
 	}
 
 	& > .next {
-		&:before {
-			content: $fa-var-angle-double-right;
-		}
+		&:before { content: $fa-var-angle-double-right; }
 	}
 
 	& > .prev,
