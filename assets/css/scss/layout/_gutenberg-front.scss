@@ -599,7 +599,13 @@
 			}
 			.woocommerce {
 				width: 100%;
-				min-width: 100%;
+			}
+		}
+		&.woocommerce-checkout {
+			.entry-content {
+				.woocommerce {
+					min-width: 100%;
+				}
 			}
 		}
 		.entry-meta,
