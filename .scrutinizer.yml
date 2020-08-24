@@ -20,8 +20,7 @@ checks:
     verify_argument_usable_as_reference: false
     verify_property_names: false
 filter:
-    dependency_paths:
-        - wordpress/
+    dependency_paths: [wordpress/*, wp-content/*, vendor/*]
     excluded_paths: [tests/*, bin/*, assets/*, languages/*, includes/classes/legacy/*, vendor/*]
 build:
   nodes:
