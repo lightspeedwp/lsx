@@ -36,7 +36,7 @@ build:
         override: true
       tests:
         override:
-          - php-scrutinizer-run --enable-security-analysis
+          - php-scrutinizer-run
           - js-scrutinizer-run
           - command: phpcs-run -p -s -v -n --standard=./.phpcs.xml --extensions=php --ignore=*/wordpress/*
       dependencies:

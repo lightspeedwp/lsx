@@ -4,7 +4,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
     <description>Coding standards</description>
-	<!-- Check all PHP files in directory tree by default. -->
+	
+	<!-- Pass some flags to PHPCS:
+		 p flag: Show progress of the run.
+		 s flag: Show sniff codes in all reports.
+	-->
+	<arg value="ps"/>
+
+	<!-- Check up to 8 files simultanously. -->
+	<arg name="parallel" value="8"/>
+
+	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
 
 	<!-- Exclude directories. -->
@@ -31,6 +41,7 @@
 		<exclude name="Generic.WhiteSpace" />
 		<exclude name="Squiz.WhiteSpace" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
+		<exclude name="WordPress.WP.EnqueuedResourceParameters.MissingVersion" />
 		
 		<!-- Not interested in whitespace issues at the moment -->
 		<exclude name="PEAR.Functions.FunctionCallSignature" />

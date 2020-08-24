@@ -25,14 +25,10 @@ matrix:
     - name: Coding Standards
       php: 7.4
       env: WP_VERSION=latest RUN_PHPCS=1
-    - name: Code Coverage
-      php: 7.4
-      env: WP_VERSION=latest RUN_CODE_COVERAGE=1
     - name: Bleeding Edge
       php: nightly
       env: WP_VERSION=trunk
   allow_failures:
-    - name: Code Coverage
     - name: Bleeding Edge
 
 before_install:
