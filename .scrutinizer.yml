@@ -7,6 +7,8 @@ checks:
         argument_type_checks: false
         avoid_closing_tag: false
         avoid_superglobals: false
+        coding_standard:
+            name: WordPress
         encourage_shallow_comparison: false
         method_calls_on_non_object: false
         no_exit: false
@@ -42,6 +44,13 @@ checks:
         avoid_duplicate_types: false
         assignment_of_null_return: false
         comparison_always_same_result: false
+        symfony_request_injection: false
+        catch_class_exists: false
+        closure_use_not_conflicting: true
+        no_non_implemented_abstract_methods: false
+        missing_arguments: false
+        no_trait_type_hints: false
+        switch_fallthrough_commented: false
 
 filter:
     dependency_paths: [wordpress/*, wp-content/*, includes/classes/legacy/*, vendor/*]
