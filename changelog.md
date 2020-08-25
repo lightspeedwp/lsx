@@ -27,6 +27,7 @@
 
 - Merged two WooCommerce panels within the customizer sidebar.
 - The WooCommerce bar will be showed if active and the screen is less than 678px.
+- Skiped the loading attribute for the custom logo.
 
 ### Fixed
 

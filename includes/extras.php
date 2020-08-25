@@ -690,3 +690,15 @@ function lsx_is_rest_api_request() {
 	$rest_helper = LSX_Rest_Helper::get_instance();
 	return $rest_helper->is_rest_api_request();
 }
+
+/**
+ * Remove lazy loading on Custom logo.
+ *
+ * @param [type] $attributes
+ * @return void
+ */
+function lsx_custom_logo_attributes( $attributes ) {
+	$attributes['loading'] = 'eager';
+	return $attributes;
+}
+add_filter( 'get_custom_logo_image_attributes', 'lsx_custom_logo_attributes' );
