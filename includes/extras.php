@@ -697,7 +697,7 @@ function lsx_is_rest_api_request() {
  * @param [type] $attributes
  * @return void
  */
-function lsx_custom_logo_attributes( $attributes ){
+function lsx_custom_logo_attributes( $attributes ) {
 	$attributes['loading'] = 'eager';
 	return $attributes;
 }
