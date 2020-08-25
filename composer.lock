@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f1218b49d0560a6241164c3c686fa27",
+    "content-hash": "813ec4b47fde7bb63aaffc4a634b5592",
     "packages": [
         {
             "name": "composer/installers",
@@ -1749,6 +1749,24 @@
             "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
+            "name": "wpackagist-plugin/popup-maker",
+            "version": "1.11.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/popup-maker/",
+                "reference": "tags/1.11.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/popup-maker.1.11.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/popup-maker/"
+        },
+        {
             "name": "wpackagist-plugin/sensei-lms",
             "version": "3.4.1",
             "source": {
@@ -1822,15 +1840,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "14.8",
+            "version": "14.8.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/14.8"
+                "reference": "tags/14.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.14.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.14.8.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
