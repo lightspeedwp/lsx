@@ -1,17 +1,22 @@
 tools:
-  php_code_sniffer:
-    config:
-      standard: WordPress
   sensiolabs_security_checker: true
+  php_cs_fixer: false
+  php_code_coverage: true
 checks:
   php:
+    argument_type_checks: false
     avoid_closing_tag: false
     avoid_superglobals: false
     coding_standard:
       name: WordPress
+    encourage_shallow_comparison: false
+    method_calls_on_non_object: false
     no_exit: false
     no_global_keyword: false
+    no_trailing_whitespace: false
     one_class_per_file: false
+    property_assignments: false
+    parse_doc_comments: false
     psr2_class_declaration: false
     psr2_control_structure_declaration: false
     psr2_switch_declaration: false
@@ -19,24 +24,38 @@ checks:
     verify_access_scope_valid: false
     verify_argument_usable_as_reference: false
     verify_property_names: false
+    fix_doc_comments: false
+    non_commented_empty_catch_block: false
 filter:
     dependency_paths: [wordpress/*, wp-content/*, includes/classes/legacy/*, vendor/*]
     excluded_paths: [tests/*, bin/*, assets/*, languages/*, includes/classes/legacy/*, vendor/*]
+coding_style:
+    php:
+        indentation:
+            general:
+                use_tabs: false
+                size: 5
 build:
-  nodes:
-    my-tests:
-      environment:
+    environment:
+        variables:
+            CI: 'true'
+            TEST_OUTPUT_STYLE: 'pretty'
+            COMPOSER_OPTIONS: '--optimize-autoloader'
+            COVERAGE_OUTPUT_STYLE: 'clover'
+            COVERAGE_CLOVER_FILE_PATH: 'build/coverage/clover.xml'
         php:
-          version: 7.4
-      services:
-        mariadb: 10
-    analysis:
+            version: "7.4"
+        timezone: GMT+2
+        postgresql: false
+        redis: false
+    nodes:
+     analysis:
       project_setup:
         override: true
       tests:
         override:
           - php-scrutinizer-run
-          - command: phpcs-run -p -s -v -n --standard=./.phpcs.xml --extensions=php --ignore=*/wordpress/*
+          - command: phpcs-run --standard=./.phpcs.xml --extensions=php --ignore=*/wordpress/*
       dependencies:
         before:
           - composer require --dev johnpbloch/wordpress
