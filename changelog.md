@@ -6,8 +6,8 @@
 
 - Improved styling for the Tribe Events Community Events forms.
 - Added support for the Mix and Match Woocommerce plugin.
-- Improved suport for Woocommerce Whishlist plugin.
-- Improved suport for Woocommerce Quick View plugin.
+- Improved support for Woocommerce Wishlist plugin.
+- Improved support for Woocommerce Quick View plugin.
 - Block Theme Support updates.
 - Added support for the How to and Faq yoast blocks.
 - Added the `lsx-subheading` class for group blocks.
@@ -45,6 +45,13 @@
 - Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
 - Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
 - Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
+
+### Security
+
+- Updating dependencies to prevent vulnerabilities.
+- Updating PHPCS options for better code.
+- General testing to ensure compatibility with latest WordPress version (5.5).
+- General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
 
 # [[2.8.0]] - 2020-05-21
 
