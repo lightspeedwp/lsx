@@ -1006,10 +1006,5 @@ if ( ! function_exists( 'lsx_payment_gateway_logos' ) ) {
 		<?php
 		}
 	}
-	include_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-	// check for plugin using plugin name.
-	if ( ! is_plugin_active( 'lsx-health-plan/lsx-health-plan.php' ) ) {
-		add_action( 'lsx_footer_before', 'lsx_payment_gateway_logos' );
-	}
+	add_action( 'lsx_footer_before', 'lsx_payment_gateway_logos' );
 }
