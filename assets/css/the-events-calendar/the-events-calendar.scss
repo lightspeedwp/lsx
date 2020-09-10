@@ -1,6 +1,6 @@
-@import '../scss/global/variables';
-@import '../scss/global/mixins';
-@import '../scss/global/placeholders';
+@import "../scss/global/variables";
+@import "../scss/global/mixins";
+@import "../scss/global/placeholders";
 
 // Placeholders and Mixins
 
@@ -20,7 +20,7 @@
 	transition: all 150ms ease;
 
 	&:focus {
-		border-color: nth($blue,1);
+		border-color: nth($blue, 1);
 	}
 }
 
@@ -30,7 +30,9 @@
 	margin-bottom: 20px;
 	padding: 15px !important;
 
-	&:before { display: none; }
+	&:before {
+		display: none;
+	}
 }
 
 %bootstrap-message-success {
@@ -69,7 +71,7 @@
 	text-align: center;
 
 	&:after {
-		content: '';
+		content: "";
 		display: block;
 		height: 2px;
 		margin: 2.4rem auto 0;
@@ -82,7 +84,9 @@
 		line-height: inherit;
 		margin-top: 8px;
 
-		&.long-text { margin-top: 16px; }
+		&.long-text {
+			margin-top: 16px;
+		}
 	}
 }
 
@@ -92,8 +96,8 @@
 	&:visited {
 		font-weight: 700;
 		height: initial;
-		@include media('>tablet') {
-		padding: 10px 30px !important;
+		@include media(">tablet") {
+			padding: 10px 30px !important;
 		}
 	}
 }
@@ -140,7 +144,47 @@
 /**
  * Tribe General Structure
  */
- .tribe-button.tribe-button-small.tribe-upcoming.tribe-button-secondary, .tribe-community-events-content .tribe-nav .my-events-display-options a.tribe-upcoming,.tribe_community_edit .button, .tribe_community_edit .button-primary, .tribe_community_edit .button-secondary, .tribe_community_edit .tribe-add-recurrence.tribe-button, .tribe_community_edit .tribe-button, .tribe_community_list #tribe-add-exclusion.button, .tribe_community_list .button, .tribe_community_list .button-primary, .tribe_community_list .button-secondary, .tribe_community_list .tribe-add-recurrence.tribe-button, .tribe_community_list .tribe-button, .tribe-community-events.form .my-events-header .tribe-button, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .choose-file, .tribe-community-events.form .tribe-button, .tribe_community_edit .tribe-button.submit, .tribe_community_list .tribe-button.submit, .tribe-community-events .tribe-section.tribe-section-image-uploader .tribe-image-upload-area .EventImage, .tribe_community_edit .button-primary, .tribe_community_edit .tribe-button.tribe-button-primary, .tribe_community_list .button-primary, .tribe_community_list .tribe-button.tribe-button-primary,  .tribe_community_edit button.submit.events-community-submit, input.button.submit.events-community-submit, #post.tribe-button.submit.events-community-submit, .tribe-community-events.form .tribe-button, #tribe-community-events.form .tribe-button, .tribe-community-events-content .tribe-nav .table-menu-wrapper a.tribe-button-tertiary {
+.tribe-button.tribe-button-small.tribe-upcoming.tribe-button-secondary,
+.tribe-community-events-content
+	.tribe-nav
+	.my-events-display-options
+	a.tribe-upcoming,
+.tribe_community_edit .button,
+.tribe_community_edit .button-primary,
+.tribe_community_edit .button-secondary,
+.tribe_community_edit .tribe-add-recurrence.tribe-button,
+.tribe_community_edit .tribe-button,
+.tribe_community_list #tribe-add-exclusion.button,
+.tribe_community_list .button,
+.tribe_community_list .button-primary,
+.tribe_community_list .button-secondary,
+.tribe_community_list .tribe-add-recurrence.tribe-button,
+.tribe_community_list .tribe-button,
+.tribe-community-events.form .my-events-header .tribe-button,
+.tribe-community-events
+	.tribe-section.tribe-section-image-uploader
+	.tribe-image-upload-area
+	.choose-file,
+.tribe-community-events.form .tribe-button,
+.tribe_community_edit .tribe-button.submit,
+.tribe_community_list .tribe-button.submit,
+.tribe-community-events
+	.tribe-section.tribe-section-image-uploader
+	.tribe-image-upload-area
+	.EventImage,
+.tribe_community_edit .button-primary,
+.tribe_community_edit .tribe-button.tribe-button-primary,
+.tribe_community_list .button-primary,
+.tribe_community_list .tribe-button.tribe-button-primary,
+.tribe_community_edit button.submit.events-community-submit,
+input.button.submit.events-community-submit,
+#post.tribe-button.submit.events-community-submit,
+.tribe-community-events.form .tribe-button,
+#tribe-community-events.form .tribe-button,
+.tribe-community-events-content
+	.tribe-nav
+	.table-menu-wrapper
+	a.tribe-button-tertiary {
 	@include lsx-button-scaffolding();
 	@include lsx-button-colour();
 	@include small-button();
@@ -148,7 +192,7 @@
 	font-weight: 600;
 
 	br {
-		display:none;
+		display: none;
 	}
 }
 .content-area {
@@ -166,8 +210,9 @@
 }
 
 .tribe-events-button {
-	box-shadow: 2px 2px 0 0 #7A030A;
-	&, #tribe-events & {
+	box-shadow: 2px 2px 0 0 #7a030a;
+	&,
+	#tribe-events & {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		@include small-button();
@@ -176,14 +221,15 @@
 	}
 }
 
-.tribe-events-filter-view.tribe-filters-closed #tribe_events_filters_wrapper .tribe_events_filters_toggle {
+.tribe-events-filter-view.tribe-filters-closed
+	#tribe_events_filters_wrapper
+	.tribe_events_filters_toggle {
 	font-size: 15px;
 }
 
 input#EventImage {
 	position: absolute;
 }
-
 
 // Structure
 
@@ -194,21 +240,27 @@ input#EventImage {
 }
 
 article.page {
-	.page-template-default:not(.has-sidebar).tribe-js & { width: 100% !important; }
+	.page-template-default:not(.has-sidebar).tribe-js & {
+		width: 100% !important;
+	}
 }
 
 .site-main {
-	.post-type-archive-tribe_events:not(.has-sidebar).tribe-js & { width: 100%; }
+	.post-type-archive-tribe_events:not(.has-sidebar).tribe-js & {
+		width: 100%;
+	}
 }
 
 #tribe-bar-form {
 	#tribe-bar-views {
 		padding: 0;
-		.tribe-bar-views-list { padding: 0; }
+		.tribe-bar-views-list {
+			padding: 0;
+		}
 	}
 
 	.tribe-bar-submit {
-		input[type=submit] {
+		input[type="submit"] {
 			@include lsx-button-scaffolding();
 			@include lsx-button-colour();
 			@include small-button();
@@ -238,11 +290,13 @@ a.tribe-events-read-more {
 }
 
 #tribe-events-footer,
-#tribe-events-header  {
+#tribe-events-header {
 	.tribe-events-sub-nav {
 		li {
 			font-weight: bold;
-			a { background: none; }
+			a {
+				background: none;
+			}
 		}
 	}
 }
@@ -254,7 +308,7 @@ a.tribe-events-read-more {
 				.current,
 				.inactive {
 					border-radius: 3px;
-					border: 2px solid nth($blue,1);
+					border: 2px solid nth($blue, 1);
 					display: inline-block;
 					height: 40px;
 					line-height: 36px;
@@ -263,19 +317,22 @@ a.tribe-events-read-more {
 					width: 40px;
 					cursor: pointer;
 					&:hover {
-						background: nth($blue,1);
+						background: nth($blue, 1);
 						color: white;
 					}
 				}
 				.current {
-					background: nth($blue,1);
+					background: nth($blue, 1);
 				}
 			}
 		}
 	}
 }
 
-a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu-btn.button.tribe-button.tribe-button-tertiary.tribe-button-activate, button#tribe-add-exclusion, .tribe-button.tribe-button-small.tribe-upcoming.tribe-button-tertiary,
+a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary,
+a.table-menu-btn.button.tribe-button.tribe-button-tertiary.tribe-button-activate,
+button#tribe-add-exclusion,
+.tribe-button.tribe-button-small.tribe-upcoming.tribe-button-tertiary,
 .tribe-button.tribe-button-small.tribe-past.tribe-button-secondary {
 	@include lsx-button-scaffolding();
 	@include small-button();
@@ -297,12 +354,14 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 }
 
 .tribe-community-events .tribe-community-notice.tribe-community-notice-error {
-    margin-top: 1em;
+	margin-top: 1em;
 }
 
 #tribe-events-header {
 	margin-bottom: 0;
-	.tribe-events-sub-nav { display: none; }
+	.tribe-events-sub-nav {
+		display: none;
+	}
 }
 
 #tribe-events-footer {
@@ -313,7 +372,9 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 }
 
 .tribe-js {
-	.datepicker { min-width: 160px; }
+	.datepicker {
+		min-width: 160px;
+	}
 	// Organizer
 	&.single-tribe_organizer {
 		#primary {
@@ -328,7 +389,7 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 						flex-direction: column;
 						border-bottom: none;
 						margin-bottom: 2.4rem;
- 						padding-bottom: 0;
+						padding-bottom: 0;
 						.tribe-events-event-image {
 							margin-top: 2.4rem;
 							order: -1;
@@ -341,14 +402,21 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 	}
 }
 
-#tribe-bar-collapse-toggle { line-height: 31px; }
+#tribe-bar-collapse-toggle {
+	line-height: 31px;
+}
 
 .tribe-events-calendar {
-	th { font-weight: normal; }
+	th {
+		font-weight: normal;
+	}
 
 	td {
-		div[id*=tribe-events-daynum-] {
-			&, & a { font-size: 14px; }
+		div[id*="tribe-events-daynum-"] {
+			&,
+			& a {
+				font-size: 14px;
+			}
 		}
 	}
 }
@@ -374,25 +442,33 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 			.tribe-event-duration {
 				font-weight: bold;
 
-				.tribe-events-abbr { margin-bottom: 12px; }
+				.tribe-events-abbr {
+					margin-bottom: 12px;
+				}
 			}
 
 			.tribe-event-description {
 				padding: 12px 0 0 0;
 
-				p { margin-bottom: 12px; }
+				p {
+					margin-bottom: 12px;
+				}
 			}
 		}
 
 		&:not(.tribe-event-featured) {
-			.tribe-events-event-thumb { padding: 12px 12px 12px 0; }
+			.tribe-events-event-thumb {
+				padding: 12px 12px 12px 0;
+			}
 		}
 	}
 }
 
 .tribe-events-user-recurrence-toggle {
 	input[type="radio"],
-	input[type="checkbox"] { margin-right: 8px; }
+	input[type="checkbox"] {
+		margin-right: 8px;
+	}
 }
 
 .tribe-events-list-separator-month {
@@ -415,7 +491,9 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 			.tribe-events-list-event-title {
 				margin-top: 0;
 
-				a { vertical-align: middle; }
+				a {
+					vertical-align: middle;
+				}
 
 				.label {
 					font-size: 60%;
@@ -424,7 +502,9 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 					text-transform: uppercase;
 					vertical-align: middle;
 
-					@include media ('<phone') { display: none; }
+					@include media("<phone") {
+						display: none;
+					}
 				}
 			}
 		}
@@ -434,11 +514,13 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 		}
 
 		.type-tribe_events {
-			@include media ('>=tablet') {
+			@include media(">=tablet") {
 				display: flex;
 			}
 
-			.tribe-events-event-meta { margin-bottom: 12px; }
+			.tribe-events-event-meta {
+				margin-bottom: 12px;
+			}
 		}
 
 		.tribe-events-event-image,
@@ -448,14 +530,16 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 			text-align: left;
 			min-width: 350px;
 
-			@include media ('<phone') {
+			@include media("<phone") {
 				margin: 0 0 15px 0;
 				width: 100%;
 			}
 		}
 
 		.tribe-events-event-content {
-			@include media ('>=phone') { flex: 1 1 auto; }
+			@include media(">=phone") {
+				flex: 1 1 auto;
+			}
 		}
 	}
 }
@@ -469,7 +553,9 @@ a.tribe-button.tribe-button-small.tribe-past.tribe-button-tertiary, a.table-menu
 			text-align: center;
 		}
 
-		.type-tribe_events { margin-left: 0; }
+		.type-tribe_events {
+			margin-left: 0;
+		}
 	}
 }
 
@@ -478,7 +564,9 @@ h2.tribe-events-page-title {
 	margin-bottom: 35px;
 }
 
-#tribe-events-bar { margin-bottom: 35px; }
+#tribe-events-bar {
+	margin-bottom: 35px;
+}
 
 .single-tribe_events {
 	&.page-has-banner {
@@ -488,12 +576,23 @@ h2.tribe-events-page-title {
 			}
 		}
 	}
-	.tribe-events-back { display: none; }
-	.tribe-events-single-event-title { font-size: 40px; display: none; }
-	.tribe-events-event-image { text-align: left; }
+	&:not(.page-has-banner) {
+		#tribe-events-content {
+			padding-top: $lsx-large-gap - $lsx-gap;
+		}
+	}
+	.tribe-events-back {
+		display: none;
+	}
+	.tribe-events-single-event-title {
+		font-size: 40px;
+		display: none;
+	}
+	.tribe-events-event-image {
+		text-align: left;
+	}
 
 	.tribe-events-schedule {
-
 		.tribe-events-cost {
 			display: table;
 			font-size: 15px;
@@ -524,22 +623,28 @@ h2.tribe-events-page-title {
 	}
 }
 
-.tribe-events-related-events-title { @extend %lsx-title; }
+.tribe-events-related-events-title {
+	@extend %lsx-title;
+}
 
 .tribe-events-single {
 	ul.tribe-related-events {
 		li {
-			@include media ('>=phone') {
+			@include media(">=phone") {
 				margin-right: 2%;
 				width: 32%;
-				&:last-child { margin-right: 0; }
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 
 			.tribe-related-event-info {
 				padding: 2rem;
 				text-align: center;
 
-				.tribe-related-events-title { font-size: 20px; }
+				.tribe-related-events-title {
+					font-size: 20px;
+				}
 
 				.moretag {
 					display: block;
@@ -550,9 +655,9 @@ h2.tribe-events-page-title {
 
 					&:after {
 						color: inherit;
-						content: '\f178';
+						content: "\f178";
 						display: inline-block;
-						font-family: 'FontAwesome';
+						font-family: "FontAwesome";
 						font-size: inherit;
 						margin-left: 5px;
 						text-rendering: auto;
@@ -568,14 +673,16 @@ h2.tribe-events-page-title {
 
 .tribe-events-event-cost {
 	font-weight: bold;
-	.ticket-cost { margin-left: 10px; }
+	.ticket-cost {
+		margin-left: 10px;
+	}
 }
 .tribe_events {
 	.cart {
-		border: 1px solid #E1E1E1;
-	    background-color: white;
-	    padding: 1em 2em;
-	    margin-bottom: 2em;
+		border: 1px solid #e1e1e1;
+		background-color: white;
+		padding: 1em 2em;
+		margin-bottom: 2em;
 	}
 }
 .tribe_events-template-default.single {
@@ -587,21 +694,23 @@ h2.tribe-events-page-title {
 .tribe-events-tickets {
 	background: white !important;
 	td {
-	    padding: 10px 0 !important;
-	    input {
-	    	&:focus {
-		    	border-color: nth($blue,1);
-			    outline: 0;
-			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6)
-		    }
-	    }
-	    select {
-	    	&:focus {
-		    	border-color: nth($blue,1);
-			    outline: 0;
-			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(65, 138, 208, 0.6)
-		    }
-	    }
+		padding: 10px 0 !important;
+		input {
+			&:focus {
+				border-color: nth($blue, 1);
+				outline: 0;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+					0 0 8px rgba(65, 138, 208, 0.6);
+			}
+		}
+		select {
+			&:focus {
+				border-color: nth($blue, 1);
+				outline: 0;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+					0 0 8px rgba(65, 138, 208, 0.6);
+			}
+		}
 	}
 }
 
@@ -612,29 +721,30 @@ h2.tribe-events-page-title {
 	}
 }
 .tribe-tickets-meta-row {
-    display: table-row;
+	display: table-row;
 }
 .tribe-tickets-table {
 	width: 100%;
 	label {
-	    padding-right: 15px;
+		padding-right: 15px;
 	}
 }
-.tribe-events-tickets input, .tribe-events-tickets select {
-    display: block;
-    width: 100%;
-    height: 50px;
-    color: $text-color;
-    border: 1px solid $breaker;
-    border-radius: 2px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    border-width: 2px;
-    box-shadow: none;
-    font-size: 18px;
-    line-height: 1.33;
-    padding: 10px 20px;
-    transition: all 150ms ease;
+.tribe-events-tickets input,
+.tribe-events-tickets select {
+	display: block;
+	width: 100%;
+	height: 50px;
+	color: $text-color;
+	border: 1px solid $breaker;
+	border-radius: 2px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	border-width: 2px;
+	box-shadow: none;
+	font-size: 18px;
+	line-height: 1.33;
+	padding: 10px 20px;
+	transition: all 150ms ease;
 }
 .tribe-events-tickets-title.tribe--rsvp {
 	padding: 0 10px;
@@ -643,11 +753,12 @@ h2.tribe-events-page-title {
 @media (min-width: 992px) {
 	.tribe_events .cart {
 		float: right;
-	    width: 40%;
+		width: 40%;
 	}
-	.tribe_events-template-default.single .tribe-events-single-event-description {
+	.tribe_events-template-default.single
+		.tribe-events-single-event-description {
 		float: left;
-	    width: 60%;
+		width: 60%;
 	}
 }
 
@@ -655,12 +766,15 @@ h2.tribe-events-page-title {
  * Tribe Community Event List
  */
 
-#tribe-events {
+#tribe-events,
+#tribe-community-events {
 	form {
 		.tribe-events-community-details {
 			background-color: white;
 		}
-		div.venue, .events-community-post-title, .events-community-post-content {
+		div.venue,
+		.events-community-post-title,
+		.events-community-post-content {
 			display: flex;
 			flex-direction: column;
 			label {
@@ -668,7 +782,8 @@ h2.tribe-events-page-title {
 				font-weight: 400;
 				text-transform: uppercase;
 			}
-			input:not([type='checkbox']):not(.button), textarea {
+			input:not([type="checkbox"]):not(.button):not(.select2-search__field),
+			textarea {
 				display: block;
 				width: 100%;
 				height: $input-height-base;
@@ -680,15 +795,26 @@ h2.tribe-events-page-title {
 				background-image: none;
 				border: 2px solid $input-border;
 				border-radius: $input-border-radius;
-				@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+				@include input-size(
+					".input-lg",
+					$input-height-large,
+					$padding-large-vertical,
+					$padding-large-horizontal,
+					$font-size-large,
+					$line-height-large,
+					$input-border-radius-large
+				);
+				@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+				@include transition(
+					border-color ease-in-out 0.15s,
+					box-shadow ease-in-out 0.15s
+				);
 				@include form-control-focus;
 				@include placeholder;
 				&::-ms-expand {
 					border: 0;
 					background-color: transparent;
-				  }
+				}
 				&[disabled],
 				&[readonly],
 				fieldset[disabled] & {
@@ -697,26 +823,31 @@ h2.tribe-events-page-title {
 				}
 				&[disabled],
 				fieldset[disabled] & {
-				cursor: $cursor-disabled;
+					cursor: $cursor-disabled;
 				}
 			}
-			input[type='checkbox'] {
+			input[type="checkbox"] {
 				margin: 5px 0 20px;
 			}
 			textarea {
 				height: auto;
 			}
 		}
-		.tribe-section-content, .tribe-section-content-field {
+		.tribe-section-content,
+		.tribe-section-content-field {
 			ul {
 				border: none;
 				box-shadow: none;
 			}
-			li, input:not(.select2-input):not([type='checkbox']):not(.tribe-datepicker):not(.tribe-timepicker) {
+			li:not(.select2-search),
+			input:not(.select2-input):not([type="checkbox"]):not(.tribe-datepicker):not(.tribe-timepicker):not(.select2-search__field) {
 				border: 2px solid $input-border;
 				border-radius: $input-border-radius;
-				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+				@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+				@include transition(
+					border-color ease-in-out 0.15s,
+					box-shadow ease-in-out 0.15s
+				);
 				@include form-control-focus;
 				@include placeholder;
 				height: 50px;
@@ -731,8 +862,11 @@ h2.tribe-events-page-title {
 		.select2-choice {
 			border: 2px solid $input-border;
 			border-radius: $input-border-radius;
-			@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-			@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+			@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+			@include transition(
+				border-color ease-in-out 0.15s,
+				box-shadow ease-in-out 0.15s
+			);
 			@include form-control-focus;
 			@include placeholder;
 			height: 50px;
@@ -746,7 +880,8 @@ h2.tribe-events-page-title {
 		.tribe-events-community-details {
 			background-color: white;
 		}
-		.events-community-post-title, .events-community-post-content {
+		.events-community-post-title,
+		.events-community-post-content {
 			display: flex;
 			flex-direction: column;
 			label {
@@ -754,7 +889,8 @@ h2.tribe-events-page-title {
 				font-weight: 400;
 				text-transform: uppercase;
 			}
-			input:not([type='checkbox']):not(.button), textarea {
+			input:not([type="checkbox"]):not(.button),
+			textarea {
 				display: block;
 				width: 100%;
 				height: $input-height-base;
@@ -766,15 +902,26 @@ h2.tribe-events-page-title {
 				background-image: none;
 				border: 2px solid $input-border;
 				border-radius: $input-border-radius;
-				@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+				@include input-size(
+					".input-lg",
+					$input-height-large,
+					$padding-large-vertical,
+					$padding-large-horizontal,
+					$font-size-large,
+					$line-height-large,
+					$input-border-radius-large
+				);
+				@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+				@include transition(
+					border-color ease-in-out 0.15s,
+					box-shadow ease-in-out 0.15s
+				);
 				@include form-control-focus;
 				@include placeholder;
 				&::-ms-expand {
 					border: 0;
 					background-color: transparent;
-				  }
+				}
 				&[disabled],
 				&[readonly],
 				fieldset[disabled] & {
@@ -783,10 +930,10 @@ h2.tribe-events-page-title {
 				}
 				&[disabled],
 				fieldset[disabled] & {
-				cursor: $cursor-disabled;
+					cursor: $cursor-disabled;
 				}
 			}
-			input[type='checkbox'] {
+			input[type="checkbox"] {
 				margin: 5px 0 20px;
 			}
 			textarea {
@@ -796,16 +943,23 @@ h2.tribe-events-page-title {
 	}
 }
 
-
-.tribe-dropdown .select2-choice .select2-arrow, .tribe-ea-dropdown .select2-choice .select2-arrow {
+.tribe-dropdown .select2-choice .select2-arrow,
+.tribe-ea-dropdown .select2-choice .select2-arrow {
 	top: 10px;
 }
 
 .select2-container .select2-choice abbr {
-    top: 17px;
+	top: 17px;
 }
 
-.tribe-dropdown.select2-container-multi .select2-choices .select2-search-choice div, .tribe-ea-dropdown.select2-container-multi .select2-choices .select2-search-choice div {
+.tribe-dropdown.select2-container-multi
+	.select2-choices
+	.select2-search-choice
+	div,
+.tribe-ea-dropdown.select2-container-multi
+	.select2-choices
+	.select2-search-choice
+	div {
 	padding-left: 10px;
 }
 
@@ -834,7 +988,8 @@ h2.tribe-events-page-title {
 
 body:not(.logged-in) {
 	#tribe-events.tribe-js {
-		> p, .tribe-community-events-content > p {
+		> p,
+		.tribe-community-events-content > p {
 			border-bottom: 1px solid $table-border-color;
 			padding: 1em 29px;
 			text-transform: uppercase;
@@ -848,7 +1003,8 @@ body:not(.logged-in) {
 				font-weight: 400;
 				text-transform: uppercase;
 			}
-			input:not([type='checkbox']):not([type='submit']), textarea {
+			input:not([type="checkbox"]):not([type="submit"]),
+			textarea {
 				display: block;
 				width: 100%;
 				height: $input-height-base;
@@ -860,15 +1016,26 @@ body:not(.logged-in) {
 				background-image: none;
 				border: 2px solid $input-border;
 				border-radius: $input-border-radius;
-				@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-				@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-				@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+				@include input-size(
+					".input-lg",
+					$input-height-large,
+					$padding-large-vertical,
+					$padding-large-horizontal,
+					$font-size-large,
+					$line-height-large,
+					$input-border-radius-large
+				);
+				@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+				@include transition(
+					border-color ease-in-out 0.15s,
+					box-shadow ease-in-out 0.15s
+				);
 				@include form-control-focus;
 				@include placeholder;
 				&::-ms-expand {
 					border: 0;
 					background-color: transparent;
-					}
+				}
 				&[disabled],
 				&[readonly],
 				fieldset[disabled] & {
@@ -877,38 +1044,42 @@ body:not(.logged-in) {
 				}
 				&[disabled],
 				fieldset[disabled] & {
-				cursor: $cursor-disabled;
+					cursor: $cursor-disabled;
 				}
 			}
-			input[type='checkbox'] {
+			input[type="checkbox"] {
 				margin: 5px 0 20px;
 			}
 			textarea {
 				height: auto;
 			}
-			@media (max-width:600px) {
+			@media (max-width: 600px) {
 				input#wp-submit {
 					width: 100%;
 				}
 			}
-
 		}
-		> a, .tribe-community-events-content > a {
+		> a,
+		.tribe-community-events-content > a {
 			display: block;
 			padding: 1em 2em;
 		}
 	}
 }
 
-.tribe-buttonset .tribe-button-field.tribe-active {
-	@include lsx-button-colour();
-	height: inherit;
-    box-shadow: none !important;
-    border: 1px solid $breaker;
+.content-area {
+	.tribe-buttonset .tribe-button-field.tribe-active {
+		@include lsx-button-colour();
+		height: inherit;
+		box-shadow: none !important;
+		border: 1px solid $breaker;
+	}
 }
 
-#tribe-community-events .my-events-header a.tribe-button.tribe-button-secondary {
-    @include lsx-button-scaffolding();
+#tribe-community-events
+	.my-events-header
+	a.tribe-button.tribe-button-secondary {
+	@include lsx-button-scaffolding();
 	@include lsx-button-colour();
 	@include small-button();
 	font-family: $font-family-sans-serif;
@@ -916,15 +1087,17 @@ body:not(.logged-in) {
 }
 
 /* Tribe Community Events buttons aligned left */
-a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
-    margin-left: 0;
-    margin-right: 0;
+a.tribe-add-post.tribe-button,
+button#tribe-add-recurrence {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 /**
  * Tribe Community Events Add new
  */
-.tribe-community-events.form, #tribe-community-events.form {
+.tribe-community-events.form,
+#tribe-community-events.form {
 	padding: 0;
 	background: transparent;
 	border: none;
@@ -933,7 +1106,10 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		width: auto;
 	}
 
-	.tribe-field-start_date, .tribe-field-end_date, .tribe-field-start_time, .tribe-field-end_time {
+	.tribe-field-start_date,
+	.tribe-field-end_date,
+	.tribe-field-start_time,
+	.tribe-field-end_time {
 		height: auto;
 		color: $text-color;
 		background-color: white;
@@ -944,7 +1120,7 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		width: auto;
 
 		&:focus {
-			border-color: nth($blue,1);
+			border-color: nth($blue, 1);
 			outline: 0;
 		}
 	}
@@ -967,7 +1143,9 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		}
 	}
 
-	.tribe-section, .events-community-post-content, .events-community-post-title {
+	.tribe-section,
+	.events-community-post-content,
+	.events-community-post-title {
 		background: white;
 		border-radius: 3px;
 		font-size: 13px;
@@ -979,7 +1157,8 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 		border: 1px solid #e0e0e0;
 	}
 
-	.events-community-post-title, .events-community-post-content {
+	.events-community-post-title,
+	.events-community-post-content {
 		padding: 16px;
 		font-weight: normal;
 		border-top: 0;
@@ -1033,15 +1212,26 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 			background-image: none;
 			border: 2px solid $input-border;
 			border-radius: $input-border-radius;
-			@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $input-border-radius-large);
-			@include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-			@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+			@include input-size(
+				".input-lg",
+				$input-height-large,
+				$padding-large-vertical,
+				$padding-large-horizontal,
+				$font-size-large,
+				$line-height-large,
+				$input-border-radius-large
+			);
+			@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075));
+			@include transition(
+				border-color ease-in-out 0.15s,
+				box-shadow ease-in-out 0.15s
+			);
 			@include form-control-focus;
 			@include placeholder;
 			&::-ms-expand {
 				border: 0;
 				background-color: transparent;
-				}
+			}
 			&[disabled],
 			&[readonly],
 			fieldset[disabled] & {
@@ -1050,7 +1240,7 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
 			}
 			&[disabled],
 			fieldset[disabled] & {
-			cursor: $cursor-disabled;
+				cursor: $cursor-disabled;
 			}
 		}
 	}
@@ -1060,13 +1250,18 @@ a.tribe-add-post.tribe-button, button#tribe-add-recurrence {
  * Tribe Community Events Mobile
  */
 
-#loginform, .loginform, .woocommerce form.login,
-.woocommerce form.register, .logged-out .woocommerce {
+#loginform,
+.loginform,
+.woocommerce form.login,
+.woocommerce form.register,
+.logged-out .woocommerce {
 	max-width: 550px;
 	margin: 0 auto;
 	border: none;
 	padding: 0;
-	button, button.button, #wp-submit {
+	button,
+	button.button,
+	#wp-submit {
 		@include lsx-button-scaffolding();
 		@include lsx-button-colour();
 		@include small-button();

@@ -321,7 +321,6 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 			$author_facebook   = get_the_author_meta( 'facebook', $author_id );
 			$author_linkedin   = get_the_author_meta( 'linkedin', $author_id );
 			$author_twitter    = get_the_author_meta( 'twitter', $author_id );
-			$author_googleplus = get_the_author_meta( 'googleplus', $author_id );
 			?>
 			<div class="col-<?php echo esc_attr( $size ); ?>-12">
 				<div class="archive-author-data">
@@ -342,7 +341,7 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 								?>
 							</h2>
 							<!-- Social -->
-							<?php if ( ! empty( $author_url ) || ! empty( $author_email ) || ! empty( $author_facebook ) || ! empty( $author_twitter ) || ! empty( $author_googleplus ) ) : ?>
+							<?php if ( ! empty( $author_url ) || ! empty( $author_email ) || ! empty( $author_facebook ) || ! empty( $author_twitter ) ) : ?>
 								<div class="archive-author-social-links">
 									<?php if ( ! empty( $author_url ) ) : ?>
 										<a href="<?php echo esc_url( $author_url ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-url"><i class="fa fa-link" aria-hidden="true"></i></a>
@@ -362,10 +361,6 @@ if ( ! function_exists( 'lsx_author_extra_info' ) ) :
 
 									<?php if ( ! empty( $author_linkedin ) ) : ?>
 										<a href="<?php echo esc_url( $author_linkedin ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-									<?php endif; ?>
-
-									<?php if ( ! empty( $author_googleplus ) ) : ?>
-										<a href="<?php echo esc_url( $author_googleplus ); ?>" target="_blank" rel="nofollow noreferrer noopener" class="archive-author-social-link archive-author-social-link-googleplus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
 									<?php endif; ?>
 								</div>
 							<?php endif; ?>

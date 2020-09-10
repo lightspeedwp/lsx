@@ -34,6 +34,9 @@ endif;
 add_filter( 'get_the_archive_title', 'modify_archive_title', 10, 1 );
 
 function modify_archive_title( $title ) {
+	if ( ! is_post_type_archive( 'forum' ) ) {
+		return $title;
+	}
 	$title = __( 'Forums', 'lsx' );
 	return $title;
 }

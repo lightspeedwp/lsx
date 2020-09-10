@@ -875,20 +875,22 @@
 	}
 
 	// Sensei
+	.content-area,
+	.learner-profile {
+		.sensei-course-filters,
+		#my-courses {
+			li {
+				a:not(.btn) {
+					background-color: #fff;
+					color: $link;
 
-	.sensei-course-filters,
-	.learner-profile #my-courses .ui-tabs-nav {
-		li {
-			a:not(.btn) {
-				background-color: #fff;
-				color: $link;
-
-				&.active,
-				&:hover,
-				&:hover:active,
-				&:focus {
-					background-color: $link;
-					color: #fff;
+					&.active,
+					&:hover,
+					&:hover:active,
+					&:focus {
+						background-color: $link;
+						color: #fff;
+					}
 				}
 			}
 		}
