@@ -451,11 +451,7 @@ if ( ! function_exists( 'lsx_site_identity' ) ) :
 	 */
 	function lsx_site_identity() {
 		if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-			if ( version_compare( get_bloginfo( 'version' ), '5.5', '<' ) ) {
-				the_custom_logo();
-			} else {
-				echo wp_kses_post( '<a href="' . home_url() . '" class="custom-logo-link" rel="home">' . the_custom_logo() . '</a>' );
-			}
+			the_custom_logo();
 		} else {
 			if ( get_theme_mod( 'site_logo_header_text', 1 ) ) {
 				lsx_site_title();
