@@ -24,11 +24,23 @@ article.page {
 	#primary {
 		margin-top: 0;
 	}
+	&.mobile-header-hamburger {
+		#masthead {
+			background-color: transparent;
+			.primary-navbar {
+				> .nav {
+					background-color: transparent;
+				}
+			}
+		}
+	}
 	#masthead {
-		background-color: transparent;
 		margin-bottom: -80px;
 		z-index: 9;
 		box-shadow: none;
+		&.scroll-to-fixed-fixed {
+			position: relative !important;
+		}
 		#searchform {
 			.search-submit {
 				color: white;
@@ -37,7 +49,6 @@ article.page {
 		.primary-navbar {
 			border: none;
 			> .nav {
-				background-color: transparent;
 				.menu-item {
 					> a {
 						@include media(">=desktop") {

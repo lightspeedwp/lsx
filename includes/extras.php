@@ -92,7 +92,7 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 
 		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
 
-		if ( false !== $fixed_header ) {
+		if ( ( false !== $fixed_header ) && ( ! is_page_template( 'page-templates/template-cover.php' ) ) ) {
 			$classes[] = 'top-menu-fixed';
 		}
 
