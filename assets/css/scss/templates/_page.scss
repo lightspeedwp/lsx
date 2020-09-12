@@ -34,6 +34,18 @@ article.page {
 			}
 		}
 	}
+	&.mobile-header-navigation-bar {
+		@include media(">=desktop-wide") {
+			#masthead {
+				background-color: transparent;
+				.primary-navbar {
+					> .nav {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
 	#masthead {
 		margin-bottom: -80px;
 		z-index: 9;
