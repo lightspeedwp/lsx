@@ -107,7 +107,7 @@ class LSX_Schema_Utils {
 	 */
 	public static function get_article_schema_id( $id, $context, $local = false ) {
 		if ( false === $local ) {
-			$url = get_permalink( $id ) . \WPSEO_Schema_IDs::ARTICLE_HASH;
+			$url = get_permalink( $id ) . \Schema_IDs::ARTICLE_HASH;
 		} else {
 			$url = get_permalink( $context->id ) . '#/schema/article/' . wp_hash( $id . get_the_title( $id ) );
 		}
@@ -122,7 +122,7 @@ class LSX_Schema_Utils {
 	 * @return string The user's schema ID.
 	 */
 	public static function get_author_schema_id( $name, $email, $context ) {
-		return $context->site_url . \WPSEO_Schema_IDs::PERSON_HASH . wp_hash( $name . $email );
+		return $context->site_url . \Schema_IDs::PERSON_HASH . wp_hash( $name . $email );
 	}
 	/**
 	 * Generates the place graph piece for the subtrip / Itinerary arrays.
@@ -164,7 +164,7 @@ class LSX_Schema_Utils {
 	public static function add_image( $data, $context ) {
 		if ( $context->has_image ) {
 			$data['image'] = array(
-				'@id' => $context->canonical . \WPSEO_Schema_IDs::PRIMARY_IMAGE_HASH,
+				'@id' => $context->canonical . \Schema_IDs::PRIMARY_IMAGE_HASH,
 			);
 		}
 		return $data;
