@@ -186,8 +186,8 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 			return;
 		}
 
-		// Cart and Checkout won't have banners of any kind.
-		if ( function_exists( 'tribe_is_event' ) && tribe_is_event() ) {
+		// Events wont have banners.
+		if ( function_exists( 'tribe_is_event' ) && ( tribe_is_event() || tribe_is_organizer() || tribe_is_venue() ) ) {
 			return;
 		}
 

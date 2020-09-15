@@ -325,6 +325,11 @@ a.tribe-events-read-more {
 					background: nth($blue, 1);
 				}
 			}
+			&.tribe-nav-top {
+				.tribe-pagination {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -343,6 +348,9 @@ button#tribe-add-exclusion,
 	&:hover {
 		background: var(--button-secondary-hover);
 	}
+}
+a.table-menu-btn.button.tribe-button.tribe-button-tertiary.tribe-button-activate {
+	color: #64686c;
 }
 
 .tribe-nav {
