@@ -102,12 +102,6 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 			$classes[] = 'has-header-search';
 		}
 
-		$preloader_content = get_theme_mod( 'lsx_preloader_content_status', false );
-
-		if ( false !== $preloader_content ) {
-			$classes[] = 'preloader-content-enable';
-		}
-
 		$register_enabled = get_option( 'users_can_register', false );
 		if ( ( $register_enabled ) && is_page( 'my-account' ) && is_singular() ) {
 			$classes[] = 'register-enabled';
@@ -702,3 +696,16 @@ function lsx_custom_logo_attributes( $attributes ) {
 	return $attributes;
 }
 add_filter( 'get_custom_logo_image_attributes', 'lsx_custom_logo_attributes' );
+
+/**
+ * Redirects non admin users to home.
+ *
+ * @return void
+ */
+function lsx_blockusers_init() {
+	if ( is_admin() && ( current_user_can( 'teacher' ) || current_user_can( 'customer' ) ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		wp_safe_redirect( home_url() );
+		exit;
+	}
+}
+add_action( 'init', 'lsx_blockusers_init' );
