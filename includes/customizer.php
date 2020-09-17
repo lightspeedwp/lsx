@@ -10,31 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
-
-	/**
-	 * Returns an array of the core panel.
-	 *
-	 * @package    lsx
-	 * @subpackage customizer
-	 *
-	 * @return $lsx_controls array()
-	 */
-	function lsx_customizer_core_controls( $lsx_controls ) {
-		$lsx_controls['sections']['lsx-core'] = array(
-			'title'       => esc_html__( 'Core Settings', 'lsx' ),
-			'description' => esc_html__( 'Change the core settings.', 'lsx' ),
-			'priority'    => 21,
-		);
-
-
-		return $lsx_controls;
-	}
-
-endif;
-
-add_filter( 'lsx_customizer_controls', 'lsx_customizer_core_controls' );
-
 if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 
 	/**
