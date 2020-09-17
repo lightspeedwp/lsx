@@ -20,7 +20,6 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 	 */
 	function lsx_scripts() {
 		lsx_scripts_add_styles();
-		lsx_scripts_add_fonts();
 		lsx_scripts_add_scripts();
 	}
 
@@ -67,21 +66,6 @@ if ( ! function_exists( 'lsx_scripts_add_styles' ) ) :
 		wp_style_add_data( 'lsx_main', 'rtl', 'replace' );
 	}
 
-endif;
-
-if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
-	/**
-	 * Enqueue fonts.
-	 *
-	 * @package    lsx
-	 * @subpackage scripts
-	 */
-	function lsx_scripts_add_fonts() {
-		$disable_fonts = get_theme_mod( 'lsx_disable_fonts', false );
-		if ( false !== $disable_fonts ) {
-			return;
-		}
-	}
 endif;
 
 if ( ! function_exists( 'lsx_scripts_add_scripts' ) ) :

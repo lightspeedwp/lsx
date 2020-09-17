@@ -68,43 +68,46 @@ article.page {
 			}
 		}
 	}
-	.entry-header {
-		background: transparent;
-		padding: 0;
-		position: relative;
-		width: 100%;
-		* {
-			color: white;
-		}
-		.entry-categories-inner {
-			a {
-				font-size: 15px;
-				text-transform: uppercase;
-				text-decoration: underline;
-				margin: 0 5px;
-				@include media("<custom") {
-					font-size: 13px;
-				}
-			}
-		}
-		.entry-title {
-			font-size: 56px;
-			@include media("<custom") {
-				font-size: 36px;
-			}
-		}
-		.intro-text {
+	#main {
+		.entry-header {
+			background: transparent;
+			padding: 0;
+			position: relative;
+			width: 100%;
 			* {
-				font-size: 28px;
-				@include media("<custom") {
-					font-size: 18px;
+				color: white;
+			}
+			.entry-categories-inner {
+				a {
+					font-size: 15px;
+					text-transform: uppercase;
+					text-decoration: underline;
+					margin: 0 5px;
+					@include media("<custom") {
+						font-size: 13px;
+					}
 				}
 			}
-		}
-		.moretag {
-			display: none;
+			.entry-title {
+				font-size: 56px;
+				@include media("<custom") {
+					font-size: 36px;
+				}
+			}
+			.intro-text {
+				* {
+					font-size: 28px;
+					@include media("<custom") {
+						font-size: 18px;
+					}
+				}
+			}
+			.moretag {
+				display: none;
+			}
 		}
 	}
+
 	#primary {
 		.entry-categories-inner {
 			a {

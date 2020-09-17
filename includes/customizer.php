@@ -10,54 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'lsx_customizer_core_controls' ) ) :
-
-	/**
-	 * Returns an array of the core panel.
-	 *
-	 * @package    lsx
-	 * @subpackage customizer
-	 *
-	 * @return $lsx_controls array()
-	 */
-	function lsx_customizer_core_controls( $lsx_controls ) {
-		$lsx_controls['sections']['lsx-core'] = array(
-			'title'       => esc_html__( 'Core Settings', 'lsx' ),
-			'description' => esc_html__( 'Change the core settings.', 'lsx' ),
-			'priority'    => 21,
-		);
-
-		$lsx_controls['settings']['lsx_preloader_content_status'] = array(
-			'default'           => '1',
-			'sanitize_callback' => 'lsx_sanitize_checkbox',
-			'transport'         => 'postMessage',
-		);
-
-		$lsx_controls['fields']['lsx_preloader_content_status'] = array(
-			'label'   => esc_html__( 'Preloader Content', 'lsx' ),
-			'section' => 'lsx-core',
-			'type'    => 'checkbox',
-		);
-
-		$lsx_controls['settings']['lsx_disable_fonts'] = array(
-			'default'           => 0,
-			'sanitize_callback' => 'lsx_sanitize_checkbox',
-			'transport'         => 'postMessage',
-		);
-
-		$lsx_controls['fields']['lsx_disable_fonts'] = array(
-			'label'   => esc_html__( 'Disable Fonts', 'lsx' ),
-			'section' => 'lsx-core',
-			'type'    => 'checkbox',
-		);
-
-		return $lsx_controls;
-	}
-
-endif;
-
-add_filter( 'lsx_customizer_controls', 'lsx_customizer_core_controls' );
-
 if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 
 	/**
