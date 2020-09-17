@@ -50,7 +50,7 @@
 
 - Updating dependencies to prevent vulnerabilities.
 - Updating PHPCS options for better code.
-- General testing to ensure compatibility with latest WordPress version (5.5).
+- General testing to ensure compatibility with latest WordPress version (5.5.1).
 - General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
 
 # [[2.8.0]] - 2020-05-21
