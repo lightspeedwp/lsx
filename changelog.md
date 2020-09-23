@@ -16,6 +16,7 @@
 - Adding the page template "Cover Template" and admin options for it.
 - Adding support for New Block Tools on WordPress 5.5.
 - Added support for native Lazy-loading images on WordPress 5.5 version.
+- Added compatibility with Yoast SEO 14.0.
 
 ### Updated
 
@@ -50,7 +51,7 @@
 
 - Updating dependencies to prevent vulnerabilities.
 - Updating PHPCS options for better code.
-- General testing to ensure compatibility with latest WordPress version (5.5).
+- General testing to ensure compatibility with latest WordPress version (5.5.1).
 - General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
 
 # [[2.8.0]] - 2020-05-21
