@@ -180,6 +180,22 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 			)
 		);
 
+		$lsx_controls['settings']['lsx_cover_template_menu_text_color'] = array(
+			'default'           => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'type'              => 'theme_mod',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_menu_text_color'] = (
+			array(
+				'label'       => __( 'Menu Text Color', 'lsx' ),
+				'description' => __( 'The color used for the text in the nav menu.', 'lsx' ),
+				'section'     => 'lsx-cover-template',
+				'control'     => 'WP_Customize_Color_Control',
+			)
+		);
+
 		$lsx_controls['settings']['lsx_cover_template_overlay_opacity'] = array(
 			'default'           => 80,
 			'sanitize_callback' => 'absint',
