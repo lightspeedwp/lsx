@@ -24,8 +24,16 @@
 	$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : '';
 
 	if ( $image_url ) {
-		$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
+		$cover_header_style  .= 'background-image: url( ' . esc_url( $image_url ) . ' );';
 		$cover_header_classes = ' bg-image';
+	}
+
+	// Get the color used for the color overlay.
+	$color_cover_color = get_theme_mod( 'lsx_cover_template_cover_background_color' );
+	if ( $color_cover_color ) {
+		$cover_header_style .= ' background-color: ' . esc_attr( $color_cover_color ) . ';';
+	} else {
+		$cover_header_style .= ' background-color: #27639e;';
 	}
 
 	// Get the color used for the color overlay.
@@ -47,7 +55,7 @@
 	$color_overlay_classes .= ' opacity-' . $color_overlay_opacity;
 	?>
 
-	<div class="cover-header <?php echo esc_html( $cover_header_classes ); ?>"<?php echo wp_kses_post( $cover_header_style ); ?>>
+	<div class="cover-header <?php echo esc_html( $cover_header_classes ); ?>" style="<?php echo wp_kses_post( $cover_header_style ); ?>">
 		<div class="cover-header-inner-wrapper">
 			<div class="cover-header-inner">
 				<div class="cover-color-overlay color-accent<?php echo esc_attr( $color_overlay_classes ); ?>"<?php echo wp_kses_post( $color_overlay_style ); ?>></div>

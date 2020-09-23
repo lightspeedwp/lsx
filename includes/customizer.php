@@ -150,6 +150,20 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 			'type'    => 'checkbox',
 		);
 
+		$lsx_controls['settings']['lsx_cover_template_cover_background_color'] = array(
+			'default'           => '#000000',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'type'              => 'theme_mod',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_cover_background_color'] = array(
+			'label'       => esc_html__( 'Cover Background Color', 'lsx' ),
+			'description' => __( 'The color used for the cover background, for post or pages without featured image. Defaults to #27639e.', 'lsx' ),
+			'section'     => 'lsx-cover-template',
+			'control'     => 'WP_Customize_Color_Control',
+		);
+
 		$lsx_controls['settings']['lsx_cover_template_overlay_background_color'] = array(
 			'default'           => '#000000',
 			'sanitize_callback' => 'sanitize_hex_color',
