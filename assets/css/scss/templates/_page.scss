@@ -109,7 +109,7 @@ article.page {
 			flex-direction: column;
 			justify-content: flex-end;
 			width: 100%;
-			min-height: calc(100vh - 10px);
+			min-height: calc(100vh - 2rem);
 			.cover-header-inner {
 				padding: 10rem 0 5rem 0;
 				width: 100%;
@@ -125,6 +125,21 @@ article.page {
 					background: currentColor;
 					content: "";
 					display: block;
+				}
+				.to-the-content-wrapper {
+					.to-the-content {
+						display: inline-block;
+						padding: 2rem;
+						i {
+							font-size: 35px;
+							transition: transform 0.1s linear;
+						}
+						&:hover {
+							i {
+								transform: scale(1.1);
+							}
+						}
+					}
 				}
 			}
 		}

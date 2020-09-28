@@ -116,15 +116,31 @@
 // lsx-subheading styles
 .content-area {
 	.lsx-subheading {
-		h2 {
+		@include media(">desktop") {
+			max-width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		h2,
+		h3 {
 			font-size: 48px;
 			color: #333;
 			line-height: 50px;
 		}
-		p.lsx-title {
+		p {
 			font-size: 26px;
 			color: #777;
 			line-height: 30px;
+			&:last-child {
+				&:after {
+					content: "";
+					display: block;
+					height: 2px;
+					margin: 2.4rem auto 0;
+					width: 80px;
+					background-color: #dadddf;
+				}
+			}
 			&:not(.has-text-align-center) {
 				text-align: initial;
 				&:after {

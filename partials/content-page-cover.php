@@ -85,7 +85,7 @@
 								<div class="to-the-content-wrapper">
 
 									<a href="#post-inner" class="to-the-content">
-										<i class="fa fa-arrow-down" aria-hidden="true"></i>
+										<i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
 									</a>
 
 								</div>
