@@ -112,6 +112,9 @@ article.page {
 			min-height: calc(100vh - 2rem);
 			.cover-header-inner {
 				padding: 10rem 0 5rem 0;
+				@include media("<=tablet") {
+					padding: 10rem 0 13rem 0;
+				}
 				width: 100%;
 				.cover-color-overlay,
 				.cover-color-overlay::before {

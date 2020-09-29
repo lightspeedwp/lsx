@@ -158,8 +158,8 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 		);
 
 		$lsx_controls['fields']['lsx_cover_template_cover_background_color'] = array(
-			'label'       => esc_html__( 'Cover Background Color', 'lsx' ),
-			'description' => __( 'The color used for the cover background, for post or pages without featured image. Defaults to #27639e.', 'lsx' ),
+			'label'       => esc_html__( 'Cover Background Colour', 'lsx' ),
+			'description' => __( 'The colour used for the cover background, for post or pages without featured image. Defaults to #27639e.', 'lsx' ),
 			'section'     => 'lsx-cover-template',
 			'control'     => 'WP_Customize_Color_Control',
 		);
