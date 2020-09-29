@@ -21,6 +21,13 @@ article.page {
 
 .page-template-template-cover,
 .post-template-template-cover {
+	&.gutenberg-compatible-template.using-gutenberg.lsx-page-title,
+	&.banner-disabled.single {
+		#primary,
+		#primary.content-area {
+			margin-top: 0;
+		}
+	}
 	#primary {
 		margin-top: 0;
 	}
