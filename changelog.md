@@ -17,6 +17,7 @@
 - Adding support for New Block Tools on WordPress 5.5.
 - Added support for native Lazy-loading images on WordPress 5.5 version.
 - Added compatibility with Yoast SEO 14.0.
+- Added support for block link color experimental feature.
 
 ### Updated
 

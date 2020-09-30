@@ -681,6 +681,16 @@ var lsx = Object.create(null);
 		}
 	};
 
+	lsx.detect_has_link_block = function() {
+		$(".has-link-color").each(function() {
+			$(this)
+				.find("a")
+				.each(function() {
+					$(this).addClass("has-link-anchor");
+				});
+		});
+	};
+
 	//Toggle for woocommerce block filters.
 	lsx.woocommerce_filters_mobile = function() {
 		if ($("body").hasClass("woocommerce-js")) {
@@ -762,6 +772,7 @@ var lsx = Object.create(null);
 		lsx.sensei_courses_empty_thumbnail();
 		lsx.sensei_course_participants_widget_more();
 		lsx.woocommerce_filters_mobile();
+		lsx.detect_has_link_block();
 	});
 
 	/**
