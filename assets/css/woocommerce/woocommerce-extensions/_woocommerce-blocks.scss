@@ -8,11 +8,6 @@
 	}
 }
 #primary {
-	&.content-area {
-		.wp-block-button__link {
-			color: inherit;
-		}
-	}
 	[class^="wc-block-featured"] {
 		.wp-block-button__link {
 			@include small-button();
