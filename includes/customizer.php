@@ -138,8 +138,24 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 			'priority'    => 23,
 		);
 
+		$lsx_controls['settings']['lsx_cover_template_alt_logo'] = array(
+			'default'           => '',
+			'type'              => 'theme_mod',
+			'transport'         => 'postMessage',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'absint'
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_alt_logo'] = array(
+			'label'       => esc_html__( 'Upload Alternative Logo Image', 'lsx' ),
+			'description' => __( 'Upload an alternative logo image (svg, png or jpg).', 'lsx' ),
+			'section'     => 'lsx-cover-template',
+			'control'     => 'WP_Customize_Media_Control',
+			'mime_type'   => 'image',
+		);
+
 		$lsx_controls['settings']['lsx_cover_template_fixed_background'] = array(
-			'default'           => '1',
+			'default'           => '',
 			'sanitize_callback' => 'lsx_sanitize_checkbox',
 			'transport'         => 'postMessage',
 		);
@@ -172,8 +188,8 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 		);
 
 		$lsx_controls['fields']['lsx_cover_template_overlay_background_color'] = array(
-			'label'       => esc_html__( 'Overlay Background Color', 'lsx' ),
-			'description' => __( 'The color used for the overlay. Defaults to black.', 'lsx' ),
+			'label'       => esc_html__( 'Overlay Background Colour', 'lsx' ),
+			'description' => __( 'The colour used for the overlay. Defaults to black.', 'lsx' ),
 			'section'     => 'lsx-cover-template',
 			'control'     => 'WP_Customize_Color_Control',
 		);
@@ -187,8 +203,8 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 
 		$lsx_controls['fields']['lsx_cover_template_overlay_text_color'] = (
 			array(
-				'label'       => __( 'Overlay Text Color', 'lsx' ),
-				'description' => __( 'The color used for the text in the overlay.', 'lsx' ),
+				'label'       => __( 'Overlay Text Colour', 'lsx' ),
+				'description' => __( 'The colour used for the text in the overlay.', 'lsx' ),
 				'section'     => 'lsx-cover-template',
 				'control'     => 'WP_Customize_Color_Control',
 			)
@@ -203,8 +219,8 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 
 		$lsx_controls['fields']['lsx_cover_template_menu_text_color'] = (
 			array(
-				'label'       => __( 'Menu Text Color', 'lsx' ),
-				'description' => __( 'The color used for the text in the nav menu.', 'lsx' ),
+				'label'       => __( 'Menu Text Colour', 'lsx' ),
+				'description' => __( 'The colour used for the text in the nav menu.', 'lsx' ),
 				'section'     => 'lsx-cover-template',
 				'control'     => 'WP_Customize_Color_Control',
 			)

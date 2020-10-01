@@ -80,6 +80,17 @@
 							the_title( '<h1 class="entry-title">', '</h1>' );
 
 							if ( is_page() ) {
+								if ( has_excerpt() ) {
+									?>
+
+									<div class="the-excerpt-wrapper">
+
+									<?php the_excerpt(); ?>
+
+									</div>
+
+									<?php
+								}
 								?>
 
 								<div class="to-the-content-wrapper">
