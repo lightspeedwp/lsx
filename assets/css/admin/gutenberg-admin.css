@@ -1,9 +1,13 @@
+.button-holder { display: -ms-flexbox; display: flex; width: 100%; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; vertical-align: middle; margin: 0; padding: 0; }
+
 /*! Body Typography */
 body.block-editor-page { font-family: "Noto Sans", sans-serif; font-weight: normal; /*! Headings - <h1> through </h6> */ }
 
 body.block-editor-page .editor-styles-wrapper, body.block-editor-page input, body.block-editor-page select, body.block-editor-page textarea, body.block-editor-page button { font-family: "Noto Sans", sans-serif; font-weight: normal; }
 
 body.block-editor-page h1, body.block-editor-page h2, body.block-editor-page h3, body.block-editor-page h4, body.block-editor-page h5, body.block-editor-page h6 { font-family: "Lora", serif; font-weight: normal; }
+
+.wp-block-button:not(.is-style-outline) div.wp-block-button__link { background-color: #418AD0; }
 
 .wp-admin.gutenberg-editor-page .wp-block-button .wp-block-button__link { border: 0 none; border-radius: 3px; font-size: 14px; font-weight: 700; height: 48px; letter-spacing: 0.6px; line-height: 1.25; padding: 15px; text-transform: uppercase; }
 

@@ -74,6 +74,16 @@
 		);
 	}
 
+	a.wp-block-button__link {
+		@include lsx-button-colour(
+			$color,
+			$color-hover,
+			$bg,
+			$bg-hover,
+			$shadow
+		);
+	}
+
 	#respond {
 		& > .comment-form {
 			input[type="submit"] {
@@ -259,6 +269,17 @@
 					#e5282b
 				);
 			}
+		}
+	}
+}
+
+@mixin custom-buttons-colours-admin(
+	$color: map-get($buttons, color),
+	$bg: map-get($buttons, bg)
+) {
+	.wp-block-button:not(.is-style-outline) {
+		div.wp-block-button__link {
+			background-color: $bg;
 		}
 	}
 }

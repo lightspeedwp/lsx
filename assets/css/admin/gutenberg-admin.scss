@@ -1,3 +1,6 @@
+@import "../scss/global/variables";
+@import "../scss/global/mixins";
+
 /*! Body Typography */
 body.block-editor-page {
 	font-family: "Noto Sans", sans-serif;
@@ -21,6 +24,8 @@ body.block-editor-page {
 		font-weight: normal;
 	}
 }
+
+@include custom-buttons-colours-admin();
 
 .wp-admin.gutenberg-editor-page {
 	.wp-block-button {
