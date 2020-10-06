@@ -17,6 +17,7 @@
 - Adding alt image and excerpt to cover template.
 - Adding support for New Block Tools on WordPress 5.5.
 - Added support for native Lazy-loading images on WordPress 5.5 version.
+- Adding in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
 - Added compatibility with Yoast SEO 14.0.
 - Added support for block link color experimental feature.
 
