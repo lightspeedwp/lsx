@@ -77,9 +77,11 @@
 	// Caldera Forms
 	.remodal-wrapper {
 		color: $color;
-
-		a:not(.btn):not(.wp-block-button__link) {
+		a:not(.btn):not(.wp-block-button__link):not(.has-link-anchor) {
 			@include lsx-link-colour($link, $hover);
+		}
+		.has-link-color a:hover {
+			color: $hover;
 		}
 
 		h1,
@@ -875,20 +877,22 @@
 	}
 
 	// Sensei
+	.content-area,
+	.learner-profile {
+		.sensei-course-filters,
+		#my-courses {
+			li {
+				a:not(.btn) {
+					background-color: #fff;
+					color: $link;
 
-	.sensei-course-filters,
-	.learner-profile #my-courses .ui-tabs-nav {
-		li {
-			a:not(.btn) {
-				background-color: #fff;
-				color: $link;
-
-				&.active,
-				&:hover,
-				&:hover:active,
-				&:focus {
-					background-color: $link;
-					color: #fff;
+					&.active,
+					&:hover,
+					&:hover:active,
+					&:focus {
+						background-color: $link;
+						color: #fff;
+					}
 				}
 			}
 		}

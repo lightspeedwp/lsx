@@ -1,0 +1,56 @@
+version: "2"
+checks:
+  argument-count:
+    enabled: true
+    config:
+      threshold: 15
+  complex-logic:
+    enabled: true
+    config:
+      threshold: 15
+  file-lines:
+    enabled: false
+  method-complexity:
+    enabled: true
+    config:
+      threshold: 25
+  method-count:
+    enabled: true
+    config:
+      threshold: 25
+  method-lines:
+    enabled: false
+  nested-control-flow:
+    enabled: false
+  return-statements:
+    enabled: false
+  similar-code:
+    enabled: false
+  identical-code:
+    enabled: true
+plugins:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  scss-lint:
+    enabled: true
+exclude_patterns:
+- "tests/"
+- "sample-data/"
+- "i18n/"
+- "bin/"
+- "languages/"
+- "includes/classes/legacy/"
+- "vendor/"
+- "config/"
+- "db/"
+- "dist/"
+- "features/"
+- "**/node_modules/"
+- "script/"
+- "**/spec/"
+- "**/test/"
+- "**/tests/"
+- "**/vendor/"
+- "**/*.d.ts"

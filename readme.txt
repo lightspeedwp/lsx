@@ -2,10 +2,10 @@
 Contributors: feedmymedia, lightspeedwp, eleshar, krugazul, virginialsdev, deon80, jaab1985, jacquesvdh, ignusvermaak, garthlsdev
 Donate link: https://donate.lsdev.biz/
 Tags: LSX Theme, Gutenberg, Block Based Builder, WordPress Theme 
-Requires at least: 5.1.1
-Tested up to: 5.4.2
-Requires PHP: 7.0
-Stable tag: 2.9
+Requires at least: 5.3
+Tested up to: 5.5
+Requires PHP: 7.2
+Stable tag: 2.9.0
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 

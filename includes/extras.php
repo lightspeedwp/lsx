@@ -92,7 +92,7 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 
 		$fixed_header = get_theme_mod( 'lsx_header_fixed', false );
 
-		if ( false !== $fixed_header ) {
+		if ( ( false !== $fixed_header ) && ( ! is_page_template( 'page-templates/template-cover.php' ) ) ) {
 			$classes[] = 'top-menu-fixed';
 		}
 
@@ -100,12 +100,6 @@ if ( ! function_exists( 'lsx_body_class' ) ) :
 
 		if ( false !== $search_form ) {
 			$classes[] = 'has-header-search';
-		}
-
-		$preloader_content = get_theme_mod( 'lsx_preloader_content_status', false );
-
-		if ( false !== $preloader_content ) {
-			$classes[] = 'preloader-content-enable';
 		}
 
 		$register_enabled = get_option( 'users_can_register', false );
@@ -669,13 +663,14 @@ function lsx_cover_template_custom_enqueue() {
 	$color_overlay_classes = '';
 
 	$cover_text_color = get_theme_mod( 'lsx_cover_template_overlay_text_color' );
+	$cover_menu_color = get_theme_mod( 'lsx_cover_template_menu_text_color' );
 
 	$color_overlay_opacity  = get_theme_mod( 'lsx_cover_template_overlay_opacity' );
 	$color_overlay_opacity  = ( false === $color_overlay_opacity ) ? 80 : $color_overlay_opacity;
 	$color_overlay_opacity  = $color_overlay_opacity / 100;
 	$color_overlay_classes .= $color_overlay_opacity;
 
-	$custom_css       = ".page-template-template-cover .entry-header .entry-title, .post-template-template-cover .entry-header .entry-title, .post-template-template-cover #primary .entry-categories-inner a, .page-template-template-cover #primary .entry-header *, .post-template-template-cover #primary .entry-header * {color: {$cover_text_color};} .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before {opacity: {$color_overlay_opacity};}";
+  $custom_css       = ".page-template-template-cover .entry-header .entry-title, .post-template-template-cover .entry-header .entry-title, .post-template-template-cover #primary #main .entry-categories-inner a, .page-template-template-cover #primary #main .entry-header *, .post-template-template-cover #primary #main .entry-header * {color: {$cover_text_color};} .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .page-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay, .post-template-template-cover .cover-header .cover-header-inner-wrapper .cover-header-inner .cover-color-overlay::before {opacity: {$color_overlay_opacity};} @media (min-width: 1200px) {.page-template-template-cover .header-wrap #masthead .primary-navbar > .nav > .menu-item > a, .page-template-template-cover .header-wrap #masthead .primary-navbar > .nav > .menu-item.active > a, .post-template-template-cover .header-wrap #masthead .primary-navbar > .nav > .menu-item > a, .post-template-template-cover .header-wrap #masthead .primary-navbar > .nav > .menu-item.active > a { color: {$cover_menu_color};} }";
 	wp_add_inline_style( 'lsx_main', $custom_css );
 
 }
@@ -690,3 +685,28 @@ function lsx_is_rest_api_request() {
 	$rest_helper = LSX_Rest_Helper::get_instance();
 	return $rest_helper->is_rest_api_request();
 }
+
+/**
+ * Remove lazy loading on Custom logo.
+ *
+ * @param [type] $attributes
+ * @return void
+ */
+function lsx_custom_logo_attributes( $attributes ) {
+	$attributes['loading'] = 'eager';
+	return $attributes;
+}
+add_filter( 'get_custom_logo_image_attributes', 'lsx_custom_logo_attributes' );
+
+/**
+ * Redirects non admin users to home.
+ *
+ * @return void
+ */
+function lsx_blockusers_init() {
+	if ( is_admin() && ( current_user_can( 'teacher' ) || current_user_can( 'customer' ) ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+		wp_safe_redirect( home_url() );
+		exit;
+	}
+}
+add_action( 'init', 'lsx_blockusers_init' );

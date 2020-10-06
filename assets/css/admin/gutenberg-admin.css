@@ -1,3 +1,5 @@
+.button-holder { display: -ms-flexbox; display: flex; width: 100%; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; text-align: center; vertical-align: middle; margin: 0; padding: 0; }
+
 /*! Body Typography */
 body.block-editor-page { font-family: "Noto Sans", sans-serif; font-weight: normal; /*! Headings - <h1> through </h6> */ }
 
@@ -5,13 +7,13 @@ body.block-editor-page .editor-styles-wrapper, body.block-editor-page input, bod
 
 body.block-editor-page h1, body.block-editor-page h2, body.block-editor-page h3, body.block-editor-page h4, body.block-editor-page h5, body.block-editor-page h6 { font-family: "Lora", serif; font-weight: normal; }
 
+.wp-block-button:not(.is-style-outline) div.wp-block-button__link { background-color: #418AD0; }
+
 .wp-admin.gutenberg-editor-page .wp-block-button .wp-block-button__link { border: 0 none; border-radius: 3px; font-size: 14px; font-weight: 700; height: 48px; letter-spacing: 0.6px; line-height: 1.25; padding: 15px; text-transform: uppercase; }
 
 #editor .wp-block-cover .wp-block-cover__inner-container .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] { margin: 0; }
 
 #editor .wp-block-cover .block-editor-block-list__block { color: #444444; }
-
-#editor .edit-post-visual-editor .block-editor-block-list__block[data-type="core/image"] { max-width: -webkit-fit-content; max-width: -moz-fit-content; max-width: fit-content; }
 
 #editor .lsx-title:after { content: ""; display: block; height: 2px; margin: 2.4rem auto 0; width: 80px; background-color: #777; }
 
@@ -19,18 +21,18 @@ body.block-editor-page h1, body.block-editor-page h2, body.block-editor-page h3,
 
 #editor .lsx-subheading h2 { font-size: 48px; color: #333; line-height: 50px; }
 
-#editor .lsx-subheading p.lsx-title { font-size: 26px; color: #777; line-height: 30px; text-align: inherit; }
+#editor .lsx-subheading p { font-size: 26px; color: #777; line-height: 30px; }
 
-#editor .lsx-subheading p.lsx-title:not(.has-text-align-center) { text-align: initial; }
+#editor .lsx-subheading p:last-child:after { content: ""; display: block; height: 2px; margin: 2.4rem auto 0; width: 80px; background-color: #dadddf; }
 
-#editor .lsx-subheading p.lsx-title:not(.has-text-align-center):after { margin-left: 0; }
+#editor .lsx-subheading p:not(.has-text-align-center) { text-align: initial; }
 
-#editor .lsx-subheading p.lsx-title.has-text-align-center { text-align: center; }
+#editor .lsx-subheading p:not(.has-text-align-center):after { margin-left: 0; }
 
-#editor .lsx-subheading p.lsx-title.has-text-align-left:after { margin-left: 0; }
+#editor .lsx-subheading p.has-text-align-left:after { margin-left: 0; }
 
-#editor .lsx-subheading p.lsx-title.has-text-align-right { text-align: right; }
+#editor .lsx-subheading p.has-text-align-right { text-align: right; }
 
-#editor .lsx-subheading p.lsx-title.has-text-align-right:after { margin-right: 0; margin-left: auto; }
+#editor .lsx-subheading p.has-text-align-right:after { margin-right: 0; margin-left: auto; }
 
 /*# sourceMappingURL=maps/gutenberg-admin.css.map */

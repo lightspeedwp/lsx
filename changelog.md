@@ -6,17 +6,20 @@
 
 - Improved styling for the Tribe Events Community Events forms.
 - Added support for the Mix and Match Woocommerce plugin.
-- Improved suport for Woocommerce Whishlist plugin.
-- Improved suport for Woocommerce Quick View plugin.
+- Improved support for Woocommerce Wishlist plugin.
+- Improved support for Woocommerce Quick View plugin.
 - Block Theme Support updates.
 - Added support for the How to and Faq yoast blocks.
 - Added the `lsx-subheading` class for group blocks.
 - Reducing the left and right Padding on LSX Buttons from 40px to 15px.
 - Adding styles to make LSX compatible with Yoast SEO's internal linking blocks.
 - Adding the page template "Cover Template" and admin options for it.
+- Adding alt image and excerpt to cover template.
 - Adding support for New Block Tools on WordPress 5.5.
 - Added support for native Lazy-loading images on WordPress 5.5 version.
 - Adding in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
+- Added compatibility with Yoast SEO 14.0.
+- Added support for block link color experimental feature.
 
 ### Updated
 
@@ -28,6 +31,7 @@
 
 - Merged two WooCommerce panels within the customizer sidebar.
 - The WooCommerce bar will be showed if active and the screen is less than 678px.
+- Skiped the loading attribute for the custom logo.
 
 ### Fixed
 
@@ -45,6 +49,13 @@
 - Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
 - Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
 - Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
+
+### Security
+
+- Updating dependencies to prevent vulnerabilities.
+- Updating PHPCS options for better code.
+- General testing to ensure compatibility with latest WordPress version (5.5.1).
+- General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
 
 # [[2.8.0]] - 2020-05-21
 

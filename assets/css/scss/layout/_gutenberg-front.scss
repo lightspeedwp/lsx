@@ -406,15 +406,24 @@
 			&.lsx-block-banner,
 			&.lsx-block-cta,
 			&.wp-block-cover,
-			&.wp-block-media-text {
-				margin-left: -50px;
-				margin-right: -50px;
-				width: calc(100% + 50px * 2);
-				max-width: calc(100% + 50px * 2);
+			&.wp-block-media-text,
+			&.wp-block-group,
+			&.wp-block-jetpack-layout-grid {
+				margin-left: -5rem;
+				margin-right: -5rem;
+				width: calc(100% + 5rem * 2);
+				max-width: calc(100% + 5rem * 2);
+				padding: 2em;
 			}
 			&.wp-block-media-text {
 				padding-left: 15px;
 				padding-right: 15px;
+			}
+			.alignfull.wp-block-jetpack-layout-grid {
+				margin-left: 0;
+				margin-right: 0;
+				width: 100%;
+				max-width: 100%;
 			}
 		}
 		.lsx-full-width-gutenberg.alignfull {
@@ -476,7 +485,6 @@
 			p,
 			.envira-gallery-wrap,
 			form,
-			.,
 			blockquote,
 			h1,
 			h2,
@@ -572,7 +580,6 @@
 			p,
 			.envira-gallery-wrap,
 			form,
-			.,
 			blockquote,
 			h1,
 			h2,

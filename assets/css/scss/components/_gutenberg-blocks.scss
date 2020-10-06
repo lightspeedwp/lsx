@@ -196,6 +196,18 @@
 		@include lsx-button-colour();
 		text-align: center;
 	}
+	.wp-block-buttons {
+		.wp-block-button {
+			padding-right: $lsx-gap / 2;
+			@include media("<=custom") {
+				width: 100%;
+				padding-right: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
 	.wp-block-button {
 		&.alignleft,
 		&.alignright {
@@ -252,8 +264,10 @@
 			display: block;
 		}
 		&.alignwide {
-			max-width: 100%;
-			width: 100%;
+			@include media(">custom") {
+				max-width: 90%;
+				width: 90%;
+			}
 		}
 		&.has-2-columns {
 			.wp-block-column {

@@ -36,15 +36,20 @@ get_header(); ?>
 
 		<?php lsx_content_bottom(); ?>
 
-		<?php
-		if ( comments_open() ) {
-			comments_template();
-		}
-		?>
-
 	</main><!-- #main -->
 
 	<?php lsx_content_after(); ?>
+
+	<?php
+	if ( is_singular( 'post' ) ) {
+		lsx_post_nav();
+	}
+	?>
+	<?php
+	if ( comments_open() ) {
+		comments_template();
+	}
+	?>
 
 </div><!-- #primary -->
 

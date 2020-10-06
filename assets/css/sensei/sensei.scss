@@ -81,6 +81,11 @@
 	#primary {
 		margin-bottom: $lsx-medium-gap;
 		#main {
+			.sensei-archive-controls {
+				h1 {
+					display: none;
+				}
+			}
 			> h1 {
 				display: none;
 			}
@@ -132,6 +137,76 @@
 	}
 }
 
+// Lesson Archive
+.post-type-archive-lesson {
+	#primary {
+		margin-bottom: $lsx-gap;
+		#main {
+			max-width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+			.archive-header {
+				display: none;
+			}
+			.post-wrapper {
+				.lesson {
+					background: white;
+					padding: 12px;
+					.entry-title {
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Lesson tags page
+.archive.tax-lesson-tag {
+	#primary {
+		margin-bottom: $lsx-gap;
+		#main {
+			max-width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+			.archive-header {
+				display: none;
+			}
+			.lesson-container {
+				.lesson {
+					background: white;
+					padding: 12px;
+					.lesson-content {
+						display: flex;
+						flex-direction: column;
+						h2 {
+							font-size: 22px;
+							color: nth($blue, 1);
+							font-family: $font-family-sans-serif;
+						}
+						.lesson-title {
+							margin-bottom: 0;
+						}
+						.lesson-meta {
+							margin-bottom: 10px;
+							margin-top: 5px;
+							font-style: italic;
+							color: #4a4a4a;
+							font-size: 12px;
+							font-size: 12px;
+							span {
+								margin-right: 8px;
+							}
+						}
+						.lesson-excerpt {
+							margin-bottom: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 // Message Archive page
 .post-type-archive-sensei_message {
 	#primary {
@@ -237,9 +312,9 @@
 									margin: 0;
 									.post-meta {
 										font-style: italic;
-										color: #333333;
+										color: #4a4a4a;
 										a {
-											color: #333333;
+											color: #4a4a4a;
 										}
 									}
 								}
@@ -410,6 +485,7 @@ article.page {
 						.course-title {
 							display: block;
 							font-size: 28px;
+							margin-left: 0;
 							a {
 								color: nth($gray, 3);
 								&:hover {
@@ -1561,6 +1637,7 @@ body:not(.logged-in) {
 					@include media(">tablet") {
 						align-self: flex-end;
 						margin-bottom: -5.5rem;
+						z-index: 9;
 					}
 				}
 			}

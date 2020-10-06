@@ -1392,7 +1392,9 @@ p.no-comments,
 
 	&.lsx-wc-cart-menu-item-simple {
 		.lsx-wc-cart-amount {
-			display: none;
+			@include media(">=desktop-wide") {
+				display: none;
+			}
 		}
 	}
 
@@ -1402,10 +1404,17 @@ p.no-comments,
 		font-weight: 300;
 		opacity: 0.75;
 	}
+	.lsx-wc-cart-count-badge {
+		@include media("<desktop-wide") {
+			display: none;
+		}
+	}
 
 	&.lsx-wc-cart-menu-item-simple {
 		.lsx-wc-cart-count {
-			display: none;
+			@include media(">=desktop-wide") {
+				display: none;
+			}
 		}
 	}
 
@@ -1886,6 +1895,7 @@ ul.lsx-wc-cart-sub-menu {
 @import "woocommerce-extensions/bookings";
 @import "woocommerce-extensions/bundle-products";
 @import "woocommerce-extensions/quick-view";
+@import "woocommerce-extensions/product-vendors";
 @import "woocommerce-extensions/product-addons";
 @import "woocommerce-extensions/product-retailers";
 @import "woocommerce-extensions/product-reviews-pro";
