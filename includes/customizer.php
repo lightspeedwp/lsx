@@ -75,6 +75,43 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 			'priority'    => 22,
 		);
 
+		$lsx_controls['settings']['lsx_header_fixed'] = array(
+			'default'           => false,
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_header_fixed'] = array(
+			'label'   => esc_html__( 'Fixed Header', 'lsx' ),
+			'section' => 'lsx-layout',
+			'type'    => 'checkbox',
+		);
+
+		$lsx_controls['settings']['lsx_header_search'] = array(
+			'default'           => false,
+			'sanitize_callback' => 'lsx_sanitize_checkbox',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_header_search'] = array(
+			'label'   => esc_html__( 'Search Box in Header', 'lsx' ),
+			'section' => 'lsx-layout',
+			'type'    => 'checkbox',
+		);
+
+		$lsx_controls['selective_refresh']['lsx_header_search'] = array(
+			'selector'        => '#lsx-header-search-css',
+			'render_callback' => function() {
+				$search_form = get_theme_mod( 'lsx_header_search' );
+
+				if ( false !== $search_form ) {
+					echo 'body #searchform { display: block; }';
+				} else {
+					echo 'body #searchform { display: none; }';
+				}
+			},
+		);
+
 		$lsx_controls['settings']['lsx_header_layout'] = array(
 			'default'   => 'inline',
 			'type'      => 'theme_mod',
@@ -125,42 +162,7 @@ if ( ! function_exists( 'lsx_customizer_layout_controls' ) ) :
 			),
 		);
 
-		$lsx_controls['settings']['lsx_header_fixed'] = array(
-			'default'           => false,
-			'sanitize_callback' => 'lsx_sanitize_checkbox',
-			'transport'         => 'postMessage',
-		);
-
-		$lsx_controls['fields']['lsx_header_fixed'] = array(
-			'label'   => esc_html__( 'Fixed Header', 'lsx' ),
-			'section' => 'lsx-layout',
-			'type'    => 'checkbox',
-		);
-
-		$lsx_controls['settings']['lsx_header_search'] = array(
-			'default'           => false,
-			'sanitize_callback' => 'lsx_sanitize_checkbox',
-			'transport'         => 'postMessage',
-		);
-
-		$lsx_controls['fields']['lsx_header_search'] = array(
-			'label'   => esc_html__( 'Search Box in Header', 'lsx' ),
-			'section' => 'lsx-layout',
-			'type'    => 'checkbox',
-		);
-
-		$lsx_controls['selective_refresh']['lsx_header_search'] = array(
-			'selector'        => '#lsx-header-search-css',
-			'render_callback' => function() {
-				$search_form = get_theme_mod( 'lsx_header_search' );
-
-				if ( false !== $search_form ) {
-					echo 'body #searchform { display: block; }';
-				} else {
-					echo 'body #searchform { display: none; }';
-				}
-			},
-		);
+		$lsx_controls = apply_filters( 'lsx_layout_customizer_controls', $lsx_controls );
 
 		return $lsx_controls;
 	}
