@@ -119,7 +119,7 @@ if ( ! function_exists( 'lsx_tec_global_header_title' ) ) :
 			}
 		} elseif ( tribe_is_community_my_events_page() ) {
 			$title = apply_filters( 'tribe_ce_submit_event_page_title', __( 'My Events', 'lsx' ) );
-		} elseif ( tribe_is_event() ) {
+		} elseif ( tribe_is_event() && ( ! is_tag() ) ) {
 			$title = tribe_get_events_title();
 		}
 

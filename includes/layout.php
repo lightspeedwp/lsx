@@ -187,7 +187,7 @@ if ( ! function_exists( 'lsx_global_header' ) ) :
 		}
 
 		// Events wont have banners.
-		if ( function_exists( 'tribe_is_event' ) && ( tribe_is_event() || tribe_is_organizer() || tribe_is_venue() ) ) {
+		if ( function_exists( 'tribe_is_event' ) && ( ! is_tag() ) && ( tribe_is_event() || tribe_is_organizer() || tribe_is_venue() ) ) {
 			return;
 		}
 
