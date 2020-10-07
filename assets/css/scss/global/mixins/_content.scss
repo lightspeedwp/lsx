@@ -111,6 +111,25 @@
 			border-color: $breaker;
 			color: $color;
 		}
+
+		.lsx-list {
+			padding-left: 0;
+			list-style-type: none;
+			padding-right: 2rem;
+			li {
+				margin-bottom: 1.5rem;
+				display: flex;
+				&:before {
+					font-size: 12px;
+					content: "\f00c";
+					display: inline-block;
+					font: normal normal normal 14px/1 "FontAwesome";
+					color: $link;
+					margin-right: 1rem;
+					padding-top: 5px;
+				}
+			}
+		}
 	}
 
 	#home-widgets {
