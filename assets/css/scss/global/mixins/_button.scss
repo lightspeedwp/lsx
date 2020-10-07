@@ -83,6 +83,28 @@
 			$shadow
 		);
 	}
+	.button-3d-true {
+		a.wp-block-button__link {
+			@include lsx-button-colour(
+				$color,
+				$color-hover,
+				$bg,
+				$bg-hover,
+				$shadow
+			);
+		}
+		.wp-block-buttons & {
+			&.wp-block.block-editor-block-list__block {
+				@include lsx-button-colour(
+					$color,
+					$color-hover,
+					$bg,
+					$bg-hover,
+					$shadow
+				);
+			}
+		}
+	}
 
 	#respond {
 		& > .comment-form {
