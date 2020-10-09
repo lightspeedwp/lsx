@@ -265,8 +265,10 @@
 		}
 		&.alignwide {
 			@include media(">custom") {
-				max-width: 90%;
-				width: 90%;
+				// max-width: 90%;
+				// width: 90%;
+				max-width: 112rem;
+				width: 112rem;
 			}
 		}
 		&.has-2-columns {
