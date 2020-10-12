@@ -238,6 +238,17 @@ article.page {
 	}
 }
 
+body:not(.logged-in) {
+	&.page-template-template-cover,
+	&.post-template-template-cover {
+		.cover-header {
+			.cover-header-inner-wrapper {
+				min-height: 100vh;
+			}
+		}
+	}
+}
+
 body.template-cover .entry-header {
 	background: transparent;
 	padding: 0;

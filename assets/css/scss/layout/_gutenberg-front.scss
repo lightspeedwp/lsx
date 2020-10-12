@@ -25,9 +25,7 @@
 		}
 	}
 	&.page-template-default,
-	&.page-template-template-cover,
-	&.page-template-template-full-width,
-	&.page-template-template-full-width-no-margins {
+	&.page-template-template-cover {
 		div#primary {
 			margin-bottom: 0;
 			margin-top: 0;
@@ -56,9 +54,7 @@
 	// LSX Blocks "Page Title" enhancements.
 	&.lsx-page-title,
 	&.page-template-default.lsx-page-title,
-	&.page-template-template-cover.lsx-page-title,
-	&.page-template-template-full-width.lsx-page-title,
-	&.page-template-template-full-width-no-margins.lsx-page-title {
+	&.page-template-template-cover.lsx-page-title {
 		div#primary {
 			margin-bottom: 8.5rem;
 			margin-top: 50px;
@@ -69,11 +65,6 @@
 					padding-top: 0px;
 				}
 			}
-		}
-	}
-	&.page-template-template-full-width-no-margins {
-		.entry-content {
-			padding: 0;
 		}
 	}
 
@@ -288,9 +279,7 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		&.page-template-template-full-width,
-		&.page-template-template-cover,
-		&.page-template-template-full-width-no-margins {
+		&.page-template-template-cover {
 			.entry-content {
 				> div,
 				> p,
@@ -362,9 +351,7 @@
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar
 		article.page,
 	.gutenberg-compatible-template.using-gutenberg.page-template-default:not(.has-sidebar)
-		article.page,
-	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
-	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins {
+		article.page {
 		width: 100%;
 	}
 }
@@ -511,7 +498,7 @@
 			#lsx-projects-slider.slick-slider,
 			#lsx-team-slider,
 			#lsx-testimonials-slider {
-				max-width: 850px;
+				max-width: 58rem;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -578,9 +565,7 @@
 }
 
 @include media(">=desktop-wide") {
-	.gutenberg-compatible-template.using-gutenberg,
-	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
-	.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
+	.gutenberg-compatible-template.using-gutenberg
 	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
 	.gutenberg-compatible-template.using-gutenberg.page-template-default {
 		.entry-content {
@@ -606,7 +591,7 @@
 			#lsx-projects-slider.slick-slider,
 			#lsx-team-slider,
 			#lsx-testimonials-slider {
-				max-width: 1150px;
+				max-width: 58rem;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -800,8 +785,6 @@ $dark-green: nth($green, 2);
 --------------------------------------------------------------*/
 //All
 .gutenberg-compatible-template.using-gutenberg,
-.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width,
-.gutenberg-compatible-template.using-gutenberg.page-template-template-full-width-no-margins,
 .gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
 .gutenberg-compatible-template.using-gutenberg.page-template-default,
 .gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
