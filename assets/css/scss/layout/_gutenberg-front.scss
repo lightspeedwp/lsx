@@ -476,7 +476,7 @@
 
 // For single posts
 @include media(">=desktop-wide") {
-	.gutenberg-compatible-template.using-gutenberg.single:not(.lsx-body-full-width) {
+	.gutenberg-compatible-template.using-gutenberg.single {
 		.entry-content {
 			figure.wp-block-embed,
 			.navbar,
@@ -568,8 +568,7 @@
 
 @include media(">=desktop-wide") {
 	.gutenberg-compatible-template.using-gutenberg
-	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar,
-	.gutenberg-compatible-template.using-gutenberg.page-template-default {
+	.gutenberg-compatible-template.using-gutenberg.page-template-template-no-sidebar {
 		.entry-content {
 			figure.wp-block-embed,
 			.navbar,
