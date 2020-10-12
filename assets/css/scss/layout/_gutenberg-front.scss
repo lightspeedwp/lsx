@@ -81,9 +81,9 @@
 			.wp-block-cover {
 				.wp-block-cover__inner-container {
 					.wp-block-columns,
-					.wp-block-jetpack-layout-grid {
+					.wp-block-jetpack-layout-grid:not(.alignfull):not(.alignwide) {
 						@include media(">=desktop") {
-							max-width: 1150px;
+							max-width: 90rem;
 							margin-left: auto;
 							margin-right: auto;
 						}
@@ -301,6 +301,8 @@
 				}
 				.row {
 					max-width: 1200px;
+					margin-left: auto;
+					margin-right: auto;
 				}
 				> .alignwide {
 					// max-width: 90%;
@@ -498,7 +500,7 @@
 			#lsx-projects-slider.slick-slider,
 			#lsx-team-slider,
 			#lsx-testimonials-slider {
-				max-width: 58rem;
+				max-width: 68rem;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -591,7 +593,7 @@
 			#lsx-projects-slider.slick-slider,
 			#lsx-team-slider,
 			#lsx-testimonials-slider {
-				max-width: 58rem;
+				max-width: 68rem;
 				margin-left: auto;
 				margin-right: auto;
 			}
@@ -839,5 +841,5 @@ $dark-green: nth($green, 2);
 [class*="__inner-container"] .wp-block-group:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright), [class*="__inner-container"] .wp-block-cover:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 58rem;
+    max-width: 68rem;
 }
