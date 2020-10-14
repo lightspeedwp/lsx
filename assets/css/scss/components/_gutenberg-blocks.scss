@@ -265,8 +265,16 @@
 		}
 		&.alignwide {
 			@include media(">custom") {
-				max-width: 90%;
-				width: 90%;
+				// max-width: 90%;
+				// width: 90%;
+				max-width: 80rem;
+				width: 80rem;
+			}
+			@include media(">tablet") {
+				// max-width: 90%;
+				// width: 90%;
+				max-width: 80rem;
+				width: 80rem;
 			}
 		}
 		&.has-2-columns {
