@@ -84,6 +84,7 @@ var lsx = Object.create(null);
 			.on("click", function() {
 				var $parent = $(this);
 				$parent.toggleClass("open");
+				$("#masthead").toggleClass("masthead-open");
 			});
 	};
 
@@ -277,7 +278,8 @@ var lsx = Object.create(null);
 			$("body").hasClass("post-template-template-cover")
 		) {
 			mastheadHeight = $("#masthead").outerHeight();
-			console.log(mastheadHeight);
+
+			//console.log(mastheadHeight);
 			$("#masthead").css("margin-bottom", -Math.abs(mastheadHeight));
 		}
 	};

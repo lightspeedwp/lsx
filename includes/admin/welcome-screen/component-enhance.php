@@ -16,8 +16,8 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-business-directory/" target="_blank"><?php esc_html_e( 'LSX Business Directory', 'lsx' ); ?></a>
-						<p><?php esc_html_e( 'The LSX Business Directory adds a business directory listings to your WordPress website using the LSX Theme and extensions..', 'lsx' ); ?></p>
+						<a href="https://lsx-business-directory.lsdev.biz/" target="_blank"><?php esc_html_e( 'LSX Business Directory', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'The LSX Business Directory adds a business directory listings to your WordPress website using the LSX Theme and extensions.', 'lsx' ); ?></p>
 					</div>
 				</div>
 

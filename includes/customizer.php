@@ -212,6 +212,21 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 			)
 		);
 
+		$lsx_controls['settings']['lsx_cover_template_overlay_opacity'] = array(
+			'default'           => 80,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage',
+		);
+
+		$lsx_controls['fields']['lsx_cover_template_overlay_opacity'] = (
+			array(
+				'label'       => __( 'Overlay Opacity', 'lsx' ),
+				'description' => __( 'Make sure that the contrast is high enough so that the text is readable.', 'lsx' ),
+				'section'     => 'lsx-cover-template',
+				'type'        => 'range',
+			)
+		);
+
 		$lsx_controls['settings']['lsx_cover_template_menu_text_color'] = array(
 			'default'           => '#ffffff',
 			'sanitize_callback' => 'sanitize_hex_color',
@@ -228,20 +243,22 @@ if ( ! function_exists( 'lsx_customizer_template_cover_controls' ) ) :
 			)
 		);
 
-		$lsx_controls['settings']['lsx_cover_template_overlay_opacity'] = array(
-			'default'           => 80,
-			'sanitize_callback' => 'absint',
+		$lsx_controls['settings']['lsx_cover_template_text_hover_color'] = array(
+			'default'           => '#f7ae00',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'type'              => 'theme_mod',
 			'transport'         => 'postMessage',
 		);
 
-		$lsx_controls['fields']['lsx_cover_template_overlay_opacity'] = (
+		$lsx_controls['fields']['lsx_cover_template_text_hover_color'] = (
 			array(
-				'label'       => __( 'Overlay Opacity', 'lsx' ),
-				'description' => __( 'Make sure that the contrast is high enough so that the text is readable.', 'lsx' ),
+				'label'       => __( 'Hover Text Colour', 'lsx' ),
+				'description' => __( 'The colour used for the text hover on links and the nav menu.', 'lsx' ),
 				'section'     => 'lsx-cover-template',
-				'type'        => 'range',
+				'control'     => 'WP_Customize_Color_Control',
 			)
 		);
+
 
 		return $lsx_controls;
 	}

@@ -120,6 +120,19 @@ article.page {
 		max-width: 90rem;
 		margin: auto;
 	}
+	@include media(">=desktop") {
+		max-width: 75rem;
+		width: 75rem;
+		.gutenberg-compatible-template.using-gutenberg .entry-content & {
+			max-width: 75rem;
+			width: 75rem;
+		}
+
+		.cart-collaterals {
+			max-width: 75rem;
+			margin: auto;
+		}
+	}
 }
 
 .woocommerce,
@@ -644,7 +657,6 @@ body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 	}
 
 	.u-columns.col2-set {
-		max-width: 1200px;
 		@include media(">desktop") {
 			display: flex;
 			.col-1,

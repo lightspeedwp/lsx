@@ -137,7 +137,10 @@ article.page {
 					display: block;
 				}
 				.the-excerpt-wrapper {
-					font-size: 26px;
+					font-size: 28px;
+					a {
+						text-decoration: underline;
+					}
 				}
 				.to-the-content-wrapper {
 					.to-the-content {
@@ -189,6 +192,9 @@ article.page {
 					@include media("<custom") {
 						font-size: 18px;
 					}
+				}
+				a {
+					text-decoration: underline;
 				}
 				.lsx-postnav-wrapper {
 					display: none;
