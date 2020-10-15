@@ -110,7 +110,7 @@ article.page {
 	}
 }
 
-.woocommerce {
+.wrap.container .woocommerce {
 	.woocommerce-ResetPassword {
 		.woocommerce-form-row {
 			width: 100%;
@@ -453,7 +453,7 @@ article.page {
 .woocommerce-cart,
 .woocommerce-checkout {
 	.checkout-header-wrapper {
-		margin-top: $lsx-medium-gap + $lsx-gap;
+		margin-top: $lsx-gap;
 		text-align: center;
 	}
 	#main {
@@ -651,7 +651,7 @@ body.woocommerce {
 
 body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 	> * {
-		max-width: 550px;
+		max-width: 75rem;
 		margin-left: auto;
 		margin-right: auto;
 	}

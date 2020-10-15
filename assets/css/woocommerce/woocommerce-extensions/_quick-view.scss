@@ -50,7 +50,10 @@ a.quick-view-button {
 	font-weight: normal !important;
 	line-height: 1.2 !important;
 	padding: 0 !important;
-
+    box-shadow: none !important;
+    color: #418AD0 !important;
+    height: auto !important;
+	margin-bottom: 10px !important;
 	&:before {
 		@include fa-icon();
 		content: '\f06e';

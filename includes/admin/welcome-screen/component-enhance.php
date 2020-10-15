@@ -14,17 +14,24 @@
 			<p><?php esc_html_e( 'Take a look at our featured extensions that extend the functionality of the LSX WordPress theme.', 'lsx' ); ?></p>
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="box-clean">
 						<a href="https://lsx-business-directory.lsdev.biz/" target="_blank"><?php esc_html_e( 'LSX Business Directory', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'The LSX Business Directory adds a business directory listings to your WordPress website using the LSX Theme and extensions.', 'lsx' ); ?></p>
 					</div>
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="box-clean">
-						<a href="https://wordpress.org/plugins/lsx-health-plan/" target="_blank"><?php esc_html_e( 'LSX Health Plan', 'lsx' ); ?></a>
+						<a href="https://lsx-health-plan.lsdev.biz/" target="_blank"><?php esc_html_e( 'LSX Health Plan', 'lsx' ); ?></a>
 						<p><?php esc_html_e( 'LSX Health Plan plugin adds the ability to include a structured exercise and nutrition programme to your WordPress website using the LSX Theme and extensions.', 'lsx' ); ?></p>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="box-clean">
+						<a href="https://tour-operator-demo.lsdev.biz/" target="_blank"><?php esc_html_e( 'LSX Tour Operator', 'lsx' ); ?></a>
+						<p><?php esc_html_e( 'LSX Tour Operator plugin features digital itineraries and other features that will bring your tour offerings to life online.', 'lsx' ); ?></p>
 					</div>
 				</div>
 

@@ -56,7 +56,7 @@
 	&.page-template-default.lsx-page-title,
 	&.page-template-template-cover.lsx-page-title {
 		div#primary {
-			margin-bottom: 8.5rem;
+			//margin-bottom: 8.5rem;
 			margin-top: 50px;
 
 			article {
@@ -206,11 +206,16 @@
 		.alignfull {
 			width: 100%;
 			max-width: 100%;
-			.slick-slider,
-			#lsx-team-slider,
 			.blocks-gallery-grid {
 				width: 100%;
 				max-width: 100%;
+			}
+			.slick-slider,
+			#lsx-team-slider{
+				width: 90%;
+				max-width: 90%;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 	}

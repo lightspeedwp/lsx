@@ -138,6 +138,8 @@ article.page {
 				}
 				.the-excerpt-wrapper {
 					font-size: 28px;
+					padding-left: 5rem;
+					padding-right: 5rem;
 					a {
 						text-decoration: underline;
 					}
@@ -182,6 +184,8 @@ article.page {
 			}
 			.entry-title {
 				font-size: 56px;
+				padding-left: 5rem;
+				padding-right: 5rem;
 				@include media("<custom") {
 					font-size: 36px;
 				}
@@ -189,6 +193,8 @@ article.page {
 			.intro-text {
 				* {
 					font-size: 28px;
+					padding-left: 5rem;
+					padding-right: 5rem;
 					@include media("<custom") {
 						font-size: 18px;
 					}

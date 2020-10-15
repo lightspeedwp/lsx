@@ -276,6 +276,10 @@
 				max-width: 80rem;
 				width: 80rem;
 			}
+			@include media(">desktop-wide") {
+				max-width: 120rem;
+				width: 120rem;
+			}
 		}
 		&.has-2-columns {
 			.wp-block-column {

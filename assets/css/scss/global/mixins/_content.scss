@@ -315,6 +315,15 @@
 					}
 				}
 			}
+			.lsx-hero-banner-block {
+				.post-meta {
+					color: white;
+
+					a {
+						@include lsx-link-colour(white, $hover);
+					}
+				}
+			}
 
 			.post-tags {
 				& > a {
