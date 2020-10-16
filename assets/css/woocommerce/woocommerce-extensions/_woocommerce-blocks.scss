@@ -19,6 +19,9 @@
 		.wc-block-grid__no-products {
 			background-color: white;
 			border: 1px solid #e4e4e4;
+			max-width: 90rem;
+			margin-left: auto;
+			margin-right: auto;
 			button {
 				@include lsx-button-scaffolding();
 				@include lsx-button-colour();
@@ -211,6 +214,26 @@
 		}
 	}
 
+	.wp-block-woocommerce-checkout,
+	.wp-block-woocommerce-cart {
+		&.alignwide {
+			max-width: 90rem;
+			width: 90rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.wc-block-components-checkout-place-order-button,
+		.wc-block-cart__submit-button {
+			@include lsx-button-scaffolding();
+			@include lsx-button-colour();
+		}
+		.wc-block-components-text-input input[type=email], .wc-block-components-text-input input[type=tel], .wc-block-components-text-input input[type=text], .wc-block-components-text-input input[type=url], .wc-block-components-select .components-custom-select-control__button, .wc-block-components-select .components-custom-select-control__button:active, .wc-block-components-select .components-custom-select-control__button:focus, .wc-block-components-select .components-custom-select-control__button:hover {
+			@extend %bootstrap-form-control;
+			@extend %lsx-form-field;
+			@extend %small-form-select;
+		}
+	}
+
 	// Search Block
 	.wp-block-woocommerce-product-search {
 		margin-bottom: $lsx-gap;
@@ -394,6 +417,8 @@
 	.wc-block-pagination {
 		display: flex;
 		justify-content: flex-end;
+		padding-left: 8px;
+		padding-right: 8px;
 		.wc-block-pagination-page {
 			border-color: nth($blue, 1);
 			color: nth($blue, 1);
