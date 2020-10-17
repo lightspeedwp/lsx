@@ -4,35 +4,34 @@
 
 ### Added
 
-- Added "Cover Template" page template and customizer options.
-- Added compatibility for the LSX Blocks "disable title" functionality.
+- Added support for native Lazy-loading images on WordPress 5.5 version.
+- Added "Cover Template" page template with customizer options for alt image, colours. Displays title, post meta & excerpt.
+- Added support for LSX Search & FacetWP filtering on all the Blog archive layouts #364.
+- Added in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
+- Added support for WooCommerce 4.6 version. 
+- Added styling support for WooCommerce Blocks 3.6 version. 
 - Added support for the Mix and Match Woocommerce plugin.
-- Added Theme Support for Block Editor 
-- Added Dedicated Styles for Certain Blocks #391.
-- Added support for the How to and Faq yoast blocks.
-- Added the `lsx-subheading` class for group blocks.
+- Added compatibility with Yoast SEO 15.1.
 - Added styling support for Yoast SEO's internal linking blocks #395.
 - Added styling support for the Yoast SEO plugin HowTo block #363.
 - Added styling support for the Yoast SEO plugin's HowTo block #362. 
-- Added alt image and excerpt to cover template.
+
+### Added Block Editor Support
 - Added support for New Block Tools on WordPress 5.5.
-- Added support for native Lazy-loading images on WordPress 5.5 version.
-- Added in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
-- Added compatibility with Yoast SEO 15.1.
-- Added styling support for WooCommerce Blocks 3.6 version. 
-- Added support for block link color experimental feature.
-- Added support for LSX Search & FacetWP filtering on all the Blog archive layouts #364.
+- Added compatibility for the LSX Blocks "disable title" functionality.
+- Added Dedicated Styles for Certain Blocks #391.
+- Added the `lsx-subheading` class for group blocks.
 - Added support for editor styles - `add_theme_support( 'editor-styles' )`
 - Added support for full and wide align images `add_theme_support( 'align-wide' )`
-- Added support for styling blocks `add_theme_support( 'wp-block-styles' )`
+- Added support for block styles for the the group, cover, columns, heading, paragraph, image and gallery core blocks `add_theme_support( 'wp-block-styles' )`
 - Added support for responsive embedded content `add_theme_support( 'responsive-embeds' )`
 - Added support for Custom Line Heights `add_theme_support( 'custom-line-height' )`
 - Added support for Custom Units `add_theme_support( 'custom-units' )`
-- Added support for experimental link colors `add_theme_support( 'experimental-link-color' )`
+- Added support for block link colors experimental feature `add_theme_support( 'experimental-link-color' )`
 - Added support for custom editor font sizes `add_theme_support('editor-font-sizes')`
 - Added support for custom color scheme `add_theme_support( 'editor-color-palette'`
-- Added support for block default gradient presets add_theme_support`( 'editor-gradient-presets' )`
-- Added support for block default font sizes, `editor-font-sizes`
+- Added support for block default gradient presets add_theme_support`add_theme_support( 'editor-gradient-presets' )`
+- Added support for block default font sizes, `add_theme_support( 'editor-font-sizes' )`
 
 ### Updated
 
@@ -43,15 +42,14 @@
 - Updated theme files to support the latest WordPress theme coding standards and practices based on Theme Check results #383
 - Updated style to support sensei shortcodes on block pages.
 - Updated Block Editor Theme Support #370.
-- Updated styling for the Tribe Events Community Events forms.
-- Updated the container block.
-- Updated the image block.
-- Updated the Breadcrumb Placement and Styling #381.
+- Updated 
+- Updated Yoast & WooCommerce breadcrumb placement & styling #381.
 - Updated styling for Woocommerce Wishlist plugin.
 - Updated styling for Woocommerce Quick View plugin.
+- Updated styling for WooCommerce Cart and Checkout pages.
 - Updated the padding on LSX Buttons #378
 - Updated styling for the Tribe Events Community Events forms.
-- Updated styling on the WooCommerce Cart and Checkout pages.
+
 
 ### Changed
 
@@ -84,7 +82,7 @@
 - Removed the [Full Width](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width.php) page template.
 - Removed the [Full Width No Margins](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width-no-margins.php) page template.
 - Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
-- Remove older Gutenberg block styling #369.
+- Removed older Gutenberg block styling #369.
 
 ### Security
 
