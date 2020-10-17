@@ -1,49 +1,81 @@
 # LSX Change log
 
-# [[2.9.0]]
+# [[2.9.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.0) - 17-10-2020
 
 ### Added
 
-- Improved styling for the Tribe Events Community Events forms.
+- Added "Cover Template" page template and customizer options.
+- Added compatibility for the LSX Blocks "disable title" functionality.
 - Added support for the Mix and Match Woocommerce plugin.
-- Improved support for Woocommerce Wishlist plugin.
-- Improved support for Woocommerce Quick View plugin.
-- Block Theme Support updates.
+- Added Theme Support for Block Editor 
+- Added Dedicated Styles for Certain Blocks #391.
 - Added support for the How to and Faq yoast blocks.
 - Added the `lsx-subheading` class for group blocks.
-- Reducing the left and right Padding on LSX Buttons from 40px to 15px.
-- Adding styles to make LSX compatible with Yoast SEO's internal linking blocks.
-- Adding the page template "Cover Template" and admin options for it.
-- Adding alt image and excerpt to cover template.
-- Adding support for New Block Tools on WordPress 5.5.
+- Added styling support for Yoast SEO's internal linking blocks #395.
+- Added styling support for the Yoast SEO plugin HowTo block #363.
+- Added styling support for the Yoast SEO plugin's HowTo block #362. 
+- Added alt image and excerpt to cover template.
+- Added support for New Block Tools on WordPress 5.5.
 - Added support for native Lazy-loading images on WordPress 5.5 version.
-- Adding in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
-- Added compatibility with Yoast SEO 14.0.
+- Added in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
+- Added compatibility with Yoast SEO 15.1.
+- Added styling support for WooCommerce Blocks 3.6 version. 
 - Added support for block link color experimental feature.
+- Added support for LSX Search & FacetWP filtering on all the Blog archive layouts #364.
+- Added support for editor styles - `add_theme_support( 'editor-styles' )`
+- Added support for full and wide align images `add_theme_support( 'align-wide' )`
+- Added support for styling blocks `add_theme_support( 'wp-block-styles' )`
+- Added support for responsive embedded content `add_theme_support( 'responsive-embeds' )`
+- Added support for Custom Line Heights `add_theme_support( 'custom-line-height' )`
+- Added support for Custom Units `add_theme_support( 'custom-units' )`
+- Added support for experimental link colors `add_theme_support( 'experimental-link-color' )`
+- Added support for custom editor font sizes `add_theme_support('editor-font-sizes')`
+- Added support for custom color scheme `add_theme_support( 'editor-color-palette'`
+- Added support for block default gradient presets add_theme_support`( 'editor-gradient-presets' )`
+- Added support for block default font sizes, `editor-font-sizes`
 
 ### Updated
 
-- Updated a few functions to meet WordPress standards based on Theme Checkers results.
 - Updated the Welcome screen.
+- Updated the theme `screenshot.png` file.
+- Updated styles spacing improvements for WordPress core blocks #373.
+- Updated single blog layout to support block editor first and foremost.
+- Updated theme files to support the latest WordPress theme coding standards and practices based on Theme Check results #383
 - Updated style to support sensei shortcodes on block pages.
+- Updated Block Editor Theme Support #370.
+- Updated styling for the Tribe Events Community Events forms.
+- Updated the container block.
+- Updated the image block.
+- Updated the Breadcrumb Placement and Styling #381.
+- Updated styling for Woocommerce Wishlist plugin.
+- Updated styling for Woocommerce Quick View plugin.
+- Updated the padding on LSX Buttons #378
+- Updated styling for the Tribe Events Community Events forms.
+- Updated styling on the WooCommerce Cart and Checkout pages.
 
 ### Changed
 
-- Merged two WooCommerce panels within the customizer sidebar.
-- The WooCommerce bar will be showed if active and the screen is less than 678px.
 - Skiped the loading attribute for the custom logo.
+- Reduced the left and right padding on LSX Buttons from 40px to 15px.
+- The WooCommerce bar will be showed if active and the screen is less than 678px.
+- Merged the two WooCommerce panels within the customizer sidebar #387.
 - Default block widths changed.
 
 ### Fixed
 
-- Fixed the compatibility with the LSX Blocks "disable title" functionality.
 - Fixed the mobile widths.
-- Archive blog spacing fixes.
-- Improvements on the container block.
-- Improvements on the image block.
-- Fixed the search bar spacing issues.
+- Fixed blog archive spacing.
+- Fixed the compatibility with the LSX Blocks "disable title" functionality.
+- Fixed the search bar spacing issues #381.
+- Fixed the margin issue when some titles are too long #386.
+- Fixed the mobile widths.
+- Fixed the search bar spacing issues #377.
 - Fixed the margin issue when some titles are too long.
 - Fixed minor issues on Sensei single lesson images and messages.
+- Fixed alignment issues with post header containing long titles #358.
+- Fixed event archive page banner that duplicates when switching views #380.
+- Fixed Sensei single lesson notification message bug #396.
+- Fixed Sensei single lesson placeholder image #397.
 
 ### Removed
 
@@ -52,6 +84,7 @@
 - Removed the [Full Width](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width.php) page template.
 - Removed the [Full Width No Margins](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width-no-margins.php) page template.
 - Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
+- Remove older Gutenberg block styling #369.
 
 ### Security
 
@@ -60,7 +93,7 @@
 - General testing to ensure compatibility with latest WordPress version (5.5.1).
 - General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
 
-# [[2.8.0]] - 2020-05-21
+# [[2.8.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.8.0) - 2020-05-21
 
 ### Added
 
