@@ -30,16 +30,16 @@
 					printf(
 						/* Translators: 1: HTML open tag link, 2: HTML close tag link, 3: HTML open tag link, 4: HTML close tag link */
 						esc_html__( 'You\'ll find information on how to use and customize the LSX theme in our %1$sdocumentation%2$s section. However, please do %3$scontact us%4$s for support should you still find yourself unable to achieve your needs.', 'lsx' ),
-						'<a href="https://www.lsdev.biz/documentation/lsx/" target="_blank" rel="noreferrer noopener">',
+						'<a href="https://www.lsdev.biz/lsx/documentation/" target="_blank" rel="noreferrer noopener">',
 						'</a>',
-						'<a href="https://www.lsdev.biz/contact-us/" target="_blank" rel="noreferrer noopener">',
+						'<a href="https://www.lsdev.biz/contact/" target="_blank" rel="noreferrer noopener">',
 						'</a>'
 					);
 					?>
 			</p>
 
 			<div class="more-button">
-				<a href="https://www.lsdev.biz/contact-us/" target="_blank" rel="noreferrer" class="button button-primary" >
+				<a href="https://www.lsdev.biz/contact/" target="_blank" rel="noreferrer" class="button button-primary" >
 					<?php esc_html_e( 'Get in touch', 'lsx' ); ?>
 				</a>
 			</div>
