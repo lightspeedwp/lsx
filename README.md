@@ -71,13 +71,12 @@ We have built to be powerful, as demonstrated by this showcase of our favorite d
 
 We have extensive documentation on all our themes functionality. This allows you to take control of your website setup and design to your needs: 
 
-* [Getting Starting with LSX](https://lsx.lsdev.biz/documentation/getting-started/)
-* [Theme Options](https://lsx.lsdev.biz/documentation/theme-options/)
-* [Customizer](https://lsx.lsdev.biz/documentation/lsx-customizer/)
-* [Page Tempates](https://lsx.lsdev.biz/documentation/page-templates/)
-* [Banners](https://lsx.lsdev.biz/documentation/banners/)
-* [Menus](https://lsx.lsdev.biz/documentation/menus/)
-* [Third Party Plugins](https://lsx.lsdev.biz/documentation/third-party-plugins/)
+* [Getting Starting with LSX](https://lsdev.biz/lsx/documentation/lsx-theme/getting-started-with-lsx-theme/)
+* [Theme Options](https://lsdev.biz/lsx/documentation/lsx-theme/theme-options/)
+* [Customizer](https://lsdev.biz/lsx/documentation/lsx-theme/lsx-customizer/)
+* [Page Tempates](https://lsdev.biz/lsx/documentation/lsx-theme/page-templates/)
+* [Menus](https://lsdev.biz/lsx/documentation/lsx-theme/menus/)
+* [Third Party Plugins](https://lsdev.biz/lsx/documentation/lsx-theme/third-party-plugins/)
 
 ## Support
 
@@ -116,14 +115,20 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
+
 ---
-
+<p align="center">
 <a href="https://www.lsdev.biz/contact/"><img src="https://www.lsdev.biz/wp-content/uploads/2020/02/work-with-lightspeed.png" width="850" alt="Work with us at LightSpeed"></a>
-
+</p>
+<p align="center">
 Copyright © 2020 LightSpeed WordPress Development. All Rights Reserved.
-
+</p>
+<p align="center">
 [LightSpeed Company Website](https://www.lsdev.biz) &nbsp;&middot;&nbsp;
-[LSX Product Website](https://www.lsdev.biz) &nbsp;&middot;&nbsp;
+[LSX Product Website](https://www.lsdev.biz) 
+</p>
+<p align="center">
 GitHub [@lightspeeddevelopment](https://github.com/lightspeeddevelopment) &nbsp;&middot;&nbsp;
 Facebook [@lightspeedwordpressdevelopment](https://facebook.com/lightspeedwordpressdevelopment) &nbsp;&middot;&nbsp;
 Twitter [@lightspeedwp](https://twitter.com/lightspeedwp)
+</p>
