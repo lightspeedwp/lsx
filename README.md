@@ -39,13 +39,25 @@
 The [LSX Theme](https://lsdev.biz/lsx/) is block editor ready, light-weight & responsive WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. We've built it to be fully compatible with WooCommerce, making it an ideal choice for your next eCommerce build. Its lightweight build ensures better load times, a bonus for both user experience and SEO. LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color options, home page configuration, widget areas and much more. 
 
 * Responsive Layout
-* Customize Colors
-* Customize Fonts
+* Customise Logo & Site Icon
+* Customise Colors
+* Customise Fonts
+* Customise Menus
 * Multiple Design Styles
 * Multiple Header Variations
 * Multiple Footer Variations
 * Social Links Menu
-* WooCommerce-Ready
+* WooCommerce Ready
+* Translation Ready
+* Sensei LMS Ready
+* Portfolio
+* Blog
+* Block Editor styles,
+* Wide Blocks
+* Featured Images
+* Sticky Posts
+* Threaded Comments
+
 
 ## Download
 
