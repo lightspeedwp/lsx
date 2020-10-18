@@ -1,4 +1,4 @@
-<h1 align="center"><a target="_blank" href="https://lsdev.biz/lsx/"><img src="https://lsdev.biz/wp-content/uploads/2019/04/lsx-theme-logo.png" alt="LSX Theme"></a></h1>
+<h1 align="center"><a target="_blank" href="https://lsdev.biz/lsx/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2020/10/lsx-theme-primary-logo.png" alt="LSX Theme"></a></h1>
 
 <p align="center">
   <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://poser.pugx.org/woocommerce/woocommerce/license" alt="license"></a> 
@@ -63,21 +63,21 @@ The [LSX Theme](https://lsdev.biz/lsx/) is block editor ready, light-weight & re
 
 [Click here to download](https://downloads.wordpress.org/theme/lsx.zip) the latest release package of LSX for WordPress.
 
-Download and install the free [LSX extensions](https://lsdev.biz/lsx/extensions/), which allow you to add team members, client reviews, portfolio, videos and so much more to your website. Each extension is designed fluidly with the LSX theme. So theres no code needed. 
+Download and install 
 
 ## Showcase
 
 A theme is only as good as the websites it creates.
 
-We have built to be powerful, as demonstrated by this showcase of our favorite designs, each one built entirely with LSX and a few recommended plugins, like [WooCommerce](https://woocommerce.com/), [LSX Blocks](https://www.lsdev.biz/lsx/blocks/) and other [LSX Extensions](https://www.lsdev.biz/lsx/extensions/).
+We have built to be powerful, as demonstrated by this showcase of our favorite designs, each one built entirely with LSX and a few recommended plugins, like [WooCommerce](https://woocommerce.com/), [LSX Blocks](https://www.lsdev.biz/lsx/blocks/) and other [LSX Extensions](https://www.lsdev.biz/lsx/extensions/). The free extensions allow you to add team members, client reviews, portfolio, videos and so much more to your website. Each extension is designed fluidly with the LSX theme, no code needed. 
 
 * [LSX + LSX Extensions + WooCommerce](https://lsx-demo.lsdev.biz/)
 * [LSX + LSX Health Extension + WooCommerce](https://wpnux.godaddy.com/v2/?template=ashby)
-* [LSX + LSX Tour Operator Plugin & Extensions + Wetu Importer](https://to-demo.lsdev.biz/)
 * [LSX + LSX Tour Operator Plugin + Wetu Importer](https://tour-operator-demo.lsdev.biz/)
+* [LSX + LSX Tour Operator Plugin & Extensions + Wetu Importer](https://to-demo.lsdev.biz/)
 * [LSX + LSX Business Directory Extension + WooCommerce + WooCommerce Memberships](https://lsx-business-directory.lsdev.biz/)
-* [LSX & WooCommerce](https://lsx-woocommerce-demo.lsdev.biz/)
 * [LSX + WooCommerce + Sensei + Paid Courses](https://lsx-sensei-demo.lsdev.biz/)
+* [LSX + WooCommerce](https://lsx-woocommerce-demo.lsdev.biz/)
 
 ## Documentation
 
