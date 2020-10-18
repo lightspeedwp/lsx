@@ -87,7 +87,7 @@
 - General testing to ensure compatibility with latest WordPress version (5.5.1).
 - General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
 
-### Compatibility Testing
+### Third Party Plugin Compatibility Testing
 
 - WordPress 5.5.1
 - Gutenberg 9.1.1
@@ -103,7 +103,7 @@
 - WooCommerce Tab Manager 1.13.1
 - WooCommerce Mix and Match 1.10.4
 - WooCommerce Checkout Field Editor 1.5.36
-- WooCommerce Social Login
+- WooCommerce Social Login 2.10.1
 - Sensei 3.5.2 
 - Events 5.2.0
 - WPForms 1.6.2.3
