@@ -34,11 +34,13 @@ We have extensive documentation on all our themes functionality. This allows you
 * [Menus](https://www.lsdev.biz/lsx/documentation/lsx-theme/menus/)
 * [Third Party Plugins](https://www.lsdev.biz/lsx/documentation/lsx-theme/third-party-plugins/)
 
-== Help & Support ==
+== Support ==
+
+Contact the [LightSpeed](https://lsdev.biz/) for assistance via the [LSX support form](https://www.lsdev.biz/lsx/support/).
 
 If you are experiencing issues with the LSX Theme, please log any bug issues you are having on the [LSX Github Issues](https://github.com/lightspeeddevelopment/lsx/issues) page.
 
-== Contributing to the LSX theme ==
+== Contributing ==
 
 If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX theme on Github](https://github.com/lightspeeddevelopment/lsx) and submit a Pull Request with your updates.
 
@@ -48,4 +50,17 @@ Take a look at all our [Frequently Asked Questions](https://www.lsdev.biz/lsx/do
 
 == Changelog == 
 
-See changelog.txt in the theme folder.
+[Lastest changelogs can be found on GitHub](https://github.com/lightspeeddevelopment/lsx/blob/master/changelog.md).
+
+== Upgrade Notice == 
+
+= LSX 2.9.0 =
+
+Various page templates from LSX in lieu of the block editor. 
+
+- Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
+- Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
+- Removed the [Full Width](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width.php) page template.
+- Removed the [Full Width No Margins](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width-no-margins.php) page template.
+- Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
+- [Download the page templates from GitHub](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/) and add them to your child theme if you still need to use any of the above page templates.
