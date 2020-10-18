@@ -1,4 +1,4 @@
-# LSX Change log
+# LSX Theme Changelog
 
 # [[2.9.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.0) - 17-10-2020
 
