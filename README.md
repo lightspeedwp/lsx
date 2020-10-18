@@ -63,8 +63,6 @@ The [LSX Theme](https://lsdev.biz/lsx/) is block editor ready, light-weight & re
 
 [Click here to download](https://downloads.wordpress.org/theme/lsx.zip) the latest release package of LSX for WordPress.
 
-Download and install 
-
 ## Showcase
 
 A theme is only as good as the websites it creates.
