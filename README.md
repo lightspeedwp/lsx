@@ -1,4 +1,4 @@
-<h1 align="center"><a target="_blank" href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/04/lsx-theme-logo.png" alt="LSX Theme"></a></h1>
+<h1 align="center"><a target="_blank" href="https://lsdev.biz/lsx/"><img src="https://lsdev.biz/wp-content/uploads/2019/04/lsx-theme-logo.png" alt="LSX Theme"></a></h1>
 
 <p align="center">
   <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"><img src="https://poser.pugx.org/woocommerce/woocommerce/license" alt="license"></a> 
@@ -38,13 +38,20 @@
 
 The [LSX Theme](https://lsdev.biz/lsx/) is block editor ready, light-weight & responsive WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. We've built it to be fully compatible with WooCommerce, making it an ideal choice for your next eCommerce build. Its lightweight build ensures better load times, a bonus for both user experience and SEO. LSX has been designed to be minimal and lean, while still having rich customizer options, like allowing you to control fonts, color options, home page configuration, widget areas and much more. 
 
-The LSX theme [2.9.0 release](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.0) has been redeveloped for the WordPress block editor. This means you can now make use of the drag-and-drop page builder when creating new pages and posts. Install the [LSX Blocks Plugin](https://www.lsdev.biz/lsx/blocks/) to extend WordPress core blocks and add custom LSX blocks. These blocks are designed to display perfectly with the LSX theme.
-
-Our range of powerful [LSX extensions](https://lsx.lsdev.biz/extensions/) gives you freedom to add team members, client reviews, your portfolio and so much more to your website. Each extension is designed fluidly with the LSX theme. So theres no code hassles involved. 
+* Responsive Layout
+* Customize Colors
+* Customize Fonts
+* Multiple Design Styles
+* Multiple Header Variations
+* Multiple Footer Variations
+* Social Links Menu
+* WooCommerce-Ready
 
 ## Download
 
 [Click here to download](https://downloads.wordpress.org/theme/lsx.zip) the latest release package of LSX for WordPress.
+
+Download and install the free [LSX extensions](https://lsdev.biz/lsx/extensions/), which allow you to add team members, client reviews, portfolio, videos and so much more to your website. Each extension is designed fluidly with the LSX theme. So theres no code needed. 
 
 ## Showcase
 
@@ -111,6 +118,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 ---
 
+<a href="https://www.lsdev.biz/contact/"><img src="https://www.lsdev.biz/wp-content/uploads/2020/02/work-with-lightspeed.png" width="850" alt="Work with us at LightSpeed"></a>
+
 Copyright © 2020 LightSpeed WordPress Development. All Rights Reserved.
 
 [LightSpeed Company Website](https://www.lsdev.biz) &nbsp;&middot;&nbsp;
@@ -118,5 +127,3 @@ Copyright © 2020 LightSpeed WordPress Development. All Rights Reserved.
 GitHub [@lightspeeddevelopment](https://github.com/lightspeeddevelopment) &nbsp;&middot;&nbsp;
 Facebook [@lightspeedwordpressdevelopment](https://facebook.com/lightspeedwordpressdevelopment) &nbsp;&middot;&nbsp;
 Twitter [@lightspeedwp](https://twitter.com/lightspeedwp)
-
-<a href="https://www.lsdev.biz/contact/"><img src="https://www.lsdev.biz/wp-content/uploads/2020/02/work-with-lightspeed.png" width="850" alt="Work with us at LightSpeed"></a>
