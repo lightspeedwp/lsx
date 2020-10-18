@@ -7,44 +7,45 @@
 - [#425](https://github.com/lightspeeddevelopment/lsx/issues/425) Added support for native Lazy-loading images on WordPress 5.5 version.
 - [#384](https://github.com/lightspeeddevelopment/lsx/issues/380) Added "Cover Template" page template with customizer options for alt image, colours. Displays title, post meta & excerpt.
 - [#364](https://github.com/lightspeeddevelopment/lsx/issues/364) Added support for LSX Search & FacetWP filtering on all the Blog archive layouts.
-- [#395](https://github.com/lightspeeddevelopment/lsx/issues/395) Added styling support for Yoast SEO's internal linking blocks .
-- [#363](https://github.com/lightspeeddevelopment/lsx/issues/363) Added styling support for the Yoast SEO plugin FAQ block .
-- [#362](https://github.com/lightspeeddevelopment/lsx/issues/362) Added styling support for the Yoast SEO plugin's HowTo block. 
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Added support for the Mix and Match Woocommerce plugin.
 - Added in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
-- Added styling support for WooCommerce Blocks 3.6 version. 
-- Added support for the Mix and Match Woocommerce plugin.
+- Added styling support for WooCommerce Blocks 3.6 Cart & Checkout versions. 
 
 ### Added Block Editor Support
 
-- Added support for New Block Tools on WordPress 5.5.
+- Added support for the WordPress 5.5 latest block editor tools.
 - Added compatibility for the LSX Blocks "disable title" functionality.
-- Added the `lsx-subheading` class for group blocks.
 - [#391](https://github.com/lightspeeddevelopment/lsx/issues/391) Added dedicated styles for specific blocks.
-- Added support for editor styles - `add_theme_support( 'editor-styles' )`
-- Added support for full and wide align images `add_theme_support( 'align-wide' )`
-- Added support for block styles for the the group, cover, columns, heading, paragraph, image and gallery core blocks `add_theme_support( 'wp-block-styles' )`
-- Added support for responsive embedded content `add_theme_support( 'responsive-embeds' )`
-- Added support for Custom Line Heights `add_theme_support( 'custom-line-height' )`
-- Added support for Custom Units `add_theme_support( 'custom-units' )`
-- Added support for block link colors experimental feature `add_theme_support( 'experimental-link-color' )`
-- Added support for custom editor font sizes `add_theme_support('editor-font-sizes')`
-- Added support for custom color scheme `add_theme_support( 'editor-color-palette'`
-- Added support for block default gradient presets add_theme_support`add_theme_support( 'editor-gradient-presets' )`
-- Added support for block default font sizes, `add_theme_support( 'editor-font-sizes' )`
+- [#385](https://github.com/lightspeeddevelopment/lsx/issues/385) Added `lsx-subheading` class for group blocks.
+- [#395](https://github.com/lightspeeddevelopment/lsx/issues/395) Added styling support for Yoast SEO's internal linking blocks .
+- [#363](https://github.com/lightspeeddevelopment/lsx/issues/363) Added styling support for the Yoast SEO plugin FAQ block .
+- [#362](https://github.com/lightspeeddevelopment/lsx/issues/362) Added styling support for the Yoast SEO plugin's HowTo block. 
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added WPForms submit button block editor styling
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for responsive embedded content `add_theme_support( 'responsive-embeds' )`
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for custom editor font sizes `add_theme_support('editor-font-sizes')`
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for block default gradient presets add_theme_support`add_theme_support( 'editor-gradient-presets' )`
+- Added theme support for editor styles - `add_theme_support( 'editor-styles' )`
+- Added theme support for full and wide align images `add_theme_support( 'align-wide' )`
+- Added theme support for block styles for the the group, cover, columns, heading, paragraph, image & gallery core blocks `add_theme_support( 'wp-block-styles' )`
+- Added theme support for Custom Line Heights `add_theme_support( 'custom-line-height' )`
+- Added theme support for Custom Units `add_theme_support( 'custom-units' )`
+- Added theme support for block link colors experimental feature `add_theme_support( 'experimental-link-color' )`
+- Added theme support for custom color scheme `add_theme_support( 'editor-color-palette'`
+- Added theme support for block default font sizes, `add_theme_support( 'editor-font-sizes' )`
 
 ### Updated
 
+- Updated the Welcome screen.
+- Updated the theme `screenshot.png` file.
 - [#373](https://github.com/lightspeeddevelopment/lsx/pull/373) Updated styles spacing improvements for WordPress core blocks.
 - [#378](https://github.com/lightspeeddevelopment/lsx/issues/378) Updated the padding on LSX Buttons.
 - [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Updated Block Editor Theme Support.
-- [#381](https://github.com/lightspeeddevelopment/lsx/pull/381) Updated Yoast & WooCommerce breadcrumb placement & styling.
-- Updated the Welcome screen.
-- Updated the theme `screenshot.png` file.
+- [#365](https://github.com/lightspeeddevelopment/lsx/pull/365) Updated Yoast & WooCommerce breadcrumb placement & styling.
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Updated styling for Woocommerce Wishlist plugin.
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Updated styling for Woocommerce Quick View plugin.
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Updated styling for WooCommerce Cart and Checkout pages.
 - Updated single blog layout to support block editor first and foremost.
 - Updated sensei shortcode styles to work on block pages.
-- Updated styling for Woocommerce Wishlist plugin.
-- Updated styling for Woocommerce Quick View plugin.
-- Updated styling for WooCommerce Cart and Checkout pages.
 - Updated styling for the Tribe Events Community Events forms.
 
 ### Changed
@@ -71,12 +72,20 @@
 
 ### Removed
 
+- [#369](https://github.com/lightspeeddevelopment/lsx/issues/369) Removed older Gutenberg block styling.
 - Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
 - Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
 - Removed the [Full Width](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width.php) page template.
 - Removed the [Full Width No Margins](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width-no-margins.php) page template.
 - Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
-- [#369](https://github.com/lightspeeddevelopment/lsx/issues/369) Removed older Gutenberg block styling.
+
+### Security
+
+- [#383](https://github.com/lightspeeddevelopment/lsx/issues/383) Tested the theme files with the [theme check plugin](https://wordpress.org/plugins/theme-check/). Updated theme files to support the latest WordPress theme coding & theme review standards. 
+- Updating dependencies to prevent vulnerabilities.
+- Updating PHPCS options for better code.
+- General testing to ensure compatibility with latest WordPress version (5.5.1).
+- General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
 
 ### Compatibility Testing
 
@@ -92,20 +101,17 @@
 - WooCommerce Bookings 1.15.29
 - WooCommerce Product Vendors 2.1.43
 - WooCommerce Tab Manager 1.13.1
+- WooCommerce Mix and Match 1.10.4
+- WooCommerce Checkout Field Editor 1.5.36
+- WooCommerce Social Login
 - Sensei 3.5.2 
 - Events 5.2.0
 - WPForms 1.6.2.3
 - GravityForms 2.4.21
 - Envira Gallery 1.9.0.2
 - Soliloquy Slider 2.6.0
-
-### Security
-
-- [#383](https://github.com/lightspeeddevelopment/lsx/issues/383) Tested the theme files with the [theme check plugin](https://wordpress.org/plugins/theme-check/). Updated theme files to support the latest WordPress theme coding & theme review standards. 
-- Updating dependencies to prevent vulnerabilities.
-- Updating PHPCS options for better code.
-- General testing to ensure compatibility with latest WordPress version (5.5.1).
-- General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
+- FacetWP 3.6.6
+- SearchWP 4.0.31
 
 # [[2.8.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.8.0) - 2020-05-21
 
@@ -125,7 +131,7 @@
 ### Fixed
 
 - Fixed issue #346 'If LSX banners is not enabled there is a simple banner showing on each page.'.
-- Body class `using-gutenberg` affecting other custom post type single pages was removed from any custom post type single page.
+- [#353](https://github.com/lightspeeddevelopment/lsx/issues/383) Body class `using-gutenberg` affecting other custom post type single pages was removed from any custom post type single page.
 - Fixed a few styling issues related to Sensei templates.
 
 ### Security
