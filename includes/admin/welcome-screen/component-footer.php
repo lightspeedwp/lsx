@@ -21,12 +21,8 @@
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 						</div>
 						<div class="mc-field-group">
-							<label for="mce-FNAME"><?php esc_html_e( 'First Name', 'lsx' ); ?> </label>
-							<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-						</div>
-						<div class="mc-field-group">
-							<label for="mce-LNAME"><?php esc_html_e( 'Last Name', 'lsx' ); ?> </label>
-							<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+							<label for="mce-NAME"><?php esc_html_e( 'Name', 'lsx' ); ?> </label>
+							<input type="text" value="" name="NAME" class="" id="mce-NAME">
 						</div>
 					</div>
 					<div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_bf676f73d0cf4af85cc244111_96f3761fa2" tabindex="-1" value=""></div>
