@@ -70,7 +70,7 @@ A theme is only as good as the websites it creates.
 We have built to be powerful, as demonstrated by this showcase of our favorite designs, each one built entirely with LSX and a few recommended plugins, like [WooCommerce](https://woocommerce.com/), [LSX Blocks](https://www.lsdev.biz/lsx/blocks/) and other [LSX Extensions](https://www.lsdev.biz/lsx/extensions/). The free extensions allow you to add team members, client reviews, portfolio, videos and so much more to your website. Each extension is designed fluidly with the LSX theme, no code needed. 
 
 * [LSX + LSX Extensions + WooCommerce](https://lsx-demo.lsdev.biz/)
-* [LSX + LSX Health Extension + WooCommerce](https://wpnux.godaddy.com/v2/?template=ashby)
+* [LSX + LSX Health Extension + WooCommerce](https://lsx-health-plan.lsdev.biz/)
 * [LSX + LSX Tour Operator Plugin + Wetu Importer](https://tour-operator-demo.lsdev.biz/)
 * [LSX + LSX Tour Operator Plugin & Extensions + Wetu Importer](https://to-demo.lsdev.biz/)
 * [LSX + LSX Business Directory Extension + WooCommerce + WooCommerce Memberships](https://lsx-business-directory.lsdev.biz/)
