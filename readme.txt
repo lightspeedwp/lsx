@@ -69,11 +69,4 @@ First answer
 
 = LSX 2.9.0 =
 
-Various page templates from LSX in lieu of the block editor. 
-
-- Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
-- Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
-- Removed the [Full Width](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width.php) page template.
-- Removed the [Full Width No Margins](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width-no-margins.php) page template.
-- Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
-- [Download the page templates from GitHub](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/) and add them to your child theme if you still need to use any of the above page templates.
+The [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php), [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php), [Full Width](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width.php), [Full Width No Margins](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width-no-margins.php) and [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page templates have been removed from the parent theme. Should you still need to use any these page templates, you can [download them from GitHub](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/) and add them to your child theme.	
