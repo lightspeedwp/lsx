@@ -1,8 +1,6 @@
-<p align="center"><a target="_blank" href="https://lsdev.biz/lsx/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2020/10/lsx-theme-primary-logo.png" alt="LSX Theme"></a></p>
-  
-<h1 align="center">LSX Theme  <a href="https://github.com/lightspeeddevelopment/lsx/releases/latest/"><img src="https://img.shields.io/static/v1?goVersion=&message=v1.3.6&label=&color=999&style=flat-square"></a></h1>
+<h1 align="center"><a target="_blank" href="https://lsdev.biz/lsx/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2020/10/lsx-theme-primary-logo.png" alt="LSX Theme"></a></h1>
 
-<h4 align="center">The most flexible <a href="https://github.com/wordpress/gutenberg" target="_blank">Gutenberg</a>-first <a href="https://wordpress.org" target="_blank">WordPress</a> theme built for go-getters everywhere.</h4>
+<h4 align="center">A flexible <a href="https://github.com/wordpress/gutenberg" target="_blank">Gutenberg</a>-first <a href="https://wordpress.org" target="_blank">WordPress</a> theme.</h4>
 
 <p align="center">
     <a href="https://woocommerce.com/?aff=2873/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/06/687474703a2f2f696d672e736869656c64732e696f2f62616467652f44657369676e6564253230666f722d576f6f436f6d6d657263652d6134363439372e737667-1.png" alt="Made for Woocommerce"></a>
@@ -36,10 +34,6 @@
   &nbsp;|&nbsp;
 	<a href="https://wordpress.org/" target="_blank">
 		<img src="https://img.shields.io/static/v1?label=&message=5.0+-+5.5&color=blue&style=flat-square&logo=wordpress&logoColor=white" alt="WordPress Versions">
-	</a>
-	&nbsp;|&nbsp;
-	<a href="https://www.php.net/" target="_blank">
-		  <img src="https://img.shields.io/static/v1?label=&message=5.6+-+7.3&color=777bb4&style=flat-square&logo=php&logoColor=white" alt="PHP Versions">
 	</a>
 </p>
 
