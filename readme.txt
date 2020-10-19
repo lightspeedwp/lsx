@@ -44,6 +44,10 @@ If you are experiencing issues with the LSX Theme, please log any bug issues you
 
 If you're a developer who's spotted a bug issue and have a fix, or simply have functionality you think would extend our core theme, we are always happy to accept your contribution! Visit the [LSX theme on Github](https://github.com/lightspeeddevelopment/lsx) and submit a Pull Request with your updates.
 
+== Installation ==
+
+
+
 == Frequently Asked Questions ==
 
 Take a look at all our [Frequently Asked Questions](https://www.lsdev.biz/lsx/documentation/lsx-theme/lsx-theme-faqs/), we are sure you'll find what you're looking for. 
