@@ -109,14 +109,18 @@
 
 					<div class="entry-summary">
 						<?php
-						if ( ! has_excerpt() ) {
-
-							$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'lsx' ) . '</a></p>';
-							$content      = wp_trim_words( get_the_content(), 30 );
-							$content      = '<p>' . $content . '</p>' . $excerpt_more;
-							echo wp_kses_post( $content );
+						if ( false === apply_filters( 'lsx_disable_content_excerpt', false ) ) {
+							if ( ! has_excerpt() ) {
+								$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'lsx' ) . '</a></p>';
+								$content      = wp_trim_words( get_the_content(), 30 );
+								$content      = '<p>' . $content . '</p>' . $excerpt_more;
+								echo wp_kses_post( $content );
+							} else {
+								the_excerpt();
+							}
 						} else {
-							the_excerpt();
+							$excerpt_more = '<p><a class="moretag" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'lsx' ) . '</a></p>';
+							echo wp_kses_post( $excerpt_more );
 						}
 						?>
 
