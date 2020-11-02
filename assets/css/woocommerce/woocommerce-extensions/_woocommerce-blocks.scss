@@ -28,6 +28,13 @@
 				@include small-button();
 			}
 		}
+		.wc-block-sort-select {
+			@media (min-width: 900px) {
+				max-width: 90rem;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
 		.wc-block-grid__products {
 			//justify-content: space-between;
 			@media (max-width: 480px) {
