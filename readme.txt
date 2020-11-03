@@ -4,7 +4,7 @@ Donate link: https://lsdev.biz/lsx/donate/
 Tags: blog, e-commerce, education
 Requires at least: 5.0
 Tested up to: 5.5.3
-Requires PHP: 7.2
+Requires PHP: 7.0
 Stable tag: 2.9.0
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
