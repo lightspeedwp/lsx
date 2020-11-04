@@ -113,6 +113,7 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 This software uses the following open source packages:
 
 * [WordPress](https://wordpress.org/)
+* [Underscores](https://underscores.me/) (C) 2014-2020 Automattic, Inc.
 * [Composer](https://getcomposer.org/)
 * [WebPack](https://webpackwebpack.js.org/)
 * [Gulp](https://gulpjs.com/)
