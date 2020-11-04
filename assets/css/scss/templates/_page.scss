@@ -69,7 +69,8 @@ article.page {
 			border: none;
 			> .nav {
 				.menu-item {
-					> a {
+					> a,
+					&.active > a {
 						@include media(">=desktop") {
 							color: white;
 						}
