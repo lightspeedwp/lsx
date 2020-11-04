@@ -34,6 +34,10 @@ article.page {
 	&.mobile-header-hamburger {
 		#masthead {
 			background-color: transparent;
+
+			&.open {
+				background-color: #374750;
+			}
 			.primary-navbar {
 				> .nav {
 					background-color: transparent;
