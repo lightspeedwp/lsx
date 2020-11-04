@@ -597,9 +597,14 @@
 			.wp-block-buttons:not(.alignfull),
 			.slick-slider,
 			#lsx-projects-slider.slick-slider,
-			#lsx-team-slider,
-			#lsx-testimonials-slider {
+			#lsx-team-slider {
 				max-width: 90rem;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#lsx-testimonials-slider {
+				max-width: 100rem;
+				width: 100%;
 				margin-left: auto;
 				margin-right: auto;
 			}
