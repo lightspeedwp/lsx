@@ -70,7 +70,7 @@ article.page {
 			> .nav {
 				.menu-item {
 					> a,
-					> a.active {
+					&.active > a {
 						@include media(">=desktop") {
 							color: white !important;
 						}
