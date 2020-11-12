@@ -428,7 +428,7 @@ if ( ! function_exists( 'lsx_add_viewport_meta_tag' ) ) :
 	 */
 	function lsx_add_viewport_meta_tag() {
 		?>
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+		<meta name="viewport" content="width=device-width, initial-scale=1>
 		<?php
 	}
 	add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
