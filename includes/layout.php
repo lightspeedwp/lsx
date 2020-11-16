@@ -419,21 +419,6 @@ if ( ! function_exists( 'lsx_post_header' ) ) :
 	add_action( 'lsx_entry_top', 'lsx_post_header' );
 endif;
 
-if ( ! function_exists( 'lsx_add_viewport_meta_tag' ) ) :
-	/**
-	 * Add Viewport Meta Tag to head.
-	 *
-	 * @package    lsx
-	 * @subpackage layout
-	 */
-	function lsx_add_viewport_meta_tag() {
-		?>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<?php
-	}
-	add_action( 'wp_head', 'lsx_add_viewport_meta_tag' );
-endif;
-
 if ( ! function_exists( 'lsx_header_search_form' ) ) :
 	/**
 	 * Add a search form to just above the nav menu.
