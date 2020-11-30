@@ -90,7 +90,7 @@ if ( ! function_exists( 'lsx_scripts_add_scripts' ) ) :
 		wp_enqueue_script( 'slick-lightbox', get_template_directory_uri() . '/assets/js/vendor/slick-lightbox.min.js', array( 'jquery', 'slick' ), LSX_VERSION, true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), LSX_VERSION, true );
 
-		if ( defined( 'SCRIPT_DEBUG' ) ) {
+		if ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) {
 			$prefix = 'src/';
 			$suffix = '';
 		} else {
