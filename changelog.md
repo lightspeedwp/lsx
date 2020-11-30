@@ -1,5 +1,23 @@
 # LSX Theme Changelog
 
+# TBA [[2.9.1]] - 30-11-2020
+
+### Updated
+
+- Updated Layout.php
+
+### Fixed
+
+- Fixed - Updated Script Function IF Statement
+
+### Changed
+
+- Changed JS File 
+
+### Removed 
+
+- Removed old Viewport Function
+
 # [[2.9.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.0) - 17-10-2020
 
 ### Added
