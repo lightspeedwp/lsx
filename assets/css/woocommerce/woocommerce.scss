@@ -110,10 +110,27 @@ article.page {
 	}
 }
 
-.woocommerce {
+.wrap.container .woocommerce {
 	.woocommerce-ResetPassword {
 		.woocommerce-form-row {
 			width: 100%;
+		}
+	}
+	.cart-collaterals {
+		max-width: 90rem;
+		margin: auto;
+	}
+	@include media(">=desktop") {
+		max-width: 75rem;
+		width: 75rem;
+		.gutenberg-compatible-template.using-gutenberg .entry-content & {
+			max-width: 75rem;
+			width: 75rem;
+		}
+
+		.cart-collaterals {
+			max-width: 75rem;
+			margin: auto;
 		}
 	}
 }
@@ -436,7 +453,7 @@ article.page {
 .woocommerce-cart,
 .woocommerce-checkout {
 	.checkout-header-wrapper {
-		margin-top: $lsx-medium-gap + $lsx-gap;
+		margin-top: $lsx-gap;
 		text-align: center;
 	}
 	#main {
@@ -634,13 +651,12 @@ body.woocommerce {
 
 body:not(.logged-in).woocommerce-account.my-account .woocommerce {
 	> * {
-		max-width: 550px;
+		max-width: 75rem;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.u-columns.col2-set {
-		max-width: 1200px;
 		@include media(">desktop") {
 			display: flex;
 			.col-1,
@@ -1392,7 +1408,9 @@ p.no-comments,
 
 	&.lsx-wc-cart-menu-item-simple {
 		.lsx-wc-cart-amount {
-			display: none;
+			@include media(">=desktop-wide") {
+				display: none;
+			}
 		}
 	}
 
@@ -1402,10 +1420,17 @@ p.no-comments,
 		font-weight: 300;
 		opacity: 0.75;
 	}
+	.lsx-wc-cart-count-badge {
+		@include media("<desktop-wide") {
+			display: none;
+		}
+	}
 
 	&.lsx-wc-cart-menu-item-simple {
 		.lsx-wc-cart-count {
-			display: none;
+			@include media(">=desktop-wide") {
+				display: none;
+			}
 		}
 	}
 
@@ -1886,6 +1911,7 @@ ul.lsx-wc-cart-sub-menu {
 @import "woocommerce-extensions/bookings";
 @import "woocommerce-extensions/bundle-products";
 @import "woocommerce-extensions/quick-view";
+@import "woocommerce-extensions/product-vendors";
 @import "woocommerce-extensions/product-addons";
 @import "woocommerce-extensions/product-retailers";
 @import "woocommerce-extensions/product-reviews-pro";

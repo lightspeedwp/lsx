@@ -441,6 +441,37 @@ if ( ! function_exists( 'lsx_post_nav' ) ) :
 
 endif;
 
+if ( ! function_exists( 'lsx_cover_custom_logo' ) ) :
+
+	/**
+	 * Outputs the Custom Logo on the Cover page if available.
+	 *
+	 * @package    lsx
+	 * @subpackage template-tags
+	 */
+	function lsx_cover_custom_logo() {
+		if ( is_page_template( 'page-templates/template-cover.php' ) ) {
+
+			$custom_logo_id = get_theme_mod( 'lsx_cover_template_alt_logo' );
+
+			if ( $custom_logo_id ) {
+
+				$site_url   = get_site_url();
+				$site_title = get_bloginfo( 'name' );
+				$image      = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+				echo '<a href="' . $site_url . '" class="custom-logo-link" rel="home"><img class="custom-logo" src="' . $image[0] . '" width="' . $image[1] . '" height="' . $image[2] . '" loading="eager" alt="' . $site_title . '"></a>';
+
+			} else {
+				the_custom_logo();
+			}
+
+
+		}
+	}
+
+endif;
+
 if ( ! function_exists( 'lsx_site_identity' ) ) :
 
 	/**
@@ -451,10 +482,10 @@ if ( ! function_exists( 'lsx_site_identity' ) ) :
 	 */
 	function lsx_site_identity() {
 		if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
-			if ( version_compare( get_bloginfo( 'version' ), '5.5', '<' ) ) {
-				the_custom_logo();
+			if ( is_page_template( 'page-templates/template-cover.php' ) ) {
+				lsx_cover_custom_logo();
 			} else {
-				echo wp_kses_post( '<a href="' . home_url() . '" class="custom-logo-link" rel="home">' . the_custom_logo() . '</a>' );
+				the_custom_logo();
 			}
 		} else {
 			if ( get_theme_mod( 'site_logo_header_text', 1 ) ) {

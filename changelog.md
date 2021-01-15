@@ -1,63 +1,137 @@
-# LSX Change log
+# LSX Theme Changelog
 
 # [[2.9.1]]
 
 ### Fixed
 - Fixed several small Cover Page Template bugs on desktop and mobile.
+- Updated Script Function IF Statement
 
 ### Updated
 - Documentation and support links.
 - Updated the minification of the CSS and JS.
+- Updated Layout.php
+
+### Removed 
+- Removed old Viewport Function
 
 ### Security
 - General testing to ensure compatibility with latest WordPress version (5.6).
 
-# [[2.9.0]]
+
+# [[2.9.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.0) - 17-10-2020
 
 ### Added
 
-- Improved styling for the Tribe Events Community Events forms.
-- Added support for the Mix and Match Woocommerce plugin.
-- Improved suport for Woocommerce Whishlist plugin.
-- Improved suport for Woocommerce Quick View plugin.
-- Block Theme Support updates.
-- Added support for the How to and Faq yoast blocks.
-- Added the `lsx-subheading` class for group blocks.
-- Reducing the left and right Padding on LSX Buttons from 40px to 15px.
-- Adding styles to make LSX compatible with Yoast SEO's internal linking blocks.
-- Adding the page template "Cover Template" and admin options for it.
-- Adding support for New Block Tools on WordPress 5.5.
-- Added support for native Lazy-loading images on WordPress 5.5 version.
+- [#425](https://github.com/lightspeeddevelopment/lsx/issues/425) Added support for native Lazy-loading images on WordPress 5.5 version.
+- [#384](https://github.com/lightspeeddevelopment/lsx/issues/380) Added "Cover Template" page template with customizer options for alt image, colours. Displays title, post meta & excerpt.
+- [#364](https://github.com/lightspeeddevelopment/lsx/issues/364) Added support for LSX Search & FacetWP filtering on all the Blog archive layouts.
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Added support for the Mix and Match Woocommerce plugin.
+- Added in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
+- Added styling support for WooCommerce Blocks 3.6 Cart & Checkout versions. 
+
+### Added Block Editor Support
+
+- Added support for the WordPress 5.5 latest block editor tools.
+- Added compatibility for the LSX Blocks "disable title" functionality.
+- [#391](https://github.com/lightspeeddevelopment/lsx/issues/391) Added dedicated styles for specific blocks.
+- [#385](https://github.com/lightspeeddevelopment/lsx/issues/385) Added `lsx-subheading` class for group blocks.
+- [#395](https://github.com/lightspeeddevelopment/lsx/issues/395) Added styling support for Yoast SEO's internal linking blocks .
+- [#363](https://github.com/lightspeeddevelopment/lsx/issues/363) Added styling support for the Yoast SEO plugin FAQ block .
+- [#362](https://github.com/lightspeeddevelopment/lsx/issues/362) Added styling support for the Yoast SEO plugin's HowTo block. 
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added WPForms submit button block editor styling
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for responsive embedded content `add_theme_support( 'responsive-embeds' )`
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for custom editor font sizes `add_theme_support('editor-font-sizes')`
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for block default gradient presets add_theme_support`add_theme_support( 'editor-gradient-presets' )`
+- Added theme support for editor styles - `add_theme_support( 'editor-styles' )`
+- Added theme support for full and wide align images `add_theme_support( 'align-wide' )`
+- Added theme support for block styles for the the group, cover, columns, heading, paragraph, image & gallery core blocks `add_theme_support( 'wp-block-styles' )`
+- Added theme support for Custom Line Heights `add_theme_support( 'custom-line-height' )`
+- Added theme support for Custom Units `add_theme_support( 'custom-units' )`
+- Added theme support for block link colors experimental feature `add_theme_support( 'experimental-link-color' )`
+- Added theme support for custom color scheme `add_theme_support( 'editor-color-palette'`
+- Added theme support for block default font sizes, `add_theme_support( 'editor-font-sizes' )`
 
 ### Updated
 
-- Updated a few functions to meet WordPress standards based on Theme Checkers results.
 - Updated the Welcome screen.
-- Updated style to support sensei shortcodes on block pages.
+- Updated the theme `screenshot.png` file.
+- [#373](https://github.com/lightspeeddevelopment/lsx/pull/373) Updated styles spacing improvements for WordPress core blocks.
+- [#378](https://github.com/lightspeeddevelopment/lsx/issues/378) Updated the padding on LSX Buttons.
+- [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Updated Block Editor Theme Support.
+- [#365](https://github.com/lightspeeddevelopment/lsx/pull/365) Updated Yoast & WooCommerce breadcrumb placement & styling.
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Updated styling for Woocommerce Wishlist plugin.
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Updated styling for Woocommerce Quick View plugin.
+- [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Updated styling for WooCommerce Cart and Checkout pages.
+- Updated single blog layout to support block editor first and foremost.
+- Updated sensei shortcode styles to work on block pages.
+- Updated styling for the Tribe Events Community Events forms.
 
 ### Changed
 
-- Merged two WooCommerce panels within the customizer sidebar.
+- [#387](https://github.com/lightspeeddevelopment/lsx/issues/387) Merged the two WooCommerce panels within the customizer sidebar.
+- Skiped the loading attribute for the custom logo.
+- Reduced the left and right padding on LSX Buttons from 40px to 15px.
 - The WooCommerce bar will be showed if active and the screen is less than 678px.
+- Default block widths changed.
 
 ### Fixed
 
-- Fixed the compatibility with the LSX Blocks "disable title" functionality.
+- [#381](https://github.com/lightspeeddevelopment/lsx/pull/381) Fixed the search bar spacing issues.
+- [#386](https://github.com/lightspeeddevelopment/lsx/pull/386) Fixed the margin issue when some titles are too long.
+- [#377](https://github.com/lightspeeddevelopment/lsx/issues/377) Fixed the search bar spacing issues.
+- [#358](https://github.com/lightspeeddevelopment/lsx/issues/358) Fixed alignment issues with post header containing long titles.
+- [#380](https://github.com/lightspeeddevelopment/lsx/issues/380) Fixed event archive page banner that duplicates when switching views.
+- [#396](https://github.com/lightspeeddevelopment/lsx/issues/396) Fixed Sensei single lesson notification message bug.
+- [#397](https://github.com/lightspeeddevelopment/lsx/issues/397) Fixed Sensei single lesson placeholder image.
 - Fixed the mobile widths.
-- Archive blog spacing fixes.
-- Improvements on the container block.
-- Improvements on the image block.
-- Fixed the search bar spacing issues.
+- Fixed blog archive spacing.
 - Fixed the margin issue when some titles are too long.
 - Fixed minor issues on Sensei single lesson images and messages.
 
 ### Removed
 
+- [#369](https://github.com/lightspeeddevelopment/lsx/issues/369) Removed older Gutenberg block styling.
 - Removed the [Front Page](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-front-page.php) page template.
 - Removed the [No Sidebar](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-no-sidebar.php) page template.
+- Removed the [Full Width](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width.php) page template.
+- Removed the [Full Width No Margins](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-full-width-no-margins.php) page template.
 - Removed the [WC Thank You](https://github.com/lightspeeddevelopment/lsx/blob/2.8.0/page-templates/template-wc-thank-you.php) page template.
 
-# [[2.8.0]] - 2020-05-21
+### Security
+
+- [#383](https://github.com/lightspeeddevelopment/lsx/issues/383) Tested the theme files with the [theme check plugin](https://wordpress.org/plugins/theme-check/). Updated theme files to support the latest WordPress theme coding & theme review standards. 
+- Updating dependencies to prevent vulnerabilities.
+- Updating PHPCS options for better code.
+- General testing to ensure compatibility with latest WordPress version (5.5.1).
+- General testing to ensure compatibility with latest LSX Theme version of al LSX extensions.
+
+### Third Party Plugin Compatibility Testing
+
+- WordPress 5.5.1
+- Gutenberg 9.1.1
+- Yoast SEO 15.1.1
+- WooCommerce 4.6.0
+- WooCommerce Blocks 3.6.0
+- Woocommerce Wishlist 
+- Woocommerce Quick View 1.2.12
+- WooCommerce Subscriptions 3.0.9
+- WooCommerce Memberships 1.19.1
+- WooCommerce Bookings 1.15.29
+- WooCommerce Product Vendors 2.1.43
+- WooCommerce Tab Manager 1.13.1
+- WooCommerce Mix and Match 1.10.4
+- WooCommerce Checkout Field Editor 1.5.36
+- WooCommerce Social Login 2.10.1
+- Sensei 3.5.2 
+- Events 5.2.0
+- WPForms 1.6.2.3
+- GravityForms 2.4.21
+- Envira Gallery 1.9.0.2
+- Soliloquy Slider 2.6.0
+- FacetWP 3.6.6
+- SearchWP 4.0.31
+
+# [[2.8.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.8.0) - 2020-05-21
 
 ### Added
 
@@ -75,7 +149,7 @@
 ### Fixed
 
 - Fixed issue #346 'If LSX banners is not enabled there is a simple banner showing on each page.'.
-- Body class `using-gutenberg` affecting other custom post type single pages was removed from any custom post type single page.
+- [#353](https://github.com/lightspeeddevelopment/lsx/issues/383) Body class `using-gutenberg` affecting other custom post type single pages was removed from any custom post type single page.
 - Fixed a few styling issues related to Sensei templates.
 
 ### Security

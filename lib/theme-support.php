@@ -43,6 +43,8 @@ if ( ! function_exists( 'theme_support' ) ) :
 		add_theme_support( 'custom-line-height' );
 		// Add support for Custom Units.
 		add_theme_support( 'custom-units' );
+		// Add support for experimental link colors.
+		add_theme_support( 'experimental-link-color' );
 		// Add custom editor font sizes.
 		add_theme_support(
 			'editor-font-sizes',

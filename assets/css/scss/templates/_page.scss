@@ -21,11 +21,84 @@ article.page {
 
 .page-template-template-cover,
 .post-template-template-cover {
+	&.gutenberg-compatible-template.using-gutenberg.lsx-page-title,
+	&.banner-disabled.single {
+		#primary,
+		#primary.content-area {
+			margin-top: 0;
+		}
+	}
 	#primary {
 		margin-top: 0;
 	}
-	.breadcrumbs-container {
-		z-index: 100;
+	&.mobile-header-hamburger {
+		#masthead {
+			background-color: transparent;
+
+			&.masthead-open {
+				background-color: #374750;
+			}
+			.primary-navbar {
+				> .nav {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+	&.mobile-header-navigation-bar {
+		@include media(">=desktop-wide") {
+			#masthead {
+				background-color: transparent;
+				.primary-navbar {
+					> .nav {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+	#masthead {
+		margin-bottom: -80px;
+		z-index: 9;
+		box-shadow: none;
+		&.scroll-to-fixed-fixed {
+			position: relative !important;
+		}
+		#searchform {
+			.search-submit {
+				color: white;
+			}
+		}
+		.primary-navbar {
+			border: none;
+			> .nav {
+				.menu-item {
+					> a,
+					&.active > a {
+						@include media(">=desktop") {
+							color: white;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.mobile-header-hamburger {
+		#masthead {
+			.wrapper-toggle {
+				background-color: transparent;
+				.navbar-toggle {
+					background-color: transparent;
+					> .icon-bar {
+						background-color: white;
+					}
+				}
+			}
+		}
+	}
+	.breadcrumbs-container,
+	#top-menu {
+		display: none;
 	}
 	.cover-header {
 		display: flex;
@@ -48,9 +121,12 @@ article.page {
 			flex-direction: column;
 			justify-content: flex-end;
 			width: 100%;
-			min-height: calc(100vh - 130px);
+			min-height: calc(100vh - 2rem);
 			.cover-header-inner {
 				padding: 10rem 0 5rem 0;
+				@include media("<=tablet") {
+					padding: 10rem 0 13rem 0;
+				}
 				width: 100%;
 				.cover-color-overlay,
 				.cover-color-overlay::before {
@@ -65,46 +141,79 @@ article.page {
 					content: "";
 					display: block;
 				}
-			}
-		}
-	}
-	.entry-header {
-		background: transparent;
-		padding: 0;
-		position: relative;
-		width: 100%;
-		* {
-			color: white;
-		}
-		.entry-categories-inner {
-			a {
-				font-size: 15px;
-				text-transform: uppercase;
-				text-decoration: underline;
-				margin: 0 5px;
-				@include media("<custom") {
-					font-size: 13px;
+				.the-excerpt-wrapper {
+					font-size: 28px;
+					padding-left: 5rem;
+					padding-right: 5rem;
+					a {
+						text-decoration: underline;
+					}
+				}
+				.to-the-content-wrapper {
+					.to-the-content {
+						display: inline-block;
+						padding: 2rem;
+						i {
+							font-size: 35px;
+							transition: transform 0.1s linear;
+						}
+						&:hover {
+							i {
+								transform: scale(1.1);
+							}
+						}
+					}
 				}
 			}
 		}
-		.entry-title {
-			font-size: 56px;
-			@include media("<custom") {
-				font-size: 36px;
-			}
-		}
-		.intro-text {
+	}
+	#main {
+		.entry-header {
+			background: transparent;
+			padding: 0;
+			position: relative;
+			width: 100%;
 			* {
-				font-size: 28px;
-				@include media("<custom") {
-					font-size: 18px;
+				color: white;
+			}
+			.entry-categories-inner {
+				a {
+					font-size: 15px;
+					text-transform: uppercase;
+					text-decoration: underline;
+					margin: 0 5px;
+					@include media("<custom") {
+						font-size: 13px;
+					}
 				}
 			}
-		}
-		.moretag {
-			display: none;
+			.entry-title {
+				font-size: 56px;
+				padding-left: 5rem;
+				padding-right: 5rem;
+			}
+			.intro-text {
+				* {
+					font-size: 28px;
+					padding-left: 5rem;
+					padding-right: 5rem;
+					@include media("<custom") {
+						font-size: 18px;
+					}
+				}
+				a {
+					text-decoration: underline;
+				}
+				.lsx-postnav-wrapper {
+					display: none;
+				}
+			}
+			.moretag {
+				display: none;
+			}
 		}
 	}
+
 	#primary {
 		.entry-categories-inner {
 			a {
@@ -138,6 +247,17 @@ article.page {
 						color: nth($blue, 1);
 					}
 				}
+			}
+		}
+	}
+}
+
+body:not(.logged-in) {
+	&.page-template-template-cover,
+	&.post-template-template-cover {
+		.cover-header {
+			.cover-header-inner-wrapper {
+				min-height: 100vh;
 			}
 		}
 	}

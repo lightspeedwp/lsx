@@ -9,9 +9,10 @@
  *
  * @since 10.2
  */
-if ( interface_exists( 'WPSEO_Graph_Piece' ) ) {
+use \Yoast\WP\SEO\Generators\Schema\Abstract_Schema_Piece;
 
-	class LSX_Schema_Graph_Piece implements WPSEO_Graph_Piece {
+if ( class_exists( 'Abstract_Schema_Piece' ) ) {
+	class LSX_Schema_Graph_Piece extends Abstract_Schema_Piece {
 		/**
 		 * A value object with context variables.
 		 *

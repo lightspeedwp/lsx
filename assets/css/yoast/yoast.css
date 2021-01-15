@@ -49,7 +49,7 @@
 .schema-faq-question:hover {
 	opacity: 0.8;
 }
-.schema-faq-answer {
+.schema-faq-answer:not(.rich-text) {
 	display: none;
 	padding: 10px 15px;
 }

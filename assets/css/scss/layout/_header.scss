@@ -1,7 +1,7 @@
 #masthead {
 	border: 0 none;
 	border-radius: 0;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 	margin-bottom: 0;
 	min-height: 0;
 
@@ -13,14 +13,16 @@
 		justify-content: flex-start;
 		position: relative;
 
-		@include media('>=phone', '<desktop-wide') {
+		@include media(">=phone", "<desktop-wide") {
 			padding-left: 30px;
 			padding-right: 30px;
 		}
 
-		@include media('<desktop-wide') { width: 100%; }
+		@include media("<desktop-wide") {
+			width: 100%;
+		}
 
-		@include media('>=desktop-wide') {
+		@include media(">=desktop-wide") {
 			flex-direction: row;
 			min-height: 80px;
 			padding-left: 15px;
@@ -31,32 +33,40 @@
 				flex-direction: column;
 			}
 
-			.header-expanded & { align-items: flex-start; }
+			.header-expanded & {
+				align-items: flex-start;
+			}
 		}
 	}
 
 	.navbar-header {
-		@include media('<desktop-wide') {
+		@include media("<desktop-wide") {
 			align-items: flex-start;
 			display: flex;
 			flex-flow: column nowrap;
 			margin: 0;
-			width: 100%
+			width: 100%;
 		}
 
 		.site-branding {
 			padding: 15px 0;
 
-			@include media('<desktop-wide') { flex-grow: 1; }
+			@include media("<desktop-wide") {
+				flex-grow: 1;
+			}
 		}
 
 		.site-title {
 			margin: 0;
 
-			& > a { transition: color 300ms ease; }
+			& > a {
+				transition: color 300ms ease;
+			}
 		}
 
-		.site-description { margin-bottom: 0; }
+		.site-description {
+			margin-bottom: 0;
+		}
 
 		.custom-logo-link {
 			& > img {
@@ -67,9 +77,11 @@
 				width: auto;
 				transition: all 300ms ease;
 
-				@include media('>=phone') { max-width: none; }
+				@include media(">=phone") {
+					max-width: none;
+				}
 
-				@include media('>=desktop-wide') {
+				@include media(">=desktop-wide") {
 					margin-bottom: 15px;
 					margin-top: 15px;
 				}
@@ -78,7 +90,7 @@
 	}
 	.mobile-header-hamburger & {
 		.navbar-header {
-			@include media('<desktop-wide') {
+			@include media("<desktop-wide") {
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;

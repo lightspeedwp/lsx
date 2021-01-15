@@ -1,0 +1,87 @@
+tools:
+  sensiolabs_security_checker: true
+  php_cs_fixer: false
+  php_code_coverage: true
+checks:
+    php:
+        argument_type_checks: false
+        avoid_closing_tag: false
+        avoid_superglobals: false
+        coding_standard:
+            name: WordPress
+        encourage_shallow_comparison: false
+        method_calls_on_non_object: false
+        no_exit: false
+        no_global_keyword: false
+        no_trailing_whitespace: false
+        one_class_per_file: false
+        property_assignments: false
+        parse_doc_comments: false
+        psr2_class_declaration: false
+        psr2_control_structure_declaration: false
+        psr2_switch_declaration: false
+        variable_existence: false
+        verify_access_scope_valid: false
+        verify_argument_usable_as_reference: false
+        verify_property_names: false
+        fix_doc_comments: false
+        non_commented_empty_catch_block: false
+        useless_calls: false
+        unused_variables: false
+        unused_properties: false
+        unused_parameters: false
+        unused_methods: false
+        unreachable_code: false
+        too_many_arguments: false
+        overriding_private_members: false
+        no_property_on_interface: false
+        foreach_traversable: false
+        deprecated_code_usage: false
+        closure_use_modifiable: false
+        call_to_parent_method: false
+        avoid_length_functions_in_loops: false
+        avoid_entity_manager_injection: false
+        avoid_duplicate_types: false
+        assignment_of_null_return: false
+        comparison_always_same_result: false
+        symfony_request_injection: false
+        catch_class_exists: false
+        closure_use_not_conflicting: true
+        no_non_implemented_abstract_methods: false
+        missing_arguments: false
+        no_trait_type_hints: false
+        switch_fallthrough_commented: false
+
+filter:
+    dependency_paths: [wordpress/*, wp-content/*, includes/classes/legacy/*, vendor/*]
+    excluded_paths: [tests/*, bin/*, assets/*, languages/*, includes/classes/legacy/*, vendor/*]
+coding_style:
+    php:
+        indentation:
+            general:
+                use_tabs: false
+                size: 5
+build:
+    environment:
+        variables:
+            CI: 'true'
+            TEST_OUTPUT_STYLE: 'pretty'
+            COMPOSER_OPTIONS: '--optimize-autoloader'
+            COVERAGE_OUTPUT_STYLE: 'clover'
+            COVERAGE_CLOVER_FILE_PATH: 'build/coverage/clover.xml'
+        php:
+            version: "7.4"
+        timezone: GMT+2
+        postgresql: false
+        redis: false
+    nodes:
+     analysis:
+      project_setup:
+        override: true
+      tests:
+        override:
+          - php-scrutinizer-run
+          - command: phpcs-run --standard=./.phpcs.xml --extensions=php --ignore=*/wordpress/*
+      dependencies:
+        before:
+          - composer require --dev johnpbloch/wordpress

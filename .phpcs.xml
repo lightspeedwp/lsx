@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress-LSX"
+         namespace="WordPressCS\WordPress"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+    <description>Coding standards</description>
+	
+	<!-- Pass some flags to PHPCS:
+		 p flag: Show progress of the run.
+		 s flag: Show sniff codes in all reports.
+	-->
+	<arg value="ps"/>
+
+	<!-- Check up to 8 files simultanously. -->
+	<arg name="parallel" value="8"/>
+
+	<!-- Check all files in this directory and the directories below it. -->
+	<file>.</file>
+
+	<!-- Exclude directories. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+	<exclude-pattern>*/woocommerce/*</exclude-pattern>
+	<exclude-pattern>*/tribe-events/*</exclude-pattern>
+	<exclude-pattern>*/.github/*</exclude-pattern>
+	<exclude-pattern>gulpfile\.js</exclude-pattern>
+	<exclude-pattern>*/wp-content/*</exclude-pattern>
+	<exclude-pattern>*.css*</exclude-pattern>
+	<exclude-pattern>*.js*</exclude-pattern>
+	<exclude-pattern type="relative">^build/*</exclude-pattern>
+	
+	<!-- Check up to 8 files simultaneously. -->
+	<arg name="parallel" value="8" />
+		
+	<config name="minimum_supported_wp_version" value="5.3" />
+	<config name="testVersion" value="7.0-" />
+
+	<rule ref="WordPress">
+		<exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
+		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
+	</rule>
+		
+	<rule ref="WordPress-Extra" />
+
+	<!-- Not interested in whitespace issues in JS and CSS files at the moment -->
+	<rule ref="Squiz.WhiteSpace">
+		<exclude-pattern>*\.css</exclude-pattern>
+		<exclude-pattern>*\.js</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.WhiteSpace">
+		<exclude-pattern>*\.css</exclude-pattern>
+		<exclude-pattern>*\.js</exclude-pattern>
+	</rule>	
+
+	<rule ref="Generic.Files.EndFileNewline">
+		<exclude-pattern>*\.css</exclude-pattern>
+		<exclude-pattern>*\.js</exclude-pattern>
+	</rule>
+	
+    <rule ref="Generic.PHP.Syntax"/>
+	
+    <rule ref="WordPress.WP.DeprecatedFunctions"/>
+	
+	<rule ref="PHPCompatibilityWP"/>
+</ruleset>

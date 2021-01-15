@@ -20,7 +20,6 @@ if ( ! function_exists( 'lsx_scripts' ) ) :
 	 */
 	function lsx_scripts() {
 		lsx_scripts_add_styles();
-		lsx_scripts_add_fonts();
 		lsx_scripts_add_scripts();
 	}
 
@@ -69,21 +68,6 @@ if ( ! function_exists( 'lsx_scripts_add_styles' ) ) :
 
 endif;
 
-if ( ! function_exists( 'lsx_scripts_add_fonts' ) ) :
-	/**
-	 * Enqueue fonts.
-	 *
-	 * @package    lsx
-	 * @subpackage scripts
-	 */
-	function lsx_scripts_add_fonts() {
-		$disable_fonts = get_theme_mod( 'lsx_disable_fonts', false );
-		if ( false !== $disable_fonts ) {
-			return;
-		}
-	}
-endif;
-
 if ( ! function_exists( 'lsx_scripts_add_scripts' ) ) :
 
 	/**
@@ -106,7 +90,7 @@ if ( ! function_exists( 'lsx_scripts_add_scripts' ) ) :
 		wp_enqueue_script( 'slick-lightbox', get_template_directory_uri() . '/assets/js/vendor/slick-lightbox.min.js', array( 'jquery', 'slick' ), LSX_VERSION, true );
 		wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/assets/js/vendor/picturefill.min.js', array(), LSX_VERSION, true );
 
-		if ( defined( 'SCRIPT_DEBUG' ) ) {
+		if ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) {
 			$prefix = 'src/';
 			$suffix = '';
 		} else {

@@ -15,23 +15,41 @@ body {
 
 html {
 	font-size: 5px;
-
-	@include media('>=phone') { font-size: 6.5px; }
-	@include media('>=tablet') { font-size: 8px; }
-	@include media('>=desktop') { font-size: 10px; }
+	scroll-behavior: smooth;
+	@include media(">=phone") {
+		font-size: 6.5px;
+	}
+	@include media(">=tablet") {
+		font-size: 8px;
+	}
+	@include media(">=desktop") {
+		font-size: 10px;
+	}
 }
 
-body { direction: ltr; }
+body {
+	direction: ltr;
+}
 
-img { @include img-responsive(inline-block); }
+img {
+	@include img-responsive(inline-block);
+}
 
-figure { max-width: 100%; }
+figure {
+	max-width: 100%;
+}
 
-p:empty { display: none; }
+p:empty {
+	display: none;
+}
 
-.checkbox { line-height: 1.2; }
+.checkbox {
+	line-height: 1.2;
+}
 
-.dropdown-menu:not(.cfdatepicker) { min-width: 100%; }
+.dropdown-menu:not(.cfdatepicker) {
+	min-width: 100%;
+}
 
 .dropdown-menu-two-columns {
 	li {

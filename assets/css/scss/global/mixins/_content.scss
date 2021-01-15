@@ -77,9 +77,11 @@
 	// Caldera Forms
 	.remodal-wrapper {
 		color: $color;
-
-		a:not(.btn):not(.wp-block-button__link) {
+		a:not(.btn):not(.wp-block-button__link):not(.has-link-anchor) {
 			@include lsx-link-colour($link, $hover);
+		}
+		.has-link-color a:hover {
+			color: $hover;
 		}
 
 		h1,
@@ -108,6 +110,25 @@
 		pre {
 			border-color: $breaker;
 			color: $color;
+		}
+
+		.lsx-list {
+			padding-left: 0;
+			list-style-type: none;
+			padding-right: 2rem;
+			li {
+				margin-bottom: 1.5rem;
+				display: flex;
+				&:before {
+					font-size: 12px;
+					content: "\f00c";
+					display: inline-block;
+					font: normal normal normal 14px/1 "FontAwesome";
+					color: $link;
+					margin-right: 1rem;
+					padding-top: 5px;
+				}
+			}
 		}
 	}
 
@@ -291,6 +312,15 @@
 
 					&:hover {
 						border-color: $hover;
+					}
+				}
+			}
+			.lsx-hero-banner-block {
+				.post-meta {
+					color: white;
+
+					a {
+						@include lsx-link-colour(white, $hover);
 					}
 				}
 			}
@@ -875,20 +905,22 @@
 	}
 
 	// Sensei
+	.content-area,
+	.learner-profile {
+		.sensei-course-filters,
+		#my-courses {
+			li {
+				a:not(.btn) {
+					background-color: #fff;
+					color: $link;
 
-	.sensei-course-filters,
-	.learner-profile #my-courses .ui-tabs-nav {
-		li {
-			a:not(.btn) {
-				background-color: #fff;
-				color: $link;
-
-				&.active,
-				&:hover,
-				&:hover:active,
-				&:focus {
-					background-color: $link;
-					color: #fff;
+					&.active,
+					&:hover,
+					&:hover:active,
+					&:focus {
+						background-color: $link;
+						color: #fff;
+					}
 				}
 			}
 		}

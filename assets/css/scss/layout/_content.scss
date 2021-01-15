@@ -116,15 +116,31 @@
 // lsx-subheading styles
 .content-area {
 	.lsx-subheading {
-		h2 {
+		@include media(">desktop") {
+			max-width: 90rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		h2,
+		h3 {
 			font-size: 48px;
 			color: #333;
 			line-height: 50px;
 		}
-		p.lsx-title {
+		p {
 			font-size: 26px;
 			color: #777;
 			line-height: 30px;
+			&:last-child {
+				&:after {
+					content: "";
+					display: block;
+					height: 2px;
+					margin: 2.4rem auto 0;
+					width: 80px;
+					background-color: #dadddf;
+				}
+			}
 			&:not(.has-text-align-center) {
 				text-align: initial;
 				&:after {
@@ -142,17 +158,6 @@
 					margin-right: 0;
 					margin-left: auto;
 				}
-			}
-		}
-		//Mobile Styling for .lsx-subheading
-		@include media("<custom") {
-			h2 {
-				font-size: 30px;
-				line-height: 30px;
-			}
-			p {
-				font-size: 22px;
-				line-height: 24px;
 			}
 		}
 	}

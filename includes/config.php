@@ -312,10 +312,7 @@ if ( ! function_exists( 'lsx_process_content_width' ) ) :
 	function lsx_process_content_width() {
 		global $content_width;
 
-		if (
-			is_page_template( 'page-templates/template-front-page.php' ) ||
-			is_page_template( 'page-templates/template-full-width.php' )
-		) {
+		if ( is_page_template( 'page-templates/template-front-page.php' ) ) {
 			$content_width = 1140;
 		}
 	}
