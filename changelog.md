@@ -1,5 +1,17 @@
 # LSX Change log
 
+# [[2.9.1]]
+
+### Fixed
+- Fixed several small Cover Page Template bugs on desktop and mobile.
+
+### Updated
+- Documentation and support links.
+- Updated the minification of the CSS and JS.
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (5.6).
+
 # [[2.9.0]]
 
 ### Added
