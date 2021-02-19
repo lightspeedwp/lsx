@@ -271,7 +271,7 @@ var lsx = Object.create(null);
                 lsx.woocommerce_filters_mobile(),
                 lsx.detect_has_link_block();
         }),
-        t.load(function () {
+        t.on('load', function() {
             lsx.fix_bootstrap_menus_dropdown(),
                 lsx.fix_bootstrap_menus_dropdown_click(),
                 lsx.fix_lazyload_envira_gallery(),
