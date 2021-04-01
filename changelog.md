@@ -13,6 +13,7 @@
 
 ### Removed 
 - Removed old Viewport Function
+- Removing the default sidebar widgets from sidebar.php
 
 ### Security
 - General testing to ensure compatibility with latest WordPress version (5.6).
