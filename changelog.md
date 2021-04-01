@@ -2,6 +2,9 @@
 
 # [[2.9.1]]
 
+### Added
+- Default grid styling for the global search results. (3 column).
+
 ### Fixed
 - Fixed several small Cover Page Template bugs on desktop and mobile.
 - Updated Script Function IF Statement

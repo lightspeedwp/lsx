@@ -296,4 +296,62 @@ article.lsx-slot {
 			}
 		}
 	}
+
+	&:not( .lsx-body-grid-layout, .lsx-body-half-grid-layout, .lsx-body-list-layout ) {
+		#categories-slider {
+			+ .post-wrapper {
+				margin-top: -6.3rem;
+			}
+		}
+		.post-wrapper {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			margin-top: -30px;
+
+			@include media('>=phone') {
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+
+			& > .post,
+			& > .page,
+			& > .lsx-slot {
+				margin-top: 0;
+				margin-bottom: 30px;
+				width: 100%;
+
+				@include media('>=phone') {
+					padding-left: 15px;
+					padding-right: 15px;
+					width: 50%;
+				}
+
+				@include media('>=desktop') {
+					width: 33.33333%;
+				}
+
+				.entry-meta,
+				.entry-title,
+				.post-meta-categories,
+				.entry-summary,
+				.entry-content {
+					padding-left: 1.5rem;
+					padding-right: 1.5rem;
+				}
+				.post-tags-wrapper {
+					margin-top: 0;
+					margin-left: 1.5rem;
+					margin-right: 1.5rem;
+					padding-bottom: 1.5rem;
+					display: flex;
+				}
+				.entry-title {
+					font-size: 22px;
+				}
+			}
+		}
+	}
 }
