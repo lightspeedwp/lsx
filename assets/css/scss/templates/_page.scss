@@ -34,6 +34,10 @@ article.page {
 	&.mobile-header-hamburger {
 		#masthead {
 			background-color: transparent;
+
+			&.masthead-open {
+				background-color: #374750;
+			}
 			.primary-navbar {
 				> .nav {
 					background-color: transparent;
@@ -69,7 +73,8 @@ article.page {
 			border: none;
 			> .nav {
 				.menu-item {
-					> a {
+					> a,
+					&.active > a {
 						@include media(">=desktop") {
 							color: white;
 						}
@@ -186,9 +191,6 @@ article.page {
 				font-size: 56px;
 				padding-left: 5rem;
 				padding-right: 5rem;
-				@include media("<custom") {
-					font-size: 36px;
-				}
 			}
 			.intro-text {
 				* {

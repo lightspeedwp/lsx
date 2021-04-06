@@ -895,21 +895,23 @@ if ( ! function_exists( 'lsx_wc_product_searchform' ) ) :
 	 */
 	function lsx_wc_product_searchform( $form ) {
 
-		$form = '
-			<form role="search" method="get" class="search-form form-inline" id="searchform" action="<?php echo esc_url( home_url( \'/\' ) ); ?>">
-				<div class="input-group">
-					<input type="search" value="<?php if ( is_search() ) { echo get_search_query(); } ?>" name="s" class="search-field form-control" placeholder="<?php esc_attr_e( \'Search\', \'lsx\' ); ?> <?php echo esc_attr( get_bloginfo( \'name\' ) ); ?>">
-					<label class="hide"><?php esc_html_e( \'Search for:\', \'lsx\' ); ?></label>
+		ob_start();
+		?>
+		<form role="search" method="get" class="search-form form-inline" id="searchform" action="<?php echo esc_url( home_url() ); ?>">
 
-					<span class="input-group-btn">
-						<button type="submit" class="search-submit btn btn-default"><span class="fa fa-search"></span></button>
-					</span>
-				</div>
+		<div class="input-group">
+			<input type="search" value="<?php if ( is_search() ) { echo esc_html( get_search_query() ); } ?>" name="s" class="search-field form-control" placeholder="<?php esc_attr_e( 'Search', 'lsx' ); ?> <?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+			<label class="hide"><?php esc_html_e( 'Search for:', 'lsx' ); ?></label>
 
-				<input type="hidden" name="post_type" value="product" />
-			</form>
-		';
+			<span class="input-group-btn">
+				<button type="submit" class="search-submit btn btn-default"><span class="fa fa-search"></span></button>
+			</span>
+		</div>
 
+		<input type="hidden" name="post_type" value="product" />
+		</form>
+		<?php
+		$form = ob_get_clean();
 		return $form;
 
 	}

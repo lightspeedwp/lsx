@@ -1,5 +1,29 @@
 # LSX Theme Changelog
 
+# [[2.9.2]]() - ??
+
+### Fixed
+
+- Fixed the output of of the product search form in the header.
+
+# [[2.9.1]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.1) - 15-01-2021
+
+### Fixed
+- Fixed several small Cover Page Template bugs on desktop and mobile.
+- Updated Script Function IF Statement
+
+### Updated
+- Documentation and support links.
+- Updated the minification of the CSS and JS.
+- Updated Layout.php
+
+### Removed 
+- Removed old Viewport Function
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (5.6).
+
+
 # [[2.9.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.0) - 17-10-2020
 
 ### Added

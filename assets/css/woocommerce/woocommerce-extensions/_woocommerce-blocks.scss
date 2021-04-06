@@ -13,7 +13,6 @@
 			@include small-button();
 		}
 	}
-
 	//Grid Block
 	.wc-block-grid {
 		.wc-block-grid__no-products {
@@ -26,6 +25,13 @@
 				@include lsx-button-scaffolding();
 				@include lsx-button-colour();
 				@include small-button();
+			}
+		}
+		.wc-block-sort-select {
+			@media (min-width: 900px) {
+				max-width: 90rem;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 		.wc-block-grid__products {

@@ -3,7 +3,7 @@ const rtlcss       = require('gulp-rtlcss');
 const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
 const jshint       = require('gulp-jshint');
-//const concat       = require('gulp-concat');
+const concat       = require('gulp-concat');
 const uglify       = require('gulp-uglify');
 const sort         = require('gulp-sort');
 const gettext      = require('gulp-gettext');
@@ -43,7 +43,7 @@ gulp.task('default', function() {
 	console.log('gulp wordpress-lang to compile the lsx.pot, en_EN.po and en_EN.mo');
 });
 
-gulp.task('styles', function () {
+gulp.task('styles', gulp.series(function () {
 	return gulp.src('assets/css/scss/*.scss')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -62,9 +62,9 @@ gulp.task('styles', function () {
 		}))
 		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest('assets/css'))
-});
+}));
 
-gulp.task('events-styles', function () {
+gulp.task('events-styles', gulp.series( function () {
     return gulp.src('assets/css/the-events-calendar/the-events-calendar.scss')
         .pipe(plumber({
             errorHandler: function(err) {
@@ -83,9 +83,9 @@ gulp.task('events-styles', function () {
         }))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('assets/css/the-events-calendar'))
-});
+}));
 
-gulp.task('events-styles-5', function () {
+gulp.task('events-styles-5', gulp.series(function () {
     return gulp.src('assets/css/the-events-calendar/the-events-calendar-5.scss')
         .pipe(plumber({
             errorHandler: function(err) {
@@ -104,9 +104,9 @@ gulp.task('events-styles-5', function () {
         }))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('assets/css/the-events-calendar'))
-});
+}));
 
-gulp.task('sensei-styles', function () {
+gulp.task('sensei-styles', gulp.series(function () {
     return gulp.src('assets/css/sensei/sensei.scss')
         .pipe(plumber({
             errorHandler: function(err) {
@@ -125,9 +125,9 @@ gulp.task('sensei-styles', function () {
         }))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('assets/css/sensei'))
-});
+}));
 
-gulp.task('popup-maker-styles', function () {
+gulp.task('popup-maker-styles', gulp.series(function () {
     return gulp.src('assets/css/popup-maker/popup-maker.scss')
         .pipe(plumber({
             errorHandler: function(err) {
@@ -146,9 +146,9 @@ gulp.task('popup-maker-styles', function () {
         }))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('assets/css/popup-maker'))
-});
+}));
 
-gulp.task('bbpress-styles', function () {
+gulp.task('bbpress-styles', gulp.series(function () {
     return gulp.src('assets/css/bb-press/bb-press.scss')
         .pipe(plumber({
             errorHandler: function(err) {
@@ -167,9 +167,9 @@ gulp.task('bbpress-styles', function () {
         }))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('assets/css/bb-press'))
-});
+}));
 
-gulp.task('woocommerce-styles', function () {
+gulp.task('woocommerce-styles', gulp.series(function () {
     return gulp.src('assets/css/woocommerce/*.scss')
         .pipe(plumber({
             errorHandler: function(err) {
@@ -188,9 +188,9 @@ gulp.task('woocommerce-styles', function () {
         }))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('assets/css/woocommerce'))
-});
+}));
 
-gulp.task('styles-rtl', function () {
+gulp.task('styles-rtl', gulp.series(function () {
 	return gulp.src('assets/css/scss/*.scss')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -211,9 +211,9 @@ gulp.task('styles-rtl', function () {
 			suffix: '-rtl'
 		}))
 		.pipe(gulp.dest('assets/css'))
-});
+}));
 
-gulp.task('vendor-styles', function () {
+gulp.task('vendor-styles', gulp.series(function () {
 	return gulp.src('assets/css/vendor/*.scss')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -230,9 +230,9 @@ gulp.task('vendor-styles', function () {
 			casacade: true
 		}))
 		.pipe(gulp.dest('assets/css/vendor'))
-});
+}));
 
-gulp.task('vendor-styles-rtl', function () {
+gulp.task('vendor-styles-rtl', gulp.series(function () {
 	return gulp.src('assets/css/vendor/*.scss')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -253,9 +253,9 @@ gulp.task('vendor-styles-rtl', function () {
 			suffix: '-rtl'
 		}))
 		.pipe(gulp.dest('assets/css/vendor'))
-});
+}));
 
-gulp.task('admin-styles', function () {
+gulp.task('admin-styles', gulp.series(function () {
 	return gulp.src('assets/css/admin/*.scss')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -274,9 +274,9 @@ gulp.task('admin-styles', function () {
 		}))
 		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest('assets/css/admin'))
-});
+}));
 
-gulp.task('admin-styles-rtl', function () {
+gulp.task('admin-styles-rtl', gulp.series(function () {
 	return gulp.src('assets/css/admin/*.scss')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -297,13 +297,13 @@ gulp.task('admin-styles-rtl', function () {
 			suffix: '-rtl'
 		}))
 		.pipe(gulp.dest('assets/css/admin'))
-});
+}));
 
 //gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
 
-gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'events-styles-5', 'sensei-styles', 'popup-maker-styles', 'bbpress-styles', 'woocommerce-styles']);
+gulp.task('compile-css', gulp.series( ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'events-styles-5', 'sensei-styles', 'popup-maker-styles', 'bbpress-styles', 'woocommerce-styles']));
 
-gulp.task('js', function() {
+gulp.task('js', gulp.series(function() {
 	return gulp.src('assets/js/src/**/*.js')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -312,13 +312,13 @@ gulp.task('js', function() {
 			}
 		}))
 		.pipe(jshint())
-		//.pipe(errorreporter)
-		//.pipe(concat('lsx.min.js'))
+		.pipe(errorreporter)
+		.pipe(concat('lsx.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js'))
-});
+}));
 
-gulp.task('vendor-bootstrap-js', function() {
+gulp.task('vendor-bootstrap-js', gulp.series(function() {
 	return gulp.src('assets/js/vendor/bootstrap.js')
 		.pipe(plumber({
 			errorHandler: function(err) {
@@ -331,16 +331,17 @@ gulp.task('vendor-bootstrap-js', function() {
 		//.pipe(concat('bootstrap.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js/vendor'))
-});
+}));
 
-gulp.task('compile-js', ['js', 'vendor-bootstrap-js']);
+gulp.task('compile-js', gulp.series(['js', 'vendor-bootstrap-js']));
 
-gulp.task('watch-css', function () {
-	return gulp.watch('assets/css/**/*.scss', ['compile-css']);
-});
 
-gulp.task('watch-js', function () {
-	return gulp.watch('assets/js/src/**/*.js', ['compile-js']);
-});
+//gulp.task('watch-css', function () {
+//	return gulp.watch('assets/css/**/*.scss', ['compile-css']);
+//});
 
-gulp.task('watch', ['watch-css', 'watch-js']);
+//gulp.task('watch-js', function () {
+//	return gulp.watch('assets/js/src/**/*.js', ['compile-js']);
+//});
+
+//gulp.task('watch', ['watch-css', 'watch-js']);

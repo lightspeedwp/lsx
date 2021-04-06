@@ -783,7 +783,7 @@ var lsx = Object.create(null);
 	 * @package    lsx
 	 * @subpackage scripts
 	 */
-	$window.load(function() {
+	$(window).on('load', function () {
 		lsx.fix_bootstrap_menus_dropdown();
 		lsx.fix_bootstrap_menus_dropdown_click();
 		lsx.fix_lazyload_envira_gallery();
