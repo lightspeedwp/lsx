@@ -3,7 +3,7 @@ const rtlcss       = require('gulp-rtlcss');
 const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
 const jshint       = require('gulp-jshint');
-//const concat       = require('gulp-concat');
+const concat       = require('gulp-concat');
 const uglify       = require('gulp-uglify');
 const sort         = require('gulp-sort');
 const gettext      = require('gulp-gettext');
@@ -312,8 +312,8 @@ gulp.task('js', gulp.series(function() {
 			}
 		}))
 		.pipe(jshint())
-		//.pipe(errorreporter)
-		//.pipe(concat('lsx.min.js'))
+		.pipe(errorreporter)
+		.pipe(concat('lsx.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('assets/js'))
 }));

@@ -370,6 +370,14 @@ if ( ! function_exists( 'lsx_disable_banner_for_blocks' ) ) :
 
 		if ( function_exists( 'has_blocks' ) && has_blocks() && ( ! is_archive() ) ) {
 			$disable = true;
+			
+
+			if ( function_exists( 'lsx_to_get_post_types' ) ) {
+				$post_types      = array_keys( lsx_to_get_post_types() );
+				if ( is_singular( $post_types ) ) {
+					$disable = false;
+				}
+			}
 		}
 
 		// Single projects will still have banners.

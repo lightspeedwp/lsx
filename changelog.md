@@ -1,6 +1,12 @@
 # LSX Theme Changelog
 
-# [[2.9.1]]
+# [[2.9.2]]() - ??
+
+### Fixed
+
+- Fixed the output of of the product search form in the header.
+
+# [[2.9.1]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.1) - 15-01-2021
 
 ### Added
 - Default grid styling for the global search results. (3 column).
