@@ -92,7 +92,7 @@
 		.navbar-header {
 			@include media("<desktop-wide") {
 				flex-direction: row;
-				justify-content: space-between;
+				justify-content: flex-end;
 				align-items: center;
 				.custom-logo-link {
 					order: 2;
