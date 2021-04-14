@@ -1,10 +1,15 @@
 # LSX Theme Changelog
 
-# [[2.9.2]]() - ??
+# [[2.9.2]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.2) - 14-04-2021
 
 ### Fixed
-
 - Fixed the output of of the product search form in the header.
+- The layout size of the WooCommerce My Account Pages, when using the block editor.
+- [#562](https://github.com/lightspeeddevelopment/lsx/issues/562) Fixed the off center mobile logo
+- [#582](https://github.com/lightspeeddevelopment/lsx/issues/582) Fixed the default blog archive top margin ( when LSX Search is not active ).
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (5.7).
 
 # [[2.9.1]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.1) - 15-01-2021
 
