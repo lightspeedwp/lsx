@@ -57,4 +57,10 @@
 		<exclude-pattern>*\.css</exclude-pattern>
 		<exclude-pattern>*\.js</exclude-pattern>
 	</rule>
+	
+    <rule ref="Generic.PHP.Syntax"/>
+	
+    <rule ref="WordPress.WP.DeprecatedFunctions"/>
+	
+	<rule ref="PHPCompatibilityWP"/>
 </ruleset>

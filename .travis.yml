@@ -30,4 +30,4 @@ before_script:
   - composer install
 
 script:
-  - ./vendor/bin/phpcs --colors -p -s -v -n --standard=.phpcs.xml .
+  - ./vendor/bin/phpcs --colors -p -s -v -n --standard=WordPress
