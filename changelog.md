@@ -1,5 +1,10 @@
 # LSX Theme Changelog
 
+# [[2.9.3]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.3) - 04-05-2021
+
+### Updated
+- Updating the Fontawesome fonts.
+
 # [[2.9.2]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.2) - 14-04-2021
 
 ### Fixed
