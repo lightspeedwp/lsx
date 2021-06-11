@@ -360,7 +360,7 @@ if ( ! function_exists( 'lsx_wc_change_price_html' ) ) :
 	 * @return string
 	 */
 	function lsx_wc_change_price_html( $price, $product ) {
-		if ( empty( $product->get_price() ) && 'variation' !== $product->get_type() ) {
+		if ( empty( $product->get_price() ) && 'variable' !== $product->get_type() ) {
 			if ( $product->is_on_sale() && $product->get_regular_price() ) {
 				$regular_price = wc_get_price_to_display(
 					$product,
