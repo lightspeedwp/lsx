@@ -1,5 +1,10 @@
 # LSX Theme Changelog
 
+# [[2.9.4]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.4) - DEVELOPMENT
+
+### Fixed
+- Fixing the WC Variation Price outputting Free instead of the range.
+
 # [[2.9.3]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.3) - 04-05-2021
 
 ### Updated
