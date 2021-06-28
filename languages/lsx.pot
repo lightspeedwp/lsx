@@ -1,4 +1,4 @@
-# Copyright (C) 2018 lsx
+# Copyright (C) 2021 lsx
 # This file is distributed under the same license as the lsx package.
 msgid ""
 msgstr ""
@@ -22,6 +22,7 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
+#. translators: 1: post date, 2: post time
 #: comment.php:26
 msgid "%1$s on %2$s"
 msgstr ""
@@ -38,7 +39,7 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#: comments.php:21, comments.php:23
+#: comments.php:21, comments.php:23, includes/admin/welcome-screen/component-footer.php:24
 msgid "Name"
 msgstr ""
 
@@ -50,203 +51,246 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: comments.php:48
-msgctxt "comments.php"
-msgid "One Response to &ldquo;%s&rdquo;"
-msgstr ""
-
-#: comments.php:54
+#. translators: 1: number of comments, 2: post title
+#: comments.php:55
 msgctxt "comments.php"
 msgid "%1$s Response to &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s Responses to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:82
+#: comments.php:48
+msgctxt "comments.php"
+msgid "One Response to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:87
 msgid "&larr; Older comments"
 msgstr ""
 
-#: comments.php:86
+#: comments.php:91
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: comments.php:94, comments.php:107
+#: comments.php:99, comments.php:112
 msgid "Comments are closed."
 msgstr ""
 
+#. translators: 1: current year, 2: blog name
 #: footer.php:27
 msgid "&#169; %1$s %2$s All Rights Reserved"
 msgstr ""
 
+#. translators: 1: theme name, 2: author name and link
 #: footer.php:37
 msgid " | %1$s is a WordPress theme developed by %2$s."
 msgstr ""
 
-#: searchform.php:21, woocommerce/product-searchform.php:26, includes/plugins/woocommerce.php:624
+#: searchform.php:21, includes/woocommerce/woocommerce.php:737, includes/woocommerce/woocommerce.php:903
 msgid "Search"
 msgstr ""
 
-#: searchform.php:22, woocommerce/product-searchform.php:27
+#: searchform.php:22, includes/woocommerce/woocommerce.php:904
 msgid "Search for:"
 msgstr ""
 
-#: sidebar-sitemap.php:27, page-templates/template-archives.php:61
+#: sidebar-sitemap.php:27, includes/template-tags.php:607, page-templates/template-archives.php:66
 msgid "Categories"
 msgstr ""
 
-#: sidebar.php:45, page-templates/template-archives.php:4
-msgid "Archives"
-msgstr ""
-
-#: sidebar.php:57
-msgid "Meta"
-msgstr ""
-
-#: includes/404-widget.php:12
+#: includes/404-widget.php:19
 msgid "404 page"
 msgstr ""
 
-#: includes/config.php:33, includes/config.php:193
+#: includes/404-widget.php:41
+msgid "lsdev.biz"
+msgstr ""
+
+#: includes/config.php:35, includes/config.php:207
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/config.php:34
+#: includes/config.php:36
 msgid "Top Menu (right)"
 msgstr ""
 
-#: includes/config.php:35
+#: includes/config.php:37
 msgid "Top Menu (left)"
 msgstr ""
 
-#: includes/config.php:36, includes/config.php:232
+#: includes/config.php:38, includes/config.php:246
 msgid "Social Menu"
 msgstr ""
 
-#: includes/config.php:37, includes/config.php:247
+#: includes/config.php:39, includes/config.php:261
 msgid "Footer Menu"
 msgstr ""
 
-#: includes/config.php:112, includes/config.php:121
+#: includes/config.php:126, includes/config.php:135
 msgid "Space for Footer Widgets"
 msgstr ""
 
-#: includes/config.php:113, includes/config.php:122
+#: includes/config.php:127, includes/config.php:136
 msgid "This is here to showcase some footer widgets. You can decide what to add and what to hide. Nam nostrum evertitur ad, ut pri nibh veniam, urbanitas definitionem eum ex."
 msgstr ""
 
-#: includes/config.php:130
+#: includes/config.php:144
 msgid "Contact us:"
 msgstr ""
 
-#: includes/config.php:141
+#: includes/config.php:155
 msgid "A Footer Call to Action"
 msgstr ""
 
-#: includes/config.php:142
+#: includes/config.php:156
 msgid "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede."
 msgstr ""
 
-#: includes/config.php:152
+#: includes/config.php:166
 msgid "LSX is a free WordPress theme"
 msgstr ""
 
-#: includes/config.php:169
+#: includes/config.php:183
 msgctxt "Theme starter content"
 msgid "Banner Example 01"
 msgstr ""
 
-#: includes/config.php:174
+#: includes/config.php:188
 msgctxt "Theme starter content"
 msgid "Banner Example 02"
 msgstr ""
 
-#: includes/config.php:179
+#: includes/config.php:193
 msgctxt "Theme starter content"
 msgid "Banner Example 03"
 msgstr ""
 
-#: includes/config.php:188
+#: includes/config.php:202
 msgid "LSX starter content example"
 msgstr ""
 
-#: includes/config.php:204
+#: includes/config.php:218
 msgid "Top Menu"
 msgstr ""
 
 #: includes/customizer.php:25
-msgid "Core Settings"
-msgstr ""
-
-#: includes/customizer.php:26
-msgid "Change the core settings."
-msgstr ""
-
-#: includes/customizer.php:37
-msgid "Lazy Loading Images"
-msgstr ""
-
-#: includes/customizer.php:49
-msgid "Preloader Content"
-msgstr ""
-
-#: includes/customizer.php:73
 msgid "Layout"
 msgstr ""
 
-#: includes/customizer.php:74
+#: includes/customizer.php:26
 msgid "Change the layout sitewide. If your homepage is set to use a page with a template, the following will not apply to it."
 msgstr ""
 
-#: includes/customizer.php:85
-msgid "Header"
-msgstr ""
-
-#: includes/customizer.php:102
-msgid "Body"
-msgstr ""
-
-#: includes/customizer.php:119
+#: includes/customizer.php:37
 msgid "Fixed Header"
 msgstr ""
 
-#: includes/customizer.php:131
+#: includes/customizer.php:49
 msgid "Search Box in Header"
 msgstr ""
 
-#: includes/customizer.php:175
-msgid "Font"
+#: includes/customizer.php:74
+msgid "Header"
 msgstr ""
 
-#: includes/customizer.php:176
-msgid "Change the fonts sitewide."
+#: includes/customizer.php:91
+msgid "Mobile Header"
 msgstr ""
 
-#: includes/extras.php:350
-msgid "Continue reading"
+#: includes/customizer.php:107
+msgid "Body"
 msgstr ""
 
-#: includes/extras.php:409
-msgid "More"
+#: includes/customizer.php:138
+msgid "Cover Template Settings"
 msgstr ""
 
-#: includes/layout.php:217
-msgid "Search Results for: %s"
+#: includes/customizer.php:139
+msgid "Change the cover template settings."
 msgstr ""
 
-#: includes/layout.php:246
-msgid "Type:"
+#: includes/customizer.php:152
+msgid "Upload Alternative Logo Image"
 msgstr ""
 
-#: includes/layout.php:262
+#: includes/customizer.php:153
+msgid "Upload an alternative logo image (svg, png or jpg)."
+msgstr ""
+
+#: includes/customizer.php:166
+msgid "Fixed Background Image"
+msgstr ""
+
+#: includes/customizer.php:179
+msgid "Cover Background Colour"
+msgstr ""
+
+#: includes/customizer.php:180
+msgid "The colour used for the cover background, for post or pages without featured image. Defaults to #27639e."
+msgstr ""
+
+#: includes/customizer.php:193
+msgid "Overlay Background Colour"
+msgstr ""
+
+#: includes/customizer.php:194
+msgid "The colour used for the overlay. Defaults to black."
+msgstr ""
+
+#: includes/customizer.php:208
+msgid "Overlay Text Colour"
+msgstr ""
+
+#: includes/customizer.php:209
+msgid "The colour used for the text in the overlay."
+msgstr ""
+
+#: includes/customizer.php:223
+msgid "Overlay Opacity"
+msgstr ""
+
+#: includes/customizer.php:224
+msgid "Make sure that the contrast is high enough so that the text is readable."
+msgstr ""
+
+#: includes/customizer.php:239
+msgid "Menu Text Colour"
+msgstr ""
+
+#: includes/customizer.php:240
+msgid "The colour used for the text in the nav menu."
+msgstr ""
+
+#: includes/customizer.php:255
+msgid "Hover Text Colour"
+msgstr ""
+
+#: includes/customizer.php:256
+msgid "The colour used for the text hover on links and the nav menu."
+msgstr ""
+
+#: includes/extras.php:468, partials/content-related.php:109, partials/content.php:122, partials/content.php:114
+msgid "Read More"
+msgstr ""
+
+#: includes/layout.php:279
 msgid "Blog"
 msgstr ""
 
-#: includes/layout.php:334
-msgid "About the author"
+#: includes/layout.php:260
+msgid "Type:"
 msgstr ""
 
-#: includes/layout.php:342
-msgid "All posts by %s"
+#: includes/layout.php:231
+msgid "Search Results for: %s"
+msgstr ""
+
+#: includes/layout.php:334
+msgid "Back To Blog"
+msgstr ""
+
+#: includes/layout.php:375, includes/template-tags.php:603
+msgid "Posts"
 msgstr ""
 
 #: includes/sanitize.php:65
@@ -257,48 +301,58 @@ msgstr ""
 msgid "Not a boolean"
 msgstr ""
 
-#: includes/template-tags.php:244
-msgid "by"
+#: includes/template-tags.php:251
+msgid "By "
 msgstr ""
 
-#: includes/template-tags.php:267
+#. translators: %s: category name
+#: includes/template-tags.php:274
 msgid "View all posts in %s"
 msgstr ""
 
-#: includes/template-tags.php:272
-msgid "Posted in"
+#: includes/template-tags.php:279
+msgid "Posted in: "
 msgstr ""
 
-#: includes/template-tags.php:388, woocommerce/loop/pagination.php:38
+#: includes/template-tags.php:298
+msgid "Tags: "
+msgstr ""
+
+#: includes/template-tags.php:396, includes/woocommerce/woocommerce.php:949
 msgid "Previous"
 msgstr ""
 
-#: includes/template-tags.php:389, woocommerce/loop/pagination.php:39
+#: includes/template-tags.php:397, includes/woocommerce/woocommerce.php:950
 msgid "Next"
 msgstr ""
 
-#: includes/template-tags.php:423
+#: includes/template-tags.php:432
 msgctxt "Previous post link"
 msgid "Previous Post"
 msgstr ""
 
-#: includes/template-tags.php:426
+#: includes/template-tags.php:435
 msgctxt "Next post link"
 msgid "Next Post"
 msgstr ""
 
-#: includes/template-tags.php:470
+#: includes/template-tags.php:537, includes/template-tags.php:518
 msgid "Toggle navigation"
 msgstr ""
 
-#: includes/template-tags.php:476
+#: includes/template-tags.php:543
 msgid "Menu"
 msgstr ""
 
-#: includes/template-tags.php:538
+#: includes/template-tags.php:598
 msgid "Pages"
 msgstr ""
 
+#: includes/template-tags.php:754
+msgid "None"
+msgstr ""
+
+#. translators: 1: HTML open tag link, 2: HTML close tag link
 #: includes/welcome.php:63
 msgid "Thanks for choosing LSX! You can read hints and tips on how get the most out of your new theme on the %1$swelcome screen%2$s."
 msgstr ""
@@ -307,179 +361,204 @@ msgstr ""
 msgid "Get started with LSX"
 msgstr ""
 
-#: includes/widgets.php:23, includes/plugins/woocommerce.php:610
+#: includes/widgets.php:24, includes/woocommerce/woocommerce.php:723
 msgid "Home"
 msgstr ""
 
-#: includes/widgets.php:32
+#: includes/widgets.php:35
 msgid "Sidebar"
 msgstr ""
 
-#: includes/widgets.php:41
+#: includes/widgets.php:46
 msgid "Footer"
 msgstr ""
 
-#: includes/widgets.php:50
+#: includes/widgets.php:57
 msgid "Footer Call to Action"
 msgstr ""
 
-#: page-templates/template-archives.php:34
+#: lib/theme-support.php:53
+msgctxt "font size option label"
+msgid "Small"
+msgstr ""
+
+#: lib/theme-support.php:54
+msgctxt "abbreviation of the font size option label"
+msgid "S"
+msgstr ""
+
+#: lib/theme-support.php:59
+msgctxt "font size option label"
+msgid "Normal"
+msgstr ""
+
+#: lib/theme-support.php:60
+msgctxt "abbreviation of the font size option label"
+msgid "N"
+msgstr ""
+
+#: lib/theme-support.php:65
+msgctxt "font size option label"
+msgid "Medium"
+msgstr ""
+
+#: lib/theme-support.php:66
+msgctxt "abbreviation of the font size option label"
+msgid "M"
+msgstr ""
+
+#: lib/theme-support.php:71
+msgctxt "font size option label"
+msgid "Large"
+msgstr ""
+
+#: lib/theme-support.php:72
+msgctxt "abbreviation of the font size option label"
+msgid "L"
+msgstr ""
+
+#: lib/theme-support.php:77
+msgctxt "font size option label"
+msgid "Huge"
+msgstr ""
+
+#: lib/theme-support.php:78
+msgctxt "abbreviation of the font size option label"
+msgid "XL"
+msgstr ""
+
+#: lib/theme-support.php:88
+msgid "Strong Blue"
+msgstr ""
+
+#: lib/theme-support.php:93
+msgid "Lighter Blue"
+msgstr ""
+
+#: lib/theme-support.php:98
+msgid "Yellow"
+msgstr ""
+
+#: lib/theme-support.php:103
+msgid "Dark Yellow"
+msgstr ""
+
+#: lib/theme-support.php:108
+msgid "Green"
+msgstr ""
+
+#: lib/theme-support.php:113
+msgid "Dark Green"
+msgstr ""
+
+#: lib/theme-support.php:118
+msgid "White"
+msgstr ""
+
+#: lib/theme-support.php:123
+msgid "Black"
+msgstr ""
+
+#: lib/theme-support.php:138
+msgid "Primary to Secondary"
+msgstr ""
+
+#: lib/theme-support.php:143
+msgid "Primary to Tertiary"
+msgstr ""
+
+#: lib/theme-support.php:148
+msgid "Primary to Background"
+msgstr ""
+
+#: lib/theme-support.php:153
+msgid "Secondary to Tertiary"
+msgstr ""
+
+#: page-templates/template-archives.php:5
+msgid "Archives"
+msgstr ""
+
+#: page-templates/template-archives.php:37
 msgid "The Last 30 Posts"
 msgstr ""
 
-#: page-templates/template-archives.php:52
+#: page-templates/template-archives.php:57
 msgid "comments"
 msgstr ""
 
-#: page-templates/template-archives.php:67
+#: page-templates/template-archives.php:72
 msgid "Monthly Archives"
 msgstr ""
 
-#: page-templates/template-archives.php:74, page-templates/template-sitemap.php:38, partials/content-custom.php:28, partials/content-page.php:28, partials/content-post.php:58, partials/content.php:95
-msgid "Edit"
+#: page-templates/template-cover.php:5
+msgid "Cover Template"
 msgstr ""
 
-#: page-templates/template-front-page.php:4
-msgid "Front Page"
-msgstr ""
-
-#: page-templates/template-front-page.php:36
-msgid "Pages:"
-msgstr ""
-
-#: page-templates/template-full-width-no-margins.php:4
-msgid "Full Width (no margins)"
-msgstr ""
-
-#: page-templates/template-full-width.php:4
-msgid "Full Width"
-msgstr ""
-
-#: page-templates/template-no-sidebar.php:4
-msgid "No Sidebar"
-msgstr ""
-
-#: page-templates/template-sitemap.php:4
+#: page-templates/template-sitemap.php:5
 msgid "Sitemap"
 msgstr ""
 
-#: page-templates/template-wc-thank-you.php:4
-msgid "WC Thank You"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:37
-msgid "Thank you. Your order has been received."
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:41
-msgid "Order Details"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:46
-msgid "Order:"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:51
-msgid "Date:"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:56
-msgid "Total:"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:62
-msgid "Payment method:"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:71
-msgid "Customer details"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:75
-msgid "Email:"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:76
-msgid "Telephone:"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:90
-msgid "Billing Address"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:95, page-templates/template-wc-thank-you.php:112
-msgid "N/A"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:107
-msgid "Shipping Address"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:125
-msgid "Products details"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:130
-msgid "Product"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:131
-msgid "Total"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:186
-msgid "Download file%s"
-msgstr ""
-
-#: page-templates/template-wc-thank-you.php:235
-msgid "Invalid order."
-msgstr ""
-
-#: partials/content-none.php:11
+#: partials/content-none.php:12
 msgid "Nothing Found"
 msgstr ""
 
-#: partials/content-none.php:18
-msgid "Ready to publish your first post?"
-msgstr ""
-
-#: partials/content-none.php:18
-msgid "Get started here"
-msgstr ""
-
-#: partials/content-none.php:22
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: partials/content-none.php:27
+#: partials/content-none.php:29
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: partials/content.php:84, tribe-events/list/single-featured.php:36
+#: partials/content-none.php:23
+msgid "Your search for \""
+msgstr ""
+
+#: partials/content-none.php:23
+msgid "\" didn’t return any results… "
+msgstr ""
+
+#: partials/content-none.php:23
+msgid "Please try another keyword"
+msgstr ""
+
+#: partials/content-none.php:19
+msgid "Ready to publish your first post?"
+msgstr ""
+
+#: partials/content-none.php:19
+msgid "Get started here"
+msgstr ""
+
+#: partials/content-related.php:90, partials/content.php:94, tribe-events/list/single-featured.php:37
 msgid "Featured"
 msgstr ""
 
-#: partials/content.php:139
-msgctxt "content.php"
-msgid "One Comment"
-msgstr ""
-
-#: partials/content.php:143
+#. translators: %s: number of comments
+#. translators: %s: number of comments
+#: partials/content-related.php:163, partials/content.php:174
 msgctxt "content.php"
 msgid "%s Comment"
 msgid_plural "%s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: woocommerce/content-widget-product.php:50, woocommerce/content-widget-review.php:34
+#: partials/content-related.php:159, partials/content.php:170
+msgctxt "content.php"
+msgid "One Comment"
+msgstr ""
+
+#: partials/content-widget-product.php:54, partials/content-widget-review.php:43
 msgid "View more"
 msgstr ""
 
-#: woocommerce/content-widget-review.php:28
-msgid "by %s"
+#. translators: %s: review author
+#: partials/content-widget-review.php:37
+msgid "by "
 msgstr ""
 
-#: includes/classes/class-lsx-bootstrap-navwalker.php:223
+#: includes/bbpress/bbpress.php:40
+msgid "Forums"
+msgstr ""
+
+#: includes/classes/class-lsx-bootstrap-navwalker.php:226
 msgid "Add a menu"
 msgstr ""
 
@@ -503,239 +582,354 @@ msgstr ""
 msgid "Number of reviews to show"
 msgstr ""
 
-#: includes/plugins/sensei.php:155
-msgid "View course"
+#: includes/sensei/class-lsx-sensei-lesson.php:62
+msgid "LSX Sensei Sidebar"
 msgstr ""
 
-#: includes/plugins/sensei.php:179
+#: includes/sensei/class-lsx-sensei.php:173, includes/sensei/class-lsx-sensei.php:415, includes/sensei/class-lsx-sensei.php:403, includes/sensei/class-lsx-sensei.php:465, includes/sensei/class-lsx-sensei.php:457, includes/sensei/class-lsx-sensei.php:554, includes/sensei/class-lsx-sensei.php:546, includes/sensei/class-lsx-sensei.php:654, includes/sensei/class-lsx-sensei.php:642, includes/sensei/class-lsx-sensei.php:718, includes/sensei/class-lsx-sensei.php:706
+msgid "Courses"
+msgstr ""
+
+#: includes/sensei/class-lsx-sensei.php:176, includes/sensei/class-lsx-sensei.php:558, includes/sensei/class-lsx-sensei.php:550, includes/sensei/class-lsx-sensei.php:596, includes/sensei/class-lsx-sensei.php:588
+msgid "Messages"
+msgstr ""
+
+#: includes/sensei/class-lsx-sensei.php:179
+msgid "Lessons"
+msgstr ""
+
+#: includes/sensei/class-lsx-sensei.php:267
 msgid "Add to cart"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:197, includes/plugins/woocommerce.php:348
+#: includes/sensei/class-lsx-sensei.php:273
+msgid "Course added to cart"
+msgstr ""
+
+#: includes/sensei/class-lsx-sensei.php:358, includes/sensei/class-lsx-sensei.php:350
+msgid "All Courses"
+msgstr ""
+
+#: includes/sensei/class-lsx-sensei.php:513, includes/sensei/class-lsx-sensei.php:506
+msgid "Learners"
+msgstr ""
+
+#: includes/sensei/class-lsx-sensei.php:600, includes/sensei/class-lsx-sensei.php:592
+msgid "Message"
+msgstr ""
+
+#: includes/sensei/class-lsx-sensei.php:722, includes/sensei/class-lsx-sensei.php:714
+msgid "Results"
+msgstr ""
+
+#: includes/the-events-calendar/the-events-calendar.php:121, includes/the-events-calendar/the-events-calendar.php:200, includes/the-events-calendar/the-events-calendar.php:195
+msgid "My Events"
+msgstr ""
+
+#: includes/the-events-calendar/the-events-calendar.php:105
+msgid "Edit an Event"
+msgstr ""
+
+#: includes/the-events-calendar/the-events-calendar.php:109
+msgid "Edit an Organizer"
+msgstr ""
+
+#: includes/the-events-calendar/the-events-calendar.php:113
+msgid "Edit a Venue"
+msgstr ""
+
+#: includes/the-events-calendar/the-events-calendar.php:117
+msgid "Submit an Event"
+msgstr ""
+
+#: includes/the-events-calendar/the-events-calendar.php:184, includes/the-events-calendar/the-events-calendar.php:179
+msgid "Events"
+msgstr ""
+
+#: includes/woocommerce/woocommerce.php:221, includes/woocommerce/woocommerce.php:216, includes/woocommerce/woocommerce.php:689
+msgid "Shop"
+msgstr ""
+
+#: includes/woocommerce/woocommerce.php:268, includes/woocommerce/woocommerce.php:425
 msgid "View your shopping cart"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:200, includes/plugins/woocommerce.php:352
+#. translators: %s: items quantity
+#. translators: %s: items quantity
+#: includes/woocommerce/woocommerce.php:271, includes/woocommerce/woocommerce.php:429
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins/woocommerce.php:295, includes/plugins/woocommerce.php:297
+#: includes/woocommerce/woocommerce.php:374, includes/woocommerce/woocommerce.php:372
 msgid "Free!"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:379
-msgid "1 other item in cart"
-msgstr ""
-
 #. translators: %s: items counter
-#: includes/plugins/woocommerce.php:382
+#: includes/woocommerce/woocommerce.php:459
 msgid "%s other items in cart"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:527
+#: includes/woocommerce/woocommerce.php:456
+msgid "1 other item in cart"
+msgstr ""
+
+#: includes/woocommerce/woocommerce.php:604
 msgid "WooCommerce"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:528
+#: includes/woocommerce/woocommerce.php:605
 msgid "Change the WooCommerce settings."
 msgstr ""
 
-#: includes/plugins/woocommerce.php:537
-msgid "Global"
+#: includes/woocommerce/woocommerce.php:614
+msgid "LSX Global"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:538
+#: includes/woocommerce/woocommerce.php:615
 msgid "Change the WooCommerce global settings."
 msgstr ""
 
-#: includes/plugins/woocommerce.php:549
+#: includes/woocommerce/woocommerce.php:626
+msgid "Footer Trust Factors Section"
+msgstr ""
+
+#: includes/woocommerce/woocommerce.php:627
+msgid "Enable the footer trust factors section."
+msgstr ""
+
+#: includes/woocommerce/woocommerce.php:639
 msgid "Footer Bar"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:550
+#: includes/woocommerce/woocommerce.php:640
 msgid "Enable the mobile footer bar."
 msgstr ""
 
-#: includes/plugins/woocommerce.php:561, includes/plugins/woocommerce.php:635
-msgid "Cart"
+#: includes/woocommerce/woocommerce.php:651
+msgid "LSX Cart"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:562
+#: includes/woocommerce/woocommerce.php:652
 msgid "Change the WooCommerce cart settings."
 msgstr ""
 
-#: includes/plugins/woocommerce.php:573
+#: includes/woocommerce/woocommerce.php:663
 msgid "Menu Item"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:574
+#: includes/woocommerce/woocommerce.php:664
 msgid "Enable the cart menu item."
 msgstr ""
 
-#: includes/plugins/woocommerce.php:601
+#: includes/woocommerce/woocommerce.php:714
 msgid "Search products"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:602
+#: includes/woocommerce/woocommerce.php:715
 msgid "Search products..."
 msgstr ""
 
-#: includes/plugins/woocommerce.php:617
+#: includes/woocommerce/woocommerce.php:730
 msgid "Account"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:684
+#: includes/woocommerce/woocommerce.php:748
+msgid "Cart"
+msgstr ""
+
+#: includes/woocommerce/woocommerce.php:797
 msgid "Download"
 msgstr ""
 
-#: includes/plugins/woocommerce.php:710
+#: includes/woocommerce/woocommerce.php:823
 msgid "Included Products"
 msgstr ""
 
-#: tribe-events/day/single-event.php:65, tribe-events/day/single-featured.php:57, tribe-events/list/single-event.php:74, tribe-events/list/single-featured.php:69
+#: tribe-events/day/single-event.php:65, tribe-events/day/single-featured.php:57, tribe-events/list/single-event.php:75, tribe-events/list/single-featured.php:70
 msgid "Price:"
 msgstr ""
 
-#: tribe-events/day/single-event.php:80, tribe-events/day/single-featured.php:70, tribe-events/list/single-event.php:93, tribe-events/list/single-featured.php:82
+#: tribe-events/day/single-event.php:80, tribe-events/day/single-featured.php:70, tribe-events/list/single-event.php:94, tribe-events/list/single-featured.php:83
 msgid "Find out more"
 msgstr ""
 
-#: tribe-events/pro/related-events.php:26
+#. translators: %s: related
+#: tribe-events/pro/related-events.php:25
 msgid "Related %s"
 msgstr ""
 
-#: tribe-events/pro/related-events.php:42
+#: tribe-events/pro/related-events.php:41
 msgid "View event"
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:13
-msgid "Enhance LSX"
+msgid "Featured Extensions"
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:14
-msgid "Take a look at our range of extensions that add to the already rich functionality of the LSX WordPress theme."
+msgid "Take a look at our featured extensions that extend the functionality of the LSX WordPress theme."
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:19
-msgid "Banners"
+msgid "LSX Business Directory"
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:20
-msgid "The LSX Banners extension adds advanced banner configuration options to your WordPress site running LSX theme."
+msgid "The LSX Business Directory adds a business directory listings to your WordPress website using the LSX Theme and extensions."
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:26
-msgid "Currencies"
+msgid "LSX Health Plan"
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:27
-msgid "The LSX Currencies extension adds currency selection functionality to sites, allowing users to view your products in whatever currencies you choose to sell in."
+msgid "LSX Health Plan plugin adds the ability to include a structured exercise and nutrition programme to your WordPress website using the LSX Theme and extensions."
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:33
-msgid "Blog Customizer"
+msgid "LSX Tour Operator"
 msgstr ""
 
 #: includes/admin/welcome-screen/component-enhance.php:34
-msgid "It allows you it to customize various aspects of the the appearance of your blog, posts widgets, archive pages and single posts so they looks exactly how you want."
+msgid "LSX Tour Operator plugin features digital itineraries and other features that will bring your tour offerings to life online."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:42
-msgid "Customizer"
+#: includes/admin/welcome-screen/component-enhance.php:47
+msgid "Core Extensions"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:43
+#: includes/admin/welcome-screen/component-enhance.php:48
+msgid "Expand the LSX theme with LSX Extensions, which add functionality and display options to your WordPress website."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:53
+msgid "LSX Search "
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:54
+msgid "The LSX Search Extension integrates with the FacetWP plugin to allow for superbly filtered search results for your users. Allow your users to break down their search results using available filters (a.k.a “Facets”). These are created by the FacetWP plugin."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:60
+msgid "LSX Customizer"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:61
 msgid "You've installed LSX, so now why not make it all yours? Whether it's a small CSS tweak or changing the entire layout of pages, posts or archives, please make use of the Theme Customizer plugin."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:49
-msgid "Login"
+#: includes/admin/welcome-screen/component-enhance.php:67
+msgid "LSX Blog Customizer"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:50
-msgid "The LSX Login extension allows users to log into a dashboard and then see configurable content based on which users can access which content."
+#: includes/admin/welcome-screen/component-enhance.php:68
+msgid "It allows you it to customize various aspects of the the appearance of your blog, posts widgets, archive pages and single posts so they looks exactly how you want."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:56
-msgid "Mega Menus"
+#: includes/admin/welcome-screen/component-enhance.php:76
+msgid "LSX Mega Menus"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:57
+#: includes/admin/welcome-screen/component-enhance.php:77
 msgid "Create custom, full-width dropdown menus that contain images, widgets and more that seamlessly tie into your LSX WordPress site."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:65
-msgid "Team"
+#: includes/admin/welcome-screen/component-enhance.php:83
+msgid "LSX Sharing"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:66
-msgid "The LSX Team Extension provides a custom post type that allows you to easily show off the people that make up your business."
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:72
-msgid "Testimonials"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:73
-msgid "The LSX Testimonials extension adds the \"Testimonials\" post type, which you can display front-and-centre on your site."
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:79
-msgid "Geo Content"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:80
-msgid "LSX Geo Content allows you to serve different content to users based on their automatically-detected IP address."
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:88
-msgid "Services"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:89
-msgid "Adds the \"Service\" post type to your LSX website which allows you to display and categorize the services your business provides."
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:95
-msgid "Projects"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:96
-msgid "Show off your finest work with the LSX Projects Extension! It adds a \"Project\" post type, allowing you to categorize and display your Projects on your LSX website."
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:102
-msgid "Sharing"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-enhance.php:103
+#: includes/admin/welcome-screen/component-enhance.php:84
 msgid "LSX Sharing adds buttons to your posts that your readers can use to share your content on Facebook, Twitter and Pinterest."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:108
-msgid "LSX extensions bundles"
+#: includes/admin/welcome-screen/component-enhance.php:90
+msgid "LSX Blocks"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:109
-msgid "We've created two bundles to help you to get the most out of LSX Theme."
+#: includes/admin/welcome-screen/component-enhance.php:91
+msgid "The new block editor is here, and with it comes the new block-based page builder. We have built these content blocks so you can simply drag and drop them into your editor, configure to your wishes and you are done!"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:114
-msgid "LSX Essentials"
+#: includes/admin/welcome-screen/component-enhance.php:104
+msgid "Post Type Extensions"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:115
-msgid "A collection of essential LSX extensions giving you more functionality, additional content types and greater control over the styling of your theme."
+#: includes/admin/welcome-screen/component-enhance.php:105
+msgid "These extensions will add a post type with options for displaying different information to your visitors."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:121
-msgid "LSX Complete"
+#: includes/admin/welcome-screen/component-enhance.php:111
+msgid "LSX Team"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-enhance.php:122
-msgid "A full set of LSX extensions giving you all the functionality, content types and customization tools you may need!"
+#: includes/admin/welcome-screen/component-enhance.php:112
+msgid "The LSX Team Extension provides a custom post type that allows you to easily show off the people that make up your business."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:118
+msgid "LSX Testimonials"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:119
+msgid "The LSX Testimonials extension adds the \"Testimonials\" post type, which you can display front-and-centre on your site."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:125
+msgid "LSX Videos"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:126
+msgid "Adds the \"Videos\" post type to your LSX website which allows you to display and categorize videos."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:135
+msgid "LSX Projects"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:136
+msgid "Show off your finest work with the LSX Projects Extension! It adds a \"Project\" post type, allowing you to categorize and display your Projects on your LSX website."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:142
+msgid "Follow our blog for latest developments"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:143
+msgid "We need to find some way of linking to social media if we are going to invite people to follow us."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:155
+msgid "API Integration Extensions"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:156
+msgid "LightSpeed has integrated plugins with reputable software partners."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:162
+msgid "LSX Give Payfast Gateway"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:163
+msgid "Use the PayFast payment gateway with the GiveWP plugin for collecting donations."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:169
+msgid "LSX Wetu Importer"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:170
+msgid "Integrate your LSX Tour Operator website with Wetu, to easily import accommodations, destinations and tours from you Wetu account."
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:176
+msgid "LSX Caldera Forms Zoho Integration"
+msgstr ""
+
+#: includes/admin/welcome-screen/component-enhance.php:177
+msgid "Maintaining your customer relationship management system is easy when you integrate with your website contact forms.."
 msgstr ""
 
 #: includes/admin/welcome-screen/component-footer.php:13
@@ -746,27 +940,20 @@ msgstr ""
 msgid "Subscribe to our mailing list."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-footer.php:21
+#: includes/admin/welcome-screen/component-footer.php:20
 msgid "Email Address"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-footer.php:25
-msgid "First Name"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-footer.php:29
-msgid "Last Name"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-footer.php:36
+#: includes/admin/welcome-screen/component-footer.php:31
 msgid "Subscribe"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-footer.php:45
+#: includes/admin/welcome-screen/component-footer.php:40
 msgid "Enjoying LSX?"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-footer.php:51
+#. translators: 1: HTML open tag link, 2: HTML close tag link
+#: includes/admin/welcome-screen/component-footer.php:46
 msgid "Why not %1$sleave a review%2$s on WordPress.org? We're looking foward to all our users' feedback!"
 msgstr ""
 
@@ -783,17 +970,14 @@ msgid "Whether you're using LSX for your personal blog, as the platform for a po
 msgstr ""
 
 #: includes/admin/welcome-screen/component-header.php:26
-msgid "Use LSX with our %1$sTour Operator Plugin%2$s to create the ultimate tour operators website!"
-msgstr ""
-
-#: includes/admin/welcome-screen/component-header.php:37
 msgid "Get support"
 msgstr ""
 
-#: includes/admin/welcome-screen/component-header.php:43
+#. translators: 1: HTML open tag link, 2: HTML close tag link, 3: HTML open tag link, 4: HTML close tag link
+#: includes/admin/welcome-screen/component-header.php:32
 msgid "You'll find information on how to use and customize the LSX theme in our %1$sdocumentation%2$s section. However, please do %3$scontact us%4$s for support should you still find yourself unable to achieve your needs."
 msgstr ""
 
-#: includes/admin/welcome-screen/component-header.php:54
+#: includes/admin/welcome-screen/component-header.php:43
 msgid "Get in touch"
 msgstr ""

@@ -14,6 +14,7 @@ const rename       = require('gulp-rename');
 //const minify       = require('gulp-minify-css');
 const map          = require('map-stream');
 const browserlist  = ['last 2 version', '> 1%'];
+var wppot          = require('gulp-wp-pot');
 
 const errorreporter = map(function(file, cb) {
 	if (file.jshint.success) {
@@ -345,3 +346,38 @@ gulp.task('compile-js', gulp.series(['js', 'vendor-bootstrap-js']));
 //});
 
 //gulp.task('watch', ['watch-css', 'watch-js']);
+
+gulp.task('wordpress-pot', function(done) {
+	return gulp.src('**/*.php')
+		.pipe(sort())
+		.pipe(wppot({
+			domain: 'lsx',
+			package: 'lsx',
+			team: 'LightSpeed <webmaster@lsdev.biz>'
+		}))
+		.pipe(gulp.dest('languages/lsx.pot')),
+		done();
+});
+
+gulp.task('wordpress-po', function(done) {
+	return gulp.src('**/*.php')
+		.pipe(sort())
+		.pipe(wppot({
+			domain: 'lsx',
+			package: 'lsx',
+			team: 'LightSpeed <webmaster@lsdev.biz>'
+		}))
+		.pipe(gulp.dest('languages/en_EN.po')),
+		done();
+});
+
+gulp.task('wordpress-po-mo', gulp.series( ['wordpress-po'], function(done) {
+	return gulp.src('languages/en_EN.po')
+		.pipe(gettext())
+		.pipe(gulp.dest('languages')),
+		done();
+}));
+
+gulp.task('wordpress-lang', gulp.series( ['wordpress-pot', 'wordpress-po-mo'] , function(done) {
+	done();
+}));
