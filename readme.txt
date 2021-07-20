@@ -3,9 +3,9 @@ Contributors: feedmymedia, lightspeedwp, eleshar, krugazul, jacquesvdh, ignusver
 Donate link: https://lsdev.biz/lsx/donate/
 Tags: blog, e-commerce, education
 Requires at least: 5.0
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 7.0
-Stable tag: 2.9.3
+Stable tag: 2.9.4
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
