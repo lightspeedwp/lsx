@@ -4,6 +4,7 @@
 
 ### Fixed
 - Fixing the WC Variation Price outputting Free instead of the range.
+- The default Search styling overriding the LSX Search and LSX Customizer styles.
 
 # [[2.9.3]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.3) - 04-05-2021
 

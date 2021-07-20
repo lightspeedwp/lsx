@@ -1,6 +1,6 @@
 const gulp         = require('gulp');
 const rtlcss       = require('gulp-rtlcss');
-const sass         = require('gulp-sass');
+const sass         = require('gulp-sass')(require('node-sass'));
 const sourcemaps   = require('gulp-sourcemaps');
 const jshint       = require('gulp-jshint');
 const concat       = require('gulp-concat');
@@ -15,6 +15,8 @@ const rename       = require('gulp-rename');
 const map          = require('map-stream');
 const browserlist  = ['last 2 version', '> 1%'];
 var wppot          = require('gulp-wp-pot');
+
+
 
 const errorreporter = map(function(file, cb) {
 	if (file.jshint.success) {
