@@ -1,10 +1,13 @@
 # LSX Theme Changelog
 
-# [[2.9.4]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.4) - DEVELOPMENT
+# [[2.9.4]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.4) - 20-07-2021
 
 ### Fixed
 - Fixing the WC Variation Price outputting Free instead of the range.
 - The default Search styling overriding the LSX Search and LSX Customizer styles.
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (5.8).
 
 # [[2.9.3]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.3) - 04-05-2021
 
