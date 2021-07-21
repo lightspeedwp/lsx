@@ -1032,20 +1032,20 @@ if ( ! function_exists( 'lsx_wc_archive_header' ) ) {
 					<header class="archive-header">
 						<h1 class="archive-title"><?php woocommerce_page_title(); ?></h1>
 						<?php
-							if ( is_shop() ) {
-								$shop_page = wc_get_page_id( 'shop' );
-								if ( 0 < $shop_page ) {
-									$shop_page = get_post( $shop_page );
-									if ( ! empty( $shop_page->post_excerpt ) ) {
-										echo wp_kses_post( '<p>' . $shop_page->post_excerpt . '</p>' );
-									}
-								} else {
-									$description = get_the_archive_description();
-									if ( ! empty( $description ) && '' !== $description ) {
-										echo wp_kses_post( '<p>' . $description . '</p>' );
-									}
+						if ( is_product_category() || is_product_tag() ) {
+							$description = get_the_archive_description();
+							if ( ! empty( $description ) && '' !== $description ) {
+								echo wp_kses_post( $description );
+							}
+						} else {
+							$shop_page = wc_get_page_id( 'shop' );
+							if ( 0 < $shop_page ) {
+								$shop_page = get_post( $shop_page );
+								if ( ! empty( $shop_page->post_excerpt ) ) {
+									echo wp_kses_post( '<p>' . $shop_page->post_excerpt . '</p>' );
 								}
 							}
+						}
 						?>
 					</header>
 				</div>
