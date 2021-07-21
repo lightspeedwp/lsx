@@ -1,0 +1,21 @@
+.lsx:not(.single-post):not(.page-has-banner) {
+	.archive-header-wrapper.woocommerce-banner {
+		.archive-header {
+			padding-bottom: 70px;
+		}
+	}
+}
+
+
+.post-type-archive-product,
+.tax-product_cat,
+.tax-product_tag {
+	.archive-header-wrapper {
+		.archive-header {
+			p {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
