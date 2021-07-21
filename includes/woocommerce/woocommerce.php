@@ -1054,3 +1054,22 @@ if ( ! function_exists( 'lsx_wc_archive_header' ) ) {
 	}
 	add_action( 'lsx_content_wrap_before', 'lsx_wc_archive_header', 100 );
 }
+
+/**
+ * Moving the Reset Variations link.
+ **/
+function lsx_wc_reset_variations_link() {
+	echo '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>';
+	add_filter( 'woocommerce_reset_variations_link', 'lsx_wc_disable_default_reset_variations_link', 10, 1 );
+}
+add_action( 'woocommerce_before_variations_form', 'lsx_wc_archive_header', 10 );
+
+/**
+ * Disables the default link.
+ *
+ * @param string $link
+ * @return string
+ */
+function lsx_wc_disable_default_reset_variations_link( $link = '' ) {
+	return '';
+}
