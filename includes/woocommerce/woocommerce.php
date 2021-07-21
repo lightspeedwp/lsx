@@ -1026,17 +1026,24 @@ if ( ! function_exists( 'lsx_wc_archive_header' ) ) {
 
 			$default_size = 'sm';
 			$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
-			$shop_page    = wc_get_page_id( 'shop' );
 			?>
 				<div class="archive-header-wrapper banner-woocommerce col-<?php echo esc_attr( $size ); ?>-12">
 					<?php lsx_global_header_inner_bottom(); ?>
 					<header class="archive-header">
 						<h1 class="archive-title"><?php woocommerce_page_title(); ?></h1>
 						<?php
-							if ( 0 < $shop_page ) {
-								$shop_page = get_post( $shop_page );
-								if ( ! empty( $shop_page->post_excerpt ) ) {
-									echo wp_kses_post( '<p>' . $shop_page->post_excerpt . '</p>' );
+							if ( is_shop() ) {
+								$shop_page = wc_get_page_id( 'shop' );
+								if ( 0 < $shop_page ) {
+									$shop_page = get_post( $shop_page );
+									if ( ! empty( $shop_page->post_excerpt ) ) {
+										echo wp_kses_post( '<p>' . $shop_page->post_excerpt . '</p>' );
+									}
+								} else {
+									$description = get_the_archive_description();
+									if ( ! empty( $description ) && '' !== $description ) {
+										echo wp_kses_post( '<p>' . $description . '</p>' );
+									}
 								}
 							}
 						?>
