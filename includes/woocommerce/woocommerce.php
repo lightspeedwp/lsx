@@ -1059,10 +1059,10 @@ if ( ! function_exists( 'lsx_wc_archive_header' ) ) {
  * Moving the Reset Variations link.
  **/
 function lsx_wc_reset_variations_link() {
-	echo '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>';
+	echo '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'lsx' ) . '</a>';
 	add_filter( 'woocommerce_reset_variations_link', 'lsx_wc_disable_default_reset_variations_link', 10, 1 );
 }
-add_action( 'woocommerce_before_variations_form', 'lsx_wc_archive_header', 10 );
+add_action( 'woocommerce_before_variations_form', 'lsx_wc_reset_variations_link', 10 );
 
 /**
  * Disables the default link.
