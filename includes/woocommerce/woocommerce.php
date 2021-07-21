@@ -1011,3 +1011,39 @@ if ( ! function_exists( 'lsx_payment_gateway_logos' ) ) {
 	}
 	add_action( 'lsx_footer_before', 'lsx_payment_gateway_logos' );
 }
+
+if ( ! function_exists( 'lsx_wc_archive_header' ) ) {
+	/**
+	 * Add Lets Encrypt and PayFast logos to cart.
+	 **/
+	function lsx_wc_archive_header() {
+		if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_category() || is_product_tag() ) ) {
+
+			if ( function_exists( 'lsx_search' ) ) {
+				$search = lsx_search();
+				remove_action( 'lsx_content_wrap_before', array( $search->frontend, 'wc_archive_header' ), 140 );
+			}
+
+			$default_size = 'sm';
+			$size         = apply_filters( 'lsx_bootstrap_column_size', $default_size );
+			$shop_page    = wc_get_page_id( 'shop' );
+			?>
+				<div class="archive-header-wrapper banner-woocommerce col-<?php echo esc_attr( $size ); ?>-12">
+					<?php lsx_global_header_inner_bottom(); ?>
+					<header class="archive-header">
+						<h1 class="archive-title"><?php woocommerce_page_title(); ?></h1>
+						<?php
+							if ( 0 < $shop_page ) {
+								$shop_page = get_post( $shop_page );
+								if ( ! empty( $shop_page->post_excerpt ) ) {
+									echo wp_kses_post( '<p>' . $shop_page->post_excerpt . '</p>' );
+								}
+							}
+						?>
+					</header>
+				</div>
+			<?php
+		}
+	}
+	add_action( 'lsx_content_wrap_before', 'lsx_wc_archive_header', 100 );
+}
