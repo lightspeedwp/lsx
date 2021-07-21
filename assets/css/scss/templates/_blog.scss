@@ -297,7 +297,11 @@ article.lsx-slot {
 		}
 	}
 
-	&:not( .lsx-body-grid-layout, .lsx-body-half-grid-layout, .lsx-body-list-layout ) {
+	&.search .post-wrapper {
+		padding-top: 14px;
+	}
+
+	&:not( .lsx-body-grid-layout ):not( .lsx-body-half-grid-layout ):not( .lsx-body-list-layout ):not( .lsx-search-enabled ) {
 		#categories-slider {
 			+ .post-wrapper {
 				margin-top: -6.3rem;

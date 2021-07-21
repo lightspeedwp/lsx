@@ -22,6 +22,8 @@ if ( ! function_exists( 'lsx_setup' ) ) :
 		global $content_width;
 		$content_width = 1140;
 
+		remove_theme_support( 'widgets-block-editor' );
+
 		load_theme_textdomain( 'lsx', get_template_directory() . '/languages' );
 
 		add_image_size( 'lsx-thumbnail-carousel', 350, 230, true );
