@@ -1073,3 +1073,41 @@ add_action( 'woocommerce_before_variations_form', 'lsx_wc_reset_variations_link'
 function lsx_wc_disable_default_reset_variations_link( $link = '' ) {
 	return '';
 }
+
+/*if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
+	function lsx_wc_template_single_meta_top() {
+		global $product;
+
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+		?>
+		<div class="product_meta">
+			<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+		</div>
+		<?php
+	}
+	add_action( 'woocommerce_single_product_summary', 'lsx_wc_template_single_meta_top', 7 );
+}
+
+if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
+	function lsx_wc_template_single_meta_bottom() {
+		global $product;
+		?>
+		<div class="product_meta">
+
+			<?php do_action( 'woocommerce_product_meta_start' ); ?>
+
+			<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
+
+				<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
+
+			<?php endif; ?>
+
+			<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+
+			<?php do_action( 'woocommerce_product_meta_end' ); ?>
+
+		</div>
+		<?php
+	}
+	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+}*/
