@@ -19,6 +19,7 @@ if ( in_array( 'wordpress-seo/wp-seo.php', apply_filters( 'active_plugins', get_
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/includes/woocommerce/woocommerce.php';
+	require get_template_directory() . '/includes/woocommerce/addons.php';
 }
 
 if ( class_exists( 'Tribe__Events__Main' ) ) {

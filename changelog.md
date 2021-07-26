@@ -1,5 +1,12 @@
 # LSX Theme Changelog
 
+# [[2.9.5]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.5) - ???
+
+### Added
+- Integration with the [Order Delivery for WooCommerce](https://woocommerce.com/products/woocommerce-order-delivery/) plugin
+
+
+
 # [[2.9.4]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.4) - 20-07-2021
 
 ### Updated
