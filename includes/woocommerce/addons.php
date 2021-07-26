@@ -6,11 +6,10 @@
  * @subpackage woocommerce
  */
 
-
 /**
  * WooCommerce Order Delivery Date
  */
-if ( ! function_exists( 'wc_od_get_delivery_date_field_args' ) ) {
+if ( function_exists( 'wc_od_get_delivery_date_field_args' ) ) {
 
 	/**
 	 * Change the arguments for the checkout delivery date field.
@@ -22,7 +21,7 @@ if ( ! function_exists( 'wc_od_get_delivery_date_field_args' ) ) {
 	 */
 	function lsx_wc_delivery_date_args( $args = array(), $context ) {
 		if ( 'checkout' === $context ) {
-			$args[] = _x( 'Date', 'Delivery date checkout field label', 'lsx' );
+			$args['label'] = _x( 'Date', 'Delivery date checkout field label', 'lsx' );
 		}
 		return $args;
 	}
