@@ -4,8 +4,10 @@
 
 ### Added
 - Integration with the [Order Delivery for WooCommerce](https://woocommerce.com/products/woocommerce-order-delivery/) plugin
+- Support for the WooCommerce Shop Description, Category and Tag descriptions below the Titles
 
-
+### Fixed
+- Default WooCommerce coupon background colours
 
 # [[2.9.4]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.4) - 20-07-2021
 
