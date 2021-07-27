@@ -1087,27 +1087,33 @@ function lsx_wc_disable_default_reset_variations_link( $link = '' ) {
 	}
 	add_action( 'woocommerce_single_product_summary', 'lsx_wc_template_single_meta_top', 7 );
 }
+*/
 
 if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
-	function lsx_wc_template_single_meta_bottom() {
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	function lsx_wc_woocommerce_sku() {
 		global $product;
-		?>
-		<div class="product_meta">
-
-			<?php do_action( 'woocommerce_product_meta_start' ); ?>
-
-			<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
-
-				<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
-
-			<?php endif; ?>
-
-			<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
-
-			<?php do_action( 'woocommerce_product_meta_end' ); ?>
-
-		</div>
-		<?php
+		if ( function_exists( 'wc_product_sku_enabled' ) && wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) {
+			?>
+			<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'lsx' ); ?> <span class="sku"><?php echo esc_attr( $product->get_sku() ); ?></span></span>
+			<?php
+			add_filter( 'wc_product_sku_enabled', 'lsx_wc_default_woocommerce_sku_disable' );
+		}
 	}
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-}*/
+	add_action( 'woocommerce_product_meta_start', 'woocommerce_template_single_meta', 10 );
+	/**
+	 * Disabled the default WC SKU
+	 *
+	 * @param boolean $enable
+	 * @return boolean
+	 */
+	function lsx_wc_default_woocommerce_sku_disable( $enable = false ) {
+		$enable = false;
+		return $enable;
+	}
+	
+}
