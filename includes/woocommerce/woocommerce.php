@@ -1089,7 +1089,7 @@ function lsx_wc_disable_default_reset_variations_link( $link = '' ) {
 }
 */
 
-if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
+if ( ! function_exists( 'lsx_wc_woocommerce_sku' ) ) {
 	/**
 	 * Undocumented function
 	 *
@@ -1097,12 +1097,12 @@ if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
 	 */
 	function lsx_wc_woocommerce_sku() {
 		global $product;
-		if ( function_exists( 'wc_product_sku_enabled' ) && wc_product_sku_enabled() && ! empty( $product->get_sku() ) ) {
+		if ( function_exists( 'wc_product_sku_enabled' ) && wc_product_sku_enabled() && ! empty( $product->get_sku() ) && 'N/A' !==  $product->get_sku() ) {
 			?>
 			<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'lsx' ); ?> <span class="sku"><?php echo esc_attr( $product->get_sku() ); ?></span></span>
 			<?php
-			add_filter( 'wc_product_sku_enabled', 'lsx_wc_default_woocommerce_sku_disable' );
 		}
+		add_filter( 'wc_product_sku_enabled', 'lsx_wc_default_woocommerce_sku_disable' );
 	}
 	add_action( 'woocommerce_product_meta_start', 'lsx_wc_woocommerce_sku', 10 );
 	/**
