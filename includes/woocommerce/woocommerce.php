@@ -1097,7 +1097,7 @@ if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
 	 */
 	function lsx_wc_woocommerce_sku() {
 		global $product;
-		if ( function_exists( 'wc_product_sku_enabled' ) && wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) {
+		if ( function_exists( 'wc_product_sku_enabled' ) && wc_product_sku_enabled() && ! empty( $product->get_sku() ) ) {
 			?>
 			<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'lsx' ); ?> <span class="sku"><?php echo esc_attr( $product->get_sku() ); ?></span></span>
 			<?php
