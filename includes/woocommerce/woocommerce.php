@@ -1104,7 +1104,7 @@ if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
 			add_filter( 'wc_product_sku_enabled', 'lsx_wc_default_woocommerce_sku_disable' );
 		}
 	}
-	add_action( 'woocommerce_product_meta_start', 'woocommerce_template_single_meta', 10 );
+	add_action( 'woocommerce_product_meta_start', 'lsx_wc_woocommerce_sku', 10 );
 	/**
 	 * Disabled the default WC SKU
 	 *
@@ -1115,5 +1115,4 @@ if ( ! function_exists( 'lsx_wc_template_single_meta' ) ) {
 		$enable = false;
 		return $enable;
 	}
-	
 }
