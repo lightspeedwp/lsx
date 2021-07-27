@@ -1,16 +1,19 @@
 # LSX Theme Changelog
 
-# [[2.9.5]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.5) - ???
+# [[2.9.5]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.5) - 27-07-2021
 
 ### Added
 - Integration with the [Order Delivery for WooCommerce](https://woocommerce.com/products/woocommerce-order-delivery/) plugin
 - Integration with the [WooCommerce Points and Rewards](https://woocommerce.com/products/woocommerce-points-and-rewards/) plugin
 - Support for the WooCommerce Shop Description, Category and Tag descriptions below the Titles
 
-
 ### Fixed
 - Default WooCommerce coupon background colours
-- Attaching the Link colour to the mobile menu toggle
+- Attaching the Menu Link colour to the mobile menu toggle
+- WooCommerce Cart and Checkout Padding.
+
+### Changed
+- The WC SKU field will no longer display `N/A` if left empty.
 
 # [[2.9.4]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.4) - 20-07-2021
 
