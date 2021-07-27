@@ -10,6 +10,7 @@
 
 ### Fixed
 - Default WooCommerce coupon background colours
+- Attaching the Link colour to the mobile menu toggle
 
 # [[2.9.4]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.4) - 20-07-2021
 
