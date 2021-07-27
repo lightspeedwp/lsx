@@ -46,7 +46,7 @@ if ( function_exists( 'wc_od_get_delivery_date_field_args' ) ) {
  * WooCommerce Points and Rewards
  */
 
-if ( ! class_exists( 'WC_Points_Rewards' ) ) {
+if ( class_exists( 'WC_Points_Rewards' ) ) {
 	/**
 	 * Adds a div around the Points and rewards message.
 	 *
