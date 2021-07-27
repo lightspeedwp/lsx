@@ -4,6 +4,7 @@
 
 ### Added
 - Integration with the [Order Delivery for WooCommerce](https://woocommerce.com/products/woocommerce-order-delivery/) plugin
+- Integration with the [WooCommerce Points and Rewards](https://woocommerce.com/products/woocommerce-points-and-rewards/) plugin
 - Support for the WooCommerce Shop Description, Category and Tag descriptions below the Titles
 
 ### Fixed
