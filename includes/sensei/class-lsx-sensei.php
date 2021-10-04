@@ -144,8 +144,8 @@ if ( ! class_exists( 'LSX_Sensei' ) ) :
 			lsx_content_wrap_before();
 			echo '<div id="primary" class="content-area ' . esc_attr( lsx_main_class() ) . '">';
 			lsx_content_before();
-			echo '<main id="main" class="site-main" role="main">';
 			lsx_content_top();
+			echo '<main id="main" class="site-main" role="main">';
 		}
 
 		/**
