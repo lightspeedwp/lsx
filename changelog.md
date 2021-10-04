@@ -1,8 +1,9 @@
 # LSX Theme Changelog
 
-# [[2.9.6]] - 4-10-2021
+# [[2.9.6]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.6) - ???
 
 ### Fixed
+- Removed the shortcoes displaying in the auto generated excerpt.
 - Sensei Sidebar Position
 
 # [[2.9.5]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.5) - 27-07-2021
