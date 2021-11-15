@@ -6,6 +6,9 @@
 - Removed the shortcoes displaying in the auto generated excerpt.
 - Sensei Sidebar Position
 
+### Changed
+- Removed Gravity Forms Submit Button Text Overwrite
+
 # [[2.9.5]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.5) - 27-07-2021
 
 ### Added

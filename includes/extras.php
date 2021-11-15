@@ -391,25 +391,6 @@ endif;
 
 add_action( 'lsx_header_after', 'lsx_page_banner' );
 
-if ( ! function_exists( 'lsx_form_submit_button' ) ) :
-
-	/**
-	 * filter the Gravity Forms button type.
-	 *
-	 * @package    lsx
-	 * @subpackage extras
-	 *
-	 * @param  $button String
-	 * @param  $form   Object
-	 * @return String
-	 */
-	function lsx_form_submit_button( $button, $form ) {
-		return "<button class='btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>Submit</span></button>";
-	}
-
-endif;
-
-add_filter( 'gform_submit_button', 'lsx_form_submit_button', 10, 2 );
 
 if ( ! function_exists( 'lsx_excerpt_more' ) ) :
 
