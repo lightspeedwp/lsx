@@ -815,6 +815,10 @@ if ( ! function_exists( 'lsx_wc_move_bundle_products' ) ) :
 	 */
 	function lsx_wc_move_bundle_products( $tabs ) {
 		global $product, $post;
+		
+		if ( is_admin() ) {
+			return $tabs;
+		}
 
 		if ( method_exists( $product, 'get_bundled_items' ) ) {
 			$bundled_items = $product->get_bundled_items();
