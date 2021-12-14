@@ -102,4 +102,4 @@ class LSX_Sensei_Lesson {
 	}
 
 } // End Class
-new LSX_Sensei_Lesson();
+$lsx_sensei_lesson = LSX_Sensei_Lesson::instance();
