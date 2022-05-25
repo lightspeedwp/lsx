@@ -1,9 +1,17 @@
 # LSX Theme Changelog
 
-# [[2.9.6]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.6) - ???
+# [[2.9.6]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.6) - 25-05-2022
+
+### Removed
+- Removed Yoast CSS & JS file to LSX Customizer plugin
+- Removed WooCommerce CSS & JS file to LSX Customizer plugin
+- Removed The Events Plugin CSS & PHP file to LSX Customizer plugin
+- Removed Sensei CSS & PHP file to LSX Customizer plugin
+- Removed Popup-Maker CSS & PHP file to LSX Customizer plugin
+- Removed bbPress CSS & PHP file to LSX Customizer plugin
 
 ### Fixed
-- Removed the shortcoes displaying in the auto generated excerpt.
+- Removed the shortcodes displaying in the auto generated excerpt.
 - Sensei Sidebar Position
 
 ### Changed
@@ -66,7 +74,7 @@
 - Updated the minification of the CSS and JS.
 - Updated Layout.php
 
-### Removed 
+### Removed
 - Removed old Viewport Function
 - Removing the default sidebar widgets from sidebar.php
 
@@ -83,7 +91,7 @@
 - [#364](https://github.com/lightspeeddevelopment/lsx/issues/364) Added support for LSX Search & FacetWP filtering on all the Blog archive layouts.
 - [#366](https://github.com/lightspeeddevelopment/lsx/issues/366) Added support for the Mix and Match Woocommerce plugin.
 - Added in a filter `lsx_layout_customizer_controls` to allow 3rd party plugins to inject layout customizer controls.
-- Added styling support for WooCommerce Blocks 3.6 Cart & Checkout versions. 
+- Added styling support for WooCommerce Blocks 3.6 Cart & Checkout versions.
 
 ### Added Block Editor Support
 
@@ -93,7 +101,7 @@
 - [#385](https://github.com/lightspeeddevelopment/lsx/issues/385) Added `lsx-subheading` class for group blocks.
 - [#395](https://github.com/lightspeeddevelopment/lsx/issues/395) Added styling support for Yoast SEO's internal linking blocks .
 - [#363](https://github.com/lightspeeddevelopment/lsx/issues/363) Added styling support for the Yoast SEO plugin FAQ block .
-- [#362](https://github.com/lightspeeddevelopment/lsx/issues/362) Added styling support for the Yoast SEO plugin's HowTo block. 
+- [#362](https://github.com/lightspeeddevelopment/lsx/issues/362) Added styling support for the Yoast SEO plugin's HowTo block.
 - [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added WPForms submit button block editor styling
 - [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for responsive embedded content `add_theme_support( 'responsive-embeds' )`
 - [#370](https://github.com/lightspeeddevelopment/lsx/issues/370) Added theme support for custom editor font sizes `add_theme_support('editor-font-sizes')`
@@ -155,7 +163,7 @@
 
 ### Security
 
-- [#383](https://github.com/lightspeeddevelopment/lsx/issues/383) Tested the theme files with the [theme check plugin](https://wordpress.org/plugins/theme-check/). Updated theme files to support the latest WordPress theme coding & theme review standards. 
+- [#383](https://github.com/lightspeeddevelopment/lsx/issues/383) Tested the theme files with the [theme check plugin](https://wordpress.org/plugins/theme-check/). Updated theme files to support the latest WordPress theme coding & theme review standards.
 - Updating dependencies to prevent vulnerabilities.
 - Updating PHPCS options for better code.
 - General testing to ensure compatibility with latest WordPress version (5.5.1).
@@ -168,7 +176,7 @@
 - Yoast SEO 15.1.1
 - WooCommerce 4.6.0
 - WooCommerce Blocks 3.6.0
-- Woocommerce Wishlist 
+- Woocommerce Wishlist
 - Woocommerce Quick View 1.2.12
 - WooCommerce Subscriptions 3.0.9
 - WooCommerce Memberships 1.19.1
@@ -178,7 +186,7 @@
 - WooCommerce Mix and Match 1.10.4
 - WooCommerce Checkout Field Editor 1.5.36
 - WooCommerce Social Login 2.10.1
-- Sensei 3.5.2 
+- Sensei 3.5.2
 - Events 5.2.0
 - WPForms 1.6.2.3
 - GravityForms 2.4.21
