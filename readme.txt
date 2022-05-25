@@ -3,9 +3,9 @@ Contributors: feedmymedia, lightspeedwp, eleshar, krugazul, jacquesvdh, ignusver
 Donate link: https://lsdev.biz/lsx/donate/
 Tags: blog, e-commerce, education
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 6.0
 Requires PHP: 7.0
-Stable tag: 2.9.5
+Stable tag: 3.0
 License: GPLv3
 Licence URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -13,15 +13,15 @@ LSX is a flexible, light-weight, minimalistic and responsive theme built for the
 
 == Description ==
 
-LSX is a flexible, light-weight, minimalistic and responsive theme designed to empower makers to build beautifully rich websites with WordPress block editor and customizer. 
+LSX is a flexible, light-weight, minimalistic and responsive theme designed to empower makers to build beautifully rich websites with WordPress block editor and customizer.
 
 We take full advantage of the block editor, which gives you more control over creating your content.
 
-Install the free LSX Blocks plugin to add additional blocks and extend core WordPress blocks. Users can easily install any of the 20 free extensions via the WordPress plugins page. 
+Install the free LSX Blocks plugin to add additional blocks and extend core WordPress blocks. Users can easily install any of the 20 free extensions via the WordPress plugins page.
 
-The flexibility LSX is perfect for blogs, small business, startups, agencies, firms, WooCommerce stores and portfolio sites. 
+The flexibility LSX is perfect for blogs, small business, startups, agencies, firms, WooCommerce stores and portfolio sites.
 
-Thanks to our emphasis on WordPress coding standards, we can boast full compatibility with all well-coded plugins, including WooCommerce, making it an ideal choice for your next eCommerce build. 
+Thanks to our emphasis on WordPress coding standards, we can boast full compatibility with all well-coded plugins, including WooCommerce, making it an ideal choice for your next eCommerce build.
 
 Check the demo to test drive the LSX DEMO SITE: https://lsx-demo.lsdev.biz/
 
@@ -57,19 +57,19 @@ For even more customization, check out the available free [LSX extensions](https
 
 = Block Editor Compatible =
 
-The LSX theme is full compatible with the WordPress block editor. This means you can now make use of the drag-and-drop page builder when creating new pages and posts. 
+The LSX theme is full compatible with the WordPress block editor. This means you can now make use of the drag-and-drop page builder when creating new pages and posts.
 
-[LSX Blocks](https://lsdev.biz/lsx/extensions/blocks) is an extension with blocks designed to display perfectly with the LSX theme. The blocks plugin extends various WordPress core blocks to be more flexible with the WordPress theme. 
+[LSX Blocks](https://lsdev.biz/lsx/extensions/blocks) is an extension with blocks designed to display perfectly with the LSX theme. The blocks plugin extends various WordPress core blocks to be more flexible with the WordPress theme.
 
 The combination of LSX Theme & LSX Blocks gives you a true page builder experience using the WordPress Gutenberg block editor.
 
 = LSX Theme Extensions =
 
-Our range of powerful [LSX extensions](https://www.lsdev.biz/lsx/extensions/) gives you freedom to add team members, client reviews, your portfolio and so much more to your website. Each extension is designed fluidly with the LSX theme. So there are no code hassles involved. 
+Our range of powerful [LSX extensions](https://www.lsdev.biz/lsx/extensions/) gives you freedom to add team members, client reviews, your portfolio and so much more to your website. Each extension is designed fluidly with the LSX theme. So there are no code hassles involved.
 
 = Documentation =
 
-We have extensive documentation on all our themes functionality. This allows you to take control of your website setup and design to your needs: 
+We have extensive documentation on all our themes functionality. This allows you to take control of your website setup and design to your needs:
 
 * [Getting Starting with LSX](https://www.lsdev.biz/lsx/documentation/lsx-theme/getting-started/)
 * [Customizer](https://www.lsdev.biz/lsx/documentation/lsx-theme/customizer/)
@@ -124,7 +124,7 @@ This software uses the following open source packages:
 
 == Frequently Asked Questions ==
 
-Take a look at all our [Frequently Asked Questions](https://www.lsdev.biz/lsx/documentation/lsx-theme/lsx-theme-faqs/), we are sure you'll find what you're looking for. 
+Take a look at all our [Frequently Asked Questions](https://www.lsdev.biz/lsx/documentation/lsx-theme/lsx-theme-faqs/), we are sure you'll find what you're looking for.
 
 = What are the server requirements for running the LSX Theme? =
 Your WordPress website needs to be running PHP version 7.0 or higher in order to make use of the LSX theme.
@@ -158,6 +158,6 @@ All of our options can be found in the Customizer in 'Appearance > Customize'.
 = Does LSX have any widget areas? =
 LSX has up to 4 widget areas which you can add widgets to in Appearance > Widgets.
 
-== Changelog == 
+== Changelog ==
 
 [Latest changelogs can be found on GitHub](https://github.com/lightspeeddevelopment/lsx/blob/master/changelog.md).

@@ -1,6 +1,6 @@
 # LSX Theme Changelog
 
-# [[2.9.6]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.6) - 25-05-2022
+# [[3.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.6) - 25-05-2022
 
 ### Removed
 - Removed Yoast CSS & JS file to LSX Customizer plugin
