@@ -67,131 +67,6 @@ gulp.task('styles', gulp.series(function () {
 		.pipe(gulp.dest('assets/css'))
 }));
 
-gulp.task('events-styles', gulp.series( function () {
-    return gulp.src('assets/css/the-events-calendar/the-events-calendar.scss')
-        .pipe(plumber({
-            errorHandler: function(err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed',
-            includePaths: ['assets/css/the-events-calendar']
-        }).on('error', gutil.log))
-        .pipe(autoprefixer({
-            browsers: browserlist,
-            casacade: true
-        }))
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('assets/css/the-events-calendar'))
-}));
-
-gulp.task('events-styles-5', gulp.series(function () {
-    return gulp.src('assets/css/the-events-calendar/the-events-calendar-5.scss')
-        .pipe(plumber({
-            errorHandler: function(err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed',
-            includePaths: ['assets/css/the-events-calendar']
-        }).on('error', gutil.log))
-        .pipe(autoprefixer({
-            browsers: browserlist,
-            casacade: true
-        }))
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('assets/css/the-events-calendar'))
-}));
-
-gulp.task('sensei-styles', gulp.series(function () {
-    return gulp.src('assets/css/sensei/sensei.scss')
-        .pipe(plumber({
-            errorHandler: function(err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed',
-            includePaths: ['assets/css/sensei']
-        }).on('error', gutil.log))
-        .pipe(autoprefixer({
-            browsers: browserlist,
-            casacade: true
-        }))
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('assets/css/sensei'))
-}));
-
-gulp.task('popup-maker-styles', gulp.series(function () {
-    return gulp.src('assets/css/popup-maker/popup-maker.scss')
-        .pipe(plumber({
-            errorHandler: function(err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed',
-            includePaths: ['assets/css/popup-maker']
-        }).on('error', gutil.log))
-        .pipe(autoprefixer({
-            browsers: browserlist,
-            casacade: true
-        }))
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('assets/css/popup-maker'))
-}));
-
-gulp.task('bbpress-styles', gulp.series(function () {
-    return gulp.src('assets/css/bb-press/bb-press.scss')
-        .pipe(plumber({
-            errorHandler: function(err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed',
-            includePaths: ['assets/css/bb-press']
-        }).on('error', gutil.log))
-        .pipe(autoprefixer({
-            browsers: browserlist,
-            casacade: true
-        }))
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('assets/css/bb-press'))
-}));
-
-gulp.task('woocommerce-styles', gulp.series(function () {
-    return gulp.src('assets/css/woocommerce/*.scss')
-        .pipe(plumber({
-            errorHandler: function(err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed',
-            includePaths: ['assets/css/woocommerce']
-        }).on('error', gutil.log))
-        .pipe(autoprefixer({
-            browsers: browserlist,
-            casacade: true
-        }))
-        .pipe(sourcemaps.write('maps'))
-        .pipe(gulp.dest('assets/css/woocommerce'))
-}));
 
 gulp.task('styles-rtl', gulp.series(function () {
 	return gulp.src('assets/css/scss/*.scss')
@@ -304,7 +179,7 @@ gulp.task('admin-styles-rtl', gulp.series(function () {
 
 //gulp.task('compile-css', ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'admin-styles-rtl']);
 
-gulp.task('compile-css', gulp.series( ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles', 'events-styles', 'events-styles-5', 'sensei-styles', 'popup-maker-styles', 'bbpress-styles', 'woocommerce-styles']));
+gulp.task('compile-css', gulp.series( ['styles', 'styles-rtl', 'vendor-styles', 'vendor-styles-rtl', 'admin-styles']));
 
 gulp.task('js', gulp.series(function() {
 	return gulp.src('assets/js/src/**/*.js')
