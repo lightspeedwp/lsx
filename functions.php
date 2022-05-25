@@ -13,31 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'LSX_VERSION', '2.9.5' );
 
-if ( in_array( 'wordpress-seo/wp-seo.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || in_array( 'wordpress-seo-premium/wp-seo-premium.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	require get_template_directory() . '/includes/yoast/class-lsx-yoast.php';
-}
-
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/includes/woocommerce/woocommerce.php';
-	require get_template_directory() . '/includes/woocommerce/addons.php';
-}
-
-if ( class_exists( 'Tribe__Events__Main' ) ) {
-	require get_template_directory() . '/includes/the-events-calendar/the-events-calendar.php';
-}
-
-if ( class_exists( 'Sensei_Main' ) || class_exists( 'Sensei_WC' ) ) {
-	require get_template_directory() . '/includes/sensei/class-lsx-sensei.php';
-}
-
-if ( class_exists( 'Popup_Maker' ) ) {
-	require get_template_directory() . '/includes/popup-maker/class-lsx-popup-maker.php';
-}
-
-if ( class_exists( 'bbPress' ) ) {
-	require get_template_directory() . '/includes/bbpress/bbpress.php';
-}
-
 require get_template_directory() . '/includes/config.php';
 require get_template_directory() . '/includes/deprecated.php';
 require get_template_directory() . '/includes/classes/class-lsx-theme-customizer.php';
@@ -62,3 +37,6 @@ require get_template_directory() . '/includes/classes/class-lsx-schema-utils.php
 require get_template_directory() . '/includes/classes/class-lsx-schema-graph-piece.php';
 require get_template_directory() . '/includes/classes/class-lsx-optimisation.php';
 require get_template_directory() . '/includes/classes/class-lsx-rest-helper.php';
+
+// Add block patterns
+require get_template_directory() . '/includes/block-patterns.php';
