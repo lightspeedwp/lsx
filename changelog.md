@@ -1,6 +1,14 @@
 # LSX Theme Changelog
 
-# [[3.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/2.9.6) - 25-05-2022
+# [[3.0.1]](https://github.com/lightspeeddevelopment/lsx/releases/tag/3.0.1) - 22-09-2022
+
+### Fixed
+- Various Theme Checker "info" issues with deprecated template tags.
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (5.8).
+
+# [[3.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/3.0) - 25-05-2022
 
 ### Removed
 - Removed Yoast CSS & JS file to LSX Customizer plugin
