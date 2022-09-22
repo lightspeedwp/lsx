@@ -456,7 +456,7 @@ if ( ! function_exists( 'lsx_cover_custom_logo' ) ) :
 
 			if ( $custom_logo_id ) {
 
-				$site_url   = get_site_url();
+				$site_url   = home_url();
 				$site_title = get_bloginfo( 'name' );
 				$image      = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 
