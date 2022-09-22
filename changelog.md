@@ -3,7 +3,7 @@
 # [[3.0.1]](https://github.com/lightspeeddevelopment/lsx/releases/tag/3.0.1) - 22-09-2022
 
 ### Fixed
-- Various Theme Checker "info" issues with deprecated template tags.
+- Theme Checker "info" issues with deprecated template tags.
 
 ### Security
 - General testing to ensure compatibility with latest WordPress version (5.8).
