@@ -2,39 +2,94 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
-		"appearanceTools": true,
+		"appearanceTools": true,	
 		"color": {
+			"custom": true,
+			"customDuotone": true,
+			"customGradient": true,
+			"duotone": [],
+			"gradients": [],
+			"link": false,
+			"text": true,
+			"background": true,
+			"defaultGradients": true,
+			"defaultPalette": true,	
 			"palette": [
 				{
-					"color": "#ffffff",
-					"name": "Base",
-					"slug": "base"
+					"slug": "primary",
+					"color": "#127EFF",
+					"name": "Primary"					
 				},
 				{
+					"slug": "secondary",
+					"color": "#43DFEF",
+					"name": "Secondary"					
+				},
+				{
+					"slug": "tertiary",
+					"color": "#CC4CCC",
+					"name": "Tertiary"					
+				},
+				{
+					"slug": "quaternary",
+					"color": "#EBEBEB",
+					"name": "Quanernary"					
+				},
+				{
+					"slug": "quinary",
+					"color": "#444949",
+					"name": "Quinary"					
+				},
+				{
+					"slug": "senary",
+					"color": "#22272C",
+					"name": "Senary"					
+				},
+				{
+					"slug": "septenary",
+					"color": "#C6C6C6",
+					"name": "Septenary"					
+				},
+				{
+					"slug": "octonary",
+					"color": "#EEDCEB",
+					"name": "Octonary"					
+				},
+				{
+					"slug": "novenary",
+					"color": "#EEDCEB",
+					"name": "Novenary"									
+				},
+				{
+					"slug": "denary",
+					"color": "#FFFFFF",
+					"name": "Denary"									
+				},
+				{
+					"slug": "base",
+					"color": "#FFFFFF",
+					"name": "Base"										
+				},
+				{
+					"slug": "contrast",
+					"color": "#313535",
+					"name": "Contrast"										
+				},
+				{
+					"slug": "background",
+					"color": "#FFFFFF",
+					"name": "Background"										
+				},
+				{
+					"slug": "foreground",
 					"color": "#000000",
-					"name": "Contrast",
-					"slug": "contrast"
-				},
-				{
-					"color": "#9DFF20",
-					"name": "Primary",
-					"slug": "primary"
-				},
-				{
-					"color": "#345C00",
-					"name": "Secondary",
-					"slug": "secondary"
-				},
-				{
-					"color": "#F6F6F6",
-					"name": "Tertiary",
-					"slug": "tertiary"
+					"name": "Foreground"															
 				}
 			]
 		},
 		"layout": {
-			"contentSize": "650px",
-			"wideSize": "1200px"
+			"contentSize": "640px",
+			"wideSize": "1200px"			
 		},
 		"spacing": {
 			"spacingScale": {

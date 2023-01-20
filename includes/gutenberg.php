@@ -18,9 +18,6 @@ function load_gutenberg_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'load_gutenberg_admin_style' );
 
-// Gutenberg Compatibility.
-require get_template_directory() . '/lib/theme-support.php';
-
 /**
  * Add custom class for Gutenberg Compatible template
  */
