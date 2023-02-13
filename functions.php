@@ -39,4 +39,4 @@ require get_template_directory() . '/includes/classes/class-lsx-optimisation.php
 require get_template_directory() . '/includes/classes/class-lsx-rest-helper.php';
 
 // Add block patterns
-require get_template_directory() . '/includes/block-patterns.php';
+/**require get_template_directory() . '/includes/block-patterns.php'; */
