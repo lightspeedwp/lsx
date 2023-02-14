@@ -20,5 +20,5 @@ require get_template_directory() . '/includes/classes/class-lsx-schema-graph-pie
 require get_template_directory() . '/includes/classes/class-lsx-optimisation.php';
 require get_template_directory() . '/includes/classes/class-lsx-rest-helper.php';
 
-// Add block patterns
-require get_template_directory() . '/includes/block-patterns.php';
+// Register our block functions
+require get_template_directory() . '/includes/block-functions.php';
