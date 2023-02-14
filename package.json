@@ -51,5 +51,8 @@
     "shelljs": "^0.8.4",
     "tough-cookie": "^4.0.0",
     "webpack": "^5.0.0"
+  },
+  "scripts": {
+	"build-post-meta": "wp-scripts build blocks/post-meta/index.js --output-path=blocks/post-meta"
   }
 }

@@ -67,3 +67,9 @@ function lsx_register_block_patterns() {
 	}
 }
 add_action( 'init', 'lsx_register_block_patterns', 9 );
+
+
+function lsx_post_meta_basic_block_init() {
+	register_block_type( get_template_directory() . '/blocks/post-meta' );
+}
+add_action( 'init', 'lsx_post_meta_basic_block_init' );
