@@ -49,10 +49,13 @@
     "randomatic": "^3.0.0",
     "sass-lint": "^1.13.1",
     "shelljs": "^0.8.4",
-    "tough-cookie": "^4.0.0",
-    "webpack": "^5.0.0"
+    "tough-cookie": "^4.0.0"
   },
   "scripts": {
-	"build-post-meta": "wp-scripts build blocks/post-meta/index.js --output-path=blocks/post-meta"
+    "build-post-meta": "wp-scripts build blocks/src/post-meta/index.js --output-path=blocks/build/post-meta"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^25.3.0",
+    "webpack": "^5.75.0"
   }
 }

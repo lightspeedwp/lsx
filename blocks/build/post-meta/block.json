@@ -1,24 +1,24 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
-  "name": "lsx/lsx-post-meta-basic",
-  "version": "0.1.0",
-  "title": "LSX Post Meta",
-  "category": "theme",
-  "icon": "flag",
-  "description": "A basic field used to store the text in a custom field.",
-  "attributes": {
-    "message": {
-      "type": "string",
-      "source": "text",
-      "selector": "div"
-    }
-  },
-  "supports": {
-    "html": false
-  },
-  "textdomain": "lsx",
-  "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "lsx/lsx-post-meta-basic",
+	"version": "0.1.0",
+	"title": "LSX Post Meta",
+	"category": "theme",
+	"icon": "flag",
+	"description": "A basic field used to store the text in a custom field.",
+	"attributes": {
+		"message": {
+			"type": "string",
+			"source": "text",
+			"selector": "div"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "lsx",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
 }
