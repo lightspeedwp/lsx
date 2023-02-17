@@ -73,3 +73,36 @@ function lsx_blocks_init() {
 	register_block_type( get_template_directory() . '/blocks/src/post-meta' );
 }
 add_action( 'init', 'lsx_blocks_init' );
+
+/**
+ * A function to replace the query post vars.
+ *
+ * @param array $query
+ * @param WP_Block $block
+ * @param int $page
+ * @return array
+ */
+function lsx_related_posts_query_args( $query, $block, $page ) {
+	if ( ! is_admin() && is_singular( 'post' ) && 'post' === $query['post_type'] && isset( $block->context['query']['related'] ) ) {
+		$group     = array();
+		$terms     = get_the_terms( get_the_ID(), 'category' );
+
+		if ( is_array( $terms ) && ! empty( $terms ) ) {
+			foreach( $terms as $term ) {
+				$group[] = $term->term_id;
+			}
+		}
+		$query['tax_query'] = array(
+			array(
+				'taxonomy' => 'category',
+				'field'    => 'term_id',
+				'terms'     => $group,
+			)
+		);
+		$query['orderby']      = 'rand';
+		$query['post__not_in'] = array( get_the_ID() );
+	}
+	return $query;
+}
+// Register our the content filters.
+add_filter( 'query_loop_block_query_vars', 'lsx_related_posts_query_args', 10, 3 );
