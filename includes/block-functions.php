@@ -106,3 +106,30 @@ function lsx_related_posts_query_args( $query, $block, $page ) {
 }
 // Register our the content filters.
 add_filter( 'query_loop_block_query_vars', 'lsx_related_posts_query_args', 10, 3 );
+
+
+/**
+ * Register the meta fields with REST.
+ *
+ * @return void
+ */
+function meta_fields_register_meta() {
+
+    $metafields = [ 'price' ];
+
+    foreach( $metafields as $metafield ){
+        // Pass an empty string to register the meta key across all existing post types.
+        register_post_meta( '', $metafield, array(
+            'show_in_rest' => true,
+            'type' => 'string',
+            'single' => true,
+            'sanitize_callback' => 'sanitize_text_field',
+            'auth_callback' => function() { 
+                return current_user_can( 'edit_posts' );
+            }
+        ));
+    } 
+}
+add_action( 'init', 'meta_fields_register_meta', 100 );
+
+

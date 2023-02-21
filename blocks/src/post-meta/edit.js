@@ -13,6 +13,9 @@ import { TextControl } from '@wordpress/components';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
+import { useSelect } from '@wordpress/data';
+import { useEntityProp } from '@wordpress/core-data';
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -27,11 +30,39 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps();
+	const postType   = useSelect(
+		( select ) => select( 'core/editor' ).getCurrentPostType(),
+		[]
+	);
+	const [ meta, setMeta ] = useEntityProp( 'postType', postType, 'meta' );
+
+	let priceVal = attributes.message;
+	if ( undefined !== meta[ 'price' ] ) {
+		priceVal = meta[ 'price' ];
+	}
+
+	console.log(postType);
+
+	const updatepriceVal = ( newValue ) => {
+		setMeta( { ...meta, price: newValue } );
+		setAttributes( { message: newValue } );
+    };
+
 	return (
 		<div { ...blockProps }>
 			<TextControl
-				value={ attributes.message }
-				onChange={ ( val ) => setAttributes( { message: val } ) }
+				value={ priceVal }
+				onChange={ updatepriceVal }
+
+				/*
+				onChange={ 
+					( val ) => {
+						//editPost( { meta: { price: val } } );
+						setAttributes( { message: val } )
+					}				
+				}
+				*/
+				//onChange={ ( val ) => setAttributes( { message: val } ) }
 			/>
 		</div>
 	);
