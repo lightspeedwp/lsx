@@ -41,8 +41,6 @@ export default function Edit( { attributes, setAttributes } ) {
 		priceVal = meta[ 'price' ];
 	}
 
-	console.log(postType);
-
 	const updatepriceVal = ( newValue ) => {
 		setMeta( { ...meta, price: newValue } );
 		setAttributes( { message: newValue } );
@@ -53,16 +51,6 @@ export default function Edit( { attributes, setAttributes } ) {
 			<TextControl
 				value={ priceVal }
 				onChange={ updatepriceVal }
-
-				/*
-				onChange={ 
-					( val ) => {
-						//editPost( { meta: { price: val } } );
-						setAttributes( { message: val } )
-					}				
-				}
-				*/
-				//onChange={ ( val ) => setAttributes( { message: val } ) }
 			/>
 		</div>
 	);

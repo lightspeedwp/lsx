@@ -131,5 +131,3 @@ function meta_fields_register_meta() {
     } 
 }
 add_action( 'init', 'meta_fields_register_meta', 100 );
-
-
