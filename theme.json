@@ -5,118 +5,61 @@
 		"color": {
 			"palette": [
 				{
-					"slug": "background",
-					"color": "#1d2327",
-					"name": "Background"
+					"color": "#ffffff",
+					"name": "Base",
+					"slug": "base"
 				},
 				{
-					"slug": "foreground",
-					"color": "#f0f0f1",
-					"name": "Foreground"
+					"color": "#313535",
+					"name": "Contrast",
+					"slug": "contrast"
 				},
 				{
-					"slug": "primary",
-					"color": "#d3bc8e",
-					"name": "Gold"
+					"color": "#CC4CCC",
+					"name": "Primary",
+					"slug": "primary"
 				},
 				{
-					"slug": "secondary",
-					"color": "#3c434a",
-					"name": "Dark Gray"
+					"color": "#127EFF",
+					"name": "Secondary",
+					"slug": "secondary"
 				},
 				{
-					"slug": "transparent",
-					"color": "transparent",
-					"name": "Transparent"
+					"color": "#43DFEF",
+					"name": "Tertiary",
+					"slug": "tertiary"
+				},
+				{
+					"color": "#EBEBEB",
+					"name": "Quaternary",
+					"slug": "quaternary"
+				},
+				{
+					"color": "#444949",
+					"name": "Quinary",
+					"slug": "quinary"
+				},
+				{
+					"color": "#22272C",
+					"name": "Senary",
+					"slug": "senaryy"
+				},
+				{
+					"color": "#C6C6C6",
+					"name": "Septenary",
+					"slug": "septenary"
 				}
 			],
 			"gradients": [
 				{
-					"slug": "d-transparent-primary",
-					"gradient": "linear-gradient(to bottom right,transparent 49.9%,#d3bc8e 50%)",
-					"name": "Diagonal transparent to primary"
+					"gradient": "linear-gradient(135deg,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--primary) 100%)",
+					"name": "Secondary to Primary",
+					"slug": "secondary-primary"
 				},
 				{
-					"slug": "d-primary-transparent",
-					"gradient": "linear-gradient(to bottom right, #d3bc8e 49.9%, transparent 50%)",
-					"name": "Diagonal primary to transparent"
-				},
-				{
-					"slug": "d-white-primary",
-					"gradient": "linear-gradient(to bottom right,#fff 49.9%,#d3bc8e 50%)",
-					"name": "Diagonal white to primary"
-				},
-				{
-					"slug": "d-primary-white",
-					"gradient": "linear-gradient(to bottom right,#d3bc8e 49.9%,#fff 50%)",
-					"name": "Diagonal primary to white"
-				},
-				{
-					"slug": "h-primary-transparent",
-					"gradient": "linear-gradient(#d3bc8e 49.9%,transparent 50%)",
-					"name": "Horizontal primary to transparent"
-				},
-				{
-					"slug": "h-transparent-primary",
-					"gradient": "linear-gradient(transparent 49.9%,#d3bc8e 50%)",
-					"name": "Horizontal transparent to primary"
-				},
-				{
-					"slug": "h-primary-white",
-					"gradient": "linear-gradient(#d3bc8e 49.9%,#fff 50%)",
-					"name": "Horizontal primary to white"
-				},
-				{
-					"slug": "h-white-primary",
-					"gradient": "linear-gradient(#fff 49.9%,#d3bc8e 50%)",
-					"name": "Horizontal white to primary"
-				},
-				{
-					"slug": "v-primary-transparent",
-					"gradient": "linear-gradient(to right, #d3bc8e 49.9%,transparent 50%)",
-					"name": "Vertical primary to transparent"
-				},
-				{
-					"slug": "v-transparent-primary",
-					"gradient": "linear-gradient(to right, transparent 49.9%,#d3bc8e 50%)",
-					"name": "Vertical transparent to primary"
-				},
-				{
-					"slug": "v-primary-white",
-					"gradient": "linear-gradient(to right, #d3bc8e 49.9%,#fff 50%)",
-					"name": "Vertical primary to white"
-				},
-				{
-					"slug": "v-white-primary",
-					"gradient": "linear-gradient(to right, #fff 49.9%,#d3bc8e 50%)",
-					"name": "Vertical white to primary"
-				}
-			],
-			"duotone": [
-				{
-					"colors": [ "#1d2327", "#d3bc8e" ],
-					"slug": "background-primary",
-					"name": "Very Dark Gray and gold"
-				},
-				{
-					"colors": [ "#3c434a", "#d3bc8e"],
-					"slug": "seconary-primary",
-					"name": "Dark Gray and gold"
-				},
-				{
-					"colors": ["#1d2327","#f0f0f1"],
-					"slug": "background-foreground",
-					"name": "Very Dark Gray and white"
-				},
-				{
-					"colors": ["#3c434a","#f0f0f1"],
-					"slug": "primary-foreground",
-					"name": "Dark Gray and white"
-				},
-				{
-					"colors": ["#9b8b6d","#f0f0f1"],
-					"slug": "primary-foreground",
-					"name": "Gold and white"
+					"gradient": "linear-gradient(135deg,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--tertiary) 100%)",
+					"name": "Secondary to Tertiary",
+					"slug": "secondary-tertiary"
 				}
 			]
 		},
@@ -141,6 +84,49 @@
 					"fontFamily": "\"Times New Roman\",\"New York\",Times,\"Noto Serif\",serif"
 				},
 				{
+					"fontFamily": "Manrope, sans-serif",
+					"name": "Manrope",
+					"slug": "primary",
+					"fontFace": [
+						{
+							"fontFamily": "Manrope",
+							"fontWeight": "200",
+							"fontStyle": "normal",
+							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-200.woff2" ]
+						},
+						{
+							"fontFamily": "Manrope",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-300.woff2" ]
+						},
+						{
+							"fontFamily": "Manrope",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-500.woff2" ]
+						},
+						{
+							"fontFamily": "Manrope",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-700.woff2" ]
+						},
+						{
+							"fontFamily": "Manrope",
+							"fontWeight": "800",
+							"fontStyle": "normal",
+							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-800.woff2" ]
+						},
+						{
+							"fontFamily": "Manrope",
+							"fontWeight": "regular",
+							"fontStyle": "normal",
+							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-regular.woff2" ]
+						}
+					]
+				},
+				{
 					"name": "Monospace (Consolas, SF Mono, Roboto Mono)",
 					"slug": "monospace",
 					"fontFamily": "Consolas,Menlo,Monaco,\"SF Mono\",\"DejaVu Sans Mono\",\"Roboto Mono\",\"Courier New\",Courier,monospace"
@@ -149,62 +135,61 @@
 			],
 			"fontSizes":[
 				{
-					"slug": "extra-small",
-					"size": "1rem",
-					"name": "Extra small"
+					"name": "xSmall",
+					"size": "16px",
+					"slug": "x-small"
 				},
 				{
-					"slug": "small",
-					"size": "1.125rem",
-					"name": "Small"
+					"name": "Small",
+					"size": "20px",
+					"slug": "small"
 				},
 				{
-					"slug": "medium",
-					"size": "1.25rem",
-					"name": "Medium"
+					"name": "Medium",
+					"size": "28px",
+					"slug": "medium"
 				},
 				{
-					"slug": "large",
-					"size": "1.5rem",
-					"name": "Large"
+					"name": "Large",
+					"size": "38px",
+					"slug": "large"
 				},
 				{
-					"slug": "x-large",
-					"size": "2rem",
-					"name": "XL"
+					"name": "xLarge",
+					"size": "50px",
+					"slug": "x-large"
 				},
 				{
-					"slug": "xx-large",
-					"size": "clamp(2.5rem, calc(1rem + 2vw), 2.75rem)",
-					"name": "XXL"
+					"slug": "huge",
+					"size": "80px",
+					"name": "Huge"
 				},
 				{
-					"slug": "xxx-large",
-					"size": "clamp(2.75rem, calc(1rem + 3vw), 3.75rem)",
-					"name": "XXXL"
-				},
-				{
-					"slug": "xxxx-large",
-					"size": "clamp(2.75rem, calc(1rem + 4vw), 4.25rem)",
-					"name": "XXXXL"
-				},
-				{
-					"slug": "xxxxx-large",
-					"size": "clamp(2.75rem, calc(1rem + 6vw), 6rem)",
-					"name": "XXXXXL"
+					"slug": "gigantic",
+					"size": "100px",
+					"name": "Gigantic"
 				}
 			]
 		},
 		"custom": {
-			"h-spacing": "2.375rem",
-			"v-spacing": "1.25rem",
-			"text-shadow": "0 2px 8px rgba(0, 0, 0, 0.9)",
-			"button-shadow": "0 8px 8px 0 rgba(0, 0, 0, 0.2)",
-			"small-button-shadow": "0 1px 1px 0 rgba(0, 0, 0, 0.2)",
-			"button-highlight": "0 0 0 #fff",
-			"button-border-color": "rgba(0, 0, 0, 0.05)",
-			"button-border-radius": "4px",
-			"button-padding": ".3rem 1rem"
+			"fontWeight": {
+				"light": 300,
+				"regular": 400,
+				"medium": 500,
+				"semi-bold": 600,
+				"bold": 700,
+				"extra-bold": 800,
+				"black": 900
+			},
+			"lineHeight": {
+				"body": 1.75,
+				"heading": 1.1,
+				"medium": 1.5,
+				"one": 1
+			},
+			"spacing": {
+				"outer": "30px"
+			}
 		}
 	},
 	"styles": {
@@ -217,7 +202,7 @@
 		},
 		"typography": {
 			"fontSize": "var(--wp--preset--font-size--medium)",
-			"fontFamily": "var(--wp--preset--font-family--system)",
+			"fontFamily": "var(--wp--preset--font-family--contrast)",
 			"lineHeight": "1.75"
 		},
 		"elements": {
