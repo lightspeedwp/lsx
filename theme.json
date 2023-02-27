@@ -487,17 +487,18 @@
 		},
 		"color": {
 			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--foreground)"
+			"text": "var(--wp--preset--color--contract)"
 		},
 		"typography": {
-			"fontSize": "var(--wp--preset--font-size--medium)",
 			"fontFamily": "var(--wp--preset--font-family--primary)",
-			"lineHeight": "1.75"
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"fontWeight": "var(--wp--custom--font-weight--light)",
+			"lineHeight": "var(--wp--custom--line-height--body)"
 		},
 		"elements": {
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--contract)"
 				}
 			}
 		},
@@ -505,7 +506,7 @@
 			"core/button": {
 				"color": {
 					"background": "var(--wp--preset--color--secondary)",
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--base)"
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
@@ -527,7 +528,7 @@
 			},
 			"core/code": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--contract)"
 				}
 			},
 			"core/post-navigation-link": {
