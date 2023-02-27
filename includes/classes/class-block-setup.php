@@ -25,7 +25,10 @@ class Block_Setup {
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'register_block_types' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'register_block_variations' ) );
 		add_action( 'init', array( $this, 'register_block_patterns' ), 9 );
+		add_action( 'init', array( $this, 'register_block_fields' ), 100 );
+
 	}
 
 	/**
@@ -35,6 +38,19 @@ class Block_Setup {
 	 */
 	public function register_block_types() {
 		register_block_type( get_template_directory() . '/blocks/src/post-meta' );
+	}
+
+	/**
+	 * Registers our block variations.
+	 *
+	 * @return void
+	 */
+	public function register_block_variations() {
+		wp_enqueue_script(
+			'lsx-block-variations',
+			get_template_directory_uri() . '/blocks/build/related-posts/index.js',
+			array( 'wp-blocks' )
+		);
 	}
 
 	/**
@@ -99,4 +115,26 @@ class Block_Setup {
 		}
 	}
 
+	/**
+	 * Register the meta fields with REST so we can access them in the blocks.
+	 *
+	 * @return void
+	 */
+	public function register_block_fields() {
+
+		$metafields = [ 'price' ];
+
+		foreach( $metafields as $metafield ){
+			// Pass an empty string to register the meta key across all existing post types.
+			register_post_meta( '', $metafield, array(
+				'show_in_rest' => true,
+				'type' => 'string',
+				'single' => true,
+				'sanitize_callback' => 'sanitize_text_field',
+				'auth_callback' => function() { 
+					return current_user_can( 'edit_posts' );
+				}
+			));
+		} 
+	}
 }
