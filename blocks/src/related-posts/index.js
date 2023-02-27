@@ -21,20 +21,28 @@ wp.blocks.registerBlockVariation( 'core/query', {
     attributes: {
         namespace: metadata.name,
         query: {
-            perPage: 6,
+            perPage: 9,
             pages: 0,
             offset: 0,
             postType: 'post',
-            order: 'desc',
+            order: 'rand',
             orderBy: 'date',
             author: '',
             search: '',
             exclude: [],
             sticky: '',
             inherit: false,
-			related: 1
+			related:1,
+			relatedPosts: true
         },
     },
+	providesContext: {
+		queryId: 'queryId',
+		query: 'query',
+		displayLayout: 'displayLayout',
+		identifier: 'namespace'
+	},
     scope: [ 'inserter' ],
+	allowedControls: [ 'postType' ],
     }
 );

@@ -95,38 +95,48 @@ function lsx_editor_assets() {
 }
 add_action( 'enqueue_block_editor_assets', 'lsx_editor_assets' );
 
-/**
- * A function to replace the query post vars.
- *
- * @param array $query
- * @param WP_Block $block
- * @param int $page
- * @return array
- */
-function lsx_related_posts_query_args( $query, $block, $page ) {
-	if ( ! is_admin() && is_singular( 'post' ) && 'post' === $query['post_type'] && isset( $block->context['query']['related'] ) ) {
-		$group     = array();
-		$terms     = get_the_terms( get_the_ID(), 'category' );
 
-		if ( is_array( $terms ) && ! empty( $terms ) ) {
-			foreach( $terms as $term ) {
-				$group[] = $term->term_id;
-			}
-		}
-		$query['tax_query'] = array(
-			array(
-				'taxonomy' => 'category',
-				'field'    => 'term_id',
-				'terms'     => $group,
-			)
-		);
-		$query['orderby']      = 'rand';
-		$query['post__not_in'] = array( get_the_ID() );
-	}
-	return $query;
+
+add_filter( 'pre_render_block', 'myplugin_pre_render_block', 10, 2 );
+
+function myplugin_pre_render_block( $pre_render, $parsed_block ) {
+    // Determine if this is the custom block variation.
+    if ( 'lsx/lsx-related-posts' === $parsed_block['attrs']['namespace'] ) {
+
+        add_filter(
+            'query_loop_block_query_vars',
+            function( $query, $block ) use ( $parsed_block ) {
+
+                // Add rating meta key/value pair if queried.
+                if ( 'lsx/lsx-related-posts' === $parsed_block['attrs']['namespace'] ) {
+
+					$group     = array();
+					$terms     = get_the_terms( get_the_ID(), 'category' );
+			
+					if ( is_array( $terms ) && ! empty( $terms ) ) {
+						foreach( $terms as $term ) {
+							$group[] = $term->term_id;
+						}
+					}
+					$query['tax_query'] = array(
+						array(
+							'taxonomy' => 'category',
+							'field'    => 'term_id',
+							'terms'     => $group,
+						)
+					);
+					$query['orderby']        = 'rand';
+					$query['post__not_in']   = array( get_the_ID() );
+                }
+                return $query;
+            },
+            10,
+            2
+        );
+    }
+
+    return $pre_render;
 }
-// Register our the content filters.
-add_filter( 'query_loop_block_query_vars', 'lsx_related_posts_query_args', 10, 3 );
 
 
 /**
