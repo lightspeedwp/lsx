@@ -69,10 +69,31 @@ function lsx_register_block_patterns() {
 add_action( 'init', 'lsx_register_block_patterns', 9 );
 
 
+/**
+ * Registers our block types via block.json
+ *
+ * @return void
+ */
 function lsx_blocks_init() {
 	register_block_type( get_template_directory() . '/blocks/src/post-meta' );
+	//register_block_type( get_template_directory() . '/blocks/src/related-posts' );
 }
 add_action( 'init', 'lsx_blocks_init' );
+
+
+/**
+ * Registers our block variations.
+ *
+ * @return void
+ */
+function lsx_editor_assets() {
+	wp_enqueue_script(
+		'lsx-block-variations',
+		get_template_directory_uri() . '/blocks/build/related-posts/index.js',
+		array( 'wp-blocks' )
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'lsx_editor_assets' );
 
 /**
  * A function to replace the query post vars.
