@@ -29,6 +29,8 @@ class Block_Functions {
 
 	/**
 	 * A function to detect variation, and alter the query args.
+	 * 
+	 * Following the https://developer.wordpress.org/news/2022/12/building-a-book-review-grid-with-a-query-loop-block-variation/
 	 *
 	 * @param string|null   $pre_render   The pre-rendered content. Default null.
 	 * @param array         $parsed_block The block being rendered.

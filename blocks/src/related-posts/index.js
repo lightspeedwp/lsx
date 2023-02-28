@@ -8,7 +8,14 @@
  * Internal dependencies
  */
 import metadata from './block.json';
+import { addFilter } from '@wordpress/hooks';
+import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
 
+
+/**
+ * Register our Related Posts variation.
+ */
 wp.blocks.registerBlockVariation( 'core/query', {
     name: metadata.name,
     title: metadata.title,
@@ -32,7 +39,6 @@ wp.blocks.registerBlockVariation( 'core/query', {
             exclude: [],
             sticky: '',
             inherit: false,
-			related:1,
 			relatedPosts: true
         },
     },
@@ -46,3 +52,62 @@ wp.blocks.registerBlockVariation( 'core/query', {
 	allowedControls: [ 'postType' ],
     }
 );
+
+const isRelatedPostsVariation = ( props ) => {
+    const {
+        attributes: { namespace }
+    } = props;
+
+    return namespace && namespace === metadata.name;
+};
+
+const LSXRelatedPostsControls = ( { props: {
+    attributes,
+    setAttributes
+} } ) => {
+    const { query } = attributes;
+
+    return (
+        <PanelBody title="Query">
+            <SelectControl
+                label="Count"
+                value={ query.perPage }
+                options={ [
+                    { value: 1,  label: "1" },
+                    { value: 2,  label: "2" },
+                    { value: 3,  label: "3" },
+                    { value: 4,  label: "4" },
+                    { value: 5,  label: "5" },
+                    { value: 6,  label: "6" },
+                    { value: 7,  label: "7" },
+                    { value: 8,  label: "8" },
+                    { value: 9,  label: "9" }
+                ] }
+                onChange={ ( value ) => {
+                    setAttributes( {
+                        query: {
+                            ...query,
+                            perPage: value
+                        }
+                    } );
+                } }
+            />
+        </PanelBody>
+    );
+};
+
+export const withLSXRelatedPostsControls = ( BlockEdit ) => ( props ) => {
+
+    return isRelatedPostsVariation( props ) ? (
+        <>
+            <BlockEdit {...props} />
+            <InspectorControls>
+                <LSXRelatedPostsControls props={props} />
+            </InspectorControls>
+        </>
+    ) : (
+        <BlockEdit {...props} />
+    );
+};
+
+addFilter( 'editor.BlockEdit', 'core/query', withLSXRelatedPostsControls );
