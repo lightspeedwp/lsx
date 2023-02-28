@@ -24,7 +24,8 @@ class Block_Functions {
 	 * @return void
 	 */
 	public function init() {
-		add_filter( 'pre_render_block', array( $this, 'pre_render_block' ), 10, 2 );
+		add_filter( 'pre_render_block', array( $this, 'pre_render_related_block' ), 10, 2 );
+		//add_filter( 'pre_render_block', array( $this, 'pre_render_featured_block' ), 10, 2 );
 	}
 
 	/**
@@ -36,17 +37,15 @@ class Block_Functions {
 	 * @param array         $parsed_block The block being rendered.
 	 * @param WP_Block|null $parent_block If this is a nested block, a reference to the parent block.
 	 */
-	public function pre_render_block( $pre_render, $parsed_block ) {
+	public function pre_render_related_block( $pre_render, $parsed_block ) {
 		// Determine if this is the custom block variation.
 		if ( isset( $parsed_block['attrs']['namespace'] ) && 'lsx/lsx-related-posts' === $parsed_block['attrs']['namespace'] ) {
-	
 			add_filter(
 				'query_loop_block_query_vars',
 				function( $query, $block ) use ( $parsed_block ) {
 	
 					// Add rating meta key/value pair if queried.
 					if ( 'lsx/lsx-related-posts' === $parsed_block['attrs']['namespace'] ) {
-	
 						$group     = array();
 						$terms     = get_the_terms( get_the_ID(), 'category' );
 				
@@ -64,6 +63,56 @@ class Block_Functions {
 						);
 						$query['orderby']        = 'rand';
 						$query['post__not_in']   = array( get_the_ID() );
+					}
+					return $query;
+				},
+				10,
+				2
+			);
+		}
+	
+		return $pre_render;
+	}
+
+	/**
+	 * A function to detect variation, and alter the query args.
+	 * 
+	 * Following the https://developer.wordpress.org/news/2022/12/building-a-book-review-grid-with-a-query-loop-block-variation/
+	 *
+	 * @param string|null   $pre_render   The pre-rendered content. Default null.
+	 * @param array         $parsed_block The block being rendered.
+	 * @param WP_Block|null $parent_block If this is a nested block, a reference to the parent block.
+	 */
+	public function pre_render_featured_block( $pre_render, $parsed_block ) {
+		// Determine if this is the custom block variation.
+		if ( isset( $parsed_block['attrs']['namespace'] ) && 'lsx/lsx-featured-posts' === $parsed_block['attrs']['namespace'] ) {
+
+			add_filter(
+				'query_loop_block_query_vars',
+				function( $query, $block ) use ( $parsed_block ) {
+	
+					// Add rating meta key/value pair if queried.
+					if ( 'lsx/lsx-featured-posts' === $parsed_block['attrs']['namespace'] ) {	
+						unset( $query['post__not_in'] );
+						unset( $query['offset'] );
+						$query['nopaging'] = false;
+
+						// if its sticky posts, only include those.
+						if ( 'post' === $query['post_type'] ) {
+							$sticky_posts = get_option( 'sticky_posts', array() );
+							if ( ! is_array( $sticky_posts ) ) {
+								$sticky_posts = array( $sticky_posts );
+							}
+							$query['post__in'] = $sticky_posts;
+						} else {
+							//Use the "featured" custom field.
+							$query['meta_query'] = array(
+								array(
+									'key'     => 'featured',
+									'compare' => 'EXISTS',
+								)
+							);
+						}
 					}
 					return $query;
 				},
