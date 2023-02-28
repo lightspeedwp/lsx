@@ -53,7 +53,8 @@
   },
   "scripts": {
     "build-post-meta": "wp-scripts build blocks/src/post-meta/index.js --output-path=blocks/build/post-meta",
-	"build-related-posts": "wp-scripts build blocks/src/related-posts/index.js --output-path=blocks/build/related-posts"
+	"build-related-posts": "wp-scripts build blocks/src/related-posts/index.js --output-path=blocks/build/related-posts",
+	"build-featured-posts": "wp-scripts build blocks/src/featured-posts/index.js --output-path=blocks/build/featured-posts"
   },
   "devDependencies": {
     "@wordpress/scripts": "^25.3.0",
