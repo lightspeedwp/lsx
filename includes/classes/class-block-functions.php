@@ -38,7 +38,7 @@ class Block_Functions {
 	 */
 	public function pre_render_block( $pre_render, $parsed_block ) {
 		// Determine if this is the custom block variation.
-		if ( 'lsx/lsx-related-posts' === $parsed_block['attrs']['namespace'] ) {
+		if ( isset( $parsed_block['attrs']['namespace'] ) && 'lsx/lsx-related-posts' === $parsed_block['attrs']['namespace'] ) {
 	
 			add_filter(
 				'query_loop_block_query_vars',
