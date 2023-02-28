@@ -40,66 +40,49 @@ class Block_Setup {
 	}
 
 	/**
-	 * Registers block patterns and categories.
-	 *
-	 * @since LSX 1.0
-	 *
-	 * @return void
-	 */
-	public function register_block_patterns() {
-		$block_pattern_categories = array(
-			'featured' => array( 'label' => __( 'Featured', 'lsx' ) ),
-			'footer'   => array( 'label' => __( 'Footers', 'lsx' ) ),
-			'header'   => array( 'label' => __( 'Headers', 'lsx' ) ),
-			'query'    => array( 'label' => __( 'Query', 'lsx' ) ),
-			'pages'    => array( 'label' => __( 'Pages', 'lsx' ) ),
-		);
+ * Registers block categories, and type.
+ *
+ * @since 0.9.2
+ */
+function lsx_register_block_pattern_categories() {
 
-		/**
-		 * Filters the theme block pattern categories.
-		 *
-		 * @since LSX 1.0
-		 *
-		 * @param array[] $block_pattern_categories {
-		 *     An associative array of block pattern categories, keyed by category name.
-		 *
-		 *     @type array[] $properties {
-		 *         An array of block category properties.
-		 *
-		 *         @type string $label A human-readable label for the pattern category.
-		 *     }
-		 * }
-		 */
-		$block_pattern_categories = apply_filters( 'lsx_block_pattern_categories', $block_pattern_categories );
-
-		foreach ( $block_pattern_categories as $name => $properties ) {
-			if ( ! \WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( $name ) ) {
-				register_block_pattern_category( $name, $properties );
-			}
-		}
-
-		$block_patterns = array(
-			'general-pricing-table',
-		);
-
-		/**
-		 * Filters the theme block patterns.
-		 *
-		 * @since LSX 1.0
-		 *
-		 * @param array $block_patterns List of block patterns by name.
-		 */
-		$block_patterns = apply_filters( 'lsx_block_patterns', $block_patterns );
-
-		foreach ( $block_patterns as $block_pattern ) {
-			$pattern_file = get_theme_file_path( '/includes/patterns/' . $block_pattern . '.php' );
-
-			register_block_pattern(
-				'lsx/' . $block_pattern,
-				require $pattern_file
-			);
-		}
+	/* Functionality specific to the Block Pattern Explorer plugin. */
+	if ( function_exists( 'register_block_pattern_category_type' ) ) {
+		register_block_pattern_category_type( 'lsx', array( 'label' => __( 'LSX', 'lsx' ) ) );
 	}
+
+	$block_pattern_categories = array(
+		'lsx-footer'  => array(
+			'label'         => __( 'Footer', 'lsx' ),
+			'categoryTypes' => array( 'lsx' ),
+		),
+		'lsx-general' => array(
+			'label'         => __( 'General', 'lsx' ),
+			'categoryTypes' => array( 'lsx' ),
+		),
+		'lsx-featured' => array(
+			'label'         => __( 'Featured', 'lsx' ),
+			'categoryTypes' => array( 'lsx' ),
+		),
+		'lsx-header'  => array(
+			'label'         => __( 'Header', 'lsx' ),
+			'categoryTypes' => array( 'lsx' ),
+		),
+		'lsx-page'    => array(
+			'label'         => __( 'Page', 'lsx' ),
+			'categoryTypes' => array( 'lsx' ),
+		),
+		'lsx-query'   => array(
+			'label'         => __( 'Query', 'lsx' ),
+			'categoryTypes' => array( 'lsx' ),
+		),
+	);
+
+	foreach ( $block_pattern_categories as $name => $properties ) {
+		register_block_pattern_category( $name, $properties );
+	}
+}
+add_action( 'init', 'lsx_register_block_pattern_categories', 9 );
 
 	/**
 	 * Register the meta fields with REST so we can access them in the blocks.
