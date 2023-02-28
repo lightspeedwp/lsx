@@ -16,3 +16,444 @@ Tags: blog, e-commerce, portfolio
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+
+
+/* Defaults
+---------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="submit"],
+textarea:focus,
+.wp-element-button {
+	transition: all 0.2s ease-in-out;
+}
+
+a,
+a:not(.wp-element-button),
+a:focus,
+a:hover {
+	text-decoration-thickness: 1px;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+b,
+strong {
+	font-weight: var(--wp--custom--font-weight--medium);
+}
+
+blockquote {
+	margin: 0;
+}
+
+/* Blocks
+---------------------------------------------------------------------------- */
+
+/* Button
+--------------------------------------------- */
+
+input[type="button"],
+input[type="submit"],
+.wp-block-post-comments input[type=submit],
+.wp-block-search__button {
+	border: 1px solid var(--wp--preset--color--contrast);
+	border-radius: 0;
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	cursor: pointer;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: var(--wp--custom--font-weight--regular);
+	padding: 10px 25px;
+	text-decoration: none;
+	white-space: normal;
+	width: auto;
+}
+
+/* Button - Fill Base
+--------------------------------------------- */
+
+.wp-block-button.is-style-fill-base .wp-element-button {
+	background-color: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Button - Outline
+--------------------------------------------- */
+
+.wp-block-button.is-style-outline .wp-element-button {
+	background-color: transparent;
+	border: 1px solid;
+	border-color: currentColor;
+	color: var(--wp--preset--color--contrast);
+	padding: 9px 24px;
+}
+
+/* Button - Outline Base
+--------------------------------------------- */
+
+.wp-block-button.is-style-outline-base .wp-element-button {
+	background-color: transparent;
+	border: 1px solid;
+	border-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--base);
+}
+
+/* Calendar
+--------------------------------------------- */
+
+.wp-block-calendar table caption,
+.wp-block-calendar table tbody {
+	color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-calendar table th {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-calendar tbody td,
+.wp-block-calendar th {
+	border: 1px solid var(--wp--preset--color--contrast);
+	padding: 10px;
+}
+
+/* Code
+--------------------------------------------- */
+
+.wp-block-code code {
+	overflow-wrap: normal;
+	overflow-x: scroll;
+	tab-size: 4;
+	white-space: pre !important;
+}
+
+*:not(.wp-block-code) > code,
+kbd {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	font-size: var(--wp--preset--font-size--small);
+	padding: 5px 8px;
+	position: relative;
+	top: -1px;
+}
+
+/*
+ * When inline code is selected, the Editor applies contextual styling. Since
+ * our code color is near white, we need to reset to the default text color.
+ */
+.rich-text:focus > code[data-rich-text-format-boundary],
+.rich-text:focus > kbd[data-rich-text-format-boundary] {
+	color: currentColor;
+}
+
+/* Comments
+--------------------------------------------- */
+
+.wp-block-comment-template li {
+	margin-left: 0;
+}
+
+.wp-block-post-comments-form input:not([type=submit]),
+.wp-block-post-comments-form textarea {
+	border-color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-post-comments-form input[type=submit] {
+	border: 1px solid var(--wp--preset--color--contrast);
+}
+
+.wp-block-post-comments-form .form-submit {
+	margin-bottom: 0;
+}
+
+/* Group
+--------------------------------------------- */
+
+.wp-block-group.is-style-full-height {
+	align-items: center;
+	display: grid;
+	min-height: 100vh;
+}
+
+.wp-block-group.is-style-shadow {
+	box-shadow: 0 0 50px rgb(0 0 0 / 10%);
+}
+
+.wp-block-group.is-style-shadow-solid {
+	box-shadow: 5px 5px var(--wp--preset--color--contrast);
+}
+
+/* Heading
+--------------------------------------------- */
+
+.wp-block-post-content .wp-block-heading + * {
+	margin-top: 20px;
+}
+
+/* Image
+--------------------------------------------- */
+
+.wp-block-image.aligncenter {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.wp-block-image.alignleft {
+	margin-right: 30px !important;
+}
+
+.wp-block-image.alignright {
+	margin-left: 30px !important;
+}
+
+/* List
+--------------------------------------------- */
+
+ol li:where(:not([class*='block'])),
+ul li:where(:not([class*='block'])),
+.wp-block-list li {
+	margin-left: 30px;
+}
+
+.is-style-no-disc li {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+/* Navigation
+--------------------------------------------- */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-bottom: 30px;
+	padding-top: 30px
+}
+
+.wp-block-navigation__responsive-container-close,
+.wp-block-navigation__responsive-container-open {
+	border: 1px solid currentColor;
+	padding: 2px;
+}
+
+.has-background .wp-block-navigation__responsive-container-open:focus,
+.has-background .wp-block-navigation__responsive-container-open:hover {
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-navigation:not([style*=text-decoration]) a,
+.wp-block-navigation:not([style*=text-decoration]) a:focus,
+.wp-block-navigation:not([style*=text-decoration]) a:hover {
+	text-decoration: none;
+}
+
+/* Navigation Submenu
+--------------------------------------------- */
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+	background-color: var(--wp--preset--color--contrast);
+	border: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	padding: 10px;
+}
+
+.wp-block-navigation :where(.wp-block-navigation__submenu-container) a {
+	padding: 2px 10px;
+}
+
+/* Paragraph
+--------------------------------------------- */
+
+p.has-background {
+	padding: 20px 30px;
+}
+
+/* Preformatted
+--------------------------------------------- */
+
+.wp-block-preformatted {
+	overflow-wrap: normal;
+	overflow-x: scroll;
+	white-space: pre;
+}
+
+/* Pullquote
+--------------------------------------------- */
+
+.wp-block-pullquote p:last-of-type {
+	margin-bottom: 0;
+}
+
+/* Quote
+--------------------------------------------- */
+
+.wp-block-quote p:last-of-type {
+	margin-bottom: 0;
+}
+
+/* Separator
+--------------------------------------------- */
+
+.wp-block-separator,
+.wp-block-separator.has-css-opacity {
+	opacity: 1;
+}
+
+.wp-block-separator.is-style-dots:before {
+	font-family: inherit;
+	font-size: var(--wp--preset--font-size--large);
+	letter-spacing: 10px;
+	padding-left: 10px;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	width: 100px;
+}
+
+.wp-block-separator:not(.is-style-dots),
+.wp-block-separator.has-background:not(.is-style-dots) {
+	border-bottom: 1px solid currentColor;
+	border-top: none;
+	height: 1px;
+}
+
+/* Spacer
+--------------------------------------------- */
+
+.wp-block-spacer + * {
+	margin-top: 0 !important;
+}
+
+/* Table
+--------------------------------------------- */
+
+.wp-block-table.is-style-stripes {
+	border-bottom: none;
+}
+
+.wp-block-table table {
+	border-collapse: collapse;
+}
+
+.wp-block-table thead {
+	border-bottom: 3px solid var(--wp--preset--color--contrast);
+}
+
+.wp-block-table tfoot {
+	border-top: 3px solid var(--wp--preset--color--contrast);
+}
+
+.wp-block-table td,
+.wp-block-table th,
+.wp-block-table tr,
+.wp-block-table.is-style-stripes td,
+.wp-block-table.is-style-stripes th,
+.wp-block-table.is-style-stripes tr {
+	border: 1px solid var(--wp--preset--color--contrast);
+}
+
+.wp-block-table th {
+	font-weight: var(--wp--custom--font-weight--regular);
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	padding: 5px;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #eee;
+}
+
+/* Custom
+---------------------------------------------------------------------------- */
+
+/* Forms
+--------------------------------------------- */
+
+input,
+select,
+textarea,
+.wp-block-search__input {
+	background-color: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--contrast);
+	border-radius: 0;
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--primary);
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: var(--wp--custom--font-weight--light);
+	line-height: var(--wp--custom--line-height--body);
+	padding: 10px 20px;
+	width: 100%;
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+input[type="button"],
+input[type="email"],
+input[type="search"],
+input[type="submit"],
+input[type="text"],
+textarea {
+	-webkit-appearance: none;
+}
+
+::placeholder {
+	color: var(--wp--preset--color--contrast);
+	font-size: var(--wp--preset--font-size--small);
+	opacity: 0.6;
+}
+
+.nf-field-container {
+	margin-bottom: 10px;
+}
+
+/* Media Queries
+---------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 800px) {
+
+	/* Navigation Link
+	--------------------------------------------- */
+
+	.wp-block-navigation-item.is-style-outline a {
+		border: 1px solid currentColor;
+		padding: 8px 15px;
+	}
+
+	/* Pullquote
+	--------------------------------------------- */
+
+	.wp-block-pullquote.alignleft,
+	.wp-block-pullquote.alignright {
+		max-width: 300px;
+	}
+
+	.wp-block-pullquote.alignleft {
+		float: left;
+		margin-right: 30px !important;
+	}
+
+	.wp-block-pullquote.alignright {
+		float: right;
+		margin-left: 30px !important;
+	}
+
+}
