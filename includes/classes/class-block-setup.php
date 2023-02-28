@@ -80,6 +80,7 @@ class Block_Setup {
 
 		$block_patterns = array(
 			'general-pricing-table',
+			'general-cta-button',
 		);
 
 		/**
