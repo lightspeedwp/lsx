@@ -52,7 +52,8 @@
     "tough-cookie": "^4.0.0"
   },
   "scripts": {
-    "build-post-meta": "wp-scripts build blocks/src/post-meta/index.js --output-path=blocks/build/post-meta"
+    "build-post-meta": "wp-scripts build blocks/src/post-meta/index.js --output-path=blocks/build/post-meta",
+	"build-related-posts": "wp-scripts build blocks/src/related-posts/index.js --output-path=blocks/build/related-posts"
   },
   "devDependencies": {
     "@wordpress/scripts": "^25.3.0",
