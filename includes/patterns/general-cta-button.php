@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Call-to-action with text, button.
- * Slug: frost/general-cta-button
- * Categories: frost-general
+ * Slug: lsx/featured-cta-button
+ * Categories: lsx-featured
  * Viewport Width: 1280
  */
 ?>
