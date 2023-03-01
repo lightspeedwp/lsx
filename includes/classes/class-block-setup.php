@@ -80,7 +80,7 @@ class Block_Setup {
 		}
 
 		$block_patterns = array(
-
+			'featured/general-hero-one-column',
 		);
 
 		/**
