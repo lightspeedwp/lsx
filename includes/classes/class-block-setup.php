@@ -80,6 +80,7 @@ class Block_Setup {
 		}
 
 		$block_patterns = array(
+			'featured/cover-2-col',
 			'featured/cover-banner-image',
 			'featured/general-hero-one-column',
 			'featured/general-hero-two-columns',
@@ -140,10 +141,10 @@ class Block_Setup {
 			get_template_directory_uri() . '/blocks/build/related-posts/index.js',
 			array( 'wp-blocks' )
 		);
-		wp_enqueue_script(
+		/*wp_enqueue_script(
 			'lsx-featured-post-block',
-			get_template_directory_uri() . '/blocks/build/featured-posts/index.js',
+			get_template_directory_uri() . '/blocks/build/related-posts/index.js',
 			array( 'wp-blocks' )
-		);
+		);*/
 	}
 }
