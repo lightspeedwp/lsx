@@ -53,6 +53,7 @@ class Block_Setup {
 			'header'   => array( 'label' => __( 'Headers', 'lsx' ) ),
 			'query'    => array( 'label' => __( 'Query', 'lsx' ) ),
 			'pages'    => array( 'label' => __( 'Pages', 'lsx' ) ),
+			'testimonials'   => array( 'label' => __( 'Testimonials', 'lsx' ) ),
 		);
 
 		/**
@@ -79,7 +80,9 @@ class Block_Setup {
 		}
 
 		$block_patterns = array(
-			'general-pricing-table',
+			'featured/general-hero-one-column',
+			'testimonials/testimonial-1-column',
+			'testimonials/testimonial-2-column',
 		);
 
 		/**
