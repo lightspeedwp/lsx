@@ -80,9 +80,7 @@ class Block_Setup {
 		}
 
 		$block_patterns = array(
-			'featured/general-hero-one-column',
-			'testimonials/testimonial-1-column',
-			'testimonials/testimonial-2-column',
+
 		);
 
 		/**
