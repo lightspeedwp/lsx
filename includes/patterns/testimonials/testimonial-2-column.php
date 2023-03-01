@@ -1,12 +1,11 @@
 <?php
 /**
- * Title: Testimonial 2-Column
- * Slug: frost/testimonial-2-column
- * Categories: lsx-patterns
- * Viewport Width: 1280
+ * Testimonial 2 Col
  */
-?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|x-small"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+return array(
+	'title'	  => __( 'Testimonial 2 Col', 'lsx' ),
+	'categories' => array( 'testimonials' ),
+	'content'	=> '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|x-small"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:heading {"textAlign":"center","align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"700"},"spacing":{"padding":{"bottom":"0","top":"var:preset|spacing|x-small"}}},"className":"wp-block-heading","fontSize":"max-48","anchor":"h-client-testimonial-2"} -->
 <h2 class="wp-block-heading alignwide has-text-align-center has-max-48-font-size" id="h-client-testimonial-2" style="padding-top:var(--wp--preset--spacing--x-small);padding-bottom:0;font-style:normal;font-weight:700">Client Testimonial</h2>
 <!-- /wp:heading -->
@@ -52,4 +51,5 @@
 <!-- /wp:quote --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group -->
+<!-- /wp:group -->',
+);
