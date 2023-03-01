@@ -39,17 +39,11 @@ wp.blocks.registerBlockVariation( 'core/query', {
             exclude: [],
             sticky: '',
             inherit: false,
-			relatedPosts: true
+			featuredPosts: true
         },
     },
-	providesContext: {
-		queryId: 'queryId',
-		query: 'query',
-		displayLayout: 'displayLayout',
-		identifier: 'namespace'
-	},
     scope: [ 'inserter' ],
-	allowedControls: [ 'postType' ],
+	allowedControls: [ 'postType', 'order' ],
     }
 );
 
