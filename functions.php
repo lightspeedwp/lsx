@@ -15,6 +15,8 @@ define( 'LSX_VERSION', '2.9.5' );
 
 require get_template_directory() . '/includes/config.php';
 require_once get_template_directory() . '/includes/classes/class-core.php';
+require_once get_template_directory() . '/includes/classes/block-styles.php';
+
 
 /**
  * Contains the LSX theme object
