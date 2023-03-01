@@ -17,6 +17,12 @@ require get_template_directory() . '/includes/config.php';
 require_once get_template_directory() . '/includes/classes/class-core.php';
 require_once get_template_directory() . '/includes/classes/block-styles.php';
 
+function lsx_styles() {
+
+	wp_enqueue_style( 'lsx-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+
+add_action( 'wp_enqueue_scripts', 'lsx_styles' );
 
 /**
  * Contains the LSX theme object
