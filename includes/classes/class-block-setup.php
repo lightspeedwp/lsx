@@ -91,6 +91,9 @@ class Block_Setup {
 			'footer/footer-mega',
 			'footer/footer-three-columns-contrast-background',
 			'footer/footer-three-columns',
+			'footer/footer-mega-contrast-background',
+			'footer/footer-stacked',
+			'footer/footer-stacked-contrast-background',
 		);
 
 		/**
