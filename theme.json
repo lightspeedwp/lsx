@@ -647,23 +647,20 @@
 					"fontWeight": "700"
 				},
 				":active": {
-					"border": {
-						"color": "var(--wp--preset--color--button-border-active)"
-					},
 					"color": {
 						"background": "var(--wp--preset--color--secondary)",
-						"text": "var(--wp--preset--color--primary)"
+						"text": "var(--wp--preset--color--base)"
 					}
 				},
 				":focus": {
 					"color": {
-						"background": "var(--wp--preset--color--foreground)",
-						"text": "var(--wp--preset--color--background)"
+						"background": "var(--wp--preset--color--secondary)",
+						"text": "var(--wp--preset--color--base)"
 					}
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--contract)",
+						"background": "var(--wp--preset--color--secondary)",
 						"text": "var(--wp--preset--color--base)"
 					}
 				}
