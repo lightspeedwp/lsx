@@ -86,6 +86,11 @@ class Block_Setup {
 			'featured/general-hero-two-columns',
 			'testimonials/testimonial-1-column',
 			'testimonials/testimonial-2-column',
+			'footer/footer-default',
+			'footer/footer-default-contrast-background',
+			'footer/footer-mega',
+			'footer/footer-three-columns-contrast-background',
+			'footer/footer-three-columns',
 		);
 
 		/**
