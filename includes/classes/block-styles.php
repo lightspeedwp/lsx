@@ -29,8 +29,6 @@ if ( function_exists( 'register_block_style' ) ) {
 				'core/quote'           => array(
 					'underline-primary-secondary'  => __( 'Underline Primary-Secondary', 'lsx' ),
 					'underline-secondary-tertiary' => __( 'Underline Secondary-Tertiary', 'lsx' ),
-					'underline-tertiary-primary'   => __( 'Underline Tertiary-Primary', 'lsx' ),
-					'underline'                    => __( 'Underline', 'lsx' ),
 				),
 			);
 
