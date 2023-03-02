@@ -24,6 +24,16 @@ if ( function_exists( 'register_block_style' ) ) {
 					'shadow'       => __( 'Shadow', 'lsx' ),
 				),
 			);
+
+			$block_styles = array(
+				'core/quote'           => array(
+					'underline-primary-secondary'  => __( 'Underline Primary-Secondary', 'lsx' ),
+					'underline-secondary-tertiary' => __( 'Underline Secondary-Tertiary', 'lsx' ),
+					'underline-tertiary-primary'   => __( 'Underline Tertiary-Primary', 'lsx' ),
+					'underline'                    => __( 'Underline', 'lsx' ),
+				),
+			);
+
 		
 			foreach ( $block_styles as $block => $styles ) {
 				foreach ( $styles as $style_name => $style_label ) {
