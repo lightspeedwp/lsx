@@ -97,6 +97,12 @@ class Block_Setup {
 			'footer/footer-stacked-contrast-background',
 		);
 
+		$page_patterns = array(
+			'post-content/layout-1',
+			'post-content/layout-2',
+		);
+		$block_patterns = array_merge( $block_patterns, $page_patterns );
+		
 		/**
 		 * Filters the theme block patterns.
 		 *
