@@ -150,6 +150,11 @@ class Block_Setup {
 			get_template_directory_uri() . '/blocks/build/related-posts/index.js',
 			array( 'wp-blocks' )
 		);
+		wp_enqueue_script(
+			'lsx-columns-variation',
+			get_template_directory_uri() . '/blocks/build/columns/index.js',
+			array( 'wp-blocks' )
+		);
 		/*wp_enqueue_script(
 			'lsx-featured-post-block',
 			get_template_directory_uri() . '/blocks/build/related-posts/index.js',
