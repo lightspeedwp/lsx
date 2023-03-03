@@ -61,8 +61,9 @@ class Block_Functions {
 								'terms'     => $group,
 							)
 						);
-						$query['orderby']        = 'rand';
-						$query['post__not_in']   = array( get_the_ID() );
+						$query['orderby']             = 'rand';
+						$query['post__not_in']        = array( get_the_ID() );
+						$query['ignore_sticky_posts'] = 1;
 					}
 					return $query;
 				},
@@ -103,6 +104,7 @@ class Block_Functions {
 								$sticky_posts = array( $sticky_posts );
 							}
 							$query['post__in'] = $sticky_posts;
+							$query['ignore_sticky_posts'] = 1;
 						} else {
 							//Use the "featured" custom field.
 							$query['meta_query'] = array(
@@ -112,7 +114,6 @@ class Block_Functions {
 								)
 							);
 						}
-						$query['posts_per_page'] = 2;
 					}
 					return $query;
 				},
