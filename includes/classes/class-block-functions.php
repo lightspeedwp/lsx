@@ -25,7 +25,7 @@ class Block_Functions {
 	 */
 	public function init() {
 		add_filter( 'pre_render_block', array( $this, 'pre_render_related_block' ), 10, 2 );
-		//add_filter( 'pre_render_block', array( $this, 'pre_render_featured_block' ), 10, 2 );
+		add_filter( 'pre_render_block', array( $this, 'pre_render_featured_block' ), 10, 2 );
 	}
 
 	/**
