@@ -25,7 +25,7 @@ class Block_Functions {
 	 */
 	public function init() {
 		add_filter( 'pre_render_block', array( $this, 'pre_render_related_block' ), 10, 2 );
-		//add_filter( 'pre_render_block', array( $this, 'pre_render_featured_block' ), 10, 2 );
+		add_filter( 'pre_render_block', array( $this, 'pre_render_featured_block' ), 10, 2 );
 	}
 
 	/**
@@ -86,7 +86,6 @@ class Block_Functions {
 	public function pre_render_featured_block( $pre_render, $parsed_block ) {
 		// Determine if this is the custom block variation.
 		if ( isset( $parsed_block['attrs']['namespace'] ) && 'lsx/lsx-featured-posts' === $parsed_block['attrs']['namespace'] ) {
-
 			add_filter(
 				'query_loop_block_query_vars',
 				function( $query, $block ) use ( $parsed_block ) {
@@ -96,7 +95,7 @@ class Block_Functions {
 						unset( $query['post__not_in'] );
 						unset( $query['offset'] );
 						$query['nopaging'] = false;
-
+						
 						// if its sticky posts, only include those.
 						if ( 'post' === $query['post_type'] ) {
 							$sticky_posts = get_option( 'sticky_posts', array() );
@@ -113,6 +112,7 @@ class Block_Functions {
 								)
 							);
 						}
+						$query['posts_per_page'] = 2;
 					}
 					return $query;
 				},
