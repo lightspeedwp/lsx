@@ -53,6 +53,7 @@ class Block_Setup {
 			'header'   => array( 'label' => __( 'Headers', 'lsx' ) ),
 			'query'    => array( 'label' => __( 'Query', 'lsx' ) ),
 			'pages'    => array( 'label' => __( 'Pages', 'lsx' ) ),
+			'team'   => array( 'label' => __( 'Team', 'lsx' ) ),
 			'testimonials'   => array( 'label' => __( 'Testimonials', 'lsx' ) ),
 		);
 
@@ -97,6 +98,10 @@ class Block_Setup {
 			'footer/footer-stacked-contrast-background',
 			'header/header-default',
 			'header/header-default-contrast-background',
+			'team/general-team-two-columns',
+			'team/general-team-two-columns-contrast-background',
+			'team/general-team-four-columns',
+			'team/general-team-four-columns-contrast-background',
 		);
 
 		$page_patterns = array(
