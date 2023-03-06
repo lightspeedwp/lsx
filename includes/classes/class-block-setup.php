@@ -99,7 +99,6 @@ class Block_Setup {
 			'header/header-default',
 			'header/header-default-contrast-background',
 			'team/general-team-two-columns',
-			'team/general-team-two-columns-contrast-background',
 			'team/general-team-four-columns',
 			'team/general-team-four-columns-contrast-background',
 		);
