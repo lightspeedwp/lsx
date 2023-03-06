@@ -15,10 +15,10 @@ return array(
 	<!-- /wp:paragraph -->
 	<!-- wp:buttons -->
 	<div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"radius":0}},"className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link no-border-radius wp-element-button">' . esc_html__( 'Get Started', 'lsx' ); . '</a></div>
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link no-border-radius wp-element-button">' . esc_html__( 'Get Started', 'lsx' ) . '</a></div>
 	<!-- /wp:button -->
 	<!-- wp:button {"style":{"border":{"radius":0}},"className":"is-style-outline"} -->
-	<div class="wp-block-button is-style-outline"><a class="wp-block-button__link no-border-radius wp-element-button">' . esc_html__( 'Learn More', 'lsx' ); . '</a></div>
+	<div class="wp-block-button is-style-outline"><a class="wp-block-button__link no-border-radius wp-element-button">' . esc_html__( 'Learn More', 'lsx' ) . '</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div><figure class="wp-block-media-text__media"><img src="'. esc_url( get_theme_file_uri() ) . '/assets/images/lsx-placeholder-contrast-1200x1200.jpg' .'" alt="Sample Image" class="wp-image-3485 size-full"/></figure></div>
 	<!-- /wp:media-text --></div>
