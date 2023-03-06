@@ -3,7 +3,7 @@
  * Footer with text, links.
  */
 return array(
-	'title'	  => __( 'Hero 3 Cloumn ', 'lsx' ),
+	'title'	  => __( 'Hero 3 Colum ', 'lsx' ),
 	'categories' => array( 'featured' ),
 	'content'	=> '
 <!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0px"},"padding":{"top":"var:preset|spacing|x-large","right":"30px","bottom":"var:preset|spacing|x-large","left":"30px"}}},"layout":{"inherit":true,"type":"constrained"}} -->
@@ -21,7 +21,7 @@ return array(
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:image {"id":676,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="' .   esc_url( get_theme_file_uri() ) . '/assets/images/sample-black_1200x1200.jpg'. '"  alt="' .   esc_attr__( 'Sample Image', 'lsx' ). '" class="wp-image-676"/></figure>
+<figure class="wp-block-image size-full"><img src="' .   esc_url( get_theme_file_uri() ) . '/assets/images/lsx-placeholder-contrast-1200x1200.jpg'. '"  alt="' .   esc_attr__( 'Sample Image', 'lsx' ). '" class="wp-image-676"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"textAlign":"center","level":3} -->
 <h3 class="has-text-align-center" id="sample-heading-1">' .   esc_html__( 'Sample Heading', 'lsx' ). '</h3>
@@ -41,7 +41,7 @@ return array(
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:image {"id":676,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="' .   esc_url( get_theme_file_uri() ) . '/assets/images/sample-black_1200x1200.jpg'. '"  alt="' .   esc_attr__( 'Sample Image', 'lsx' ). '" class="wp-image-676"/></figure>
+<figure class="wp-block-image size-full"><img src="' .   esc_url( get_theme_file_uri() ) . '/assets/images/lsx-placeholder-contrast-1200x1200.jpg'. '"  alt="' .   esc_attr__( 'Sample Image', 'lsx' ). '" class="wp-image-676"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"textAlign":"center","level":3} -->
 <h3 class="has-text-align-center" id="sample-heading-2">' .   esc_html__( 'Sample Heading', 'lsx' ). '</h3>
@@ -61,7 +61,7 @@ return array(
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:image {"id":676,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="' .   esc_url( get_theme_file_uri() ) . '/assets/images/sample-black_1200x1200.jpg'. '"  alt="' .   esc_attr__( 'Sample Image', 'lsx' ). '" class="wp-image-676"/></figure>
+<figure class="wp-block-image size-full"><img src="' .   esc_url( get_theme_file_uri() ) . '/assets/images/lsx-placeholder-contrast-1200x1200.jpg'. '"  alt="' .   esc_attr__( 'Sample Image', 'lsx' ). '" class="wp-image-676"/></figure>
 <!-- /wp:image -->
 <!-- wp:heading {"textAlign":"center","level":3} -->
 <h3 class="has-text-align-center" id="sample-heading-3">' .   esc_html__( 'Sample Heading', 'lsx' ). '</h3>

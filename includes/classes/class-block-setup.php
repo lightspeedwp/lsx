@@ -95,6 +95,8 @@ class Block_Setup {
 			'footer/footer-mega-contrast-background',
 			'footer/footer-stacked',
 			'footer/footer-stacked-contrast-background',
+			'header/header-default',
+			'header/header-default-contrast-background',
 		);
 
 		$page_patterns = array(
