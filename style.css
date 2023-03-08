@@ -435,32 +435,20 @@ p.has-background {
     font-style: italic;
 }
 
-ul.schema-how-to-steps,
-ol.schema-how-to-steps {
-    list-style-type: none;
-    counter-reset: rowNumber;
-    margin-left: 0;
-}
-
 .schema-how-to-step {
     position: relative;
     padding-left: 48px;
 }
 
-.schema-how-to-step:not(:empty):before {
-	display: inline-block;
-	position: absolute;
-	width: 30px;
-	left: 0;
-	content: count;
-	counter-increment: rowNumber;
-	font-size: 14px;
-	color: var(--wp--preset--color--base);
-	text-align: center;
-	line-height: 1;
-	padding: 8px;
-	background: var(--wp--preset--color--secondary);
-	border-radius: 100%;
+.schema-how-to ol>li {margin-left:0; padding-left:0; counter-increment:item; list-style:none inside;margin-bottom:10px}
+.schema-how-to ol>li:before {
+content:"(" counter(item) ")";
+padding:3px 5px;
+margin-right:0.5em;
+background:var(--wp--preset--color--secondary);
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px; 
 }
 
 /* Forms
