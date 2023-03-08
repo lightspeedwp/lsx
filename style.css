@@ -442,7 +442,7 @@ p.has-background {
 
 .schema-how-to ol>li {margin-left:0; padding-left:0; counter-increment:item; list-style:none inside;margin-bottom:10px}
 .schema-how-to ol>li:before {
-content:" counter(item) ";
+content:counter(item);
 padding:3px 5px;
 margin-right:0.5em;
 font-weight: bold;
