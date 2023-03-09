@@ -102,6 +102,8 @@ class Block_Setup {
 			'team/general-team-two-columns-contrast-background',
 			'team/general-team-four-columns',
 			'team/general-team-four-columns-contrast-background',
+			'pages/page-contact',
+			'pages/page-links',
 		);
 
 		$page_patterns = array(
