@@ -429,6 +429,12 @@ p.has-background {
 ---------------------------------------------------------------------------- */
 
 .post-meta p{padding-bottom: 0px;}
+.taxonomy-post_tag.wp-block-post-terms{padding-bottom: 15px;}
+.projecttypes a:not(:first-child){display:none;}
+.post-type-archive-project .projecttypes, .tax-project-group .projecttypes, .tax-project-tag .projecttypes, .tax-project-type .projecttypes, .page .projecttypes, .single .projecttypes{ background: var(--wp--preset--color--secondary);position:absolute; right:-10px; width:auto;top:70px!important;z-index:99;padding:4px 10px;border-radius: 1px;border:1px solid #fff;line-height: 22px;}
+body.blog .projecttypes, body.category .projecttypes{ background: var(--wp--preset--color--secondary);position:absolute; right:-10px; width:auto;top:15px!important;z-index:99;padding:4px 10px;border-radius: 1px;border:1px solid #fff;line-height: 22px;}
+.projecttypes a{color:#fff!important;font-size:14px; font-weight:bold;text-decoration: none;}
+.projecttypes .wp-block-post-terms__separator{display:none;}
 
 /* Yoast How-to
 ---------------------------------------------------------------------------- */
