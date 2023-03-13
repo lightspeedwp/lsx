@@ -24,10 +24,7 @@ class Setup {
 	 * @return void
 	 */
 	public function init() {
-		//add_action( 'admin_init', array( $this, 'remove_customizer_menu' ), 10 );
-		//add_filter( 'map_meta_cap', array( $this, 'remove_customize_capability' ), 10, 4 );
-
-		//add_filter( 'user_has_cap', array( $this, 'remove_customize_capability' ), 200, 4 );
+		add_action( 'admin_init', array( $this, 'remove_customizer_menu' ), 10 );
 	}
 
 	/**
@@ -42,23 +39,11 @@ class Setup {
             '_wp_customize_loader_settings',
             11
         );
-		remove_submenu_page( 'themes.php', 'customize' );
-	}
 
-	/**
-	 * Removes the customizer capability
-	 *
-	 * @param array $caps
-	 * @param string $cap
-	 * @param array $args
-	 * @param object $wp_user
-	 * @return void
-	 */
-    public function remove_customize_capability( $all_caps = [],$caps = '',$args = [], $wp_user ) {
-        //print_r('<pre>');
-		//print_r($all_caps);
-		//print_r('</pre>');
-		//die();
-        return $all_caps;
-    }
+		$customize_url = 'customize.php';
+		if ( isset( $_SERVER['REQUEST_URI'] ) ) {
+			$customize_url .= '?return=' . urlencode( $_SERVER['REQUEST_URI'] );
+		}
+		remove_submenu_page( 'themes.php', $customize_url );
+	}
 }
