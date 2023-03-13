@@ -515,19 +515,15 @@ textarea {
 /* Media Queries
 ---------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 800px) {
+@media (max-width:960px) {
 
 	/* Navigation Link
 	--------------------------------------------- */
 
-	.wp-block-navigation-item.is-style-outline a {
-		border: 1px solid #fff;
-		padding: 8px 15px;
-	}
-	
+	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{padding-left: 15px;}
+
 	.wp-block-navigation__responsive-container-close {
 		right: 20px;
 		top: -20px;}
-
 
 }
