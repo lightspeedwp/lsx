@@ -76,6 +76,5 @@ class Frontend {
 		if ( ! is_admin() && is_search() && is_main_query() ) {
 			$query->set( 'post_type', 'post' );
 		}
-		return $query;
 	}
 }
