@@ -73,7 +73,7 @@ class Frontend {
 	 * @return object
 	 */
 	public function search_args( $query ) {
-		if ( is_search() ) {
+		if ( ! is_admin() && is_search() && is_main_query() ) {
 			$query->set( 'post_type', 'post' );
 		}
 		return $query;
