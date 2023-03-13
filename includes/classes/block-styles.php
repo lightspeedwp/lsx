@@ -26,6 +26,18 @@ if ( function_exists( 'register_block_style' ) ) {
 			);
 
 			$block_styles = array(
+				'core/image'           => array(
+					'shadow'       => __( 'Shadow', 'lsx' ),
+				),
+			);
+
+			$block_styles = array(
+				'core/quote'           => array(
+					'shadow'       => __( 'Shadow', 'lsx' ),
+				),
+			);
+
+			$block_styles = array(
 				'core/quote'           => array(
 					'underline-primary-secondary'  => __( 'Underline Primary-Secondary', 'lsx' ),
 					'underline-secondary-tertiary' => __( 'Underline Secondary-Tertiary', 'lsx' ),
