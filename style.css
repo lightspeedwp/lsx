@@ -524,6 +524,7 @@ textarea {
 		border: 1px solid #fff;
 		padding: 8px 15px;
 	}
+	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{padding-left: 15px;}
 
 	.wp-block-navigation .has-child:hover>.wp-block-navigation__submenu-container,
 	.wp-block-navigation .has-child .wp-block-navigation-submenu__toggle[aria-expanded=true]+.wp-block-navigation__submenu-container {
@@ -546,6 +547,11 @@ textarea {
 	.wp-block-navigation .has-child :where(.wp-block-navigation__submenu-container) .wp-block-navigation__submenu-icon {
 		margin-right: .7em
 	}
+
+	.wp-block-navigation__responsive-container-close {
+		right: 20px;
+		top: -20px;}
+	
 	/* Pullquote
 	--------------------------------------------- */
 
