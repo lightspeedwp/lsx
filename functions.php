@@ -18,7 +18,6 @@ require_once get_template_directory() . '/includes/classes/class-core.php';
 require_once get_template_directory() . '/includes/classes/block-styles.php';
 
 function lsx_styles() {
-
 	wp_enqueue_style( 'lsx-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 
@@ -40,7 +39,7 @@ function lsx() {
 	global $lsx;
 	if ( null === $lsx ) {
 		$lsx = new Core();
-		$lsx->load_classes();
+		$lsx->init();
 	}
 	return $lsx;
 }

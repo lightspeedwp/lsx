@@ -36,20 +36,42 @@ class Core {
 	}
 
 	/**
+	 * Loads the actions we need.
+	 *
+	 * @return void
+	 */
+	public function init() {
+		//Load our files and includes
+		$this->load_classes();
+
+		//Run our actions.
+		add_action( 'init', array( $this, 'remove_customizer_menu' ), 10 );
+		$this->block_setup->init();
+		$this->block_functions->init();
+	}
+
+	/**
 	 * Loads the classes
 	 */
 	public function load_classes() {
 		require get_template_directory() . '/includes/classes/class-block-setup.php';
 		$this->block_setup = new Block_Setup();
-		$this->block_setup->init();
-
+		
 		require get_template_directory() . '/includes/classes/class-block-functions.php';
 		$this->block_functions = new Block_Functions();
-		$this->block_functions->init();
 
 		/*require get_template_directory() . '/includes/classes/class-lsx-schema-utils.php';
 		require get_template_directory() . '/includes/classes/class-lsx-schema-graph-piece.php';
 		require get_template_directory() . '/includes/classes/class-lsx-optimisation.php';
 		require get_template_directory() . '/includes/classes/class-lsx-rest-helper.php';*/
+	}
+
+	/**
+	 * Removed the Customzer option from the Appearance Menu 
+	 *
+	 * @return void
+	 */
+	public function remove_customizer_menu() {
+		remove_submenu_page( 'themes.php', 'customize.php' );
 	}
 }
