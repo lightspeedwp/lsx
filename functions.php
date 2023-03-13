@@ -11,24 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LSX_VERSION', '2.9.5' );
+define( 'LSX_VERSION', '4.0.0' );
 
-require get_template_directory() . '/includes/config.php';
 require_once get_template_directory() . '/includes/classes/class-core.php';
-require_once get_template_directory() . '/includes/classes/block-styles.php';
-
-function lsx_styles() {
-	wp_enqueue_style( 'lsx-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-}
-
-add_action( 'wp_enqueue_scripts', 'lsx_styles' );
-
-// Load Asset Files
-function lsx_yoast_faq_asset_files() {
-	wp_enqueue_style( 'LSXFAQ', get_stylesheet_directory_uri() . '/assets/css/faq/style.min.css', array() );
-	wp_enqueue_script( 'LSXFAQ-js', get_stylesheet_directory_uri()  . '/assets/js/LSXFAQ-JS.min.js', array( "jquery" ), "1.0", true );
-  }
-  add_action( 'wp_enqueue_scripts', 'lsx_yoast_faq_asset_files' );
 
 /**
  * Contains the LSX theme object
