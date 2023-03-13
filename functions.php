@@ -11,10 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LSX_VERSION', '2.9.5' );
+define( 'LSX_VERSION', '4.0.0' );
 
 require_once get_template_directory() . '/includes/classes/class-core.php';
-require_once get_template_directory() . '/includes/classes/block-styles.php';
 
 /**
  * Contains the LSX theme object
