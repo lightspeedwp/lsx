@@ -24,7 +24,7 @@ class Block_Styles {
 	 * @return void
 	 */
 	public function init() {
-		add_action( 'init', array( $this, 'lsx_register_block_styles' ), 10 );
+		add_action( 'init', array( $this, 'register_block_styles' ), 10 );
 	}
 
 	/**
