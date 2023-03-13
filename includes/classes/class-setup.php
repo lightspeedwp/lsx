@@ -56,7 +56,6 @@ class Setup {
 	 * @return void
 	 */
 	public function remove_customizer_adminbar_menu() {
-		die('hello');
 		remove_action( 'admin_bar_menu', 'wp_admin_bar_customize_menu', 40 );
 	}
 
