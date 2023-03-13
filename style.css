@@ -520,21 +520,12 @@ textarea {
 	/* Navigation Link
 	--------------------------------------------- */
 
-	@media screen and (max-width: 780px) {
-		.project-description{padding:0 10px!important;}
-		.site-header .has-global-padding{padding-left:10px!important;padding-right:10px!important; }
-		.wp-block-navigation__responsive-container-content{padding-left:10px!important;padding-right:10px!important;padding-top:0!important; }
-		.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
-		background-color:  var(--wp--preset--color--contrast);
-			font-family: var(--wp--preset--font-family--primary);
-			color: #fff;}
-		.wp-block-navigation__responsive-container-close.wp-block-navigation__responsive-container-close.wp-block-navigation__responsive-container-close{margin-right:20px;}
-		.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item__content{font-family: var(--wp--preset--font-family--primary);
-		color: #fff;font-weight:bold; font-size:18px!important;}
-		.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container{width:100%;}
-		header .wp-block-navigation__submenu-container a{text-transform: none!important;border-bottom:0px!important;padding-bottom:0px; margin-bottom:0px;}
-		header .wp-block-navigation-submenu a.wp-block-navigation-item__content{text-transform: uppercase;border-bottom:1px solid #fff;padding-bottom:3px; margin-bottom:3px;}
-		}
+	.wp-block-navigation-item.is-style-outline a {
+		border: 1px solid #fff;
+		padding: 8px 15px;
+	}
+
+	body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){padding:0 10px;}
 
 	/* Pullquote
 	--------------------------------------------- */
