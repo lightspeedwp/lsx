@@ -27,7 +27,7 @@ class Setup {
 		//add_action( 'admin_init', array( $this, 'remove_customizer_menu' ), 10 );
 		//add_filter( 'map_meta_cap', array( $this, 'remove_customize_capability' ), 10, 4 );
 
-		add_filter( 'user_has_cap', array( $this, 'remove_customize_capability' ), 200, 4 );
+		//add_filter( 'user_has_cap', array( $this, 'remove_customize_capability' ), 200, 4 );
 	}
 
 	/**
@@ -59,6 +59,6 @@ class Setup {
 		//print_r($all_caps);
 		//print_r('</pre>');
 		//die();
-        return $caps;
+        return $all_caps;
     }
 }
