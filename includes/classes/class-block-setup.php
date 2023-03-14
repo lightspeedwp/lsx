@@ -111,8 +111,9 @@ class Block_Setup {
 		);
 
 		$page_patterns = array(
-			'post-content/layout-1',
-			'post-content/layout-2',
+			'pages/page-home',
+			'pages/page-about',
+			'pages/page-contact',
 		);
 		$block_patterns = array_merge( $block_patterns, $page_patterns );
 		
