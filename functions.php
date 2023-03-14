@@ -29,3 +29,11 @@ function lsx() {
 	return $lsx;
 }
 lsx();
+
+// Add favicon to your website.
+add_action( 'wp_head', 'add_site_favicon' );
+function add_site_favicon() {
+
+	echo '<link rel="shortcut icon" type="image/x-icon" href="' . get_template_directory_uri() . '/assets/images/favicon.png" />';
+
+}
