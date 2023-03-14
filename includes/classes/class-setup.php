@@ -25,7 +25,7 @@ class Setup {
 	 */
 	public function init() {
 		add_action( 'admin_init', array( $this, 'remove_customizer_menu' ), 10 );
-		add_action( 'admin_bar_menu', array( $this, 'remove_customizer_adminbar_menu', 50 ) );
+		//add_action( 'admin_bar_menu', array( $this, 'remove_customizer_adminbar_menu', 50 ) );
 	
 		add_filter( 'user_has_cap', array( $this, 'remove_customize_capability' ), 200, 4 );
 	}
