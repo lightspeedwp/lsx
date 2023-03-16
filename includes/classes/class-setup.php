@@ -25,9 +25,9 @@ class Setup {
 	 */
 	public function init() {
 		add_action( 'admin_init', array( $this, 'remove_customizer_menu' ), 10 );
-		//add_action( 'admin_bar_menu', array( $this, 'remove_customizer_adminbar_menu', 50 ) );
 	
 		add_filter( 'user_has_cap', array( $this, 'remove_customize_capability' ), 200, 4 );
+		add_action( 'wp_before_admin_bar_render', array( $this, 'admin_bar_render' ), 10 );
 	}
 
 	/**
@@ -51,15 +51,6 @@ class Setup {
 	}
 
 	/**
-	 * Undocumented function
-	 *
-	 * @return void
-	 */
-	public function remove_customizer_adminbar_menu() {
-		remove_action( 'admin_bar_menu', 'wp_admin_bar_customize_menu', 40 );
-	}
-
-	/**
 	 * Removes the customizer capability
 	 *
 	 * @param array $caps
@@ -74,4 +65,14 @@ class Setup {
 		}
         return $all_caps;
     }
+
+	/**
+	 * Removes unwanted links from the admin bar.
+	 *
+	 * @return void
+	 */
+	public function admin_bar_render() {
+		global $wp_admin_bar;
+		$wp_admin_bar->remove_menu('customize');
+	}
 }
