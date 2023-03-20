@@ -35,17 +35,25 @@ class Block_Styles {
 	public function register_block_styles() {
 
 		$block_styles = array(
+			'core/separator'           => array(
+				'wide'       => __( 'Wide', 'lsx' ),
+			),
+		);
+
+		$block_styles = array(
 			'core/button'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
 		);
 
+
 		$block_styles = array(
 			'core/quote'           => array(
-				'underline-primary-secondary'  => __( 'Underline Primary-Secondary', 'lsx' ),
-				'underline-secondary-tertiary' => __( 'Underline Secondary-Tertiary', 'lsx' ),
+				'contrast-background' => __( 'Contrast', 'lsx' ),
+				'primary-background' => __( 'Primary', 'lsx' ),
 			),
 		);
+
 
 	
 		foreach ( $block_styles as $block => $styles ) {
