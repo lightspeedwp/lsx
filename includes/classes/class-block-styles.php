@@ -51,6 +51,7 @@ class Block_Styles {
 			'core/quote'           => array(
 				'contrast-background' => __( 'Contrast', 'lsx' ),
 				'primary-background' => __( 'Primary', 'lsx' ),
+				'secondary-background' => __( 'Secondary', 'lsx' ),
 			),
 		);
 
