@@ -104,8 +104,9 @@ blockquote {
 	display: inline;
 }
 
-.wp-block-quote.is-style-primary-background{background-color: var(--wp--preset--color--primary)!important;color:var(--wp--preset--color--base)!important;}
-.wp-block-quote.is-style-contrast-background{background-color: var(--wp--preset--color--contrast)!important;color:var(--wp--preset--color--base)!important;}
+.wp-block-quote.is-style-primary-background{background-color: var(--wp--preset--color--primary)!important;color:var(--wp--preset--color--base)!important;border: 2px solid var(--wp--preset--color--contrast)!important;	box-shadow: 5px 5px var(--wp--preset--color--contrast);
+}
+.wp-block-quote.is-style-contrast-background{background-color: var(--wp--preset--color--contrast)!important;color:var(--wp--preset--color--base)!important;border: 2px solid var(--wp--preset--color--contrast)!important;}
 
 
 /* Button
