@@ -71,9 +71,46 @@
 			}
 		},
 		"color": {
-			"defaultDuotone": true,
+			"defaultDuotone": false,
 			"defaultGradients": false,
 			"defaultPalette": false,
+			"duotone": [
+                {
+                    "colors": [ "#CC3F23", "#F6DD54" ],
+                    "slug": "senary-and-quantenary",
+                    "name": "Senary and Quantenary"
+                },
+				{
+                    "colors": [ "#323649", "#FF3131" ],
+                    "slug": "denary-and-primary",
+                    "name": "Denary and Primary"
+                },
+				{
+                    "colors": [ "#114BB2", "#F6DD54" ],
+                    "slug": "septenary-and-quantenary",
+                    "name": "Septenary and Quantenary"
+                },
+				{
+                    "colors": [ "#114BB2", "#2F8EFF" ],
+                    "slug": "septenary-and-secondary",
+                    "name": "Septenary and Secondary"
+                },
+				{
+                    "colors": [ "#114BB2", "#00CE5F" ],
+                    "slug": "septenary-and-tertiary",
+                    "name": "Septenary and Tertiary"
+                },
+				{
+                    "colors": [ "#000000", "#B4B7C1" ],
+                    "slug": "black-and-quinary",
+                    "name": "Black and Quinary"
+                },
+				{
+                    "colors": [ "#000000", "#2F8EFF" ],
+                    "slug": "black-and-secondary",
+                    "name": "Black and Secondary"
+                }
+            ],
 			"gradients": [
 				{
 					"gradient": "linear-gradient(135deg,var(--wp--preset--color--primary) 0%,var(--wp--preset--color--quantenary) 100%)",
