@@ -72,13 +72,38 @@
 		},
 		"color": {
 			"defaultDuotone": true,
-			"defaultGradients": true,
-			"defaultPalette": true,
+			"defaultGradients": false,
+			"defaultPalette": false,
 			"gradients": [
 				{
-					"gradient": "linear-gradient(135deg,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--primary) 100%)",
-					"name": "Secondary to Primary",
-					"slug": "secondary-primary"
+					"gradient": "linear-gradient(135deg,var(--wp--preset--color--primary) 0%,var(--wp--preset--color--quantenary) 100%)",
+					"name": "Primary to Quantenary",
+					"slug": "primary-quantenary"
+				},
+				{
+					"gradient": "linear-gradient(135deg,var(--wp--preset--color--primary) 0%,var(--wp--preset--color--contrast) 100%)",
+					"name": "Primary to Black",
+					"slug": "primary-black"
+				},
+				{
+					"gradient": "linear-gradient(0deg,var(--wp--preset--color--contrast) 0%,var(--wp--preset--color--primary) 100%)",
+					"name": "Black to Primary",
+					"slug": "black-primary"
+				},
+				{
+					"gradient": "linear-gradient(135deg,var(--wp--preset--color--septenary) 0%,var(--wp--preset--color--tertiar) 100%)",
+					"name": "Septenary to Tertiary",
+					"slug": "septenary-tertiary"
+				},
+				{
+					"gradient": "linear-gradient(135deg,var(--wp--preset--color--denary) 0%,var(--wp--preset--color--quinary) 100%)",
+					"name": "Denary to Quinary",
+					"slug": "denary-quinary"
+				},
+				{
+					"gradient": "linear-gradient(135deg,var(--wp--preset--color--tertiary) 0%,var(--wp--preset--color--quantenary) 100%)",
+					"name": "Tertiary to Quantenary",
+					"slug": "tertiary-quantenary"
 				},
 				{
 					"gradient": "linear-gradient(135deg,var(--wp--preset--color--secondary) 0%,var(--wp--preset--color--tertiary) 100%)",
@@ -93,44 +118,69 @@
 					"slug": "base"
 				},
 				{
-					"color": "#313535",
+					"color": "#000000",
 					"name": "Contrast",
 					"slug": "contrast"
 				},
 				{
-					"color": "#CC4CCC",
+					"color": "#FF3131",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#127EFF",
+					"color": "#2F8EFF",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
 				{
-					"color": "#43DFEF",
+					"color": "#00CE5F",
 					"name": "Tertiary",
 					"slug": "tertiary"
 				},
 				{
-					"color": "#EBEBEB",
+					"color": "#F6DD54",
 					"name": "Quaternary",
 					"slug": "quaternary"
 				},
 				{
-					"color": "#444949",
+					"color": "#B4B7C1",
 					"name": "Quinary",
 					"slug": "quinary"
 				},
 				{
-					"color": "#22272C",
+					"color": "#CC3F23",
 					"name": "Senary",
 					"slug": "senaryy"
 				},
 				{
-					"color": "#C6C6C6",
+					"color": "#114BB2",
 					"name": "Septenary",
 					"slug": "septenary"
+				},
+				{
+					"color": "##00A34B",
+					"name": "Octonary",
+					"slug": "octonary"
+				},
+				{
+					"color": "#D6B300",
+					"name": "Novenary",
+					"slug": "novenary"
+				},
+				{
+					"color": "#323649",
+					"name": "Denary",
+					"slug": "denary"
+				},
+				{
+					"color": "#FF7A00",
+					"name": "CTA",
+					"slug": "cta"
+				},
+				{
+					"color": "#C15D00",
+					"name": "CTA Hover",
+					"slug": "ctahover"
 				}
 				
 			]
