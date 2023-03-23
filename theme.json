@@ -221,6 +221,31 @@
 				}
 				
 			]
+
+		},
+		"shadow": {
+			"presets": [
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"shadow": "16px 16px var( --wp--preset--color--primary )"
+				},
+				{
+					"name": "Small",
+					"slug": "sm",
+					"shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+				},
+				{
+					"name": "Medium",
+					"slug": "md",
+					"shadow": "0 4px  10px 0 rgba( 0, 0, 0, 0.3 )"
+				},
+				{
+					"name": "Large",
+					"slug": "lg",
+					"shadow": "0 8px  15px 0 rgba( 0, 0, 0, 0.3 )"
+				}
+			]
 		},
 		"custom": {
 			"fontWeight": {
@@ -425,6 +450,9 @@
 						"top": "10px"
 					}
 			},
+			"core/quote": {
+                "shadow": "var( --wp--preset--shadow--lg )"
+            },
 			"core/calendar": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
