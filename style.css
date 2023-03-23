@@ -358,32 +358,6 @@ p.has-background {
 	margin-bottom: 0;
 }
 
-/* Separator
---------------------------------------------- */
-
-.wp-block-separator,
-.wp-block-separator.has-css-opacity {
-	opacity: 1;
-}
-
-.wp-block-separator.is-style-dots:before {
-	font-family: inherit;
-	font-size: var(--wp--preset--font-size--large);
-	letter-spacing: 10px;
-	padding-left: 10px;
-}
-
-.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-	width: 100px;
-}
-
-.wp-block-separator:not(.is-style-dots),
-.wp-block-separator.has-background:not(.is-style-dots) {
-	border-bottom: 1px solid currentColor;
-	border-top: none;
-	height: 1px;
-}
-
 /* Spacer
 --------------------------------------------- */
 

@@ -13,6 +13,11 @@ namespace LSX\Classes;
 class Block_Styles {
 
 	/**
+	 * Holds the array of block stylesheets
+	 */
+	var $block_assets = array();
+
+	/**
 	 * Contructor
 	 */
 	public function __construct() {
@@ -26,6 +31,7 @@ class Block_Styles {
 	public function init() {
 		add_action( 'init', array( $this, 'register_block_styles' ), 10 );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'block_editor_styles' ) );
+		add_action( 'after_setup_theme', array( $this, 'enqueue_block_styles' ), 10 );
 	}
 
 	/**
@@ -75,5 +81,39 @@ class Block_Styles {
 	 */
 	public function block_editor_styles() {
 		wp_enqueue_style( 'editor-styles', get_template_directory_uri() . '/assets/css/editor-style.css', false, LSX_VERSION, 'all' );
+	}
+
+	/**
+	 * Returns an array of the block assets.
+	 *
+	 * @return array
+	 */
+	private function get_block_assets() {
+		$this->block_assets = array(
+			'core/separator' => array(
+				'handle' => 'lsx-separator-block-styles',
+				'src'    => get_template_directory_uri() . '/assets/css/blocks/separator.css',
+				'path'   => get_template_directory() . '/assets/css/blocks/separator.css',
+			),
+		);
+		return $this->block_assets;
+	}
+
+	/**
+	 * Registers our block specific styles.
+	 *
+	 * @return void
+	 */
+	public function enqueue_block_styles() {
+		foreach ( $this->get_block_assets() as $block_name => $block_asset ) {
+			wp_enqueue_block_style(
+				$block_name,
+				array(
+					'handle' => $block_asset['handle'],
+					'src'    => $block_asset['src'],
+					'path'   => $block_asset['path'],
+				),
+			);
+		}
 	}
 }
