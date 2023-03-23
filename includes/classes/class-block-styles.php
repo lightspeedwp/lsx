@@ -39,36 +39,21 @@ class Block_Styles {
 			'core/separator'           => array(
 				'wide'       => __( 'Wide', 'lsx' ),
 			),
-		);
-
-		$block_styles = array(
 			'core/button'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
-		);
-
-		$block_styles = array(
 			'core/image'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
-		);
-
-		$block_styles = array(
 			'core/quote'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
-		);
-
-
-		$block_styles = array(
 			'core/quote'           => array(
 				'contrast-background' => __( 'Contrast', 'lsx' ),
 				'primary-background' => __( 'Primary', 'lsx' ),
 				'secondary-background' => __( 'Secondary', 'lsx' ),
 			),
 		);
-
-
 	
 		foreach ( $block_styles as $block => $styles ) {
 			foreach ( $styles as $style_name => $style_label ) {
@@ -83,7 +68,12 @@ class Block_Styles {
 		}
 	}
 
+	/**
+	 * Registers the editor styles
+	 *
+	 * @return void
+	 */
 	public function block_editor_styles() {
-		wp_enqueue_style( 'editor-styles', get_template_directory() . '/assets/css/admin/editor-style.css', false, '10.4', 'all' );
+		wp_enqueue_style( 'editor-styles', get_template_directory_uri() . '/assets/css/editor-style.css', false, LSX_VERSION, 'all' );
 	}
 }
