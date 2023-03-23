@@ -46,6 +46,9 @@ class Block_Styles {
 				'wide'       => __( 'Wide', 'lsx' ),
 			),
 			'core/button'           => array(
+				'cta'       => __( 'CTA', 'lsx' ),
+				'pill'       => __( 'Pill', 'lsx' ),
+				'rounded'       => __( 'Rounded', 'lsx' ),
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
 			'core/image'           => array(
@@ -94,6 +97,11 @@ class Block_Styles {
 				'handle' => 'lsx-separator-block-styles',
 				'src'    => get_template_directory_uri() . '/assets/css/blocks/separator.css',
 				'path'   => get_template_directory() . '/assets/css/blocks/separator.css',
+			),
+			'core/button' => array(
+				'handle' => 'lsx-button-block-styles',
+				'src'    => get_template_directory_uri() . '/assets/css/blocks/button.css',
+				'path'   => get_template_directory() . '/assets/css/blocks/button.css',
 			),
 		);
 		return $this->block_assets;
