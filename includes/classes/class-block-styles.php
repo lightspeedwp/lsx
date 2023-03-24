@@ -53,6 +53,7 @@ class Block_Styles {
 			),
 			'core/image'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
+				'innaer-border'       => __( 'Inner Border', 'lsx' ),
 			),
 			'core/quote'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
@@ -102,6 +103,11 @@ class Block_Styles {
 				'handle' => 'lsx-button-block-styles',
 				'src'    => get_template_directory_uri() . '/assets/css/blocks/button.css',
 				'path'   => get_template_directory() . '/assets/css/blocks/button.css',
+			),
+			'core/image' => array(
+				'handle' => 'lsx-button-block-styles',
+				'src'    => get_template_directory_uri() . '/assets/css/blocks/imagen.css',
+				'path'   => get_template_directory() . '/assets/css/blocks/image.css',
 			),
 		);
 		return $this->block_assets;
