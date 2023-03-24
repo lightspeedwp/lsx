@@ -60,8 +60,8 @@ class Block_Styles {
 				'secondary-background' => __( 'Secondary', 'lsx' ),
 			),
 			'core/image'           => array(
-				'shadow'       => __( 'Shadow', 'lsx' ),
 				'inner-border'   => __( 'Inner Border', 'lsx' ),
+				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
 		);
 	
