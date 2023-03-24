@@ -51,10 +51,6 @@ class Block_Styles {
 				'rounded'       => __( 'Rounded', 'lsx' ),
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
-			'core/image'           => array(
-				'shadow'       => __( 'Shadow', 'lsx' ),
-				'inner-border'       => __( 'Inner Border', 'lsx' ),
-			),
 			'core/quote'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
@@ -62,6 +58,10 @@ class Block_Styles {
 				'contrast-background' => __( 'Contrast', 'lsx' ),
 				'primary-background' => __( 'Primary', 'lsx' ),
 				'secondary-background' => __( 'Secondary', 'lsx' ),
+			),
+			'core/image'           => array(
+				'shadow'       => __( 'Shadow', 'lsx' ),
+				'inner-border'   => __( 'Inner Border', 'lsx' ),
 			),
 		);
 	
