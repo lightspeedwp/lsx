@@ -53,7 +53,7 @@ class Block_Styles {
 			),
 			'core/image'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
-				'innaer-border'       => __( 'Inner Border', 'lsx' ),
+				'inner-border'       => __( 'Inner Border', 'lsx' ),
 			),
 			'core/quote'           => array(
 				'shadow'       => __( 'Shadow', 'lsx' ),
