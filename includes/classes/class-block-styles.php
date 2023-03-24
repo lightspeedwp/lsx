@@ -52,9 +52,6 @@ class Block_Styles {
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
 			'core/quote'           => array(
-				'shadow'       => __( 'Shadow', 'lsx' ),
-			),
-			'core/quote'           => array(
 				'contrast-background' => __( 'Contrast', 'lsx' ),
 				'primary-background' => __( 'Primary', 'lsx' ),
 				'secondary-background' => __( 'Secondary', 'lsx' ),
