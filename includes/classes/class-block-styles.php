@@ -105,8 +105,8 @@ class Block_Styles {
 				'path'   => get_template_directory() . '/assets/css/blocks/button.css',
 			),
 			'core/image' => array(
-				'handle' => 'lsx-button-block-styles',
-				'src'    => get_template_directory_uri() . '/assets/css/blocks/imagen.css',
+				'handle' => 'lsx-image-block-styles',
+				'src'    => get_template_directory_uri() . '/assets/css/blocks/image.css',
 				'path'   => get_template_directory() . '/assets/css/blocks/image.css',
 			),
 		);
