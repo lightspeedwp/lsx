@@ -48,8 +48,10 @@ class Block_Styles {
 			'core/button'           => array(
 				'cta'       => __( 'CTA', 'lsx' ),
 				'pill'       => __( 'Pill', 'lsx' ),
+				'pill-outline'       => __( 'Pill Outline', 'lsx' ),
 				'rounded'       => __( 'Rounded', 'lsx' ),
 				'shadow'       => __( 'Shadow', 'lsx' ),
+				'outline-shadow'       => __( 'Outline Shadow', 'lsx' ),
 			),
 			'core/quote'           => array(
 				'contrast-background' => __( 'Contrast', 'lsx' ),

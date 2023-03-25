@@ -1,14 +1,51 @@
 /* Button
 --------------------------------------------- */
 
-.wp-block-button.is-style-cta .wp-element-button{background-color: var(--wp--preset--color--cta)!important;color:var(--wp--preset--color--base)!important;
-}
-.wp-block-button.is-style-cta .wp-element-button:hover{background-color: var(--wp--preset--color--ctahover)!important;}
-.wp-block-button.is-style-pill .wp-element-button{border-radius:50px!important;}
+.wp-block-button.is-style-cta .wp-element-button{background-color: var(--wp--preset--color--cta);color:var(--wp--preset--color--base);}
+.wp-block-button.is-style-pill .wp-element-button, .wp-block-button.is-style-pill .wp-element-button:hover{border-radius:50px!important;}
 .wp-block-button.is-style-shadow .wp-element-button{box-shadow: 5px 5px var(--wp--preset--color--contrast);}
 
-.wp-block-button.is-style-rounded .wp-element-button{border-radius:5px!important;}
+.wp-block-button.is-style-rounded .wp-element-button, .wp-block-button.is-style-rounded .wp-element-button:hover{border-radius:8px!important;}
+
+.wp-block-button.is-style-pill-outline .wp-element-button {
+    border-radius:50px!important;
+    background-color: transparent;
+    border:1px solid;
+    border-color: currentColor;}
+    .wp-block-button.is-style-outline-shadow .wp-element-button {
+        background-color: transparent;
+        box-shadow: 5px 5px var(--wp--preset--color--contrast);
+        border:1px solid;
+        border-color: currentColor;}
+
+/* Button Hovers
+--------------------------------------------- */
+.wp-block-button .has-primary-background-color:hover{background-color: var(--wp--preset--color--senary)!important;}
+
+.wp-block-button.is-style-pill .has-cta-background-color:hover{background-color: var(--wp--preset--color--ctahover)!important;color:var(--wp--preset--color--base)!important;}
+.wp-block-button.is-style-pill-outline .has-cta-color:hover{background-color: var(--wp--preset--color--cta)!important;color:var(--wp--preset--color--base)!important;}
+
+.wp-block-button.is-style-outline-shadow .has-cta-color:hover{background-color: var(--wp--preset--color--cta)!important;color:var(--wp--preset--color--base)!important;}
+.wp-block-button.is-style-outline .has-cta-color:hover{background-color: var(--wp--preset--color--cta)!important;color:var(--wp--preset--color--base)!important;}
+.wp-block-button.is-style-cta .wp-element-button:hover, .wp-block-button .has-cta-background-color:hover{background-color: var(--wp--preset--color--ctahover)!important;}
+
+.wp-block-button.is-style-outline .has-contrast-color:hover{background-color: var(--wp--preset--color--ctahover)!important;color:var(--wp--preset--color--base)!important;}
 
 .wp-element-button.has-primary-background-color:hover{background-color: var(--wp--preset--color--senary)!important;}
 .wp-element-button.has-secondary-background-color:hover{background-color: var(--wp--preset--color--septenary)!important;}
 .wp-element-button.has-tertiary-background-color:hover{background-color: var(--wp--preset--color--octonary)!important;}
+
+.wp-block-button.has-contrast-background-color:hover{background-color: var(--wp--preset--color--primary)!important;}
+.wp-block-button .has-contrast-background-color:hover{background-color: var(--wp--preset--color--primary)!important;}
+.has-contrast-background-color .wp-block-button.is-style-fill-base .wp-element-button:hover{background-color: var(--wp--preset--color--primary);color:var(--wp--preset--color--base);}
+.wp-block-button.is-style-fill-base.is-style-fill .wp-element-button:hover{background-color: var(--wp--preset--color--primary);color:var(--wp--preset--color--base);}
+
+.wp-block-button.is-style-pill .has-primary-background-color:hover{background-color: var(--wp--preset--color--senary)!important;color:var(--wp--preset--color--base)!important;}
+.wp-block-button.is-style-pill-outline .has-primary-color:hover{background-color: var(--wp--preset--color--primary)!important;color:var(--wp--preset--color--base)!important;}
+
+.wp-block-button.is-style-outline .has-primary-color:hover{background-color: var(--wp--preset--color--primary)!important;color:var(--wp--preset--color--base)!important;}
+
+.wp-block-button.is-style-pill .has-secondary-background-color:hover{background-color: var(--wp--preset--color--septenary)!important;color:var(--wp--preset--color--base)!important;}
+.wp-block-button.is-style-pill-outline .has-secondary-color:hover{background-color: var(--wp--preset--color--secondary)!important;color:var(--wp--preset--color--base)!important;}
+
+.wp-block-button.is-style-outline .has-secondary-color:hover{background-color: var(--wp--preset--color--secondary)!important;color:var(--wp--preset--color--base)!important;}
