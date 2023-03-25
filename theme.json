@@ -71,8 +71,8 @@
 			}
 		},
 		"color": {
-			"defaultDuotone": false,
-			"defaultGradients": false,
+			"defaultDuotone": true,
+			"defaultGradients": true,
 			"defaultPalette": false,
 			"duotone": [
                 {
@@ -740,7 +740,7 @@
 					"radius": "0"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--primary)",
+					"background": "var(--wp--preset--color--cta)",
 					"text": "var(--wp--preset--color--base)"
 				},
 				"spacing": {
@@ -769,13 +769,13 @@
 				},
 				":focus": {
 					"color": {
-						"background": "var(--wp--preset--color--secondary)",
+						"background": "var(--wp--preset--color--ctahover)",
 						"text": "var(--wp--preset--color--base)"
 					}
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--secondary)",
+						"background": "var(--wp--preset--color--ctahover)",
 						"text": "var(--wp--preset--color--base)"
 					}
 				}
