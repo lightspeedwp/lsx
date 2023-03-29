@@ -262,6 +262,8 @@ ul li:where(:not([class*='block'])),
 /* Navigation Submenu
 --------------------------------------------- */
 
+.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{margin-top:20px;border: 1px solid #6C6C6C; border-radius: 10px;}
+
 .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
 	background-color: var(--wp--preset--color--contrast);
 	border: var(--wp--preset--color--contrast);
