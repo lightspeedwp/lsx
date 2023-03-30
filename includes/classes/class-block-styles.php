@@ -62,6 +62,13 @@ class Block_Styles {
 				'inner-border'   => __( 'Inner Border', 'lsx' ),
 				'shadow'       => __( 'Shadow', 'lsx' ),
 			),
+			'core/paragraph'           => array(
+				'content-box'   => __( 'Content Box', 'lsx' ),
+				'dark-content-box'       => __( 'Dark Content Box', 'lsx' ),
+				'failure-content-box'       => __( 'Failure Content Box', 'lsx' ),
+				'warning-content-box'       => __( 'Warning Content Box', 'lsx' ),
+				'success-content-box'       => __( 'Success Content Box', 'lsx' ),
+			),
 		);
 	
 		foreach ( $block_styles as $block => $styles ) {
@@ -107,6 +114,11 @@ class Block_Styles {
 				'handle' => 'lsx-image-block-styles',
 				'src'    => get_template_directory_uri() . '/assets/css/blocks/image.css',
 				'path'   => get_template_directory() . '/assets/css/blocks/image.css',
+			),
+			'core/paragraph' => array(
+				'handle' => 'lsx-paragraph-block-styles',
+				'src'    => get_template_directory_uri() . '/assets/css/blocks/paragraph.css',
+				'path'   => get_template_directory() . '/assets/css/blocks/paragraph.css',
 			),
 		);
 		return $this->block_assets;
