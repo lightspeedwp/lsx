@@ -260,7 +260,7 @@ ul li:where(:not([class*='block'])),
 /* Navigation Submenu
 --------------------------------------------- */
 
-.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{left:0!important;right:auto;border: 1px solid #6C6C6C; border-radius: 10px;box-shadow: 2px 4px 14px 2px rgba(165, 165, 165, 0.15);}
+.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{border: 1px solid #6C6C6C; border-radius: 10px;box-shadow: 2px 4px 14px 2px rgba(165, 165, 165, 0.15);}
 
 .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
 	background-color: var(--wp--preset--color--contrast);
