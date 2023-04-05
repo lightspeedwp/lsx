@@ -20,7 +20,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* Defaults
 ---------------------------------------------------------------------------- */
-body .wp-block-group.alignfull.is-layout-constrained, body .wp-block-group.alignfull.is-layout-flow{margin-block-start: 0px!important;}
+body .is-layout-constrained > * {margin-block-start: 0px!important;}
+body .is-layout-constrained .wp-block-group.alignfull, body .wp-block-group.alignfull.is-layout-flow{margin-block-start: 0px!important;}
 *,
 *::before,
 *::after {
