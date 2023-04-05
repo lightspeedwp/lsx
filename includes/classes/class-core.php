@@ -1,6 +1,7 @@
 <?php
 namespace LSX;
 
+use LSX\Classes\Images;
 use LSX\Classes\Setup;
 use LSX\Classes\Block_Setup;
 use LSX\Classes\Block_Functions;
@@ -17,6 +18,13 @@ use LSX\Classes\Frontend;
  * @copyright 2023 LightSpeed
  */
 class Core {
+
+	/**
+	 * Contains the class responsible for the images and sizes.
+	 *
+	 * @var object
+	 */
+	public $images;
 	
 	/**
 	 * Contains the class responsible for setting up theme.
@@ -69,6 +77,7 @@ class Core {
 		$this->load_classes();
 
 		// Initiate our classes.
+		$this->images->init();
 		$this->setup->init();
 		$this->block_setup->init();
 		$this->block_styles->init();
@@ -82,6 +91,9 @@ class Core {
 	public function load_classes() {
 		require get_template_directory() . '/includes/classes/class-setup.php';
 		$this->setup = new Setup();
+
+		require get_template_directory() . '/includes/classes/class-images.php';
+		$this->images = new Images();
 
 		require get_template_directory() . '/includes/classes/class-block-setup.php';
 		$this->block_setup = new Block_Setup();
