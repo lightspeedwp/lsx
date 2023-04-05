@@ -23,8 +23,10 @@
 .wp-block-button.is-style-outline-shadow .wp-element-button {
     background-color: transparent;
     border:1px solid;
-    border-color: currentColor;}
+    color:#000;
+    border-color: #000;}
 
+.wp-block-button.is-style-outline-shadow .wp-element-button{box-shadow: 5px 5px var(--wp--preset--color--contrast);} 
 .wp-block-button.is-style-outline-shadow .wp-element-button.has-cta-color{box-shadow: 5px 5px var(--wp--preset--color--ctahover);} 
 .wp-block-button.is-style-outline-shadow .wp-element-button.has-primary-color{box-shadow: 5px 5px var(--wp--preset--color--senaryy);} 
 .wp-block-button.is-style-outline-shadow .wp-element-button.has-secondary-color{box-shadow: 5px 5px var(--wp--preset--color--septenary);}
