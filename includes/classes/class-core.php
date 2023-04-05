@@ -77,6 +77,7 @@ class Core {
 		$this->load_classes();
 
 		// Initiate our classes.
+		$this->images->init();
 		$this->setup->init();
 		$this->block_setup->init();
 		$this->block_styles->init();
