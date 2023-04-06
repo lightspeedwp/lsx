@@ -30,7 +30,6 @@ class Frontend {
 
 		//Output on the frontend.
 		add_filter( 'wpforms_frontend_form_data', array( $this, 'wpforms_match_button_block' ) );
-		add_action( 'pre_get_posts', array( $this, 'search_args' ), 10, 1 );
 	}
 
 	/**
@@ -64,17 +63,5 @@ class Frontend {
 	function wpforms_match_button_block( $form_data ) {
 		$form_data['settings']['submit_class'] .= ' btn';
 		return $form_data;
-	}
-
-	/**
-	 * Make sure our search only searches posts.
-	 *
-	 * @param object $query
-	 * @return object
-	 */
-	public function search_args( $query ) {
-		if ( ! is_admin() && $query->is_search() && $query->is_main_query() ) {
-			$query->set( 'post_type', 'post' );
-		}
 	}
 }
