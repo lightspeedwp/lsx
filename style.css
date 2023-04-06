@@ -481,5 +481,11 @@ textarea {
 }
 .site-header .wp-block-search .wp-block-search__inside-wrapper:hover input,
 .site-header .wp-block-search .wp-block-search__inside-wrapper:focus input {
-	display:block;
+	display: block;
+    position: absolute;
+    width: 300px;
+    margin-left: -300px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 52px;
 }
