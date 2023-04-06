@@ -55,6 +55,7 @@ class Block_Setup {
 			'pages'    => array( 'label' => __( 'Pages', 'lsx' ) ),
 			'team'   => array( 'label' => __( 'Team', 'lsx' ) ),
 			'testimonials'   => array( 'label' => __( 'Testimonials', 'lsx' ) ),
+			'cards'   => array( 'label' => __( 'Cards', 'lsx' ) ),
 		);
 
 		/**
@@ -81,6 +82,7 @@ class Block_Setup {
 		}
 
 		$block_patterns = array(
+			'featured/page-title',
 			'featured/cover-2-col',
 			'featured/cover-banner-image',
 			'featured/general-hero-one-column',
@@ -112,6 +114,7 @@ class Block_Setup {
 			'pages/page-home',
 			'pages/page-team',
 			'pages/page-testimonials',
+			'cards/three-columns-icon-cards',
 		);
 
 		$page_patterns = array(
