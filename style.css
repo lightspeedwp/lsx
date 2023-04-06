@@ -22,6 +22,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 ---------------------------------------------------------------------------- */
 body .is-layout-constrained > .wp-block-group.alignfull {margin-block-start: 0px!important;}
 body .is-layout-constrained .alignfull, body .alignfull.is-layout-flow{margin-block-start: 0px!important;}
+
 *,
 *::before,
 *::after {
@@ -353,7 +354,7 @@ p.has-background {
 
 /* Custom
 ---------------------------------------------------------------------------- */
-
+.wp-block-yoast-faq-block p.schema-faq-answer a{color:#fff!important;}
 .post-meta p{padding-bottom: 0px;}
 .taxonomy-post_tag.wp-block-post-terms{padding-bottom: 15px;}
 .projecttypes a:not(:first-child){display:none;}
