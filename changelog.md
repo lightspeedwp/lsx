@@ -1,5 +1,19 @@
 # LSX Theme Changelog
 
+# [[4.0.0]](https://github.com/lightspeeddevelopment/lsx/releases/tag/4.0.0) - IN DEVELOPMENT
+
+### Updates
+- The LSX the has updted to a full site editor theme
+
+### Removed
+- Support for WordPress PHP templates
+- Removed the Support for the customizer
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.2).
+- General testing to ensure compatibility with latest WooCommerce version (7.5.1).
+
+
 # [[3.0.1]](https://github.com/lightspeeddevelopment/lsx/releases/tag/3.0.1) - 22-09-2022
 
 ### Fixed
