@@ -27,6 +27,8 @@ class Setup {
 		add_action( 'admin_init', array( $this, 'remove_customizer_menu' ), 10 );
 		add_filter( 'user_has_cap', array( $this, 'remove_customize_capability' ), 200, 4 );
 		add_action( 'wp_before_admin_bar_render', array( $this, 'admin_bar_render' ), 10 );
+
+		add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
 	}
 
 	/**
@@ -73,5 +75,16 @@ class Setup {
 	public function admin_bar_render() {
 		global $wp_admin_bar;
 		$wp_admin_bar->remove_menu('customize');
+	}
+
+	/**
+	 * Adds the old menu options back in for site transition
+	 *
+	 * @deprecated in version 4.0.0
+	 * @todo Remove in Version 4.1.0
+	 * @return void
+	 */
+	public function theme_setup() {
+		add_theme_support( 'menus' );
 	}
 }
