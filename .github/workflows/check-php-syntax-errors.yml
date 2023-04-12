@@ -7,13 +7,15 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  php-lint:
+    name: Linting with overtrue/phplint
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Checking PHP syntax error
-      uses: overtrue/phplint@master
-      with:
-        path: .
-        options: --exclude=*.log
+      - name: Lint PHP files
+
+        uses: overtrue/phplint@main
+        with:
+          path: .
+          options: --exclude=vendor
