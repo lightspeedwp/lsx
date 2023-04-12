@@ -27,6 +27,7 @@ class Frontend {
 		// Styles and Scripts
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'yoast_faq_asset_files' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'lsx-woocommerce' ) );
 
 		//Output on the frontend.
 		add_filter( 'wpforms_frontend_form_data', array( $this, 'wpforms_match_button_block' ) );
@@ -55,6 +56,19 @@ class Frontend {
 		wp_enqueue_script( 'lsx-yoast-faq-js', get_stylesheet_directory_uri()  . '/assets/js/LSXFAQ-JS.min.js', array( "jquery" ), "1.0", true );
 	}
 	
+/**
+	 * Woocommerce
+	 *
+	 * @return void
+	 */
+	public function wp_enqueue_woocommerce_style(){
+	wp_register_style( 'lsx-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css', array() );
+	
+	if ( class_exists( 'woocommerce' ) ) {
+		wp_enqueue_style( 'lsx-woocommerce' );
+	}
+}
+
 	/**
 	 * WPForms submit button, match Gutenberg button block
 	 *
