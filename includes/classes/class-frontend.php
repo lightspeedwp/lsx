@@ -46,7 +46,7 @@ class Frontend {
  * Enqueue your own stylesheet
  */
 public function wp_enqueue_woocommerce_style(){
-	wp_register_style( 'lsx-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css' );
+	wp_register_style( 'lsx-woocommerce', get_stylesheet_directory_uri() . '/assets/css/woocommerce.css' );
 	
 	if ( class_exists( 'woocommerce' ) ) {
 		wp_enqueue_style( 'lsx-woocommerce' );
