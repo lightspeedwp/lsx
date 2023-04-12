@@ -3,7 +3,7 @@
     "description": "LSX is a minimalistic WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. The theme displays perfectly on all desktop and portable devices.",
     "type": "wordpress-theme",
     "require": {
-        "php": ">=7.2",
+        "php": ">=8.0",
         "composer/installers": "^2.0.0"
     },
     "require-dev": {
@@ -13,12 +13,12 @@
         "phpcompatibility/phpcompatibility-wp": "^2.1.0",
         "roave/security-advisories": "dev-master",
         "wpackagist-plugin/bbpress": "^2.6.5",
-        "wpackagist-plugin/wordpress-seo": "^20.0",
+        "wpackagist-plugin/wordpress-seo": "^19.0",
         "wpackagist-plugin/woocommerce": "^7.0.0",
         "wpackagist-plugin/tour-operator": "^1.4.1",
         "wpackagist-plugin/sensei-lms": "^4.0.0",
         "wpackagist-plugin/the-events-calendar": "^6.0.0",
-        "wpackagist-plugin/jetpack": "^12.0",
+        "wpackagist-plugin/jetpack": "^11.0",
         "wpackagist-plugin/popup-maker": "^1.11.2"
     },
     "repositories":[{
@@ -30,8 +30,12 @@
     "minimum-stability": "dev",
     "config": {
         "allow-plugins": {
+            "third-party/required-plugin": true,
+            "my-organization/*": true,
+            "unnecessary/plugin": false,
             "composer/installers": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "johnpbloch/wordpress-core-installer": true
         }
     }
 }
