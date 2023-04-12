@@ -40,18 +40,7 @@ class Frontend {
 	public function enqueue_styles() {
 		wp_enqueue_style( 'lsx-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
-
-	/**
- 	* Enqueue Woocommerce stylesheet
- 	*/
-function wp_enqueue_woocommerce_style(){
-	wp_register_style( 'lsx-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css' );
 	
-	if ( class_exists( 'woocommerce' ) ) {
-		wp_enqueue_style( 'lsx-woocommerce' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
 
 	/**
 	 * Load the assets files for Yoast
