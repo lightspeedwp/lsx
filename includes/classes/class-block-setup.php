@@ -82,12 +82,13 @@ class Block_Setup {
 		}
 
 		$block_patterns = array(
-			'featured/page-title',
 			'featured/cover-2-col',
 			'featured/cover-banner-image',
 			'featured/general-hero-one-column',
 			'featured/general-hero-two-columns',
 			'featured/general-hero-three-columns',
+			'featured/page-title',
+			'featured/white-page-title',
 			'testimonials/testimonial-1-column',
 			'testimonials/testimonial-2-column',
 			'footer/footer-default',
