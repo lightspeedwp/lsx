@@ -11,7 +11,15 @@
         "wp-coding-standards/wpcs": "^2.3",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
         "phpcompatibility/phpcompatibility-wp": "^2.1.0",
-        "roave/security-advisories": "dev-master"
+        "roave/security-advisories": "dev-master",
+        "wpackagist-plugin/bbpress": "^2.6.5",
+        "wpackagist-plugin/wordpress-seo": "^20.0",
+        "wpackagist-plugin/woocommerce": "^7.0.0",
+        "wpackagist-plugin/tour-operator": "^1.4.1",
+        "wpackagist-plugin/sensei-lms": "^4.0.0",
+        "wpackagist-plugin/the-events-calendar": "^6.0.0",
+        "wpackagist-plugin/jetpack": "^12.0",
+        "wpackagist-plugin/popup-maker": "^1.11.2"
     },
     "repositories":[{
         "type":"composer",
@@ -19,5 +27,11 @@
     }],
     "license": "GPL-3.0-or-later",
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
