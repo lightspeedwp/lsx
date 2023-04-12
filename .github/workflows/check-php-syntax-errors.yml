@@ -8,14 +8,37 @@ on:
 
 jobs:
   php-lint:
-    name: Linting with overtrue/phplint
+    name: "Linting with overtrue/phplint"
 
-    runs-on: ubuntu-latest
+    runs-on: "${{ matrix.operating-system }}"
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        operating-system:
+          - "ubuntu-20.04"
+          - "ubuntu-22.04"
+
+        php-version:
+          - "8.1"
+          - "8.2"
 
     steps:
-      - name: Lint PHP files
-
-        uses: overtrue/phplint@main
+      - name: Checkout Code
+        uses: actions/checkout@v3
         with:
-          path: .
-          options: --exclude=vendor
+          fetch-depth: 0
+          repository: overtrue/phplint
+
+      - name: Setup PHP runtime
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php-version }}"
+          coverage: "none"
+
+      - name: Lint PHP files
+        run: |
+          curl -Ls https://github.com/overtrue/phplint/releases/latest/download/phplint.phar -o /usr/local/bin/phplint
+          chmod +x /usr/local/bin/phplint
+          /usr/local/bin/phplint -vvv --no-cache
