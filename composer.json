@@ -3,7 +3,7 @@
     "description": "LSX is a minimalistic WordPress theme that allows users to create fast, efficient and attractive websites that are feature-rich. The theme displays perfectly on all desktop and portable devices.",
     "type": "wordpress-theme",
     "require": {
-        "php": ">=7.2",
+        "php": ">=8.0",
         "composer/installers": "^2.0.0"
     },
     "require-dev": {
@@ -27,5 +27,11 @@
     }],
     "license": "GPL-3.0-or-later",
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
