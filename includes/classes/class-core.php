@@ -7,6 +7,8 @@ use LSX\Classes\Block_Setup;
 use LSX\Classes\Block_Functions;
 use LSX\Classes\Block_Styles;
 use LSX\Classes\Frontend;
+use LSX\Classes\WooCommerce;
+use stdClass;
 
 /**
  * The main file loading the rest of the files
@@ -62,6 +64,13 @@ class Core {
 	public $frontend;
 
 	/**
+	 * All the third part classes
+	 *
+	 * @var object
+	 */
+	public $third_party;
+
+	/**
 	 * Contructor
 	 */
 	public function __construct() {
@@ -83,6 +92,9 @@ class Core {
 		$this->block_styles->init();
 		$this->block_functions->init();
 		$this->frontend->init();
+
+		//3rd Party Plugins
+		$this->third_party->woocommerce->init();
 	}
 
 	/**
@@ -106,5 +118,9 @@ class Core {
 
 		require get_template_directory() . '/includes/classes/class-frontend.php';
 		$this->frontend = new Frontend();
+
+		$this->third_party = new stdClass;
+		require get_template_directory() . '/includes/classes/class-woocommerce.php';
+		$this->third_party->woocommerce = new WooCommerce();
 	}
 }
