@@ -27,7 +27,6 @@ class Frontend {
 		// Styles and Scripts
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'yoast_faq_asset_files' ) );
-		add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
 
 		//Output on the frontend.
 		add_filter( 'wpforms_frontend_form_data', array( $this, 'wpforms_match_button_block' ) );
@@ -42,16 +41,6 @@ class Frontend {
 		wp_enqueue_style( 'lsx-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
 
-	/**
- * Enqueue your own stylesheet
- */
-public function wp_enqueue_woocommerce_style(){
-	wp_register_style( 'lsx-woocommerce', get_stylesheet_directory_uri() . '/assets/css/woocommerce.css' );
-	
-	if ( class_exists( 'woocommerce' ) ) {
-		wp_enqueue_style( 'lsx-woocommerce' );
-	}
-}
 
 	/**
 	 * Load the assets files for Yoast
