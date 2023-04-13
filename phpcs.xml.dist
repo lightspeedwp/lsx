@@ -1,60 +1,39 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress-LSX"
-         namespace="WordPressCS\WordPress"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+<ruleset
+    name="WordPress-LSX"
+    namespace="WordPressCS\WordPress"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd"
+>
     <description>Coding standards</description>
-	
-	<!-- Pass some flags to PHPCS:
-		 p flag: Show progress of the run.
-		 s flag: Show sniff codes in all reports.
-	-->
-	<arg value="ps"/>
 
-	<!-- Check up to 8 files simultanously. -->
-	<arg name="parallel" value="8"/>
+    <file>.</file>
+    <exclude-pattern>/dependencies/</exclude-pattern>
+    <exclude-pattern>/tests/</exclude-pattern>
+    <exclude-pattern>/vendor/</exclude-pattern>
 
-	<!-- Check all files in this directory and the directories below it. -->
-	<file>.</file>
+    <arg name="extensions" value="php" />
+    <arg name="basepath" value="./" />
 
-	<!-- Exclude directories. -->
-	<exclude-pattern>*/vendor/*</exclude-pattern>
-	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern>*/tests/*</exclude-pattern>
-	<exclude-pattern>*/woocommerce/*</exclude-pattern>
-	<exclude-pattern>*/tribe-events/*</exclude-pattern>
-	<exclude-pattern>*/.github/*</exclude-pattern>
-	<exclude-pattern>gulpfile\.js</exclude-pattern>
-	<exclude-pattern>*/wp-content/*</exclude-pattern>
-	<exclude-pattern>*.css*</exclude-pattern>
-	<exclude-pattern>*.js*</exclude-pattern>
-	<exclude-pattern type="relative">^build/*</exclude-pattern>
-	
-	<!-- Check up to 8 files simultaneously. -->
-	<arg name="parallel" value="8" />
-		
-	<config name="minimum_supported_wp_version" value="5.3" />
-	<config name="testVersion" value="7.0-" />
+    <arg name="colors" />
+    <arg name="parallel" value="8" />
 
-	<rule ref="WordPress">
-		<exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
-		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
-	</rule>
-		
-	<rule ref="WordPress-Extra" />
+    <config name="testVersion" value="8.0-" />
+    <rule ref="PHPCompatibilityWP" />
 
-	<!-- Not interested in whitespace issues in JS and CSS files at the moment -->
-	<rule ref="Squiz.WhiteSpace">
-		<exclude-pattern>*\.css</exclude-pattern>
-		<exclude-pattern>*\.js</exclude-pattern>
-	</rule>
-	<rule ref="WordPress.WhiteSpace">
-		<exclude-pattern>*\.css</exclude-pattern>
-		<exclude-pattern>*\.js</exclude-pattern>
-	</rule>	
+    <rule ref="WordPress">
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
+        <exclude name="WordPress.PHP.DisallowShortTernary" />
+        <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+        <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.SpacesAroundArrayKeys" />
+        <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
+        <exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound" />
+        <exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound" />
+        <exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound" />
+        <exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound" />
+    </rule>
 
-	<rule ref="Generic.Files.EndFileNewline">
-		<exclude-pattern>*\.css</exclude-pattern>
-		<exclude-pattern>*\.js</exclude-pattern>
-	</rule>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
 </ruleset>
