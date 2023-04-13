@@ -469,7 +469,9 @@ textarea {
 	/* Navigation Link
 	--------------------------------------------- */
 
-	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{padding-left: 15px;}
+	.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container{padding:10px 0 0 15px;}
+
+	.wp-block-navigation__responsive-container-content .wp-block-search{border:0;background-color: #464646;padding:8px 15px;color:#fff!important;}
 
 	.wp-block-navigation__responsive-container-close {
 		right: 60px;
