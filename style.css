@@ -473,12 +473,18 @@ textarea {
 
 	.wp-block-navigation__responsive-container-content .wp-block-search{border:0;background-color: #464646;padding:8px 15px;color:#fff!important;}
 
+	header .wp-block-navigation__responsive-container.is-menu-open .wp-block-search .wp-block-search__inside-wrapper input,
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-search .wp-block-search__inside-wrapper input{display:block!important;}
+
 	.wp-block-navigation__responsive-container-close {
 		right: 60px;
 		top: 20px;}
 		.desktopnone{display:block;}
 		.wp-block-navigation__responsive-container.is-menu-open{padding-top:130px!important;}
 		.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{border:0;box-shadow: none;border-radius: 0;}
+
+		.wp-block-navigation-item.has-child a{border-bottom: 1px solid currentColor;}
+		.wp-block-navigation-item.has-child ul a{border-bottom: 0;}
 }
 
 /**
