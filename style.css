@@ -474,7 +474,7 @@ textarea {
 	.wp-block-navigation__responsive-container-content .wp-block-search{border:0;background-color: #464646;padding:8px 15px;color:#fff!important;}
 
 	header .wp-block-navigation__responsive-container.is-menu-open .wp-block-search .wp-block-search__inside-wrapper input,
-.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-search .wp-block-search__inside-wrapper input{display:block!important;position: absolute;
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-search .wp-block-search__inside-wrapper input{display:block!important;position: relative;
 	width: auto!important;
 	margin-left: 0px!important;
 background-color: transparent;
@@ -489,6 +489,8 @@ border:0!important;}
 		.wp-block-navigation__responsive-container.is-menu-open{padding-top:130px!important;}
 		.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{border:0;box-shadow: none;border-radius: 0;}
 		header img.logo{z-index: 99999999;}
+
+		.wp-block-navigation__responsive-container.is-menu-open .wp-block-search__button{background:none!important;padding-right:0; padding-left:0!important;}
 }
 
 /**
