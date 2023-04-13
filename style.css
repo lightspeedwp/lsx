@@ -477,14 +477,16 @@ textarea {
 .site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-search .wp-block-search__inside-wrapper input{display:block!important;position: relative;
 	width: auto!important;
 	margin-left: 0px!important;
-background-color: transparent;
+background-color: transparent;color:#fff!important;padding-left:20px;
 border:0!important;}
+
+header .minicart{z-index: 99999999;}
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-search .wp-block-search__inside-wrapper input::placeholder {color:#fff!important;padding-left:20px;}
 
 	.wp-block-navigation__responsive-container-close {
-		right: 60px;
-		top: 20px;}
+		right: 20px;
+		top: -36px;}
 		.desktopnone{display:block;}
 		.mobilenone{display:none;}
 		.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-search__button-inside .wp-block-search__inside-wrapper{border:0;box-shadow: none;border-radius: 0;}
