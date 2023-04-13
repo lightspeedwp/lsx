@@ -491,6 +491,22 @@ border:0!important;}
 		header .wp-block-image.logo{z-index: 99999999;}
 
 		.wp-block-navigation__responsive-container.is-menu-open .wp-block-search__button{background:none!important;padding-right:0; padding-left:0!important;position:absolute; border:0!important;}
+		.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-icon{display: block!important;}
+
+		.wp-block-navigation .wp-block-navigation__submenu-icon {
+			align-self: center;
+			background-color: inherit;
+			border: none;
+			color: currentColor;
+			display: inline-block;
+			font-size: inherit;
+			height: 0.8em;
+			position: relative;
+			top: -17px;
+			line-height: 0;
+			padding: 0;
+			right: -40%;
+			width: 0.8em;
 }
 
 /**
