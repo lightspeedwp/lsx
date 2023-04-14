@@ -491,7 +491,15 @@ textarea {
 
 	.wc-block-components-button:not(.is-link){background:#000!important; margin-left:10px; border-radius:5px;}
 
+	.wc-block-components-form .wc-block-components-text-input input[type=email]:focus, .wc-block-components-form .wc-block-components-text-input input[type=number]:focus, .wc-block-components-form .wc-block-components-text-input input[type=tel]:focus, .wc-block-components-form .wc-block-components-text-input input[type=text]:focus, .wc-block-components-form .wc-block-components-text-input input[type=url]:focus, .wc-block-components-text-input input[type=email]:focus, .wc-block-components-text-input input[type=number]:focus, .wc-block-components-text-input input[type=tel]:focus, .wc-block-components-text-input input[type=text]:focus, .wc-block-components-text-input input[type=url]:focus{border:2px solid #2b2d2f!important;box-shadow: none!important;}
 
+	.woocommerce-checkout.wc-block-components-radio-control__option {
+		padding: 22px 0 20px 2.9em!important;
+	}
+
+	.wc-block-components-checkbox .wc-block-components-checkbox__input[type=checkbox]{padding:10px!important}
+
+	.wc-block-components-checkbox .wc-block-components-checkbox__input[type=checkbox]:focus{background-color: var(--wp--preset--color--secondary)!important;opacity:0.4;}
 /* Media Queries
 ---------------------------------------------------------------------------- */
 
