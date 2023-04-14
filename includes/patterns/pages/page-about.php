@@ -5,190 +5,214 @@
 return array(
 	'title'	  => __( 'About Page', 'lsx' ),
 	'categories' => array( 'pages' ),
-	'content'	=> '<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0px","left":"0px"},"padding":{"bottom":"0","top":"var:preset|spacing|40"}}},"className":"what-we-do"} -->
-    <div class="wp-block-columns alignwide what-we-do" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:0"><!-- wp:column {"verticalAlignment":"center","width":""} -->
-    <div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"gradient":"horizontal-primary-to-background","className":"avalon-left-top","extUtilities":[]} -->
-    <div class="wp-block-group avalon-left-top has-horizontal-primary-to-background-gradient-background has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)"><!-- wp:cover {"url":"https://lsx.lightspeedwp.dev/wp-content/uploads/2018/10/kristopher-roller-110203-unsplash-scaled.jpg","id":102,"dimRatio":20,"style":{"color":{}}} -->
-    <div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-20 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-102" alt="" src="https://lsx.lightspeedwp.dev/wp-content/uploads/2018/10/kristopher-roller-110203-unsplash-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"x-large"} -->
-    <p class="has-text-align-center has-base-color has-text-color has-x-large-font-size"><strong>Block WordPress Theme</strong></p>
-    <!-- /wp:paragraph --></div></div>
-    <!-- /wp:cover --></div>
+	'content'	=> '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"70px","bottom":"var:preset|spacing|x-large","right":"30px","left":"30px"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull" style="padding-top:70px;padding-right:30px;padding-bottom:var(--wp--preset--spacing--x-large);padding-left:30px"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|medium"}}}} -->
+    <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
+    <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%"><!-- wp:heading {"style":{"typography":{"letterSpacing":"-1px"},"spacing":{"margin":{"bottom":"0px"}}},"className":"wp-block-heading","fontSize":"max-60"} -->
+    <h2 class="wp-block-heading has-max-60-font-size" id="we-reimagine-how-to-build-wordpress-websites" style="margin-bottom:0px;letter-spacing:-1px">Experience the next generation of WordPress.</h2>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|x-small"}}},"fontSize":"large"} -->
+    <p class="has-large-font-size" style="margin-top:var(--wp--preset--spacing--x-small)"><p>Whether youre building a website for your business, personal brand, or creative project, lsx is the perfect solution for anyone looking to launch a website quickly and efficiently.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:buttons {"layout":{"type":"flex"},"style":{"spacing":{"blockGap":"10px","margin":{"top":"30px"}}}} -->
+    <div class="wp-block-buttons" style="margin-top:30px"><!-- wp:button {"fontSize":"small"} -->
+    <div class="wp-block-button has-custom-font-size has-small-font-size"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
+    <!-- /wp:button -->
+    <!-- wp:button {"style":{"spacing":{"padding":{"top":"14px","bottom":"14px","left":"29px","right":"29px"}}},"className":"is-style-outline-background is-style-outline","fontSize":"small"} -->
+    <div class="wp-block-button has-custom-font-size is-style-outline-background is-style-outline has-small-font-size"><a class="wp-block-button__link wp-element-button" style="padding-top:14px;padding-right:29px;padding-bottom:14px;padding-left:29px"><p>Learn More</a></div>
+    <!-- /wp:button --></div>
+    <!-- /wp:buttons --></div>
+    <!-- /wp:column -->
+    <!-- wp:column {"verticalAlignment":"center","width":"40%"} -->
+    <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%"><!-- wp:image {"id":5886,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image size-full"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/sample_black_1200x1200.jpg'. '" alt="Sample Image" class="wp-image-5886"/></figure>
+    <!-- /wp:image --></div>
+    <!-- /wp:column --></div>
+    <!-- /wp:columns --></div>
+    <!-- /wp:group -->
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium","right":"30px","left":"30px"},"margin":{"top":"0"}}},"backgroundColor":"contrast","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-contrast-background-color has-background" style="margin-top:0;padding-top:var(--wp--preset--spacing--medium);padding-right:30px;padding-bottom:var(--wp--preset--spacing--medium);padding-left:30px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+    <div class="wp-block-group alignwide"><!-- wp:image {"id":5573,"width":150,"height":32,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/lsx-white.png'. '" alt="Sample Logo" class="wp-image-5573" width="150" height="32"/></figure>
+    <!-- /wp:image -->
+    <!-- wp:image {"id":5573,"width":150,"height":32,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/lsx-white.png'. '" alt="Sample Logo" class="wp-image-5573" width="150" height="32"/></figure>
+    <!-- /wp:image -->
+    <!-- wp:image {"id":5573,"width":150,"height":32,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/lsx-white.png'. '" alt="Sample Logo" class="wp-image-5573" width="150" height="32"/></figure>
+    <!-- /wp:image -->
+    <!-- wp:image {"id":5573,"width":150,"height":32,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/lsx-white.png'. '" alt="Sample Logo" class="wp-image-5573" width="150" height="32"/></figure>
+    <!-- /wp:image -->
+    <!-- wp:image {"id":5573,"width":150,"height":32,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/lsx-white.png'. '" alt="Sample Logo" class="wp-image-5573" width="150" height="32"/></figure>
+    <!-- /wp:image --></div>
     <!-- /wp:group --></div>
+    <!-- /wp:group -->
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","right":"30px","left":"30px"},"margin":{"top":"0"}}},"layout":{"type":"constrained","wideSize":"1200px"}} -->
+    <div class="wp-block-group alignfull" style="margin-top:0;padding-top:var(--wp--preset--spacing--x-large);padding-right:30px;padding-bottom:var(--wp--preset--spacing--x-large);padding-left:30px"><!-- wp:group {"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","style":{"typography":{"letterSpacing":"-1px"}},"className":"wp-block-heading","fontSize":"max-60"} -->
+    <h2 class="wp-block-heading has-text-align-center has-max-60-font-size" id="text-on-left-image-on-right" style="letter-spacing:-1px">Build with lsx.</h2>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}}} -->
+    <p class="has-text-align-center" style="line-height:1.5"><p>With its clean, minimal design and powerful feature set, lsx enables agencies to build stylish and sophisticated WordPress websites.</p>
+    <!-- /wp:paragraph --></div>
+    <!-- /wp:group -->
+    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"0","left":"0"},"margin":{"top":"var:preset|spacing|medium"}}}} -->
+    <div class="wp-block-columns" style="margin-top:var(--wp--preset--spacing--medium)"><!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}},"backgroundColor":"neutral"} -->
+    <div class="wp-block-column has-neutral-background-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small);flex-basis:25%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"400"}},"fontSize":"max-60"} -->
+    <p class="has-max-60-font-size" style="font-style:normal;font-weight:400;line-height:1">01</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"uppercase"}},"className":"wp-block-heading","fontSize":"small"} -->
+    <h3 class="wp-block-heading has-small-font-size" style="text-transform:uppercase"><p>Design</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} -->
+    <p class="has-small-font-size" style="line-height:1.5"><p>The foundation on which aesthetics, user experience, and functionality is built.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:paragraph {"fontSize":"small"} -->
+    <p class="has-small-font-size"><a href="#features">Learn More →</a></p>
+    <!-- /wp:paragraph --></div>
     <!-- /wp:column -->
-    
-    <!-- wp:column {"verticalAlignment":"center","width":"","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
-    <div class="wp-block-column is-vertically-aligned-center" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:paragraph {"align":"left","style":{"typography":{"textTransform":"capitalize","letterSpacing":"3px","fontStyle":"normal","fontWeight":"400"}},"className":"tagline","fontSize":"x-small"} -->
-    <p class="has-text-align-left tagline has-x-small-font-size" style="font-style:normal;font-weight:400;letter-spacing:3px;text-transform:capitalize">About us</p>
+    <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}},"backgroundColor":"primary","textColor":"base"} -->
+    <div class="wp-block-column has-base-color has-primary-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small);flex-basis:25%"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","lineHeight":"1"}},"fontSize":"max-60"} -->
+    <p class="has-max-60-font-size" style="font-style:normal;font-weight:400;line-height:1">02</p>
     <!-- /wp:paragraph -->
-    
-    <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"1.2"}},"fontSize":"x-large"} -->
-    <p class="has-x-large-font-size" style="font-style:normal;font-weight:300;line-height:1.2"><strong>LSX</strong> Wordpress Theme</p>
+    <!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"uppercase"}},"className":"wp-block-heading","fontSize":"small"} -->
+    <h3 class="wp-block-heading has-small-font-size" style="text-transform:uppercase">Patterns</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} -->
+    <p class="has-small-font-size" style="line-height:1.5"><p>A preset bundle of blocks that empower builders and amplify their creativity.</p>
     <!-- /wp:paragraph -->
-    
-    <!-- wp:paragraph -->
-    <p><strong>LSX</strong> is truly the next-generation WordPress theme. It’s never been easier to create a stunning-looking blog or a website.</p>
+    <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"fontSize":"small"} -->
+    <p class="has-link-color has-small-font-size"><a href="#">Learn More →</a></p>
+    <!-- /wp:paragraph --></div>
+    <!-- /wp:column -->
+    <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}},"backgroundColor":"secondary","textColor":"base"} -->
+    <div class="wp-block-column has-base-color has-secondary-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small);flex-basis:25%"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","lineHeight":"1"}},"fontSize":"max-60"} -->
+    <p class="has-max-60-font-size" style="font-style:normal;font-weight:400;line-height:1">03</p>
     <!-- /wp:paragraph -->
-    
-    <!-- wp:buttons -->
-    <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-avalon-button-shadow"} -->
-    <div class="wp-block-button is-style-avalon-button-shadow"><a class="wp-block-button__link wp-element-button" href="#0">Our Mission</a></div>
+    <!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"uppercase"}},"className":"wp-block-heading","fontSize":"small"} -->
+    <h3 class="wp-block-heading has-small-font-size" style="text-transform:uppercase"><p>Layouts</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} -->
+    <p class="has-small-font-size" style="line-height:1.5"><p>A collection of full-page patterns used to showcase content or a message.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"fontSize":"small"} -->
+    <p class="has-link-color has-small-font-size"><a href="#">Learn More →</a></p>
+    <!-- /wp:paragraph --></div>
+    <!-- /wp:column -->
+    <!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","right":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|x-small"}},"backgroundColor":"contrast","textColor":"base"} -->
+    <div class="wp-block-column has-base-color has-contrast-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small);flex-basis:25%"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","lineHeight":"1"}},"fontSize":"max-60"} -->
+    <p class="has-max-60-font-size" style="font-style:normal;font-weight:400;line-height:1">04</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"uppercase"}},"className":"wp-block-heading","fontSize":"small"} -->
+    <h3 class="wp-block-heading has-small-font-size" style="text-transform:uppercase"><p>Styles</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} -->
+    <p class="has-small-font-size" style="line-height:1.5"><p>An essential element of web design used to create a visually striking design.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"fontSize":"small"} -->
+    <p class="has-link-color has-small-font-size"><a href="#">Learn More →</a></p>
+    <!-- /wp:paragraph --></div>
+    <!-- /wp:column --></div>
+    <!-- /wp:columns --></div>
+    <!-- /wp:group -->
+    <!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0px"},"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","right":"30px","left":"30px"}}},"backgroundColor":"contrast","textColor":"base","className":"has-background-color","layout":{"inherit":true,"type":"constrained"}} -->
+    <div class="wp-block-group alignfull has-background-color has-base-color has-contrast-background-color has-text-color has-background" style="margin-top:0px;padding-top:var(--wp--preset--spacing--x-large);padding-right:30px;padding-bottom:var(--wp--preset--spacing--x-large);padding-left:30px"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
+    <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"65%"} -->
+    <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:65%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"large"} -->
+    <p class="has-large-font-size" style="line-height:1.5"><p>With its clean, minimal design and powerful feature set, lsx enables agencies to build stylish and sophisticated WordPress websites. Ka-chow!</p>
+    <!-- /wp:paragraph --></div>
+    <!-- /wp:column -->
+    <!-- wp:column {"verticalAlignment":"center","width":"35%"} -->
+    <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:35%"><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"}} -->
+    <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","className":"is-style-fill"} -->
+    <div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-background-color has-background wp-element-button">View Patterns</a></div>
+    <!-- /wp:button -->
+    <!-- wp:button {"textColor":"base","className":"is-style-outline"} -->
+    <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button">View Layouts</a></div>
     <!-- /wp:button --></div>
     <!-- /wp:buttons --></div>
     <!-- /wp:column --></div>
     <!-- /wp:columns --></div>
     <!-- /wp:group -->
-    
-    <!-- wp:group {"align":"full","textColor":"base","gradient":"secondary-primary","className":"avalon-trusted-by is-style-avalon-border","layout":{"inherit":true,"type":"constrained"},"extUtilities":[]} -->
-    <div class="wp-block-group alignfull avalon-trusted-by is-style-avalon-border has-base-color has-secondary-primary-gradient-background has-text-color has-background"><!-- wp:columns {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","right":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|x-small"}}}} -->
-    <div class="wp-block-columns alignwide" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--x-small);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--x-small)"><!-- wp:column {"verticalAlignment":"center","width":"48%"} -->
-    <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:48%"><!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-    <p class="has-text-align-center has-large-font-size">Trusted by over&nbsp;<strong>250,000+&nbsp;</strong>Clients worldwide since 2017</p>
+    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|x-large","right":"30px","left":"30px"},"margin":{"top":"0"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull" style="margin-top:0;padding-top:var(--wp--preset--spacing--x-large);padding-right:30px;padding-bottom:var(--wp--preset--spacing--x-large);padding-left:30px"><!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"default"}} -->
+    <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"bottom":"0px"}}},"className":"wp-block-heading","fontSize":"max-48"} -->
+    <h2 class="wp-block-heading has-text-align-center has-max-48-font-size" id="block-patterns" style="margin-bottom:0px">Meet the team.</h2>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|medium"}}}} -->
+    <p class="has-text-align-center" style="margin-bottom:var(--wp--preset--spacing--medium)"><p>The talented folks who work on the lsx theme.</p>
     <!-- /wp:paragraph --></div>
-    <!-- /wp:column -->
-    
-    <!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"fontSize":"huge"} -->
-    <p class="has-text-align-center has-huge-font-size" style="font-style:normal;font-weight:800">4.8</p>
-    <!-- /wp:paragraph -->
-    
-    <!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"2px"}},"className":"avalon-rating"} -->
-    <p class="has-text-align-center avalon-rating" style="letter-spacing:2px">★★★★★</p>
-    <!-- /wp:paragraph -->
-    
-    <!-- wp:paragraph {"align":"center"} -->
-    <p class="has-text-align-center">3000 Ratings</p>
-    <!-- /wp:paragraph --></div>
-    <!-- /wp:column -->
-    
-    <!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"800"}},"fontSize":"huge"} -->
-    <p class="has-text-align-center has-huge-font-size" style="font-style:normal;font-weight:800">2000+</p>
-    <!-- /wp:paragraph -->
-    
-    <!-- wp:paragraph {"align":"center","className":"avalon-rating"} -->
-    <p class="has-text-align-center avalon-rating">Worldwide Sales per Year</p>
-    <!-- /wp:paragraph --></div>
-    <!-- /wp:column --></div>
-    <!-- /wp:columns --></div>
     <!-- /wp:group -->
-    
-    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","right":"28px","left":"30px"}}},"className":"what-we-do","layout":{"contentSize":"","type":"constrained"}} -->
-    <div class="wp-block-group alignfull what-we-do" style="padding-top:var(--wp--preset--spacing--60);padding-right:28px;padding-bottom:var(--wp--preset--spacing--60);padding-left:30px"><!-- wp:columns {"align":"wide"} -->
-    <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":"43.33%"} -->
-    <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:43.33%"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"1","fontSize":"2.15rem"}}} -->
-    <p style="font-size:2.15rem;font-style:normal;font-weight:300;line-height:1"><strong>Elegant</strong> Wordpress Theme</p>
-    <!-- /wp:paragraph -->
-    
-    <!-- wp:buttons -->
-    <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-avalon-button-shadow is-style-avalon-button-shadow"} -->
-    <div class="wp-block-button is-style-avalon-button-shadow"><a class="wp-block-button__link wp-element-button" href="#">Our Mission</a></div>
-    <!-- /wp:button --></div>
-    <!-- /wp:buttons --></div>
-    <!-- /wp:column -->
-    
-    <!-- wp:column {"width":"56.66%","style":{"spacing":{"padding":{"left":"0"}}}} -->
-    <div class="wp-block-column" style="padding-left:0;flex-basis:56.66%"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"6%"}}}} -->
-    <div class="wp-block-columns" style="padding-top:6%"><!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"unset"}},"className":"tagline"} -->
-    <figure class="wp-block-image size-full tagline"><img src="https://demo.anarieldesign.com/avalon/wp-content/themes/avalon/assets/images/icon-1.jpg" alt="Fashion"/></figure>
-    <!-- /wp:image -->
-    
-    <!-- wp:heading {"fontSize":"large"} -->
-    <h2 class="has-large-font-size" id="a-small-heading">WooCommerce</h2>
-    <!-- /wp:heading -->
-    
-    <!-- wp:paragraph {"fontSize":"ext-medium"} -->
-    <p class="has-ext-medium-font-size">Your items will be shipped for free using our standard shipping method. Please allow 1-2 weeks for delivery.</p>
-    <!-- /wp:paragraph --></div>
-    <!-- /wp:column -->
-    
-    <!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"unset"}},"className":"tagline"} -->
-    <figure class="wp-block-image size-full tagline"><img src="https://demo.anarieldesign.com/avalon/wp-content/themes/avalon/assets/images/icon-2.jpg" alt="Fashion"/></figure>
-    <!-- /wp:image -->
-    
-    <!-- wp:heading {"fontSize":"large"} -->
-    <h2 class="has-large-font-size" id="a-second-heading-1">Open Source</h2>
-    <!-- /wp:heading -->
-    
-    <!-- wp:paragraph {"fontSize":"ext-medium"} -->
-    <p class="has-ext-medium-font-size">Money Guarantee ensures that you will receive your full purchase price back if you are not satisfied with your purchase.</p>
-    <!-- /wp:paragraph --></div>
-    <!-- /wp:column --></div>
-    <!-- /wp:columns -->
-    
-    <!-- wp:columns -->
+    <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+    <div class="wp-block-group alignwide"><!-- wp:columns -->
     <div class="wp-block-columns"><!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"unset"}},"className":"tagline"} -->
-    <figure class="wp-block-image size-full tagline"><img src="https://demo.anarieldesign.com/avalon/wp-content/themes/avalon/assets/images/icon-3.jpg" alt="Fashion"/></figure>
+    <div class="wp-block-column"><!-- wp:image {"align":"center","id":3489,"width":200,"height":200,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image aligncenter size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/sample_800x800.jpg'. '" alt="Sample Image" class="wp-image-3489" width="200" height="200"/></figure>
     <!-- /wp:image -->
-    
-    <!-- wp:heading {"fontSize":"large"} -->
-    <h2 class="has-large-font-size" id="a-second-heading">Full Site Editing</h2>
+    <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"medium"} -->
+    <h3 class="wp-block-heading has-text-align-center has-medium-font-size" id="member-name-1"><h3>Member Name</h3>
     <!-- /wp:heading -->
-    
-    <!-- wp:paragraph {"fontSize":"ext-medium"} -->
-    <p class="has-ext-medium-font-size">Flexible payment options allow customers to choose from a variety of payment methods, including credit cards, debit cards, online payment services, and even cash.</p>
-    <!-- /wp:paragraph --></div>
-    <!-- /wp:column -->
-    
-    <!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"unset"}},"className":"tagline"} -->
-    <figure class="wp-block-image size-full tagline"><img src="https://demo.anarieldesign.com/avalon/wp-content/themes/avalon/assets/images/icon-4.jpg" alt="Fashion"/></figure>
-    <!-- /wp:image -->
-    
-    <!-- wp:heading {"fontSize":"large"} -->
-    <h2 class="has-large-font-size" id="a-third-heading">Online Support</h2>
-    <!-- /wp:heading -->
-    
-    <!-- wp:paragraph {"fontSize":"ext-medium"} -->
-    <p class="has-ext-medium-font-size">Our online support is focused on providing our customers with fast, reliable and helpful support. We are available via email &amp; chat to answer any questions.</p>
-    <!-- /wp:paragraph --></div>
-    <!-- /wp:column --></div>
-    <!-- /wp:columns --></div>
-    <!-- /wp:column --></div>
-    <!-- /wp:columns --></div>
-    <!-- /wp:group -->
-    
-    <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","right":"30px","left":"30px"}}},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-right:30px;padding-bottom:var(--wp--preset--spacing--50);padding-left:30px"><!-- wp:columns {"align":"wide"} -->
-    <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":"40%"} -->
-    <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%"><!-- wp:heading {"style":{"spacing":{"margin":{"top":"0"}}}} -->
-    <h2 style="margin-top:0">A Company that inspires you to be unique always.</h2>
-    <!-- /wp:heading -->
-    
-    <!-- wp:paragraph -->
-    <p>LSX for Wordpress is all about embracing your individual style, while also having fun with website trends. From statement pieces to classic staples, simple &amp; elegant designs can be whatever you want it to be.</p>
+    <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}}} -->
+    <p class="has-text-align-center" style="line-height:1.5"><p>Im a WordPress developer and enjoy building websites.</p>
     <!-- /wp:paragraph -->
-    
-    <!-- wp:buttons -->
-    <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-avalon-button-shadow is-style-avalon-button-shadow"} -->
-    <div class="wp-block-button is-style-avalon-button-shadow"><a class="wp-block-button__link wp-element-button" href="#">Our Mission</a></div>
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
+    <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)">View Profile</a></div>
     <!-- /wp:button --></div>
     <!-- /wp:buttons --></div>
     <!-- /wp:column -->
-    
     <!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:columns -->
-    <div class="wp-block-columns"><!-- wp:column -->
-    <div class="wp-block-column"><!-- wp:cover {"url":"https://lsx.lightspeedwp.dev/wp-content/uploads/2018/10/brandon-siu-XMhlm_Iokss-unsplash-1024x767.jpg","id":268,"dimRatio":0,"isDark":false,"style":{"color":{}}} -->
-    <div class="wp-block-cover is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-268" alt="" src="https://lsx.lightspeedwp.dev/wp-content/uploads/2018/10/brandon-siu-XMhlm_Iokss-unsplash-1024x767.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-    <p class="has-text-align-center has-large-font-size"></p>
-    <!-- /wp:paragraph --></div></div>
-    <!-- /wp:cover --></div>
+    <div class="wp-block-column"><!-- wp:image {"align":"center","id":3489,"width":200,"height":200,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image aligncenter size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/sample_800x800.jpg'. '" alt="Sample Image" class="wp-image-3489" width="200" height="200"/></figure>
+    <!-- /wp:image -->
+    <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"medium"} -->
+    <h3 class="wp-block-heading has-text-align-center has-medium-font-size" id="member-name-1"><h3>Member Name</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}}} -->
+    <p class="has-text-align-center" style="line-height:1.5"><p>Im a WordPress developer and enjoy building websites.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
+    <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)">View Profile</a></div>
+    <!-- /wp:button --></div>
+    <!-- /wp:buttons --></div>
     <!-- /wp:column -->
-    
-    <!-- wp:column {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60"}}}} -->
-    <div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--60)"><!-- wp:cover {"url":"https://lsx.lightspeedwp.dev/wp-content/uploads/2018/10/federico-bottos-442265-unsplash-scaled.jpg","id":100,"dimRatio":0,"style":{"color":{}}} -->
-    <div class="wp-block-cover"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-100" alt="" src="https://lsx.lightspeedwp.dev/wp-content/uploads/2018/10/federico-bottos-442265-unsplash-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-    <p class="has-text-align-center has-large-font-size"></p>
-    <!-- /wp:paragraph --></div></div>
-    <!-- /wp:cover --></div>
+    <!-- wp:column -->
+    <div class="wp-block-column"><!-- wp:image {"align":"center","id":3489,"width":200,"height":200,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image aligncenter size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/sample_800x800.jpg'. '" alt="Sample Image" class="wp-image-3489" width="200" height="200"/></figure>
+    <!-- /wp:image -->
+    <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"medium"} -->
+    <h3 class="wp-block-heading has-text-align-center has-medium-font-size" id="member-name-1"><h3>Member Name</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}}} -->
+    <p class="has-text-align-center" style="line-height:1.5"><p>Im a WordPress developer and enjoy building websites.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
+    <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)">View Profile</a></div>
+    <!-- /wp:button --></div>
+    <!-- /wp:buttons --></div>
+    <!-- /wp:column -->
+    <!-- wp:column -->
+    <div class="wp-block-column"><!-- wp:image {"align":"center","id":3489,"width":200,"height":200,"sizeSlug":"full","linkDestination":"none"} -->
+    <figure class="wp-block-image aligncenter size-full is-resized"><img src="' .  esc_url( get_theme_file_uri() ) . '/assets/images/sample_800x800.jpg'. '" alt="Sample Image" class="wp-image-3489" width="200" height="200"/></figure>
+    <!-- /wp:image -->
+    <!-- wp:heading {"textAlign":"center","level":3,"fontSize":"medium"} -->
+    <h3 class="wp-block-heading has-text-align-center has-medium-font-size" id="member-name-1"><h3>Member Name</h3>
+    <!-- /wp:heading -->
+    <!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.5"}}} -->
+    <p class="has-text-align-center" style="line-height:1.5"><p>Im a WordPress developer and enjoy building websites.</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+    <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"top":"var:preset|spacing|x-small","bottom":"var:preset|spacing|x-small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}}} -->
+    <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#" style="padding-top:var(--wp--preset--spacing--x-small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--x-small);padding-left:var(--wp--preset--spacing--medium)">View Profile</a></div>
+    <!-- /wp:button --></div>
+    <!-- /wp:buttons --></div>
     <!-- /wp:column --></div>
     <!-- /wp:columns --></div>
-    <!-- /wp:column --></div>
-    <!-- /wp:columns --></div>
+    <!-- /wp:group --></div>
     <!-- /wp:group -->',
 );
 
