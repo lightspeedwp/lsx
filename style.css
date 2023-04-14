@@ -502,8 +502,15 @@ textarea {
 
 	.woocommerce-account .wp-block-post-title, .woocommerce-account main .woocommerce, .woocommerce-cart .wp-block-post-title, .woocommerce-cart main .woocommerce, .woocommerce-checkout .wp-block-post-title, .woocommerce-checkout main .woocommerce{    max-width: inherit!important;}
 
-	.woocommerce-MyAccount-navigation ul li{background:#eee;border-bottom: 1px #2b2d2f;}
+	.woocommerce-MyAccount-navigation ul{border: 1px solid #2b2d2f;border-bottom: 0px!important;}
+	.woocommerce-MyAccount-navigation ul li{background: #eee;
+		border-bottom: 1px solid #2b2d2f;
+		padding: 18px 10px!important;}
 	.woocommerce-MyAccount-navigation ul li a{color:#000!important;}
+
+	.woocommerce-account .woocommerce-MyAccount-content {
+		float: left;
+		width: 70%;}
 /* Media Queries
 ---------------------------------------------------------------------------- */
 
