@@ -463,7 +463,7 @@ textarea {
 
 /* Woocommerce Cart */
 
-.wc-block-components-quantity-selector{border:2px solid #DDDDDD;}
+.wc-block-components-quantity-selector{border:2px solid #DDDDDD!important;}
 .wc-points-rewards-text-input label{top: -8px;}
 .wc-points-rewards-text-input input[type=number] {
     font-size: 1em;
@@ -481,6 +481,8 @@ textarea {
 	.wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input:focus {
 		box-shadow: inset 0px 0px 2px 1px currentColor;
 		outline: none;}
+
+		.wc-block-components-form .wc-block-components-text-input input[type=email], .wc-block-components-form .wc-block-components-text-input input[type=number], .wc-block-components-form .wc-block-components-text-input input[type=tel], .wc-block-components-form .wc-block-components-text-input input[type=text], .wc-block-components-form .wc-block-components-text-input input[type=url], .wc-block-components-text-input input[type=email], .wc-block-components-text-input input[type=number], .wc-block-components-text-input input[type=tel], .wc-block-components-text-input input[type=text], .wc-block-components-text-input input[type=url]{border:2px solid #DDDDDD!important;}
 
 		.wc-block-cart__submit-container .wc-block-cart__submit-button{background-color: var(--wp--preset--color--cta)!important;color:var(--wp--preset--color--base)!important;}
 
