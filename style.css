@@ -478,6 +478,12 @@ textarea {
     box-sizing: border-box;
     height: 2em;}
 
+	.wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input:focus {
+		box-shadow: inset 0px 0px 2px 1px currentColor;
+		outline: none;}
+
+		.wc-block-cart__submit-container .wc-block-cart__submit-button{background-color: var(--wp--preset--color--cta)!important;color:var(--wp--preset--color--base)!important;}
+
 	.wc-block-components-radio-control__option{padding: 0 0 0 1.9em!important;}
 	.wc-block-components-radio-control .wc-block-components-radio-control__input{appearance: auto!important;}
 
