@@ -52,6 +52,7 @@ class Block_Styles {
 				'rounded'       => __( 'Rounded', 'lsx' ),
 				'shadow'       => __( 'Shadow', 'lsx' ),
 				'outline-shadow'       => __( 'Outline Shadow', 'lsx' ),
+				'link'       => __( 'Link', 'lsx' ),
 			),
 			'core/quote'           => array(
 				'contrast-background' => __( 'Contrast', 'lsx' ),
