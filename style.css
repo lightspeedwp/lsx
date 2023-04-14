@@ -503,9 +503,11 @@ textarea {
 	.woocommerce-account .wp-block-post-title, .woocommerce-account main .woocommerce, .woocommerce-cart .wp-block-post-title, .woocommerce-cart main .woocommerce, .woocommerce-checkout .wp-block-post-title, .woocommerce-checkout main .woocommerce{    max-width: inherit!important;}
 
 	.woocommerce-MyAccount-navigation ul{border: 1px solid #2b2d2f;border-bottom: 0px!important;}
-	.woocommerce-MyAccount-navigation ul li{background: #eee;
+	.woocommerce-MyAccount-navigation ul li{background: #fff;
 		border-bottom: 1px solid #2b2d2f;
 		padding: 22px 30px!important;margin:0!important;}
+		.woocommerce-MyAccount-navigation ul li:hover{background: #000;}
+		.woocommerce-MyAccount-navigation ul li:hover a{color:#fff!important;}
 	.woocommerce-MyAccount-navigation ul li a{color:#000!important;}
 
 	.woocommerce-account .woocommerce-MyAccount-navigation{ width: 28%;}
