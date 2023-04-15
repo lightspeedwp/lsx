@@ -1,0 +1,40 @@
+/* Sizes
+--------------------------------------------- */
+
+.wp-block-quote.is-style-underline,
+.wp-block-quote.is-style-underline-primary-secondary,
+.wp-block-quote.is-style-underline-secondary-tertiary,
+.wp-block-quote.is-style-underline-tertiary-primary {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+}
+
+.wp-block-quote.is-style-underline h1, .wp-block-quote.is-style-underline h2, .wp-block-quote.is-style-underline h3{
+	background: var(--wp--preset--gradient--primary-secondary-tertiary);
+}
+
+.wp-block-quote.is-style-underline-primary-secondary h1, .wp-block-quote.is-style-underline-primary-secondary h2, .wp-block-quote.is-style-underline-primary-secondary h3{
+	background: var(--wp--preset--gradient--primary-secondary);
+}
+
+.wp-block-quote.is-style-underline-secondary-tertiary h1, .wp-block-quote.is-style-underline-secondary-tertiary h2, .wp-block-quote.is-style-underline-secondary-tertiary h3 {
+	background: var(--wp--preset--gradient--secondary-tertiary);
+}
+
+.wp-block-quote.is-style-underline-tertiary-primary {
+	background: var(--wp--preset--gradient--tertiary-primary);
+}
+
+.wp-block-quote.is-style-underline h1, .wp-block-quote.is-style-underline h2, .wp-block-quote.is-style-underline h1,
+.wp-block-quote.is-style-underline-primary-secondary h1,.wp-block-quote.is-style-underline-primary-secondary h2, .wp-block-quote.is-style-underline-primary-secondary h3
+.wp-block-quote.is-style-underline-secondary-tertiary h1, .wp-block-quote.is-style-underline-secondary-tertiary h2, .wp-block-quote.is-style-underline-secondary-tertiary h3,
+.wp-block-quote.is-style-underline-tertiary-primary h1, .wp-block-quote.is-style-underline-tertiary-primary h2, .wp-block-quote.is-style-underline-tertiary-primary h3 {
+	background-position: 0 85%;
+	background-repeat: repeat-x;
+	background-size: 100% 10px;
+	font-size: var(--wp--preset--font-size--max-48);
+	font-weight: var(--wp--custom--font-weight--medium);
+	line-height: var(--wp--custom--line-height--one);
+	display: inline;
+}
