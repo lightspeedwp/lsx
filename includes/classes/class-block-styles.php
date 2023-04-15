@@ -59,6 +59,11 @@ class Block_Styles {
 				'primary-background' => __( 'Primary', 'lsx' ),
 				'secondary-background' => __( 'Secondary', 'lsx' ),
 			),
+			'core/pullquote'           => array(
+				'contrast-background' => __( 'Contrast', 'lsx' ),
+				'primary-background' => __( 'Primary', 'lsx' ),
+				'secondary-background' => __( 'Secondary', 'lsx' ),
+			),
 			'core/image'           => array(
 				'inner-border'   => __( 'Inner Border', 'lsx' ),
 				'shadow'       => __( 'Shadow', 'lsx' ),
@@ -126,6 +131,11 @@ class Block_Styles {
 				'handle' => 'lsx-image-block-styles',
 				'src'    => get_template_directory_uri() . '/assets/css/blocks/image.css',
 				'path'   => get_template_directory() . '/assets/css/blocks/image.css',
+			),
+			'core/pullquote' => array(
+				'handle' => 'lsx-pullquote-block-styles',
+				'src'    => get_template_directory_uri() . '/assets/css/blocks/pullquote.css',
+				'path'   => get_template_directory() . '/assets/css/blocks/pullquote.css',
 			),
 			'core/paragraph' => array(
 				'handle' => 'lsx-paragraph-block-styles',
