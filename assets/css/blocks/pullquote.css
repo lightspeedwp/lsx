@@ -1,6 +1,6 @@
 /* Sizes
 --------------------------------------------- */
-.wp-block-pullquote.is-style-primary-background{position: relative;border-radius: 5px;border: 2px solid #ccc;}
+.wp-block-pullquote.is-style-primary-background{margin-top:40px;position: relative;border-radius: 5px;border: 2px solid #ccc;}
 
 .wp-block-pullquote.is-style-primary-background:before {
     background-color: #f6f6f6;
@@ -23,7 +23,7 @@
 
     .wp-block-pullquote.is-style-primary-background p{font-style:italic;}
 
-    .wp-block-pullquote.is-style-contrast-background{position: relative;border-radius: 5px;border: 2px solid #ccc;background:#000; }
+    .wp-block-pullquote.is-style-contrast-background{margin-top:40px;position: relative;border-radius: 5px;border: 2px solid #ccc;background:#000; }
 
 .wp-block-pullquote.is-style-contrast-background:before {
     background-color: #f6f6f6;
@@ -45,3 +45,4 @@
     transform: translateX(-50%);}
 
     .wp-block-pullquote.is-style-contrast-background p{font-style:italic;color:#fff!important}
+    .wp-block-pullquote.is-style-contrast-background cite{font-style:italic;color:#fff!important}
