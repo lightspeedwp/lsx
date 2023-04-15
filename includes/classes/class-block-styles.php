@@ -75,7 +75,7 @@ class Block_Styles {
 			'underline-secondary-tertiary' => __( 'Underline #2', 'lsx' ),
 			'underline-tertiary-primary'   => __( 'Underline #3', 'lsx' ),
 			'underline'                    => __( 'Underline #4', 'lsx' ),
-			),
+			)
 		);
 	
 		foreach ( $block_styles as $block => $styles ) {
@@ -118,7 +118,7 @@ class Block_Styles {
 				'path'   => get_template_directory() . '/assets/css/blocks/button.css',
 			),
 			'core/heading' => array(
-				'handle' => 'lsx-button-block-styles',
+				'handle' => 'lsx-heading-block-styles',
 				'src'    => get_template_directory_uri() . '/assets/css/blocks/heading.css',
 				'path'   => get_template_directory() . '/assets/css/blocks/heading.css',
 			),
@@ -131,7 +131,7 @@ class Block_Styles {
 				'handle' => 'lsx-paragraph-block-styles',
 				'src'    => get_template_directory_uri() . '/assets/css/blocks/paragraph.css',
 				'path'   => get_template_directory() . '/assets/css/blocks/paragraph.css',
-			),
+			)
 		);
 		return $this->block_assets;
 	}
