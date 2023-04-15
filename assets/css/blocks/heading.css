@@ -1,35 +1,35 @@
 /* Sizes
 --------------------------------------------- */
 
-.wp-block-quote.is-style-underline,
-.wp-block-quote.is-style-underline-primary-secondary,
-.wp-block-quote.is-style-underline-secondary-tertiary,
-.wp-block-quote.is-style-underline-tertiary-primary {
+.wp-block-heading.is-style-underline,
+.wp-block-heading.is-style-underline-primary-secondary,
+.wp-block-heading.is-style-underline-secondary-tertiary,
+.wp-block-heading.is-style-underline-tertiary-primary {
 	border: none;
 	box-shadow: none;
 	padding: 0;
 }
 
-.wp-block-quote.is-style-underline h1, .wp-block-quote.is-style-underline h2, .wp-block-quote.is-style-underline h3{
+.wp-block-heading.is-style-underline  {
 	background: var(--wp--preset--gradient--primary-secondary-tertiary);
 }
 
-.wp-block-quote.is-style-underline-primary-secondary h1, .wp-block-quote.is-style-underline-primary-secondary h2, .wp-block-quote.is-style-underline-primary-secondary h3{
+.wp-block-heading.is-style-underline-primary-secondary  {
 	background: var(--wp--preset--gradient--primary-secondary);
 }
 
-.wp-block-quote.is-style-underline-secondary-tertiary h1, .wp-block-quote.is-style-underline-secondary-tertiary h2, .wp-block-quote.is-style-underline-secondary-tertiary h3 {
+.wp-block-heading.is-style-underline-secondary-tertiary  {
 	background: var(--wp--preset--gradient--secondary-tertiary);
 }
 
-.wp-block-quote.is-style-underline-tertiary-primary {
+.wp-block-heading.is-style-underline-tertiary-primary  {
 	background: var(--wp--preset--gradient--tertiary-primary);
 }
 
-.wp-block-quote.is-style-underline h1, .wp-block-quote.is-style-underline h2, .wp-block-quote.is-style-underline h1,
-.wp-block-quote.is-style-underline-primary-secondary h1,.wp-block-quote.is-style-underline-primary-secondary h2, .wp-block-quote.is-style-underline-primary-secondary h3
-.wp-block-quote.is-style-underline-secondary-tertiary h1, .wp-block-quote.is-style-underline-secondary-tertiary h2, .wp-block-quote.is-style-underline-secondary-tertiary h3,
-.wp-block-quote.is-style-underline-tertiary-primary h1, .wp-block-quote.is-style-underline-tertiary-primary h2, .wp-block-quote.is-style-underline-tertiary-primary h3 {
+.wp-block-heading.is-style-underline ,
+.wp-block-heading.is-style-underline-primary-secondary ,
+.wp-block-heading.is-style-underline-secondary-tertiary ,
+.wp-block-heading.is-style-underline-tertiary-primary {
 	background-position: 0 85%;
 	background-repeat: repeat-x;
 	background-size: 100% 10px;
