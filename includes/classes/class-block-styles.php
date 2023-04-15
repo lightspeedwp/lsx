@@ -71,7 +71,7 @@ class Block_Styles {
 				'success-content-box'       => __( 'Success Content Box', 'lsx' ),
 			),
 			'core/heading'           => array(
-				'underline-primary-secondary'  => __( 'Underline #1', 'lsx' ),
+				'underline-primary'  => __( 'Underline #1', 'lsx' ),
 			'underline-secondary-tertiary' => __( 'Underline #2', 'lsx' ),
 			'underline-tertiary-primary'   => __( 'Underline #3', 'lsx' ),
 			'underline'                    => __( 'Underline #4', 'lsx' ),
