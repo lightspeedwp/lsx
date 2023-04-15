@@ -48,6 +48,7 @@ body .is-layout-constrained .alignfull, body .alignfull.is-layout-flow{margin-bl
 
 /* Button Hovers
 --------------------------------------------- */
+.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background):hover, .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover{color:var(--wp--preset--color--base);background-color: var(--wp--preset--color--contrast);}
 .wp-block-button .has-primary-background-color:hover{background-color: var(--wp--preset--color--senary)!important;}
 
 .wp-block-button.is-style-pill .has-cta-background-color:hover{background-color: var(--wp--preset--color--ctahover)!important;color:var(--wp--preset--color--base)!important;}
