@@ -1,6 +1,6 @@
 /* Sizes
 --------------------------------------------- */
-.wp-block-pullquote.is-style-primary-background{position: relative;border-radius: 5px;border: 2px solid #2b2d2f;}
+.wp-block-pullquote.is-style-primary-background{position: relative;border-radius: 5px;border: 2px solid #ccc;}
 
 .wp-block-pullquote.is-style-primary-background:before {
     background-color: #f6f6f6;
@@ -22,3 +22,26 @@
     transform: translateX(-50%);}
 
     .wp-block-pullquote.is-style-primary-background p{font-style:italic;}
+
+    .wp-block-pullquote.is-style-contrast-background{position: relative;border-radius: 5px;border: 2px solid #ccc;background:#000; }
+
+.wp-block-pullquote.is-style-contrast-background:before {
+    background-color: #f6f6f6;
+    color: #d84e2e;
+    font-size: 92px;
+    height: 80px;
+    top: -50px;
+    width: 80px;
+    border-radius: 50%;
+    content: "”";
+    text-align: center;
+    font-family: system;
+    font-style: normal;
+    left: 50%;
+    line-height: 1.375;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);}
+
+    .wp-block-pullquote.is-style-contrast-background p{font-style:italic;color:#fff!important}
