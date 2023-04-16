@@ -511,8 +511,12 @@ textarea {
 		border-bottom: 1px solid #2b2d2f;
 		padding: 22px 30px!important;margin:0!important;}
 		.woocommerce-MyAccount-navigation ul li:hover{background: #000;}
+
 		.woocommerce-MyAccount-navigation ul li:hover a{color:#fff!important;}
 	.woocommerce-MyAccount-navigation ul li a{color:#000!important;}
+
+	.woocommerce-MyAccount-navigation ul li.is-active{background: #000;}
+	.woocommerce-MyAccount-navigation ul li.is-active a{color:#fff!important;}
 
 	.woocommerce-account .woocommerce-MyAccount-navigation{ width: 28%;}
 
@@ -592,6 +596,10 @@ header .minicart{z-index: 99999999;margin-right:50px;}
 	.woocommerce-account .woocommerce-ResetPassword{width:100%;margin:1em auto;}
 
 	.woocommerce-account .wp-block-group.alignfull .woocommerce-form.woocommerce-form-login{width:100%;margin:2em auto;}
+
+	.woocommerce-account .woocommerce-MyAccount-content, .woocommerce-account .woocommerce-MyAccount-navigation {
+		float: none;
+		width: 100%!important;}
 }
 
 /**
