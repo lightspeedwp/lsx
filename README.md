@@ -113,20 +113,8 @@ If you're a developer who's spotted a bug issue and have a fix, or simply have f
 This software uses the following open source packages:
 
 * [WordPress](https://wordpress.org/)
-* [Underscores](https://underscores.me/) (C) 2014-2020 Automattic, Inc.
-* [Composer](https://getcomposer.org/)
-* [WebPack](https://webpackwebpack.js.org/)
-* [Gulp](https://gulpjs.com/)
 * [Node.js](https://nodejs.org/)
 * [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-* [WP-Bootstrap-Navwalker](https://github.com/twittem/wp-bootstrap-navwalker) is licensed under the terms of the GNU GPL, Version 3.
-* [Bootstrap](http://getbootstrap.com/) is licensed under the terms of the MIT license.
-* [Font Awesome](http://fontawesome.io/) icons are licensed under the terms of the SIL OFL 1.1, and code licensed under the terms of MIT License.
-* [Modernizr](https://modernizr.com/) is licensed under the terms of the MIT license.
-* [imagesLoaded](http://imagesloaded.desandro.com/) is licensed under the terms of the MIT license.
-* [ScrollToFixed](https://github.com/bigspotteddog/ScrollToFixed) is licensed under the terms of the MIT license.
-* [Picturefill](https://scottjehl.github.io/picturefill/) is licensed under the terms of the MIT license.
-* [lazysizes](https://github.com/aFarkas/lazysizes) is licensed under MIT license.
 
 ## License
 
