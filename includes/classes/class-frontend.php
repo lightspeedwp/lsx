@@ -48,13 +48,11 @@ class Frontend {
 	 * @return void
 	 */
 	public function yoast_faq_asset_files() {
-		/**
-		 * @todo Load the Yoast files conditionally
-		 */
-		wp_enqueue_style( 'lsx-yoast-faq-css', get_stylesheet_directory_uri() . '/assets/css/faq/style.min.css', array() );
-		wp_enqueue_script( 'lsx-yoast-faq-js', get_stylesheet_directory_uri()  . '/assets/js/LSXFAQ-JS.min.js', array( "jquery" ), "1.0", true );
+		if ( function_exists( 'wpseo_init' ) ) {
+			wp_enqueue_style( 'lsx-yoast-faq-css', get_stylesheet_directory_uri() . '/assets/css/faq/style.min.css', array() );
+			wp_enqueue_script( 'lsx-yoast-faq-js', get_stylesheet_directory_uri()  . '/assets/js/LSXFAQ-JS.min.js', array( "jquery" ), "1.0", true );
+		}
 	}
-	
 
 	/**
 	 * WPForms submit button, match Gutenberg button block
