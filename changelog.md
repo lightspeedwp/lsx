@@ -1,5 +1,10 @@
 # LSX Theme Changelog
 
+# [[3.0.2]](https://github.com/lightspeeddevelopment/lsx/releases/tag/3.0.2) - 20-04-2023
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.2).
+
 # [[3.0.1]](https://github.com/lightspeeddevelopment/lsx/releases/tag/3.0.1) - 22-09-2022
 
 ### Fixed
