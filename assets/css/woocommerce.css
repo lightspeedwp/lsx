@@ -69,6 +69,12 @@
 	 .woocommerce-page table.shop_table tr{background-color:#fff;}
 
 	 .wc-block-mini-cart__footer .wc-block-mini-cart__footer-actions .wp-block-woocommerce-mini-cart-checkout-button-block{background-color: var(--wp--preset--color--cta)!important;}
+	 .woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
+	 display: block;
+    text-align: center!important;
+    margin-bottom: 1em;
+    font-size: 1.25em!important;
+    padding: 1em!important;}
 
 	 .woocommerce #payment #place_order, .woocommerce-page #payment #place_order, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button{background-color: var(--wp--preset--color--cta)!important;}
 	 .woocommerce #payment #place_order:hover, .woocommerce-page #payment #place_order:hover, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover{background-color: var(--wp--preset--color--ctahover)!important;}
