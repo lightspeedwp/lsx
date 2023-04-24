@@ -59,9 +59,12 @@ class Images {
 	 * @return array
 	 */
 
-	 
+	function is_blog () {
+		return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
+	}
+	
 	public function render_post_image_data( $parsed_block, $source_block, $parent_block ) {
-		if ( ! is_home() && !is_front_page() && is_archive() && 'core/post-featured-image' === $parsed_block['blockName'] ) {
+		if ( ! is_home() && !is_front_page() && is_blog() && 'core/post-featured-image' === $parsed_block['blockName'] ) {
 			$parsed_block['attrs']['sizeSlug'] = 'lsx-blog-thumbnail';
 		}
 		return $parsed_block;
