@@ -382,17 +382,23 @@ li.type-project, li.type-post, li.type-product{position:relative;}
 .wp-block-query-pagination-numbers .page-numbers.current{background: #2F8EFF;border: 1px solid #2F8EFF;color:#fff!important;}
 .wp-block-query-pagination-numbers .page-numbers:hover{background: #2F8EFF;border: 1px solid #2F8EFF;color:#fff!important;}
 
-
-
 .wp-block-lsx-lsx-mega-menu .wp-block-navigation__container{gap:0!important;}
 .wp-block-navigation__container .wp-block-navigation-item a:hover{color:var(--wp--preset--color--cta)!important;}
+
+.aw-referrals-share-or{color: #fff !important;}
 
 /* Forms
 ---------------------------------------------------------------------------- */
 
 .contrast-form{color:#fff!important;background-color: var(--wp--preset--color--contrast)!important;padding:10px;}
 .contrast-form input[type=text]{background:#fff; border: 1px solid var(--wp--preset--color--secondary)!important;}
-
+.aw-email-referral-form p.form-row{margin: 0 0 10px!important;}
+.aw-email-referral-form p input{
+font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 8px;}
+	.aw-email-referral-form	.email-button button{padding:10px 20px;width:100%; display:block;color:#fff;text-align:center; background-color:var(--wp--preset--color--cta)!important;}
 /* Yoast How-to
 ---------------------------------------------------------------------------- */
 
