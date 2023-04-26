@@ -267,7 +267,9 @@ ul li:where(:not([class*='block'])),
 --------------------------------------------- */
 .wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container.wp-block-lsx-lsx-mega-menu.has-width-full{border-radius: 0!important;border:none!important; }
 .wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{border: 1px solid #6C6C6C; border-radius: 10px;box-shadow: 2px 4px 14px 2px rgba(165, 165, 165, 0.15);}
-
+.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container {
+    min-width: 220px!important;
+}
 .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
 	background-color: var(--wp--preset--color--contrast);
 	border: var(--wp--preset--color--contrast);
