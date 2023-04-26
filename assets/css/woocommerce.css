@@ -105,7 +105,7 @@
 	#add_payment_method .cart-collaterals .cart_totals tr td, #add_payment_method .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td, .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-checkout .cart-collaterals .cart_totals tr td, .woocommerce-checkout .cart-collaterals .cart_totals tr th{border-top:2px solid #2B2D2F!important;}
 	.woocommerce .select2-container--default .select2-selection--single{border:2px solid #2B2D2F!important;border-radius: 0;}
 	.woocommerce div.product form.cart div.quantity .qty, .woocommerce .quantity .qty{border:2px solid #2B2D2F!important;}
-
+	.woocommerce div.product form.cart button.single_add_to_cart_button{font-size: var(--wp--preset--font-size--small)!important;}
 	.wp-block-woocommerce-product-details.alignwide{max-width: 1200px!important}
 	.woocommerce-Tabs-panel h2{display:none;}
 	.woocommerce-Tabs-panel p, .woocommerce-Tabs-panel table.shop_attributes, .woocommerce-Tabs-panel h1, .woocommerce-Tabs-panel h2, .woocommerce-Tabs-panel h3{width:660px;margin:1em auto;}
@@ -117,6 +117,9 @@
 	#add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text{border:2px solid #2B2D2F!important;}
 	.woocommerce .woocommerce-checkout-review-order-table tbody th, .woocommerce .woocommerce-checkout-review-order-table tfoot td, .woocommerce .woocommerce-checkout-review-order-table tfoot th{border:2px solid #2B2D2F!important;}
 	.woocommerce .order_details tfoot th{border:2px solid #2B2D2F!important;}
+
+	.wc-block-cart__submit-container .wc-block-cart__submit-button:hover, .wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button:hover {
+		background-color: var(--wp--preset--color--ctahover)!important;}
 	
 
 
