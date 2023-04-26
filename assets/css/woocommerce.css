@@ -124,6 +124,8 @@
 
 	.wc-block-cart__submit-container .wc-block-cart__submit-button:hover, .wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button:hover {
 		background-color: var(--wp--preset--color--ctahover)!important;}
+		.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
+			border: 2px solid #d3ced2!important;}
 	
 
 
@@ -137,7 +139,7 @@
 	.woocommerce-Tabs-panel p, .woocommerce-Tabs-panel table.shop_attributes, .woocommerce-Tabs-panel h1, .woocommerce-Tabs-panel h2, .woocommerce-Tabs-panel h3{width:90%!important;margin:1em auto;}
 
 
-	.woocommerce-account .wp-block-group.alignfull .woocommerce-form.woocommerce-form-login{width:100%;margin:2em auto;}
+	.woocommerce-account .wp-block-group.alignfull .woocommerce-form.woocommerce-form-login{width:100%;margin:2em auto;background:#fff;}
 
 	.woocommerce-account .woocommerce-MyAccount-content, .woocommerce-account .woocommerce-MyAccount-navigation {
 		float: none;
