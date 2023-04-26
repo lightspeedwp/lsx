@@ -148,7 +148,26 @@
 /* Woocommerce Cart */
 	.woocommerce-account .woocommerce-ResetPassword{width:100%;margin:1em auto;}
 	.woocommerce-Tabs-panel{width:90%!important;margin:1em auto;}
+	.woocommerce table.variations tr{margin-bottom:0;line-height: 0.5rem;}
+	.woocommerce div.product form.cart table.variations th {
+		line-height: 0.5rem;
+		width: 100%;
+		float: left;}
 
+		.woocommerce div.product form.cart .variations {
+			border: 0;
+			width: 100%;
+			position: relative;}
+
+		.woocommerce div.product form.cart .reset_variations {
+			font-size: .83em;
+			position: absolute;
+			top: -12px;
+			width: 100%;
+			left: 80%;}
+
+		div+.bundle_sells_title {
+			padding-top: 0em!important;}
 
 	.woocommerce-account .wp-block-group.alignfull .woocommerce-form.woocommerce-form-login{width:100%;margin:2em auto;background:#fff;}
 
