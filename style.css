@@ -445,7 +445,8 @@ textarea {
 --------------------------------------------- */
 footer .has-contrast-background-color a:not(.wp-element-button){color:#fff!important;}
 footer .has-contrast-background-color a:not(.wp-element-button):hover{color: var(--wp--preset--color--secondary)!important;}
-footer .has-contrast-background-color .wp-block-social-links:not(.is-style-logos-only){fill:#000!important;}
+footer .has-contrast-background-color .wp-block-social-links:not(.is-style-logos-only)
+footer .has-contrast-background-color .wp-block-social-links:not(.is-style-logos-only) a{color:#000!important;}
 
 /* Media Queries
 ---------------------------------------------------------------------------- */
