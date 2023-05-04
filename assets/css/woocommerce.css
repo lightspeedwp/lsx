@@ -84,7 +84,7 @@
     text-align: center!important;
     margin-bottom: 1em;
     font-size: 1.25em!important;
-    padding: 1em!important;}
+    padding: 1em!important;width:40%;}
 	.woocommerce-info, .woocommerce-message{border: 1px solid #2F8EFF!important;}
 
 	 .woocommerce #payment #place_order, .woocommerce-page #payment #place_order, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button{background-color: var(--wp--preset--color--cta)!important;}
@@ -124,6 +124,10 @@
 			height: 25px;
 			top: 5px;
 			position: relative;}
+			.woocommerce-checkout form .form-row .input-checkbox{width: 25px;
+				height: 25px;
+				top: 5px;
+				position: relative;}
 	.page-template-woocommerce-page h1.wp-block-post-title{width:1200px; margin:0 auto;font-size:60px;text-align: center;}
 	.woocommerce-account h1.wp-block-post-title{width:1200px; margin:0 auto;font-size:60px;text-align: center;}
 	.woocommerce-Tabs-panel{width:660px;margin:1em auto!important;}
@@ -162,6 +166,7 @@
 
 @media (max-width:960px) {
 
+	.woocommerce #payment #place_order, .woocommerce-page #payment #place_order{width:100%!important;}
 /* Woocommerce Cart */
 	.woocommerce-account .woocommerce-ResetPassword{width:100%;margin:1em auto;}
 	.woocommerce-Tabs-panel{width:90%!important;margin:1em auto;}
