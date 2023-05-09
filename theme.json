@@ -350,37 +350,37 @@
 							"fontFamily": "Manrope",
 							"fontWeight": "200",
 							"fontStyle": "normal",
-							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-200.woff2" ]
+							"src": [ "file:./assets/fonts/manrope/manrope-200.woff2" ]
 						},
 						{
 							"fontFamily": "Manrope",
 							"fontWeight": "300",
 							"fontStyle": "normal",
-							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-300.woff2" ]
+							"src": [ "file:./assets/fonts/manrope/manrope-300.woff2" ]
 						},
 						{
 							"fontFamily": "Manrope",
 							"fontWeight": "500",
 							"fontStyle": "normal",
-							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-500.woff2" ]
+							"src": [ "file:./assets/fonts/manrope/manrope-500.woff2" ]
 						},
 						{
 							"fontFamily": "Manrope",
 							"fontWeight": "700",
 							"fontStyle": "normal",
-							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-700.woff2" ]
+							"src": [ "file:./assets/fonts/manrope/manrope-700.woff2" ]
 						},
 						{
 							"fontFamily": "Manrope",
 							"fontWeight": "800",
 							"fontStyle": "normal",
-							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-800.woff2" ]
+							"src": [ "file:./assets/fonts/manrope/manrope-800.woff2" ]
 						},
 						{
 							"fontFamily": "Manrope",
 							"fontWeight": "regular",
 							"fontStyle": "normal",
-							"src": [ "/wp-content/themes/lsx/assets/fonts/manrope/manrope-regular.woff2" ]
+							"src": [ "file:./assets/fonts/manrope/manrope-regular.woff2" ]
 						}
 					]
 				},
@@ -523,16 +523,15 @@
 	"styles": {
 		"blocks": {
 			"core/buttons": {
+				"spacing": {
 					"margin": {
 						"bottom": "10px",
 						"left": "0px",
 						"right": "0px",
 						"top": "10px"
 					}
+				}
 			},
-			"core/quote": {
-                "shadow": "var( --wp--preset--shadow--lg )"
-            },
 			"core/calendar": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
@@ -815,11 +814,6 @@
 			"text": "var(--wp--preset--color--contrast)"
 		},
 		"elements": {
-			"link": {
-				"color": {
-					"text": "inherit"
-				}
-			},
 			"button": {
 				"border": {
 					"radius": "0"
