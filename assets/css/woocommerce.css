@@ -428,8 +428,13 @@
 .woocommerce div.product .woocommerce-tabs ul.tabs{
     text-align: center;
 }
-.woocommerce ul.products li.product .star-rating{margin: -10px 0 0 18px!important;}
-
+.woocommerce ul.products li.product .star-rating{
+    margin: -10px 0 0 18px!important;
+}
+.woocommerce ul.products li.product .price{
+    color:#000!important;
+    font-weight: 500;
+}
 /* Bundles ---------------------------------------------------------------------------- */
  .bundle_sells_title h3{
      margin-block-start: 15px!important;
@@ -472,7 +477,7 @@
         position: relative;
     }
     .woocommerce div.product form.cart button.single_add_to_cart_button {
-        width: 68%;
+        width: 72%;
     }
     /* Woocommerce Cart */
      .woocommerce-account .woocommerce-ResetPassword{
