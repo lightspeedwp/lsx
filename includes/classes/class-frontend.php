@@ -27,6 +27,7 @@ class Frontend {
 		// Styles and Scripts
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'yoast_faq_asset_files' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'woo_asset_files' ) );
 
 		//Output on the frontend.
 		add_filter( 'wpforms_frontend_form_data', array( $this, 'wpforms_match_button_block' ) );
@@ -48,13 +49,22 @@ class Frontend {
 	 * @return void
 	 */
 	public function yoast_faq_asset_files() {
-		/**
-		 * @todo Load the Yoast files conditionally
-		 */
-		wp_enqueue_style( 'lsx-yoast-faq-css', get_stylesheet_directory_uri() . '/assets/css/faq/style.min.css', array() );
-		wp_enqueue_script( 'lsx-yoast-faq-js', get_stylesheet_directory_uri()  . '/assets/js/LSXFAQ-JS.min.js', array( "jquery" ), "1.0", true );
+		if ( function_exists( 'wpseo_init' ) ) {
+			wp_enqueue_style( 'lsx-yoast-faq-css', get_template_directory_uri() . '/assets/css/faq/style.css', array() );
+			wp_enqueue_script( 'lsx-yoast-faq-js', get_template_directory_uri()  . '/assets/js/faq.js', array( "jquery" ), "1.0", true );
+		}
 	}
-	
+
+	/**
+	 * Load the assets files for Yoast
+	 *
+	 * @return void
+	 */
+	public function woo_asset_files() {
+		if ( class_exists( 'woocommerce' ) ) {
+			wp_enqueue_style( 'lsx-woo-css', get_template_directory_uri() . '/assets/css/woocommerce.css', array() );
+		}
+	}
 
 	/**
 	 * WPForms submit button, match Gutenberg button block

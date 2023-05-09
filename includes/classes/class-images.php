@@ -36,6 +36,7 @@ class Images {
 	 */
 	public function register_image_sizes() {
 		add_image_size( 'lsx-blog-thumbnail', 640, 480, array( 'center', 'center' ) );
+		add_image_size( 'lsx-product-thumbnail', 480, 480, array( 'center', 'center' ) );
 	}
 
 	/**
@@ -58,9 +59,13 @@ class Images {
 	 * @param WP_Block|null $parent_block If this is a nested block, a reference to the parent block.
 	 * @return array
 	 */
+	
 	public function render_post_image_data( $parsed_block, $source_block, $parent_block ) {
-		if ( ! is_front_page() && is_home() && 'core/post-featured-image' === $parsed_block['blockName'] ) {
+		if ( ! is_home() || !is_front_page() || is_archive() && 'core/post-featured-image' === $parsed_block['blockName'] ) {
 			$parsed_block['attrs']['sizeSlug'] = 'lsx-blog-thumbnail';
+		}
+		if ( function_exists( 'is_woocommerce' ) && is_woocommerce() && 'woocommerce/product-image' === $parsed_block['blockName'] ) {
+			$parsed_block['attrs']['sizeSlug'] = 'lsx-product-thumbnail';
 		}
 		return $parsed_block;
 	}
