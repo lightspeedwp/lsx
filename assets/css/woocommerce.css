@@ -271,32 +271,6 @@
  .woocommerce div.product form.cart .woocommerce-variation-description p{
 	margin-bottom:0!important;
  }
- .single .quantity input[type="number"]::-webkit-outer-spin-button,
- .single .quantity input[type="number"]::-webkit-inner-spin-button {
-  transform: rotate(90deg);
-  height: 80px;
-  opacity: 0;
-}
-
-.single .quantity {
-  position: relative;
-}
-
-.single .quantity:after {
-  content: "+";
-  position: absolute;
-  right: 5px;
-  height: 100%;
-  top: 8px;
-  pointer-events: none;
-}
-.single .quantity:before {
-  content: "-";
-  position: absolute;
-  left: 5px;
-  height: 100%;
-  top: 8px;
-}
  .woocommerce div.product p.price, .woocommerce div.product span.price{
 	color:#000;
  }
