@@ -408,8 +408,18 @@
     margin-right: 16px;
 }
 .wc-block-mini-cart__template-part .cross-sells-product, .wc-block-mini-cart .cross-sells-product{
-	display:flex;
+	display: inline-block;
+    width: 100%;
+    position: relative;
 }
+.wc-block-mini-cart__template-part .wc-block-components-product-rating, .wc-block-mini-cart .wc-block-components-product-rating{
+	display:none;
+}
+.wc-block-mini-cart__template-part .cross-sells-product .wp-block-button.wc-block-components-product-button, .wc-block-mini-cart .cross-sells-product .wp-block-button.wc-block-components-product-button{
+	right: 0px;
+    position: absolute;
+}
+
 
 /* Bundles ---------------------------------------------------------------------------- */
  .bundle_sells_title h3{
