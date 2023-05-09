@@ -50,8 +50,8 @@ class Frontend {
 	 */
 	public function yoast_faq_asset_files() {
 		if ( function_exists( 'wpseo_init' ) ) {
-			wp_enqueue_style( 'lsx-yoast-faq-css', get_template_directory_uri() . '/assets/css/faq/style.min.css', array() );
-			wp_enqueue_script( 'lsx-yoast-faq-js', get_template_directory_uri()  . '/assets/js/LSXFAQ-JS.min.js', array( "jquery" ), "1.0", true );
+			wp_enqueue_style( 'lsx-yoast-faq-css', get_template_directory_uri() . '/assets/css/faq/style.css', array() );
+			wp_enqueue_script( 'lsx-yoast-faq-js', get_template_directory_uri()  . '/assets/js/faq.js', array( "jquery" ), "1.0", true );
 		}
 	}
 
