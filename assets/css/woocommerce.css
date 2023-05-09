@@ -428,6 +428,7 @@
 .woocommerce div.product .woocommerce-tabs ul.tabs{
     text-align: center;
 }
+.woocommerce ul.products li.product .star-rating{margin: -10px 0 0 18px!important;}
 
 /* Bundles ---------------------------------------------------------------------------- */
  .bundle_sells_title h3{
@@ -449,6 +450,29 @@
          float: left;
          clear: both;
          margin: 0 0 2em
+    }
+    .woocommerce div.product form.cart .variations select {
+        border: 2px solid #2B2D2F!important;
+        background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right;
+        -webkit-appearance: none;
+        position: relative;
+        float: left;
+        width: 100%;
+        background-position-x: 90%;
+    }
+    .woocommerce div.product form.cart .variations td {
+        position: relative;
+        width: 95%;
+        display: block;
+        min-width: 94%;
+    }
+    .woocommerce div.product form.cart .variations {
+        border: 0;
+        width: 100%;
+        position: relative;
+    }
+    .woocommerce div.product form.cart button.single_add_to_cart_button {
+        width: 68%;
     }
     /* Woocommerce Cart */
      .woocommerce-account .woocommerce-ResetPassword{
