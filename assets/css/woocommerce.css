@@ -425,7 +425,9 @@
 	right: 0px;
     position: absolute;
 }
-
+.woocommerce div.product .woocommerce-tabs ul.tabs{
+    text-align: center;
+}
 
 /* Bundles ---------------------------------------------------------------------------- */
  .bundle_sells_title h3{
@@ -442,6 +444,12 @@
      .woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
         width:100%!important;
     }
+    .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+         width: 48%;
+         float: left;
+         clear: both;
+         margin: 0 0 2em
+    }
     /* Woocommerce Cart */
      .woocommerce-account .woocommerce-ResetPassword{
         width:100%;
@@ -454,6 +462,9 @@
      .woocommerce table.variations tr{
         margin-bottom:0;
         line-height: 0.5rem;
+    }
+    .woocommerce .woocommerce-result-count{
+        width:100%;
     }
      .woocommerce div.product form.cart table.variations th {
          line-height: 0.5rem;
