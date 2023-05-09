@@ -261,11 +261,25 @@
 }
  .woocommerce div.product form.cart .variations select{
     border: 2px solid #2B2D2F!important;
-     background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right;
-     -webkit-appearance: none;
-     width: 100%;
-    background-position-x: 214px;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right;
+    -webkit-appearance: none;
+    position: relative;
+    float: left;
+    width: 260px;
+    background-position-x: 228px;
 }
+ .woocommerce div.product form.cart .woocommerce-variation-description p{
+	margin-bottom:0!important;
+ }
+ .woocommerce div.product p.price, .woocommerce div.product span.price{
+	color:#000;
+ }
+ .woocommerce div.product form.cart .reset_variations{
+	position: absolute;
+    top: -34px;
+    width: 46px;
+    right: 18px;
+ }
  .woocommerce-checkout input[type="radio"]{
     width: 25px;
     height: 25px;
