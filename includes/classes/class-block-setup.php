@@ -31,15 +31,6 @@ class Block_Setup {
 	}
 
 	/**
-	 * Registers our block types via block.json
-	 *
-	 * @return void
-	 */
-	public function register_block_types() {
-		register_block_type( get_template_directory() . '/blocks/src/post-meta' );
-	}
-
-	/**
 	 * Registers block patterns and categories.
 	 *
 	 * @since LSX 1.0
