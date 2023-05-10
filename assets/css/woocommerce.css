@@ -268,22 +268,25 @@
 }
  .woocommerce .woocommerce-ordering select{
     border: 2px solid #2B2D2F!important;
-     background: url('../wp-content/plugins/woocommerce/assets/images/icons/gridicons-chevron-down.svg') no-repeat right;
+     background: url('/wp-content/plugins/woocommerce/assets/images/icons/gridicons-chevron-down.svg') no-repeat right;
     -webkit-appearance: none;
      width: 200px;
     background-position-x: 166px;
+    background-size: 24px;
     height: 3.5rem;
     padding: 0.9rem 1.1rem;
     font-size: var(--wp--preset--font-size--small);
 }
  .woocommerce div.product form.cart .variations select{
     border: 2px solid #2B2D2F!important;
-    background: url('../wp-content/plugins/woocommerce/assets/images/icons/gridicons-chevron-down.svg') no-repeat right;
+    background: url('/wp-content/plugins/woocommerce/assets/images/icons/gridicons-chevron-down.svg') no-repeat right;
     -webkit-appearance: none;
     position: relative;
     float: left;
+    background-size: 24px;
+    float: left;
     width: 260px;
-    background-position-x: 228px;
+    background-position-x: 220px;
 }
  .woocommerce div.product form.cart .variations td{
 	position: relative;
