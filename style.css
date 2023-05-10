@@ -320,11 +320,24 @@ p.has-base-color a, .has-base-color.has-link-color a{
  li.type-project, li.type-post, li.type-product{
     position:relative;
 }
-.wc-block-grid__product .wp-block-button a{
+.wc-block-grid__product .wp-block-button a, .wc-block-grid__product .wp-block-button button{
     width:100%!important;
 }
  .wp-block-cover{
     margin-block-start: 0px;
+}
+.type-product{position:relative;}
+.type-product .taxonomy-product_cat{
+    background: var(--wp--preset--color--secondary);
+    position: absolute;
+    right: -10px;
+    width: auto;
+    top: 15px!important;
+    z-index: 9;
+    padding: 4px 10px;
+    border-radius: 1px;
+    border: 1px solid #fff;
+    line-height: 22px;
 }
 .wc-block-pagination.wc-block-components-pagination .wc-block-components-pagination-page--arrow{
     margin:0!important;
