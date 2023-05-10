@@ -320,6 +320,13 @@ p.has-base-color a, .has-base-color.has-link-color a{
  li.type-project, li.type-post, li.type-product{
     position:relative;
 }
+.wc-block-grid__product{
+    background: #eee;
+}
+
+.wc-block-grid__product .wp-block-button{
+    width:100%!important;
+}
  .wp-block-cover{
     margin-block-start: 0px;
 }
@@ -334,7 +341,7 @@ p.has-base-color a, .has-base-color.has-link-color a{
 }
     .wc-block-pagination.wc-block-components-pagination  .wc-block-pagination-page:hover{
     background: #2F8EFF;
-    border: 1px solid #2F8EFF;
+    border: 1px solid #2F8EFF!important;
     color:#fff!important;
     }
 .wc-block-pagination.wc-block-components-pagination .wc-block-pagination-page--active{
