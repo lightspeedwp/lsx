@@ -327,10 +327,13 @@ p.has-base-color a, .has-base-color.has-link-color a{
     margin-block-start: 0px;
 }
 .type-product{position:relative;}
+.type-product .taxonomy-product_cat a{
+    color:#FFF!important;
+}
 .type-product .taxonomy-product_cat{
     background: var(--wp--preset--color--secondary);
     position: absolute;
-    right: -10px;
+    lft: -10px;
     width: auto;
     top: 15px!important;
     z-index: 9;
