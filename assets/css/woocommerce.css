@@ -321,6 +321,12 @@
     top: 0px;
     position: relative;
 }
+.woocommerce-shipping-fields input[type="checkbox"]{
+    width: 25px;
+    height: 25px;
+    top: 0px;
+    position: relative;
+}
  .page-template-woocommerce-page h1.wp-block-post-title{
     width:1200px;
      margin:0 auto;
@@ -411,6 +417,15 @@
     border:2px solid #2B2D2F!important;
     padding: 8px 14px;
     border-radius: 5px;
+}
+.woocommerce #review_form #respond textarea{
+    border:2px solid #2B2D2F!important;
+    border-radius: 5px;
+}
+.comment-respond .comment-form input{
+    font-size: var(--wp--preset--font-size--small);
+    padding: 0.9rem 1.1rem;
+    border: 2px solid #2B2D2F!important;
 }
  .product-details .woocommerce-tabs.wc-tabs-wrapper{
     margin-top: 0;
