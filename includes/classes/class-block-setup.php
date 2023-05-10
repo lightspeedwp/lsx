@@ -25,7 +25,6 @@ class Block_Setup {
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'register_block_patterns' ), 9 );
-		add_action( 'enqueue_block_editor_assets', array( $this, 'register_block_variations' ) );
 	}
 
 	/**
@@ -131,28 +130,5 @@ class Block_Setup {
 				require $pattern_file
 			);
 		}
-	}
-
-	/**
-	 * Registers our block variations.
-	 *
-	 * @return void
-	 */
-	public function register_block_variations() {
-		wp_enqueue_script(
-			'lsx-related-post-block',
-			get_template_directory_uri() . '/blocks/build/related-posts/index.js',
-			array( 'wp-blocks' )
-		);
-		wp_enqueue_script(
-			'lsx-columns-variation',
-			get_template_directory_uri() . '/blocks/build/columns/index.js',
-			array( 'wp-blocks' )
-		);
-		wp_enqueue_script(
-			'lsx-featured-post-block',
-			get_template_directory_uri() . '/blocks/build/featured-posts/index.js',
-			array( 'wp-blocks' )
-		);
 	}
 }
