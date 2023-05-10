@@ -333,7 +333,7 @@ p.has-base-color a, .has-base-color.has-link-color a{
 .type-product .taxonomy-product_cat{
     background: var(--wp--preset--color--secondary);
     position: absolute;
-    lft: -10px;
+    left: -10px;
     width: auto;
     top: 15px!important;
     z-index: 9;
@@ -361,9 +361,21 @@ p.has-base-color a, .has-base-color.has-link-color a{
     border: 1px solid #2F8EFF;
     color:#fff!important;
 }
+.woocommerce-pagination .page-numbers{
+    margin:0!important;
+    border: 1px solid #2F8EFF;
+    color:#2F8EFF!important;
+}
  .wp-block-query-pagination>.wp-block-query-pagination-numbers{
     margin:0!important;
     border: 1px solid #2F8EFF;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+    background: #2F8EFF;
+    color:#fff!important;
+}
+.woocommerce nav.woocommerce-pagination ul li{
+    border-right: 1px solid #2F8EFF;
 }
  .wp-block-query-pagination-numbers .page-numbers{
     padding:0px 9px;
