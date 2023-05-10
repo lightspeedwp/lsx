@@ -461,14 +461,25 @@
     width: 100%;
     float: left;
 }
-.comment-respond .comment-form-cookies-consent{
-    float: inherit !important;
+.comment-respond .comment-form-cookies-consent label {
+    float: none !important;
 }
 .comment-respond .comment-form-cookies-consent input[type="checkbox"] {
     width: 25px;
     height: 25px;
     top: 0px;
     position: relative;
+}
+.wc-block-components-sort-select__select{
+    border: 2px solid #2B2D2F!important;
+    background: url(/wp-content/plugins/woocommerce/assets/images/icons/gridicons-chevron-down.svg) no-repeat right;
+    -webkit-appearance: none;
+    width: 200px;
+    background-position-x: 166px;
+    background-size: 24px;
+    height: 3.5rem;
+    padding: 0.9rem 1.1rem;
+    font-size: var(--wp--preset--font-size--small);
 }
 .type-product .taxonomy-product_cat{
     background: var(--wp--preset--color--secondary);
