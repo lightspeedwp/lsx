@@ -455,6 +455,21 @@
     position: relative!important;
     top: -30px;
 }
+ .comment-respond label {
+    margin-bottom: 0.7rem;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+.comment-respond .comment-form-cookies-consent{
+    float: inherit !important;
+}
+.comment-respond .comment-form-cookies-consent input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    top: 0px;
+    position: relative;
+}
 .type-product .taxonomy-product_cat{
     background: var(--wp--preset--color--secondary);
     position: absolute;
