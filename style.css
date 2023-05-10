@@ -45,9 +45,9 @@ body .is-layout-constrained > .wp-block-group.alignfull {
      font-weight: var(--wp--custom--font-weight--medium);
 }
 p.has-base-color a, .has-base-color.has-link-color a{
-    color: var(--wp--preset--color--base) !important;
+    color: var(--wp--preset--color--base) !important;text-decoration: none!important;font-weight:bold!important;
 }
-.has-base-color.has-link-color a:hover{color: var(--wp--preset--color--secondary) !important;}
+.has-base-color.has-link-color a:hover{color: var(--wp--preset--color--base) !important;text-decoration: underline!important;}
  blockquote {
      margin: 0;
 }
