@@ -323,10 +323,20 @@ p.has-base-color a, .has-base-color.has-link-color a{
  .wp-block-cover{
     margin-block-start: 0px;
 }
-.wc-block-pagination.wc-block-components-pagination .wc-block-components-pagination-page--arrow{margin:0!important;
-    border: 0px solid #2F8EFF;}
-.wc-block-pagination.wc-block-components-pagination  .wc-block-pagination-page{margin:0!important;
-    border: 1px solid #2F8EFF;}
+.wc-block-pagination.wc-block-components-pagination .wc-block-components-pagination-page--arrow{
+    margin:0!important;
+    border: 0px solid #2F8EFF!important;
+}
+.wc-block-pagination.wc-block-components-pagination  .wc-block-pagination-page{
+    margin:0!important;
+    border: 1px solid #2F8EFF;
+    color:#2F8EFF!important;
+}
+    .wc-block-pagination.wc-block-components-pagination  .wc-block-pagination-page:hover{
+    background: #2F8EFF;
+    border: 1px solid #2F8EFF;
+    color:#fff!important;
+    }
 .wc-block-pagination.wc-block-components-pagination .wc-block-pagination-page--active{
     background: #2F8EFF;
     border: 1px solid #2F8EFF;
