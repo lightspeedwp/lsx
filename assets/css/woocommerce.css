@@ -440,13 +440,76 @@
     position: relative!important;
     top: -30px;
 }
-
+.type-product .taxonomy-product_cat{
+    background: var(--wp--preset--color--secondary);
+    position: absolute;
+    left: -10px;
+    width: auto;
+    top: 15px!important;
+    z-index: 9;
+    padding: 4px 10px;
+    border-radius: 1px;
+    border: 1px solid #fff;
+    line-height: 22px;
+}
+.wc-block-pagination.wc-block-components-pagination .wc-block-components-pagination-page--arrow{
+    margin:0!important;
+    border: 0px solid #2F8EFF!important;
+}
+.wc-block-pagination.wc-block-components-pagination  .wc-block-pagination-page{
+    margin:0!important;
+    border: 1px solid #2F8EFF;
+    color:#2F8EFF!important;
+}
+    .wc-block-pagination.wc-block-components-pagination  .wc-block-pagination-page:hover{
+    background: #2F8EFF;
+    border: 1px solid #2F8EFF!important;
+    color:#fff!important;
+    }
+.wc-block-pagination.wc-block-components-pagination .wc-block-pagination-page--active{
+    background: #2F8EFF;
+    border: 1px solid #2F8EFF;
+    color:#fff!important;
+}
+.woocommerce-pagination .page-numbers{
+    margin:0!important;
+    border: 1px solid #2F8EFF;
+    color:#2F8EFF!important;
+}
+ .wp-block-query-pagination>.wp-block-query-pagination-numbers{
+    margin:0!important;
+    border: 1px solid #2F8EFF;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+    background: #2F8EFF;
+    color:#fff!important;
+}
+.woocommerce nav.woocommerce-pagination ul li{
+    border-right: 0px solid #2F8EFF;
+}
+ .wp-block-query-pagination-numbers .page-numbers{
+    padding:0px 9px;
+    background: #FFFFFF;
+    border: 1px solid #2F8EFF;
+    float:left
+}
+ .wp-block-query-pagination-numbers .page-numbers.current{
+    background: #2F8EFF;
+    border: 1px solid #2F8EFF;
+    color:#fff!important;
+}
+ .wp-block-query-pagination-numbers .page-numbers:hover{
+    background: #2F8EFF;
+    border: 1px solid #2F8EFF;
+    color:#fff!important;
+}
 .wc-block-mini-cart__template-part .cross-sells-product .wp-block-button.wc-block-components-product-button, .wc-block-mini-cart .cross-sells-product .wp-block-button.wc-block-components-product-button{
 	right: 0px;
     position: absolute;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs{
-    text-align: center;
+    text-align: left;
+    padding-left: 76px;
 }
 .woocommerce ul.products li.product .star-rating{
     margin: -10px 0 0 18px!important;
