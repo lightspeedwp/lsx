@@ -190,6 +190,15 @@ p.has-base-color a, .has-base-color.has-link-color a{
  .wp-block-navigation:not([style*=text-decoration]) a, .wp-block-navigation:not([style*=text-decoration]) a:focus, .wp-block-navigation:not([style*=text-decoration]) a:hover {
      text-decoration: none;
 }
+
+body .wp-block-navigation .wp-block-navigation-item__description {
+    display: block;
+    font-size-adjust: -10px;
+    opacity: 0.7;
+    font-weight: 400;
+    text-decoration: none;
+}
+
 /* Navigation Submenu --------------------------------------------- */
  .wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container.wp-block-lsx-lsx-mega-menu.has-width-full{
     border-radius: 0!important;
