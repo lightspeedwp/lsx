@@ -191,12 +191,19 @@ p.has-base-color a, .has-base-color.has-link-color a{
      text-decoration: none;
 }
 
+body .wp-block-navigation .wp-block-navigation-item__label {
+	display: block;
+}
 body .wp-block-navigation .wp-block-navigation-item__description {
     display: block;
     font-size-adjust: -10px;
     opacity: 0.7;
     font-weight: 400;
     text-decoration: none;
+}
+
+.wp-block-navigation .has-child .wp-block-navigation__submenu-container>.wp-block-navigation-item>.wp-block-navigation-item__content {
+	flex-direction: column;
 }
 
 /* Navigation Submenu --------------------------------------------- */
