@@ -55,10 +55,6 @@ p.has-base-color a, .has-base-color.has-link-color a{
     fill: currentColor!important;
     color: currentColor!important;
 }
-/* Mega Menu --------------------------------------------- */
- .wp-block-lsx-lsx-mega-menu.has-width-full .wp-block-navigation-item{
-    display: block!important;
-}
 /* Quote --------------------------------------------- */
  .wp-block-quote.is-style-underline, .wp-block-quote.is-style-underline-primary-secondary, .wp-block-quote.is-style-underline-secondary-tertiary, .wp-block-quote.is-style-underline-tertiary-primary {
      border: none;
@@ -199,31 +195,23 @@ p.has-base-color a, .has-base-color.has-link-color a{
     border-radius: 0!important;
     border:none!important;
 }
- .wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{
+.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{
     border: 1px solid #6C6C6C;
      border-radius: 10px;
     box-shadow: 2px 4px 14px 2px rgba(165, 165, 165, 0.15);
 }
- .wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container {
+.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container {
      min-width: 220px!important;
 }
- .wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
      border: var(--wp--preset--color--contrast);
      color: var(--wp--preset--color--base);
      padding: 10px;
 }
- .wp-block-navigation :where(.wp-block-navigation__submenu-container) a {
+.wp-block-navigation :where(.wp-block-navigation__submenu-container) a {
      padding: 2px 10px;
 }
- .wp-block-lsx-lsx-mega-menu.has-width-full ul{
-    top:116px;
-    width:100%!important;
-    min-width:auto;
-}
- .wp-block-lsx-lsx-mega-menu .has-width-wide .wp-block-navigation__submenu-container{
-    max-width: var(--wp--style--global--wide-size);
-    width: var(--wp--style--global--wide-size);
-}
+
 /* Paragraph --------------------------------------------- */
  p.has-background {
      padding: 20px 30px;
