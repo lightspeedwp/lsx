@@ -28,6 +28,7 @@ class Frontend {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'yoast_faq_asset_files' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'woo_asset_files' ) );
+		add_filter( 'script_loader_tag', array( $this, 'cf_async_disable' ), 10, 3);
 
 		//Output on the frontend.
 		add_filter( 'wpforms_frontend_form_data', array( $this, 'wpforms_match_button_block' ) );
@@ -96,5 +97,16 @@ class Frontend {
 		}
 
 		return $items;
+	}
+
+	/**
+	 * Make comment reply button work with CloudFlare Rocket Loader
+	 * @see https://support.cloudflare.com/hc/en-us/articles/200169436-How-can-I-have-Rocket-Loader-ignore-specific-JavaScripts-
+	 */
+	public function cf_async_disable( $tag, $handle, $src ) {
+		if ( 'comment-reply' !== $handle ) {
+			return $tag;
+		}
+		return str_replace( ' src', ' data-cfasync="false" src', $tag );
 	}
 }
