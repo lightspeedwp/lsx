@@ -6,11 +6,14 @@ jobs:
     name: Run PHPCS inspection
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
       with:
         ref: ${{ github.event.pull_request.head.sha }}
     - name: Run PHPCS inspection
-      uses: rtCamp/action-phpcs-code-review@v3.0.0
+      # Dependabot-triggered runs don't get repo secrets (GH_BOT_TOKEN), so this
+      # always fails on Dependabot PRs regardless of the code -- non-blocking there.
+      continue-on-error: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+      uses: rtCamp/action-phpcs-code-review@v3.1.1
       env:
         GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
         SKIP_FOLDERS: "tests,.github,vendor,woocommerce,tribe-events"
