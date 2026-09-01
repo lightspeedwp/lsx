@@ -12,7 +12,7 @@ jobs:
     - name: Run PHPCS inspection
       # Dependabot-triggered runs don't get repo secrets (GH_BOT_TOKEN), so this
       # always fails on Dependabot PRs regardless of the code -- non-blocking there.
-      continue-on-error: ${{ github.actor == 'dependabot[bot]' }}
+      continue-on-error: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
       uses: rtCamp/action-phpcs-code-review@v3.1.1
       env:
         GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
