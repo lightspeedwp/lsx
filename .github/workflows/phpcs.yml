@@ -10,13 +10,11 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
     - name: Run PHPCS inspection
-      # Dependabot-triggered runs don't get repo secrets (GH_BOT_TOKEN), so this
-      # always fails on Dependabot PRs regardless of the code -- non-blocking there.
-      continue-on-error: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
-      uses: rtCamp/action-phpcs-code-review@v3.1.1
-      env:
-        GH_BOT_TOKEN: ${{ secrets.GH_BOT_TOKEN }}
-        SKIP_FOLDERS: "tests,.github,vendor,woocommerce,tribe-events"
-        PHPCS_SNIFFS_EXCLUDE: "WordPress.Files.FileName"
+      uses: 10up/wpcs-action@stable
       with:
-        args: "WordPress,WordPress-Core,WordPress-Docs"
+        # Registers PHPCompatibilityWP alongside WPCS so phpcs.xml.dist's
+        # <rule ref="PHPCompatibilityWP" /> resolves; use_local_config then
+        # picks up phpcs.xml.dist's actual ruleset (paths, excludes, sniff
+        # overrides) instead of re-declaring them here.
+        standard: '10up-Default'
+        use_local_config: 'true'
